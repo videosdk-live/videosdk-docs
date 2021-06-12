@@ -2,34 +2,30 @@
 sidebar_position: 1
 ---
 
-# Tutorial Intro
+# Introduction
 
-Let's discover **Docusaurus in less than 5 minutes**.
+Real-time comunication SDK is built with blend of webRTC and optimised UDP protocol. Our SDK helps developers to add real-time audio and video calls to any mobile app or web application.
 
-## Getting Started
+With our `embeded-sdk`, you can embeded a video call widget in your web application. It supports 98% of the devices across all platforms and adaptive video calling for better quality calls with low latency. Developers can also customise `embeded-sdk` to make it more convenient for your application.
 
-Get started by **creating a new site**.
+Our research team has worked hard to handeled all the edge cases so you just have to focus on what matters.
 
-Or **try Docusaurus immediately** with **[new.docusaurus.io](https://new.docusaurus.io)**.
+![Embeded SDK Example to add video call widget in your web application](/img/placeholder.jpg)
 
-## Generate a new site
+## Ways to start developing
 
-Generate a new Docusaurus site using the **classic template**:
+### 1. Dashboard
 
-```shell
-npx @docusaurus/init@latest init my-website classic
-```
+Create or schedule meetings instantly using dashboard and try it out.
 
-## Start your site
+### 2. Embeded SDK
 
-Run the development server:
+Best way to start is embeded a working video call widget in your app.
 
-```shell
-cd my-website
+### 3. Programmable API
 
-npx docusaurus start
-```
+Programmable API enables opportunity to create and manage rooms directly from your backend server.
 
-Your site starts at `http://localhost:3000`.
+### 4. Custom Meetings Interface SDK
 
-Open `docs/intro.md` and edit some lines: the site **reloads automatically** and display your changes.
+Our front-end sdk provides fine control to design custom user interface and experience specifically for your needs.

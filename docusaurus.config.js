@@ -1,24 +1,25 @@
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
+
 module.exports = {
-  title: "My Site",
-  tagline: "Dinosaurs are cool",
-  url: "https://your-docusaurus-test-site.com",
+  title: "Realtime distrubuted CDN",
+  tagline: "St",
+  url: "https://docs.videosdk.live",
   baseUrl: "/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
   favicon: "img/favicon.ico",
-  organizationName: "facebook", // Usually your GitHub org/user name.
-  projectName: "docusaurus", // Usually your repo name.
+  organizationName: "videosdk-live", // Usually your GitHub org/user name.
+  projectName: "videosdk-live", // Usually your repo name.
   themeConfig: {
     colorMode: {
-      defaultMode: "light",
-      disableSwitch: true,
+      defaultMode: "dark",
+      disableSwitch: false,
     },
     navbar: {
-      title: "My Site",
+      title: "videosdk.live",
       logo: {
-        alt: "My Site Logo",
-        src: "img/logo.svg",
+        alt: "VideosdK live logo",
+        src: "img/zujonow_32.png",
       },
       items: [
         {
@@ -30,13 +31,16 @@ module.exports = {
             {
               label: "Realtime communication",
               to: "docs/realtime-communication/intro",
+              activeBaseRegex: "docs/realtime-communication/*",
             },
-            {
-              label: "Live streaming",
-              to: "docs/live-streaming/intro",
-            },
+            /*{
+              label: "Low Latency Live streaming",
+              to: "docs/live-streaming/introduction",
+              activeBaseRegex: "docs/live-streaming/*",
+            },*/
           ],
         },
+
         // {
         //   type: "docsVersionDropdown",
         //   dropdownActiveClassDisabled: true,
@@ -66,15 +70,15 @@ module.exports = {
           items: [
             {
               label: "Stack Overflow",
-              href: "https://stackoverflow.com/questions/tagged/docusaurus",
+              href: "https://stackoverflow.com/questions/tagged/videosdk.live",
             },
             {
               label: "Discord",
-              href: "https://discordapp.com/invite/docusaurus",
+              href: "https://discordapp.com/invite/videosdk.live",
             },
             {
               label: "Twitter",
-              href: "https://twitter.com/docusaurus",
+              href: "https://twitter.com/videosdk.live",
             },
           ],
         },
@@ -87,12 +91,12 @@ module.exports = {
             },
             {
               label: "GitHub",
-              href: "https://github.com/facebook/docusaurus",
+              href: "https://github.com/videosdk.live/videosdk.live",
             },
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Zujo Tech Pvt Ltd.`,
     },
   },
   presets: [
@@ -102,15 +106,15 @@ module.exports = {
         docs: {
           sidebarPath: require.resolve("./sidebars.js"),
           // Please change this to your repo.
-          editUrl:
-            "https://github.com/facebook/docusaurus/edit/master/website/",
+          //editUrl:
+          //  "https://github.com/facebook/docusaurus/edit/master/website/",
           // includeCurrentVersion: false,
         },
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
-          editUrl:
-            "https://github.com/facebook/docusaurus/edit/master/website/blog/",
+          //editUrl:
+          //  "https://github.com/facebook/docusaurus/edit/master/website/blog/",
         },
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
