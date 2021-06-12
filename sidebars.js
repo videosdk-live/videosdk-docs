@@ -118,7 +118,7 @@ module.exports = {
       collapsed: false,
     },
   ],
-  livestreamingSidebar: [
+  /*livestreamingSidebar: [
     {
       type: "category",
       label: "LIVE STREAMING",
@@ -133,5 +133,5 @@ module.exports = {
       items: ["video-on-demand/intro"],
       collapsed: false,
     },
-  ],
+  ],*/
 };

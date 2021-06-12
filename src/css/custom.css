@@ -225,7 +225,6 @@
 
 html,
 body {
-  font-smoothing: antialiased;
   text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
@@ -1373,7 +1372,7 @@ h4.method-list-item-label .method-list-item-validation {
 .method-list-group .method-list-group li h4 {
   margin-bottom: 4px;
 }
-4: .video-with-border {
+.video-with-border {
   border-radius: 5px;
   overflow: hidden;
   border: 2px solid var(--custom-border-color);
