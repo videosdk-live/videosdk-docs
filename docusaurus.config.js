@@ -1,8 +1,8 @@
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 
 module.exports = {
-  title: "Realtime distrubuted CDN",
-  tagline: "St",
+  title: "VideoSDK.live Documentation",
+  tagline: "Realtime distrubuted CDN",
   url: "https://docs.videosdk.live",
   baseUrl: "/",
   onBrokenLinks: "throw",
@@ -20,6 +20,7 @@ module.exports = {
       logo: {
         alt: "VideosdK live logo",
         src: "img/zujonow_32.png",
+        srcDark: "img/zujonow_32_white.png",
       },
       items: [
         {
@@ -33,11 +34,16 @@ module.exports = {
               to: "docs/realtime-communication/intro",
               activeBaseRegex: "docs/realtime-communication/*",
             },
-            /*{
-              label: "Low Latency Live streaming",
-              to: "docs/live-streaming/introduction",
+            {
+              label: "Live streaming",
+              to: "docs/live-streaming/intro",
               activeBaseRegex: "docs/live-streaming/*",
-            },*/
+            },
+            {
+              label: "Video On Deamnd",
+              to: "docs/video-on-demand/intro",
+              activeBaseRegex: "docs/video-on-demand/*",
+            },
           ],
         },
 
@@ -60,8 +66,8 @@ module.exports = {
           title: "Docs",
           items: [
             {
-              label: "Tutorial",
-              to: "/docs/intro",
+              label: "Realtime Communication",
+              to: "/docs/realtime-communication/intro",
             },
           ],
         },
@@ -85,10 +91,6 @@ module.exports = {
         {
           title: "More",
           items: [
-            {
-              label: "Blog",
-              to: "/blog",
-            },
             {
               label: "GitHub",
               href: "https://github.com/videosdk.live/videosdk.live",

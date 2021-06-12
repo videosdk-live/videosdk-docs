@@ -1,48 +1,48 @@
-import React from 'react';
-import clsx from 'clsx';
-import styles from './HomepageFeatures.module.css';
+import React from "react";
+import clsx from "clsx";
+import Link from "@docusaurus/Link";
+import styles from "./HomepageFeatures.module.css";
 
 const FeatureList = [
   {
-    title: 'Easy to Use',
-    Svg: require('../../static/img/undraw_docusaurus_mountain.svg').default,
+    title: "Realtime Communication SDK",
+    link: "/docs/realtime-communication/intro",
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        Realtime communication SDK provides seamless support to integrate
+        realtime audio, video chat in your app.
       </>
     ),
   },
   {
-    title: 'Focus on What Matters',
-    Svg: require('../../static/img/undraw_docusaurus_tree.svg').default,
+    title: "Live Streming SDK",
+    link: "/docs/live-streaming/intro",
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        Our live streaming SDK can be helpful to scale your custom live
+        streaming solution with just couple of lines of code.
       </>
     ),
   },
   {
-    title: 'Powered by React',
-    Svg: require('../../static/img/undraw_docusaurus_react.svg').default,
+    title: "Video On Demand",
+    link: "/docs/video-on-demand/intro",
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        Video On Demand SDK/API provides end-to-end media workflow with media
+        storage, encoding and streaming.
       </>
     ),
   },
 ];
 
-function Feature({Svg, title, description}) {
+function Feature({ link, title, description }) {
   return (
-    <div className={clsx('col col--4')}>
-      <div className="text--center">
-        <Svg className={styles.featureSvg} alt={title} />
-      </div>
+    <div className={clsx("col col--4")}>
       <div className="text--center padding-horiz--md">
-        <h3>{title}</h3>
+        <h3>
+          <Link to={link}>{title}</Link>
+        </h3>
         <p>{description}</p>
       </div>
     </div>

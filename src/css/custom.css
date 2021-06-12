@@ -558,7 +558,6 @@ a.card:hover {
   -webkit-mask-size: cover;
   width: 21px;
   mask-size: cover;
-  background: var(--ifm-color-gray-900);
   -webkit-transform: rotate(180deg);
   transform: rotate(180deg);
   transition: var(--ifm-transition-fast) ease;
@@ -571,7 +570,6 @@ a.card:hover {
   -webkit-mask-size: cover;
   width: 21px;
   mask-size: cover;
-  background: var(--ifm-color-gray-900);
 }
 
 .menu .menu__list-item.menu__list-item--collapsed .menu__link--sublist::after {
@@ -624,8 +622,7 @@ main[class^="docMainContainer_"] div.container div.row div.col.col--3 {
 
 div[class^="docSidebarContainer_"] {
   border-right-color: var(--ifm-sidebar-border-color);
-  max-width: 250px;
-  /* min-width: 250px; */
+  max-width: fit-content;
 }
 
 div[class^="sidebar_"] {
@@ -744,6 +741,9 @@ a.hash-link {
 .footer {
   border-top: 1px solid var(--custom-border-color);
   padding-bottom: 80px;
+}
+.footer--dark {
+  --ifm-footer-link-color: var(--ifm-footer-title-color);
 }
 
 .has-emphasis {

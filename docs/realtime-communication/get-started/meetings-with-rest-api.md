@@ -11,7 +11,7 @@ You can use use REST API to create and manage meetings. You will require API key
 ## Generate your API Key and Secret
 
 You can generate API Key and Secret using "API Keys" section. Refer authentication section for more information about generating token.
-![Generate API keys from console](/img/placeholder.jpg)
+![Generate API keys from console](/img/api-key.jpg)
 
 ## Sample request
 
