@@ -118,11 +118,30 @@ module.exports = {
       collapsed: false,
     },
   ],
-  /*livestreamingSidebar: [
+  livestreamingSidebar: [
     {
       type: "category",
       label: "LIVE STREAMING",
       items: ["live-streaming/intro"],
+      collapsed: false,
+    },
+    {
+      type: "category",
+      label: "API REFERENCE",
+      collapsed: false,
+      items: [
+        "live-streaming/api-reference/auth",
+        "live-streaming/api-reference/create-live-stream",
+        "live-streaming/api-reference/list-live-streams",
+        "live-streaming/api-reference/get-live-stream",
+        "live-streaming/api-reference/update-live-stream",
+        "live-streaming/api-reference/delete-live-stream",
+      ],
+    },
+    {
+      type: "category",
+      label: "TUTORIALS",
+      items: ["live-streaming/tutorials/live-streaming-tutorial"],
       collapsed: false,
     },
   ],
@@ -133,5 +152,30 @@ module.exports = {
       items: ["video-on-demand/intro"],
       collapsed: false,
     },
-  ],*/
+    {
+      type: "category",
+      label: "STORAGE/STREAMING API REFERENCE",
+      items: [
+        "video-on-demand/storage-api-reference/auth",
+        "video-on-demand/storage-api-reference/create-new-url",
+        "video-on-demand/storage-api-reference/upload-file",
+        "video-on-demand/storage-api-reference/list-all-files",
+        "video-on-demand/storage-api-reference/get-file-details",
+        "video-on-demand/storage-api-reference/delete-file",
+      ],
+      collapsed: false,
+    },
+    {
+      type: "category",
+      label: "ENCODING API REFERENCE",
+      items: [
+        "video-on-demand/encoding-api-reference/auth",
+        "video-on-demand/encoding-api-reference/create-encoding-job",
+        "video-on-demand/encoding-api-reference/list-all-encoding-jobs",
+        "video-on-demand/encoding-api-reference/get-encoding-job-details",
+        "video-on-demand/encoding-api-reference/delete-encoding-job",
+      ],
+      collapsed: false,
+    },
+  ],
 };

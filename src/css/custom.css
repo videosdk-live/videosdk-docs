@@ -620,6 +620,7 @@ main[class^="docMainContainer_"] div.container div.row div.col.col--3 {
 }
 
 div[class^="docSidebarContainer_"] {
+  width: calc(var(--doc-sidebar-width) - 1);
   border-right-color: var(--ifm-sidebar-border-color);
   max-width: fit-content;
 }
@@ -738,11 +739,20 @@ a.hash-link {
 }
 
 .footer {
+  font-weight: normal;
+  background-color: var(--custom-background-color);
   border-top: 1px solid var(--custom-border-color);
   padding-bottom: 80px;
 }
 .footer--dark {
+  font-weight: normal;
   --ifm-footer-link-color: var(--ifm-footer-title-color);
+}
+.footer__link-item {
+  --ifm-footer-link-color: var(--custom-content-color);
+}
+.footer__title {
+  --ifm-footer-title-color: var(--custom-content-color);
 }
 
 .has-emphasis {

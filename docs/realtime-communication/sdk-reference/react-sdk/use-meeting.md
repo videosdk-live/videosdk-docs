@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # useMeeting Hook
 
-`useMeeting` hook abtracts meeting class and takes all the events as parameters and returns all the properties and methods to work work meeting instance.
+`useMeeting` hook abtracts meeting class and takes all the events as parameters and returns all the properties and methods to work meeting instance.
 
 ## useMeeting example
 

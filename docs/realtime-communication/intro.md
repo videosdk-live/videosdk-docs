@@ -8,7 +8,7 @@ Real-time comunication SDK is built with blend of webRTC and optimised UDP proto
 
 With our `embeded-sdk`, you can embeded a video call widget in your web application. It supports 98% of the devices across all platforms and adaptive video calling for better quality calls with low latency. Developers can also customise `embeded-sdk` to make it more convenient for your application.
 
-Our research team has worked hard to handeled all the edge cases so you just have to focus on what matters.
+Our research team has worked hard to handled all the edge cases so you just have to focus on what matters.
 
 ![Embeded SDK Example to add video call widget in your web application](/img/prebuilt.jpg)
 

@@ -40,7 +40,7 @@ module.exports = {
               activeBaseRegex: "docs/live-streaming/*",
             },
             {
-              label: "Video On Deamnd",
+              label: "Video On Demand",
               to: "docs/video-on-demand/intro",
               activeBaseRegex: "docs/video-on-demand/*",
             },
@@ -69,9 +69,17 @@ module.exports = {
               label: "Realtime Communication",
               to: "/docs/realtime-communication/intro",
             },
+            {
+              label: "Live Streaming",
+              to: "docs/live-streaming/intro",
+            },
+            {
+              label: "Video On Demand",
+              to: "/docs/video-on-demand/intro",
+            },
           ],
         },
-        {
+        /*{
           title: "Community",
           items: [
             {
@@ -87,7 +95,7 @@ module.exports = {
               href: "https://twitter.com/videosdk.live",
             },
           ],
-        },
+        },*/
         {
           title: "More",
           items: [
@@ -98,7 +106,7 @@ module.exports = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Zujo Tech Pvt Ltd.`,
+      copyright: `Copyright © ${new Date().getFullYear()} videosdk.live.`,
     },
   },
   presets: [

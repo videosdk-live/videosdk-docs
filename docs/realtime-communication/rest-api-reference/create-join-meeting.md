@@ -33,7 +33,7 @@ cURL -H "Content-Type: application/json" \
 <TabItem value="node">
 
 ```js
-var request = require("request");
+var request = require("node-fetch");
 
 var options = {
   method: "POST",

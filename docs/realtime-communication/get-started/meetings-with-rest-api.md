@@ -6,7 +6,7 @@ sidebar_position: 1
 
 ## REST API
 
-You can use use REST API to create and manage meetings. You will require API key and Secret to access API routes.
+You can use REST API to create and manage meetings. You will require API key and Secret to access API routes.
 
 ## Generate your API Key and Secret
 

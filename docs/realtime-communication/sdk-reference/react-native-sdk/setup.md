@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # Setup
 
-`@videosdk.live/react-native-sdk` is react native library for real-time communication. It inherits the same concepts of of `@videosdk.live/react-sdk`
+`@videosdk.live/react-native-sdk` is react native library for real-time communication. It inherits the same concepts of `@videosdk.live/react-sdk`
 
 ## Minimum OS/SDK versions
 
@@ -114,7 +114,7 @@ public class MainApplication extends Application implements ReactApplication {
 
 ### Register services at start of meeting
 
-Call register event from the `index.js` file to initialse services such as incall manager and foreground services.
+Call register event from the `index.js` file to initialize services such as incall manager and foreground services.
 
 ```js title="index.js"
 // Import the library
