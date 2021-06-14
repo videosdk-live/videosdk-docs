@@ -4,15 +4,17 @@ sidebar_position: 1
 
 # Live Streaming Tutorial
 
+## Step by step tutorial of integrating live stream api in you app
+
 This tutorial explains steps to integrate live video streaming in your app.
 
-## Generate access token
+### Step 1: Generate access token
 
 An access token is required to call the ZujoNow APIs. You can generate one with the API key and secret mentioned in the developer portal at ZujoNow console.
 
 Note: Please note that this code is meant to be written on your backend server. Do not reveal your secret key to anyone. This sample is in Node.js but you can write the same in any other programming language with the help of a JWT library. Please check <a href="https://jwt.io/">jwt.io</a> website for more details.
 
-```js {20} title="server.js"
+```js {19} title="server.js"
 const express = require("express");
 const jwt = require("jsonwebtoken");
 const cors = require("cors");
@@ -30,7 +32,6 @@ app.get("/get-token", (req, res) => {
   const options = { expiresIn: "10m", algorithm: "HS256" };
   const payload = {
     apikey: API_KEY,
-    permissions: ["allow_join", "allow_mod", "ask_join"], // Trigger permission.
   };
   const token = jwt.sign(payload, SECRET_KEY, options);
   res.json({ token });
@@ -41,7 +42,7 @@ app.listen(port, () => {
 });
 ```
 
-## Create live stream
+### Step 2: Create live stream
 
 Use the "Create live stream" Rest API to create a new live stream. It will return the upstream and downstream URLs in response.
 
@@ -68,7 +69,7 @@ app.get("/live", async (req, res) => {
 });
 ```
 
-## Start broadcasting
+### Step 3: Start broadcasting
 
 Use any RTMP supported broadcasting software like OBS studio, to publish the video. Following are the steps for <a href="https://obsproject.com/">OBS studio</a> or <a href="https://streamlabs.com/">Streamlabs</a>.
 
@@ -83,7 +84,7 @@ Use any RTMP supported broadcasting software like OBS studio, to publish the vid
 
 5. Hurray! You are live now.
 
-## Start streaming
+### Step 4: Start streaming
 
 Use any HLS supported video player like <a href="https://videojs.com/">video.js</a>, to play the video. Create and html file, paste the below code and replace the url with the downstreamUrl received in response of step 2.
 

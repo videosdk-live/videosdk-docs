@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # Meetings with REST API
 
-## REST API
+## Using REST API
 
 You can use REST API to create and manage meetings. You will require API key and Secret to access API routes.
 
@@ -21,8 +21,8 @@ import TabItem from '@theme/TabItem';
 <Tabs
 defaultValue="curl"
 values={[
-{label: 'cURL request creates meeting', value: 'curl'},
-{label: 'Result', value: 'result'},
+{label: 'cURL', value: 'curl'},
+{label: 'RESULT', value: 'result'},
 ]}>
 <TabItem value="curl">
 

@@ -4,6 +4,8 @@ sidebar_position: 1
 
 # What we offer
 
+## Explore amazing features
+
 Let's discover **Realtime SDK features in less than 5 minutes**.
 
 ### ✅ : Shipped

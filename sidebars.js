@@ -127,6 +127,15 @@ module.exports = {
     },
     {
       type: "category",
+      label: "GET STARTED",
+      items: [
+        "live-streaming/get-started/features",
+        "live-streaming/get-started/live-streaming-with-rest-api",
+      ],
+      collapsed: false,
+    },
+    {
+      type: "category",
       label: "API REFERENCE",
       collapsed: false,
       items: [
@@ -175,6 +184,12 @@ module.exports = {
         "video-on-demand/encoding-api-reference/get-encoding-job-details",
         "video-on-demand/encoding-api-reference/delete-encoding-job",
       ],
+      collapsed: false,
+    },
+    {
+      type: "category",
+      label: "TUTORIALS",
+      items: ["video-on-demand/tutorials/stream-video-files-tutorial"],
       collapsed: false,
     },
   ],

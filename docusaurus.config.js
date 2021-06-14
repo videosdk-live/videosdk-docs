@@ -101,7 +101,11 @@ module.exports = {
           items: [
             {
               label: "GitHub",
-              href: "https://github.com/videosdk.live/videosdk.live",
+              href: "https://github.com/videosdk-live",
+            },
+            {
+              label: "NPM",
+              href: "https://www.npmjs.com/package/@videosdk.live",
             },
           ],
         },

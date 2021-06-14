@@ -10,7 +10,7 @@ With our `embeded-sdk`, you can embeded a video call widget in your web applicat
 
 Our research team has worked hard to handled all the edge cases so you just have to focus on what matters.
 
-![Embeded SDK Example to add video call widget in your web application](/img/prebuilt.jpg)
+![Embeded SDK Example to add video call widget in your web application](/img/Zujonow-whitelabel-min.jpg)
 
 ## Ways to start developing
 
