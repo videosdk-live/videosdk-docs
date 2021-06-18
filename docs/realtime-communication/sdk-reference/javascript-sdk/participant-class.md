@@ -6,7 +6,9 @@ sidebar_position: 1
 
 Participant class includes all the properties, methods and events related to all the participants joined in a particular meeting.
 
-## Get local and remote participants
+## Participant Class
+
+### Get local and remote participants
 
 You can get the local streams and participant meta from meeting.localParticipant. And a Map of joined participants is always available via meeting.participants.
 

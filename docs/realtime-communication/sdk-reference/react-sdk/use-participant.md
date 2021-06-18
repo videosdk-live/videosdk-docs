@@ -6,6 +6,8 @@ sidebar_position: 1
 
 `useParticipant` abstracts participant class. It take events as partameters and returns participant properties and methods.
 
+## useParticipant hook
+
 ```jsx title="useMeeting hook example"
 import {
   useParticipant,

@@ -4,6 +4,8 @@ sidebar_position: 1
 
 # Create Live Stream
 
+## Using create live stream API
+
 A live stream create api will help you to connect your RTMP stream to videosdk.live.
 
 import Tabs from '@theme/Tabs';

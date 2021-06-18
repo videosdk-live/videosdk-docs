@@ -4,6 +4,10 @@ sidebar_position: 1
 
 # Stream Class
 
+Stream class is responsible for handeling audio, video and screen sharing streams.
+
+## Stream Class
+
 Stream class defines instance of audio, video and shared screen stream of participants.
 
 import MethodListGroup from '@theme/MethodListGroup';

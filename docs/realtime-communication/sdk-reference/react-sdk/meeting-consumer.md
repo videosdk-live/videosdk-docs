@@ -4,6 +4,8 @@ sidebar_position: 1
 
 # Meeting Consumer
 
+## Using meeting consumer
+
 A React component that subscribes to context changes. Meeting Consumer updated to every change in the instance of meeting, participant and streams.
 
 It requires <a href="https://reactjs.org/docs/render-props.html#using-props-other-than-render">function as child</a>. The function receives the current context value and returns a React node.

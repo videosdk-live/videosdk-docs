@@ -4,6 +4,8 @@ sidebar_position: 1
 
 # Update Live Stream
 
+## Using update live stream API
+
 Update the live stream information.
 
 import Tabs from '@theme/Tabs';

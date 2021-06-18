@@ -6,7 +6,9 @@ sidebar_position: 1
 
 `@videosdk.live/react-sdk` wraps up our `@videosdk.live/js-sdk` into usable hooks APIs. It simplifies code and concept for react-js
 
-## Install the library in React
+## @videosdk.live/react-sdk
+
+### Install the library in React
 
 The easiest way to get started is by installing `@videosdk.live/react-sdk` in your app.
 
@@ -35,7 +37,7 @@ yarn add @videosdk.live/react-sdk
 </TabItem>
 </Tabs>
 
-## Import the library in your app
+### Import the library in your app
 
 `react-sdk` provides two most important hook `useMeeting` and `useParticipant`. it also provides `MeetingProvider` and `MeetingConsumer` to listen changes in meeting state and events.
 

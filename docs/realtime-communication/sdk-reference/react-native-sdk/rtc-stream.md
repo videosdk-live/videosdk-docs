@@ -4,6 +4,8 @@ sidebar_position: 1
 
 # RTC Stream
 
+## using RTCView in your app
+
 To display participant video and screen share, you have to use `RTCView` component.
 
 ```javascript title="Using RTCView"

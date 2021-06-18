@@ -4,6 +4,8 @@ sidebar_position: 1
 
 # Setup
 
+## Setting up react native sdk
+
 `@videosdk.live/react-native-sdk` is react native library for real-time communication. It inherits the same concepts of `@videosdk.live/react-sdk`
 
 ## Minimum OS/SDK versions

@@ -103,6 +103,9 @@ import MethodListHeading from '@theme/MethodListHeading';
       <MethodListItemLabel name="off(eventType: string)"  type={"undefined"} />
       <MethodListItemLabel name="respondEntry(participantId: string, decision: allowed | denied)"  type={"undefined"} />
       <MethodListItemLabel name="startRecording(webhookUrl: string)"  type={"undefined"} />
+      <MethodListItemLabel name="stopRecording()"  type={"undefined"} />
+      <MethodListItemLabel name="startVideo(link: string)"  type={"undefined"} />
+      <MethodListItemLabel name="stopVideo()"  type={"undefined"} />
       <MethodListItemLabel name="sendChatMessage(text: string)"  type={"undefined"} />
     </MethodListGroup>
   </MethodListItemLabel>

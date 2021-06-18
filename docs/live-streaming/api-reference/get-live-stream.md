@@ -4,6 +4,8 @@ sidebar_position: 1
 
 # Get Live Stream
 
+## Using get live stream API
+
 Get all the details of one single live stream.
 
 import Tabs from '@theme/Tabs';

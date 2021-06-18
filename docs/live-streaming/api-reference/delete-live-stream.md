@@ -4,6 +4,8 @@ sidebar_position: 1
 
 # Delete Live Stream
 
+## Using delete live stream API
+
 Delete live stream reference from the videosdk.live
 
 import Tabs from '@theme/Tabs';

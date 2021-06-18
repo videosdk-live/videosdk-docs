@@ -4,6 +4,8 @@ sidebar_position: 1
 
 # List Live Streams
 
+## Using list live stream API
+
 This will return all the livestreams.
 
 import Tabs from '@theme/Tabs';

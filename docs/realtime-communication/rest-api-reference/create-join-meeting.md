@@ -4,7 +4,9 @@ sidebar_position: 1
 
 # Create/Join Meeting using API
 
-## Create meeting
+## Using create/join meeting API
+
+### Create meeting
 
 You have to call simple API to create meeting room.
 
@@ -95,7 +97,7 @@ puts response.read_body
 </TabItem>
 </Tabs>
 
-## Validate existing meeting id
+### Validate existing meeting id
 
 To validate existing meeting id, before joining use following API.
 <Tabs

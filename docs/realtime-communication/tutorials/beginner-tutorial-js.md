@@ -565,6 +565,26 @@ Update the participant video quality based on use case to `"low" | "med" | "high
 participant.setQuality("low");
 ```
 
+- ### Start/Stop video
+  ​
+  Share video link to play with `startVideo({ link })` method and stop video with `stopVideo()`. Toggling video will trigger `video-started` and `video-stopped` events for all participants when starting and stopping video respectively.
+  ​
+  ```javascript
+  // The webhook will be called with the fileUrl as a POST request when the video is processed.
+  meeting.startVideo({ link: "https://your-app-server.com/video/demo.mp4" });
+  meeting.stopVideo();
+  ​
+  // ...
+  ​
+  meeting.on("video-started", () => {
+    // start playing video
+  });
+  ​
+  meeting.on("video-stopped", () => {
+    // stop playing video
+  });
+  ```
+
 ## Leave the meeting
 
 You can disconnect from the meeting with `meeting.leave()` method. This will trigger `participant-left` event for all other participants.
