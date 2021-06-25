@@ -42,6 +42,11 @@ module.exports = {
       items: [
         "realtime-communication/rest-api-reference/auth",
         "realtime-communication/rest-api-reference/create-join-meeting",
+        "realtime-communication/rest-api-reference/meeting-list",
+        "realtime-communication/rest-api-reference/meeting-details",
+        "realtime-communication/rest-api-reference/meeting-recording-list",
+        "realtime-communication/rest-api-reference/meeting-recording-details",
+        "realtime-communication/rest-api-reference/meeting-recording-remove",
       ],
       collapsed: false,
     },
