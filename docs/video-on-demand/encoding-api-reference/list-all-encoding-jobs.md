@@ -223,7 +223,7 @@ import MethodListHeading from '@theme/MethodListHeading';
     <MethodListGroup>
       <MethodListHeading heading="Request" />
       <MethodListItemLabel name="page" option={"optional"} type={"number"} defaultValue="1" />
-      <MethodListItemLabel name="perPage" option={"optional"} type={"number"} />
+      <MethodListItemLabel name="perPage" option={"optional"} type={"number"} defaultValue="20" />
     </MethodListGroup>
   </MethodListItemLabel>
 </MethodListGroup>
