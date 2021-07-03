@@ -222,8 +222,8 @@ import MethodListHeading from '@theme/MethodListHeading';
   <MethodListItemLabel name="__request" option={"required"} type={"object"} >
     <MethodListGroup>
       <MethodListHeading heading="Request" />
-      <MethodListItemLabel name="page" option={"required"} type={"number"} />
-      <MethodListItemLabel name="perPage" option={"required"} type={"number"} />
+      <MethodListItemLabel name="page" option={"optional"} type={"number"} defaultValue="1" />
+      <MethodListItemLabel name="perPage" option={"optional"} type={"number"} />
     </MethodListGroup>
   </MethodListItemLabel>
 </MethodListGroup>

@@ -576,7 +576,6 @@ Share video link to play with `startVideo({ link })` method and stop video with 
 meeting.startVideo({ link: "https://your-app-server.com/video/demo.mp4" });
 meeting.stopVideo();
 ​
-// ...
 ​
 // Listening on start of the video stream.
 meeting.on("video-started", ({ link, currentTime }) => {
