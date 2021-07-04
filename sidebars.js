@@ -39,7 +39,10 @@ module.exports = {
     {
       type: "category",
       label: "TUTORIALS",
-      items: ["realtime-communication/tutorials/beginner-tutorial-js"],
+      items: [
+        "realtime-communication/tutorials/beginner-tutorial-js",
+        "realtime-communication/tutorials/beginner-tutorial-prebuilt-javascript",
+      ],
       collapsed: false,
     },
     {
@@ -58,9 +61,12 @@ module.exports = {
       items: [
         {
           type: "category",
-          label: "EMBEDED SDK",
+          label: "PREBUILT SDK JS",
           collapsed: true,
-          items: ["realtime-communication/sdk-reference/embeded-sdk/setup"],
+          items: [
+            "realtime-communication/sdk-reference/prebuilt-sdk-js/setup",
+            "realtime-communication/sdk-reference/prebuilt-sdk-js/video-sdk-meeting",
+          ],
         },
         {
           type: "category",
