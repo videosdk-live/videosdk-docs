@@ -1,7 +1,7 @@
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 
 module.exports = {
-  title: "VideoSDK.live Documentation",
+  title: "videosdk.live Documentation",
   tagline: "Realtime distrubuted CDN",
   url: "https://docs.videosdk.live",
   baseUrl: "/",

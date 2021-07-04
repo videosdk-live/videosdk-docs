@@ -114,6 +114,18 @@ import MethodListGroup from '@theme/MethodListGroup';
 import MethodListItemLabel from '@theme/MethodListItemLabel';
 import MethodListHeading from '@theme/MethodListHeading';
 
+### Request
+
+<MethodListGroup>
+  <MethodListItemLabel name="__request" option={"required"} type={"object"} >
+    <MethodListGroup>
+      <MethodListHeading heading="Properties" />
+      <MethodListItemLabel name="name" option={"optional"} type={"string"} />
+      <MethodListItemLabel name="record" option={"optional"} type={"boolean"} />
+    </MethodListGroup>
+  </MethodListItemLabel>
+</MethodListGroup>
+
 ### Response
 
 <MethodListGroup>

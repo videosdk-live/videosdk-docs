@@ -244,7 +244,8 @@ import MethodListHeading from '@theme/MethodListHeading';
           </MethodListItemLabel>
         </MethodListGroup>
       </MethodListItemLabel>
-      <MethodListItemLabel name="webhookUrl" option={"optional"}  type={"string"} />
+      <MethodListItemLabel name="webhookUrl" option={"required"}  type={"string"} /> 
+      <MethodListItemLabel name="userData" option={"required"}  type={"object"} />
     </MethodListGroup>
   </MethodListItemLabel>
 </MethodListGroup>

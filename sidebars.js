@@ -38,6 +38,15 @@ module.exports = {
     },
     {
       type: "category",
+      label: "TUTORIALS",
+      items: [
+        "realtime-communication/tutorials/beginner-tutorial-js",
+        "realtime-communication/tutorials/beginner-tutorial-prebuilt-javascript",
+      ],
+      collapsed: false,
+    },
+    {
+      type: "category",
       label: "REST API REFERENCE",
       items: [
         "realtime-communication/rest-api-reference/auth",
@@ -57,9 +66,12 @@ module.exports = {
       items: [
         {
           type: "category",
-          label: "EMBEDED SDK",
+          label: "PREBUILT SDK JS",
           collapsed: true,
-          items: ["realtime-communication/sdk-reference/embeded-sdk/setup"],
+          items: [
+            "realtime-communication/sdk-reference/prebuilt-sdk-js/setup",
+            "realtime-communication/sdk-reference/prebuilt-sdk-js/video-sdk-meeting",
+          ],
         },
         {
           type: "category",
@@ -107,12 +119,6 @@ module.exports = {
     },
     {
       type: "category",
-      label: "TUTORIALS",
-      items: ["realtime-communication/tutorials/beginner-tutorial-js"],
-      collapsed: false,
-    },
-    {
-      type: "category",
       label: "SEE ALSO",
       items: [
         //"realtime-communication/see-also/architecture",
@@ -141,6 +147,12 @@ module.exports = {
     },
     {
       type: "category",
+      label: "TUTORIALS",
+      items: ["live-streaming/tutorials/live-streaming-tutorial"],
+      collapsed: false,
+    },
+    {
+      type: "category",
       label: "API REFERENCE",
       collapsed: false,
       items: [
@@ -152,18 +164,18 @@ module.exports = {
         "live-streaming/api-reference/delete-live-stream",
       ],
     },
-    {
-      type: "category",
-      label: "TUTORIALS",
-      items: ["live-streaming/tutorials/live-streaming-tutorial"],
-      collapsed: false,
-    },
   ],
   videoondemandSidebar: [
     {
       type: "category",
       label: "VIDEO ON DEMAND",
       items: ["video-on-demand/intro"],
+      collapsed: false,
+    },
+    {
+      type: "category",
+      label: "TUTORIALS",
+      items: ["video-on-demand/tutorials/stream-video-files-tutorial"],
       collapsed: false,
     },
     {
@@ -189,12 +201,6 @@ module.exports = {
         "video-on-demand/encoding-api-reference/get-encoding-job-details",
         "video-on-demand/encoding-api-reference/delete-encoding-job",
       ],
-      collapsed: false,
-    },
-    {
-      type: "category",
-      label: "TUTORIALS",
-      items: ["video-on-demand/tutorials/stream-video-files-tutorial"],
       collapsed: false,
     },
   ],
