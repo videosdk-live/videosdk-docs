@@ -2,7 +2,9 @@
 sidebar_position: 1
 ---
 
-# Meeting list
+# List All Meetings
+
+## Using list all meetings API
 
 You have to call simple API to list meetings.
 
@@ -118,10 +120,44 @@ import MethodListGroup from '@theme/MethodListGroup';
 import MethodListItemLabel from '@theme/MethodListItemLabel';
 import MethodListHeading from '@theme/MethodListHeading';
 
+### Request
+
 <MethodListGroup>
     <MethodListGroup>
       <MethodListHeading heading="Query Parameters" />
       <MethodListItemLabel name="page" option={"optional"} type={"string"} />
       <MethodListItemLabel name="perPage" option={"optional"} type={"string"} />
     </MethodListGroup>
+</MethodListGroup>
+
+### Response
+
+<MethodListGroup>
+  <MethodListItemLabel name="__response"  type={"object"} >
+    <MethodListGroup>
+      <MethodListHeading heading="Properties" />
+      <MethodListItemLabel name="pageInfo" type={"object"} >
+        <MethodListGroup>
+          <MethodListItemLabel name="currentPage"  type={"number"} />
+          <MethodListItemLabel name="perPage"  type={"number"} />
+          <MethodListItemLabel name="lastPage" type={"number"} />
+        </MethodListGroup>
+      </MethodListItemLabel>
+      <MethodListItemLabel name="data" type={"Array<object>"} >
+        <MethodListGroup>
+          <MethodListItemLabel name="meetingId"  type={"string"} />
+          <MethodListItemLabel name="userId"  type={"string"} />
+          <MethodListItemLabel name="user" type={"object"} >
+            <MethodListGroup>
+              <MethodListItemLabel name="name"  type={"string"} />
+              <MethodListItemLabel name="id"  type={"string"} />
+            </MethodListGroup>
+          </MethodListItemLabel>
+          <MethodListItemLabel name="createdAt"  type={"date"} />
+          <MethodListItemLabel name="updatedAt"  type={"date"} />
+          <MethodListItemLabel name="id"  type={"string"} />
+        </MethodListGroup>
+      </MethodListItemLabel>
+    </MethodListGroup>
+  </MethodListItemLabel>
 </MethodListGroup>

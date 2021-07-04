@@ -2,7 +2,9 @@
 sidebar_position: 1
 ---
 
-# Meeting recording list
+# List All Meeting Recordings
+
+## Using all meeting recordings API
 
 You have to call simple API to list meetings.
 

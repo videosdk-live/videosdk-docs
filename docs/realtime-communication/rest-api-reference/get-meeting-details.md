@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# Meeting details
+# Get Meeting Details
 
 You have to call simple API to list meeting details.
 
@@ -107,9 +107,32 @@ import MethodListGroup from '@theme/MethodListGroup';
 import MethodListItemLabel from '@theme/MethodListItemLabel';
 import MethodListHeading from '@theme/MethodListHeading';
 
+### Request
+
 <MethodListGroup>
     <MethodListGroup>
       <MethodListHeading heading="Query Parameters" />
       <MethodListItemLabel name="id" option={"optional"} type={"string"} />
     </MethodListGroup>
+</MethodListGroup>
+
+### Response
+
+<MethodListGroup>
+  <MethodListItemLabel name="__response"  type={"object"} >
+    <MethodListGroup>
+      <MethodListHeading heading="Properties" />
+      <MethodListItemLabel name="meetingId"  type={"string"} />
+      <MethodListItemLabel name="userId"  type={"string"} />
+      <MethodListItemLabel name="user" type={"object"} >
+        <MethodListGroup>
+          <MethodListItemLabel name="name"  type={"string"} />
+          <MethodListItemLabel name="id"  type={"string"} />
+        </MethodListGroup>
+      </MethodListItemLabel>
+      <MethodListItemLabel name="createdAt"  type={"date"} />
+      <MethodListItemLabel name="updatedAt"  type={"date"} />
+      <MethodListItemLabel name="id"  type={"string"} />
+    </MethodListGroup>
+  </MethodListItemLabel>
 </MethodListGroup>
