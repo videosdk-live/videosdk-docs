@@ -2,7 +2,9 @@
 sidebar_position: 1
 ---
 
-# Meeting recording details
+# Get Recording Details
+
+## Using get recording details API
 
 You have to call simple API to list meeting details.
 

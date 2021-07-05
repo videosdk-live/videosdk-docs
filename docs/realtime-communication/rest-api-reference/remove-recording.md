@@ -2,7 +2,9 @@
 sidebar_position: 1
 ---
 
-# Meeting recording remove
+# Remove Meeting Recordings
+
+## Using remove meeting recordings API
 
 You have to call simple API to list meeting details.
 
