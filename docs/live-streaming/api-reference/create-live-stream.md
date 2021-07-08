@@ -28,7 +28,13 @@ curl -L -X POST 'https://api.zujonow.com/v1/livestreams' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "name": "Nickname for livestream",
-    "record": true
+    "record": true,
+    "restream": [
+      {
+          "url": "rtmp://x.rtmp.youtube.com/live2",
+          "streamKey": "0tjp-h6a2-8c9d-vusv-01uu"
+      }
+    ]
 }'
 ```
 
@@ -46,7 +52,15 @@ var options = {
     Accept: "application/json",
     "Content-Type": "application/json",
   },
-  body: JSON.stringify({ name: "Nickname for livestream", record: true }),
+  body: JSON.stringify({
+    name: "Nickname for livestream", record: true
+    restream: [
+      {
+          "url": "rtmp://x.rtmp.youtube.com/live2",
+          "streamKey": "0tjp-h6a2-8c9d-vusv-01uu"
+      }
+    ]
+    }),
 };
 
 fetch(url, options)
@@ -63,7 +77,15 @@ import requests
 
 url = "https://api.zujonow.com/v1/livestreams"
 
-payload = {"name": "Nickname for livestream", "record": True}
+payload = {
+  "name": "Nickname for livestream", "record": True,
+  "restream": [
+      {
+          "url": "rtmp://x.rtmp.youtube.com/live2",
+          "streamKey": "0tjp-h6a2-8c9d-vusv-01uu"
+      }
+    ]
+}
 headers = {
     "Authorization": `${YOUR_JWT_TOKEN}`,
     "Accept": "application/json",
@@ -92,7 +114,7 @@ request = Net::HTTP::Post.new(url)
 request["Accept"] = 'application/json'
 request["Content-Type"] = 'application/json'
 request["Authorization"] = `${YOUR_JWT_TOKEN}`
-request.body = "{\"record\":false,\"name\":\"Nickname for livestream\"}"
+request.body = "{\"record\":false,\"name\":\"Nickname for livestream\",\"restream\": [ { \"url\": \"rtmp://x.rtmp.youtube.com/live2\", \"streamKey\": \"0tjp-h6a2-8c9d-vusv-01uu\" } ]}"
 
 response = http.request(request)
 puts response.read_body
@@ -103,15 +125,27 @@ puts response.read_body
 
 ```json
 {
-  "record": true,
-  "id": "6034a7dfa9cedd724c20cf67",
-  "name": "Nickname for livestream",
-  "streamKey": "d492a9ed-84ce-448c-84dd-718bdea724a5",
-  "upstreamUrl": "rtmp://live.zujonow.com/live/...",
-  "downstreamUrl": "https://live.zujonow.com/live/.../index.m3u8",
-  "recordingUrl": "https://live.zujonow.com/live/.../storage/index.m3u8",
-  "createdAt": "2021-02-23T06:59:43.049Z",
-  "updatedAt": "2021-02-23T06:59:43.049Z"
+  "record": false,
+  "userId": "607adacdaeba2c4d217d5fea443d",
+  "name": "zujo",
+  "streamKey": "e83fb175-5606-4ee5-b960-aacfce300ba6",
+  "upstreamUrl": "rtmp://dev-live.zujonow.com/live/e83fb175-5606-4ee5-b960-aacfce300ba6",
+  "downstreamUrl": "https://dev-live.zujonow.com/live/e83fb175-5606-4ee5-b960-aacfce300ba6/index.m3u8",
+  "recordingUrl": "https://dev-live.zujonow.com/live/e83fb175-5606-4ee5-b960-aacfce300ba6/storage/index.m3u8",
+  "restream": [
+    {
+      "_id": "60e2fed0135c9810f490f3b6",
+      "url": "rtmp://x.rtmp.youtube.com/live2",
+      "streamKey": "0tjp-h6a2-8c9d-vusv-01uu"
+    }
+  ],
+  "createdAt": "2021-07-05T12:43:52.921Z",
+  "updatedAt": "2021-07-05T12:45:04.379Z",
+  "user": {
+    "name": "Demo user 01",
+    "id": "607adacdaeba2c4d217d5fea"
+  },
+  "id": "60e2fe88135c9810f490f3b4"
 }
 ```
 
@@ -130,6 +164,12 @@ import MethodListHeading from '@theme/MethodListHeading';
       <MethodListHeading heading="Properties" />
       <MethodListItemLabel name="name" option={"required"} type={"string"} />
       <MethodListItemLabel name="record" option={"optional"} type={"boolean"} />
+      <MethodListItemLabel name="restream"  type={"Array<object>"} description="Restream video stream on other social media or other live streaming service" >
+        <MethodListGroup>
+          <MethodListItemLabel name="url"  type={"string"} option={"required"} />
+          <MethodListItemLabel name="streamKey" option={"required"}  type={"string"} />
+        </MethodListGroup>
+      </MethodListItemLabel>
     </MethodListGroup>
   </MethodListItemLabel>
 </MethodListGroup>
@@ -147,6 +187,13 @@ import MethodListHeading from '@theme/MethodListHeading';
       <MethodListItemLabel name="upstreamUrl"  type={"string"} />
       <MethodListItemLabel name="downstreamUrl"  type={"string"} />
       <MethodListItemLabel name="recordingUrl"  type={"string"} />
+    <MethodListItemLabel name="restream"    type={"Array<object>"} >
+        <MethodListGroup>
+          <MethodListItemLabel name="url"  type={"string"}  />
+          <MethodListItemLabel name="streamKey" type={"string"} />
+          <MethodListItemLabel name="id"   type={"string"} />
+        </MethodListGroup>
+      </MethodListItemLabel>
       <MethodListItemLabel name="createdAt"  type={"date"} />
       <MethodListItemLabel name="updatedAt"  type={"date"} />
     </MethodListGroup>
