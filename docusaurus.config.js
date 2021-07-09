@@ -10,7 +10,18 @@ module.exports = {
   favicon: "img/favicon.ico",
   organizationName: "videosdk-live", // Usually your GitHub org/user name.
   projectName: "videosdk-live", // Usually your repo name.
+  i18n: {
+    defaultLocale: "en",
+    locales: ["en"],
+  },
   themeConfig: {
+    algolia: {
+      apiKey: "6b125a23a26dc2bf6a8a0cb51a66a3f7",
+      indexName: "videosdk",
+      searchParameters: {
+        facetFilters: ["content"],
+      },
+    },
     colorMode: {
       defaultMode: "dark",
       disableSwitch: false,
@@ -111,10 +122,6 @@ module.exports = {
         },
       ],
       copyright: `Copyright © ${new Date().getFullYear()} videosdk.live.`,
-    },
-    algolia: {
-      apiKey: "6b125a23a26dc2bf6a8a0cb51a66a3f7",
-      indexName: "videosdk",
     },
   },
   presets: [
