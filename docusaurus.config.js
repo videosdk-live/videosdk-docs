@@ -112,6 +112,21 @@ module.exports = {
       ],
       copyright: `Copyright © ${new Date().getFullYear()} videosdk.live.`,
     },
+    algolia: {
+      apiKey: "f28d740545d27074660777c85cf9b011",
+      indexName: "videosdk",
+
+      // Optional: see doc section below
+      contextualSearch: true,
+
+      // Optional: see doc section below
+      appId: "BH4D9OD16A",
+
+      // Optional: Algolia search parameters
+      searchParameters: {},
+
+      //... other Algolia params
+    },
   },
   presets: [
     [
