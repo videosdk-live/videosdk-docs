@@ -567,7 +567,6 @@ participant.setQuality("low");
 
 ### Start/Stop video
 
-​
 Share video link to play with `startVideo({ link })` method and stop video with `stopVideo()`. Toggling video will trigger `video-started` and `video-stopped` events for all participants when starting and stopping video respectively.
 ​
 
@@ -588,6 +587,23 @@ meeting.on("video-stopped", () => {
   videoRef.current.pause();
   videoRef.current.src = null;
 });
+```
+
+### Restream meeting on social media
+
+Restream meeting on your favorate social media channels using RTMP key and url.
+
+```javascript
+// start livestreaming
+meeting.startLivestream([
+  {
+    url: "rtmp://x.rtmp.youtube.com/live2/",
+    streamKey: "abcd-h6a2-pqrs-vusv-prpf",
+  },
+]);
+​
+// stop livestreaming
+meeting.stopLivestream();
 ```
 
 ## Leave the meeting

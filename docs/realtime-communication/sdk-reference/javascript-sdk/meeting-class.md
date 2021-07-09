@@ -108,6 +108,8 @@ import MethodListHeading from '@theme/MethodListHeading';
       <MethodListItemLabel name="stopRecording()"  type={"undefined"} />
       <MethodListItemLabel name="startVideo(link: string)"  type={"undefined"} />
       <MethodListItemLabel name="stopVideo()"  type={"undefined"} />
+      <MethodListItemLabel name="startLivestream(streamInfo:Array<Object<url,streamkey>>)"  type={"undefined"} />
+      <MethodListItemLabel name="stopLivestream()"  type={"undefined"} />
       <MethodListItemLabel name="sendChatMessage(text: string)"  type={"undefined"} />
     </MethodListGroup>
   </MethodListItemLabel>
