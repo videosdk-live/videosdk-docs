@@ -26,6 +26,12 @@ module.exports = {
       defaultMode: "dark",
       disableSwitch: false,
     },
+    prism: {
+      defaultLanguage: "js",
+      plugins: ["line-numbers", "show-language"],
+      theme: require("@kiwicopple/prism-react-renderer/themes/vsDark"),
+      darkTheme: require("@kiwicopple/prism-react-renderer/themes/vsDark"),
+    },
     navbar: {
       title: "videosdk.live",
       logo: {
@@ -35,10 +41,13 @@ module.exports = {
       },
       items: [
         {
-          // type: "doc",
-          // docId: "intro",
           position: "left",
-          label: "Product",
+          label: "Overview",
+          to: "/docs/overview/introduction",
+        },
+        {
+          position: "left",
+          label: "API Reference",
           items: [
             {
               label: "Realtime communication",
@@ -57,7 +66,11 @@ module.exports = {
             },
           ],
         },
-
+        {
+          position: "left",
+          label: "Tutorials",
+          to: "/docs/tutorials/introduction",
+        },
         // {
         //   type: "docsVersionDropdown",
         //   dropdownActiveClassDisabled: true,
@@ -74,7 +87,7 @@ module.exports = {
       style: "dark",
       links: [
         {
-          title: "Docs",
+          title: "API Reference",
           items: [
             {
               label: "Realtime Communication",
@@ -87,6 +100,23 @@ module.exports = {
             {
               label: "Video On Demand",
               to: "/docs/video-on-demand/intro",
+            },
+          ],
+        },
+        {
+          title: "Tutorials",
+          items: [
+            {
+              label: "RTC Quickstart",
+              to: "/docs/tutorials/realtime-communication/js-sdk/quickstart-js",
+            },
+            {
+              label: "Live Streaming Quickstart",
+              to: "/docs/tutorials/live-streaming/api/quickstart-rest-api",
+            },
+            {
+              label: "VOD Quickstart",
+              to: "/docs/tutorials/realtime-communication/js-sdk/quickstart-js",
             },
           ],
         },
@@ -142,7 +172,10 @@ module.exports = {
           //  "https://github.com/facebook/docusaurus/edit/master/website/blog/",
         },
         theme: {
-          customCss: require.resolve("./src/css/custom.css"),
+          customCss: [
+            require.resolve("./src/css/custom.css"),
+            "prismjs/themes/prism-dark.css",
+          ],
         },
       },
     ],
