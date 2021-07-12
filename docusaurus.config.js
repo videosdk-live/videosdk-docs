@@ -3,7 +3,7 @@
 module.exports = {
   title: "videosdk.live Documentation",
   tagline: "Realtime distrubuted CDN",
-  url: "https://docs.videosdk.live",
+  url: "https://www.videosdk.live",
   baseUrl: "/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
@@ -87,6 +87,27 @@ module.exports = {
       style: "dark",
       links: [
         {
+          title: "Intoruction",
+          items: [
+            {
+              label: "Dashboard",
+              href: "/docs/overview/dashboard/introduction",
+            },
+            {
+              label: "Real-time communication SDK",
+              href: "/docs/overview/real-time-communication/introduction",
+            },
+            {
+              label: "Live Streaming SDK",
+              href: "/docs/overview/live-streaming/introduction",
+            },
+            {
+              label: "Video On Demand SDK",
+              href: "/docs/overview/video-on-demand/introduction",
+            },
+          ],
+        },
+        {
           title: "API Reference",
           items: [
             {
@@ -120,7 +141,7 @@ module.exports = {
             },
           ],
         },
-        /*{
+        {
           title: "Community",
           items: [
             {
@@ -128,15 +149,11 @@ module.exports = {
               href: "https://stackoverflow.com/questions/tagged/videosdk.live",
             },
             {
-              label: "Discord",
-              href: "https://discordapp.com/invite/videosdk.live",
-            },
-            {
               label: "Twitter",
-              href: "https://twitter.com/videosdk.live",
+              href: "https://twitter.com/video_sdk",
             },
           ],
-        },*/
+        },
         {
           title: "More",
           items: [

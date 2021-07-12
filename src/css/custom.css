@@ -675,8 +675,8 @@ div[class^="sidebar_"]
   cursor: pointer;
 }
 
-div[class^="codeBlockContent_node_modules-@docusaurus-theme-classic-lib-next-theme-CodeBlock-styles-module"],
-div[class*=" codeBlockContent_node_modules-@docusaurus-theme-classic-lib-next-theme-CodeBlock-styles-module"],
+div[class^="codeBlockContent"],
+div[class*=" codeBlockContent"],
 .prism-code {
   background-color: var(--ifm-code-background-dark) !important;
 }
@@ -706,8 +706,8 @@ div[class*=" codeBlockContent_node_modules-@docusaurus-theme-classic-lib-next-th
   /* text-transform: uppercase; */
   border-bottom: 1px solid #444;
 }
-div[class^="codeBlockTitle_node_modules-@docusaurus-theme-classic-lib-next-theme-CodeBlock-styles-module"],
-div[class*="codeBlockTitle_node_modules-@docusaurus-theme-classic-lib-next-theme-CodeBlock-styles-module"] {
+div[class^="codeBlockTitle"],
+div[class*="codeBlockTitle"] {
   color: #ccc !important;
   font-size: 0.8rem !important;
   border-color: #444;
