@@ -26,12 +26,7 @@ module.exports = {
       defaultMode: "dark",
       disableSwitch: false,
     },
-    prism: {
-      defaultLanguage: "js",
-      plugins: ["line-numbers", "show-language"],
-      theme: require("@kiwicopple/prism-react-renderer/themes/vsDark"),
-      darkTheme: require("@kiwicopple/prism-react-renderer/themes/vsDark"),
-    },
+
     navbar: {
       title: "videosdk.live",
       logo: {
@@ -189,10 +184,13 @@ module.exports = {
           //  "https://github.com/facebook/docusaurus/edit/master/website/blog/",
         },
         theme: {
-          customCss: [
-            require.resolve("./src/css/custom.css"),
-            "prismjs/themes/prism-dark.css",
-          ],
+          customCss: [require.resolve("./src/css/custom.css")],
+          prism: {
+            defaultLanguage: "js",
+            plugins: ["line-numbers", "show-language"],
+            theme: require("@kiwicopple/prism-react-renderer/themes/vsDark"),
+            darkTheme: require("@kiwicopple/prism-react-renderer/themes/vsDark"),
+          },
         },
       },
     ],
