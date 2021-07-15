@@ -3,7 +3,7 @@
 module.exports = {
   title: "videosdk.live Documentation",
   tagline: "Realtime distrubuted CDN",
-  url: "https://www.videosdk.live",
+  url: "https://docs.videosdk.live",
   baseUrl: "/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
@@ -146,6 +146,14 @@ module.exports = {
             {
               label: "Twitter",
               href: "https://twitter.com/video_sdk",
+            },
+            {
+              label: "LinkedIn",
+              href: "https://www.linkedin.com/company/videosdk",
+            },
+            {
+              label: "Medium",
+              href: "https://medium.com/video-sdk",
             },
           ],
         },
