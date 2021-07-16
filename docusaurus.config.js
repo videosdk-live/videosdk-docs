@@ -15,6 +15,7 @@ module.exports = {
     locales: ["en"],
   },
   themeConfig: {
+    image: "img/videosdklive-thumbnail.jpg",
     algolia: {
       apiKey: "6b125a23a26dc2bf6a8a0cb51a66a3f7",
       indexName: "videosdk",
@@ -23,7 +24,7 @@ module.exports = {
       },
     },
     colorMode: {
-      defaultMode: "dark",
+      defaultMode: "light",
       disableSwitch: false,
     },
 
