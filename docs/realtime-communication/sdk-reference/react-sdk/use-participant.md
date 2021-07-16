@@ -39,8 +39,8 @@ import MethodListHeading from '@theme/MethodListHeading';
       <MethodListItemLabel name="participantId" option={"optional"} type={"string"} />
       <MethodListItemLabel name="triggers" option={"optional"} type={"object"} >
         <MethodListGroup>
-          <MethodListItemLabel name="onStreamEnabled" option={"optional"} type={"event"} />
-          <MethodListItemLabel name="onStreamDisabled" option={"optional"} type={"event"} />
+          <MethodListItemLabel name="onStreamEnabled" option={"optional"} type={"callback"} />
+          <MethodListItemLabel name="onStreamDisabled" option={"optional"} type={"callback"} />
         </MethodListGroup>
       </MethodListItemLabel>
     </MethodListGroup>
@@ -64,11 +64,11 @@ import MethodListHeading from '@theme/MethodListHeading';
       <MethodListItemLabel name="isLocal" option={"optional"} type={"boolean"} />
       <MethodListItemLabel name="isActiveSpeaker" option={"optional"} type={"boolean"} />
       <MethodListItemLabel name="isMainParticipant" option={"optional"} type={"boolean"} />
-      <MethodListItemLabel name="setQuality()" option={"optional"} type={"function"} />
-      <MethodListItemLabel name="enableMic()" option={"optional"} type={"function"} />
-      <MethodListItemLabel name="disableMic()" option={"optional"} type={"function"} />
-      <MethodListItemLabel name="enableWebcam()" option={"optional"} type={"function"} />
-      <MethodListItemLabel name="disableWebcam()" option={"optional"} type={"function"} />
+      <MethodListItemLabel name="setQuality()" option={"optional"} type={"callback"} />
+      <MethodListItemLabel name="enableMic()" option={"optional"} type={"callback"} />
+      <MethodListItemLabel name="disableMic()" option={"optional"} type={"callback"} />
+      <MethodListItemLabel name="enableWebcam()" option={"optional"} type={"callback"} />
+      <MethodListItemLabel name="disableWebcam()" option={"optional"} type={"callback"} />
     </MethodListGroup>
   </MethodListItemLabel>
 </MethodListGroup>
