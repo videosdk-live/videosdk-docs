@@ -106,7 +106,7 @@ import MethodListHeading from '@theme/MethodListHeading';
       <MethodListItemLabel name="respondEntry(participantId: string, decision: allowed | denied)"  type={"undefined"} />
       <MethodListItemLabel name="startRecording(webhookUrl: string)"  type={"undefined"} />
       <MethodListItemLabel name="stopRecording()"  type={"undefined"} />
-      <MethodListItemLabel name="startVideo(link: string)"  type={"undefined"} />
+      <MethodListItemLabel name="startVideo({link: string})"  type={"undefined"} />
       <MethodListItemLabel name="stopVideo()"  type={"undefined"} />
       <MethodListItemLabel name="startLivestreamtartLivestream(streamInfo: Array<{url: String, streamKey: String}>)"  type={"undefined"} />
       <MethodListItemLabel name="stopLivestream()"  type={"undefined"} />
