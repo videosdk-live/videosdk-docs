@@ -78,8 +78,6 @@ import MethodListHeading from '@theme/MethodListHeading';
       <MethodListItemLabel name="entry-responded"  type={"event"} />
       <MethodListItemLabel name="recording-started"  type={"event"} />
       <MethodListItemLabel name="recording-stopped"  type={"event"} />
-      <MethodListItemLabel name="stream-enabled"  type={"event"} />
-      <MethodListItemLabel name="stream-disabled"  type={"event"} />
       <MethodListItemLabel name="chat-message"  type={"event"} />
       <MethodListItemLabel name="video-started"  type={"event"} />
       <MethodListItemLabel name="video-stopped"  type={"event"} />
