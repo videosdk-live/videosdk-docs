@@ -57,7 +57,6 @@ import MethodListHeading from '@theme/MethodListHeading';
       <MethodListItemLabel name="mainParticipantId" type={"string"} />
       <MethodListItemLabel name="localParticipant"  type={"Participant"} />
       <MethodListItemLabel name="participants" type={"Map<string, Participant>"} />
-      <MethodListItemLabel name="participants"  type={"Map<string, Participant>"} />
       <MethodListItemLabel name="messages"  type={"Array<{senderId: string, text: string, timestamp: number}>"} />
     </MethodListGroup>
   </MethodListItemLabel>
