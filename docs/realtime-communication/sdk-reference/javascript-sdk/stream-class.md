@@ -23,7 +23,7 @@ import MethodListHeading from '@theme/MethodListHeading';
       <MethodListItemLabel name="id" type={"string"} />
       <MethodListItemLabel name="kind" type={"string"} />
       <MethodListItemLabel name="codec" type={"string"} />
-      <MethodListItemLabel name="codec"  type={"MediaStreamTrack"}  />
+      <MethodListItemLabel name="track"  type={"MediaStreamTrack"}  />
     </MethodListGroup>
   </MethodListItemLabel>
 </MethodListGroup>
