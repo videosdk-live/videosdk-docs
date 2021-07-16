@@ -81,6 +81,8 @@ import MethodListHeading from '@theme/MethodListHeading';
       <MethodListItemLabel name="chat-message"  type={"event"} />
       <MethodListItemLabel name="video-started"  type={"event"} />
       <MethodListItemLabel name="video-stopped"  type={"event"} />
+      <MethodListItemLabel name="livestream-started"  type={"event"} />
+      <MethodListItemLabel name="livestream-stopped"  type={"event"} />
     </MethodListGroup>
   </MethodListItemLabel>
 </MethodListGroup>
