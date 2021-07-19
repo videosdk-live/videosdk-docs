@@ -1,8 +1,8 @@
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 
 module.exports = {
-  title: "videosdk.live Documentation",
-  tagline: "Realtime distrubuted CDN",
+  title: "video sdk Documentation",
+  tagline: "Interactive Video API Experiences For Developers",
   url: "https://docs.videosdk.live",
   baseUrl: "/",
   onBrokenLinks: "throw",
@@ -66,6 +66,21 @@ module.exports = {
           position: "left",
           label: "Tutorials",
           to: "/docs/tutorials/introduction",
+        },
+        {
+          position: "left",
+          label: "Resources",
+          to: "/docs/resources/overview",
+        },
+        {
+          href: "https://github.com/videosdk-live/videosdk.live",
+          className: "navbar-item-github",
+          position: "right",
+        },
+        {
+          href: "https://twitter.com/video_sdk",
+          className: "navbar-item-twitter",
+          position: "right",
         },
         // {
         //   type: "docsVersionDropdown",

@@ -34,18 +34,18 @@ import MethodListHeading from '@theme/MethodListHeading';
   <MethodListItemLabel name="__namedParameters" option={"required"} type={"object"} >
     <MethodListGroup>
       <MethodListHeading heading="Parameters" />
-      <MethodListItemLabel name="onParticipantJoined(participant)" option={"optional"} type={"event"} />
-      <MethodListItemLabel name="onParticipantLeft(participant)" option={"optional"} type={"event"} />
-      <MethodListItemLabel name="onSpeakerChanged(activeSpeakerId)" option={"optional"} type={"event"} />
-      <MethodListItemLabel name="onPresenterChanged(presenterId)" option={"optional"} type={"event"} />
-      <MethodListItemLabel name="onMainParticipantChanged(participant)" option={"optional"} type={"event"} />
-      <MethodListItemLabel name="onEntryRequested(participantId, name)" option={"optional"} type={"event"} />
-      <MethodListItemLabel name="onEntryResponded(participantId, name)" option={"optional"} type={"event"} />
-      <MethodListItemLabel name="onRecordingStarted()" option={"optional"} type={"event"} />
-      <MethodListItemLabel name="onRecordingStopped()" option={"optional"} type={"event"} />
-      <MethodListItemLabel name="onChatMessage(data)" option={"optional"} type={"event"} />
-      <MethodListItemLabel name="onMeetingJoined()" option={"optional"} type={"event"} />
-      <MethodListItemLabel name="onMeetingLeft()" option={"optional"} type={"event"} />
+      <MethodListItemLabel name="onParticipantJoined(participant)" option={"optional"} type={"callback"} />
+      <MethodListItemLabel name="onParticipantLeft(participant)" option={"optional"} type={"callback"} />
+      <MethodListItemLabel name="onSpeakerChanged(activeSpeakerId)" option={"optional"} type={"callback"} />
+      <MethodListItemLabel name="onPresenterChanged(presenterId)" option={"optional"} type={"callback"} />
+      <MethodListItemLabel name="onMainParticipantChanged(participant)" option={"optional"} type={"callback"} />
+      <MethodListItemLabel name="onEntryRequested(participantId, name)" option={"optional"} type={"callback"} />
+      <MethodListItemLabel name="onEntryResponded(participantId, name)" option={"optional"} type={"callback"} />
+      <MethodListItemLabel name="onRecordingStarted()" option={"optional"} type={"callback"} />
+      <MethodListItemLabel name="onRecordingStopped()" option={"optional"} type={"callback"} />
+      <MethodListItemLabel name="onChatMessage(data)" option={"optional"} type={"callback"} />
+      <MethodListItemLabel name="onMeetingJoined()" option={"optional"} type={"callback"} />
+      <MethodListItemLabel name="onMeetingLeft()" option={"optional"} type={"callback"} />
       <MethodListItemLabel name="function as child" option={"optional"} type={"function"} description="You can subscribe to all the function and properties." >
       </MethodListItemLabel>
     </MethodListGroup>

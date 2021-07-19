@@ -313,4 +313,31 @@ module.exports = {
       collapsed: false,
     },
   ],
+  resources: [
+    {
+      type: "category",
+      label: "RESOURCES",
+      items: ["resources/overview"],
+      collapsed: false,
+    },
+    {
+      type: "category",
+      label: "CODE SAMPLES",
+      items: [
+        {
+          type: "category",
+          label: "REAL TIME COMMUNICATION",
+          items: ["resources/code-samples/real-time-communication/overview"],
+          collapsed: false,
+        },
+        {
+          type: "category",
+          label: "LIVE STREAMING",
+          items: ["resources/code-samples/live-streaming/overview"],
+          collapsed: false,
+        },
+      ],
+      collapsed: false,
+    },
+  ],
 };
