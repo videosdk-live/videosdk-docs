@@ -2,6 +2,17 @@
 
 ## Follow below steps if you are setting up for Android
 
+### Update colors.xml file
+
+```xml title="android/app/src/main/res/values/colors.xml"
+<resources>
+    <item name="red" type="color">#FC0303</item>
+    <integer-array name="androidcolors">
+    <item>@color/red</item>
+    </integer-array>
+</resources>
+```
+
 ### Update AndroidManifest.xml file
 
 ```xml title="AndroidManifest.xml"
@@ -21,9 +32,20 @@
     <uses-permission android:name="android.permission.WAKE_LOCK" />
 ​
   <application>
-    <!-- Enable foreground service -->
-    <service android:name="live.videosdk.rnfgservice.ForegroundService" android:foregroundServiceType="mediaProjection">
-    </service>
+   <meta-data
+      android:name="live.videosdk.rnfgservice.notification_channel_name"
+      android:value="Meeting Notification"
+     />
+    <meta-data
+    android:name="live.videosdk.rnfgservice.notification_channel_description"
+    android:value="Whenever meeting started notification will appear."
+    />
+    <meta-data
+    android:name="live.videosdk.rnfgservice.notification_color"
+    android:resource="@color/red"
+    />
+    <service android:name="live.videosdk.rnfgservice.ForegroundService" android:foregroundServiceType="mediaProjection"></service>
+    <service android:name="live.videosdk.rnfgservice.ForegroundServiceTask"></service>
   </application>
 </manifest>
 ```

@@ -2,7 +2,13 @@
 
 ## Follow below steps if you are setting up for IOS
 
-### Step 1: IMPORTANT: Make sure you are using CocoaPods 1.10 or higher.
+### Step 1: Install incall manager
+
+```sh title="Install react-native-incallmanager"
+$ yarn add @videosdk.live/react-native-incallmanager
+```
+
+### Step 2: IMPORTANT: Make sure you are using CocoaPods 1.10 or higher.
 
 To update CocoaPods you simply install the gem again
 
@@ -10,7 +16,7 @@ To update CocoaPods you simply install the gem again
 $[sudo] gem install cocoapods
 ```
 
-### Step 2: Manual linking (if react-native-incall-manager is not linked automatically)
+### Step 3: Manual linking (if react-native-incall-manager is not linked automatically)
 
 2.1 Drag node_modules/@videosdk.live/react-native-incall-manager/ios/RNInCallManager.xcodeproj under <your_xcode_project>/Libraries
 
@@ -21,18 +27,18 @@ $[sudo] gem install cocoapods
   2.3 Select <your_xcode_project> --> Build Settings
   In Header Search Paths, add $(SRCROOT)/../node_modules/@videosdk.live/react-native-incall-manager/ios/RNInCallManager
 
-### Step 3: Change path of `react-native-webrtc`
+### Step 4: Change path of `react-native-webrtc`
 
 ```sh title="Change path of react-native-webrtc"
 pod ‘react-native-webrtc’, :path => ‘../node_modules/@videosdk.live/react-native-webrtc’
 ```
 
-### Step 4: Change your platform version
+### Step 5: Change your platform version
 
 You have change platform field of podfile to 11.0 or above it, as react-native-webrtc doesn’t support iOS < 11
 platform :ios, ‘11.0’
 
-### Step 5: Install pods
+### Step 6: Install pods
 
 After updating the version, you have to install pods.
 
@@ -40,11 +46,11 @@ After updating the version, you have to install pods.
 Pod install
 ```
 
-### Step 6: Add “libreact-native-webrtc.a” binary
+### Step 7: Add “libreact-native-webrtc.a” binary
 
 Add “libreact-native-webrtc.a” in Link Binary with libraries. In target of main project folder.
 
-### Step 7: Declare permissions in Info.plist :
+### Step 8: Declare permissions in Info.plist :
 
 Add following lines to info.plist (project folder/iOS/projectname/info.plist):
 
