@@ -92,6 +92,19 @@ public class MainApplication extends Application implements ReactApplication {
 }
 ```
 
+### 4. Add this line to `android/gradle.properties`:
+
+```java title="android/gradle.properties"
+/* This one fixes a weird WebRTC runtime problem on some devices. */
+android.enableDexingArtifactTransform.desugaring=false
+```
+
+### 5. Add below line in the `android/app/proguard-rules.pro` (optional: if you are using Proguard):
+
+```java title="android/app/proguard-rules.pro"
+-keep class org.webrtc.** { *; }
+```
+
 ## Final Steps
 
 ### Import Example
