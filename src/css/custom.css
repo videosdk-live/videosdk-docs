@@ -1636,3 +1636,8 @@ pre[class*="language-"] > code[class*="language-"] {
   line-height: inherit;
   white-space: pre;
 }
+
+.mermaid {
+  background: #f5f8fb;
+  border-radius: 5px;
+}

@@ -12,6 +12,12 @@ Our research team has worked hard to handled all the edge cases so you just have
 
 ![Embeded SDK Example to add video call widget in your web application](/img/Zujonow-whitelabel-min.jpg)
 
+## Architecture
+
+import Mermaid from '@theme/Mermaid';
+
+<Mermaid chart={`sequenceDiagram Host->>App Server: Request for token; App Server->>Host: Received token; Host->>App Server: Request for meetingId; App Server->>VideoSDK Server: Request for meetingId; VideoSDK Server->>App Server: Sending meetingId; App Server->>Host: Received meetingId; Host->>Participants: Broadcast meetingId; Host->>App Server: Start Meeting; Participants-->>App Server: Join Meeting; Participants->>App Server: Request for token; App Server->>Participants: Received token; Participants->>App Server: Validate meetingId; Participants->>App Server: Leave Meeting; Host->>App Server: End Meeting;`}/>
+
 ## Ways to start developing
 
 ### 1. Dashboard
