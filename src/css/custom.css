@@ -372,6 +372,7 @@ article header {
 /* Sidebar */
 
 .navbar__logo {
+  height: auto;
   max-width: 196px;
 }
 
@@ -1640,4 +1641,8 @@ pre[class*="language-"] > code[class*="language-"] {
 .mermaid {
   background: #f5f8fb;
   border-radius: 5px;
+}
+
+.method-list-item-description {
+  color: var(--ifm-heading-color);
 }

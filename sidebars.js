@@ -61,7 +61,10 @@ module.exports = {
     {
       type: "category",
       label: "REAL TIME COMMUNICATION",
-      items: ["realtime-communication/intro"],
+      items: [
+        "realtime-communication/intro",
+        "realtime-communication/architecture",
+      ],
       collapsed: false,
     },
     /* {
@@ -165,6 +168,20 @@ module.exports = {
           label: "ELECTRON SDK",
           collapsed: true,
           items: ["realtime-communication/sdk-reference/electron-sdk/setup"],
+        },
+        {
+          type: "category",
+          label: "ANDROID SDK",
+          collapsed: true,
+          items: [
+            "realtime-communication/sdk-reference/android-sdk/setup",
+            "realtime-communication/sdk-reference/android-sdk/video-sdk-class",
+            "realtime-communication/sdk-reference/android-sdk/meeting-class",
+            "realtime-communication/sdk-reference/android-sdk/participant-class",
+            "realtime-communication/sdk-reference/android-sdk/stream-class",
+            "realtime-communication/sdk-reference/android-sdk/meeting-event-listener-class",
+            "realtime-communication/sdk-reference/android-sdk/participant-event-listener-class",
+          ],
         },
       ],
     },

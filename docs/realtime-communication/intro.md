@@ -1,5 +1,18 @@
 ---
+title: Introduction to Real time communication API
+hide_title: false
+hide_table_of_contents: false
+description: RTC SDK provides wide range of features to build your own custom video chat application without worrying about performance issues and scaling.
+sidebar_label: Introduction
+pagination_label: Introduction
+keywords:
+  - RTC API
+  - RTC SDK
+  - video API
+  - audio rooms API
+image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
+slug: intro
 ---
 
 # Introduction
@@ -11,12 +24,6 @@ With our `embeded-sdk`, you can embeded a video call widget in your web applicat
 Our research team has worked hard to handled all the edge cases so you just have to focus on what matters.
 
 ![Embeded SDK Example to add video call widget in your web application](/img/Zujonow-whitelabel-min.jpg)
-
-## Architecture
-
-import Mermaid from '@theme/Mermaid';
-
-<Mermaid chart={`sequenceDiagram Host->>App Server: Request for token; App Server->>Host: Received token; Host->>App Server: Request for meetingId; App Server->>VideoSDK Server: Request for meetingId; VideoSDK Server->>App Server: Sending meetingId; App Server->>Host: Received meetingId; Host->>Participants: Broadcast meetingId; Host->>App Server: Start Meeting; Participants-->>App Server: Join Meeting; Participants->>App Server: Request for token; App Server->>Participants: Received token; Participants->>App Server: Validate meetingId; Participants->>App Server: Leave Meeting; Host->>App Server: End Meeting;`}/>
 
 ## Ways to start developing
 

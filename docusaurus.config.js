@@ -7,7 +7,7 @@ module.exports = {
   baseUrl: "/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
-  favicon: "img/favicon.ico",
+  favicon: "img/icons/favicon.ico",
   organizationName: "videosdk-live", // Usually your GitHub org/user name.
   projectName: "videosdk-live", // Usually your repo name.
   i18n: {
@@ -29,11 +29,11 @@ module.exports = {
     },
 
     navbar: {
-      title: "videosdk.live",
+      title: "",
       logo: {
         alt: "VideosdK live logo",
-        src: "img/zujonow_32.png",
-        srcDark: "img/zujonow_32_white.png",
+        src: "img/videosdk_docs_blacklogo.png",
+        srcDark: "img/videosdk_docs_whitelogo.png",
       },
       items: [
         {
