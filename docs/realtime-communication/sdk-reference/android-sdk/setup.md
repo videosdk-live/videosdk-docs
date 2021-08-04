@@ -60,7 +60,7 @@ dependencies {
 <uses-permission android:name="android.permission.BLUETOOTH" />
 ```
 
-### Step 3: Extend the `android.app.Application` class and create `MainApplication.java` class with the following code:
+### Step 2: Extend the `android.app.Application` class and create `MainApplication.java` class with the following code:
 
 ```js title="MainApplication.java"
 package live.videosdk.demo;
@@ -70,7 +70,6 @@ import android.app.Application;
 import live.videosdk.android.VideoSDK;
 
 public class MainApplication extends Application {
-
     @Override
     public void onCreate() {
         super.onCreate();
@@ -78,6 +77,17 @@ public class MainApplication extends Application {
         VideoSDK.initialize(getApplicationContext());
     }
 }
+```
+
+### Step 3: Also add `MainApplication` to `AndroidManifest.xml`
+
+```js title="AndroidManifest.xml"
+<application
+        android:name=".MainApplication"
+				...
+>
+  <!-- ... -->
+</application>
 ```
 
 ### Step 4: In your `MainActivity.java` add the following code in `onCreate()` method:
@@ -88,7 +98,7 @@ protected void onCreate(Bundle savedInstanceState) {
   super.onCreate(savedInstanceState);
   setContentView(R.layout.activity_main);
 
-  final String meetingId = "pqrs-wxyz-abcd";
+  final String meetingId = "<meeting-id>";
   final String participantName = "John Doe";
 
   final boolean micEnabled = true;
@@ -108,4 +118,4 @@ protected void onCreate(Bundle savedInstanceState) {
 }
 ```
 
-### Step 4: All set! Refer to the documentation for a full list of available methods, events and features of the SDK.
+### Step 4: All set! Here is the link to the complete sample code on [Github](https://github.com/videosdk-live/videosdk-rtc-android-java-sdk-example). Please refer to the [documentation](/docs/realtime-communication/sdk-reference/android-sdk/videosdk-class) for a full list of available methods, events and features of the SDK.

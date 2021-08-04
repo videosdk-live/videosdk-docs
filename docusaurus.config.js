@@ -73,6 +73,11 @@ module.exports = {
           to: "/docs/resources/overview",
         },
         {
+          label: "Start Project",
+          href: "https://app.videosdk.live/login",
+          position: "right",
+        },
+        {
           href: "https://github.com/videosdk-live/videosdk.live",
           className: "navbar-item-github",
           position: "right",
@@ -182,7 +187,7 @@ module.exports = {
             },
             {
               label: "NPM",
-              href: "https://www.npmjs.com/package/@videosdk.live",
+              href: "https://www.npmjs.com/org/videosdk.live",
             },
           ],
         },
