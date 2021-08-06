@@ -344,13 +344,34 @@ module.exports = {
         {
           type: "category",
           label: "REAL TIME COMMUNICATION",
-          items: ["resources/code-samples/real-time-communication/overview"],
+          items: [
+            //"resources/code-samples/real-time-communication/overview",
+            "resources/code-samples/real-time-communication/node-js-auth",
+            "resources/code-samples/real-time-communication/react-js-sdk",
+            "resources/code-samples/real-time-communication/react-native-sdk",
+            "resources/code-samples/real-time-communication/android-prebuilt-sdk",
+          ],
           collapsed: false,
         },
         {
           type: "category",
           label: "LIVE STREAMING",
-          items: ["resources/code-samples/live-streaming/overview"],
+          items: [
+            //"resources/code-samples/live-streaming/overview",
+            "resources/code-samples/live-streaming/rtc-to-rtmp",
+            "resources/code-samples/live-streaming/live-streaming-react",
+            "resources/code-samples/live-streaming/live-streaming-react-native",
+          ],
+          collapsed: false,
+        },
+        {
+          type: "category",
+          label: "VIDEO ON DEMAND",
+          items: [
+            //"resources/code-samples/live-streaming/overview",
+            "resources/code-samples/video-on-demand/react-js-sdk",
+            "resources/code-samples/video-on-demand/react-native-sdk",
+          ],
           collapsed: false,
         },
       ],
