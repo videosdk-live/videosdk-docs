@@ -346,10 +346,12 @@ module.exports = {
           label: "REAL TIME COMMUNICATION",
           items: [
             //"resources/code-samples/real-time-communication/overview",
+            "resources/code-samples/real-time-communication/js-prebuilt-sdk",
+            "resources/code-samples/real-time-communication/android-prebuilt-sdk",
             "resources/code-samples/real-time-communication/node-js-auth",
             "resources/code-samples/real-time-communication/react-js-sdk",
             "resources/code-samples/real-time-communication/react-native-sdk",
-            "resources/code-samples/real-time-communication/android-prebuilt-sdk",
+            "resources/code-samples/real-time-communication/android-sdk",
           ],
           collapsed: false,
         },

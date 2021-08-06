@@ -12,7 +12,7 @@ keywords:
   - low code
 image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
-slug: rtc-node-js-auth-code-sample
+slug: rtc-android-prebuilt-code-sample
 ---
 
 # Android Prebuilt Code Sample

@@ -10,6 +10,7 @@ module.exports = {
   favicon: "img/icons/favicon.ico",
   organizationName: "videosdk-live", // Usually your GitHub org/user name.
   projectName: "videosdk-live", // Usually your repo name.
+  plugins: ["@docusaurus/plugin-google-analytics"],
   i18n: {
     defaultLocale: "en",
     locales: ["en"],
@@ -22,6 +23,11 @@ module.exports = {
       searchParameters: {
         facetFilters: ["content"],
       },
+    },
+    googleAnalytics: {
+      trackingID: "G-NR8EYPZFJ7",
+      // Optional fields.
+      anonymizeIP: true, // Should IPs be anonymized?
     },
     colorMode: {
       defaultMode: "light",
