@@ -10,7 +10,6 @@ module.exports = {
   favicon: "img/icons/favicon.ico",
   organizationName: "videosdk-live", // Usually your GitHub org/user name.
   projectName: "videosdk-live", // Usually your repo name.
-  plugins: ["@docusaurus/plugin-google-analytics"],
   i18n: {
     defaultLocale: "en",
     locales: ["en"],
