@@ -1965,7 +1965,7 @@ html[data-theme="dark"] .rds-demos .terminals .code {
   border-radius: 0 0 10px 10px;
   border: 2px dashed #5961ff;
   border-top: none;
-  background-color: #fff;
+  background-color: #0c0e10;
 }
 @media only screen and (max-width: 750px) {
   .rds-demos .terminal .terminal-body {
@@ -1994,6 +1994,7 @@ html[data-theme="dark"] .rds-demos .terminal .terminal-body .title {
   padding: 0;
   list-style: none;
   line-height: 1.45;
+  color: #fff;
 }
 @media only screen and (max-width: 750px) {
   .rds-demos .terminal .terminal-body .links {
@@ -2013,7 +2014,7 @@ html[data-theme="dark"] .rds-demos .terminal .terminal-body .title {
 }
 .rds-demos .terminal .terminal-body .links a {
   text-decoration: underline;
-  color: #161f31;
+  color: #fff;
   transition: color 0.2s ease-in-out;
 }
 html[data-theme="dark"] .rds-demos .terminal .terminal-body .links a {
