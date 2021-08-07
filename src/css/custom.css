@@ -319,7 +319,7 @@ li + li {
 
 .title {
   font-weight: bold;
-  color: var(--custom-content-color-lightest) !important;
+  color: #fff !important;
 }
 
 .alert.alert--warning {
@@ -1645,4 +1645,380 @@ pre[class*="language-"] > code[class*="language-"] {
 
 .method-list-item-description {
   color: var(--ifm-heading-color);
+}
+
+/** Hero */
+.rds-hero {
+  margin-top: -63px;
+  padding: 114px 0 65px;
+  border-radius: 0 0 10px 10px;
+  background-color: #161f31;
+  color: #fff;
+}
+@media only screen and (min-width: 997px) and (max-width: 1100px) {
+  .rds-hero {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .rds-hero .row {
+    flex-wrap: nowrap;
+  }
+  .rds-hero .col--7 {
+    min-width: 665px;
+  }
+  .rds-hero .col--5 {
+    flex: 1 !important;
+    max-width: none !important;
+  }
+}
+@media only screen and (max-width: 750px) {
+  .rds-hero {
+    padding: 71px 0 62px;
+  }
+}
+.rds-hero .row {
+  align-items: center;
+}
+@media only screen and (max-width: 996px) {
+  .rds-hero .row .col:first-child {
+    order: 2;
+  }
+  .rds-hero .row .col:last-child {
+    order: 1;
+  }
+}
+.rds-hero .hero-title {
+  margin: 0;
+  line-height: 1.1;
+  font-size: 50px;
+  font-weight: 500;
+  color: var(--ifm-color-primary);
+}
+@media only screen and (max-width: 996px) {
+  .rds-hero .hero-title {
+    text-align: center;
+  }
+}
+@media only screen and (max-width: 750px) {
+  .rds-hero .hero-title {
+    line-height: 1.25;
+    font-size: 32px;
+  }
+}
+.rds-hero .hero-subtitle {
+  margin: 17px 0 0 0;
+  line-height: 1.5;
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--custom-color-orange-800);
+}
+@media only screen and (max-width: 996px) {
+  .rds-hero .hero-subtitle {
+    text-align: center;
+  }
+}
+@media only screen and (max-width: 750px) {
+  .rds-hero .hero-subtitle {
+    margin-top: 13px;
+    font-size: 14px;
+  }
+}
+.rds-hero .boxes {
+  display: flex;
+  margin-top: 42px;
+}
+@media only screen and (max-width: 750px) {
+  .rds-hero .boxes {
+    flex-direction: column;
+    margin-top: 36px;
+  }
+}
+.rds-hero .boxes .box {
+  flex: 1;
+  position: relative;
+  border: 1px dashed #dc382c;
+  border-radius: 5px;
+  transition: background-color 0.2s ease-in-out;
+}
+@media only screen and (max-width: 750px) {
+  .rds-hero .boxes .box {
+    margin: 0 auto;
+    max-width: 282px;
+  }
+}
+.rds-hero .boxes .box:hover {
+  background-color: #dc382c;
+}
+@media only screen and (min-width: 751px) {
+  .rds-hero .boxes .box:not(:first-child) {
+    margin-left: 12px;
+  }
+}
+@media only screen and (max-width: 750px) {
+  .rds-hero .boxes .box:not(:first-child) {
+    margin-top: 25px;
+  }
+}
+.rds-hero .boxes .box .bg {
+  display: none;
+  position: absolute;
+}
+.rds-hero .boxes .box.box-create .bg {
+  top: 0;
+  left: 13px;
+}
+.rds-hero .boxes .box.box-develop .bg {
+  top: 9px;
+  left: 5px;
+}
+.rds-hero .boxes .box.box-explore .bg {
+  top: 15px;
+  left: 43px;
+}
+.rds-hero .boxes .box .icon {
+  display: flex;
+  align-items: center;
+  padding: 5px 21px 0;
+  height: 69px;
+}
+@media only screen and (max-width: 750px) {
+  .rds-hero .boxes .box .icon {
+    justify-content: center;
+  }
+}
+@media only screen and (max-width: 750px) {
+  .rds-hero .boxes .box .icon svg {
+    zoom: 1.1;
+  }
+}
+.rds-hero .boxes .box .text {
+  padding: 0 16px 23px 21px;
+}
+@media only screen and (max-width: 750px) {
+  .rds-hero .boxes .box .text {
+    padding-bottom: 25px;
+  }
+}
+.rds-hero .boxes .box .text .title {
+  margin: 0;
+  line-height: 1.5;
+  font-size: 18px;
+  font-weight: 400;
+  color: #fff;
+}
+@media only screen and (max-width: 750px) {
+  .rds-hero .boxes .box .text .title {
+    text-align: center;
+    line-height: 1.2;
+    font-size: 22px;
+  }
+}
+.rds-hero .boxes .box .text .description {
+  margin: 5px 0 0 0;
+  line-height: 1.5;
+  font-size: 14.5px;
+}
+@media only screen and (max-width: 750px) {
+  .rds-hero .boxes .box .text .description {
+    margin-top: 10px;
+    text-align: center;
+    line-height: 1.6;
+    font-size: 16px;
+  }
+}
+.rds-hero .boxes .box .text .more {
+  display: flex;
+  align-items: center;
+  margin-top: 14px;
+  line-height: 1.2;
+  font-size: 14.5px;
+  font-weight: 700;
+}
+@media only screen and (max-width: 750px) {
+  .rds-hero .boxes .box .text .more {
+    justify-content: center;
+    font-size: 16px;
+  }
+}
+.rds-hero .boxes .box .text .more svg {
+  margin-left: 8px;
+  flex: 0 0 14px;
+}
+.rds-hero .boxes .box .text .more svg path {
+  transition: fill 0.2s ease-in-out;
+}
+.rds-hero .boxes .box:hover .text .more svg path {
+  fill: #fff;
+}
+.rds-hero .boxes .box .link {
+  z-index: 5;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+  text-indent: -9999px;
+  cursor: pointer;
+}
+.rds-hero .illustration {
+  max-width: 100%;
+}
+@media only screen and (min-width: 997px) {
+  .rds-hero .illustration {
+    margin-left: 66px;
+  }
+}
+@media only screen and (min-width: 997px) and (max-width: 1100px) {
+  .rds-hero .illustration {
+    float: right;
+    margin-left: 0;
+    zoom: 0.8;
+  }
+}
+@media only screen and (max-width: 996px) {
+  .rds-hero .illustration {
+    display: block;
+    margin: 0 auto 48px;
+    zoom: 0.48;
+  }
+}
+
+/*** RDS Demos ***/
+
+.rds-demos {
+  position: relative;
+  padding-bottom: 68px;
+  background-color: #161f31;
+}
+@media only screen and (max-width: 750px) {
+  .rds-demos {
+    padding-top: 46px;
+  }
+}
+.rds-demos .container {
+  position: relative;
+}
+.rds-demos .container > *:not(.terminals) {
+  z-index: 2;
+  position: relative;
+}
+.rds-demos .terminals {
+  position: relative;
+}
+.rds-demos .terminals:not(:first-child) {
+  margin-top: 75px;
+}
+@media only screen and (max-width: 750px) {
+  .rds-demos .terminals:not(:first-child) {
+    margin-top: 34px;
+  }
+}
+.rds-demos .terminals .code {
+  position: absolute;
+  top: -37px;
+  left: -109px;
+  user-select: none;
+}
+html[data-theme="dark"] .rds-demos .terminals .code {
+  opacity: 0.4;
+}
+@media only screen and (max-width: 750px) {
+  .rds-demos .terminals .col:not(:last-child) {
+    margin-bottom: 45px;
+  }
+}
+.rds-demos .terminal {
+  z-index: 2;
+  position: relative;
+}
+@media only screen and (min-width: 751px) {
+  .rds-demos .terminal.right {
+    margin-top: 60px;
+  }
+}
+.rds-demos .terminal .terminal-header {
+  position: relative;
+  height: 36px;
+  border-radius: 10px 10px 0 0;
+  background-color: #2e2e2e;
+}
+@media only screen and (max-width: 750px) {
+  .rds-demos .terminal .terminal-header {
+    height: 31px;
+  }
+}
+.rds-demos .terminal .terminal-header svg {
+  position: absolute;
+  top: 50%;
+  left: 17px;
+  transform: translateY(-50%);
+}
+@media only screen and (max-width: 750px) {
+  .rds-demos .terminal .terminal-header svg {
+    zoom: 0.85;
+  }
+}
+.rds-demos .terminal .terminal-body {
+  padding: 36px 69px 40px;
+  min-height: 280px;
+  border-radius: 0 0 10px 10px;
+  border: 2px dashed #5961ff;
+  border-top: none;
+  background-color: #fff;
+}
+@media only screen and (max-width: 750px) {
+  .rds-demos .terminal .terminal-body {
+    padding: 31px 25px 35px;
+    min-height: 220px;
+  }
+}
+html[data-theme="dark"] .rds-demos .terminal .terminal-body {
+  background-color: #0c0e10;
+}
+.rds-demos .terminal .terminal-body .title {
+  margin: 0;
+  line-height: 1;
+  font-size: 26px;
+}
+@media only screen and (max-width: 750px) {
+  .rds-demos .terminal .terminal-body .title {
+    font-size: 22px;
+  }
+}
+html[data-theme="dark"] .rds-demos .terminal .terminal-body .title {
+  color: #fff;
+}
+.rds-demos .terminal .terminal-body .links {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  line-height: 1.45;
+}
+@media only screen and (max-width: 750px) {
+  .rds-demos .terminal .terminal-body .links {
+    font-size: 15px;
+  }
+}
+.rds-demos .terminal .terminal-body .links:not(:first-child) {
+  margin-top: 30px;
+}
+@media only screen and (max-width: 750px) {
+  .rds-demos .terminal .terminal-body .links:not(:first-child) {
+    margin-top: 24px;
+  }
+}
+.rds-demos .terminal .terminal-body .links li:not(:first-child) {
+  margin-top: 10px;
+}
+.rds-demos .terminal .terminal-body .links a {
+  text-decoration: underline;
+  color: #161f31;
+  transition: color 0.2s ease-in-out;
+}
+html[data-theme="dark"] .rds-demos .terminal .terminal-body .links a {
+  color: #fff;
+}
+.rds-demos .terminal .terminal-body .links a:hover {
+  color: #5961ff !important;
 }
