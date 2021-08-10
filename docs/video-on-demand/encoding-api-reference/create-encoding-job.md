@@ -100,7 +100,7 @@ fetch(url, options)
 ```python
 import requests
 
-url = "https://api.zujonow.com/v1/livestreams"
+url = "https://api.zujonow.com/v1/encoder/jobs"
 
 payload = {
   videoId: "6053115ebba24b4d700c8c49",
@@ -144,7 +144,7 @@ require 'uri'
 require 'net/http'
 require 'openssl'
 
-url = URI("https://api.zujonow.com/v1/livestreams")
+url = URI("https://api.zujonow.com/v1/encoder/jobs")
 
 http = Net::HTTP.new(url.host, url.port)
 http.use_ssl = true
