@@ -21,9 +21,7 @@ Prebuilt SDK enables opportunity to integrate real-time communication SDK witout
 
 It supports all the modern frameworks such as plain JavaScript, React JS, Vue and Angular.
 
-## Using prebuilt sdk
-
-### Step 0: Access token generation (server-side code)
+## Step 0: Access token generation (server-side code)
 
 An access token is required to authenticate with the Zujo SDK and make any API calls. You can generate one with the `API key` and `secret` mentioned in your developer portal at ZujoNow console.
 
@@ -87,7 +85,7 @@ values={[
 ]}>
 <TabItem value="curl">
 
-```js
+```bash
 cURL -H "Content-Type: application/json" \
      -H "Authorization: $YOUR_JWT_TOKEN" \
      -XPOST \
@@ -248,13 +246,13 @@ puts response.read_body
 </TabItem>
 </Tabs>
 
-## Step 3: Install prebuilt SDK in your app
+## Step 2: Install prebuilt SDK in your app
 
 ### Setting up prebuilt sdk using `<script>`
 
 The easiest way to get started is by just adding our prebuilt script in your website.
 
-```js
+```html title="index.html"
 <script src="https://sdk.videosdk.live/embedded/index.js"></script>
 ```
 
@@ -272,48 +270,57 @@ values={[
 ]}>
 <TabItem value="npm">
 
-```js
+```bash
 npm install @videosdk.live/js-prebuilt
 ```
 
 </TabItem>
 <TabItem value="yarn">
 
-```js
+```bash
 yarn add @videosdk.live/js-prebuilt
 ```
 
 </TabItem>
 </Tabs>
 
-### Step 3: Add script into your application.
+and include it in the html file
+
+```html title="index.html"
+<script src="node_modules/@videosdk.live/js-prebuilt/dist/index.js"></script>
+```
+
+## Step 3: Add script into your application.
 
 Intialize `VideoSDKMeeting` on the page where you want to start meeting.
 
-```js
-const videoMeeting = new VideoSDKMeeting();
+```html title="index.html"
+<script>
+  const videoMeeting = new VideoSDKMeeting();
 
-const videoMeetingSpecs = {
-  micEnabled: true,
-  webcamEnabled: true,
-  name,
-  meetingId: "/* MEETING ID */",
-  redirectOnLeave: "/* REDIRECT ON LEAVE */",
-  chatEnabled: true,
-  screenShareEnabled: true,
-  pollEnabled: true,
-  whiteBoardEnabled: true,
-  participantCanToggleSelfWebcam: true,
-  participantCanToggleSelfMic: true,
-  raiseHandEnabled: true,
-  token: "/* YOUR TOKEN */",
-  containerId: null,
-};
-videoMeeting.init(videoMeetingSpecs);
+  const videoMeetingSpecs = {
+    micEnabled: true,
+    webcamEnabled: true,
+    name,
+    meetingId: "/* MEETING ID */",
+    redirectOnLeave: "/* REDIRECT ON LEAVE */",
+    chatEnabled: true,
+    screenShareEnabled: true,
+    pollEnabled: true,
+    whiteBoardEnabled: true,
+    participantCanToggleSelfWebcam: true,
+    participantCanToggleSelfMic: true,
+    raiseHandEnabled: true,
+    token: "/* YOUR TOKEN */",
+    containerId: null,
+  };
+
+  videoMeeting.init(videoMeetingSpecs);
+</script>
 ```
 
-### Step 4: Run the application.
+## Step 4: Run the application.
 
-Once you will have call `init` and run the application, you will be able to see the meeting screen.
+Once you call `init()` and run the application, you will be able to see the meeting screen.
 
 ![Prebuilt SDK Example to add video call widget in your web application](/img/tutorial/integrate-it-anywhere.jpg)
