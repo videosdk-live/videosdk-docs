@@ -37,7 +37,7 @@ let fs = require("fs");
 const formData = new FormData();
 formData.append("file", fs.createReadStream("mock-video.mp4"));
 
-const url = "https://api.zujonow.com/v1/files";
+const url = "https://storage-api.zujonow.com/v1/files";
 var options = {
   method: "POST",
   headers: {

@@ -74,7 +74,7 @@ app.get("/live", async (req, res) => {
     }),
   };
   const response = await request(
-    "https://api.zujonow.com/api/livestreams",
+    "https://api.zujonow.com/v1/livestreams",
     options
   );
   const json = await response.json();

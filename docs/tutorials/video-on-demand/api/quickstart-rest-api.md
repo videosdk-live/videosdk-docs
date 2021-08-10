@@ -148,7 +148,7 @@ values={[
 <TabItem value="curl">
 
 ```js
-curl --L --X POST 'https://api.zujonow.com/api/encoder/jobs' \
+curl --L --X POST 'https://api.zujonow.com/v1/encoder/jobs' \
 --header 'Authorization: `your token goes here`' \
 --header 'Content-Type: application/json' \
 --data-raw '
