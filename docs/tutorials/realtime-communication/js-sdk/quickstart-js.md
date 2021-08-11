@@ -19,7 +19,13 @@ slug: quickstart-js
 
 ## Using Plain JavaScript SDK
 
-Let's start with the terms used in Plain JavaScript SDK
+Let's start with the terms used in Plain JavaScript SDK.
+
+:::note
+
+Also check out this [example code](https://github.com/videosdk-live/videosdk-rtc-react-sdk-example) on github to get started quickly.
+
+:::
 
 ### Meeting
 

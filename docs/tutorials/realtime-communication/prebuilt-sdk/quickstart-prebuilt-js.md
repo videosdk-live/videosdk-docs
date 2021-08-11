@@ -21,6 +21,12 @@ Prebuilt SDK enables opportunity to integrate real-time communication SDK witout
 
 It supports all the modern frameworks such as plain JavaScript, React JS, Vue and Angular.
 
+:::note
+
+Also check out this [example code](https://github.com/videosdk-live/videosdk-rtc-js-prebuilt-embedded-example) on github to get started quickly.
+
+:::
+
 ## Step 0: Access token generation (server-side code)
 
 An access token is required to authenticate with the Zujo SDK and make any API calls. You can generate one with the `API key` and `secret` mentioned in your developer portal at ZujoNow console.

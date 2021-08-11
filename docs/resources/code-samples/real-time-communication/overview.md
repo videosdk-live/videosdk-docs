@@ -38,10 +38,10 @@ $ git clone https://github.com/videosdk-live/videosdk-rtc-android-webview-exampl
 
 For more information follow, [Prebuilt documentation](/docs/realtime-communication/sdk-reference/prebuilt-sdk-js/setup).
 
-### 2. [React JS Code Sample](https://github.com/videosdk-live/videosdk-rtc-nodejs-sdk-example)
+### 2. [React JS Code Sample](https://github.com/videosdk-live/videosdk-rtc-react-sdk-example)
 
 ```sh
-$ git clone https://github.com/videosdk-live/videosdk-rtc-nodejs-sdk-example
+$ git clone https://github.com/videosdk-live/videosdk-rtc-react-sdk-example
 ```
 
 For more information follow, [React JS documentation](/docs/realtime-communication/sdk-reference/react-sdk/setup).

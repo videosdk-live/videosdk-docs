@@ -17,10 +17,10 @@ slug: rtc-react-js-sdk-code-sample
 
 # React JS SDK Code Sample
 
-## using [RTC React JS SDK Code Sample](https://github.com/videosdk-live/videosdk-rtc-nodejs-sdk-example)
+## using [RTC React JS SDK Code Sample](https://github.com/videosdk-live/videosdk-rtc-react-sdk-example)
 
 ```sh
-$ git clone https://github.com/videosdk-live/videosdk-rtc-nodejs-sdk-example
+$ git clone https://github.com/videosdk-live/videosdk-rtc-react-sdk-example
 ```
 
 ## documentation

@@ -21,6 +21,12 @@ slug: quickstart-rest-api
 
 This tutorial explains steps to integrate live video streaming in your app.
 
+:::note
+
+Also check out this [example code](https://github.com/videosdk-live/videosdk-live-streaming-react-api-example.git) on github to get started quickly.
+
+:::
+
 ### Step 1: Generate access token
 
 An access token is required to call the ZujoNow APIs. You can generate one with the API key and secret mentioned in the developer portal at ZujoNow console.
