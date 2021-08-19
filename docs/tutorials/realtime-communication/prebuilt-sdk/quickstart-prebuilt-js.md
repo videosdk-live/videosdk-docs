@@ -15,6 +15,9 @@ sidebar_position: 1
 slug: quickstart-prebuilt-js
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 # Quickstart for Prebuilt JS
 
 Prebuilt SDK enables opportunity to integrate real-time communication SDK witout writing explicit code. It just requires 10 minutes to integrate.
@@ -27,239 +30,14 @@ Also check out this [example code](https://github.com/videosdk-live/videosdk-rtc
 
 :::
 
-## Step 0: Access token generation (server-side code)
-
-An access token is required to authenticate with the Zujo SDK and make any API calls. You can generate one with the `API key` and `secret` mentioned in your developer portal at ZujoNow console.
-
-### Generate access token (NodeJS)
-
-```js {20} title="server.js"
-const express = require("express");
-const jwt = require("jsonwebtoken");
-const cors = require("cors");
-const request = require("request");
-
-const app = express();
-const port = 9000;
-app.use(cors());
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-
-app.get("/get-token", (req, res) => {
-  const API_KEY = process.env.ZUJONOW_API_KEY;
-  const SECRET_KEY = process.env.ZUJONOW_SECRET_KEY;
-  const options = { expiresIn: "10m", algorithm: "HS256" };
-  const payload = {
-    apikey: API_KEY,
-    permissions: ["allow_join", "allow_mod", "ask_join"], // Trigger permission.
-  };
-  const token = jwt.sign(payload, SECRET_KEY, options);
-  res.json({ token });
-});
-
-app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`);
-});
-```
-
-Available permissions are:
-
-- `allow_join`: The participant will be permitted entry without request.
-- `ask_join`: The participant will not be permitted entry without request.
-- `allow_mod`: Allow participant to enable/disable other participant's mic/webcam.
-
-This generated token must be sent in the `Authorization` header for all API calls. <br/>
-And it should also be used with the `ZujoSDK.config(token)` method.
-
-## Step 1: Create or join meeting
-
-Get a meeting id for new meeting or validate an existing meeting id to join a meeting.
-
-### Create new meeting ID
-
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
-<Tabs
-defaultValue="curl"
-values={[
-{label: 'cURL request creates meeting', value: 'curl'},
-{label: 'NodeJS/JS', value: 'node'},
-{label: 'Python', value: 'python'},
-{label: 'Ruby', value: 'ruby'},
-{label: 'RESULT', value: 'result'},
-]}>
-<TabItem value="curl">
-
-```bash
-cURL -H "Content-Type: application/json" \
-     -H "Authorization: $YOUR_JWT_TOKEN" \
-     -XPOST \
-     https://api.zujonow.com/v1/meetings
-```
-
-</TabItem>
-<TabItem value="node">
-
-```js
-var request = require("request");
-
-var options = {
-  method: "POST",
-  url: "https://api.zujonow.com/v1/meetings",
-  headers: { authorization: `${YOUR_JWT_TOKEN}` },
-};
-
-request(options, function (error, response, body) {
-  if (error) throw new Error(error);
-
-  console.log(body);
-});
-```
-
-</TabItem>
-<TabItem value="python">
-
-```python
-import requests
-
-url = "https://api.zujonow.com/v1/meetings"
-
-headers = {'authorization': f'Bearer {YOUR_JWT_TOKEN}'}
-
-response = requests.request("GET", url, headers=headers)
-
-print(response.text)
-```
-
-</TabItem>
-<TabItem value="ruby">
-
-```ruby
-require 'uri'
-require 'net/http'
-
-url = URI("https://api.zujonow.com/v1/meetings")
-
-http = Net::HTTP.new(url.host, url.port)
-http.use_ssl = true
-http.verify_mode = OpenSSL::SSL::VERIFY_NONE
-
-request = Net::HTTP::Get.new(url)
-request["authorization"] = "Bearer #{YOUR_JWT_TOKEN}"
-
-response = http.request(request)
-puts response.read_body
-```
-
-</TabItem>
-<TabItem value="result">
-
-```js
-{
-  "meetingId":"jpkf-iool-64ox"
-}
-```
-
-</TabItem>
-</Tabs>
-
-### OR
-
-### Validate existing meeting ID for joining
-
-<Tabs
-defaultValue="curl"
-values={[
-{label: 'cURL request creates meeting', value: 'curl'},
-{label: 'NodeJS/JS', value: 'node'},
-{label: 'Python', value: 'python'},
-{label: 'Ruby', value: 'ruby'},
-{label: 'RESULT', value: 'result'},
-]}>
-<TabItem value="curl">
-
-```js
-cURL -H "Content-Type: application/json" \
-     -H "Authorization: $YOUR_JWT_TOKEN" \
-     -XPOST \
-     https://api.zujonow.com/v1/meetings/${meetingId}
-```
-
-</TabItem>
-<TabItem value="node">
-
-```js
-var request = require("request");
-
-var options = {
-  method: "POST",
-  url: "https://api.zujonow.com/v1/meetings/${meetingId}",
-  headers: { authorization: `${YOUR_JWT_TOKEN}` },
-};
-
-request(options, function (error, response, body) {
-  if (error) throw new Error(error);
-
-  console.log(body);
-});
-```
-
-</TabItem>
-<TabItem value="python">
-
-```python
-import requests
-
-url = "https://api.zujonow.com/v1/meetings/${meetingId}"
-
-headers = {'authorization': f'Bearer {YOUR_JWT_TOKEN}'}
-
-response = requests.request("GET", url, headers=headers)
-
-print(response.text)
-```
-
-</TabItem>
-<TabItem value="ruby">
-
-```ruby
-require 'uri'
-require 'net/http'
-
-url = URI("https://api.zujonow.com/v1/meetings/${meetingId}")
-
-http = Net::HTTP.new(url.host, url.port)
-http.use_ssl = true
-http.verify_mode = OpenSSL::SSL::VERIFY_NONE
-
-request = Net::HTTP::Get.new(url)
-request["authorization"] = "Bearer #{YOUR_JWT_TOKEN}"
-
-response = http.request(request)
-puts response.read_body
-```
-
-</TabItem>
-<TabItem value="result">
-
-```js
-{
-  "meetingId":"jpkf-iool-64ox"
-}
-```
-
-</TabItem>
-</Tabs>
-
-## Step 2: Install prebuilt SDK in your app
+## Step 1: Add script to your project
 
 ### Setting up prebuilt sdk using `<script>`
 
 The easiest way to get started is by just adding our prebuilt script in your website.
 
 ```html title="index.html"
-<script src="https://sdk.videosdk.live/embedded/index.js"></script>
+<script src="https://sdk.videosdk.live/rtc-js-prebuilt/0.1.1/rtc-js-prebuilt.js"></script>
 ```
 
 ### OR
@@ -293,40 +71,52 @@ yarn add @videosdk.live/js-prebuilt
 and include it in the html file
 
 ```html title="index.html"
-<script src="node_modules/@videosdk.live/js-prebuilt/dist/index.js"></script>
+<script src="node_modules/@videosdk.live/rtc-js-prebuilt/dist/index.js"></script>
 ```
 
-## Step 3: Add script into your application.
+## Step 2: Setup the meeting
 
 Intialize `VideoSDKMeeting` on the page where you want to start meeting.
 
 ```html title="index.html"
 <script>
-  const videoMeeting = new VideoSDKMeeting();
+  const meeting = new VideoSDKMeeting();
 
-  const videoMeetingSpecs = {
+  const config = {
+    name: "John Doe",
+    apiKey: "YOUR API KEY", // generated from app.videosdk.live
+    meetingId: "milkyway", // enter your meeting id
+
+    containerId: null,
+    redirectOnLeave: "https://www.videosdk.live/",
+
     micEnabled: true,
     webcamEnabled: true,
-    name,
-    meetingId: "/* MEETING ID */",
-    redirectOnLeave: "/* REDIRECT ON LEAVE */",
+    participantCanToggleSelfWebcam: true,
+    participantCanToggleSelfMic: true,
+
     chatEnabled: true,
     screenShareEnabled: true,
     pollEnabled: true,
     whiteBoardEnabled: true,
-    participantCanToggleSelfWebcam: true,
-    participantCanToggleSelfMic: true,
     raiseHandEnabled: true,
-    token: "/* YOUR TOKEN */",
-    containerId: null,
+
+    recordingEnabled: true,
+    recordingWebhookUrl: "https://www.videosdk.live/callback",
+    participantCanToggleRecording: true,
   };
 
-  videoMeeting.init(videoMeetingSpecs);
+  meeting.init(config);
 </script>
 ```
 
-## Step 4: Run the application.
+## Step 3: Run the application
 
-Once you call `init()` and run the application, you will be able to see the meeting screen.
+Install `live-server` or any other http server if you don't already have one.
+
+```sh
+$ npm install -g live-server
+$ live-server
+```
 
 ![Prebuilt SDK Example to add video call widget in your web application](/img/tutorial/integrate-it-anywhere.jpg)
