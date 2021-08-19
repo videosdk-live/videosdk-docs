@@ -347,6 +347,9 @@ module.exports = {
           items: [
             //"resources/code-samples/real-time-communication/overview",
             "resources/code-samples/real-time-communication/js-prebuilt-sdk",
+            "resources/code-samples/real-time-communication/angular-prebuilt-sdk",
+            "resources/code-samples/real-time-communication/react-prebuilt-sdk",
+            "resources/code-samples/real-time-communication/vue-prebuilt-sdk",
             "resources/code-samples/real-time-communication/android-prebuilt-sdk",
             "resources/code-samples/real-time-communication/node-js-auth",
             "resources/code-samples/real-time-communication/react-js-sdk",

@@ -22,6 +22,9 @@ A collection of resources for you to explore and learn.
 ## 1. RTC Code Samples
 
 - [JS Prebuilt Code Sample](/docs/resources/code-samples/real-time-communication/rtc-js-prebuilt-code-sample)
+- [Angular Prebuilt Code Sample](/docs/resources/code-samples/real-time-communication/rtc-angular-prebuilt-code-sample)
+- [React Prebuilt Code Sample](/docs/resources/code-samples/real-time-communication/rtc-react-prebuilt-code-sample)
+- [Vue Prebuilt Code Sample](/docs/resources/code-samples/real-time-communication/rtc-vue-prebuilt-code-sample)
 - [Android Prebuilt Code Sample](/docs/resources/code-samples/real-time-communication/rtc-android-prebuilt-code-sample)
 - [Node JS Auth Code Sample](/docs/resources/code-samples/real-time-communication/rtc-node-js-auth-code-sample)
 - [React JS Code Sample](/docs/resources/code-samples/real-time-communication/rtc-react-js-sdk-code-sample)
