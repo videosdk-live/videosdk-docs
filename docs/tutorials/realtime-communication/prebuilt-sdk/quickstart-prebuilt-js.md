@@ -30,53 +30,21 @@ Also check out this [example code](https://github.com/videosdk-live/videosdk-rtc
 
 :::
 
-## Step 1: Add script to your project
+## Step 1: Signup with videosdk.live
 
-### Setting up prebuilt sdk using `<script>`
+Visit [https://app.videosdk.live/settings/api-keys](https://app.videosdk.live/settings/api-keys) and signup with your Google or Github account to generate a new **API key** to run the prebuilt.
 
-The easiest way to get started is by just adding our prebuilt script in your website.
+## Step 2: Add script to your project
+
+Create an `index.html` file and add the following `<script>` tag at the end of your code's `<body>` tag.
 
 ```html title="index.html"
 <script src="https://sdk.videosdk.live/rtc-js-prebuilt/0.1.1/rtc-js-prebuilt.js"></script>
 ```
 
-### OR
+## Step 3: Setup the meeting
 
-### Setting up prebuilt sdk using NPM package manager
-
-Another way is by installing `@videosdk.live/rtc-js-prebuilt` in your app.
-
-<Tabs
-defaultValue="npm"
-values={[
-{label: 'NPM', value: 'npm'},
-{label: 'YARN', value: 'yarn'},
-]}>
-<TabItem value="npm">
-
-```bash
-npm install @videosdk.live/rtc-js-prebuilt
-```
-
-</TabItem>
-<TabItem value="yarn">
-
-```bash
-yarn add @videosdk.live/rtc-js-prebuilt
-```
-
-</TabItem>
-</Tabs>
-
-and include it in the html file
-
-```html title="index.html"
-<script src="node_modules/@videosdk.live/rtc-js-prebuilt/dist/index.js"></script>
-```
-
-## Step 2: Setup the meeting
-
-Intialize `VideoSDKMeeting` on the page where you want to start meeting.
+Intialize `VideoSDKMeeting` after including the script on the page. Replace the `apiKey` with the one generated in **Step 1**.
 
 ```html title="index.html"
 <script>
@@ -84,7 +52,7 @@ Intialize `VideoSDKMeeting` on the page where you want to start meeting.
 
   const config = {
     name: "John Doe",
-    apiKey: "YOUR API KEY", // generated from app.videosdk.live
+    apiKey: "YOUR API KEY", // generated in step 1
     meetingId: "milkyway", // enter your meeting id
 
     containerId: null,
@@ -110,7 +78,7 @@ Intialize `VideoSDKMeeting` on the page where you want to start meeting.
 </script>
 ```
 
-## Step 3: Run the application
+## Step 4: Run the application
 
 Install any http server if you don't already have one and run the server to join meeting from browser.
 
