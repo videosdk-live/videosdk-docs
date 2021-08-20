@@ -44,7 +44,7 @@ The easiest way to get started is by just adding our prebuilt script in your web
 
 ### Setting up prebuilt sdk using NPM package manager
 
-Another way is by installing `@videosdk.live/js-prebuilt` in your app.
+Another way is by installing `@videosdk.live/rtc-js-prebuilt` in your app.
 
 <Tabs
 defaultValue="npm"
@@ -55,14 +55,14 @@ values={[
 <TabItem value="npm">
 
 ```bash
-npm install @videosdk.live/js-prebuilt
+npm install @videosdk.live/rtc-js-prebuilt
 ```
 
 </TabItem>
 <TabItem value="yarn">
 
 ```bash
-yarn add @videosdk.live/js-prebuilt
+yarn add @videosdk.live/rtc-js-prebuilt
 ```
 
 </TabItem>
