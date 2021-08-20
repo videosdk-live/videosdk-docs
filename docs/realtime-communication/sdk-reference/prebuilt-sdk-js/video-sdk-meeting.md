@@ -15,23 +15,30 @@ The `VideoSDKMeeting Class` includes properties, methods and events to control u
 ### init()
 
 ```js title="Javascript"
-const videoMeeting = new VideoSDKMeeting();
+const meeting = new VideoSDKMeeting();
 
-videoMeeting.init({
+meeting.init({
+  name: "John Doe",
+  apiKey: "YOUR API KEY", // generated from app.videosdk.live
+  meetingId: "milkyway", // enter your meeting id
+
+  containerId: null,
+  redirectOnLeave: "https://www.videosdk.live/",
+
   micEnabled: true,
   webcamEnabled: true,
-  name,
-  meetingId: "/* MEETING ID */",
-  redirectOnLeave: "/* REDIRECT ON LEAVE */",
+  participantCanToggleSelfWebcam: true,
+  participantCanToggleSelfMic: true,
+
   chatEnabled: true,
   screenShareEnabled: true,
   pollEnabled: true,
   whiteBoardEnabled: true,
-  participantCanToggleSelfWebcam: true,
-  participantCanToggleSelfMic: true,
   raiseHandEnabled: true,
-  token: "/* YOUR TOKEN */",
-  containerId: null,
+
+  recordingEnabled: true,
+  recordingWebhookUrl: "https://www.videosdk.live/callback",
+  participantCanToggleRecording: true,
 });
 ```
 
@@ -57,7 +64,7 @@ import MethodListHeading from '@theme/MethodListHeading';
       <MethodListItemLabel name="participantCanToggleSelfWebcam" option={"required"} type={"boolean"} />
       <MethodListItemLabel name="participantCanToggleSelfMic" option={"required"} type={"boolean"} />
       <MethodListItemLabel name="raiseHandEnabled" option={"required"} type={"boolean"} />
-      <MethodListItemLabel name="token" option={"required"} type={"string"} />
+      <MethodListItemLabel name="apiKey" option={"required"} type={"string"} />
       <MethodListItemLabel name="containerId" option={"required"} type={"string"} description={"Specify id of the container where you want to display prebuilt UI or keep it null"} />
     </MethodListGroup>
   </MethodListItemLabel>
