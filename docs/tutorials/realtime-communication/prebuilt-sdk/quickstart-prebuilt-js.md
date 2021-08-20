@@ -26,7 +26,7 @@ It supports all the modern frameworks such as plain JavaScript, React JS, Vue an
 
 :::note
 
-Also check out this [example code](https://github.com/videosdk-live/videosdk-rtc-js-prebuilt-embedded-example) on github to get started quickly.
+Also check out this [example code](https://github.com/videosdk-live/videosdk-rtc-js-prebuilt-embedded-example) on github or [download](https://github.com/videosdk-live/videosdk-rtc-js-prebuilt-embedded-example/archive/refs/tags/v0.1.0.zip) the full source code and unzip on your computer to get started quickly.
 
 :::
 
@@ -140,3 +140,9 @@ and open [http://localhost/index.html](http://localhost/index.html) in your web 
 </Tabs>
 
 ![Prebuilt SDK Example to add video call widget in your web application](/img/tutorial/integrate-it-anywhere.jpg)
+
+:::note
+
+Stuck anywhere? Check out this [example code](https://github.com/videosdk-live/videosdk-rtc-js-prebuilt-embedded-example) on github or [download](https://github.com/videosdk-live/videosdk-rtc-js-prebuilt-embedded-example/archive/refs/tags/v0.1.0.zip) the full source code and unzip on your computer.
+
+:::
