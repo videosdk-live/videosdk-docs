@@ -112,11 +112,63 @@ Intialize `VideoSDKMeeting` on the page where you want to start meeting.
 
 ## Step 3: Run the application
 
-Install `live-server` or any other http server if you don't already have one.
+Install any http server if you don't already have one and run the server to join meeting from browser.
 
-```sh
+<Tabs
+defaultValue="node"
+values={[
+{label: 'Node.js', value: 'node'},
+{label: 'Python', value: 'python'},
+{label: 'PHP', value: 'php'},
+{label: 'WAMP', value: 'wamp'},
+{label: 'XAMPP', value: 'xampp'},
+]}>
+<TabItem value="node">
+
+```bash
 $ npm install -g live-server
-$ live-server
+$ live-server --port=8000
 ```
+
+and open [http://localhost:8000](http://localhost:8000) in your web browser
+
+</TabItem>
+<TabItem value="python">
+
+```bash
+$ python3 -m http.server
+```
+
+and open [http://localhost:8000](http://localhost:8000) in your web browser
+
+</TabItem>
+<TabItem value="php">
+
+```bash
+$ php -S localhost:8000
+```
+
+and open [http://localhost:8000](http://localhost:8000) in your web browser
+
+</TabItem>
+<TabItem value="wamp">
+
+```
+Move the html file to C:\wamp\www and start the WAMP server
+```
+
+and open [http://localhost/index.html](http://localhost/index.html) in your web browser
+
+</TabItem>
+<TabItem value="xampp">
+
+```
+Move the html file to C:\xampp\htdocs and start the XAMPP server
+```
+
+and open [http://localhost/index.html](http://localhost/index.html) in your web browser
+
+</TabItem>
+</Tabs>
 
 ![Prebuilt SDK Example to add video call widget in your web application](/img/tutorial/integrate-it-anywhere.jpg)
