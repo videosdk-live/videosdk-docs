@@ -13,12 +13,12 @@ Our prebuilt sdk enables opportunity to integrate real time communication with y
 The easiest way to get started is by just adding our prebuilt script in your website.
 
 ```js
-<script src="https://sdk.videosdk.live/embedded/index.js"></script>
+<script src="https://sdk.videosdk.live/rtc-js-prebuilt/0.1.1/rtc-js-prebuilt.js"></script>
 ```
 
 ### Setting up prebuilt sdk using NPM package manager
 
-Another way is by installing `@videosdk.live/js-prebuilt` in your app.
+Another way is by installing `@videosdk.live/rtc-js-prebuilt` in your app.
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -32,14 +32,14 @@ values={[
 <TabItem value="npm">
 
 ```js
-npm install @videosdk.live/js-prebuilt
+npm install @videosdk.live/rtc-js-prebuilt
 ```
 
 </TabItem>
 <TabItem value="yarn">
 
 ```js
-yarn add @videosdk.live/js-prebuilt
+yarn add @videosdk.live/rtc-js-prebuilt
 ```
 
 </TabItem>
