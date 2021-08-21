@@ -93,6 +93,7 @@ import MethodListHeading from '@theme/MethodListHeading';
     <MethodListHeading heading="Join and leave" />
     <MethodListItemLabel name="join()"  type={"void"} />
     <MethodListItemLabel name="leave()"  type={"void"} />
+    <MethodListItemLabel name="end()"  type={"void"} />
   </MethodListGroup>
 </MethodListGroup>
 
