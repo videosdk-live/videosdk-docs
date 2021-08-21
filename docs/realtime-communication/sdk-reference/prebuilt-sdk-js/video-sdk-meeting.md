@@ -39,6 +39,10 @@ meeting.init({
   recordingEnabled: true,
   recordingWebhookUrl: "https://www.videosdk.live/callback",
   participantCanToggleRecording: true,
+
+  brandingEnabled: true,
+  brandLogoURL: "https://picsum.photos/200",
+  brandName: "Awesome startup",
 });
 ```
 
@@ -66,6 +70,12 @@ import MethodListHeading from '@theme/MethodListHeading';
       <MethodListItemLabel name="raiseHandEnabled" option={"required"} type={"boolean"} />
       <MethodListItemLabel name="apiKey" option={"required"} type={"string"} />
       <MethodListItemLabel name="containerId" option={"required"} type={"string"} description={"Specify id of the container where you want to display prebuilt UI or keep it null"} />
+      <MethodListItemLabel name="recordingEnabled" option={"optional"} type={"boolean"} />
+      <MethodListItemLabel name="recordingWebhookUrl" option={"optional"} type={"string"} />
+      <MethodListItemLabel name="participantCanToggleRecording" option={"optional"} type={"boolean"} />
+      <MethodListItemLabel name="brandingEnabled" option={"optional"} type={"boolean"} />
+      <MethodListItemLabel name="brandLogoURL" option={"optional"} type={"string"} />
+      <MethodListItemLabel name="brandName" option={"optional"} type={"string"} />
     </MethodListGroup>
   </MethodListItemLabel>
 </MethodListGroup>

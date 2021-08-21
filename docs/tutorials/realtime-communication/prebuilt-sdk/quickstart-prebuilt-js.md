@@ -72,6 +72,10 @@ Intialize `VideoSDKMeeting` after including the script on the page. Replace the 
     recordingEnabled: true,
     recordingWebhookUrl: "https://www.videosdk.live/callback",
     participantCanToggleRecording: true,
+
+    brandingEnabled: true,
+    brandLogoURL: "https://picsum.photos/200",
+    brandName: "Awesome startup",
   };
 
   meeting.init(config);
