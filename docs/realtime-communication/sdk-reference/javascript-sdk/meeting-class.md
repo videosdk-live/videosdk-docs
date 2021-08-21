@@ -10,7 +10,7 @@ The entry point into real-time communication SDK.
 
 The `Meeting Class` includes methods and events for managing meetings, participants, audio and video streams, data channels and UI customisation.
 
-You don't ever need to call the `MeetingClass` constructor directly. Instead use one of the factory methods.
+You don't ever need to call the `Meeting Class` constructor directly. Instead use one of the factory methods.
 
 ## Factory Methods
 
@@ -78,8 +78,8 @@ import MethodListHeading from '@theme/MethodListHeading';
       <MethodListItemLabel name="recording-started"  type={"event"} />
       <MethodListItemLabel name="recording-stopped"  type={"event"} />
       <MethodListItemLabel name="chat-message"  type={"event"} />
-      <MethodListItemLabel name="video-started"  type={"event"} />
-      <MethodListItemLabel name="video-stopped"  type={"event"} />
+      <MethodListItemLabel name="video-state-changed"  type={"event"} />
+      <MethodListItemLabel name="video-seeked"  type={"event"} />
       <MethodListItemLabel name="livestream-started"  type={"event"} />
       <MethodListItemLabel name="livestream-stopped"  type={"event"} />
     </MethodListGroup>
@@ -89,27 +89,74 @@ import MethodListHeading from '@theme/MethodListHeading';
 ### Methods
 
 <MethodListGroup>
-  <MethodListItemLabel name="__methods" >
-    <MethodListGroup>
-      <MethodListHeading heading="Methods" />
-      <MethodListItemLabel name="join()"  type={"undefined"} />
-      <MethodListItemLabel name="leave()"  type={"undefined"} />
-      <MethodListItemLabel name="muteMic()"  type={"undefined"} />
-      <MethodListItemLabel name="unmuteMic()"  type={"undefined"} />
-      <MethodListItemLabel name="disableWebcam()"  type={"undefined"} />
-      <MethodListItemLabel name="enableWebcam()"  type={"undefined"} />
-      <MethodListItemLabel name="disableScreenShare()"  type={"undefined"} />
-      <MethodListItemLabel name="enableScreenShare()"  type={"undefined"} />
-      <MethodListItemLabel name="on(eventType: string)"  type={"undefined"} />
-      <MethodListItemLabel name="off(eventType: string)"  type={"undefined"} />
-      <MethodListItemLabel name="respondEntry(participantId: string, decision: allowed | denied)"  type={"undefined"} />
-      <MethodListItemLabel name="startRecording(webhookUrl: string)"  type={"undefined"} />
-      <MethodListItemLabel name="stopRecording()"  type={"undefined"} />
-      <MethodListItemLabel name="startVideo({link: string})"  type={"undefined"} />
-      <MethodListItemLabel name="stopVideo()"  type={"undefined"} />
-      <MethodListItemLabel name="startLivestreamtartLivestream(streamInfo: Array<{url: String, streamKey: String}>)"  type={"undefined"} />
-      <MethodListItemLabel name="stopLivestream()"  type={"undefined"} />
-      <MethodListItemLabel name="sendChatMessage(text: string)"  type={"undefined"} />
-    </MethodListGroup>
-  </MethodListItemLabel>
+  <MethodListGroup>
+    <MethodListHeading heading="Join and leave" />
+    <MethodListItemLabel name="join()"  type={"void"} />
+    <MethodListItemLabel name="leave()"  type={"void"} />
+  </MethodListGroup>
+</MethodListGroup>
+
+<MethodListGroup>
+  <MethodListGroup>
+    <MethodListHeading heading="Mic and webcam" />
+    <MethodListItemLabel name="muteMic()"  type={"void"} />
+    <MethodListItemLabel name="unmuteMic()"  type={"void"} />
+    <MethodListItemLabel name="disableWebcam()"  type={"void"} />
+    <MethodListItemLabel name="enableWebcam()"  type={"void"} />
+  </MethodListGroup>
+</MethodListGroup>
+
+<MethodListGroup>
+  <MethodListGroup>
+    <MethodListHeading heading="Screenshare" />
+    <MethodListItemLabel name="disableScreenShare()"  type={"void"} />
+    <MethodListItemLabel name="enableScreenShare()"  type={"void"} />
+  </MethodListGroup>
+</MethodListGroup>
+
+<MethodListGroup>
+  <MethodListGroup>
+    <MethodListHeading heading="Recording" />
+    <MethodListItemLabel name="startRecording(webhookUrl: string)"  type={"void"} />
+    <MethodListItemLabel name="stopRecording()"  type={"void"} />
+  </MethodListGroup>
+</MethodListGroup>
+
+<MethodListGroup>
+  <MethodListGroup>
+    <MethodListHeading heading="External video" />
+    <MethodListItemLabel
+      name="startVideo({ link: string })"
+      type={"void"}
+      description={<p>Triggers <code>video-state-changed</code> event with status "started"</p>}
+    />
+    <MethodListItemLabel
+      name="stopVideo()"
+      type={"void"}
+      description={<p>Triggers <code>video-state-changed</code> event with status "stopped"</p>}
+    />
+    <MethodListItemLabel
+      name="pauseVideo({ currentTime: number })"
+      type={"void"}
+      description={<p>Triggers <code>video-state-changed</code> event with status "paused"</p>}
+    />
+    <MethodListItemLabel
+      name="resumeVideo()"
+      type={"void"}
+      description={<p>Triggers <code>video-state-changed</code> event with status "resumed"</p>}
+    />
+    <MethodListItemLabel
+      name="seekVideo({ currentTime: number })"
+      type={"void"}
+      description={<p>Triggers <code>video-seeked</code> event with <code>currentTime</code></p>}
+    />
+  </MethodListGroup>
+</MethodListGroup>
+
+<MethodListGroup>
+  <MethodListGroup>
+    <MethodListHeading heading="Livestream / RTMP out" />
+    <MethodListItemLabel name="startLivestream(Array<{ url: string, streamKey: string }>)"  type={"void"} />
+    <MethodListItemLabel name="stopLivestream()"  type={"void"} />
+  </MethodListGroup>
 </MethodListGroup>

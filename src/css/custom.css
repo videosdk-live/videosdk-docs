@@ -1644,7 +1644,8 @@ pre[class*="language-"] > code[class*="language-"] {
 }
 
 .method-list-item-description {
-  color: var(--ifm-heading-color);
+  color: var(--ifm-color-content-secondary);
+  margin-top: 1rem !important;
 }
 
 /** Hero */

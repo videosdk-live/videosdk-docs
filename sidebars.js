@@ -253,7 +253,7 @@ module.exports = {
       items: [
         {
           type: "category",
-          label: "STREAMING REST API REFERENCE",
+          label: "STORAGE REST API REFERENCE",
           items: [
             "video-on-demand/storage-api-reference/auth",
             "video-on-demand/storage-api-reference/create-new-url",
@@ -296,8 +296,8 @@ module.exports = {
           label: "Quickstart",
           collapsed: false,
           items: [
-            "tutorials/realtime-communication/js-sdk/quickstart-js",
             "tutorials/realtime-communication/prebuilt-sdk/quickstart-prebuilt-js",
+            "tutorials/realtime-communication/js-sdk/quickstart-js",
           ],
         },
       ],

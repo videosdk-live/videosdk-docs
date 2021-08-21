@@ -20,9 +20,11 @@ const MethodListItemLabel = ({
         {defaultValue ? "(default:" + defaultValue + ")" : null}
       </span>
     </h4>
-    <div class="method-list-item-description">
-      {description ? description : <p>No description provided.</p>}
-    </div>
+    {description && (
+      <div class="method-list-item-description">
+        {description ? description : <p>No description provided.</p>}
+      </div>
+    )}
     {children}
   </li>
 );
