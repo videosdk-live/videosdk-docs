@@ -8,7 +8,7 @@ sidebar_position: 1
 
 ## useParticipant hook
 
-```jsx title="useMeeting hook example"
+```jsx title="useParticipant react hook"
 import {
   useParticipant,
 } from "@videosdk.live/react-sdk";
