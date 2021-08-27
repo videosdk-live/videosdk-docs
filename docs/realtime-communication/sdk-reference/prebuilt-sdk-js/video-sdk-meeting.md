@@ -43,6 +43,26 @@ meeting.init({
   brandingEnabled: true,
   brandLogoURL: "https://picsum.photos/200",
   brandName: "Awesome startup",
+  poweredBy: true,
+
+  participantCanLeave: true, // if false, leave button won't be visible
+
+  // Live stream meeting to youtube
+  livestream: {
+    autoStart: true,
+    outputs: [
+      {
+        url: "rtmp://x.rtmp.youtube.com/live2",
+        streamKey: "<STREAM KEY FROM YOUTUBE>",
+      },
+    ],
+  },
+
+  permissions: {
+    askToJoin: false, // Ask joined participants for entry in meeting
+    toggleParticipantMic: true, // Can toggle other participant's mic
+    toggleParticipantWebcam: true, // Can toggle other participant's webcam
+  },
 });
 ```
 
@@ -76,6 +96,21 @@ import MethodListHeading from '@theme/MethodListHeading';
       <MethodListItemLabel name="brandingEnabled" option={"optional"} type={"boolean"} />
       <MethodListItemLabel name="brandLogoURL" option={"optional"} type={"string"} />
       <MethodListItemLabel name="brandName" option={"optional"} type={"string"} />
+      <MethodListItemLabel name="poweredBy" option={"optional"} type={"boolean"} />
+      <MethodListItemLabel name="participantCanLeave" option={"optional"} type={"boolean"} />
+      <MethodListItemLabel name="livestream" option={"optional"} type={"object"} >
+        <MethodListGroup>
+          <MethodListItemLabel name="autoStart" option={"optional"} type={"boolean"} />
+          <MethodListItemLabel name="outputs" option={"optional"} type={"Array<{url: string, streamKey: string}>"} />
+        </MethodListGroup>
+      </MethodListItemLabel>
+      <MethodListItemLabel name="permissions" option={"optional"} type={"object"} >
+        <MethodListGroup>
+          <MethodListItemLabel name="askToJoin" option={"optional"} type={"boolean"} />
+          <MethodListItemLabel name="toggleParticipantMic" option={"optional"} type={"boolean"} />
+          <MethodListItemLabel name="toggleParticipantWebcam" option={"optional"} type={"boolean"} />
+        </MethodListGroup>
+      </MethodListItemLabel>
     </MethodListGroup>
   </MethodListItemLabel>
 </MethodListGroup>

@@ -76,6 +76,26 @@ Intialize `VideoSDKMeeting` after including the script on the page. Replace the 
     brandingEnabled: true,
     brandLogoURL: "https://picsum.photos/200",
     brandName: "Awesome startup",
+    poweredBy: true,
+
+    participantCanLeave: true, // if false, leave button won't be visible
+
+    // Live stream meeting to youtube
+    livestream: {
+      autoStart: true,
+      outputs: [
+        // {
+        //   url: "rtmp://x.rtmp.youtube.com/live2",
+        //   streamKey: "<STREAM KEY FROM YOUTUBE>",
+        // },
+      ],
+    },
+
+    permissions: {
+      askToJoin: false, // Ask joined participants for entry in meeting
+      toggleParticipantMic: true, // Can toggle other participant's mic
+      toggleParticipantWebcam: true, // Can toggle other participant's webcam
+    },
   };
 
   meeting.init(config);
