@@ -39,7 +39,7 @@ Visit [https://app.videosdk.live/settings/api-keys](https://app.videosdk.live/se
 Create an `index.html` file and add the following `<script>` tag at the end of your code's `<body>` tag.
 
 ```html title="index.html"
-<script src="https://sdk.videosdk.live/rtc-js-prebuilt/0.1.1/rtc-js-prebuilt.js"></script>
+<script src="https://sdk.videosdk.live/rtc-js-prebuilt/0.1.4/rtc-js-prebuilt.js"></script>
 ```
 
 ## Step 3: Setup the meeting
