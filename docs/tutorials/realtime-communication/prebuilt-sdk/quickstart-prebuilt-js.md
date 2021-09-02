@@ -39,7 +39,7 @@ Visit [https://app.videosdk.live/settings/api-keys](https://app.videosdk.live/se
 Create an `index.html` file and add the following `<script>` tag at the end of your code's `<body>` tag.
 
 ```html title="index.html"
-<script src="https://sdk.videosdk.live/rtc-js-prebuilt/0.1.4/rtc-js-prebuilt.js"></script>
+<script src="https://sdk.videosdk.live/rtc-js-prebuilt/0.1.5/rtc-js-prebuilt.js"></script>
 ```
 
 ## Step 3: Setup the meeting
@@ -52,7 +52,7 @@ Intialize `VideoSDKMeeting` after including the script on the page. Replace the 
 
   const config = {
     name: "John Doe",
-    apiKey: "YOUR API KEY", // generated in step 1
+    apiKey: "<API KEY>", // generated in step 1
     meetingId: "milkyway", // enter your meeting id
 
     containerId: null,
@@ -95,6 +95,12 @@ Intialize `VideoSDKMeeting` after including the script on the page. Replace the 
       askToJoin: false, // Ask joined participants for entry in meeting
       toggleParticipantMic: true, // Can toggle other participant's mic
       toggleParticipantWebcam: true, // Can toggle other participant's webcam
+    },
+
+    joinScreen: {
+      visible: true, // Show the join screen ?
+      title: "Daily scrum", // Meeting title
+      meetingUrl: window.location.href, // Meeting joining url
     },
   };
 

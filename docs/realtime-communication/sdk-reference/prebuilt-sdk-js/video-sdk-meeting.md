@@ -63,6 +63,12 @@ meeting.init({
     toggleParticipantMic: true, // Can toggle other participant's mic
     toggleParticipantWebcam: true, // Can toggle other participant's webcam
   },
+
+  joinScreen: {
+    visible: true, // Show the join screen ?
+    title: "Daily scrum", // Meeting title
+    meetingUrl: window.location.href, // Meeting joining url
+  },
 });
 ```
 
@@ -109,6 +115,13 @@ import MethodListHeading from '@theme/MethodListHeading';
           <MethodListItemLabel name="askToJoin" option={"optional"} type={"boolean"} />
           <MethodListItemLabel name="toggleParticipantMic" option={"optional"} type={"boolean"} />
           <MethodListItemLabel name="toggleParticipantWebcam" option={"optional"} type={"boolean"} />
+        </MethodListGroup>
+      </MethodListItemLabel>
+      <MethodListItemLabel name="joinScreen" option={"optional"} type={"object"} >
+        <MethodListGroup>
+          <MethodListItemLabel name="visible" option={"optional"} type={"boolean"} />
+          <MethodListItemLabel name="title" option={"optional"} type={"string"} />
+          <MethodListItemLabel name="meetingUrl" option={"optional"} type={"string"} />
         </MethodListGroup>
       </MethodListItemLabel>
     </MethodListGroup>
