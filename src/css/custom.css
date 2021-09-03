@@ -57,7 +57,7 @@
   --custom-primary-darkest: #c61111;
   --custom-primary-darker: #eb1a1a;
   --custom-primary-dark: #ed2828;
-  --custom-primary: #ef4444;
+  --custom-primary: #ec5998;
   --custom-primary-light: #f16060;
   --custom-primary-lighter: #f36e6e;
   --custom-primary-lightest: #f69999;
@@ -178,7 +178,7 @@
   --custom-primary-darkest: #c61111;
   --custom-primary-darker: #eb1a1a;
   --custom-primary-dark: #ed2828;
-  --custom-primary: #ef4444;
+  --custom-primary: #ec5998;
   --custom-primary-light: #f16060;
   --custom-primary-lighter: #f36e6e;
   --custom-primary-lightest: #f69999;
@@ -232,6 +232,20 @@ body {
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+::-webkit-scrollbar {
+  width: 3px;
+  height: 3px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #ec4899;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #ec4899;
 }
 
 :root[data-theme="light"] .navbar__logo.logo--dark,
@@ -925,6 +939,7 @@ a.hash-link {
 .token.string {
   font-style: normal !important;
   color: var(--ifm-color-primary) !important;
+  font-size: small;
 }
 .token.console {
   font-style: normal !important;
@@ -941,7 +956,11 @@ a.hash-link {
 .token.number {
   color: #b5cea8 !important;
 }
-.token.boolean,
+.token.boolean {
+  font-style: normal !important;
+  color: var(--ifm-color-primary) !important;
+  font-size: small;
+}
 .token.doc-comment.class-name {
   @apply text-green-500;
 }
@@ -1378,6 +1397,22 @@ code[class*="language-"] *::selection {
   text-shadow: none;
   background: #75a7ca;
 }
+div[class^="codeBlockTitle"],
+div[class*=" codeBlockTitle"] {
+  color: #ccc !important;
+  font-size: 0.8rem !important;
+  border-color: #fff;
+  background-color: #2a2a2a !important;
+}
+
+[class*="codeBlockLines"] {
+  background-color: #2a2a2a !important;
+}
+
+/* div[class^="codeBlockContent"],
+div[class*=" codeBlockContent"] {
+  background-color: #666;
+} */
 
 @media print {
   pre[class*="language-"],
@@ -1387,8 +1422,8 @@ code[class*="language-"] *::selection {
 }
 
 pre[class*="language-"] {
-  padding: 1em;
-  margin: 0.5em 0;
+  padding: 0em;
+  margin: 0em 0;
   overflow: auto;
   background: #1e1e1e;
 }
@@ -1549,11 +1584,11 @@ pre[class*="language-"] {
 }
 
 .token.tag {
-  color: #569cd6;
+  color: #569cd6 !important;
 }
 
-.token.tag .token.punctuation {
-  color: #808080;
+.token.tag.token.punctuation {
+  color: #808080 !important;
 }
 
 .token.cdata {
@@ -1564,7 +1599,9 @@ pre[class*="language-"] {
   color: #9cdcfe;
 }
 
-.token.attr-value,
+.token.attr-value {
+  color: #ec5998 !important;
+}
 .token.attr-value .token.punctuation {
   color: #ce9178;
 }
@@ -1650,11 +1687,12 @@ pre[class*="language-"] > code[class*="language-"] {
 
 /** Hero */
 .rds-hero {
-  margin-top: -63px;
-  padding: 114px 0 65px;
-  border-radius: 0 0 10px 10px;
+  /* margin-top: -63px; */
+  /* padding: 114px 0 65px; */
+  /* border-radius: 0 0 10px 10px; */
   background-color: #161f31;
   color: #fff;
+  overflow: hidden;
 }
 @media only screen and (min-width: 997px) and (max-width: 1100px) {
   .rds-hero {
@@ -1737,7 +1775,7 @@ pre[class*="language-"] > code[class*="language-"] {
 .rds-hero .boxes .box {
   flex: 1;
   position: relative;
-  border: 1px dashed #dc382c;
+  border: 1px dashed #ec5998;
   border-radius: 5px;
   transition: background-color 0.2s ease-in-out;
 }
@@ -1748,7 +1786,7 @@ pre[class*="language-"] > code[class*="language-"] {
   }
 }
 .rds-hero .boxes .box:hover {
-  background-color: #dc382c;
+  background-color: #ec5998;
 }
 @media only screen and (min-width: 751px) {
   .rds-hero .boxes .box:not(:first-child) {

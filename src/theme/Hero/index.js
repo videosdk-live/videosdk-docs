@@ -41,10 +41,10 @@ function Hero() {
     return color;
   }
   return (
-    <header className="rds-hero">
-      <div className="container">
-        <div className="row">
-          <div className="col col--7">
+    <header className="rds-hero ">
+      <div className="container ">
+        <div className="row ">
+          <div className="col col--7 ">
             <h1 className="hero-title">
               Video API
               <br /> for developers.
@@ -59,7 +59,7 @@ function Hero() {
 
             <div className="boxes">
               <div className="box box-create">
-                <SvgCreateBg color="#FFFFFF" className="bg" />
+                {/* <SvgCreateBg color="#FFFFFF" className="bg" /> */}
                 <span className="icon">
                   <SvgCreate color="#FFFFFF" />
                 </span>
@@ -70,7 +70,7 @@ function Hero() {
                   </p>
                   <span className="more">
                     Get Started
-                    <SvgArrowRight color="#DC382C" />
+                    <SvgArrowRight color="#EC5998" />
                   </span>
                 </div>
                 <a
@@ -92,7 +92,7 @@ function Hero() {
                     Develop your application using video sdk
                   </p>
                   <span className="more">
-                    Code your application <SvgArrowRight color="#DC382C" />
+                    Code your application <SvgArrowRight color="#EC5598" />
                   </span>
                 </div>
                 <a
@@ -114,7 +114,7 @@ function Hero() {
                     Explore resources to find best fit for your application.
                   </p>
                   <span className="more">
-                    Explore resources <SvgArrowRight color="#DC382C" />
+                    Explore resources <SvgArrowRight color="#EC5598" />
                   </span>
                 </div>
                 <a
