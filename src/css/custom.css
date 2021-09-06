@@ -673,6 +673,9 @@ div[class^="sidebar_"]
   div[class^="sidebar_"] {
     padding-right: var(--ifm-spacing-horizontal);
     padding-left: var(--ifm-spacing-horizontal);
+    height: 100vh;
+    overflow-y: auto;
+    border-right: 1px solid #8a8f96;
   }
 }
 
