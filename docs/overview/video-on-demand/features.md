@@ -19,7 +19,7 @@ slug: features
 
 ## Explore amazing features
 
-Let's discover **Realtime SDK features in less than 5 minutes**.
+Let's discover **VOD API features in less than 5 minutes**.
 
 #### ✅ : Shipped
 
@@ -29,10 +29,13 @@ Let's discover **Realtime SDK features in less than 5 minutes**.
 
 ## Features
 
-|                          | SDK |
-| ------------------------ | --- |
-| Upload large video files | ✅  |
-| Instant video encoding   | ✅  |
-| Stream it on global CDN  | ✅  |
-| Adaptive video streaming | ✅  |
-| Embeded Player           | 🚧  |
+|                          | APIg |
+| ------------------------ | ---- |
+| Upload large video files | ✅   |
+| Instant video encoding   | ✅   |
+| Stream it on global CDN  | ✅   |
+| Adaptive video streaming | ✅   |
+| Storage API              | ✅   |
+| Generate thumbnails      | ✅   |
+| 98% device support       | ✅   |
+| Embeded Player           | 🚧   |

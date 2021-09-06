@@ -83,6 +83,11 @@ module.exports = {
           position: "right",
         },
         {
+          label: "Back to Video SDK",
+          href: "https://videosdk.live",
+          position: "right",
+        },
+        {
           href: "https://github.com/videosdk-live/videosdk.live",
           className: "navbar-item-github",
           position: "right",

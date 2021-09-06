@@ -37,4 +37,5 @@ Let's discover **Dashboard features in less than 5 minutes**.
 | Upload videos from console            | ✅     |
 | Start meetings from console           | ✅     |
 | Go live from console                  | ✅     |
-| Automatic billing                     | 🚧     |
+| Automatic billing                     | ✅     |
+| Manage API keys                       | ✅     |
