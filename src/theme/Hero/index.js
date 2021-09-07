@@ -70,7 +70,7 @@ function Hero() {
                   </p>
                   <span className="more">
                     Get Started
-                    <SvgArrowRight color="#EC5998" />
+                    <SvgArrowRight color="#ef4444" />
                   </span>
                 </div>
                 <a
@@ -92,7 +92,7 @@ function Hero() {
                     Develop your application using video sdk
                   </p>
                   <span className="more">
-                    Code your application <SvgArrowRight color="#EC5598" />
+                    Code your application <SvgArrowRight color="#ef4444" />
                   </span>
                 </div>
                 <a
@@ -114,7 +114,7 @@ function Hero() {
                     Explore resources to find best fit for your application.
                   </p>
                   <span className="more">
-                    Explore resources <SvgArrowRight color="#EC5598" />
+                    Explore resources <SvgArrowRight color="#ef4444" />
                   </span>
                 </div>
                 <a
