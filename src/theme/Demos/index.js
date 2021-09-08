@@ -64,7 +64,7 @@ function Demos() {
                     </a>
                   </li>
                   <li>
-                    <a href="Quickstart for Prebuilt JS">
+                    <a href="/docs/tutorials/realtime-communication/prebuilt-sdk/quickstart-prebuilt-js">
                       How to build scalable video conferencing in 10 minutes
                     </a>
                   </li>
