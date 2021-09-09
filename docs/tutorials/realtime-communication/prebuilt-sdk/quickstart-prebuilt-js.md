@@ -34,81 +34,82 @@ Also check out this [example code](https://github.com/videosdk-live/videosdk-rtc
 
 Visit [https://app.videosdk.live/settings/api-keys](https://app.videosdk.live/settings/api-keys) and signup with your Google or Github account to generate a new **API key** to run the prebuilt.
 
-## Step 2: Add script to your project
+## Step 2: Add script and setup the meeting
 
-Create an `index.html` file and add the following `<script>` tag at the end of your code's `<body>` tag.
-
-```html title="index.html"
-<script src="https://sdk.videosdk.live/rtc-js-prebuilt/0.1.5/rtc-js-prebuilt.js"></script>
-```
-
-## Step 3: Setup the meeting
-
-Intialize `VideoSDKMeeting` after including the script on the page. Replace the `apiKey` with the one generated in **Step 1**.
+Create an `index.html` file and add the following `<script>` tag at the end of your code's `<body>` tag. Intialize `VideoSDKMeeting` after the script gets loaded. Replace the `apiKey` with the one generated in **Step 1**.
 
 ```html title="index.html"
 <script>
-  const meeting = new VideoSDKMeeting();
+  var script = document.createElement("script");
+  script.type = "text/javascript";
 
-  const config = {
-    name: "John Doe",
-    apiKey: "<API KEY>", // generated in step 1
-    meetingId: "milkyway", // enter your meeting id
+  script.addEventListener("load", function (event) {
+    const meeting = new VideoSDKMeeting();
 
-    containerId: null,
-    redirectOnLeave: "https://www.videosdk.live/",
+    const config = {
+      name: "John Doe",
+      apiKey: "<API KEY>", // generated in step 1
+      meetingId: "milkyway", // enter your meeting id
 
-    micEnabled: true,
-    webcamEnabled: true,
-    participantCanToggleSelfWebcam: true,
-    participantCanToggleSelfMic: true,
+      containerId: null,
+      redirectOnLeave: "https://www.videosdk.live/",
 
-    chatEnabled: true,
-    screenShareEnabled: true,
-    pollEnabled: true,
-    whiteBoardEnabled: true,
-    raiseHandEnabled: true,
+      micEnabled: true,
+      webcamEnabled: true,
+      participantCanToggleSelfWebcam: true,
+      participantCanToggleSelfMic: true,
 
-    recordingEnabled: true,
-    recordingWebhookUrl: "https://www.videosdk.live/callback",
-    participantCanToggleRecording: true,
+      chatEnabled: true,
+      screenShareEnabled: true,
+      pollEnabled: true,
+      whiteBoardEnabled: true,
+      raiseHandEnabled: true,
 
-    brandingEnabled: true,
-    brandLogoURL: "https://picsum.photos/200",
-    brandName: "Awesome startup",
-    poweredBy: true,
+      recordingEnabled: true,
+      recordingWebhookUrl: "https://www.videosdk.live/callback",
+      participantCanToggleRecording: true,
 
-    participantCanLeave: true, // if false, leave button won't be visible
+      brandingEnabled: true,
+      brandLogoURL: "https://picsum.photos/200",
+      brandName: "Awesome startup",
+      poweredBy: true,
 
-    // Live stream meeting to youtube
-    livestream: {
-      autoStart: true,
-      outputs: [
-        // {
-        //   url: "rtmp://x.rtmp.youtube.com/live2",
-        //   streamKey: "<STREAM KEY FROM YOUTUBE>",
-        // },
-      ],
-    },
+      participantCanLeave: true, // if false, leave button won't be visible
 
-    permissions: {
-      askToJoin: false, // Ask joined participants for entry in meeting
-      toggleParticipantMic: true, // Can toggle other participant's mic
-      toggleParticipantWebcam: true, // Can toggle other participant's webcam
-    },
+      // Live stream meeting to youtube
+      livestream: {
+        autoStart: true,
+        outputs: [
+          // {
+          //   url: "rtmp://x.rtmp.youtube.com/live2",
+          //   streamKey: "<STREAM KEY FROM YOUTUBE>",
+          // },
+        ],
+      },
 
-    joinScreen: {
-      visible: true, // Show the join screen ?
-      title: "Daily scrum", // Meeting title
-      meetingUrl: window.location.href, // Meeting joining url
-    },
-  };
+      permissions: {
+        askToJoin: false, // Ask joined participants for entry in meeting
+        toggleParticipantMic: true, // Can toggle other participant's mic
+        toggleParticipantWebcam: true, // Can toggle other participant's webcam
+      },
 
-  meeting.init(config);
+      joinScreen: {
+        visible: true, // Show the join screen ?
+        title: "Daily scrum", // Meeting title
+        meetingUrl: window.location.href, // Meeting joining url
+      },
+    };
+
+    meeting.init(config);
+  });
+
+  script.src =
+    "https://sdk.videosdk.live/rtc-js-prebuilt/0.1.5/rtc-js-prebuilt.js";
+  document.getElementsByTagName("head")[0].appendChild(script);
 </script>
 ```
 
-## Step 4: Run the application
+## Step 3: Run the application
 
 Install any http server if you don't already have one and run the server to join meeting from browser.
 
