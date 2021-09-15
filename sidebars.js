@@ -183,6 +183,20 @@ module.exports = {
             "realtime-communication/sdk-reference/android-sdk/participant-event-listener-class",
           ],
         },
+        {
+          type: "category",
+          label: "IOS SDK",
+          collapsed: true,
+          items: [
+            "realtime-communication/sdk-reference/ios-sdk/setup",
+            "realtime-communication/sdk-reference/ios-sdk/video-sdk-class",
+            "realtime-communication/sdk-reference/ios-sdk/meeting-class",
+            "realtime-communication/sdk-reference/ios-sdk/participant-class",
+            "realtime-communication/sdk-reference/ios-sdk/stream-class",
+            "realtime-communication/sdk-reference/ios-sdk/meeting-event-listener-class",
+            "realtime-communication/sdk-reference/ios-sdk/participant-event-listener-class",
+          ],
+        },
       ],
     },
     {
@@ -343,7 +357,7 @@ module.exports = {
       items: [
         {
           type: "category",
-          label: "REAL TIME COMMUNICATION",
+          label: "RTC PREBUILT SDK",
           items: [
             //"resources/code-samples/real-time-communication/overview",
             "resources/code-samples/real-time-communication/js-prebuilt-sdk",
@@ -351,6 +365,14 @@ module.exports = {
             "resources/code-samples/real-time-communication/react-prebuilt-sdk",
             "resources/code-samples/real-time-communication/vue-prebuilt-sdk",
             "resources/code-samples/real-time-communication/android-prebuilt-sdk",
+          ],
+          collapsed: false,
+        },
+        {
+          type: "category",
+          label: "RTC RAW SDK",
+          items: [
+            //"resources/code-samples/real-time-communication/overview",
             "resources/code-samples/real-time-communication/node-js-auth",
             "resources/code-samples/real-time-communication/react-js-sdk",
             "resources/code-samples/real-time-communication/react-native-sdk",
