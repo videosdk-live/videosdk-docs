@@ -387,7 +387,12 @@ article header {
 
 .navbar__logo {
   height: auto;
-  max-width: 196px;
+  max-width: 250px;
+}
+
+a[class^="sidebarLogo_"] img {
+  height: auto;
+  max-width: 250px;
 }
 
 @media (max-width: 750px) {
@@ -645,6 +650,7 @@ div[class^="sidebar_"] {
   font-size: 0.85rem;
 }
 div[class^="sidebar_"] .menu {
+  overflow: hidden;
   background: var(--ifm-sidebar-background);
   margin-right: calc(var(--ifm-spacing-horizontal) * -1);
   padding-bottom: var(--ifm-spacing-vertical);

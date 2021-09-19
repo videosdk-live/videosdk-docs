@@ -19,30 +19,54 @@ module.exports = {
     {
       type: "category",
       label: "GET STARTED",
-      items: ["overview/introduction"],
-      collapsed: false,
-    },
-    {
-      type: "category",
-      label: "DASHBOARD",
-      items: ["overview/dashboard/introduction", "overview/dashboard/features"],
-      collapsed: false,
-    },
-    {
-      type: "category",
-      label: "REAL TIME COMMUNICATION",
       items: [
-        "overview/real-time-communication/introduction",
-        "overview/real-time-communication/features",
+        "overview/introduction",
+        {
+          type: "category",
+          label: "Architecture",
+          items: [
+            "overview/architecture/terminology",
+            // "overview/architecture/authentication",
+            "overview/architecture/video-and-audio-call",
+            "overview/architecture/live-streaming",
+            "overview/architecture/video-on-demand",
+          ],
+          collapsed: false,
+        },
       ],
       collapsed: false,
     },
     {
       type: "category",
+      label: "DASHBOARD",
+      items: [
+        "overview/dashboard/getting-started",
+        //"overview/dashboard/features"
+      ],
+      collapsed: false,
+    },
+    {
+      type: "category",
+      label: "AUDIO AND VIDEO CALLING",
+      items: ["overview/audio-and-video-calling/getting-started"],
+      collapsed: false,
+    },
+    // {
+    //   type: "category",
+    //   label: "REAL TIME COMMUNICATION",
+    //   items: [
+    //     "overview/real-time-communication/introduction",
+    //     // "overview/real-time-communication/features",
+    //   ],
+    //   collapsed: false,
+    // },
+    {
+      type: "category",
       label: "LIVE STREAMING",
       items: [
-        "overview/live-streaming/introduction",
-        "overview/live-streaming/features",
+        //"overview/live-streaming/introduction",
+        // "overview/live-streaming/features",
+        "overview/live-streaming/getting-started",
       ],
       collapsed: false,
     },
@@ -51,7 +75,7 @@ module.exports = {
       label: "VIDEO ON DEMAND",
       items: [
         "overview/video-on-demand/introduction",
-        "overview/video-on-demand/features",
+        // "overview/video-on-demand/features",
       ],
       collapsed: false,
     },

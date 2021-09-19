@@ -1,7 +1,7 @@
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 
 module.exports = {
-  title: "video sdk Documentation",
+  title: "Video SDK",
   tagline: "Interactive Video API Experiences For Developers",
   url: "https://docs.videosdk.live",
   baseUrl: "/",
@@ -35,10 +35,13 @@ module.exports = {
 
     navbar: {
       title: "",
+      hideOnScroll: true,
       logo: {
         alt: "VideosdK live logo",
         src: "img/videosdk_docs_blacklogo.png",
         srcDark: "img/videosdk_docs_whitelogo.png",
+        href: "https://videosdk.live/",
+        target: "_self",
       },
       items: [
         {

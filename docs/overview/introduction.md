@@ -1,38 +1,105 @@
 ---
-title: Intoduction to videosdk.live
+title: Intoduction
 hide_title: false
-hide_table_of_contents: false
+hide_table_of_contents: true
 description: videosdk.live is a video API for real-time communication, live streaming and video-on-demand services. We provide SDK support in all the platforms.
-sidebar_label: Intoduction to videosdk.live
-pagination_label: Intoduction to videosdk.live
+sidebar_label: Intoduction
+pagination_label: Intoduction
 keywords:
-  - video api
+  - video calling
+  - interactive live streaming
+  - standard live streaming
   - video on demand
-  - live streaming
-  - video conferencing api
 image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
 slug: introduction
 ---
 
-# Intoduction to videosdk.live
+# Intoduction
 
-videosdk.live is video api for developers. Our API lets developers integrate real-time audio, video and data streaming, live streaming and video on demand into their applications.
+Video SDK provides all the services to build interactive video product. It includes realtime communication, standard live streaming, interactive live streaming and video on demand.
 
-With just couple of lines of code, you can build audio conferencing, video conferencing, live streaming and video streaming in your app, which works across all platforms and browsers.
+import Card from '@theme/Card';
 
-You can also build custom UI/UX experience with our libraries and APIs.
+<div class="container">
+  <div class="row ">
+    <div class="col col--4">
+      <Card heading="Dashboard" link="/docs/overview/dashboard/introduction" description="Manage manual operation, logs and history." />
+    </div>
+    <div class="col col--4">
+      <Card heading="Video & Audio Calling" description="Low latency video,audio and data communication." />
+    </div>
+    <div class="col col--4">
+      <Card heading="Interactive Live Streaming" description="Low latency video,audio and data broadcasting." />
+    </div>
+  </div>
+  <div class="row ">
+    <div class="col col--6">
+      <Card heading="Standard Live Streaming" description="Standard RTMP Live Streaming with encoding and playback." />
+    </div>
+    <div class="col col--6">
+      <Card heading="Video On Demand" description="Low latency video,audio and data communication" />
+    </div>
+  </div>
+</div>
 
-We will look after scalablity and user experience of all the services so you can focus on important things.
+## Getting Started
 
-Also, we will happy to help you with any point of time to resolve technical issues as well as improve the quality of services.
+To use all the services, visit [app.videosdk.live](https://app.videosdk.live/). VideoSDK is compatible with major programming languages.
 
-![Embeded SDK Example to add video call widget in your web application](/img/videosdklive-thumbnail.jpg)
+<div class="container">
+  <div class="row ">
+    <div class="col col--3">
+      <Card heading="React" icon="/img/icons/libraries/react-icon.svg" />
+    </div>
+    <div class="col col--3">
+      <Card heading="Angular" icon="/img/icons/libraries/angular-icon.svg" />
+    </div>
+    <div class="col col--3">
+      <Card heading="Vue" icon="/img/icons/libraries/vuejs-icon.svg"  />
+    </div>
+    <div class="col col--3">
+      <Card heading="NextJS" icon="/img/icons/libraries/nextjs-icon.svg"  />
+    </div>
+  </div>
+  <div class="row ">
+    <div class="col col--3">
+      <Card heading="Android" icon="/img/icons/libraries/kotlin-icon.svg"  />
+    </div>
+    <div class="col col--3">
+      <Card heading="IOS" icon="/img/icons/libraries/swift-icon.svg"  />
+    </div>
+    <div class="col col--3">
+      <Card heading="Flutter" icon="/img/icons/libraries/dart-icon.svg" />
+    </div>
+    <div class="col col--3">
+      <Card heading="Unity3D" icon="/img/icons/libraries/c-sharp-icon.svg" />
+    </div>
+  </div>
+</div>
 
-What we offer?
+## How to use documentation.
 
-1. Real time communication SDK/API
-2. Live video streaming APIs
-3. Video on demand APIs
+This documentation is divided into 5 section.
 
-You can directly go to our [reference documentation](/docs/realtime-communication/intro) or contact us using [support](https://videosdk.live/support)
+<div class="container">
+  <div class="row ">
+    <div class="col col--4">
+      <Card heading="Overview" link="/docs/overview/introduction" description="An overview of all the services to get started." />
+    </div>
+    <div class="col col--4">
+      <Card heading="Guide" description="In depth guide of each product and SDK." />
+    </div>
+    <div class="col col--4">
+      <Card heading="API Reference" description="Technical reference of our API and SDK in detail." />
+    </div>
+  </div>
+  <div class="row ">
+    <div class="col col--6">
+      <Card heading="Tutorials" description="Tailormade tutorials to develpe custom apps using the SDK." />
+    </div>
+    <div class="col col--6">
+      <Card heading="Code Samples" description="List of official code samples" />
+    </div>
+  </div>
+</div>
