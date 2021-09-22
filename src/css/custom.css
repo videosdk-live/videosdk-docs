@@ -2109,3 +2109,11 @@ html[data-theme="dark"] .rds-demos .terminal .terminal-body .links a {
 .token.known-class-name.class-name {
   color: #5edfff !important;
 }
+
+/* admonition */
+.admonition-heading h5 {
+  color: #000;
+}
+.dark .admonition-heading h5 {
+  color: #000;
+}

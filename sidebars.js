@@ -74,8 +74,9 @@ module.exports = {
       type: "category",
       label: "VIDEO ON DEMAND",
       items: [
-        "overview/video-on-demand/introduction",
+        // "overview/video-on-demand/introduction",
         // "overview/video-on-demand/features",
+        "overview/video-on-demand/getting-started",
       ],
       collapsed: false,
     },
