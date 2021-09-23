@@ -51,6 +51,37 @@ module.exports = {
         },
         {
           position: "left",
+          label: "Guide",
+          items: [
+            {
+            label: "Dashboard",
+            to: "docs/guide/dashboard/getting-started",
+            activeBaseRegex: "docs/guide/dashboard/*",
+            },
+            {
+              label: "Prebuilt Video Calling SDK",
+              to: "docs/guide/prebuilt-video-calling/getting-started",
+              activeBaseRegex: "docs/guide/prebuilt-video-calling/*",
+            },
+            {
+              label: "Audio & Video Calling SDK",
+              to: "docs/guide/audio-and-video-calling/getting-started",
+              activeBaseRegex: "docs/guide/audio-and-video-calling/*",
+            },
+            {
+              label: "Standard Live Streaming API",
+              to: "docs/guide/standard-live-streaming/getting-started",
+              activeBaseRegex: "docs/guide/standard-live-streaming/*",
+            },
+            {
+              label: "Video On Demand API",
+              to: "docs/guide/video-on-demand/getting-started",
+              activeBaseRegex: "docs/guide/video-on-demand/*",
+            },
+          ],
+        },
+        {
+          position: "left",
           label: "API Reference",
           items: [
             {
@@ -83,11 +114,6 @@ module.exports = {
         {
           label: "Start Project",
           href: "https://app.videosdk.live/login",
-          position: "right",
-        },
-        {
-          label: "Back to Video SDK",
-          href: "https://videosdk.live",
           position: "right",
         },
         {

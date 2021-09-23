@@ -1,15 +1,15 @@
 ---
-title: Getting Started with Audio and Video Calling
+title: Getting Started with Interactive Live Streaming
 hide_title: false
 hide_table_of_contents: false
-description: Audio and video calling sdk will help you to integrate video and audio calling in your application.
+description: Interactive Live Streaming sdk will help you to integrate interactive live streaming in your application.
 sidebar_label: Getting Started
-pagination_label: Getting Started Audio and Video Calling
+pagination_label: Getting Started Interactive Live Streaming
 keywords:
-  - audio calling
-  - video calling
-  - real-time communication
-  - collabration
+  - live streaming
+  - interactive live streaming
+  - low latency broadcasting
+  - one-to-many live streaming
 image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
 slug: getting-started
@@ -17,13 +17,13 @@ slug: getting-started
 
 import Mermaid from '@theme/Mermaid';
 
-# Explore audio and video calling
+# Explore interactive live streaming
 
-This guide will get you running with the VideoSDK audio and video calling in minutes.
+This guide will get you running with the VideoSDK interactive live streaming in minutes.
 
 ## Overview
 
-At it's core, VideoSDK RTC is a distributed SFU. It eanbles highly scalable audio and video meetings unlike vanilla webRTC.
+At it's core, VideoSDK RTC is a distributed SFU. It eanbles highly scalable interactive live streaming unlike vanilla webRTC.
 
 VideoSDK uses access tokens for authentication. Using our dashboard ([app.videosdk.live](https://app.videosdk.live/)), anyone can generate access tokens tokens with an API key and secret pair.
 
@@ -180,13 +180,6 @@ $token = JWT::encode($payload, $secret_key, 'HS256');
 
 </TabItem>
 </Tabs>
-
-Available permissions are:
-
-- **allow_join**: The participant will be permitted entry without request.
-- **ask_join**: The participant will not be permitted entry without request.
-- **allow_mod**: Allow participant to enable/disable other participant's mic/webcam.
-
 
 ## Connecting to your meeting
 

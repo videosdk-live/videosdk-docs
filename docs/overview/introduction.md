@@ -24,21 +24,21 @@ import Card from '@theme/Card';
 <div class="container">
   <div class="row ">
     <div class="col col--4">
-      <Card heading="Dashboard" link="/docs/overview/dashboard/introduction" description="Manage manual operation, logs and history." />
+      <Card heading="Dashboard" link="/docs/overview/dashboard/getting-started" description="Manage manual operation, logs and history." />
     </div>
     <div class="col col--4">
-      <Card heading="Video & Audio Calling" description="Low latency video,audio and data communication." />
+      <Card heading="Video & Audio Calling" link="/docs/overview/audio-and-video-calling/getting-started" description="Low latency video,audio and data communication." />
     </div>
     <div class="col col--4">
-      <Card heading="Interactive Live Streaming" description="Low latency video,audio and data broadcasting." />
+      <Card heading="Interactive Live Streaming" link="/docs/overview/interactive-live-streaming/getting-started" description="Low latency video,audio and data broadcasting." />
     </div>
   </div>
   <div class="row ">
     <div class="col col--6">
-      <Card heading="Standard Live Streaming" description="Standard RTMP Live Streaming with encoding and playback." />
+      <Card heading="Standard Live Streaming" link="/docs/overview/live-streaming/getting-started" description="Standard RTMP Live Streaming with encoding and playback." />
     </div>
     <div class="col col--6">
-      <Card heading="Video On Demand" description="Low latency video,audio and data communication" />
+      <Card heading="Video On Demand" link="/docs/overview/video-on-demand/getting-started" description="Low latency video,audio and data communication" />
     </div>
   </div>
 </div>

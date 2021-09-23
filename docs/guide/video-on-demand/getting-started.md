@@ -1,15 +1,15 @@
 ---
-title: Getting Started with Live Streaming
+title: Getting Started with Video On Demand
 hide_title: false
 hide_table_of_contents: false
-description: Live streaming sdk will help you to integrate live streaming in your application.
+description: Video On demand sdk will help you to integrate video streaming in your application.
 sidebar_label: Getting Started
 pagination_label: Getting Started Live Streaming
 keywords:
-  - live streaming
-  - interactive live streaming
-  - live broadcasting
-  - hls streaming
+  - video on demand
+  - video streaming
+  - video encoding
+  - video hosting
 image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
 slug: getting-started
@@ -17,13 +17,13 @@ slug: getting-started
 
 import Mermaid from '@theme/Mermaid';
 
-# Explore live streaming
+# Explore video on demand
 
-This guide will get you running with the VideoSDK Live Streaming in minutes.
+This guide will get you running with the VideoSDK Video On Demand in minutes.
 
 ## Overview
 
-At it's core, VideoSDK Live Streaming is a media server. It eanbles high quality live streaming experience.
+At it's core, VideoSDK Video On Demand is a sclable API for video encoding and streaming. It eanbles high quality video streaming experience.
 
 VideoSDK uses access tokens for authentication. Using our dashboard ([app.videosdk.live](https://app.videosdk.live/)), anyone can generate access tokens tokens with an API key and secret pair.
 
@@ -176,173 +176,134 @@ $token = JWT::encode($payload, $secret_key, 'HS256');
 </TabItem>
 </Tabs>
 
-## Create unique live stream
+## Create a signed URL to upload video file
+Before starting uploading video, you have generate a signed upload URL using CREATE UPLOAD URL API. 
 
+```js title="Create a signed URL"
+curl --L --X POST 'https://api.zujonow.com/v1/files' \
+--header 'Authorization: `${VIDEOSDK_API_TOKEN}`'
+```
 
-You can replace `${VIDEOSDK_TOKEN_ID}` with your own access token details or make sure to export those environment variables with the correct values first.
+The response will include URL 
+- **URL**: You can upload video on this URL using POST a video API
 
-[Detailed API Reference](/docs/live-streaming/api-reference/create-live-stream)
+```js title="Response"
+{
+  "url": "https://storage-api.zujonow.com/v1/files"
+}
+```
 
-<Tabs
-defaultValue="curl"
-values={[
-{label: 'cURL', value: 'curl'},
-{label: 'NodeJS/JS', value: 'node'},
-{label: 'Python', value: 'python'},
-{label: 'Ruby', value: 'ruby'},
-]}>
-<TabItem value="curl">
+## Post a video via signed URL
+To start uploading video, you have to parse video file in formdata. 
 
-```js
-curl -L -X POST 'https://api.zujonow.com/v1/livestreams' \
---header 'Authorization: `${VIDEOSDK_TOKEN_ID}`' \
+```js title="Upload via signed URL"
+curl --L --X POST 'https://storage-api.zujonow.com/v1/files' \
+--header 'Authorization: `jwt token goes here`' \
+--header 'Content-Type: multipart/form-data'
+--form 'file=mock-video.mp4"'
+```
+
+The reponse will include `meta` and `fileURL`:
+- **meta**: Meta data will include technical information about Video. 
+- **fileUrl**: URL of file uploaded on our cloud from where you can play video.
+
+```json title="Response"
+{
+  "meta": {
+    "resolution": {
+      "width": 720,
+      "height": 1280
+    },
+    "format": "mov,mp4,m4a,3gp,3g2,mj2",
+    "duration": 20.032
+  },
+  "jobId": null,
+  "filePath": "files/videos/6052e0064b442a2f16018373.mp4",
+  "size": 3965342,
+  "type": "video",
+  "createdAt": "2021-03-18T05:07:18.771Z",
+  "updatedAt": "2021-03-18T05:07:18.771Z",
+  "fileUrl": "https://cdn.zujonow.com/files/videos/{FILE_ID}.mp4",
+  "id": "6052e0064b442a2f16018374"
+}
+```
+
+## Encode a video
+This API helps you to customise all the encoding needs. It will reflect as per parameters you provide such as `presets` and `thumbnails`.
+
+The request parameters will be:
+- **videoId**: Id of video uploaded using Post a video API.
+- **presets**: Type of videos you want to convert in such as mp4, hls etc. with resolution specified. 
+- **thumbnails**: Configuration to generate thumbnails of video
+- **webhookUrl**: Get notified on this URL when encoding job completes. 
+
+```js title="Encode a video request"
+curl --L --X POST 'https://api.zujonow.com/v1/encoder/jobs' \
+--header 'Authorization: `your token goes here`' \
 --header 'Content-Type: application/json' \
---data-raw '{
-    "name": "Nickname for livestream",
-    "record": true,
-    "restream": [
-      {
-          "url": "rtmp://x.rtmp.youtube.com/live2",
-          "streamKey": "0tjp-h6a2-8c9d-vusv-01uu"
-      }
-    ]
+--data-raw '
+{
+    "videoId": "6053115ebba24b4d700c8c49",
+    "presets": [
+        {
+            "resolutions": ["240", "360", "480"],
+            "format": "hls"
+        }, {
+            "resolutions": ["360"],
+            "format": "mp4"
+        }
+    ],
+    "thumbnails": [
+        {
+            "timestamp": "00:00:03",
+            "resolutions": ["360"],
+            "formats": ["jpg", "webp"],
+            "filters": ["none", "blur"]
+        }
+    ],
+    "webhookUrl":"https://<your-website-address>/<path>"
 }'
 ```
 
-</TabItem>
-<TabItem value="node">
+The response will include `status` and `videoId` of job. 
+- **status**: It represents processing status of the video
+- **videoId**: Id of the video processing. 
 
-```js
-var fetch = require("node-fetch");
+## Wait for "ready"
+As soon as you POST a video, VideoSDK begins downloading and processing the video. 
 
-const url = "https://api.zujonow.com/v1/livestreams";
-var options = {
-  method: "POST",
-  headers: {
-    Authorization: `${YOUR_JWT_TOKEN}`,
-    Accept: "application/json",
-    "Content-Type": "application/json",
-  },
-  body: JSON.stringify({
-    name: "Nickname for livestream", record: true
-    restream: [
-      {
-          "url": "rtmp://x.rtmp.youtube.com/live2",
-          "streamKey": "0tjp-h6a2-8c9d-vusv-01uu"
-      }
-    ]
-    }),
-};
+When the video is ready for playback, the asset "status" changes to "completed".
 
-fetch(url, options)
-  .then((res) => res.json())
-  .then((json) => console.log(json))
-  .catch((err) => console.error("error:" + err));
+The best way to get notified is to use webhooks. We will send you notification as soon as video will be ready to play. Once video is processed it will includes array of `files` which could be fetched via API.
+
+```js title="Request for job details"
+curl --request GET \
+  --url 'https://api.zujonow.com/v1/encoder/jobs/${id}' \
+  --header 'Authorization: `${VIDEOSDK_JWT_TOKEN}`'
 ```
 
-</TabItem>
-<TabItem value="python">
-
-```js
-import requests
-
-url = "https://api.zujonow.com/v1/livestreams"
-
-payload = {
-  "name": "Nickname for livestream", "record": True,
-  "restream": [
-      {
-          "url": "rtmp://x.rtmp.youtube.com/live2",
-          "streamKey": "0tjp-h6a2-8c9d-vusv-01uu"
-      }
-    ]
-}
-headers = {
-    "Authorization": `${YOUR_JWT_TOKEN}`,
-    "Accept": "application/json",
-    "Content-Type": "application/json"
-}
-
-response = requests.request("POST", url, json=payload, headers=headers)
-
-print(response.text)
-```
-
-</TabItem>
-<TabItem value="ruby">
-
-```js
-require 'uri'
-require 'net/http'
-require 'openssl'
-
-url = URI("https://api.zujonow.com/v1/livestreams")
-
-http = Net::HTTP.new(url.host, url.port)
-http.use_ssl = true
-
-request = Net::HTTP::Post.new(url)
-request["Accept"] = 'application/json'
-request["Content-Type"] = 'application/json'
-request["Authorization"] = `${YOUR_JWT_TOKEN}`
-request.body = "{\"record\":false,\"name\":\"Nickname for livestream\",\"restream\": [ { \"url\": \"rtmp://x.rtmp.youtube.com/live2\", \"streamKey\": \"0tjp-h6a2-8c9d-vusv-01uu\" } ]}"
-
-response = http.request(request)
-puts response.read_body
-```
-
-</TabItem>
-
-</Tabs>
-
-The response will include a `Upstream URL` and a `Stream Key`.
-
-- **Upstream URL**: It will be used to push RTMP stream from your client to our server. 
-- **Stream Key**: It is a secret that can be used along with VideoSDK's RTMP Server URL to configure RTMP streaming software.
-
-:::caution
-
-The Stream Key should be treated as a private key for live streaming. Anyone with the key can use it to stream video to the Live Stream it belongs to, so make sure your users know to keep it safe. 
-
-:::
-
-```json 
+```js title="Get job details in Response"
 {
-  "record": false,
-  "name": "zujo",
-  "streamKey": "e83fb175-5606-4ee5-b960-aacfce300ba6",
-  "upstreamUrl": "rtmp://dev-live.zujonow.com/live/.......",
-  "downstreamUrl": "https://live.zujonow.com/live/.......",
-  "recordingUrl": "https://live.zujonow.com/live/......",
-  "restream": [
+  "status": "completed",
+  "videoId": "6053115ebba24b4d700c8c49",
+  "files": [
     {
-      "url": "rtmp://x.rtmp.youtube.com/live2",
-      "streamKey": "0tjp-h6a2-8c9d-vusv-01uu"
-    }
-  ],
-  "createdAt": "2021-07-05T12:43:52.921Z",
-  "updatedAt": "2021-07-05T12:45:04.379Z"
+      "meta": {
+        ...
+      },
+      "jobId": "605311c86efd284e474c5c76",
+      "filePath": "files/videos/605311d9bba24b4d700c8c4d",
+      "fileUrl": "https://cdn.zujonow.com/files/videos/605311d9bba24b4d700c8c4d/index.m3u8",
+      "size": 1572953,
+      "type": "video",
+      .....
+    },
+  ]
 }
 ```
 
-You can find more details about the options on the [Create Live Stream](/docs/live-streaming/api-reference/create-live-stream/)
-
-## Start Broadcasting
-VideoSDK supports live streaming using the RTMP protocol, which is supported by most broadcast software/hardware as well as open source software for mobile applications.
-
-Your users or your client app will need software that can push an RTMP stream. That software will be configured using the Stream Key from the prior step along with VideoSDK's RTMP Server URL
-
-| RTMP Server URL      | Description | Common Applications
-| ----------- | ----------- | ----------- |
-| rtmp://live.zujonow.com/live      | Mux's standard RTMP entry point. Compatible with the majority of streaming applications and services.       | OBS, Wirecast, Streamaxia RTMP SDKs
-
-If you want to live stream with a protocol other than RTMP, let us know!
-
-![Go live with VideoSDK](/img/tutorial/go-live-with-rtmp.jpeg)
-
-## Play live stream
-
-To play back a live stream, use the `downstreamUrl` that was returned when you created the Live Stream.
+## Watch your Video
+To play back a video, use `fileUrl` from the response of video. 
 
 
 <Tabs
@@ -368,7 +329,7 @@ values={[
   data-setup="{}"
 >
   <source
-    src="https://live.zujonow.com/live/cae23d5b-0c34-4429-a70b-0d597e5e0e96/index.m3u8"
+    src="https://cdn.zujonow.com/files/videos/605311d9bba24b4d700c8c4d/index.m3u8"
     type="application/x-mpegURL"
   />
   <p class="vjs-no-js">
@@ -400,7 +361,7 @@ import Hls from 'hls.js';
 
 export default function VideoPlayer() {
   const videoRef = useRef(null);
-  const src = "https://live.zujonow.com/live/cae23d5b-0c34-4429-a70b-0d597e5e0e96/index.m3u8";
+  const src = "https://cdn.zujonow.com/files/videos/605311d9bba24b4d700c8c4d/index.m3u8";
 
   useEffect(() => {
     let hls;
@@ -446,7 +407,7 @@ implementation 'com.google.android.exoplayer:exoplayer-hls:2.X.X'
 // Create a player instance.
 SimpleExoPlayer player = new SimpleExoPlayer.Builder(context).build();
 // Set the media item to be played.
-player.setMediaItem(MediaItem.fromUri("https://live.zujonow.com/live/cae23d5b-0c34-4429-a70b-0d597e5e0e96/index.m3u8"));
+player.setMediaItem(MediaItem.fromUri("https://cdn.zujonow.com/files/videos/605311d9bba24b4d700c8c4d/index.m3u8"));
 // Prepare the player.
 player.prepare(); 
 ```
@@ -459,7 +420,7 @@ import SwiftUI
 import AVKit
 
 struct ContentView: View {
-    private let player = AVPlayer(url: URL(string: "https://live.zujonow.com/live/cae23d5b-0c34-4429-a70b-0d597e5e0e96/index.m3u8")!)
+    private let player = AVPlayer(url: URL(string: "https://cdn.zujonow.com/files/videos/605311d9bba24b4d700c8c4d/index.m3u8")!)
 
     var body: some View {
         //  VideoPlayer comes from SwiftUI
@@ -482,8 +443,6 @@ struct ContentView_Previews: PreviewProvider {
 
 </Tabs>
 
-## Stop broadcast
-When the Streamer is finished they will stop the broadcast software/hardware, which will disconnect from the VideoSDK servers.
 
-## What Next
-Explore guide, tutorials and code samples to implement custom features using Live Streaming SDK.
+
+

@@ -21,18 +21,18 @@ module.exports = {
       label: "GET STARTED",
       items: [
         "overview/introduction",
-        {
-          type: "category",
-          label: "Architecture",
-          items: [
-            "overview/architecture/terminology",
-            // "overview/architecture/authentication",
-            "overview/architecture/video-and-audio-call",
-            "overview/architecture/live-streaming",
-            "overview/architecture/video-on-demand",
-          ],
-          collapsed: false,
-        },
+        // {
+        //   type: "category",
+        //   label: "Architecture",
+        //   items: [
+        //     "overview/architecture/terminology",
+        //     // "overview/architecture/authentication",
+        //     "overview/architecture/video-and-audio-call",
+        //     "overview/architecture/live-streaming",
+        //     "overview/architecture/video-on-demand",
+        //   ],
+        //   collapsed: false,
+        // },
       ],
       collapsed: false,
     },
@@ -48,7 +48,13 @@ module.exports = {
     {
       type: "category",
       label: "AUDIO AND VIDEO CALLING",
-      items: ["overview/audio-and-video-calling/getting-started"],
+      items: ["overview/audio-and-video-calling/getting-started", "overview/audio-and-video-calling/architecture"],
+      collapsed: false,
+    },
+    {
+      type: "category",
+      label: "INTERACTIVE LIVE STREAMING",
+      items: ["overview/interactive-live-streaming/getting-started", "overview/interactive-live-streaming/architecture"],
       collapsed: false,
     },
     // {
@@ -62,11 +68,11 @@ module.exports = {
     // },
     {
       type: "category",
-      label: "LIVE STREAMING",
+      label: "STANDARD LIVE STREAMING",
       items: [
         //"overview/live-streaming/introduction",
         // "overview/live-streaming/features",
-        "overview/live-streaming/getting-started",
+        "overview/live-streaming/getting-started", "overview/live-streaming/architecture",
       ],
       collapsed: false,
     },
@@ -74,8 +80,70 @@ module.exports = {
       type: "category",
       label: "VIDEO ON DEMAND",
       items: [
-        "overview/video-on-demand/introduction",
+        // "overview/video-on-demand/introduction",
         // "overview/video-on-demand/features",
+        "overview/video-on-demand/getting-started",
+        "overview/video-on-demand/architecture",
+        
+      ],
+      collapsed: false,
+    },
+  ],
+
+  // Guide to learn about each SDK
+  guideDashboard: [
+    {
+      type: "category",
+      label: "GUIDE",
+      items: [
+        "guide/dashboard/getting-started",
+      ],
+      collapsed: false,
+    },
+  ],
+
+  guidePrebuiltVideoCalling:[
+    {
+      type: "category",
+      label: "GUIDE",
+      items: [
+        "guide/prebuilt-video-calling/getting-started",
+      ],
+      collapsed: false,
+    },
+  ],
+
+  guideAudioAndVideoCalling:[
+    {
+      type: "category",
+      label: "GUIDE",
+      items: [
+        "guide/audio-and-video-calling/getting-started",
+        "guide/audio-and-video-calling/architecture",
+      ],
+      collapsed: false,
+    },
+  ],
+
+  guideStandardLiveStreaming:[
+    {
+      type: "category",
+      label: "GUIDE",
+      items: [
+        "guide/standard-live-streaming/getting-started",
+        "guide/standard-live-streaming/architecture",
+      ],
+      collapsed: false,
+    },
+  ],
+
+  guideVideoOnDemand:[
+    {
+      type: "category",
+      label: "GUIDE",
+      items: [
+        "guide/video-on-demand/getting-started",
+        "guide/video-on-demand/architecture",
       ],
       collapsed: false,
     },
@@ -247,6 +315,7 @@ module.exports = {
       collapsed: false,
     },
   ],
+
   livestreamingSidebar: [
     {
       type: "category",
@@ -290,6 +359,7 @@ module.exports = {
       ],
     },
   ],
+
   videoondemandSidebar: [
     {
       type: "category",
@@ -330,6 +400,7 @@ module.exports = {
       collapsed: false,
     },
   ],
+
   tutorials: [
     {
       type: "category",
@@ -380,6 +451,7 @@ module.exports = {
       collapsed: false,
     },
   ],
+
   resources: [
     {
       type: "category",
