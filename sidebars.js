@@ -221,6 +221,18 @@ module.exports = {
             "realtime-communication/sdk-reference/ios-sdk/participant-event-listener-class",
           ],
         },
+        {
+          type: "category",
+          label: "FLUTTER SDK",
+          collapsed: true,
+          items: [
+            "realtime-communication/sdk-reference/flutter-sdk/setup",
+            "realtime-communication/sdk-reference/flutter-sdk/meeting-builder-widget",
+            "realtime-communication/sdk-reference/flutter-sdk/meeting-class",
+            "realtime-communication/sdk-reference/flutter-sdk/participant-class",
+            "realtime-communication/sdk-reference/flutter-sdk/stream-class",
+          ],
+        },
       ],
     },
     {
