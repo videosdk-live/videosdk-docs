@@ -59,6 +59,9 @@ Then in your application code:
 
 ```js title="Webpack/node-style require"
 const VideoSDK = require("@videosdk.live/js");
+
+VideoSDK.config("<token>")
+
 VideoSDK.initMeeting({...})
 ```
 
@@ -66,5 +69,8 @@ Or
 
 ```js title="ES6 import"
 import VideoSDK from "@videosdk.live/js";
+
+VideoSDK.config("<token>")
+
 VideoSDK.initMeeting({...})
 ```

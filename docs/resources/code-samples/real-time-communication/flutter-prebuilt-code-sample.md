@@ -20,7 +20,7 @@ slug: rtc-flutter-prebuilt-code-sample
 ## using [RTC Flutter SDK Code Sample](https://github.com/videosdk-live/videosdk-rtc-flutter-sdk-example)
 
 ```sh
-$ git clone https://github.com/videosdk-live/videosdk-rtc-flutter-sdk-example.git
+git clone https://github.com/videosdk-live/videosdk-rtc-flutter-sdk-example.git
 ```
 
 ## documentation
