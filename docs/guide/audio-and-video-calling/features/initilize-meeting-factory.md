@@ -3,7 +3,7 @@ title: Initialize Video Calling SDK
 hide_title: false
 hide_table_of_contents: false
 description: This guide will explain initilization process of .
-sidebar_label: Initialize Meeting via Factory 
+sidebar_label: Initialize Meeting via Factory
 pagination_label: Initialize Video Calling SDK
 keywords:
   - Initialize audio calling
@@ -224,6 +224,29 @@ class MeetingViewController: UICollectionViewController {
         meeting = nil
     }
 
+}
+```
+
+</TabItem>
+<TabItem value="flutter">
+
+```js
+import 'package:videosdk/rtc.dart';
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MeetingBuilder(
+        meetingId: "<Id-on-meeting>",
+        displayName: "<Name-of-participant>",
+        micEnabled: "<Flag-to-enable-mic>",
+        webcamEnabled: "<Flag-to-enable-webcam>",
+        token: "<Authentication-token>",
+        builder: (Meeting _meeting) {
+            print('builder _meeting => $_meeting');
+        }
+    );
+  }
 }
 ```
 
