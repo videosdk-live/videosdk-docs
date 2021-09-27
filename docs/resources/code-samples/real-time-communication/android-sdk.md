@@ -12,7 +12,7 @@ keywords:
   - java
 image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
-slug: rtc-android-prebuilt-code-sample
+slug: rtc-android-code-sample
 ---
 
 # Android Prebuilt Code Sample

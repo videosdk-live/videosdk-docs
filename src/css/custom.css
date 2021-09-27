@@ -1314,6 +1314,8 @@ code {
   border-bottom-color: var(--ifm-tabs-color-active);
   color: var(--custom-primary);
 }
+
+
 div[role="tabpanel"],
 div[role="tabpanel"] div {
   margin-top: 0 !important;
@@ -1321,6 +1323,8 @@ div[role="tabpanel"] div {
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
 }
+
+
 
 .method-list-group {
   list-style: none;
@@ -2113,8 +2117,5 @@ html[data-theme="dark"] .rds-demos .terminal .terminal-body .links a {
 
 /* admonition */
 .admonition-heading h5 {
-  color: #000;
-}
-.dark .admonition-heading h5 {
-  color: #000;
+  color: var(--ifm-color-gray-900);
 }
