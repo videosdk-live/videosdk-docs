@@ -33,6 +33,7 @@ A collection of resources for you to explore and learn.
 - [React JS Code Sample](/docs/resources/code-samples/real-time-communication/rtc-react-js-sdk-code-sample)
 - [React Native Code Sample](/docs/resources/code-samples/real-time-communication/rtc-react-native-sdk-code-sample)
 - [Android Code Sample](/docs/resources/code-samples/real-time-communication/rtc-android-prebuilt-code-sample)
+- [Flutter Code Sample](/docs/resources/code-samples/real-time-communication/rtc-flutter-prebuilt-code-sample)
 
 ## 3. Live Stream Code Samples
 

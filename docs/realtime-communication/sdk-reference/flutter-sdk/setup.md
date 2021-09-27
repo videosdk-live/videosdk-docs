@@ -28,11 +28,9 @@ Flutter SDK is client for real-time communication for android and ios devices. I
 
 ## Use this package as a library
 
-### Depend on it
+### Step 1: Add this package in your flutter project
 
 #### Run this command:
-
-With Flutter:
 
 ```
 flutter pub add videosdk
@@ -47,7 +45,7 @@ dependencies:
 
 Alternatively, your editor might support or flutter pub get. Check the docs for your editor to learn more.
 
-### Import it
+### Step 2: Import it
 
 Now in your Dart code, you can use:
 
