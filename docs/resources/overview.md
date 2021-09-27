@@ -32,7 +32,7 @@ A collection of resources for you to explore and learn.
 - [Node JS Auth Code Sample](/docs/resources/code-samples/real-time-communication/rtc-node-js-auth-code-sample)
 - [React JS Code Sample](/docs/resources/code-samples/real-time-communication/rtc-react-js-sdk-code-sample)
 - [React Native Code Sample](/docs/resources/code-samples/real-time-communication/rtc-react-native-sdk-code-sample)
-- [Android Code Sample](/docs/resources/code-samples/real-time-communication/rtc-android-prebuilt-code-sample)
+- [Android Code Sample](/docs/resources/code-samples/real-time-communication/rtc-android-code-sample)
 - [Flutter Code Sample](/docs/resources/code-samples/real-time-communication/rtc-flutter-prebuilt-code-sample)
 
 ## 3. Live Stream Code Samples

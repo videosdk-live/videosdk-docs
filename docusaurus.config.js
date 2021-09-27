@@ -88,6 +88,7 @@ module.exports = {
               label: "Realtime communication",
               to: "docs/realtime-communication/intro",
               activeBaseRegex: "docs/realtime-communication/*",
+              
             },
             {
               label: "Live streaming",
@@ -258,6 +259,7 @@ module.exports = {
             plugins: ["line-numbers", "show-language"],
             theme: require("@kiwicopple/prism-react-renderer/themes/vsDark"),
             darkTheme: require("@kiwicopple/prism-react-renderer/themes/vsDark"),
+            additionalLanguages: ['Java']
           },
         },
       },

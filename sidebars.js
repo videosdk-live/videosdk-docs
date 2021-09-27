@@ -119,7 +119,30 @@ module.exports = {
       label: "GUIDE",
       items: [
         "guide/audio-and-video-calling/getting-started",
-        "guide/audio-and-video-calling/architecture",
+        "guide/audio-and-video-calling/authentication-and-tokens",
+      ],
+      collapsed: false,
+    },
+    {
+      type: "category",
+      label: "INSTALLATION",
+      items: [
+        "guide/audio-and-video-calling/installation/get-started",
+        "guide/audio-and-video-calling/installation/installation-js",
+        "guide/audio-and-video-calling/installation/installation-react-js",
+        "guide/audio-and-video-calling/installation/installation-react-native-android",
+        "guide/audio-and-video-calling/installation/installation-react-native-ios",
+        "guide/audio-and-video-calling/installation/installation-android",
+        "guide/audio-and-video-calling/installation/installation-ios",
+        "guide/audio-and-video-calling/installation/installation-flutter",
+      ],
+      collapsed: false,
+    },
+    {
+      type: "category",
+      label: "FEATURES",
+      items: [
+        "guide/audio-and-video-calling/features/initilize-meeting-factory"
       ],
       collapsed: false,
     },
