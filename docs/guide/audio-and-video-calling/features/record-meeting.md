@@ -2,11 +2,12 @@
 title: Record Meeting
 hide_title: false
 hide_table_of_contents: false
-description: This guide will explain toggling webcam in meeting.
+description: This guide will explain start and stop meeting recording.
 sidebar_label: Record Meeting
 pagination_label: Record Meeting
 keywords:
-  - Toggle webcam in meeting
+  - Start Recording meeting
+  - Stop Recording meeting
   - audio calling
   - video calling
   - real-time communication

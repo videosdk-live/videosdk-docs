@@ -2,11 +2,15 @@
 title: Play External Video
 hide_title: false
 hide_table_of_contents: false
-description: This guide will explain toggling webcam in meeting.
+description: This guide will explain play external video link in meeting.
 sidebar_label: Play External Video
 pagination_label: Play External Video
 keywords:
-  - Toggle webcam in meeting
+  - play external video
+  - pause external video
+  - seek external video
+  - resume external video
+  - stop external video
   - audio calling
   - video calling
   - real-time communication
@@ -43,11 +47,23 @@ values={[
 
 ```js
 const onPress = () => {
-  // Start Recording
-  meeting?.startRecording();
+  // Start Video
+  meeting?.startVideo({
+    link:
+      "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+  });
 
-  // Stop Recording
-  meeting?.stopRecording();
+  // Stop Video
+  meeting?.stopVideo();
+
+  // Pause Video
+  meeting?.pauseVideo({ currentTime: 5 });
+
+  // Resume Video
+  meeting?.resumeVideo();
+
+  // Seek Video
+  meeting?.seekVideo({ currentTime: 10 });
 };
 ```
 
@@ -56,11 +72,23 @@ const onPress = () => {
 
 ```js
 const onPress = () => {
-  // Start Recording
-  meeting?.startRecording();
+  // Start Video
+  meeting?.startVideo({
+    link:
+      "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+  });
 
-  // Stop Recording
-  meeting?.stopRecording();
+  // Stop Video
+  meeting?.stopVideo();
+
+  // Pause Video
+  meeting?.pauseVideo({ currentTime: 5 });
+
+  // Resume Video
+  meeting?.resumeVideo();
+
+  // Seek Video
+  meeting?.seekVideo({ currentTime: 10 });
 };
 ```
 
@@ -69,11 +97,23 @@ const onPress = () => {
 
 ```js
 const onPress = () => {
-  // Start Recording
-  meeting?.startRecording();
+  // Start Video
+  meeting?.startVideo({
+    link:
+      "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+  });
 
-  // Stop Recording
-  meeting?.stopRecording();
+  // Stop Video
+  meeting?.stopVideo();
+
+  // Pause Video
+  meeting?.pauseVideo({ currentTime: 5 });
+
+  // Resume Video
+  meeting?.resumeVideo();
+
+  // Seek Video
+  meeting?.seekVideo({ currentTime: 10 });
 };
 ```
 

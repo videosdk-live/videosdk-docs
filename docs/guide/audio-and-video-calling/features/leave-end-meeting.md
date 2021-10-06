@@ -6,9 +6,11 @@ description: This guide will explain ending process of meeting.
 sidebar_label: Leave OR End Meeting
 pagination_label: Leave OR End Meeting
 keywords:
-  - Join audio calling
-  - Join video calling
-  - Join real-time communication
+  - Exit Meeting
+  - Leave Meeting
+  - audio calling
+  - video calling
+  - real-time communication
 image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
 slug: leave-end-meeting

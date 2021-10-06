@@ -2,13 +2,15 @@
 title: Mic Controls
 hide_title: false
 hide_table_of_contents: false
-description: This guide will explain ending process of meeting.
+description: This guide will explain mic controls for meeting.
 sidebar_label: Mic Controls
 pagination_label: Mic Controls
 keywords:
-  - Join audio calling
-  - Join video calling
-  - Join real-time communication
+  - Mic on
+  - Mic off
+  - audio calling
+  - video calling
+  - real-time communication
 image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
 slug: mic-controls

@@ -23,17 +23,18 @@ After the successful installation of videoSDK, the next step is to integrate vid
 
 <p>This guide will provide an overview of how to configure, initialize and join a VideoSDK meeting.</p>
 
-<!-- 1. **Configure** - To configure a meeting, you will need generated token from [Server Setup](/docs/guide/audio-and-video-calling/server-setup).
-
-2. **Initialize** - After configuration, you will have to Initialize meeting by providing name, meetingId, micEnabled, webcamEnabled & maxResolution. For meetingId generation you can follow our guide [Server Setup](/docs/guide/audio-and-video-calling/server-setup).
-
-3. **Join** - After configuration & initialization, the third step is to call `join()`function to join a meeting. -->
 </div>
 <div>
 <img src="/img/New Meeting.gif"/>
 </div>
 
 </div>
+
+1. **Configure** - To configure a meeting, you will need generated token from [Server Setup](/docs/guide/audio-and-video-calling/server-setup).
+
+2. **Initialize** - After configuration, you will have to Initialize meeting by providing name, meetingId, micEnabled, webcamEnabled & maxResolution. For meetingId generation you can follow our guide [Server Setup](/docs/guide/audio-and-video-calling/server-setup).
+
+3. **Join** - After configuration & initialization, the third step is to call `join()`function to join a meeting.
 
 **NOTE** : For React & React native developer, you have to be familiar with hooks concept. You can undesratnd hooks concept on [React Hooks](https://reactjs.org/docs/hooks-intro.html).
 

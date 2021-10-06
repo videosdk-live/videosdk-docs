@@ -2,13 +2,17 @@
 title: Camera Controls
 hide_title: false
 hide_table_of_contents: false
-description: This guide will explain ending process of meeting.
+description: This guide will explain camera controls for meeting.
 sidebar_label: Camera Controls
 pagination_label: Camera Controls
 keywords:
-  - Join audio calling
-  - Join video calling
-  - Join real-time communication
+  - Camera on
+  - Camera off
+  - Webcam on
+  - Webcam off
+  - audio calling
+  - video calling
+  - real-time communication
 image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
 slug: camera-controls

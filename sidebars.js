@@ -159,6 +159,8 @@ module.exports = {
         "guide/audio-and-video-calling/features/screenshare",
         "guide/audio-and-video-calling/features/send-messages",
         "guide/audio-and-video-calling/features/record-meeting",
+        "guide/audio-and-video-calling/features/play-external-video",
+        "guide/audio-and-video-calling/features/go-live-social-media",
       ],
       collapsed: false,
     },

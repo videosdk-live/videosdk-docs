@@ -2,11 +2,12 @@
 title: Share Your Screen
 hide_title: false
 hide_table_of_contents: false
-description: This guide will explain toggling webcam in meeting.
+description: This guide will explain screen share in meeting.
 sidebar_label: Share Your Screen
 pagination_label: Share Your Screen
 keywords:
-  - Toggle webcam in meeting
+  - Start Screen share
+  - Stop Screen share
   - audio calling
   - video calling
   - real-time communication

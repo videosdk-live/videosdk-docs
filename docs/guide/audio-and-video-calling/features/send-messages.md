@@ -2,11 +2,12 @@
 title: Send Messages
 hide_title: false
 hide_table_of_contents: false
-description: This guide will explain toggling webcam in meeting.
+description: This guide will explain send messages in meeting.
 sidebar_label: Send Messages
 pagination_label: Send Messages
 keywords:
-  - Toggle webcam in meeting
+  - Send Message
+  - Raise Hand
   - audio calling
   - video calling
   - real-time communication
