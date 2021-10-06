@@ -30,6 +30,8 @@ This guide will provide an overview of how participant can start, stop, resume a
 4. **Resume** : By using `resumeVideo()` function, a broadcaster can resume external video from last pause video duration.
 5. **Seek** : By using `seekVideo()` function, a broadcaster can seek external video to any given duration by providing `{ currentTime: 5 }` object as an argument.
 
+### Start, Stop, Pause, Resume, and Seek External Video
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 

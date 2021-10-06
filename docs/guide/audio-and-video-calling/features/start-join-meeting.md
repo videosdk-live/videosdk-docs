@@ -30,15 +30,10 @@ After the successful installation of videoSDK, the next step is to integrate vid
 
 </div>
 
-1. **Configure** - To configure a meeting, you will need generated token from [Server Setup](/docs/guide/audio-and-video-calling/server-setup).
+## 1. Configuration
 
-2. **Initialize** - After configuration, you will have to Initialize meeting by providing name, meetingId, micEnabled, webcamEnabled & maxResolution. For meetingId generation you can follow our guide [Server Setup](/docs/guide/audio-and-video-calling/server-setup).
-
-3. **Join** - After configuration & initialization, the third step is to call `join()`function to join a meeting.
-
-**NOTE** : For React & React native developer, you have to be familiar with hooks concept. You can undesratnd hooks concept on [React Hooks](https://reactjs.org/docs/hooks-intro.html).
-
-### Configuration And Initialization
+To configure a meeting, you will need [generated token](/docs/guide/audio-and-video-calling/server-setup#generate-accees-token-and-integrate-other-apis) and [meetingId](/docs/realtime-communication/rest-api-reference/create-join-meeting#create-meeting), we had discussed in [Server Setup](/docs/guide/audio-and-video-calling/server-setup).
+This code snippet calls API from local server
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -56,9 +51,186 @@ values={[
 <TabItem value="js">
 
 ```js
+const getToken = async () => {
+  try {
+    const response = await fetch(`${LOCAL_SERVER_URL}/get-token`, {
+      method: "GET",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+    });
+    const { token } = await response.json();
+    return token;
+  } catch (e) {
+    console.log(e);
+  }
+};
+
+const getMeetingId = async (token) => {
+  try {
+    const VIDEOSDK_API_ENDPOINT = `${LOCAL_SERVER_URL}/create-meeting`;
+    const options = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ token }),
+    };
+    const response = await fetch(VIDEOSDK_API_ENDPOINT, options)
+      .then(async (result) => {
+        const { meetingId } = await result.json();
+        return meetingId;
+      })
+      .catch((error) => console.log("error", error));
+    return response;
+  } catch (e) {
+    console.log(e);
+  }
+};
+
+const access_token = await getToken();
+const meetingId = await getMeetingId(access_token);
+```
+
+</TabItem>
+<TabItem value="react">
+
+```js
+const getToken = async () => {
+  try {
+    const response = await fetch(`${LOCAL_SERVER_URL}/get-token`, {
+      method: "GET",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+    });
+    const { token } = await response.json();
+    return token;
+  } catch (e) {
+    console.log(e);
+  }
+};
+
+const getMeetingId = async (token) => {
+  try {
+    const VIDEOSDK_API_ENDPOINT = `${LOCAL_SERVER_URL}/create-meeting`;
+    const options = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ token }),
+    };
+    const response = await fetch(VIDEOSDK_API_ENDPOINT, options)
+      .then(async (result) => {
+        const { meetingId } = await result.json();
+        return meetingId;
+      })
+      .catch((error) => console.log("error", error));
+    return response;
+  } catch (e) {
+    console.log(e);
+  }
+};
+
+const access_token = await getToken();
+const meetingId = await getMeetingId(access_token);
+```
+
+</TabItem>
+<TabItem value="reactnative">
+
+```js
+const getToken = async () => {
+  try {
+    const response = await fetch(`${LOCAL_SERVER_URL}/get-token`, {
+      method: "GET",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+    });
+    const { token } = await response.json();
+    return token;
+  } catch (e) {
+    console.log(e);
+  }
+};
+
+const getMeetingId = async (token) => {
+  try {
+    const VIDEOSDK_API_ENDPOINT = `${LOCAL_SERVER_URL}/create-meeting`;
+    const options = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ token }),
+    };
+    const response = await fetch(VIDEOSDK_API_ENDPOINT, options)
+      .then(async (result) => {
+        const { meetingId } = await result.json();
+        return meetingId;
+      })
+      .catch((error) => console.log("error", error));
+    return response;
+  } catch (e) {
+    console.log(e);
+  }
+};
+
+const access_token = await getToken();
+const meetingId = await getMeetingId(access_token);
+```
+
+</TabItem>
+<TabItem value="android">
+
+```js
+COMING SOON!
+```
+
+</TabItem>
+<TabItem value="ios">
+
+```js
+COMING SOON!
+```
+
+</TabItem>
+<TabItem value="flutter">
+
+```js
+COMING SOON!
+```
+
+</TabItem>
+</Tabs>
+
+## 2. Initialization
+
+After configuration, you will have to Initialize meeting by providing name, meetingId, micEnabled, webcamEnabled & maxResolution.
+
+**NOTE** : For React & React native developer, you have to be familiar with hooks concept. You can understand hooks concept on [React Hooks](https://reactjs.org/docs/hooks-intro.html).
+
+<Tabs
+defaultValue="js"
+values={[
+{label: 'JavaScript', value: 'js'},
+{label: 'React', value: 'react'},
+{label: 'ReactNative', value: 'reactnative'},
+{label: 'Android', value: 'android'},
+{label: 'iOS', value: 'ios'},
+{label: 'Flutter', value: 'flutter'},
+]}>
+<TabItem value="js">
+
+```js
 import VideoSDK from "@videosdk.live/js";
 
-// Configure authentication token got earlier
+// Configure authentication token
 VideoSDK.config("<Authentication-token>");
 
 // Initilize meeting
@@ -272,7 +444,9 @@ import MethodListHeading from '@theme/MethodListHeading';
   </MethodListItemLabel>
 </MethodListGroup>
 
-### Join
+## 3. Join
+
+After configuration & initialization, the third step is to call `join()`function to join a meeting.
 
 <Tabs
 defaultValue="js"
