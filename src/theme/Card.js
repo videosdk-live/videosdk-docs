@@ -3,7 +3,11 @@ const Card = ({ heading, description, link, icon }) => (
   <a
     className="card"
     href={link}
-    style={{ marginBottom: 10, cursor: "pointer" }}
+    style={{
+      marginBottom: 16,
+      cursor: "pointer",
+      borderColor: "var(--custom-color-subtle)",
+    }}
   >
     <div
       class="card__header"

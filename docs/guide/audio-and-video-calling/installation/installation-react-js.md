@@ -3,8 +3,8 @@ title: Install Audio and Video Calling SDK in React JS
 hide_title: false
 hide_table_of_contents: false
 description: This guide explains installation of React SDK in your application. it uses react hooks to simplify installation steps.
-sidebar_label: "Installation: React JS"
-pagination_label: "Installation: React JS"
+sidebar_label: "React JS"
+pagination_label: "React JS"
 keywords:
   - react sdk
   - react js sdk

@@ -3,8 +3,8 @@ title: Install Audio and Video Calling SDK in iOS
 hide_title: false
 hide_table_of_contents: false
 description: This guide explains installation of iOS in your application. it is compatible with both objective-c and swift.
-sidebar_label: "Installation: iOS"
-pagination_label: "Installation: iOS"
+sidebar_label: "iOS"
+pagination_label: "iOS"
 keywords:
   - ios sdk
   - objective-c sdk

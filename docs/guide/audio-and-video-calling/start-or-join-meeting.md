@@ -3,8 +3,8 @@ title: Getting Started with Audio and Video Calling
 hide_title: false
 hide_table_of_contents: false
 description: Audio and video calling sdk will help you to integrate video and audio calling in your application.
-sidebar_label: Getting Started
-pagination_label: Getting Started
+sidebar_label: Start or Join Meeting
+pagination_label: Getting Started Audio and Video Calling
 keywords:
   - audio calling
   - video calling
@@ -12,7 +12,7 @@ keywords:
   - collabration
 image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
-slug: getting-started
+slug: start-or-join-meeting
 ---
 
 import Mermaid from '@theme/Mermaid';
@@ -27,28 +27,35 @@ At it's core, VideoSDK RTC is a distributed SFU. It eanbles highly scalable audi
 
 VideoSDK enables opportunity to integrate video and audio calling to Web, Android, iOS applications. it provides Programmable SDKs and REST APIs to build up scalable video conferencing applications.
 
-## Steps
+## Terminology
 
-import Card from '@theme/Card';
+#### **Meeting**
 
-<div class="container guide-steps-block">
-  <div class="row ">
-    <div class="col col--6">
-      <Card heading="1. Signup & Create API" link="/docs/overview/live-streaming/getting-started" description="Generate your API key." />
-    </div>
-    <div class="col col--6" >
-      <Card heading="2. Server Setup" link="/docs/overview/video-on-demand/getting-started" description="Integrate server with API key."  />
-    </div>
-  </div>
-   <div class="row ">
-    <div class="col col--6">
-      <Card heading="3. Client Setup" link="/docs/overview/video-on-demand/getting-started" description="SDK Integration with client." />
-    </div>
-    <div class="col col--6">
-      <Card heading="4. Start or Join Meeting" link="/docs/overview/live-streaming/getting-started" description="Enter in Meeting." />
-    </div>
-  </div>
-</div>
+A Meeting represents real-time audio, video, and/or screen-share session, and is the basic building block for media sharing among participants.
+
+#### **Participants**
+
+Participants are the client applications that are connected to a Meeting and shares audio and video media with one another.
+
+#### **Local Participant**
+
+Local Participant producing audio or video stream from the local client's media sources
+
+#### **Streams**
+
+Streams are indiviual audio and video streams produced by the participants in the meeting
+
+#### **Active Speaker**
+
+Active Speaker represents the participant who is currently producing highest decibels audio stream (in other words speaking)
+
+#### **Active Presenter**
+
+Active Presenter is the participant who is currently sharing his/her screen as a video stream
+
+#### **Main participant**
+
+Main Participant represents the client who shall be displayed on the main screen indicating that he/she is either presenting or speaking
 
 ## Architecture
 

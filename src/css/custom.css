@@ -471,16 +471,22 @@ a.card {
   border: 1px solid #333;
   display: flex;
   /* background-color: var(--ifm-background-color); */
+  transition: all 0.2s ease;
 }
 a.card .card__body {
   flex: 1;
   flex-grow: 1;
+  /* font-weight: lighter !important; */
 }
 a.card:hover {
-  transition: all 0.2s ease;
-  border: 1px solid var(--custom-primary);
-  box-shadow: var(--custom-shadow-xl), 0 0 0 1px var(--custom-primary) !important;
+  border: 1px solid var(--custom-primary) !important;
+  box-shadow: var(--custom-shadow-md);
 }
+
+.guide-steps-block .col {
+  padding: 0px 8px !important;
+}
+
 .avatar__intro {
   padding-left: 15px;
 }
@@ -650,7 +656,7 @@ div[class^="sidebar_"] {
   font-size: 0.85rem;
 }
 div[class^="sidebar_"] .menu {
-  overflow: hidden;
+  /* overflow: hidden; */
   background: var(--ifm-sidebar-background);
   margin-right: calc(var(--ifm-spacing-horizontal) * -1);
   padding-bottom: var(--ifm-spacing-vertical);
@@ -1315,7 +1321,6 @@ code {
   color: var(--custom-primary);
 }
 
-
 div[role="tabpanel"],
 div[role="tabpanel"] div {
   margin-top: 0 !important;
@@ -1323,8 +1328,6 @@ div[role="tabpanel"] div {
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
 }
-
-
 
 .method-list-group {
   list-style: none;

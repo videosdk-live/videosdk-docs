@@ -3,8 +3,8 @@ title: Install Audio and Video Calling SDK in Flutter
 hide_title: false
 hide_table_of_contents: false
 description: This guide explains installation of flutter in your application. it is compatible with both dart and javascript.
-sidebar_label: "Installation: Flutter"
-pagination_label: "Installation: Flutter"
+sidebar_label: "Flutter"
+pagination_label: "Flutter"
 keywords:
   - flutter sdk
   - dart sdk

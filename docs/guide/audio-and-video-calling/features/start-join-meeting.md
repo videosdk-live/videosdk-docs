@@ -1,22 +1,43 @@
 ---
-title: Initialize Video Calling SDK
+title: Start OR Join Meeting
 hide_title: false
 hide_table_of_contents: false
-description: This guide will explain initilization process of .
-sidebar_label: Initialize Meeting via Factory
-pagination_label: Initialize Video Calling SDK
+description: This guide will explain joining process of meeting.
+sidebar_label: Start OR Join Meeting
+pagination_label: Start OR Join Meeting
 keywords:
-  - Initialize audio calling
-  - Initialize video calling
-  - Initialize real-time communication
+  - Join audio calling
+  - Join video calling
+  - Join real-time communication
 image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
-slug: initilize-meeting-factory
+slug: start-join-meeting
 ---
 
-A meeting is the main construct in Video SDK. Upon a successful connection, you're provided a meeting object to interact with. The two key properties on a meeting object are **localParticipant** object, representing current user, and **participants**, an array of other users in the meeting. 
+<div style={{display:'flex',flexDirection:'row',alignItems:'stretch',}}>
+<div style={{}}>
+<p>
+After the successful installation of videoSDK, the next step is to integrate videoSDK features with your webApp/MobileApp.</p>
 
-To initilize meeting object, you have to use **initMeeting** factory method which returns **Meeting** object.
+<p>To Communicate with other participant's audio or video call, you will need to join the meeting.</p>
+
+<p>This guide will provide an overview of how to configure, initialize and join a VideoSDK meeting.</p>
+
+<!-- 1. **Configure** - To configure a meeting, you will need generated token from [Server Setup](/docs/guide/audio-and-video-calling/server-setup).
+
+2. **Initialize** - After configuration, you will have to Initialize meeting by providing name, meetingId, micEnabled, webcamEnabled & maxResolution. For meetingId generation you can follow our guide [Server Setup](/docs/guide/audio-and-video-calling/server-setup).
+
+3. **Join** - After configuration & initialization, the third step is to call `join()`function to join a meeting. -->
+</div>
+<div>
+<img src="/img/New Meeting.gif"/>
+</div>
+
+</div>
+
+**NOTE** : For React & React native developer, you have to be familiar with hooks concept. You can undesratnd hooks concept on [React Hooks](https://reactjs.org/docs/hooks-intro.html).
+
+### Configuration And Initialization
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -37,7 +58,7 @@ values={[
 import VideoSDK from "@videosdk.live/js";
 
 // Configure authentication token got earlier
-VideoSDK.config("<Authentication-token>")
+VideoSDK.config("<Authentication-token>");
 
 // Initilize meeting
 const meeting = VideoSDK.initMeeting({
@@ -47,12 +68,6 @@ const meeting = VideoSDK.initMeeting({
   webcamEnabled: "<Flag-to-enable-webcam>", // optional, default: true
   maxResolution: "<Maximum-resolution>", // optional, default: "hd"
 });
-
-// Get local participant of the meeting 
-meeting?.localParticipant 
-
-// Get all the participant of the meeting 
-meeting?.participants 
 ```
 
 </TabItem>
@@ -62,36 +77,29 @@ meeting?.participants
 import { MeetingProvider, useMeeting } from "@videosdk.live/react-sdk";
 
 const App = () => {
-    // Init Meeting Provider
-    return (
-        <MeetingProvider
-            config={{
-                meetingId: "<Id-on-meeting>",
-                name: "<Name-of-participant>",
-                micEnabled: "<Flag-to-enable-mic>",
-                webcamEnabled: "<Flag-to-enable-webcam>",
-                maxResolution: "<Maximum-resolution>"
-            }}
-            token={"<Authentication-token>"}
-        >
-            <MeetingView>...</MeetingView>
-        </MeetingProvider>
-    );
-}
+  // Init Meeting Provider
+  return (
+    <MeetingProvider
+      config={{
+        meetingId: "<Id-on-meeting>",
+        name: "<Name-of-participant>",
+        micEnabled: "<Flag-to-enable-mic>",
+        webcamEnabled: "<Flag-to-enable-webcam>",
+        maxResolution: "<Maximum-resolution>",
+      }}
+      token={"<Authentication-token>"}
+    >
+      <MeetingView>...</MeetingView>
+    </MeetingProvider>
+  );
+};
 
 const MeetingView = () => {
-     // Get Meeting object using useMeeting hook
-    const meeting = useMeeting()
+  // Get Meeting object using useMeeting hook
+  const meeting = useMeeting();
 
-    // Get local participant of the meeting 
-    meeting?.localParticipant 
-
-    // Get all the participant of the meeting 
-    meeting?.participants 
-
-    return <>...</>
-}
-
+  return <>...</>;
+};
 ```
 
 </TabItem>
@@ -101,36 +109,29 @@ const MeetingView = () => {
 import { MeetingProvider, useMeeting } from "@videosdk.live/react-sdk";
 
 const App = () => {
-    // Init Meeting Provider
-    return (
-        <MeetingProvider
-            config={{
-                meetingId: "<Id-on-meeting>",
-                name: "<Name-of-participant>",
-                micEnabled: "<Flag-to-enable-mic>",
-                webcamEnabled: "<Flag-to-enable-webcam>",
-                maxResolution: "<Maximum-resolution>"
-            }}
-            token={"<Authentication-token>"}
-        >
-            <MeetingView>...</MeetingView>
-        </MeetingProvider>
-    );
-}
+  // Init Meeting Provider
+  return (
+    <MeetingProvider
+      config={{
+        meetingId: "<Id-on-meeting>",
+        name: "<Name-of-participant>",
+        micEnabled: "<Flag-to-enable-mic>",
+        webcamEnabled: "<Flag-to-enable-webcam>",
+        maxResolution: "<Maximum-resolution>",
+      }}
+      token={"<Authentication-token>"}
+    >
+      <MeetingView>...</MeetingView>
+    </MeetingProvider>
+  );
+};
 
 const MeetingView = () => {
-     // Get Meeting object using useMeeting hook
-    const meeting = useMeeting()
+  // Get Meeting object using useMeeting hook
+  const meeting = useMeeting();
 
-    // Get local participant of the meeting 
-    meeting?.localParticipant 
-
-    // Get all the participant of the meeting 
-    meeting?.participants 
-
-    return <>...</>
-}
-
+  return <>...</>;
+};
 ```
 
 </TabItem>
@@ -152,24 +153,19 @@ public class MainActivity extends AppCompatActivity {
         final String participantName = "John Doe";
         final boolean micEnabled = true;
         final boolean webcamEnabled = true;
-        
+
         // Configure authentication token got earlier
         VideoSDK.config(token);
 
         // create a new meeting instance
         meeting = VideoSDK.initMeeting(
                     MainActivity.this, // Reference to this activity
-                    meetingId, 
+                    meetingId,
                     participantName,
-                    micEnabled, 
+                    micEnabled,
                     webcamEnabled
                 );
 
-        // Get local participant of the meeting 
-        meeting.localParticipant 
-
-        // Get all the participant of the meeting 
-        meeting.participants 
     }
 }
 
@@ -202,7 +198,7 @@ class MeetingViewController: UICollectionViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
+
         // create a new meeting instance
         meeting = VideoSDK.initMeeting(
             meetingId: meetingData.meetingId,
@@ -210,17 +206,11 @@ class MeetingViewController: UICollectionViewController {
             micEnabled: meetingData.micEnabled,
             webcamEnabled: meetingData.cameraEnabled
         )
-
-        // Get local participant of the meeting 
-        meeting.localParticipant 
-
-        // Get all the participant of the meeting 
-        meeting.participants 
     }
-    
+
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
+
         meeting = nil
     }
 
@@ -253,11 +243,9 @@ class MyApp extends StatelessWidget {
 </TabItem>
 </Tabs>
 
-
 import MethodListGroup from '@theme/MethodListGroup';
 import MethodListItemLabel from '@theme/MethodListItemLabel';
 import MethodListHeading from '@theme/MethodListHeading';
-
 
 ### Methods
 
@@ -282,3 +270,68 @@ import MethodListHeading from '@theme/MethodListHeading';
     </MethodListGroup>
   </MethodListItemLabel>
 </MethodListGroup>
+
+### Join
+
+<Tabs
+defaultValue="js"
+values={[
+{label: 'JavaScript', value: 'js'},
+{label: 'React', value: 'react'},
+{label: 'ReactNative', value: 'reactnative'},
+{label: 'Android', value: 'android'},
+{label: 'iOS', value: 'ios'},
+{label: 'Flutter', value: 'flutter'},
+]}>
+<TabItem value="js">
+
+```js
+const onPress = () => {
+  // Joining Meeting
+  meeting?.join();
+};
+```
+
+</TabItem>
+<TabItem value="react">
+
+```js
+const onPress = () => {
+  // Joining Meeting
+  meeting?.join();
+};
+```
+
+</TabItem>
+<TabItem value="reactnative">
+
+```js
+const onPress = () => {
+  // Joining Meeting
+  meeting?.join();
+};
+```
+
+</TabItem>
+<TabItem value="android">
+
+```js
+COMING SOON!
+```
+
+</TabItem>
+<TabItem value="ios">
+
+```js
+COMING SOON!
+```
+
+</TabItem>
+<TabItem value="flutter">
+
+```js
+COMING SOON!
+```
+
+</TabItem>
+</Tabs>

@@ -1,10 +1,10 @@
 ---
-title: Intoduction
+title: Introduction
 hide_title: false
 hide_table_of_contents: true
 description: videosdk.live is a video API for real-time communication, live streaming and video-on-demand services. We provide SDK support in all the platforms.
-sidebar_label: Intoduction
-pagination_label: Intoduction
+sidebar_label: Introduction
+pagination_label: Introduction
 keywords:
   - video calling
   - interactive live streaming
@@ -15,7 +15,7 @@ sidebar_position: 1
 slug: introduction
 ---
 
-# Intoduction
+# Introduction
 
 Video SDK provides all the services to build interactive video product. It includes realtime communication, standard live streaming, interactive live streaming and video on demand.
 

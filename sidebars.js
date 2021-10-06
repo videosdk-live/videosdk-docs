@@ -48,13 +48,19 @@ module.exports = {
     {
       type: "category",
       label: "AUDIO AND VIDEO CALLING",
-      items: ["overview/audio-and-video-calling/getting-started", "overview/audio-and-video-calling/architecture"],
+      items: [
+        "overview/audio-and-video-calling/getting-started",
+        "overview/audio-and-video-calling/architecture",
+      ],
       collapsed: false,
     },
     {
       type: "category",
       label: "INTERACTIVE LIVE STREAMING",
-      items: ["overview/interactive-live-streaming/getting-started", "overview/interactive-live-streaming/architecture"],
+      items: [
+        "overview/interactive-live-streaming/getting-started",
+        "overview/interactive-live-streaming/architecture",
+      ],
       collapsed: false,
     },
     // {
@@ -72,7 +78,8 @@ module.exports = {
       items: [
         //"overview/live-streaming/introduction",
         // "overview/live-streaming/features",
-        "overview/live-streaming/getting-started", "overview/live-streaming/architecture",
+        "overview/live-streaming/getting-started",
+        "overview/live-streaming/architecture",
       ],
       collapsed: false,
     },
@@ -84,7 +91,6 @@ module.exports = {
         // "overview/video-on-demand/features",
         "overview/video-on-demand/getting-started",
         "overview/video-on-demand/architecture",
-        
       ],
       collapsed: false,
     },
@@ -95,46 +101,49 @@ module.exports = {
     {
       type: "category",
       label: "GUIDE",
-      items: [
-        "guide/dashboard/getting-started",
-      ],
+      items: ["guide/dashboard/getting-started"],
       collapsed: false,
     },
   ],
 
-  guidePrebuiltVideoCalling:[
+  guidePrebuiltVideoCalling: [
     {
       type: "category",
       label: "GUIDE",
-      items: [
-        "guide/prebuilt-video-calling/getting-started",
-      ],
+      items: ["guide/prebuilt-video-calling/getting-started"],
       collapsed: false,
     },
   ],
 
-  guideAudioAndVideoCalling:[
+  guideAudioAndVideoCalling: [
     {
       type: "category",
       label: "GUIDE",
-      items: [
-        "guide/audio-and-video-calling/getting-started",
-        "guide/audio-and-video-calling/authentication-and-tokens",
-      ],
+      items: ["guide/audio-and-video-calling/getting-started"],
       collapsed: false,
     },
     {
       type: "category",
-      label: "INSTALLATION",
+      label: "SETUP",
       items: [
-        "guide/audio-and-video-calling/installation/get-started",
-        "guide/audio-and-video-calling/installation/installation-js",
-        "guide/audio-and-video-calling/installation/installation-react-js",
-        "guide/audio-and-video-calling/installation/installation-react-native-android",
-        "guide/audio-and-video-calling/installation/installation-react-native-ios",
-        "guide/audio-and-video-calling/installation/installation-android",
-        "guide/audio-and-video-calling/installation/installation-ios",
-        "guide/audio-and-video-calling/installation/installation-flutter",
+        "guide/audio-and-video-calling/signup-and-create-api",
+        "guide/audio-and-video-calling/server-setup",
+        {
+          type: "category",
+          label: "Client Setup",
+          items: [
+            "guide/audio-and-video-calling/installation/get-started",
+            "guide/audio-and-video-calling/installation/installation-js",
+            "guide/audio-and-video-calling/installation/installation-react-js",
+            "guide/audio-and-video-calling/installation/installation-react-native-android",
+            "guide/audio-and-video-calling/installation/installation-react-native-ios",
+            "guide/audio-and-video-calling/installation/installation-android",
+            "guide/audio-and-video-calling/installation/installation-ios",
+            "guide/audio-and-video-calling/installation/installation-flutter",
+          ],
+          collapsed: true,
+        },
+        // "guide/audio-and-video-calling/start-or-join-meeting",
       ],
       collapsed: false,
     },
@@ -142,13 +151,20 @@ module.exports = {
       type: "category",
       label: "FEATURES",
       items: [
-        "guide/audio-and-video-calling/features/initilize-meeting-factory"
+        // "guide/audio-and-video-calling/features/initilize-meeting-factory",
+        "guide/audio-and-video-calling/features/start-join-meeting",
+        "guide/audio-and-video-calling/features/leave-end-meeting",
+        "guide/audio-and-video-calling/features/camera-controls",
+        "guide/audio-and-video-calling/features/mic-controls",
+        "guide/audio-and-video-calling/features/screenshare",
+        "guide/audio-and-video-calling/features/send-messages",
+        "guide/audio-and-video-calling/features/record-meeting",
       ],
       collapsed: false,
     },
   ],
 
-  guideStandardLiveStreaming:[
+  guideStandardLiveStreaming: [
     {
       type: "category",
       label: "GUIDE",
@@ -160,7 +176,7 @@ module.exports = {
     },
   ],
 
-  guideVideoOnDemand:[
+  guideVideoOnDemand: [
     {
       type: "category",
       label: "GUIDE",
@@ -182,29 +198,7 @@ module.exports = {
       ],
       collapsed: false,
     },
-    /* {
-      type: "category",
-      label: "GET STARTED",
-      items: [
-        "realtime-communication/get-started/features",
-        //"realtime-communication/get-started/explore-console",
-        //"realtime-communication/get-started/embeded-meeting",
-        "realtime-communication/get-started/meetings-with-rest-api",
-        //"realtime-communication/get-started/customise-interface-ui-components",
-        "realtime-communication/get-started/integrate-mobile-tab-tv",
-        //"realtime-communication/get-started/what-next",
-      ],
-      collapsed: false,
-    },
-    {
-      type: "category",
-      label: "TUTORIALS",
-      items: [
-        "realtime-communication/tutorials/beginner-tutorial-js",
-        "realtime-communication/tutorials/beginner-tutorial-prebuilt-javascript",
-      ],
-      collapsed: false,
-    },*/
+
     {
       type: "category",
       label: "API REFERENCE",
