@@ -113,6 +113,51 @@ module.exports = {
       items: ["guide/prebuilt-video-calling/getting-started"],
       collapsed: false,
     },
+    {
+      type: "category",
+      label: "SETUP",
+      items: [
+        "guide/audio-and-video-calling/signup-and-create-api",
+        "guide/audio-and-video-calling/server-setup",
+        {
+          type: "category",
+          label: "Client Setup",
+          items: [
+            "guide/audio-and-video-calling/installation/get-started",
+            "guide/audio-and-video-calling/installation/installation-js",
+            "guide/audio-and-video-calling/installation/installation-react-js",
+            "guide/audio-and-video-calling/installation/installation-react-native-android",
+            "guide/audio-and-video-calling/installation/installation-react-native-ios",
+            "guide/audio-and-video-calling/installation/installation-android",
+            "guide/audio-and-video-calling/installation/installation-ios",
+            "guide/audio-and-video-calling/installation/installation-flutter",
+          ],
+          collapsed: true,
+        },
+        // "guide/audio-and-video-calling/start-or-join-meeting",
+      ],
+      collapsed: false,
+    },
+    {
+      type: "category",
+      label: "FEATURES",
+      items: [
+        // "guide/audio-and-video-calling/features/initilize-meeting-factory",
+        "guide/audio-and-video-calling/features/start-join-meeting",
+        "guide/audio-and-video-calling/features/manage-participants",
+
+        "guide/audio-and-video-calling/features/leave-end-meeting",
+        "guide/audio-and-video-calling/features/camera-controls",
+        "guide/audio-and-video-calling/features/mic-controls",
+        "guide/audio-and-video-calling/features/screenshare",
+        "guide/audio-and-video-calling/features/send-messages",
+        "guide/audio-and-video-calling/features/record-meeting",
+        "guide/audio-and-video-calling/features/play-external-video",
+        "guide/audio-and-video-calling/features/go-live-social-media",
+        "guide/audio-and-video-calling/features/speaker-indication",
+      ],
+      collapsed: false,
+    },
   ],
 
   guideAudioAndVideoCalling: [
