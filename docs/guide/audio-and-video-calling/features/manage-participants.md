@@ -297,15 +297,15 @@ COMING SOON!
 
 ## 3. Participant Related Events
 
-1. **participant-joined** - Whenever any new participant join the meeting, `participant-joined` event will be trigger. For example, the meeeting is running with **Alice** and **Bob**, then **Eve** join that meeting, after that `participant-joined` event trigger and return the [participant object](/docs/guide/audio-and-video-calling/features/manage-participants#participant-object-properties).
+1. **participant-joined** - Whenever any new participant join the meeting, `participant-joined` event will trigger. For example, the meeeting is running with **Alice** and **Bob**, then **Eve** join that meeting, after that `participant-joined` event trigger and return the [participant object](/docs/guide/audio-and-video-calling/features/manage-participants#participant-object-properties).
 
-2. **participant-left** - Whenever any participant leave/exit the meeting, `participant-left` event will be trigger.For example, the meeeting is running with **Alice** and **Bob**, then **Bob** leave that meeting, after that `participant-left` event trigger and return the [participant object](/docs/guide/audio-and-video-calling/features/manage-participants#participant-object-properties)
+2. **participant-left** - Whenever any participant leave/exit the meeting, `participant-left` event will trigger.For example, the meeeting is running with **Alice** and **Bob**, then **Bob** leave that meeting, after that `participant-left` event trigger and return the [participant object](/docs/guide/audio-and-video-calling/features/manage-participants#participant-object-properties)
 
-3. **presenter-changed** - Whenever any participant present/screenshare their screen/window in meeting, `presenter-changed` event will be trigger and return the presenter `participantId`.
+3. **presenter-changed** - Whenever any participant present/screenshare their screen/window in meeting, `presenter-changed` event will trigger and return the presenter `participantId`.
 
-4. **stream-enabled** - Whenever any participant enabled mic/webcam in meeting, `stream-enabled` event will be trigger and return [Stream Map](docs/guide/audio-and-video-calling/features/manage-participants#streams-map-properties).
+4. **stream-enabled** - Whenever any participant enabled mic/webcam in meeting, `stream-enabled` event will trigger and return [Stream Map](/docs/guide/audio-and-video-calling/features/manage-participants#streams-map-properties).
 
-5. **stream-disabled** - Whenever any participant disabled mic/webcam in meeting, `stream-disabled` event will be trigger and return [Stream Map](docs/guide/audio-and-video-calling/features/manage-participants#streams-map-properties).
+5. **stream-disabled** - Whenever any participant disabled mic/webcam in meeting, `stream-disabled` event will trigger and return [Stream Map](/docs/guide/audio-and-video-calling/features/manage-participants#streams-map-properties).
 
 <Tabs
 defaultValue="js"
