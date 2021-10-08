@@ -1,10 +1,10 @@
 ---
-title: Start OR Join Meeting
+title: Start or Join Meeting
 hide_title: false
 hide_table_of_contents: false
 description: This guide will explain joining process of meeting.
-sidebar_label: Start OR Join Meeting
-pagination_label: Start OR Join Meeting
+sidebar_label: Start or Join Meeting
+pagination_label: Start or Join Meeting
 keywords:
   - Join audio calling
   - Join video calling
@@ -34,6 +34,12 @@ After the successful installation of videoSDK, the next step is to integrate vid
 
 To configure a meeting, you will need [generated token](/docs/guide/audio-and-video-calling/server-setup#generate-accees-token-and-integrate-other-apis) and [meetingId](/docs/realtime-communication/rest-api-reference/create-join-meeting#create-meeting), we had discussed in [Server Setup](/docs/guide/audio-and-video-calling/server-setup).
 This code snippet calls API from local server
+
+**Scenario 1** - Suppose you **don't have** any meetingId, you can simply generate meetingId by invoking `create-meeting` API.
+
+**Scenario 2** - Suppose you **have** meetingId, now you don't have to call `create-meeting` API to generate meetingId, instead you can call `validate-meeting` API to validate meetingId.
+
+**Token generation API is necessary for both scenario.**
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -89,6 +95,31 @@ const getMeetingId = async (token) => {
   }
 };
 
+/** This API is for validate the meeting id  */
+/** Not require to call this API after create meeting API  */
+const validateMeeting = async (token, meetingId) => {
+  try {
+    const VIDEOSDK_API_ENDPOINT = `${LOCAL_SERVER_URL}/validate-meeting/${meetingId}`;
+    const options = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ token }),
+    };
+    const response = await fetch(VIDEOSDK_API_ENDPOINT, options)
+      .then(async (result) => {
+        const { meetingId } = await result.json();
+        return meetingId;
+      })
+      .catch((error) => console.log("error", error));
+    return response;
+  } catch (e) {
+    console.log(e);
+  }
+};
+
+
 const access_token = await getToken();
 const meetingId = await getMeetingId(access_token);
 ```
@@ -135,8 +166,32 @@ const getMeetingId = async (token) => {
   }
 };
 
+/** This API is for validate the meeting id  */
+/** Not require to call this API after create meeting API  */
+const validateMeeting = async (token, meetingId) => {
+  try {
+    const VIDEOSDK_API_ENDPOINT = `${LOCAL_SERVER_URL}/validate-meeting/${meetingId}`;
+    const options = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ token }),
+    };
+    const response = await fetch(VIDEOSDK_API_ENDPOINT, options)
+      .then(async (result) => {
+        const { meetingId } = await result.json();
+        return meetingId;
+      })
+      .catch((error) => console.log("error", error));
+    return response;
+  } catch (e) {
+    console.log(e);
+  }
+};
 const access_token = await getToken();
 const meetingId = await getMeetingId(access_token);
+const validatedMeetingId = await validateMeeting(token, "provided-meeting-id");
 ```
 
 </TabItem>
@@ -181,8 +236,34 @@ const getMeetingId = async (token) => {
   }
 };
 
+/** This API is for validate the meeting id  */
+/** Not require to call this API after create meeting API  */
+const validateMeeting = async (token, meetingId) => {
+  try {
+    const VIDEOSDK_API_ENDPOINT = `${LOCAL_SERVER_URL}/validate-meeting/${meetingId}`;
+    const options = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ token }),
+    };
+    const response = await fetch(VIDEOSDK_API_ENDPOINT, options)
+      .then(async (result) => {
+        const { meetingId } = await result.json();
+        return meetingId;
+      })
+      .catch((error) => console.log("error", error));
+    return response;
+  } catch (e) {
+    console.log(e);
+  }
+};
+
 const access_token = await getToken();
 const meetingId = await getMeetingId(access_token);
+const validatedMeetingId = await validateMeeting(token, "provided-meeting-id");
+
 ```
 
 </TabItem>

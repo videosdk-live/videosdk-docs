@@ -153,6 +153,8 @@ module.exports = {
       items: [
         // "guide/audio-and-video-calling/features/initilize-meeting-factory",
         "guide/audio-and-video-calling/features/start-join-meeting",
+        "guide/audio-and-video-calling/features/manage-participants",
+
         "guide/audio-and-video-calling/features/leave-end-meeting",
         "guide/audio-and-video-calling/features/camera-controls",
         "guide/audio-and-video-calling/features/mic-controls",
@@ -161,6 +163,7 @@ module.exports = {
         "guide/audio-and-video-calling/features/record-meeting",
         "guide/audio-and-video-calling/features/play-external-video",
         "guide/audio-and-video-calling/features/go-live-social-media",
+        "guide/audio-and-video-calling/features/speaker-indication",
       ],
       collapsed: false,
     },

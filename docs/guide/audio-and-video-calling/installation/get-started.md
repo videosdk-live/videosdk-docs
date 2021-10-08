@@ -31,5 +31,5 @@ This guide will follow installation guide for all the VideoSDK for Audio and Vid
 1. [React Native Android](/docs/guide/audio-and-video-calling/installation/installation-react-native-android)
 2. [React Native iOS](/docs/guide/audio-and-video-calling/installation/installation-react-native-ios)
 3. [Android](/docs/guide/audio-and-video-calling/installation/installation-android)
-4. [iOS Project](/docs/guide/audio-and-video-calling/installation/installation-ios)
+4. [iOS](/docs/guide/audio-and-video-calling/installation/installation-ios)
 5. [Flutter](/docs/guide/audio-and-video-calling/installation/installation-flutter)

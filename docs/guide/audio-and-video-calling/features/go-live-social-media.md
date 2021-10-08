@@ -113,3 +113,93 @@ COMING SOON!
 
 </TabItem>
 </Tabs>
+
+### Events
+
+1. **livestream-started** - Whenever broadcasting of meeting started, `livestream-started` event will trigger.
+
+2. **livestream-stopped** - Whenever broadcasting of meeting stopped, `livestream-stopped` event will trigger.
+
+<Tabs
+defaultValue="js"
+values={[
+{label: 'JavaScript', value: 'js'},
+{label: 'React', value: 'react'},
+{label: 'ReactNative', value: 'reactnative'},
+{label: 'Android', value: 'android'},
+{label: 'iOS', value: 'ios'},
+{label: 'Flutter', value: 'flutter'},
+]}>
+<TabItem value="js">
+
+```js
+meeting.on("livestream-started", () => {
+  console.log("LiveStream Started");
+});
+
+meeting.on("livestream-stopped", () => {
+  console.log("LiveStream Stopped");
+});
+```
+
+</TabItem>
+<TabItem value="react">
+
+```js
+import { useMeeting } from "@videosdk.live/react-sdk";
+
+/** useMeeting hooks events */
+const {
+  /** Methods */
+} = useMeeting({
+  onLiveStreamstarted: () => {
+    console.log("LiveStream Started");
+  },
+  onLiveStreamStopped: () => {
+    console.log("LiveStream Stopped");
+  },
+});
+```
+
+</TabItem>
+<TabItem value="reactnative">
+
+```js
+import { useMeeting } from "@videosdk.live/react-native-sdk";
+
+/** useMeeting hooks events */
+const {
+  /** Methods */
+} = useMeeting({
+  onLiveStreamstarted: () => {
+    console.log("LiveStream Started");
+  },
+  onLiveStreamStopped: () => {
+    console.log("LiveStream Stopped");
+  },
+});
+```
+
+</TabItem>
+<TabItem value="android">
+
+```js
+COMING SOON!
+```
+
+</TabItem>
+<TabItem value="ios">
+
+```js
+COMING SOON!
+```
+
+</TabItem>
+<TabItem value="flutter">
+
+```js
+COMING SOON!
+```
+
+</TabItem>
+</Tabs>

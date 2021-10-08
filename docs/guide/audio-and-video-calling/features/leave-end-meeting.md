@@ -1,10 +1,10 @@
 ---
-title: Leave OR End Meeting
+title: Leave or End Meeting
 hide_title: false
 hide_table_of_contents: false
 description: This guide will explain ending process of meeting.
-sidebar_label: Leave OR End Meeting
-pagination_label: Leave OR End Meeting
+sidebar_label: Leave or End Meeting
+pagination_label: Leave or End Meeting
 keywords:
   - Exit Meeting
   - Leave Meeting
@@ -80,7 +80,10 @@ const onPress = () => {
 <TabItem value="android">
 
 ```js
-COMING SOON!
+  @Override
+    protected void onClick() {
+         meeting.leave();
+    }
 ```
 
 </TabItem>

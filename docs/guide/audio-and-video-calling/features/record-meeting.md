@@ -100,3 +100,93 @@ COMING SOON!
 
 </TabItem>
 </Tabs>
+
+### Events
+
+1. **recording-started** - Whenever any participant start meeting recording, then `recording-started` event will trigger.
+
+2. **recording-stopped** - Whenever any participant stop meeting recording, then `recording-stopped` event will trigger.
+
+<Tabs
+defaultValue="js"
+values={[
+{label: 'JavaScript', value: 'js'},
+{label: 'React', value: 'react'},
+{label: 'ReactNative', value: 'reactnative'},
+{label: 'Android', value: 'android'},
+{label: 'iOS', value: 'ios'},
+{label: 'Flutter', value: 'flutter'},
+]}>
+<TabItem value="js">
+
+```js
+meeting.on("recording-started", () => {
+  console.log("Recording Started");
+});
+
+meeting.on("recording-stopped", () => {
+  console.log("Recording Stopped");
+});
+```
+
+</TabItem>
+<TabItem value="react">
+
+```js
+import { useMeeting } from "@videosdk.live/react-sdk";
+
+/** useMeeting hooks events */
+const {
+  /** Methods */
+} = useMeeting({
+  onRecordingStarted: () => {
+    console.log("Recording Started");
+  },
+  onRecordingStopped: () => {
+    console.log("Recording Stopped");
+  },
+});
+```
+
+</TabItem>
+<TabItem value="reactnative">
+
+```js
+import { useMeeting } from "@videosdk.live/react-native-sdk";
+
+/** useMeeting hooks events */
+const {
+  /** Methods */
+} = useMeeting({
+  onRecordingStarted: () => {
+    console.log("Recording Started");
+  },
+  onRecordingStopped: () => {
+    console.log("Recording Stopped");
+  },
+});
+```
+
+</TabItem>
+<TabItem value="android">
+
+```js
+COMING SOON!
+```
+
+</TabItem>
+<TabItem value="ios">
+
+```js
+COMING SOON!
+```
+
+</TabItem>
+<TabItem value="flutter">
+
+```js
+COMING SOON!
+```
+
+</TabItem>
+</Tabs>

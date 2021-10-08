@@ -193,4 +193,4 @@ Available permissions are:
 - **ask_join**: The participant will not be permitted entry without request.
 - **allow_mod**: Allow participant to enable/disable other participant's mic/webcam.
 
-For other API's you can follow [Create Meeting & Validate Meeting.](/docs/realtime-communication/rest-api-reference/create-join-meeting)
+For other APIs you can follow [Create Meeting & Validate Meeting.](/docs/realtime-communication/rest-api-reference/create-join-meeting)
