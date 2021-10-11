@@ -18,16 +18,12 @@ sidebar_position: 1
 slug: camera-controls
 ---
 
-Whenever any participant wants to start/stop broadcasting their video to other participant in a meeting, they can simply do it with videoSDK Meeting.
+Different webcam control permissions allows participant to enable/disable their own webcam and other participant's webcam too & also can set default participant's webcam settings, when meeting start.
 
-This guide will provide an overview of how to implement enable, disable and switch webcam features in a meeting.
+### Camera Attributes
 
-1. **Enable Camera** - By using `enableWebcam()` function, a participant can publish camera stream to other participants.
-2. **Disable Camera** - By using `disableWebcam()` function, a participant can stop publishing camera stream to other participants.
-3. **Toggle Camera** - A participant can enable / disable webcam using `toggleWebcam()` function.
-4. **Switch Camera** - By using `changeWebcam()` function, a participant can stream from front / rear camera during the meeting.This function is only applicable for Mobile devices.
-
-### Enable, Disable, Toggle And Switch Webcam
+- **webcamEnabled**: Default webcam setting for meeting joinee, true enables webcam & false disable webcam.
+- **participantCanToggleSelfWebcam**: Allow participant to enable/disable their own webcam.
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -37,87 +33,66 @@ defaultValue="js"
 values={[
 {label: 'JavaScript', value: 'js'},
 {label: 'React', value: 'react'},
-{label: 'ReactNative', value: 'reactnative'},
-{label: 'Android', value: 'android'},
-{label: 'iOS', value: 'ios'},
-{label: 'Flutter', value: 'flutter'},
+{label: 'Angular', value: 'angular'},
+{label: 'Vue', value: 'vue'},
 ]}>
 <TabItem value="js">
 
 ```js
-const onPress = () => {
-  // Enable Webcam in Meeting
-  meeting?.enableWebcam();
-
-  // Disable Webcam in Meeting
-  meeting?.disableWebcam();
-
-  // Toggle Webcam in Meeting
-  meeting?.toggleWebcam();
-
-  // Change Webcam in Meeting
-  meeting?.changeWebcam();
+const config = {
+  // ...
+  webcamEnabled: true,
+  participantCanToggleSelfWebcam: true,
+  // ...
 };
 ```
 
 </TabItem>
+
 <TabItem value="react">
 
 ```js
-const onPress = () => {
-  // Enable Webcam in Meeting
-  meeting?.enableWebcam();
+useEffect(() => {
+  const config = {
+    // ...
+    webcamEnabled: true,
+    participantCanToggleSelfWebcam: true,
 
-  // Disable Webcam in Meeting
-  meeting?.disableWebcam();
+    // ...
+  };
+}, []);
+```
 
-  // Toggle Webcam in Meeting
-  meeting?.toggleWebcam();
+</TabItem>
+<TabItem value="angular">
 
-  // Change Webcam in Meeting
-  meeting?.changeWebcam();
+```js
+function ngOnInit() {
+  const config = {
+    // ...
+    webcamEnabled: true,
+    participantCanToggleSelfWebcam: true,
+
+    // ...
+  };
+}
+```
+
+</TabItem>
+<TabItem value="vue">
+
+```js
+mounted: () => {
+  const config = {
+    // ...
+    webcamEnabled: true,
+    participantCanToggleSelfWebcam: true,
+
+    // ...
+  };
 };
 ```
 
 </TabItem>
-<TabItem value="reactnative">
 
-```js
-const onPress = () => {
-  // Enable Webcam in Meeting
-  meeting?.enableWebcam();
-
-  // Disable Webcam in Meeting
-  meeting?.disableWebcam();
-
-  // Toggle Webcam in Meeting
-  meeting?.toggleWebcam();
-
-  // Change Webcam in Meeting
-  meeting?.changeWebcam();
-};
-```
-
-</TabItem>
-<TabItem value="android">
-
-```js
-COMING SOON!
-```
-
-</TabItem>
-<TabItem value="ios">
-
-```js
-COMING SOON!
-```
-
-</TabItem>
-<TabItem value="flutter">
-
-```js
-COMING SOON!
-```
-
-</TabItem>
 </Tabs>

@@ -16,15 +16,13 @@ sidebar_position: 1
 slug: mic-controls
 ---
 
-Whenever any participant wants to start / stop broadcasting their audio to other participant in meeting, they can simply do it with videoSDK Meeting.
+Different mic control permissions allows participant to enable/disable their own mic and other participant's mic too & also can set default participant's mic settings, when meeting start.
 
-This guide will provide an overview of how to use enable and disable Mic in a meeting.
+### Mic Attributes
 
-1. **Enable Mic** - By using `enableMic()` function, a participant can publish audio to other participants.
-2. **Disable Mic** - By using `disableMic()` function, a participant can stop publishing audio to other participants.
-3. **Toggle Mic** - A participant can on / off mic using `toggleMic()` function.
-
-### Enable, Disable And Toggle Mic
+- **micEnabled**: Default mic setting for meeting joinee, true enables mic & false disable mic.
+- **participantCanToggleSelfMic**: Allow participant to enable/disable their own mic.
+- **participantCanToggleOtherMic**: Allow participant to enable/disable other participant's mic.
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -34,78 +32,66 @@ defaultValue="js"
 values={[
 {label: 'JavaScript', value: 'js'},
 {label: 'React', value: 'react'},
-{label: 'ReactNative', value: 'reactnative'},
-{label: 'Android', value: 'android'},
-{label: 'iOS', value: 'ios'},
-{label: 'Flutter', value: 'flutter'},
+{label: 'Angular', value: 'angular'},
+{label: 'Vue', value: 'vue'},
 ]}>
 <TabItem value="js">
 
 ```js
-const onPress = () => {
-  // Enable Mic in Meeting
-  meeting?.enableMic();
-
-  // Disable Mic in Meeting
-  meeting?.disableMic();
-
-  // Toggle Mic in Meeting
-  meeting?.toggleMic();
+const config = {
+  // ...
+  micEnabled: true,
+  participantCanToggleSelfMic: true,
+  // ...
 };
 ```
 
 </TabItem>
+
 <TabItem value="react">
 
 ```js
-const onPress = () => {
-  // Enable Mic in Meeting
-  meeting?.enableMic();
+useEffect(() => {
+  const config = {
+    // ...
+    micEnabled: true,
+    participantCanToggleSelfMic: true,
 
-  // Disable Mic in Meeting
-  meeting?.disableMic();
+    // ...
+  };
+}, []);
+```
 
-  // Toggle Mic in Meeting
-  meeting?.toggleMic();
+</TabItem>
+<TabItem value="angular">
+
+```js
+function ngOnInit() {
+  const config = {
+    // ...
+    micEnabled: true,
+    participantCanToggleSelfMic: true,
+
+    // ...
+  };
+}
+```
+
+</TabItem>
+<TabItem value="vue">
+
+```js
+mounted: () => {
+  const config = {
+    // ...
+    micEnabled: true,
+    participantCanToggleSelfMic: true,
+
+    // ...
+  };
 };
 ```
 
 </TabItem>
-<TabItem value="reactnative">
 
-```js
-const onPress = () => {
-  // Enable Mic in Meeting
-  meeting?.enableMic();
-
-  // Disable Mic in Meeting
-  meeting?.disableMic();
-
-  // Toggle Mic in Meeting
-  meeting?.toggleMic();
-};
-```
-
-</TabItem>
-<TabItem value="android">
-
-```js
-COMING SOON!
-```
-
-</TabItem>
-<TabItem value="ios">
-
-```js
-COMING SOON!
-```
-
-</TabItem>
-<TabItem value="flutter">
-
-```js
-COMING SOON!
-```
-
-</TabItem>
 </Tabs>

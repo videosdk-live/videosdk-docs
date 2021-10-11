@@ -16,19 +16,20 @@ sidebar_position: 1
 slug: send-messages
 ---
 
-Whenever any participant wants to notify other participants via chat messages or Raise hand, they can simply do it with videoSDK Meeting.
+This feature allows participants who wants to notify other participants via chat messages or Raise hand in the meeting.
 
-This guide will provide an overview of how to implement chat and raise hand in a meeting.
+### Chat
 
-1. **Chat Message** - If a participant wants to inform or notify something in current meeting, they can use `sendChatMessage()` function by providing `{message:"Anything they wish to send"}` object argument.
+If a participant wants to inform or notify something in current meeting,
+they can use this feature to communicate with other participants in the meeting.
 
-2. **Raised Hand** - If a participant has some doubts during the meeting and wants to raise hand, they can use `sendChatMessage()` function by providing `{type:"RAISE_HAND"}` object argument.
+- **chatEnabled**: If it is true, then chat button will be visible on top bar of the meeting. If it is false, then chat button won't be available on top bar of the meeting
 
-:::note
-`sendChatMessage()` function only takes string as an argument.
-:::
+### Raise hand
 
-### Send Message And Raised Hand
+It allows participant to raise their hand virtually to indicate that participant has some doubts or comment during the meeting.
+
+- **raiseHandEnabled**: If it is true, then raise hand button will be visible on top bar of the meeting. If it is false, then raise hand button won't be available on top bar of the meeting
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -38,169 +39,63 @@ defaultValue="js"
 values={[
 {label: 'JavaScript', value: 'js'},
 {label: 'React', value: 'react'},
-{label: 'ReactNative', value: 'reactnative'},
-{label: 'Android', value: 'android'},
-{label: 'iOS', value: 'ios'},
-{label: 'Flutter', value: 'flutter'},
+{label: 'Angular', value: 'angular'},
+{label: 'Vue', value: 'vue'},
 ]}>
 <TabItem value="js">
 
 ```js
-const onPress = () => {
-  // Sending Message
-  let data = {
-    message: "Hello World",
-  };
-
-  meeting?.sendChatMessage(JSON.stringify(data));
-
-  // Raising Hand
-  meeting?.sendChatMessage(JSON.stringify({ type: "RAISE_HAND", data: {} }));
+const config = {
+  // ...
+  chatEnabled: true,
+  raiseHandEnabled: true,
+  // ...
 };
 ```
 
 </TabItem>
+
 <TabItem value="react">
 
 ```js
-const onPress = () => {
-  // Sending Message
-  let data = {
-    message: "Hello World",
+useEffect(() => {
+  const config = {
+    // ...
+    chatEnabled: true,
+    raiseHandEnabled: true,
+    // ...
   };
-  meeting?.sendChatMessage(JSON.stringify(data));
+}, []);
+```
 
-  // Raising Hand
-  meeting?.sendChatMessage(JSON.stringify({ type: "RAISE_HAND", data: {} }));
+</TabItem>
+<TabItem value="angular">
+
+```js
+function ngOnInit() {
+  const config = {
+    // ...
+    chatEnabled: true,
+    raiseHandEnabled: true,
+    // ...
+  };
+}
+```
+
+</TabItem>
+<TabItem value="vue">
+
+```js
+mounted: () => {
+  const config = {
+    // ...
+    chatEnabled: true,
+    raiseHandEnabled: true,
+    // ...
+  };
 };
 ```
 
 </TabItem>
-<TabItem value="reactnative">
 
-```js
-const onPress = () => {
-  // Sending Message
-  let data = {
-    message: "Hello World",
-  };
-  meeting?.sendChatMessage(JSON.stringify(data));
-
-  // Raising Hand
-  meeting?.sendChatMessage(JSON.stringify({ type: "RAISE_HAND", data: {} }));
-};
-```
-
-</TabItem>
-<TabItem value="android">
-
-```js
-COMING SOON!
-```
-
-</TabItem>
-<TabItem value="ios">
-
-```js
-COMING SOON!
-```
-
-</TabItem>
-<TabItem value="flutter">
-
-```js
-COMING SOON!
-```
-
-</TabItem>
-</Tabs>
-
-### Events
-
-1. **chat-message** - Whenever any participant sending message/raise hand in the meeting, then `chat-message` event will trigger and return senderId, senderName, timeStamp, text and type `(RAISE_HAND/CHAT)`.
-
-<Tabs
-defaultValue="js"
-values={[
-{label: 'JavaScript', value: 'js'},
-{label: 'React', value: 'react'},
-{label: 'ReactNative', value: 'reactnative'},
-{label: 'Android', value: 'android'},
-{label: 'iOS', value: 'ios'},
-{label: 'Flutter', value: 'flutter'},
-]}>
-<TabItem value="js">
-
-```js
-meeting.on("chat-message", (messageData) => {
-  const { senderId, senderName, text } = messageData;
-
-  const { type, data } = JSON.parse(text);
-
-  // type can be "CHAT" or "RAISE_HAND"
-});
-```
-
-</TabItem>
-<TabItem value="react">
-
-```js
-import { useMeeting } from "@videosdk.live/react-sdk";
-
-/** useMeeting hooks events */
-const {
-  /** Methods */
-} = useMeeting({
-  onChatMessage: (messageData) => {
-    const { senderId, senderName, text } = messageData;
-
-    const { type, data } = JSON.parse(text);
-
-    // type can be "CHAT" or "RAISE_HAND"
-  },
-});
-```
-
-</TabItem>
-<TabItem value="reactnative">
-
-```js
-import { useMeeting } from "@videosdk.live/react-native-sdk";
-
-/** useMeeting hooks events */
-const {
-  /** Methods */
-} = useMeeting({
-  onChatMessage: (messageData) => {
-    const { senderId, senderName, text } = messageData;
-
-    const { type, data } = JSON.parse(text);
-
-    // type can be "CHAT" or "RAISE_HAND"
-  },
-});
-```
-
-</TabItem>
-<TabItem value="android">
-
-```js
-COMING SOON!
-```
-
-</TabItem>
-<TabItem value="ios">
-
-```js
-COMING SOON!
-```
-
-</TabItem>
-<TabItem value="flutter">
-
-```js
-COMING SOON!
-```
-
-</TabItem>
 </Tabs>

@@ -24,15 +24,21 @@ import Card from '@theme/Card';
 <div class="container guide-steps-block">
   <div class="row ">
     <div class="col col--6">
-      <Card heading="1. Signup & Create API" link="/docs/guide/audio-and-video-calling/signup-and-create-api" description="Generate your API key." />
+      <Card heading="1. Signup & Create API" link="/docs/guide/prebuilt-video-calling/signup-and-create-api" description="Generate your API key." />
     </div>
     <div class="col col--6" >
-      <Card heading="2. Server Setup" link="/docs/guide/audio-and-video-calling/server-setup" description="Integrate server with API key."  />
+      <Card heading="2. Prebuilt Setup" link="/docs/guide/prebuilt-video-calling/prebuilt-setup" description="Integrate Prebuilt with API key."  />
     </div>
+  </div>
+  <div class="row " style={{justifyContent:'center'}}>
+    <div class="col col--6">
+      <Card heading="3. Join Meeting" link="/docs/guide/audio-and-video-calling/signup-and-create-api" description="Enter in Meeting." />
+    </div>
+    
   </div>
 </div>
 
-## Embed a meeting
+<!-- ## Embed a meeting
 
 Embedding a meeting into a website and app requires you to add script into page or application.
 
@@ -381,4 +387,4 @@ class ViewController: UIViewController {
 
 ## What Next
 
-Explore tutorials and code samples to customise prebuilt SDK.
+Explore tutorials and code samples to customise prebuilt SDK. -->

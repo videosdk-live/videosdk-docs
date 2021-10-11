@@ -16,15 +16,14 @@ sidebar_position: 1
 slug: recording-meeting
 ---
 
-Record meeting allows participants to record video and audio during the meeting. The recording files can be available in developer dashboard.
-Any participant can start / stop recording any time during the meeting.
+Record meeting allows participants to record video and audio during the meeting. The recording files are available in customer dashboard.
+Any participant can start/stop recording any time during the meeting.
 
-This guide will provide an overview of how to implement start and stop Meeting Recording.
+### Recording Attributes
 
-1. **Start Recording** - By using `startRecording()` function, a participant can start meeting recording.
-2. **Stop Recording** - By using `stopRecording()` function, a participant can stop meeting recording.
-
-### Start And Stop Recording
+- **recordingEnabled**: If it is true, then recording button will be visible on top bar of the meeting. If it is false, then recording button won't be available on top bar of the meeting.
+- **participantCanToggleRecording**: If it is true, then other participant can start/stop recording during the meeting. If it is false, then participant can not start/stop recording during the meeting.
+- **recordingWebhookUrl**: It's your [webhook url](https://en.wikipedia.org/wiki/Webhook), where we notify once meeting recording is complete.
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -34,159 +33,67 @@ defaultValue="js"
 values={[
 {label: 'JavaScript', value: 'js'},
 {label: 'React', value: 'react'},
-{label: 'ReactNative', value: 'reactnative'},
-{label: 'Android', value: 'android'},
-{label: 'iOS', value: 'ios'},
-{label: 'Flutter', value: 'flutter'},
+{label: 'Angular', value: 'angular'},
+{label: 'Vue', value: 'vue'},
 ]}>
 <TabItem value="js">
 
 ```js
-const onPress = () => {
-  // Start Recording
-  meeting?.startRecording();
-
-  // Stop Recording
-  meeting?.stopRecording();
+const config = {
+  // ...
+  recordingEnabled: true,
+  participantCanToggleRecording: true,
+  recordingWebhookUrl: "yourwebsite.com/callback",
+  // ...
 };
 ```
 
 </TabItem>
+
 <TabItem value="react">
 
 ```js
-const onPress = () => {
-  // Start Recording
-  meeting?.startRecording();
+useEffect(() => {
+  const config = {
+    // ...
+    recordingEnabled: true,
+    participantCanToggleRecording: true,
+    recordingWebhookUrl: "yourwebsite.com/callback",
+    // ...
+  };
+}, []);
+```
 
-  // Stop Recording
-  meeting?.stopRecording();
+</TabItem>
+<TabItem value="angular">
+
+```js
+function ngOnInit() {
+  const config = {
+    // ...
+    recordingEnabled: true,
+    participantCanToggleRecording: true,
+    recordingWebhookUrl: "yourwebsite.com/callback",
+    // ...
+  };
+}
+```
+
+</TabItem>
+<TabItem value="vue">
+
+```js
+mounted: () => {
+  const config = {
+    // ...
+    recordingEnabled: true,
+    participantCanToggleRecording: true,
+    recordingWebhookUrl: "yourwebsite.com/callback",
+    // ...
+  };
 };
 ```
 
 </TabItem>
-<TabItem value="reactnative">
 
-```js
-const onPress = () => {
-  // Start Recording
-  meeting?.startRecording();
-
-  // Stop Recording
-  meeting?.stopRecording();
-};
-```
-
-</TabItem>
-<TabItem value="android">
-
-```js
-COMING SOON!
-```
-
-</TabItem>
-<TabItem value="ios">
-
-```js
-COMING SOON!
-```
-
-</TabItem>
-<TabItem value="flutter">
-
-```js
-COMING SOON!
-```
-
-</TabItem>
-</Tabs>
-
-### Events
-
-1. **recording-started** - Whenever any participant start meeting recording, then `recording-started` event will trigger.
-
-2. **recording-stopped** - Whenever any participant stop meeting recording, then `recording-stopped` event will trigger.
-
-<Tabs
-defaultValue="js"
-values={[
-{label: 'JavaScript', value: 'js'},
-{label: 'React', value: 'react'},
-{label: 'ReactNative', value: 'reactnative'},
-{label: 'Android', value: 'android'},
-{label: 'iOS', value: 'ios'},
-{label: 'Flutter', value: 'flutter'},
-]}>
-<TabItem value="js">
-
-```js
-meeting.on("recording-started", () => {
-  console.log("Recording Started");
-});
-
-meeting.on("recording-stopped", () => {
-  console.log("Recording Stopped");
-});
-```
-
-</TabItem>
-<TabItem value="react">
-
-```js
-import { useMeeting } from "@videosdk.live/react-sdk";
-
-/** useMeeting hooks events */
-const {
-  /** Methods */
-} = useMeeting({
-  onRecordingStarted: () => {
-    console.log("Recording Started");
-  },
-  onRecordingStopped: () => {
-    console.log("Recording Stopped");
-  },
-});
-```
-
-</TabItem>
-<TabItem value="reactnative">
-
-```js
-import { useMeeting } from "@videosdk.live/react-native-sdk";
-
-/** useMeeting hooks events */
-const {
-  /** Methods */
-} = useMeeting({
-  onRecordingStarted: () => {
-    console.log("Recording Started");
-  },
-  onRecordingStopped: () => {
-    console.log("Recording Stopped");
-  },
-});
-```
-
-</TabItem>
-<TabItem value="android">
-
-```js
-COMING SOON!
-```
-
-</TabItem>
-<TabItem value="ios">
-
-```js
-COMING SOON!
-```
-
-</TabItem>
-<TabItem value="flutter">
-
-```js
-COMING SOON!
-```
-
-</TabItem>
 </Tabs>
