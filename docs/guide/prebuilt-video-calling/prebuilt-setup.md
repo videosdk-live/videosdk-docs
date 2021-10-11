@@ -48,7 +48,7 @@ Create an `index.html` file and add the following `<script>` tag at the end of y
       containerId: null,
 
       /**
-       FEATURES ATTRIBUTES
+       FEATURE ATTRIBUTES
       */
     };
 
