@@ -24,10 +24,9 @@ This guide will provide an overview of how to implement enable, disable and swit
 
 1. **Enable Camera** - By using `enableWebcam()` function, a participant can publish camera stream to other participants.
 2. **Disable Camera** - By using `disableWebcam()` function, a participant can stop publishing camera stream to other participants.
-3. **Toggle Camera** - A participant can enable / disable webcam using `toggleWebcam()` function.
-4. **Switch Camera** - By using `changeWebcam()` function, a participant can stream from front / rear camera during the meeting.This function is only applicable for Mobile devices.
+3. **Switch Camera** - By using `changeWebcam()` function, a participant can stream from front / rear camera during the meeting.This function is only applicable for Mobile devices.
 
-### Enable, Disable, Toggle And Switch Webcam
+### Enable, Disable And Switch Webcam
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -52,9 +51,6 @@ const onPress = () => {
   // Disable Webcam in Meeting
   meeting?.disableWebcam();
 
-  // Toggle Webcam in Meeting
-  meeting?.toggleWebcam();
-
   // Change Webcam in Meeting
   meeting?.changeWebcam();
 };
@@ -71,9 +67,6 @@ const onPress = () => {
   // Disable Webcam in Meeting
   meeting?.disableWebcam();
 
-  // Toggle Webcam in Meeting
-  meeting?.toggleWebcam();
-
   // Change Webcam in Meeting
   meeting?.changeWebcam();
 };
@@ -89,9 +82,6 @@ const onPress = () => {
 
   // Disable Webcam in Meeting
   meeting?.disableWebcam();
-
-  // Toggle Webcam in Meeting
-  meeting?.toggleWebcam();
 
   // Change Webcam in Meeting
   meeting?.changeWebcam();

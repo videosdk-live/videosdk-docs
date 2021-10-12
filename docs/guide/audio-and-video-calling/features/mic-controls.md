@@ -22,9 +22,8 @@ This guide will provide an overview of how to use enable and disable Mic in a me
 
 1. **Enable Mic** - By using `enableMic()` function, a participant can publish audio to other participants.
 2. **Disable Mic** - By using `disableMic()` function, a participant can stop publishing audio to other participants.
-3. **Toggle Mic** - A participant can on / off mic using `toggleMic()` function.
 
-### Enable, Disable And Toggle Mic
+### Enable, Disable Mic
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -48,9 +47,6 @@ const onPress = () => {
 
   // Disable Mic in Meeting
   meeting?.disableMic();
-
-  // Toggle Mic in Meeting
-  meeting?.toggleMic();
 };
 ```
 
@@ -64,9 +60,6 @@ const onPress = () => {
 
   // Disable Mic in Meeting
   meeting?.disableMic();
-
-  // Toggle Mic in Meeting
-  meeting?.toggleMic();
 };
 ```
 
@@ -80,9 +73,6 @@ const onPress = () => {
 
   // Disable Mic in Meeting
   meeting?.disableMic();
-
-  // Toggle Mic in Meeting
-  meeting?.toggleMic();
 };
 ```
 
