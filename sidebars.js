@@ -113,6 +113,32 @@ module.exports = {
       items: ["guide/prebuilt-video-calling/getting-started"],
       collapsed: false,
     },
+    {
+      type: "category",
+      label: "SETUP",
+      items: [
+        "guide/prebuilt-video-calling/signup-and-create-api",
+        "guide/prebuilt-video-calling/prebuilt-setup",
+      ],
+      collapsed: false,
+    },
+    {
+      type: "category",
+      label: "FEATURES",
+      items: [
+        "guide/prebuilt-video-calling/features/join-meeting",
+        "guide/prebuilt-video-calling/features/leave-meeting",
+        "guide/prebuilt-video-calling/features/camera-controls",
+        "guide/prebuilt-video-calling/features/mic-controls",
+        "guide/prebuilt-video-calling/features/screenshare",
+        "guide/prebuilt-video-calling/features/send-messages",
+        "guide/prebuilt-video-calling/features/record-meeting",
+        "guide/prebuilt-video-calling/features/go-live-social-media",
+        "guide/prebuilt-video-calling/features/branding",
+        "guide/prebuilt-video-calling/features/set-permissions",
+      ],
+      collapsed: false,
+    },
   ],
 
   guideAudioAndVideoCalling: [

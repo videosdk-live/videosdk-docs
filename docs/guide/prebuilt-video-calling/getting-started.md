@@ -9,7 +9,7 @@ keywords:
   - no code
   - low code
   - prebuilt sdk
-  - embed sdk 
+  - embed sdk
 image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
 slug: getting-started
@@ -17,12 +17,29 @@ slug: getting-started
 
 Prebuilt SDK is an easy-to-use video meeting SDK. Embed video meetings into an application or website with the API allowing your team to build faster and ship more often.
 
-## Get Started 
-To use the Embedded API you need to register and generate API key from [app.videosdk.live](https://app.videosdk.live/). A new key will be generated from the Setting > API Keys. 
+## Steps
 
-You can use any unique `meetingId` to create a room and next you just need to embed iframe in your app or website. 
+import Card from '@theme/Card';
 
-## Embed a meeting
+<div class="container guide-steps-block">
+  <div class="row ">
+    <div class="col col--6">
+      <Card heading="1. Signup & Create API" link="/docs/guide/prebuilt-video-calling/signup-and-create-api" description="Generate your API key." />
+    </div>
+    <div class="col col--6" >
+      <Card heading="2. Prebuilt Setup" link="/docs/guide/prebuilt-video-calling/prebuilt-setup" description="Integrate Prebuilt with API key."  />
+    </div>
+  </div>
+  <div class="row " style={{justifyContent:'center'}}>
+    <div class="col col--6">
+      <Card heading="3. Join Meeting" link="/docs/guide/audio-and-video-calling/signup-and-create-api" description="Enter in Meeting." />
+    </div>
+    
+  </div>
+</div>
+
+<!-- ## Embed a meeting
+
 Embedding a meeting into a website and app requires you to add script into page or application.
 
 import Tabs from '@theme/Tabs';
@@ -58,7 +75,7 @@ values={[
 
       micEnabled: true,
       webcamEnabled: true,
-      
+
       joinScreen: {
         visible: true, // Show the join screen ?
         title: "Daily Scrum", // Meeting title
@@ -304,7 +321,7 @@ class WKWebViewController: UIViewController, WKNavigationDelegate {
 
     public var roomUrlString = "" // Replace by your own
     private var webView: WKWebView!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         let config = WKWebViewConfiguration()
@@ -330,7 +347,7 @@ import SafariServices
 class ViewController: UIViewController, SFSafariViewControllerDelegate {
 
     public var roomUrlString = "" // Replace by your own
-    
+
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         guard let roomUrl = URL(string: roomUrlString) else {
@@ -353,7 +370,7 @@ import UIKit
 class ViewController: UIViewController {
 
     public var roomUrlString = "" // Replace by your own
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         guard let roomUrl = URL(string: roomUrlString),
@@ -369,9 +386,5 @@ class ViewController: UIViewController {
 </Tabs>
 
 ## What Next
-Explore tutorials and code samples to customise prebuilt SDK.
 
-
-
-
-
+Explore tutorials and code samples to customise prebuilt SDK. -->
