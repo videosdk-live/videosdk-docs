@@ -19,7 +19,7 @@ import Mermaid from '@theme/Mermaid';
 
 To begin working with the VideoSDK, you need to setup a server that can authenticate & validate your API key and secret which we generated in the previous step. Follow this [Signup & Create API Key](signup-and-create-api) if you haven't generated API key and secret.
 
-For server setup, you'll need the following API's:
+For server setup, you'll need the following APIs:
 
 1. `GET` **get-token** : By providing API key and secret, this API will return accesstoken. We'll discuss in depth how to achieve it.
 
@@ -28,7 +28,7 @@ For server setup, you'll need the following API's:
 3. `POST` **validate-meeting/:meetingId** : By providing generated meetingId as a path parameter, this API will only validate the provided meetingId and return a `200 status`response. This API is for verification purpose only **[OPTIONAL]**.
 
 :::note
-You can integrate this API's in client side also.
+You can integrate this APIs in client side also.
 :::
 
 ### Why we use token based Authentication ?

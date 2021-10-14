@@ -23,7 +23,7 @@ This guide will get you running with the VideoSDK audio and video calling in min
 
 ## Overview
 
-At it's core, VideoSDK RTC is a distributed SFU. It eanbles highly scalable audio and video meetings unlike vanilla webRTC.
+At it's core, VideoSDK RTC is a distributed SFU(Selective Forwarding Unit). It eanbles highly scalable audio and video meetings unlike vanilla webRTC.
 
 VideoSDK enables opportunity to integrate video and audio calling to Web, Android, iOS applications. it provides Programmable SDKs and REST APIs to build up scalable video conferencing applications.
 

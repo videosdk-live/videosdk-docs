@@ -16,9 +16,10 @@ slug: installation-flutter
 ---
 
 # Installation: Flutter SDK
-Flutter SDK is natively written SDK using Dart. It is compatible with both iOs and Android. 
 
-## Install an Flutter SDK
+Flutter SDK is natively written SDK using Dart. It is compatible with both iOs and Android.
+
+## Install a Flutter SDK
 
 The easiest way to get started is by installing the sdk in your app.
 
@@ -27,7 +28,8 @@ The easiest way to get started is by installing the sdk in your app.
 ```js
 flutter pub add videosdk
 ```
-This will add a line like this to your package's pubspec.yaml (and run an implicit flutter pub get)
+
+This will add a line like this to your packages pubspec.yaml (and run an implicit flutter pub get)
 
 ### Step 2: Import the video sdk and start using it
 

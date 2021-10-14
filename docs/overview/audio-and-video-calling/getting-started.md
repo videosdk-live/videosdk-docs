@@ -23,7 +23,7 @@ This guide will get you running with the VideoSDK audio and video calling in min
 
 ## Overview
 
-At it's core, VideoSDK RTC is a distributed SFU. It eanbles highly scalable audio and video meetings unlike vanilla webRTC.
+At it's core, VideoSDK RTC is a distributed SFU(Selective Forwarding Unit). It eanbles highly scalable audio and video meetings unlike vanilla webRTC.
 
 VideoSDK uses access tokens for authentication. Using our dashboard ([app.videosdk.live](https://app.videosdk.live/)), anyone can generate access tokens tokens with an API key and secret pair.
 
@@ -186,7 +186,6 @@ Available permissions are:
 - **allow_join**: The participant will be permitted entry without request.
 - **ask_join**: The participant will not be permitted entry without request.
 - **allow_mod**: Allow participant to enable/disable other participant's mic/webcam.
-
 
 ## Connecting to your meeting
 

@@ -16,7 +16,8 @@ slug: installation-ios
 ---
 
 # Installation: iOS SDK
-iOS SDK is natively written SDK using Swift. It is compatible with both Objective-C and Swift. 
+
+iOS SDK is natively written SDK using Swift. It is compatible with both Objective-C and Swift.
 
 ## Install an iOS SDK
 
@@ -24,15 +25,17 @@ The easiest way to get started is by installing the sdk in your app.
 
 ### Step 1: Install VideoSDK using CocoaPods
 
-```js 
+```js
 pod 'VideoSDK'
 ```
+
 OR
+
 ```js
 pod 'VideoSDKRTC', :git => 'https://github.com/videosdk-live/videosdk-rtc-ios-sdk.git'
 ```
 
-### Step 2: Add permission to use microhphone and camera. Insert following lines on code in info.plist
+### Step 2: Add permission to use microphone and camera. Insert following lines on code in info.plist
 
 ```js title="info.plist"
 <key>NSCameraUsageDescription</key>

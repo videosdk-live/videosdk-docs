@@ -23,7 +23,7 @@ This guide will get you running with the VideoSDK interactive live streaming in 
 
 ## Overview
 
-At it's core, VideoSDK RTC is a distributed SFU. It eanbles highly scalable interactive live streaming unlike vanilla webRTC.
+At it's core, VideoSDK RTC is a distributed SFU(Selective Forwarding Unit). It eanbles highly scalable interactive live streaming unlike vanilla webRTC.
 
 VideoSDK uses access tokens for authentication. Using our dashboard ([app.videosdk.live](https://app.videosdk.live/)), anyone can generate access tokens tokens with an API key and secret pair.
 
