@@ -178,7 +178,6 @@ $token = JWT::encode($payload, $secret_key, 'HS256');
 
 ## Create unique live stream
 
-
 You can replace `${VIDEOSDK_TOKEN_ID}` with your own access token details or make sure to export those environment variables with the correct values first.
 
 [Detailed API Reference](/docs/live-streaming/api-reference/create-live-stream)
@@ -297,21 +296,21 @@ puts response.read_body
 
 The response will include a `Upstream URL` and a `Stream Key`.
 
-- **Upstream URL**: It will be used to push RTMP stream from your client to our server. 
+- **Upstream URL**: It will be used to push RTMP stream from your client to our server.
 - **Stream Key**: It is a secret that can be used along with VideoSDK's RTMP Server URL to configure RTMP streaming software.
 
 :::caution
 
-The Stream Key should be treated as a private key for live streaming. Anyone with the key can use it to stream video to the Live Stream it belongs to, so make sure your users know to keep it safe. 
+The Stream Key should be treated as a private key for live streaming. Anyone with the key can use it to stream video to the Live Stream it belongs to, so make sure your users know to keep it safe.
 
 :::
 
-```json 
+```json
 {
   "record": false,
   "name": "zujo",
-  "streamKey": "e83fb175-5606-4ee5-b960-aacfce300ba6",
-  "upstreamUrl": "rtmp://dev-live.zujonow.com/live/.......",
+  "streamKey": "eb175-5-4e5-60-aacfce300b",
+  "upstreamUrl": "rtmp://live.zujonow.com/live/.......",
   "downstreamUrl": "https://live.zujonow.com/live/.......",
   "recordingUrl": "https://live.zujonow.com/live/......",
   "restream": [
@@ -319,22 +318,21 @@ The Stream Key should be treated as a private key for live streaming. Anyone wit
       "url": "rtmp://x.rtmp.youtube.com/live2",
       "streamKey": "0tjp-h6a2-8c9d-vusv-01uu"
     }
-  ],
-  "createdAt": "2021-07-05T12:43:52.921Z",
-  "updatedAt": "2021-07-05T12:45:04.379Z"
+  ]
 }
 ```
 
 You can find more details about the options on the [Create Live Stream](/docs/live-streaming/api-reference/create-live-stream/)
 
 ## Start Broadcasting
+
 VideoSDK supports live streaming using the RTMP protocol, which is supported by most broadcast software/hardware as well as open source software for mobile applications.
 
 Your users or your client app will need software that can push an RTMP stream. That software will be configured using the Stream Key from the prior step along with VideoSDK's RTMP Server URL
 
-| RTMP Server URL      | Description | Common Applications
-| ----------- | ----------- | ----------- |
-| rtmp://live.zujonow.com/live      | Mux's standard RTMP entry point. Compatible with the majority of streaming applications and services.       | OBS, Wirecast, Streamaxia RTMP SDKs
+| RTMP Server URL              | Description                                                                                           | Common Applications                 |
+| ---------------------------- | ----------------------------------------------------------------------------------------------------- | ----------------------------------- |
+| rtmp://live.zujonow.com/live | Mux's standard RTMP entry point. Compatible with the majority of streaming applications and services. | OBS, Wirecast, Streamaxia RTMP SDKs |
 
 If you want to live stream with a protocol other than RTMP, let us know!
 
@@ -343,7 +341,6 @@ If you want to live stream with a protocol other than RTMP, let us know!
 ## Play live stream
 
 To play back a live stream, use the `downstreamUrl` that was returned when you created the Live Stream.
-
 
 <Tabs
 defaultValue="html"
@@ -396,11 +393,12 @@ values={[
 
 ```js
 import React, { useEffect, useRef } from "react";
-import Hls from 'hls.js';
+import Hls from "hls.js";
 
 export default function VideoPlayer() {
   const videoRef = useRef(null);
-  const src = "https://live.zujonow.com/live/cae23d5b-0c34-4429-a70b-0d597e5e0e96/index.m3u8";
+  const src =
+    "https://live.zujonow.com/live/cae23d5b-0c34-4429-a70b-0d597e5e0e96/index.m3u8";
 
   useEffect(() => {
     let hls;
@@ -434,7 +432,7 @@ export default function VideoPlayer() {
       style={{ width: "100%", maxWidth: "500px" }}
     />
   );
-}  
+}
 ```
 
 </TabItem>
@@ -448,7 +446,7 @@ SimpleExoPlayer player = new SimpleExoPlayer.Builder(context).build();
 // Set the media item to be played.
 player.setMediaItem(MediaItem.fromUri("https://live.zujonow.com/live/cae23d5b-0c34-4429-a70b-0d597e5e0e96/index.m3u8"));
 // Prepare the player.
-player.prepare(); 
+player.prepare();
 ```
 
 </TabItem>
@@ -483,7 +481,9 @@ struct ContentView_Previews: PreviewProvider {
 </Tabs>
 
 ## Stop broadcast
+
 When the Streamer is finished they will stop the broadcast software/hardware, which will disconnect from the VideoSDK servers.
 
 ## What Next
+
 Explore guide, tutorials and code samples to implement custom features using Live Streaming SDK.

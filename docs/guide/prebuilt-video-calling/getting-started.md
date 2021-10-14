@@ -15,7 +15,7 @@ sidebar_position: 1
 slug: getting-started
 ---
 
-Prebuilt SDK is an easy-to-use video meeting SDK. Embed video meetings into an application or website with the API allowing your team to build faster and ship more often.
+Prebuilt SDK is an easy-to-use video meeting SDK. Embed video meetings into your application with the API allowing your team to build faster and ship more often.
 
 ## Steps
 

@@ -199,9 +199,30 @@ module.exports = {
     {
       type: "category",
       label: "GUIDE",
+      items: ["guide/standard-live-streaming/getting-started"],
+      collapsed: false,
+    },
+    {
+      type: "category",
+      label: "SETUP",
       items: [
-        "guide/standard-live-streaming/getting-started",
-        "guide/standard-live-streaming/architecture",
+        "guide/standard-live-streaming/signup-and-create-api",
+        "guide/standard-live-streaming/authentication",
+      ],
+      collapsed: false,
+    },
+    {
+      type: "category",
+      label: "FEATURES",
+      items: [
+        "guide/standard-live-streaming/features/create-live-stream",
+        "guide/standard-live-streaming/features/go-live-with-rtmp",
+        "guide/standard-live-streaming/features/play-live-stream",
+        "guide/standard-live-streaming/features/recording",
+        "guide/standard-live-streaming/features/restream",
+        "guide/standard-live-streaming/features/list-live-stream",
+        "guide/standard-live-streaming/features/get-live-stream",
+        "guide/standard-live-streaming/features/update-live-stream",
       ],
       collapsed: false,
     },

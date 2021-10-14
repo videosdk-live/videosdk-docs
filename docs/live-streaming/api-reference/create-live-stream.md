@@ -8,11 +8,8 @@ sidebar_position: 1
 
 A live stream create api will help you to connect your RTMP stream to videosdk.live.
 
-
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-
-
 
 <Tabs
 defaultValue="curl"
@@ -131,10 +128,10 @@ puts response.read_body
   "record": false,
   "userId": "607adacdaeba2c4d217d5fea443d",
   "name": "zujo",
-  "streamKey": "e83fb175-5606-4ee5-b960-aacfce300ba6",
-  "upstreamUrl": "rtmp://dev-live.zujonow.com/live/e83fb175-5606-4ee5-b960-aacfce300ba6",
-  "downstreamUrl": "https://dev-live.zujonow.com/live/e83fb175-5606-4ee5-b960-aacfce300ba6/index.m3u8",
-  "recordingUrl": "https://dev-live.zujonow.com/live/e83fb175-5606-4ee5-b960-aacfce300ba6/storage/index.m3u8",
+  "streamKey": "eb175-5-4e5-60-aacfce300b",
+  "upstreamUrl": "rtmp://live.zujonow.com/live/eb175-5-4e5-60-aacfce300b",
+  "downstreamUrl": "https://live.zujonow.com/live/eb175-5-4e5-60-aacfce300b/index.m3u8",
+  "recordingUrl": "https://live.zujonow.com/live/eb175-5-4e5-60-aacfce300b/storage/index.m3u8",
   "restream": [
     {
       "_id": "60e2fed0135c9810f490f3b6",
