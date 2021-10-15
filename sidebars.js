@@ -18,26 +18,6 @@ module.exports = {
   overview: [
     {
       type: "category",
-      label: "GET STARTED",
-      items: [
-        "overview/introduction",
-        // {
-        //   type: "category",
-        //   label: "Architecture",
-        //   items: [
-        //     "overview/architecture/terminology",
-        //     // "overview/architecture/authentication",
-        //     "overview/architecture/video-and-audio-call",
-        //     "overview/architecture/live-streaming",
-        //     "overview/architecture/video-on-demand",
-        //   ],
-        //   collapsed: false,
-        // },
-      ],
-      collapsed: false,
-    },
-    {
-      type: "category",
       label: "DASHBOARD",
       items: [
         "overview/dashboard/getting-started",
