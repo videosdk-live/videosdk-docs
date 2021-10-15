@@ -1,8 +1,8 @@
 ---
-title: Install Audio and Video Calling SDK in Android
+title: Start a Audio & Video Call in Android SDK - Video SDK Docs
 hide_title: false
 hide_table_of_contents: false
-description: This guide explains installation of Android in your application. it is compatible with both java and kotlin.
+description: Build customizable real-time audio and video calling applications in Android SDK using Video SDK add live audio & video conferencing to your applications.
 sidebar_label: "Android"
 pagination_label: "Android"
 keywords:
@@ -15,8 +15,9 @@ sidebar_position: 1
 slug: installation-android
 ---
 
-# Installation: Android SDK
-Android SDK is natively written SDK using Java. It is compatible with both Java and Kotlin. 
+# Getting Started - Android SDK
+
+Android SDK is natively written SDK using Java. It is compatible with both Java and Kotlin.
 
 ## Install an Android SDK
 
@@ -50,6 +51,7 @@ dependencies {
 ```
 
 ### Step 4: Extend the android.app.Application class and create MainApplication.java class with the following code
+
 ```js title="MainApplication.java"
 package live.videosdk.demo;
 
@@ -68,6 +70,7 @@ public class MainApplication extends Application {
 ```
 
 ### Step 5: Add MainApplication to AndroidManifest.xml
+
 ```js title="AndroidManifest.xml"
 <application
     android:name=".MainApplication"
@@ -77,6 +80,7 @@ public class MainApplication extends Application {
 ```
 
 ### Step 6: Start using it
+
 ```js title="MainActivity.java"
 @Override
 protected void onCreate(Bundle savedInstanceState) {

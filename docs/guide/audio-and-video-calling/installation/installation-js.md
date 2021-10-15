@@ -1,8 +1,8 @@
 ---
-title: Install Audio and Video Calling SDK in Java Script
+title: Start a Audio & Video Call in Javascript SDK - Video SDK Docs
 hide_title: false
 hide_table_of_contents: false
-description: This guide explains installation of javascript SDK in your application. it provides npm and yarn package for the same. 
+description: Build customizable real-time audio and video calling applications in Javascript SDK using Video SDK add live audio & video conferencing to your applications.
 sidebar_label: "JavaScript"
 pagination_label: "JavaScript"
 keywords:
@@ -15,7 +15,8 @@ sidebar_position: 1
 slug: installation-javascript
 ---
 
-# Installation: Java Script
+# Getting Started - JavaScript SDK
+
 There are two ways to install JavaScript SDK.
 
 ## First Way: Install via using `<script>` tag
@@ -48,10 +49,8 @@ npm install @videosdk.live/js-sdk
 yarn add @videosdk.live/js-sdk
 ```
 
-
-
-
 ## Example
+
 Next step is to import the library and start using it.
 
 ### Webpack/node-style require

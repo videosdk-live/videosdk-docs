@@ -1,8 +1,8 @@
 ---
-title: Play External Video
+title: Play External Video Audio & Video Call - Video SDK Docs
 hide_title: false
 hide_table_of_contents: false
-description: This guide will explain play external video link in meeting.
+description: Play External Video features quick integrate in Javascript, React JS, Android, iOS, React Native, Flutter with Video SDK to add live video & audio conferencing to your applications.
 sidebar_label: Play External Video
 pagination_label: Play External Video
 keywords:
@@ -18,6 +18,8 @@ image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
 slug: play-external-video
 ---
+
+# Play External Video
 
 This feature allows participants to broadcast any external video by providing video link.
 Like screen share feature, one participant is broadcasting and other participants are receivers.
@@ -51,8 +53,7 @@ values={[
 const onPress = () => {
   // Start Video
   meeting?.startVideo({
-    link:
-      "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+    link: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
   });
 
   // Stop Video
@@ -76,8 +77,7 @@ const onPress = () => {
 const onPress = () => {
   // Start Video
   meeting?.startVideo({
-    link:
-      "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+    link: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
   });
 
   // Stop Video
@@ -101,8 +101,7 @@ const onPress = () => {
 const onPress = () => {
   // Start Video
   meeting?.startVideo({
-    link:
-      "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+    link: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
   });
 
   // Stop Video

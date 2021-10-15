@@ -1,8 +1,8 @@
 ---
-title: Camera Controls
+title: Camera Controls Audio & Video Call - Video SDK Docs
 hide_title: false
 hide_table_of_contents: false
-description: This guide will explain camera controls for meeting.
+description: Camera Controls features quick integrate in Javascript, React JS, Android, iOS, React Native, Flutter with Video SDK to add live video & audio conferencing to your applications.
 sidebar_label: Camera Controls
 pagination_label: Camera Controls
 keywords:
@@ -17,6 +17,8 @@ image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
 slug: camera-controls
 ---
+
+# Camera Controls
 
 Whenever any participant wants to start/stop broadcasting their video to other participant in a meeting, they can simply do it with videoSDK Meeting.
 

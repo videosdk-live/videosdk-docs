@@ -1,8 +1,8 @@
 ---
-title: Go Live On Social Media
+title: RTMP Live Social Media Audio & Video Call - Video SDK Docs
 hide_title: false
 hide_table_of_contents: false
-description: This guide will explain broadcast meeting on various social media platforms.
+description: RTMP Live Social Media features quick integrate in Javascript, React JS, Android, iOS, React Native, Flutter with Video SDK to add live video & audio conferencing to your applications.
 sidebar_label: Go Live On Social Media
 pagination_label: Go Live On Social Media
 keywords:
@@ -15,6 +15,8 @@ image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
 slug: go-live-social-media
 ---
+
+# Go Live On Social Media
 
 This feature allows participant to broadcast meeting on various social media platforms such as Facebook or Youtube.
 This guide will provide an overview of how participant can start and stop broadcasting meeting.

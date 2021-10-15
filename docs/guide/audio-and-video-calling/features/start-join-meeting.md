@@ -1,8 +1,8 @@
 ---
-title: Start or Join Meeting
+title: Start or join Meeting Audio & Video Call - Video SDK Docs
 hide_title: false
 hide_table_of_contents: false
-description: This guide will explain joining process of meeting.
+description: Start or join Meeting features quick integrate in Javascript, React JS, Android, iOS, React Native, Flutter with Video SDK to add live video & audio conferencing to your applications.
 sidebar_label: Start or Join Meeting
 pagination_label: Start or Join Meeting
 keywords:
@@ -13,6 +13,8 @@ image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
 slug: start-join-meeting
 ---
+
+# Start or Join Meeting
 
 <div style={{display:'flex',flexDirection:'row',alignItems:'stretch',}}>
 <div style={{}}>
@@ -118,7 +120,6 @@ const validateMeeting = async (token, meetingId) => {
     console.log(e);
   }
 };
-
 
 const access_token = await getToken();
 const meetingId = await getMeetingId(access_token);
@@ -263,7 +264,6 @@ const validateMeeting = async (token, meetingId) => {
 const access_token = await getToken();
 const meetingId = await getMeetingId(access_token);
 const validatedMeetingId = await validateMeeting(token, "provided-meeting-id");
-
 ```
 
 </TabItem>

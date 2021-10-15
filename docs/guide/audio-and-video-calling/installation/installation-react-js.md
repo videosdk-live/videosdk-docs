@@ -1,8 +1,8 @@
 ---
-title: Install Audio and Video Calling SDK in React JS
+title: Start a Audio & Video Call in React JS SDK - Video SDK Docs
 hide_title: false
 hide_table_of_contents: false
-description: This guide explains installation of React SDK in your application. it uses react hooks to simplify installation steps.
+description: Create customizable real-time audio and video calling applications with React JS SDK with Video SDK add live audio & video conferencing to your applications.
 sidebar_label: "React JS"
 pagination_label: "React JS"
 keywords:
@@ -15,7 +15,8 @@ sidebar_position: 1
 slug: installation-react-js
 ---
 
-# Installation: React JS
+# Getting Started - React JS SDK
+
 React JS SDK wraps up out JavaScript SDK into usable hooks API. It simplifies the code for React JS.
 
 ## Install a React SDK
@@ -23,24 +24,31 @@ React JS SDK wraps up out JavaScript SDK into usable hooks API. It simplifies th
 The easiest way to get started is by installing the sdk in your app.
 
 ### Npm
+
 ```js
 $ npm install "@videosdk.live/react-sdk"
 ```
+
 ### Yarn
+
 ```js
 $ yarn add "@videosdk.live/react-sdk"
 ```
 
 ## Use hooks API
+
 Our React JS SDK provides two important hooks API:
+
 - useMeeting
 - useParticipant
 
-Also, React Provider and Consumer to listen changes in meeting environment. 
+Also, React Provider and Consumer to listen changes in meeting environment.
+
 - MeetingProvider
 - MeetingConsumer
 
 ## Example
+
 ```js title="Example: using React JS SDK"
 import {
   MeetingProvider,
@@ -57,6 +65,7 @@ const Meeting = () => {
 }
 
 ```
+
 :::note
 
 Check out official example of React JS SDK implementation: [videosdk-rtc-react-sdk-example](https://github.com/videosdk-live/videosdk-rtc-react-sdk-example)

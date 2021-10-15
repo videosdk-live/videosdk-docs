@@ -1,8 +1,8 @@
 ---
-title: Getting Started with Audio and Video Calling
+title: Get Started with Video and Audio Call - Video SDK Documentation
 hide_title: false
 hide_table_of_contents: false
-description: Audio and video calling sdk will help you to integrate video and audio calling in your application.
+description: Video SDK enables the opportunity to integrate native iOS, Android & Web SDKs to add live video and audio conferencing to your applications.
 sidebar_label: Getting Started
 pagination_label: Getting Started
 keywords:
@@ -17,7 +17,7 @@ slug: getting-started
 
 import Mermaid from '@theme/Mermaid';
 
-# Explore audio and video calling
+# Audio / Video Getting started
 
 This guide will get you running with the VideoSDK audio and video calling in minutes.
 

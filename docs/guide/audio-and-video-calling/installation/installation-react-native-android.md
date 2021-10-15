@@ -1,8 +1,8 @@
 ---
-title: Install Audio and Video Calling SDK in React Native Android
+title: Start a Audio & Video Call in React Native Android SDK - Video SDK Docs
 hide_title: false
 hide_table_of_contents: false
-description: This guide explains installation of React SDK in your application. it uses react hooks to simplify installation steps.
+description: Build customizable real-time audio and video calling applications in React Native Android SDK using Video SDK add live audio & video conferencing to your applications.
 sidebar_label: "React Native Android"
 pagination_label: "React Native Android"
 keywords:
@@ -15,8 +15,9 @@ sidebar_position: 1
 slug: installation-react-native-android
 ---
 
-# Installation: React Native Android
-React Native SDK wraps up out React SDK. It also simplifies dependecies management.  
+# Getting Started - React Native Android SDK
+
+React Native SDK wraps up out React SDK. It also simplifies dependecies management.
 
 ## Install a React Native SDK in Android
 
@@ -25,10 +26,13 @@ React Native SDK wraps up out React SDK. It also simplifies dependecies manageme
 The easiest way to get started is by installing the sdk in your app.
 
 #### Npm
+
 ```js
 $ npm install "@videosdk.live/react-native-sdk"
 ```
+
 #### Yarn
+
 ```js
 $ yarn add "@videosdk.live/react-native-sdk"
 ```
@@ -55,6 +59,7 @@ project(':rnfgservice').projectDir = new File(rootProject.projectDir, '../node_m
 ```
 
 ### Step 4: Add below lines in MainApplication.java
+
 ```js title="MainApplication.java"
 import live.videosdk.rnfgservice.ForegroundServicePackage;
 import live.videosdk.rnincallmanager.InCallManagerPackage;
@@ -82,10 +87,12 @@ public class MainApplication extends Application implements ReactApplication {
 
 ```js title="android/app/src/main/res/values/colors.xml"
 <resources>
-    <item name="red" type="color">#FC0303</item>
-    <integer-array name="androidcolors">
+  <item name="red" type="color">
+    #FC0303
+  </item>
+  <integer-array name="androidcolors">
     <item>@color/red</item>
-    </integer-array>
+  </integer-array>
 </resources>
 ```
 
@@ -127,6 +134,7 @@ public class MainApplication extends Application implements ReactApplication {
 ```
 
 ### Step 7: Register services at index page of project
+
 ```js title="App.js"
 // Import the library
 import { register } from '@videosdk.live/react-native-sdk';
@@ -140,11 +148,9 @@ AppRegistry.registerComponent(appName, () => App);
 ```
 
 ### Step 8: Start using it
+
 ```js title="MeetingGrid.js"
-import {
-  useMeeting,
-  useParticipant,
-} from "@videosdk.live/react-native-sdk";
+import { useMeeting, useParticipant } from "@videosdk.live/react-native-sdk";
 
 const { join, leave } = useMeeting();
 ```
