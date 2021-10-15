@@ -19,7 +19,7 @@ slug: get-started
 
 ## For video and audio calling SDK
 
-This guide will follow installation guide for all the VideoSDK for Audio and Video Calling. follow the below guide to install VideoSDK RTC in your website or App
+This guide will follow installation guide for all the VideoSDK for Audio and Video Calling. Follow the below guide to install VideoSDK RTC in your website or App
 
 ## Web SDK
 

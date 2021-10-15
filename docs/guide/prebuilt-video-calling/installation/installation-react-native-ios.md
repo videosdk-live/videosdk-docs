@@ -40,7 +40,7 @@ $ yarn add "@videosdk.live/react-native-incallmanager"
 ```
 
 ### Step 3: Install all the dependecies via CocoaPods
-MPORTANT: Make sure you are using CocoaPods 1.10 or higher.
+IMPORTANT: Make sure you are using CocoaPods 1.10 or higher.
 
 ```js
 $[sudo] gem install cocoapods

@@ -40,7 +40,7 @@ $ yarn add "@videosdk.live/react-native-incallmanager"
 ```
 
 ### Step 3: Install all the dependecies via CocoaPods
-MPORTANT: Make sure you are using CocoaPods 1.10 or higher.
+IMPORTANT: Make sure you are using CocoaPods 1.10 or higher.
 
 ```js
 $[sudo] gem install cocoapods
@@ -67,7 +67,7 @@ You have change platform field of podfile to 11.0 or above it, as react-native-w
 ```js 
 $ Pod install
 ```
-### Step 8: Link webRtc binary 
+### Step 8: Link WebRTC binary 
 Add “libreact-native-webrtc.a” in Link Binary with libraries. In target of main project folder.
 
 ### Step 9: Declare permissions in Info.plist 

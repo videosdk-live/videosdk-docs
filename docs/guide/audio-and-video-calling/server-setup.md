@@ -189,8 +189,8 @@ $token = JWT::encode($payload, $secret_key, 'HS256');
 
 Available permissions are:
 
-- **allow_join**: The participant will be permitted entry without request.
-- **ask_join**: The participant will not be permitted entry without request.
-- **allow_mod**: Allow participant to enable/disable other participant's mic/webcam.
+- **allow_join**: The participant is **allowed to join** the meeting directly.
+- **ask_join**: The participant requires to **ask for permission to join** the meeting.
+- **allow_mod**: The participant is **allowed to toggle** webcam & mic of other participants.
 
 For other APIs you can follow [Create Meeting & Validate Meeting.](/docs/realtime-communication/rest-api-reference/create-join-meeting)
