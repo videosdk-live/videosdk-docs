@@ -32,7 +32,7 @@ import Card from '@theme/Card';
   </div>
   <div class="row " style={{justifyContent:'center'}}>
     <div class="col col--6">
-      <Card heading="3. Join Meeting" link="/docs/guide/audio-and-video-calling/signup-and-create-api" description="Enter in Meeting." />
+      <Card heading="3. Join Meeting" link="/docs/guide/prebuilt-video-calling/features/join-meeting" description="Enter in Meeting." />
     </div>
     
   </div>

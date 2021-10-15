@@ -18,9 +18,17 @@ slug: screenshare
 
 Screen sharing allows any participant who wants to share either the complete screen, a specific window or, a browser tab during the meeting.
 
+### How it works. ?
+
+- While `screenShareEnabled` value set to `true`, you will show screen share button as display in below image.
+
+- While `screenShareEnabled` value set to `false`, the below screen share button will not appear.
+
+![Go live with VideoSDK](/img/prebuilt/prebuilt-screen-share.png)
+
 ### Screen Share Attributes
 
-- **screenShareEnabled**: If it is true, then screen share button will be visible on top bar of the meeting. If it is false, then screen share button won't be available on top bar of the meeting.
+- `screenShareEnabled`: If it is true, then screen share button will be visible on top bar of the meeting. If it is false, then screen share button won't be available on top bar of the meeting.
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -28,10 +36,7 @@ import TabItem from '@theme/TabItem';
 <Tabs
 defaultValue="js"
 values={[
-{label: 'JavaScript', value: 'js'},
-{label: 'React', value: 'react'},
-{label: 'Angular', value: 'angular'},
-{label: 'Vue', value: 'vue'},
+{label: 'JavaScript', value: 'js'}
 ]}>
 <TabItem value="js">
 
@@ -40,46 +45,6 @@ const config = {
   // ...
   screenShareEnabled: true,
   // ...
-};
-```
-
-</TabItem>
-
-<TabItem value="react">
-
-```js
-useEffect(() => {
-  const config = {
-    // ...
-    screenShareEnabled: true,
-    // ...
-  };
-}, []);
-```
-
-</TabItem>
-<TabItem value="angular">
-
-```js
-function ngOnInit() {
-  const config = {
-    // ...
-    screenShareEnabled: true,
-    // ...
-  };
-}
-```
-
-</TabItem>
-<TabItem value="vue">
-
-```js
-mounted: () => {
-  const config = {
-    // ...
-    screenShareEnabled: true,
-    // ...
-  };
 };
 ```
 

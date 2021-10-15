@@ -18,11 +18,18 @@ slug: mic-controls
 
 Different mic control permissions allows participant to enable/disable their own mic and other participant's mic too & also can set default participant's mic settings, when meeting start.
 
+### How it works. ?
+
+- While `participantCanToggleSelfMic` value set to `true`, you can enable/disable your own mic as display in below image.
+
+- While `participantCanToggleSelfMic` value set to `false`, the below mic button will not appear.
+
+![Go live with VideoSDK](/img/prebuilt/prebuilt-mic.png)
+
 ### Mic Attributes
 
-- **micEnabled**: Default mic setting for meeting joinee, true enables mic & false disable mic.
-- **participantCanToggleSelfMic**: Allow participant to enable/disable their own mic.
-- **participantCanToggleOtherMic**: Allow participant to enable/disable other participant's mic.
+- `micEnabled`: Default mic setting for meeting joinee, true enables mic & false disable mic.
+- `participantCanToggleSelfMic`: Allow participant to enable/disable their own mic.
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -30,10 +37,7 @@ import TabItem from '@theme/TabItem';
 <Tabs
 defaultValue="js"
 values={[
-{label: 'JavaScript', value: 'js'},
-{label: 'React', value: 'react'},
-{label: 'Angular', value: 'angular'},
-{label: 'Vue', value: 'vue'},
+{label: 'JavaScript', value: 'js'}
 ]}>
 <TabItem value="js">
 
@@ -43,52 +47,6 @@ const config = {
   micEnabled: true,
   participantCanToggleSelfMic: true,
   // ...
-};
-```
-
-</TabItem>
-
-<TabItem value="react">
-
-```js
-useEffect(() => {
-  const config = {
-    // ...
-    micEnabled: true,
-    participantCanToggleSelfMic: true,
-
-    // ...
-  };
-}, []);
-```
-
-</TabItem>
-<TabItem value="angular">
-
-```js
-function ngOnInit() {
-  const config = {
-    // ...
-    micEnabled: true,
-    participantCanToggleSelfMic: true,
-
-    // ...
-  };
-}
-```
-
-</TabItem>
-<TabItem value="vue">
-
-```js
-mounted: () => {
-  const config = {
-    // ...
-    micEnabled: true,
-    participantCanToggleSelfMic: true,
-
-    // ...
-  };
 };
 ```
 

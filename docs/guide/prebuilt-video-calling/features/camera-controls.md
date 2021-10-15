@@ -20,10 +20,18 @@ slug: camera-controls
 
 Different webcam control permissions allows participant to enable/disable their own webcam and other participant's webcam too & also can set default participant's webcam settings, when meeting start.
 
+### How it works. ?
+
+- While `participantCanToggleSelfWebcam` value set to `true`, you can enable/disable your own webcam as display in below image.
+
+- While `participantCanToggleSelfWebcam` value set to `false`, the below webcam button will not appear.
+
+![Go live with VideoSDK](/img/prebuilt/prebuilt-webcam.png)
+
 ### Camera Attributes
 
-- **webcamEnabled**: Default webcam setting for meeting joinee, true enables webcam & false disable webcam.
-- **participantCanToggleSelfWebcam**: Allow participant to enable/disable their own webcam.
+- `webcamEnabled`: Default webcam setting for meeting joinee, true enables webcam & false disable webcam.
+- `participantCanToggleSelfWebcam`: Allow participant to enable/disable their own webcam.
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -31,10 +39,7 @@ import TabItem from '@theme/TabItem';
 <Tabs
 defaultValue="js"
 values={[
-{label: 'JavaScript', value: 'js'},
-{label: 'React', value: 'react'},
-{label: 'Angular', value: 'angular'},
-{label: 'Vue', value: 'vue'},
+{label: 'JavaScript', value: 'js'}
 ]}>
 <TabItem value="js">
 
@@ -44,52 +49,6 @@ const config = {
   webcamEnabled: true,
   participantCanToggleSelfWebcam: true,
   // ...
-};
-```
-
-</TabItem>
-
-<TabItem value="react">
-
-```js
-useEffect(() => {
-  const config = {
-    // ...
-    webcamEnabled: true,
-    participantCanToggleSelfWebcam: true,
-
-    // ...
-  };
-}, []);
-```
-
-</TabItem>
-<TabItem value="angular">
-
-```js
-function ngOnInit() {
-  const config = {
-    // ...
-    webcamEnabled: true,
-    participantCanToggleSelfWebcam: true,
-
-    // ...
-  };
-}
-```
-
-</TabItem>
-<TabItem value="vue">
-
-```js
-mounted: () => {
-  const config = {
-    // ...
-    webcamEnabled: true,
-    participantCanToggleSelfWebcam: true,
-
-    // ...
-  };
 };
 ```
 

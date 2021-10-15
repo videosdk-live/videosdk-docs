@@ -21,8 +21,8 @@ This guide will provide an overview of how participant can start and stop broadc
 
 ### Live streaming attributes
 
-- **autoStart**: If it is true then live streaming will start automatically when the meeting starts, default value is false (You can't start live streaming during the meeting).
-- **outputs**: It's an array of object that contains RTMP url and stream key from the provided platforms such as Youtube or Facebook.
+- `autoStart`: If it is true then live streaming will start automatically when the meeting starts, default value is false (You can't start live streaming during the meeting).
+- `outputs`: It's an array of object that contains RTMP url and stream key from the provided platforms such as Youtube or Facebook.
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -30,10 +30,7 @@ import TabItem from '@theme/TabItem';
 <Tabs
 defaultValue="js"
 values={[
-{label: 'JavaScript', value: 'js'},
-{label: 'React', value: 'react'},
-{label: 'Angular', value: 'angular'},
-{label: 'Vue', value: 'vue'},
+{label: 'JavaScript', value: 'js'}
 ]}>
 <TabItem value="js">
 
@@ -50,70 +47,6 @@ const config = {
     ],
   },
   // ...
-};
-```
-
-</TabItem>
-
-<TabItem value="react">
-
-```js
-useEffect(() => {
-  const config = {
-    // ...
-    livestream: {
-      autoStart: true,
-      outputs: [
-        {
-          url: "rtmp://x.rtmp.youtube.com/live2",
-          streamKey: "<STREAM KEY FROM YOUTUBE>",
-        },
-      ],
-    },
-    // ...
-  };
-}, []);
-```
-
-</TabItem>
-<TabItem value="angular">
-
-```js
-function ngOnInit() {
-  const config = {
-    // ...
-    livestream: {
-      autoStart: true,
-      outputs: [
-        {
-          url: "rtmp://x.rtmp.youtube.com/live2",
-          streamKey: "<STREAM KEY FROM YOUTUBE>",
-        },
-      ],
-    },
-    // ...
-  };
-}
-```
-
-</TabItem>
-<TabItem value="vue">
-
-```js
-mounted: () => {
-  const config = {
-    // ...
-    livestream: {
-      autoStart: true,
-      outputs: [
-        {
-          url: "rtmp://x.rtmp.youtube.com/live2",
-          streamKey: "<STREAM KEY FROM YOUTUBE>",
-        },
-      ],
-    },
-    // ...
-  };
 };
 ```
 

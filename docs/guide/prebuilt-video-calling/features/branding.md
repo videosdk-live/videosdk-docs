@@ -17,12 +17,20 @@ slug: branding
 
 This feature allows you to embed your branding to top of the meeting .
 
+### How it works. ?
+
+- While `brandingEnabled` value set to `true`, you will show branding as display in below image.
+
+- While `brandingEnabled` value set to `false`, the branding will not appear.
+
+![Go live with VideoSDK](/img/prebuilt/prebuilt-branding.png)
+
 ### Branding Attributes
 
-- **brandingEnabled**: If it is true, then branding will be visible on top bar of the meeting. If it is false, then branding won't be available on top bar of the meeting.
-- **brandLogoURL**: Provide public URL of your logo.
-- **brandName**: Provide your brand title.
-- **poweredBy**: If it is true, then `Powered by videosdk.live` text will appear in bottm of branding. If it is false, then text will not appear in bottm of branding
+- `brandingEnabled`: If it is true, then branding will be visible on top bar of the meeting. If it is false, then branding won't be available on top bar of the meeting.
+- `brandLogoURL`: Provide public URL of your logo.
+- `brandName`: Provide your brand title.
+- `poweredBy`: If it is true, then `Powered by videosdk.live` text will appear in bottm of branding. If it is false, then text will not appear in bottm of branding
 
 :::note
 
@@ -36,10 +44,7 @@ import TabItem from '@theme/TabItem';
 <Tabs
 defaultValue="js"
 values={[
-{label: 'JavaScript', value: 'js'},
-{label: 'React', value: 'react'},
-{label: 'Angular', value: 'angular'},
-{label: 'Vue', value: 'vue'},
+{label: 'JavaScript', value: 'js'}
 ]}>
 <TabItem value="js">
 
@@ -55,54 +60,4 @@ const config = {
 ```
 
 </TabItem>
-
-<TabItem value="react">
-
-```js
-useEffect(() => {
-  const config = {
-    // ...
-    brandingEnabled: true,
-    brandLogoURL: "<Logo url>",
-    brandName: "Room#1",
-    poweredBy: false,
-    // ...
-  };
-}, []);
-```
-
-</TabItem>
-<TabItem value="angular">
-
-```js
-function ngOnInit() {
-  const config = {
-    // ...
-    brandingEnabled: true,
-    brandLogoURL: "<Logo url>",
-    brandName: "Room#1",
-    poweredBy: false,
-    // ...
-  };
-}
-```
-
-</TabItem>
-<TabItem value="vue">
-
-```js
-mounted: () => {
-  const config = {
-    // ...
-    brandingEnabled: true,
-    brandLogoURL: "<Logo url>",
-    brandName: "Room#1",
-    poweredBy: false,
-    // ...
-  };
-};
-```
-
-</TabItem>
-
 </Tabs>

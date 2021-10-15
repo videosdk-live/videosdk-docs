@@ -20,15 +20,26 @@ To Communicate with other participant's audio or video call, you will need to jo
 
 This guide will provide an overview of how to setup join feature in VideoSDK prebuilt.
 
+### How it works. ?
+
+- While JoinScreen `visible` value set to `true`, the below screen will display before the meeting start.
+
+![Go live with VideoSDK](/img/prebuilt/prebuilt-join-screen.png)
+
+- While JoinScreen `visible` value set to `false`, the below screen will display before the meeting start and you have to click any where to start meeting.
+
+![Go live with VideoSDK](/img/prebuilt/prebuilt-click-anywhere.png)
+
 ### Join Screen Attributes
 
 To configure join screen feature, you need to add join screen object in meeting config.
 
 `joinScreen` object has following attributes:
 
-- **visible**: If you want to show join screen before the start of the meeting set it `true `otherwise `false`.
-- **title**: Meeting title.
-- **meetingUrl**: Meeting join url, where your meeting will be hosted.
+- `visible`: If you want to show join screen before the start of the meeting set it `true `otherwise `false`.
+
+- `title`: Meeting title.
+- `meetingUrl`: Meeting join url, where your meeting will be hosted.
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -36,10 +47,7 @@ import TabItem from '@theme/TabItem';
 <Tabs
 defaultValue="js"
 values={[
-{label: 'JavaScript', value: 'js'},
-{label: 'React', value: 'react'},
-{label: 'Angular', value: 'angular'},
-{label: 'Vue', value: 'vue'},
+{label: 'JavaScript', value: 'js'}
 ]}>
 <TabItem value="js">
 
@@ -52,58 +60,6 @@ const config = {
     meetingUrl: "customURL.com",
   },
   // ...
-};
-```
-
-</TabItem>
-
-<TabItem value="react">
-
-```js
-useEffect(() => {
-  const config = {
-    // ...
-    joinScreen: {
-      visible: true,
-      title: "Daily scrum",
-      meetingUrl: customURL.com,
-    },
-    // ...
-  };
-}, []);
-```
-
-</TabItem>
-<TabItem value="angular">
-
-```js
-function ngOnInit() {
-  const config = {
-    // ...
-    joinScreen: {
-      visible: true,
-      title: "Daily scrum",
-      meetingUrl: customURL.com,
-    },
-    // ...
-  };
-}
-```
-
-</TabItem>
-<TabItem value="vue">
-
-```js
-mounted: () => {
-  const config = {
-    // ...
-    joinScreen: {
-      visible: true,
-      title: "Daily scrum",
-      meetingUrl: customURL.com,
-    },
-    // ...
-  };
 };
 ```
 
