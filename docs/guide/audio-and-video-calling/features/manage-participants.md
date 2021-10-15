@@ -1,8 +1,8 @@
 ---
-title: Manage Participants
+title: Manage Participants Audio & Video Call - Video SDK Docs
 hide_title: false
 hide_table_of_contents: false
-description: This guide will explain ending process of meeting.
+description: Manage Participants features quick integrate in Javascript, React JS, Android, iOS, React Native, Flutter with Video SDK to add live video & audio conferencing to your applications.
 sidebar_label: Manage Participants
 pagination_label: Manage Participants
 keywords:
@@ -15,6 +15,8 @@ image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
 slug: manage-participants
 ---
+
+# Manage Participants
 
 ## 1. Local Participant (self)
 
@@ -251,13 +253,8 @@ const participants = meeeting.participants;
 const ParticipantView = ({ participantId }) => {
   /** useParticipant Hooks which accept `participantId`
     as parameter then return participant properties such as displayName, webcamOn, micOn etc.  */
-  const {
-    displayName,
-    webcamStream,
-    webcamOn,
-    micOn,
-    isActiveSpeaker,
-  } = useParticipant(participantId);
+  const { displayName, webcamStream, webcamOn, micOn, isActiveSpeaker } =
+    useParticipant(participantId);
 
   return (
     <RTCView

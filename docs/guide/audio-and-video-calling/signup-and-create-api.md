@@ -1,8 +1,8 @@
 ---
-title: Signup & Create API Key
+title: Sign up for free Video SDK account
 hide_title: false
 hide_table_of_contents: false
-description: This guide will explain authentication and token flow for audio and video calling SDK.
+description: Video SDK Sign up. Get started with 10,000 minutes free every month! Programmable Video SDKs and Rest APIs to build up scalable video conferencing applications.
 sidebar_label: Signup & Create API Key
 pagination_label: Signup & Create API Key
 keywords:
@@ -15,7 +15,7 @@ sidebar_position: 1
 slug: signup-and-create-api
 ---
 
-# Signup & Create API Key
+# Sign Up & Create API Key
 
 This guide will help you to generate API key and secret from dashboard.
 

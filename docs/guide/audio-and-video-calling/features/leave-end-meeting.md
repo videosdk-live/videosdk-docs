@@ -1,8 +1,8 @@
 ---
-title: Leave or End Meeting
+title: Leave or End Meeting Audio & Video Call - Video SDK Docs
 hide_title: false
 hide_table_of_contents: false
-description: This guide will explain ending process of meeting.
+description: Leave or End Meeting features quick integrate in Javascript, React JS, Android, iOS, React Native, Flutter with Video SDK to add live video & audio conferencing to your applications.
 sidebar_label: Leave or End Meeting
 pagination_label: Leave or End Meeting
 keywords:
@@ -15,6 +15,8 @@ image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
 slug: leave-end-meeting
 ---
+
+# Leave or End Meeting
 
 Whenever participant wishes to end their communication in the meeting, they can simply leave the meeting.
 

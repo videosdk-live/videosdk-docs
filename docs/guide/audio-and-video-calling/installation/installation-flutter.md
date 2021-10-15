@@ -1,8 +1,8 @@
 ---
-title: Install Audio and Video Calling SDK in Flutter
+title: Start a Audio & Video Call in Flutter SDK - Video SDK Docs
 hide_title: false
 hide_table_of_contents: false
-description: This guide explains installation of flutter in your application. it is compatible with both dart and javascript.
+description: Build customizable real-time audio and video calling applications in Flutter SDK using Video SDK add live audio & video conferencing to your applications.
 sidebar_label: "Flutter"
 pagination_label: "Flutter"
 keywords:
@@ -15,7 +15,7 @@ sidebar_position: 1
 slug: installation-flutter
 ---
 
-# Installation: Flutter SDK
+# Getting Started - Flutter SDK
 
 Flutter SDK is natively written SDK using Dart. It is compatible with both iOs and Android.
 

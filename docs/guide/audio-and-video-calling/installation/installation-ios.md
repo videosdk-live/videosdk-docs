@@ -1,8 +1,8 @@
 ---
-title: Install Audio and Video Calling SDK in iOS
+title: Start a Audio & Video Call in iOS SDK - Video SDK Docs
 hide_title: false
 hide_table_of_contents: false
-description: This guide explains installation of iOS in your application. it is compatible with both objective-c and swift.
+description: Build customizable real-time audio and video calling applications in iOS SDK using Video SDK add live audio & video conferencing to your applications.
 sidebar_label: "iOS"
 pagination_label: "iOS"
 keywords:
@@ -15,7 +15,7 @@ sidebar_position: 1
 slug: installation-ios
 ---
 
-# Installation: iOS SDK
+# Getting Started - iOS SDK
 
 iOS SDK is natively written SDK using Swift. It is compatible with both Objective-C and Swift.
 

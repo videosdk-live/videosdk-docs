@@ -1,8 +1,8 @@
 ---
-title: Server Setup
+title: Just Click Setup - Testing Token Server | Video SDK
 hide_title: false
 hide_table_of_contents: false
-description: Audio and video calling sdk will help you to integrate video and audio calling in your application.
+description: Video SDK and Audio SDK, developers need to implement a token server. This requires efforts on both the front-end and backend.
 sidebar_label: Server Setup
 pagination_label: Server Setup
 keywords:
@@ -16,6 +16,8 @@ slug: server-setup
 ---
 
 import Mermaid from '@theme/Mermaid';
+
+# Server Setup
 
 To begin working with the VideoSDK, you need to setup a server that can authenticate & validate your API key and secret which we generated in the previous step. Follow this [Signup & Create API Key](signup-and-create-api) if you haven't generated API key and secret.
 

@@ -1,8 +1,8 @@
 ---
-title: Speaker Indication
+title: Speaker Indication Audio & Video Call - Video SDK Docs
 hide_title: false
 hide_table_of_contents: false
-description: This guide will explain active speaker in meeting.
+description: Speaker Indication features quick integrate in Javascript, React JS, Android, iOS, React Native, Flutter with Video SDK to add live video & audio conferencing to your applications.
 sidebar_label: Speaker Indication
 pagination_label: Speaker Indication
 keywords:
@@ -14,6 +14,8 @@ image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
 slug: speaker-indication
 ---
+
+# Speaker Indication
 
 Speaker indication feature in videoSDK let you know, which participant in a meeting is active speaker.
 

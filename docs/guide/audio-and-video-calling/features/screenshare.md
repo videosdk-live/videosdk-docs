@@ -1,8 +1,8 @@
 ---
-title: Share Your Screen
+title: Share your Screen Audio & Video Call - Video SDK Docs
 hide_title: false
 hide_table_of_contents: false
-description: This guide will explain screen share in meeting.
+description: Share your Screen features quick integrate in Javascript, React JS, Android, iOS, React Native, Flutter with Video SDK to add live video & audio conferencing to your applications.
 sidebar_label: Share Your Screen
 pagination_label: Share Your Screen
 keywords:
@@ -15,6 +15,8 @@ image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
 slug: screenshare
 ---
+
+# Share Your Screen
 
 Whenever any participant wants to share either the complete screen, a specific window or, a browser tab, they can simply do it with videoSDK Meeting.
 For Mobile Devices a complete screen will be share.

@@ -2,7 +2,7 @@
 title: Send Messages
 hide_title: false
 hide_table_of_contents: false
-description: This guide will explain send messages in meeting.
+description: Send Messages features quick integrate in Javascript, React JS, Android, iOS, React Native, Flutter with Video SDK to add live video & audio conferencing to your applications.
 sidebar_label: Send Messages
 pagination_label: Send Messages
 keywords:
@@ -15,6 +15,8 @@ image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
 slug: send-messages
 ---
+
+# Send Messages
 
 Whenever any participant wants to notify other participants via chat messages or Raise hand, they can simply do it with videoSDK Meeting.
 

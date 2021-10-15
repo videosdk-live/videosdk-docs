@@ -1,8 +1,8 @@
 ---
-title: Mic Controls
+title: Mic Controls Audio & Video Call - Video SDK Docs
 hide_title: false
 hide_table_of_contents: false
-description: This guide will explain mic controls for meeting.
+description: Mic Controls features quick integrate in Javascript, React JS, Android, iOS, React Native, Flutter with Video SDK to add live video & audio conferencing to your applications.
 sidebar_label: Mic Controls
 pagination_label: Mic Controls
 keywords:
@@ -15,6 +15,8 @@ image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
 slug: mic-controls
 ---
+
+# Mic Controls
 
 Whenever any participant wants to start / stop broadcasting their audio to other participant in meeting, they can simply do it with videoSDK Meeting.
 
