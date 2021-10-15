@@ -234,7 +234,21 @@ module.exports = {
       label: "GUIDE",
       items: [
         "guide/video-on-demand/getting-started",
-        "guide/video-on-demand/architecture",
+        // "guide/video-on-demand/architecture",
+      ],
+      collapsed: false,
+    },
+    {
+      type: "category",
+      label: "FEATURES",
+      items: [
+        "guide/video-on-demand/features/upload-file",
+        "guide/video-on-demand/features/list-all-files",
+        "guide/video-on-demand/features/get-file-details",
+        "guide/video-on-demand/features/delete-file",
+        "guide/video-on-demand/features/create-encoding-job",
+        "guide/video-on-demand/features/list-encoding-jobs",
+        "guide/video-on-demand/features/get-encoding-job-details",
       ],
       collapsed: false,
     },
