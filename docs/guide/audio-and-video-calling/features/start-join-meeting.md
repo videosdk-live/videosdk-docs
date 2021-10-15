@@ -1,5 +1,5 @@
 ---
-title: Start or join Meeting Audio & Video Call - Video SDK Docs
+title: Start join Meeting Audio & Video Call - Video SDK Docs
 hide_title: false
 hide_table_of_contents: false
 description: Start or join Meeting features quick integrate in Javascript, React JS, Android, iOS, React Native, Flutter with Video SDK to add live video & audio conferencing to your applications.
