@@ -28,7 +28,7 @@ You can import this library using `<script>` tag. The easiest way to get started
   <head>....</head>
   <body>
     .....
-    <script src="https://sdk.zujonow.com/zujo-sdk-2.0.0.min.js"></script>
+    <script src="https://sdk.videosdk.live/zujo-sdk-2.0.0.min.js"></script>
   </body>
 </html>
 ```
