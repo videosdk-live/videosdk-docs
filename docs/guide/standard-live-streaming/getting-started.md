@@ -43,7 +43,7 @@ import Card from '@theme/Card';
   </div>
   <div class="row " style={{justifyContent:'center'}}>
     <div class="col col--6">
-      <Card heading="3. Create Live Stream" link="/docs/guide/audio-and-video-calling/signup-and-create-api" description="Setup Live Stream." />
+      <Card heading="3. Create Live Stream" link="/docs/guide/standard-live-streaming/features/create-live-stream" description="Setup Live Stream." />
     </div>
     
   </div>
