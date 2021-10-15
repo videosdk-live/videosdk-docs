@@ -115,3 +115,7 @@ mounted: () => {
 </TabItem>
 
 </Tabs>
+
+- Permission (Join / Mic / Webcam) pop up will appear as describe in below image.
+
+![Go live with VideoSDK](/img/prebuilt/prebuilt-permission.png)

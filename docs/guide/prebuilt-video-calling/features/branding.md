@@ -17,6 +17,14 @@ slug: branding
 
 This feature allows you to embed your branding to top of the meeting .
 
+### How it works. ?
+
+- While `brandingEnabled` value set to `true`, you will show branding as display in below image.
+
+- While `brandingEnabled` value set to `false`, the branding will not appear.
+
+![Go live with VideoSDK](/img/prebuilt/prebuilt-branding.png)
+
 ### Branding Attributes
 
 - **brandingEnabled**: If it is true, then branding will be visible on top bar of the meeting. If it is false, then branding won't be available on top bar of the meeting.
