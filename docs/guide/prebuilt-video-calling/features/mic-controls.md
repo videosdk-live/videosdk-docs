@@ -28,8 +28,8 @@ Different mic control permissions allows participant to enable/disable their own
 
 ### Mic Attributes
 
-- **micEnabled**: Default mic setting for meeting joinee, true enables mic & false disable mic.
-- **participantCanToggleSelfMic**: Allow participant to enable/disable their own mic.
+- `micEnabled`: Default mic setting for meeting joinee, true enables mic & false disable mic.
+- `participantCanToggleSelfMic`: Allow participant to enable/disable their own mic.
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -37,10 +37,7 @@ import TabItem from '@theme/TabItem';
 <Tabs
 defaultValue="js"
 values={[
-{label: 'JavaScript', value: 'js'},
-{label: 'React', value: 'react'},
-{label: 'Angular', value: 'angular'},
-{label: 'Vue', value: 'vue'},
+{label: 'JavaScript', value: 'js'}
 ]}>
 <TabItem value="js">
 
@@ -50,52 +47,6 @@ const config = {
   micEnabled: true,
   participantCanToggleSelfMic: true,
   // ...
-};
-```
-
-</TabItem>
-
-<TabItem value="react">
-
-```js
-useEffect(() => {
-  const config = {
-    // ...
-    micEnabled: true,
-    participantCanToggleSelfMic: true,
-
-    // ...
-  };
-}, []);
-```
-
-</TabItem>
-<TabItem value="angular">
-
-```js
-function ngOnInit() {
-  const config = {
-    // ...
-    micEnabled: true,
-    participantCanToggleSelfMic: true,
-
-    // ...
-  };
-}
-```
-
-</TabItem>
-<TabItem value="vue">
-
-```js
-mounted: () => {
-  const config = {
-    // ...
-    micEnabled: true,
-    participantCanToggleSelfMic: true,
-
-    // ...
-  };
 };
 ```
 

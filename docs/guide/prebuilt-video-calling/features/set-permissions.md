@@ -21,11 +21,11 @@ This feature allows you to control meeting join, webcam and mic permissions for 
 
 ### Permissions Attributes
 
-- **askToJoin**: If it is true, then participant will require to take permission before joining the meeting. If it is false, then participant will directly join meeting without any permission.
+- `askToJoin`: If it is true, then participant will require to take permission before joining the meeting. If it is false, then participant will directly join meeting without any permission.
 
-- **toggleParticipantMic**: If it is true, then participant can disable mic of other participants, but it will ask for permission when enabling mic. If it is false, then participant can not toggle mic of other participants.
+- `toggleParticipantMic`: If it is true, then participant can disable mic of other participants, but it will ask for permission when enabling mic. If it is false, then participant can not toggle mic of other participants.
 
-- **toggleParticipantWebcam**: If it is true, then participant can disable webcam of other participants, but it will ask for permission when enabling webcam. If it is false, then participant can not toggle webcam of other participants.
+- `toggleParticipantWebcam`: If it is true, then participant can disable webcam of other participants, but it will ask for permission when enabling webcam. If it is false, then participant can not toggle webcam of other participants.
 
 :::note
 
@@ -41,10 +41,7 @@ import TabItem from '@theme/TabItem';
 <Tabs
 defaultValue="js"
 values={[
-{label: 'JavaScript', value: 'js'},
-{label: 'React', value: 'react'},
-{label: 'Angular', value: 'angular'},
-{label: 'Vue', value: 'vue'},
+{label: 'JavaScript', value: 'js'}
 ]}>
 <TabItem value="js">
 
@@ -57,58 +54,6 @@ const config = {
     toggleParticipantMic: false,
   },
   // ...
-};
-```
-
-</TabItem>
-
-<TabItem value="react">
-
-```js
-useEffect(() => {
-  const config = {
-    // ...
-    permissions: {
-      askToJoin: false,
-      toggleParticipantWebcam: false,
-      toggleParticipantMic: false,
-    },
-    // ...
-  };
-}, []);
-```
-
-</TabItem>
-<TabItem value="angular">
-
-```js
-function ngOnInit() {
-  const config = {
-    // ...
-    permissions: {
-      askToJoin: false,
-      toggleParticipantWebcam: false,
-      toggleParticipantMic: false,
-    },
-    // ...
-  };
-}
-```
-
-</TabItem>
-<TabItem value="vue">
-
-```js
-mounted: () => {
-  const config = {
-    // ...
-    permissions: {
-      askToJoin: false,
-      toggleParticipantWebcam: false,
-      toggleParticipantMic: false,
-    },
-    // ...
-  };
 };
 ```
 

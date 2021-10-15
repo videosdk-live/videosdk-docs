@@ -47,10 +47,7 @@ import TabItem from '@theme/TabItem';
 <Tabs
 defaultValue="js"
 values={[
-{label: 'JavaScript', value: 'js'},
-{label: 'React', value: 'react'},
-{label: 'Angular', value: 'angular'},
-{label: 'Vue', value: 'vue'},
+{label: 'JavaScript', value: 'js'}
 ]}>
 <TabItem value="js">
 
@@ -63,58 +60,6 @@ const config = {
     meetingUrl: "customURL.com",
   },
   // ...
-};
-```
-
-</TabItem>
-
-<TabItem value="react">
-
-```js
-useEffect(() => {
-  const config = {
-    // ...
-    joinScreen: {
-      visible: true,
-      title: "Daily scrum",
-      meetingUrl: customURL.com,
-    },
-    // ...
-  };
-}, []);
-```
-
-</TabItem>
-<TabItem value="angular">
-
-```js
-function ngOnInit() {
-  const config = {
-    // ...
-    joinScreen: {
-      visible: true,
-      title: "Daily scrum",
-      meetingUrl: customURL.com,
-    },
-    // ...
-  };
-}
-```
-
-</TabItem>
-<TabItem value="vue">
-
-```js
-mounted: () => {
-  const config = {
-    // ...
-    joinScreen: {
-      visible: true,
-      title: "Daily scrum",
-      meetingUrl: customURL.com,
-    },
-    // ...
-  };
 };
 ```
 

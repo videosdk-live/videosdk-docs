@@ -36,10 +36,7 @@ import TabItem from '@theme/TabItem';
 <Tabs
 defaultValue="js"
 values={[
-{label: 'JavaScript', value: 'js'},
-{label: 'React', value: 'react'},
-{label: 'Angular', value: 'angular'},
-{label: 'Vue', value: 'vue'},
+{label: 'JavaScript', value: 'js'}
 ]}>
 <TabItem value="js">
 
@@ -54,47 +51,5 @@ const config = {
 
 </TabItem>
 
-<TabItem value="react">
-
-```js
-useEffect(() => {
-  const config = {
-    // ...
-    participantCanLeave: true,
-    redirectOnLeave: "https://www.videosdk.live/",
-    // ...
-  };
-}, []);
-```
-
-</TabItem>
-<TabItem value="angular">
-
-```js
-function ngOnInit() {
-  const config = {
-    // ...
-    participantCanLeave: true,
-    redirectOnLeave: "https://www.videosdk.live/",
-    // ...
-  };
-}
-```
-
-</TabItem>
-<TabItem value="vue">
-
-```js
-mounted: () => {
-  const config = {
-    // ...
-    participantCanLeave: true,
-    redirectOnLeave: "https://www.videosdk.live/",
-    // ...
-  };
-};
-```
-
-</TabItem>
 
 </Tabs>
