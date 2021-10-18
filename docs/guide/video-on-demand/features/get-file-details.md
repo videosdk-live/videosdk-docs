@@ -9,7 +9,7 @@ keywords:
   - Get File Details
 image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
-slug: Get File Details
+slug: get-file-details
 ---
 
 # Get File Details

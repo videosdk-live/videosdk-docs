@@ -9,7 +9,7 @@ keywords:
   - Create Encoding Job
 image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
-slug: Create Encoding Job
+slug: create-encoding-job
 ---
 
 # Create Encoding Job
