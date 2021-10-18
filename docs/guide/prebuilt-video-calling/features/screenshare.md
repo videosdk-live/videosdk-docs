@@ -6,11 +6,15 @@ description: Screen Share features prebuilt Video SDK embedded is an easy-to-use
 sidebar_label: Share Your Screen
 pagination_label: Share Your Screen
 keywords:
+  - screen share in audio calling
+  - screen share in video calling
   - Start Screen share
   - Stop Screen share
   - audio calling
   - video calling
   - real-time communication
+  - video sdk embed
+  - video sdk prebuilt
 image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
 slug: screenshare

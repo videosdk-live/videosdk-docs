@@ -9,6 +9,7 @@ keywords:
   - Join audio calling
   - Join video calling
   - Join real-time communication
+  - video sdk prebuilt
 image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
 slug: join-meeting

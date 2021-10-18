@@ -9,9 +9,12 @@ keywords:
   - allow join
   - toggle participant mic
   - toggle participant webcam
+  - toggle participant camera
   - audio calling
   - video calling
   - real-time communication
+  - video sdk embed
+  - video sdk prebuilt
 image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
 slug: set-permissions

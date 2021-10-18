@@ -11,6 +11,10 @@ keywords:
   - audio calling
   - video calling
   - real-time communication
+  - record audio calling
+  - record video calling
+  - video sdk embed
+  - video sdk prebuilt
 image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
 slug: recording-meeting

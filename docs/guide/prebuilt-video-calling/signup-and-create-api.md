@@ -9,7 +9,9 @@ keywords:
   - authentication audio calling
   - authentication video calling
   - authentication real-time communication
-  - tokens
+  - scalable video conferencing applications
+  - video sdk embed
+  - video sdk prebuilt
 image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
 slug: signup-and-create-api

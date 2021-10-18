@@ -11,6 +11,10 @@ keywords:
   - audio calling
   - video calling
   - real-time communication
+  - live on social media
+  - video sdk embed
+  - video sdk prebuilt
+  - RTMP live social media
 image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
 slug: go-live-social-media
