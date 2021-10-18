@@ -42,7 +42,7 @@ values={[
 
 ```js
 curl --request GET \
-  --url 'https://api.zujonow.com/v1/encoder/jobs/?page=1&perPage=20' \
+  --url 'https://api.zujonow.com/v1/encoder/jobs?userId=<Your unique id>&page=1&perPage=20' \
   --header 'Authorization: `jwt token goes here`'
 ```
 
@@ -52,7 +52,8 @@ curl --request GET \
 ```js
 const fetch = require("node-fetch");
 
-const url = "https://api.zujonow.com/v1/encoder/jobs/?page=1&perPage=20";
+const url =
+  "https://api.zujonow.com/v1/encoder/jobs?userId=<Your unique id>&page=1&perPage=20";
 const options = {
   method: "GET",
   headers: { Accept: "application/json", Authorization: `jwt token goes here` },
@@ -72,7 +73,7 @@ import requests
 
 url = "https://api.zujonow.com/v1/encoder/jobs"
 
-querystring = {"page":"1","perPage":"25"}
+querystring = {"userId":"Your unique id","page":"1","perPage":"25"}
 
 headers = {"Accept": "application/json", "Authorization": "jwt token goes here"}
 
@@ -89,7 +90,7 @@ require 'uri'
 require 'net/http'
 require 'openssl'
 
-url = URI("https://api.zujonow.com/v1/encoder/jobs/?page=1&perPage=20")
+url = URI("https://api.zujonow.com/v1/encoder/jobs?userId=<Your unique id>&page=1&perPage=20")
 
 http = Net::HTTP.new(url.host, url.port)
 http.use_ssl = true
