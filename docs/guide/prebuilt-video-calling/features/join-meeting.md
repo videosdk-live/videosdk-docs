@@ -1,18 +1,21 @@
 ---
-title: Join Screen
+title: Prebuilt Join Meeting Audio & Video Call | Video SDK Embed Docs
 hide_title: false
 hide_table_of_contents: false
-description: This guide will explain joining process of meeting.
+description: Join Meeting features prebuilt Video SDK embedded is an easy-to-use video calling API. Video SDK Prebuilt makes it easy for developers to add video calls 10 in minutes to any website or app.
 sidebar_label: Join Screen
 pagination_label: Join Screen
 keywords:
   - Join audio calling
   - Join video calling
   - Join real-time communication
+  - video sdk prebuilt
 image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
 slug: join-meeting
 ---
+
+# Join Meeting
 
 After the successful installation of videoSDK prebuilt, the next step is to integrate videoSDK prebuilt features with your webApp.
 
@@ -41,17 +44,7 @@ To configure join screen feature, you need to add join screen object in meeting 
 - `title`: Meeting title.
 - `meetingUrl`: Meeting join url, where your meeting will be hosted.
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
-<Tabs
-defaultValue="js"
-values={[
-{label: 'JavaScript', value: 'js'}
-]}>
-<TabItem value="js">
-
-```js
+```js title="index.html"
 const config = {
   // ...
   joinScreen: {
@@ -62,7 +55,3 @@ const config = {
   // ...
 };
 ```
-
-</TabItem>
-
-</Tabs>

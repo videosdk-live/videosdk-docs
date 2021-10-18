@@ -1,15 +1,14 @@
 ---
-title: Client Setup
+title: Prebuilt Set up Video and Audio Call | Video SDK Embedded
 hide_title: false
 hide_table_of_contents: false
-description: videosdk.live tutorials will help you to deep dive into details of all the SDK and API. We tried to include example of all the possible programming langaguges.
+description: Prebuit Video SDK supports all the modern frameworks such as plain JavaScript, React JS, Vue and Angular and more. Embedded Video calling build up scalable video conferencing applications or website.
 sidebar_label: Client Setup
 pagination_label: Client Setup
 keywords:
-  - video api
-  - prebuilt-js
-  - embedded-sdk
-  - tutorials
+  - scalable video conferencing
+  - prebuilt video sdk
+  - video sdk embedded
 image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
 slug: client-setup
@@ -17,6 +16,8 @@ slug: client-setup
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+
+# Prebuilt Setup
 
 Prebuilt SDK enables opportunity to integrate real-time communication SDK witout writing explicit code. It just requires 10 minutes to integrate.
 

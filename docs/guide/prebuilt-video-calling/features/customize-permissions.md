@@ -1,21 +1,26 @@
 ---
-title: Customize Permissions
+title: Prebuilt Set Permissions Audio & Video Call | Video SDK Embed Docs
 hide_title: false
 hide_table_of_contents: false
-description: This guide will explain how to control meeting join, webcam and mic permissions for participants.
+description: Set Permissions features prebuilt Video SDK embedded is an easy-to-use video calling API. Video SDK Prebuilt makes it easy for developers to add video calls 10 in minutes to any website or app.
 sidebar_label: Customize Permissions
 pagination_label: Customize Permissions
 keywords:
   - allow join
   - toggle participant mic
   - toggle participant webcam
+  - toggle participant camera
   - audio calling
   - video calling
   - real-time communication
+  - video sdk embed
+  - video sdk prebuilt
 image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
 slug: customize-permissions
 ---
+
+# Set Permissions
 
 This feature allows you to control meeting join, webcam and mic permissions for participants.
 
@@ -35,17 +40,7 @@ This feature allows you to control meeting join, webcam and mic permissions for 
 
 :::
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
-<Tabs
-defaultValue="js"
-values={[
-{label: 'JavaScript', value: 'js'}
-]}>
-<TabItem value="js">
-
-```js
+```js title="index.html"
 const config = {
   // ...
   permissions: {
@@ -56,10 +51,6 @@ const config = {
   // ...
 };
 ```
-
-</TabItem>
-
-</Tabs>
 
 - Permission (Join / Mic / Webcam) pop up will appear as describe in below image.
 
