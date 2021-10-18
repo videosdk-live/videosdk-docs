@@ -24,15 +24,15 @@ import Card from '@theme/Card';
 <div class="container guide-steps-block">
   <div class="row ">
     <div class="col col--6">
-      <Card heading="1. Signup & Create API" link="/docs/guide/prebuilt-video-calling/signup-and-create-api" description="Generate your API key." />
+      <Card heading="1. Signup & Create API Key" link="/docs/guide/prebuilt-video-calling/signup-and-create-api" description="Generate your API key." />
     </div>
     <div class="col col--6" >
-      <Card heading="2. Prebuilt Setup" link="/docs/guide/prebuilt-video-calling/prebuilt-setup" description="Integrate Prebuilt with API key."  />
+      <Card heading="2. Prebuilt Setup" link="/docs/guide/prebuilt-video-calling/client-setup" description="Integrate Prebuilt with API key."  />
     </div>
   </div>
-  <div class="row " style={{justifyContent:'center'}}>
+  <div class="row " >
     <div class="col col--6">
-      <Card heading="3. Join Meeting" link="/docs/guide/prebuilt-video-calling/features/join-meeting" description="Enter in Meeting." />
+      <Card heading="3. Join Meeting" link="/docs/guide/prebuilt-video-calling/features/join-meeting" description="Join Meeting Link." />
     </div>
     
   </div>

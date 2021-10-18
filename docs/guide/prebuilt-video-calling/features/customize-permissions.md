@@ -1,10 +1,10 @@
 ---
-title: Set Permissions
+title: Customize Permissions
 hide_title: false
 hide_table_of_contents: false
 description: This guide will explain how to control meeting join, webcam and mic permissions for participants.
-sidebar_label: Set Permissions
-pagination_label: Set Permissions
+sidebar_label: Customize Permissions
+pagination_label: Customize Permissions
 keywords:
   - allow join
   - toggle participant mic
@@ -14,7 +14,7 @@ keywords:
   - real-time communication
 image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
-slug: set-permissions
+slug: customize-permissions
 ---
 
 This feature allows you to control meeting join, webcam and mic permissions for participants.

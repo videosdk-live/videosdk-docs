@@ -34,7 +34,7 @@ import Card from '@theme/Card';
 <div class="container guide-steps-block">
   <div class="row ">
     <div class="col col--6">
-      <Card heading="1. Signup & Create API" link="/docs/guide/audio-and-video-calling/signup-and-create-api" description="Generate your API key." />
+      <Card heading="1. Signup & Create API Key" link="/docs/guide/audio-and-video-calling/signup-and-create-api" description="Generate your API key." />
     </div>
     <div class="col col--6" >
       <Card heading="2. Server Setup" link="/docs/guide/audio-and-video-calling/server-setup" description="Integrate server with API key."  />

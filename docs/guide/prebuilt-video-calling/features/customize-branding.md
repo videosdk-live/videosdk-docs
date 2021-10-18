@@ -1,10 +1,10 @@
 ---
-title: Branding
+title: Customize Branding
 hide_title: false
 hide_table_of_contents: false
 description: This guide will explain branding attributes in video sdk prebuilt.
-sidebar_label: Branding
-pagination_label: Branding
+sidebar_label: Customize Branding
+pagination_label: Customize Branding
 keywords:
   - brand
   - audio calling
@@ -12,7 +12,7 @@ keywords:
   - real-time communication
 image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
-slug: branding
+slug: customize-branding
 ---
 
 This feature allows you to embed your branding to top of the meeting .

@@ -1,10 +1,10 @@
 ---
-title: Prebuilt Setup
+title: Client Setup
 hide_title: false
 hide_table_of_contents: false
 description: videosdk.live tutorials will help you to deep dive into details of all the SDK and API. We tried to include example of all the possible programming langaguges.
-sidebar_label: Prebuilt Setup
-pagination_label: Prebuilt Setup
+sidebar_label: Client Setup
+pagination_label: Client Setup
 keywords:
   - video api
   - prebuilt-js
@@ -12,7 +12,7 @@ keywords:
   - tutorials
 image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
-slug: prebuilt-setup
+slug: client-setup
 ---
 
 import Tabs from '@theme/Tabs';

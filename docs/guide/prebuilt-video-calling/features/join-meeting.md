@@ -1,10 +1,10 @@
 ---
-title: Meeting Join Screen
+title: Join Screen
 hide_title: false
 hide_table_of_contents: false
 description: This guide will explain joining process of meeting.
-sidebar_label: Meeting Join Screen
-pagination_label: Meeting Join Screen
+sidebar_label: Join Screen
+pagination_label: Join Screen
 keywords:
   - Join audio calling
   - Join video calling

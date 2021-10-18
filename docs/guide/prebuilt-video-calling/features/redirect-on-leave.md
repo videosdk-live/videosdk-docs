@@ -1,10 +1,10 @@
 ---
-title: Leave Meeting
+title: Redirect on Leave
 hide_title: false
 hide_table_of_contents: false
 description: This guide will explain leaving process of meeting.
-sidebar_label: Leave Meeting
-pagination_label: Leave Meeting
+sidebar_label: Redirect on Leave
+pagination_label: Redirect on Leave
 keywords:
   - exit audio calling
   - exit video calling
@@ -50,6 +50,5 @@ const config = {
 ```
 
 </TabItem>
-
 
 </Tabs>

@@ -35,6 +35,5 @@ For example, we provide project name **HelloWorld**.
 ## 3. Copy API Key and Secret
 
 After submitting your project name, the API Key and Secret will be displayed in API key's table with your project name.
-Copy the generated API Key and Secret for your server setup.
 
 ![Video SDK Home Dashboard](/img/tutorial/api_key_table.png)
