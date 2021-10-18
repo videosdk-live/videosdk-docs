@@ -20,7 +20,7 @@ sidebar_position: 1
 slug: screenshare
 ---
 
-# Screen Share
+# Share Your Screen
 
 Screen sharing allows any participant who wants to share either the complete screen, a specific window or, a browser tab during the meeting.
 

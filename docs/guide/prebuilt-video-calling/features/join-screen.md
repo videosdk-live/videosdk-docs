@@ -12,10 +12,10 @@ keywords:
   - video sdk prebuilt
 image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
-slug: join-meeting
+slug: join-screen
 ---
 
-# Join Meeting
+# Join Screen
 
 After the successful installation of videoSDK prebuilt, the next step is to integrate videoSDK prebuilt features with your webApp.
 

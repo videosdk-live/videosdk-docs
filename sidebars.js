@@ -106,7 +106,7 @@ module.exports = {
       type: "category",
       label: "FEATURES",
       items: [
-        "guide/prebuilt-video-calling/features/join-meeting",
+        "guide/prebuilt-video-calling/features/join-screen",
         "guide/prebuilt-video-calling/features/camera-controls",
         "guide/prebuilt-video-calling/features/mic-controls",
         "guide/prebuilt-video-calling/features/redirect-on-leave",

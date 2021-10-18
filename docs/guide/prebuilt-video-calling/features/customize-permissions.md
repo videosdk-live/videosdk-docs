@@ -20,7 +20,7 @@ sidebar_position: 1
 slug: customize-permissions
 ---
 
-# Set Permissions
+# Customize Permissions
 
 This feature allows you to control meeting join, webcam and mic permissions for participants.
 
