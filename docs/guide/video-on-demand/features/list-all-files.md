@@ -9,7 +9,7 @@ keywords:
   - list all files
 image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
-slug: list all files
+slug: list-all-files
 ---
 
 # List All Files

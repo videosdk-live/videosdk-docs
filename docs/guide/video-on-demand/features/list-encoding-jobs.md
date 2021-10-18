@@ -9,7 +9,7 @@ keywords:
   - List Encoding Jobs
 image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
-slug: List Encoding Jobs
+slug: list-encoding-jobs
 ---
 
 # List Encoding Jobs

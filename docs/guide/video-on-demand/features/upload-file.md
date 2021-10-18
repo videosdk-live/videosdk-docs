@@ -9,7 +9,7 @@ keywords:
   - upload file
 image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
-slug: upload file
+slug: upload-file
 ---
 
 # Upload File

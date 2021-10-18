@@ -9,7 +9,7 @@ keywords:
   - Delete file
 image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
-slug: Delete file
+slug: delete-file
 ---
 
 # Delete File

@@ -1,22 +1,22 @@
 ---
-title: Get Encoding Job Details
+title: Delete Encoding Job
 hide_title: false
 hide_table_of_contents: false
-description: This guide will explain get encoding job details.
-sidebar_label: Get Encoding Job Details
-pagination_label: Get Encoding Job Details
+description: This guide will explain delete encoding job.
+sidebar_label: Delete Encoding Job
+pagination_label: Delete Encoding Job
 keywords:
-  - Get Encoding Job Details
+  - Delete Encoding Job
 image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
-slug: Get Encoding Job Details
+slug: delete-encoding-job
 ---
 
-# Get Encoding Job Details
+# Delete Encoding Job
 
-In this guide you will get to know about how to get details of particular encoding job. you just need to paas jobId in path parameter.
+NOTE: You can only deleted those encoding job which current status is "queued".
 
-If wish you also see the job details in your dashboard.
+This guide will provide an overview of how to delete encoded job using videoSDK API.
 
 ### Path Params
 
@@ -37,9 +37,9 @@ import MethodListHeading from '@theme/MethodListHeading';
       <MethodListItemLabel name="videoId"  type={"String"}  description="unique identifier of video file." />
       <MethodListItemLabel name="videoUrl"  type={"String"}  description="Url of video where the video is stored." />
         <MethodListItemLabel name="presets"  type={"Array"}  description="It contains an array of object that you provided in body params." />
-        <MethodListItemLabel name="thumbnails" type={"Array"} description="It contains an array of object that you provided in body params."/> 
-        <MethodListItemLabel name="files" type={"Array"} description="It contains an array of object with the properties of meta information about file, jobId, size, fileUrl, type and id of the file."/>
+        <MethodListItemLabel name="thumbnails" type={"Array"} description="It contains an array of object that you provided in body params."/>
         <MethodListItemLabel name="user" type={"Object"} description="User information such as id of that user, name and email."/>
     </MethodListGroup>
+
   </MethodListItemLabel>
 </MethodListGroup>
