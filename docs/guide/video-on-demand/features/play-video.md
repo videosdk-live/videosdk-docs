@@ -152,3 +152,5 @@ struct ContentView_Previews: PreviewProvider {
 </TabItem>
 
 </Tabs>
+
+![Video SDK Home Dashboard](/img/play-video.png)
