@@ -30,17 +30,7 @@ Whenever participant wishes to end their communication in the meeting, they can 
 - `participantCanLeave`: If it is true, then end meeting button will be visible on top right bar of the meeting. If it is false, then end meeting button won't be available on top right bar of the meeting.
 - `redirectOnLeave`: It's URL where you want to redirect participant after leave the meeting,**OPTIONAL**.
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
-<Tabs
-defaultValue="js"
-values={[
-{label: 'JavaScript', value: 'js'}
-]}>
-<TabItem value="js">
-
-```js
+```js title="index.html"
 const config = {
   // ...
   participantCanLeave: true,
@@ -48,8 +38,3 @@ const config = {
   // ...
 };
 ```
-
-</TabItem>
-
-
-</Tabs>

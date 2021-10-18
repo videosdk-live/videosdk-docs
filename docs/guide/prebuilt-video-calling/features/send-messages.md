@@ -35,17 +35,7 @@ It allows participant to raise their hand virtually to indicate that participant
 
   ![Go live with VideoSDK](/img/prebuilt/prebuilt-raise-hand.png)
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
-<Tabs
-defaultValue="js"
-values={[
-{label: 'JavaScript', value: 'js'}
-]}>
-<TabItem value="js">
-
-```js
+```js title="index.html"
 const config = {
   // ...
   chatEnabled: true,
@@ -53,7 +43,3 @@ const config = {
   // ...
 };
 ```
-
-</TabItem>
-
-</Tabs>

@@ -31,17 +31,7 @@ Different mic control permissions allows participant to enable/disable their own
 - `micEnabled`: Default mic setting for meeting joinee, true enables mic & false disable mic.
 - `participantCanToggleSelfMic`: Allow participant to enable/disable their own mic.
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
-<Tabs
-defaultValue="js"
-values={[
-{label: 'JavaScript', value: 'js'}
-]}>
-<TabItem value="js">
-
-```js
+```js title="index.html"
 const config = {
   // ...
   micEnabled: true,
@@ -49,7 +39,3 @@ const config = {
   // ...
 };
 ```
-
-</TabItem>
-
-</Tabs>

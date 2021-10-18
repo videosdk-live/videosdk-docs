@@ -38,17 +38,7 @@ If you set `brandingEnabled` true, then you should have to provide `brandLogoURL
 
 :::
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
-<Tabs
-defaultValue="js"
-values={[
-{label: 'JavaScript', value: 'js'}
-]}>
-<TabItem value="js">
-
-```js
+```js title="index.html"
 const config = {
   // ...
   brandingEnabled: true,
@@ -58,6 +48,3 @@ const config = {
   // ...
 };
 ```
-
-</TabItem>
-</Tabs>

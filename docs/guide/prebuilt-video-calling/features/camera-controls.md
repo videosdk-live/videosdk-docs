@@ -33,17 +33,7 @@ Different webcam control permissions allows participant to enable/disable their 
 - `webcamEnabled`: Default webcam setting for meeting joinee, true enables webcam & false disable webcam.
 - `participantCanToggleSelfWebcam`: Allow participant to enable/disable their own webcam.
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
-<Tabs
-defaultValue="js"
-values={[
-{label: 'JavaScript', value: 'js'}
-]}>
-<TabItem value="js">
-
-```js
+```js title="index.html"
 const config = {
   // ...
   webcamEnabled: true,
@@ -51,7 +41,3 @@ const config = {
   // ...
 };
 ```
-
-</TabItem>
-
-</Tabs>

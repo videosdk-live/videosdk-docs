@@ -33,17 +33,7 @@ Any participant can start/stop recording any time during the meeting.
 - `participantCanToggleRecording`: If it is true, then other participant can start/stop recording during the meeting. If it is false, then participant can not start/stop recording during the meeting.
 - `recordingWebhookUrl`: It's your [webhook url](https://en.wikipedia.org/wiki/Webhook), where we notify once meeting recording is complete.
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
-<Tabs
-defaultValue="js"
-values={[
-{label: 'JavaScript', value: 'js'}
-]}>
-<TabItem value="js">
-
-```js
+```js title="index.html"
 const config = {
   // ...
   recordingEnabled: true,
@@ -52,7 +42,3 @@ const config = {
   // ...
 };
 ```
-
-</TabItem>
-
-</Tabs>

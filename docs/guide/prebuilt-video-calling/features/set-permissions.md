@@ -35,17 +35,7 @@ This feature allows you to control meeting join, webcam and mic permissions for 
 
 :::
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
-<Tabs
-defaultValue="js"
-values={[
-{label: 'JavaScript', value: 'js'}
-]}>
-<TabItem value="js">
-
-```js
+```js title="index.html"
 const config = {
   // ...
   permissions: {
@@ -56,10 +46,6 @@ const config = {
   // ...
 };
 ```
-
-</TabItem>
-
-</Tabs>
 
 - Permission (Join / Mic / Webcam) pop up will appear as describe in below image.
 

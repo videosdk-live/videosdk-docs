@@ -24,17 +24,7 @@ This guide will provide an overview of how participant can start and stop broadc
 - `autoStart`: If it is true then live streaming will start automatically when the meeting starts, default value is false (You can't start live streaming during the meeting).
 - `outputs`: It's an array of object that contains RTMP url and stream key from the provided platforms such as Youtube or Facebook.
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
-<Tabs
-defaultValue="js"
-values={[
-{label: 'JavaScript', value: 'js'}
-]}>
-<TabItem value="js">
-
-```js
+```js title="index.html"
 const config = {
   // ...
   livestream: {
@@ -49,7 +39,3 @@ const config = {
   // ...
 };
 ```
-
-</TabItem>
-
-</Tabs>

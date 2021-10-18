@@ -41,17 +41,7 @@ To configure join screen feature, you need to add join screen object in meeting 
 - `title`: Meeting title.
 - `meetingUrl`: Meeting join url, where your meeting will be hosted.
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
-<Tabs
-defaultValue="js"
-values={[
-{label: 'JavaScript', value: 'js'}
-]}>
-<TabItem value="js">
-
-```js
+```js title="index.html"
 const config = {
   // ...
   joinScreen: {
@@ -62,7 +52,3 @@ const config = {
   // ...
 };
 ```
-
-</TabItem>
-
-</Tabs>

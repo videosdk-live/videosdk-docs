@@ -30,24 +30,10 @@ Screen sharing allows any participant who wants to share either the complete scr
 
 - `screenShareEnabled`: If it is true, then screen share button will be visible on top bar of the meeting. If it is false, then screen share button won't be available on top bar of the meeting.
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
-<Tabs
-defaultValue="js"
-values={[
-{label: 'JavaScript', value: 'js'}
-]}>
-<TabItem value="js">
-
-```js
+```js title="index.html"
 const config = {
   // ...
   screenShareEnabled: true,
   // ...
 };
 ```
-
-</TabItem>
-
-</Tabs>
