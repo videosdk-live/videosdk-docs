@@ -6,15 +6,17 @@ import ProductsOverview from "../components/home/products";
 import UseCaseOverview from "../components/home/usecase";
 import Hero from "@theme/Hero";
 import Demos from "@theme/Demos";
+import Overview from "../theme/Overview";
 
 export default function Home() {
   return (
     <Layout
-      title={`Live Streaming SDK/API | Real time Communication SDK`}
+      title={`Overview`}
       description="Our live streaming API gives you promising control over your live streaming experience. You need just 10 minutes to integrate our video streaming API."
     >
-      <Hero />
-      <Demos />
+      {/* <Hero />
+      <Demos /> */}
+      <Overview />
       {/* <HomeHero /> */}
       <main>
         {/* <HomepageFeatures /> */}
