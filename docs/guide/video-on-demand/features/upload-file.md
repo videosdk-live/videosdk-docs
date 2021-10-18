@@ -16,11 +16,85 @@ slug: upload file
 
 This guide will provide an overview of how to upload video/image using generated token in previous step Authentication.
 
+Upload file API provides end-to-end secure way to upload your file directly to our servers from your client app.
+
 ### Body Params
 
 | Property Name | Type            | Description                         |
 | ------------- | --------------- | ----------------------------------- |
 | file          | form-data/ file | Video file you would like to upload |
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs
+defaultValue="curl"
+values={[
+{label: 'cURL', value: 'curl'},
+{label: 'NodeJS/JS', value: 'node'},
+{label: 'RESULT', value: 'result'},
+]}>
+<TabItem value="curl">
+
+```js
+curl --L --X POST 'https://storage-api.zujonow.com/v1/files' \
+--header 'Authorization: `jwt token goes here`' \
+--header 'Content-Type: multipart/form-data'
+--form 'file=mock-video.mp4"'
+```
+
+</TabItem>
+<TabItem value="node">
+
+```js
+var fetch = require("node-fetch");
+let fs = require("fs");
+
+const formData = new FormData();
+formData.append("file", fs.createReadStream("mock-video.mp4"));
+
+const url = "https://storage-api.zujonow.com/v1/files";
+var options = {
+  method: "POST",
+  headers: {
+    Authorization: `${YOUR_JWT_TOKEN}`,
+  },
+  body: formData,
+};
+
+fetch(url, options)
+  .then((res) => res.json())
+  .then((json) => console.log(json))
+  .catch((err) => console.error("error:" + err));
+```
+
+</TabItem>
+
+<TabItem value="result">
+
+```json
+{
+  "meta": {
+    "resolution": {
+      "width": 720,
+      "height": 1280
+    },
+    "format": "mov,mp4,m4a,3gp,3g2,mj2",
+    "duration": 20.032
+  },
+  "jobId": null,
+  "filePath": "files/videos/6052e0064b442a2f16018373.mp4",
+  "size": 3965342,
+  "type": "video",
+  "createdAt": "2021-03-18T05:07:18.771Z",
+  "updatedAt": "2021-03-18T05:07:18.771Z",
+  "fileUrl": "https://cdn.zujonow.com/files/videos/6052e0064b442a2f16018373.mp4",
+  "id": "6052e0064b442a2f16018374"
+}
+```
+
+</TabItem>
+</Tabs>
 
 import MethodListGroup from '@theme/MethodListGroup';
 import MethodListItemLabel from '@theme/MethodListItemLabel';

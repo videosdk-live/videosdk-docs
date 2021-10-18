@@ -232,9 +232,15 @@ module.exports = {
     {
       type: "category",
       label: "GUIDE",
+      items: ["guide/video-on-demand/getting-started"],
+      collapsed: false,
+    },
+    {
+      type: "category",
+      label: "SETUP",
       items: [
-        "guide/video-on-demand/getting-started",
-        // "guide/video-on-demand/architecture",
+        "guide/video-on-demand/signup-and-create-api",
+        "guide/video-on-demand/authentication",
       ],
       collapsed: false,
     },
