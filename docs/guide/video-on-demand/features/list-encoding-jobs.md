@@ -22,9 +22,9 @@ You can list same encoding job and original file information in [dashboard](http
 
 ### Query Params
 
-| Property Name | Type   | Description       |
-| ------------- | ------ | ----------------- |
-| userId        | string | unique id of user |
+| Property Name | Type   | Description        |
+| ------------- | ------ | ------------------ |
+| userId        | string | unique id of user. |
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -36,7 +36,7 @@ values={[
 {label: 'NodeJS/JS', value: 'node'},
 {label: 'Python', value: 'python'},
 {label: 'Ruby', value: 'ruby'},
-{label: 'RESULT', value: 'result'},
+{label: 'RESPONSE', value: 'response'},
 ]}>
 <TabItem value="curl">
 
@@ -103,7 +103,7 @@ puts response.read_body
 ```
 
 </TabItem>
-<TabItem value="result">
+<TabItem value="response">
 
 ```js
 {

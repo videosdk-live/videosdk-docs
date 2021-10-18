@@ -18,9 +18,9 @@ This guide will provide an overview of how to list all files that you created by
 
 ### Query Params
 
-| Property Name | Type   | Description       |
-| ------------- | ------ | ----------------- |
-| userId        | string | Unique id of user |
+| Property Name | Type   | Description        |
+| ------------- | ------ | ------------------ |
+| userId        | string | Unique id of user. |
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -32,7 +32,7 @@ values={[
 {label: 'NodeJS/JS', value: 'node'},
 {label: 'Python', value: 'python'},
 {label: 'Ruby', value: 'ruby'},
-{label: 'RESULT', value: 'result'},
+{label: 'RESPONSE', value: 'response'},
 ]}>
 <TabItem value="curl">
 
@@ -99,7 +99,7 @@ puts response.read_body
 ```
 
 </TabItem>
-<TabItem value="result">
+<TabItem value="response">
 
 ```js
 {
@@ -122,8 +122,6 @@ puts response.read_body
         "filePath": "files/videos/6052e0064b442a2f16018373.mp4",
         "size": 3965342,
         "type": "video",
-        "createdAt": "2021-03-18T05:07:18.771Z",
-        "updatedAt": "2021-03-18T05:07:18.771Z",
         "fileUrl": "https://cdn.zujonow.com/files/videos/6052e0064b442a2f16018373.mp4",
         "id": "6052e0064b442a2f16018374"
     },

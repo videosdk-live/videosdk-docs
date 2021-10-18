@@ -132,7 +132,7 @@ import MethodListHeading from '@theme/MethodListHeading';
       <MethodListItemLabel name="userId"  type={"String"}  description="Unique identifier of user." />
       <MethodListItemLabel name="name"  type={"String"}  description="Provided name of the live stream." />
       <MethodListItemLabel name="record"  type={"Boolean"}  description="Flag for live stream recording, which you have provided while creating live stream." />
-      <MethodListItemLabel name="streamKey"  type={"String"}  description="Stream keys are like your live stream’s password and address" />
+      <MethodListItemLabel name="streamKey"  type={"String"}  description="Stream keys are like your live stream’s password and address." />
       <MethodListItemLabel name="upstreamUrl"  type={"String"}  description="where a RTMP stream is used to send video between an encoder and server." />
       <MethodListItemLabel name="downstreamUrl"  type={"String"}  description="It's URL, Where you can play live stream in video player (Support HLS format)." />
       <MethodListItemLabel name="recordingUrl"  type={"String"}  description="It's URL, Where live stream recording is stored." />

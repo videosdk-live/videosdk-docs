@@ -25,7 +25,7 @@ Whether you want to offer on-demand access to the event after it has taken place
 
 This guide will provide an overview of how we can achieve recording feature in live stream.
 
-For Enable recording, you have to provide `record` property to `true` in body params, while [Creating Live Stream](/docs/guide/standard-live-streaming/features/create-live-stream). In response you will get `recordingUrl` , you can play it on any video player which support HLS fromat
+For Enable recording, you have to provide `record` property to `true` in body params, while [Creating Live Stream](/docs/guide/standard-live-streaming/features/create-live-stream). In response you will get `recordingUrl` , you can play it on any video player which support HLS fromat.
 
 In case you provide wrong configuration, while creating live stream, you can update configuration using [Update Live Stream](/docs/guide/standard-live-streaming/features/update-live-stream).
 

@@ -20,9 +20,9 @@ This guide will provide an overview of how to delete encoded job using videoSDK 
 
 ### Path Params
 
-| Property Name | Type   | Description               |
-| ------------- | ------ | ------------------------- |
-| jobId         | string | unique id of encoding job |
+| Property Name | Type   | Description                |
+| ------------- | ------ | -------------------------- |
+| jobId         | string | unique id of encoding job. |
 
 import MethodListGroup from '@theme/MethodListGroup';
 import MethodListItemLabel from '@theme/MethodListItemLabel';

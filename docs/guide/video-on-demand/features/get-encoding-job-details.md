@@ -9,7 +9,7 @@ keywords:
   - Get Encoding Job Details
 image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
-slug: Get Encoding Job Details
+slug: get-encoding-job-details
 ---
 
 # Get Encoding Job Details
@@ -20,9 +20,9 @@ If you wish you will also see the job details in your [dashboard](https://app.vi
 
 ### Path Params
 
-| Property Name | Type   | Description               |
-| ------------- | ------ | ------------------------- |
-| jobId         | string | unique id of encoding job |
+| Property Name | Type   | Description                |
+| ------------- | ------ | -------------------------- |
+| jobId         | string | unique id of encoding job. |
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -34,7 +34,7 @@ values={[
 {label: 'NodeJS/JS', value: 'node'},
 {label: 'Python', value: 'python'},
 {label: 'Ruby', value: 'ruby'},
-{label: 'RESULT', value: 'result'},
+{label: 'RESPONSE', value: 'response'},
 ]}>
 <TabItem value="curl">
 
@@ -99,7 +99,7 @@ puts response.read_body
 ```
 
 </TabItem>
-<TabItem value="result">
+<TabItem value="response">
 
 ```js
 {
@@ -199,6 +199,7 @@ puts response.read_body
 
 </TabItem>
 </Tabs>
+
 import MethodListGroup from '@theme/MethodListGroup';
 import MethodListItemLabel from '@theme/MethodListItemLabel';
 import MethodListHeading from '@theme/MethodListHeading';

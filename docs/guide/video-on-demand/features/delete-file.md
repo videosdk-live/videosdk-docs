@@ -18,9 +18,9 @@ This guide will provide an overview of delete particular file by passing file id
 
 ### Path Params
 
-| Property Name | Type   | Description       |
-| ------------- | ------ | ----------------- |
-| id            | string | Unique id of file |
+| Property Name | Type   | Description        |
+| ------------- | ------ | ------------------ |
+| id            | string | Unique id of file. |
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -32,7 +32,7 @@ values={[
 {label: 'NodeJS/JS', value: 'node'},
 {label: 'Python', value: 'python'},
 {label: 'Ruby', value: 'ruby'},
-{label: 'RESULT', value: 'result'},
+{label: 'RESPONSE', value: 'response'},
 ]}>
 <TabItem value="curl">
 
@@ -97,7 +97,7 @@ puts response.read_body
 ```
 
 </TabItem>
-<TabItem value="result">
+<TabItem value="response">
 
 ```js
 {

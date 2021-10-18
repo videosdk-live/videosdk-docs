@@ -20,9 +20,9 @@ Upload file API provides end-to-end secure way to upload your file directly to o
 
 ### Body Params
 
-| Property Name | Type            | Description                         |
-| ------------- | --------------- | ----------------------------------- |
-| file          | form-data/ file | Video file you would like to upload |
+| Property Name | Type            | Description                          |
+| ------------- | --------------- | ------------------------------------ |
+| file          | form-data/ file | Video file you would like to upload. |
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -32,7 +32,7 @@ defaultValue="curl"
 values={[
 {label: 'cURL', value: 'curl'},
 {label: 'NodeJS/JS', value: 'node'},
-{label: 'RESULT', value: 'result'},
+{label: 'RESPONSE', value: 'response'},
 ]}>
 <TabItem value="curl">
 
@@ -70,7 +70,7 @@ fetch(url, options)
 
 </TabItem>
 
-<TabItem value="result">
+<TabItem value="response">
 
 ```json
 {
@@ -86,8 +86,6 @@ fetch(url, options)
   "filePath": "files/videos/6052e0064b442a2f16018373.mp4",
   "size": 3965342,
   "type": "video",
-  "createdAt": "2021-03-18T05:07:18.771Z",
-  "updatedAt": "2021-03-18T05:07:18.771Z",
   "fileUrl": "https://cdn.zujonow.com/files/videos/6052e0064b442a2f16018373.mp4",
   "id": "6052e0064b442a2f16018374"
 }

@@ -40,7 +40,7 @@ values={[
 {label: 'NodeJS/JS', value: 'node'},
 {label: 'Python', value: 'python'},
 {label: 'Ruby', value: 'ruby'},
-{label: 'RESULT', value: 'result'},
+{label: 'RESPONSE', value: 'response'},
 ]}>
 <TabItem value="curl">
 
@@ -202,7 +202,7 @@ puts response.read_body
 ```
 
 </TabItem>
-<TabItem value="result" >
+<TabItem value="response" >
 
 ```json
 {
@@ -230,8 +230,6 @@ puts response.read_body
       "timestamp": "00:00:03"
     }
   ],
-  "createdAt": "2021-03-18T08:39:36.764Z",
-  "updatedAt": "2021-03-18T08:39:36.764Z",
   "id": "605311c86efd284e474c5c76"
 }
 ```
