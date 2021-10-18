@@ -23,7 +23,41 @@ This guide will get you running with the VideoSDK Video On Demand in minutes.
 
 ## Overview
 
-At it's core, VideoSDK Video On Demand is a sclable API for video encoding and streaming. It eanbles high quality video streaming experience.
+At it's core, VideoSDK Video On Demand is a sclable API for video encoding and streaming.
+
+- It eanbles high quality video streaming experience.
+- Upload large video files
+- Get video metadata in milliseconds.
+- Instant video encoding from 240p to 4k
+- Support multiple file and compression formats
+- Generate HD thumbnail images from video files.
+- Get notified when encoding is finished.
+- protected video streaming
+- 360 video support
+- Embeded video players
+
+## Steps
+
+import Card from '@theme/Card';
+
+<div class="container guide-steps-block">
+  <div class="row ">
+    <div class="col col--6">
+      <Card heading="1. Signup & Create API" link="/docs/guide/video-on-demand/signup-and-create-api" description="Generate your API key." />
+    </div>
+    <div class="col col--6" >
+      <Card heading="2. Authentication" link="/docs/guide/video-on-demand/authentication" description="Integrate server with API key."  />
+    </div>
+  </div>
+   <div class="row ">
+    <div class="col col--6">
+      <Card heading="3. File" link="/docs/guide/audio-and-video-calling/installation/get-started" description="Upload Video File." />
+    </div>
+    <div class="col col--6">
+      <Card heading="4. Encoding" link="/docs/guide/audio-and-video-calling/features/start-join-meeting" description="Encode Video File." />
+    </div>
+  </div>
+</div>
 
 ## Architecture
 

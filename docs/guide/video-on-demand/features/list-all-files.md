@@ -38,7 +38,7 @@ values={[
 
 ```js
 curl --request GET \
-  --url 'https://api.zujonow.com/v1/files/?page=1&perPage=20' \
+  --url 'https://api.zujonow.com/v1/files?userId=<Your unique id>&page=1&perPage=20' \
   --header 'Authorization: `jwt token goes here`'
 ```
 
@@ -48,7 +48,8 @@ curl --request GET \
 ```js
 const fetch = require("node-fetch");
 
-const url = "https://api.zujonow.com/v1/files/?page=1&perPage=20";
+const url =
+  "https://api.zujonow.com/v1/files?userId=<Your unique id>&page=1&perPage=20";
 const options = {
   method: "GET",
   headers: { Accept: "application/json", Authorization: `jwt token goes here` },
@@ -68,7 +69,7 @@ import requests
 
 url = "https://api.zujonow.com/v1/files"
 
-querystring = {"page":"1","perPage":"25"}
+querystring = {"userId":"Your unique id","page":"1","perPage":"25"}
 
 headers = {"Accept": "application/json", "Authorization": "jwt token goes here"}
 
@@ -85,7 +86,7 @@ require 'uri'
 require 'net/http'
 require 'openssl'
 
-url = URI("https://api.zujonow.com/v1/files/?page=1&perPage=20")
+url = URI("https://api.zujonow.com/v1/files?userId=<Your unique id>&page=1&perPage=20")
 
 http = Net::HTTP.new(url.host, url.port)
 http.use_ssl = true
@@ -141,11 +142,11 @@ import MethodListHeading from '@theme/MethodListHeading';
   <MethodListItemLabel  description="Response Body" >
     <MethodListGroup>
       <MethodListHeading heading="parameters" />
-      <MethodListItemLabel name="id"  type={"String"}  description="Unique identifier of video file." />
-      <MethodListItemLabel name="type"  type={"String"}  description="type of file uploaded video or image." />
-      <MethodListItemLabel name="size"  type={"Number"}  description="size of uploaded file(in bytes)." />
-      <MethodListItemLabel name="meta"  type={"Object"}  description="information about uploaded file such as resolution, format, etc." />
-        <MethodListItemLabel name="fileUrl"  type={"String"}  description="The url where the file is stored." />
+      <MethodListItemLabel name="id"  type={"string"}  description="Unique identifier of video file." />
+      <MethodListItemLabel name="type"  type={"string"}  description="type of file uploaded video or image." />
+      <MethodListItemLabel name="size"  type={"number"}  description="size of uploaded file(in bytes)." />
+      <MethodListItemLabel name="meta"  type={"object"}  description="information about uploaded file such as resolution, format, etc." />
+        <MethodListItemLabel name="fileUrl"  type={"string"}  description="The url where the file is stored." />
     </MethodListGroup>
   </MethodListItemLabel>
 </MethodListGroup>

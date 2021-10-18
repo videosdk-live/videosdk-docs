@@ -170,15 +170,15 @@ import MethodListHeading from '@theme/MethodListHeading';
   <MethodListItemLabel  description="Response Body" >
     <MethodListGroup>
       <MethodListHeading heading="parameters" />
-      <MethodListItemLabel name="id"  type={"String"}  description="Unique identifier of live stream." />
-      <MethodListItemLabel name="name"  type={"String"}  description="Provided name of the live stream." />
-      <MethodListItemLabel name="record"  type={"Boolean"}  description="Flag for live stream recording, which you have provided while creating live stream." />
-      <MethodListItemLabel name="streamKey"  type={"String"}  description="Stream keys are like your live stream’s password and address." />
-      <MethodListItemLabel name="upstreamUrl"  type={"String"}  description="where a RTMP stream is used to send video between an encoder and server." />
-      <MethodListItemLabel name="downstreamUrl"  type={"String"}  description="It's URL, Where you can play live stream in video player (Support HLS format)." />
-      <MethodListItemLabel name="recordingUrl"  type={"String"}  description="It's URL, Where live stream recording is stored. 
+      <MethodListItemLabel name="id"  type={"string"}  description="Unique identifier of live stream." />
+      <MethodListItemLabel name="name"  type={"string"}  description="Provided name of the live stream." />
+      <MethodListItemLabel name="record"  type={"boolean"}  description="Flag for live stream recording, which you have provided while creating live stream." />
+      <MethodListItemLabel name="streamKey"  type={"string"}  description="Stream keys are like your live stream’s password and address." />
+      <MethodListItemLabel name="upstreamUrl"  type={"string"}  description="where a RTMP stream is used to send video between an encoder and server." />
+      <MethodListItemLabel name="downstreamUrl"  type={"string"}  description="It's URL, Where you can play live stream in video player (Support HLS format)." />
+      <MethodListItemLabel name="recordingUrl"  type={"string"}  description="It's URL, Where live stream recording is stored. 
        NOTE: This property is only visible, if you set `record : true` in body params." />
-      <MethodListItemLabel name="restream"  type={"Array"}  description="This property contains object of RTMP url and streamKey, which you have provided in body params." />
+      <MethodListItemLabel name="restream"  type={"array"}  description="This property contains object of RTMP url and streamKey, which you have provided in body params." />
     </MethodListGroup>
   </MethodListItemLabel>
 </MethodListGroup>

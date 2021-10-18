@@ -27,6 +27,12 @@ At it's core, VideoSDK Live Streaming is a media server. It eanbles high quality
 
 - It allows user to record live stream, so user can watch it later.
 - User can also Restream to other platforms such as Youtube, Facebook, etc.
+- RTMP support for live streaming.
+- Commpatible with OBS studio, Streamyard etc.
+- Adaptive live streaming based on screen resolution and internet bandwidth.
+- Record your live streaming for playback.
+- Private streaming with authentication.
+- Embeded live streaming player.
 
 ## Steps
 
