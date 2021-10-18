@@ -1,8 +1,8 @@
 ---
-title: Share Your Screen
+title: Prebuilt Screen Share Audio & Video Call | Video SDK Embed Docs
 hide_title: false
 hide_table_of_contents: false
-description: This guide will explain screen share in meeting.
+description: Screen Share features prebuilt Video SDK embedded is an easy-to-use video calling API. Video SDK Prebuilt makes it easy for developers to add video calls 10 in minutes to any website or app.
 sidebar_label: Share Your Screen
 pagination_label: Share Your Screen
 keywords:
@@ -15,6 +15,8 @@ image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
 slug: screenshare
 ---
+
+# Screen Share
 
 Screen sharing allows any participant who wants to share either the complete screen, a specific window or, a browser tab during the meeting.
 

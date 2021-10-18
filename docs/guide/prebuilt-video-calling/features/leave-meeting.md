@@ -1,8 +1,8 @@
 ---
-title: Leave Meeting
+title: Prebuilt Leave Meeting Audio & Video Call | Video SDK Embed Docs
 hide_title: false
 hide_table_of_contents: false
-description: This guide will explain leaving process of meeting.
+description: Leave Meeting features prebuilt Video SDK embedded is an easy-to-use video calling API. Video SDK Prebuilt makes it easy for developers to add video calls 10 in minutes to any website or app.
 sidebar_label: Leave Meeting
 pagination_label: Leave Meeting
 keywords:
@@ -16,6 +16,8 @@ image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
 slug: leave-meeting
 ---
+
+# Leave Meeting
 
 Whenever participant wishes to end their communication in the meeting, they can simply leave the meeting.
 

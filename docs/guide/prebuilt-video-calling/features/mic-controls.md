@@ -1,8 +1,8 @@
 ---
-title: Mic Controls
+title: Prebuilt Mic Controls Audio & Video Call | Video SDK Embed Docs
 hide_title: false
 hide_table_of_contents: false
-description: This guide will explain mic controls for meeting.
+description: Mic Controls features prebuilt Video SDK embedded is an easy-to-use video calling API. Video SDK Prebuilt makes it easy for developers to add video calls 10 in minutes to any website or app.
 sidebar_label: Mic Controls
 pagination_label: Mic Controls
 keywords:
@@ -15,6 +15,8 @@ image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
 slug: mic-controls
 ---
+
+# Mic Controls
 
 Different mic control permissions allows participant to enable/disable their own mic and other participant's mic too & also can set default participant's mic settings, when meeting start.
 

@@ -1,8 +1,8 @@
 ---
-title: Record Meeting
+title: Prebuilt  Recording Meeting Audio & Video Call | Video SDK Embed Docs
 hide_title: false
 hide_table_of_contents: false
-description: This guide will explain start and stop meeting recording.
+description: Record Meeting features prebuilt Video SDK embedded is an easy-to-use video calling API. Video SDK Prebuilt makes it easy for developers to add video calls 10 in minutes to any website or app.
 sidebar_label: Record Meeting
 pagination_label: Record Meeting
 keywords:
@@ -15,6 +15,8 @@ image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
 slug: recording-meeting
 ---
+
+# Record Meeting
 
 Record meeting allows participants to record video and audio during the meeting. The recording files are available in customer dashboard.
 Any participant can start/stop recording any time during the meeting.

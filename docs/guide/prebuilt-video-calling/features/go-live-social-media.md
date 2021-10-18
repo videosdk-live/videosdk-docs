@@ -1,8 +1,8 @@
 ---
-title: Go Live On Social Media
+title: Prebuilt Go RTMP Live Social Media Audio & Video Call | Video SDK Embed Docs
 hide_title: false
 hide_table_of_contents: false
-description: This guide will explain broadcast meeting on various social media platforms.
+description: Go Live Social Media features prebuilt Video SDK embedded is an easy-to-use video calling API. Video SDK Prebuilt makes it easy for developers to add video calls 10 in minutes to any website or app.
 sidebar_label: Go Live On Social Media
 pagination_label: Go Live On Social Media
 keywords:
@@ -15,6 +15,8 @@ image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
 slug: go-live-social-media
 ---
+
+# Go Live Social Media
 
 Livestreaming allows participant to broadcast meeting on various social media platforms such as Facebook or Youtube.
 This guide will provide an overview of how participant can start and stop broadcasting meeting.

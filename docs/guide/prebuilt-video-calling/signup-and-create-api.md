@@ -1,8 +1,8 @@
 ---
-title: Signup & Create API Key
+title: Sign up for free account | Video SDK Embedded
 hide_title: false
 hide_table_of_contents: false
-description: This guide will explain authentication and token flow for audio and video calling SDK.
+description: Prebuit Video SDK Sign up. Get started with 10,000 minutes free every month! Video SDK Embedded  and rests APIs to build up scalable video conferencing applications or website.
 sidebar_label: Signup & Create API Key
 pagination_label: Signup & Create API Key
 keywords:
