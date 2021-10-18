@@ -14,9 +14,9 @@ slug: Get Encoding Job Details
 
 # Get Encoding Job Details
 
-In this guide you will get to know about how to get details of particular encoding job. you just need to paas jobId in path parameter.
+In this guide, you will get to know about how to get details of particular encoding job by passing jobId as path parameter.
 
-If wish you also see the job details in your dashboard.
+If you wish you will also see the job details in your [dashboard](https://app.videosdk.live/vod/videos).
 
 ### Path Params
 
