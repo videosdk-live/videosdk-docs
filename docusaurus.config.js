@@ -47,16 +47,16 @@ module.exports = {
         {
           position: "left",
           label: "Overview",
-          to: "/docs/overview/introduction",
+          to: "/",
         },
         {
           position: "left",
           label: "Guide",
           items: [
             {
-            label: "Dashboard",
-            to: "docs/guide/dashboard/getting-started",
-            activeBaseRegex: "docs/guide/dashboard/*",
+              label: "Dashboard",
+              to: "docs/guide/dashboard/getting-started",
+              activeBaseRegex: "docs/guide/dashboard/*",
             },
             {
               label: "Prebuilt Video Calling SDK",
@@ -88,7 +88,6 @@ module.exports = {
               label: "Realtime communication",
               to: "docs/realtime-communication/intro",
               activeBaseRegex: "docs/realtime-communication/*",
-              
             },
             {
               label: "Live streaming",
@@ -259,7 +258,7 @@ module.exports = {
             plugins: ["line-numbers", "show-language"],
             theme: require("@kiwicopple/prism-react-renderer/themes/vsDark"),
             darkTheme: require("@kiwicopple/prism-react-renderer/themes/vsDark"),
-            additionalLanguages: ['Java']
+            additionalLanguages: ["Java"],
           },
         },
       },
