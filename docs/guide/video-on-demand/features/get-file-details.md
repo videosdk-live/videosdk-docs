@@ -14,7 +14,7 @@ slug: get-file-details
 
 # Get File Details
 
-This guide will provide an overview of retrieving particular file details using file id, which we have created in upload file.
+This guide will provide an overview of retrieving particular file details using file id, which we have created in [Upload File](/docs/guide/video-on-demand/features/upload-file).
 
 ### Path Params
 
@@ -131,12 +131,12 @@ import MethodListHeading from '@theme/MethodListHeading';
   <MethodListItemLabel  description="Response Body" >
     <MethodListGroup>
       <MethodListHeading heading="parameters" />
-      <MethodListItemLabel name="id"  type={"String"}  description="Unique identifier of file." />
-      <MethodListItemLabel name="type"  type={"String"}  description="type of file uploaded video or image." />
-      <MethodListItemLabel name="size"  type={"Number"}  description="size of uploaded file(in bytes)." />
-      <MethodListItemLabel name="meta"  type={"Object"}  description="information about uploaded file such as resolution, format, etc." />
-        <MethodListItemLabel name="fileUrl"  type={"String"}  description="The url where the video is stored." />
-        <MethodListItemLabel name="user" type={"Object"} description="user info such as email, name and id of the user."/>
+      <MethodListItemLabel name="id"  type={"string"}  description="Unique identifier of file." />
+      <MethodListItemLabel name="type"  type={"string"}  description="type of file uploaded video or image." />
+      <MethodListItemLabel name="size"  type={"number"}  description="size of uploaded file(in bytes)." />
+      <MethodListItemLabel name="meta"  type={"object"}  description="information about uploaded file such as resolution, format, etc." />
+        <MethodListItemLabel name="fileUrl"  type={"string"}  description="The url where the video is stored." />
+        <MethodListItemLabel name="user" type={"object"} description="user info such as email, name and id of the user."/>
     </MethodListGroup>
   </MethodListItemLabel>
 </MethodListGroup>

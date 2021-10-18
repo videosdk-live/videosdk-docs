@@ -14,7 +14,7 @@ slug: upload-file
 
 # Upload File
 
-This guide will provide an overview of how to upload video/image using generated token in previous step Authentication.
+This guide will provide an overview of how to upload video/image using generated token in previous step [Authentication](/docs/guide/video-on-demand/authentication).
 
 Upload file API provides end-to-end secure way to upload your file directly to our servers from your client app.
 
@@ -104,11 +104,11 @@ import MethodListHeading from '@theme/MethodListHeading';
   <MethodListItemLabel  description="Response Body" >
     <MethodListGroup>
       <MethodListHeading heading="parameters" />
-      <MethodListItemLabel name="id"  type={"String"}  description="Unique identifier of file." />
-      <MethodListItemLabel name="type"  type={"String"}  description="type of file uploaded video or image." />
-      <MethodListItemLabel name="size"  type={"Number"}  description="size of uploaded file(in bytes)." />
-      <MethodListItemLabel name="meta"  type={"Object"}  description="information about uploaded file such as resolution, format, etc." />
-        <MethodListItemLabel name="fileUrl"  type={"String"}  description="The url where the file is stored." />
+      <MethodListItemLabel name="id"  type={"string"}  description="Unique identifier of file." />
+      <MethodListItemLabel name="type"  type={"string"}  description="type of file uploaded video or image." />
+      <MethodListItemLabel name="size"  type={"number"}  description="size of uploaded file(in bytes)." />
+      <MethodListItemLabel name="meta"  type={"object"}  description="information about uploaded file such as resolution, format, etc." />
+        <MethodListItemLabel name="fileUrl"  type={"string"}  description="The url where the file is stored." />
     </MethodListGroup>
   </MethodListItemLabel>
 </MethodListGroup>

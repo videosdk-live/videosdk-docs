@@ -144,13 +144,13 @@ import MethodListHeading from '@theme/MethodListHeading';
   <MethodListItemLabel  description="Response Body" >
     <MethodListGroup>
       <MethodListHeading heading="parameters" />
-      <MethodListItemLabel name="id"  type={"String"}  description="Unique identifier of encoded job." />
-      <MethodListItemLabel name="status"  type={"String"}  description="status of encoding job either queued, processing, completed, failed." />
-      <MethodListItemLabel name="videoId"  type={"String"}  description="unique identifier of video file." />
-      <MethodListItemLabel name="videoUrl"  type={"String"}  description="Url of video where the video is stored." />
-        <MethodListItemLabel name="presets"  type={"Array"}  description="It contains an array of object that you provided in body params." />
-        <MethodListItemLabel name="thumbnails" type={"Array"} description="It contains an array of object that you provided in body params."/>
-        <MethodListItemLabel name="user" type={"Object"} description="User information such as id of that user, name and email."/>
+      <MethodListItemLabel name="id"  type={"string"}  description="Unique identifier of encoded job." />
+      <MethodListItemLabel name="status"  type={"string"}  description="status of encoding job either queued, processing, completed, failed." />
+      <MethodListItemLabel name="videoId"  type={"string"}  description="unique identifier of video file." />
+      <MethodListItemLabel name="videoUrl"  type={"string"}  description="Url of video where the video is stored." />
+        <MethodListItemLabel name="presets"  type={"array"}  description="It contains an array of object that you provided in body params." />
+        <MethodListItemLabel name="thumbnails" type={"array"} description="It contains an array of object that you provided in body params."/>
+        <MethodListItemLabel name="user" type={"object"} description="User information such as id of that user, name and email."/>
     </MethodListGroup>
 
   </MethodListItemLabel>

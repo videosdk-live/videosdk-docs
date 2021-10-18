@@ -144,11 +144,11 @@ import MethodListHeading from '@theme/MethodListHeading';
   <MethodListItemLabel  description="Response Body" >
     <MethodListGroup>
       <MethodListHeading heading="parameters" />
-      <MethodListItemLabel name="id"  type={"String"}  description="Unique identifier of video file." />
-      <MethodListItemLabel name="type"  type={"String"}  description="type of file uploaded video or image." />
-      <MethodListItemLabel name="size"  type={"Number"}  description="size of uploaded file(in bytes)." />
-      <MethodListItemLabel name="meta"  type={"Object"}  description="information about uploaded file such as resolution, format, etc." />
-        <MethodListItemLabel name="fileUrl"  type={"String"}  description="The url where the file is stored." />
+      <MethodListItemLabel name="id"  type={"string"}  description="Unique identifier of video file." />
+      <MethodListItemLabel name="type"  type={"string"}  description="type of file uploaded video or image." />
+      <MethodListItemLabel name="size"  type={"number"}  description="size of uploaded file(in bytes)." />
+      <MethodListItemLabel name="meta"  type={"object"}  description="information about uploaded file such as resolution, format, etc." />
+        <MethodListItemLabel name="fileUrl"  type={"string"}  description="The url where the file is stored." />
     </MethodListGroup>
   </MethodListItemLabel>
 </MethodListGroup>

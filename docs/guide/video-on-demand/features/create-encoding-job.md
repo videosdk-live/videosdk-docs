@@ -247,13 +247,13 @@ import MethodListHeading from '@theme/MethodListHeading';
   <MethodListItemLabel  description="Response Body" >
     <MethodListGroup>
       <MethodListHeading heading="parameters" />
-      <MethodListItemLabel name="id"  type={"String"}  description="Unique identifier of encoded job." />
-      <MethodListItemLabel name="status"  type={"String"}  description="status of encoding job either queued, processing, completed, failed." />
-      <MethodListItemLabel name="videoId"  type={"Number"}  description="Unique identifier of video file." />
-      <MethodListItemLabel name="videoUrl"  type={"Object"}  description="Url of video where the video is stored." />
+      <MethodListItemLabel name="id"  type={"string"}  description="Unique identifier of encoded job." />
+      <MethodListItemLabel name="status"  type={"string"}  description="status of encoding job either queued, processing, completed, failed." />
+      <MethodListItemLabel name="videoId"  type={"number"}  description="Unique identifier of video file." />
+      <MethodListItemLabel name="videoUrl"  type={"object"}  description="Url of video where the video is stored." />
         <MethodListItemLabel name="presets"  type={"array"}  description="It contains an array of object that you provided in body params. " />
         <MethodListItemLabel name="thumbnails" type={"array"} description="It contains an array of object that you provided in body params."/>
-        <MethodListItemLabel name="webhookUrl" type={"String"} description="It's Url, where we notify once encoding is complete."/>
+        <MethodListItemLabel name="webhookUrl" type={"string"} description="It's Url, where we notify once encoding is complete."/>
     </MethodListGroup>
   </MethodListItemLabel>
 </MethodListGroup>

@@ -267,11 +267,12 @@ module.exports = {
             "guide/video-on-demand/features/list-encoding-jobs",
             "guide/video-on-demand/features/get-encoding-job-details",
             "guide/video-on-demand/features/delete-encoding-job",
-            "guide/video-on-demand/features/play-video",
           ],
           collapsed: false,
         },
+        "guide/video-on-demand/features/play-video",
       ],
+
       collapsed: false,
     },
   ],
