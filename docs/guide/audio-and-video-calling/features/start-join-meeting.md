@@ -446,13 +446,13 @@ values={[
 <TabItem value="js">
 
 ```js
-import VideoSDK from "@videosdk.live/js";
+import ZujoSDK from "@videosdk.live/js-sdk";
 
 // Configure authentication token
-VideoSDK.config("<Authentication-token>");
+ZujoSDK.config("<Authentication-token>");
 
 // Initilize meeting
-const meeting = VideoSDK.initMeeting({
+const meeting = ZujoSDK.initMeeting({
   meetingId: "<Id-on-meeting>", // required
   name: "<Name-of-participant>", // required
   micEnabled: "<Flag-to-enable-mic>", // optional, default: true

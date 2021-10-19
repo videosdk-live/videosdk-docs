@@ -12,7 +12,7 @@ It supports all the modern frameworks such as plain JavaScript, React JS, Vue an
 
 ## Step 0: Access token generation (server-side code)
 
-An access token is required to authenticate with the Zujo SDK and make any API calls. You can generate one with the `API key` and `secret` mentioned in your developer portal at VideoSDK console.
+An access token is required to authenticate with the VideoSDK and make any API calls. You can generate one with the `API key` and `secret` mentioned in your developer portal at VideoSDK console.
 
 ### Generate access token (NodeJS)
 

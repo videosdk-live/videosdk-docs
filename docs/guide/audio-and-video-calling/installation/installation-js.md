@@ -56,13 +56,13 @@ Next step is to import the library and start using it.
 ### Webpack/node-style require
 
 ```js title="Webpack/node-style require"
-const VideoSDK = require("@videosdk.live/js");
-VideoSDK.initMeeting({...})
+const ZujoSDK = require("@videosdk.live/js-sdk");
+ZujoSDK.initMeeting({...})
 ```
 
 ### ES6 import
 
 ```js title="ES6 import"
-import VideoSDK from "@videosdk.live/js";
-VideoSDK.initMeeting({...})
+import ZujoSDK from "@videosdk.live/js-sdk";
+ZujoSDK.initMeeting({...})
 ```
