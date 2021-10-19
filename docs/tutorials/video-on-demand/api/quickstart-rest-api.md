@@ -77,7 +77,7 @@ values={[
 <TabItem value="curl">
 
 ```js
-curl --L --X POST 'https://api.zujonow.com/v1/files' \
+curl --L --X POST 'https://api.videosdk.live/v1/files' \
 --header 'Authorization: `jwt token goes here`'
 ```
 
@@ -87,7 +87,7 @@ curl --L --X POST 'https://api.zujonow.com/v1/files' \
 
 ```json
 {
-  "url": "https://storage-api.zujonow.com/v1/files"
+  "url": "https://storage-api.videosdk.live/v1/files"
 }
 ```
 
@@ -107,7 +107,7 @@ values={[
 <TabItem value="curl">
 
 ```js
-curl --L --X POST 'https://storage-api.zujonow.com/v1/files' \
+curl --L --X POST 'https://storage-api.videosdk.live/v1/files' \
 --header 'Authorization: `jwt token goes here`' \
 --header 'Content-Type: multipart/form-data'
 --form 'file=mock-video.mp4"'
@@ -133,7 +133,7 @@ curl --L --X POST 'https://storage-api.zujonow.com/v1/files' \
   "type": "video",
   "createdAt": "2021-03-18T05:07:18.771Z",
   "updatedAt": "2021-03-18T05:07:18.771Z",
-  "fileUrl": "https://cdn.zujonow.com/files/videos/6052e0064b442a2f16018373.mp4",
+  "fileUrl": "https://cdn.videosdk.live/files/videos/6052e0064b442a2f16018373.mp4",
   "id": "6052e0064b442a2f16018374"
 }
 ```
@@ -154,7 +154,7 @@ values={[
 <TabItem value="curl">
 
 ```js
-curl --L --X POST 'https://api.zujonow.com/v1/encoder/jobs' \
+curl --L --X POST 'https://api.videosdk.live/v1/encoder/jobs' \
 --header 'Authorization: `your token goes here`' \
 --header 'Content-Type: application/json' \
 --data-raw '
@@ -243,7 +243,7 @@ To play video, fetch `fileUrl` of video either from webhook or from the details 
 
 <script>
   const video = document.querySelector('#my-player');
-  const src = 'https://cdn.zujonow.com/files/videos/605311d9bba24b4d700c8c4d/index.m3u8';
+  const src = 'https://cdn.videosdk.live/files/videos/605311d9bba24b4d700c8c4d/index.m3u8';
   if (video.canPlayType('application/vnd.apple.mpegurl')) {
     // Some browers (safari and ie edge) support HLS natively
     video.src = src;

@@ -177,34 +177,38 @@ $token = JWT::encode($payload, $secret_key, 'HS256');
 </Tabs>
 
 ## Create a signed URL to upload video file
-Before starting uploading video, you have generate a signed upload URL using CREATE UPLOAD URL API. 
+
+Before starting uploading video, you have generate a signed upload URL using CREATE UPLOAD URL API.
 
 ```js title="Create a signed URL"
-curl --L --X POST 'https://api.zujonow.com/v1/files' \
+curl --L --X POST 'https://api.videosdk.live/v1/files' \
 --header 'Authorization: `${VIDEOSDK_API_TOKEN}`'
 ```
 
-The response will include URL 
+The response will include URL
+
 - **URL**: You can upload video on this URL using POST a video API
 
 ```js title="Response"
 {
-  "url": "https://storage-api.zujonow.com/v1/files"
+  "url": "https://storage-api.videosdk.live/v1/files"
 }
 ```
 
 ## Post a video via signed URL
-To start uploading video, you have to parse video file in formdata. 
+
+To start uploading video, you have to parse video file in formdata.
 
 ```js title="Upload via signed URL"
-curl --L --X POST 'https://storage-api.zujonow.com/v1/files' \
+curl --L --X POST 'https://storage-api.videosdk.live/v1/files' \
 --header 'Authorization: `jwt token goes here`' \
 --header 'Content-Type: multipart/form-data'
 --form 'file=mock-video.mp4"'
 ```
 
 The reponse will include `meta` and `fileURL`:
-- **meta**: Meta data will include technical information about Video. 
+
+- **meta**: Meta data will include technical information about Video.
 - **fileUrl**: URL of file uploaded on our cloud from where you can play video.
 
 ```json title="Response"
@@ -223,22 +227,24 @@ The reponse will include `meta` and `fileURL`:
   "type": "video",
   "createdAt": "2021-03-18T05:07:18.771Z",
   "updatedAt": "2021-03-18T05:07:18.771Z",
-  "fileUrl": "https://cdn.zujonow.com/files/videos/{FILE_ID}.mp4",
+  "fileUrl": "https://cdn.videosdk.live/files/videos/{FILE_ID}.mp4",
   "id": "6052e0064b442a2f16018374"
 }
 ```
 
 ## Encode a video
+
 This API helps you to customise all the encoding needs. It will reflect as per parameters you provide such as `presets` and `thumbnails`.
 
 The request parameters will be:
+
 - **videoId**: Id of video uploaded using Post a video API.
-- **presets**: Type of videos you want to convert in such as mp4, hls etc. with resolution specified. 
+- **presets**: Type of videos you want to convert in such as mp4, hls etc. with resolution specified.
 - **thumbnails**: Configuration to generate thumbnails of video
-- **webhookUrl**: Get notified on this URL when encoding job completes. 
+- **webhookUrl**: Get notified on this URL when encoding job completes.
 
 ```js title="Encode a video request"
-curl --L --X POST 'https://api.zujonow.com/v1/encoder/jobs' \
+curl --L --X POST 'https://api.videosdk.live/v1/encoder/jobs' \
 --header 'Authorization: `your token goes here`' \
 --header 'Content-Type: application/json' \
 --data-raw '
@@ -265,12 +271,14 @@ curl --L --X POST 'https://api.zujonow.com/v1/encoder/jobs' \
 }'
 ```
 
-The response will include `status` and `videoId` of job. 
+The response will include `status` and `videoId` of job.
+
 - **status**: It represents processing status of the video
-- **videoId**: Id of the video processing. 
+- **videoId**: Id of the video processing.
 
 ## Wait for "ready"
-As soon as you POST a video, VideoSDK begins downloading and processing the video. 
+
+As soon as you POST a video, VideoSDK begins downloading and processing the video.
 
 When the video is ready for playback, the asset "status" changes to "completed".
 
@@ -278,7 +286,7 @@ The best way to get notified is to use webhooks. We will send you notification a
 
 ```js title="Request for job details"
 curl --request GET \
-  --url 'https://api.zujonow.com/v1/encoder/jobs/${id}' \
+  --url 'https://api.videosdk.live/v1/encoder/jobs/${id}' \
   --header 'Authorization: `${VIDEOSDK_JWT_TOKEN}`'
 ```
 
@@ -293,7 +301,7 @@ curl --request GET \
       },
       "jobId": "605311c86efd284e474c5c76",
       "filePath": "files/videos/605311d9bba24b4d700c8c4d",
-      "fileUrl": "https://cdn.zujonow.com/files/videos/605311d9bba24b4d700c8c4d/index.m3u8",
+      "fileUrl": "https://cdn.videosdk.live/files/videos/605311d9bba24b4d700c8c4d/index.m3u8",
       "size": 1572953,
       "type": "video",
       .....
@@ -303,8 +311,8 @@ curl --request GET \
 ```
 
 ## Watch your Video
-To play back a video, use `fileUrl` from the response of video. 
 
+To play back a video, use `fileUrl` from the response of video.
 
 <Tabs
 defaultValue="html"
@@ -329,7 +337,7 @@ values={[
   data-setup="{}"
 >
   <source
-    src="https://cdn.zujonow.com/files/videos/605311d9bba24b4d700c8c4d/index.m3u8"
+    src="https://cdn.videosdk.live/files/videos/605311d9bba24b4d700c8c4d/index.m3u8"
     type="application/x-mpegURL"
   />
   <p class="vjs-no-js">
@@ -357,11 +365,12 @@ values={[
 
 ```js
 import React, { useEffect, useRef } from "react";
-import Hls from 'hls.js';
+import Hls from "hls.js";
 
 export default function VideoPlayer() {
   const videoRef = useRef(null);
-  const src = "https://cdn.zujonow.com/files/videos/605311d9bba24b4d700c8c4d/index.m3u8";
+  const src =
+    "https://cdn.videosdk.live/files/videos/605311d9bba24b4d700c8c4d/index.m3u8";
 
   useEffect(() => {
     let hls;
@@ -395,7 +404,7 @@ export default function VideoPlayer() {
       style={{ width: "100%", maxWidth: "500px" }}
     />
   );
-}  
+}
 ```
 
 </TabItem>
@@ -407,9 +416,9 @@ implementation 'com.google.android.exoplayer:exoplayer-hls:2.X.X'
 // Create a player instance.
 SimpleExoPlayer player = new SimpleExoPlayer.Builder(context).build();
 // Set the media item to be played.
-player.setMediaItem(MediaItem.fromUri("https://cdn.zujonow.com/files/videos/605311d9bba24b4d700c8c4d/index.m3u8"));
+player.setMediaItem(MediaItem.fromUri("https://cdn.videosdk.live/files/videos/605311d9bba24b4d700c8c4d/index.m3u8"));
 // Prepare the player.
-player.prepare(); 
+player.prepare();
 ```
 
 </TabItem>
@@ -420,7 +429,7 @@ import SwiftUI
 import AVKit
 
 struct ContentView: View {
-    private let player = AVPlayer(url: URL(string: "https://cdn.zujonow.com/files/videos/605311d9bba24b4d700c8c4d/index.m3u8")!)
+    private let player = AVPlayer(url: URL(string: "https://cdn.videosdk.live/files/videos/605311d9bba24b4d700c8c4d/index.m3u8")!)
 
     var body: some View {
         //  VideoPlayer comes from SwiftUI
@@ -442,7 +451,3 @@ struct ContentView_Previews: PreviewProvider {
 </TabItem>
 
 </Tabs>
-
-
-
-

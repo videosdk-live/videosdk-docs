@@ -8,11 +8,8 @@ sidebar_position: 1
 
 A live stream create api will help you to connect your RTMP stream to videosdk.live.
 
-
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-
-
 
 <Tabs
 defaultValue="curl"
@@ -26,7 +23,7 @@ values={[
 <TabItem value="curl">
 
 ```js
-curl -L -X POST 'https://api.zujonow.com/v1/livestreams' \
+curl -L -X POST 'https://api.videosdk.live/v1/livestreams' \
 --header 'Authorization: `jwt token goes here`' \
 --header 'Content-Type: application/json' \
 --data-raw '{
@@ -47,7 +44,7 @@ curl -L -X POST 'https://api.zujonow.com/v1/livestreams' \
 ```js
 var fetch = require("node-fetch");
 
-const url = "https://api.zujonow.com/v1/livestreams";
+const url = "https://api.videosdk.live/v1/livestreams";
 var options = {
   method: "POST",
   headers: {
@@ -78,7 +75,7 @@ fetch(url, options)
 ```python
 import requests
 
-url = "https://api.zujonow.com/v1/livestreams"
+url = "https://api.videosdk.live/v1/livestreams"
 
 payload = {
   "name": "Nickname for livestream", "record": True,
@@ -108,7 +105,7 @@ require 'uri'
 require 'net/http'
 require 'openssl'
 
-url = URI("https://api.zujonow.com/v1/livestreams")
+url = URI("https://api.videosdk.live/v1/livestreams")
 
 http = Net::HTTP.new(url.host, url.port)
 http.use_ssl = true
@@ -132,9 +129,9 @@ puts response.read_body
   "userId": "607adacdaeba2c4d217d5fea443d",
   "name": "zujo",
   "streamKey": "e83fb175-5606-4ee5-b960-aacfce300ba6",
-  "upstreamUrl": "rtmp://dev-live.zujonow.com/live/e83fb175-5606-4ee5-b960-aacfce300ba6",
-  "downstreamUrl": "https://dev-live.zujonow.com/live/e83fb175-5606-4ee5-b960-aacfce300ba6/index.m3u8",
-  "recordingUrl": "https://dev-live.zujonow.com/live/e83fb175-5606-4ee5-b960-aacfce300ba6/storage/index.m3u8",
+  "upstreamUrl": "rtmp://live.zujonow.com/live/e83fb175-5606-4ee5-b960-aacfce300ba6",
+  "downstreamUrl": "https://live.zujonow.com/live/e83fb175-5606-4ee5-b960-aacfce300ba6/index.m3u8",
+  "recordingUrl": "https://live.zujonow.com/live/e83fb175-5606-4ee5-b960-aacfce300ba6/storage/index.m3u8",
   "restream": [
     {
       "_id": "60e2fed0135c9810f490f3b6",
