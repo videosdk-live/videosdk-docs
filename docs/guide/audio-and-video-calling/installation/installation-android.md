@@ -23,20 +23,24 @@ Android SDK is natively written SDK using Java. It is compatible with both Java 
 
 The easiest way to get started is by installing the sdk in your app.
 
-### Step 1: Download the aar file and copy to apps/lib
-
-Download Link: [videosdk-rtc-android-sdk-1.0.0.aar](https://sdk.zujonow.com/videosdk-rtc-android-sdk-1.0.0.aar)
-
-### Step 2: Add dependencies in your build.gradle
+### Step 1: Add the repo to project's `build.gradle` file.
 
 ```js title="build.gradle"
-dependencies {
-    implementation fileTree(include: ['*.jar', '*.aar'], dir: 'libs')
-    implementation 'com.squareup.okhttp3:okhttp:4.3.0'
-    implementation 'com.squareup.okhttp3:logging-interceptor:4.3.0'
+allprojects {
+  repositories {
+    // ...
+    maven { url 'https://jitpack.io' }
+  }
+}
+```
 
-    implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
-    implementation 'io.reactivex.rxjava2:rxjava:2.2.6'
+### Step 2: Add the dependency in `app/build.gradle`:
+
+```js title="app/build.gradle"
+dependencies {
+		implementation 'live.videosdk:android-sdk:0.0.1'
+
+		// other app dependencies
 }
 ```
 
