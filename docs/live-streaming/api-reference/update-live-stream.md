@@ -24,7 +24,7 @@ values={[
 
 ```js
 curl --request GET \
-  --url 'https://api.zujonow.com/v1/livestreams/${id}' \
+  --url 'https://api.videosdk.live/v1/livestreams/${id}' \
   --header 'Authorization: `jwt token goes here`'
   --data-raw '{
     "name": "Nickname for livestream",
@@ -38,7 +38,7 @@ curl --request GET \
 ```js
 const fetch = require("node-fetch");
 
-const url = "https://api.zujonow.com/v1/livestreams/${id}";
+const url = "https://api.videosdk.live/v1/livestreams/${id}";
 const options = {
   method: "POST",
   headers: { Accept: "application/json", Authorization: `jwt token goes here` },
@@ -57,7 +57,7 @@ fetch(url, options)
 ```python
 import requests
 
-url = "https://api.zujonow.com/v1/livestreams/${id}"
+url = "https://api.videosdk.live/v1/livestreams/${id}"
 
 payload = {name: "Nickname for livestream", record: True }
 headers = {"Accept": "application/json", "Authorization": "jwt token goes here"}
@@ -75,7 +75,7 @@ require 'uri'
 require 'net/http'
 require 'openssl'
 
-url = URI("https://api.zujonow.com/v1/livestreams/{id}")
+url = URI("https://api.videosdk.live/v1/livestreams/{id}")
 
 http = Net::HTTP.new(url.host, url.port)
 http.use_ssl = true

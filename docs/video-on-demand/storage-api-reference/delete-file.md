@@ -24,7 +24,7 @@ values={[
 
 ```js
 curl --request DELETE \
-  --url 'https://api.zujonow.com/v1/files/${id}' \
+  --url 'https://api.videosdk.live/v1/files/${id}' \
   --header 'Authorization: `jwt token goes here`'
 ```
 
@@ -34,7 +34,7 @@ curl --request DELETE \
 ```js
 const fetch = require("node-fetch");
 
-const url = "https://api.zujonow.com/v1/files/${id}";
+const url = "https://api.videosdk.live/v1/files/${id}";
 const options = {
   method: "DELETE",
   headers: { Accept: "application/json", Authorization: `jwt token goes here` },
@@ -52,7 +52,7 @@ fetch(url, options)
 ```python
 import requests
 
-url = "https://api.zujonow.com/v1/files/${id}"
+url = "https://api.videosdk.live/v1/files/${id}"
 
 headers = {"Accept": "application/json", "Authorization": "jwt token goes here"}
 
@@ -69,7 +69,7 @@ require 'uri'
 require 'net/http'
 require 'openssl'
 
-url = URI("https://api.zujonow.com/v1/files/${id}")
+url = URI("https://api.videosdk.live/v1/files/${id}")
 
 http = Net::HTTP.new(url.host, url.port)
 http.use_ssl = true
@@ -101,7 +101,7 @@ puts response.read_body
   "type": "video",
   "createdAt": "2021-03-18T05:50:11.677Z",
   "updatedAt": "2021-03-18T05:50:11.677Z",
-  "fileUrl": "https://cdn.zujonow.com/files/videos/6052ea0f2dbbd93351b7bdf5.mp4",
+  "fileUrl": "https://cdn.videosdk.live/files/videos/6052ea0f2dbbd93351b7bdf5.mp4",
   "id": "6052ea132dbbd93351b7bdf6"
 }
 ```

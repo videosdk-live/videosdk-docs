@@ -27,7 +27,7 @@ values={[
 <TabItem value="curl">
 
 ```js
-curl -L -X POST 'https://api.zujonow.com/v1/livestreams' \
+curl -L -X POST 'https://api.videosdk.live/v1/livestreams' \
 --header 'Authorization: `jwt token goes here`' \
 --header 'Content-Type: application/json' \
 --data-raw '{

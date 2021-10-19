@@ -23,7 +23,7 @@ values={[
 <TabItem value="curl">
 
 ```js
-curl --L --X POST 'https://api.zujonow.com/v1/files' \
+curl --L --X POST 'https://api.videosdk.live/v1/files' \
 --header 'Authorization: `jwt token goes here`'
 ```
 
@@ -33,7 +33,7 @@ curl --L --X POST 'https://api.zujonow.com/v1/files' \
 ```js
 var fetch = require("node-fetch");
 
-const url = "https://api.zujonow.com/v1/files";
+const url = "https://api.videosdk.live/v1/files";
 var options = {
   method: "POST",
   headers: {
@@ -55,7 +55,7 @@ fetch(url, options)
 ```python
 import requests
 
-url = "https://api.zujonow.com/v1/files"
+url = "https://api.videosdk.live/v1/files"
 
 headers = {
     "Authorization": `${YOUR_JWT_TOKEN}`,
@@ -76,7 +76,7 @@ require 'uri'
 require 'net/http'
 require 'openssl'
 
-url = URI("https://api.zujonow.com/v1/files")
+url = URI("https://api.videosdk.live/v1/files")
 
 http = Net::HTTP.new(url.host, url.port)
 http.use_ssl = true
@@ -95,7 +95,7 @@ puts response.read_body
 
 ```json
 {
-  "url": "https://storage-api.zujonow.com/v1/files"
+  "url": "https://storage-api.videosdk.live/v1/files"
 }
 ```
 
