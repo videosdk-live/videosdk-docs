@@ -129,9 +129,9 @@ puts response.read_body
   "userId": "607adacdaeba2c4d217d5fea443d",
   "name": "zujo",
   "streamKey": "e83fb175-5606-4ee5-b960-aacfce300ba6",
-  "upstreamUrl": "rtmp://live.zujonow.com/live/e83fb175-5606-4ee5-b960-aacfce300ba6",
-  "downstreamUrl": "https://live.zujonow.com/live/e83fb175-5606-4ee5-b960-aacfce300ba6/index.m3u8",
-  "recordingUrl": "https://live.zujonow.com/live/e83fb175-5606-4ee5-b960-aacfce300ba6/storage/index.m3u8",
+  "upstreamUrl": "rtmp://live.videosdk.live/live/e83fb175-5606-4ee5-b960-aacfce300ba6",
+  "downstreamUrl": "https://live.videosdk.live/live/e83fb175-5606-4ee5-b960-aacfce300ba6/index.m3u8",
+  "recordingUrl": "https://live.videosdk.live/live/e83fb175-5606-4ee5-b960-aacfce300ba6/storage/index.m3u8",
   "restream": [
     {
       "_id": "60e2fed0135c9810f490f3b6",

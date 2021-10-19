@@ -122,7 +122,7 @@ Use any HLS supported video player like <a href="https://videojs.com/">video.js<
     data-setup="{}"
   >
     <source
-      src="https://live.zujonow.com/live/cae23d5b-0c34-4429-a70b-0d597e5e0e96/index.m3u8"
+      src="https://live.videosdk.live/live/cae23d5b-0c34-4429-a70b-0d597e5e0e96/index.m3u8"
       type="application/x-mpegURL"
     />
     <p class="vjs-no-js">

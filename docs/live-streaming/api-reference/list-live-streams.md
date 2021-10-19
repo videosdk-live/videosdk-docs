@@ -101,9 +101,9 @@ puts response.read_body
       "userId": "5fa671e77b80d58c11cbca95",
       "name": "Nickname for livestream",
       "streamKey": "0893a39c-0f3f-4ac8-8700-06151a1f68ed",
-      "upstreamUrl": "rtmp://live.zujonow.com/live/...",
-      "downstreamUrl": "https://live.zujonow.com/live/.../index.m3u8",
-      "recordingUrl": "https://live.zujonow.com/live/.../storage/index.m3u8",
+      "upstreamUrl": "rtmp://live.videosdk.live/live/...",
+      "downstreamUrl": "https://live.videosdk.live/live/.../index.m3u8",
+      "recordingUrl": "https://live.videosdk.live/live/.../storage/index.m3u8",
       "createdAt": "2021-02-23T05:16:28.219Z",
       "updatedAt": "2021-02-23T05:16:28.219Z"
     },

@@ -310,9 +310,9 @@ The Stream Key should be treated as a private key for live streaming. Anyone wit
   "record": false,
   "name": "zujo",
   "streamKey": "e83fb175-5606-4ee5-b960-aacfce300ba6",
-  "upstreamUrl": "rtmp://live.zujonow.com/live/.......",
-  "downstreamUrl": "https://live.zujonow.com/live/.......",
-  "recordingUrl": "https://live.zujonow.com/live/......",
+  "upstreamUrl": "rtmp://live.videosdk.live/live/.......",
+  "downstreamUrl": "https://live.videosdk.live/live/.......",
+  "recordingUrl": "https://live.videosdk.live/live/......",
   "restream": [
     {
       "url": "rtmp://x.rtmp.youtube.com/live2",
@@ -332,9 +332,9 @@ VideoSDK supports live streaming using the RTMP protocol, which is supported by 
 
 Your users or your client app will need software that can push an RTMP stream. That software will be configured using the Stream Key from the prior step along with VideoSDK's RTMP Server URL
 
-| RTMP Server URL              | Description                                                                                           | Common Applications                 |
-| ---------------------------- | ----------------------------------------------------------------------------------------------------- | ----------------------------------- |
-| rtmp://live.zujonow.com/live | Mux's standard RTMP entry point. Compatible with the majority of streaming applications and services. | OBS, Wirecast, Streamaxia RTMP SDKs |
+| RTMP Server URL                | Description                                                                                           | Common Applications                 |
+| ------------------------------ | ----------------------------------------------------------------------------------------------------- | ----------------------------------- |
+| rtmp://live.videosdk.live/live | Mux's standard RTMP entry point. Compatible with the majority of streaming applications and services. | OBS, Wirecast, Streamaxia RTMP SDKs |
 
 If you want to live stream with a protocol other than RTMP, let us know!
 
@@ -367,7 +367,7 @@ values={[
   data-setup="{}"
 >
   <source
-    src="https://live.zujonow.com/live/cae23d5b-0c34-4429-a70b-0d597e5e0e96/index.m3u8"
+    src="https://live.videosdk.live/live/cae23d5b-0c34-4429-a70b-0d597e5e0e96/index.m3u8"
     type="application/x-mpegURL"
   />
   <p class="vjs-no-js">
@@ -400,7 +400,7 @@ import Hls from "hls.js";
 export default function VideoPlayer() {
   const videoRef = useRef(null);
   const src =
-    "https://live.zujonow.com/live/cae23d5b-0c34-4429-a70b-0d597e5e0e96/index.m3u8";
+    "https://live.videosdk.live/live/cae23d5b-0c34-4429-a70b-0d597e5e0e96/index.m3u8";
 
   useEffect(() => {
     let hls;
@@ -446,7 +446,7 @@ implementation 'com.google.android.exoplayer:exoplayer-hls:2.X.X'
 // Create a player instance.
 SimpleExoPlayer player = new SimpleExoPlayer.Builder(context).build();
 // Set the media item to be played.
-player.setMediaItem(MediaItem.fromUri("https://live.zujonow.com/live/cae23d5b-0c34-4429-a70b-0d597e5e0e96/index.m3u8"));
+player.setMediaItem(MediaItem.fromUri("https://live.videosdk.live/live/cae23d5b-0c34-4429-a70b-0d597e5e0e96/index.m3u8"));
 // Prepare the player.
 player.prepare();
 ```
@@ -459,7 +459,7 @@ import SwiftUI
 import AVKit
 
 struct ContentView: View {
-    private let player = AVPlayer(url: URL(string: "https://live.zujonow.com/live/cae23d5b-0c34-4429-a70b-0d597e5e0e96/index.m3u8")!)
+    private let player = AVPlayer(url: URL(string: "https://live.videosdk.live/live/cae23d5b-0c34-4429-a70b-0d597e5e0e96/index.m3u8")!)
 
     var body: some View {
         //  VideoPlayer comes from SwiftUI
