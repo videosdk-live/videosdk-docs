@@ -82,24 +82,30 @@ const onPress = () => {
 <TabItem value="android">
 
 ```js
-  @Override
-    protected void onClick() {
-         meeting.leave();
-    }
+  btnLeave.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View v) {
+        meeting.leave();
+      }
+  });
 ```
 
 </TabItem>
 <TabItem value="ios">
 
 ```js
-COMING SOON!
+/// End Meeting
+buttonControlsView.onEndMeetingTapped = {
+  self.meeting?.leave()
+}
 ```
 
 </TabItem>
 <TabItem value="flutter">
 
 ```js
-COMING SOON!
+// Leave the meeting
+meeting?.leave();
 ```
 
 </TabItem>

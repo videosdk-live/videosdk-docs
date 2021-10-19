@@ -270,21 +270,158 @@ const validatedMeetingId = await validateMeeting(token, "provided-meeting-id");
 <TabItem value="android">
 
 ```js
-COMING SOON!
+package live.videosdk.rtc.android.java;
+
+import com.androidnetworking.AndroidNetworking;
+import com.androidnetworking.error.ANError;
+import com.androidnetworking.interfaces.JSONObjectRequestListener;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+public class JoinActivity extends AppCompatActivity {
+  private String apiServerUrl = "http://192.168.0.101:9000";
+
+  // ...
+  // onCreate() and other methods
+
+  private void getToken(@Nullable String meetingId) {
+    AndroidNetworking
+      .get(apiServerUrl + "/get-token")
+      .build()
+      .getAsJSONObject(
+        new JSONObjectRequestListener() {
+          @Override
+          public void onResponse(JSONObject response) {
+            try {
+              String token = response.getString("token");
+
+              if (meetingId == null) {
+                createMeeting(token);
+              } else {
+                joinMeeting(token, meetingId);
+              }
+            } catch (JSONException e) {
+              e.printStackTrace();
+            }
+          }
+
+          @Override
+          public void onError(ANError anError) {
+            anError.printStackTrace();
+          }
+        }
+      );
+  }
+
+  private void createMeeting(String token) {
+    AndroidNetworking
+      .post(apiServerUrl + "/create-meeting")
+      .addBodyParameter("token", token)
+      .build()
+      .getAsJSONObject(
+        new JSONObjectRequestListener() {
+          @Override
+          public void onResponse(JSONObject response) {
+            try {
+              // final String meetingId = response.getString("meetingId");
+
+              // Intent intent = new Intent(JoinActivity.this, MainActivity.class);
+              // intent.putExtra("token", token);
+              // intent.putExtra("meetingId", meetingId);
+
+              // startActivity(intent);
+            } catch (JSONException e) {
+              e.printStackTrace();
+            }
+          }
+
+          @Override
+          public void onError(ANError anError) {
+            anError.printStackTrace();
+          }
+        }
+      );
+  }
+
+  private void joinMeeting(String token, String meetingId) {
+    AndroidNetworking
+      .post(apiServerUrl + "/validate-meeting/{meetingId}")
+      .addPathParameter("meetingId", meetingId)
+      .addBodyParameter("token", token)
+      .build()
+      .getAsJSONObject(
+        new JSONObjectRequestListener() {
+          @Override
+          public void onResponse(JSONObject response) {
+            // Intent intent = new Intent(JoinActivity.this, MainActivity.class);
+            // intent.putExtra("token", token);
+            // intent.putExtra("meetingId", meetingId);
+
+            // startActivity(intent);
+          }
+
+          @Override
+          public void onError(ANError anError) {
+            anError.printStackTrace();
+          }
+        }
+      );
+  }
+}
+
 ```
 
 </TabItem>
 <TabItem value="ios">
 
 ```js
-COMING SOON!
+/// Server Token URL
+fileprivate let getTokenUrl = "<URL to retrieve token>"
+
+/**
+  Retrieve token from your server
+*/
+URLSession.shared.dataTask(with: URL(string: getTokenUrl)!) { data, response, error in
+  if let data = data, let json = try? JSON(data: data) {
+      self.serverToken = json["token"].stringValue
+  }
+}
 ```
 
 </TabItem>
 <TabItem value="flutter">
 
 ```js
-COMING SOON!
+import 'package:videosdk/rtc.dart';
+import 'package:videosdk/meeting.dart';
+
+String? meetingId;
+String? token;
+
+void _fetchMeetingIdAndToken() async {
+    final API_SERVER_HOST = dotenv.env['API_SERVER_HOST'];
+
+    final Uri get_token_url = Uri.parse('http://$API_SERVER_HOST/get-token');
+    final http.Response tokenResponse = await http.get(get_token_url);
+
+    final dynamic _token = json.decode(tokenResponse.body)['token'];
+
+    final Uri get_meeting_id_url =
+        Uri.parse('http://$API_SERVER_HOST/create-meeting/');
+
+    final http.Response meetingIdResponse =
+        await http.post(get_meeting_id_url, body: {"token": _token});
+
+    final _meetingId = json.decode(meetingIdResponse.body)['meetingId'];
+
+    print("_token => $_token _meetingId => $_meetingId");
+
+    setState(() {
+      token = _token;
+      meetingId = _meetingId;
+    });
+  }
+
 ```
 
 </TabItem>
@@ -408,18 +545,17 @@ public class MainActivity extends AppCompatActivity {
         final boolean micEnabled = true;
         final boolean webcamEnabled = true;
 
-        // Configure authentication token got earlier
+        // Configure authentication token
         VideoSDK.config(token);
 
         // create a new meeting instance
         meeting = VideoSDK.initMeeting(
-                    MainActivity.this, // Reference to this activity
-                    meetingId,
-                    participantName,
-                    micEnabled,
-                    webcamEnabled
-                );
-
+                MainActivity.this,
+                meetingId,
+                participantName,
+                micEnabled,
+                webcamEnabled
+        );
     }
 }
 
@@ -572,21 +708,25 @@ const onPress = () => {
 <TabItem value="android">
 
 ```js
-COMING SOON!
+// After receiving mic and webcam access permissions
+// join the meeting
+meeting.join();
 ```
 
 </TabItem>
 <TabItem value="ios">
 
 ```js
-COMING SOON!
+// join
+meeting?.join();
 ```
 
 </TabItem>
 <TabItem value="flutter">
 
 ```js
-COMING SOON!
+// Join the meeting
+meeting?.join();
 ```
 
 </TabItem>

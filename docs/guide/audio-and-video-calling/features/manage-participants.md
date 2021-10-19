@@ -268,25 +268,171 @@ const ParticipantView = ({ participantId }) => {
 </TabItem>
 <TabItem value="android">
 
-```js
-  @Override
-    protected void onClick() {
-         meeting.leave();
-    }
+```xml title="activity_main.xml"
+  <org.webrtc.SurfaceViewRenderer
+      android:id="@+id/svrLocal"
+      android:layout_width="80dp"
+      android:layout_height="100dp"
+      android:layout_gravity="end" />
+
+  <androidx.recyclerview.widget.RecyclerView
+      android:id="@+id/rvParticipants"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent" />
 ```
+
+```js title="MainActivity.java"
+  import org.webrtc.SurfaceViewRenderer;
+  import org.webrtc.VideoTrack;
+
+  private void displayLocalParticipant() {
+    final SurfaceViewRenderer svrLocal = findViewById(R.id.svrLocal);
+
+    // display local video when stream available
+    meeting
+      .getLocalParticipant()
+      .addEventListener(
+        new ParticipantEventListener() {
+          @Override
+          public void onStreamEnabled(Stream stream) {
+            if (stream.getKind().equalsIgnoreCase("video")) {
+              VideoTrack track = (VideoTrack) stream.getTrack();
+              track.addSink(svrLocal);
+            }
+          }
+        }
+      );
+  }
+
+  private void displayRemoteParticipants() {
+    final RecyclerView rvParticipants = findViewById(R.id.rvParticipants);
+    rvParticipants.setLayoutManager(new GridLayoutManager(this, 2));
+    rvParticipants.setAdapter(new ParticipantAdapter(meeting));
+  }
+
+```
+
+```xml title="item_remote_peer.xml"
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <org.webrtc.SurfaceViewRenderer
+        android:id="@+id/svrParticipant"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</FrameLayout>
+```
+
+```js title="ParticipantAdapter.java"
+
+public class ParticipantAdapter extends RecyclerView.Adapter<ParticipantAdapter.PeerViewHolder> {
+
+    private final List<Participant> participants = new ArrayList<>();
+    private int containerHeight;
+
+    public ParticipantAdapter(Meeting meeting) {
+        Handler mHandler = new Handler(Looper.getMainLooper());
+
+        meeting.addEventListener(new MeetingEventListener() {
+            @Override
+            public void onParticipantJoined(Participant participant) {
+                participants.add(participant);
+                mHandler.post(() -> notifyItemInserted(participants.size() - 1));
+            }
+
+            @Override
+            public void onParticipantLeft(Participant participant) {
+                // remove participant from grid
+            }
+        });
+    }
+
+    @NonNull
+    @Override
+    public PeerViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        containerHeight = parent.getHeight();
+
+        return new PeerViewHolder(LayoutInflater.from(parent.getContext())
+                .inflate(R.layout.item_remote_peer, parent, false));
+    }
+
+    @Override
+    public void onBindViewHolder(@NonNull PeerViewHolder holder, int position) {
+        final Participant participant = participants.get(position);
+
+        ViewGroup.LayoutParams layoutParams = holder.itemView.getLayoutParams();
+        layoutParams.height = containerHeight / 3;
+        holder.itemView.setLayoutParams(layoutParams);
+
+        for (Map.Entry<String, Stream> entry : participant.getStreams().entrySet()) {
+            Stream stream = entry.getValue();
+            if (stream.getKind().equalsIgnoreCase("video")) {
+                VideoTrack videoTrack = (VideoTrack) stream.getTrack();
+                videoTrack.addSink(holder.svrParticipant);
+                break;
+            }
+        }
+
+        participant.addEventListener(new ParticipantEventListener() {
+            @Override
+            public void onStreamEnabled(Stream stream) {
+                if (stream.getKind().equalsIgnoreCase("video")) {
+                    VideoTrack videoTrack = (VideoTrack) stream.getTrack();
+                    videoTrack.addSink(holder.svrParticipant);
+                }
+            }
+        });
+
+    }
+
+    @Override
+    public int getItemCount() {
+        return participants.size();
+    }
+
+
+    static class PeerViewHolder extends RecyclerView.ViewHolder {
+        public SurfaceViewRenderer svrParticipant;
+        public View itemView;
+
+        PeerViewHolder(@NonNull View view) {
+            super(view);
+
+            itemView = view;
+
+            svrParticipant = view.findViewById(R.id.svrParticipant);
+            svrParticipant.init(PeerConnectionUtils.getEglContext(), null);
+        }
+    }
+}
+
+```
+
+Please refer the [example code](https://github.com/videosdk-live/videosdk-rtc-android-java-sdk-example/blob/master/app/src/main/java/live/videosdk/rtc/android/java) on Github for more details.
 
 </TabItem>
 <TabItem value="ios">
 
 ```js
-COMING SOON!
+// show local participant in the grid if available
+guard let localParticipant = self.meeting?.localParticipant else { return }
+
+// event listener for self
+localParticipant.addEventListener(self)
 ```
 
 </TabItem>
 <TabItem value="flutter">
 
 ```js
-COMING SOON!
+// Get local participants
+meeting?.localParticipant;
+
+// Get remote participants
+meeting?.participants;
 ```
 
 </TabItem>
@@ -384,21 +530,120 @@ const {
 <TabItem value="android">
 
 ```js
-COMING SOON!
+ meeting.addEventListener(new MeetingEventListener() {
+    @Override
+    public void onParticipantJoined(Participant participant) {
+      participant.addEventListener(new ParticipantEventListener() {
+          @Override
+          public void onStreamEnabled(Stream stream) {
+              if (stream.getKind().equalsIgnoreCase("video")) {
+                  // participant video enabled
+              } else if (stream.getKind().equalsIgnoreCase("audio")) {
+                  // participant mic enabled
+              }
+          }
+
+          @Override
+          public void onStreamDisabled(Stream stream) {
+              if (stream.getKind().equalsIgnoreCase("video")) {
+                  // participant video disabled
+              } else if (stream.getKind().equalsIgnoreCase("audio")) {
+                  // participant mic disabled
+              }
+          }
+      });
+    }
+
+    @Override
+    public void onParticipantLeft(Participant participant) {
+      Toast
+        .makeText(
+          MainActivity.this,
+          participant.getDisplayName() + " left",
+          Toast.LENGTH_SHORT
+        )
+        .show();
+    }
+ });
 ```
 
 </TabItem>
 <TabItem value="ios">
 
 ```js
-COMING SOON!
+ /// A new participant joined
+    func onParticipantJoined(_ participant: Participant) {
+        // add listener
+        participant.addEventListener(self)
+
+        // add new participant to list and show in grid
+        participants.append(participant)
+        addParticipantToGridView()
+    }
+
+    /// A participant left from the meeting
+    /// - Parameter participant: participant object
+    func onParticipantLeft(_ participant: Participant) {
+        // remove listener
+        participant.removeEventListener(self)
+
+        // remove from list and update ui
+        guard let index = self.participants.firstIndex(where: { $0.id == participant.id }) else {
+            return
+        }
+
+        // remove participant from list and grid
+        participants.remove(at: index)
+        removeParticipantFromGridView(at: index)
+    }
+
+    /// Participant has enabled mic, video or screenshare
+    /// - Parameters:
+    ///   - stream: enabled stream object
+    ///   - participant: participant object
+    func onStreamEnabled(_ stream: MediaStream, forParticipant participant: Participant) {
+        // show stream in cell
+        if let cell = self.cellForParticipant(participant) {
+            cell.updateView(forStream: stream, enabled: true)
+        }
+
+        if participant.isLocal {
+            // turn on controls for local participant
+            self.buttonControlsView.updateButtons(forStream: stream, enabled: true)
+        }
+    }
+
+    /// Participant has disabled mic, video or screenshare
+    /// - Parameters:
+    ///   - stream: disabled stream object
+    ///   - participant: participant object
+    func onStreamDisabled(_ stream: MediaStream, forParticipant participant: Participant) {
+        // hide stream in cell
+        if let cell = self.cellForParticipant(participant) {
+            cell.updateView(forStream: stream, enabled: false)
+        }
+
+        if participant.isLocal {
+            // turn off controls for local participant
+            self.buttonControlsView.updateButtons(forStream: stream, enabled: false)
+        }
+    }
 ```
 
 </TabItem>
 <TabItem value="flutter">
 
 ```js
-COMING SOON!
+// Adding event listner
+meeting.on("participant-joined", (Participant participant) {
+  print("new participant => $participant");
+  },
+);
+
+meeting.on("participant-left", (Participant participant) {
+  print("new participant => $participant");
+  },
+);
 ```
 
 </TabItem>

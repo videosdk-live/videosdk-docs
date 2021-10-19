@@ -82,21 +82,47 @@ const onPress = () => {
 <TabItem value="android">
 
 ```js
-COMING SOON!
+  btnMic.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View v) {
+
+        // Toggle participant mic in meeting
+        if (micEnabled) {
+          meeting.muteMic();
+        } else {
+          meeting.unmuteMic();
+        }
+
+      }
+  });
 ```
 
 </TabItem>
 <TabItem value="ios">
 
 ```js
-COMING SOON!
+/// Mic tap
+buttonControlsView.onMicTapped = { on in
+  if on {
+    self.meeting?.muteMic()
+  } else {
+    self.meeting?.unmuteMic()
+  }
+}
 ```
 
 </TabItem>
 <TabItem value="flutter">
 
 ```js
-COMING SOON!
+ElevatedButton(
+  onPressed: widget.meeting.disableMic,
+  child: Text("disableMic"),
+),
+ElevatedButton(
+  onPressed: widget.meeting.enableMic,
+  child: Text("enableMic"),
+),
 ```
 
 </TabItem>
