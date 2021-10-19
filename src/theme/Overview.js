@@ -106,7 +106,7 @@ function Overview() {
                     },
                     {
                       linkName: "API reference",
-                      link: "/video-on-demand/intro",
+                      link: "/docs/video-on-demand/intro",
                     },
                     {
                       linkName: "Tutorial",
