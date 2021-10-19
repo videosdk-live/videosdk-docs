@@ -20,7 +20,7 @@ function Overview() {
               <div class="col col--6">
                 <CardLinks
                   title="Prebuilt"
-                  text=" Embed video meetings into an application  in few minutes."
+                  text="Embed video meetings into an application in few minutes."
                   img="/img/icons/libraries/prebuilt-icon.svg"
                   links={[
                     {
@@ -36,7 +36,7 @@ function Overview() {
                       link: "/docs/tutorials/realtime-communication/prebuilt-sdk/quickstart-prebuilt-js",
                     },
                     {
-                      linkName: "Code sample",
+                      linkName: "Code samples",
                       link: "/docs/resources/overview#1-rtc-prebuilt-sdk-code-samples",
                     },
                   ]}
@@ -61,7 +61,7 @@ function Overview() {
                       link: "/docs/tutorials/realtime-communication/js-sdk/quickstart-js",
                     },
                     {
-                      linkName: "Code sample",
+                      linkName: "Code samples",
                       link: "/docs/resources/overview#2-rtc-raw-sdk-code-samples",
                     },
                   ]}
@@ -88,7 +88,7 @@ function Overview() {
                       link: "/docs/tutorials/live-streaming/api/quickstart-rest-api",
                     },
                     {
-                      linkName: "Code sample",
+                      linkName: "Code samples",
                       link: "/docs/resources/overview#3-live-stream-code-samples",
                     },
                   ]}
@@ -113,7 +113,7 @@ function Overview() {
                       link: "/docs/tutorials/video-on-demand/api/quickstart-rest-api",
                     },
                     {
-                      linkName: "Code sample",
+                      linkName: "Code samples",
                       link: "/docs/resources/overview#4-video-on-demand-code-samples",
                     },
                   ]}
