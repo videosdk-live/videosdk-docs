@@ -44,13 +44,13 @@ function Overview() {
               </div>
               <div class="col col--6">
                 <CardLinks
-                  title="Video & Audio Calling"
+                  title="Audio & Video Calling"
                   text="Low latency video,audio and data communication."
                   img="/img/icons/libraries/video-call-icon.svg"
                   links={[
                     {
                       linkName: "Guide",
-                      link: "http://localhost:3000/docs/guide/audio-and-video-calling/getting-started",
+                      link: "/docs/guide/audio-and-video-calling/getting-started",
                     },
                     {
                       linkName: "API reference",
