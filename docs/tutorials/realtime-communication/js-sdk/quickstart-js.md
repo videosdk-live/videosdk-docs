@@ -68,7 +68,7 @@ Signup on the ZujoNow website to get a key pair for SDK authentication. Your **A
 Include this in your HTML file
 
 ```html title="index.html"
-<script src="https://sdk.zujonow.com/zujo-sdk-2.0.0.min.js"></script>
+<script src="https://sdk.videosdk.live/zujo-sdk-2.0.0.min.js"></script>
 ```
 
 ---

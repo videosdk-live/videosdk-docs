@@ -31,7 +31,7 @@ It supports the following OS/SDK versions.
 
 ### Step 1: Download the `aar` file and copy to `apps/libs` android directory.
 
-- [https://sdk.zujonow.com/videosdk-rtc-android-sdk-1.0.0.aar](https://sdk.zujonow.com/videosdk-rtc-android-sdk-1.0.0.aar)
+- [https://sdk.videosdk.live/videosdk-rtc-android-sdk-1.0.0.aar](https://sdk.videosdk.live/videosdk-rtc-android-sdk-1.0.0.aar)
 
 ### Step 2: Add the following dependencies in your app's `build.gradle`:
 

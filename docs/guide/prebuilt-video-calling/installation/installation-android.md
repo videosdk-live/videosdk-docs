@@ -16,7 +16,8 @@ slug: installation-android
 ---
 
 # Installation: Android SDK
-Android SDK is natively written SDK using Java. It is compatible with both Java and Kotlin. 
+
+Android SDK is natively written SDK using Java. It is compatible with both Java and Kotlin.
 
 ## Install an Android SDK
 
@@ -24,7 +25,7 @@ The easiest way to get started is by installing the sdk in your app.
 
 ### Step 1: Download the aar file and copy to apps/lib
 
-Download Link: [videosdk-rtc-android-sdk-1.0.0.aar](https://sdk.zujonow.com/videosdk-rtc-android-sdk-1.0.0.aar)
+Download Link: [videosdk-rtc-android-sdk-1.0.0.aar](https://sdk.videosdk.live/videosdk-rtc-android-sdk-1.0.0.aar)
 
 ### Step 2: Add dependencies in your build.gradle
 
@@ -50,6 +51,7 @@ dependencies {
 ```
 
 ### Step 4: Extend the android.app.Application class and create MainApplication.java class with the following code
+
 ```js title="MainApplication.java"
 package live.videosdk.demo;
 
@@ -68,6 +70,7 @@ public class MainApplication extends Application {
 ```
 
 ### Step 5: Add MainApplication to AndroidManifest.xml
+
 ```js title="AndroidManifest.xml"
 <application
     android:name=".MainApplication"
@@ -77,6 +80,7 @@ public class MainApplication extends Application {
 ```
 
 ### Step 6: Start using it
+
 ```js title="MainActivity.java"
 @Override
 protected void onCreate(Bundle savedInstanceState) {
