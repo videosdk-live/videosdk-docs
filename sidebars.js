@@ -224,6 +224,8 @@ module.exports = {
             "realtime-communication/rest-api-reference/create-join-meeting",
             "realtime-communication/rest-api-reference/list-all-meetings",
             "realtime-communication/rest-api-reference/get-meeting-details",
+            "realtime-communication/rest-api-reference/list-meeting-sessions",
+            "realtime-communication/rest-api-reference/get-session-details",
             "realtime-communication/rest-api-reference/list-recordings",
             "realtime-communication/rest-api-reference/get-recording-details",
             "realtime-communication/rest-api-reference/remove-recording",

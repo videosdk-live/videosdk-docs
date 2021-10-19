@@ -1,5 +1,6 @@
 ---
 sidebar_position: 1
+sidebar_label: Create Meeting using API
 ---
 
 # Create/Join Meeting using API
@@ -28,7 +29,7 @@ values={[
 cURL -H "Content-Type: application/json" \
      -H "Authorization: $YOUR_JWT_TOKEN" \
      -XPOST \
-     https://api.zujonow.com/v1/meetings
+     https://api.videosdk.live/v1/meetings
 ```
 
 </TabItem>
@@ -39,7 +40,7 @@ var request = require("node-fetch");
 
 var options = {
   method: "POST",
-  url: "https://api.zujonow.com/v1/meetings",
+  url: "https://api.videosdk.live/v1/meetings",
   headers: { authorization: `${YOUR_JWT_TOKEN}` },
 };
 
@@ -56,7 +57,7 @@ request(options, function (error, response, body) {
 ```python
 import requests
 
-url = "https://api.zujonow.com/v1/meetings"
+url = "https://api.videosdk.live/v1/meetings"
 
 headers = {'authorization': f'Bearer {YOUR_JWT_TOKEN}'}
 
@@ -72,7 +73,7 @@ print(response.text)
 require 'uri'
 require 'net/http'
 
-url = URI("https://api.zujonow.com/v1/meetings")
+url = URI("https://api.videosdk.live/v1/meetings")
 
 http = Net::HTTP.new(url.host, url.port)
 http.use_ssl = true
@@ -115,7 +116,7 @@ values={[
 cURL -H "Content-Type: application/json" \
      -H "Authorization: $YOUR_JWT_TOKEN" \
      -XPOST \
-     https://api.zujonow.com/v1/meetings/${meetingId}
+     https://api.videosdk.live/v1/meetings/${meetingId}
 ```
 
 </TabItem>
@@ -126,7 +127,7 @@ var request = require("request");
 
 var options = {
   method: "POST",
-  url: "https://api.zujonow.com/v1/meetings/${meetingId}",
+  url: "https://api.videosdk.live/v1/meetings/${meetingId}",
   headers: { authorization: `${YOUR_JWT_TOKEN}` },
 };
 
@@ -143,7 +144,7 @@ request(options, function (error, response, body) {
 ```python
 import requests
 
-url = "https://api.zujonow.com/v1/meetings/${meetingId}"
+url = "https://api.videosdk.live/v1/meetings/${meetingId}"
 
 headers = {'authorization': f'Bearer {YOUR_JWT_TOKEN}'}
 
@@ -159,7 +160,7 @@ print(response.text)
 require 'uri'
 require 'net/http'
 
-url = URI("https://api.zujonow.com/v1/meetings/${meetingId}")
+url = URI("https://api.videosdk.live/v1/meetings/${meetingId}")
 
 http = Net::HTTP.new(url.host, url.port)
 http.use_ssl = true
