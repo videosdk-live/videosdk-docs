@@ -2,11 +2,9 @@
 sidebar_position: 1
 ---
 
-# List All Meeting Recordings
+# List Meeting Recordings
 
-## Using all meeting recordings API
-
-You have to call simple API to list meetings.
+You have to call simple API to list recordings.
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';

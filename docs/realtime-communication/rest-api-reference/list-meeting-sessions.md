@@ -3,9 +3,7 @@ sidebar_position: 1
 sidebar_label: List Meeting Sessions
 ---
 
-# List All Meeting Sessions
-
-## Using list all meeting sessions API
+# List Meeting Sessions
 
 You have to call simple API to list meeting sessions.
 

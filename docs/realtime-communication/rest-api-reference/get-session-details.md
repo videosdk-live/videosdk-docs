@@ -5,8 +5,6 @@ sidebar_label: Get Session Details
 
 # Get Session Details
 
-## Using get session details API
-
 You have to call simple API to list session details.
 
 import Tabs from '@theme/Tabs';

@@ -2,9 +2,7 @@
 sidebar_position: 1
 ---
 
-# List All Meetings
-
-## Using list all meetings API
+# List Meetings
 
 You have to call simple API to list meetings.
 
