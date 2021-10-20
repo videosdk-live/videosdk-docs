@@ -35,7 +35,7 @@ import Card from '@theme/Card';
   </div>
   <div class="row " >
     <div class="col col--6">
-      <Card heading="3. Join Meeting" link="/docs/guide/prebuilt-video-calling/features/join-screen" description="Join Meeting Link." />
+      <Card heading="3. Customize Prebuilt" link="/docs/guide/prebuilt-video-calling/features/join-screen" description="Start with customizing the Join screen." />
     </div>
     
   </div>
