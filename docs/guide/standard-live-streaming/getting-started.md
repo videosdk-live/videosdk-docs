@@ -41,7 +41,7 @@ import Card from '@theme/Card';
       <Card heading="2. Authentication" link="/docs/guide/standard-live-streaming/authentication" description="Generate Access Token."  />
     </div>
   </div>
-  <div class="row " style={{justifyContent:'center'}}>
+  <div class="row " >
     <div class="col col--6">
       <Card heading="3. Create Live Stream" link="/docs/guide/standard-live-streaming/features/create-live-stream" description="Setup Live Stream." />
     </div>

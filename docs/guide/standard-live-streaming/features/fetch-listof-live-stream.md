@@ -1,10 +1,10 @@
 ---
-title: List Live Stream
+title: Fetch List of Live Stream
 hide_title: false
 hide_table_of_contents: false
 description: Live Streaming architecture helps you to understand how to implement scalable live broadcasting applications.
-sidebar_label: List Live Stream
-pagination_label: List Live Stream
+sidebar_label: Fetch List of Live Stream
+pagination_label: Fetch List of Live Stream
 keywords:
   - live streaming
   - live broadcasting
@@ -12,7 +12,7 @@ keywords:
   - live audio streaming
 image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
-slug: list-live-stream
+slug: fetch-listof-live-stream
 ---
 
 This guide will provide an overview of how to list all live streams that you created by passing `userId` as query parameter.
