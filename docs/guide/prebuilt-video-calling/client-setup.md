@@ -17,7 +17,7 @@ slug: client-setup
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prebuilt Setup
+# Client Setup
 
 Prebuilt SDK enables opportunity to integrate real-time communication SDK witout writing explicit code. It just requires 10 minutes to integrate.
 

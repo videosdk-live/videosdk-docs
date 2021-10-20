@@ -1,17 +1,17 @@
 ---
-title: Secure Prebuilt
+title: Whitelist Domain For Better Security
 hide_title: false
 hide_table_of_contents: false
 description: This guide will explain joining process of meeting.
-sidebar_label: Secure Prebuilt
-pagination_label: Secure Prebuilt
+sidebar_label: Whitelist Domain For Better Security
+pagination_label: Whitelist Domain For Better Security
 keywords:
   - Join audio calling
   - Join video calling
   - Join real-time communication
 image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
-slug: secure-prebuilt
+slug: whitelist-domain
 ---
 
 You can secure your prebuilt by using **Domain Whitelisting** feature in dashboard.
@@ -47,7 +47,7 @@ You can also add more than one domain under the same API key.
 1. If you don't provide any domains under whitelisting, then you can acess prebuilt with any domain name.
 2. If you have already added some domains, and you want to use **localhost** as development purpose, then for developing you should have to add **localhost** as domain name under whitelisting.
 3. For subdomain cases, suppose you have **abc.xyz.com**, for this case you can't list your domain name as **xyz**. You should have to add it as **abc.xyz** in whitelisting.
-:::
+   :::
 
 ### Step : 3 Delete Domain
 

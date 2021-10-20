@@ -19,7 +19,7 @@ function Overview() {
             <div class="row ">
               <div class="col col--6">
                 <CardLinks
-                  title="Prebuilt"
+                  title="Prebuilt Video and Audio Calling"
                   text="Embed video meetings into an application in few minutes."
                   img="/img/icons/libraries/prebuilt-icon.svg"
                   links={[

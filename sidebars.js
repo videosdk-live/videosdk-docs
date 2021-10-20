@@ -116,7 +116,7 @@ module.exports = {
         "guide/prebuilt-video-calling/features/go-live-social-media",
         "guide/prebuilt-video-calling/features/customize-branding",
         "guide/prebuilt-video-calling/features/customize-permissions",
-        "guide/prebuilt-video-calling/features/secure-prebuilt",
+        "guide/prebuilt-video-calling/features/whitelist-domain",
       ],
       collapsed: false,
     },
