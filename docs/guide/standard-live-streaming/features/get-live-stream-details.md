@@ -1,10 +1,10 @@
 ---
-title: Live Stream Details
+title: Get Live Stream Details
 hide_title: false
 hide_table_of_contents: false
 description: Live Streaming architecture helps you to understand how to implement scalable live broadcasting applications.
-sidebar_label: Live Stream Details
-pagination_label: Live Stream Details
+sidebar_label: Get Live Stream Details
+pagination_label: Get Live Stream Details
 keywords:
   - live streaming
   - live broadcasting
@@ -12,7 +12,7 @@ keywords:
   - live audio streaming
 image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
-slug: get-live-stream
+slug: get-live-stream-details
 ---
 
 This guide will provide an overview of retrieving particular live stream details using live stream id, which we have created in [Create New Live Stream](/docs/guide/standard-live-streaming/features/create-live-stream).

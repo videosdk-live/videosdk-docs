@@ -1,10 +1,10 @@
 ---
-title: Restream
+title: Restream on Social Media
 hide_title: false
 hide_table_of_contents: false
 description: Live Streaming architecture helps you to understand how to implement scalable live broadcasting applications.
-sidebar_label: Restream
-pagination_label: Restream
+sidebar_label: Restream on Social Media
+pagination_label: Restream on Social Media
 keywords:
   - live streaming
   - live broadcasting
@@ -12,7 +12,7 @@ keywords:
   - live audio streaming
 image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
-slug: restream
+slug: restream-social-media
 ---
 
 Everyone has their preferred social media platforms (Youtube, Facebook and Linkedin) and it can be difficult to get people across different platforms. With Restream your viewers can see live stream no matter what platform they use.
