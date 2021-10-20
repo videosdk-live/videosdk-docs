@@ -5,7 +5,7 @@ sidebar_label: Delete Recordings
 
 # Delete Recordings
 
-You have to call simple API to delete recordings.
+Use the following Rest API to delete recordings.
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';

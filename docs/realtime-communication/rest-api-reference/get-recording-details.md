@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # Get Recording Details
 
-You have to call simple API to get recording details.
+Use the following Rest API to get recording details.
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';

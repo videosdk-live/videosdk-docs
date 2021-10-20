@@ -7,7 +7,7 @@ sidebar_label: Create Meeting using API
 
 ### Create meeting
 
-You have to call simple API to create meeting room.
+Use the following Rest API to create new meeting.
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';

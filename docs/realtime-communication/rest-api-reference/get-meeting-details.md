@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # Get Meeting Details
 
-You have to call simple API to get meeting details.
+Use the following Rest API to get meeting details.
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';

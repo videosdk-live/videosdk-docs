@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # List Meeting Recordings
 
-You have to call simple API to list recordings.
+Use the following Rest API to list recordings.
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
