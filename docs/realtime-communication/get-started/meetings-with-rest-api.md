@@ -30,7 +30,7 @@ values={[
 cURL -H "Content-Type: application/json" \
      -H "Authorization: $YOUR_JWT_TOKEN" \
      -XPOST \
-     https://api.zujonow.com/v1/meetings
+     https://api.videosdk.live/v1/meetings
 ```
 
 </TabItem>

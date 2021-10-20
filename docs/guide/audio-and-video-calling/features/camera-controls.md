@@ -94,21 +94,47 @@ const onPress = () => {
 <TabItem value="android">
 
 ```js
-COMING SOON!
+  btnWebcam.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View v) {
+
+        // Toggle participant webcam in meeting
+        if (webcamEnabled) {
+          meeting.disableWebcam();
+        } else {
+          meeting.enableWebcam();
+        }
+
+      }
+  });
 ```
 
 </TabItem>
 <TabItem value="ios">
 
 ```js
-COMING SOON!
+/// Video tap
+buttonControlsView.onVideoTapped = { on in
+  if on {
+    self.meeting?.disableWebcam()
+  } else {
+    self.meeting?.enableWebcam()
+  }
+}
 ```
 
 </TabItem>
 <TabItem value="flutter">
 
 ```js
-COMING SOON!
+ElevatedButton(
+  onPressed: widget.meeting.disableWebcam,
+  child: Text("disableWebcam"),
+),
+ElevatedButton(
+  onPressed: widget.meeting.enableWebcam,
+  child: Text("enableWebcam"),
+),
 ```
 
 </TabItem>

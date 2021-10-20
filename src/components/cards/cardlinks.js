@@ -11,8 +11,12 @@ const CardLinks = ({ title, text, links, img }) => {
         {/* <h3>{title}</h3> */}
         {/* <Card heading={title} icon="/img/icons/libraries/react-icon.svg" /> */}
         <div
-          class="card__header"
-          style={{ display: "flex", gap: 20, alignItems: "center" }}
+          style={{
+            display: "flex",
+            gap: 20,
+            alignItems: "center",
+            marginBottom: "8px",
+          }}
         >
           {
             <img
@@ -22,19 +26,19 @@ const CardLinks = ({ title, text, links, img }) => {
               style={{ display: "block", maxHeight: "20px" }}
             />
           }
-          {title && <h3>{title}</h3>}
+          {title && <h3 style={{ marginBottom: 0 }}>{title}</h3>}
         </div>
+        <p>{text}</p>
       </div>
 
       <div className="card__body">
-        <p>{text}</p>
-        {links.map((link, i) => (
-          <ul>
-            <li key={link.link + i}>
+        <ul>
+          {links.map((link, i) => (
+            <li key={link.link + i} style={{ marginBottom: "16px" }}>
               <a href={link.link}>{link.linkName}</a>
             </li>
-          </ul>
-        ))}
+          ))}
+        </ul>
       </div>
     </div>
   );

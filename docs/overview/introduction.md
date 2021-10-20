@@ -28,7 +28,7 @@ import CardLinks from '../../src/components/cards/cardlinks'
     </div>
     <div class="col col--6">
       <CardLinks title="Video & Audio Calling" text="Low latency video,audio and data communication." 
-      links = {[{linkName:"Guide",link: "http://localhost:3000/docs/guide/audio-and-video-calling/getting-started"},{linkName:"API reference",link: "/docs/realtime-communication/intro"},{linkName:"Tutorial",link: "/docs/tutorials/realtime-communication/js-sdk/quickstart-js"},{linkName:"Code sample",link: "/docs/resources/overview#2-rtc-raw-sdk-code-samples"}]}
+      links = {[{linkName:"Guide",link: "/docs/guide/audio-and-video-calling/getting-started"},{linkName:"API reference",link: "/docs/realtime-communication/intro"},{linkName:"Tutorial",link: "/docs/tutorials/realtime-communication/js-sdk/quickstart-js"},{linkName:"Code sample",link: "/docs/resources/overview#2-rtc-raw-sdk-code-samples"}]}
       />
     </div>
   </div>

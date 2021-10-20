@@ -20,7 +20,7 @@ function Overview() {
               <div class="col col--6">
                 <CardLinks
                   title="Prebuilt"
-                  text=" Embed video meetings into an application  in few minutes."
+                  text="Embed video meetings into an application in few minutes."
                   img="/img/icons/libraries/prebuilt-icon.svg"
                   links={[
                     {
@@ -36,7 +36,7 @@ function Overview() {
                       link: "/docs/tutorials/realtime-communication/prebuilt-sdk/quickstart-prebuilt-js",
                     },
                     {
-                      linkName: "Code sample",
+                      linkName: "Code samples",
                       link: "/docs/resources/overview#1-rtc-prebuilt-sdk-code-samples",
                     },
                   ]}
@@ -44,13 +44,13 @@ function Overview() {
               </div>
               <div class="col col--6">
                 <CardLinks
-                  title="Video & Audio Calling"
+                  title="Audio & Video Calling"
                   text="Low latency video,audio and data communication."
                   img="/img/icons/libraries/video-call-icon.svg"
                   links={[
                     {
                       linkName: "Guide",
-                      link: "http://localhost:3000/docs/guide/audio-and-video-calling/getting-started",
+                      link: "/docs/guide/audio-and-video-calling/getting-started",
                     },
                     {
                       linkName: "API reference",
@@ -61,7 +61,7 @@ function Overview() {
                       link: "/docs/tutorials/realtime-communication/js-sdk/quickstart-js",
                     },
                     {
-                      linkName: "Code sample",
+                      linkName: "Code samples",
                       link: "/docs/resources/overview#2-rtc-raw-sdk-code-samples",
                     },
                   ]}
@@ -88,7 +88,7 @@ function Overview() {
                       link: "/docs/tutorials/live-streaming/api/quickstart-rest-api",
                     },
                     {
-                      linkName: "Code sample",
+                      linkName: "Code samples",
                       link: "/docs/resources/overview#3-live-stream-code-samples",
                     },
                   ]}
@@ -106,14 +106,14 @@ function Overview() {
                     },
                     {
                       linkName: "API reference",
-                      link: "/video-on-demand/intro",
+                      link: "/docs/video-on-demand/intro",
                     },
                     {
                       linkName: "Tutorial",
                       link: "/docs/tutorials/video-on-demand/api/quickstart-rest-api",
                     },
                     {
-                      linkName: "Code sample",
+                      linkName: "Code samples",
                       link: "/docs/resources/overview#4-video-on-demand-code-samples",
                     },
                   ]}

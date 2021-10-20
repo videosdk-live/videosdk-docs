@@ -1,12 +1,13 @@
 ---
 sidebar_position: 1
+sidebar_label: Get Session Details
 ---
 
-# List All Meetings
+# Get Session Details
 
-## Using list all meetings API
+## Using get session details API
 
-You have to call simple API to list meetings.
+You have to call simple API to list session details.
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -24,7 +25,7 @@ values={[
 
 ```js
 
-curl -L -X GET 'https://api.videosdk.live/v1/meetings' \
+curl -L -X GET 'https://api.videosdk.live/v1/meeting-sessions/:id' \
 -H 'Authorization: $YOUR_JWT_TOKEN'
 
 ```
@@ -36,7 +37,7 @@ curl -L -X GET 'https://api.videosdk.live/v1/meetings' \
 var request = require("request");
 var options = {
   method: "GET",
-  url: "https://api.videosdk.live/v1/meetings",
+  url: "https://api.videosdk.live/v1/meeting-sessions/:id",
   headers: {
     Authorization: "$YOUR_JWT_TOKEN",
   },
@@ -53,7 +54,7 @@ request(options, function (error, response) {
 ```python
 import requests
 
-url = "https://api.videosdk.live/v1/meetings"
+url = "https://api.videosdk.live/v1/meeting-sessions/:id"
 
 headers = {
   'Authorization': '$YOUR_JWT_TOKEN'
@@ -72,9 +73,9 @@ print(response.text)
 require "uri"
 require "net/http"
 
-url = URI("https://api.videosdk.live/v1/meetings")
+url = URI("https://api.videosdk.live/v1/meeting-sessions/:id")
 
-https = Net::HTTP.new(url.host, url.port);
+https = Net::HTTP.new(url.host, url.port)
 https.use_ssl = true
 
 request = Net::HTTP::Get.new(url)
@@ -90,21 +91,22 @@ puts response.read_body
 
 ```js
 {
-    "pageInfo": {
-        "currentPage": 1,
-        "perPage": 20,
-        "lastPage": 4,
-        "total": 65
-    },
-    "data": [
+    "id": "616e79f7ba68c7768bfd18bf",
+    "meetingId": "ywnm-eicr-d55x",
+    "start": "2021-10-19T07:55:35.807Z",
+    "end": "2021-10-19T07:55:39.941Z",
+    "activeDuration": 0,
+    "participants": [
         {
-            "meetingId": "yw3w-nfzh-9jl0",
-            "userId": "5fa671e77b80d58c11cbca95",
-            "createdAt": "2021-06-18T08:10:46.683Z",
-            "updatedAt": "2021-06-18T08:10:46.683Z",
-            "id": "60cc550656592b6a03d7a2d0"
-        },
-        ...
+            "participantId": "wcrkkrf4",
+            "name": "Chintan Rajpara",
+            "timelog": [
+                {
+                    "start": "2021-10-19T07:55:36.316Z",
+                    "end": "2021-10-19T07:55:39.937Z"
+                }
+            ]
+        }
     ]
 }
 ```
@@ -120,9 +122,8 @@ import MethodListHeading from '@theme/MethodListHeading';
 
 <MethodListGroup>
     <MethodListGroup>
-      <MethodListHeading heading="Query Parameters" />
-      <MethodListItemLabel name="page" option={"optional"} type={"string"} />
-      <MethodListItemLabel name="perPage" option={"optional"} type={"string"} />
+      <MethodListHeading heading="Path Parameters" />
+      <MethodListItemLabel name="id" option={"optional"} type={"string"} />
     </MethodListGroup>
 </MethodListGroup>
 
@@ -131,29 +132,23 @@ import MethodListHeading from '@theme/MethodListHeading';
 <MethodListGroup>
   <MethodListItemLabel name="__response"  type={"object"} >
     <MethodListGroup>
-      <MethodListHeading heading="Properties" />
-      <MethodListItemLabel name="pageInfo" type={"object"} >
-        <MethodListGroup>
-          <MethodListItemLabel name="currentPage"  type={"number"} />
-          <MethodListItemLabel name="perPage"  type={"number"} />
-          <MethodListItemLabel name="lastPage" type={"number"} />
-        </MethodListGroup>
-      </MethodListItemLabel>
-      <MethodListItemLabel name="data" type={"Array<object>"} >
-        <MethodListGroup>
+    <MethodListHeading heading="Properties" />
+          <MethodListItemLabel name="id"  type={"string"} />
           <MethodListItemLabel name="meetingId"  type={"string"} />
-          <MethodListItemLabel name="userId"  type={"string"} />
-          <MethodListItemLabel name="user" type={"object"} >
+          <MethodListItemLabel name="start"  type={"date"} />
+          <MethodListItemLabel name="end"  type={"date"} />
+          <MethodListItemLabel name="activeDuration" type={"number"} >
+          <MethodListItemLabel name="participants" type={"Array<object>"} />
             <MethodListGroup>
+              <MethodListItemLabel name="participantId"  type={"string"} />
               <MethodListItemLabel name="name"  type={"string"} />
-              <MethodListItemLabel name="id"  type={"string"} />
+               <MethodListItemLabel name="timelog" type={"Array<object>"} />
+               <MethodListGroup>
+                    <MethodListItemLabel name="start"  type={"date"} />
+                    <MethodListItemLabel name="end"  type={"date"} />
+                </MethodListGroup>
             </MethodListGroup>
           </MethodListItemLabel>
-          <MethodListItemLabel name="createdAt"  type={"date"} />
-          <MethodListItemLabel name="updatedAt"  type={"date"} />
-          <MethodListItemLabel name="id"  type={"string"} />
-        </MethodListGroup>
-      </MethodListItemLabel>
     </MethodListGroup>
   </MethodListItemLabel>
 </MethodListGroup>

@@ -22,7 +22,7 @@ values={[
 
 ```js
 
-curl -L -X GET 'https://api.zujonow.com/v1/meetings/:id' \
+curl -L -X GET 'https://api.videosdk.live/v1/meetings/:id' \
 -H 'Authorization: $YOUR_JWT_TOKEN'
 
 ```
@@ -34,7 +34,7 @@ curl -L -X GET 'https://api.zujonow.com/v1/meetings/:id' \
 var request = require("request");
 var options = {
   method: "GET",
-  url: "https://api.zujonow.com/v1/meetings/:id",
+  url: "https://api.videosdk.live/v1/meetings/:id",
   headers: {
     Authorization: "$YOUR_JWT_TOKEN",
   },
@@ -51,7 +51,7 @@ request(options, function (error, response) {
 ```python
 import requests
 
-url = "https://api.zujonow.com/v1/meetings/:id"
+url = "https://api.videosdk.live/v1/meetings/:id"
 
 headers = {
   'Authorization': '$YOUR_JWT_TOKEN'
@@ -70,7 +70,7 @@ print(response.text)
 require "uri"
 require "net/http"
 
-url = URI("https://api.zujonow.com/v1/meetings/:id")
+url = URI("https://api.videosdk.live/v1/meetings/:id")
 
 https = Net::HTTP.new(url.host, url.port)
 https.use_ssl = true
@@ -92,10 +92,6 @@ puts response.read_body
     "userId": "5fa671e77b80d58c11cbca95",
     "createdAt": "2021-06-18T08:10:46.683Z",
     "updatedAt": "2021-06-18T08:10:46.683Z",
-    "user": {
-        "name": "DND - Zujo test account",
-        "id": "5fa671e77b80d58c11cbca95"
-    },
     "id": "60cc550656592b6a03d7a2d0"
 }
 ```

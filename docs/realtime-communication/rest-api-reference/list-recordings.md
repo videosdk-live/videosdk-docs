@@ -24,7 +24,7 @@ values={[
 
 ```js
 
-curl -L -X GET 'https://api.zujonow.com/v1/meeting-recordings' \
+curl -L -X GET 'https://api.videosdk.live/v1/meeting-recordings' \
 -H 'Authorization: $YOUR_JWT_TOKEN'
 
 ```
@@ -36,7 +36,7 @@ curl -L -X GET 'https://api.zujonow.com/v1/meeting-recordings' \
 var request = require("request");
 var options = {
   method: "GET",
-  url: "https://api.zujonow.com/v1/meeting-recordings",
+  url: "https://api.videosdk.live/v1/meeting-recordings",
   headers: {
     Authorization: "$YOUR_JWT_TOKEN",
   },
@@ -53,7 +53,7 @@ request(options, function (error, response) {
 ```python
 import requests
 
-url = "https://api.zujonow.com/v1/meeting-recordings"
+url = "https://api.videosdk.live/v1/meeting-recordings"
 
 headers = {
   'Authorization': '$YOUR_JWT_TOKEN'
@@ -72,7 +72,7 @@ print(response.text)
 require "uri"
 require "net/http"
 
-url = URI("https://api.zujonow.com/v1/meeting-recordings")
+url = URI("https://api.videosdk.live/v1/meeting-recordings")
 
 https = Net::HTTP.new(url.host, url.port);
 https.use_ssl = true
@@ -120,7 +120,7 @@ puts response.read_body
                 "type": "video",
                 "createdAt": "2021-07-02T13:34:30.566Z",
                 "updatedAt": "2021-07-02T13:34:30.566Z",
-                "fileUrl": "https://cdn.zujonow.com/encoded/videos/60df15dc1b5d6a8205573286/720.mp4",
+                "fileUrl": "https://cdn.videosdk.live/encoded/videos/60df15dc1b5d6a8205573286/720.mp4",
                 "id": "60df15e61b5d6a3805573289"
             },
             "id": "60df15df7433b02e3d06653c"
@@ -145,6 +145,7 @@ import MethodListHeading from '@theme/MethodListHeading';
       <MethodListItemLabel name="page" option={"optional"} type={"string"} />
       <MethodListItemLabel name="perPage" option={"optional"} type={"string"} />
       <MethodListItemLabel name="meetingId" option={"optional"} type={"string"} />
+      <MethodListItemLabel name="sessionId" option={"optional"} type={"string"} />
     </MethodListGroup>
 </MethodListGroup>
 
@@ -166,6 +167,7 @@ import MethodListHeading from '@theme/MethodListHeading';
         <MethodListGroup>
           <MethodListItemLabel name="userId"  type={"string"} />
           <MethodListItemLabel name="meetingId"  type={"string"} />
+          <MethodListItemLabel name="sessionId"  type={"string"} />
           <MethodListItemLabel name="origFileId"  type={"string"} />
           <MethodListItemLabel name="jobId"  type={"string"} />
           <MethodListItemLabel name="fileId"  type={"string"} />

@@ -2,7 +2,7 @@
 title: Install Audio and Video Calling SDK in Java Script
 hide_title: false
 hide_table_of_contents: false
-description: This guide explains installation of javascript SDK in your application. it provides npm and yarn package for the same. 
+description: This guide explains installation of javascript SDK in your application. it provides npm and yarn package for the same.
 sidebar_label: "JavaScript"
 pagination_label: "JavaScript"
 keywords:
@@ -16,6 +16,7 @@ slug: installation-javascript
 ---
 
 # Installation: Java Script
+
 There are two ways to install JavaScript SDK.
 
 ## First Way: Install via using `<script>` tag
@@ -27,7 +28,7 @@ You can import this library using `<script>` tag. The easiest way to get started
   <head>....</head>
   <body>
     .....
-    <script src="https://sdk.zujonow.com/zujo-sdk-2.0.0.min.js"></script>
+    <script src="https://sdk.videosdk.live/zujo-sdk-2.0.0.min.js"></script>
   </body>
 </html>
 ```
@@ -48,22 +49,20 @@ npm install @videosdk.live/js-sdk
 yarn add @videosdk.live/js-sdk
 ```
 
-
-
-
 ## Example
+
 Next step is to import the library and start using it.
 
 ### Webpack/node-style require
 
 ```js title="Webpack/node-style require"
-const VideoSDK = require("@videosdk.live/js");
-VideoSDK.initMeeting({...})
+const ZujoSDK = require("@videosdk.live/js-sdk");
+ZujoSDK.initMeeting({...})
 ```
 
 ### ES6 import
 
 ```js title="ES6 import"
-import VideoSDK from "@videosdk.live/js";
-VideoSDK.initMeeting({...})
+import ZujoSDK from "@videosdk.live/js-sdk";
+ZujoSDK.initMeeting({...})
 ```
