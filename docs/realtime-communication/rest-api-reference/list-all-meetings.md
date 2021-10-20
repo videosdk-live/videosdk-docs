@@ -2,11 +2,9 @@
 sidebar_position: 1
 ---
 
-# List All Meetings
+# List Meetings
 
-## Using list all meetings API
-
-You have to call simple API to list meetings.
+Use the following Rest API to list meetings.
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';

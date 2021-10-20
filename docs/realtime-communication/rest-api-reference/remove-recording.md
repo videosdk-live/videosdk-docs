@@ -1,13 +1,11 @@
 ---
 sidebar_position: 1
-sidebar_label: Delete Meeting Recording
+sidebar_label: Delete Recordings
 ---
 
-# Remove Meeting Recordings
+# Delete Recordings
 
-## Using remove meeting recordings API
-
-You have to call simple API to list meeting details.
+Use the following Rest API to delete recordings.
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';

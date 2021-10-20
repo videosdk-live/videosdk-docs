@@ -3,11 +3,9 @@ sidebar_position: 1
 sidebar_label: List Meeting Sessions
 ---
 
-# List All Meeting Sessions
+# List Meeting Sessions
 
-## Using list all meeting sessions API
-
-You have to call simple API to list meeting sessions.
+Use the following Rest API to list meeting sessions.
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
