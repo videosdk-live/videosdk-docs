@@ -51,10 +51,10 @@ import Card from '@theme/Card';
   </div>
    <div class="row ">
     <div class="col col--6">
-      <Card heading="3. File" link="/docs/guide/audio-and-video-calling/installation/get-started" description="Upload Video File." />
+      <Card heading="3. File" link="/docs/guide/video-on-demand/features/upload-file" description="Upload Video File." />
     </div>
     <div class="col col--6">
-      <Card heading="4. Encoding" link="/docs/guide/audio-and-video-calling/features/start-join-meeting" description="Encode Video File." />
+      <Card heading="4. Encoding" link="/docs/guide/video-on-demand/features/create-encoding-job" description="Encode Video File." />
     </div>
   </div>
 </div>
