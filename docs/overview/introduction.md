@@ -24,7 +24,7 @@ import CardLinks from '../../src/components/cards/cardlinks'
 <div class="container">
   <div class="row ">
       <div class="col col--6">
-      <CardLinks title="Prebuilt" text=" Embed video meetings into an application  in few minutes." links = {[{linkName:"Guide",link: "/docs/guide/prebuilt-video-calling/getting-started"},{linkName:"Tutorial",link: "/docs/tutorials/realtime-communication/prebuilt-sdk/quickstart-prebuilt-js"},{linkName:"Code sample",link: "/docs/resources/overview#1-rtc-prebuilt-sdk-code-samples"}]} />
+      <CardLinks title="Prebuilt" text=" Embed video meetings into an application  in few minutes." links = {[{linkName:"Guide",link: "/docs/guide/prebuilt-video-and-audio-calling/getting-started"},{linkName:"Tutorial",link: "/docs/tutorials/realtime-communication/prebuilt-sdk/quickstart-prebuilt-js"},{linkName:"Code sample",link: "/docs/resources/overview#1-rtc-prebuilt-sdk-code-samples"}]} />
     </div>
     <div class="col col--6">
       <CardLinks title="Video & Audio Calling" text="Low latency video,audio and data communication." 

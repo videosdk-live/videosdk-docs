@@ -22,7 +22,7 @@ You can secure your prebuilt by using **Domain Whitelisting** feature in dashboa
 
 ### Step : 1 API Listing
 
-First of all, you need to generate API key from [Dashboard](https://app.videosdk.live/dashboard), for generating API key you need to follow [Signup and Create API Key](/docs/guide/prebuilt-video-calling/signup-and-create-api).
+First of all, you need to generate API key from [Dashboard](https://app.videosdk.live/dashboard), for generating API key you need to follow [Signup and Create API Key](/docs/guide/prebuilt-video-and-audio-calling/signup-and-create-api).
 
 After genearting API, you will see your [API List](https://app.videosdk.live/settings/api-keys) as describe below.
 

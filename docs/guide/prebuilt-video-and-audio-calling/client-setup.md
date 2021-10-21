@@ -31,7 +31,7 @@ Also check out this [example code](https://github.com/videosdk-live/videosdk-rtc
 
 ## Step 1: Add script and setup the meeting
 
-Create an `index.html` file and add the following `<script>` tag at the end of your code's `<body>` tag. Intialize `VideoSDKMeeting` after the script gets loaded. Replace the `apiKey` with the one generated in Previous Step [Signup & Create API Key](/docs/guide/prebuilt-video-calling/signup-and-create-api).
+Create an `index.html` file and add the following `<script>` tag at the end of your code's `<body>` tag. Intialize `VideoSDKMeeting` after the script gets loaded. Replace the `apiKey` with the one generated in Previous Step [Signup & Create API Key](/docs/guide/prebuilt-video-and-audio-calling/signup-and-create-api).
 
 ```html title="index.html"
 <script>

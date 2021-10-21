@@ -60,8 +60,8 @@ module.exports = {
             },
             {
               label: "Prebuilt Video & Audio Calling SDK",
-              to: "docs/guide/prebuilt-video-calling/getting-started",
-              activeBaseRegex: "docs/guide/prebuilt-video-calling/*",
+              to: "docs/guide/prebuilt-video-and-audio-calling/getting-started",
+              activeBaseRegex: "docs/guide/prebuilt-video-and-audio-calling/*",
             },
             {
               label: "Custom Video & Audio Calling SDK",
