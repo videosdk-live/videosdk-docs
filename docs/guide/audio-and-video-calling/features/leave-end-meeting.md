@@ -105,7 +105,7 @@ buttonControlsView.onEndMeetingTapped = {
 
 ```js
 // Leave the meeting
-meeting?.leave();
+meeting.leave();
 ```
 
 </TabItem>

@@ -27,7 +27,7 @@ After the successful installation of videoSDK, the next step is to integrate vid
 
 </div>
 <div>
-<img src="/img/New Meeting.gif"/>
+<img src="/img/gif/new-meeting.gif"/>
 </div>
 
 </div>
@@ -392,34 +392,55 @@ URLSession.shared.dataTask(with: URL(string: getTokenUrl)!) { data, response, er
 <TabItem value="flutter">
 
 ```js
+import 'dart:convert';
+import 'package:http/http.dart' as http; // For API Calling, you need to add third party package "http"
 import 'package:videosdk/rtc.dart';
 import 'package:videosdk/meeting.dart';
 
+// States Defined in Stateful Component.
 String? meetingId;
 String? token;
 
-void _fetchMeetingIdAndToken() async {
-    final API_SERVER_HOST = dotenv.env['API_SERVER_HOST'];
+void _getMeetingIdAndToken() async {
+    final LOCAL_SERVER_URL = dotenv.env['LOCAL_SERVER_URL'];
 
-    final Uri get_token_url = Uri.parse('http://$API_SERVER_HOST/get-token');
-    final http.Response tokenResponse = await http.get(get_token_url);
+    // Calling get-token API.
+    final Uri tokenUrl = Uri.parse('$LOCAL_SERVER_URL/get-token');
+    final http.Response tokenResponse = await http.get(tokenUrl);
 
     final dynamic _token = json.decode(tokenResponse.body)['token'];
 
-    final Uri get_meeting_id_url =
-        Uri.parse('http://$API_SERVER_HOST/create-meeting/');
+    // Calling create-meeting API.
+    final Uri meetingIdUrl =
+        Uri.parse('$LOCAL_SERVER_URL/create-meeting/');
 
     final http.Response meetingIdResponse =
-        await http.post(get_meeting_id_url, body: {"token": _token});
+        await http.post(meetingIdUrl, body: {"token": _token});
 
     final _meetingId = json.decode(meetingIdResponse.body)['meetingId'];
 
-    print("_token => $_token _meetingId => $_meetingId");
-
+    // Setting into states of stateful widget
     setState(() {
       token = _token;
       meetingId = _meetingId;
     });
+  }
+
+  // This API is for validate the meeting id
+  // Not require to call this API after create meeting API
+
+dynamic validateMeeting(token, meetingId) async {
+    final String LOCAL_SERVER_URL = dotenv.env['LOCAL_SERVER_URL'];
+    final Uri validateMeetingUrl =
+        Uri.parse('$LOCAL_SERVER_URL/validate-meeting/$meetingId');
+    final http.Response validateMeetingResponse =
+        await http.post(validateMeetingUrl, body: {"token": token});
+    final _meetingId = json.decode(validateMeetingResponse.body)['meetingId'];
+    if (_meetingId != null) {
+      return _meetingId;
+    } else {
+      return null;
+    }
   }
 
 ```
@@ -429,9 +450,27 @@ void _fetchMeetingIdAndToken() async {
 
 ## 2. Initialization
 
-After configuration, you will have to Initialize meeting by providing name, meetingId, micEnabled, webcamEnabled & maxResolution.
+<div style={{display:'flex',flexDirection:'row',alignItems:'stretch',}}>
+<div style={{}}>
+<p>
+After configuration, you will have to Initialize 
+<p>
+meeting by providing name, meetingId, micEnabled, webcamEnabled & maxResolution.
+</p>
+</p>
 
-**NOTE** : For React & React native developer, you have to be familiar with hooks concept. You can understand hooks concept on [React Hooks](https://reactjs.org/docs/hooks-intro.html).
+<p>
+NOTE : For React & React native developer, you have
+
+<p>to be familiar with hooks concept. You can understand hooks concept on <a href={'https://reactjs.org/docs/hooks-intro.html'}>React Hooks</a>.</p>
+
+</p>
+</div>
+<div>
+<img src="/img/gif/add-participant.gif"/>
+</div>
+
+</div>
 
 <Tabs
 defaultValue="js"
@@ -611,59 +650,60 @@ class MeetingViewController: UICollectionViewController {
 <TabItem value="flutter">
 
 ```js
+import 'package:flutter/material.dart';
 import 'package:videosdk/rtc.dart';
 
 class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MeetingBuilder(
-        meetingId: "<Id-on-meeting>",
-        displayName: "<Name-of-participant>",
-        micEnabled: "<Flag-to-enable-mic>",
-        webcamEnabled: "<Flag-to-enable-webcam>",
-        token: "<Authentication-token>",
-        builder: (Meeting _meeting) {
-            print('builder _meeting => $_meeting');
-        }
-    );
-  }
+    @override
+    Widget build(BuildContext context) {
+        return MeetingBuilder(
+            meetingId: "<Id-on-meeting>",
+            displayName: "<Name-of-participant>",
+            micEnabled: "<Flag-to-enable-mic>",
+            webcamEnabled: "<Flag-to-enable-webcam>",
+            token: "<Authentication-token>",
+            builder: (Meeting: meeting) {
+
+                return Container(
+                    child: Column(
+                        children: [
+                            ListParticipants(
+                                participants: meeting.participants,
+                            ),
+                            LocalParticipant(
+                                localParticipant: meeting.localParticipant,
+                                meeting: meeting as Meeting,
+                            )
+                        ],
+                    ),
+                );
+            }
+        );
+    }
 }
 ```
 
 </TabItem>
 </Tabs>
 
-import MethodListGroup from '@theme/MethodListGroup';
-import MethodListItemLabel from '@theme/MethodListItemLabel';
-import MethodListHeading from '@theme/MethodListHeading';
-
-### Methods
-
-<MethodListGroup>
-  <MethodListItemLabel name="config()" description="Method to configure authentication token in SDK. It established connection between client and server"   >
-    <MethodListGroup>
-      <MethodListHeading heading="parameters" />
-      <MethodListItemLabel name="token" type={"String"} option="required" description="Authentication token generated earlier" />
-    </MethodListGroup>
-  </MethodListItemLabel>
-</MethodListGroup>
-
-<MethodListGroup>
-  <MethodListItemLabel name="initMeeting()"  description="Factory method to initialize Meeting object" >
-    <MethodListGroup>
-      <MethodListHeading heading="parameters" />
-      <MethodListItemLabel name="meetingId"  type={"String"} option="required" description="meetingId generated using API" />
-      <MethodListItemLabel name="name"  type={"String"}  option="required" description="name of the participant" />
-      <MethodListItemLabel name="micEnabled"  type={"Boolean"}  option="optional" defaultValue="true"  description="Flag to enable and disable mic" />
-      <MethodListItemLabel name="webcamEnabled"  type={"Boolean"} option="optional" defaultValue="true"  description="Flag to enable and disable camera" />
-      <MethodListItemLabel name="maxResolution"  type={"String"} option="optional" defaultValue="hd"  description="Maximum resoultion a particular participant should have" />
-    </MethodListGroup>
-  </MethodListItemLabel>
-</MethodListGroup>
-
 ## 3. Join
 
-After configuration & initialization, the third step is to call `join()`function to join a meeting.
+<div style={{display:'flex',flexDirection:'row',alignItems:'stretch',}}>
+<div style={{}}>
+<p>
+After configuration & initialization, the third step is to call join() to join a meeting.
+</p>
+
+<p>
+After joining, you will be able to Manage Participant in a meeting.
+</p>
+
+</div>
+<div>
+<img src="/img/gif/join-meeting.gif"/>
+</div>
+
+</div>
 
 <Tabs
 defaultValue="js"

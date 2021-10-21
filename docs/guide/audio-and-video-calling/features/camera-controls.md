@@ -128,13 +128,15 @@ buttonControlsView.onVideoTapped = { on in
 
 ```js
 ElevatedButton(
-  onPressed: widget.meeting.disableWebcam,
+  onPressed: meeting.disableWebcam,
   child: Text("disableWebcam"),
 ),
 ElevatedButton(
-  onPressed: widget.meeting.enableWebcam,
+  onPressed: meeting.enableWebcam,
   child: Text("enableWebcam"),
 ),
+
+// changeWebcam() method is coming soon in flutter.
 ```
 
 </TabItem>

@@ -225,6 +225,7 @@ const ParticipantView = ({ participantId }) => {
 <TabItem value="reactnative">
 
 ```js
+import { View } from "react-native";
 import {
   useParticipant,
   RTCView,
@@ -240,11 +241,11 @@ const participants = meeeting.participants;
 /** Render All Participant including local participant */
 {
   [...participants.keys()].map((k) => (
-    <div style={{ display: "flex" }}>
+    <View>
       {k.map((l) => (
         <ParticipantView key={l} participantId={l} />
       ))}
-    </div>
+    </View>
   ));
 }
 
@@ -253,8 +254,13 @@ const participants = meeeting.participants;
 const ParticipantView = ({ participantId }) => {
   /** useParticipant Hooks which accept `participantId`
     as parameter then return participant properties such as displayName, webcamOn, micOn etc.  */
-  const { displayName, webcamStream, webcamOn, micOn, isActiveSpeaker } =
-    useParticipant(participantId);
+  const {
+    displayName,
+    webcamStream,
+    webcamOn,
+    micOn,
+    isActiveSpeaker,
+  } = useParticipant(participantId);
 
   return (
     <RTCView
@@ -427,12 +433,252 @@ localParticipant.addEventListener(self)
 </TabItem>
 <TabItem value="flutter">
 
-```js
-// Get local participants
-meeting?.localParticipant;
+```js title="LocalParticipant.dart"
+import 'package:flutter/material.dart';
+import 'package:videosdk/meeting.dart';
+import 'package:videosdk/participant.dart';
+import 'package:flutter_webrtc/flutter_webrtc.dart';
+import 'package:videosdk/stream.dart';
 
-// Get remote participants
-meeting?.participants;
+class LocalParticipant extends StatefulWidget {
+  final Participant localParticipant;
+  final Meeting meeting;
+  LocalParticipant({
+    Key? key,
+    required this.localParticipant,
+    required this.meeting,
+  }) : super(key: key);
+  @override
+  LocalParticipantState createState() => LocalParticipantState();
+}
+class LocalParticipantState extends State<LocalParticipant> {
+  Stream? videoStream;
+  Stream? audioStream;
+  @override
+  initState() {
+    _initStreamListners();
+    super.initState();
+  }
+  _initStreamListners() {
+   // Participant `stream-enabled` event, discussed in next section "Participant Related Events"
+    widget.localParticipant.on(
+      "stream-enabled",
+      (Stream _stream) {
+        setState(
+          () {
+            if (_stream.kind == 'video') {
+              videoStream = _stream;
+            } else if (_stream.kind == 'audio') {
+              audioStream = _stream;
+            }
+          },
+        );
+      },
+    );
+    // Participant `stream-disabled` event, discussed in next section "Participant Related Events"
+    widget.localParticipant.on(
+      "stream-disabled",
+      (Stream _stream) {
+        if (_stream.kind == 'video') {
+          if (videoStream?.id == _stream.id) {
+            setState(
+              () {
+                videoStream = null;
+              },
+            );
+          }
+        } else if (_stream.kind == 'audio') {
+          if (audioStream?.id == _stream.id) {
+            setState(
+              () {
+                audioStream = null;
+              },
+            );
+          }
+        }
+      },
+    );
+  }
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Container(
+          child: Column(
+            children: [
+              Text(
+                'Name: ${widget.localParticipant.displayName}',
+                overflow: TextOverflow.fade,
+              ),
+              Text(
+                'Video On: ${videoStream != null ? "Yes" : "No"}',
+                overflow: TextOverflow.fade,
+              ),
+              Text(
+                'Audio On: ${audioStream != null ? "Yes" : "No"}',
+                overflow: TextOverflow.fade,
+              ),
+            ],
+          ),
+        ),
+        Container(
+          height: 240.0,
+          width: 240.0,
+          child: videoStream?.renderer != null && videoStream?.track != null
+              ? RTCVideoView(
+                  videoStream?.renderer as RTCVideoRenderer,
+                  objectFit: RTCVideoViewObjectFit.RTCVideoViewObjectFitCover,
+                )
+              : FittedBox(
+                  fit: BoxFit.contain,
+                  child: Icon(Icons.person),
+                ),
+        ),
+        Wrap(
+          children: [
+            ElevatedButton(
+              onPressed: widget.meeting.disableWebcam,
+              child: Text("disableWebcam"),
+            ),
+            ElevatedButton(
+              onPressed: widget.meeting.enableWebcam,
+              child: Text("enableWebcam"),
+            ),
+            ElevatedButton(
+              onPressed: widget.meeting.disableMic,
+              child: Text("disableMic"),
+            ),
+            ElevatedButton(
+              onPressed: widget.meeting.enableMic,
+              child: Text("enableMic"),
+            ),
+            ElevatedButton(
+              onPressed: widget.meeting.join,
+              child: Text("join"),
+            ),
+            ElevatedButton(
+              onPressed: widget.meeting.leave,
+              child: Text("leave"),
+            ),
+          ],
+        ),
+      ],
+    );
+  }
+}
+
+```
+
+```js title="ListParticipants.dart"
+import 'package:flutter/material.dart';
+import 'package:flutter_webrtc/flutter_webrtc.dart';
+import 'package:videosdk/participant.dart';
+import 'package:videosdk/stream.dart';
+
+class ListParticipants extends StatelessWidget {
+  final Map<String, Participant> participants;
+  const ListParticipants({
+    Key? key,
+    required this.participants,
+  }) : super(key: key);
+  @override
+  Widget build(BuildContext context) {
+    return Wrap(
+      children: [
+        for (dynamic participant in participants.values)
+          Container(
+            key: ValueKey('${participant.id}_container'),
+            width: 240.0,
+            height: 240.0,
+            child: RemoteParticipant(
+              key: ValueKey(participant.id),
+              participant: participants[participant.id]!,
+            ),
+          ),
+      ],
+    );
+  }
+}
+```
+
+```js title="RemoteParticipant.dart"
+
+import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
+import 'package:flutter_webrtc/flutter_webrtc.dart';
+import 'package:videosdk/participant.dart';
+import 'package:videosdk/stream.dart';
+
+class RemoteParticipant extends StatefulWidget {
+  final Participant participant;
+  RemoteParticipant({Key? key, required this.participant}) : super(key: key);
+  @override
+  RemoteParticipantState createState() => RemoteParticipantState();
+}
+class RemoteParticipantState extends State<RemoteParticipant> {
+  Stream? videoStream;
+  Stream? audioStream;
+  @override
+  initState() {
+    _initStreamListners();
+    super.initState();
+  }
+  _initStreamListners() {
+    // Participant `stream-enabled` event, discussed in next section "Participant Related Events"
+    widget.participant.on("stream-enabled", (Stream _stream) {
+      setState(() {
+        if (_stream.kind == 'video') {
+          videoStream = _stream;
+        } else if (_stream.kind == 'audio') {
+          audioStream = _stream;
+        }
+      });
+    });
+
+    // Participant `stream-disabled` event, discussed in next section "Participant Related Events"
+    widget.participant.on("stream-disabled", (Stream _stream) {
+      if (_stream.kind == 'video') {
+        if (videoStream?.id == _stream.id) {
+          setState(() {
+            videoStream = null;
+          });
+        }
+      } else if (_stream.kind == 'audio') {
+        if (audioStream?.id == _stream.id) {
+          setState(() {
+            audioStream = null;
+          });
+        }
+      }
+    });
+  }
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 240.0,
+      width: 240.0,
+      child: Stack(
+        fit: StackFit.expand,
+        children: [
+          if (videoStream?.renderer != null && videoStream?.track != null)
+            RTCVideoView(
+              videoStream?.renderer as RTCVideoRenderer,
+              objectFit: RTCVideoViewObjectFit.RTCVideoViewObjectFitCover,
+            )
+          else
+            Container(
+              child: FittedBox(
+                fit: BoxFit.contain,
+                child: Icon(
+                  Icons.person,
+                ),
+              ),
+            ),
+        ],
+      ),
+    );
+  }
+}
+
 ```
 
 </TabItem>
