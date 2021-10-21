@@ -12,7 +12,7 @@ keywords:
   - sky sdk
 image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
-slug: installation-flutter
+slug: flutter-sdk
 ---
 
 # Getting Started - Flutter SDK
@@ -27,7 +27,7 @@ Flutter SDK is client for real-time communication for android and ios devices. I
 
 ### Android: minSdkVersion >= 21
 
-<!-- ### iOS: > 11 -->
+<!-- ### IOS: > 11 -->
 
 ## Use this package as a library
 

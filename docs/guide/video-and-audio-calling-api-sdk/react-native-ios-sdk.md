@@ -1,10 +1,10 @@
 ---
-title: Start a Video & Audio Call in React Native iOS SDK- Video SDK Docs
+title: Start a Video & Audio Call in React Native IOS SDK- Video SDK Docs
 hide_title: false
 hide_table_of_contents: false
-description: Build customizable real-time video & audio calling applications in React Native iOS SDK using Video SDK add live Video & Audio conferencing to your applications.
-sidebar_label: "React Native iOS"
-pagination_label: "React Native iOS"
+description: Build customizable real-time video & audio calling applications in React Native IOS SDK using Video SDK add live Video & Audio conferencing to your applications.
+sidebar_label: "React Native IOS"
+pagination_label: "React Native IOS"
 keywords:
   - react native ios sdk
   - react native js sdk
@@ -12,14 +12,14 @@ keywords:
   - audio call hooks
 image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
-slug: installation-react-native-ios
+slug: react-native-ios-sdk
 ---
 
-# Getting Started - React Native iOS SDK
+# Getting Started - React Native IOS SDK
 
 React JS SDK wraps up out JavaScript SDK into usable hooks API. It simplifies the code for React Native SDK.
 
-## Install a React Native SDK in iOS
+## Install a React Native SDK in IOS
 
 ### Step 1: Install SDK from Npm or Yarn
 
@@ -59,7 +59,7 @@ $[sudo] gem install cocoapods
 
   - Drag Libraries/RNInCallManager.xcodeproj/Products/libRNInCallManager.a to Link Binary With Libraries
 
-- 3. Select <your_xcode_project> --> Build Settings In Header Search Paths, add $(SRCROOT)/../node_modules/@videosdk.live/react-native-incall-manager/ios/RNInCallManager
+- 3. Select <your_xcode_project> --> Build Settings In Header Search Paths, add \$(SRCROOT)/../node_modules/@videosdk.live/react-native-incall-manager/ios/RNInCallManager
 
 ### Step 5: Change the dependecy of react-native-webrtc
 
@@ -69,19 +69,21 @@ pod ‘react-native-webrtc’, :path => ‘../node_modules/@videosdk.live/react-
 
 ### Step 6: Change platform field of podfile to 11.0 or above it
 
-You have change platform field of podfile to 11.0 or above it, as react-native-webrtc doesn’t support iOS < 11 platform :ios, ‘11.0’
+You have change platform field of podfile to 11.0 or above it, as react-native-webrtc doesn’t support IOS < 11 platform :ios, ‘11.0’
 
 ### Step 7: Install pods
 
 ```js
 $ Pod install
 ```
-### Step 8: Link WebRTC binary 
+
+### Step 8: Link WebRTC binary
+
 Add “libreact-native-webrtc.a” in Link Binary with libraries. In target of main project folder.
 
 ### Step 9: Declare permissions in Info.plist
 
-```js title="iOS/projectname/info.plist"
+```js title="IOS/projectname/info.plist"
 <key>NSCameraUsageDescription</key>
 <string>Camera permission description</string>
 <key>NSMicrophoneUsageDescription</key>

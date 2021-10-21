@@ -12,7 +12,7 @@ keywords:
   - install via yarn
 image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
-slug: installation-javascript
+slug: javascript-sdk
 ---
 
 # Getting Started - JavaScript SDK

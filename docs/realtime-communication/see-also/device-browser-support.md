@@ -13,8 +13,8 @@ We support the following web browsers:
 - Firefox 78 ESR and above
 - Microsoft Edge 74 and above.
 - Electron 6 and above
-- iOS Safari (in iOS 12.1 and later)
-- 3rd-party browsers (such as Chrome) and in-app browsers (such as the Gmail app's built-in browser) using WKWebView, as of iOS 14
+- IOS Safari (in IOS 12.1 and later)
+- 3rd-party browsers (such as Chrome) and in-app browsers (such as the Gmail app's built-in browser) using WKWebView, as of IOS 14
 - Android Chrome, Firefox, Samsung Internet, and Chromium-based 3rd-party browsers
 
 ## Screen sharing
@@ -24,5 +24,5 @@ We support the following web browsers:
 
 ## Mobile support
 
-- iOS 12.1 and later versions
+- IOS 12.1 and later versions
 - Android 5.0 and above with current security and platform updates

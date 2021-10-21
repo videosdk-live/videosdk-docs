@@ -14,7 +14,7 @@ sidebar_position: 1
 
 ### Android: minSdkVersion >= 21
 
-### iOS: > 11
+### IOS: > 11
 
 ## Install the library in React Native
 

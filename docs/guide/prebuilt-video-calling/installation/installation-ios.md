@@ -1,10 +1,10 @@
 ---
-title: Install Video & Audio Calling SDK in iOS
+title: Install Video & Audio Calling SDK in IOS
 hide_title: false
 hide_table_of_contents: false
-description: This guide explains installation of iOS in your application. it is compatible with both objective-c and swift.
-sidebar_label: "iOS"
-pagination_label: "iOS"
+description: This guide explains installation of IOS in your application. it is compatible with both objective-c and swift.
+sidebar_label: "IOS"
+pagination_label: "IOS"
 keywords:
   - ios sdk
   - objective-c sdk
@@ -15,10 +15,10 @@ sidebar_position: 1
 slug: installation-ios
 ---
 
-# Installation: iOS SDK
-iOS SDK is natively written SDK using Swift. It is compatible with both Objective-C and Swift. 
+# Installation: IOS SDK
+IOS SDK is natively written SDK using Swift. It is compatible with both Objective-C and Swift. 
 
-## Install an iOS SDK
+## Install an IOS SDK
 
 The easiest way to get started is by installing the sdk in your app.
 
@@ -60,6 +60,6 @@ let meeting = VideoSDK.initMeeting(
 
 :::note
 
-Check out official example of iOS SDK implementation: [videosdk-rtc-ios-sdk-example](https://github.com/videosdk-live/videosdk-rtc-ios-sdk-example)
+Check out official example of IOS SDK implementation: [videosdk-rtc-ios-sdk-example](https://github.com/videosdk-live/videosdk-rtc-ios-sdk-example)
 
 :::

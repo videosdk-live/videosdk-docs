@@ -2,7 +2,7 @@
 title: Manage Participants Video & Audio Call - Video SDK Docs
 hide_title: false
 hide_table_of_contents: false
-description: Manage Participants features quick integrate in Javascript, React JS, Android, iOS, React Native, Flutter with Video SDK to add live video & audio conferencing to your applications.
+description: Manage Participants features quick integrate in Javascript, React JS, Android, IOS, React Native, Flutter with Video SDK to add live video & audio conferencing to your applications.
 sidebar_label: Manage Participants
 pagination_label: Manage Participants
 keywords:
@@ -23,7 +23,7 @@ slug: manage-participants
 Local participant is used to consume your video & audio streams.
 it contains information about local participant such as displayName, id, quality and streams Map.
 
-You can acces localParticipant from the [meeting object](/docs/guide/audio-and-video-calling/features/start-join-meeting#2-initialization).
+You can acces localParticipant from the [meeting object](/docs/guide/video-and-audio-calling-api-sdk/features/start-join-meeting#2-initialization).
 
 ### Participant object properties
 
@@ -48,7 +48,7 @@ You can acces localParticipant from the [meeting object](/docs/guide/audio-and-v
 
 Other participants Map is used to get all the participants (except you) in the meeting at any given time.
 
-Other participants Map contains same properties as [LocalParticipant](/docs/guide/audio-and-video-calling/features/manage-participants#localparticipant-object-properties).
+Other participants Map contains same properties as [LocalParticipant](/docs/guide/video-and-audio-calling-api-sdk/features/manage-participants#localparticipant-object-properties).
 
 ### Local And Other Participants
 
@@ -62,7 +62,7 @@ values={[
 {label: 'React', value: 'react'},
 {label: 'ReactNative', value: 'reactnative'},
 {label: 'Android', value: 'android'},
-{label: 'iOS', value: 'ios'},
+{label: 'IOS', value: 'ios'},
 {label: 'Flutter', value: 'flutter'},
 ]}>
 <TabItem value="js">
@@ -686,15 +686,15 @@ class RemoteParticipantState extends State<RemoteParticipant> {
 
 ## 3. Participant Related Events
 
-1. **participant-joined** - Whenever any new participant join the meeting, `participant-joined` event will trigger. For example, the meeeting is running with **Alice** and **Bob**, then **Eve** join that meeting, after that `participant-joined` event trigger and return the [participant object](/docs/guide/audio-and-video-calling/features/manage-participants#participant-object-properties).
+1. **participant-joined** - Whenever any new participant join the meeting, `participant-joined` event will trigger. For example, the meeeting is running with **Alice** and **Bob**, then **Eve** join that meeting, after that `participant-joined` event trigger and return the [participant object](/docs/guide/video-and-audio-calling-api-sdk/features/manage-participants#participant-object-properties).
 
-2. **participant-left** - Whenever any participant leave/exit the meeting, `participant-left` event will trigger.For example, the meeeting is running with **Alice** and **Bob**, then **Bob** leave that meeting, after that `participant-left` event trigger and return the [participant object](/docs/guide/audio-and-video-calling/features/manage-participants#participant-object-properties)
+2. **participant-left** - Whenever any participant leave/exit the meeting, `participant-left` event will trigger.For example, the meeeting is running with **Alice** and **Bob**, then **Bob** leave that meeting, after that `participant-left` event trigger and return the [participant object](/docs/guide/video-and-audio-calling-api-sdk/features/manage-participants#participant-object-properties)
 
 3. **presenter-changed** - Whenever any participant present/screenshare their screen/window in meeting, `presenter-changed` event will trigger and return the presenter `participantId`.
 
-4. **stream-enabled** - Whenever any participant enabled mic/webcam in meeting, `stream-enabled` event will trigger and return [Stream Map](/docs/guide/audio-and-video-calling/features/manage-participants#streams-map-properties).
+4. **stream-enabled** - Whenever any participant enabled mic/webcam in meeting, `stream-enabled` event will trigger and return [Stream Map](/docs/guide/video-and-audio-calling-api-sdk/features/manage-participants#streams-map-properties).
 
-5. **stream-disabled** - Whenever any participant disabled mic/webcam in meeting, `stream-disabled` event will trigger and return [Stream Map](/docs/guide/audio-and-video-calling/features/manage-participants#streams-map-properties).
+5. **stream-disabled** - Whenever any participant disabled mic/webcam in meeting, `stream-disabled` event will trigger and return [Stream Map](/docs/guide/video-and-audio-calling-api-sdk/features/manage-participants#streams-map-properties).
 
 <Tabs
 defaultValue="js"
@@ -703,7 +703,7 @@ values={[
 {label: 'React', value: 'react'},
 {label: 'ReactNative', value: 'reactnative'},
 {label: 'Android', value: 'android'},
-{label: 'iOS', value: 'ios'},
+{label: 'IOS', value: 'ios'},
 {label: 'Flutter', value: 'flutter'},
 ]}>
 <TabItem value="js">

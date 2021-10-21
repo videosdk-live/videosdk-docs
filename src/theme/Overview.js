@@ -50,7 +50,7 @@ function Overview() {
                   links={[
                     {
                       linkName: "Guide",
-                      link: "/docs/guide/audio-and-video-calling/getting-started",
+                      link: "/docs/guide/video-and-audio-calling-api-sdk/getting-started",
                     },
                     {
                       linkName: "API reference",

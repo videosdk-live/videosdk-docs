@@ -23,13 +23,13 @@ This guide will follow installation guide for all the VideoSDK for Video & Audio
 
 ## Web SDK
 
-1. [JavaScript](/docs/guide/audio-and-video-calling/installation/installation-javascript)
-2. [React JS](/docs/guide/audio-and-video-calling/installation/installation-react-js)
+1. [JavaScript](/docs/guide/video-and-audio-calling-api-sdk/installation/installation-javascript)
+2. [React JS](/docs/guide/video-and-audio-calling-api-sdk/installation/installation-react-js)
 
 ## Mobile SDK
 
-1. [React Native Android](/docs/guide/audio-and-video-calling/installation/installation-react-native-android)
-2. [React Native iOS](/docs/guide/audio-and-video-calling/installation/installation-react-native-ios)
-3. [Android](/docs/guide/audio-and-video-calling/installation/installation-android)
-4. [iOS](/docs/guide/audio-and-video-calling/installation/installation-ios)
-5. [Flutter](/docs/guide/audio-and-video-calling/installation/installation-flutter)
+1. [React Native Android](/docs/guide/video-and-audio-calling-api-sdk/installation/installation-react-native-android)
+2. [React Native IOS](/docs/guide/video-and-audio-calling-api-sdk/installation/installation-react-native-ios)
+3. [Android](/docs/guide/video-and-audio-calling-api-sdk/installation/installation-android)
+4. [IOS](/docs/guide/video-and-audio-calling-api-sdk/installation/installation-ios)
+5. [Flutter](/docs/guide/video-and-audio-calling-api-sdk/installation/installation-flutter)

@@ -1,10 +1,10 @@
 ---
-title: Install Video & Audio Calling SDK in React Native iOS
+title: Install Video & Audio Calling SDK in React Native IOS
 hide_title: false
 hide_table_of_contents: false
 description: This guide explains installation of React SDK in your application. it uses react hooks to simplify installation steps.
-sidebar_label: "React Native iOS"
-pagination_label: "React Native iOS"
+sidebar_label: "React Native IOS"
+pagination_label: "React Native IOS"
 keywords:
   - react native ios sdk
   - react native js sdk
@@ -15,10 +15,10 @@ sidebar_position: 1
 slug: installation-react-native-ios
 ---
 
-# Installation: React Native iOS
+# Installation: React Native IOS
 React JS SDK wraps up out JavaScript SDK into usable hooks API. It simplifies the code for React Native SDK.
 
-## Install a React Native SDK in iOS
+## Install a React Native SDK in IOS
 
 ### Step 1: Install SDK from Npm or Yarn
 
@@ -61,7 +61,7 @@ pod ‘react-native-webrtc’, :path => ‘../node_modules/@videosdk.live/react-
 ```
 
 ### Step 6: Change platform field of podfile to 11.0 or above it
-You have change platform field of podfile to 11.0 or above it, as react-native-webrtc doesn’t support iOS < 11 platform :ios, ‘11.0’
+You have change platform field of podfile to 11.0 or above it, as react-native-webrtc doesn’t support IOS < 11 platform :ios, ‘11.0’
 
 ### Step 7: Install pods
 ```js 
@@ -71,7 +71,7 @@ $ Pod install
 Add “libreact-native-webrtc.a” in Link Binary with libraries. In target of main project folder.
 
 ### Step 9: Declare permissions in Info.plist 
-```js title="iOS/projectname/info.plist"
+```js title="IOS/projectname/info.plist"
 <key>NSCameraUsageDescription</key>
 <string>Camera permission description</string>
 <key>NSMicrophoneUsageDescription</key>

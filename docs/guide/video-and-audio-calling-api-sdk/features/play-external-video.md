@@ -2,7 +2,7 @@
 title: Play External Video Video & Audio Call - Video SDK Docs
 hide_title: false
 hide_table_of_contents: false
-description: Play External Video features quick integrate in Javascript, React JS, Android, iOS, React Native, Flutter with Video SDK to add live video & audio conferencing to your applications.
+description: Play External Video features quick integrate in Javascript, React JS, Android, IOS, React Native, Flutter with Video SDK to add live video & audio conferencing to your applications.
 sidebar_label: Play External Video
 pagination_label: Play External Video
 keywords:
@@ -44,7 +44,7 @@ values={[
 {label: 'React', value: 'react'},
 {label: 'ReactNative', value: 'reactnative'},
 {label: 'Android', value: 'android'},
-{label: 'iOS', value: 'ios'},
+{label: 'IOS', value: 'ios'},
 {label: 'Flutter', value: 'flutter'},
 ]}>
 <TabItem value="js">

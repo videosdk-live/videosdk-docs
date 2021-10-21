@@ -25,7 +25,7 @@ This guide will get you running with the VideoSDK video & audio calling in minut
 
 At it's core, VideoSDK RTC is a distributed SFU. It eanbles highly scalable video & audio meetings unlike vanilla webRTC.
 
-VideoSDK enables opportunity to integrate video & audio calling to Web, Android, iOS applications. it provides Programmable SDKs and REST APIs to build up scalable video conferencing applications.
+VideoSDK enables opportunity to integrate video & audio calling to Web, Android, IOS applications. it provides Programmable SDKs and REST APIs to build up scalable video conferencing applications.
 
 ## Terminology
 

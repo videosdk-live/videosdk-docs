@@ -2,7 +2,7 @@
 title: Get Started with Video & Audio Call - Video SDK Documentation
 hide_title: false
 hide_table_of_contents: false
-description: Video SDK enables the opportunity to integrate native iOS, Android & Web SDKs to add live video & audio conferencing to your applications.
+description: Video SDK enables the opportunity to integrate native IOS, Android & Web SDKs to add live video & audio conferencing to your applications.
 sidebar_label: Getting Started
 pagination_label: Getting Started
 keywords:
@@ -17,7 +17,7 @@ slug: getting-started
 
 import Mermaid from '@theme/Mermaid';
 
-# Audio / Video Getting started
+# Video / Audio Getting started
 
 This guide will get you running with the VideoSDK video & audio calling in minutes.
 
@@ -25,7 +25,7 @@ This guide will get you running with the VideoSDK video & audio calling in minut
 
 At it's core, VideoSDK RTC is a distributed SFU(Selective Forwarding Unit). It eanbles highly scalable video & audio meetings unlike vanilla webRTC.
 
-VideoSDK enables opportunity to integrate video & audio calling to Web, Android, iOS applications. it provides Programmable SDKs and REST APIs to build up scalable video conferencing applications.
+VideoSDK enables opportunity to integrate video & audio calling to Web, Android, IOS applications. it provides Programmable SDKs and REST APIs to build up scalable video conferencing applications.
 
 ## Steps
 
@@ -34,18 +34,18 @@ import Card from '@theme/Card';
 <div class="container guide-steps-block">
   <div class="row ">
     <div class="col col--6">
-      <Card heading="1. Signup & Create API Key" link="/docs/guide/audio-and-video-calling/signup-and-create-api" description="Generate your API key." />
+      <Card heading="1. Signup & Create API Key" link="/docs/guide/video-and-audio-calling-api-sdk/signup-and-create-api" description="Generate your API key." />
     </div>
     <div class="col col--6" >
-      <Card heading="2. Server Setup" link="/docs/guide/audio-and-video-calling/server-setup" description="Integrate server with API key."  />
+      <Card heading="2. Server Setup" link="/docs/guide/video-and-audio-calling-api-sdk/server-setup" description="Integrate server with API key."  />
     </div>
   </div>
    <div class="row ">
     <div class="col col--6">
-      <Card heading="3. Client Setup" link="/docs/guide/audio-and-video-calling/installation/get-started" description="SDK Integration with client." />
+      <Card heading="3. Client Setup" link="/docs/guide/video-and-audio-calling-api-sdk/installation/get-started" description="SDK Integration with client." />
     </div>
     <div class="col col--6">
-      <Card heading="4. Start or Join Meeting" link="/docs/guide/audio-and-video-calling/features/start-join-meeting" description="Enter in Meeting." />
+      <Card heading="4. Start or Join Meeting" link="/docs/guide/video-and-audio-calling-api-sdk/features/start-join-meeting" description="Enter in Meeting." />
     </div>
   </div>
 </div>

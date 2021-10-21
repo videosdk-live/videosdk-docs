@@ -2,7 +2,7 @@
 title: Send Messages
 hide_title: false
 hide_table_of_contents: false
-description: Send Messages features quick integrate in Javascript, React JS, Android, iOS, React Native, Flutter with Video SDK to add live video & audio conferencing to your applications.
+description: Send Messages features quick integrate in Javascript, React JS, Android, IOS, React Native, Flutter with Video SDK to add live video & audio conferencing to your applications.
 sidebar_label: Send Messages
 pagination_label: Send Messages
 keywords:
@@ -42,7 +42,7 @@ values={[
 {label: 'React', value: 'react'},
 {label: 'ReactNative', value: 'reactnative'},
 {label: 'Android', value: 'android'},
-{label: 'iOS', value: 'ios'},
+{label: 'IOS', value: 'ios'},
 {label: 'Flutter', value: 'flutter'},
 ]}>
 <TabItem value="js">
@@ -128,7 +128,7 @@ values={[
 {label: 'React', value: 'react'},
 {label: 'ReactNative', value: 'reactnative'},
 {label: 'Android', value: 'android'},
-{label: 'iOS', value: 'ios'},
+{label: 'IOS', value: 'ios'},
 {label: 'Flutter', value: 'flutter'},
 ]}>
 <TabItem value="js">

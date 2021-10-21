@@ -12,7 +12,7 @@ keywords:
   - audio call hooks
 image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
-slug: installation-react-js
+slug: react-js-sdk
 ---
 
 # Getting Started - React JS SDK

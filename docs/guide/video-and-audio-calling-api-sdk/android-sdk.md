@@ -12,7 +12,7 @@ keywords:
   - chromebook sdk
 image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
-slug: installation-android
+slug: android-sdk
 ---
 
 # Getting Started - Android SDK

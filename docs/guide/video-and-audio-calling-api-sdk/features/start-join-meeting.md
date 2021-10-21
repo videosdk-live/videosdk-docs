@@ -2,7 +2,7 @@
 title: Start join Meeting Video & Audio Call - Video SDK Docs
 hide_title: false
 hide_table_of_contents: false
-description: Start or join Meeting features quick integrate in Javascript, React JS, Android, iOS, React Native, Flutter with Video SDK to add live video & audio conferencing to your applications.
+description: Start or join Meeting features quick integrate in Javascript, React JS, Android, IOS, React Native, Flutter with Video SDK to add live video & audio conferencing to your applications.
 sidebar_label: Start or Join Meeting
 pagination_label: Start or Join Meeting
 keywords:
@@ -34,7 +34,7 @@ After the successful installation of videoSDK, the next step is to integrate vid
 
 ## 1. Configuration
 
-To configure a meeting, you will need [generated token](/docs/guide/audio-and-video-calling/server-setup#generate-accees-token-and-integrate-other-apis) and [meetingId](/docs/realtime-communication/rest-api-reference/create-join-meeting#create-meeting), we had discussed in [Server Setup](/docs/guide/audio-and-video-calling/server-setup).
+To configure a meeting, you will need [generated token](/docs/guide/video-and-audio-calling-api-sdk/server-setup#generate-accees-token-and-integrate-other-apis) and [meetingId](/docs/realtime-communication/rest-api-reference/create-join-meeting#create-meeting), we had discussed in [Server Setup](/docs/guide/video-and-audio-calling-api-sdk/server-setup).
 This code snippet calls API from local server
 
 **Scenario 1** - Suppose you **don't have** any meetingId, you can simply generate meetingId by invoking `create-meeting` API.
@@ -53,7 +53,7 @@ values={[
 {label: 'React', value: 'react'},
 {label: 'ReactNative', value: 'reactnative'},
 {label: 'Android', value: 'android'},
-{label: 'iOS', value: 'ios'},
+{label: 'IOS', value: 'ios'},
 {label: 'Flutter', value: 'flutter'},
 ]}>
 <TabItem value="js">
@@ -479,7 +479,7 @@ values={[
 {label: 'React', value: 'react'},
 {label: 'ReactNative', value: 'reactnative'},
 {label: 'Android', value: 'android'},
-{label: 'iOS', value: 'ios'},
+{label: 'IOS', value: 'ios'},
 {label: 'Flutter', value: 'flutter'},
 ]}>
 <TabItem value="js">
@@ -712,7 +712,7 @@ values={[
 {label: 'React', value: 'react'},
 {label: 'ReactNative', value: 'reactnative'},
 {label: 'Android', value: 'android'},
-{label: 'iOS', value: 'ios'},
+{label: 'IOS', value: 'ios'},
 {label: 'Flutter', value: 'flutter'},
 ]}>
 <TabItem value="js">

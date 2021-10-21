@@ -12,7 +12,7 @@ keywords:
   - audio call hooks
 image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
-slug: installation-react-native-android
+slug: react-native-android-sdk
 ---
 
 # Getting Started - React Native Android SDK

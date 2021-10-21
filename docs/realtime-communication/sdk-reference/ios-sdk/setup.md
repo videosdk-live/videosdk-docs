@@ -25,7 +25,7 @@ IOS SDK is client for real-time communication for ios devices. It inherits the s
 
 It supports the following OS/SDK versions.
 
-- iOS 13.0+
+- IOS 13.0+
 
 ## Installation
 
@@ -45,7 +45,7 @@ pod 'VideoSDKRTC', :git => 'https://github.com/videosdk-live/videosdk-rtc-ios-sd
 
 :::caution
 
-- Currently this only supports iOS device (arm64). Running on simulator is not supported.
+- Currently this only supports IOS device (arm64). Running on simulator is not supported.
 - You will need to set `Enable Bitcode` to `false`.
 
 :::

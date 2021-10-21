@@ -54,9 +54,9 @@ values={[
 {label: 'HTML', value: 'html'},
 {label: 'Java', value: 'java'},
 {label: 'Kotlin', value: 'kotlin'},
-{label: 'Swift iOS 14.5 onwards', value: 'swift145'},
-{label: 'Swift iOS 14.3 and 14.4', value: 'swift144'},
-{label: 'Swift iOS lower 14.3', value: 'swift143'}
+{label: 'Swift IOS 14.5 onwards', value: 'swift145'},
+{label: 'Swift IOS 14.3 and 14.4', value: 'swift144'},
+{label: 'Swift IOS lower 14.3', value: 'swift143'}
 ]}>
 <TabItem value="html">
 
@@ -317,7 +317,7 @@ class MainActivity : AppCompatActivity() {
 <TabItem value="swift145">
 
 ```js
-// Use WKWebView for iOS 14.5 and onwards
+// Use WKWebView for IOS 14.5 and onwards
 import WebKit
 
 class WKWebViewController: UIViewController, WKNavigationDelegate {
@@ -344,7 +344,7 @@ class WKWebViewController: UIViewController, WKNavigationDelegate {
 <TabItem value="swift144">
 
 ```js
-// Use SFSafariViewController for iOS 14.3 and 14.4
+// Use SFSafariViewController for IOS 14.3 and 14.4
 import SafariServices
 
 class ViewController: UIViewController, SFSafariViewControllerDelegate {
@@ -367,7 +367,7 @@ class ViewController: UIViewController, SFSafariViewControllerDelegate {
 <TabItem value="swift143">
 
 ```js
-// iOS versions lower than 14.3
+// IOS versions lower than 14.3
 import UIKit
 
 class ViewController: UIViewController {

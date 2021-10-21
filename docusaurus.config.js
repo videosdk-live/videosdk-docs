@@ -65,8 +65,8 @@ module.exports = {
             },
             {
               label: "Custom Video & Audio Calling SDK",
-              to: "docs/guide/audio-and-video-calling/getting-started",
-              activeBaseRegex: "docs/guide/audio-and-video-calling/*",
+              to: "docs/guide/video-and-audio-calling-api-sdk/getting-started",
+              activeBaseRegex: "docs/guide/video-and-audio-calling-api-sdk/*",
             },
             {
               label: "Standard Live Stream API",

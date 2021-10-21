@@ -194,7 +194,7 @@ values={[
 {label: 'React.js', value: 'react'},
 {label: 'React Native', value: 'reactnative'},
 {label: 'Android', value: 'android'},
-{label: 'iOS', value: 'ios'},
+{label: 'IOS', value: 'ios'},
 {label: 'Flutter', value: 'flutter'},
 ]}>
 <TabItem value="js">
@@ -297,7 +297,7 @@ dependencies {
 <br/>
 
 <p>
-The iOS SDK is available as a CocoaPod and Swift package.
+The IOS SDK is available as a CocoaPod and Swift package.
 Here's an <a target="_blank" href="https://github.com/videosdk-live/videosdk-rtc-android-java-sdk-example">example app</a> using the Android SDK.
 </p>
 

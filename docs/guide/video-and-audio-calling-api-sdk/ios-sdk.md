@@ -1,10 +1,10 @@
 ---
-title: Start a Video & Audio Call in iOS SDK - Video SDK Docs
+title: Start a Video & Audio Call in IOS SDK - Video SDK Docs
 hide_title: false
 hide_table_of_contents: false
-description: Build customizable real-time video & audio calling applications in iOS SDK using Video SDK add live Video & Audio conferencing to your applications.
-sidebar_label: "iOS"
-pagination_label: "iOS"
+description: Build customizable real-time video & audio calling applications in IOS SDK using Video SDK add live Video & Audio conferencing to your applications.
+sidebar_label: "IOS"
+pagination_label: "IOS"
 keywords:
   - ios sdk
   - objective-c sdk
@@ -12,14 +12,14 @@ keywords:
   - mac sdk
 image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
-slug: installation-ios
+slug: ios-sdk
 ---
 
-# Getting Started - iOS SDK
+# Getting Started - IOS SDK
 
-iOS SDK is natively written SDK using Swift. It is compatible with both Objective-C and Swift.
+IOS SDK is natively written SDK using Swift. It is compatible with both Objective-C and Swift.
 
-## Install an iOS SDK
+## Install an IOS SDK
 
 The easiest way to get started is by installing the sdk in your app.
 
@@ -63,6 +63,6 @@ let meeting = VideoSDK.initMeeting(
 
 :::note
 
-Check out official example of iOS SDK implementation: [videosdk-rtc-ios-sdk-example](https://github.com/videosdk-live/videosdk-rtc-ios-sdk-example)
+Check out official example of IOS SDK implementation: [videosdk-rtc-ios-sdk-example](https://github.com/videosdk-live/videosdk-rtc-ios-sdk-example)
 
 :::

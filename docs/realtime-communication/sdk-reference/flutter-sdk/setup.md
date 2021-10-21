@@ -24,7 +24,7 @@ Flutter SDK is client for real-time communication for android and ios devices. I
 
 ### Android: minSdkVersion >= 21
 
-<!-- ### iOS: > 11 -->
+<!-- ### IOS: > 11 -->
 
 ## Use this package as a library
 
