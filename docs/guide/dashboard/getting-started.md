@@ -15,10 +15,41 @@ sidebar_position: 1
 slug: getting-started
 ---
 
-# Explore the dashboard
+# Explore the Dashboard
 
-Dashboard will help you to monitor all the services and historical information. It also includes usage of all the services.
+A Dashboard is a visual display of all of your data. While it can be used in all kinds of different ways, its primary intention is to provide information at-a-glance, such as your monthly, weekly and daily usage of Meeting & Video on Demand minutes.
 
+## Sections
+
+import Card from '@theme/Card';
+
+<div class="container guide-steps-block">
+  <div class="row ">
+    <div class="col col--6">
+      <Card heading="1. Dashboard" link="/docs/guide/prebuilt-video-and-audio-calling/signup-and-create-api" description="Lorem ipsum" />
+    </div>
+    <div class="col col--6" >
+      <Card heading="2. Meetings" link="/docs/guide/prebuilt-video-and-audio-calling/client-setup" description="Lorem ipsum"  />
+    </div>
+  </div>
+  <div class="row " >
+    <div class="col col--6">
+      <Card heading="3. Video on Demand" link="/docs/guide/prebuilt-video-and-audio-calling/features/join-screen" description="Lorem ipsum" />
+    </div>
+    <div class="col col--6">
+      <Card heading="4. Live Streaming" link="/docs/guide/prebuilt-video-and-audio-calling/features/join-screen" description="Lorem ipsum" />
+    </div>
+    
+  </div>
+  <div class="row " >
+    <div class="col col--6">
+      <Card heading="5. Settings" link="/docs/guide/prebuilt-video-and-audio-calling/features/join-screen" description="Lorem ipsum" />
+    </div>
+    
+  </div>
+</div>
+
+<!--
 ## Overview
 
 ### Overview of Dashboard
@@ -83,4 +114,4 @@ Manage all your invoices in single
 
 Register at [app.videosdk.live](https://app.videosdk.live) to explore more.
 
-:::
+::: -->

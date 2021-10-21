@@ -84,6 +84,15 @@ module.exports = {
       items: ["guide/dashboard/getting-started"],
       collapsed: false,
     },
+    {
+      type: "category",
+      label: "Pages",
+      items: [
+        "guide/dashboard/dashboard-home",
+        "guide/dashboard/meetings",
+      ],
+      collapsed: false,
+    },
   ],
 
   guidePrebuiltVideoCalling: [
