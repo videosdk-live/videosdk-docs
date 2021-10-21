@@ -1,5 +1,5 @@
 ---
-title: Install Audio and Video Calling SDK in Flutter
+title: Install Video & Audio Calling SDK in Flutter
 hide_title: false
 hide_table_of_contents: false
 description: This guide explains installation of flutter in your application. it is compatible with both dart and javascript.

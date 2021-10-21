@@ -1,5 +1,5 @@
 ---
-title: Install Audio and Video Calling SDK
+title: Install Video & Audio Calling SDK
 hide_title: false
 hide_table_of_contents: false
 description: VideoSDK supports many programmable interfaces such as javascript, react, react native, android, ios and flutter.
@@ -17,9 +17,9 @@ slug: get-started
 
 # Supported platforms
 
-## For video and audio calling SDK
+## For video & audio calling SDK
 
-This guide will follow installation guide for all the VideoSDK for Audio and Video Calling. Follow the below guide to install VideoSDK RTC in your website or App
+This guide will follow installation guide for all the VideoSDK for Video & Audio Calling. Follow the below guide to install VideoSDK RTC in your website or App
 
 ## Web SDK
 

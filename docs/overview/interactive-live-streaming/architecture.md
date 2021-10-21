@@ -28,6 +28,6 @@ This diagram demonstrates end-to-end flow to implement interactive live streamin
 
 :::info
 
-Video and Audio Call example in React.js: [videosdk-rtc-react-sdk-example](https://github.com/videosdk-live/videosdk-rtc-react-sdk-example)
+Video & Audio Call example in React.js: [videosdk-rtc-react-sdk-example](https://github.com/videosdk-live/videosdk-rtc-react-sdk-example)
 
 :::

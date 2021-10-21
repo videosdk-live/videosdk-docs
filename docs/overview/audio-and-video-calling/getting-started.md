@@ -1,10 +1,10 @@
 ---
-title: Getting Started with Audio and Video Calling
+title: Getting Started with Video & Audio Calling
 hide_title: false
 hide_table_of_contents: false
-description: Audio and video calling sdk will help you to integrate video and audio calling in your application.
+description: video & audio calling sdk will help you to integrate video & audio calling in your application.
 sidebar_label: Getting Started
-pagination_label: Getting Started Audio and Video Calling
+pagination_label: Getting Started Video & Audio Calling
 keywords:
   - audio calling
   - video calling
@@ -17,13 +17,13 @@ slug: getting-started
 
 import Mermaid from '@theme/Mermaid';
 
-# Explore audio and video calling
+# Explore video & audio calling
 
-This guide will get you running with the VideoSDK audio and video calling in minutes.
+This guide will get you running with the VideoSDK video & audio calling in minutes.
 
 ## Overview
 
-At it's core, VideoSDK RTC is a distributed SFU(Selective Forwarding Unit). It eanbles highly scalable audio and video meetings unlike vanilla webRTC.
+At it's core, VideoSDK RTC is a distributed SFU(Selective Forwarding Unit). It eanbles highly scalable video & audio meetings unlike vanilla webRTC.
 
 VideoSDK uses access tokens for authentication. Using our dashboard ([app.videosdk.live](https://app.videosdk.live/)), anyone can generate access tokens tokens with an API key and secret pair.
 

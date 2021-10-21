@@ -1,8 +1,8 @@
 ---
-title: Authentication in Audio and Video Calling SDK
+title: Authentication in Video & Audio Calling SDK
 hide_title: false
 hide_table_of_contents: false
-description: This guide will explain authentication and token flow for audio and video calling SDK.
+description: This guide will explain authentication and token flow for video & audio calling SDK.
 sidebar_label: Authentication and Tokens
 pagination_label: Authentication and Tokens
 keywords:

@@ -1,5 +1,5 @@
 ---
-title: Install Audio and Video Calling SDK in Java Script
+title: Install Video & Audio Calling SDK in Java Script
 hide_title: false
 hide_table_of_contents: false
 description: This guide explains installation of javascript SDK in your application. it provides npm and yarn package for the same.

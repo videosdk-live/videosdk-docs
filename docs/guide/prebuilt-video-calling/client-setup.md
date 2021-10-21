@@ -1,5 +1,5 @@
 ---
-title: Prebuilt Set up Video and Audio Call | Video SDK Embedded
+title: Prebuilt Set up Video & Audio Call | Video SDK Embedded
 hide_title: false
 hide_table_of_contents: false
 description: Prebuit Video SDK supports all the modern frameworks such as plain JavaScript, React JS, Vue and Angular and more. Embedded Video calling build up scalable video conferencing applications or website.

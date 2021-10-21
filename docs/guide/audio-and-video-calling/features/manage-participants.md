@@ -1,5 +1,5 @@
 ---
-title: Manage Participants Audio & Video Call - Video SDK Docs
+title: Manage Participants Video & Audio Call - Video SDK Docs
 hide_title: false
 hide_table_of_contents: false
 description: Manage Participants features quick integrate in Javascript, React JS, Android, iOS, React Native, Flutter with Video SDK to add live video & audio conferencing to your applications.
@@ -20,7 +20,7 @@ slug: manage-participants
 
 ## 1. Local Participant (self)
 
-Local participant is used to consume your video and audio streams.
+Local participant is used to consume your video & audio streams.
 it contains information about local participant such as displayName, id, quality and streams Map.
 
 You can acces localParticipant from the [meeting object](/docs/guide/audio-and-video-calling/features/start-join-meeting#2-initialization).
@@ -33,7 +33,7 @@ You can acces localParticipant from the [meeting object](/docs/guide/audio-and-v
 | displayName   | string  | The name you define during the meeting initialization. |
 | local         | boolean | Indicates the participant is local or not.             |
 | quality       | string  | Indicates the participant streams quality.             |
-| Streams       | Map     | Returns Audio and Video Streams.                       |
+| Streams       | Map     | Returns Video & Audio Streams.                       |
 
 ### Streams Map properties
 
@@ -78,7 +78,7 @@ localParticipant.streams.forEach((stream) => {
 
 const participants = meeeting.participants;
 
-/** to play other participants audio and video */
+/** to play other participants video & audio */
 function loadOtherParticipants() {
   meeting.participants.forEach((participant) => {
     let videoElement = createVideoElement(participant.id);

@@ -27,7 +27,7 @@ module.exports = {
     },
     {
       type: "category",
-      label: "AUDIO AND VIDEO CALLING",
+      label: "VIDEO & AUDIO CALLING",
       items: [
         "overview/audio-and-video-calling/getting-started",
         "overview/audio-and-video-calling/architecture",

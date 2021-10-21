@@ -1,8 +1,8 @@
 ---
-title: Video and Audio Calling API | Video SDK Embed Docs
+title: Video & Audio Calling API | Video SDK Embed Docs
 hide_title: false
 hide_table_of_contents: false
-description: Prebuilt Video SDK Embedded is an easy-to-use audio video calling API. Embed video meetings add live video and audio conferencing to your applications or website.
+description: Prebuilt Video SDK Embedded is an easy-to-use audio video calling API. Embed video meetings add live video & audio conferencing to your applications or website.
 sidebar_label: Getting Started
 pagination_label: Getting Started Prebuilt Video Calling
 keywords:

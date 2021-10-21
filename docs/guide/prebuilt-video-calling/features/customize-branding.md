@@ -1,5 +1,5 @@
 ---
-title: Prebuilt Branding Logo Audio & Video Call | Video SDK Embed Docs
+title: Prebuilt Branding Logo Video & Audio Call | Video SDK Embed Docs
 hide_title: false
 hide_table_of_contents: false
 description: Branding Logo features prebuilt Video SDK embedded is an easy-to-use video calling API. Video SDK Prebuilt makes it easy for developers to add video calls 10 in minutes to any website or app.

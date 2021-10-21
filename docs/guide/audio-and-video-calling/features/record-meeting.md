@@ -1,5 +1,5 @@
 ---
-title: Record Meeting Audio & Video Call - Video SDK Docs
+title: Record Meeting Video & Audio Call - Video SDK Docs
 hide_title: false
 hide_table_of_contents: false
 description: Record Meeting features quick integrate in Javascript, React JS, Android, iOS, React Native, Flutter with Video SDK to add live video & audio conferencing to your applications.
@@ -18,7 +18,7 @@ slug: recording-meeting
 
 # Record Meeting
 
-Record meeting allows participants to record video and audio during the meeting. The recording files are available in developer dashboard.
+Record meeting allows participants to record video & audio during the meeting. The recording files are available in developer dashboard.
 Any participant can start / stop recording any time during the meeting.
 
 This guide will provide an overview of how to implement start and stop Meeting Recording.

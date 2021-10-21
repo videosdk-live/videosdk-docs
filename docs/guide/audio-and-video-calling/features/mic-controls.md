@@ -1,5 +1,5 @@
 ---
-title: Mic Controls Audio & Video Call - Video SDK Docs
+title: Mic Controls Video & Audio Call - Video SDK Docs
 hide_title: false
 hide_table_of_contents: false
 description: Mic Controls features quick integrate in Javascript, React JS, Android, iOS, React Native, Flutter with Video SDK to add live video & audio conferencing to your applications.

@@ -19,7 +19,7 @@ function Overview() {
             <div class="row ">
               <div class="col col--6">
                 <CardLinks
-                  title="Prebuilt Video and Audio Calling"
+                  title="Prebuilt Video & Audio Calling SDK"
                   text="Embed video meetings into an application in few minutes."
                   img="/img/icons/libraries/prebuilt-icon.svg"
                   links={[
@@ -44,7 +44,7 @@ function Overview() {
               </div>
               <div class="col col--6">
                 <CardLinks
-                  title="Audio & Video Calling"
+                  title="Custom Video & Audio Calling SDK"
                   text="Low latency video,audio and data communication."
                   img="/img/icons/libraries/video-call-icon.svg"
                   links={[
@@ -71,7 +71,7 @@ function Overview() {
             <div class="row ">
               <div class="col col--6">
                 <CardLinks
-                  title="Standard Live Streaming"
+                  title="Standard Live Stream API"
                   text="Standard RTMP Live Streaming with encoding and playback."
                   img="/img/icons/libraries/live-streaming-icon.svg"
                   links={[
@@ -96,7 +96,7 @@ function Overview() {
               </div>
               <div class="col col--6">
                 <CardLinks
-                  title="Video On Demand"
+                  title="Video on Demand API"
                   text="Low latency video,audio and data communication"
                   img="/img/icons/libraries/vod-icon.svg"
                   links={[

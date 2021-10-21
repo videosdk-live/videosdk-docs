@@ -2,7 +2,7 @@
 title: Setup
 hide_title: false
 hide_table_of_contents: false
-description: Audio and video calling sdk will help you to integrate video and audio calling in your application.
+description: video & audio calling sdk will help you to integrate video & audio calling in your application.
 sidebar_label: Setup
 pagination_label: Setup
 keywords:

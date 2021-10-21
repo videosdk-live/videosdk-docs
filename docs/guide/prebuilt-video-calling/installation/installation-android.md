@@ -1,5 +1,5 @@
 ---
-title: Install Audio and Video Calling SDK in Android
+title: Install Video & Audio Calling SDK in Android
 hide_title: false
 hide_table_of_contents: false
 description: This guide explains installation of Android in your application. it is compatible with both java and kotlin.

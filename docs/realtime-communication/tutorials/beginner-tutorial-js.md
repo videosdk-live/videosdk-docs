@@ -14,7 +14,7 @@ A Meeting represents real-time audio, video, and/or screen-share session, and is
 
 ### Participants
 
-Participants are the client applications that are connected to a Meeting and shares audio and video media with one another.
+Participants are the client applications that are connected to a Meeting and shares video & audio media with one another.
 
 ### Local Participant
 
@@ -22,7 +22,7 @@ Participant producing audio or video stream from the local client's media source
 
 ### Streams
 
-Streams are indiviual audio and video streams produced by the participants in the meeting
+Streams are indiviual video & audio streams produced by the participants in the meeting
 
 ### Active Speaker
 

@@ -18,9 +18,9 @@ Let's discover **Realtime SDK features in less than 5 minutes**.
 
 |                                                      | Embeded | SDK |
 | ---------------------------------------------------- | ------- | --- |
-| Video and audio chat functionality                   | ✅      | ✅  |
-| Customised interface for video and audio             | 🚧      | ✅  |
-| Adaptive video and audio calling                     | ✅      | ✅  |
+| video & audio chat functionality                   | ✅      | ✅  |
+| Customised interface for video & audio             | 🚧      | ✅  |
+| Adaptive video & audio calling                     | ✅      | ✅  |
 | Cross browser and device support                     | 🚧      | ✅  |
 | Screen sharing                                       | ✅      | ✅  |
 | Interactive Whiteboard                               | ✅      | ✅  |

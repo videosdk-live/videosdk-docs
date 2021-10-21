@@ -19,7 +19,7 @@ slug: meeting-class
 
 ## Using Meeting Class
 
-The `Meeting Class` includes methods and events for managing meetings, participants, audio and video streams, data channels and UI customisation.
+The `Meeting Class` includes methods and events for managing meetings, participants, video & audio streams, data channels and UI customisation.
 
 import MethodListGroup from '@theme/MethodListGroup';
 import MethodListItemLabel from '@theme/MethodListItemLabel';

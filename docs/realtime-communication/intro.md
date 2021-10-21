@@ -17,7 +17,7 @@ slug: intro
 
 # Introduction
 
-Real-time comunication SDK is built with blend of webRTC and optimised UDP protocol. Our SDK helps developers to add real-time audio and video calls to any mobile app or web application.
+Real-time comunication SDK is built with blend of webRTC and optimised UDP protocol. Our SDK helps developers to add real-time video & audio calls to any mobile app or web application.
 
 With our `embeded-sdk`, you can embeded a video call widget in your web application. It supports 98% of the devices across all platforms and adaptive video calling for better quality calls with low latency. Developers can also customise `embeded-sdk` to make it more convenient for your application.
 

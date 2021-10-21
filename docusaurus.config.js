@@ -59,22 +59,22 @@ module.exports = {
               activeBaseRegex: "docs/guide/dashboard/*",
             },
             {
-              label: "Prebuilt Video Calling SDK",
+              label: "Prebuilt Video & Audio Calling SDK",
               to: "docs/guide/prebuilt-video-calling/getting-started",
               activeBaseRegex: "docs/guide/prebuilt-video-calling/*",
             },
             {
-              label: "Audio & Video Calling SDK",
+              label: "Custom Video & Audio Calling SDK",
               to: "docs/guide/audio-and-video-calling/getting-started",
               activeBaseRegex: "docs/guide/audio-and-video-calling/*",
             },
             {
-              label: "Standard Live Streaming API",
+              label: "Standard Live Stream API",
               to: "docs/guide/standard-live-streaming/getting-started",
               activeBaseRegex: "docs/guide/standard-live-streaming/*",
             },
             {
-              label: "Video On Demand API",
+              label: "Video on Demand API",
               to: "docs/guide/video-on-demand/getting-started",
               activeBaseRegex: "docs/guide/video-on-demand/*",
             },
