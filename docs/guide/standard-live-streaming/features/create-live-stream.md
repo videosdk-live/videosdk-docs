@@ -19,11 +19,11 @@ This guide will provide an overview of how to create live stream using generated
 
 ### Body Params
 
-| Property Name           | Type    | Description                                                                                                                                                                            |
-| ----------------------- | ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| name                    | string  | Name of your live stream.                                                                                                                                                              |
-| record                  | boolean | Whether you are recording or not. `true` for record, `false` for not record. For more info you can follow [Recording Guide](/docs/guide/standard-live-streaming/features/recording).   |
-| restream **[Optional]** | Array   | RTMP url and stream key from the provided platforms such as Youtube or Facebook. For more info you can follow [Restream Guide](/docs/guide/standard-live-streaming/features/restream). |
+| Property Name           | Type    | Description                                                                                                                                                                                                   |
+| ----------------------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| name                    | string  | Name of your live stream.                                                                                                                                                                                     |
+| record                  | boolean | Whether you are recording or not. `true` for record, `false` for not record. For more info you can follow [Recording Guide](/docs/guide/standard-live-streaming/features/recording).                          |
+| restream **[Optional]** | Array   | RTMP url and stream key from the provided platforms such as Youtube or Facebook. For more info you can follow [Restream on Social Media](/docs/guide/standard-live-streaming/features/restream-social-media). |
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
