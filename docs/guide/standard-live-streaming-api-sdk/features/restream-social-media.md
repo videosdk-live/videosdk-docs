@@ -33,6 +33,6 @@ If not, you have to enable it by yourself and it will take approximately 24 hour
 
 ## Step 2: Get your stream key & URL
 
-- In stream settings, Look directly under the label to find the **Stream key** and **Stream URL**, copy both of them and paste it to [Creating Live Stream](/docs/guide/standard-live-streaming/features/create-live-stream) body params.
+- In stream settings, Look directly under the label to find the **Stream key** and **Stream URL**, copy both of them and paste it to [Creating Live Stream](/docs/guide/standard-live-streaming-api-sdk/features/create-new-live-stream) body params.
 
 ![Video SDK Home Dashboard](/img/yt-panel.png)

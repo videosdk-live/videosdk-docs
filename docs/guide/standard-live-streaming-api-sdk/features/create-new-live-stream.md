@@ -1,8 +1,8 @@
 ---
-title: Create New Live Stream
+title: Live Streaming Create New Live Stream | Video SDK Docs
 hide_title: false
 hide_table_of_contents: false
-description: Live Streaming architecture helps you to understand how to implement scalable live broadcasting applications.
+description: Live Streaming Create New documentation offers the most flexibility and control over your live viewing experience, build a custom integration with your live streaming web & app.
 sidebar_label: Create New Live Stream
 pagination_label: Create New Live Stream
 keywords:
@@ -12,18 +12,20 @@ keywords:
   - live audio streaming
 image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
-slug: create-live-stream
+slug: create-new-live-stream
 ---
 
-This guide will provide an overview of how to create live stream using generated token in previous step [Authentication](/docs/guide/standard-live-streaming/authentication).
+# Live Stream - Create New Live Stream
+
+This guide will provide an overview of how to create live stream using generated token in previous step [Authentication](/docs/guide/standard-live-streaming-api-sdk/authentication).
 
 ### Body Params
 
-| Property Name           | Type    | Description                                                                                                                                                                                                   |
-| ----------------------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| name                    | string  | Name of your live stream.                                                                                                                                                                                     |
-| record                  | boolean | Whether you are recording or not. `true` for record, `false` for not record. For more info you can follow [Recording Guide](/docs/guide/standard-live-streaming/features/recording).                          |
-| restream **[Optional]** | Array   | RTMP url and stream key from the provided platforms such as Youtube or Facebook. For more info you can follow [Restream on Social Media](/docs/guide/standard-live-streaming/features/restream-social-media). |
+| Property Name           | Type    | Description                                                                                                                                                                                                           |
+| ----------------------- | ------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| name                    | string  | Name of your live stream.                                                                                                                                                                                             |
+| record                  | boolean | Whether you are recording or not. `true` for record, `false` for not record. For more info you can follow [Recording Guide](/docs/guide/standard-live-streaming-api-sdk/features/record-live-stream).                          |
+| restream **[Optional]** | Array   | RTMP url and stream key from the provided platforms such as Youtube or Facebook. For more info you can follow [Restream on Social Media](/docs/guide/standard-live-streaming-api-sdk/features/restream-social-media). |
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';

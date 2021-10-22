@@ -1,8 +1,8 @@
 ---
-title: Go Live With RTMP
+title: Live Streaming Go Live With- RTMP | Video SDK Docs
 hide_title: false
 hide_table_of_contents: false
-description: Live Streaming architecture helps you to understand how to implement scalable live broadcasting applications.
+description: Live Streaming Go Live With- RTMP documentation offers the most flexibility and control over your live viewing experience, build a custom integration with your live streaming web & app.
 sidebar_label: Go Live With RTMP
 pagination_label: Go Live With RTMP
 keywords:
@@ -14,6 +14,8 @@ image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
 slug: go-live-with-rtmp
 ---
+
+# Live Stream - Go Live With- RTMP
 
 In previous step, we have created live stream using videoSDK API and in response we got `upstreamUrl` and `streamKey`.
 
@@ -44,19 +46,17 @@ This will prompt you to add a type of video source you can add.
      - **streamKey** : `eb175-5-4e5-60-aacfce300b` this part we call it as our streamKey.
        :::
 
-  3. Add `streamKey` in **Stream Key** textfield, which have generated in [Create Live Stream](/docs/guide/standard-live-streaming/features/create-live-stream).
+  3. Add `streamKey` in **Stream Key** textfield, which have generated in [Create Live Stream](/docs/guide/standard-live-streaming-api-sdk/features/create-new-live-stream).
 
 - Now, click on **apply** and **ok**.
 
 ![Video SDK Home Dashboard](/img/obs-settings.png)
-
 
 ## Step 3: Start Broadcasting
 
 After all configuration, you can broadcast stream by clicking **Start Streaming** on bottom-right area of the application window.
 
 ![Video SDK Home Dashboard](/img/obs-start.png)
-
 
 ## Step 4: Stop Broadcasting
 

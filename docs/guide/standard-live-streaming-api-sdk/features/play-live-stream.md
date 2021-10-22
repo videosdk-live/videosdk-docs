@@ -1,8 +1,8 @@
 ---
-title: Play Live Stream
+title: Live Streaming Play Live Stream | Video SDK Docs
 hide_title: false
 hide_table_of_contents: false
-description: Live Streaming architecture helps you to understand how to implement scalable live broadcasting applications.
+description: Live Streaming Play Live Stream documentation offers the most flexibility and control over your live viewing experience, build a custom integration with your live streaming web & app.
 sidebar_label: Play Live Stream
 pagination_label: Play Live Stream
 keywords:
@@ -15,7 +15,8 @@ sidebar_position: 1
 slug: play-live-stream
 ---
 
-To play back a live stream, use the `downstreamUrl`, which we have created in [Create New Live Stream](/docs/guide/standard-live-streaming/features/create-live-stream).
+# Live Stream - Play Live Stream
+To play back a live stream, use the `downstreamUrl`, which we have created in [Create New Live Stream](/docs/guide/standard-live-streaming-api-sdk/features/create-new-live-stream).
 
 For play livestream you need to set up video player which supports HLS format.
 

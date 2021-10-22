@@ -1,8 +1,8 @@
 ---
-title: Get Live Stream Details
+title: Live Streaming Details | Video SDK Docs
 hide_title: false
 hide_table_of_contents: false
-description: Live Streaming architecture helps you to understand how to implement scalable live broadcasting applications.
+description: Live Streaming Details documentation offers the most flexibility and control over your live viewing experience, build a custom integration with your live streaming web & app.
 sidebar_label: Get Live Stream Details
 pagination_label: Get Live Stream Details
 keywords:
@@ -15,7 +15,9 @@ sidebar_position: 1
 slug: get-live-stream-details
 ---
 
-This guide will provide an overview of retrieving particular live stream details using live stream id, which we have created in [Create New Live Stream](/docs/guide/standard-live-streaming/features/create-live-stream).
+# Live Stream - Get Live Stream Details
+
+This guide will provide an overview of retrieving particular live stream details using live stream id, which we have created in [Create New Live Stream](/docs/guide/standard-live-streaming-api-sdk/features/create-new-live-stream).
 
 ### Query Params
 

@@ -1,8 +1,8 @@
 ---
-title: Getting Started with Live Streaming
+title: Live Streaming | Video SDK Docs
 hide_title: false
 hide_table_of_contents: false
-description: Live streaming sdk will help you to integrate live streaming in your application.
+description: Video SDK Live Streaming API offers the most flexibility and control over your live viewing experience, build a custom integration with your live streaming web & app.
 sidebar_label: Getting Started
 pagination_label: Getting Started Live Streaming
 keywords:
@@ -15,9 +15,7 @@ sidebar_position: 1
 slug: getting-started
 ---
 
-import Mermaid from '@theme/Mermaid';
-
-# Explore live streaming
+# Getting Started Live Streaming
 
 This guide will get you running with the VideoSDK Live Streaming in minutes.
 
@@ -41,15 +39,15 @@ import Card from '@theme/Card';
 <div class="container guide-steps-block">
   <div class="row ">
     <div class="col col--6">
-      <Card heading="1. Signup & Create API" link="/docs/guide/standard-live-streaming/signup-and-create-api" description="Generate your API key." />
+      <Card heading="1. Signup & Create API" link="/docs/guide/standard-live-streaming-api-sdk/signup-and-create-api" description="Generate your API key." />
     </div>
     <div class="col col--6" >
-      <Card heading="2. Authentication" link="/docs/guide/standard-live-streaming/authentication" description="Generate Access Token."  />
+      <Card heading="2. Authentication" link="/docs/guide/standard-live-streaming-api-sdk/authentication" description="Generate Access Token."  />
     </div>
   </div>
   <div class="row " >
     <div class="col col--6">
-      <Card heading="3. Create Live Stream" link="/docs/guide/standard-live-streaming/features/create-live-stream" description="Setup Live Stream." />
+      <Card heading="3. Create Live Stream" link="/docs/guide/standard-live-streaming-api-sdk/features/create-new-live-stream" description="Setup Live Stream." />
     </div>
     
   </div>
