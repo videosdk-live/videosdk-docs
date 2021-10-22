@@ -483,65 +483,65 @@ module.exports = {
     },
   ],
 
-  resources: [
-    {
-      type: "category",
-      label: "RESOURCES",
-      items: ["resources/overview"],
-      collapsed: false,
-    },
-    {
-      type: "category",
-      label: "CODE SAMPLES",
-      items: [
-        {
-          type: "category",
-          label: "RTC PREBUILT SDK",
-          items: [
-            //"resources/code-samples/real-time-communication/overview",
-            "resources/code-samples/real-time-communication/js-prebuilt-sdk",
-            "resources/code-samples/real-time-communication/angular-prebuilt-sdk",
-            "resources/code-samples/real-time-communication/react-prebuilt-sdk",
-            "resources/code-samples/real-time-communication/vue-prebuilt-sdk",
-            "resources/code-samples/real-time-communication/android-prebuilt-sdk",
-          ],
-          collapsed: false,
-        },
-        {
-          type: "category",
-          label: "RTC RAW SDK",
-          items: [
-            //"resources/code-samples/real-time-communication/overview",
-            "resources/code-samples/real-time-communication/node-js-auth",
-            "resources/code-samples/real-time-communication/react-js-sdk",
-            "resources/code-samples/real-time-communication/react-native-sdk",
-            "resources/code-samples/real-time-communication/android-sdk",
-          ],
-          collapsed: false,
-        },
-        {
-          type: "category",
-          label: "LIVE STREAMING",
-          items: [
-            //"resources/code-samples/live-streaming/overview",
-            "resources/code-samples/live-streaming/rtc-to-rtmp",
-            "resources/code-samples/live-streaming/live-streaming-react",
-            "resources/code-samples/live-streaming/live-streaming-react-native",
-          ],
-          collapsed: false,
-        },
-        {
-          type: "category",
-          label: "VIDEO ON DEMAND",
-          items: [
-            //"resources/code-samples/live-streaming/overview",
-            "resources/code-samples/video-on-demand/react-js-sdk",
-            "resources/code-samples/video-on-demand/react-native-sdk",
-          ],
-          collapsed: false,
-        },
-      ],
-      collapsed: false,
-    },
-  ],
+  // resources: [
+  //   {
+  //     type: "category",
+  //     label: "RESOURCES",
+  //     items: ["resources/overview"],
+  //     collapsed: false,
+  //   },
+  //   {
+  //     type: "category",
+  //     label: "CODE SAMPLES",
+  //     items: [
+  //       {
+  //         type: "category",
+  //         label: "RTC PREBUILT SDK",
+  //         items: [
+  //           //"resources/code-samples/real-time-communication/overview",
+  //           "resources/code-samples/real-time-communication/js-prebuilt-sdk",
+  //           "resources/code-samples/real-time-communication/angular-prebuilt-sdk",
+  //           "resources/code-samples/real-time-communication/react-prebuilt-sdk",
+  //           "resources/code-samples/real-time-communication/vue-prebuilt-sdk",
+  //           "resources/code-samples/real-time-communication/android-prebuilt-sdk",
+  //         ],
+  //         collapsed: false,
+  //       },
+  //       {
+  //         type: "category",
+  //         label: "RTC RAW SDK",
+  //         items: [
+  //           //"resources/code-samples/real-time-communication/overview",
+  //           "resources/code-samples/real-time-communication/node-js-auth",
+  //           "resources/code-samples/real-time-communication/react-js-sdk",
+  //           "resources/code-samples/real-time-communication/react-native-sdk",
+  //           "resources/code-samples/real-time-communication/android-sdk",
+  //         ],
+  //         collapsed: false,
+  //       },
+  //       {
+  //         type: "category",
+  //         label: "LIVE STREAMING",
+  //         items: [
+  //           //"resources/code-samples/live-streaming/overview",
+  //           "resources/code-samples/live-streaming/rtc-to-rtmp",
+  //           "resources/code-samples/live-streaming/live-streaming-react",
+  //           "resources/code-samples/live-streaming/live-streaming-react-native",
+  //         ],
+  //         collapsed: false,
+  //       },
+  //       {
+  //         type: "category",
+  //         label: "VIDEO ON DEMAND",
+  //         items: [
+  //           //"resources/code-samples/live-streaming/overview",
+  //           "resources/code-samples/video-on-demand/react-js-sdk",
+  //           "resources/code-samples/video-on-demand/react-native-sdk",
+  //         ],
+  //         collapsed: false,
+  //       },
+  //     ],
+  //     collapsed: false,
+  //   },
+  // ],
 };

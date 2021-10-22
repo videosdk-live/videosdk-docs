@@ -109,8 +109,8 @@ module.exports = {
         },
         {
           position: "left",
-          label: "Resources",
-          to: "/docs/resources/overview",
+          label: "Code Samples",
+          to: "/docs/code-sample/overview",
         },
         {
           label: "Start Project",
