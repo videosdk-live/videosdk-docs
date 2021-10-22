@@ -1,8 +1,8 @@
 ---
-title: Delete file
+title: Delete file (VOD) | Video SDK Documentation
 hide_title: false
 hide_table_of_contents: false
-description: This guide will explain how to delete file.
+description: Video on demand (VOD) delete file documents how to interact with the video encoding API It's our go-to reference whether you're just getting started.
 sidebar_label: Delete file
 pagination_label: Delete file
 keywords:

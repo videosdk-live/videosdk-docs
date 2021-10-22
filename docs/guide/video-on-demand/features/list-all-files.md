@@ -1,8 +1,8 @@
 ---
-title: List All Files
+title: List all Files (VOD) | Video SDK Documentation
 hide_title: false
 hide_table_of_contents: false
-description: This guide will explain list of all files.
+description: Video on demand (VOD) list all files documents how to interact with the video encoding API It's our go-to reference whether you're just getting started.
 sidebar_label: List All Files
 pagination_label: List All Files
 keywords:

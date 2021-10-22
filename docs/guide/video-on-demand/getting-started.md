@@ -1,5 +1,5 @@
 ---
-title: Getting Started with Video On Demand
+title: Getting Started - Video on Demand (VOD)
 hide_title: false
 hide_table_of_contents: false
 description: Video On demand sdk will help you to integrate video streaming in your application.
@@ -16,8 +16,6 @@ slug: getting-started
 ---
 
 import Mermaid from '@theme/Mermaid';
-
-# Explore video on demand
 
 This guide will get you running with the VideoSDK Video On Demand in minutes.
 

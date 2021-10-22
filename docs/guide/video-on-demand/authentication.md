@@ -2,7 +2,7 @@
 title: Authentication
 hide_title: false
 hide_table_of_contents: false
-description: Live streaming sdk will help you to integrate live streaming in your application.
+description: Authentication architecture will help you to implement authentication strategies.
 sidebar_label: Authentication
 pagination_label: Authentication
 keywords:

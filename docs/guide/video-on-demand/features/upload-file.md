@@ -1,8 +1,8 @@
 ---
-title: Upload File
+title: Video Upload File (VOD) | Video SDK Documentation
 hide_title: false
 hide_table_of_contents: false
-description: This guide will explain upload file.
+description: Video on demand (VOD) video upload file documents how to interact with the video encoding API It's our go-to reference whether you're just getting started.
 sidebar_label: Upload File
 pagination_label: Upload File
 keywords:

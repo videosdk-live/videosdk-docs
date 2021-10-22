@@ -1,8 +1,8 @@
 ---
-title: Get Encoding Job Details
+title: Get encoding job details (VOD) | Video SDK Documentation
 hide_title: false
 hide_table_of_contents: false
-description: This guide will explain get encoding job details.
+description: Video on demand (VOD) Get encoding job details documents how to interact with the video encoding API It's our go-to reference whether you're just getting started.
 sidebar_label: Get Encoding Job Details
 pagination_label: Get Encoding Job Details
 keywords:

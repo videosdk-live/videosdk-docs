@@ -1,8 +1,8 @@
 ---
-title: Signup & Create API Key
+title: Live Streaming Sign up for free Video SDK account Live Streaming | Video SDK Docs
 hide_title: false
 hide_table_of_contents: false
-description: This guide will explain authentication and token flow for audio and video calling SDK.
+description: Video SDK Live Streaming API Sign up for free Video SDK account offers the most flexibility your live viewing experience, build a custom integration with your live streaming web & app.
 sidebar_label: Signup & Create API Key
 pagination_label: Signup & Create API Key
 keywords:
@@ -15,7 +15,7 @@ sidebar_position: 1
 slug: signup-and-create-api
 ---
 
-# Signup & Create API Key
+# Sign up for free Video SDK account Live Streaming
 
 This guide will help you to generate API key and secret from dashboard.
 

@@ -1,8 +1,8 @@
 ---
-title: Get File Details
+title: Get file Details (VOD) | Video SDK Documentation
 hide_title: false
 hide_table_of_contents: false
-description: This guide will explain how to get file details.
+description: Video on demand (VOD) get file details documents how to interact with the video encoding API It's our go-to reference whether you're just getting started.
 sidebar_label: Get File Details
 pagination_label: Get File Details
 keywords:

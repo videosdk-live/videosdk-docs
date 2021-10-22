@@ -1,8 +1,8 @@
 ---
-title: Signup & Create API Key
+title: Sign up for free Video SDK account Video on demand (VOD)
 hide_title: false
 hide_table_of_contents: false
-description: This guide will explain authentication and token flow for audio and video calling SDK.
+description: Video on demand (VOD) Sign up for free account create a Video on Demand (VOD) Platform for Business It's our go-to reference whether you're just getting started.
 sidebar_label: Signup & Create API Key
 pagination_label: Signup & Create API Key
 keywords:
@@ -14,8 +14,6 @@ image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
 slug: signup-and-create-api
 ---
-
-# Signup & Create API Key
 
 This guide will help you to generate API key and secret from dashboard.
 
