@@ -1,10 +1,10 @@
 ---
-title: Overview of resources
+title: Code Samples | Video SDK
 hide_title: false
 hide_table_of_contents: false
-description: video sdk resources will help you to integrate our SDK into your application easily.
-sidebar_label: Overview
-pagination_label: Overview of resources
+description: video sdk code sample will help you to integrate our SDK into your application easily.
+sidebar_label: Code Samples
+pagination_label: Code Samples
 keywords:
   - code sample
   - quickstart
@@ -15,9 +15,9 @@ sidebar_position: 1
 slug: overview
 ---
 
-# Overview
+# Code Samples
 
-A collection of resources for you to explore and learn.
+A collection of Code Samples for you to explore and learn.
 
 ### 1. Prebuilt Video & Audio Calling SDK
 

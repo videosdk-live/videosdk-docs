@@ -7,9 +7,9 @@ function Overview() {
       <div class="row">
         <div class="col">
           <div class="docItemContainer_node_modules-@docusaurus-theme-classic-lib-next-theme-DocItem-styles-module"></div>
-          <h1 class="h1Heading_node_modules-@docusaurus-theme-classic-lib-next-theme-Heading-styles-module">
+          {/* <h1 class="h1Heading_node_modules-@docusaurus-theme-classic-lib-next-theme-Heading-styles-module">
             Overview
-          </h1>
+          </h1> */}
           <p>
             Video SDK provides all the services to build interactive video
             product. It includes realtime communication, standard live
@@ -41,7 +41,7 @@ function Overview() {
                     {
                       linkName: "Code samples",
                       link:
-                        "/docs/resources/overview#1-rtc-prebuilt-sdk-code-samples",
+                        "/docs/code-sample/overview#1-prebuilt-video--audio-calling-sdk",
                     },
                   ]}
                 />
@@ -69,7 +69,7 @@ function Overview() {
                     {
                       linkName: "Code samples",
                       link:
-                        "/docs/resources/overview#2-rtc-raw-sdk-code-samples",
+                        "/docs/code-sample/overview#2-custom-video--audio-calling-sdk",
                     },
                   ]}
                 />
@@ -99,7 +99,7 @@ function Overview() {
                     {
                       linkName: "Code samples",
                       link:
-                        "/docs/resources/overview#3-live-stream-code-samples",
+                        "/docs/code-sample/overview#3-standard-live-stream-api",
                     },
                   ]}
                 />
@@ -125,8 +125,7 @@ function Overview() {
                     },
                     {
                       linkName: "Code samples",
-                      link:
-                        "/docs/resources/overview#4-video-on-demand-code-samples",
+                      link: "/docs/code-sample/overview#4-video-on-demand-api",
                     },
                   ]}
                 />
