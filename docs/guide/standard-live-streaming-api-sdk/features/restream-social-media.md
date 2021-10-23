@@ -1,8 +1,8 @@
 ---
-title: Restream on Social Media
+title: Live Streaming Multistream to 10+ Social Media | Video SDK Docs
 hide_title: false
 hide_table_of_contents: false
-description: Live Streaming architecture helps you to understand how to implement scalable live broadcasting applications.
+description: Live Streaming Restream on Social Media documentation offers the most flexibility and control over your live viewing experience, build a custom integration with your live streaming web & app.
 sidebar_label: Restream on Social Media
 pagination_label: Restream on Social Media
 keywords:
@@ -14,6 +14,8 @@ image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
 slug: restream-social-media
 ---
+
+# Live Stream - Restream on Social Media
 
 Everyone has their preferred social media platforms (Youtube, Facebook and Linkedin) and it can be difficult to get people across different platforms. With Restream your viewers can see live stream no matter what platform they use.
 

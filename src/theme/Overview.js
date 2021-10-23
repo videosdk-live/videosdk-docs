@@ -85,7 +85,7 @@ function Overview() {
                     {
                       linkName: "Guide",
                       link:
-                        "/docs/guide/standard-live-streaming/getting-started",
+                        "/docs/guide/standard-live-streaming-api-sdk/getting-started",
                     },
                     {
                       linkName: "API reference",
