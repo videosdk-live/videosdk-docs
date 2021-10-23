@@ -90,6 +90,9 @@ module.exports = {
       items: [
         "guide/dashboard/dashboard-home",
         "guide/dashboard/meetings",
+        "guide/dashboard/video-on-demand",
+        "guide/dashboard/live-streaming",
+        "guide/dashboard/settings",
       ],
       collapsed: false,
     },

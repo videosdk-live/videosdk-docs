@@ -12,22 +12,24 @@ keywords:
   - realtime query
 image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
-slug: meeitngs
+slug: meetings
 ---
 
-Dashboard meeting page contains four section such as OverView, Sessions, Recordings, API Reference
+Dashboard meeting page is all about your consumed meeting minutes, number conducted session and list of session recordings.
 
-## 1. OverView
+This page Contains three major section such as [Overview](/docs/guide/dashboard/meetings#1-overview), [Sessions](/docs/guide/dashboard/meetings#2-sessions) and [Recordings](/docs/guide/dashboard/meetings#3-recordings).
 
-It contains Meeting properties listed below:
+## 1. Overview
+
+It contains Meeting properties listed below.
 
 ### A. Participant minutes
 
 This can be calculated by time(minutes) spent by each participant in a meeting and total participant minute is sum of the time spent by each participant in the call.
 
-For example, the total participant minutes for 3 participants in a 30-minute call is as given below:
+For example, the total participant minutes for 6 participants in a 50 minute call is as given below:
 
-`Total Participant Minutes = 3 (Number of participants) \* 30 (Duration of the Meeting) = 90 minutes.`
+![Video SDK Home Dashboard](/img/dashboard/pricing-tabel.jpg)
 
 ### B. Recording minutes
 
@@ -39,15 +41,19 @@ Indicates the total minutes of rtmp out during each and every meetings.
 
 For example, if we RTMP out on platform like youtube, linkedin , facebook, etc with duration of 30 minutes meeting, then RTMP out minutes will be consider as only 30 minutes.
 
+![Video SDK Home Dashboard](/img/dashboard/meeting-overview.png)
+
 ## 2. Sessions
 
 This section contains listing of sessions in tabular format, which contains session properties such as **MeetingId**, **Date**, **Meeting Duration**, **Total Participants**, **Recording Minutes** and **RTMP out Minutes**.
+
+![Video SDK Home Dashboard](/img/dashboard/meeting-session.png)
 
 You can list your sessions on yearly, monthly, weekly and daily basis by clicking on **Select Date button** and also you can list them on your custom dates also.
 
 You can easily search your session using search bar(Right side on select date) by providing **meetingId** as value.
 
-By pressing session item you can see particular session details. The session details divided in to two parts the top one is for **Session info** and the bottom one is for **Participant**.
+By pressing session item you can see particular item details. The session details divided in to two parts the top one is for **Session info** and the bottom one is for **Participant**.
 
 - The session info section contains **meetingId**, **Duration of the session**, **Meeting Link**, **Total number of recording** and **Total number of live streams**.
 
@@ -55,12 +61,16 @@ By pressing session item you can see particular session details. The session det
 
 You can easily search participant using search bar by providing participant name as value.
 
+![Video SDK Home Dashboard](/img/dashboard/meeting-session-sidebar.png)
+
 ## 3. Recordings
 
 This section contains listing of sessions recording in tabular format, which contains properties such as **MeetingId**, **Date** and **Recording duration**.
 
 You can perform below actions on recording section :
 
-1. **Play** : You can play the recording by pressing play icon under **MeetingId** column.
+1. **Play** : You can play the recording by pressing play icon on left side of table items.
 2. **Download** : You can download particular recording in your system by pressing download icon under **Action** column.
 3. **Delete** : You can remove particular recording in listing by pressing trash icon under **Action** column.
+
+![Video SDK Home Dashboard](/img/dashboard/meeting-recording.png)
