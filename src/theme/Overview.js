@@ -25,19 +25,23 @@ function Overview() {
                   links={[
                     {
                       linkName: "Guide",
-                      link: "/docs/guide/prebuilt-video-and-audio-calling/getting-started",
+                      link:
+                        "/docs/guide/prebuilt-video-and-audio-calling/getting-started",
                     },
                     {
                       linkName: "API reference",
-                      link: "/docs/realtime-communication/sdk-reference/prebuilt-sdk-js/setup",
+                      link:
+                        "/docs/realtime-communication/sdk-reference/prebuilt-sdk-js/setup",
                     },
                     {
                       linkName: "Tutorial",
-                      link: "/docs/tutorials/realtime-communication/prebuilt-sdk/quickstart-prebuilt-js",
+                      link:
+                        "/docs/tutorials/realtime-communication/prebuilt-sdk/quickstart-prebuilt-js",
                     },
                     {
                       linkName: "Code samples",
-                      link: "/docs/resources/overview#1-rtc-prebuilt-sdk-code-samples",
+                      link:
+                        "/docs/code-sample/overview#1-prebuilt-video--audio-calling-sdk",
                     },
                   ]}
                 />
@@ -50,7 +54,8 @@ function Overview() {
                   links={[
                     {
                       linkName: "Guide",
-                      link: "/docs/guide/video-and-audio-calling-api-sdk/getting-started",
+                      link:
+                        "/docs/guide/video-and-audio-calling-api-sdk/getting-started",
                     },
                     {
                       linkName: "API reference",
@@ -58,11 +63,13 @@ function Overview() {
                     },
                     {
                       linkName: "Tutorial",
-                      link: "/docs/tutorials/realtime-communication/js-sdk/quickstart-js",
+                      link:
+                        "/docs/tutorials/realtime-communication/js-sdk/quickstart-js",
                     },
                     {
                       linkName: "Code samples",
-                      link: "/docs/resources/overview#2-rtc-raw-sdk-code-samples",
+                      link:
+                        "/docs/code-sample/overview#2-custom-video--audio-calling-sdk",
                     },
                   ]}
                 />
@@ -77,7 +84,8 @@ function Overview() {
                   links={[
                     {
                       linkName: "Guide",
-                      link: "/docs/guide/standard-live-streaming/getting-started",
+                      link:
+                        "/docs/guide/standard-live-streaming/getting-started",
                     },
                     {
                       linkName: "API reference",
@@ -85,11 +93,13 @@ function Overview() {
                     },
                     {
                       linkName: "Tutorial",
-                      link: "/docs/tutorials/live-streaming/api/quickstart-rest-api",
+                      link:
+                        "/docs/tutorials/live-streaming/api/quickstart-rest-api",
                     },
                     {
                       linkName: "Code samples",
-                      link: "/docs/resources/overview#3-live-stream-code-samples",
+                      link:
+                        "/docs/code-sample/overview#3-standard-live-stream-api",
                     },
                   ]}
                 />
@@ -110,11 +120,12 @@ function Overview() {
                     },
                     {
                       linkName: "Tutorial",
-                      link: "/docs/tutorials/video-on-demand/api/quickstart-rest-api",
+                      link:
+                        "/docs/tutorials/video-on-demand/api/quickstart-rest-api",
                     },
                     {
                       linkName: "Code samples",
-                      link: "/docs/resources/overview#4-video-on-demand-code-samples",
+                      link: "/docs/code-sample/overview#4-video-on-demand-api",
                     },
                   ]}
                 />
