@@ -318,9 +318,7 @@ The Stream Key should be treated as a private key for live streaming. Anyone wit
       "url": "rtmp://x.rtmp.youtube.com/live2",
       "streamKey": "0tjp-h6a2-8c9d-vusv-01uu"
     }
-  ],
-  "createdAt": "2021-07-05T12:43:52.921Z",
-  "updatedAt": "2021-07-05T12:45:04.379Z"
+  ]
 }
 ```
 

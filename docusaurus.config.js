@@ -70,9 +70,9 @@ module.exports = {
               activeBaseRegex: "docs/guide/video-and-audio-calling-api-sdk/*",
             },
             {
-              label: "Standard Live Stream API",
-              to: "docs/guide/standard-live-streaming/getting-started",
-              activeBaseRegex: "docs/guide/standard-live-streaming/*",
+              label: "Standard Live Streaming API",
+              to: "docs/guide/standard-live-streaming-api-sdk/getting-started",
+              activeBaseRegex: "docs/guide/standard-live-streaming-api-sdk/*",
             },
             {
               label: "Video on Demand API",
