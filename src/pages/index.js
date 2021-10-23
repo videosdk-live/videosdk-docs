@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useLayoutEffect } from "react";
 import Layout from "@theme/Layout";
 import HomeOverview from "../components/home/overview";
 import HomeHero from "../components/home/hero";
@@ -8,6 +8,9 @@ import Hero from "@theme/Hero";
 import Demos from "@theme/Demos";
 
 export default function Home() {
+  useLayoutEffect(() => {
+    window.location.href = "docs/overview/introduction";
+  }, []);
   return (
     <Layout
       title={`Live Streaming SDK/API | Real time Communication SDK`}

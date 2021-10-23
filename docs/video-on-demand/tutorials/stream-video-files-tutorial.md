@@ -10,7 +10,7 @@ This tutorial explains steps to integrate video streaming in your app.
 
 ### Step 1: Generate access token
 
-An access token is required to call the ZujoNow APIs. You can generate one with the API key and secret mentioned in the developer portal at ZujoNow console.
+An access token is required to call the VideoSDK APIs. You can generate one with the API key and secret mentioned in the developer portal at VideoSDK console.
 
 Note: Please note that this code is meant to be written on your backend server. Do not reveal your secret key to anyone. This sample is in Node.js but you can write the same in any other programming language with the help of a JWT library. Please check <a href="https://jwt.io/">jwt.io</a> website for more details.
 
@@ -27,8 +27,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.get("/get-token", (req, res) => {
-  const API_KEY = process.env.ZUJONOW_API_KEY;
-  const SECRET_KEY = process.env.ZUJONOW_SECRET_KEY;
+  const API_KEY = process.env.VIDEOSDK_API_KEY;
+  const SECRET_KEY = process.env.VIDEOSDK_SECRET_KEY;
   const options = { expiresIn: "10m", algorithm: "HS256" };
   const payload = {
     apikey: API_KEY,
@@ -58,7 +58,7 @@ values={[
 <TabItem value="curl">
 
 ```js
-curl --L --X POST 'https://api.zujonow.com/v1/files' \
+curl --L --X POST 'https://api.videosdk.live/v1/files' \
 --header 'Authorization: `jwt token goes here`'
 ```
 
@@ -68,7 +68,7 @@ curl --L --X POST 'https://api.zujonow.com/v1/files' \
 
 ```json
 {
-  "url": "https://storage-api.zujonow.com/v1/files"
+  "url": "https://storage-api.videosdk.live/v1/files"
 }
 ```
 
@@ -88,7 +88,7 @@ values={[
 <TabItem value="curl">
 
 ```js
-curl --L --X POST 'https://storage-api.zujonow.com/v1/files' \
+curl --L --X POST 'https://storage-api.videosdk.live/v1/files' \
 --header 'Authorization: `jwt token goes here`' \
 --header 'Content-Type: multipart/form-data'
 --form 'file=mock-video.mp4"'
@@ -114,7 +114,7 @@ curl --L --X POST 'https://storage-api.zujonow.com/v1/files' \
   "type": "video",
   "createdAt": "2021-03-18T05:07:18.771Z",
   "updatedAt": "2021-03-18T05:07:18.771Z",
-  "fileUrl": "https://cdn.zujonow.com/files/videos/6052e0064b442a2f16018373.mp4",
+  "fileUrl": "https://cdn.videosdk.live/files/videos/6052e0064b442a2f16018373.mp4",
   "id": "6052e0064b442a2f16018374"
 }
 ```
@@ -135,7 +135,7 @@ values={[
 <TabItem value="curl">
 
 ```js
-curl --L --X POST 'https://api.zujonow.com/v1/encoder/jobs' \
+curl --L --X POST 'https://api.videosdk.live/v1/encoder/jobs' \
 --header 'Authorization: `your token goes here`' \
 --header 'Content-Type: application/json' \
 --data-raw '
@@ -224,7 +224,7 @@ To play video, fetch `fileUrl` of video either from webhook or from the details 
 
 <script>
   const video = document.querySelector('#my-player');
-  const src = 'https://cdn.zujonow.com/files/videos/605311d9bba24b4d700c8c4d/index.m3u8';
+  const src = 'https://cdn.videosdk.live/files/videos/605311d9bba24b4d700c8c4d/index.m3u8';
   if (video.canPlayType('application/vnd.apple.mpegurl')) {
     // Some browers (safari and ie edge) support HLS natively
     video.src = src;

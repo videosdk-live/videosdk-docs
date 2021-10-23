@@ -1,7 +1,7 @@
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 
 module.exports = {
-  title: "video sdk Documentation",
+  title: "Video SDK",
   tagline: "Interactive Video API Experiences For Developers",
   url: "https://docs.videosdk.live",
   baseUrl: "/",
@@ -35,16 +35,51 @@ module.exports = {
 
     navbar: {
       title: "",
+      hideOnScroll: true,
       logo: {
         alt: "VideosdK live logo",
         src: "img/videosdk_docs_blacklogo.png",
         srcDark: "img/videosdk_docs_whitelogo.png",
+        href: "https://videosdk.live/",
+        target: "_self",
       },
       items: [
         {
           position: "left",
           label: "Overview",
-          to: "/docs/overview/introduction",
+          to: "docs/overview/introduction",
+          activeBaseRegex: "docs/overview/introduction",
+        },
+        {
+          position: "left",
+          label: "Guide",
+          items: [
+            {
+              label: "Dashboard",
+              to: "docs/guide/dashboard/getting-started",
+              activeBaseRegex: "docs/guide/dashboard/*",
+            },
+            {
+              label: "Prebuilt Video & Audio Calling SDK",
+              to: "docs/guide/prebuilt-video-and-audio-calling/getting-started",
+              activeBaseRegex: "docs/guide/prebuilt-video-and-audio-calling/*",
+            },
+            {
+              label: "Custom Video & Audio Calling SDK",
+              to: "docs/guide/video-and-audio-calling-api-sdk/getting-started",
+              activeBaseRegex: "docs/guide/video-and-audio-calling-api-sdk/*",
+            },
+            {
+              label: "Standard Live Streaming API",
+              to: "docs/guide/standard-live-streaming-api-sdk/getting-started",
+              activeBaseRegex: "docs/guide/standard-live-streaming-api-sdk/*",
+            },
+            {
+              label: "Video on Demand API",
+              to: "docs/guide/video-on-demand/getting-started",
+              activeBaseRegex: "docs/guide/video-on-demand/*",
+            },
+          ],
         },
         {
           position: "left",
@@ -74,17 +109,12 @@ module.exports = {
         },
         {
           position: "left",
-          label: "Resources",
-          to: "/docs/resources/overview",
+          label: "Code Samples",
+          to: "/docs/code-sample/overview",
         },
         {
           label: "Start Project",
           href: "https://app.videosdk.live/login",
-          position: "right",
-        },
-        {
-          label: "Back to Video SDK",
-          href: "https://videosdk.live",
           position: "right",
         },
         {
@@ -229,6 +259,7 @@ module.exports = {
             plugins: ["line-numbers", "show-language"],
             theme: require("@kiwicopple/prism-react-renderer/themes/vsDark"),
             darkTheme: require("@kiwicopple/prism-react-renderer/themes/vsDark"),
+            additionalLanguages: ["Java"],
           },
         },
       },

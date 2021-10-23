@@ -387,7 +387,12 @@ article header {
 
 .navbar__logo {
   height: auto;
-  max-width: 196px;
+  max-width: 250px;
+}
+
+a[class^="sidebarLogo_"] img {
+  height: auto;
+  max-width: 250px;
 }
 
 @media (max-width: 750px) {
@@ -466,16 +471,22 @@ a.card {
   border: 1px solid #333;
   display: flex;
   /* background-color: var(--ifm-background-color); */
+  transition: all 0.2s ease;
 }
 a.card .card__body {
   flex: 1;
   flex-grow: 1;
+  /* font-weight: lighter !important; */
 }
 a.card:hover {
-  transition: all 0.2s ease;
-  border: 1px solid var(--custom-primary);
-  box-shadow: var(--custom-shadow-xl), 0 0 0 1px var(--custom-primary) !important;
+  border: 1px solid var(--custom-primary) !important;
+  box-shadow: var(--custom-shadow-md);
 }
+
+.guide-steps-block .col {
+  padding: 0px 8px !important;
+}
+
 .avatar__intro {
   padding-left: 15px;
 }
@@ -645,6 +656,7 @@ div[class^="sidebar_"] {
   font-size: 0.85rem;
 }
 div[class^="sidebar_"] .menu {
+  /* overflow: hidden; */
   background: var(--ifm-sidebar-background);
   margin-right: calc(var(--ifm-spacing-horizontal) * -1);
   padding-bottom: var(--ifm-spacing-vertical);
@@ -1308,6 +1320,7 @@ code {
   border-bottom-color: var(--ifm-tabs-color-active);
   color: var(--custom-primary);
 }
+
 div[role="tabpanel"],
 div[role="tabpanel"] div {
   margin-top: 0 !important;
@@ -1410,10 +1423,11 @@ code[class*="language-"] *::selection {
 }
 div[class^="codeBlockTitle"],
 div[class*=" codeBlockTitle"] {
-  color: #ccc !important;
-  font-size: 16px !important;
+  color: rgb(156, 155, 155) !important;
+  font-size: 14px !important;
   border-color: #fff;
   background-color: #2a2a2a !important;
+  border-color: #333;
 }
 
 [class*="codeBlockLines"] {
@@ -2102,4 +2116,9 @@ html[data-theme="dark"] .rds-demos .terminal .terminal-body .links a {
 }
 .token.known-class-name.class-name {
   color: #5edfff !important;
+}
+
+/* admonition */
+.admonition-heading h5 {
+  color: var(--ifm-color-gray-900);
 }

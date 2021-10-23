@@ -21,7 +21,7 @@ You can import this library using `<script>` tag. The easiest way to get started
   <head>....</head>
   <body>
     .....
-    <script src="https://sdk.zujonow.com/zujo-sdk-2.0.0.min.js"></script>
+    <script src="https://sdk.videosdk.live/zujo-sdk-2.0.0.min.js"></script>
   </body>
 </html>
 ```
@@ -58,13 +58,19 @@ yarn add @videosdk.live/js-sdk
 Then in your application code:
 
 ```js title="Webpack/node-style require"
-const VideoSDK = require("@videosdk.live/js");
-VideoSDK.initMeeting({...})
+const ZujoSDK = require("@videosdk.live/js-sdk");
+
+ZujoSDK.config("<token>")
+
+ZujoSDK.initMeeting({...})
 ```
 
 Or
 
 ```js title="ES6 import"
-import VideoSDK from "@videosdk.live/js";
-VideoSDK.initMeeting({...})
+import ZujoSDK from "@videosdk.live/js-sdk";
+
+ZujoSDK.config("<token>")
+
+ZujoSDK.initMeeting({...})
 ```

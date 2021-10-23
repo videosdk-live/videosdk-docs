@@ -24,7 +24,7 @@ values={[
 
 ```js
 curl --request GET \
-  --url 'https://api.zujonow.com/v1/livestreams/?page=1&perPage=20' \
+  --url 'https://api.videosdk.live/v1/livestreams/?page=1&perPage=20' \
   --header 'Authorization: `jwt token goes here`'
 ```
 
@@ -34,7 +34,7 @@ curl --request GET \
 ```js
 const fetch = require("node-fetch");
 
-const url = "https://api.zujonow.com/v1/livestreams/?page=1&perPage=20";
+const url = "https://api.videosdk.live/v1/livestreams/?page=1&perPage=20";
 const options = {
   method: "GET",
   headers: { Accept: "application/json", Authorization: `jwt token goes here` },
@@ -52,7 +52,7 @@ fetch(url, options)
 ```python
 import requests
 
-url = "https://api.zujonow.com/v1/livestreams"
+url = "https://api.videosdk.live/v1/livestreams"
 
 querystring = {"page":"1","perPage":"25"}
 
@@ -71,7 +71,7 @@ require 'uri'
 require 'net/http'
 require 'openssl'
 
-url = URI("https://api.zujonow.com/v1/livestreams/?page=1&perPage=20")
+url = URI("https://api.videosdk.live/v1/livestreams/?page=1&perPage=20")
 
 http = Net::HTTP.new(url.host, url.port)
 http.use_ssl = true
@@ -101,9 +101,9 @@ puts response.read_body
       "userId": "5fa671e77b80d58c11cbca95",
       "name": "Nickname for livestream",
       "streamKey": "0893a39c-0f3f-4ac8-8700-06151a1f68ed",
-      "upstreamUrl": "rtmp://live.zujonow.com/live/...",
-      "downstreamUrl": "https://live.zujonow.com/live/.../index.m3u8",
-      "recordingUrl": "https://live.zujonow.com/live/.../storage/index.m3u8",
+      "upstreamUrl": "rtmp://live.videosdk.live/live/...",
+      "downstreamUrl": "https://live.videosdk.live/live/.../index.m3u8",
+      "recordingUrl": "https://live.videosdk.live/live/.../storage/index.m3u8",
       "createdAt": "2021-02-23T05:16:28.219Z",
       "updatedAt": "2021-02-23T05:16:28.219Z"
     },

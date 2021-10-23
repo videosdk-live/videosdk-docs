@@ -19,7 +19,7 @@ slug: stream-class
 
 ## using Stream Class
 
-The `Stream Class` includes methods and events audio and video streams.
+The `Stream Class` includes methods and events video & audio streams.
 
 import MethodListGroup from '@theme/MethodListGroup';
 import MethodListItemLabel from '@theme/MethodListItemLabel';

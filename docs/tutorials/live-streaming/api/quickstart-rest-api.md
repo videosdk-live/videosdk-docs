@@ -29,7 +29,7 @@ Also check out this [example code](https://github.com/videosdk-live/videosdk-liv
 
 ### Step 1: Generate access token
 
-An access token is required to call the ZujoNow APIs. You can generate one with the API key and secret mentioned in the developer portal at ZujoNow console.
+An access token is required to call the VideoSDK APIs. You can generate one with the API key and secret mentioned in the developer portal at VideoSDK console.
 
 Note: Please note that this code is meant to be written on your backend server. Do not reveal your secret key to anyone. This sample is in Node.js but you can write the same in any other programming language with the help of a JWT library. Please check <a href="https://jwt.io/">jwt.io</a> website for more details.
 
@@ -46,8 +46,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.get("/get-token", (req, res) => {
-  const API_KEY = process.env.ZUJONOW_API_KEY;
-  const SECRET_KEY = process.env.ZUJONOW_SECRET_KEY;
+  const API_KEY = process.env.VIDEOSDK_API_KEY;
+  const SECRET_KEY = process.env.VIDEOSDK_SECRET_KEY;
   const options = { expiresIn: "10m", algorithm: "HS256" };
   const payload = {
     apikey: API_KEY,
@@ -80,7 +80,7 @@ app.get("/live", async (req, res) => {
     }),
   };
   const response = await request(
-    "https://api.zujonow.com/v1/livestreams",
+    "https://api.videosdk.live/v1/livestreams",
     options
   );
   const json = await response.json();
@@ -122,7 +122,7 @@ Use any HLS supported video player like <a href="https://videojs.com/">video.js<
     data-setup="{}"
   >
     <source
-      src="https://live.zujonow.com/live/cae23d5b-0c34-4429-a70b-0d597e5e0e96/index.m3u8"
+      src="https://live.videosdk.live/live/cae23d5b-0c34-4429-a70b-0d597e5e0e96/index.m3u8"
       type="application/x-mpegURL"
     />
     <p class="vjs-no-js">

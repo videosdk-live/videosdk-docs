@@ -33,7 +33,7 @@ A Meeting represents real-time audio, video, and/or screen-share session, and is
 
 ### Participants
 
-Participants are the client applications that are connected to a Meeting and shares audio and video media with one another.
+Participants are the client applications that are connected to a Meeting and shares video & audio media with one another.
 
 ### Local Participant
 
@@ -41,7 +41,7 @@ Participant producing audio or video stream from the local client's media source
 
 ### Streams
 
-Streams are indiviual audio and video streams produced by the participants in the meeting
+Streams are indiviual video & audio streams produced by the participants in the meeting
 
 ### Active Speaker
 
@@ -61,21 +61,21 @@ Main participant represents the client who shall be displayed on the main screen
 
 ### Get an API key
 
-Signup on the ZujoNow website to get a key pair for SDK authentication. Your **API Key** and **Secret** will be visible on the console dashboard.
+Signup on the VideoSDK website to get a key pair for SDK authentication. Your **API Key** and **Secret** will be visible on the console dashboard.
 
 ### Integrate
 
 Include this in your HTML file
 
 ```html title="index.html"
-<script src="https://sdk.zujonow.com/zujo-sdk-2.0.0.min.js"></script>
+<script src="https://sdk.videosdk.live/zujo-sdk-2.0.0.min.js"></script>
 ```
 
 ---
 
 ## Step 0: Access token generation (server-side code)
 
-An access token is required to authenticate with the Zujo SDK and make any API calls. You can generate one with the `API key` and `secret` mentioned in your developer portal at ZujoNow console.
+An access token is required to authenticate with the VideoSDK and make any API calls. You can generate one with the `API key` and `secret` mentioned in your developer portal at VideoSDK console.
 
 ## Generate access token (NodeJS)
 
@@ -92,8 +92,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.get("/get-token", (req, res) => {
-  const API_KEY = process.env.ZUJONOW_API_KEY;
-  const SECRET_KEY = process.env.ZUJONOW_SECRET_KEY;
+  const API_KEY = process.env.VIDEOSDK_API_KEY;
+  const SECRET_KEY = process.env.VIDEOSDK_SECRET_KEY;
   const options = { expiresIn: "10m", algorithm: "HS256" };
   const payload = {
     apikey: API_KEY,
@@ -141,7 +141,7 @@ values={[
 cURL -H "Content-Type: application/json" \
      -H "Authorization: $YOUR_JWT_TOKEN" \
      -XPOST \
-     https://api.zujonow.com/v1/meetings
+     https://api.videosdk.live/v1/meetings
 ```
 
 </TabItem>
@@ -152,7 +152,7 @@ var request = require("request");
 
 var options = {
   method: "POST",
-  url: "https://api.zujonow.com/v1/meetings",
+  url: "https://api.videosdk.live/v1/meetings",
   headers: { authorization: `${YOUR_JWT_TOKEN}` },
 };
 
@@ -169,7 +169,7 @@ request(options, function (error, response, body) {
 ```python
 import requests
 
-url = "https://api.zujonow.com/v1/meetings"
+url = "https://api.videosdk.live/v1/meetings"
 
 headers = {'authorization': f'Bearer {YOUR_JWT_TOKEN}'}
 
@@ -185,7 +185,7 @@ print(response.text)
 require 'uri'
 require 'net/http'
 
-url = URI("https://api.zujonow.com/v1/meetings")
+url = URI("https://api.videosdk.live/v1/meetings")
 
 http = Net::HTTP.new(url.host, url.port)
 http.use_ssl = true
@@ -229,7 +229,7 @@ values={[
 cURL -H "Content-Type: application/json" \
      -H "Authorization: $YOUR_JWT_TOKEN" \
      -XPOST \
-     https://api.zujonow.com/v1/meetings/${meetingId}
+     https://api.videosdk.live/v1/meetings/${meetingId}
 ```
 
 </TabItem>
@@ -240,7 +240,7 @@ var request = require("request");
 
 var options = {
   method: "POST",
-  url: "https://api.zujonow.com/v1/meetings/${meetingId}",
+  url: "https://api.videosdk.live/v1/meetings/${meetingId}",
   headers: { authorization: `${YOUR_JWT_TOKEN}` },
 };
 
@@ -257,7 +257,7 @@ request(options, function (error, response, body) {
 ```python
 import requests
 
-url = "https://api.zujonow.com/v1/meetings/${meetingId}"
+url = "https://api.videosdk.live/v1/meetings/${meetingId}"
 
 headers = {'authorization': f'Bearer {YOUR_JWT_TOKEN}'}
 
@@ -273,7 +273,7 @@ print(response.text)
 require 'uri'
 require 'net/http'
 
-url = URI("https://api.zujonow.com/v1/meetings/${meetingId}")
+url = URI("https://api.videosdk.live/v1/meetings/${meetingId}")
 
 http = Net::HTTP.new(url.host, url.port)
 http.use_ssl = true

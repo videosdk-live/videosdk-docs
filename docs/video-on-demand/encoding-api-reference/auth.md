@@ -8,7 +8,7 @@ sidebar_position: 1
 
 The process of authentication is designed in such a way that it can be useful in both server and client side.
 
-First of all, you have to install either of the SDK to generate token. Next step is to generate a `jwtwebtoken` in programming environment you are working with.
+First of all, you have to install either of the SDK to generate token. Next step is to generate a `jsonwebtoken` in programming environment you are working with.
 
 ## Generate access token (NodeJS)
 
@@ -25,8 +25,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.get("/get-token", (req, res) => {
-  const API_KEY = process.env.ZUJONOW_API_KEY;
-  const SECRET_KEY = process.env.ZUJONOW_SECRET_KEY;
+  const API_KEY = process.env.VIDEOSDK_API_KEY;
+  const SECRET_KEY = process.env.VIDEOSDK_SECRET_KEY;
   const options = { expiresIn: "10m", algorithm: "HS256" };
   const payload = {
     apikey: API_KEY,

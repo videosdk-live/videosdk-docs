@@ -17,17 +17,70 @@ slug: introduction
 
 # Explore the dashboard
 
-## videosdk.live dashboard
+Dashboard will help you to monitor all the services and historical information. It also includes usage of all the services.
 
-Dashboard provides access to all the usage information and analytics for all the services. Dashboard offers easy to use quick operations such as creating API keys, uploading video to encode, go live directly from browser etc.
+## Overview
 
-![Low latency live streaming](/img/dashboard.jpg)
+### Overview of Dashboard
 
-## What it includes
+Get overall overview of the dashboard.
 
-1. Realtime and historical monitoring of usage
-2. Monthly free credits
-3. Quick operations
-4. Automatic billing
-5. Logs of all the usage information
-6. and many more.
+![Video SDK Home Dashboard](/img/tutorial/dashboard-home.jpg)
+
+### Generate your API keys
+
+To generate api keys visit, Setting > API Keys
+
+![Generate you API Key](/img/tutorial/api-keys-screen.jpg)
+
+## Sessions
+
+### Historical Sessions
+
+See all the historical and ongoing sessions and it's details, visit Meetings > Sessions
+
+![List down all sessions](/img/tutorial/list-session.jpg)
+
+### Session Details
+
+See all the details of the session
+
+![List down all sessions](/img/tutorial/list-sessions-details.jpg)
+
+### Historical Recordings
+
+See all the historical and ongoing recordings and it's details, visit Meetings > Recordings
+
+![List down all the recordings](/img/tutorial/list-recordings.jpg)
+
+## Video On Demand
+
+### Historical Encoding Jobs
+
+See all the historical and ongoing encoding jobs and it's details, visit Encoder Jobs > Encoding Jobs
+![List down all the encoding jobs](/img/tutorial/list-encoding-jobs.jpg)
+
+### Encoding Job Details
+
+Find all the details of encoding jobs by clicking on the list item.
+![List down all the encoding details](/img/tutorial/list-encoding-jobs-details.jpg)
+
+## Profile and Billing Information
+
+### Billing Information
+
+Manage all your billing information.
+
+![Manage billing details](/img/tutorial/billing-details.jpg)
+
+### List Invoices
+
+Manage all your invoices in single
+
+![Manage billing details](/img/tutorial/list-invoice.jpg)
+
+:::note
+
+Register at [app.videosdk.live](https://videosdk.live) to explore more.
+
+:::

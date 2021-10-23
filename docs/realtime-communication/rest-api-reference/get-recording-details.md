@@ -4,9 +4,7 @@ sidebar_position: 1
 
 # Get Recording Details
 
-## Using get recording details API
-
-You have to call simple API to list meeting details.
+Use the following Rest API to get recording details.
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -24,7 +22,7 @@ values={[
 
 ```js
 
-curl -L -X GET 'https://api.zujonow.com/v1/meeting-recordings/:id' \
+curl -L -X GET 'https://api.videosdk.live/v1/meeting-recordings/:id' \
 -H 'Authorization: $YOUR_JWT_TOKEN'
 
 ```
@@ -36,7 +34,7 @@ curl -L -X GET 'https://api.zujonow.com/v1/meeting-recordings/:id' \
 var request = require("request");
 var options = {
   method: "GET",
-  url: "https://api.zujonow.com/v1/meeting-recordings/:id",
+  url: "https://api.videosdk.live/v1/meeting-recordings/:id",
   headers: {
     Authorization: "$YOUR_JWT_TOKEN",
   },
@@ -53,7 +51,7 @@ request(options, function (error, response) {
 ```python
 import requests
 
-url = "https://api.zujonow.com/v1/meeting-recordings/:id"
+url = "https://api.videosdk.live/v1/meeting-recordings/:id"
 
 headers = {
   'Authorization': '$YOUR_JWT_TOKEN'
@@ -72,7 +70,7 @@ print(response.text)
 require "uri"
 require "net/http"
 
-url = URI("https://api.zujonow.com/v1/meeting-recordings/:id")
+url = URI("https://api.videosdk.live/v1/meeting-recordings/:id")
 
 https = Net::HTTP.new(url.host, url.port)
 https.use_ssl = true
@@ -112,7 +110,7 @@ puts response.read_body
       "type": "video",
       "createdAt": "2021-07-02T13:34:30.566Z",
       "updatedAt": "2021-07-02T13:34:30.566Z",
-      "fileUrl": "https://cdn.zujonow.com/encoded/videos/60df15dc1b5d6a8205573286/720.mp4",
+      "fileUrl": "https://cdn.videosdk.live/encoded/videos/60df15dc1b5d6a8205573286/720.mp4",
       "id": "60df15e61b5d6a3805573289"
   },
   "id": "60df15df7433b02e3d06653c"
@@ -143,6 +141,7 @@ import MethodListHeading from '@theme/MethodListHeading';
       <MethodListHeading heading="Properties" />
           <MethodListItemLabel name="userId"  type={"string"} />
           <MethodListItemLabel name="meetingId"  type={"string"} />
+          <MethodListItemLabel name="sessionId"  type={"string"} />
           <MethodListItemLabel name="origFileId"  type={"string"} />
           <MethodListItemLabel name="jobId"  type={"string"} />
           <MethodListItemLabel name="fileId"  type={"string"} />

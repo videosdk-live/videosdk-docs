@@ -59,10 +59,10 @@ import MethodListHeading from '@theme/MethodListHeading';
 
 ```js title="initMeeting"
 // Configure the token
-ZujoSDK.config(token)
+VideoSDK.config(token)
 
 // Initialize the meeting
-Meeting meeting = ZujoSDK.initMeeting({
+Meeting meeting = VideoSDK.initMeeting({
   context,
   meetingId, // required
   name, // required

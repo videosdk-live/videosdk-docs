@@ -18,31 +18,48 @@ module.exports = {
   overview: [
     {
       type: "category",
-      label: "GET STARTED",
-      items: ["overview/introduction"],
-      collapsed: false,
-    },
-    {
-      type: "category",
       label: "DASHBOARD",
-      items: ["overview/dashboard/introduction", "overview/dashboard/features"],
-      collapsed: false,
-    },
-    {
-      type: "category",
-      label: "REAL TIME COMMUNICATION",
       items: [
-        "overview/real-time-communication/introduction",
-        "overview/real-time-communication/features",
+        "overview/dashboard/getting-started",
+        //"overview/dashboard/features"
       ],
       collapsed: false,
     },
     {
       type: "category",
-      label: "LIVE STREAMING",
+      label: "VIDEO & AUDIO CALLING",
       items: [
-        "overview/live-streaming/introduction",
-        "overview/live-streaming/features",
+        "overview/video-and-audio-calling-api-sdk/getting-started",
+        "overview/video-and-audio-calling-api-sdk/architecture",
+      ],
+      collapsed: false,
+    },
+    {
+      type: "category",
+      label: "INTERACTIVE LIVE STREAMING",
+      items: [
+        "overview/interactive-live-streaming/getting-started",
+        "overview/interactive-live-streaming/architecture",
+      ],
+      collapsed: false,
+    },
+    // {
+    //   type: "category",
+    //   label: "REAL TIME COMMUNICATION",
+    //   items: [
+    //     "overview/real-time-communication/introduction",
+    //     // "overview/real-time-communication/features",
+    //   ],
+    //   collapsed: false,
+    // },
+    {
+      type: "category",
+      label: "STANDARD LIVE STREAMING",
+      items: [
+        //"overview/live-streaming/introduction",
+        // "overview/live-streaming/features",
+        "overview/live-streaming/getting-started",
+        "overview/live-streaming/architecture",
       ],
       collapsed: false,
     },
@@ -50,9 +67,193 @@ module.exports = {
       type: "category",
       label: "VIDEO ON DEMAND",
       items: [
-        "overview/video-on-demand/introduction",
-        "overview/video-on-demand/features",
+        // "overview/video-on-demand/introduction",
+        // "overview/video-on-demand/features",
+        "overview/video-on-demand/getting-started",
+        "overview/video-on-demand/architecture",
       ],
+      collapsed: false,
+    },
+  ],
+
+  // Guide to learn about each SDK
+  guideDashboard: [
+    {
+      type: "category",
+      label: "GUIDE",
+      items: ["guide/dashboard/getting-started"],
+      collapsed: false,
+    },
+  ],
+
+  guidePrebuiltVideoCalling: [
+    {
+      type: "category",
+      label: "GUIDE",
+      items: ["guide/prebuilt-video-and-audio-calling/getting-started"],
+      collapsed: false,
+    },
+    {
+      type: "category",
+      label: "SETUP",
+      items: [
+        "guide/prebuilt-video-and-audio-calling/signup-and-create-api",
+        "guide/prebuilt-video-and-audio-calling/client-setup",
+      ],
+      collapsed: false,
+    },
+    {
+      type: "category",
+      label: "FEATURES",
+      items: [
+        "guide/prebuilt-video-and-audio-calling/features/join-screen",
+        "guide/prebuilt-video-and-audio-calling/features/camera-controls",
+        "guide/prebuilt-video-and-audio-calling/features/mic-controls",
+        "guide/prebuilt-video-and-audio-calling/features/redirect-on-leave",
+        "guide/prebuilt-video-and-audio-calling/features/screenshare",
+        "guide/prebuilt-video-and-audio-calling/features/send-messages",
+        "guide/prebuilt-video-and-audio-calling/features/record-meeting",
+        "guide/prebuilt-video-and-audio-calling/features/go-live-social-media",
+        "guide/prebuilt-video-and-audio-calling/features/customize-branding",
+        "guide/prebuilt-video-and-audio-calling/features/customize-permissions",
+        "guide/prebuilt-video-and-audio-calling/features/whitelist-domain",
+      ],
+      collapsed: false,
+    },
+  ],
+
+  guideAudioAndVideoCalling: [
+    {
+      type: "category",
+      label: "GUIDE",
+      items: ["guide/video-and-audio-calling-api-sdk/getting-started"],
+      collapsed: false,
+    },
+    {
+      type: "category",
+      label: "SETUP",
+      items: [
+        "guide/video-and-audio-calling-api-sdk/signup-and-create-api",
+        "guide/video-and-audio-calling-api-sdk/server-setup",
+        {
+          type: "category",
+          label: "Client Setup",
+          items: [
+            "guide/video-and-audio-calling-api-sdk/supported-platforms",
+            "guide/video-and-audio-calling-api-sdk/javascript-sdk",
+            "guide/video-and-audio-calling-api-sdk/react-js-sdk",
+            "guide/video-and-audio-calling-api-sdk/react-native-android-sdk",
+            "guide/video-and-audio-calling-api-sdk/react-native-ios-sdk",
+            "guide/video-and-audio-calling-api-sdk/android-sdk",
+            "guide/video-and-audio-calling-api-sdk/ios-sdk",
+            "guide/video-and-audio-calling-api-sdk/flutter-sdk",
+          ],
+          collapsed: true,
+        },
+        // "guide/video-and-audio-calling-api-sdk/start-or-join-meeting",
+      ],
+      collapsed: false,
+    },
+    {
+      type: "category",
+      label: "FEATURES",
+      items: [
+        // "guide/video-and-audio-calling-api-sdk/features/initilize-meeting-factory",
+        "guide/video-and-audio-calling-api-sdk/features/start-join-meeting",
+        "guide/video-and-audio-calling-api-sdk/features/manage-participants",
+
+        "guide/video-and-audio-calling-api-sdk/features/leave-end-meeting",
+        "guide/video-and-audio-calling-api-sdk/features/camera-controls",
+        "guide/video-and-audio-calling-api-sdk/features/mic-controls",
+        "guide/video-and-audio-calling-api-sdk/features/screenshare",
+        "guide/video-and-audio-calling-api-sdk/features/send-messages",
+        "guide/video-and-audio-calling-api-sdk/features/record-meeting",
+        "guide/video-and-audio-calling-api-sdk/features/play-external-video",
+        "guide/video-and-audio-calling-api-sdk/features/go-live-social-media",
+        "guide/video-and-audio-calling-api-sdk/features/speaker-indication",
+      ],
+      collapsed: false,
+    },
+  ],
+
+  guideStandardLiveStreaming: [
+    {
+      type: "category",
+      label: "GUIDE",
+      items: ["guide/standard-live-streaming-api-sdk/getting-started"],
+      collapsed: false,
+    },
+    {
+      type: "category",
+      label: "SETUP",
+      items: [
+        "guide/standard-live-streaming-api-sdk/signup-and-create-api",
+        "guide/standard-live-streaming-api-sdk/authentication",
+      ],
+      collapsed: false,
+    },
+    {
+      type: "category",
+      label: "FEATURES",
+      items: [
+        "guide/standard-live-streaming-api-sdk/features/create-new-live-stream",
+        "guide/standard-live-streaming-api-sdk/features/go-live-with-rtmp",
+        "guide/standard-live-streaming-api-sdk/features/play-live-stream",
+        "guide/standard-live-streaming-api-sdk/features/record-live-stream",
+        "guide/standard-live-streaming-api-sdk/features/restream-social-media",
+        "guide/standard-live-streaming-api-sdk/features/fetch-listof-live-stream",
+        "guide/standard-live-streaming-api-sdk/features/get-live-stream-details",
+        "guide/standard-live-streaming-api-sdk/features/update-live-stream",
+      ],
+      collapsed: false,
+    },
+  ],
+
+  guideVideoOnDemand: [
+    {
+      type: "category",
+      label: "GUIDE",
+      items: ["guide/video-on-demand/getting-started"],
+      collapsed: false,
+    },
+    {
+      type: "category",
+      label: "SETUP",
+      items: [
+        "guide/video-on-demand/signup-and-create-api",
+        "guide/video-on-demand/authentication",
+      ],
+      collapsed: false,
+    },
+    {
+      type: "category",
+      label: "FEATURES",
+      items: [
+        {
+          type: "category",
+          label: "File",
+          items: [
+            "guide/video-on-demand/features/upload-file",
+            "guide/video-on-demand/features/list-all-files",
+            "guide/video-on-demand/features/get-file-details",
+            "guide/video-on-demand/features/delete-file",
+          ],
+          collapsed: false,
+        },
+        {
+          type: "category",
+          label: "Encoding",
+          items: [
+            "guide/video-on-demand/features/create-encoding-job",
+            "guide/video-on-demand/features/list-encoding-jobs",
+            "guide/video-on-demand/features/get-encoding-job-details",
+            "guide/video-on-demand/features/delete-encoding-job",
+          ],
+          collapsed: false,
+        },
+        "guide/video-on-demand/features/play-video",
+      ],
+
       collapsed: false,
     },
   ],
@@ -67,29 +268,7 @@ module.exports = {
       ],
       collapsed: false,
     },
-    /* {
-      type: "category",
-      label: "GET STARTED",
-      items: [
-        "realtime-communication/get-started/features",
-        //"realtime-communication/get-started/explore-console",
-        //"realtime-communication/get-started/embeded-meeting",
-        "realtime-communication/get-started/meetings-with-rest-api",
-        //"realtime-communication/get-started/customise-interface-ui-components",
-        "realtime-communication/get-started/integrate-mobile-tab-tv",
-        //"realtime-communication/get-started/what-next",
-      ],
-      collapsed: false,
-    },
-    {
-      type: "category",
-      label: "TUTORIALS",
-      items: [
-        "realtime-communication/tutorials/beginner-tutorial-js",
-        "realtime-communication/tutorials/beginner-tutorial-prebuilt-javascript",
-      ],
-      collapsed: false,
-    },*/
+
     {
       type: "category",
       label: "API REFERENCE",
@@ -103,6 +282,8 @@ module.exports = {
             "realtime-communication/rest-api-reference/create-join-meeting",
             "realtime-communication/rest-api-reference/list-all-meetings",
             "realtime-communication/rest-api-reference/get-meeting-details",
+            "realtime-communication/rest-api-reference/list-meeting-sessions",
+            "realtime-communication/rest-api-reference/get-session-details",
             "realtime-communication/rest-api-reference/list-recordings",
             "realtime-communication/rest-api-reference/get-recording-details",
             "realtime-communication/rest-api-reference/remove-recording",
@@ -197,6 +378,18 @@ module.exports = {
             "realtime-communication/sdk-reference/ios-sdk/participant-event-listener-class",
           ],
         },
+        {
+          type: "category",
+          label: "FLUTTER SDK",
+          collapsed: true,
+          items: [
+            "realtime-communication/sdk-reference/flutter-sdk/setup",
+            "realtime-communication/sdk-reference/flutter-sdk/meeting-builder-widget",
+            "realtime-communication/sdk-reference/flutter-sdk/meeting-class",
+            "realtime-communication/sdk-reference/flutter-sdk/participant-class",
+            "realtime-communication/sdk-reference/flutter-sdk/stream-class",
+          ],
+        },
       ],
     },
     {
@@ -211,6 +404,7 @@ module.exports = {
       collapsed: false,
     },
   ],
+
   livestreamingSidebar: [
     {
       type: "category",
@@ -254,6 +448,7 @@ module.exports = {
       ],
     },
   ],
+
   videoondemandSidebar: [
     {
       type: "category",
@@ -294,6 +489,7 @@ module.exports = {
       collapsed: false,
     },
   ],
+
   tutorials: [
     {
       type: "category",
@@ -344,65 +540,66 @@ module.exports = {
       collapsed: false,
     },
   ],
-  resources: [
-    {
-      type: "category",
-      label: "RESOURCES",
-      items: ["resources/overview"],
-      collapsed: false,
-    },
-    {
-      type: "category",
-      label: "CODE SAMPLES",
-      items: [
-        {
-          type: "category",
-          label: "RTC PREBUILT SDK",
-          items: [
-            //"resources/code-samples/real-time-communication/overview",
-            "resources/code-samples/real-time-communication/js-prebuilt-sdk",
-            "resources/code-samples/real-time-communication/angular-prebuilt-sdk",
-            "resources/code-samples/real-time-communication/react-prebuilt-sdk",
-            "resources/code-samples/real-time-communication/vue-prebuilt-sdk",
-            "resources/code-samples/real-time-communication/android-prebuilt-sdk",
-          ],
-          collapsed: false,
-        },
-        {
-          type: "category",
-          label: "RTC RAW SDK",
-          items: [
-            //"resources/code-samples/real-time-communication/overview",
-            "resources/code-samples/real-time-communication/node-js-auth",
-            "resources/code-samples/real-time-communication/react-js-sdk",
-            "resources/code-samples/real-time-communication/react-native-sdk",
-            "resources/code-samples/real-time-communication/android-sdk",
-          ],
-          collapsed: false,
-        },
-        {
-          type: "category",
-          label: "LIVE STREAMING",
-          items: [
-            //"resources/code-samples/live-streaming/overview",
-            "resources/code-samples/live-streaming/rtc-to-rtmp",
-            "resources/code-samples/live-streaming/live-streaming-react",
-            "resources/code-samples/live-streaming/live-streaming-react-native",
-          ],
-          collapsed: false,
-        },
-        {
-          type: "category",
-          label: "VIDEO ON DEMAND",
-          items: [
-            //"resources/code-samples/live-streaming/overview",
-            "resources/code-samples/video-on-demand/react-js-sdk",
-            "resources/code-samples/video-on-demand/react-native-sdk",
-          ],
-          collapsed: false,
-        },
-      ],
-      collapsed: false,
-    },
-  ],
+
+  // resources: [
+  //   {
+  //     type: "category",
+  //     label: "RESOURCES",
+  //     items: ["resources/overview"],
+  //     collapsed: false,
+  //   },
+  //   {
+  //     type: "category",
+  //     label: "CODE SAMPLES",
+  //     items: [
+  //       {
+  //         type: "category",
+  //         label: "RTC PREBUILT SDK",
+  //         items: [
+  //           //"resources/code-samples/real-time-communication/overview",
+  //           "resources/code-samples/real-time-communication/js-prebuilt-sdk",
+  //           "resources/code-samples/real-time-communication/angular-prebuilt-sdk",
+  //           "resources/code-samples/real-time-communication/react-prebuilt-sdk",
+  //           "resources/code-samples/real-time-communication/vue-prebuilt-sdk",
+  //           "resources/code-samples/real-time-communication/android-prebuilt-sdk",
+  //         ],
+  //         collapsed: false,
+  //       },
+  //       {
+  //         type: "category",
+  //         label: "RTC RAW SDK",
+  //         items: [
+  //           //"resources/code-samples/real-time-communication/overview",
+  //           "resources/code-samples/real-time-communication/node-js-auth",
+  //           "resources/code-samples/real-time-communication/react-js-sdk",
+  //           "resources/code-samples/real-time-communication/react-native-sdk",
+  //           "resources/code-samples/real-time-communication/android-sdk",
+  //         ],
+  //         collapsed: false,
+  //       },
+  //       {
+  //         type: "category",
+  //         label: "LIVE STREAMING",
+  //         items: [
+  //           //"resources/code-samples/live-streaming/overview",
+  //           "resources/code-samples/live-streaming/rtc-to-rtmp",
+  //           "resources/code-samples/live-streaming/live-streaming-react",
+  //           "resources/code-samples/live-streaming/live-streaming-react-native",
+  //         ],
+  //         collapsed: false,
+  //       },
+  //       {
+  //         type: "category",
+  //         label: "VIDEO ON DEMAND",
+  //         items: [
+  //           //"resources/code-samples/live-streaming/overview",
+  //           "resources/code-samples/video-on-demand/react-js-sdk",
+  //           "resources/code-samples/video-on-demand/react-native-sdk",
+  //         ],
+  //         collapsed: false,
+  //       },
+  //     ],
+  //     collapsed: false,
+  //   },
+  // ],
 };
