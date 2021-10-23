@@ -1,8 +1,8 @@
 ---
-title: Sign up for free Video SDK account
+title: Sign up for free Video SDK account Video on demand (VOD)
 hide_title: false
 hide_table_of_contents: false
-description: Video SDK Sign up. Get started with 10,000 minutes free every month! Programmable Video SDKs and Rest APIs to build up scalable video conferencing applications.
+description: Video on demand (VOD) Sign up for free account create a Video on Demand (VOD) Platform for Business It's our go-to reference whether you're just getting started.
 sidebar_label: Signup & Create API Key
 pagination_label: Signup & Create API Key
 keywords:
@@ -14,8 +14,6 @@ image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
 slug: signup-and-create-api
 ---
-
-# Sign Up & Create API Key
 
 This guide will help you to generate API key and secret from dashboard.
 

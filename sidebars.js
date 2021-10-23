@@ -192,9 +192,30 @@ module.exports = {
     {
       type: "category",
       label: "GUIDE",
+      items: ["guide/standard-live-streaming-api-sdk/getting-started"],
+      collapsed: false,
+    },
+    {
+      type: "category",
+      label: "SETUP",
       items: [
-        "guide/standard-live-streaming/getting-started",
-        "guide/standard-live-streaming/architecture",
+        "guide/standard-live-streaming-api-sdk/signup-and-create-api",
+        "guide/standard-live-streaming-api-sdk/authentication",
+      ],
+      collapsed: false,
+    },
+    {
+      type: "category",
+      label: "FEATURES",
+      items: [
+        "guide/standard-live-streaming-api-sdk/features/create-new-live-stream",
+        "guide/standard-live-streaming-api-sdk/features/go-live-with-rtmp",
+        "guide/standard-live-streaming-api-sdk/features/play-live-stream",
+        "guide/standard-live-streaming-api-sdk/features/record-live-stream",
+        "guide/standard-live-streaming-api-sdk/features/restream-social-media",
+        "guide/standard-live-streaming-api-sdk/features/fetch-listof-live-stream",
+        "guide/standard-live-streaming-api-sdk/features/get-live-stream-details",
+        "guide/standard-live-streaming-api-sdk/features/update-live-stream",
       ],
       collapsed: false,
     },
@@ -204,10 +225,47 @@ module.exports = {
     {
       type: "category",
       label: "GUIDE",
+      items: ["guide/video-on-demand/getting-started"],
+      collapsed: false,
+    },
+    {
+      type: "category",
+      label: "SETUP",
       items: [
-        "guide/video-on-demand/getting-started",
-        "guide/video-on-demand/architecture",
+        "guide/video-on-demand/signup-and-create-api",
+        "guide/video-on-demand/authentication",
       ],
+      collapsed: false,
+    },
+    {
+      type: "category",
+      label: "FEATURES",
+      items: [
+        {
+          type: "category",
+          label: "File",
+          items: [
+            "guide/video-on-demand/features/upload-file",
+            "guide/video-on-demand/features/list-all-files",
+            "guide/video-on-demand/features/get-file-details",
+            "guide/video-on-demand/features/delete-file",
+          ],
+          collapsed: false,
+        },
+        {
+          type: "category",
+          label: "Encoding",
+          items: [
+            "guide/video-on-demand/features/create-encoding-job",
+            "guide/video-on-demand/features/list-encoding-jobs",
+            "guide/video-on-demand/features/get-encoding-job-details",
+            "guide/video-on-demand/features/delete-encoding-job",
+          ],
+          collapsed: false,
+        },
+        "guide/video-on-demand/features/play-video",
+      ],
+
       collapsed: false,
     },
   ],
@@ -495,65 +553,65 @@ module.exports = {
     },
   ],
 
-  resources: [
-    {
-      type: "category",
-      label: "RESOURCES",
-      items: ["resources/overview"],
-      collapsed: false,
-    },
-    {
-      type: "category",
-      label: "CODE SAMPLES",
-      items: [
-        {
-          type: "category",
-          label: "RTC PREBUILT SDK",
-          items: [
-            //"resources/code-samples/real-time-communication/overview",
-            "resources/code-samples/real-time-communication/js-prebuilt-sdk",
-            "resources/code-samples/real-time-communication/angular-prebuilt-sdk",
-            "resources/code-samples/real-time-communication/react-prebuilt-sdk",
-            "resources/code-samples/real-time-communication/vue-prebuilt-sdk",
-            "resources/code-samples/real-time-communication/android-prebuilt-sdk",
-          ],
-          collapsed: false,
-        },
-        {
-          type: "category",
-          label: "RTC RAW SDK",
-          items: [
-            //"resources/code-samples/real-time-communication/overview",
-            "resources/code-samples/real-time-communication/node-js-auth",
-            "resources/code-samples/real-time-communication/react-js-sdk",
-            "resources/code-samples/real-time-communication/react-native-sdk",
-            "resources/code-samples/real-time-communication/android-sdk",
-          ],
-          collapsed: false,
-        },
-        {
-          type: "category",
-          label: "LIVE STREAMING",
-          items: [
-            //"resources/code-samples/live-streaming/overview",
-            "resources/code-samples/live-streaming/rtc-to-rtmp",
-            "resources/code-samples/live-streaming/live-streaming-react",
-            "resources/code-samples/live-streaming/live-streaming-react-native",
-          ],
-          collapsed: false,
-        },
-        {
-          type: "category",
-          label: "VIDEO ON DEMAND",
-          items: [
-            //"resources/code-samples/live-streaming/overview",
-            "resources/code-samples/video-on-demand/react-js-sdk",
-            "resources/code-samples/video-on-demand/react-native-sdk",
-          ],
-          collapsed: false,
-        },
-      ],
-      collapsed: false,
-    },
-  ],
+  // resources: [
+  //   {
+  //     type: "category",
+  //     label: "RESOURCES",
+  //     items: ["resources/overview"],
+  //     collapsed: false,
+  //   },
+  //   {
+  //     type: "category",
+  //     label: "CODE SAMPLES",
+  //     items: [
+  //       {
+  //         type: "category",
+  //         label: "RTC PREBUILT SDK",
+  //         items: [
+  //           //"resources/code-samples/real-time-communication/overview",
+  //           "resources/code-samples/real-time-communication/js-prebuilt-sdk",
+  //           "resources/code-samples/real-time-communication/angular-prebuilt-sdk",
+  //           "resources/code-samples/real-time-communication/react-prebuilt-sdk",
+  //           "resources/code-samples/real-time-communication/vue-prebuilt-sdk",
+  //           "resources/code-samples/real-time-communication/android-prebuilt-sdk",
+  //         ],
+  //         collapsed: false,
+  //       },
+  //       {
+  //         type: "category",
+  //         label: "RTC RAW SDK",
+  //         items: [
+  //           //"resources/code-samples/real-time-communication/overview",
+  //           "resources/code-samples/real-time-communication/node-js-auth",
+  //           "resources/code-samples/real-time-communication/react-js-sdk",
+  //           "resources/code-samples/real-time-communication/react-native-sdk",
+  //           "resources/code-samples/real-time-communication/android-sdk",
+  //         ],
+  //         collapsed: false,
+  //       },
+  //       {
+  //         type: "category",
+  //         label: "LIVE STREAMING",
+  //         items: [
+  //           //"resources/code-samples/live-streaming/overview",
+  //           "resources/code-samples/live-streaming/rtc-to-rtmp",
+  //           "resources/code-samples/live-streaming/live-streaming-react",
+  //           "resources/code-samples/live-streaming/live-streaming-react-native",
+  //         ],
+  //         collapsed: false,
+  //       },
+  //       {
+  //         type: "category",
+  //         label: "VIDEO ON DEMAND",
+  //         items: [
+  //           //"resources/code-samples/live-streaming/overview",
+  //           "resources/code-samples/video-on-demand/react-js-sdk",
+  //           "resources/code-samples/video-on-demand/react-native-sdk",
+  //         ],
+  //         collapsed: false,
+  //       },
+  //     ],
+  //     collapsed: false,
+  //   },
+  // ],
 };

@@ -21,5 +21,5 @@ A collection of tutorials for you
 
 1. [Quickstart RTC with Prebuilt JavaScript](/docs/tutorials/realtime-communication/prebuilt-sdk/quickstart-prebuilt-js)
 2. [Quickstart RTC with Plain JavaScript](/docs/tutorials/realtime-communication/js-sdk/quickstart-js)
-3. [Quickstart Live Streaming with REST API](/docs/tutorials/realtime-communication/prebuilt-sdk/quickstart-prebuilt-js)
+3. [Quickstart Live Streaming with REST API](/docs/tutorials/live-streaming/api/quickstart-rest-api)
 4. [Quickstart Video On Demand with REST API](/docs/tutorials/video-on-demand/api/quickstart-rest-api)
