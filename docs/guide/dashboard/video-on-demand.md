@@ -21,30 +21,30 @@ This page Contains two major section [Overview](/docs/guide/dashboard/video-on-d
 
 ## 1. Overview
 
-It contains Video on Demand (VOD) properties listed below:
+It displays the overall uses of Video on Demand (VOD) minutes :
 
 ### A. Encoding
 
-It's completely dependent on video duration, if a particular video duration is 10 mins and we are performing encoding then, our encoding minutes will be consider 10 mins.
+It's completely dependent on video duration, if a particular video duration is 10 mins and we are performing encoding then our encoding minutes will be consider 10 mins.
 
 ### B. Storage
 
 It indicates the total number of stored video duration in minutes.
 
-For example, we have stored 3 videos with 10 mins, 25 mins and 2 mins duration, so, our storage minutes will be consider sum of 3 videos duration which is 37 mins
+For example, we have stored 3 videos with 10 mins, 25 mins and 2 mins duration. So our storage minutes will be consider sum of 3 videos duration which is 37 mins
 
 ### C. Stream
 
-COMING SOON
+Streaming Minutes are the total number of minutes of video content that have been streamed by your viewers.
 
 ![Video SDK Home Dashboard](/img/dashboard/vod-overview.png)
 
 ## 2. Videos
 
-This section contains listing of encode video in tabular format, which contains properties such as
+This section contains listing of encoded video in tabular format, which contains below properties :
 
 1. **Video Id** - The unique identifier of particular video.
-2. **Video Details** - Includes basic information such as video duration (Hours, Minutes, Second) and video size.
+2. **Video Details** - Includes basic information such as **Video Duration** (Hours, Minutes, Second) and **Video Size**.
 3. **Status** - Indicates the staus of encodig which can be **Queued**, **Processing**, **Completed** and **Failed**.
 4. **Encoding Duration** - Indicates the number of time taken by encoding.
 5. **Created At** - Creation date.
@@ -53,12 +53,14 @@ This section contains listing of encode video in tabular format, which contains 
 
 By pressing video item you can see particular item details. The video details divided in to four section which are listed below :
 
-1. **Original Video** - This section contains Original video URL, Video Duration, Video Resolution and Video File Format.
+1. **Original Video** - This section contains **Original Video URL**, **Video Duration**, **Video Resolution** and **Video File Format**.
 
 - You can download original video by pressing URL and also you can copy video URL by clicking copy button.
 
-2. **Encoded Video** - This section contains Encoded video Format, Actual Resolution, Encoded video size and copy button, whcih can help you to copy encoded video URL.
-3. **Thumbnails** - This section contains the Video Thumbnail Info, which you have specify during creating encoding job.
+2. **Encoded Video** - This section contains **Encoded video Format**, **Actual Resolution**, **Encoded video size** and **Copy Button** whcih can help you to copy encoded video URL.
+3. **Thumbnails** - This section contains the **Video Thumbnail Info** which you have specify during creating encoding job.
 4. **Webhook Url** - After completion of encoding, it will redirect to provided webhook URL **[Optional]**.
 
 ![Video SDK Home Dashboard](/img/dashboard/vod-sidebar.png)
+
+The last section is for [API Reference](https://docs.videosdk.live/docs/video-on-demand/intro/) only.

@@ -17,7 +17,7 @@ slug: getting-started
 
 # Explore the Dashboard
 
-A Dashboard is a visual display of all of your data. While it can be used in all kinds of different ways, its primary intention is to provide information at-a-glance, such as your monthly, weekly and daily usage of Meeting & Video on Demand minutes.
+A Dashboard is a visual display of all of your data. While it can be used in all kinds of different ways, its primary intention is to provide information at-a-glance, such as your monthly, weekly and daily usage of Meeting & Video on Demand (VOD) minutes and Remaining credit balance.
 
 ## Sections
 
@@ -26,28 +26,34 @@ import Card from '@theme/Card';
 <div class="container guide-steps-block">
   <div class="row ">
     <div class="col col--6">
-      <Card heading="1. Dashboard" link="/docs/guide/prebuilt-video-and-audio-calling/signup-and-create-api" description="Lorem ipsum" />
+      <Card heading="1. Dashboard" link="/docs/guide/dashboard/dashboard-home" description="Get overview of Dashboard." />
     </div>
     <div class="col col--6" >
-      <Card heading="2. Meetings" link="/docs/guide/prebuilt-video-and-audio-calling/client-setup" description="Lorem ipsum"  />
+      <Card heading="2. Meetings" link="/docs/guide/dashboard/meetings" description="Get overview of Sessions."  />
     </div>
   </div>
   <div class="row " >
     <div class="col col--6">
-      <Card heading="3. Video on Demand" link="/docs/guide/prebuilt-video-and-audio-calling/features/join-screen" description="Lorem ipsum" />
+      <Card heading="3. Video on Demand" link="/docs/guide/dashboard/video-on-demand" description="Get overview of VOD." />
     </div>
     <div class="col col--6">
-      <Card heading="4. Live Streaming" link="/docs/guide/prebuilt-video-and-audio-calling/features/join-screen" description="Lorem ipsum" />
+      <Card heading="4. Live Streaming" link="/docs/guide/dashboard/live-streaming" description="Get overview of Live Stream." />
     </div>
     
   </div>
   <div class="row " >
     <div class="col col--6">
-      <Card heading="5. Settings" link="/docs/guide/prebuilt-video-and-audio-calling/features/join-screen" description="Lorem ipsum" />
+      <Card heading="5. Profile & Billing Info." link="/docs/guide/dashboard/settings" description="Get overview of Profile & Billing Information." />
     </div>
     
   </div>
 </div>
+
+:::info
+
+Register at [app.videosdk.live](https://app.videosdk.live) to explore more.
+
+::: -->
 
 <!--
 ## Overview

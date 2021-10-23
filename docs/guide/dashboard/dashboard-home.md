@@ -15,7 +15,7 @@ sidebar_position: 1
 slug: dashboard-home
 ---
 
-Dashboard home page provides the user a global overview, with access to the most important data such as Over all usage of service with date modification, list of working APIs and total credit balance.
+Dashboard home page provides the user a global overview, with access to the most important data such as overall usage of service with date modification, list of working APIs and total credit balance.
 
 This page Contains five major section such as [Usage](/docs/guide/dashboard/dashboard-home#1-usage), [API key](/docs/guide/dashboard/dashboard-home#2-api-keys), [Credit Balance](/docs/guide/dashboard/dashboard-home#3-credit-balance), [Resources](/docs/guide/dashboard/dashboard-home#4-resources) and [Support](/docs/guide/dashboard/dashboard-home#5-support)
 
@@ -43,19 +43,19 @@ By pressing view all button on top of the section, you will redirect to [<ins>**
 
 In this section you can find your credit balance, it works as your digital wallet.
 
-You can use your credit balance in monthly billing.
+You can use your credit balance for paying monthly invoices.
 
 ![Video SDK Home Dashboard](/img/dashboard/home-credit-balance.png)
 
 ## 4. Resources
 
-This section contains link of documentation such as Overview, Guide, Api reference and code sample.
+This section contains link of documentation such as **Overview**, **Guide**, **Api Reference** and **Code Sample**.
 
 ![Video SDK Home Dashboard](/img/dashboard/home-resources.png)
 
 ## 5. Support
 
-This section majorly contains overall support of videosdk.live, you can reach out us on email, Wahtsapp number and Phone number as well.
+This section majorly contains overall support of videosdk.live, you can reach out us on **email**, **Wahtsapp number** and **Phone number** as well.
 
 You can also join our discord community where you can get regular updates of videosdk.live.
 

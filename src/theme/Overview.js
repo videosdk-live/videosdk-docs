@@ -20,24 +20,28 @@ function Overview() {
               <div class="col col--6">
                 <CardLinks
                   title="Prebuilt Video & Audio Calling SDK"
-                  text="Embed video meetings into an application in few minutes."
+                  text="Invest 90 seconds to develop video & audio calling on web & app"
                   img="/img/icons/libraries/prebuilt-icon.svg"
                   links={[
                     {
                       linkName: "Guide",
-                      link: "/docs/guide/prebuilt-video-and-audio-calling/getting-started",
+                      link:
+                        "/docs/guide/prebuilt-video-and-audio-calling/getting-started",
                     },
                     {
                       linkName: "API reference",
-                      link: "/docs/realtime-communication/sdk-reference/prebuilt-sdk-js/setup",
+                      link:
+                        "/docs/realtime-communication/sdk-reference/prebuilt-sdk-js/setup",
                     },
                     {
                       linkName: "Tutorial",
-                      link: "/docs/tutorials/realtime-communication/prebuilt-sdk/quickstart-prebuilt-js",
+                      link:
+                        "/docs/tutorials/realtime-communication/prebuilt-sdk/quickstart-prebuilt-js",
                     },
                     {
                       linkName: "Code samples",
-                      link: "/docs/resources/overview#1-rtc-prebuilt-sdk-code-samples",
+                      link:
+                        "/docs/resources/overview#1-rtc-prebuilt-sdk-code-samples",
                     },
                   ]}
                 />
@@ -45,12 +49,13 @@ function Overview() {
               <div class="col col--6">
                 <CardLinks
                   title="Custom Video & Audio Calling SDK"
-                  text="Low latency video,audio and data communication."
+                  text="Add 100% customizable video & audio conferencing in native app"
                   img="/img/icons/libraries/video-call-icon.svg"
                   links={[
                     {
                       linkName: "Guide",
-                      link: "/docs/guide/video-and-audio-calling-api-sdk/getting-started",
+                      link:
+                        "/docs/guide/video-and-audio-calling-api-sdk/getting-started",
                     },
                     {
                       linkName: "API reference",
@@ -58,11 +63,13 @@ function Overview() {
                     },
                     {
                       linkName: "Tutorial",
-                      link: "/docs/tutorials/realtime-communication/js-sdk/quickstart-js",
+                      link:
+                        "/docs/tutorials/realtime-communication/js-sdk/quickstart-js",
                     },
                     {
                       linkName: "Code samples",
-                      link: "/docs/resources/overview#2-rtc-raw-sdk-code-samples",
+                      link:
+                        "/docs/resources/overview#2-rtc-raw-sdk-code-samples",
                     },
                   ]}
                 />
@@ -72,12 +79,13 @@ function Overview() {
               <div class="col col--6">
                 <CardLinks
                   title="Standard Live Stream API"
-                  text="Standard RTMP Live Streaming with encoding and playback."
+                  text="RTMP-in based Live Stream API, including encoding & playback"
                   img="/img/icons/libraries/live-streaming-icon.svg"
                   links={[
                     {
                       linkName: "Guide",
-                      link: "/docs/guide/standard-live-streaming/getting-started",
+                      link:
+                        "/docs/guide/standard-live-streaming/getting-started",
                     },
                     {
                       linkName: "API reference",
@@ -85,11 +93,13 @@ function Overview() {
                     },
                     {
                       linkName: "Tutorial",
-                      link: "/docs/tutorials/live-streaming/api/quickstart-rest-api",
+                      link:
+                        "/docs/tutorials/live-streaming/api/quickstart-rest-api",
                     },
                     {
                       linkName: "Code samples",
-                      link: "/docs/resources/overview#3-live-stream-code-samples",
+                      link:
+                        "/docs/resources/overview#3-live-stream-code-samples",
                     },
                   ]}
                 />
@@ -97,7 +107,7 @@ function Overview() {
               <div class="col col--6">
                 <CardLinks
                   title="Video on Demand API"
-                  text="Low latency video,audio and data communication"
+                  text="Video hosting API, with encoding for elite UX"
                   img="/img/icons/libraries/vod-icon.svg"
                   links={[
                     {
@@ -110,11 +120,13 @@ function Overview() {
                     },
                     {
                       linkName: "Tutorial",
-                      link: "/docs/tutorials/video-on-demand/api/quickstart-rest-api",
+                      link:
+                        "/docs/tutorials/video-on-demand/api/quickstart-rest-api",
                     },
                     {
                       linkName: "Code samples",
-                      link: "/docs/resources/overview#4-video-on-demand-code-samples",
+                      link:
+                        "/docs/resources/overview#4-video-on-demand-code-samples",
                     },
                   ]}
                 />
