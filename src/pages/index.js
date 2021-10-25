@@ -9,9 +9,6 @@ import Demos from "@theme/Demos";
 import Overview from "../theme/Overview";
 
 export default function Home() {
-  useLayoutEffect(() => {
-    window.location.href = "docs/overview/introduction";
-  }, []);
   return (
     <Layout
       title={`Live Streaming SDK/API | Real time Communication SDK`}

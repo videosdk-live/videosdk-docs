@@ -47,8 +47,8 @@ module.exports = {
         {
           position: "left",
           label: "Overview",
-          to: "docs/overview/introduction",
-          activeBaseRegex: "docs/overview/introduction",
+          to: "/",
+          activeBaseRegex: "/$",
         },
         {
           position: "left",
