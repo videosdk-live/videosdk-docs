@@ -84,28 +84,30 @@ module.exports = {
       items: ["guide/dashboard/getting-started"],
       collapsed: false,
     },
-    {
-      type: "category",
-      label: "Pages",
-      items: [
-        "guide/dashboard/dashboard-home",
-        "guide/dashboard/meetings",
-        "guide/dashboard/video-on-demand",
-        "guide/dashboard/live-streaming",
-        "guide/dashboard/profile-and-billing",
-        "guide/dashboard/start-tour-and-quick-start",
-      ],
-      collapsed: false,
-    },
-    {
-      type: "category",
-      label: "How to ?",
-      items: [
-        "guide/dashboard/create-api-key",
-        "guide/dashboard/domain-whitelisting",
-      ],
-      collapsed: false,
-    },
+    // {
+    //   type: "category",
+    //   label: "Pages",
+    //   items: [
+    //     "guide/dashboard/dashboard-home",
+    //     "guide/dashboard/dashboard-home",
+
+    //     "guide/dashboard/meetings",
+    //     "guide/dashboard/video-on-demand",
+    //     "guide/dashboard/live-streaming",
+    //     "guide/dashboard/profile-and-billing",
+    //     "guide/dashboard/start-tour-and-quick-start",
+    //   ],
+    //   collapsed: false,
+    // },
+    // {
+    //   type: "category",
+    //   label: "How to ?",
+    //   items: [
+    //     "guide/dashboard/create-api-key",
+    //     "guide/dashboard/domain-whitelisting",
+    //   ],
+    //   collapsed: false,
+    // },
   ],
 
   guidePrebuiltVideoCalling: [
