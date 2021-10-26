@@ -25,7 +25,7 @@ slug: recording-meeting
 Record meeting allows participants to record video & audio during the meeting. The recording files are available in customer dashboard.
 Any participant can start/stop recording any time during the meeting.
 
-### How it works. ?
+### How it works ?
 
 - While `recordingEnabled` value set to `true`, you will show recording button as display in below image.
 

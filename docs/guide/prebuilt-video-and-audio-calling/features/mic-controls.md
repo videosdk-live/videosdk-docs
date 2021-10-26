@@ -22,7 +22,7 @@ slug: mic-controls
 
 Different mic control permissions allows participant to enable/disable their own mic and other participant's mic too & also can set default participant's mic settings, when meeting start.
 
-### How it works. ?
+### How it works ?
 
 - While `participantCanToggleSelfMic` value set to `true`, you can enable/disable your own mic as display in below image.
 

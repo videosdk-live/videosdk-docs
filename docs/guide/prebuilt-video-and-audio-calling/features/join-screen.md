@@ -23,13 +23,13 @@ To Communicate with other participant's audio or video call, you will need to jo
 
 This guide will provide an overview of how to setup join feature in VideoSDK prebuilt.
 
-### How it works. ?
+### How it works ?
 
-- While JoinScreen `visible` value set to `true`, the below screen will display before the meeting start.
+- While JoinScreen `visible` value is set to `true`, the below screen will display before the meeting start.
 
 ![Go live with VideoSDK](/img/prebuilt/prebuilt-join-screen.png)
 
-- While JoinScreen `visible` value set to `false`, the below screen will display before the meeting start and you have to click any where to start meeting.
+- While JoinScreen `visible` value is set to `false`, the below screen will display before the meeting start and you have to click any where to start meeting.
 
 ![Go live with VideoSDK](/img/prebuilt/prebuilt-click-anywhere.png)
 

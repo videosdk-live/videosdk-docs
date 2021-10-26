@@ -24,7 +24,7 @@ slug: camera-controls
 
 Different webcam control permissions allows participant to enable/disable their own webcam and other participant's webcam too & also can set default participant's webcam settings, when meeting start.
 
-### How it works. ?
+### How it works ?
 
 - While `participantCanToggleSelfWebcam` value set to `true`, you can enable/disable your own webcam as display in below image.
 

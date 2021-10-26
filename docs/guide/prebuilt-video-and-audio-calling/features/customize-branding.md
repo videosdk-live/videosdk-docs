@@ -21,7 +21,7 @@ slug: customize-branding
 
 This feature allows you to embed your branding to top of the meeting .
 
-### How it works. ?
+### How it works ?
 
 - While `brandingEnabled` value set to `true`, you will show branding as display in below image.
 
