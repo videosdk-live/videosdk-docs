@@ -423,11 +423,11 @@ Please refer the [example code](https://github.com/videosdk-live/videosdk-rtc-an
 <TabItem value="ios">
 
 ```js
-// show local participant in the grid if available
-guard let localParticipant = self.meeting?.localParticipant else { return }
+// get local participant
+let localParticipant = self.meeting?.localParticipant
 
-// event listener for self
-localParticipant.addEventListener(self)
+// get other participants
+let otherParticipants = self.meeting?.participants
 ```
 
 </TabItem>
@@ -817,63 +817,159 @@ const {
 <TabItem value="ios">
 
 ```js
- /// A new participant joined
-    func onParticipantJoined(_ participant: Participant) {
-        // add listener
-        participant.addEventListener(self)
+/// keep track of video participants including self to show in UI
+// ex. we can show participants as grid in collectionView.
+private var participants: [Participant] = []
 
-        // add new participant to list and show in grid
-        participants.append(participant)
-        addParticipantToGridView()
+/// keep track of mic
+private var micEnabled = true
+
+/// keep track of video
+private var videoEnabled = true
+
+/// keep track of screenshare
+private var screenShareEnabled = false
+
+
+// MARK: - MeetingEventListener
+
+extension MeetingViewController: MeetingEventListener {
+
+    /// Meeting started
+    func onMeetingJoined() {
+
+        // handle for local participant
+        if let localParticipant = self.meeting?.localParticipant { 
+            // event listener for self
+            localParticipant.addEventListener(self)
+
+            // add to list
+            participants.append(localParticipant)
+
+            // show in ui
+            // ex. add to collecionView
+            // addParticipantToGridView()
+        }
     }
 
+    /// A new participant joined
+    func onParticipantJoined(_ participant: Participant) {
+        // add new participant to list
+        participants.append(participant)
+        
+        // add listener
+        participant.addEventListener(self)
+        
+        // show in ui
+        // ex. add to collectionView
+        // addParticipantToGridView()
+    }
+    
     /// A participant left from the meeting
     /// - Parameter participant: participant object
     func onParticipantLeft(_ participant: Participant) {
         // remove listener
         participant.removeEventListener(self)
-
+        
         // remove from list and update ui
         guard let index = self.participants.firstIndex(where: { $0.id == participant.id }) else {
             return
         }
-
-        // remove participant from list and grid
+        
+        // remove participant from list
         participants.remove(at: index)
-        removeParticipantFromGridView(at: index)
+        
+        // hide from ui
+        // ex. remove from collectionview
+        // removeParticipantFromGridView(at: index)
     }
+}
 
+// MARK: - ParticipantEventListener
+
+extension MeetingViewController: ParticipantEventListener {
+ 
     /// Participant has enabled mic, video or screenshare
     /// - Parameters:
     ///   - stream: enabled stream object
     ///   - participant: participant object
     func onStreamEnabled(_ stream: MediaStream, forParticipant participant: Participant) {
-        // show stream in cell
-        if let cell = self.cellForParticipant(participant) {
-            cell.updateView(forStream: stream, enabled: true)
-        }
+        
+        switch stream.kind {
+        case .audio:
+            // update ui to show that participant's mic is enabled
+            // ex. update collectionView cell
 
-        if participant.isLocal {
-            // turn on controls for local participant
-            self.buttonControlsView.updateButtons(forStream: stream, enabled: true)
+            if participant.isLocal {
+                // update mic flag for local participant
+                micEnabled = true
+            }
+
+        case .video:
+            // show track in videoView: RTCMTLVideoView
+            if let track = stream.track as? RTCVideoTrack {
+                track.add(videoView)
+            }
+
+            if participant.isLocal {
+                // update video flag for local participant
+                videoEnabled = true
+            }
+
+        case .share:
+            // show track in screenShareView: RTCMTLVideoView
+            if let track = stream.track as? RTCVideoTrack {
+                track.add(screenShareView)
+            }
+
+            if participant.isLocal {
+                // update screenShare flag for local participant
+                screenShareEnabled = true
+            }
         }
     }
-
+    
     /// Participant has disabled mic, video or screenshare
     /// - Parameters:
     ///   - stream: disabled stream object
     ///   - participant: participant object
     func onStreamDisabled(_ stream: MediaStream, forParticipant participant: Participant) {
-        // hide stream in cell
-        if let cell = self.cellForParticipant(participant) {
-            cell.updateView(forStream: stream, enabled: false)
-        }
+        
+        switch stream.kind {
+        case .audio:
+            // update ui to show that participant's mic is disabled
+            // ex. update collectionView cell
 
-        if participant.isLocal {
-            // turn off controls for local participant
-            self.buttonControlsView.updateButtons(forStream: stream, enabled: false)
+            if participant.isLocal {
+                // update mic flag for local participant
+                micEnabled = false
+            }
+
+        case .video:
+            // remove track from videoView: RTCMTLVideoView
+            if let track = stream.track as? RTCVideoTrack {
+                track.remove(videoView)
+            }
+
+            if participant.isLocal {
+                // update video flag for local participant
+                videoEnabled = false
+            }
+
+        case .share:
+            // remove track from screenShareView: RTCMTLVideoView
+            if let track = stream.track as? RTCVideoTrack {
+                track.remove(screenShareView)
+            }
+
+            if participant.isLocal {
+                // update screenShare flag for local participant
+                screenShareEnabled = false
+            }
         }
     }
+}
+
 ```
 
 </TabItem>

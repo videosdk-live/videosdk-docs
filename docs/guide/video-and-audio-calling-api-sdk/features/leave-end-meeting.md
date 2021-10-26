@@ -94,9 +94,19 @@ const onPress = () => {
 <TabItem value="ios">
 
 ```js
-/// End Meeting
-buttonControlsView.onEndMeetingTapped = {
-  self.meeting?.leave()
+@IBAction func leaveMeetingButtonTapped(_ sender: Any) {
+    // leave meeting
+    self.meeting?.leave()
+}
+
+/// Events: 
+// called after user leaves the meeting
+func onMeetingLeft() {
+    // cleanup: remove listeners
+    meeting?.localParticipant.removeEventListener(self)
+    meeting?.removeEventListener(self)
+
+    // dismiss meeting controller
 }
 ```
 

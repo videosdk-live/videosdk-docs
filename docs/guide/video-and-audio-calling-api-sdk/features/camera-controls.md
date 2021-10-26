@@ -113,13 +113,25 @@ const onPress = () => {
 <TabItem value="ios">
 
 ```js
-/// Video tap
-buttonControlsView.onVideoTapped = { on in
-  if on {
-    self.meeting?.disableWebcam()
-  } else {
-    self.meeting?.enableWebcam()
-  }
+@IBAction func videoButtonTapped(_ sender: Any) {
+    if !videoEnabled {
+        // enable webcam/camera
+        self.meeting?.enableWebcam()
+    } else {
+        // disable webcam/camera
+        self.meeting?.disableWebcam()
+    }
+}
+
+/// keep track of camera position
+private var cameraPosition = CameraPosition.front
+
+@IBAction func cameraButtonTapped(_ sender: Any) {
+    cameraPosition.toggle()
+
+    // switch camera to front/back
+    // Values: .front, .back
+    self.meeting?.switchWebcam(position: cameraPosition)
 }
 ```
 

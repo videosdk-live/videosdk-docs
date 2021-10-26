@@ -90,7 +90,21 @@ COMING SOON!
 <TabItem value="ios">
 
 ```js
-COMING SOON!
+/// webhook url
+private let recordingWebhookUrl = "<webhook-url-here>"
+
+/// keep track of recording
+private var recordingStarted = false
+
+@IBAction func recordButtonTapped(_ sender: Any) {
+    if !recordingStarted {
+        // start recording
+        meeting?.startRecording(webhookUrl: recordingWebhookUrl)
+    } else {
+        // stop recording
+        meeting?.stopRecording()
+    }
+}
 ```
 
 </TabItem>
@@ -180,7 +194,19 @@ COMING SOON!
 <TabItem value="ios">
 
 ```js
-COMING SOON!
+/// Called after recording starts
+func onRecordingStarted() {
+    recordingStarted = true
+    
+    // show indication that meeting recording is started.
+}
+
+/// Caled after recording stops
+func onRecordingStoppped() {
+    recordingStarted = false
+    
+    // hide meeting recording indication.
+}
 ```
 
 </TabItem>

@@ -375,16 +375,44 @@ public class JoinActivity extends AppCompatActivity {
 <TabItem value="ios">
 
 ```js
-/// Server Token URL
-fileprivate let getTokenUrl = "<URL to retrieve token>"
+// Update server url here.
+let LOCAL_SERVER_URL = "http://192.168.0.101:9000"
 
-/**
-  Retrieve token from your server
-*/
-URLSession.shared.dataTask(with: URL(string: getTokenUrl)!) { data, response, error in
-  if let data = data, let json = try? JSON(data: data) {
-      self.serverToken = json["token"].stringValue
-  }
+class APIService {
+    
+    class func getToken(completion: @escaping (Result<String, Error>) -> Void) {
+        var url = URL(string: LOCAL_SERVER_URL)!
+        url = url.appendingPathComponent("get-token")
+        
+        URLSession.shared.dataTask(with: url) { data, response, error in
+            if let data = data, let token = data.toJSON()["token"] as? String {
+                completion(.success(token))
+            } else if let err = error {
+                completion(.failure(err))
+            }
+        }
+        .resume()
+    }
+    
+    class func createMeeting(token: String, completion: @escaping (Result<String, Error>) -> Void) {
+        var url = URL(string: LOCAL_SERVER_URL)!
+        url = url.appendingPathComponent("create-meeting")
+        
+        let params = ["token": token]
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.httpBody = try? JSONSerialization.data(withJSONObject: params, options: [])
+        
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            if let data = data, let meetingId = data.toJSON()["meetingId"] as? String {
+                completion(.success(meetingId))
+            } else if let err = error {
+                completion(.failure(err))
+            }
+        }
+        .resume()
+    }
 }
 ```
 
@@ -604,45 +632,28 @@ public class MainActivity extends AppCompatActivity {
 <TabItem value="ios">
 
 ```js
-import VideoSDK
+// import sdk
+import VideoSDKRTC
 
-// Configure parameters
-struct MeetingData {
-    let token: String
-    let name: String
-    let meetingId: String
-    let micEnabled: Bool
-    let cameraEnabled: Bool
-}
+class MeetingViewController: UIViewController {
 
-class MeetingViewController: UICollectionViewController {
-    var meetingData: MeetingData!
+    // meeting
+    private var meeting: Meeting?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Configure authentication token got earlier
-        VideoSDK.config(token: meetingData.token)
-    }
-
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+        VideoSDK.config(token: <Authentication-token>)
 
         // create a new meeting instance
         meeting = VideoSDK.initMeeting(
-            meetingId: meetingData.meetingId,
-            participantName: meetingData.name,
-            micEnabled: meetingData.micEnabled,
-            webcamEnabled: meetingData.cameraEnabled
+            meetingId: <meetingId>, // required
+            participantName: <participantName>, // required
+            micEnabled: <flag-to-enable-mic>, // optional, default: true
+            webcamEnabled: <flag-to-enalbe-camera> // optional, default: true
         )
     }
-
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-
-        meeting = nil
-    }
-
 }
 ```
 

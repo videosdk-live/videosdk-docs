@@ -101,13 +101,14 @@ const onPress = () => {
 <TabItem value="ios">
 
 ```js
-/// Mic tap
-buttonControlsView.onMicTapped = { on in
-  if on {
-    self.meeting?.muteMic()
-  } else {
-    self.meeting?.unmuteMic()
-  }
+@IBAction func micButtonTapped(_ sender: Any) {
+    if !micEnabled {
+        // enable/unmute mic
+        self.meeting?.unmuteMic()
+    } else {
+        // disable/mute mic
+        self.meeting?.muteMic()
+    }
 }
 ```
 
