@@ -7,9 +7,9 @@ function Overview() {
       <div class="row">
         <div class="col">
           <div class="docItemContainer_node_modules-@docusaurus-theme-classic-lib-next-theme-DocItem-styles-module"></div>
-          {/* <h1 class="h1Heading_node_modules-@docusaurus-theme-classic-lib-next-theme-Heading-styles-module">
+          <h1 class="h1Heading_node_modules-@docusaurus-theme-classic-lib-next-theme-Heading-styles-module">
             Overview
-          </h1> */}
+          </h1>
           <p>
             Video SDK provides all the services to build interactive video
             product. It includes realtime communication, standard live
@@ -20,7 +20,7 @@ function Overview() {
               <div class="col col--6">
                 <CardLinks
                   title="Prebuilt Video & Audio Calling SDK"
-                  text="Embed video meetings into an application in few minutes."
+                  text="Invest 90 seconds to develop video & audio calling on web & app"
                   img="/img/icons/libraries/prebuilt-icon.svg"
                   links={[
                     {
@@ -49,7 +49,7 @@ function Overview() {
               <div class="col col--6">
                 <CardLinks
                   title="Custom Video & Audio Calling SDK"
-                  text="Low latency video,audio and data communication."
+                  text="Add 100% customizable video & audio conferencing in native app"
                   img="/img/icons/libraries/video-call-icon.svg"
                   links={[
                     {
@@ -79,13 +79,13 @@ function Overview() {
               <div class="col col--6">
                 <CardLinks
                   title="Standard Live Stream API"
-                  text="Standard RTMP Live Streaming with encoding and playback."
+                  text="RTMP-in based Live Stream API, including encoding & playback"
                   img="/img/icons/libraries/live-streaming-icon.svg"
                   links={[
                     {
                       linkName: "Guide",
                       link:
-                        "/docs/guide/standard-live-streaming/getting-started",
+                        "/docs/guide/standard-live-streaming-api-sdk/getting-started",
                     },
                     {
                       linkName: "API reference",
@@ -107,7 +107,7 @@ function Overview() {
               <div class="col col--6">
                 <CardLinks
                   title="Video on Demand API"
-                  text="Low latency video,audio and data communication"
+                  text="Video hosting API, with encoding for elite UX"
                   img="/img/icons/libraries/vod-icon.svg"
                   links={[
                     {
