@@ -41,18 +41,18 @@ import Card from '@theme/Card';
 <div class="container guide-steps-block">
   <div class="row ">
     <div class="col col--6">
-      <Card heading="1. Signup & Create API" link="/docs/guide/video-on-demand/signup-and-create-api" description="Generate your API key." />
+      <Card heading="1. Signup & Create API" link="/docs/guide/video-on-demand/signup-and-create-api" description="Generate Your API Key" />
     </div>
     <div class="col col--6" >
-      <Card heading="2. Authentication" link="/docs/guide/video-on-demand/authentication" description="Integrate server with API key."  />
+      <Card heading="2. Authentication" link="/docs/guide/video-on-demand/authentication" description="Integrate server with API key"  />
     </div>
   </div>
    <div class="row ">
     <div class="col col--6">
-      <Card heading="3. File" link="/docs/guide/video-on-demand/features/upload-file" description="Upload Video File." />
+      <Card heading="3. File" link="/docs/guide/video-on-demand/features/upload-file" description="Upload Video File" />
     </div>
     <div class="col col--6">
-      <Card heading="4. Encoding" link="/docs/guide/video-on-demand/features/create-encoding-job" description="Encode Video File." />
+      <Card heading="4. Encoding" link="/docs/guide/video-on-demand/features/create-encoding-job" description="Encode Video File" />
     </div>
   </div>
 </div>

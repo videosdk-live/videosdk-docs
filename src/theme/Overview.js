@@ -107,7 +107,7 @@ function Overview() {
               <div class="col col--6">
                 <CardLinks
                   title="Video on Demand API"
-                  text="Video hosting API, with encoding for elite UX"
+                  text="Video hosting API with multiple resolution support and global delivery"
                   img="/img/icons/libraries/vod-icon.svg"
                   links={[
                     {
