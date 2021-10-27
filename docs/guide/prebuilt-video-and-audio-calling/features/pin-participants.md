@@ -31,7 +31,7 @@ If no participant is pinned, then the default meeting layout will automatically 
 
 ### 1. GRID Layout
 
-This layout will be default layout if no participants are pinned, it will look same as a normal meeting grid layout, when any participant is pinned that participant will be moved on top of the main screen grid above all non pinned participants
+This layout is default layout if no participants are pinned, it will look same as a normal meeting grid layout, when any participant is pinned that participant will be moved on top of the main screen grid above all non pinned participants
 
 ![prebuilt-grid](/img/prebuilt/prebuilt-grid.png)
 
@@ -41,7 +41,7 @@ While screenshare as well the main view will contain only screenshare media but 
 
 ### 2. SIDEBAR Layout
 
-This layout will have one main screen view and other sidebar grid layout beside main screen view. Only pinned participant will be visible in this layout all unpinned users will not be visible inside the grid. if more then one participant is pinned then the first participant who was pinned will appear in main screen layout and all other remaining pinned particiapants will be visible in sidebar.
+This layout will have one main screen view and other sidebar grid layout. Only pinned participant will be visible in this layout, all unpinned participants will not be visible in this layout. If more than one participant is pinned then the first participant who was pinned will appear in main screen layout and all other remaining pinned particiapants will be visible in sidebar.
 
 ![prebuilt-sidebar](/img/prebuilt/prebuilt-sidebar.png)
 
@@ -55,7 +55,7 @@ This layout will only contain main screen layout, multiple pinned participants w
 
 ![prebuilt-spotlight](/img/prebuilt/prebuilt-spotlight.png)
 
-If any pinned participant started screenshare then only screenshare view will be visible in main screen, no webcam view will be visible when any pinned participant started screenshare if the layout is set to `SPOTLIGHT`.
+If any pinned participant started screenshare then only screenshare view will be visible in main screen, no webcam view will be visible when any pinned participant started screenshare.
 
 ![prebuilt-spotlight-share](/img/prebuilt/prebuilt-spotlight-share.png)
 

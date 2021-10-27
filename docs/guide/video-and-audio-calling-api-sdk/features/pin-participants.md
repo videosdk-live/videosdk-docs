@@ -41,22 +41,14 @@ values={[
 <TabItem value="js">
 
 ```js
-const {
-    cam: false,
-    share: false
-} = participant?.pinState;
-
+const { cam, share } = participant?.pinState;
 ```
 
 </TabItem>
 <TabItem value="react">
 
 ```js
-const {
-    cam: false,
-    share: false
-} = participant?.pinState;
-
+const { cam, share } = participant?.pinState;
 ```
 
 </TabItem>
@@ -94,13 +86,13 @@ COMING SOON!
 </Tabs>
 
 :::note
-`pin()` and `unpin()` functions will take `object` or `null` as an argument. Pin will be effective for both webcam and screenshare of that participant.
+`pin()` and `unpin()` functions will take `string` or `null` as an argument. Pin will be effective for both webcam and screenshare of that participant.
 
-Suppose you want to pin or unpin only webcam of that participant then you can pass `{ cam: true }`, else if you want to pin or unpin only screenshare of that participant then you can pass `{ share: true }`.
+Suppose you want to pin or unpin only webcam of that participant then you can pass `CAM`, else if you want to pin or unpin only screenshare of that participant then you can pass `SHARE`.
 
-You can also pass `{ cam: true, share: true }` if you want to `pin` or `unpin` both webcam and screenshare media of that user, or passing `null` or nothing as an argument will also work in the same way.
+You can also pass `SHARE_AND_CAM` if you want to `pin` or `unpin` both webcam and screenshare media of that user, or passing `null` or nothing as an argument will also work in the same way.
 
-If any participant's webcam is pinned but not screenshare, then calling `pin({ share: true })` will not override `{cam: true}`, but the new pinState of that participant will be `{ cam: true, share: true }`.  
+If any participant's webcam is pinned but not screenshare, then calling `pin("SHARE")` the new pinState of that participant will be `{ cam: true, share: true }`.  
 :::
 
 ### Pin And Unpin a Participant
@@ -124,20 +116,20 @@ const onPress = () => {
   participant.pin();
 
   // Pin webcam of that participant
-  participant.pin({ cam: true });
+  participant.pin("CAM");
 
   // Pin screenshare of that participant
-  participant.pin({ share: true });
+  participant.pin("SHARE");
 
   //
   // Unpin both webcam and screenshare of that participant
   participant.unpin();
 
   // Unpin webcam of that participant
-  participant.unpin({ cam: true });
+  participant.unpin("CAM");
 
   // Unpin screenshare of that participant
-  participant.unpin({ share: true });
+  participant.unpin("SHARE");
 };
 ```
 
@@ -150,20 +142,20 @@ const onPress = () => {
   participant.pin();
 
   // Pin webcam of that participant
-  participant.pin({ cam: true });
+  participant.pin("CAM");
 
   // Pin screenshare of that participant
-  participant.pin({ share: true });
+  participant.pin("SHARE");
 
   //
   // Unpin both webcam and screenshare of that participant
   participant.unpin();
 
   // Unpin webcam of that participant
-  participant.unpin({ cam: true });
+  participant.unpin("CAM");
 
   // Unpin screenshare of that participant
-  participant.unpin({ share: true });
+  participant.unpin("SHARE");
 };
 ```
 
