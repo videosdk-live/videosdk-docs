@@ -57,6 +57,8 @@ import MethodListHeading from '@theme/MethodListHeading';
       <MethodListItemLabel name="disableMic()"  type={"undefined"} />
       <MethodListItemLabel name="enableWebcam()"  type={"undefined"} />
       <MethodListItemLabel name="disableWebcam()"  type={"undefined"} />
+      <MethodListItemLabel name="pin(SHARE_AND_CAM | CAM | SHARE | null)"  type={"undefined"} />
+      <MethodListItemLabel name="unpin(SHARE_AND_CAM | CAM | SHARE | null)"  type={"undefined"} />
       <MethodListItemLabel name="on(eventType: string)"  type={"undefined"} />
       <MethodListItemLabel name="off(eventType: string)"  type={"undefined"} />
     </MethodListGroup>

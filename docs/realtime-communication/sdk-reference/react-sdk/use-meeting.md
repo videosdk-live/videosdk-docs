@@ -52,6 +52,7 @@ import MethodListHeading from '@theme/MethodListHeading';
       <MethodListItemLabel name="onLiveStreamStopped" option={"optional"} type={"event"} />
       <MethodListItemLabel name="onVideoStateChanged" option={"optional"} type={"event"} />
       <MethodListItemLabel name="onVideoSeeked" option={"optional"} type={"event"} />
+      <MethodListItemLabel name="onPinStateChanged" option={"optional"} type={"event"} />
     </MethodListGroup>
   </MethodListItemLabel>
 </MethodListGroup>
@@ -69,6 +70,7 @@ import MethodListHeading from '@theme/MethodListHeading';
       <MethodListItemLabel name="onMainParticipantChanged" type={"event"} />
       <MethodListItemLabel name="activeSpeakerId" type={"string"} />
       <MethodListItemLabel name="participants" type={"Map<Participant>"} />
+      <MethodListItemLabel name="pinnedParticipants" type={"Map<string, { cam: bool, share: bool }}>"} />
       <MethodListItemLabel name="presenterId" type={"string"} />
       <MethodListItemLabel name="localMicOn" type={"boolean"} />
       <MethodListItemLabel name="localWebcamOn" type={"boolean"} />
