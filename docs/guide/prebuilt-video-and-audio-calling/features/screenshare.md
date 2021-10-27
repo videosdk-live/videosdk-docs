@@ -24,7 +24,7 @@ slug: screenshare
 
 Screen sharing allows any participant who wants to share either the complete screen, a specific window or, a browser tab during the meeting.
 
-### How it works. ?
+### How it works ?
 
 - While `screenShareEnabled` value set to `true`, you will show screen share button as display in below image.
 

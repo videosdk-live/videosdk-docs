@@ -14,7 +14,7 @@ slug: upload-file
 
 # Upload File
 
-This guide will provide an overview of how to upload video/image using generated token in previous step [Authentication](/docs/guide/video-on-demand/authentication).
+This guide will provide an overview of how to upload video/image using generated token , for token generation you can follow [Authentication](/docs/guide/video-on-demand/authentication).
 
 Upload file API provides end-to-end secure way to upload your file directly to our servers from your client app.
 

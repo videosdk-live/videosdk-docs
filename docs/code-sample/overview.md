@@ -46,3 +46,14 @@ A collection of Code Samples for you to explore and learn.
 
 - [Video On Demand React Code Sample](https://github.com/videosdk-live/videosdk-vod-react-api-example)
 - [Video On Demand React Native Code Sample](https://github.com/videosdk-live/videosdk-vod-react-native-api-example)
+
+### 5. Auth API Server
+
+- [Dotnet Auth API Server Code Sample](https://github.com/videosdk-live/videosdk-rtc-api-server-examples/tree/main/dotnet)
+- [Go Auth API Server Code Sample](https://github.com/videosdk-live/videosdk-rtc-api-server-examples/tree/main/go)
+- [Java Auth API Server Code Sample](https://github.com/videosdk-live/videosdk-rtc-api-server-examples/tree/main/java)
+- [NodeJs Auth API Server Code Sample](https://github.com/videosdk-live/videosdk-rtc-api-server-examples/tree/main/nodejs)
+- [Php Auth API Server Code Sample](https://github.com/videosdk-live/videosdk-rtc-api-server-examples/tree/main/php)
+- [Python Auth API Server Code Sample](https://github.com/videosdk-live/videosdk-rtc-api-server-examples/tree/main/python)
+- [Ruby Auth API Server Code Sample](https://github.com/videosdk-live/videosdk-rtc-api-server-examples/tree/main/ruby)
+- [Rust Auth API Server Code Sample](https://github.com/videosdk-live/videosdk-rtc-api-server-examples/tree/main/rust)

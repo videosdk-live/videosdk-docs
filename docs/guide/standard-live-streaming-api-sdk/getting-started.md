@@ -39,7 +39,7 @@ import Card from '@theme/Card';
 <div class="container guide-steps-block">
   <div class="row ">
     <div class="col col--6">
-      <Card heading="1. Signup & Create API" link="/docs/guide/standard-live-streaming-api-sdk/signup-and-create-api" description="Generate your API key." />
+      <Card heading="1. Signup & Create API" link="/docs/guide/standard-live-streaming-api-sdk/signup-and-create-api" description="Generate Your API Key" />
     </div>
     <div class="col col--6" >
       <Card heading="2. Authentication" link="/docs/guide/standard-live-streaming-api-sdk/authentication" description="Generate Access Token."  />
@@ -47,7 +47,7 @@ import Card from '@theme/Card';
   </div>
   <div class="row " >
     <div class="col col--6">
-      <Card heading="3. Create Live Stream" link="/docs/guide/standard-live-streaming-api-sdk/features/create-new-live-stream" description="Setup Live Stream." />
+      <Card heading="3. Create Live Stream" link="/docs/guide/standard-live-streaming-api-sdk/features/create-new-live-stream" description="Setup Live Stream" />
     </div>
     
   </div>
