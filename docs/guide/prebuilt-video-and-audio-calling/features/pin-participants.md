@@ -18,7 +18,7 @@ slug: pin-participants
 
 This feature allows participants to pin self or other participants in the meeting.
 
-- `canPin`: If it is true then that participant can pin or unpin other participants in the meeting, by default it is set to `false`.
+- `allowed`: If it is true then that participant can pin or unpin other participants in the meeting, by default it is set to `false`.
 - `layout`: It should be a any of `GRID` or `SPOTLIGHT` or `SIDEBAR`, by default it is set to `GRID`.
 
 :::note
@@ -65,7 +65,7 @@ If any pinned participant started screenshare then only screenshare view will be
 const config = {
   // ...
   pin: {
-    canPin: true,
+    allowed: true,
     layout: "SPOTLIGHT",
   },
   // ...
