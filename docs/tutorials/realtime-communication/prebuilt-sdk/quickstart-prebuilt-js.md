@@ -98,6 +98,11 @@ Create an `index.html` file and add the following `<script>` tag at the end of y
         title: "Daily scrum", // Meeting title
         meetingUrl: window.location.href, // Meeting joining url
       },
+
+      pin: {
+        allowed: true, // participant can pin any participant in meeting
+        layout: "SPOTLIGHT", // meeting layout - GRID | SPOTLIGHT | SIDEBAR
+      },
     };
 
     meeting.init(config);

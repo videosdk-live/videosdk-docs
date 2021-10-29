@@ -18,7 +18,7 @@ slug: pin-participants
 
 # Pin Participants
 
-In any meeting for large number of participants, if you want to only show one or two participant(s) on main screen then you you can pin that perticipants so that viewers can only focus upon that participants only.
+In any meeting with large number of participants, if you want to show only one or two participant(s) on main screen then you can pin that perticipants so that viewers can only focus upon that participants only.
 
 This guide will provide an overview of how to pin or unpin any participants in a meeting.
 
@@ -195,7 +195,7 @@ COMING SOON!
 
 ### pin-state-changed Event
 
-Whenever any participant got pinned or unpinned but any participant, `pin-state-changed` event will be triggered.
+Whenever any participant got pinned or unpinned by any participant, `pin-state-changed` event will be triggered.
 
 <Tabs
 defaultValue="js"
