@@ -29,7 +29,7 @@ This guide will provide an overview of how to setup join feature in VideoSDK pre
 
 ![Go live with VideoSDK](/img/prebuilt/prebuilt-join-screen.png)
 
-- While JoinScreen `visible` value is set to `false`, the below screen will display before the meeting start and you have to click any where to start meeting.
+- While JoinScreen `visible` value is set to `false`, the below screen will display before the meeting start and you have to click any where to start the meeting.
 
 ![Go live with VideoSDK](/img/prebuilt/prebuilt-click-anywhere.png)
 

@@ -24,9 +24,9 @@ Different mic control permissions allows participant to enable/disable their own
 
 ### How it works ?
 
-- While `participantCanToggleSelfMic` value set to `true`, you can enable/disable your own mic as display in below image.
+- While `participantCanToggleSelfMic` value is set to `true`, you can enable/disable your own mic as display in below image.
 
-- While `participantCanToggleSelfMic` value set to `false`, the below mic button will not appear.
+- While `participantCanToggleSelfMic` value is set to `false`, the below mic button will not appear.
 
 ![Go live with VideoSDK](/img/prebuilt/prebuilt-mic.png)
 
