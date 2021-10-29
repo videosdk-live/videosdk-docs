@@ -64,6 +64,7 @@ import MethodListHeading from '@theme/MethodListHeading';
       <MethodListItemLabel name="isLocal" option={"optional"} type={"boolean"} />
       <MethodListItemLabel name="isActiveSpeaker" option={"optional"} type={"boolean"} />
       <MethodListItemLabel name="isMainParticipant" option={"optional"} type={"boolean"} />
+      <MethodListItemLabel name="pinState" option={"optional"} type={"{ cam: bool, share: bool }"} />
       <MethodListItemLabel name="setQuality()" option={"optional"} type={"callback"} />
       <MethodListItemLabel name="enableMic()" option={"optional"} type={"callback"} />
       <MethodListItemLabel name="disableMic()" option={"optional"} type={"callback"} />

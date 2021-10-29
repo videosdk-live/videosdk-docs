@@ -46,6 +46,7 @@ import MethodListHeading from '@theme/MethodListHeading';
       <MethodListItemLabel name="onChatMessage(data)" option={"optional"} type={"callback"} />
       <MethodListItemLabel name="onMeetingJoined()" option={"optional"} type={"callback"} />
       <MethodListItemLabel name="onMeetingLeft()" option={"optional"} type={"callback"} />
+      <MethodListItemLabel name="onPinStateChanged()" option={"optional"} type={"event"} />
       <MethodListItemLabel name="function as child" option={"optional"} type={"function"} description="You can subscribe to all the function and properties." >
       </MethodListItemLabel>
     </MethodListGroup>
