@@ -98,13 +98,18 @@ Create an `index.html` file and add the following `<script>` tag at the end of y
         title: "Daily scrum", // Meeting title
         meetingUrl: window.location.href, // Meeting joining url
       },
+
+      pin: {
+        allowed: true, // participant can pin any participant in meeting
+        layout: "SPOTLIGHT", // meeting layout - GRID | SPOTLIGHT | SIDEBAR
+      },
     };
 
     meeting.init(config);
   });
 
   script.src =
-    "https://sdk.videosdk.live/rtc-js-prebuilt/0.1.5/rtc-js-prebuilt.js";
+    "https://sdk.videosdk.live/rtc-js-prebuilt/0.1.15/rtc-js-prebuilt.js";
   document.getElementsByTagName("head")[0].appendChild(script);
 </script>
 ```

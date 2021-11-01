@@ -57,6 +57,7 @@ import MethodListHeading from '@theme/MethodListHeading';
       <MethodListItemLabel name="mainParticipantId" type={"string"} />
       <MethodListItemLabel name="localParticipant"  type={"Participant"} />
       <MethodListItemLabel name="participants" type={"Map<string, Participant>"} />
+      <MethodListItemLabel name="pinnedParticipants" type={"Map<string, { cam: bool, share: bool }}>"} />
       <MethodListItemLabel name="messages"  type={"Array<{senderId: string, text: string, timestamp: number}>"} />
     </MethodListGroup>
   </MethodListItemLabel>
@@ -82,6 +83,7 @@ import MethodListHeading from '@theme/MethodListHeading';
       <MethodListItemLabel name="video-seeked"  type={"event"} />
       <MethodListItemLabel name="livestream-started"  type={"event"} />
       <MethodListItemLabel name="livestream-stopped"  type={"event"} />
+      <MethodListItemLabel name="pin-state-changed"  type={"event"} />
     </MethodListGroup>
   </MethodListItemLabel>
 </MethodListGroup>
