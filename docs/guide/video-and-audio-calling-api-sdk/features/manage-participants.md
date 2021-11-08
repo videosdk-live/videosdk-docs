@@ -33,7 +33,7 @@ You can acces localParticipant from the [meeting object](/docs/guide/video-and-a
 | displayName   | string  | The name you define during the meeting initialization. |
 | local         | boolean | Indicates the participant is local or not.             |
 | quality       | string  | Indicates the participant streams quality.             |
-| Streams       | Map     | Returns Video & Audio Streams.                       |
+| Streams       | Map     | Returns Video & Audio Streams.                         |
 
 ### Streams Map properties
 
@@ -254,13 +254,8 @@ const participants = meeeting.participants;
 const ParticipantView = ({ participantId }) => {
   /** useParticipant Hooks which accept `participantId`
     as parameter then return participant properties such as displayName, webcamOn, micOn etc.  */
-  const {
-    displayName,
-    webcamStream,
-    webcamOn,
-    micOn,
-    isActiveSpeaker,
-  } = useParticipant(participantId);
+  const { displayName, webcamStream, webcamOn, micOn, isActiveSpeaker } =
+    useParticipant(participantId);
 
   return (
     <RTCView
@@ -544,12 +539,12 @@ class LocalParticipantState extends State<LocalParticipant> {
               child: Text("enableWebcam"),
             ),
             ElevatedButton(
-              onPressed: widget.meeting.disableMic,
-              child: Text("disableMic"),
+              onPressed: widget.meeting.muteMic,
+              child: Text("muteMic"),
             ),
             ElevatedButton(
-              onPressed: widget.meeting.enableMic,
-              child: Text("enableMic"),
+              onPressed: widget.meeting.unmuteMic,
+              child: Text("unmuteMic"),
             ),
             ElevatedButton(
               onPressed: widget.meeting.join,

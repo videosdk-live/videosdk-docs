@@ -116,12 +116,12 @@ buttonControlsView.onMicTapped = { on in
 
 ```js
 ElevatedButton(
-  onPressed: meeting.disableMic,
-  child: Text("disableMic"),
+  onPressed: meeting.unmuteMic,
+  child: Text("unmuteMic"),
 ),
 ElevatedButton(
-  onPressed: meeting.enableMic,
-  child: Text("enableMic"),
+  onPressed: meeting.muteMic,
+  child: Text("muteMic"),
 ),
 ```
 

@@ -48,7 +48,13 @@ import MethodListHeading from '@theme/MethodListHeading';
       <MethodListItemLabel name="meeting-left"  type={"void"} />      
       <MethodListItemLabel name="participant-joined"  type={"participant"} />
       <MethodListItemLabel name="participant-left"  type={"participantId"} />
-    </MethodListGroup>
+      <MethodListItemLabel name="recording-started" type={"void"} />
+      <MethodListItemLabel name="recording-stopped" type={"void"} />
+      <MethodListItemLabel name="livestream-started" type={"void"} />
+      <MethodListItemLabel name="livestream-stopped" type={"void"} />
+      <MethodListItemLabel name="speaker-changed" type={"void"} />
+      <MethodListItemLabel name="presenter-changed" type={"void"} />
+      </MethodListGroup>
   </MethodListItemLabel>
 </MethodListGroup>
 
@@ -60,8 +66,14 @@ import MethodListHeading from '@theme/MethodListHeading';
       <MethodListHeading heading="Methods" />
       <MethodListItemLabel type={"void"} name="disableWebcam()" />
       <MethodListItemLabel type={"void"} name="enableWebcam()" />
-      <MethodListItemLabel type={"void"} name="disableMic()" />
-      <MethodListItemLabel type={"void"} name="enableMic()" />
+      <MethodListItemLabel type={"void"} name="muteMic()" />
+      <MethodListItemLabel type={"void"} name="unmuteMic()" />
+      <MethodListItemLabel type={"void"} name="getWebcams()"  />
+      <MethodListItemLabel type={"void"} name="getMics()"  />
+      <MethodListItemLabel type={"void"} name="startRecording()" />
+      <MethodListItemLabel type={"void"} name="stopRecording()" />
+      <MethodListItemLabel type={"void"} name="startLivestream()" />
+      <MethodListItemLabel type={"void"} name="stopLivestream()" />
       <MethodListItemLabel type={"void"} name="join()" />
       <MethodListItemLabel type={"void"} name="leave()" />
       <MethodListItemLabel type={"void"} name="on(String event, Function handler)" />
