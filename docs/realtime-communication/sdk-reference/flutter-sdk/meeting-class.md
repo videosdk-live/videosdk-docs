@@ -70,6 +70,7 @@ import MethodListHeading from '@theme/MethodListHeading';
       <MethodListItemLabel type={"void"} name="unmuteMic()" />
       <MethodListItemLabel type={"void"} name="getWebcams()"  />
       <MethodListItemLabel type={"void"} name="getMics()"  />
+      <MethodListItemLabel type={"void"} name="changeWebcam()"  />
       <MethodListItemLabel type={"void"} name="startRecording()" />
       <MethodListItemLabel type={"void"} name="stopRecording()" />
       <MethodListItemLabel type={"void"} name="startLivestream()" />
