@@ -117,7 +117,10 @@ func onSpeakerChanged(participantId: String?) {
 <TabItem value="flutter">
 
 ```js
-COMING SOON!
+meeting.on('speaker-changed', (activeSpeakerId) {
+  print("participantId => $activeSpeakerId");
+});
+
 ```
 
 </TabItem>

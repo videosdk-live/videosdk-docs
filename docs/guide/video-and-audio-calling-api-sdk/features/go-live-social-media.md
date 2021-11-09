@@ -126,7 +126,16 @@ private var livestreamStarted = false
 <TabItem value="flutter">
 
 ```js
-COMING SOON!
+// Start Live Stream
+meeting.startLivestream([
+  {
+    url: "rtmp://a.rtmp.youtube.com/live2",
+    streamKey: "streamKey1",
+  },
+]);
+
+// Stop Live Stream
+meeting?.stopLivestream();
 ```
 
 </TabItem>
@@ -228,7 +237,14 @@ func onLivestreamStopped() {
 <TabItem value="flutter">
 
 ```js
-COMING SOON!
+meeting.on("livestream-started", () {
+  print("meeting livestream started");
+});
+//
+meeting.on("livestream-stopped", () {
+  print("meeting livestream stopped");
+});
+
 ```
 
 </TabItem>

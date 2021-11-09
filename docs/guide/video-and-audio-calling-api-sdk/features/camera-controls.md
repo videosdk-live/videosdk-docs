@@ -147,6 +147,14 @@ ElevatedButton(
   onPressed: meeting.enableWebcam,
   child: Text("enableWebcam"),
 ),
+ElevatedButton(
+  onPressed:  () {
+    meeting?.changeWebcam("<device-id>")
+  },
+  child: Text("changeWebcam"),
+),
+
+
 
 // changeWebcam() method is coming soon in flutter.
 ```

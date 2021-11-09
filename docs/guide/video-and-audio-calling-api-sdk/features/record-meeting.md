@@ -111,7 +111,10 @@ private var recordingStarted = false
 <TabItem value="flutter">
 
 ```js
-COMING SOON!
+// Start Recording
+meeting.startRecording('<webhookUrl>');
+// Stop Recording
+meeting.stopRecording(),
 ```
 
 </TabItem>
@@ -213,7 +216,13 @@ func onRecordingStoppped() {
 <TabItem value="flutter">
 
 ```js
-COMING SOON!
+meeting.on("recording-started", () {
+  print("meeting recording started");
+});
+//
+meeting.on("recording-stopped", () {
+  print("meeting recording stopped");
+});
 ```
 
 </TabItem>
