@@ -26,9 +26,9 @@ Different webcam control permissions allows participant to enable/disable their 
 
 ### How it works ?
 
-- While `participantCanToggleSelfWebcam` value set to `true`, you can enable/disable your own webcam as display in below image.
+- While `participantCanToggleSelfWebcam` value is set to `true`, you can enable/disable your own webcam as display in below image.
 
-- While `participantCanToggleSelfWebcam` value set to `false`, the below webcam button will not appear.
+- While `participantCanToggleSelfWebcam` value is set to `false`, the below webcam button will not appear.
 
 ![Go live with VideoSDK](/img/prebuilt/prebuilt-webcam.png)
 

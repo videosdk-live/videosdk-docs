@@ -23,9 +23,9 @@ This feature allows you to embed your branding to top of the meeting .
 
 ### How it works ?
 
-- While `brandingEnabled` value set to `true`, you will show branding as display in below image.
+- While `brandingEnabled` value is set to `true`, you will see branding as shown in below image.
 
-- While `brandingEnabled` value set to `false`, the branding will not appear.
+- While `brandingEnabled` value is set to `false`, the branding will not appear.
 
 ![Go live with VideoSDK](/img/prebuilt/prebuilt-branding.png)
 
@@ -34,7 +34,7 @@ This feature allows you to embed your branding to top of the meeting .
 - `brandingEnabled`: If it is true, then branding will be visible on top bar of the meeting. If it is false, then branding won't be available on top bar of the meeting.
 - `brandLogoURL`: Provide public URL of your logo.
 - `brandName`: Provide your brand title.
-- `poweredBy`: If it is true, then `Powered by videosdk.live` text will appear in bottm of branding. If it is false, then text will not appear in bottm of branding
+- `poweredBy`: If it is true, then `Powered by videosdk.live` text will appear in bottom of the branding. If it is false, then text will not appear in bottom of the branding
 
 :::note
 

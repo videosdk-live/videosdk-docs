@@ -27,9 +27,9 @@ Any participant can start/stop recording any time during the meeting.
 
 ### How it works ?
 
-- While `recordingEnabled` value set to `true`, you will show recording button as display in below image.
+- While `recordingEnabled` value is set to `true`, you will show recording button as display in below image.
 
-- While `recordingEnabled` value set to `false`, the below recording button will not appear.
+- While `recordingEnabled` value is set to `false`, the below recording button will not appear.
 
 ![Go live with VideoSDK](/img/prebuilt/prebuilt-recording.png)
 

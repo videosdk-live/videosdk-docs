@@ -20,7 +20,7 @@ sidebar_position: 1
 slug: go-live-social-media
 ---
 
-# Go Live Social Media
+# Go Live On Social Media
 
 Livestreaming allows participant to broadcast meeting on various social media platforms such as Facebook or Youtube.
 This guide will provide an overview of how participant can start and stop broadcasting meeting.
