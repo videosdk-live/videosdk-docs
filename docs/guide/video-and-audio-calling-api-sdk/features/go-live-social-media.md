@@ -103,7 +103,23 @@ COMING SOON!
 <TabItem value="ios">
 
 ```js
-COMING SOON!
+/// keep track of livestream
+private var livestreamStarted = false
+
+@IBAction func livestreamButtonTapped(_ sender: Any) {
+    if !livestreamStarted {
+        // prepare output
+        // specify social-media-url and stream-key
+        let output = LivestreamOutput(url: "<rtmp://a.rtmp.youtube.com/live2>", streamKey: "<stream-key>")
+        
+        // start livestream
+        self.meeting?.startLivestream(outputs: [output])
+    }
+    else {
+        // stop livestream
+        self.meeting?.stopLivestream()
+    }
+}
 ```
 
 </TabItem>
@@ -193,7 +209,19 @@ COMING SOON!
 <TabItem value="ios">
 
 ```js
-COMING SOON!
+/// Called after livestream starts
+func onLivestreamStarted() {
+    liveStreamStarted = true
+    
+    // show indication that livestream is started
+}
+
+/// Called after livestream stops
+func onLivestreamStopped() {
+    liveStreamStarted = false
+
+    // hide livestream indication
+}
 ```
 
 </TabItem>

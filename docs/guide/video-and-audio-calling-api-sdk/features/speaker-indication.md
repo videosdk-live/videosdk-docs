@@ -91,7 +91,26 @@ COMING SOON!
 <TabItem value="ios">
 
 ```js
-COMING SOON!
+/// Called when speaker is changed
+/// - Parameter participantId: participant id of the speaker, nil when no one is speaking.
+func onSpeakerChanged(participantId: String?) {
+    
+    // show indicator for active speaker
+    if let participant = participants.first(where: { $0.id == participantId }),
+        
+        // show indication for active speaker
+        // ex. show border color
+        // cell.contentView.layer.borderColor = UIColor.blue.cgColor : UIColor.clear.cgColor
+    }
+    
+    // hide indicator for others participants
+    let otherParticipants = participants.filter { $0.id != participantId }
+    for participant in otherParticipants {
+
+        // ex. remove border color
+        //cell.contentView.layer.borderColor = UIColor.clear.cgColor
+    }
+}
 ```
 
 </TabItem>

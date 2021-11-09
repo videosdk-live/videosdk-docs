@@ -26,7 +26,7 @@ The easiest way to get started is by installing the sdk in your app.
 ### Step 1: Install VideoSDK using CocoaPods
 
 ```js
-pod 'VideoSDK'
+pod 'VideoSDKRTC'
 ```
 
 OR
@@ -47,18 +47,8 @@ pod 'VideoSDKRTC', :git => 'https://github.com/videosdk-live/videosdk-rtc-ios-sd
 
 ### Step 3: Start using VideoSDK
 
-```js title="Example"
-import VideoSDK
-
-// Configure token, fetch it via auth API
-VideoSDK.config(token: <server token here>)
-
-// Intialize meeting
-let meeting = VideoSDK.initMeeting(
-    meetingId: <meetingId>,
-    participantName: <your name>,
-    micEnabled: true,
-    webcamEnabled: true)
+```js title="Import SDK"
+import VideoSDKRTC
 ```
 
 :::note
