@@ -104,14 +104,6 @@ register();
 AppRegistry.registerComponent(appName, () => App);
 ```
 
-### Step 11: Start using it
-
-```js title="MeetingGrid.js"
-import { useMeeting, useParticipant } from "@videosdk.live/react-native-sdk";
-
-const { join, leave } = useMeeting();
-```
-
 :::note
 
 Check out official example of React Native SDK implementation: [videosdk-rtc-react-native-sdk-example](https://github.com/videosdk-live/videosdk-rtc-react-native-sdk-example)
