@@ -379,11 +379,11 @@ public class JoinActivity extends AppCompatActivity {
 let LOCAL_SERVER_URL = "http://192.168.0.101:9000"
 
 class APIService {
-    
+
     class func getToken(completion: @escaping (Result<String, Error>) -> Void) {
         var url = URL(string: LOCAL_SERVER_URL)!
         url = url.appendingPathComponent("get-token")
-        
+
         URLSession.shared.dataTask(with: url) { data, response, error in
             if let data = data, let token = data.toJSON()["token"] as? String {
                 completion(.success(token))
@@ -393,17 +393,17 @@ class APIService {
         }
         .resume()
     }
-    
+
     class func createMeeting(token: String, completion: @escaping (Result<String, Error>) -> Void) {
         var url = URL(string: LOCAL_SERVER_URL)!
         url = url.appendingPathComponent("create-meeting")
-        
+
         let params = ["token": token]
-        
+
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.httpBody = try? JSONSerialization.data(withJSONObject: params, options: [])
-        
+
         URLSession.shared.dataTask(with: request) { data, response, error in
             if let data = data, let meetingId = data.toJSON()["meetingId"] as? String {
                 completion(.success(meetingId))
@@ -576,6 +576,10 @@ const App = () => {
         micEnabled: "<Flag-to-enable-mic>",
         webcamEnabled: "<Flag-to-enable-webcam>",
         maxResolution: "<Maximum-resolution>",
+        notification: {
+          title: "<Notification-Title>",
+          message: "<Notification-Message>",
+        },
       }}
       token={"<Authentication-token>"}
     >

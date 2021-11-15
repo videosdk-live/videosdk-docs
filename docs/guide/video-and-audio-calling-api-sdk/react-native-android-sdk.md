@@ -133,7 +133,7 @@ public class MainApplication extends Application implements ReactApplication {
 </manifest>
 ```
 
-### Step 7: Register services at index page of project
+### Step 8: Register services at index page of project
 
 ```js title="App.js"
 // Import the library
@@ -145,14 +145,6 @@ import App from './src/App.js';
 // Register the service
 register();
 AppRegistry.registerComponent(appName, () => App);
-```
-
-### Step 8: Start using it
-
-```js title="MeetingGrid.js"
-import { useMeeting, useParticipant } from "@videosdk.live/react-native-sdk";
-
-const { join, leave } = useMeeting();
 ```
 
 :::note
