@@ -29,7 +29,7 @@ A collection of Code Samples for you to explore and learn.
 
 ### 2. Custom Video & Audio Calling SDK
 
-- [Node JS Auth Code Sample](https://github.com/videosdk-live/videosdk-rtc-nodejs-sdk-example)
+- [JS Code Sample](https://github.com/videosdk-live/videosdk-rtc-javascript-sdk-example)
 - [React JS Code Sample](https://github.com/videosdk-live/videosdk-rtc-react-sdk-example)
 - [React Native Code Sample](https://github.com/videosdk-live/videosdk-rtc-react-native-sdk-example)
 - [Android Code Sample](https://github.com/videosdk-live/videosdk-rtc-android-java-sdk-example)
