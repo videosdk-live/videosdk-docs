@@ -564,7 +564,7 @@ const MeetingView = () => {
 <TabItem value="reactnative">
 
 ```js
-import { MeetingProvider, useMeeting } from "@videosdk.live/react-sdk";
+import { MeetingProvider, useMeeting } from "@videosdk.live/react-native-sdk";
 
 const App = () => {
   // Init Meeting Provider
