@@ -8,7 +8,7 @@
     "build": "docusaurus build",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",
-    "clear": "docusaurus clear",
+    "clear": "docusaurus clear && rm -rf docusaurus.zip",
     "serve": "docusaurus serve",
     "zip": "zip -vr docusaurus.zip build .docusaurus",
     "build:zip": "yarn clear && yarn build && yarn zip",
