@@ -1,5 +1,5 @@
 ---
-title: Toggle Participant Media 
+title: Toggle Participant Media
 hide_title: false
 hide_table_of_contents: false
 description: Camera Controls features quick integrate in Javascript, React JS, Android, IOS, React Native, Flutter with Video SDK to add live video & audio conferencing to your applications.
@@ -19,29 +19,29 @@ slug: toggle-participant-media
 ---
 
 Control other participant's webcam and mic.
-For better idea, let's understand this with a real case scenario 
+For better idea, let's understand this with a real case scenario
 
 **Scenario 1 (Online Class)** - In this scenario, the lecturer(Local Participant) will control the student's(Other Participant) webcam and mic as per his/her needs.
 
-**Scenario 2 (Online Events)** - In this scenario, the event hosts will control the audience webcam and mic when someone wants to speak.  
+**Scenario 2 (Online Events)** - In this scenario, the event hosts will control the audience webcam and mic when someone wants to speak.
 
 This guide will provide an overview of how to control other participant webcam and mic in a meeting.
 
-1. **Enable Webcam of Participant** - By using `enableWebcam()` function, a `webcam-requested` event will trigger on requested participant side. 
+1. **Enable Webcam of Participant** - By using `enableWebcam()` function, a `webcam-requested` event will trigger on requested participant side.
 
-    **Example** : Meeting is running with **User A** and **User B**. Now **User A** wants to Enable Webcam of **User B**, so **User A** will use `enableWebcam()` function to request **User B**, after that **User B** recieve the `webcam-requested` event, from there user can either accept or reject the incoming request.
+   **Example** : Meeting is running with **User A** and **User B**. Now **User A** wants to Enable Webcam of **User B**, so **User A** will use `enableWebcam()` function to request **User B**, after that **User B** recieve the `webcam-requested` event, from there user can either accept or reject the incoming request.
 
 2. **Disable Webcam of Participant** - By using `disableWebcam()` function, webcam of that participant will be turned off.
 
-    **Example** : **User A** wants to Disable Webcam of **User B**, so **User A** will use `disableWebcam()` function to Disable it without any request.
+   **Example** : **User A** wants to Disable Webcam of **User B**, so **User A** will use `disableWebcam()` function to Disable it without any request.
 
-3. **Enable Mic of Participant** - By using `enableMic()` function, a `mic-requested` event will trigger on requested participant side. 
+3. **Enable Mic of Participant** - By using `enableMic()` function, a `mic-requested` event will trigger on requested participant side.
 
-     **Example** : Meeting is running with **User A** and **User B**. Now **User A** wants to Enable Mic of **User B**, so **User A** will use `enableMic()` function to request **User B**, after that **User B** will receive the `Mic-requested` event, from there user can either accept or reject the incoming request.
+   **Example** : Meeting is running with **User A** and **User B**. Now **User A** wants to Enable Mic of **User B**, so **User A** will use `enableMic()` function to request **User B**, after that **User B** will receive the `Mic-requested` event, from there user can either accept or reject the incoming request.
 
 4. **Disable Mic of Participant** - By using `disableMic()` function, Mic of that participant will disable.
 
-    **Example** : **User A** wants to Disable Mic of **User B**, so **User A** will use `disableMic()` function to Disable it without any request.
+   **Example** : **User A** wants to Disable Mic of **User B**, so **User A** will use `disableMic()` function to Disable it without any request.
 
 :::note
 
@@ -50,9 +50,6 @@ To achieve this feature, you need to pass `allow_join` persmission while geneart
 [How to apply permission while generating token?](/docs/guide/video-and-audio-calling-api-sdk/server-setup#generate-accees-token-and-integrate-other-apis)
 
 :::
-
-
-
 
 ### Request Media Methods
 
@@ -86,8 +83,6 @@ participant.enableMic();
 
 // This will directly disable mic of particular participant
 participant.disableMic();
-
-
 ```
 
 </TabItem>
@@ -96,21 +91,22 @@ participant.disableMic();
 ```js
 import { useParticipant } from "@videosdk.live/react-sdk";
 
-const { enableWebcam, disableWebcam, enableMic, disableMic } =  useParticipant("<participant-id>");
+const { enableWebcam, disableWebcam, enableMic, disableMic } =
+  useParticipant("<participant-id>");
 
 const onPress = () => {
-    // This will emit an event called "webcam-requested" to that particular participant
-    enableWebcam();
+  // This will emit an event called "webcam-requested" to that particular participant
+  enableWebcam();
 
-    // This will directly disable webcam of particular participant
-    disableWebcam();
+  // This will directly disable webcam of particular participant
+  disableWebcam();
 
-    // This will emit an event called "mic-requested" to that particular participant
-    enableMic();
+  // This will emit an event called "mic-requested" to that particular participant
+  enableMic();
 
-    // This will directly disable mic of particular participant
-    disableMic();
-}
+  // This will directly disable mic of particular participant
+  disableMic();
+};
 ```
 
 </TabItem>
@@ -119,24 +115,23 @@ const onPress = () => {
 ```js
 import { useParticipant } from "@videosdk.live/react-native-sdk";
 
-const { enableWebcam, disableWebcam, enableMic, disableMic } =  useParticipant("<participant-id>");
+const { enableWebcam, disableWebcam, enableMic, disableMic } =
+  useParticipant("<participant-id>");
 
 const onPress = () => {
-    // This will emit an event called "webcam-requested" to that particular participant
-    enableWebcam();
+  // This will emit an event called "webcam-requested" to that particular participant
+  enableWebcam();
 
-    // This will directly disable webcam of particular participant
-    disableWebcam();
+  // This will directly disable webcam of particular participant
+  disableWebcam();
 
-    // This will emit an event called "mic-requested" to that particular participant
-    enableMic();
+  // This will emit an event called "mic-requested" to that particular participant
+  enableMic();
 
-    // This will directly disable mic of particular participant
-    disableMic();
-
-}
+  // This will directly disable mic of particular participant
+  disableMic();
+};
 ```
-
 
 </TabItem>
 <TabItem value="android">
@@ -170,31 +165,24 @@ participant.enableMic();
 
 // This will directly disable mic of particular participant
 participant.disableMic();
-
-
 ```
 
 </TabItem>
 </Tabs>
 
-
 ### Manage Requested Media Events
 
 1. **webcam-requested** - This event will be emitted to the participant `B` when any other participant `A` requests to enable webcam of that participant `B`. This event handler will receieve following three arguments:
 
-      - `participantId` - Id of participant who requested to turn on webcam.
-      - `accept()` - Callback function to accept the request.
-      -  `reject()` - Callback function to reject the request.
+   - `accept()` - Callback function to accept the request.
+   - `reject()` - Callback function to reject the request.
 
 <div style={{height: "10px"}}></div>
 
 2. **mic-requested** - This event will be emitted to the participant `B` when any other participant `A` requests to enable mic of that participant `B`. This event handler will receieve following three arguments:
 
-      - `participantId` - Id of participant who requested to turn on mic.
-      - `accept()` - Callback function to accept the request.
-      -  `reject()` - Callback function to reject the request.
-
-         
+   - `accept()` - Callback function to accept the request.
+   - `reject()` - Callback function to reject the request.
 
 <Tabs
 defaultValue="js"
@@ -210,24 +198,18 @@ values={[
 
 ```js
 // Handle Webcam Requested
-meeting.on("webcam-requested", ({ participantId, accept, reject }) {
-    // id of participant who requested to turn on webcam
-    console.log(participantId);
-
+meeting.on("webcam-requested", ({ accept, reject }) {
     // callback function to accept the request
-    accept(); 
+    accept();
 
     // callback function to reject the request
     reject();
 }, );
 
 // Handle Mic Requested
-meeting.on("mic-requested", ({ participantId, accept, reject }) {
-     // id of participant who requested to turn on webcam
-    console.log(participantId);
-
+meeting.on("mic-requested", ({ accept, reject }) {
     // callback function to accept the request
-    accept(); 
+    accept();
 
     // callback function to reject the request
     reject();
@@ -241,28 +223,22 @@ meeting.on("mic-requested", ({ participantId, accept, reject }) {
 import { useMeeting } from "@videosdk.live/react-sdk";
 
 const {
-    /** Methods */
+  /** Methods */
 } = useMeeting({
-    onWebcamRequested: ({ participantId, accept, reject }) => {
-     // id of participant who requested to turn on webcam
-    console.log(participantId);
-
+  onWebcamRequested: ({ accept, reject }) => {
     // callback function to accept the request
-    accept(); 
+    accept();
 
     // callback function to reject the request
     reject();
-},
-    onMicRequested: ({ participantId, accept, reject }) => {
-     // id of participant who requested to turn on webcam
-    console.log(participantId);
-
+  },
+  onMicRequested: ({ accept, reject }) => {
     // callback function to accept the request
-    accept(); 
+    accept();
 
     // callback function to reject the request
     reject();
-}
+  },
 });
 ```
 
@@ -273,31 +249,24 @@ const {
 import { useMeeting } from "@videosdk.live/react-native-sdk";
 
 const {
-    /** Methods */
+  /** Methods */
 } = useMeeting({
-    onWebcamRequested: ({ participantId, accept, reject }) => {
-     // id of participant who requested to turn on webcam
-    console.log(participantId);
-
+  onWebcamRequested: ({ accept, reject }) => {
     // callback function to accept the request
-    accept(); 
+    accept();
 
     // callback function to reject the request
     reject();
-},
-    onMicRequested: ({ participantId, accept, reject }) => {
-     // id of participant who requested to turn on webcam
-    console.log(participantId);
-
+  },
+  onMicRequested: ({ accept, reject }) => {
     // callback function to accept the request
-    accept(); 
+    accept();
 
     // callback function to reject the request
     reject();
-}
+  },
 });
 ```
-
 
 </TabItem>
 <TabItem value="android">
@@ -318,24 +287,18 @@ COMING SOON!
 
 ```js
 // Handle Webcam Requested
-widget.meeting.on("webcam-requested", ({ participantId, accept, reject }) {
-    // id of participant who requested to turn on webcam
-    console.log(participantId);
-
+widget.meeting.on("webcam-requested", ({ accept, reject }) {
     // callback function to accept the request
-    accept(); 
+    accept();
 
     // callback function to reject the request
     reject();
 }, );
 
 // Handle Mic Requested
-widget.meeting.on("mic-requested", ({ participantId, accept, reject }) {
-     // id of participant who requested to turn on webcam
-    console.log(participantId);
-
-    // callback function to accept the request
-    accept(); 
+widget.meeting.on("mic-requested", ({ accept, reject }) {
+     // callback function to accept the request
+    accept();
 
     // callback function to reject the request
     reject();
