@@ -186,7 +186,7 @@ module.exports = {
         // "guide/video-and-audio-calling-api-sdk/features/initilize-meeting-factory",
         "guide/video-and-audio-calling-api-sdk/features/start-join-meeting",
         "guide/video-and-audio-calling-api-sdk/features/manage-participants",
-
+        "guide/video-and-audio-calling-api-sdk/features/manage-participants-latest",
         "guide/video-and-audio-calling-api-sdk/features/leave-end-meeting",
         "guide/video-and-audio-calling-api-sdk/features/camera-controls",
         "guide/video-and-audio-calling-api-sdk/features/mic-controls",
