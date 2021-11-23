@@ -31,9 +31,11 @@ import MethodListHeading from '@theme/MethodListHeading';
   <MethodListItemLabel name="__properties"  >
     <MethodListGroup>
       <MethodListHeading heading="Properties" />
-      <MethodListItemLabel name="id"  type={"String"} />
-      <MethodListItemLabel name="localParticipant"  type={"Participant"} />
-      <MethodListItemLabel name="participants"  type={"Map<String, Participant>"} />
+      <MethodListItemLabel description={"meeting Id"} name="id"  type={"String"} />
+      <MethodListItemLabel description={"local participant of the meeting"} name="localParticipant"  type={"Participant"} />
+      <MethodListItemLabel description={"all remote participants of the meeting"} name="participants"  type={"Map<String, Participant>"} />
+      <MethodListItemLabel description={"Id of the webcam device selected as input video source"} name="selectedWebcamId"  type={"String?"} />
+      <MethodListItemLabel description={"Id of the microphone device selected as input audio source"} name="selectedMicId"  type={"String?"} />
     </MethodListGroup>
   </MethodListItemLabel>
 </MethodListGroup>
@@ -44,16 +46,16 @@ import MethodListHeading from '@theme/MethodListHeading';
   <MethodListItemLabel name="__events" >
     <MethodListGroup>
       <MethodListHeading heading="Events" />
-      <MethodListItemLabel name="meeting-joined"  type={"void"} />
-      <MethodListItemLabel name="meeting-left"  type={"void"} />      
-      <MethodListItemLabel name="participant-joined"  type={"participant"} />
-      <MethodListItemLabel name="participant-left"  type={"participantId"} />
-      <MethodListItemLabel name="recording-started" type={"void"} />
-      <MethodListItemLabel name="recording-stopped" type={"void"} />
-      <MethodListItemLabel name="livestream-started" type={"void"} />
-      <MethodListItemLabel name="livestream-stopped" type={"void"} />
-      <MethodListItemLabel name="speaker-changed" type={"void"} />
-      <MethodListItemLabel name="presenter-changed" type={"void"} />
+      <MethodListItemLabel description={"emitted when local participant joined the meeting successfuly"} name="meeting-joined"  type={"void"} />
+      <MethodListItemLabel description={"emitted when local participant left the meeting"} name="meeting-left"  type={"void"} />      
+      <MethodListItemLabel description={"emitted when new participant joined the meeting"} name="participant-joined"  type={"participant"} />
+      <MethodListItemLabel description={"emitted when any participant from the meeting left"} name="participant-left"  type={"participantId"} />
+      <MethodListItemLabel description={"emitted when recording of the meeting is started successfully"} name="recording-started" type={"void"} />
+      <MethodListItemLabel description={"emitted when recording of the meeting is stopped"} name="recording-stopped" type={"void"} />
+      <MethodListItemLabel description={"emitted when live streaming of the meeting in social media is started successfully"} name="livestream-started" type={"void"} />
+      <MethodListItemLabel description={"emitted when live streaming of the meeting is stopped"} name="livestream-stopped" type={"void"} />
+      <MethodListItemLabel description={"emitted when active speaker is changed"} name="speaker-changed" type={"void"} />
+      <MethodListItemLabel description={"emitted when any participant started presenting"} name="presenter-changed" type={"void"} />
       </MethodListGroup>
   </MethodListItemLabel>
 </MethodListGroup>
@@ -64,20 +66,20 @@ import MethodListHeading from '@theme/MethodListHeading';
   <MethodListItemLabel name="__methods" >
     <MethodListGroup>
       <MethodListHeading heading="Methods" />
-      <MethodListItemLabel type={"void"} name="disableWebcam()" />
-      <MethodListItemLabel type={"void"} name="enableWebcam()" />
-      <MethodListItemLabel type={"void"} name="muteMic()" />
-      <MethodListItemLabel type={"void"} name="unmuteMic()" />
-      <MethodListItemLabel type={"void"} name="getWebcams()"  />
-      <MethodListItemLabel type={"void"} name="getMics()"  />
-      <MethodListItemLabel type={"void"} name="changeWebcam()"  />
-      <MethodListItemLabel type={"void"} name="startRecording()" />
-      <MethodListItemLabel type={"void"} name="stopRecording()" />
-      <MethodListItemLabel type={"void"} name="startLivestream()" />
-      <MethodListItemLabel type={"void"} name="stopLivestream()" />
-      <MethodListItemLabel type={"void"} name="join()" />
-      <MethodListItemLabel type={"void"} name="leave()" />
-      <MethodListItemLabel type={"void"} name="on(String event, Function handler)" />
+      <MethodListItemLabel description={"join the meeting"} type={"void"} name="join()" />
+      <MethodListItemLabel description={"leave the meeting"} type={"void"} name="leave()" />
+      <MethodListItemLabel description={"enable self webcam"} type={"void"} name="enableWebcam()" />
+      <MethodListItemLabel description={"disable self webcam"} type={"void"} name="disableWebcam()" />
+      <MethodListItemLabel description={"unmute self mic"} type={"void"} name="unmuteMic()" />
+      <MethodListItemLabel description={"mute self mic"} type={"void"} name="muteMic()" />
+      <MethodListItemLabel description={"get all webcam devices"} type={"void"} name="getWebcams()"  />
+      <MethodListItemLabel description={"get all mic devices"} type={"void"} name="getMics()"  />
+      <MethodListItemLabel description={"change self webcam"} type={"void"} name="changeWebcam()" option={"<deviceId>"} />
+      <MethodListItemLabel description={"start meeting recording"} type={"void"} name="startRecording()" />
+      <MethodListItemLabel description={"stop meeting recording"} type={"void"} name="stopRecording()" />
+      <MethodListItemLabel description={"start meeting live streaming"} type={"void"} name="startLivestream()" />
+      <MethodListItemLabel description={"stop meeting live streaming"} type={"void"} name="stopLivestream()" />
+      <MethodListItemLabel description={"event handler of the meeting"} type={"void"} name="on(String event, Function handler)" />
     </MethodListGroup>
   </MethodListItemLabel>
 </MethodListGroup>
