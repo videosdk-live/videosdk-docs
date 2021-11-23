@@ -133,6 +133,7 @@ import MethodListHeading from '@theme/MethodListHeading';
     <MethodListHeading heading="Properties" />
           <MethodListItemLabel name="id"  type={"string"} />
           <MethodListItemLabel name="meetingId"  type={"string"} />
+          <MethodListItemLabel name="chatLink" type={"string"} />
           <MethodListItemLabel name="start"  type={"date"} />
           <MethodListItemLabel name="end"  type={"date"} />
           <MethodListItemLabel name="activeDuration" type={"number"} >
