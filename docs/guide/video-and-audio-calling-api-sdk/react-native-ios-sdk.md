@@ -108,6 +108,18 @@ register();
 AppRegistry.registerComponent(appName, () => App);
 ```
 
+## Use hooks API
+
+Our React JS SDK provides two important hooks API:
+
+- **useMeeting** : Responsible to handle meeting environment.
+- **useParticipant** : Responsible to handle Participant
+
+Also, React Provider and Consumer to listen changes in meeting environment.
+
+- **MeetingProvider** : Meeting Provider is [Context.Provider](https://reactjs.org/docs/context.html#contextprovider) that allows consuming components to subscribe to meeting changes
+- **MeetingConsumer** : Meeting Consumer is [Context.Consumer](https://reactjs.org/docs/context.html#contextconsumer) that subscribes to meeting changes.
+
 :::note
 
 Check out official example of React Native SDK implementation: [videosdk-rtc-react-native-sdk-example](https://github.com/videosdk-live/videosdk-rtc-react-native-sdk-example)

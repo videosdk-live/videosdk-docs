@@ -83,34 +83,6 @@ public class MainApplication extends Application {
 </application>
 ```
 
-### Step 6: Start using it
-
-```js title="MainActivity.java"
-@Override
-protected void onCreate(Bundle savedInstanceState) {
-  super.onCreate(savedInstanceState);
-  setContentView(R.layout.activity_main);
-
-  final String meetingId = "<meeting-id>";
-  final String participantName = "John Doe";
-
-  final boolean micEnabled = true;
-  final boolean webcamEnabled = true;
-
-  // generate the jwt token from your api server and add it here
-  VideoSDK.config("JWT TOKEN GENERATED FROM SERVER");
-
-  // create a new meeting instance
-  Meeting meeting = VideoSDK.initMeeting(
-          MainActivity.this, meetingId, participantName,
-          micEnabled, webcamEnabled
-  );
-
-  // get permissions and join the meeting with meeting.join();
-  // checkPermissionAndJoinMeeting();
-}
-```
-
 :::note
 
 Check out official example of Android SDK implementation: [videosdk-rtc-android-java-sdk-example](https://github.com/videosdk-live/videosdk-rtc-android-java-sdk-example)

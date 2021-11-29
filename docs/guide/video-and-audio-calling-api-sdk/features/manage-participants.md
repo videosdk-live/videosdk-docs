@@ -27,15 +27,15 @@ You can acces localParticipant from the [meeting object](/docs/guide/video-and-a
 
 ### Participant object properties
 
-| Property Name | Type    | Description                                            |
-| ------------- | ------- | ------------------------------------------------------ |
-| id            | string  | Unique id of the participant.                          |
-| displayName   | string  | The name you define during the meeting initialization. |
-| local         | boolean | Indicates the participant is local or not.             |
-| quality       | string  | Indicates the participant streams quality.             |
-| Streams       | Map     | Returns Video & Audio Streams.                         |
+| Property Name | Type          | Description                                            |
+| ------------- | ------------- | ------------------------------------------------------ |
+| id            | string        | Unique id of the participant.                          |
+| displayName   | string        | The name you define during the meeting initialization. |
+| local         | boolean       | Indicates the participant is local or not.             |
+| quality       | string        | Indicates the participant streams quality.             |
+| Streams       | Map of Stream | Returns Video & Audio Streams.                         |
 
-### Streams Map properties
+### Stream Object properties
 
 | Property Name | Type   | Description        |
 | ------------- | ------ | ------------------ |
