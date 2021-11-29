@@ -27,7 +27,6 @@ A collection of Code Samples for you to explore and learn.
 - [Vue Prebuilt Code Sample](https://github.com/videosdk-live/videosdk-rtc-vue-prebuilt-example)
 - [Android Prebuilt Webview Code Sample](https://github.com/videosdk-live/videosdk-rtc-android-prebuilt-webview-example)
 - [iOS Prebuilt Webview Code Sample](https://github.com/videosdk-live/videosdk-rtc-ios-prebuilt-webview-example)
-- [React Prebuilt call trigger example](https://github.com/videosdk-live/videosdk-rtc-react-prebuilt-call-trigger-example)
 
 ### 2. Prebuilt Video & Audio Calling Example
 
