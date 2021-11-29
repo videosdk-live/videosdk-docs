@@ -69,7 +69,7 @@ values={[
 <TabItem value="js">
 
 ```js
-const participants = meeeting.participants;
+const participants = meeting.participants;
 const participant = participants.get("<participant-id>");
 
 // This will emit an event called "webcam-requested" to that particular participant
@@ -137,7 +137,19 @@ const onPress = () => {
 <TabItem value="android">
 
 ```js
-COMING SOON!
+Participant participant = meeting.getParticipants().get("<participant-id>");
+
+// This will emit an event called "onWebcamRequested" to that particular participant
+participant.enableWebcam();
+
+// This will directly disable webcam of particular participant
+participant.disableWebcam();
+
+// This will emit an event called "onMicRequested" to that particular participant
+participant.enableMic();
+
+// This will directly disable mic of particular participant
+participant.disableMic();
 ```
 
 </TabItem>
@@ -163,7 +175,7 @@ participant?.disableWebcam()
 <TabItem value="flutter">
 
 ```js
-const participants = meeeting.participants;
+const participants = meeting.participants;
 const participant = participants.get("<participant-id>");
 
 // This will emit an event called "webcam-requested" to that particular participant
@@ -284,7 +296,19 @@ const {
 <TabItem value="android">
 
 ```js
-COMING SOON!
+new MeetingEventListener() {
+  @Override
+  public void onMicRequested(String participantId, MicRequestListener listener) {
+      // TODO: show dialog before accepting request
+      listener.accept();
+  }
+
+  @Override
+  public void onWebcamRequested(String participantId, WebcamRequestListener listener) {
+      // TODO: show dialog before accepting request
+      listener.accept();
+  }
+}
 ```
 
 </TabItem>

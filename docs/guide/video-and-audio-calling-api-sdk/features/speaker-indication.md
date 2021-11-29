@@ -21,7 +21,7 @@ Speaker indication feature in videoSDK let you know, which participant in a meet
 
 Whenever any participant speaks in meeting, `speaker-changed` event will trigger.
 
-For example, the meeeting is running with **Alice** and **Bob**. Whenever any of them speaks, `speaker-changed` event will trigger and return the speaker `participantId`.
+For example, the meeting is running with **Alice** and **Bob**. Whenever any of them speaks, `speaker-changed` event will trigger and return the speaker `participantId`.
 
 We can access `speaker-changed` event through [meeting object](/docs/guide/video-and-audio-calling-api-sdk/features/start-join-meeting#2-initialization).
 
@@ -94,15 +94,15 @@ COMING SOON!
 /// Called when speaker is changed
 /// - Parameter participantId: participant id of the speaker, nil when no one is speaking.
 func onSpeakerChanged(participantId: String?) {
-    
+
     // show indicator for active speaker
     if let participant = participants.first(where: { $0.id == participantId }),
-        
+
         // show indication for active speaker
         // ex. show border color
         // cell.contentView.layer.borderColor = UIColor.blue.cgColor : UIColor.clear.cgColor
     }
-    
+
     // hide indicator for others participants
     let otherParticipants = participants.filter { $0.id != participantId }
     for participant in otherParticipants {

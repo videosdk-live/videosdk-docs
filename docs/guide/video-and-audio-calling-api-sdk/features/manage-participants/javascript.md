@@ -37,10 +37,10 @@ Remote participants Map contains same properties as **LocalParticipant**.
 
 ```js title="participant.js"
 // Access localParticipant
-const localParticipant = meeeting.localParticipant;
+const localParticipant = meeting.localParticipant;
 
 // Access otherParticipant
-const participants = meeeting.participants;
+const participants = meeting.participants;
 ```
 
 ### Participant object properties
@@ -68,7 +68,7 @@ You can get single participant object by passing id.
 
 ```js title="participant.js"
 // Access single participant using id
-const participant = meeeting.participants.get("<participant-id>");
+const participant = meeting.participants.get("<participant-id>");
 ```
 
 ## How to Render Local (Self) Participant?
@@ -148,7 +148,7 @@ participantContainer.appendChild(videoElement);
 
 ### 1. Handle Participant Join Event and Create Elements
 
-- **participant-joined** - Whenever any new participant join the meeting, `participant-joined` event will trigger. For example, the meeeting is running with **Alice** and **Bob**, then **Eve** join that meeting, after that `participant-joined` event trigger and return the [Participant object](/docs/guide/video-and-audio-calling-api-sdk/features/manage-participants/javascript#participant-object-properties).
+- **participant-joined** - Whenever any new participant join the meeting, `participant-joined` event will trigger. For example, the meeting is running with **Alice** and **Bob**, then **Eve** join that meeting, after that `participant-joined` event trigger and return the [Participant object](/docs/guide/video-and-audio-calling-api-sdk/features/manage-participants/javascript#participant-object-properties).
 
 In `participant-joined` event, we will create Video and Audio elements for rendering streams.
 
@@ -269,7 +269,7 @@ meeting.on("participant-joined", (participant) => {
 
 ### 4. Handle Participant Left Event
 
-- **participant-left** - Whenever any participant leave/exit the meeting, `participant-left` event will trigger.For example, the meeeting is running with Alice and Bob, then Bob leave that meeting, after that `participant-left` event trigger and return the participant object.
+- **participant-left** - Whenever any participant leave/exit the meeting, `participant-left` event will trigger.For example, the meeting is running with Alice and Bob, then Bob leave that meeting, after that `participant-left` event trigger and return the participant object.
 
 In `participant-left` event, we will remove left participant Video and Audio elements.
 
