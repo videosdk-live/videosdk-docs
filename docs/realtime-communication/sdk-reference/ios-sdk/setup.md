@@ -34,7 +34,7 @@ It requires `Xcode 12.0+` and `Swift 5.0+` installed.
 ### Step 1: To integrate VideoSDK into your Xcode project using CocoaPods, specify it in your `Podfile`:
 
 ```js title="Install via CocoaPods"
-pod 'VideoSDK'
+pod 'VideoSDKRTC'
 ```
 
 OR

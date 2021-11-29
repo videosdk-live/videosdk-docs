@@ -144,7 +144,19 @@ COMING SOON!
 <TabItem value="ios">
 
 ```js
-COMING SOON!
+let participant = meeting?.participants.first(where: { $0.id == <participantId> })
+
+/// Enable/Unmute mic for this participant
+participant?.enableMic()
+
+/// Disable/Mute mic for this participant
+participant?.disableMic()
+
+/// Enable/Turn on camera for this participant
+participant?.enableWebcam()
+
+/// Disable/Turn off camera for this participant
+participant?.disableWebcam()
 ```
 
 </TabItem>
@@ -279,7 +291,25 @@ COMING SOON!
 <TabItem value="ios">
 
 ```js
-COMING SOON!
+/// Called when host requests to turn on the mic/audio
+func onMicRequested(participantId: String?, accept: @escaping () -> Void, reject: @escaping () -> Void) {
+
+    // callback to accept the request
+    accept()
+
+    // callback to reject the request
+    reject()
+}
+
+/// Called when host requests to turn on the camera/video
+func onWebcamRequested(participantId: String?, accept: @escaping () -> Void, reject: @escaping () -> Void) {
+    // callback to accept the request
+    accept()
+
+    // callback to reject the request
+    reject()
+}
+
 ```
 
 </TabItem>
