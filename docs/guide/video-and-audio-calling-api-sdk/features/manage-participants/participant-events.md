@@ -163,6 +163,23 @@ meeting.on("participant-left", (Participant participant) {
   print("new participant => $participant");
   },
 );
+
+participant.on("stream-enabled", (Stream stream) {
+  print("enabled stream => $stream");
+});
+
+participant.on("stream-disabled", (Stream stream) {
+  print("disabled stream => $stream");
+});
+
+participant.on("stream-paused", (Stream stream) {
+  print("paused stream => $stream");
+});
+
+participant.on("stream-resumed", (Stream stream) {
+  print("resumed stream => $stream");
+});
+
 ```
 
 </TabItem>
