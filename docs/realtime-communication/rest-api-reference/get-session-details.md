@@ -91,6 +91,7 @@ puts response.read_body
 {
     "id": "616e79f7ba68c7768bfd18bf",
     "meetingId": "ywnm-eicr-d55x",
+    "chatLink" : "https://cdn.zujonow.com/temp/hq3g-ny2g-kv8x-12348924f6213b0f00a9f7a6-6169bd856790717248e86cff.csv",
     "start": "2021-10-19T07:55:35.807Z",
     "end": "2021-10-19T07:55:39.941Z",
     "activeDuration": 0,
@@ -133,6 +134,7 @@ import MethodListHeading from '@theme/MethodListHeading';
     <MethodListHeading heading="Properties" />
           <MethodListItemLabel name="id"  type={"string"} />
           <MethodListItemLabel name="meetingId"  type={"string"} />
+          <MethodListItemLabel name="chatLink" type={"string"} />
           <MethodListItemLabel name="start"  type={"date"} />
           <MethodListItemLabel name="end"  type={"date"} />
           <MethodListItemLabel name="activeDuration" type={"number"} >

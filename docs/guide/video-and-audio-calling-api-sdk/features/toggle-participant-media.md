@@ -69,7 +69,7 @@ values={[
 <TabItem value="js">
 
 ```js
-const participants = meeeting.participants;
+const participants = meeting.participants;
 const participant = participants.get("<participant-id>");
 
 // This will emit an event called "webcam-requested" to that particular participant
@@ -137,21 +137,45 @@ const onPress = () => {
 <TabItem value="android">
 
 ```js
-COMING SOON!
+Participant participant = meeting.getParticipants().get("<participant-id>");
+
+// This will emit an event called "onWebcamRequested" to that particular participant
+participant.enableWebcam();
+
+// This will directly disable webcam of particular participant
+participant.disableWebcam();
+
+// This will emit an event called "onMicRequested" to that particular participant
+participant.enableMic();
+
+// This will directly disable mic of particular participant
+participant.disableMic();
 ```
 
 </TabItem>
 <TabItem value="ios">
 
 ```js
-COMING SOON!
+let participant = meeting?.participants.first(where: { $0.id == <participantId> })
+
+/// Enable/Unmute mic for this participant
+participant?.enableMic()
+
+/// Disable/Mute mic for this participant
+participant?.disableMic()
+
+/// Enable/Turn on camera for this participant
+participant?.enableWebcam()
+
+/// Disable/Turn off camera for this participant
+participant?.disableWebcam()
 ```
 
 </TabItem>
 <TabItem value="flutter">
 
 ```js
-const participants = meeeting.participants;
+const participants = meeting.participants;
 const participant = participants.get("<participant-id>");
 
 // This will emit an event called "webcam-requested" to that particular participant
@@ -272,14 +296,44 @@ const {
 <TabItem value="android">
 
 ```js
-COMING SOON!
+new MeetingEventListener() {
+  @Override
+  public void onMicRequested(String participantId, MicRequestListener listener) {
+      // TODO: show dialog before accepting request
+      listener.accept();
+  }
+
+  @Override
+  public void onWebcamRequested(String participantId, WebcamRequestListener listener) {
+      // TODO: show dialog before accepting request
+      listener.accept();
+  }
+}
 ```
 
 </TabItem>
 <TabItem value="ios">
 
 ```js
-COMING SOON!
+/// Called when host requests to turn on the mic/audio
+func onMicRequested(participantId: String?, accept: @escaping () -> Void, reject: @escaping () -> Void) {
+
+    // callback to accept the request
+    accept()
+
+    // callback to reject the request
+    reject()
+}
+
+/// Called when host requests to turn on the camera/video
+func onWebcamRequested(participantId: String?, accept: @escaping () -> Void, reject: @escaping () -> Void) {
+    // callback to accept the request
+    accept()
+
+    // callback to reject the request
+    reject()
+}
+
 ```
 
 </TabItem>

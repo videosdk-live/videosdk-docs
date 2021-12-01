@@ -96,7 +96,24 @@ const onPress = () => {
 <TabItem value="android">
 
 ```js
-COMING SOON!
+private static final String YOUTUBE_RTMP_URL = null;
+private static final String YOUTUBE_RTMP_STREAM_KEY = null;
+
+//
+findViewById(R.id.btnLivestream).setOnClickListener(view -> {
+    if (!livestreaming) {
+        if (YOUTUBE_RTMP_URL == null || YOUTUBE_RTMP_STREAM_KEY == null) {
+            throw new Error("RTMP url or stream key missing.");
+        }
+
+        List<LivestreamOutput> outputs = new ArrayList<>();
+        outputs.add(new LivestreamOutput(YOUTUBE_RTMP_URL, YOUTUBE_RTMP_STREAM_KEY));
+
+        meeting.startLivestream(outputs);
+    } else {
+        meeting.stopLivestream();
+    }
+});
 ```
 
 </TabItem>
@@ -111,7 +128,7 @@ private var livestreamStarted = false
         // prepare output
         // specify social-media-url and stream-key
         let output = LivestreamOutput(url: "<rtmp://a.rtmp.youtube.com/live2>", streamKey: "<stream-key>")
-        
+
         // start livestream
         self.meeting?.startLivestream(outputs: [output])
     }
@@ -211,7 +228,21 @@ const {
 <TabItem value="android">
 
 ```js
-COMING SOON!
+new MeetingEventListener() {
+  @Override
+  public void onLivestreamStarted() {
+      livestreaming = true;
+
+      // TODO: show indication that meeting livestream is started.
+  }
+
+  @Override
+  public void onLivestreamStopped() {
+      livestreaming = false;
+
+      // TODO: show indication that meeting livestream is stopped.
+  }
+}
 ```
 
 </TabItem>
@@ -221,7 +252,7 @@ COMING SOON!
 /// Called after livestream starts
 func onLivestreamStarted() {
     liveStreamStarted = true
-    
+
     // show indication that livestream is started
 }
 

@@ -101,6 +101,7 @@ puts response.read_body
             "meetingId": "ywnm-eicr-d55x",
             "start": "2021-10-19T07:55:35.807Z",
             "end": "2021-10-19T07:55:39.941Z",
+            "chatLink" : "https://cdn.zujonow.com/temp/hq3g-ny2g-kv8x-12348924f6213b0f00a9f7a6-6169bd856790717248e86cff.csv",
             "activeDuration": 0,
             "participants": [
                 {
@@ -152,6 +153,7 @@ import MethodListHeading from '@theme/MethodListHeading';
         <MethodListGroup>
           <MethodListItemLabel name="id"  type={"string"} />
           <MethodListItemLabel name="meetingId"  type={"string"} />
+          <MethodListItemLabel name="chatLink" type={"string"} />
           <MethodListItemLabel name="start"  type={"date"} />
           <MethodListItemLabel name="end"  type={"date"} />
           <MethodListItemLabel name="activeDuration" type={"number"} >
@@ -169,5 +171,6 @@ import MethodListHeading from '@theme/MethodListHeading';
         </MethodListGroup>
       </MethodListItemLabel>
     </MethodListGroup>
+
   </MethodListItemLabel>
 </MethodListGroup>

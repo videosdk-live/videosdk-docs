@@ -13,6 +13,7 @@ keywords:
 image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
 slug: javascript-sdk
+
 ---
 
 # Getting Started - JavaScript SDK
@@ -47,22 +48,4 @@ npm install @videosdk.live/js-sdk
 
 ```js
 yarn add @videosdk.live/js-sdk
-```
-
-## Example
-
-Next step is to import the library and start using it.
-
-### Webpack/node-style require
-
-```js title="Webpack/node-style require"
-const ZujoSDK = require("@videosdk.live/js-sdk");
-ZujoSDK.initMeeting({...})
-```
-
-### ES6 import
-
-```js title="ES6 import"
-import ZujoSDK from "@videosdk.live/js-sdk";
-ZujoSDK.initMeeting({...})
 ```

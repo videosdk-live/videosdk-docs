@@ -74,7 +74,7 @@ import MethodListHeading from '@theme/MethodListHeading';
       <MethodListItemLabel name="enableMic()"  type={"void"} />
       <MethodListItemLabel name="disableMic()"  type={"void"} />
       <MethodListItemLabel name="disableWebcam()"  type={"void"} />
-      <MethodListItemLabel name="setQuality(String quality)"  type={"void"} />
+      <MethodListItemLabel name="remove()"  type={"void"} />
     </MethodListGroup>
   </MethodListItemLabel>
 </MethodListGroup>

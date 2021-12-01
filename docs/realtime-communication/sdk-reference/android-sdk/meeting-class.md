@@ -70,18 +70,16 @@ import MethodListHeading from '@theme/MethodListHeading';
       <MethodListHeading heading="Methods" />
       <MethodListItemLabel name="join()"  type={"void"} />
       <MethodListItemLabel name="leave()"  type={"void"} />
+      <MethodListItemLabel name="end()"  type={"void"} />
       <MethodListItemLabel name="muteMic()"  type={"void"} />
       <MethodListItemLabel name="unmuteMic()"  type={"void"} />
       <MethodListItemLabel name="disableWebcam()"  type={"void"} />
       <MethodListItemLabel name="enableWebcam()"  type={"void"} />
-      <MethodListItemLabel name="disableScreenShare()"  type={"void"} />
-      <MethodListItemLabel name="enableScreenShare()"  type={"void"} />
-      <MethodListItemLabel name="sendChatMessage(String text)"  type={"void"} />
       <MethodListItemLabel name="startRecording(String webhookUrl)"  type={"void"} />
       <MethodListItemLabel name="stopRecording()"  type={"void"} />
-      <MethodListItemLabel name="changeWebcam(String deviceId)"  type={"void"} />
-      <MethodListItemLabel name="setWebcamQuality(String quality)"  type={"void"} />
-      <MethodListItemLabel name="respondEntry(String pId, String decision)"  type={"void"} />
+      <MethodListItemLabel name="startLivestream(List<LivestreamOutput> outputs)"  type={"void"} />
+      <MethodListItemLabel name="stopLivestream()"  type={"void"} />
+      <MethodListItemLabel name="changeWebcam()"  type={"void"} />
     </MethodListGroup>
   </MethodListItemLabel>
 </MethodListGroup>

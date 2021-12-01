@@ -88,6 +88,13 @@ const onPress = () => {
         meeting.leave();
       }
   });
+
+  btnEnd.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View v) {
+        meeting.end();
+      }
+  });
 ```
 
 </TabItem>
@@ -99,7 +106,7 @@ const onPress = () => {
     self.meeting?.leave()
 }
 
-/// Events: 
+/// Events:
 // called after user leaves the meeting
 func onMeetingLeft() {
     // cleanup: remove listeners
