@@ -16,58 +16,11 @@ sidebar_position: 1
 slug: react-native
 ---
 
-## What is Participant?
+## Contents
 
-A participant is refered as a single user in a meeting, it can be you or can be remote user.
-In Video SDK we have categorise participant in two types.
-
-1. [Local Participant (Self | You)](/docs/guide/video-and-audio-calling-api-sdk/features/manage-participants/react-native#1-local-participant-self--you)
-2. [Remote Participants](/docs/guide/video-and-audio-calling-api-sdk/features/manage-participants/react-native#2-remote-participants)
-
-### 1. Local Participant (Self | You)
-
-Local participant is used to consume your video & audio streams.
-local participant object contains properties such as displayName, id, quality and streams Map.
-
-### 2. Remote Participants
-
-Remote participants Map is used to get all the participants (including you) in the meeting at any given time.
-
-Remote participants Map contains same properties as **LocalParticipant**.
-
-You can get Local and Remote Participant from `useMeeting` Hook.
-
-### Accessing Participants
-
-```js title="index.js"
-import { useMeeting } from "@videosdk.live/react-native-sdk";
-
-const {
-  // Access localParticipant
-  localParticipant,
-  // Access remoteParticipant
-  participants,
-} = useMeeting();
-```
-
-### Participant object properties
-
-| Property Name | Type                                                                                                                            | Description                                            |
-| ------------- | ------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------ |
-| id            | string                                                                                                                          | Unique id of the participant.                          |
-| displayName   | string                                                                                                                          | The name you define during the meeting initialization. |
-| local         | boolean                                                                                                                         | Indicates the participant is local or not.             |
-| quality       | string                                                                                                                          | Indicates the participant streams quality.             |
-| Streams       | Map of [Stream](/docs/guide/video-and-audio-calling-api-sdk/features/manage-participants/react-native#stream-object-properties) | Returns Video & Audio Streams.                         |
-
-### Stream Object properties
-
-| Property Name | Type   | Description                                |
-| ------------- | ------ | ------------------------------------------ |
-| id            | string | Unique id                                  |
-| codec         | string | Video/Audio codec.                         |
-| kind          | string | Stream Kind such as audio, video and share |
-| track         | string | MediaStreamTrack                           |
+- [How to Access Single Participant?](/docs/guide/video-and-audio-calling-api-sdk/features/manage-participants/react-native#how-to-access-single-participant)
+- [How to Render Remote Participant?](/docs/guide/video-and-audio-calling-api-sdk/features/manage-participants/react-native#how-to-render-participant)
+- [Events](/docs/guide/video-and-audio-calling-api-sdk/features/manage-participants/react-native#events)
 
 ## How to Access Single Participant?
 
@@ -90,6 +43,11 @@ const participant = participants.get("<participant-id>");
 ```
 
 ## How to Render Participant?
+
+For rendering participant, you don't have to manage local participant seprately.
+`participants` properties from `useMeeting` hook return all the participant (including you).
+
+If you want to access local participant, you can use `localparticipant` from `useMeeting` hook.
 
 ### 1. Get Participants from useMeeting Hook
 
@@ -175,4 +133,4 @@ const ParticipantView = ({ participantId }) => {
 
 ## Events
 
-You can follow this [Participant Related Events](/docs/guide/video-and-audio-calling-api-sdk/features/manage-participants/participant-events).
+Please refer to this [Participant Events](/docs/guide/video-and-audio-calling-api-sdk/features/manage-participants/participant-events) for more information about the event.

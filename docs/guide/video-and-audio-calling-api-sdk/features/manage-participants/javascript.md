@@ -14,53 +14,12 @@ sidebar_position: 1
 slug: javascript
 ---
 
-## What is Participant?
+## Contents
 
-A participant is refered as a single user in a meeting, it can be you or can be remote user.
-In Video SDK we have categorise participant in two types.
-
-1. [Local Participant (Self | You)](/docs/guide/video-and-audio-calling-api-sdk/features/manage-participants/javascript#1-local-participant-self--you)
-2. [Remote Participants (Except You)](/docs/guide/video-and-audio-calling-api-sdk/features/manage-participants/javascript#2-remote-participants-except-you)
-
-### 1. Local Participant (Self | You)
-
-Local participant is used to consume your video & audio streams.
-local participant object contains properties such as displayName, id, quality and streams Map.
-
-### 2. Remote Participants (Except You)
-
-Remote participants Map is used to get all the participants (except you) in the meeting at any given time.
-
-Remote participants Map contains same properties as **LocalParticipant**.
-
-### Accessing Participants
-
-```js title="participant.js"
-// Access localParticipant
-const localParticipant = meeeting.localParticipant;
-
-// Access otherParticipant
-const participants = meeeting.participants;
-```
-
-### Participant object properties
-
-| Property Name | Type                                                                                                                          | Description                                            |
-| ------------- | ----------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------ |
-| id            | string                                                                                                                        | Unique id of the participant.                          |
-| displayName   | string                                                                                                                        | The name you define during the meeting initialization. |
-| local         | boolean                                                                                                                       | Indicates the participant is local or not.             |
-| quality       | string                                                                                                                        | Indicates the participant streams quality.             |
-| Streams       | Map of [Stream](/docs/guide/video-and-audio-calling-api-sdk/features/manage-participants/javascript#stream-object-properties) | Returns Video & Audio Streams.                         |
-
-### Stream Object properties
-
-| Property Name | Type   | Description                                |
-| ------------- | ------ | ------------------------------------------ |
-| id            | string | Unique id                                  |
-| codec         | string | Video/Audio codec.                         |
-| kind          | string | Stream Kind such as audio, video and share |
-| track         | string | MediaStreamTrack                           |
+- [How to Access Single Participant?](/docs/guide/video-and-audio-calling-api-sdk/features/manage-participants/javascript#how-to-access-single-participant)
+- [How to Render Local (Self) Participant?](/docs/guide/video-and-audio-calling-api-sdk/features/manage-participants/javascript#how-to-render-local-self-participant)
+- [How to Render Remote Participant?](/docs/guide/video-and-audio-calling-api-sdk/features/manage-participants/javascript#how-to-render-remote-participant)
+- [Events](/docs/guide/video-and-audio-calling-api-sdk/features/manage-participants/javascript#events)
 
 ## How to Access Single Participant?
 
@@ -286,4 +245,4 @@ meeting.on("participant-left", (participant) => {
 
 ## Events
 
-You can follow this [Participant Related Events](/docs/guide/video-and-audio-calling-api-sdk/features/manage-participants/participant-events).
+Please refer to this [Participant Events](/docs/guide/video-and-audio-calling-api-sdk/features/manage-participants/participant-events) for more information about the event.
