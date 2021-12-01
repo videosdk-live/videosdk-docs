@@ -183,7 +183,6 @@ module.exports = {
       type: "category",
       label: "FEATURES",
       items: [
-        // "guide/video-and-audio-calling-api-sdk/features/initilize-meeting-factory",
         "guide/video-and-audio-calling-api-sdk/features/start-join-meeting",
         // "guide/video-and-audio-calling-api-sdk/features/manage-participants",
         {

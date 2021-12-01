@@ -51,10 +51,10 @@ values={[
 
 ```js
 // Access localParticipant
-const localParticipant = meeeting.localParticipant;
+const localParticipant = meeting.localParticipant;
 
 // Access otherParticipant
-const participants = meeeting.participants;
+const participants = meeting.participants;
 ```
 
 </TabItem>
