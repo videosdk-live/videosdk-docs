@@ -30,7 +30,7 @@ import Card from '@theme/Card';
       <Card heading="1. Signup & Create API Key" link="/docs/guide/prebuilt-video-and-audio-calling/signup-and-create-api" description="Generate Your API Key" />
     </div>
     <div class="col col--6" >
-      <Card heading="2. Client Setup" link="/docs/guide/prebuilt-video-and-audio-calling/client-setup" description="Integrate Prebuilt with API key"  />
+      <Card heading="2. Client Setup" link="/docs/guide/prebuilt-video-and-audio-calling/using-script" description="Integrate Prebuilt with API key"  />
     </div>
   </div>
   <div class="row " >

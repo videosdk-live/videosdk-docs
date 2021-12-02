@@ -1,10 +1,10 @@
 ---
-title: Setup Meeting using script tag
+title: Setup Meeting Using HTML Script Tag
 hide_title: false
 hide_table_of_contents: false
 description: video & audio calling sdk will help you to integrate video & audio calling in your application.
-sidebar_label: Using Script
-pagination_label: Using Script
+sidebar_label: Using HTML Script Tag
+pagination_label: Using HTML Script Tag
 keywords:
   - audio calling
   - video calling
@@ -33,15 +33,61 @@ Create an `index.html` file and add the following `<script>` tag at the end of y
     const meeting = new VideoSDKMeeting();
 
     const config = {
-      name: "John Doe",
-      apiKey: "<API KEY>", // generated in step 1
-      meetingId: "milkyway", // enter your meeting id
+      name: name,
+      meetingId: meetingId,
+      apiKey: apiKey,
 
       containerId: null,
+      redirectOnLeave: "https://www.videosdk.live/",
 
-      /**
-       FEATURE ATTRIBUTES
-      */
+      micEnabled: true,
+      webcamEnabled: true,
+      participantCanToggleSelfWebcam: true,
+      participantCanToggleSelfMic: true,
+
+      chatEnabled: true,
+      screenShareEnabled: true,
+      pollEnabled: true,
+      whiteBoardEnabled: true,
+      raiseHandEnabled: true,
+
+      recordingEnabled: true,
+      recordingEnabledByDefault: false,
+      recordingWebhookUrl: "https://www.videosdk.live/callback",
+      participantCanToggleRecording: true,
+
+      brandingEnabled: true,
+      brandLogoURL: "https://picsum.photos/200",
+      brandName: "Awesome startup",
+
+      participantCanLeave: true, // if false, leave button won't be visible
+
+      livestream: {
+        autoStart: true,
+        outputs: [
+          // {
+          //   url: "rtmp://x.rtmp.youtube.com/live2",
+          //   streamKey: "<STREAM KEY FROM YOUTUBE>",
+          // },
+        ],
+      },
+
+      permissions: {
+        askToJoin: false, // Ask joined participants for entry in meeting
+        toggleParticipantMic: true, // Can toggle other participant's mic
+        toggleParticipantWebcam: true, // Can toggle other participant's webcam
+      },
+
+      joinScreen: {
+        visible: true, // Show the join screen ?
+        title: "Daily scrum", // Meeting title
+        meetingUrl: window.location.href, // Meeting joining url
+      },
+
+      pin: {
+        allowed: true, // participant can pin any participant in meeting
+        layout: "SPOTLIGHT", // meeting layout - GRID | SPOTLIGHT | SIDEBAR
+      },
     };
 
     meeting.init(config);
