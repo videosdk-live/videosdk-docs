@@ -126,8 +126,8 @@ module.exports = {
           type: "category",
           label: "Client Setup",
           items: [
-            "guide/prebuilt-video-and-audio-calling/using-npm",
             "guide/prebuilt-video-and-audio-calling/using-script",
+            "guide/prebuilt-video-and-audio-calling/using-npm",
           ],
           collapsed: false,
         },
