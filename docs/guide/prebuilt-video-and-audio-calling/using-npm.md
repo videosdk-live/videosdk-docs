@@ -95,6 +95,12 @@ export default function App() {
 }
 ```
 
+:::note
+
+Stuck anywhere? Check out this react [example code](https://github.com/videosdk-live/videosdk-rtc-react-prebuilt-example) on github or [download](https://github.com/videosdk-live/videosdk-rtc-react-prebuilt-example/archive/refs/heads/main.zip) the full source code and unzip on your computer.
+
+:::
+
 </TabItem>
 <TabItem value="angular">
 
@@ -109,17 +115,12 @@ import { environment } from "./../environments/environment";
 })
 export class AppComponent implements OnInit {
   async ngOnInit() {
-    const apiKey = "<API KEY>";
-    const meetingId = "milkyway";
-    const name = "Demo User";
-
     const config = {
-      name: name,
-      meetingId: meetingId,
-      apiKey: apiKey,
+      name: "Demo User",
+      meetingId: "milkyway",
+      apiKey: "<API KEY>",
 
       containerId: null,
-      redirectOnLeave: "https://www.videosdk.live/",
 
       micEnabled: true,
       webcamEnabled: true,
@@ -128,41 +129,12 @@ export class AppComponent implements OnInit {
 
       chatEnabled: true,
       screenShareEnabled: true,
-      pollEnabled: true,
-      whiteBoardEnabled: true,
-      raiseHandEnabled: true,
 
-      recordingEnabled: true,
-      recordingEnabledByDefault: false,
-      recordingWebhookUrl: "https://www.videosdk.live/callback",
-      participantCanToggleRecording: true,
+      /*
 
-      brandingEnabled: true,
-      brandLogoURL: "https://picsum.photos/200",
-      brandName: "Awesome startup",
-
-      participantCanLeave: true, // if false, leave button won't be visible
-
-      livestream: {
-        autoStart: true,
-        outputs: [
-          // {
-          //   url: "rtmp://x.rtmp.youtube.com/live2",
-          //   streamKey: "<STREAM KEY FROM YOUTUBE>",
-          // },
-        ],
-      },
-
-      permissions: {
-        askToJoin: false, // Ask joined participants for entry in meeting
-        toggleParticipantMic: true, // Can toggle other participant's mic
-        toggleParticipantWebcam: true, // Can toggle other participant's webcam
-      },
-
-      pin: {
-        allowed: true, // participant can pin any participant in meeting
-        layout: "SPOTLIGHT", // meeting layout - GRID | SPOTLIGHT | SIDEBAR
-      },
+     Other Feature Properties
+      
+      */
     };
 
     const meeting = new VideoSDKMeeting();
@@ -170,6 +142,12 @@ export class AppComponent implements OnInit {
   }
 }
 ```
+
+:::note
+
+Stuck anywhere? Check out this angular [example code](https://github.com/videosdk-live/videosdk-rtc-angular-prebuilt-example) on github or [download](https://github.com/videosdk-live/videosdk-rtc-angular-prebuilt-example/archive/refs/heads/main.zip) the full source code and unzip on your computer.
+
+:::
 
 </TabItem>
 
@@ -186,57 +164,29 @@ export default {
     };
   },
   mounted: async function() {
-    const apiKey = "<API KEY>";
-    const meetingId = "milkyway";
-    const name = "Demo User";
-    const config = {
-      name: name,
-      meetingId: meetingId,
-      apiKey: apiKey,
+
+  const config = {
+      name: "Demo User",
+      meetingId: "milkyway",
+      apiKey: "<API KEY>",
+
       containerId: null,
-      redirectOnLeave: "https://www.videosdk.live/",
+
       micEnabled: true,
       webcamEnabled: true,
       participantCanToggleSelfWebcam: true,
       participantCanToggleSelfMic: true,
+
       chatEnabled: true,
       screenShareEnabled: true,
-      pollEnabled: true,
-      whiteBoardEnabled: true,
-      raiseHandEnabled: true,
-      recordingEnabled: true,
-      recordingEnabledByDefault: false,
-      recordingWebhookUrl: "https://www.videosdk.live/callback",
-      participantCanToggleRecording: true,
-      brandingEnabled: true,
-      brandLogoURL: "https://picsum.photos/200",
-      brandName: "Awesome startup",
-      participantCanLeave: true, // if false, leave button won't be visible
-      // Live stream meeting to youtube
-      livestream: {
-        autoStart: true,
-        outputs: [
-          // {
-          //   url: "rtmp://x.rtmp.youtube.com/live2",
-          //   streamKey: "<STREAM KEY FROM YOUTUBE>",
-          // },
-        ],
-      },
-      permissions: {
-        askToJoin: false, // Ask joined participants for entry in meeting
-        toggleParticipantMic: true, // Can toggle other participant's mic
-        toggleParticipantWebcam: true, // Can toggle other participant's webcam
-      },
-      joinScreen: {
-        visible: true, // Show the join screen ?
-        title: "Daily scrum", // Meeting title
-        meetingUrl: window.location.href, // Meeting joining url
-      },
-      pin: {
-        allowed: true, // participant can pin any participant in meeting
-        layout: "SPOTLIGHT", // meeting layout - GRID | SPOTLIGHT | SIDEBAR
-      },
+
+      /*
+
+     Other Feature Properties
+
+      */
     };
+
     const meeting = new VideoSDKMeeting();
     meeting.init(config);
   },
@@ -245,74 +195,20 @@ export default {
 
 ```
 
+:::note
+Stuck anywhere? Check out this vue [example code](https://github.com/videosdk-live/videosdk-rtc-vue-prebuilt-example) on github or [download](https://github.com/videosdk-live/videosdk-rtc-vue-prebuilt-example/archive/refs/heads/main.zip) the full source code and unzip on your computer.
+
+:::
+
 </TabItem>
 </Tabs>
 
 ### Step 3: Run the application
 
-Install any http server if you don't already have one and run the server to join meeting from browser.
-
-<Tabs
-defaultValue="node"
-values={[
-{label: 'Node.js', value: 'node'},
-{label: 'Python', value: 'python'},
-{label: 'PHP', value: 'php'},
-{label: 'WAMP', value: 'wamp'},
-{label: 'XAMPP', value: 'xampp'},
-]}>
-<TabItem value="node">
+Now, final step is to run the application and verify prebuilt in browesr.
 
 ```bash
-$ npm install -g live-server
-$ live-server --port=8000
+$ npm start
 ```
-
-and open [http://localhost:8000](http://localhost:8000) in your web browser
-
-</TabItem>
-<TabItem value="python">
-
-```bash
-$ python3 -m http.server
-```
-
-and open [http://localhost:8000](http://localhost:8000) in your web browser
-
-</TabItem>
-<TabItem value="php">
-
-```bash
-$ php -S localhost:8000
-```
-
-and open [http://localhost:8000](http://localhost:8000) in your web browser
-
-</TabItem>
-<TabItem value="wamp">
-
-```
-Move the html file to C:\wamp\www and start the WAMP server
-```
-
-and open [http://localhost/index.html](http://localhost/index.html) in your web browser
-
-</TabItem>
-<TabItem value="xampp">
-
-```
-Move the html file to C:\xampp\htdocs and start the XAMPP server
-```
-
-and open [http://localhost/index.html](http://localhost/index.html) in your web browser
-
-</TabItem>
-</Tabs>
 
 ![Prebuilt SDK Example to add video call widget in your web application](/img/prebuilt/prebuilt-grid.png)
-
-:::note
-
-Stuck anywhere? Check out this [example code](https://github.com/videosdk-live/videosdk-rtc-js-prebuilt-embedded-example) on github or [download](https://github.com/videosdk-live/videosdk-rtc-js-prebuilt-embedded-example/archive/refs/tags/v0.1.1.zip) the full source code and unzip on your computer.
-
-:::
