@@ -122,7 +122,15 @@ module.exports = {
       label: "SETUP",
       items: [
         "guide/prebuilt-video-and-audio-calling/signup-and-create-api",
-        "guide/prebuilt-video-and-audio-calling/client-setup",
+        {
+          type: "category",
+          label: "Client Setup",
+          items: [
+            "guide/prebuilt-video-and-audio-calling/using-script",
+            "guide/prebuilt-video-and-audio-calling/using-npm",
+          ],
+          collapsed: false,
+        },
       ],
       collapsed: false,
     },
