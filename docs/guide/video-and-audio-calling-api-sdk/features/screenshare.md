@@ -97,7 +97,16 @@ COMING SOON!
 <TabItem value="flutter">
 
 ```js
-COMING SOON!
+// only works for android
+
+ElevatedButton(
+  onPressed: meeting.disableScreenShare,
+  child: Text("Disable Screen Share"),
+),
+ElevatedButton(
+  onPressed: meeting.enableScreenShare,
+  child: Text("DnableS creenS hare"),
+),
 ```
 
 </TabItem>
