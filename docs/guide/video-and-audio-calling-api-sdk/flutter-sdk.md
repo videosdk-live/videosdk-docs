@@ -70,14 +70,6 @@ If you need to use a Bluetooth device, please add:
 <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
 ```
 
-And specify the service inside the `<application>` tag as follows.
-
-```xml
-
-<service android:name="live.videosdk.videosdk.VideosdkPlugin" android:foregroundServiceType="mediaProjection" android:enabled="true"/>
-
-```
-
 The Flutter project template adds it, so it may already be there.
 
 Also you will need to set your build settings to Java 8, because official WebRTC jar now uses static methods in `EglBase` interface. Just add this to your app level `build.gradle`:
