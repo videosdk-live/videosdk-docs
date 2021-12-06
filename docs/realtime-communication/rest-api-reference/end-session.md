@@ -1,11 +1,11 @@
 ---
 sidebar_position: 1
-sidebar_label: Get Session Details
+sidebar_label: End Session
 ---
 
-# Get Session Details
+# End Session
 
-Use the following Rest API to list session details.
+Use the following Rest API to end a running session.
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -22,27 +22,28 @@ values={[
 <TabItem value="curl">
 
 ```js
-
-curl -L -X GET 'https://api.videosdk.live/v1/meeting-sessions/:id' \
--H 'Authorization: $YOUR_JWT_TOKEN'
-
+cURL -H "Content-Type: application/json" \
+     -H "Authorization: $YOUR_JWT_TOKEN" \
+     -XPOST \
+     https://api.videosdk.live/v1/meeting-sessions/:id/end
 ```
 
 </TabItem>
 <TabItem value="node">
 
 ```js
-var request = require("request");
+var request = require("node-fetch");
+
 var options = {
-  method: "GET",
-  url: "https://api.videosdk.live/v1/meeting-sessions/:id",
-  headers: {
-    Authorization: "$YOUR_JWT_TOKEN",
-  },
+  method: "POST",
+  url: "https://api.videosdk.live/v1/meeting-sessions/:id/end",
+  headers: { authorization: `${YOUR_JWT_TOKEN}` },
 };
-request(options, function (error, response) {
+
+request(options, function (error, response, body) {
   if (error) throw new Error(error);
-  console.log(response.body);
+
+  console.log(body);
 });
 ```
 
@@ -52,57 +53,63 @@ request(options, function (error, response) {
 ```python
 import requests
 
-url = "https://api.videosdk.live/v1/meeting-sessions/:id"
+url = "https://api.videosdk.live/v1/meeting-sessions/:id/end"
 
-headers = {
-  'Authorization': '$YOUR_JWT_TOKEN'
-}
+headers = {'authorization': f'Bearer {YOUR_JWT_TOKEN}'}
 
-response = requests.request("GET", url, headers=headers)
+response = requests.request("POST", url, headers=headers)
 
 print(response.text)
-
 ```
 
 </TabItem>
 <TabItem value="ruby">
 
 ```ruby
-require "uri"
-require "net/http"
+require 'uri'
+require 'net/http'
 
-url = URI("https://api.videosdk.live/v1/meeting-sessions/:id")
+url = URI("https://api.videosdk.live/v1/meeting-sessions/:id/end")
 
-https = Net::HTTP.new(url.host, url.port)
-https.use_ssl = true
+http = Net::HTTP.new(url.host, url.port)
+http.use_ssl = true
+http.verify_mode = OpenSSL::SSL::VERIFY_NONE
 
 request = Net::HTTP::Get.new(url)
-request["Authorization"] = "$YOUR_JWT_TOKEN"
+request["authorization"] = "Bearer #{YOUR_JWT_TOKEN}"
 
-response = https.request(request)
+response = http.request(request)
 puts response.read_body
-
 ```
 
 </TabItem>
+
 <TabItem value="result">
 
 ```js
 {
-    "id": "616e79f7ba68c7768bfd18bf",
-    "meetingId": "ywnm-eicr-d55x",
-    "chatLink" : "https://cdn.zujonow.com/temp/hq3g-ny2g-kv8x-12348924f6213b0f00a9f7a6-6169bd856790717248e86cff.csv",
-    "start": "2021-10-19T07:55:35.807Z",
-    "end": "2021-10-19T07:55:39.941Z",
-    "activeDuration": 0,
+    "id": "61adc697a239e84d0aaa7e15",
+    "meetingId": "25af-rsr2-lk92",
+    "start": "2021-12-06T08:15:19.121Z",
+    "end": null,
     "participants": [
         {
-            "participantId": "wcrkkrf4",
+            "participantId": "c7wgj9sd",
             "name": "John Doe",
             "timelog": [
                 {
-                    "start": "2021-10-19T07:55:36.316Z",
-                    "end": "2021-10-19T07:55:39.937Z"
+                    "start": "2021-12-06T08:15:20.565Z",
+                    "end": "2021-12-06T08:15:54.246Z"
+                }
+            ]
+        },
+        {
+            "participantId": "ofwb7db6",
+            "name": "John Doe",
+            "timelog": [
+                {
+                    "start": "2021-12-06T08:15:27.585Z",
+                    "end": null
                 }
             ]
         }
@@ -122,7 +129,7 @@ import MethodListHeading from '@theme/MethodListHeading';
 <MethodListGroup>
     <MethodListGroup>
       <MethodListHeading heading="Path Parameters" />
-      <MethodListItemLabel name="id" option={"optional"} type={"string"} />
+      <MethodListItemLabel name="id" option={"session-id"} type={"string"} />
     </MethodListGroup>
 </MethodListGroup>
 
@@ -134,19 +141,18 @@ import MethodListHeading from '@theme/MethodListHeading';
     <MethodListHeading heading="Properties" />
           <MethodListItemLabel name="id"  type={"string"} />
           <MethodListItemLabel name="meetingId"  type={"string"} />
-          <MethodListItemLabel name="chatLink" type={"string"} />
           <MethodListItemLabel name="start"  type={"date"} />
           <MethodListItemLabel name="end"  type={"date"} />
-          <MethodListItemLabel name="activeDuration" type={"number"} >
-          <MethodListItemLabel name="participants" type={"Array<object>"} />
+          <MethodListItemLabel name="participants" type={"Array<object>"} >
             <MethodListGroup>
               <MethodListItemLabel name="participantId"  type={"string"} />
               <MethodListItemLabel name="name"  type={"string"} />
-               <MethodListItemLabel name="timelog" type={"Array<object>"} />
+               <MethodListItemLabel name="timelog" type={"Array<object>"} >
                <MethodListGroup>
                     <MethodListItemLabel name="start"  type={"date"} />
                     <MethodListItemLabel name="end"  type={"date"} />
                 </MethodListGroup>
+                </MethodListItemLabel>
             </MethodListGroup>
           </MethodListItemLabel>
     </MethodListGroup>
