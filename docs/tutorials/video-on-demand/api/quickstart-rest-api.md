@@ -133,7 +133,7 @@ curl --L --X POST 'https://storage-api.videosdk.live/v1/files' \
   "type": "video",
   "createdAt": "2021-03-18T05:07:18.771Z",
   "updatedAt": "2021-03-18T05:07:18.771Z",
-  "fileUrl": "https://cdn.videosdk.live/files/videos/6052e0064b442a2f16018373.mp4",
+  "fileUrl": "https://cdn.zujonow.com/files/videos/6052e0064b442a2f16018373.mp4",
   "id": "6052e0064b442a2f16018374"
 }
 ```
@@ -243,7 +243,7 @@ To play video, fetch `fileUrl` of video either from webhook or from the details 
 
 <script>
   const video = document.querySelector('#my-player');
-  const src = 'https://cdn.videosdk.live/files/videos/605311d9bba24b4d700c8c4d/index.m3u8';
+  const src = 'https://cdn.zujonow.com/files/videos/605311d9bba24b4d700c8c4d/index.m3u8';
   if (video.canPlayType('application/vnd.apple.mpegurl')) {
     // Some browers (safari and ie edge) support HLS natively
     video.src = src;

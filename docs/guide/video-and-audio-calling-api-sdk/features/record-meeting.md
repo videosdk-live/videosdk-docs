@@ -83,7 +83,19 @@ const onPress = () => {
 <TabItem value="android">
 
 ```js
-COMING SOON!
+// TODO: change webhookUrl
+String webhookUrl = "<webhook-url-here>";
+
+// keep track of recording
+boolean recording = false;
+
+findViewById(R.id.btnRecording).setOnClickListener(view -> {
+    if (!recording) {
+        meeting.startRecording(webhookUrl);
+    } else {
+        meeting.stopRecording();
+    }
+});
 ```
 
 </TabItem>
@@ -190,7 +202,21 @@ const {
 <TabItem value="android">
 
 ```js
-COMING SOON!
+new MeetingEventListener() {
+  @Override
+  public void onRecordingStarted() {
+      recording = true;
+
+      // TODO: show indication that meeting recording is started.
+  }
+
+  @Override
+  public void onRecordingStopped() {
+      recording = false;
+
+      // TODO: show indication that meeting recording is stopped.
+  }
+}
 ```
 
 </TabItem>
@@ -200,14 +226,14 @@ COMING SOON!
 /// Called after recording starts
 func onRecordingStarted() {
     recordingStarted = true
-    
+
     // show indication that meeting recording is started.
 }
 
 /// Caled after recording stops
 func onRecordingStoppped() {
     recordingStarted = false
-    
+
     // hide meeting recording indication.
 }
 ```

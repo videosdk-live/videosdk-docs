@@ -27,15 +27,15 @@ You can acces localParticipant from the [meeting object](/docs/guide/video-and-a
 
 ### Participant object properties
 
-| Property Name | Type    | Description                                            |
-| ------------- | ------- | ------------------------------------------------------ |
-| id            | string  | Unique id of the participant.                          |
-| displayName   | string  | The name you define during the meeting initialization. |
-| local         | boolean | Indicates the participant is local or not.             |
-| quality       | string  | Indicates the participant streams quality.             |
-| Streams       | Map     | Returns Video & Audio Streams.                         |
+| Property Name | Type          | Description                                            |
+| ------------- | ------------- | ------------------------------------------------------ |
+| id            | string        | Unique id of the participant.                          |
+| displayName   | string        | The name you define during the meeting initialization. |
+| local         | boolean       | Indicates the participant is local or not.             |
+| quality       | string        | Indicates the participant streams quality.             |
+| Streams       | Map of Stream | Returns Video & Audio Streams.                         |
 
-### Streams Map properties
+### Stream Object properties
 
 | Property Name | Type   | Description        |
 | ------------- | ------ | ------------------ |
@@ -70,13 +70,13 @@ values={[
 ```js
 /** localParticipant contains Participant object
   as displayed above local participant section */
-const localParticipant = meeeting.localParticipant;
+const localParticipant = meeting.localParticipant;
 
 localParticipant.streams.forEach((stream) => {
   setTrack(stream, videoElement, audioElement, participant.id);
 });
 
-const participants = meeeting.participants;
+const participants = meeting.participants;
 
 /** to play other participants video & audio */
 function loadOtherParticipants() {
@@ -143,9 +143,9 @@ import { useParticipant } from "@videosdk.live/react-sdk";
 /** localParticipant contains Participant object
   as displayed above local participant section */
 
-const localParticipant = meeeting.localParticipant;
+const localParticipant = meeting.localParticipant;
 
-const participants = meeeting.participants;
+const participants = meeting.participants;
 
 /** Render All Participant including local participant */
 {
@@ -234,9 +234,9 @@ import {
 
 /** localParticipant contains Participant object
   as displayed above local participant section */
-const localParticipant = meeeting.localParticipant;
+const localParticipant = meeting.localParticipant;
 
-const participants = meeeting.participants;
+const participants = meeting.participants;
 
 /** Render All Participant including local participant */
 {
@@ -419,10 +419,10 @@ Please refer the [example code](https://github.com/videosdk-live/videosdk-rtc-an
 
 ```js
 // get local participant
-let localParticipant = self.meeting?.localParticipant
+let localParticipant = self.meeting?.localParticipant;
 
 // get other participants
-let otherParticipants = self.meeting?.participants
+let otherParticipants = self.meeting?.participants;
 ```
 
 </TabItem>
@@ -681,9 +681,9 @@ class RemoteParticipantState extends State<RemoteParticipant> {
 
 ## 3. Participant Related Events
 
-1. **participant-joined** - Whenever any new participant join the meeting, `participant-joined` event will trigger. For example, the meeeting is running with **Alice** and **Bob**, then **Eve** join that meeting, after that `participant-joined` event trigger and return the [participant object](/docs/guide/video-and-audio-calling-api-sdk/features/manage-participants#participant-object-properties).
+1. **participant-joined** - Whenever any new participant join the meeting, `participant-joined` event will trigger. For example, the meeting is running with **Alice** and **Bob**, then **Eve** join that meeting, after that `participant-joined` event trigger and return the [participant object](/docs/guide/video-and-audio-calling-api-sdk/features/manage-participants#participant-object-properties).
 
-2. **participant-left** - Whenever any participant leave/exit the meeting, `participant-left` event will trigger.For example, the meeeting is running with **Alice** and **Bob**, then **Bob** leave that meeting, after that `participant-left` event trigger and return the [participant object](/docs/guide/video-and-audio-calling-api-sdk/features/manage-participants#participant-object-properties)
+2. **participant-left** - Whenever any participant leave/exit the meeting, `participant-left` event will trigger.For example, the meeting is running with **Alice** and **Bob**, then **Bob** leave that meeting, after that `participant-left` event trigger and return the [participant object](/docs/guide/video-and-audio-calling-api-sdk/features/manage-participants#participant-object-properties)
 
 3. **presenter-changed** - Whenever any participant present/screenshare their screen/window in meeting, `presenter-changed` event will trigger and return the presenter `participantId`.
 
@@ -834,7 +834,7 @@ extension MeetingViewController: MeetingEventListener {
     func onMeetingJoined() {
 
         // handle for local participant
-        if let localParticipant = self.meeting?.localParticipant { 
+        if let localParticipant = self.meeting?.localParticipant {
             // event listener for self
             localParticipant.addEventListener(self)
 
@@ -851,29 +851,29 @@ extension MeetingViewController: MeetingEventListener {
     func onParticipantJoined(_ participant: Participant) {
         // add new participant to list
         participants.append(participant)
-        
+
         // add listener
         participant.addEventListener(self)
-        
+
         // show in ui
         // ex. add to collectionView
         // addParticipantToGridView()
     }
-    
+
     /// A participant left from the meeting
     /// - Parameter participant: participant object
     func onParticipantLeft(_ participant: Participant) {
         // remove listener
         participant.removeEventListener(self)
-        
+
         // remove from list and update ui
         guard let index = self.participants.firstIndex(where: { $0.id == participant.id }) else {
             return
         }
-        
+
         // remove participant from list
         participants.remove(at: index)
-        
+
         // hide from ui
         // ex. remove from collectionview
         // removeParticipantFromGridView(at: index)
@@ -883,13 +883,13 @@ extension MeetingViewController: MeetingEventListener {
 // MARK: - ParticipantEventListener
 
 extension MeetingViewController: ParticipantEventListener {
- 
+
     /// Participant has enabled mic, video or screenshare
     /// - Parameters:
     ///   - stream: enabled stream object
     ///   - participant: participant object
     func onStreamEnabled(_ stream: MediaStream, forParticipant participant: Participant) {
-        
+
         switch stream.kind {
         case .audio:
             // update ui to show that participant's mic is enabled
@@ -923,13 +923,13 @@ extension MeetingViewController: ParticipantEventListener {
             }
         }
     }
-    
+
     /// Participant has disabled mic, video or screenshare
     /// - Parameters:
     ///   - stream: disabled stream object
     ///   - participant: participant object
     func onStreamDisabled(_ stream: MediaStream, forParticipant participant: Participant) {
-        
+
         switch stream.kind {
         case .audio:
             // update ui to show that participant's mic is disabled

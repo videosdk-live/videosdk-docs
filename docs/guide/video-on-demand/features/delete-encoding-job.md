@@ -40,7 +40,7 @@ values={[
 
 ```js
 curl --request DELETE \
-  --url 'https://api.zujonow.com/v1/encoder/jobs/${id}' \
+  --url 'https://api.videosdk.live/v1/encoder/jobs/${id}' \
   --header 'Authorization: `jwt token goes here`'
 ```
 
@@ -50,7 +50,7 @@ curl --request DELETE \
 ```js
 const fetch = require("node-fetch");
 
-const url = "https://api.zujonow.com/v1/encoder/jobs/${id}";
+const url = "https://api.videosdk.live/v1/encoder/jobs/${id}";
 const options = {
   method: "DELETE",
   headers: { Accept: "application/json", Authorization: `jwt token goes here` },
@@ -68,7 +68,7 @@ fetch(url, options)
 ```python
 import requests
 
-url = "https://api.zujonow.com/v1/encoder/jobs/${id}"
+url = "https://api.videosdk.live/v1/encoder/jobs/${id}"
 
 headers = {"Accept": "application/json", "Authorization": "jwt token goes here"}
 
@@ -85,7 +85,7 @@ require 'uri'
 require 'net/http'
 require 'openssl'
 
-url = URI("https://api.zujonow.com/v1/encoder/jobs/${id}")
+url = URI("https://api.videosdk.live/v1/encoder/jobs/${id}")
 
 http = Net::HTTP.new(url.host, url.port)
 http.use_ssl = true

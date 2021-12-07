@@ -25,17 +25,31 @@ React JS SDK wraps up out JavaScript SDK into usable hooks API. It simplifies th
 
 The easiest way to get started is by installing the sdk in your app.
 
-#### Npm
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs
+defaultValue="npm"
+values={[
+{label: 'Npm', value: 'npm'},
+{label: 'Yarn', value: 'yarn'}
+]}>
+<TabItem value="npm">
 
 ```js
-$ npm install "@videosdk.live/react-native-sdk"
+npm install "@videosdk.live/react-native-sdk"
 ```
 
-#### Yarn
+</TabItem>
+<TabItem value="yarn">
 
 ```js
-$ yarn add "@videosdk.live/react-native-sdk"
+yarn add "@videosdk.live/react-native-sdk"
 ```
+
+</TabItem>
+
+</Tabs>
 
 ### Step 2: Install @videosdk.live/react-native-incallmanager to manage media-routes/sensors/events during a audio/video chat on React Native
 
@@ -53,18 +67,12 @@ $[sudo] gem install cocoapods
 
 ### Step 4: Manual linking (if react-native-incall-manager is not linked automatically)
 
-- 1. Drag node_modules/@videosdk.live/react-native-incall-manager/ios/RNInCallManager.xcodeproj under <your_xcode_project>/Libraries
+- Select `Your_Xcode_Project/TARGETS/BuildSettings`, in Header Search Paths, add `"$(SRCROOT)/../node_modules/@videosdk.live/react-native-incall-manager/ios/RNInCallManager"`
 
-- 2. Select <your_xcode_project> --> Build Phases --> Link Binary With Libraries
-
-  - Drag Libraries/RNInCallManager.xcodeproj/Products/libRNInCallManager.a to Link Binary With Libraries
-
-- 3. Select <your_xcode_project> --> Build Settings In Header Search Paths, add \$(SRCROOT)/../node_modules/@videosdk.live/react-native-incall-manager/ios/RNInCallManager
-
-### Step 5: Change the dependecy of react-native-webrtc
+### Step 5: Include in the Podfile in your react-native ios directory
 
 ```js title="Podfile"
-pod ‘react-native-webrtc’, :path => ‘../node_modules/@videosdk.live/react-native-webrtc’
+pod 'react-native-webrtc', :path => '../node_modules/@videosdk.live/react-native-sdk/node_modules/@videosdk.live/react-native-webrtc'
 ```
 
 ### Step 6: Change platform field of podfile to 11.0 or above it
@@ -77,11 +85,7 @@ You have change platform field of podfile to 11.0 or above it, as react-native-w
 $ Pod install
 ```
 
-### Step 8: Link WebRTC binary
-
-Add “libreact-native-webrtc.a” in Link Binary with libraries. In target of main project folder.
-
-### Step 9: Declare permissions in Info.plist
+### Step 8: Declare permissions in Info.plist
 
 ```js title="IOS/projectname/info.plist"
 <key>NSCameraUsageDescription</key>
@@ -90,7 +94,7 @@ Add “libreact-native-webrtc.a” in Link Binary with libraries. In target of m
 <string>Microphone permission description</string>
 ```
 
-### Step 10: Register services at index page of project
+### Step 9: Register services at index page of project
 
 ```js title="App.js"
 // Import the library
@@ -103,6 +107,18 @@ import App from './src/App.js';
 register();
 AppRegistry.registerComponent(appName, () => App);
 ```
+
+## Use hooks API
+
+Our React JS SDK provides two important hooks API:
+
+- **useMeeting** : Responsible to handle meeting environment.
+- **useParticipant** : Responsible to handle Participant
+
+Also, React Provider and Consumer to listen changes in meeting environment.
+
+- **MeetingProvider** : Meeting Provider is [Context.Provider](https://reactjs.org/docs/context.html#contextprovider) that allows consuming components to subscribe to meeting changes
+- **MeetingConsumer** : Meeting Consumer is [Context.Consumer](https://reactjs.org/docs/context.html#contextconsumer) that subscribes to meeting changes.
 
 :::note
 
