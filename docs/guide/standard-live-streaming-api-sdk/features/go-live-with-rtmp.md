@@ -38,11 +38,11 @@ This will prompt you to add a type of video source you can add.
 - Now, click on the next tab labeled **Stream** in the OBS Studio settings window and perform below steps
 
   1. Select **Custom...** value in Service dropdown.
-  2. Copy this `rtmp://live.zujonow.com/live` and paste it to **Server** textfield.
+  2. Copy this `rtmp://live.videosdk.live/live` and paste it to **Server** textfield.
      :::note
-     `upstreamUrl` consist two part, for example, `rtmp://live.zujonow.com/live/eb175-5-4e5-60-aacfce300b` is our `upstreamUrl`.
+     `upstreamUrl` consist two part, for example, `rtmp://live.videosdk.live/live/eb175-5-4e5-60-aacfce300b` is our `upstreamUrl`.
 
-     - **serverURL** : `rtmp://live.zujonow.com/live` this part we call it as our serverURL.
+     - **serverURL** : `rtmp://live.videosdk.live/live` this part we call it as our serverURL.
      - **streamKey** : `eb175-5-4e5-60-aacfce300b` this part we call it as our streamKey.
        :::
 

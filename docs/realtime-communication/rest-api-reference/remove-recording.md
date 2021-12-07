@@ -111,7 +111,7 @@ puts response.read_body
       "type": "video",
       "createdAt": "2021-07-02T13:34:30.566Z",
       "updatedAt": "2021-07-02T13:34:30.566Z",
-      "fileUrl": "https://cdn.videosdk.live/encoded/videos/60df15dc1b5d6a8205573286/720.mp4",
+      "fileUrl": "https://cdn.zujonow.com/encoded/videos/60df15dc1b5d6a8205573286/720.mp4",
       "id": "60df15e61b5d6a3805573289"
   },
   "id": "60df15df7433b02e3d06653c"

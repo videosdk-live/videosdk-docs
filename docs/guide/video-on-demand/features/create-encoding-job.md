@@ -45,7 +45,7 @@ values={[
 <TabItem value="curl">
 
 ```js
-curl --L --X POST 'https://api.zujonow.com/v1/encoder/jobs' \
+curl --L --X POST 'https://api.videosdk.live/v1/encoder/jobs' \
 --header 'Authorization: `your token goes here`' \
 --header 'Content-Type: application/json' \
 --data-raw '
@@ -78,7 +78,7 @@ curl --L --X POST 'https://api.zujonow.com/v1/encoder/jobs' \
 ```js
 var fetch = require("node-fetch");
 
-const url = "https://api.zujonow.com/v1/encoder/jobs";
+const url = "https://api.videosdk.live/v1/encoder/jobs";
 var options = {
   method: "POST",
   headers: {
@@ -122,7 +122,7 @@ fetch(url, options)
 ```python
 import requests
 
-url = "https://api.zujonow.com/v1/encoder/jobs"
+url = "https://api.videosdk.live/v1/encoder/jobs"
 
 payload = {
   videoId: "6053115ebba24b4d700c8c49",
@@ -166,7 +166,7 @@ require 'uri'
 require 'net/http'
 require 'openssl'
 
-url = URI("https://api.zujonow.com/v1/encoder/jobs")
+url = URI("https://api.videosdk.live/v1/encoder/jobs")
 
 http = Net::HTTP.new(url.host, url.port)
 http.use_ssl = true
