@@ -3,8 +3,8 @@ title: Share your Screen Video & Audio Call - Video SDK Docs
 hide_title: false
 hide_table_of_contents: false
 description: Share your Screen features quick integrate in Javascript, React JS and React native android with Video SDK to add live video & audio conferencing to your applications.
-sidebar_label: JS, ReactJS and React Native Android
-pagination_label: JS, ReactJS and React Native Android
+sidebar_label: Other platforms
+pagination_label: Other platforms
 keywords:
   - Start Screen share
   - Stop Screen share
@@ -13,10 +13,10 @@ keywords:
   - real-time communication
 image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
-slug: javascript-reactjs-react-native-android
+slug: other-platforms
 ---
 
-# JS, ReactJS and React Native Android
+# Share your screen
 
 Whenever any participant wants to share either the complete screen, a specific window or, a browser tab, they can simply do it with videoSDK Meeting.
 For Mobile Devices a complete screen will be share.
@@ -54,7 +54,6 @@ const onPress = () => {
 <TabItem value="react">
 
 ```js
-
 import { useMeeting } from "@videosdk.live/react-sdk";
 
 const { enableScreenShare, disableScreenShare } = useMeeting();
@@ -66,7 +65,6 @@ const onPress = () => {
   // Disabling ScreenShare
   disableScreenShare();
 };
-
 ```
 
 </TabItem>
@@ -84,7 +82,6 @@ const onPress = () => {
   // Disabling ScreenShare
   disableScreenShare();
 };
-
 ```
 
 </TabItem>

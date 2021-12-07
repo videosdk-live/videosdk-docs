@@ -200,9 +200,10 @@ module.exports = {
         {
           type: "category",
           label: "Share Your Screen",
-          items: ["guide/video-and-audio-calling-api-sdk/features/screenshare/js-react-RNandroid",
-          "guide/video-and-audio-calling-api-sdk/features/screenshare/react-native-ios"
-        ],
+          items: [
+            "guide/video-and-audio-calling-api-sdk/features/screenshare/react-native-ios",
+            "guide/video-and-audio-calling-api-sdk/features/screenshare/other-platforms",
+          ],
           collapsed: false,
         },
         "guide/video-and-audio-calling-api-sdk/features/toggle-participant-media",
