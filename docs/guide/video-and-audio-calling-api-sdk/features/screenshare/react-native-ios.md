@@ -2,9 +2,9 @@
 title: Share your Screen Video & Audio Call - Video SDK Docs
 hide_title: false
 hide_table_of_contents: false
-description: Share your Screen features quick integrate in Javascript, React JS, Android, IOS, React Native, Flutter with Video SDK to add live video & audio conferencing to your applications.
-sidebar_label: Share Your Screen
-pagination_label: Share Your Screen
+description: Share your Screen features quick integrate in Javascript and React JS with Video SDK to add live video & audio conferencing to your applications.
+sidebar_label:  React Native iOS
+pagination_label:  React Native iOS
 keywords:
   - Start Screen share
   - Stop Screen share
@@ -13,98 +13,19 @@ keywords:
   - real-time communication
 image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
-slug: screenshare
+slug: react-native-ios
 ---
 
-# Share Your Screen
 
-Whenever any participant wants to share either the complete screen, a specific window or, a browser tab, they can simply do it with videoSDK Meeting.
-For Mobile Devices a complete screen will be share.
+# React Native iOS
 
-This guide will provide an overview of how to use enable and disable Screen Share in a meeting.
+## Contents
 
-1. **Enable Screen Share** - By using `enableScreenShare()` function, a participant can publish screen stream to other participants.
-2. **Disable Screen Share** - By using `disableScreenShare()` function, a participant can stop publishing screen stream to other participants.
+ - [How to create Broadcast Upload Extension for Screen Sharing in iOS](/docs/guide/video-and-audio-calling-api-sdk/features/screenshare/react-native-ios#how-to-create-broadcast-upload-extension-for-screen-sharing-in-ios)
 
-### Enable, Disable Screen Share
+  - [How to create iOS Native Module for RPSystemBroadcastPickerView](/docs/guide/video-and-audio-calling-api-sdk/features/screenshare/react-native-ios#how-to-create-ios-native-module-for-rpsystembroadcastpickerview)
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
-<Tabs
-defaultValue="js"
-values={[
-{label: 'JavaScript', value: 'js'},
-{label: 'React', value: 'react'},
-{label: 'ReactNative', value: 'reactnative'},
-{label: 'Android', value: 'android'},
-{label: 'IOS', value: 'ios'},
-{label: 'Flutter', value: 'flutter'},
-]}>
-<TabItem value="js">
-
-```js
-const onPress = () => {
-  // Enabling ScreenShare
-  meeting?.enableScreenShare();
-
-  // Disabling ScreenShare
-  meeting?.disableScreenShare();
-};
-```
-
-</TabItem>
-<TabItem value="react">
-
-```js
-const onPress = () => {
-  // Enabling ScreenShare
-  meeting?.enableScreenShare();
-
-  // Disabling ScreenShare
-  meeting?.disableScreenShare();
-};
-```
-
-</TabItem>
-<TabItem value="reactnative">
-
-```js
-const onPress = () => {
-  // Enabling ScreenShare
-  meeting?.enableScreenShare();
-
-  // Disabling ScreenShare
-  meeting?.disableScreenShare();
-};
-```
-
-</TabItem>
-<TabItem value="android">
-
-```js
-COMING SOON!
-```
-
-</TabItem>
-<TabItem value="ios">
-
-```js
-COMING SOON!
-```
-
-</TabItem>
-<TabItem value="flutter">
-
-```js
-COMING SOON!
-```
-
-</TabItem>
-</Tabs>
-
-
-## Steps to create broadcast upload extension for screen sharing in ios
+## How to create Broadcast Upload Extension for Screen Sharing in iOS
 
 ### Step 1 : Open Target
 
@@ -182,7 +103,14 @@ Go to **Your-Extension-Name -> Signing & Capabilities** and configure  **App Gro
 
 ![IOS Screen Share](/img/ios-screenshare/step13-xcode.png)
 
-## Steps to create iOS Native Module for RPSystemBroadcastPickerView
+
+:::note
+
+You can also check out extension [example code](https://github.com/videosdk-live/videosdk-rtc-react-native-sdk-example/tree/master/ios/BroadcastScreen) on github
+:::
+
+
+## How to create iOS Native Module for RPSystemBroadcastPickerView
 
 ### Step 1 : Add Files in iOS Project
 
@@ -210,7 +138,7 @@ After creating bridging header file, create Objective-c file name `VideosdkRPK`
 
 
 
-### Step 2 : Integrate Native Module at React native side
+### Step 2 : Integrate Native Module on React native side
 
  - Create file with name  `VideosdkRPK.js` and copy the code from [VideosdkRPK.js](https://github.com/videosdk-live/videosdk-rtc-react-native-sdk-example/blob/master/VideosdkRPK.js).
 
@@ -220,6 +148,7 @@ After creating bridging header file, create Objective-c file name `VideosdkRPK`
 import React, { useEffect } from "react";
 import VideosdkRPK from "../VideosdkRPK";
 import { TouchableOpacity, Text } from "react-native";
+
 const { enableScreenShare, disableScreenShare } = useMeeting({});
 
 useEffect(() => {
@@ -262,7 +191,7 @@ return (
 
 ![IOS Screen Share](/img/ios-screenshare/step23-xcode.png)
 
-After clicking **Start Broadcast** button, we wiil able to get the screen stream in session.
+After clicking **Start Broadcast** button, we wiil be able to get the screen stream in session.
 
 
 <!-- ## How to Create App Group in Apple Store
