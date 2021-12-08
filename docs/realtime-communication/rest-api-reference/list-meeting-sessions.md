@@ -106,7 +106,7 @@ puts response.read_body
             "participants": [
                 {
                     "participantId": "wcrkkrf4",
-                    "name": "Chintan Rajpara",
+                    "name": "John Doe",
                     "timelog": [
                         {
                             "start": "2021-10-19T07:55:36.316Z",
