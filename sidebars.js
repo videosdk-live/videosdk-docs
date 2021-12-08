@@ -197,15 +197,9 @@ module.exports = {
         "guide/video-and-audio-calling-api-sdk/features/leave-end-meeting",
         "guide/video-and-audio-calling-api-sdk/features/camera-controls",
         "guide/video-and-audio-calling-api-sdk/features/mic-controls",
-        {
-          type: "category",
-          label: "Share Your Screen",
-          items: [
-            "guide/video-and-audio-calling-api-sdk/features/screenshare/react-native-ios",
-            "guide/video-and-audio-calling-api-sdk/features/screenshare/other-platforms",
-          ],
-          collapsed: false,
-        },
+        "guide/video-and-audio-calling-api-sdk/features/screenshare",
+
+        
         "guide/video-and-audio-calling-api-sdk/features/toggle-participant-media",
         "guide/video-and-audio-calling-api-sdk/features/send-messages",
         "guide/video-and-audio-calling-api-sdk/features/record-meeting",
@@ -213,6 +207,14 @@ module.exports = {
         "guide/video-and-audio-calling-api-sdk/features/go-live-social-media",
         "guide/video-and-audio-calling-api-sdk/features/speaker-indication",
         "guide/video-and-audio-calling-api-sdk/features/pin-participants",
+      ],
+      collapsed: false,
+    },
+    {
+      type: "category",
+      label: "Extras",
+      items: [
+        "guide/video-and-audio-calling-api-sdk/extras/react-native-ios-screen-share",
       ],
       collapsed: false,
     },

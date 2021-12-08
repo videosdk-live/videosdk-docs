@@ -2,9 +2,9 @@
 title: Share your Screen Video & Audio Call - Video SDK Docs
 hide_title: false
 hide_table_of_contents: false
-description: Share your Screen features quick integrate in Javascript and React JS with Video SDK to add live video & audio conferencing to your applications.
-sidebar_label: React Native iOS
-pagination_label: React Native iOS
+description: Share your Screen features quick integrate in react native IOS with Video SDK to add live video & audio conferencing to your applications.
+sidebar_label: React Native iOS Screen Share
+pagination_label: React Native iOS Screen Share
 keywords:
   - Start Screen share
   - Stop Screen share
@@ -13,15 +13,15 @@ keywords:
   - real-time communication
 image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
-slug: react-native-ios
+slug: react-native-ios-screen-share
 ---
 
 # Share screen - React Native iOS
 
 ## Contents
 
-1. [Create Broadcast Upload Extension in iOS](/docs/guide/video-and-audio-calling-api-sdk/features/screenshare/react-native-ios#how-to-create-broadcast-upload-extension-for-screen-sharing-in-ios)
-2. [Create iOS Native Module for RPSystemBroadcastPickerView](/docs/guide/video-and-audio-calling-api-sdk/features/screenshare/react-native-ios#how-to-create-ios-native-module-for-rpsystembroadcastpickerview)
+1. [Create Broadcast Upload Extension in iOS](/docs/guide/video-and-audio-calling-api-sdk/extras/react-native-ios-screen-share#create-broadcast-upload-extension-in-ios)
+2. [Create iOS Native Module for RPSystemBroadcastPickerView](/docs/guide/video-and-audio-calling-api-sdk/extras/react-native-ios-screen-share#create-ios-native-module-for-rpsystembroadcastpickerview)
 
 ## Create Broadcast Upload Extension in iOS
 
