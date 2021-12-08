@@ -196,15 +196,15 @@ module.exports = {
         {
           type: "category",
           label: "Manage Participants",
+          collapsed: true,
           items: [
-            "guide/video-and-audio-calling-api-sdk/features/manage-participants/participant",
+            "guide/video-and-audio-calling-api-sdk/features/manage-participants/introduction",
             "guide/video-and-audio-calling-api-sdk/features/manage-participants/javascript",
             "guide/video-and-audio-calling-api-sdk/features/manage-participants/react",
             "guide/video-and-audio-calling-api-sdk/features/manage-participants/react-native",
             "guide/video-and-audio-calling-api-sdk/features/manage-participants/flutter",
             "guide/video-and-audio-calling-api-sdk/features/manage-participants/participant-events",
           ],
-          collapsed: false,
         },
         "guide/video-and-audio-calling-api-sdk/features/leave-end-meeting",
         "guide/video-and-audio-calling-api-sdk/features/camera-controls",

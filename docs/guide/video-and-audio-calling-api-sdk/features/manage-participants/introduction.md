@@ -3,8 +3,8 @@ title: Participants Video & Audio Call - Video SDK Docs
 hide_title: false
 hide_table_of_contents: false
 description: Manage Participants features quick integrate in Javascript, React JS, Android, IOS, React Native, Flutter with Video SDK to add live video & audio conferencing to your applications.
-sidebar_label: What is Participant ?
-pagination_label: What is Participant ?
+sidebar_label: Introduction
+pagination_label: Introduction to participant
 keywords:
   - Exit Meeting
   - Leave Meeting
@@ -13,13 +13,12 @@ keywords:
   - real-time communication
 image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
-slug: manage-participants
+slug: introduction
 ---
 
-# What is Participant?
+# Introduction to participant
 
-A participant is refered as a single user in a meeting, it can be you or can be remote user.
-In Video SDK we have categorise participant in two types.
+A participant is referred to as a single user in the meeting, it can be you or a remote user.
 
 1. [Local Participant (Self | You)](/docs/guide/video-and-audio-calling-api-sdk/features/manage-participants/manage-participants#1-local-participant-self--you)
 2. [Remote Participants (Except You)](/docs/guide/video-and-audio-calling-api-sdk/features/manage-participants/manage-participants#2-remote-participants-except-you)
@@ -27,13 +26,14 @@ In Video SDK we have categorise participant in two types.
 ### 1. Local Participant (Self | You)
 
 Local participant is used to consume your video & audio streams.
-local participant object contains properties such as displayName, id, quality and streams Map.
+
+`localParticipant` object contains properties such as `displayName`, `id`, `quality` and `streams` Map.
 
 ### 2. Remote Participants (Except You)
 
 Remote participants Map is used to get all the participants (except you) in the meeting at any given time.
 
-Remote participants Map contains same properties as **LocalParticipant**.
+Each participant in the `participants` Map contains same properties as `localParticipant`.
 
 ### Accessing Participants
 
