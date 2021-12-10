@@ -50,7 +50,42 @@ You can simply add **Custom HTML** block in page, just by clicking on it.
 ## Step 4 : Add prebuilt code in a HTML block
 
 White color code snippet will appear, after adding cusotm html block.
-Copy the code from [index.html](https://github.com/videosdk-live/videosdk-rtc-js-prebuilt-embedded-example/blob/master/index.html) and paste it under html code snippet.
+Copy the code from below snippet.
+
+```html title="index.html"
+<script>
+  var script = document.createElement("script");
+  script.type = "text/javascript";
+
+  script.addEventListener("load", function (event) {
+    const config = {
+      name: "Video SDK Live",
+      meetingId: "prebuilt",
+      apiKey: "<YOUR API KEY>",
+
+      containerId: null,
+
+      micEnabled: true,
+      webcamEnabled: true,
+      participantCanToggleSelfWebcam: true,
+      participantCanToggleSelfMic: true,
+
+      chatEnabled: true,
+      screenShareEnabled: true,
+
+    };
+
+    const meeting = new VideoSDKMeeting();
+    meeting.init(config);
+  });
+
+  script.src =
+    "https://sdk.videosdk.live/rtc-js-prebuilt/0.1.18/rtc-js-prebuilt.js";
+  document.getElementsByTagName("head")[0].appendChild(script);
+</script>
+```
+
+After that, it will look like this.
 
 ![Wordpress Prebuilt](/img/prebuilt/wordpress/wordpress-5.png)
 
@@ -120,7 +155,7 @@ Now, we need to modify only `meetingId` property from `config` object
 
 
       script.src =
-        "https://sdk.videosdk.live/rtc-js-prebuilt/0.1.16/rtc-js-prebuilt.js";
+        "https://sdk.videosdk.live/rtc-js-prebuilt/0.1.18/rtc-js-prebuilt.js";
       document.getElementsByTagName("head")[0].appendChild(script);
     </script>
 ```
