@@ -566,7 +566,6 @@ module.exports = {
           collapsed: false,
           items: [
             "tutorials/realtime-communication/prebuilt-sdk/quickstart-prebuilt-js",
-            "tutorials/realtime-communication/js-sdk/quickstart-js",
             "tutorials/realtime-communication/prebuilt-sdk/quickstart-prebuilt-wordpress",
           ],
         },
