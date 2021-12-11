@@ -90,7 +90,7 @@ After assigning meeting id as params, we have to fetch it in code block, so that
 
 For that we will use `URLSearchParams` API to get the data in the URL query parameters.
 
-`const url = new URLSearchParams(window.parent.location.href);`
+`const url = new URLSearchParams(window.location.search);`
 
 For getting meetingId, we will use **get(_params_name_)** method
 
