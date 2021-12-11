@@ -199,7 +199,6 @@ module.exports = {
         "guide/video-and-audio-calling-api-sdk/features/mic-controls",
         "guide/video-and-audio-calling-api-sdk/features/screenshare",
 
-        
         "guide/video-and-audio-calling-api-sdk/features/toggle-participant-media",
         "guide/video-and-audio-calling-api-sdk/features/send-messages",
         "guide/video-and-audio-calling-api-sdk/features/record-meeting",
@@ -568,6 +567,7 @@ module.exports = {
           items: [
             "tutorials/realtime-communication/prebuilt-sdk/quickstart-prebuilt-js",
             "tutorials/realtime-communication/js-sdk/quickstart-js",
+            "tutorials/realtime-communication/prebuilt-sdk/quickstart-prebuilt-wordpress",
           ],
         },
       ],
