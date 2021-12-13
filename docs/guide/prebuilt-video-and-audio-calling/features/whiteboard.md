@@ -14,7 +14,7 @@ slug: whiteboard
 
 # Whiteboard
 
-This fetaure allows any participant can explain their thoughts to other participants by drawing on whiteboard.
+This feature allows any participant can explain their thoughts to other participants by drawing on whiteboard.
 
 ### How it works ?
 
@@ -34,7 +34,7 @@ This fetaure allows any participant can explain their thoughts to other particip
 const config = {
   // ...
   whiteboardEnabled: true,
-  permission: {
+  permissions: {
     // ...
     drawOnWhiteboard: true,
     toggleWhiteboard: true,
