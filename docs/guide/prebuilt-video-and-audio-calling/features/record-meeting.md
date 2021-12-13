@@ -36,15 +36,18 @@ Any participant can start/stop recording any time during the meeting.
 ### Recording Attributes
 
 - `recordingEnabled`: If it is true, then recording button will be visible on top bar of the meeting. If it is false, then recording button won't be available on top bar of the meeting.
-- `participantCanToggleRecording`: If it is true, then other participant can start/stop recording during the meeting. If it is false, then participant can not start/stop recording during the meeting.
+- `toggleRecording`: If it is true, then other participant can start/stop recording during the meeting. If it is false, then participant can not start/stop recording during the meeting.
 - `recordingWebhookUrl`: It's your [webhook url](https://en.wikipedia.org/wiki/Webhook), where we notify once meeting recording is complete.
 
 ```js title="index.html"
 const config = {
   // ...
   recordingEnabled: true,
-  participantCanToggleRecording: true,
   recordingWebhookUrl: "yourwebsite.com/callback",
+  permissions: {
+    // ...
+    toggleRecording: true, // Can toggle meeting recording
+  },
   // ...
 };
 ```

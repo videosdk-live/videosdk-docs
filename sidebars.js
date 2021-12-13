@@ -152,6 +152,7 @@ module.exports = {
         "guide/prebuilt-video-and-audio-calling/features/pin-participants",
         "guide/prebuilt-video-and-audio-calling/features/remove-participant",
         "guide/prebuilt-video-and-audio-calling/features/end-meeting",
+        "guide/prebuilt-video-and-audio-calling/features/whiteboard",
       ],
       collapsed: false,
     },
