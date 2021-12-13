@@ -33,12 +33,11 @@ meeting.init({
   chatEnabled: true,
   screenShareEnabled: true,
   pollEnabled: true,
-  whiteBoardEnabled: true,
+  whiteboardEnabled: true,
   raiseHandEnabled: true,
 
   recordingEnabled: true,
   recordingWebhookUrl: "https://www.videosdk.live/callback",
-  participantCanToggleRecording: true,
 
   brandingEnabled: true,
   brandLogoURL: "https://picsum.photos/200",
@@ -62,6 +61,11 @@ meeting.init({
     askToJoin: false, // Ask joined participants for entry in meeting
     toggleParticipantMic: true, // Can toggle other participant's mic
     toggleParticipantWebcam: true, // Can toggle other participant's webcam
+    drawOnWhiteboard: true, // Can draw on whiteboard
+    toggleWhiteboard: true, // Can toggle whiteboard
+    toggleRecording: true, // Can toggle meeting recording
+    removeParticipant: true, // Can remove participant
+    endMeeting: true, // Can end meeting
   },
 
   joinScreen: {
@@ -95,7 +99,7 @@ import MethodListHeading from '@theme/MethodListHeading';
       <MethodListItemLabel name="chatEnabled" option={"required"} type={"boolean"} />
       <MethodListItemLabel name="screenShareEnabled" option={"required"} type={"boolean"} />
       <MethodListItemLabel name="pollEnabled" option={"required"} type={"boolean"} />
-      <MethodListItemLabel name="whiteBoardEnabled" option={"required"} type={"boolean"} />
+      <MethodListItemLabel name="whiteboardEnabled" option={"required"} type={"boolean"} />
       <MethodListItemLabel name="participantCanToggleSelfWebcam" option={"required"} type={"boolean"} />
       <MethodListItemLabel name="participantCanToggleSelfMic" option={"required"} type={"boolean"} />
       <MethodListItemLabel name="raiseHandEnabled" option={"required"} type={"boolean"} />
@@ -103,7 +107,6 @@ import MethodListHeading from '@theme/MethodListHeading';
       <MethodListItemLabel name="containerId" option={"required"} type={"string"} description={"Specify id of the container where you want to display prebuilt UI or keep it null"} />
       <MethodListItemLabel name="recordingEnabled" option={"optional"} type={"boolean"} />
       <MethodListItemLabel name="recordingWebhookUrl" option={"optional"} type={"string"} />
-      <MethodListItemLabel name="participantCanToggleRecording" option={"optional"} type={"boolean"} />
       <MethodListItemLabel name="brandingEnabled" option={"optional"} type={"boolean"} />
       <MethodListItemLabel name="brandLogoURL" option={"optional"} type={"string"} />
       <MethodListItemLabel name="brandName" option={"optional"} type={"string"} />
@@ -120,6 +123,9 @@ import MethodListHeading from '@theme/MethodListHeading';
           <MethodListItemLabel name="askToJoin" option={"optional"} type={"boolean"} />
           <MethodListItemLabel name="toggleParticipantMic" option={"optional"} type={"boolean"} />
           <MethodListItemLabel name="toggleParticipantWebcam" option={"optional"} type={"boolean"} />
+          <MethodListItemLabel name="drawOnWhiteboard" option={"optional"} type={"boolean"} />
+          <MethodListItemLabel name="toggleWhiteboard" option={"optional"} type={"boolean"} />
+          <MethodListItemLabel name="toggleRecording" option={"optional"} type={"boolean"} />
         </MethodListGroup>
       </MethodListItemLabel>
       <MethodListItemLabel name="joinScreen" option={"optional"} type={"object"} >
