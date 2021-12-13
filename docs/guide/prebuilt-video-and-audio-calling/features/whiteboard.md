@@ -1,10 +1,10 @@
 ---
-title: Whiteboard
+title: Whiteboard (BETA)
 hide_title: false
 hide_table_of_contents: false
 description: This guide will explain about whiteboard.
-sidebar_label: Whiteboard
-pagination_label: Whiteboard
+sidebar_label: Whiteboard (BETA)
+pagination_label: Whiteboard (BETA)
 keywords:
   - Whiteboard
 image: img/videosdklive-thumbnail.jpg
@@ -12,21 +12,21 @@ sidebar_position: 1
 slug: whiteboard
 ---
 
-# Whiteboard
+# Whiteboard (BETA)
 
-This feature allows any participant can explain their thoughts to other participants by drawing on whiteboard.
+This feature allows participants to explain their thoughts to other participants by drawing on an interactive whiteboard.
 
 ### How it works ?
 
-- while `whiteboardEnabled`: value is set to `true`, you will able to see whiteboard icon as display in below image. Using this button you can start or stop whiteboard.
+- When `whiteboardEnabled` value is set to `true`, you will able to see whiteboard icon as displayed in image below. Using this button you can start or stop whiteboard.
 
-![whiteboard](/img/prebuilt/prebuilt-whiteboard.png)
+![whiteboard button](/img/prebuilt/prebuilt-whiteboard.png)
 
-- while `drawOnWhiteboard`: value is set to `true`, you will able to draw on whiteboard, by default it is set to `true`.
+- When `drawOnWhiteboard`: value is set to `true`, you will able to draw on whiteboard, by default it is set to `true`.
 
-- while `toggleWhiteboard`: value is set to `true`, you will able to start or stop whiteboard, if it is false whiteboard button will be displayed but you can not start or stop whitwboard. By default it is set to `true`.
+- When `toggleWhiteboard`: value is set to `true`, you will able to start or stop whiteboard, if it is false whiteboard button will be displayed but you can not start or stop whitwboard. By default it is set to `true`.
 
-![whiteboard](/img/prebuilt/prebuilt-whiteboard-open.png)
+![whiteboard demo](/img/prebuilt/prebuilt-whiteboard-open.png)
 
 ### Whiteboard attributes
 
