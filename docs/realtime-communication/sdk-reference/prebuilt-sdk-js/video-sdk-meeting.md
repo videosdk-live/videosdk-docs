@@ -64,6 +64,8 @@ meeting.init({
     drawOnWhiteboard: true, // Can draw on whiteboard
     toggleWhiteboard: true, // Can toggle whiteboard
     toggleRecording: true, // Can toggle meeting recording
+    removeParticipant: true, // Can remove participant
+    endMeeting: true, // Can end meeting
   },
 
   joinScreen: {
