@@ -27,8 +27,8 @@ This fetaure allows any participant to end meeting.
 ```js title="index.html"
 const config = {
   // ... other configuration
-  permission: {
-    // ... other permission
+  permissions: {
+    // ... other permissions
     endMeeting: true,
   },
   // ...

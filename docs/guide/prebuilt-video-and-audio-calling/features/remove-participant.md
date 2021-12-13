@@ -29,7 +29,7 @@ This fetaure will allow any participant to remove other participant in the meeti
 const config = {
   // ... other configuration
   permissions: {
-    // ... other permission
+    // ... other permissions
     removeParticipant: true,
   },
   // ...
