@@ -15,13 +15,13 @@ slug: remove-participant
 
 # Remove Participant
 
-This fetaure will allow any participant to remove other participant in the meeting.
+This feature will allow any participant to remove other participant in the meeting.
 
 ### How it works ?
 
-- while `removeParticipant`: value is set to `true`, you will able to see remove participant icon in participants panel. By clicking you will be able to remove participant from meeting.
+- When `removeParticipant` value is set to `true`, you will able to see remove participant icon in participants panel. By clicking you will be able to remove the participant from meeting.
 
-![remove-participant](/img/prebuilt/prebuilt-remove-participant.png)
+![Remove participant button](/img/prebuilt/prebuilt-remove-participant.png)
 
 ### Remove Participant attributes
 

@@ -14,13 +14,13 @@ slug: end-meeting
 
 # End Meeting
 
-This fetaure allows any participant to end meeting.
+This feature allows any participant to end meeting.
 
 ### How it works ?
 
-- while `endMeeting`: value is set to `true`, you will able to see options as display in below image. By Clicking on Leave only you will leave the meeting. By Clicking on End you end meeting for every participants.
+- When `endMeeting` value is set to `true`, you will able to see options as displayed in image below. Ending the meeting makes all participants leave the meeting.
 
-![end-meeting](/img/prebuilt/prebuilt-end-meeting.png)
+![End meeting button](/img/prebuilt/prebuilt-end-meeting.png)
 
 ### End Meeting attributes
 
