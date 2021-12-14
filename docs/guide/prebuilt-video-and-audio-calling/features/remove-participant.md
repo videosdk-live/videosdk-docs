@@ -19,7 +19,7 @@ This feature will allow any participant to remove other participant in the meeti
 
 ### How it works ?
 
-- When `removeParticipant` value is set to `true`, you will able to see remove participant icon in participants panel. By clicking you will be able to remove the participant from meeting.
+- When `removeParticipant` value is set to `true`, you will be able to see remove participant icon in participants panel. By clicking you will be able to remove the participant from meeting.
 
 ![Remove participant button](/img/prebuilt/prebuilt-remove-participant.png)
 

@@ -16,7 +16,7 @@ slug: create-encoding-job
 
 Encoding API converts source video into compressed version in multiple formats and resolutions up to 1080ps.
 
-Once you create the encoding job, then you will able to see the status of encoding job and also more details about encoding jobs in your [dashboard](https://app.videosdk.live/vod/videos).
+Once you create the encoding job, then you will be able to see the status of encoding job and also more details about encoding jobs in your [dashboard](https://app.videosdk.live/vod/videos).
 
 ![Create Encoding Job](/img/tutorial/create_encoding_job.png)
 
