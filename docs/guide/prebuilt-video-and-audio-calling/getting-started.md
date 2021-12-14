@@ -90,7 +90,7 @@ values={[
   });
 
   script.src =
-    "https://sdk.videosdk.live/rtc-js-prebuilt/0.1.20/rtc-js-prebuilt.js";
+    "https://sdk.videosdk.live/rtc-js-prebuilt/0.1.21/rtc-js-prebuilt.js";
   document.getElementsByTagName("head")[0].appendChild(script);
 </script>
 ```
