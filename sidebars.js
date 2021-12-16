@@ -170,7 +170,6 @@ module.exports = {
       label: "SETUP",
       items: [
         "guide/video-and-audio-calling-api-sdk/signup-and-create-api",
-        "guide/video-and-audio-calling-api-sdk/server-setup",
         {
           type: "category",
           label: "Client Setup",
@@ -186,6 +185,7 @@ module.exports = {
           ],
           collapsed: true,
         },
+        "guide/video-and-audio-calling-api-sdk/server-setup",
         // "guide/video-and-audio-calling-api-sdk/start-or-join-meeting",
       ],
       collapsed: false,
