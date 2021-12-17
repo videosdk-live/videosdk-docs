@@ -43,6 +43,20 @@ This code snippet calls API from local server
 
 **Token generation API is necessary for both scenario.**
 
+:::note
+You can take advantage of regional API to decrease latency in video calling.
+
+To achieve regional based API, you have to pass `region : REGION_CODE` parameter in `create-meeting` API Body.
+
+Currently we are supporting below regions:
+
+- `sg001` Region Code for Sinapore.
+- `uk001` Region Code for London(UK).
+- `us001` Region Code for Fremont(CA).
+
+In case, if you are not providing any region code, by default it will cosider `sg001` region.
+:::
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
@@ -83,7 +97,7 @@ const getMeetingId = async (token) => {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ token }),
+      body: JSON.stringify({ token, region: "sg001" }),
     };
     const response = await fetch(VIDEOSDK_API_ENDPOINT, options)
       .then(async (result) => {
@@ -153,7 +167,7 @@ const getMeetingId = async (token) => {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ token }),
+      body: JSON.stringify({ token, region: "sg001" }),
     };
     const response = await fetch(VIDEOSDK_API_ENDPOINT, options)
       .then(async (result) => {
@@ -223,7 +237,7 @@ const getMeetingId = async (token) => {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ token }),
+      body: JSON.stringify({ token, region: "sg001" }),
     };
     const response = await fetch(VIDEOSDK_API_ENDPOINT, options)
       .then(async (result) => {
@@ -279,7 +293,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 public class JoinActivity extends AppCompatActivity {
-  private String apiServerUrl = "http://192.168.0.101:9000";
+  private String apiServerUrl = "http://localhost:9000";
 
   // ...
   // onCreate() and other methods
@@ -317,6 +331,7 @@ public class JoinActivity extends AppCompatActivity {
     AndroidNetworking
       .post(apiServerUrl + "/create-meeting")
       .addBodyParameter("token", token)
+      .addBodyParameter("region", "sg001")
       .build()
       .getAsJSONObject(
         new JSONObjectRequestListener() {
@@ -443,7 +458,7 @@ void _getMeetingIdAndToken() async {
         Uri.parse('$LOCAL_SERVER_URL/create-meeting/');
 
     final http.Response meetingIdResponse =
-        await http.post(meetingIdUrl, body: {"token": _token});
+        await http.post(meetingIdUrl, body: {"token": _token,"region": "sg001"});
 
     final _meetingId = json.decode(meetingIdResponse.body)['meetingId'];
 
