@@ -104,6 +104,9 @@ const onPress = () => {
 @IBAction func leaveMeetingButtonTapped(_ sender: Any) {
     // leave meeting
     self.meeting?.leave()
+
+    // end meeting for everyone
+    self.meeting?.end()
 }
 
 /// Events:

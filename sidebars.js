@@ -150,6 +150,9 @@ module.exports = {
         "guide/prebuilt-video-and-audio-calling/features/customize-permissions",
         "guide/prebuilt-video-and-audio-calling/features/whitelist-domain",
         "guide/prebuilt-video-and-audio-calling/features/pin-participants",
+        "guide/prebuilt-video-and-audio-calling/features/remove-participant",
+        "guide/prebuilt-video-and-audio-calling/features/end-meeting",
+        "guide/prebuilt-video-and-audio-calling/features/whiteboard",
       ],
       collapsed: false,
     },
@@ -167,7 +170,6 @@ module.exports = {
       label: "SETUP",
       items: [
         "guide/video-and-audio-calling-api-sdk/signup-and-create-api",
-        "guide/video-and-audio-calling-api-sdk/server-setup",
         {
           type: "category",
           label: "Client Setup",
@@ -183,6 +185,7 @@ module.exports = {
           ],
           collapsed: true,
         },
+        "guide/video-and-audio-calling-api-sdk/server-setup",
         // "guide/video-and-audio-calling-api-sdk/start-or-join-meeting",
       ],
       collapsed: false,
@@ -197,14 +200,8 @@ module.exports = {
         "guide/video-and-audio-calling-api-sdk/features/leave-end-meeting",
         "guide/video-and-audio-calling-api-sdk/features/camera-controls",
         "guide/video-and-audio-calling-api-sdk/features/mic-controls",
-        {
-          type: "category",
-          label: "Share Your Screen",
-          items: ["guide/video-and-audio-calling-api-sdk/features/screenshare/js-react-RNandroid",
-          "guide/video-and-audio-calling-api-sdk/features/screenshare/react-native-ios"
-        ],
-          collapsed: false,
-        },
+        "guide/video-and-audio-calling-api-sdk/features/screenshare",
+
         "guide/video-and-audio-calling-api-sdk/features/toggle-participant-media",
         "guide/video-and-audio-calling-api-sdk/features/send-messages",
         "guide/video-and-audio-calling-api-sdk/features/record-meeting",
@@ -212,6 +209,14 @@ module.exports = {
         "guide/video-and-audio-calling-api-sdk/features/go-live-social-media",
         "guide/video-and-audio-calling-api-sdk/features/speaker-indication",
         "guide/video-and-audio-calling-api-sdk/features/pin-participants",
+      ],
+      collapsed: false,
+    },
+    {
+      type: "category",
+      label: "Extras",
+      items: [
+        "guide/video-and-audio-calling-api-sdk/extras/react-native-ios-screen-share",
       ],
       collapsed: false,
     },
@@ -564,9 +569,7 @@ module.exports = {
           collapsed: false,
           items: [
             "tutorials/realtime-communication/prebuilt-sdk/quickstart-prebuilt-js",
-            "tutorials/realtime-communication/js-sdk/quickstart-js",
             "tutorials/realtime-communication/prebuilt-sdk/quickstart-prebuilt-wordpress",
-
           ],
         },
       ],

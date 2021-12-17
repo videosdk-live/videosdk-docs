@@ -289,7 +289,7 @@ const videoMeetingSpecs = {
   chatEnabled: true,
   screenShareEnabled: true,
   pollEnabled: true,
-  whiteBoardEnabled: true,
+  whiteboardEnabled: true,
   participantCanToggleSelfWebcam: true,
   participantCanToggleSelfMic: true,
   raiseHandEnabled: true,

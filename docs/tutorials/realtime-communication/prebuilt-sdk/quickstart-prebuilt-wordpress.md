@@ -72,7 +72,6 @@ Copy the code from below snippet.
 
       chatEnabled: true,
       screenShareEnabled: true,
-
     };
 
     const meeting = new VideoSDKMeeting();
@@ -80,7 +79,7 @@ Copy the code from below snippet.
   });
 
   script.src =
-    "https://sdk.videosdk.live/rtc-js-prebuilt/0.1.18/rtc-js-prebuilt.js";
+    "https://sdk.videosdk.live/rtc-js-prebuilt/0.1.21/rtc-js-prebuilt.js";
   document.getElementsByTagName("head")[0].appendChild(script);
 </script>
 ```
@@ -142,12 +141,12 @@ Now, we need to modify only `meetingId` property from `config` object
         const meeting = new VideoSDKMeeting();
 
         //Get URL query parameters
-        const url = new URLSearchParams(window.parent.location.href);
+        const url = new URLSearchParams(window.location.search);
 
         const config = {
-          //
+          // ...
           meetingId: url.get("meetingId"), // Get meeting id from params.
-          //
+          // ...
         };
 
         meeting.init(config);
@@ -155,7 +154,7 @@ Now, we need to modify only `meetingId` property from `config` object
 
 
       script.src =
-        "https://sdk.videosdk.live/rtc-js-prebuilt/0.1.18/rtc-js-prebuilt.js";
+        "https://sdk.videosdk.live/rtc-js-prebuilt/0.1.21/rtc-js-prebuilt.js";
       document.getElementsByTagName("head")[0].appendChild(script);
     </script>
 ```

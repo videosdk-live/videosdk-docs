@@ -43,9 +43,8 @@ This will add a line like this to your package's pubspec.yaml (and run an implic
 
 ```
 dependencies:
-  videosdk: ^0.0.4
+  videosdk: ^0.0.8
 ```
-
 
 ### Step 2: Update AndroidManifest.xml file for the permissions
 
@@ -89,11 +88,11 @@ If necessary, in the same `build.gradle` you will need to increase `minSdkVersio
 Now in your Dart code, you can use:
 
 ```js
-import 'package:videosdk/meeting.dart';
-import 'package:videosdk/meeting_builder.dart';
-import 'package:videosdk/participant.dart';
-import 'package:videosdk/rtc.dart';
-import 'package:videosdk/stream.dart';
+import "package:videosdk/meeting.dart";
+import "package:videosdk/meeting_builder.dart";
+import "package:videosdk/participant.dart";
+import "package:videosdk/rtc.dart";
+import "package:videosdk/stream.dart";
 ```
 
 ---

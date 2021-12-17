@@ -62,12 +62,11 @@ Create an `index.html` file and add the following `<script>` tag at the end of y
       chatEnabled: true,
       screenShareEnabled: true,
       pollEnabled: true,
-      whiteBoardEnabled: true,
+      whiteboardEnabled: true,
       raiseHandEnabled: true,
 
       recordingEnabled: true,
       recordingWebhookUrl: "https://www.videosdk.live/callback",
-      participantCanToggleRecording: true,
 
       brandingEnabled: true,
       brandLogoURL: "https://picsum.photos/200",
@@ -91,6 +90,9 @@ Create an `index.html` file and add the following `<script>` tag at the end of y
         askToJoin: false, // Ask joined participants for entry in meeting
         toggleParticipantMic: true, // Can toggle other participant's mic
         toggleParticipantWebcam: true, // Can toggle other participant's webcam
+        drawOnWhiteboard: true, // Can draw on whiteboard
+        toggleWhiteboard: true, // Can toggle whiteboard
+        toggleRecording: true, // Can toggle meeting recording
       },
 
       joinScreen: {
@@ -109,7 +111,7 @@ Create an `index.html` file and add the following `<script>` tag at the end of y
   });
 
   script.src =
-    "https://sdk.videosdk.live/rtc-js-prebuilt/0.1.15/rtc-js-prebuilt.js";
+    "https://sdk.videosdk.live/rtc-js-prebuilt/0.1.21/rtc-js-prebuilt.js";
   document.getElementsByTagName("head")[0].appendChild(script);
 </script>
 ```
