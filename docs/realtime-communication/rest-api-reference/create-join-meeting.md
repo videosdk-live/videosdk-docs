@@ -9,6 +9,20 @@ sidebar_label: Create Meeting using API
 
 Use the following Rest API to create new meeting.
 
+:::note
+You can take advantage of regional API to decrease latency in video calling.
+
+To achieve region based meetings, just pass `region : REGION_CODE` parameter in `create-meeting` request Body.
+
+Currently the below regions are supported:
+
+- `sg001` Region Code for Singapore, SG.
+- `uk001` Region Code for London, UK.
+- `us001` Region Code for Fremont, CA.
+
+In case you are not providing any region code, the default region will be `sg001`.
+:::
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 

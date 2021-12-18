@@ -46,15 +46,15 @@ This code snippet calls API from local server
 :::note
 You can take advantage of regional API to decrease latency in video calling.
 
-To achieve regional based API, you have to pass `region : REGION_CODE` parameter in `create-meeting` API Body.
+To achieve region based meetings, just pass `region : REGION_CODE` parameter in `create-meeting` request Body.
 
-Currently we are supporting below regions:
+Currently the below regions are supported:
 
-- `sg001` Region Code for Sinapore.
-- `uk001` Region Code for London(UK).
-- `us001` Region Code for Fremont(CA).
+- `sg001` Region Code for Singapore, SG.
+- `uk001` Region Code for London, UK.
+- `us001` Region Code for Fremont, CA.
 
-In case, if you are not providing any region code, by default it will cosider `sg001` region.
+In case you are not providing any region code, the default region will be `sg001`.
 :::
 
 import Tabs from '@theme/Tabs';
