@@ -528,7 +528,7 @@ values={[
 <TabItem value="js">
 
 ```js
-import ZujoSDK from "@videosdk.live/js-sdk";
+import { ZujoSDK } from "@videosdk.live/js-sdk";
 
 // Configure authentication token
 ZujoSDK.config("<Authentication-token>");
