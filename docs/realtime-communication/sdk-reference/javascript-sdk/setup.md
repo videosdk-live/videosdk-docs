@@ -68,7 +68,7 @@ ZujoSDK.initMeeting({...})
 Or
 
 ```js title="ES6 import"
-import ZujoSDK from "@videosdk.live/js-sdk";
+import { ZujoSDK } from "@videosdk.live/js-sdk";
 
 ZujoSDK.config("<token>")
 
