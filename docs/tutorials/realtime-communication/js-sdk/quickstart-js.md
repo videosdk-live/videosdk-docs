@@ -68,7 +68,7 @@ Signup on the VideoSDK website to get a key pair for SDK authentication. Your **
 Include this in your HTML file
 
 ```html title="index.html"
-<script src="https://sdk.videosdk.live/js-sdk/0.0.15/videosdk.js"></script>
+<script src="https://sdk.videosdk.live/js-sdk/0.0.18/videosdk.js"></script>
 ```
 
 ---
@@ -355,7 +355,7 @@ The `meeting` object consists of:
   - `disableScreenShare()`, `enableScreenShare()`
   - `on(eventType: string)`, `off(eventType: string)`
   - `respondEntry(participantId: string, decision: "allowed" | "denied")`
-  - `startRecording(webhookUrl: string)`, `stopRecording()`
+  - `startRecording(webhookUrl: string, awsDirPath: string)`, `stopRecording()`
   - `sendChatMessage(text: string)`
 
 ## Step 4: Get local and remote participants
@@ -524,11 +524,14 @@ meeting.disableScreenShare();
 
 ### Start/Stop recording
 
-Record the meeting session with `startRecording(webhookUrl)` method and stop recording with `stopRecording()`. Toggling recording will trigger `recording-started` and `recording-stopped` events for all participants when starting and stopping recording respectively.
+Record the meeting session with `startRecording(webhookUrl, awsDirPath)` method and stop recording with `stopRecording()`. Toggling recording will trigger `recording-started` and `recording-stopped` events for all participants when starting and stopping recording respectively.
 
 ```javascript title="Start and stop recordings methods"
 // The webhook will be called with the fileUrl as a POST request when the recording is processed.
-meeting.startRecording("https://your-app-server.com/api/recordings");
+meeting.startRecording(
+  "https://your-app-server.com/api/recordings",
+  "meeting/meeting-id"
+);
 meeting.stopRecording();
 
 // ...

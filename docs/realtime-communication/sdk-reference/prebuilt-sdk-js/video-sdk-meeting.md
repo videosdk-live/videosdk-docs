@@ -38,6 +38,7 @@ meeting.init({
 
   recordingEnabled: true,
   recordingWebhookUrl: "https://www.videosdk.live/callback",
+  recordingAWSDirPath: `/meeting-recordings/${meetingId}/`, // automatically save recording in this s3 path
 
   brandingEnabled: true,
   brandLogoURL: "https://picsum.photos/200",
@@ -78,6 +79,15 @@ meeting.init({
     allowed: true, // participant can pin any participant in meeting
     layout: "SPOTLIGHT", // meeting layout - GRID | SPOTLIGHT | SIDEBAR
   },
+
+  leftScreen: {
+    // visible when redirect on leave not provieded
+    actionButton: {
+      // optional action button
+      label: "Video SDK Live", // action button label
+      href: "https://videosdk.live/", // action button href
+    },
+  },
 });
 ```
 
@@ -107,6 +117,7 @@ import MethodListHeading from '@theme/MethodListHeading';
       <MethodListItemLabel name="containerId" option={"required"} type={"string"} description={"Specify id of the container where you want to display prebuilt UI or keep it null"} />
       <MethodListItemLabel name="recordingEnabled" option={"optional"} type={"boolean"} />
       <MethodListItemLabel name="recordingWebhookUrl" option={"optional"} type={"string"} />
+      <MethodListItemLabel name="recordingAWSDirPath" option={"optional"} type={"string"} />
       <MethodListItemLabel name="brandingEnabled" option={"optional"} type={"boolean"} />
       <MethodListItemLabel name="brandLogoURL" option={"optional"} type={"string"} />
       <MethodListItemLabel name="brandName" option={"optional"} type={"string"} />
@@ -133,6 +144,15 @@ import MethodListHeading from '@theme/MethodListHeading';
           <MethodListItemLabel name="visible" option={"optional"} type={"boolean"} />
           <MethodListItemLabel name="title" option={"optional"} type={"string"} />
           <MethodListItemLabel name="meetingUrl" option={"optional"} type={"string"} />
+        </MethodListGroup>
+      </MethodListItemLabel>
+      <MethodListItemLabel name="left" option={"optional"} type={"object"} >
+        <MethodListGroup>
+          <MethodListItemLabel name="actionButton" option={"optional"} type={"boolean"} />
+        <MethodListGroup>
+          <MethodListItemLabel name="label" option={"optional"} type={"string"} />
+          <MethodListItemLabel name="href" option={"optional"} type={"string"} />
+         </MethodListGroup>
         </MethodListGroup>
       </MethodListItemLabel>
     </MethodListGroup>
