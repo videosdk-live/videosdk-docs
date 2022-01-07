@@ -38,7 +38,7 @@ Visit, [app.videosdk.live](https://app.videosdk.live/) to gererate API Key and s
 
 ## Generate Accees Token
 
-For security, every participant that connects to meeting needs a access token. By substituting `apiKey` and `permissions` in it.
+For security, every participant that connects to meeting needs a access token. By substituting `apikey` and `permissions` in it.
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -164,7 +164,7 @@ $api_key = "api_key_generated";
 $secret_key = "secret_key_generated"
 
 $payload = [
-    'apiKey' => api_key,
+    'apikey' => api_key,
     'permissions': ["allow_join"],
 ];
 

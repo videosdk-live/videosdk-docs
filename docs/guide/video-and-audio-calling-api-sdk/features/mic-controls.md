@@ -28,6 +28,13 @@ This guide will provide an overview of how to use enable and disable Mic in a me
 
 ### Enable, Disable, Change Mic
 
+:::note
+
+For Javascript, we will use `unmuteMic()` function for publish audio to other participants and `muteMic()` function for stop publishing audio to other participants.
+:::
+
+### Enable, Disable Mic
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 

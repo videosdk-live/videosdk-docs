@@ -171,7 +171,6 @@ module.exports = {
       label: "SETUP",
       items: [
         "guide/video-and-audio-calling-api-sdk/signup-and-create-api",
-        "guide/video-and-audio-calling-api-sdk/server-setup",
         {
           type: "category",
           label: "Client Setup",
@@ -187,6 +186,7 @@ module.exports = {
           ],
           collapsed: true,
         },
+        "guide/video-and-audio-calling-api-sdk/server-setup",
         // "guide/video-and-audio-calling-api-sdk/start-or-join-meeting",
       ],
       collapsed: false,
@@ -401,10 +401,10 @@ module.exports = {
             "realtime-communication/sdk-reference/react-native-sdk/setup-android",
             "realtime-communication/sdk-reference/react-native-sdk/setup-ios",
             "realtime-communication/sdk-reference/react-native-sdk/rtc-stream",
-            "realtime-communication/sdk-reference/react-sdk/use-meeting",
-            "realtime-communication/sdk-reference/react-sdk/use-participant",
-            "realtime-communication/sdk-reference/react-sdk/meeting-provider",
-            "realtime-communication/sdk-reference/react-sdk/meeting-consumer",
+            "realtime-communication/sdk-reference/react-native-sdk/use-meeting",
+            "realtime-communication/sdk-reference/react-native-sdk/use-participant",
+            "realtime-communication/sdk-reference/react-native-sdk/meeting-provider",
+            "realtime-communication/sdk-reference/react-native-sdk/meeting-consumer",
           ],
         },
         {
