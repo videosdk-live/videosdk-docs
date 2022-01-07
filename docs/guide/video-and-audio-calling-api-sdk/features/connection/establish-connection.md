@@ -15,7 +15,7 @@ import TabItem from '@theme/TabItem';
 
 ### Event
 
-- **connection-open** - Whenever connection between two rooms established successfully, this event will trigger and return `connection` list
+- **connection-open** - Whenever connection between two rooms established successfully, this event will trigger and return [Connection](/docs/guide/video-and-audio-calling-api-sdk/features/connection/overview#1-connection) list.
 
 ### Example
 

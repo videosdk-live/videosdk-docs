@@ -1,26 +1,11 @@
 ---
-title: What is Connection - Video SDK Docs
-hide_title: false
-hide_table_of_contents: false
-description: Camera Controls features quick integrate in Javascript, React JS, Android, IOS, React Native, Flutter with Video SDK to add live video & audio conferencing to your applications.
 sidebar_label: Overview
 pagination_label: Overview
-keywords:
-  - Camera on
-  - Camera off
-  - Webcam on
-  - Webcam off
-  - audio calling
-  - video calling
-  - real-time communication
-image: img/videosdklive-thumbnail.jpg
-sidebar_position: 1
-slug: overview
 ---
 
 # Overview
 
-This feature allows participant for establishing connection and getting information from other meetings. Also, a participant will have basic control over other running meetings
+This feature allows participant for establishing connection and getting information from other meetings. Also, a participant will have basic control over other running meetings.
 
 For example, there are two meetings are running parallelly **Meeting A** and **Meeting B**, in case one of the participant from **Meeting A** wants to access information of **Meeting B** without joining it, now this can be achieved by establishing connection between meetings, so that participants of **Meeting A** and **Meeting B** will get all the updates from each other.
 
@@ -44,7 +29,7 @@ Whenever new connection establish between meetings, **Connection** instance is c
 
 ### 2. ConnectionMeeting
 
-This entity is the instance of connected Meeting
+This entity is the instance of connected Meeting.
 
 #### **ConnectionMeeting object properties** :
 
