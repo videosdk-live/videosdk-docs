@@ -333,14 +333,13 @@ div[class*=" announcementBar"] button span {
 }
 
 @media screen and (min-width: 768px) {
-
   html,
   body {
     text-rendering: optimizeLegibility;
   }
 }
 
-li+li {
+li + li {
   margin-top: 0;
 }
 
@@ -414,7 +413,6 @@ a[class^="sidebarLogo_"] img {
 }
 
 @media (max-width: 750px) {
-
   .DocSearch-Button-Key,
   .DocSearch-Button-KeySeparator,
   .DocSearch-Button-Placeholder {
@@ -534,12 +532,12 @@ a.card:hover {
   }
 }
 
-.menu>ul.menu__list li {
+.menu > ul.menu__list li {
   margin-top: 0;
   margin-bottom: 0;
 }
 
-.menu>ul.menu__list li>a {
+.menu > ul.menu__list li > a {
   padding-left: 0;
   padding-right: 0;
   color: var(--custom-content-color);
@@ -552,51 +550,51 @@ a.card:hover {
 /* Category headers */
 
 /* First sidebar nav section  */
-.menu>.menu__list>.menu__list-item:first-child {
+.menu > .menu__list > .menu__list-item:first-child {
   margin-top: 16px;
 }
 
 /* First sidebar nav section  */
-.menu>.menu__list>.menu__list-item>.menu__link::after {
+.menu > .menu__list > .menu__list-item > .menu__link::after {
   display: none;
 }
 
 /* All sidebar nav sections  */
-.menu>.menu__list>.menu__list-item {
+.menu > .menu__list > .menu__list-item {
   margin-bottom: 16px;
 }
 
 /* Sidebar nav header  */
-.menu>.menu__list>.menu__list-item>.menu__link {
+.menu > .menu__list > .menu__list-item > .menu__link {
   margin-bottom: 4px;
   color: gray;
 }
 
 /* Disable click events for large screens  */
 @media (min-width: 997px) {
-  .menu>.menu__list>.menu__list-item>.menu__link {
+  .menu > .menu__list > .menu__list-item > .menu__link {
     pointer-events: none;
   }
 }
 
-.menu>ul.menu__list>li.menu__list-item:first-child div.title {
+.menu > ul.menu__list > li.menu__list-item:first-child div.title {
   margin-top: 0;
 }
 
-.menu>ul.menu__list ul.menu__list {
+.menu > ul.menu__list ul.menu__list {
   border-left: 1px solid var(--custom-border-color);
   margin-left: 0;
   padding-left: var(--ifm-menu-link-padding-horizontal);
 }
 
-.menu>ul.menu__list ul.menu__list .menu__link {
+.menu > ul.menu__list ul.menu__list .menu__link {
   border-radius: 0;
-  font-size: 0.90rem;
+  font-size: 0.9rem;
   margin-left: calc(var(--ifm-menu-link-padding-horizontal) * -1);
   padding-left: var(--ifm-menu-link-padding-horizontal);
 }
 
-.menu>ul.menu__list>li>ul.menu__list {
+.menu > ul.menu__list > li > ul.menu__list {
   border-left: 0px none;
   padding-left: 0;
 }
@@ -693,7 +691,7 @@ div[class^="docSidebarContainer_"] {
 }
 
 div[class^="sidebar_"] {
-  font-size: 0.90rem;
+  font-size: 0.9rem;
 }
 
 div[class^="sidebar_"] .menu {
@@ -711,13 +709,16 @@ div[class^="sidebar_"] .menu .menu__link {
   padding-right: var(--ifm-menu-link-padding-horizontal);
 }
 
-div[class^="sidebar_"] .menu__link.menu__link--active:not(.menu__link--sublist) {
+div[class^="sidebar_"]
+  .menu__link.menu__link--active:not(.menu__link--sublist) {
   border-radius: 0;
   border-right: 2px solid var(--ifm-color-primary);
   padding-right: calc(var(--ifm-menu-link-padding-horizontal) - 2px);
 }
 
-div[class^="sidebar_"] .menu__link.menu__link--active:not(.menu__link--sublist) .badge {
+div[class^="sidebar_"]
+  .menu__link.menu__link--active:not(.menu__link--sublist)
+  .badge {
   background: var(--ifm-color-primary);
   border: 1px solid var(--ifm-color-primary);
   color: white;
@@ -832,7 +833,7 @@ a.hash-link {
     padding-left: var(--ifm-spacing-horizontal) !important;
   }
 
-  .ButtonTabs>div {
+  .ButtonTabs > div {
     display: flex !important;
     flex-wrap: nowrap !important;
     overflow-x: auto !important;
@@ -982,7 +983,7 @@ a.hash-link {
   border-radius: 8px !important;
 }
 
-.DocSearch-Button>svg {
+.DocSearch-Button > svg {
   display: none;
 }
 
@@ -1057,7 +1058,7 @@ token.property-access {
 
 .token.comment {
   font-style: normal !important;
-  color: #666 !important;
+  color: #6e7f6d !important;
 }
 
 .token.number {
@@ -1112,7 +1113,7 @@ html[data-theme="dark"] .DocSearch {
 
 .navbar__link {
   /* same size as sidebar */
-  font-size: 0.90rem;
+  font-size: 0.9rem;
   /* font-weight: 400; */
 }
 
@@ -1147,7 +1148,8 @@ html[data-theme="dark"] .DocSearch {
 }
 
 html[data-theme="dark"] .navbar-item-github:before {
-  background: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='white' d='M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12'/%3E%3C/svg%3E") no-repeat;
+  background: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='white' d='M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12'/%3E%3C/svg%3E")
+    no-repeat;
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -1183,7 +1185,8 @@ html[data-theme="dark"] .navbar-item-github:before {
 }
 
 html[data-theme="dark"] .navbar-item-twitter:before {
-  background: url("data:image/svg+xml,%3Csvg viewBox='0 0 335 276' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='white' d='m302 70a195 195 0 0 1 -299 175 142 142 0 0 0 97 -30 70 70 0 0 1 -58 -47 70 70 0 0 0 31 -2 70 70 0 0 1 -57 -66 70 70 0 0 0 28 5 70 70 0 0 1 -18 -90 195 195 0 0 0 141 72 67 67 0 0 1 116 -62 117 117 0 0 0 43 -17 65 65 0 0 1 -31 38 117 117 0 0 0 39 -11 65 65 0 0 1 -32 35'/%3E%3C/svg%3E") no-repeat;
+  background: url("data:image/svg+xml,%3Csvg viewBox='0 0 335 276' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='white' d='m302 70a195 195 0 0 1 -299 175 142 142 0 0 0 97 -30 70 70 0 0 1 -58 -47 70 70 0 0 0 31 -2 70 70 0 0 1 -57 -66 70 70 0 0 0 28 5 70 70 0 0 1 -18 -90 195 195 0 0 0 141 72 67 67 0 0 1 116 -62 117 117 0 0 0 43 -17 65 65 0 0 1 -31 38 117 117 0 0 0 39 -11 65 65 0 0 1 -32 35'/%3E%3C/svg%3E")
+    no-repeat;
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -1338,7 +1341,8 @@ html[data-theme="dark"] .navbar-item-twitter:before {
   }
 
   .ShowcaseCard-Footer a {
-    margin: var(--ifm-card-vertical-spacing) var(--ifm-card-horizontal-spacing) 0 0;
+    margin: var(--ifm-card-vertical-spacing) var(--ifm-card-horizontal-spacing)
+      0 0;
   }
 
   .ShowcaseCard-Text h3 {
@@ -1551,7 +1555,6 @@ div[class*=" codeBlockContent"] {
 } */
 
 @media print {
-
   pre[class*="language-"],
   code[class*="language-"] {
     text-shadow: none;
@@ -1565,7 +1568,7 @@ pre[class*="language-"] {
   background: #1e1e1e;
 }
 
-:not(pre)>code[class*="language-"] {
+:not(pre) > code[class*="language-"] {
   padding: 0.1em 0.3em;
   border-radius: 0.3em;
   color: #db4c69;
@@ -1797,7 +1800,7 @@ pre[data-line] {
   position: relative;
 }
 
-pre[class*="language-"]>code[class*="language-"] {
+pre[class*="language-"] > code[class*="language-"] {
   position: relative;
   z-index: 1;
   /* color: red; */
@@ -2127,7 +2130,7 @@ pre[class*="language-"]>code[class*="language-"] {
   position: relative;
 }
 
-.rds-demos .container>*:not(.terminals) {
+.rds-demos .container > *:not(.terminals) {
   z-index: 2;
   position: relative;
 }
