@@ -13,7 +13,7 @@ import TabItem from '@theme/TabItem';
 - **switchTo** - If you want a participant from a connected meeting to be switched from one meeting to another meeting, `switchTo` method is used.
   This method accept `meetingId`, `token` and `payload` as an object.
 
-  - `meetingId` - This should be the `meetingId` where you want to switch that participant from the meeting where he/she is currently joined.
+  - `meetingId` - This should be the `meetingId` where you want to switch that participant from the joined meeting.
 
 ### Event
 
@@ -62,7 +62,7 @@ const onClick = () => {
   connectionParticipant.switchTo({ meetingId, token, payload });
 };
 
-// This event will be emitted to all participants of Meeting B
+// This event will be emitted to participant of Meeting B
 meeting.on(
   "switch-meeting",
   ({
@@ -151,3 +151,30 @@ useMeeting({
 
 </TabItem>
 </Tabs>
+
+For **React** and **React Native** Developer, you need to slightly modify in [Initialization](/docs/guide/video-and-audio-calling-api-sdk/features/start-join-meeting#2-initialization) config props.
+
+```js
+const App = () => {
+  return (
+    <MeetingProvider
+      config={{
+        meetingId: "<Id-on-meeting>",
+        name: "<Name-of-participant>",
+        micEnabled: "<Flag-to-enable-mic>",
+        webcamEnabled: "<Flag-to-enable-webcam>",
+        reInitialiseMeetingOnConfigChange: true, // Add This Line
+      }}
+      token={"<Authentication-token>"}
+    >
+      <>...</>
+    </MeetingProvider>
+  );
+};
+```
+
+`reInitialiseMeetingOnConfigChange` prop help you to update token and meeting id at run time, you don't have to rejoin or reinitialize the meeting.
+
+The reason we are using this props is we are resetting meetingId and token at participant side [switch-meeting](/docs/guide/video-and-audio-calling-api-sdk/features/connection/switch-connection-participant#event) event.
+
+If you not specify this props, MeetingProvider will not able to reset meetingId and token at run time.

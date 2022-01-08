@@ -208,6 +208,7 @@ module.exports = {
         "guide/video-and-audio-calling-api-sdk/features/go-live-social-media",
         "guide/video-and-audio-calling-api-sdk/features/speaker-indication",
         "guide/video-and-audio-calling-api-sdk/features/pin-participants",
+        "guide/video-and-audio-calling-api-sdk/features/switch-participant",
         {
           type: "category",
           label: "Connection",
@@ -220,7 +221,6 @@ module.exports = {
             "guide/video-and-audio-calling-api-sdk/features/connection/switch-connection-participant",
             "guide/video-and-audio-calling-api-sdk/features/connection/end-connection-meeting",
             "guide/video-and-audio-calling-api-sdk/features/connection/close-connection",
-            // "guide/video-and-audio-calling-api-sdk/features/connection/open-connection",
           ],
           collapsed: false,
         },
