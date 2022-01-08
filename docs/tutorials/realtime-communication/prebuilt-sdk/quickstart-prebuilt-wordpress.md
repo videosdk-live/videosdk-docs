@@ -79,7 +79,7 @@ Copy the code from below snippet.
   });
 
   script.src =
-    "https://sdk.videosdk.live/rtc-js-prebuilt/0.1.26/rtc-js-prebuilt.js";
+    "https://sdk.videosdk.live/rtc-js-prebuilt/0.1.27/rtc-js-prebuilt.js";
   document.getElementsByTagName("head")[0].appendChild(script);
 </script>
 ```
@@ -154,7 +154,7 @@ Now, we need to modify only `meetingId` property from `config` object
 
 
       script.src =
-        "https://sdk.videosdk.live/rtc-js-prebuilt/0.1.26/rtc-js-prebuilt.js";
+        "https://sdk.videosdk.live/rtc-js-prebuilt/0.1.27/rtc-js-prebuilt.js";
       document.getElementsByTagName("head")[0].appendChild(script);
     </script>
 ```

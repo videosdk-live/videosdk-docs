@@ -68,6 +68,7 @@ Create an `index.html` file and add the following `<script>` tag at the end of y
       recordingEnabled: true,
       recordingWebhookUrl: "https://www.videosdk.live/callback",
       recordingAWSDirPath: `/meeting-recordings/${meetingId}/`, // automatically save recording in this s3 path
+      autoStartRecording: true, // auto start recording on participant joined
 
       brandingEnabled: true,
       brandLogoURL: "https://picsum.photos/200",
@@ -123,7 +124,7 @@ Create an `index.html` file and add the following `<script>` tag at the end of y
   });
 
   script.src =
-    "https://sdk.videosdk.live/rtc-js-prebuilt/0.1.26/rtc-js-prebuilt.js";
+    "https://sdk.videosdk.live/rtc-js-prebuilt/0.1.27/rtc-js-prebuilt.js";
   document.getElementsByTagName("head")[0].appendChild(script);
 </script>
 ```

@@ -39,6 +39,7 @@ meeting.init({
   recordingEnabled: true,
   recordingWebhookUrl: "https://www.videosdk.live/callback",
   recordingAWSDirPath: `/meeting-recordings/${meetingId}/`, // automatically save recording in this s3 path
+  autoStartRecording: true, // auto start recording on participant joined
 
   brandingEnabled: true,
   brandLogoURL: "https://picsum.photos/200",
@@ -118,6 +119,7 @@ import MethodListHeading from '@theme/MethodListHeading';
       <MethodListItemLabel name="recordingEnabled" option={"optional"} type={"boolean"} />
       <MethodListItemLabel name="recordingWebhookUrl" option={"optional"} type={"string"} />
       <MethodListItemLabel name="recordingAWSDirPath" option={"optional"} type={"string"} />
+      <MethodListItemLabel name="autoStartRecording" option={"optional"} type={"boolean"} />
       <MethodListItemLabel name="brandingEnabled" option={"optional"} type={"boolean"} />
       <MethodListItemLabel name="brandLogoURL" option={"optional"} type={"string"} />
       <MethodListItemLabel name="brandName" option={"optional"} type={"string"} />
