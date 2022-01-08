@@ -211,7 +211,7 @@ module.exports = {
         "guide/video-and-audio-calling-api-sdk/features/switch-participant",
         {
           type: "category",
-          label: "Connect Meetings",
+          label: "Connect Meetings (BETA)",
           items: [
             "guide/video-and-audio-calling-api-sdk/features/connection/overview",
             "guide/video-and-audio-calling-api-sdk/features/connection/establish-connection",
@@ -222,7 +222,7 @@ module.exports = {
             "guide/video-and-audio-calling-api-sdk/features/connection/end-connection-meeting",
             "guide/video-and-audio-calling-api-sdk/features/connection/close-connection",
           ],
-          collapsed: false,
+          collapsed: true,
         },
       ],
       collapsed: false,
