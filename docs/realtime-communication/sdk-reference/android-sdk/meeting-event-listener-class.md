@@ -37,6 +37,7 @@ import MethodListHeading from '@theme/MethodListHeading';
       <MethodListItemLabel name="onParticipantLeft(Participant participant)"  type={"void"} />
       <MethodListItemLabel name="onEntryRequested(String id, String name)"  type={"void"} />
       <MethodListItemLabel name="onEntryResponded(String id, String decision)"  type={"void"} />
+      <MethodListItemLabel name="onPresenterChanged(String participantId)"  type={"void"} />
       <MethodListItemLabel name="onSpeakerChanged(String participantId)"  type={"void"} />
       <MethodListItemLabel name="onRecordingStarted()"  type={"void"} />
       <MethodListItemLabel name="onRecordingStopped()"  type={"void"} />
