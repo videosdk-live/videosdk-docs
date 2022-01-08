@@ -1,31 +1,12 @@
 ---
-title: Quickstart for Plain JavaScript
-hide_title: false
-hide_table_of_contents: false
-description: This tutorial will help you to integrate meetings in using plain javascript application. it supports almost 98% browsers as well as can be used as webview.
-sidebar_label: with Plain JavaScript
-pagination_label: Quickstart for Plain JavaScript
-keywords:
-  - video api
-  - quickstart-js
-  - next-js
-  - tutorials
-image: img/videosdklive-thumbnail.jpg
-sidebar_position: 1
-slug: quickstart-js
+sidebar_position: 0
 ---
 
-# Quickstart for Plain JavaScript
+# Beginner Tutorial JavaScript
 
-## Using Plain JavaScript SDK
+## Terminology
 
-Let's start with the terms used in Plain JavaScript SDK.
-
-:::note
-
-Also check out this [example code](https://github.com/videosdk-live/videosdk-rtc-react-sdk-example) on github to get started quickly.
-
-:::
+Let's start with the terms used in VideoSDK meeting Client SDK.
 
 ### Meeting
 
@@ -298,15 +279,7 @@ puts response.read_body
 </TabItem>
 </Tabs>
 
-## Step 2: Configure videosdk
-
-Before starting with `js-sdk`, you have to pass token to config.
-
-```javascript title="Pass token to config"
-ZujoSDK.config(token);
-```
-
-## Step 3: Initialize meeting
+## Step 2: Initialize meeting
 
 To initialize meeting you need to provide the following parameters:
 
@@ -355,10 +328,10 @@ The `meeting` object consists of:
   - `disableScreenShare()`, `enableScreenShare()`
   - `on(eventType: string)`, `off(eventType: string)`
   - `respondEntry(participantId: string, decision: "allowed" | "denied")`
-  - `startRecording(webhookUrl: string, awsDirPath: string)`, `stopRecording()`
+  - `startRecording(webhookUrl: string, , awsDirPath: string)`, `stopRecording()`
   - `sendChatMessage(text: string)`
 
-## Step 4: Get local and remote participants
+## Step 3: Get local and remote participants
 
 You can get the local streams and participant meta from `meeting.localParticipant`. And a `Map` of joined participants is always available via `meeting.participants`.
 
@@ -386,7 +359,7 @@ Each `participant` object consists of:
   - `enableWebcam()`, `disableWebcam()`
   - `on(eventType: string)`, `off(eventType: string)`
 
-## Step 5: Listen for entry request events
+## Step 4: Listen for entry request events
 
 When participant asks for entry in a meeting that you are connected to, you will be notified via `entry-requested` and when you or any other participant's entry is responded, `entry-responded` will be fired.
 
@@ -408,7 +381,7 @@ meeting.on("entry-responded", (participantId, decision) => {
 });
 ```
 
-## Step 6: Listen for new & leaving participant events
+## Step 5: Listen for new & leaving participant events
 
 When participant joins or leaves a meeting that you are connected to, you will be notified via `participant-joined` and `participant-left` events respectively.
 
@@ -422,7 +395,7 @@ meeting.on("participant-left", (participant) => {
 });
 ```
 
-## Step 7: Listen for audio/video stream events
+## Step 6: Listen for audio/video stream events
 
 When a participant from meeting enables or diables a audio/video stream, you will be notified via `stream-enabled` and `stream-disabled` events from the participant object.
 
@@ -465,7 +438,7 @@ Each `stream` object consists of:
 
 Chrome's autoplay policy does not allow audio autoplay unless user has interacted with the domain (click, tap, etc.) or the user's <a href="https://developers.google.com/web/updates/2017/09/autoplay-policy-changes#mei">Media engagement Index</a> threshold has been crossed. Thus, as a workaround before starting the meeting, user can either create a meeting join page or create a join meeting confirmation dialog by which we can perform a user click interaction to enable audio autoplay in chrome's newer versions.
 
-## Step 8: Main screen video (optional)
+## Step 7: Main screen video (optional)
 
 When a participant who is currently presenting or speaking is changed in the meeting, you will be notified via `main-participant-changed` event.
 
@@ -475,7 +448,7 @@ meeting.on("main-participant-changed", (participant) => {
 });
 ```
 
-## Step 9: Join the meeting
+## Step 8: Join the meeting
 
 After we set local participant, main-screen participant, other participants, participant event handlers and stream event handlers from the meeting, next step is to join the meeting by calling `meeting.join()`. This will trigger `participant-joined` event for all other participants.
 
@@ -483,7 +456,7 @@ After we set local participant, main-screen participant, other participants, par
 meeting.join();
 ```
 
-## Step 10: Utility methods & events (optional)
+## Step 9: Utility methods & events (optional)
 
 ### Mute/Unmute mic
 
@@ -530,7 +503,7 @@ Record the meeting session with `startRecording(webhookUrl, awsDirPath)` method 
 // The webhook will be called with the fileUrl as a POST request when the recording is processed.
 meeting.startRecording(
   "https://your-app-server.com/api/recordings",
-  "meeting/meeting-id"
+  "meetings/meeting-id"
 );
 meeting.stopRecording();
 

@@ -21,7 +21,7 @@ You can import this library using `<script>` tag. The easiest way to get started
   <head>....</head>
   <body>
     .....
-    <script src="https://sdk.videosdk.live/js-sdk/0.0.15/videosdk.js"></script>
+    <script src="https://sdk.videosdk.live/js-sdk/0.0.18/videosdk.js"></script>
   </body>
 </html>
 ```

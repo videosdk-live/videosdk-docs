@@ -120,7 +120,7 @@ import MethodListHeading from '@theme/MethodListHeading';
 <MethodListGroup>
   <MethodListGroup>
     <MethodListHeading heading="Recording" />
-    <MethodListItemLabel name="startRecording(webhookUrl: string)"  type={"void"} />
+    <MethodListItemLabel name="startRecording(webhookUrl: string, awsDirPath: string)"  type={"void"} />
     <MethodListItemLabel name="stopRecording()"  type={"void"} />
   </MethodListGroup>
 </MethodListGroup>

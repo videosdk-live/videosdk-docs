@@ -46,7 +46,7 @@ values={[
 ```js
 const onPress = () => {
   // Start Recording
-  meeting?.startRecording();
+  meeting?.startRecording(webhookUrl, awsDirPath);
 
   // Stop Recording
   meeting?.stopRecording();
@@ -59,7 +59,7 @@ const onPress = () => {
 ```js
 const onPress = () => {
   // Start Recording
-  meeting?.startRecording();
+  meeting?.startRecording(webhookUrl, awsDirPath);
 
   // Stop Recording
   meeting?.stopRecording();
