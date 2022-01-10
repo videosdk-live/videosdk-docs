@@ -17,7 +17,7 @@ You don't ever need to call the `Meeting Class` constructor directly. Instead us
 ### initMeeting()
 
 ```js title="Javascript"
-const meeting = ZujoSDK.initMeeting({
+const meeting = VideoSDK.initMeeting({
   meetingId, // required
   name, // required
   micEnabled, // optional, default: true

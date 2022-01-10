@@ -58,19 +58,19 @@ yarn add @videosdk.live/js-sdk
 Then in your application code:
 
 ```js title="Webpack/node-style require"
-const ZujoSDK = require("@videosdk.live/js-sdk");
+const VideoSDK = require("@videosdk.live/js-sdk");
 
-ZujoSDK.config("<token>")
+VideoSDK.config("<token>")
 
-ZujoSDK.initMeeting({...})
+VideoSDK.initMeeting({...})
 ```
 
 Or
 
 ```js title="ES6 import"
-import { ZujoSDK } from "@videosdk.live/js-sdk";
+import { VideoSDK } from "@videosdk.live/js-sdk";
 
-ZujoSDK.config("<token>")
+VideoSDK.config("<token>")
 
-ZujoSDK.initMeeting({...})
+VideoSDK.initMeeting({...})
 ```

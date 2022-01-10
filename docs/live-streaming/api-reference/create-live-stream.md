@@ -127,7 +127,7 @@ puts response.read_body
 {
   "record": false,
   "userId": "607adacdaeba2c4d217d5fea443d",
-  "name": "zujo",
+  "name": "videosdk",
   "streamKey": "e83fb175-5606-4ee5-b960-aacfce300ba6",
   "upstreamUrl": "rtmp://live.videosdk.live/live/e83fb175-5606-4ee5-b960-aacfce300ba6",
   "downstreamUrl": "https://live.videosdk.live/live/e83fb175-5606-4ee5-b960-aacfce300ba6/index.m3u8",

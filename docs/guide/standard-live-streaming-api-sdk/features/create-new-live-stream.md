@@ -145,7 +145,7 @@ puts response.read_body
 ```json
 {
   "record": false,
-  "name": "zujo",
+  "name": "videosdk",
   "streamKey": "eb175-5-4e5-60-aacfce300b",
   "upstreamUrl": "rtmp://live.videosdk.live/live/...",
   "downstreamUrl": "https://live.videosdk.live/live/.../index.m3u8",
