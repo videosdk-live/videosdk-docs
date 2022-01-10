@@ -308,7 +308,7 @@ The Stream Key should be treated as a private key for live streaming. Anyone wit
 ```json
 {
   "record": false,
-  "name": "zujo",
+  "name": "videosdk",
   "streamKey": "e83fb175-5606-4ee5-b960-aacfce300ba6",
   "upstreamUrl": "rtmp://live.videosdk.live/live/.......",
   "downstreamUrl": "https://live.videosdk.live/live/.......",

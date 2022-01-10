@@ -86,7 +86,7 @@ fetch(url, options)
   "filePath": "files/videos/6052e0064b442a2f16018373.mp4",
   "size": 3965342,
   "type": "video",
-  "fileUrl": "https://cdn.zujonow.com/files/videos/6052e0064b442a2f16018373.mp4",
+  "fileUrl": "https://cdn.videosdk.live/uploads/videos/6052e0064b442a2f16018373.mp4",
   "id": "6052e0064b442a2f16018374"
 }
 ```
