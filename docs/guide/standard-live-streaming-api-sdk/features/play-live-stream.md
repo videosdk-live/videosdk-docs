@@ -16,6 +16,7 @@ slug: play-live-stream
 ---
 
 # Live Stream - Play Live Stream
+
 To play back a live stream, use the `downstreamUrl`, which we have created in [Create New Live Stream](/docs/guide/standard-live-streaming-api-sdk/features/create-new-live-stream).
 
 For play livestream you need to set up video player which supports HLS format.
@@ -25,6 +26,7 @@ import TabItem from '@theme/TabItem';
 
 <Tabs
 defaultValue="html"
+groupId={"client-group-id"}
 values={[
 {label: 'HTML', value: 'html'},
 {label: 'React.js', value: 'react'},

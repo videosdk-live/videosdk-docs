@@ -28,6 +28,7 @@ import TabItem from '@theme/TabItem';
 
 <Tabs
 defaultValue="curl"
+groupId={"server-group-id"}
 values={[
 {label: 'cURL request creates meeting', value: 'curl'},
 {label: 'NodeJS/JS', value: 'node'},
@@ -126,6 +127,7 @@ puts response.read_body
 To validate existing meeting id, before joining use following API.
 <Tabs
 defaultValue="curl"
+groupId={"server-group-id"}
 values={[
 {label: 'cURL request creates meeting', value: 'curl'},
 {label: 'NodeJS/JS', value: 'node'},

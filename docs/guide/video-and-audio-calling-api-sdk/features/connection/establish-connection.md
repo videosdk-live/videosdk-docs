@@ -29,6 +29,7 @@ After using this method, `connection-open` event will be emitted at both meeting
 
 <Tabs
 defaultValue="js"
+groupId={"client-group-id"}
 values={[
 {label: 'JavaScript', value: 'js'},
 {label: 'React', value: 'react'},

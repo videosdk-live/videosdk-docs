@@ -25,6 +25,7 @@ import TabItem from '@theme/TabItem';
 
 <Tabs
 defaultValue="npm"
+groupId={"package-manager-group-id"}
 values={[
 {label: 'NPM', value: 'npm'},
 {label: 'YARN', value: 'yarn'},

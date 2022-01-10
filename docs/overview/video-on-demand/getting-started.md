@@ -51,6 +51,7 @@ import TabItem from '@theme/TabItem';
 
 <Tabs
 defaultValue="node"
+groupId={"server-group-id"}
 values={[
 {label: 'Node.js', value: 'node'},
 {label: 'Python', value: 'python'},
@@ -316,6 +317,7 @@ To play back a video, use `fileUrl` from the response of video.
 
 <Tabs
 defaultValue="html"
+groupId={"client-group-id"}
 values={[
 {label: 'HTML', value: 'html'},
 {label: 'React.js', value: 'react'},

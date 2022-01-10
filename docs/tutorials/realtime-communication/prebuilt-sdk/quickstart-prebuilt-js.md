@@ -135,6 +135,7 @@ Install any http server if you don't already have one and run the server to join
 
 <Tabs
 defaultValue="node"
+groupId={"server-group-id"}
 values={[
 {label: 'Node.js', value: 'node'},
 {label: 'Python', value: 'python'},

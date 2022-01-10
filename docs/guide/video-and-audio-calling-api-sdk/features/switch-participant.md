@@ -40,6 +40,7 @@ after that `P2` from **Meeting_A** will receive an event `switch-meeting` with *
 
 <Tabs
 defaultValue="js"
+groupId={"client-group-id"}
 values={[
 {label: 'JavaScript', value: 'js'},
 {label: 'React', value: 'react'},

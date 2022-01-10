@@ -109,6 +109,7 @@ import TabItem from '@theme/TabItem';
 
 <Tabs
 defaultValue="curl"
+groupId={"server-group-id"}
 values={[
 {label: 'cURL request creates meeting', value: 'curl'},
 {label: 'NodeJS/JS', value: 'node'},
@@ -197,6 +198,7 @@ OR
 
 <Tabs
 defaultValue="curl"
+groupId={"server-group-id"}
 values={[
 {label: 'cURL request creates meeting', value: 'curl'},
 {label: 'NodeJS/JS', value: 'node'},

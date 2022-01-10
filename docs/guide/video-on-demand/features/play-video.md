@@ -23,6 +23,7 @@ import TabItem from '@theme/TabItem';
 
 <Tabs
 defaultValue="html"
+groupId={"client-group-id"}
 values={[
 {label: 'HTML', value: 'html'},
 {label: 'React.js', value: 'react'},
