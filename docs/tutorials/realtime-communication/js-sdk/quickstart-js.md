@@ -115,7 +115,7 @@ Available permissions are:
 - `allow_mod`: Allow participant to enable/disable other participant's mic/webcam.
 
 This generated token must be sent in the `Authorization` header for all API calls. <br/>
-And it should also be used with the `ZujoSDK.config(token)` method.
+And it should also be used with the `VideoSDK.config(token)` method.
 
 ## Step 1: Create or join meeting
 
@@ -303,7 +303,7 @@ puts response.read_body
 Before starting with `js-sdk`, you have to pass token to config.
 
 ```javascript title="Pass token to config"
-ZujoSDK.config(token);
+VideoSDK.config(token);
 ```
 
 ## Step 3: Initialize meeting
@@ -317,7 +317,7 @@ To initialize meeting you need to provide the following parameters:
 - `maxResolution: "sd" | "hd"` defines the maximum available resolution for webcam video.
 
 ```javascript title="Intialize meeting instance"
-const meeting = ZujoSDK.initMeeting({
+const meeting = VideoSDK.initMeeting({
   meetingId, // required
   name, // required
   micEnabled, // optional, default: true
