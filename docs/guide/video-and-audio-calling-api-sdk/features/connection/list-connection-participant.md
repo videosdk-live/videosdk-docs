@@ -20,6 +20,7 @@ After getting a single meeting connection, all joined participants of that meeti
 
 <Tabs
 defaultValue="js"
+groupId={"client-group-id"}
 values={[
 {label: 'JavaScript', value: 'js'},
 {label: 'React', value: 'react'},

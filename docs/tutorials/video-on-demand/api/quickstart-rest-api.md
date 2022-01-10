@@ -70,6 +70,7 @@ import TabItem from '@theme/TabItem';
 
 <Tabs
 defaultValue="curl"
+groupId={"server-group-id"}
 values={[
 {label: 'cURL', value: 'curl'},
 {label: 'RESULT', value: 'result'},
@@ -100,6 +101,7 @@ After creating signed URL, next step is to upload file on our server.
 
 <Tabs
 defaultValue="curl"
+groupId={"server-group-id"}
 values={[
 {label: 'cURL', value: 'curl'},
 {label: 'RESULT', value: 'result'},
@@ -147,6 +149,7 @@ Encoding API converts source video into compressed version in multiple resolutio
 
 <Tabs
 defaultValue="curl"
+groupId={"server-group-id"}
 values={[
 {label: 'cURL', value: 'curl'},
 {label: 'RESULT', value: 'result'},

@@ -26,6 +26,7 @@ import TabItem from '@theme/TabItem';
 
 <Tabs
 defaultValue="npm"
+groupId={"package-manager-group-id"}
 values={[
 {label: 'NPM', value: 'npm'},
 {label: 'YARN', value: 'yarn'},
@@ -52,6 +53,7 @@ Copy API key generated from [Signup & Create API Key](/docs/guide/prebuilt-video
 
 <Tabs
 defaultValue="react"
+groupId={"client-group-id"}
 values={[
 {label: 'React', value: 'react'},
 {label: 'Angular', value: 'angular'},

@@ -11,6 +11,7 @@ import TabItem from '@theme/TabItem';
 
 <Tabs
 defaultValue="curl"
+groupId={"server-group-id"}
 values={[
 {label: 'cURL request', value: 'curl'},
 {label: 'NodeJS/JS', value: 'node'},

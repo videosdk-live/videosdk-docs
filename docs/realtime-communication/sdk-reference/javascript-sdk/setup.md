@@ -21,7 +21,7 @@ You can import this library using `<script>` tag. The easiest way to get started
   <head>....</head>
   <body>
     .....
-    <script src="https://sdk.videosdk.live/js-sdk/0.0.18/videosdk.js"></script>
+    <script src="https://sdk.videosdk.live/js-sdk/0.0.19/videosdk.js"></script>
   </body>
 </html>
 ```
@@ -35,6 +35,7 @@ import TabItem from '@theme/TabItem';
 
 <Tabs
 defaultValue="npm"
+groupId={"package-manager-group-id"}
 values={[
 {label: 'NPM', value: 'npm'},
 {label: 'YARN', value: 'yarn'},

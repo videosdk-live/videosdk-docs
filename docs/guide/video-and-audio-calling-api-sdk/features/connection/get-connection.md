@@ -14,6 +14,7 @@ After successfully established connections, you will be able to get all the conn
 
 <Tabs
 defaultValue="js"
+groupId={"client-group-id"}
 values={[
 {label: 'JavaScript', value: 'js'},
 {label: 'React', value: 'react'},
@@ -64,6 +65,7 @@ For React and ReactNative developer, videosdk.live introduce new hook called `us
 
 <Tabs
 defaultValue="js"
+groupId={"client-group-id"}
 values={[
 {label: 'JavaScript', value: 'js'},
 {label: 'React', value: 'react'},
