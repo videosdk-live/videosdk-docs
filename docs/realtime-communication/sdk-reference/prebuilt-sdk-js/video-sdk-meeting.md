@@ -89,6 +89,10 @@ meeting.init({
       href: "https://videosdk.live/", // action button href
     },
   },
+
+  notificationSoundEnabled: true,
+
+  maxResolution: "sd", // "hd" or "sd"
 });
 ```
 
@@ -157,6 +161,8 @@ import MethodListHeading from '@theme/MethodListHeading';
          </MethodListGroup>
         </MethodListGroup>
       </MethodListItemLabel>
+      <MethodListItemLabel name="maxResolution" option={"optional"} type={"string"} />
+      <MethodListItemLabel name="notificationSoundEnabled" option={"optional"} type={"string"} />
     </MethodListGroup>
   </MethodListItemLabel>
 </MethodListGroup>

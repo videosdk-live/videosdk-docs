@@ -15,12 +15,13 @@ keywords:
   - real-time communication
   - video sdk embed
   - video sdk prebuilt
+  - webcam resolution
 image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
 slug: camera-controls
 ---
 
-# Camera Controls
+## Camera Controls
 
 Different webcam control permissions allows participant to enable/disable their own webcam and other participant's webcam too & also can set default participant's webcam settings, when meeting start.
 
@@ -42,6 +43,24 @@ const config = {
   // ...
   webcamEnabled: true,
   participantCanToggleSelfWebcam: true,
+  // ...
+};
+```
+
+## Set webcam resolution
+
+If you want to restrict the `webcam` stream quality of any participant that is being uploaded to server, you can use `maxResolution`.
+
+### How it works ?
+
+- `maxResolution` can be set to `sd` or `hd`. If it is `sd` then the upload resolution will be `360p` else if it is set to `hd` then it will be `720p`. By default it is set to `sd`.
+
+### Max resolution Attributes
+
+```js title="index.html"
+const config = {
+  // ...
+  maxResolution: "sd", // "sd" or "hd"
   // ...
 };
 ```

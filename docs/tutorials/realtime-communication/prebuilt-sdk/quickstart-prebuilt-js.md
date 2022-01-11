@@ -118,13 +118,17 @@ Create an `index.html` file and add the following `<script>` tag at the end of y
           href: "https://videosdk.live/", // action button href
         },
       },
+
+      notificationSoundEnabled: true,
+
+      maxResolution: "sd", // "hd" or "sd"
     };
 
     meeting.init(config);
   });
 
   script.src =
-    "https://sdk.videosdk.live/rtc-js-prebuilt/0.1.27/rtc-js-prebuilt.js";
+    "https://sdk.videosdk.live/rtc-js-prebuilt/0.1.28/rtc-js-prebuilt.js";
   document.getElementsByTagName("head")[0].appendChild(script);
 </script>
 ```
