@@ -118,15 +118,15 @@ module.exports = {
           position: "right",
         },
         {
-          href: "https://github.com/videosdk-live/videosdk.live",
-          className: "navbar-item-github",
+          label: "Join Community",
+          href: "https://app.videosdk.live/login",
           position: "right",
         },
         {
-          href: "https://twitter.com/video_sdk",
-          className: "navbar-item-twitter",
+          href: "https://github.com/videosdk-live/videosdk.live",
+          className: "navbar-item-github",
           position: "right",
-        },
+        }
         // {
         //   type: "docsVersionDropdown",
         //   dropdownActiveClassDisabled: true,
@@ -143,23 +143,27 @@ module.exports = {
       style: "dark",
       links: [
         {
-          title: "Intoruction",
+          title: "Guide",
           items: [
             {
               label: "Dashboard",
-              href: "/docs/overview/dashboard/introduction",
+              href: "/docs/guide/dashboard/getting-started",
             },
             {
-              label: "Real-time communication SDK",
-              href: "/docs/overview/real-time-communication/introduction",
+              label: "Prebuilt Video & Audio Calling",
+              href: "/docs/guide/prebuilt-video-and-audio-calling/getting-started",
             },
             {
-              label: "Live Streaming SDK",
+              label: "Custom Video & Audio Calling",
               href: "/docs/overview/live-streaming/introduction",
             },
             {
-              label: "Video On Demand SDK",
-              href: "/docs/overview/video-on-demand/introduction",
+              label: "Standard Live Streaming",
+              href: "/docs/guide/standard-live-streaming-api-sdk/getting-started",
+            },
+            {
+              label: "Video On Demand",
+              href: "/docs/guide/video-on-demand/getting-started",
             },
           ],
         },
@@ -184,15 +188,19 @@ module.exports = {
           title: "Tutorials",
           items: [
             {
-              label: "RTC Quickstart",
+              label: "Video/Audio Concefencing Java Script",
               to: "/docs/tutorials/realtime-communication/js-sdk/quickstart-js",
+            },
+            {
+              label: "Video/Audio Concefencing with Wordpress",
+              to: "/docs/tutorials/realtime-communication/prebuilt-sdk/quickstart-prebuilt-wordpress",
             },
             {
               label: "Live Streaming Quickstart",
               to: "/docs/tutorials/live-streaming/api/quickstart-rest-api",
             },
             {
-              label: "VOD Quickstart",
+              label: "Video on Demand Quickstart",
               to: "/docs/tutorials/realtime-communication/js-sdk/quickstart-js",
             },
           ],
@@ -200,6 +208,10 @@ module.exports = {
         {
           title: "Community",
           items: [
+            {
+              label: "Discord Community",
+              href: "https://discord.gg/Gpmj6eCq5u",
+            },
             {
               label: "Stack Overflow",
               href: "https://stackoverflow.com/questions/tagged/videosdk.live",
@@ -228,6 +240,14 @@ module.exports = {
             {
               label: "NPM",
               href: "https://www.npmjs.com/org/videosdk.live",
+            },
+            {
+              label: "Start Project",
+              href: "https://app.videosdk.live",
+            },
+            {
+              label: "Join the Community",
+              href: "https://discord.gg/Gpmj6eCq5u",
             },
           ],
         },
@@ -265,4 +285,16 @@ module.exports = {
       },
     ],
   ],
+  scripts: [
+    {
+      // Page sense
+      src: 'https://cdn-in.pagesense.io/js/zujotechpvtltd/8c69e67587b74006a3927185dd663808.js',
+      async: true,
+    },
+    {
+      // Zoho Sales IQ
+      src: 'https://salesiq.zoho.in/widget',
+      async: true,
+    }
+  ]
 };
