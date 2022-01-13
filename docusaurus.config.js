@@ -188,7 +188,7 @@ module.exports = {
           title: "Tutorials",
           items: [
             {
-              label: "Video/Audio Concefencing Java Script",
+              label: "Video/ Concefencing Java Script",
               to: "/docs/tutorials/realtime-communication/js-sdk/quickstart-js",
             },
             {
