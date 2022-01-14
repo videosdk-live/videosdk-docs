@@ -188,11 +188,11 @@ module.exports = {
           title: "Tutorials",
           items: [
             {
-              label: "Video/ Concefencing Java Script",
+              label: "Video Conferencing Java Script",
               to: "/docs/tutorials/realtime-communication/js-sdk/quickstart-js",
             },
             {
-              label: "Video/Audio Concefencing with Wordpress",
+              label: "Video Conferencing with Wordpress",
               to: "/docs/tutorials/realtime-communication/prebuilt-sdk/quickstart-prebuilt-wordpress",
             },
             {

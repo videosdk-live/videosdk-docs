@@ -577,7 +577,7 @@ module.exports = {
     },
     {
       type: "category",
-      label: "REAL TIME COMMUNICATION",
+      label: "Audio/Video Conferencing SDK",
       items: [
         {
           type: "category",
@@ -586,6 +586,7 @@ module.exports = {
           items: [
             "tutorials/realtime-communication/prebuilt-sdk/quickstart-prebuilt-js",
             "tutorials/realtime-communication/prebuilt-sdk/quickstart-prebuilt-wordpress",
+            "tutorials/video-calling-api/react-js/quickstart",
           ],
         },
       ],
@@ -593,7 +594,7 @@ module.exports = {
     },
     {
       type: "category",
-      label: "LIVE STREAMING",
+      label: "Live Streaming API",
       items: [
         {
           type: "category",
@@ -606,7 +607,7 @@ module.exports = {
     },
     {
       type: "category",
-      label: "VIDEO ON DEMAND",
+      label: "Video On Demand API",
       items: [
         {
           type: "category",
