@@ -539,6 +539,7 @@ VideoSDK.config("<Authentication-token>");
 const meeting = VideoSDK.initMeeting({
   meetingId: "<Id-on-meeting>", // required
   name: "<Name-of-participant>", // required
+  participantId:'Id-of-participant' // optional, default: SDK will generate
   micEnabled: "<Flag-to-enable-mic>", // optional, default: true
   webcamEnabled: "<Flag-to-enable-webcam>", // optional, default: true
   maxResolution: "<Maximum-resolution>", // optional, default: "hd"
@@ -558,6 +559,7 @@ const App = () => {
       config={{
         meetingId: "<Id-on-meeting>",
         name: "<Name-of-participant>",
+        participantId:'Id-of-participant' // optional, default: SDK will generate
         micEnabled: "<Flag-to-enable-mic>",
         webcamEnabled: "<Flag-to-enable-webcam>",
         maxResolution: "<Maximum-resolution>",
@@ -590,6 +592,7 @@ const App = () => {
       config={{
         meetingId: "<Id-on-meeting>",
         name: "<Name-of-participant>",
+        participantId:'Id-of-participant' // optional,  default: SDK will generate
         micEnabled: "<Flag-to-enable-mic>",
         webcamEnabled: "<Flag-to-enable-webcam>",
         maxResolution: "<Maximum-resolution>",
