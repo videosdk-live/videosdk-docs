@@ -22,3 +22,13 @@ This feature allows SDK to raise error pop up for providing invalid parameter du
 ![error-pop-up-2](/img/prebuilt/error-pop-up-2.png)
 
 By default, `debug` value is `false`.
+
+### Debug Mode attributes
+
+```js title="index.html"
+const config = {
+  // ... other configuration
+  debug: true, // false
+  // ...
+};
+```
