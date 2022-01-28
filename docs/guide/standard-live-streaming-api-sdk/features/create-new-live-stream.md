@@ -148,6 +148,7 @@ puts response.read_body
   "record": false,
   "name": "videosdk",
   "streamKey": "eb175-5-4e5-60-aacfce300b",
+  "streamUrl": "rtmp://live.videosdk.live/live",
   "upstreamUrl": "rtmp://live.videosdk.live/live/...",
   "downstreamUrl": "https://live.videosdk.live/live/.../index.m3u8",
   "recordingUrl": "https://live.videosdk.live/live/.../storage/index.m3u8",
@@ -177,6 +178,7 @@ import MethodListHeading from '@theme/MethodListHeading';
       <MethodListItemLabel name="name"  type={"string"}  description="Provided name of the live stream." />
       <MethodListItemLabel name="record"  type={"boolean"}  description="Flag for live stream recording, which you have provided while creating live stream." />
       <MethodListItemLabel name="streamKey"  type={"string"}  description="Stream keys are like your live stream’s password and address." />
+      <MethodListItemLabel name="streamUrl"  type={"string"}  description="It's URL, without streamKey." />
       <MethodListItemLabel name="upstreamUrl"  type={"string"}  description="where a RTMP stream is used to send video between an encoder and server." />
       <MethodListItemLabel name="downstreamUrl"  type={"string"}  description="It's URL, Where you can play live stream in video player (Support HLS format)." />
       <MethodListItemLabel name="recordingUrl"  type={"string"}  description="It's URL, Where live stream recording is stored. 
