@@ -1,12 +1,28 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import CardLinks from "../components/cards/cardlinks";
+import Cookies from 'js-cookie'
 
 function Overview() {
+
+  const [user, setUser] = useState({})
+  
+  useEffect(() => {
+    getUser();
+  },[])
+
+  const getUser = async () => {
+    const user = await Cookies.get("user");
+    setUser(JSON.parse(user))
+  }
+
   return (
     <div class="container padding-top--md padding-bottom--lg">
       <div class="row">
         <div class="col">
           <div class="docItemContainer_node_modules-@docusaurus-theme-classic-lib-next-theme-DocItem-styles-module"></div>
+          <h1 class="h1Heading_node_modules-@docusaurus-theme-classic-lib-next-theme-Heading-styles-module">
+            {user.name ? "Hello, "+user.name: null }
+          </h1>
           <h1 class="h1Heading_node_modules-@docusaurus-theme-classic-lib-next-theme-Heading-styles-module">
             Overview
           </h1>
