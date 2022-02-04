@@ -23,11 +23,6 @@ module.exports = {
         facetFilters: ["content"],
       },
     },
-    googleAnalytics: {
-      trackingID: "G-NR8EYPZFJ7",
-      // Optional fields.
-      anonymizeIP: true, // Should IPs be anonymized?
-    },
     colorMode: {
       defaultMode: "light",
       disableSwitch: false,
@@ -281,6 +276,11 @@ module.exports = {
             darkTheme: require("@kiwicopple/prism-react-renderer/themes/vsDark"),
             additionalLanguages: ["Java"],
           },
+        },        
+        googleAnalytics: {
+          trackingID: "G-NR8EYPZFJ7",
+          // Optional fields.
+          anonymizeIP: true, // Should IPs be anonymized?
         },
       },
     ],
