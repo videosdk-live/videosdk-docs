@@ -1,19 +1,18 @@
 import React, { useEffect, useState } from "react";
 import CardLinks from "../components/cards/cardlinks";
-import Cookies from 'js-cookie'
+import Cookies from "js-cookie";
 
 function Overview() {
+  const [user, setUser] = useState({});
 
-  const [user, setUser] = useState({})
-  
   useEffect(() => {
     getUser();
-  },[])
+  }, []);
 
   const getUser = async () => {
     const user = await Cookies.get("user");
-    setUser(JSON.parse(user))
-  }
+    setUser(JSON.parse(user));
+  };
 
   return (
     <div class="container padding-top--md padding-bottom--lg">
@@ -21,7 +20,7 @@ function Overview() {
         <div class="col">
           <div class="docItemContainer_node_modules-@docusaurus-theme-classic-lib-next-theme-DocItem-styles-module"></div>
           <h1 class="h1Heading_node_modules-@docusaurus-theme-classic-lib-next-theme-Heading-styles-module">
-            {user.name ? "Hello, "+user.name: null }
+            {user.name ? "Hello, " + user.name : null}
           </h1>
           <h1 class="h1Heading_node_modules-@docusaurus-theme-classic-lib-next-theme-Heading-styles-module">
             Overview
@@ -41,23 +40,19 @@ function Overview() {
                   links={[
                     {
                       linkName: "Guide",
-                      link:
-                        "/docs/guide/prebuilt-video-and-audio-calling/getting-started",
+                      link: "/docs/guide/prebuilt-video-and-audio-calling/getting-started",
                     },
                     {
                       linkName: "API reference",
-                      link:
-                        "/docs/realtime-communication/sdk-reference/prebuilt-sdk-js/setup",
+                      link: "/docs/realtime-communication/sdk-reference/prebuilt-sdk-js/setup",
                     },
                     {
                       linkName: "Tutorial",
-                      link:
-                        "/docs/tutorials/realtime-communication/prebuilt-sdk/quickstart-prebuilt-js",
+                      link: "/docs/tutorials/realtime-communication/prebuilt-sdk/quickstart-prebuilt-js",
                     },
                     {
                       linkName: "Code samples",
-                      link:
-                        "/docs/code-sample/overview#1-prebuilt-video--audio-calling-sdk",
+                      link: "/docs/code-sample/overview#1-prebuilt-video--audio-calling-sdk",
                     },
                   ]}
                 />
@@ -70,8 +65,7 @@ function Overview() {
                   links={[
                     {
                       linkName: "Guide",
-                      link:
-                        "/docs/guide/video-and-audio-calling-api-sdk/getting-started",
+                      link: "/react/video-and-audio-calling-api-sdk/getting-started",
                     },
                     {
                       linkName: "API reference",
@@ -79,13 +73,11 @@ function Overview() {
                     },
                     {
                       linkName: "Tutorial",
-                      link:
-                        "/docs/tutorials/realtime-communication/js-sdk/quickstart-js",
+                      link: "/docs/tutorials/realtime-communication/js-sdk/quickstart-js",
                     },
                     {
                       linkName: "Code samples",
-                      link:
-                        "/docs/code-sample/overview#2-custom-video--audio-calling-sdk",
+                      link: "/docs/code-sample/overview#2-custom-video--audio-calling-sdk",
                     },
                   ]}
                 />
@@ -100,8 +92,7 @@ function Overview() {
                   links={[
                     {
                       linkName: "Guide",
-                      link:
-                        "/docs/guide/standard-live-streaming-api-sdk/getting-started",
+                      link: "/docs/guide/standard-live-streaming-api-sdk/getting-started",
                     },
                     {
                       linkName: "API reference",
@@ -109,13 +100,11 @@ function Overview() {
                     },
                     {
                       linkName: "Tutorial",
-                      link:
-                        "/docs/tutorials/live-streaming/api/quickstart-rest-api",
+                      link: "/docs/tutorials/live-streaming/api/quickstart-rest-api",
                     },
                     {
                       linkName: "Code samples",
-                      link:
-                        "/docs/code-sample/overview#3-standard-live-stream-api",
+                      link: "/docs/code-sample/overview#3-standard-live-stream-api",
                     },
                   ]}
                 />
@@ -136,8 +125,7 @@ function Overview() {
                     },
                     {
                       linkName: "Tutorial",
-                      link:
-                        "/docs/tutorials/video-on-demand/api/quickstart-rest-api",
+                      link: "/docs/tutorials/video-on-demand/api/quickstart-rest-api",
                     },
                     {
                       linkName: "Code samples",

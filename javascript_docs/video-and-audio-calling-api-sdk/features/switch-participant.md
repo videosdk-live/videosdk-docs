@@ -38,16 +38,6 @@ after that `P2` from **Meeting_A** will receive an event `switch-meeting` with *
 
 ### **Method and Event Code**
 
-<Tabs
-defaultValue="js"
-groupId={"client-group-id"}
-values={[
-{label: 'JavaScript', value: 'js'},
-{label: 'React', value: 'react'},
-{label: 'ReactNative', value: 'reactnative'}
-]}>
-<TabItem value="js">
-
 ```js
 // Get participant of meeting A
 const Participant = meeting.participants.get("<participant-id>");
@@ -63,83 +53,3 @@ const onClick = () => {
 // This event will be emitted to participant P2 of Meeting A.
 meeting.on("switch-meeting", ({ meetingId, payload, token }) => {});
 ```
-
-</TabItem>
-<TabItem value="react">
-
-```js
-import { useParticipant, useMeeting } from "@videosdk.live/react-sdk";
-
-const { switchTo } = useParticipant("<participant-id>");
-
-const onClick = () => {
-  const meetingId = "<meeting-B-id>"; // <meeting-B-id> || <other-meeting-id>
-  const token = "JWT";
-  const payload = "payload";
-
-  switchTo({ meetingId, token, payload });
-};
-
-useMeeting({
-  onSwitchMeeting: ({ meetingId, payload, token }) => {
-    // Resetting token and meetingId at participant side
-    setToken(token);
-    setMeetingId(meetingId);
-  },
-});
-```
-
-</TabItem>
-<TabItem value="reactnative">
-
-```js
-import { useMeeting, useParticipant } from "@videosdk.live/react-native-sdk";
-
-const { switchTo } = useParticipant("<participant-id>");
-
-const onClick = () => {
-  const meetingId = "<meeting-B-id>"; // <meeting-B-id> || <other-meeting-id>
-  const token = "JWT";
-  const payload = "payload";
-
-  switchTo({ meetingId, token, payload });
-};
-
-useMeeting({
-  onSwitchMeeting: ({ meetingId, payload, token }) => {
-    // Resetting token and meetingId at participant side
-    setToken(token);
-    setMeetingId(meetingId);
-  },
-});
-```
-
-</TabItem>
-</Tabs>
-
-For **React** and **React Native** Developer, you need to slightly modify in [Initialization](/docs/guide/video-and-audio-calling-api-sdk/features/start-join-meeting#2-initialization) config props.
-
-```js
-const App = () => {
-  return (
-    <MeetingProvider
-      config={{
-        meetingId: "<Id-on-meeting>",
-        name: "<Name-of-participant>",
-        micEnabled: "<Flag-to-enable-mic>",
-        webcamEnabled: "<Flag-to-enable-webcam>",
-        reInitialiseMeetingOnConfigChange: true, // Add This Line
-      }}
-      token={"<Authentication-token>"}
-    >
-      <>...</>
-    </MeetingProvider>
-  );
-};
-```
-
-`reInitialiseMeetingOnConfigChange` prop help you to update token and meeting id at run time, you don't have to rejoin or reinitialize the meeting.
-
-The reason we are using this props is we are resetting meetingId and token at participant side [switch-meeting](/docs/guide/video-and-audio-calling-api-sdk/features/switch-participant#event) event.
-
-If you not specify this props, MeetingProvider will not able to reset meetingId and token at run time.

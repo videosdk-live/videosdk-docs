@@ -34,18 +34,18 @@ import Card from '@theme/Card';
 <div class="container guide-steps-block">
   <div class="row ">
     <div class="col col--6">
-      <Card heading="1. Signup & Create API Key" link="/docs/guide/video-and-audio-calling-api-sdk/signup-and-create-api" description="Generate Your API Key" />
+      <Card heading="1. Signup & Create API Key" link="/javascript/video-and-audio-calling-api-sdk/signup-and-create-api" description="Generate Your API Key" />
     </div>
      <div class="col col--6">
-      <Card heading="2. Client Setup" link="/docs/guide/video-and-audio-calling-api-sdk/supported-platforms" description="SDK Integration with client" />
+      <Card heading="2. Client Setup" link="/javascript/video-and-audio-calling-api-sdk/supported-platforms" description="SDK Integration with client" />
     </div>
   </div>
    <div class="row ">
    <div class="col col--6" >
-      <Card heading="3. Server Setup" link="/docs/guide/video-and-audio-calling-api-sdk/server-setup" description="Integrate server with API key"  />
+      <Card heading="3. Server Setup" link="/javascript/video-and-audio-calling-api-sdk/server-setup" description="Integrate server with API key"  />
     </div>
     <div class="col col--6">
-      <Card heading="4. Start or Join Meeting" link="/docs/guide/video-and-audio-calling-api-sdk/features/start-join-meeting" description="Enter in Meeting" />
+      <Card heading="4. Start or Join Meeting" link="/javascript/video-and-audio-calling-api-sdk/features/start-join-meeting" description="Enter in Meeting" />
     </div>
   </div>
 </div>

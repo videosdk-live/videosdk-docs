@@ -37,19 +37,6 @@ This guide will provide an overview of how participant can start, stop, resume a
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<Tabs
-defaultValue="js"
-groupId={"client-group-id"}
-values={[
-{label: 'JavaScript', value: 'js'},
-{label: 'React', value: 'react'},
-{label: 'ReactNative', value: 'reactnative'},
-{label: 'Android', value: 'android'},
-{label: 'IOS', value: 'ios'},
-{label: 'Flutter', value: 'flutter'},
-]}>
-<TabItem value="js">
-
 ```js
 const onPress = () => {
   // Start Video
@@ -70,75 +57,3 @@ const onPress = () => {
   meeting?.seekVideo({ currentTime: 10 });
 };
 ```
-
-</TabItem>
-<TabItem value="react">
-
-```js
-const onPress = () => {
-  // Start Video
-  meeting?.startVideo({
-    link: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
-  });
-
-  // Stop Video
-  meeting?.stopVideo();
-
-  // Pause Video
-  meeting?.pauseVideo({ currentTime: 5 });
-
-  // Resume Video
-  meeting?.resumeVideo();
-
-  // Seek Video
-  meeting?.seekVideo({ currentTime: 10 });
-};
-```
-
-</TabItem>
-<TabItem value="reactnative">
-
-```js
-const onPress = () => {
-  // Start Video
-  meeting?.startVideo({
-    link: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
-  });
-
-  // Stop Video
-  meeting?.stopVideo();
-
-  // Pause Video
-  meeting?.pauseVideo({ currentTime: 5 });
-
-  // Resume Video
-  meeting?.resumeVideo();
-
-  // Seek Video
-  meeting?.seekVideo({ currentTime: 10 });
-};
-```
-
-</TabItem>
-<TabItem value="android">
-
-```js
-COMING SOON!
-```
-
-</TabItem>
-<TabItem value="ios">
-
-```js
-COMING SOON!
-```
-
-</TabItem>
-<TabItem value="flutter">
-
-```js
-COMING SOON!
-```
-
-</TabItem>
-</Tabs>

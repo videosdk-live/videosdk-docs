@@ -31,19 +31,6 @@ This guide will provide an overview of how to use enable and disable Screen Shar
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<Tabs
-defaultValue="js"
-groupId={"client-group-id"}
-values={[
-{label: 'JavaScript', value: 'js'},
-{label: 'React', value: 'react'},
-{label: 'ReactNative', value: 'reactnative'},
-{label: 'Android', value: 'android'},
-{label: 'IOS', value: 'ios'},
-{label: 'Flutter', value: 'flutter'},
-]}>
-<TabItem value="js">
-
 ```js
 const onPress = () => {
   // Enabling ScreenShare
@@ -53,61 +40,6 @@ const onPress = () => {
   meeting?.disableScreenShare();
 };
 ```
-
-</TabItem>
-<TabItem value="react">
-
-```js
-const onPress = () => {
-  // Enabling ScreenShare
-  meeting?.enableScreenShare();
-
-  // Disabling ScreenShare
-  meeting?.disableScreenShare();
-};
-```
-
-</TabItem>
-<TabItem value="reactnative">
-
-```js
-const onPress = () => {
-  // Enabling ScreenShare
-  meeting?.enableScreenShare();
-
-  // Disabling ScreenShare
-  meeting?.disableScreenShare();
-};
-```
-
-</TabItem>
-<TabItem value="android">
-
-```js
-COMING SOON!
-```
-
-</TabItem>
-<TabItem value="ios">
-
-```js
-COMING SOON!
-```
-
-</TabItem>
-<TabItem value="flutter">
-
-```js
-COMING SOON!
-```
-
-</TabItem>
-</Tabs>
-
-:::caution
-
-For React Native iOS Screen Share feature, you need to follow this guide [React Native iOS Screen Share](/docs/guide/video-and-audio-calling-api-sdk/extras/react-native-ios-screen-share)
-:::
 
 <!-- ## How to Create App Group in Apple Store
 ### Step 1 : Go to App store

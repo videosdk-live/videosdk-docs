@@ -1,5 +1,5 @@
 module.exports = {
-    guideAudioAndVideoCalling: [
+  guideAudioAndVideoCalling: [
     {
       type: "category",
       label: "GUIDE",
@@ -11,7 +11,7 @@ module.exports = {
       label: "SETUP",
       items: [
         "video-and-audio-calling-api-sdk/signup-and-create-api",
-        "video-and-audio-calling-api-sdk/react-js-sdk",
+        "video-and-audio-calling-api-sdk/javascript-sdk",
         "video-and-audio-calling-api-sdk/server-setup",
         // "video-and-audio-calling-api-sdk/start-or-join-meeting",
       ],
@@ -55,13 +55,5 @@ module.exports = {
       ],
       collapsed: false,
     },
-    {
-      type: "category",
-      label: "Extras",
-      items: [
-        "video-and-audio-calling-api-sdk/extras/react-native-ios-screen-share",
-      ],
-      collapsed: false,
-    },
   ],
-}
+};

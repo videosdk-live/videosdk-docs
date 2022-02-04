@@ -83,7 +83,7 @@ function DocSidebarDesktop({ path, sidebar, onCollapse, isHidden }) {
       currentPath.split("/")[1],
       e.target.value
     );
-    window.location.replace('http://'+window.location.host + currentPath)
+    window.location.replace("http://" + window.location.host + currentPath);
   }
 
   return (
@@ -100,65 +100,33 @@ function DocSidebarDesktop({ path, sidebar, onCollapse, isHidden }) {
           [styles.menuWithAnnouncementBar]: showAnnouncementBar,
         })}
       >
-        {/* <div className="row">
-          <div className="col navbar__item dropdown dropdown--hoverable">
-            <a aria-current="page" class="navbar__link">
-              Lateset Version Of SDK
-            </a>
-            <ul class="dropdown__menu">
-              <li>
-                <a
-                  aria-current="page"
-                  class="dropdown__link dropdown__link--active"
-                >
-                  0.0.x
-                </a>
-              </li>
-              <li>
-                <a class="dropdown__link">0.1.x</a>
-              </li>
-            </ul>
+        {window.location.pathname.split("/")[1] == "docs" ? (
+          <div className="row">
+            <select className="dropdownSidebar dropdownSidebarVersion ">
+              <option>0.0.x</option>
+              <option>0.0.1</option>
+            </select>
           </div>
-          <div className="col navbar__item dropdown dropdown--hoverable">
-            <a
-              aria-current="page"
-              class="navbar__link"
-              href="/react/installation"
+        ) : (
+          <div className="row">
+            <select
+              onChange={routingSDK}
+              defaultValue={window.location.pathname.split("/")[1]}
+              className="col dropdownSidebar"
             >
-              Lateset Version Of SDK
-            </a>
-            <ul class="dropdown__menu">
-              <li>
-                <a
-                  aria-current="page"
-                  class="dropdown__link dropdown__link--active"
-                  href="/react/installation"
-                >
-                  0.0.x
-                </a>
-              </li>
-              <li>
-                <a class="dropdown__link" href="/react/0.19.x/installation">
-                  0.1.x
-                </a>
-              </li>
-            </ul>
+              <option value="react">React</option>
+              <option value="javascript">JS</option>
+              <option value="react-native">React Native</option>
+              <option value="android">Android</option>
+              <option value="ios">IOS</option>
+              <option value="flutter">Flutter</option>
+            </select>
+            <select className="col dropdownSidebar">
+              <option>0.0.x</option>
+              <option>0.0.1</option>
+            </select>
           </div>
-        </div> */}
-        <div className="row">
-          <select onChange={routingSDK} defaultValue={window.location.pathname.split("/")[1]} className="col dropdownSidebar">
-            <option value = "react">React</option>
-            <option>JS</option>
-            <option>React Native</option>
-            <option value = "android">Android</option>
-            <option value = "ios">IOS</option>
-            <option value = "flutter">Flutter</option>
-          </select>
-          <select className="col dropdownSidebar">
-            <option>0.0.x</option>
-            <option>0.0.1</option>
-          </select>
-        </div>
+        )}
         <ul className={clsx(ThemeClassNames.docs.docSidebarMenu, "menu__list")}>
           <DocSidebarItems items={sidebar} activePath={path} level={1} />
         </ul>

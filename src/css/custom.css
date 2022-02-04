@@ -475,6 +475,10 @@ a[class^="sidebarLogo_"] img {
   color: var(--ifm-color-content);
   display: block;
 }
+.dropdownSidebarVersion {
+  width: 90%;
+  margin-left: 15px;
+}
 
 .dropdownSidebar {
   height: 40px;

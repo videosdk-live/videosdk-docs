@@ -36,15 +36,6 @@ We have depicted a specific constant with code and message in the below table.
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<Tabs
-defaultValue="js"
-groupId={"client-group-id"}
-values={[
-{label: 'JavaScript', value: 'js'},
-{label: 'React', value: 'react'},
-]}>
-<TabItem value="js">
-
 ```js
 import { VideoSDK } from "@videosdk.live/js-sdk";
 
@@ -68,37 +59,3 @@ meeting.on("error", (data) => {
   }
 });
 ```
-
-</TabItem>
-<TabItem value="react">
-
-```js
-import { Constants, useMeeting } from "@videosdk.live/react-sdk";
-
-const {
-  /** Properties and Methods */
-} = useMeeting({
-  onError: (data) => {
-    const { code, message } = data;
-
-    // Get Constant from SDK which contain value of error Code
-    const { INVALID_TOKEN, INVALID_MEETING_ID } = Constants.errors;
-
-    switch (code) {
-      case INVALID_TOKEN:
-        console.log(`Error is ${message}`);
-        break;
-
-      case INVALID_MEETING_ID:
-        console.log(`Error is ${message}`);
-        break;
-
-      default:
-        break;
-    }
-  },
-});
-```
-
-</TabItem>
-</Tabs>
