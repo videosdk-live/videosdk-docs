@@ -408,6 +408,7 @@ article header {
 .navbar__logo {
   height: auto;
   max-width: 250px;
+  padding-top: 0.5rem;
 }
 
 a[class^="sidebarLogo_"] img {

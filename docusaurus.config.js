@@ -61,8 +61,8 @@ module.exports = {
             },
             {
               label: "Custom Video & Audio Calling SDK",
-              to: "docs/guide/video-and-audio-calling-api-sdk/getting-started",
-              activeBaseRegex: "docs/guide/video-and-audio-calling-api-sdk/*",
+              to: "react/video-and-audio-calling-api-sdk/getting-started",
+              activeBaseRegex: "/*/video-and-audio-calling-api-sdk/*",
             },
             {
               label: "Standard Live Streaming API",
@@ -282,6 +282,68 @@ module.exports = {
           // Optional fields.
           anonymizeIP: true, // Should IPs be anonymized?
         },
+      },
+    ],
+  ],
+  plugins: [
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'react_docs',
+        path: 'react_docs',
+        routeBasePath: 'react',
+        sidebarPath: require.resolve('./sidebarReact.js'),
+        // ... other options
+      },
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'android_docs',
+        path: 'android_docs',
+        routeBasePath: 'android',
+        sidebarPath: require.resolve('./sidebarAndroid.js'),
+        // ... other options
+      },
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'ios_docs',
+        path: 'ios_docs',
+        routeBasePath: 'ios',
+        sidebarPath: require.resolve('./sidebarIos.js'),
+        // ... other options
+      },
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'flutter_docs',
+        path: 'flutter_docs',
+        routeBasePath: 'flutter',
+        sidebarPath: require.resolve('./sidebarFlutter.js'),
+        // ... other options
+      },
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'react_native_docs',
+        path: 'react_native_docs',
+        routeBasePath: 'react-native',
+        sidebarPath: require.resolve('./sidebarReactNative.js'),
+        // ... other options
+      },
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'javascript_docs',
+        path: 'javascript_docs',
+        routeBasePath: 'javascript',
+        sidebarPath: require.resolve('./sidebarJavaScript.js'),
+        // ... other options
       },
     ],
   ],

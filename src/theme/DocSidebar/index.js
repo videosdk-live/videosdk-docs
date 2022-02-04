@@ -78,14 +78,12 @@ function DocSidebarDesktop({ path, sidebar, onCollapse, isHidden }) {
 
   function routingSDK(e) {
     // setSDK(e.target.value);
-    console.log("pathname : ", window.location.pathname);
     var currentPath = window.location.pathname;
-    console.log(e.target.value);
     currentPath = currentPath.replace(
       currentPath.split("/")[1],
       e.target.value
     );
-    console.log("new Path : ", currentPath);
+    window.location.replace('http://'+window.location.host + currentPath)
   }
 
   return (
@@ -148,13 +146,13 @@ function DocSidebarDesktop({ path, sidebar, onCollapse, isHidden }) {
           </div>
         </div> */}
         <div className="row">
-          <select onChange={routingSDK} className="col dropdownSidebar">
-            <option>React</option>
+          <select onChange={routingSDK} defaultValue={window.location.pathname.split("/")[1]} className="col dropdownSidebar">
+            <option value = "react">React</option>
             <option>JS</option>
             <option>React Native</option>
-            <option>Android</option>
-            <option>IOS</option>
-            <option>Flutter</option>
+            <option value = "android">Android</option>
+            <option value = "ios">IOS</option>
+            <option value = "flutter">Flutter</option>
           </select>
           <select className="col dropdownSidebar">
             <option>0.0.x</option>
