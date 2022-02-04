@@ -98,7 +98,13 @@ COMING SOON!
 <TabItem value="flutter">
 
 ```js
-COMING SOON!
+// Only works for Android
+void onPress() {
+  // Enabling ScreenShare
+  meeting?.enableScreenShare();
+  // Disabling ScreenShare
+  meeting?.disableScreenShare();
+}
 ```
 
 </TabItem>

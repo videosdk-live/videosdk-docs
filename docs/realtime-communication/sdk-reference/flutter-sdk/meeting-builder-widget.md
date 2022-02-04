@@ -37,6 +37,7 @@ import MethodListHeading from '@theme/MethodListHeading';
     <MethodListItemLabel name="token" type={"String"}   />
     <MethodListItemLabel name="micEnabled" type={"Bool"}   />
     <MethodListItemLabel name="webcamEnabled" type={"Bool"}   />
+    <MethodListItemLabel name="notification" type={"NotificationInfo"}   />
     <MethodListItemLabel name="builder" type={"Widget Function(Meeting)"}   />
   </MethodListGroup>
 </MethodListGroup>
@@ -50,6 +51,11 @@ MeetingBuilder(
   token: "<token>",
   micEnabled: true,
   webcamEnabled: true,
+  notification: const NotificationInfo(
+    title: "Video SDK",
+    message: "Video SDK is sharing screen in the meeting",
+    icon: "notification_share", // drawable icon name
+  ),
   builder: (Meeting meeting) {
     return Text("Meeting screen");
   },
