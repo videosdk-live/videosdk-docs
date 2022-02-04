@@ -98,13 +98,16 @@ COMING SOON!
 <TabItem value="flutter">
 
 ```js
-// Only works for Android
-void onPress() {
-  // Enabling ScreenShare
-  meeting?.enableScreenShare();
-  // Disabling ScreenShare
-  meeting?.disableScreenShare();
-}
+// only works for android
+
+ElevatedButton(
+  onPressed: meeting.disableScreenShare,
+  child: Text("Disable Screen Share"),
+),
+ElevatedButton(
+  onPressed: meeting.enableScreenShare,
+  child: Text("Dnable Screen Share"),
+),
 ```
 
 </TabItem>

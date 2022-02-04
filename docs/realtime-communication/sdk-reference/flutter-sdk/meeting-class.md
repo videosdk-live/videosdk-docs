@@ -72,6 +72,8 @@ import MethodListHeading from '@theme/MethodListHeading';
       <MethodListItemLabel description={"disable self webcam"} type={"void"} name="disableWebcam()" />
       <MethodListItemLabel description={"unmute self mic"} type={"void"} name="unmuteMic()" />
       <MethodListItemLabel description={"mute self mic"} type={"void"} name="muteMic()" />
+      <MethodListItemLabel description={"start sharing phone screen"} type={"void"} name="enableScreenShare()" />
+      <MethodListItemLabel description={"stop sharing phone screen"} type={"void"} name="disableScreenShare()" />
       <MethodListItemLabel description={"get all webcam devices"} type={"void"} name="getWebcams()"  />
       <MethodListItemLabel description={"get all mic devices"} type={"void"} name="getMics()"  />
       <MethodListItemLabel description={"change self webcam"} type={"void"} name="changeWebcam()" option={"<deviceId>"} />

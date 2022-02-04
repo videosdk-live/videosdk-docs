@@ -703,7 +703,6 @@ class MyApp extends StatelessWidget {
             icon: "notification_share",
             ),
             builder: (Meeting: meeting) {
-
                 return Container(
                     child: Column(
                         children: [
@@ -722,6 +721,10 @@ class MyApp extends StatelessWidget {
     }
 }
 ```
+
+> For screen sharing in android, foreground service must be started and for that there should be a notification displayed while screen shareing is on. To customize notificaiton icon you need to create a new notificaiton icon. if you created a new icon called `ic_notification_share` then you need to pass only `notification_share` in `icon` property in `NotificationInfo`
+
+[Please refer this guide to create android image assets](https://developer.android.com/studio/write/image-asset-studio#notification)
 
 </TabItem>
 </Tabs>
