@@ -46,16 +46,16 @@ import MethodListHeading from '@theme/MethodListHeading';
   <MethodListItemLabel name="__events" >
     <MethodListGroup>
       <MethodListHeading heading="Events" />
-      <MethodListItemLabel description={"emitted when local participant joined the meeting successfuly"} name="meetingJoined"  type={"void"} />
-      <MethodListItemLabel description={"emitted when local participant left the meeting"} name="meetingLeft"  type={"void"} />      
-      <MethodListItemLabel description={"emitted when new participant joined the meeting"} name="participantJoined"  type={"participant"} />
-      <MethodListItemLabel description={"emitted when any participant from the meeting left"} name="participantLeft"  type={"participantId"} />
-      <MethodListItemLabel description={"emitted when recording of the meeting is started successfully"} name="recordingStarted" type={"void"} />
-      <MethodListItemLabel description={"emitted when recording of the meeting is stopped"} name="recordingStopped" type={"void"} />
-      <MethodListItemLabel description={"emitted when live streaming of the meeting in social media is started successfully"} name="liveStreamStarted" type={"void"} />
-      <MethodListItemLabel description={"emitted when live streaming of the meeting is stopped"} name="liveStreamStopped" type={"void"} />
-      <MethodListItemLabel description={"emitted when active speaker is changed"} name="speakerChanged" type={"void"} />
-      <MethodListItemLabel description={"emitted when any participant started presenting"} name="presenterChanged" type={"void"} />
+      <MethodListItemLabel description={"emitted when local participant joined the meeting successfuly"} name="Events.meetingJoined"  type={"void"} />
+      <MethodListItemLabel description={"emitted when local participant left the meeting"} name="Events.meetingLeft"  type={"void"} />      
+      <MethodListItemLabel description={"emitted when new participant joined the meeting"} name="Events.participantJoined"  type={"participant"} />
+      <MethodListItemLabel description={"emitted when any participant from the meeting left"} name="Events.participantLeft"  type={"participantId"} />
+      <MethodListItemLabel description={"emitted when recording of the meeting is started successfully"} name="Events.recordingStarted" type={"void"} />
+      <MethodListItemLabel description={"emitted when recording of the meeting is stopped"} name="Events.recordingStopped" type={"void"} />
+      <MethodListItemLabel description={"emitted when live streaming of the meeting in social media is started successfully"} name="Events.liveStreamStarted" type={"void"} />
+      <MethodListItemLabel description={"emitted when live streaming of the meeting is stopped"} name="Events.liveStreamStopped" type={"void"} />
+      <MethodListItemLabel description={"emitted when active speaker is changed"} name="Events.speakerChanged" type={"void"} />
+      <MethodListItemLabel description={"emitted when any participant started presenting"} name="Events.presenterChanged" type={"void"} />
       </MethodListGroup>
   </MethodListItemLabel>
 </MethodListGroup>
