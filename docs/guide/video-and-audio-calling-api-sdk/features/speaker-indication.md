@@ -118,7 +118,7 @@ func onSpeakerChanged(participantId: String?) {
 <TabItem value="flutter">
 
 ```js
-meeting.on('speaker-changed', (activeSpeakerId) {
+meeting.on(Events.speakerChanged, (activeSpeakerId) {
   print("participantId => $activeSpeakerId");
 });
 

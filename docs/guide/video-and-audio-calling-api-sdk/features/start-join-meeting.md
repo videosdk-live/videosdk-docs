@@ -697,6 +697,11 @@ class MyApp extends StatelessWidget {
             micEnabled: "<Flag-to-enable-mic>",
             webcamEnabled: "<Flag-to-enable-webcam>",
             token: "<Authentication-token>",
+            notification: const NotificationInfo(
+            title: "Video SDK",
+            message: "Video SDK is sharing screen in the meeting",
+            icon: "notification_share",
+            ),
             builder: (Meeting: meeting) {
 
                 return Container(
