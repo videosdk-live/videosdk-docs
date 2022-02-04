@@ -33,6 +33,7 @@ import TabItem from '@theme/TabItem';
 
 <Tabs
 defaultValue="js"
+groupId={"client-group-id"}
 values={[
 {label: 'JavaScript', value: 'js'},
 {label: 'React', value: 'react'},
@@ -105,9 +106,39 @@ ElevatedButton(
 ),
 ElevatedButton(
   onPressed: meeting.enableScreenShare,
-  child: Text("DnableS creenS hare"),
+  child: Text("Dnable Screen Share"),
 ),
 ```
 
 </TabItem>
 </Tabs>
+
+:::caution
+
+For React Native iOS Screen Share feature, you need to follow this guide [React Native iOS Screen Share](/docs/guide/video-and-audio-calling-api-sdk/extras/react-native-ios-screen-share)
+:::
+
+<!-- ## How to Create App Group in Apple Store
+### Step 1 : Go to App store
+
+Navigate to [App Group](https://developer.apple.com/account/resources/identifiers/list/applicationGroup) and click on identifier.
+
+![IOS Screen Share](/img/ios-screenshare/step14-xcode.png)
+
+### Step 2 : Choose App Groups
+
+Select **App Groups** from identifier and click on continue.
+![IOS Screen Share](/img/ios-screenshare/step15-xcode.png)
+
+### Step 3 : Add identifier
+
+Add description and identifier, then click continue.
+
+**Note** : Make sure the identifier prefix should be **group**, for example **group.com.ScreenBroadcast**.
+
+![IOS Screen Share](/img/ios-screenshare/step16-xcode.png)
+
+### Step 4 : Register identifier
+
+Now, click on Register button to register this group.
+![IOS Screen Share](/img/ios-screenshare/step17-xcode.png) -->

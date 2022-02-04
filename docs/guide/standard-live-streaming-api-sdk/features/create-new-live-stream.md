@@ -24,7 +24,7 @@ This guide will provide an overview of how to create live stream using generated
 | Property Name           | Type    | Description                                                                                                                                                                                                           |
 | ----------------------- | ------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | name                    | string  | Name of your live stream.                                                                                                                                                                                             |
-| record                  | boolean | Whether you are recording or not. `true` for record, `false` for not record. For more info you can follow [Recording Guide](/docs/guide/standard-live-streaming-api-sdk/features/record-live-stream).                          |
+| record                  | boolean | Whether you are recording or not. `true` for record, `false` for not record. For more info you can follow [Recording Guide](/docs/guide/standard-live-streaming-api-sdk/features/record-live-stream).                 |
 | restream **[Optional]** | Array   | RTMP url and stream key from the provided platforms such as Youtube or Facebook. For more info you can follow [Restream on Social Media](/docs/guide/standard-live-streaming-api-sdk/features/restream-social-media). |
 
 import Tabs from '@theme/Tabs';
@@ -32,6 +32,7 @@ import TabItem from '@theme/TabItem';
 
 <Tabs
 defaultValue="curl"
+groupId={"server-group-id"}
 values={[
 {label: 'cURL', value: 'curl'},
 {label: 'NodeJS/JS', value: 'node'},
@@ -42,7 +43,7 @@ values={[
 <TabItem value="curl">
 
 ```js
-curl -L -X POST 'https://api.zujonow.com/v1/livestreams' \
+curl -L -X POST 'https://api.videosdk.live/v1/livestreams' \
 --header 'Authorization: `jwt token goes here`' \
 --header 'Content-Type: application/json' \
 --data-raw '{
@@ -63,7 +64,7 @@ curl -L -X POST 'https://api.zujonow.com/v1/livestreams' \
 ```js
 var fetch = require("node-fetch");
 
-const url = "https://api.zujonow.com/v1/livestreams";
+const url = "https://api.videosdk.live/v1/livestreams";
 var options = {
   method: "POST",
   headers: {
@@ -94,7 +95,7 @@ fetch(url, options)
 ```python
 import requests
 
-url = "https://api.zujonow.com/v1/livestreams"
+url = "https://api.videosdk.live/v1/livestreams"
 
 payload = {
   "name": "Nickname for livestream", "record": True,
@@ -124,7 +125,7 @@ require 'uri'
 require 'net/http'
 require 'openssl'
 
-url = URI("https://api.zujonow.com/v1/livestreams")
+url = URI("https://api.videosdk.live/v1/livestreams")
 
 http = Net::HTTP.new(url.host, url.port)
 http.use_ssl = true
@@ -145,11 +146,11 @@ puts response.read_body
 ```json
 {
   "record": false,
-  "name": "zujo",
+  "name": "videosdk",
   "streamKey": "eb175-5-4e5-60-aacfce300b",
-  "upstreamUrl": "rtmp://live.zujonow.com/live/...",
-  "downstreamUrl": "https://live.zujonow.com/live/.../index.m3u8",
-  "recordingUrl": "https://live.zujonow.com/live/.../storage/index.m3u8",
+  "upstreamUrl": "rtmp://live.videosdk.live/live/...",
+  "downstreamUrl": "https://live.videosdk.live/live/.../index.m3u8",
+  "recordingUrl": "https://live.videosdk.live/live/.../storage/index.m3u8",
   "restream": [
     {
       "_id": "60e2fed0135c9810f490f3b6",

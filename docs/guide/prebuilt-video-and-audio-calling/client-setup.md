@@ -35,6 +35,7 @@ Also check out this [example code](https://github.com/videosdk-live/videosdk-rtc
 
 <Tabs
 defaultValue="npm"
+groupId={"package-manager-group-id"}
 values={[
 {label: 'NPM', value: 'npm'},
 {label: 'YARN', value: 'yarn'},
@@ -61,6 +62,7 @@ Copy API key generated from [Signup & Create API Key](/docs/guide/prebuilt-video
 
 <Tabs
 defaultValue="react"
+groupId={"client-group-id"}
 values={[
 {label: 'React', value: 'react'},
 {label: 'Angular', value: 'angular'},
@@ -190,7 +192,7 @@ Create an `index.html` file and add the following `<script>` tag at the end of y
   });
 
   script.src =
-    "https://sdk.videosdk.live/rtc-js-prebuilt/0.1.15/rtc-js-prebuilt.js";
+    "https://sdk.videosdk.live/rtc-js-prebuilt/0.1.29/rtc-js-prebuilt.js";
   document.getElementsByTagName("head")[0].appendChild(script);
 </script>
 ```
@@ -201,6 +203,7 @@ Install any http server if you don't already have one and run the server to join
 
 <Tabs
 defaultValue="node"
+groupId={"server-group-id"}
 values={[
 {label: 'Node.js', value: 'node'},
 {label: 'Python', value: 'python'},

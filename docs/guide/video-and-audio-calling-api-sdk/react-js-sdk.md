@@ -5,7 +5,6 @@ hide_table_of_contents: false
 description: Create customizable real-time video & audio calling applications with React JS SDK with Video SDK add live Video & Audio conferencing to your applications.
 sidebar_label: "React JS"
 pagination_label: "React JS"
-pagination_prev: "null"
 keywords:
   - react sdk
   - react js sdk

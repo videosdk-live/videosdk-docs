@@ -57,6 +57,7 @@ import TabItem from '@theme/TabItem';
 
 <Tabs
 defaultValue="js"
+groupId={"client-group-id"}
 values={[
 {label: 'JavaScript', value: 'js'},
 {label: 'React', value: 'react'},
@@ -457,7 +458,7 @@ class LocalParticipantState extends State<LocalParticipant> {
   _initStreamListners() {
    // Participant `stream-enabled` event, discussed in next section "Participant Related Events"
     widget.localParticipant.on(
-      "stream-enabled",
+      Events.streamEnabled,
       (Stream _stream) {
         setState(
           () {
@@ -472,7 +473,7 @@ class LocalParticipantState extends State<LocalParticipant> {
     );
     // Participant `stream-disabled` event, discussed in next section "Participant Related Events"
     widget.localParticipant.on(
-      "stream-disabled",
+      Events.streamDisabled,
       (Stream _stream) {
         if (_stream.kind == 'video') {
           if (videoStream?.id == _stream.id) {
@@ -614,12 +615,12 @@ class RemoteParticipantState extends State<RemoteParticipant> {
   Stream? audioStream;
   @override
   initState() {
-    _initStreamListners();
+    _initStreamListeners();
     super.initState();
   }
-  _initStreamListners() {
-    // Participant `stream-enabled` event, discussed in next section "Participant Related Events"
-    widget.participant.on("stream-enabled", (Stream _stream) {
+  _initStreamListeners() {
+    // Participant `streamEnabled` event, discussed in next section "Participant Related Events"
+    widget.participant.on(Events.streamEnabled, (Stream _stream) {
       setState(() {
         if (_stream.kind == 'video') {
           videoStream = _stream;
@@ -629,8 +630,8 @@ class RemoteParticipantState extends State<RemoteParticipant> {
       });
     });
 
-    // Participant `stream-disabled` event, discussed in next section "Participant Related Events"
-    widget.participant.on("stream-disabled", (Stream _stream) {
+    // Participant `streamDisabled` event, discussed in next section "Participant Related Events"
+    widget.participant.on(Events.streamDisabled, (Stream _stream) {
       if (_stream.kind == 'video') {
         if (videoStream?.id == _stream.id) {
           setState(() {
@@ -693,6 +694,7 @@ class RemoteParticipantState extends State<RemoteParticipant> {
 
 <Tabs
 defaultValue="js"
+groupId={"client-group-id"}
 values={[
 {label: 'JavaScript', value: 'js'},
 {label: 'React', value: 'react'},
@@ -972,12 +974,12 @@ extension MeetingViewController: ParticipantEventListener {
 
 ```js
 // Adding event listner
-meeting.on("participant-joined", (Participant participant) {
+meeting.on(Events.participantJoined, (Participant participant) {
   print("new participant => $participant");
   },
 );
 
-meeting.on("participant-left", (Participant participant) {
+meeting.on(Events.participantLeft, (Participant participant) {
   print("new participant => $participant");
   },
 );

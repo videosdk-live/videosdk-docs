@@ -30,13 +30,14 @@ Here is the simple sequence diagram represents the authentication.
 
 ## Generate Accees Token
 
-For security, every user that connects to live streaming needs a access token. By substituting `apiKey` and `secretKey` in it.
+For security, every user that connects to live streaming needs a access token. By substituting `apikey` and `secretKey` in it.
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 <Tabs
 defaultValue="node"
+groupId={"server-group-id"}
 values={[
 {label: 'Node.js', value: 'node'},
 {label: 'Python', value: 'python'},
@@ -152,7 +153,7 @@ $api_key = "api_key_generated";
 $secret_key = "secret_key_generated"
 
 $payload = [
-    'apiKey' => api_key
+    'apikey' => api_key
 ];
 
 $token = JWT::encode($payload, $secret_key, 'HS256');

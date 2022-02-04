@@ -44,13 +44,14 @@ Visit, [app.videosdk.live](https://app.videosdk.live/) to gererate API Key and s
 
 ## Generate Accees Token
 
-For security, every participant that connects to meeting needs a access token. By substituting `apiKey` and `permissions` in it.
+For security, every participant that connects to meeting needs a access token. By substituting `apikey` and `permissions` in it.
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 <Tabs
 defaultValue="node"
+groupId={"server-group-id"}
 values={[
 {label: 'Node.js', value: 'node'},
 {label: 'Python', value: 'python'},
@@ -166,7 +167,7 @@ $api_key = "api_key_generated";
 $secret_key = "secret_key_generated"
 
 $payload = [
-    'apiKey' => api_key
+    'apikey' => api_key
 ];
 
 $token = JWT::encode($payload, $secret_key, 'HS256');
@@ -227,7 +228,7 @@ The reponse will include `meta` and `fileURL`:
   "type": "video",
   "createdAt": "2021-03-18T05:07:18.771Z",
   "updatedAt": "2021-03-18T05:07:18.771Z",
-  "fileUrl": "https://cdn.videosdk.live/files/videos/{FILE_ID}.mp4",
+  "fileUrl": "https://cdn.videosdk.live/uploads/videos/{FILE_ID}.mp4",
   "id": "6052e0064b442a2f16018374"
 }
 ```
@@ -301,7 +302,7 @@ curl --request GET \
       },
       "jobId": "605311c86efd284e474c5c76",
       "filePath": "files/videos/605311d9bba24b4d700c8c4d",
-      "fileUrl": "https://cdn.videosdk.live/files/videos/605311d9bba24b4d700c8c4d/index.m3u8",
+      "fileUrl": "https://cdn.videosdk.live/uploads/videos/605311d9bba24b4d700c8c4d/index.m3u8",
       "size": 1572953,
       "type": "video",
       .....
@@ -316,6 +317,7 @@ To play back a video, use `fileUrl` from the response of video.
 
 <Tabs
 defaultValue="html"
+groupId={"client-group-id"}
 values={[
 {label: 'HTML', value: 'html'},
 {label: 'React.js', value: 'react'},
@@ -337,7 +339,7 @@ values={[
   data-setup="{}"
 >
   <source
-    src="https://cdn.videosdk.live/files/videos/605311d9bba24b4d700c8c4d/index.m3u8"
+    src="https://cdn.videosdk.live/uploads/videos/605311d9bba24b4d700c8c4d/index.m3u8"
     type="application/x-mpegURL"
   />
   <p class="vjs-no-js">
@@ -370,7 +372,7 @@ import Hls from "hls.js";
 export default function VideoPlayer() {
   const videoRef = useRef(null);
   const src =
-    "https://cdn.videosdk.live/files/videos/605311d9bba24b4d700c8c4d/index.m3u8";
+    "https://cdn.videosdk.live/uploads/videos/605311d9bba24b4d700c8c4d/index.m3u8";
 
   useEffect(() => {
     let hls;
@@ -416,7 +418,7 @@ implementation 'com.google.android.exoplayer:exoplayer-hls:2.X.X'
 // Create a player instance.
 SimpleExoPlayer player = new SimpleExoPlayer.Builder(context).build();
 // Set the media item to be played.
-player.setMediaItem(MediaItem.fromUri("https://cdn.videosdk.live/files/videos/605311d9bba24b4d700c8c4d/index.m3u8"));
+player.setMediaItem(MediaItem.fromUri("https://cdn.videosdk.live/uploads/videos/605311d9bba24b4d700c8c4d/index.m3u8"));
 // Prepare the player.
 player.prepare();
 ```
@@ -429,7 +431,7 @@ import SwiftUI
 import AVKit
 
 struct ContentView: View {
-    private let player = AVPlayer(url: URL(string: "https://cdn.videosdk.live/files/videos/605311d9bba24b4d700c8c4d/index.m3u8")!)
+    private let player = AVPlayer(url: URL(string: "https://cdn.videosdk.live/uploads/videos/605311d9bba24b4d700c8c4d/index.m3u8")!)
 
     var body: some View {
         //  VideoPlayer comes from SwiftUI

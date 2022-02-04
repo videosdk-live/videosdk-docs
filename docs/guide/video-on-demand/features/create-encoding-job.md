@@ -16,7 +16,7 @@ slug: create-encoding-job
 
 Encoding API converts source video into compressed version in multiple formats and resolutions up to 1080ps.
 
-Once you create the encoding job, then you will able to see the status of encoding job and also more details about encoding jobs in your [dashboard](https://app.videosdk.live/vod/videos).
+Once you create the encoding job, then you will be able to see the status of encoding job and also more details about encoding jobs in your [dashboard](https://app.videosdk.live/vod/videos).
 
 ![Create Encoding Job](/img/tutorial/create_encoding_job.png)
 
@@ -35,6 +35,7 @@ import TabItem from '@theme/TabItem';
 
 <Tabs
 defaultValue="curl"
+groupId={"server-group-id"}
 values={[
 {label: 'cURL', value: 'curl'},
 {label: 'NodeJS/JS', value: 'node'},
@@ -45,7 +46,7 @@ values={[
 <TabItem value="curl">
 
 ```js
-curl --L --X POST 'https://api.zujonow.com/v1/encoder/jobs' \
+curl --L --X POST 'https://api.videosdk.live/v1/encoder/jobs' \
 --header 'Authorization: `your token goes here`' \
 --header 'Content-Type: application/json' \
 --data-raw '
@@ -78,7 +79,7 @@ curl --L --X POST 'https://api.zujonow.com/v1/encoder/jobs' \
 ```js
 var fetch = require("node-fetch");
 
-const url = "https://api.zujonow.com/v1/encoder/jobs";
+const url = "https://api.videosdk.live/v1/encoder/jobs";
 var options = {
   method: "POST",
   headers: {
@@ -122,7 +123,7 @@ fetch(url, options)
 ```python
 import requests
 
-url = "https://api.zujonow.com/v1/encoder/jobs"
+url = "https://api.videosdk.live/v1/encoder/jobs"
 
 payload = {
   videoId: "6053115ebba24b4d700c8c49",
@@ -166,7 +167,7 @@ require 'uri'
 require 'net/http'
 require 'openssl'
 
-url = URI("https://api.zujonow.com/v1/encoder/jobs")
+url = URI("https://api.videosdk.live/v1/encoder/jobs")
 
 http = Net::HTTP.new(url.host, url.port)
 http.use_ssl = true

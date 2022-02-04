@@ -29,6 +29,7 @@ import TabItem from '@theme/TabItem';
 
 <Tabs
 defaultValue="curl"
+groupId={"server-group-id"}
 values={[
 {label: 'cURL', value: 'curl'},
 {label: 'NodeJS/JS', value: 'node'},
@@ -37,7 +38,7 @@ values={[
 <TabItem value="curl">
 
 ```js
-curl --L --X POST 'https://storage-api.zujonow.com/v1/files' \
+curl --L --X POST 'https://storage-api.videosdk.live/v1/files' \
 --header 'Authorization: `jwt token goes here`' \
 --header 'Content-Type: multipart/form-data'
 --form 'file=mock-video.mp4"'
@@ -53,7 +54,7 @@ let fs = require("fs");
 const formData = new FormData();
 formData.append("file", fs.createReadStream("mock-video.mp4"));
 
-const url = "https://storage-api.zujonow.com/v1/files";
+const url = "https://storage-api.videosdk.live/v1/files";
 var options = {
   method: "POST",
   headers: {
@@ -86,7 +87,7 @@ fetch(url, options)
   "filePath": "files/videos/6052e0064b442a2f16018373.mp4",
   "size": 3965342,
   "type": "video",
-  "fileUrl": "https://cdn.zujonow.com/files/videos/6052e0064b442a2f16018373.mp4",
+  "fileUrl": "https://cdn.videosdk.live/uploads/videos/6052e0064b442a2f16018373.mp4",
   "id": "6052e0064b442a2f16018374"
 }
 ```

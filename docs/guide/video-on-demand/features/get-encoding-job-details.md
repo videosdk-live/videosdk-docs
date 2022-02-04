@@ -29,6 +29,7 @@ import TabItem from '@theme/TabItem';
 
 <Tabs
 defaultValue="curl"
+groupId={"server-group-id"}
 values={[
 {label: 'cURL', value: 'curl'},
 {label: 'NodeJS/JS', value: 'node'},
@@ -40,7 +41,7 @@ values={[
 
 ```js
 curl --request GET \
-  --url 'https://api.zujonow.com/v1/encoder/jobs/${id}' \
+  --url 'https://api.videosdk.live/v1/encoder/jobs/${id}' \
   --header 'Authorization: `jwt token goes here`'
 ```
 
@@ -50,7 +51,7 @@ curl --request GET \
 ```js
 const fetch = require("node-fetch");
 
-const url = "https://api.zujonow.com/v1/encoder/jobs/${id}";
+const url = "https://api.videosdk.live/v1/encoder/jobs/${id}";
 const options = {
   method: "GET",
   headers: { Accept: "application/json", Authorization: `jwt token goes here` },
@@ -68,7 +69,7 @@ fetch(url, options)
 ```python
 import requests
 
-url = "https://api.zujonow.com/v1/encoder/jobs/${id}"
+url = "https://api.videosdk.live/v1/encoder/jobs/${id}"
 
 headers = {"Accept": "application/json", "Authorization": "jwt token goes here"}
 
@@ -85,7 +86,7 @@ require 'uri'
 require 'net/http'
 require 'openssl'
 
-url = URI("https://api.zujonow.com/v1/encoder/jobs/${id}")
+url = URI("https://api.videosdk.live/v1/encoder/jobs/${id}")
 
 http = Net::HTTP.new(url.host, url.port)
 http.use_ssl = true
@@ -141,7 +142,7 @@ puts response.read_body
       "filePath": "files/videos/605311d8bba24b4d700c8c4a.mp4",
       "size": 1572953,
       "type": "video",
-      "fileUrl": "https://cdn.zujonow.com/files/videos/604efc189036d077e3bd03bd.mp4",
+      "fileUrl": "https://cdn.videosdk.live/encoded/videos/604efc189036d077e3bd03bd.mp4",
       "id": "605311d8bba24b4d700c8c4b"
     },
     {
@@ -157,7 +158,7 @@ puts response.read_body
       "filePath": "files/videos/605311d9bba24b4d700c8c4d",
       "size": 5755392,
       "type": "x-tar",
-      "fileUrl": "https://cdn.zujonow.com/files/videos/605311d9bba24b4d700c8c4d/index.m3u8",
+      "fileUrl": "https://cdn.videosdk.live/encoded/videos/605311d9bba24b4d700c8c4d/index.m3u8",
       "id": "605311d9bba24b4d700c8c4e"
     },
     {
@@ -165,7 +166,7 @@ puts response.read_body
       "filePath": "files/images/605311d9bba24b4d700c8c4f.jpg",
       "size": 24155,
       "type": "image",
-      "fileUrl": "https://cdn.zujonow.com/files/images/605311d9bba24b4d700c8c4f.jpg",
+      "fileUrl": "https://cdn.videosdk.live/encoded/images/605311d9bba24b4d700c8c4f.jpg",
       "id": "605311d9bba24b4d700c8c50"
     },
     {
@@ -173,7 +174,7 @@ puts response.read_body
       "filePath": "files/images/605311dabba24b4d700c8c51.jpg",
       "size": 3647,
       "type": "image",
-      "fileUrl": "https://cdn.zujonow.com/files/images/605311dabba24b4d700c8c51.jpg",
+      "fileUrl": "https://cdn.videosdk.live/encoded/images/605311dabba24b4d700c8c51.jpg",
       "id": "605311dabba24b4d700c8c52"
     },
     {
@@ -181,7 +182,7 @@ puts response.read_body
       "filePath": "files/images/605311dabba24b4d700c8c53.webp",
       "size": 14976,
       "type": "image",
-      "fileUrl": "https://cdn.zujonow.com/files/images/605311dabba24b4d700c8c53.webp",
+      "fileUrl": "https://cdn.videosdk.live/encoded/images/605311dabba24b4d700c8c53.webp",
       "id": "605311dabba24b4d700c8c54"
     },
     {
@@ -189,7 +190,7 @@ puts response.read_body
       "filePath": "files/images/605311dabba24b4d700c8c55.webp",
       "size": 1296,
       "type": "image",
-      "fileUrl": "https://cdn.zujonow.com/files/images/605311dabba24b4d700c8c55.webp",
+      "fileUrl": "https://cdn.videosdk.live/encoded/images/605311dabba24b4d700c8c55.webp",
       "id": "605311dabba24b4d700c8c56"
     }
   ],

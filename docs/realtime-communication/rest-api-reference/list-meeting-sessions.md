@@ -12,6 +12,7 @@ import TabItem from '@theme/TabItem';
 
 <Tabs
 defaultValue="curl"
+groupId={"server-group-id"}
 values={[
 {label: 'cURL request', value: 'curl'},
 {label: 'NodeJS/JS', value: 'node'},
@@ -101,12 +102,12 @@ puts response.read_body
             "meetingId": "ywnm-eicr-d55x",
             "start": "2021-10-19T07:55:35.807Z",
             "end": "2021-10-19T07:55:39.941Z",
-            "chatLink" : "https://cdn.zujonow.com/temp/hq3g-ny2g-kv8x-12348924f6213b0f00a9f7a6-6169bd856790717248e86cff.csv",
+            "chatLink" : "https://cdn.videosdk.live/chats/hq3g-ny2g-kv8x-12348924f6213b0f00a9f7a6-6169bd856790717248e86cff.csv",
             "activeDuration": 0,
             "participants": [
                 {
                     "participantId": "wcrkkrf4",
-                    "name": "Chintan Rajpara",
+                    "name": "John Doe",
                     "timelog": [
                         {
                             "start": "2021-10-19T07:55:36.316Z",

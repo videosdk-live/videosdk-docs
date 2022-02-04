@@ -150,6 +150,11 @@ module.exports = {
         "guide/prebuilt-video-and-audio-calling/features/customize-permissions",
         "guide/prebuilt-video-and-audio-calling/features/whitelist-domain",
         "guide/prebuilt-video-and-audio-calling/features/pin-participants",
+        "guide/prebuilt-video-and-audio-calling/features/remove-participant",
+        "guide/prebuilt-video-and-audio-calling/features/end-meeting",
+        "guide/prebuilt-video-and-audio-calling/features/whiteboard",
+        "guide/prebuilt-video-and-audio-calling/features/left-screen",
+        "guide/prebuilt-video-and-audio-calling/features/debug-mode",
       ],
       collapsed: false,
     },
@@ -167,7 +172,6 @@ module.exports = {
       label: "SETUP",
       items: [
         "guide/video-and-audio-calling-api-sdk/signup-and-create-api",
-        "guide/video-and-audio-calling-api-sdk/server-setup",
         {
           type: "category",
           label: "Client Setup",
@@ -183,6 +187,7 @@ module.exports = {
           ],
           collapsed: true,
         },
+        "guide/video-and-audio-calling-api-sdk/server-setup",
         // "guide/video-and-audio-calling-api-sdk/start-or-join-meeting",
       ],
       collapsed: false,
@@ -197,14 +202,39 @@ module.exports = {
         "guide/video-and-audio-calling-api-sdk/features/leave-end-meeting",
         "guide/video-and-audio-calling-api-sdk/features/camera-controls",
         "guide/video-and-audio-calling-api-sdk/features/mic-controls",
-        "guide/video-and-audio-calling-api-sdk/features/toggle-participant-media",
         "guide/video-and-audio-calling-api-sdk/features/screenshare",
+        "guide/video-and-audio-calling-api-sdk/features/toggle-participant-media",
         "guide/video-and-audio-calling-api-sdk/features/send-messages",
         "guide/video-and-audio-calling-api-sdk/features/record-meeting",
         "guide/video-and-audio-calling-api-sdk/features/play-external-video",
         "guide/video-and-audio-calling-api-sdk/features/go-live-social-media",
         "guide/video-and-audio-calling-api-sdk/features/speaker-indication",
         "guide/video-and-audio-calling-api-sdk/features/pin-participants",
+        "guide/video-and-audio-calling-api-sdk/features/switch-participant",
+        {
+          type: "category",
+          label: "Connect Meetings (BETA)",
+          items: [
+            "guide/video-and-audio-calling-api-sdk/features/connection/overview",
+            "guide/video-and-audio-calling-api-sdk/features/connection/establish-connection",
+            "guide/video-and-audio-calling-api-sdk/features/connection/get-connection",
+            "guide/video-and-audio-calling-api-sdk/features/connection/list-connection-participant",
+            "guide/video-and-audio-calling-api-sdk/features/connection/send-message-to-connection",
+            "guide/video-and-audio-calling-api-sdk/features/connection/switch-connection-participant",
+            "guide/video-and-audio-calling-api-sdk/features/connection/end-connection-meeting",
+            "guide/video-and-audio-calling-api-sdk/features/connection/close-connection",
+          ],
+          collapsed: true,
+        },
+        "guide/video-and-audio-calling-api-sdk/features/error-event",
+      ],
+      collapsed: false,
+    },
+    {
+      type: "category",
+      label: "Extras",
+      items: [
+        "guide/video-and-audio-calling-api-sdk/extras/react-native-ios-screen-share",
       ],
       collapsed: false,
     },
@@ -316,11 +346,27 @@ module.exports = {
             "realtime-communication/rest-api-reference/create-join-meeting",
             "realtime-communication/rest-api-reference/list-all-meetings",
             "realtime-communication/rest-api-reference/get-meeting-details",
-            "realtime-communication/rest-api-reference/list-meeting-sessions",
-            "realtime-communication/rest-api-reference/get-session-details",
-            "realtime-communication/rest-api-reference/list-recordings",
-            "realtime-communication/rest-api-reference/get-recording-details",
-            "realtime-communication/rest-api-reference/remove-recording",
+            {
+              type: "category",
+              label: "Sessions",
+              collapsed: false,
+              items: [
+                "realtime-communication/rest-api-reference/list-meeting-sessions",
+                "realtime-communication/rest-api-reference/get-session-details",
+                "realtime-communication/rest-api-reference/end-session",
+                "realtime-communication/rest-api-reference/remove-participant",
+              ],
+            },
+            {
+              type: "category",
+              label: "Recordings",
+              collapsed: false,
+              items: [
+                "realtime-communication/rest-api-reference/list-recordings",
+                "realtime-communication/rest-api-reference/get-recording-details",
+                "realtime-communication/rest-api-reference/remove-recording",
+              ],
+            },
           ],
         },
       ],
@@ -372,10 +418,10 @@ module.exports = {
             "realtime-communication/sdk-reference/react-native-sdk/setup-android",
             "realtime-communication/sdk-reference/react-native-sdk/setup-ios",
             "realtime-communication/sdk-reference/react-native-sdk/rtc-stream",
-            "realtime-communication/sdk-reference/react-sdk/use-meeting",
-            "realtime-communication/sdk-reference/react-sdk/use-participant",
-            "realtime-communication/sdk-reference/react-sdk/meeting-provider",
-            "realtime-communication/sdk-reference/react-sdk/meeting-consumer",
+            "realtime-communication/sdk-reference/react-native-sdk/use-meeting",
+            "realtime-communication/sdk-reference/react-native-sdk/use-participant",
+            "realtime-communication/sdk-reference/react-native-sdk/meeting-provider",
+            "realtime-communication/sdk-reference/react-native-sdk/meeting-consumer",
           ],
         },
         {
@@ -533,7 +579,7 @@ module.exports = {
     },
     {
       type: "category",
-      label: "REAL TIME COMMUNICATION",
+      label: "Audio/Video Conferencing SDK",
       items: [
         {
           type: "category",
@@ -541,7 +587,8 @@ module.exports = {
           collapsed: false,
           items: [
             "tutorials/realtime-communication/prebuilt-sdk/quickstart-prebuilt-js",
-            "tutorials/realtime-communication/js-sdk/quickstart-js",
+            "tutorials/realtime-communication/prebuilt-sdk/quickstart-prebuilt-wordpress",
+            "tutorials/video-calling-api/react-js/quickstart",
           ],
         },
       ],
@@ -549,7 +596,7 @@ module.exports = {
     },
     {
       type: "category",
-      label: "LIVE STREAMING",
+      label: "Live Streaming API",
       items: [
         {
           type: "category",
@@ -562,7 +609,7 @@ module.exports = {
     },
     {
       type: "category",
-      label: "VIDEO ON DEMAND",
+      label: "Video On Demand API",
       items: [
         {
           type: "category",

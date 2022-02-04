@@ -14,19 +14,14 @@ slug: list-all-files
 
 # List All Files
 
-This guide will provide an overview of how to list all files that you created by passing userId as query parameter.
-
-### Query Params
-
-| Property Name | Type   | Description        |
-| ------------- | ------ | ------------------ |
-| userId        | string | Unique id of user. |
+This guide will provide an overview of how to list all files that you created by passing JWT Token in header.
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 <Tabs
 defaultValue="curl"
+groupId={"server-group-id"}
 values={[
 {label: 'cURL', value: 'curl'},
 {label: 'NodeJS/JS', value: 'node'},
@@ -38,7 +33,7 @@ values={[
 
 ```js
 curl --request GET \
-  --url 'https://api.zujonow.com/v1/files?userId=<Your unique id>&page=1&perPage=20' \
+  --url 'https://api.videosdk.live/v1/files' \
   --header 'Authorization: `jwt token goes here`'
 ```
 
@@ -48,8 +43,7 @@ curl --request GET \
 ```js
 const fetch = require("node-fetch");
 
-const url =
-  "https://api.zujonow.com/v1/files?userId=<Your unique id>&page=1&perPage=20";
+const url = "https://api.videosdk.live/v1/files";
 const options = {
   method: "GET",
   headers: { Accept: "application/json", Authorization: `jwt token goes here` },
@@ -67,13 +61,11 @@ fetch(url, options)
 ```python
 import requests
 
-url = "https://api.zujonow.com/v1/files"
-
-querystring = {"userId":"Your unique id","page":"1","perPage":"25"}
+url = "https://api.videosdk.live/v1/files"
 
 headers = {"Accept": "application/json", "Authorization": "jwt token goes here"}
 
-response = requests.request("GET", url, headers=headers, params=querystring)
+response = requests.request("GET", url, headers=headers)
 
 print(response.text)
 ```
@@ -86,7 +78,7 @@ require 'uri'
 require 'net/http'
 require 'openssl'
 
-url = URI("https://api.zujonow.com/v1/files?userId=<Your unique id>&page=1&perPage=20")
+url = URI("https://api.videosdk.live/v1/files")
 
 http = Net::HTTP.new(url.host, url.port)
 http.use_ssl = true
@@ -123,7 +115,7 @@ puts response.read_body
         "filePath": "files/videos/6052e0064b442a2f16018373.mp4",
         "size": 3965342,
         "type": "video",
-        "fileUrl": "https://cdn.zujonow.com/files/videos/6052e0064b442a2f16018373.mp4",
+        "fileUrl": "https://cdn.videosdk.live/uploads/videos/6052e0064b442a2f16018373.mp4",
         "id": "6052e0064b442a2f16018374"
     },
     ...

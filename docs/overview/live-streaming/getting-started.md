@@ -44,13 +44,14 @@ Visit, [app.videosdk.live](https://app.videosdk.live/) to gererate API Key and s
 
 ## Generate Accees Token
 
-For security, every participant that connects to meeting needs a access token. By substituting `apiKey` and `permissions` in it.
+For security, every participant that connects to meeting needs a access token. By substituting `apikey` and `permissions` in it.
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 <Tabs
 defaultValue="node"
+groupId={"server-group-id"}
 values={[
 {label: 'Node.js', value: 'node'},
 {label: 'Python', value: 'python'},
@@ -166,7 +167,7 @@ $api_key = "api_key_generated";
 $secret_key = "secret_key_generated"
 
 $payload = [
-    'apiKey' => api_key
+    'apikey' => api_key
 ];
 
 $token = JWT::encode($payload, $secret_key, 'HS256');
@@ -184,6 +185,7 @@ You can replace `${VIDEOSDK_TOKEN_ID}` with your own access token details or mak
 
 <Tabs
 defaultValue="curl"
+groupId={"server-group-id"}
 values={[
 {label: 'cURL', value: 'curl'},
 {label: 'NodeJS/JS', value: 'node'},
@@ -308,7 +310,7 @@ The Stream Key should be treated as a private key for live streaming. Anyone wit
 ```json
 {
   "record": false,
-  "name": "zujo",
+  "name": "videosdk",
   "streamKey": "e83fb175-5606-4ee5-b960-aacfce300ba6",
   "upstreamUrl": "rtmp://live.videosdk.live/live/.......",
   "downstreamUrl": "https://live.videosdk.live/live/.......",
@@ -344,6 +346,7 @@ To play back a live stream, use the `downstreamUrl` that was returned when you c
 
 <Tabs
 defaultValue="html"
+groupId={"client-group-id"}
 values={[
 {label: 'HTML', value: 'html'},
 {label: 'React.js', value: 'react'},

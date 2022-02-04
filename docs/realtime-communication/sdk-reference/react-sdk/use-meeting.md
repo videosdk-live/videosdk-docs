@@ -79,7 +79,7 @@ import MethodListHeading from '@theme/MethodListHeading';
       <MethodListItemLabel name="join()" type={"function"} />
       <MethodListItemLabel name="leave()" type={"function"} />
       <MethodListItemLabel name="end()" type={"function"} />
-      <MethodListItemLabel name="startRecording(webhookUrl: string)" type={"function"} />
+      <MethodListItemLabel name="startRecording(webhookUrl: string, awsDirPath: string)" type={"function"} />
       <MethodListItemLabel name="stopRecording()" type={"function"} />
       <MethodListItemLabel name="sendChatMessage()" type={"function"} />
       <MethodListItemLabel name="respondEntry()" type={"function"} />

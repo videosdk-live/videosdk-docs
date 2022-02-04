@@ -50,6 +50,7 @@ import TabItem from '@theme/TabItem';
 
 <Tabs
 defaultValue="html"
+groupId={"client-group-id"}
 values={[
 {label: 'HTML', value: 'html'},
 {label: 'Java', value: 'java'},
@@ -90,7 +91,7 @@ values={[
   });
 
   script.src =
-    "https://sdk.videosdk.live/rtc-js-prebuilt/0.1.15/rtc-js-prebuilt.js";
+    "https://sdk.videosdk.live/rtc-js-prebuilt/0.1.29/rtc-js-prebuilt.js";
   document.getElementsByTagName("head")[0].appendChild(script);
 </script>
 ```

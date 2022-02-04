@@ -13,6 +13,7 @@ import TabItem from '@theme/TabItem';
 
 <Tabs
 defaultValue="curl"
+groupId={"server-group-id"}
 values={[
 {label: 'cURL', value: 'curl'},
 {label: 'NodeJS/JS', value: 'node'},
@@ -131,7 +132,7 @@ puts response.read_body
       "type": "video",
       "createdAt": "2021-03-18T08:39:52.743Z",
       "updatedAt": "2021-03-18T08:39:52.743Z",
-      "fileUrl": "https://cdn.videosdk.live/files/videos/604efc189036d077e3bd03bd.mp4",
+      "fileUrl": "https://cdn.videosdk.live/encoded/videos/604efc189036d077e3bd03bd.mp4",
       "id": "605311d8bba24b4d700c8c4b"
     },
     {
@@ -149,7 +150,7 @@ puts response.read_body
       "type": "x-tar",
       "createdAt": "2021-03-18T08:39:53.446Z",
       "updatedAt": "2021-03-18T08:39:53.446Z",
-      "fileUrl": "https://cdn.videosdk.live/files/videos/605311d9bba24b4d700c8c4d/index.m3u8",
+      "fileUrl": "https://cdn.videosdk.live/encoded/videos/605311d9bba24b4d700c8c4d/index.m3u8",
       "id": "605311d9bba24b4d700c8c4e"
     },
     {
@@ -159,7 +160,7 @@ puts response.read_body
       "type": "image",
       "createdAt": "2021-03-18T08:39:53.830Z",
       "updatedAt": "2021-03-18T08:39:53.830Z",
-      "fileUrl": "https://cdn.videosdk.live/files/images/605311d9bba24b4d700c8c4f.jpg",
+      "fileUrl": "https://cdn.videosdk.live/encoded/images/605311d9bba24b4d700c8c4f.jpg",
       "id": "605311d9bba24b4d700c8c50"
     },
     {
@@ -169,7 +170,7 @@ puts response.read_body
       "type": "image",
       "createdAt": "2021-03-18T08:39:54.140Z",
       "updatedAt": "2021-03-18T08:39:54.140Z",
-      "fileUrl": "https://cdn.videosdk.live/files/images/605311dabba24b4d700c8c51.jpg",
+      "fileUrl": "https://cdn.videosdk.live/encoded/images/605311dabba24b4d700c8c51.jpg",
       "id": "605311dabba24b4d700c8c52"
     },
     {
@@ -179,7 +180,7 @@ puts response.read_body
       "type": "image",
       "createdAt": "2021-03-18T08:39:54.455Z",
       "updatedAt": "2021-03-18T08:39:54.455Z",
-      "fileUrl": "https://cdn.videosdk.live/files/images/605311dabba24b4d700c8c53.webp",
+      "fileUrl": "https://cdn.videosdk.live/encoded/images/605311dabba24b4d700c8c53.webp",
       "id": "605311dabba24b4d700c8c54"
     },
     {
@@ -189,7 +190,7 @@ puts response.read_body
       "type": "image",
       "createdAt": "2021-03-18T08:39:54.868Z",
       "updatedAt": "2021-03-18T08:39:54.868Z",
-      "fileUrl": "https://cdn.videosdk.live/files/images/605311dabba24b4d700c8c55.webp",
+      "fileUrl": "https://cdn.videosdk.live/encoded/images/605311dabba24b4d700c8c55.webp",
       "id": "605311dabba24b4d700c8c56"
     }
   ],

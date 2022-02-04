@@ -43,11 +43,26 @@ This code snippet calls API from local server
 
 **Token generation API is necessary for both scenario.**
 
+:::note
+You can take advantage of regional API to decrease latency in video calling.
+
+To achieve region based meetings, just pass `region : REGION_CODE` parameter in `create-meeting` request Body.
+
+Currently the below regions are supported:
+
+- `sg001` Region Code for Singapore, SG.
+- `uk001` Region Code for London, UK.
+- `us001` Region Code for Fremont, CA.
+
+In case you are not providing any region code, the default region will be `sg001`.
+:::
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 <Tabs
 defaultValue="js"
+groupId={"client-group-id"}
 values={[
 {label: 'JavaScript', value: 'js'},
 {label: 'React', value: 'react'},
@@ -83,7 +98,7 @@ const getMeetingId = async (token) => {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ token }),
+      body: JSON.stringify({ token, region: "sg001" }),
     };
     const response = await fetch(VIDEOSDK_API_ENDPOINT, options)
       .then(async (result) => {
@@ -153,7 +168,7 @@ const getMeetingId = async (token) => {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ token }),
+      body: JSON.stringify({ token, region: "sg001" }),
     };
     const response = await fetch(VIDEOSDK_API_ENDPOINT, options)
       .then(async (result) => {
@@ -223,7 +238,7 @@ const getMeetingId = async (token) => {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ token }),
+      body: JSON.stringify({ token, region: "sg001" }),
     };
     const response = await fetch(VIDEOSDK_API_ENDPOINT, options)
       .then(async (result) => {
@@ -279,7 +294,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 public class JoinActivity extends AppCompatActivity {
-  private String apiServerUrl = "http://192.168.0.101:9000";
+  private String apiServerUrl = "http://localhost:9000";
 
   // ...
   // onCreate() and other methods
@@ -317,6 +332,7 @@ public class JoinActivity extends AppCompatActivity {
     AndroidNetworking
       .post(apiServerUrl + "/create-meeting")
       .addBodyParameter("token", token)
+      .addBodyParameter("region", "sg001")
       .build()
       .getAsJSONObject(
         new JSONObjectRequestListener() {
@@ -443,7 +459,7 @@ void _getMeetingIdAndToken() async {
         Uri.parse('$LOCAL_SERVER_URL/create-meeting/');
 
     final http.Response meetingIdResponse =
-        await http.post(meetingIdUrl, body: {"token": _token});
+        await http.post(meetingIdUrl, body: {"token": _token,"region": "sg001"});
 
     final _meetingId = json.decode(meetingIdResponse.body)['meetingId'];
 
@@ -502,6 +518,7 @@ NOTE : For React & React native developer, you have
 
 <Tabs
 defaultValue="js"
+groupId={"client-group-id"}
 values={[
 {label: 'JavaScript', value: 'js'},
 {label: 'React', value: 'react'},
@@ -513,15 +530,16 @@ values={[
 <TabItem value="js">
 
 ```js
-import ZujoSDK from "@videosdk.live/js-sdk";
+import { VideoSDK } from "@videosdk.live/js-sdk";
 
 // Configure authentication token
-ZujoSDK.config("<Authentication-token>");
+VideoSDK.config("<Authentication-token>");
 
 // Initilize meeting
-const meeting = ZujoSDK.initMeeting({
+const meeting = VideoSDK.initMeeting({
   meetingId: "<Id-on-meeting>", // required
   name: "<Name-of-participant>", // required
+  participantId:'Id-of-participant' // optional, default: SDK will generate
   micEnabled: "<Flag-to-enable-mic>", // optional, default: true
   webcamEnabled: "<Flag-to-enable-webcam>", // optional, default: true
   maxResolution: "<Maximum-resolution>", // optional, default: "hd"
@@ -541,6 +559,7 @@ const App = () => {
       config={{
         meetingId: "<Id-on-meeting>",
         name: "<Name-of-participant>",
+        participantId:'Id-of-participant' // optional, default: SDK will generate
         micEnabled: "<Flag-to-enable-mic>",
         webcamEnabled: "<Flag-to-enable-webcam>",
         maxResolution: "<Maximum-resolution>",
@@ -573,6 +592,7 @@ const App = () => {
       config={{
         meetingId: "<Id-on-meeting>",
         name: "<Name-of-participant>",
+        participantId:'Id-of-participant' // optional,  default: SDK will generate
         micEnabled: "<Flag-to-enable-mic>",
         webcamEnabled: "<Flag-to-enable-webcam>",
         maxResolution: "<Maximum-resolution>",
@@ -677,10 +697,10 @@ class MyApp extends StatelessWidget {
             micEnabled: "<Flag-to-enable-mic>",
             webcamEnabled: "<Flag-to-enable-webcam>",
             token: "<Authentication-token>",
-            notification: NotificationInfo(
-                title: "Video SDK",
-                message: "Video SDK is sharing screen in the meeting",
-                icon: "notification_share", // android drawable icon name without prefix
+            notification: const NotificationInfo(
+            title: "Video SDK",
+            message: "Video SDK is sharing screen in the meeting",
+            icon: "notification_share",
             ),
             builder: (Meeting: meeting) {
                 return Container(
@@ -730,6 +750,7 @@ After joining, you will be able to Manage Participant in a meeting.
 
 <Tabs
 defaultValue="js"
+groupId={"client-group-id"}
 values={[
 {label: 'JavaScript', value: 'js'},
 {label: 'React', value: 'react'},

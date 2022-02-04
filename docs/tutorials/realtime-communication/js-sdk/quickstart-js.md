@@ -68,7 +68,7 @@ Signup on the VideoSDK website to get a key pair for SDK authentication. Your **
 Include this in your HTML file
 
 ```html title="index.html"
-<script src="https://sdk.videosdk.live/js-sdk/0.0.15/videosdk.js"></script>
+<script src="https://sdk.videosdk.live/js-sdk/0.0.20/videosdk.js"></script>
 ```
 
 ---
@@ -115,7 +115,7 @@ Available permissions are:
 - `allow_mod`: Allow participant to enable/disable other participant's mic/webcam.
 
 This generated token must be sent in the `Authorization` header for all API calls. <br/>
-And it should also be used with the `ZujoSDK.config(token)` method.
+And it should also be used with the `VideoSDK.config(token)` method.
 
 ## Step 1: Create or join meeting
 
@@ -128,6 +128,7 @@ import TabItem from '@theme/TabItem';
 
 <Tabs
 defaultValue="curl"
+groupId={"server-group-id"}
 values={[
 {label: 'cURL request creates meeting', value: 'curl'},
 {label: 'NodeJS/JS', value: 'node'},
@@ -216,6 +217,7 @@ OR
 
 <Tabs
 defaultValue="curl"
+groupId={"server-group-id"}
 values={[
 {label: 'cURL request creates meeting', value: 'curl'},
 {label: 'NodeJS/JS', value: 'node'},
@@ -303,7 +305,7 @@ puts response.read_body
 Before starting with `js-sdk`, you have to pass token to config.
 
 ```javascript title="Pass token to config"
-ZujoSDK.config(token);
+VideoSDK.config(token);
 ```
 
 ## Step 3: Initialize meeting
@@ -317,7 +319,7 @@ To initialize meeting you need to provide the following parameters:
 - `maxResolution: "sd" | "hd"` defines the maximum available resolution for webcam video.
 
 ```javascript title="Intialize meeting instance"
-const meeting = ZujoSDK.initMeeting({
+const meeting = VideoSDK.initMeeting({
   meetingId, // required
   name, // required
   micEnabled, // optional, default: true
@@ -355,7 +357,7 @@ The `meeting` object consists of:
   - `disableScreenShare()`, `enableScreenShare()`
   - `on(eventType: string)`, `off(eventType: string)`
   - `respondEntry(participantId: string, decision: "allowed" | "denied")`
-  - `startRecording(webhookUrl: string)`, `stopRecording()`
+  - `startRecording(webhookUrl: string, awsDirPath: string)`, `stopRecording()`
   - `sendChatMessage(text: string)`
 
 ## Step 4: Get local and remote participants
@@ -524,11 +526,14 @@ meeting.disableScreenShare();
 
 ### Start/Stop recording
 
-Record the meeting session with `startRecording(webhookUrl)` method and stop recording with `stopRecording()`. Toggling recording will trigger `recording-started` and `recording-stopped` events for all participants when starting and stopping recording respectively.
+Record the meeting session with `startRecording(webhookUrl, awsDirPath)` method and stop recording with `stopRecording()`. Toggling recording will trigger `recording-started` and `recording-stopped` events for all participants when starting and stopping recording respectively.
 
 ```javascript title="Start and stop recordings methods"
 // The webhook will be called with the fileUrl as a POST request when the recording is processed.
-meeting.startRecording("https://your-app-server.com/api/recordings");
+meeting.startRecording(
+  "https://your-app-server.com/api/recordings",
+  "meeting/meeting-id"
+);
 meeting.stopRecording();
 
 // ...

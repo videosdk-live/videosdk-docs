@@ -35,6 +35,7 @@ import TabItem from '@theme/TabItem';
 
 <Tabs
 defaultValue="js"
+groupId={"client-group-id"}
 values={[
 {label: 'JavaScript', value: 'js'},
 {label: 'React', value: 'react'},
@@ -46,7 +47,7 @@ values={[
 <TabItem value="js">
 
 ```js
-const onPress = () => {
+const onPress = async () => {
   // Enable Webcam in Meeting
   meeting?.enableWebcam();
 
@@ -54,7 +55,11 @@ const onPress = () => {
   meeting?.disableWebcam();
 
   // Change Webcam in Meeting
-  meeting?.changeWebcam();
+  const webcams = await meeting?.getWebcams(); // returns all webcams
+
+  const { deviceId, label } = webcams[0];
+
+  meeting?.changeWebcam(deviceId);
 };
 ```
 
@@ -62,7 +67,7 @@ const onPress = () => {
 <TabItem value="react">
 
 ```js
-const onPress = () => {
+const onPress = async () => {
   // Enable Webcam in Meeting
   meeting?.enableWebcam();
 
@@ -70,7 +75,11 @@ const onPress = () => {
   meeting?.disableWebcam();
 
   // Change Webcam in Meeting
-  meeting?.changeWebcam();
+  const webcams = await meeting?.getWebcams(); // returns all webcams
+
+  const { deviceId, label } = webcams[0];
+
+  meeting?.changeWebcam(deviceId);
 };
 ```
 

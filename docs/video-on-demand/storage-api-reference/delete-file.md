@@ -13,6 +13,7 @@ import TabItem from '@theme/TabItem';
 
 <Tabs
 defaultValue="curl"
+groupId={"server-group-id"}
 values={[
 {label: 'cURL', value: 'curl'},
 {label: 'NodeJS/JS', value: 'node'},
@@ -101,7 +102,7 @@ puts response.read_body
   "type": "video",
   "createdAt": "2021-03-18T05:50:11.677Z",
   "updatedAt": "2021-03-18T05:50:11.677Z",
-  "fileUrl": "https://cdn.videosdk.live/files/videos/6052ea0f2dbbd93351b7bdf5.mp4",
+  "fileUrl": "https://cdn.videosdk.live/uploads/videos/6052ea0f2dbbd93351b7bdf5.mp4",
   "id": "6052ea132dbbd93351b7bdf6"
 }
 ```

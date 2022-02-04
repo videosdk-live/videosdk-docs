@@ -58,6 +58,7 @@ import TabItem from '@theme/TabItem';
 
 <Tabs
 defaultValue="js"
+groupId={"client-group-id"}
 values={[
 {label: 'JavaScript', value: 'js'},
 {label: 'React', value: 'react'},
@@ -210,6 +211,7 @@ participant.disableMic();
 
 <Tabs
 defaultValue="js"
+groupId={"client-group-id"}
 values={[
 {label: 'JavaScript', value: 'js'},
 {label: 'React', value: 'react'},
@@ -341,7 +343,7 @@ func onWebcamRequested(participantId: String?, accept: @escaping () -> Void, rej
 
 ```js
 // Handle Webcam Requested
-widget.meeting.on("webcam-requested", ({ accept, reject }) {
+widget.meeting.on(Events.webcamRequested, ({ accept, reject }) {
     // callback function to accept the request
     accept();
 
@@ -350,7 +352,7 @@ widget.meeting.on("webcam-requested", ({ accept, reject }) {
 }, );
 
 // Handle Mic Requested
-widget.meeting.on("mic-requested", ({ accept, reject }) {
+widget.meeting.on(Events.micRequested, ({ accept, reject }) {
      // callback function to accept the request
     accept();
 

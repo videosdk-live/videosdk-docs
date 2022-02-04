@@ -62,12 +62,13 @@ Create an `index.html` file and add the following `<script>` tag at the end of y
       chatEnabled: true,
       screenShareEnabled: true,
       pollEnabled: true,
-      whiteBoardEnabled: true,
+      whiteboardEnabled: true,
       raiseHandEnabled: true,
 
       recordingEnabled: true,
       recordingWebhookUrl: "https://www.videosdk.live/callback",
-      participantCanToggleRecording: true,
+      recordingAWSDirPath: `/meeting-recordings/${meetingId}/`, // automatically save recording in this s3 path
+      autoStartRecording: true, // auto start recording on participant joined
 
       brandingEnabled: true,
       brandLogoURL: "https://picsum.photos/200",
@@ -91,6 +92,11 @@ Create an `index.html` file and add the following `<script>` tag at the end of y
         askToJoin: false, // Ask joined participants for entry in meeting
         toggleParticipantMic: true, // Can toggle other participant's mic
         toggleParticipantWebcam: true, // Can toggle other participant's webcam
+        drawOnWhiteboard: true, // Can draw on whiteboard
+        toggleWhiteboard: true, // Can toggle whiteboard
+        toggleRecording: true, // Can toggle meeting recording
+        removeParticipant: true, // Can remove participant
+        endMeeting: true, // Can end meeting
       },
 
       joinScreen: {
@@ -103,13 +109,26 @@ Create an `index.html` file and add the following `<script>` tag at the end of y
         allowed: true, // participant can pin any participant in meeting
         layout: "SPOTLIGHT", // meeting layout - GRID | SPOTLIGHT | SIDEBAR
       },
+
+      leftScreen: {
+        // visible when redirect on leave not provieded
+        actionButton: {
+          // optional action button
+          label: "Video SDK Live", // action button label
+          href: "https://videosdk.live/", // action button href
+        },
+      },
+
+      notificationSoundEnabled: true,
+
+      maxResolution: "sd", // "hd" or "sd"
     };
 
     meeting.init(config);
   });
 
   script.src =
-    "https://sdk.videosdk.live/rtc-js-prebuilt/0.1.15/rtc-js-prebuilt.js";
+    "https://sdk.videosdk.live/rtc-js-prebuilt/0.1.29/rtc-js-prebuilt.js";
   document.getElementsByTagName("head")[0].appendChild(script);
 </script>
 ```
@@ -120,6 +139,7 @@ Install any http server if you don't already have one and run the server to join
 
 <Tabs
 defaultValue="node"
+groupId={"server-group-id"}
 values={[
 {label: 'Node.js', value: 'node'},
 {label: 'Python', value: 'python'},

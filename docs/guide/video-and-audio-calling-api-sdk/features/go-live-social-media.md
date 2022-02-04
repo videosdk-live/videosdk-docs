@@ -31,6 +31,7 @@ import TabItem from '@theme/TabItem';
 
 <Tabs
 defaultValue="js"
+groupId={"client-group-id"}
 values={[
 {label: 'JavaScript', value: 'js'},
 {label: 'React', value: 'react'},
@@ -166,6 +167,7 @@ meeting?.stopLivestream();
 
 <Tabs
 defaultValue="js"
+groupId={"client-group-id"}
 values={[
 {label: 'JavaScript', value: 'js'},
 {label: 'React', value: 'react'},
@@ -268,11 +270,11 @@ func onLivestreamStopped() {
 <TabItem value="flutter">
 
 ```js
-meeting.on("livestream-started", () {
+meeting.on(Events.livestreamStarted, () {
   print("meeting livestream started");
 });
 //
-meeting.on("livestream-stopped", () {
+meeting.on(Events.livestreamStopped, () {
   print("meeting livestream stopped");
 });
 

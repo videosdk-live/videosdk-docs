@@ -17,7 +17,7 @@ You don't ever need to call the `Meeting Class` constructor directly. Instead us
 ### initMeeting()
 
 ```js title="Javascript"
-const meeting = ZujoSDK.initMeeting({
+const meeting = VideoSDK.initMeeting({
   meetingId, // required
   name, // required
   micEnabled, // optional, default: true
@@ -120,7 +120,7 @@ import MethodListHeading from '@theme/MethodListHeading';
 <MethodListGroup>
   <MethodListGroup>
     <MethodListHeading heading="Recording" />
-    <MethodListItemLabel name="startRecording(webhookUrl: string)"  type={"void"} />
+    <MethodListItemLabel name="startRecording(webhookUrl: string, awsDirPath: string)"  type={"void"} />
     <MethodListItemLabel name="stopRecording()"  type={"void"} />
   </MethodListGroup>
 </MethodListGroup>

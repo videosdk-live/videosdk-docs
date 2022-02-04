@@ -21,7 +21,7 @@ You can import this library using `<script>` tag. The easiest way to get started
   <head>....</head>
   <body>
     .....
-    <script src="https://sdk.videosdk.live/js-sdk/0.0.15/videosdk.js"></script>
+    <script src="https://sdk.videosdk.live/js-sdk/0.0.20/videosdk.js"></script>
   </body>
 </html>
 ```
@@ -35,6 +35,7 @@ import TabItem from '@theme/TabItem';
 
 <Tabs
 defaultValue="npm"
+groupId={"package-manager-group-id"}
 values={[
 {label: 'NPM', value: 'npm'},
 {label: 'YARN', value: 'yarn'},
@@ -58,19 +59,19 @@ yarn add @videosdk.live/js-sdk
 Then in your application code:
 
 ```js title="Webpack/node-style require"
-const ZujoSDK = require("@videosdk.live/js-sdk");
+const VideoSDK = require("@videosdk.live/js-sdk");
 
-ZujoSDK.config("<token>")
+VideoSDK.config("<token>")
 
-ZujoSDK.initMeeting({...})
+VideoSDK.initMeeting({...})
 ```
 
 Or
 
 ```js title="ES6 import"
-import ZujoSDK from "@videosdk.live/js-sdk";
+import { VideoSDK } from "@videosdk.live/js-sdk";
 
-ZujoSDK.config("<token>")
+VideoSDK.config("<token>")
 
-ZujoSDK.initMeeting({...})
+VideoSDK.initMeeting({...})
 ```

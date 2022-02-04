@@ -33,6 +33,7 @@ import TabItem from '@theme/TabItem';
 
 <Tabs
 defaultValue="js"
+groupId={"client-group-id"}
 values={[
 {label: 'JavaScript', value: 'js'},
 {label: 'React', value: 'react'},
@@ -46,7 +47,7 @@ values={[
 ```js
 const onPress = () => {
   // Start Recording
-  meeting?.startRecording();
+  meeting?.startRecording(webhookUrl, awsDirPath);
 
   // Stop Recording
   meeting?.stopRecording();
@@ -59,7 +60,7 @@ const onPress = () => {
 ```js
 const onPress = () => {
   // Start Recording
-  meeting?.startRecording();
+  meeting?.startRecording(webhookUrl, awsDirPath);
 
   // Stop Recording
   meeting?.stopRecording();
@@ -140,6 +141,7 @@ meeting.stopRecording(),
 
 <Tabs
 defaultValue="js"
+groupId={"client-group-id"}
 values={[
 {label: 'JavaScript', value: 'js'},
 {label: 'React', value: 'react'},
@@ -242,11 +244,11 @@ func onRecordingStoppped() {
 <TabItem value="flutter">
 
 ```js
-meeting.on("recording-started", () {
+meeting.on(Events.recordingStarted, () {
   print("meeting recording started");
 });
 //
-meeting.on("recording-stopped", () {
+meeting.on(Events.recordingStopped, () {
   print("meeting recording stopped");
 });
 ```

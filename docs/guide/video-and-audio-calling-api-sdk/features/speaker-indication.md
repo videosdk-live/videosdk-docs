@@ -32,6 +32,7 @@ import TabItem from '@theme/TabItem';
 
 <Tabs
 defaultValue="js"
+groupId={"client-group-id"}
 values={[
 {label: 'JavaScript', value: 'js'},
 {label: 'React', value: 'react'},
@@ -117,7 +118,7 @@ func onSpeakerChanged(participantId: String?) {
 <TabItem value="flutter">
 
 ```js
-meeting.on('speaker-changed', (activeSpeakerId) {
+meeting.on(Events.speakerChanged, (activeSpeakerId) {
   print("participantId => $activeSpeakerId");
 });
 

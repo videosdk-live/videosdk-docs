@@ -22,8 +22,16 @@ Whenever any participant wants to start / stop broadcasting their audio to other
 
 This guide will provide an overview of how to use enable and disable Mic in a meeting.
 
-1. **Enable Mic** - By using `enableMic()` function, a participant can publish audio to other participants.
-2. **Disable Mic** - By using `disableMic()` function, a participant can stop publishing audio to other participants.
+1. **Enable Mic** - By using `unmuteMic()` function, a participant can publish audio to other participants.
+2. **Disable Mic** - By using `muteMic()` function, a participant can stop publishing audio to other participants.
+3. **Change Mic** - By using `changeMic()` function, a participant can change mic.
+
+### Enable, Disable, Change Mic
+
+:::note
+
+For Javascript, we will use `unmuteMic()` function for publish audio to other participants and `muteMic()` function for stop publishing audio to other participants.
+:::
 
 ### Enable, Disable Mic
 
@@ -32,6 +40,7 @@ import TabItem from '@theme/TabItem';
 
 <Tabs
 defaultValue="js"
+groupId={"client-group-id"}
 values={[
 {label: 'JavaScript', value: 'js'},
 {label: 'React', value: 'react'},
@@ -45,10 +54,17 @@ values={[
 ```js
 const onPress = () => {
   // Enable Mic in Meeting
-  meeting?.enableMic();
+  meeting?.unmuteMic();
 
   // Disable Mic in Meeting
-  meeting?.disableMic();
+  meeting?.muteMic();
+
+  // Change Mic in Meeting
+  const mics = await meeting?.getMics(); // returns all mics
+
+  const { deviceId, label } = mics[0];
+
+  meeting?.changeMic(deviceId);
 };
 ```
 
@@ -58,10 +74,17 @@ const onPress = () => {
 ```js
 const onPress = () => {
   // Enable Mic in Meeting
-  meeting?.enableMic();
+  meeting?.unmuteMic();
 
   // Disable Mic in Meeting
-  meeting?.disableMic();
+  meeting?.muteMic();
+
+  // Change Mic in Meeting
+  const mics = await meeting?.getMics(); // returns all mics
+
+  const { deviceId, label } = mics[0];
+
+  meeting?.changeMic(deviceId);
 };
 ```
 
@@ -71,10 +94,10 @@ const onPress = () => {
 ```js
 const onPress = () => {
   // Enable Mic in Meeting
-  meeting?.enableMic();
+  meeting?.unmuteMic();
 
   // Disable Mic in Meeting
-  meeting?.disableMic();
+  meeting?.muteMic();
 };
 ```
 
