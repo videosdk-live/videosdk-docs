@@ -81,8 +81,8 @@ module.exports = {
           label: "API Reference",
           items: [
             {
-              label: "Realtime communication",
-              to: "docs/realtime-communication/intro",
+              label: "Custom SDK References",
+              to: "react/api/sdk-reference/setup",
               activeBaseRegex: "docs/realtime-communication/*",
             },
             {
@@ -126,7 +126,7 @@ module.exports = {
           href: "https://github.com/videosdk-live/videosdk.live",
           className: "navbar-item-github",
           position: "right",
-        }
+        },
         // {
         //   type: "docsVersionDropdown",
         //   dropdownActiveClassDisabled: true,
@@ -281,7 +281,7 @@ module.exports = {
             darkTheme: require("@kiwicopple/prism-react-renderer/themes/vsDark"),
             additionalLanguages: ["Java"],
           },
-        },        
+        },
         googleAnalytics: {
           trackingID: "G-NR8EYPZFJ7",
           // Optional fields.
@@ -292,72 +292,72 @@ module.exports = {
   ],
   plugins: [
     [
-      '@docusaurus/plugin-content-docs',
+      "@docusaurus/plugin-content-docs",
       {
-        id: 'react_docs',
-        path: 'react_docs',
-        routeBasePath: 'react',
-        sidebarPath: require.resolve('./sidebarReact.js'),
+        id: "react_docs",
+        path: "react_docs",
+        routeBasePath: "react",
+        sidebarPath: require.resolve("./sidebarReact.js"),
         // ... other options
       },
     ],
     [
-      '@docusaurus/plugin-content-docs',
+      "@docusaurus/plugin-content-docs",
       {
-        id: 'android_docs',
-        path: 'android_docs',
-        routeBasePath: 'android',
-        sidebarPath: require.resolve('./sidebarAndroid.js'),
+        id: "android_docs",
+        path: "android_docs",
+        routeBasePath: "android",
+        sidebarPath: require.resolve("./sidebarAndroid.js"),
         // ... other options
       },
     ],
     [
-      '@docusaurus/plugin-content-docs',
+      "@docusaurus/plugin-content-docs",
       {
-        id: 'ios_docs',
-        path: 'ios_docs',
-        routeBasePath: 'ios',
-        sidebarPath: require.resolve('./sidebarIos.js'),
+        id: "ios_docs",
+        path: "ios_docs",
+        routeBasePath: "ios",
+        sidebarPath: require.resolve("./sidebarIos.js"),
         // ... other options
       },
     ],
     [
-      '@docusaurus/plugin-content-docs',
+      "@docusaurus/plugin-content-docs",
       {
-        id: 'flutter_docs',
-        path: 'flutter_docs',
-        routeBasePath: 'flutter',
-        sidebarPath: require.resolve('./sidebarFlutter.js'),
+        id: "flutter_docs",
+        path: "flutter_docs",
+        routeBasePath: "flutter",
+        sidebarPath: require.resolve("./sidebarFlutter.js"),
         // ... other options
       },
     ],
     [
-      '@docusaurus/plugin-content-docs',
+      "@docusaurus/plugin-content-docs",
       {
-        id: 'react_native_docs',
-        path: 'react_native_docs',
-        routeBasePath: 'react-native',
-        sidebarPath: require.resolve('./sidebarReactNative.js'),
+        id: "react_native_docs",
+        path: "react_native_docs",
+        routeBasePath: "react-native",
+        sidebarPath: require.resolve("./sidebarReactNative.js"),
         // ... other options
       },
     ],
     [
-      '@docusaurus/plugin-content-docs',
+      "@docusaurus/plugin-content-docs",
       {
-        id: 'javascript_docs',
-        path: 'javascript_docs',
-        routeBasePath: 'javascript',
-        sidebarPath: require.resolve('./sidebarJavaScript.js'),
+        id: "javascript_docs",
+        path: "javascript_docs",
+        routeBasePath: "javascript",
+        sidebarPath: require.resolve("./sidebarJavaScript.js"),
         // ... other options
       },
     ],
     [
-      '@docusaurus/plugin-content-docs',
+      "@docusaurus/plugin-content-docs",
       {
-        id: 'prebuilt_docs',
-        path: 'prebuilt_docs',
-        routeBasePath: 'prebuilt',
-        sidebarPath: require.resolve('./sidebarPrebuilt.js'),
+        id: "prebuilt_docs",
+        path: "prebuilt_docs",
+        routeBasePath: "prebuilt",
+        sidebarPath: require.resolve("./sidebarPrebuilt.js"),
         // ... other options
       },
     ],
@@ -365,13 +365,13 @@ module.exports = {
   scripts: [
     {
       // Page sense
-      src: 'https://cdn-in.pagesense.io/js/zujotechpvtltd/8c69e67587b74006a3927185dd663808.js',
+      src: "https://cdn-in.pagesense.io/js/zujotechpvtltd/8c69e67587b74006a3927185dd663808.js",
       async: true,
     },
     {
       // Zoho Sales IQ
-      src: 'https://salesiq.zoho.in/widget',
+      src: "https://salesiq.zoho.in/widget",
       async: true,
-    }
-  ]
+    },
+  ],
 };
