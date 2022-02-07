@@ -65,7 +65,7 @@ function Overview() {
                   links={[
                     {
                       linkName: "Guide",
-                      link: "/react/video-and-audio-calling-api-sdk/getting-started",
+                      link: "/react/guide/video-and-audio-calling-api-sdk/getting-started",
                     },
                     {
                       linkName: "API reference",
