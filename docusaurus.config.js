@@ -57,7 +57,7 @@ module.exports = {
             {
               label: "Prebuilt Video & Audio Calling SDK",
               to: "prebuilt/guide/prebuilt-video-and-audio-calling/getting-started",
-              activeBaseRegex: "docs/guide/prebuilt-video-and-audio-calling/*",
+              activeBaseRegex: "/*/prebuilt-video-and-audio-calling/*",
             },
             {
               label: "Custom Video & Audio Calling SDK",
@@ -83,7 +83,7 @@ module.exports = {
             {
               label: "Custom SDK References",
               to: "react/api/sdk-reference/setup",
-              activeBaseRegex: "docs/realtime-communication/*",
+              activeBaseRegex: "/*/api/sdk-reference/*",
             },
             {
               label: "Realtime communication",

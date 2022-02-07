@@ -4,7 +4,7 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
-import React, { useState, version } from "react";
+import React, { useState } from "react";
 import clsx from "clsx";
 import {
   useThemeConfig,
@@ -19,8 +19,6 @@ import IconArrow from "@theme/IconArrow";
 import { translate } from "@docusaurus/Translate";
 import DocSidebarItems from "@theme/DocSidebarItems";
 import styles from "./styles.module.css";
-// import javascript_versions from "../../../javascript_docs_versions.json";
-import { useEffect } from "react";
 
 function useShowAnnouncementBar() {
   const { isActive } = useAnnouncementBar();
@@ -67,46 +65,36 @@ function DocSidebarDesktop({ path, sidebar, onCollapse, isHidden }) {
     navbar: { hideOnScroll },
     hideableSidebar,
   } = useThemeConfig();
-  const [sdk, setSDK] = useState([
-    "JS-Prebuilt",
-    "React",
-    "JS-Custom",
-    "React-Native",
-    "Android",
-    "IOS",
-    "Flutter",
-  ]);
-  const [Versions, setVersions] = useState([]);
+  const [sdk, setSDK] = useState(window.location.pathname.split('/')[1]);
+  const [Version, setVersion] = useState([]);
 
   function routingSDK(e) {
-    // setSDK(e.target.value);
-    console.log("URL : ", window.location.pathname);
+    setSDK(e.target.value);
     var currentPath = window.location.pathname;
     currentPath = currentPath.replace(
       currentPath.split("/")[1],
       e.target.value
     );
-    window.location.replace("http://" + window.location.host + currentPath);
-    let dropdownSidebarVersions = document.getElementById(
-      "dropdownSidebarVersions"
-    );
+    window.location.replace("http://" + window.location.host + "/"+e.target.value+"/guide/video-and-audio-calling-api-sdk/getting-started");
   }
 
-  function routingVersion(e) {
+  function getRoutingVersionPath(version) {
     // setSDK(e.target.value);
     var currentPath = window.location.pathname;
-    currentPath = currentPath.replace(
-      currentPath.split("/")[1],
-      e.target.value
-    );
-    window.location.replace("http://" + window.location.host + currentPath);
+    var version = currentPath.split("/")[2];
+    if (!version.match('([0-9])+\.([0-9])+\.([0-9]|[a-z])+'))
+      currentPath = currentPath.replace(
+        currentPath.split("/")[2],
+        version
+      );
+    else {
+      currentPath = currentPath.replace(
+        currentPath.split("/")[1],
+        (sdk+"/"+version)
+      )
+    }
+    return "http://" + window.location.host + currentPath;
   }
-
-  // useEffect(() => {
-  //   if (window.location.pathname.split("/")[2] == "javascript") {
-  //     setVersions(javascript_versions);
-  //   }
-  // }, []);
 
   return (
     <div
@@ -122,12 +110,19 @@ function DocSidebarDesktop({ path, sidebar, onCollapse, isHidden }) {
           [styles.menuWithAnnouncementBar]: showAnnouncementBar,
         })}
       >
-        {window.location.pathname.split("/")[1] == "docs" ? null : (
+        {window.location.pathname.split("/")[1] == "docs" ? (
           <div className="row">
+            <select className="dropdownSidebar dropdownSidebarVersion ">
+              <option>0.0.x</option>
+              <option>0.0.1</option>
+            </select>
+          </div>
+        ) : (
+            <div className="row">
             <select
               onChange={routingSDK}
               defaultValue={window.location.pathname.split("/")[1]}
-              className="col dropdownSidebar"
+              className="col dropdown--hoverable"
             >
               <option value="react">React</option>
               <option value="javascript">JS</option>
@@ -135,14 +130,25 @@ function DocSidebarDesktop({ path, sidebar, onCollapse, isHidden }) {
               <option value="android">Android</option>
               <option value="ios">IOS</option>
               <option value="flutter">Flutter</option>
-            </select>
-            <select
-              className="col dropdownSidebar"
-              id="dropdownSidebarVersions"
-            >
-              {Versions.map((version) => {
-                return <option value={version}>{version}</option>;
-              })}
+              </select>
+              <div class="col dropdown dropdown--hoverable dropdown--right">
+                <a class="navbar__link dropdown__link" href="/docs/1.0.xx/">1.0.xx</a>
+                <ul class="dropdown__menu">
+                  
+                  <li>
+                    <a class="dropdown__link" href="/docs/next/">3.xx.xx 🚧</a>
+                  </li>
+                  <li>
+                    <a class="dropdown__link" href="/docs/">2.xx.xx</a>
+                  </li>
+                  <li>
+                    <a class="dropdown__link" href="/docs/1.0.xx/">1.0.xx</a>
+                  </li>
+                </ul>
+              </div>
+            <select className="col dropdownSidebar" onChange={routingVersion}>
+              <option>0.0.x</option>
+              <option>0.1.x</option>
             </select>
           </div>
         )}
