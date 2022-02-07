@@ -55,5 +55,17 @@ module.exports = {
       ],
       collapsed: false,
     },
+    {
+      type: "category",
+      label: "SDK REFERENCE",
+      collapsed: false,
+      items: [
+            "video-and-audio-calling-api-sdk/sdk-reference/setup",
+            "video-and-audio-calling-api-sdk/sdk-reference/use-meeting",
+            "video-and-audio-calling-api-sdk/sdk-reference/use-participant",
+            "video-and-audio-calling-api-sdk/sdk-reference/meeting-provider",
+            "video-and-audio-calling-api-sdk/sdk-reference/meeting-consumer",
+      ],
+    },
   ],
 }

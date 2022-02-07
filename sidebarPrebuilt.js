@@ -45,5 +45,14 @@ module.exports = {guidePrebuiltVideoCalling: [
         "prebuilt-video-and-audio-calling/features/debug-mode",
       ],
       collapsed: false,
+  },
+    {
+      type: "category",
+      label: "SDK REFERENCE",
+      collapsed: false,
+      items: [
+            "prebuilt-video-and-audio-calling/sdk-reference/setup",
+            "prebuilt-video-and-audio-calling/sdk-reference/video-sdk-meeting",
+      ],
     },
   ]}
