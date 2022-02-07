@@ -46,28 +46,14 @@ module.exports = {
         "guide/prebuilt-video-and-audio-calling/features/debug-mode",
       ],
       collapsed: false,
-<<<<<<< Updated upstream
   },
 ],
   apiSidebar: [
-=======
-    },
->>>>>>> Stashed changes
     {
       type: "category",
       label: "SDK REFERENCE",
       collapsed: false,
-<<<<<<< Updated upstream
-      items: [
-            "api/sdk-reference/setup",
-            "api/sdk-reference/video-sdk-meeting",
-      ],
-    },
-  ]
-}  
-=======
       items: ["api/sdk-reference/setup", "api/sdk-reference/video-sdk-meeting"],
     },
   ],
 };
->>>>>>> Stashed changes

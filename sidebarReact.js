@@ -13,11 +13,6 @@ module.exports = {
         "guide/video-and-audio-calling-api-sdk/signup-and-create-api",
         "guide/video-and-audio-calling-api-sdk/react-js-sdk",
         "guide/video-and-audio-calling-api-sdk/server-setup",
-<<<<<<< Updated upstream
-        // "guide/video-and-audio-calling-api-sdk/start-or-join-meeting",
-=======
-        // "/guide/video-and-audio-calling-api-sdk/start-or-join-meeting",
->>>>>>> Stashed changes
       ],
       collapsed: false,
     },
@@ -25,11 +20,6 @@ module.exports = {
       type: "category",
       label: "FEATURES",
       items: [
-<<<<<<< Updated upstream
-        // "guide/video-and-audio-calling-api-sdk/features/initilize-meeting-factory",
-=======
-        // "/guide/video-and-audio-calling-api-sdk/features/initilize-meeting-factory",
->>>>>>> Stashed changes
         "guide/video-and-audio-calling-api-sdk/features/start-join-meeting",
         "guide/video-and-audio-calling-api-sdk/features/manage-participants",
         "guide/video-and-audio-calling-api-sdk/features/leave-end-meeting",
@@ -70,7 +60,6 @@ module.exports = {
       label: "SDK REFERENCE",
       collapsed: false,
       items: [
-<<<<<<< Updated upstream
             "api/sdk-reference/setup",
             "api/sdk-reference/use-meeting",
             "api/sdk-reference/use-participant",
@@ -80,14 +69,3 @@ module.exports = {
     },
   ]
 }
-=======
-        "api/sdk-reference/setup",
-        "api/sdk-reference/use-meeting",
-        "api/sdk-reference/use-participant",
-        "api/sdk-reference/meeting-provider",
-        "api/sdk-reference/meeting-consumer",
-      ],
-    },
-  ],
-};
->>>>>>> Stashed changes

@@ -5,9 +5,9 @@ import Cookies from "js-cookie";
 function Overview() {
   const [user, setUser] = useState({});
 
-  useEffect(() => {
-    getUser();
-  }, []);
+  // useEffect(() => {
+  //   getUser();
+  // }, []);
 
   const getUser = async () => {
     const user = await Cookies.get("user");

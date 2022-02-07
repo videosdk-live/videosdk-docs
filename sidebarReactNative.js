@@ -16,11 +16,7 @@ module.exports = {
           label: "Client Setup",
           items: [
             "guide/video-and-audio-calling-api-sdk/react-native-android-sdk",
-<<<<<<< Updated upstream
             "guide/video-and-audio-calling-api-sdk/react-native-ios-sdk"
-=======
-            "guide/video-and-audio-calling-api-sdk/react-native-ios-sdk",
->>>>>>> Stashed changes
           ],
           collapsed: true,
         },
@@ -82,20 +78,6 @@ module.exports = {
       label: "SDK REFERENCE",
       collapsed: false,
       items: [
-<<<<<<< Updated upstream
-            "api/sdk-reference/setup",
-            "api/sdk-reference/setup-android",
-            "api/sdk-reference/setup-ios",
-            "api/sdk-reference/rtc-stream",
-            "api/sdk-reference/use-meeting",
-            "api/sdk-reference/use-participant",
-            "api/sdk-reference/meeting-provider",
-            "api/sdk-reference/meeting-consumer",
-      ],
-    },
-  ]
-}
-=======
         "api/sdk-reference/setup",
         "api/sdk-reference/setup-android",
         "api/sdk-reference/setup-ios",
@@ -108,4 +90,3 @@ module.exports = {
     },
   ],
 };
->>>>>>> Stashed changes

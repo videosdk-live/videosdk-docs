@@ -4,7 +4,7 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import clsx from "clsx";
 import {
   useThemeConfig,
@@ -19,6 +19,13 @@ import IconArrow from "@theme/IconArrow";
 import { translate } from "@docusaurus/Translate";
 import DocSidebarItems from "@theme/DocSidebarItems";
 import styles from "./styles.module.css";
+import react_versions from '../../../react_docs_versions.json';
+import android_versions from '../../../android_docs_versions.json';
+import react_native_versions from '../../../react_native_docs_versions.json';
+import flutter_versions from '../../../flutter_docs_versions.json';
+import ios_versions from '../../../ios_docs_versions.json';
+import javascript_versions from '../../../javascript_docs_versions.json';
+import prebuilt_versions from '../../../prebuilt_docs_versions.json';
 
 function useShowAnnouncementBar() {
   const { isActive } = useAnnouncementBar();
@@ -66,35 +73,67 @@ function DocSidebarDesktop({ path, sidebar, onCollapse, isHidden }) {
     hideableSidebar,
   } = useThemeConfig();
   const [sdk, setSDK] = useState(window.location.pathname.split('/')[1]);
-  const [Version, setVersion] = useState([]);
+  const [version, setVersion] = useState("");
+  const [versionList, setVersionList] = useState([])
 
   function routingSDK(e) {
     setSDK(e.target.value);
-    var currentPath = window.location.pathname;
-    currentPath = currentPath.replace(
-      currentPath.split("/")[1],
-      e.target.value
-    );
-    window.location.replace("http://" + window.location.host + "/"+e.target.value+"/guide/video-and-audio-calling-api-sdk/getting-started");
+    window.location.assign("http://" + window.location.host + "/"+e.target.value+"/guide/video-and-audio-calling-api-sdk/getting-started");
   }
 
-  function getRoutingVersionPath(version) {
-    // setSDK(e.target.value);
+  function routeVersion(e) {
     var currentPath = window.location.pathname;
-    var version = currentPath.split("/")[2];
-    if (!version.match('([0-9])+\.([0-9])+\.([0-9]|[a-z])+'))
+    var currentVersion = currentPath.split("/")[2];
+    
+    if (currentVersion.match('([0-9])+\.([0-9])+\.([0-9]|[a-z])+')){
       currentPath = currentPath.replace(
         currentPath.split("/")[2],
-        version
+        e.target.value == versionList[0] ? "": e.target.value
       );
+      currentPath = currentPath.replace('//', "/");
+    }
     else {
       currentPath = currentPath.replace(
         currentPath.split("/")[1],
-        (sdk+"/"+version)
+        (sdk+"/"+e.target.value)
       )
     }
-    return "http://" + window.location.host + currentPath;
+    console.log()
+    window.location.replace("http://" + window.location.host + currentPath);
   }
+
+  useEffect(() => {
+    var currentVersion = window.location.pathname.split("/")[2];
+    if (currentVersion.match('([0-9])+\.([0-9])+\.([0-9]|[a-z])+'))
+      setVersion(currentVersion)
+    else {
+      setVersion(versionList[0])
+    }
+    if (sdk == "react") {
+      setVersionList(react_versions)
+    } else if (sdk == "javascript") {
+      setVersionList(javascript_versions)
+    }
+     else if (sdk == "react-native") {
+      
+      setVersionList(react_native_versions)
+    }
+     else if (sdk == "android") {
+      
+      setVersionList(android_versions)
+    }
+     else if (sdk == "ios") {
+      
+      setVersionList(ios_versions)
+    }
+     else if (sdk == "flutter") {
+      
+      setVersionList(flutter_versions)
+    } else if (sdk == "prebuilt") {
+      
+      setVersionList(prebuilt_versions)
+    }
+  },[])
 
   return (
     <div
@@ -110,15 +149,8 @@ function DocSidebarDesktop({ path, sidebar, onCollapse, isHidden }) {
           [styles.menuWithAnnouncementBar]: showAnnouncementBar,
         })}
       >
-        {window.location.pathname.split("/")[1] == "docs" ? (
-          <div className="row">
-            <select className="dropdownSidebar dropdownSidebarVersion ">
-              <option>0.0.x</option>
-              <option>0.0.1</option>
-            </select>
-          </div>
-        ) : (
-            <div className="row">
+        <div className="row">
+        {sdk != "docs" && sdk !="prebuilt" ? (
             <select
               onChange={routingSDK}
               defaultValue={window.location.pathname.split("/")[1]}
@@ -130,28 +162,14 @@ function DocSidebarDesktop({ path, sidebar, onCollapse, isHidden }) {
               <option value="android">Android</option>
               <option value="ios">IOS</option>
               <option value="flutter">Flutter</option>
-              </select>
-              <div class="col dropdown dropdown--hoverable dropdown--right">
-                <a class="navbar__link dropdown__link" href="/docs/1.0.xx/">1.0.xx</a>
-                <ul class="dropdown__menu">
-                  
-                  <li>
-                    <a class="dropdown__link" href="/docs/next/">3.xx.xx 🚧</a>
-                  </li>
-                  <li>
-                    <a class="dropdown__link" href="/docs/">2.xx.xx</a>
-                  </li>
-                  <li>
-                    <a class="dropdown__link" href="/docs/1.0.xx/">1.0.xx</a>
-                  </li>
-                </ul>
-              </div>
-            <select className="col dropdownSidebar" onChange={routingVersion}>
-              <option>0.0.x</option>
-              <option>0.1.x</option>
             </select>
+          ) : null}
+          {sdk != "docs"? (<select className="col dropdownSidebar" value={version}onChange={routeVersion}>
+                {versionList.map((v) => {
+                return <option value={v}>{v}</option>
+              })}
+            </select>):null}
           </div>
-        )}
         <ul className={clsx(ThemeClassNames.docs.docSidebarMenu, "menu__list")}>
           <DocSidebarItems items={sidebar} activePath={path} level={1} />
         </ul>
