@@ -23,73 +23,9 @@ Whenever any participant speaks in meeting, `speaker-changed` event will trigger
 
 For example, the meeting is running with **Alice** and **Bob**. Whenever any of them speaks, `speaker-changed` event will trigger and return the speaker `participantId`.
 
-We can access `speaker-changed` event through [meeting object](/docs/guide/video-and-audio-calling-api-sdk/features/start-join-meeting#2-initialization).
+We can access `speaker-changed` event through [meeting object](/ios/video-and-audio-calling-api-sdk/features/start-join-meeting#2-initialization).
 
 ### speaker-changed Event
-
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
-<Tabs
-defaultValue="js"
-groupId={"client-group-id"}
-values={[
-{label: 'JavaScript', value: 'js'},
-{label: 'React', value: 'react'},
-{label: 'ReactNative', value: 'reactnative'},
-{label: 'Android', value: 'android'},
-{label: 'IOS', value: 'ios'},
-{label: 'Flutter', value: 'flutter'},
-]}>
-<TabItem value="js">
-
-```js
-meeting.on("speaker-changed", (activeSpeakerId) => {
-  console.log("participantId", activeSpeakerId);
-});
-```
-
-</TabItem>
-<TabItem value="react">
-
-```js
-import { useMeeting } from "@videosdk.live/react-sdk";
-
-/** useMeeting hooks events */
-const {
-  /** Methods */
-} = useMeeting({
-  onSpeakerChanged: (activeSpeakerId) => {
-    console.log("participantId", activeSpeakerId);
-  },
-});
-```
-
-</TabItem>
-<TabItem value="reactnative">
-
-```js
-import { useMeeting } from "@videosdk.live/react-native-sdk";
-
-/** useMeeting hooks events */
-const {
-  /** Methods */
-} = useMeeting({
-  onSpeakerChanged: (activeSpeakerId) => {
-    console.log("participantId", activeSpeakerId);
-  },
-});
-```
-
-</TabItem>
-<TabItem value="android">
-
-```js
-COMING SOON!
-```
-
-</TabItem>
-<TabItem value="ios">
 
 ```js
 /// Called when speaker is changed
@@ -113,16 +49,3 @@ func onSpeakerChanged(participantId: String?) {
     }
 }
 ```
-
-</TabItem>
-<TabItem value="flutter">
-
-```js
-meeting.on('speaker-changed', (activeSpeakerId) {
-  print("participantId => $activeSpeakerId");
-});
-
-```
-
-</TabItem>
-</Tabs>

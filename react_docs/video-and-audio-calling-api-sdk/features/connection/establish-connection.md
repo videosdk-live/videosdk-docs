@@ -3,9 +3,6 @@ sidebar_label: Establish Connection
 pagination_label: Establish Connection
 ---
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
 # Establish Connection between Meetings
 
 ### Methods
@@ -15,7 +12,7 @@ import TabItem from '@theme/TabItem';
 
 ### Event
 
-- **connection-open** - Whenever connection between two rooms established successfully, this event will trigger and return [Connection](/docs/guide/video-and-audio-calling-api-sdk/features/connection/overview#1-connection) list.
+- **connection-open** - Whenever connection between two rooms established successfully, this event will trigger and return [Connection](/react/video-and-audio-calling-api-sdk/features/connection/overview#1-connection) list.
 
 ### Example
 
@@ -27,28 +24,6 @@ After using this method, `connection-open` event will be emitted at both meeting
 
 #### **Method and Event Code**
 
-<Tabs
-defaultValue="js"
-groupId={"client-group-id"}
-values={[
-{label: 'JavaScript', value: 'js'},
-{label: 'React', value: 'react'},
-{label: 'ReactNative', value: 'reactnative'}
-]}>
-<TabItem value="js">
-
-```js
-// Create Connection to Meeting B
-meeting.connectTo({ meetingId: "Meeting_B_ID", payload: "Hello Everyone." });
-
-//  This event will be emitted to participants of both meetings, Meeting A & Meeting B
-meeting.on("connection-open", (connection) => {
-  console.log("Connection", connection);
-});
-```
-
-</TabItem>
-<TabItem value="react">
 
 ```js
 import { useMeeting } from "@videosdk.live/react-sdk";
@@ -65,25 +40,3 @@ const onClick = () => {
   connectTo({ meetingId: "Meeting_B_ID", payload: "Hello Everyone." });
 };
 ```
-
-</TabItem>
-<TabItem value="reactnative">
-
-```js
-import { useMeeting } from "@videosdk.live/react-native-sdk";
-
-const { connectTo } = useMeeting({
-  // This event will be emitted to participants of both meetings, Meeting A & Meeting B
-  onConnectionOpen: (connection) => {
-    console.log("Connection", connection);
-  },
-});
-
-// Create Connection to Meeting B
-const onPress = () => {
-  connectTo({ meetingId: "Meeting_B_ID", payload: "Hello Everyone." });
-};
-```
-
-</TabItem>
-</Tabs>

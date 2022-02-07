@@ -55,13 +55,5 @@ module.exports = {
       ],
       collapsed: false,
     },
-    {
-      type: "category",
-      label: "Extras",
-      items: [
-        "video-and-audio-calling-api-sdk/extras/react-native-ios-screen-share",
-      ],
-      collapsed: false,
-    },
   ],
 }

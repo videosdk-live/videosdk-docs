@@ -3,8 +3,8 @@ title: Start a Video & Audio Call in Javascript SDK - Video SDK Docs
 hide_title: false
 hide_table_of_contents: false
 description: Build customizable real-time video & audio calling applications in Javascript SDK using Video SDK add live Video & Audio conferencing to your applications.
-sidebar_label: "JavaScript"
-pagination_label: "JavaScript"
+sidebar_label: "Client Setup for JavaScript"
+pagination_label: "Client Setup for JavaScript"
 keywords:
   - install sdk
   - javascript

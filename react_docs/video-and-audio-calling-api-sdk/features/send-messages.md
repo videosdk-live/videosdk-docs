@@ -32,38 +32,6 @@ This guide will provide an overview of how to implement chat and raise hand in a
 
 ### Send Message And Raised Hand
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
-<Tabs
-defaultValue="js"
-groupId={"client-group-id"}
-values={[
-{label: 'JavaScript', value: 'js'},
-{label: 'React', value: 'react'},
-{label: 'ReactNative', value: 'reactnative'},
-{label: 'Android', value: 'android'},
-{label: 'IOS', value: 'ios'},
-{label: 'Flutter', value: 'flutter'},
-]}>
-<TabItem value="js">
-
-```js
-const onPress = () => {
-  // Sending Message
-  let data = {
-    message: "Hello World",
-  };
-
-  meeting?.sendChatMessage(JSON.stringify(data));
-
-  // Raising Hand
-  meeting?.sendChatMessage(JSON.stringify({ type: "RAISE_HAND", data: {} }));
-};
-```
-
-</TabItem>
-<TabItem value="react">
 
 ```js
 const onPress = () => {
@@ -77,76 +45,10 @@ const onPress = () => {
   meeting?.sendChatMessage(JSON.stringify({ type: "RAISE_HAND", data: {} }));
 };
 ```
-
-</TabItem>
-<TabItem value="reactnative">
-
-```js
-const onPress = () => {
-  // Sending Message
-  let data = {
-    message: "Hello World",
-  };
-  meeting?.sendChatMessage(JSON.stringify(data));
-
-  // Raising Hand
-  meeting?.sendChatMessage(JSON.stringify({ type: "RAISE_HAND", data: {} }));
-};
-```
-
-</TabItem>
-<TabItem value="android">
-
-```js
-COMING SOON!
-```
-
-</TabItem>
-<TabItem value="ios">
-
-```js
-COMING SOON!
-```
-
-</TabItem>
-<TabItem value="flutter">
-
-```js
-COMING SOON!
-```
-
-</TabItem>
-</Tabs>
 
 ### Events
 
 1. **chat-message** - Whenever any participant sending message/raise hand in the meeting, then `chat-message` event will trigger and return senderId, senderName, timeStamp, text and type `(RAISE_HAND/CHAT)`.
-
-<Tabs
-defaultValue="js"
-groupId={"client-group-id"}
-values={[
-{label: 'JavaScript', value: 'js'},
-{label: 'React', value: 'react'},
-{label: 'ReactNative', value: 'reactnative'},
-{label: 'Android', value: 'android'},
-{label: 'IOS', value: 'ios'},
-{label: 'Flutter', value: 'flutter'},
-]}>
-<TabItem value="js">
-
-```js
-meeting.on("chat-message", (messageData) => {
-  const { senderId, senderName, text } = messageData;
-
-  const { type, data } = JSON.parse(text);
-
-  // type can be "CHAT" or "RAISE_HAND"
-});
-```
-
-</TabItem>
-<TabItem value="react">
 
 ```js
 import { useMeeting } from "@videosdk.live/react-sdk";
@@ -164,47 +66,3 @@ const {
   },
 });
 ```
-
-</TabItem>
-<TabItem value="reactnative">
-
-```js
-import { useMeeting } from "@videosdk.live/react-native-sdk";
-
-/** useMeeting hooks events */
-const {
-  /** Methods */
-} = useMeeting({
-  onChatMessage: (messageData) => {
-    const { senderId, senderName, text } = messageData;
-
-    const { type, data } = JSON.parse(text);
-
-    // type can be "CHAT" or "RAISE_HAND"
-  },
-});
-```
-
-</TabItem>
-<TabItem value="android">
-
-```js
-COMING SOON!
-```
-
-</TabItem>
-<TabItem value="ios">
-
-```js
-COMING SOON!
-```
-
-</TabItem>
-<TabItem value="flutter">
-
-```js
-COMING SOON!
-```
-
-</TabItem>
-</Tabs>

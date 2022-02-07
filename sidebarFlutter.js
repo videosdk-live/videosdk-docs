@@ -34,5 +34,17 @@ module.exports = {
       ],
       collapsed: false,
     },
+    {
+      type: "category",
+      label: "SDK REFERENCE",
+      collapsed: false,
+      items: [
+            "video-and-audio-calling-api-sdk/sdk-reference/setup",
+            "video-and-audio-calling-api-sdk/sdk-reference/meeting-builder-widget",
+            "video-and-audio-calling-api-sdk/sdk-reference/meeting-class",
+            "video-and-audio-calling-api-sdk/sdk-reference/participant-class",
+            "video-and-audio-calling-api-sdk/sdk-reference/stream-class",
+      ],
+    },
   ],
 }

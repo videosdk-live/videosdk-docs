@@ -47,47 +47,12 @@ This guide will provide an overview of how to control other participant webcam a
 
 To achieve this feature, you need to pass `allow_join` persmission while genearting token for meeting initialization. After that you will be able to access participant media methods.
 
-[How to apply permission while generating token?](/docs/guide/video-and-audio-calling-api-sdk/server-setup#generate-accees-token-and-integrate-other-apis)
+[How to apply permission while generating token?](/react/video-and-audio-calling-api-sdk/server-setup#generate-accees-token-and-integrate-other-apis)
 
 :::
 
 ### Request Media Methods
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
-<Tabs
-defaultValue="js"
-groupId={"client-group-id"}
-values={[
-{label: 'JavaScript', value: 'js'},
-{label: 'React', value: 'react'},
-{label: 'ReactNative', value: 'reactnative'},
-{label: 'Android', value: 'android'},
-{label: 'IOS', value: 'ios'},
-{label: 'Flutter', value: 'flutter'},
-]}>
-<TabItem value="js">
-
-```js
-const participants = meeting.participants;
-const participant = participants.get("<participant-id>");
-
-// This will emit an event called "webcam-requested" to that particular participant
-participant.enableWebcam();
-
-// This will directly disable webcam of particular participant
-participant.disableWebcam();
-
-// This will emit an event called "mic-requested" to that particular participant
-participant.enableMic();
-
-// This will directly disable mic of particular participant
-participant.disableMic();
-```
-
-</TabItem>
-<TabItem value="react">
 
 ```js
 import { useParticipant } from "@videosdk.live/react-sdk";
@@ -110,91 +75,6 @@ const onPress = () => {
 };
 ```
 
-</TabItem>
-<TabItem value="reactnative">
-
-```js
-import { useParticipant } from "@videosdk.live/react-native-sdk";
-
-const { enableWebcam, disableWebcam, enableMic, disableMic } =
-  useParticipant("<participant-id>");
-
-const onPress = () => {
-  // This will emit an event called "webcam-requested" to that particular participant
-  enableWebcam();
-
-  // This will directly disable webcam of particular participant
-  disableWebcam();
-
-  // This will emit an event called "mic-requested" to that particular participant
-  enableMic();
-
-  // This will directly disable mic of particular participant
-  disableMic();
-};
-```
-
-</TabItem>
-<TabItem value="android">
-
-```js
-Participant participant = meeting.getParticipants().get("<participant-id>");
-
-// This will emit an event called "onWebcamRequested" to that particular participant
-participant.enableWebcam();
-
-// This will directly disable webcam of particular participant
-participant.disableWebcam();
-
-// This will emit an event called "onMicRequested" to that particular participant
-participant.enableMic();
-
-// This will directly disable mic of particular participant
-participant.disableMic();
-```
-
-</TabItem>
-<TabItem value="ios">
-
-```js
-let participant = meeting?.participants.first(where: { $0.id == <participantId> })
-
-/// Enable/Unmute mic for this participant
-participant?.enableMic()
-
-/// Disable/Mute mic for this participant
-participant?.disableMic()
-
-/// Enable/Turn on camera for this participant
-participant?.enableWebcam()
-
-/// Disable/Turn off camera for this participant
-participant?.disableWebcam()
-```
-
-</TabItem>
-<TabItem value="flutter">
-
-```js
-const participants = meeting.participants;
-const participant = participants.get("<participant-id>");
-
-// This will emit an event called "webcam-requested" to that particular participant
-participant.enableWebcam();
-
-// This will directly disable webcam of particular participant
-participant.disableWebcam();
-
-// This will emit an event called "mic-requested" to that particular participant
-participant.enableMic();
-
-// This will directly disable mic of particular participant
-participant.disableMic();
-```
-
-</TabItem>
-</Tabs>
-
 ### Manage Requested Media Events
 
 1. **webcam-requested** - This event will be emitted to the participant `B` when any other participant `A` requests to enable webcam of that participant `B`. This event handler will receieve following three arguments:
@@ -209,41 +89,6 @@ participant.disableMic();
    - `accept()` - Callback function to accept the request.
    - `reject()` - Callback function to reject the request.
 
-<Tabs
-defaultValue="js"
-groupId={"client-group-id"}
-values={[
-{label: 'JavaScript', value: 'js'},
-{label: 'React', value: 'react'},
-{label: 'ReactNative', value: 'reactnative'},
-{label: 'Android', value: 'android'},
-{label: 'IOS', value: 'ios'},
-{label: 'Flutter', value: 'flutter'},
-]}>
-<TabItem value="js">
-
-```js
-// Handle Webcam Requested
-meeting.on("webcam-requested", ({ accept, reject }) {
-    // callback function to accept the request
-    accept();
-
-    // callback function to reject the request
-    reject();
-}, );
-
-// Handle Mic Requested
-meeting.on("mic-requested", ({ accept, reject }) {
-    // callback function to accept the request
-    accept();
-
-    // callback function to reject the request
-    reject();
-}, );
-```
-
-</TabItem>
-<TabItem value="react">
 
 ```js
 import { useMeeting } from "@videosdk.live/react-sdk";
@@ -267,99 +112,3 @@ const {
   },
 });
 ```
-
-</TabItem>
-<TabItem value="reactnative">
-
-```js
-import { useMeeting } from "@videosdk.live/react-native-sdk";
-
-const {
-  /** Methods */
-} = useMeeting({
-  onWebcamRequested: ({ accept, reject }) => {
-    // callback function to accept the request
-    accept();
-
-    // callback function to reject the request
-    reject();
-  },
-  onMicRequested: ({ accept, reject }) => {
-    // callback function to accept the request
-    accept();
-
-    // callback function to reject the request
-    reject();
-  },
-});
-```
-
-</TabItem>
-<TabItem value="android">
-
-```js
-new MeetingEventListener() {
-  @Override
-  public void onMicRequested(String participantId, MicRequestListener listener) {
-      // TODO: show dialog before accepting request
-      listener.accept();
-  }
-
-  @Override
-  public void onWebcamRequested(String participantId, WebcamRequestListener listener) {
-      // TODO: show dialog before accepting request
-      listener.accept();
-  }
-}
-```
-
-</TabItem>
-<TabItem value="ios">
-
-```js
-/// Called when host requests to turn on the mic/audio
-func onMicRequested(participantId: String?, accept: @escaping () -> Void, reject: @escaping () -> Void) {
-
-    // callback to accept the request
-    accept()
-
-    // callback to reject the request
-    reject()
-}
-
-/// Called when host requests to turn on the camera/video
-func onWebcamRequested(participantId: String?, accept: @escaping () -> Void, reject: @escaping () -> Void) {
-    // callback to accept the request
-    accept()
-
-    // callback to reject the request
-    reject()
-}
-
-```
-
-</TabItem>
-<TabItem value="flutter">
-
-```js
-// Handle Webcam Requested
-widget.meeting.on("webcam-requested", ({ accept, reject }) {
-    // callback function to accept the request
-    accept();
-
-    // callback function to reject the request
-    reject();
-}, );
-
-// Handle Mic Requested
-widget.meeting.on("mic-requested", ({ accept, reject }) {
-     // callback function to accept the request
-    accept();
-
-    // callback function to reject the request
-    reject();
-}, );
-```
-
-</TabItem>
-</Tabs>

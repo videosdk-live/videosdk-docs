@@ -11,7 +11,15 @@ module.exports = {
       label: "SETUP",
       items: [
         "video-and-audio-calling-api-sdk/signup-and-create-api",
-        "video-and-audio-calling-api-sdk/react-js-sdk",
+        {
+          type: "category",
+          label: "Client Setup",
+          items: [
+            "video-and-audio-calling-api-sdk/react-native-android-sdk",
+            "video-and-audio-calling-api-sdk/react-native-ios-sdk"
+          ],
+          collapsed: true,
+        },
         "video-and-audio-calling-api-sdk/server-setup",
         // "video-and-audio-calling-api-sdk/start-or-join-meeting",
       ],

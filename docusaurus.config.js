@@ -346,6 +346,16 @@ module.exports = {
         // ... other options
       },
     ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'prebuilt_docs',
+        path: 'prebuilt_docs',
+        routeBasePath: 'prebuilt',
+        sidebarPath: require.resolve('./sidebarPrebuilt.js'),
+        // ... other options
+      },
+    ],
   ],
   scripts: [
     {

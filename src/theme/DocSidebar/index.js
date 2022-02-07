@@ -86,6 +86,16 @@ function DocSidebarDesktop({ path, sidebar, onCollapse, isHidden }) {
     window.location.replace("http://" + window.location.host + currentPath);
   }
 
+  function routingVersion(e) {
+    // setSDK(e.target.value);
+    var currentPath = window.location.pathname;
+    currentPath = currentPath.replace(
+      currentPath.split("/")[1],
+      e.target.value
+    );
+    window.location.replace("http://" + window.location.host + currentPath);
+  }
+
   return (
     <div
       className={clsx(styles.sidebar, {
@@ -123,7 +133,7 @@ function DocSidebarDesktop({ path, sidebar, onCollapse, isHidden }) {
             </select>
             <select className="col dropdownSidebar">
               <option>0.0.x</option>
-              <option>0.0.1</option>
+              <option>0.1.x</option>
             </select>
           </div>
         )}
