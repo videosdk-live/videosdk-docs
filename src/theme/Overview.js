@@ -69,7 +69,7 @@ function Overview() {
                     },
                     {
                       linkName: "API reference",
-                      link: "/docs/realtime-communication/intro",
+                      link: "/react/api/sdk-reference/setup",
                     },
                     {
                       linkName: "Tutorial",

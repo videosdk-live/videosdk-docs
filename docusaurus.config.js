@@ -311,6 +311,7 @@ module.exports = {
         // ... other options
       },
     ],
+
     [
       "@docusaurus/plugin-content-docs",
       {

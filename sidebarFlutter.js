@@ -1,5 +1,5 @@
 module.exports = {
-    guideAudioAndVideoCalling: [
+  guideAudioAndVideoCalling: [
     {
       type: "category",
       label: "GUIDE",
@@ -41,6 +41,7 @@ module.exports = {
       label: "SDK REFERENCE",
       collapsed: false,
       items: [
+<<<<<<< Updated upstream
             "api/sdk-reference/setup",
             "api/sdk-reference/meeting-builder-widget",
             "api/sdk-reference/meeting-class",
@@ -50,3 +51,14 @@ module.exports = {
     },
   ]
 }
+=======
+        "api/sdk-reference/setup",
+        "api/sdk-reference/meeting-builder-widget",
+        "api/sdk-reference/meeting-class",
+        "api/sdk-reference/participant-class",
+        "api/sdk-reference/stream-class",
+      ],
+    },
+  ],
+};
+>>>>>>> Stashed changes
