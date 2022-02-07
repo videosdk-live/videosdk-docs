@@ -4,7 +4,7 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
-import React, { useState } from "react";
+import React, { useState, version } from "react";
 import clsx from "clsx";
 import {
   useThemeConfig,
@@ -19,6 +19,8 @@ import IconArrow from "@theme/IconArrow";
 import { translate } from "@docusaurus/Translate";
 import DocSidebarItems from "@theme/DocSidebarItems";
 import styles from "./styles.module.css";
+// import javascript_versions from "../../../javascript_docs_versions.json";
+import { useEffect } from "react";
 
 function useShowAnnouncementBar() {
   const { isActive } = useAnnouncementBar();
@@ -74,16 +76,20 @@ function DocSidebarDesktop({ path, sidebar, onCollapse, isHidden }) {
     "IOS",
     "Flutter",
   ]);
-  const [Version, setVersion] = useState([]);
+  const [Versions, setVersions] = useState([]);
 
   function routingSDK(e) {
     // setSDK(e.target.value);
+    console.log("URL : ", window.location.pathname);
     var currentPath = window.location.pathname;
     currentPath = currentPath.replace(
       currentPath.split("/")[1],
       e.target.value
     );
     window.location.replace("http://" + window.location.host + currentPath);
+    let dropdownSidebarVersions = document.getElementById(
+      "dropdownSidebarVersions"
+    );
   }
 
   function routingVersion(e) {
@@ -95,6 +101,12 @@ function DocSidebarDesktop({ path, sidebar, onCollapse, isHidden }) {
     );
     window.location.replace("http://" + window.location.host + currentPath);
   }
+
+  // useEffect(() => {
+  //   if (window.location.pathname.split("/")[2] == "javascript") {
+  //     setVersions(javascript_versions);
+  //   }
+  // }, []);
 
   return (
     <div
@@ -110,14 +122,7 @@ function DocSidebarDesktop({ path, sidebar, onCollapse, isHidden }) {
           [styles.menuWithAnnouncementBar]: showAnnouncementBar,
         })}
       >
-        {window.location.pathname.split("/")[1] == "docs" ? (
-          <div className="row">
-            <select className="dropdownSidebar dropdownSidebarVersion ">
-              <option>0.0.x</option>
-              <option>0.0.1</option>
-            </select>
-          </div>
-        ) : (
+        {window.location.pathname.split("/")[1] == "docs" ? null : (
           <div className="row">
             <select
               onChange={routingSDK}
@@ -131,9 +136,13 @@ function DocSidebarDesktop({ path, sidebar, onCollapse, isHidden }) {
               <option value="ios">IOS</option>
               <option value="flutter">Flutter</option>
             </select>
-            <select className="col dropdownSidebar">
-              <option>0.0.x</option>
-              <option>0.1.x</option>
+            <select
+              className="col dropdownSidebar"
+              id="dropdownSidebarVersions"
+            >
+              {Versions.map((version) => {
+                return <option value={version}>{version}</option>;
+              })}
             </select>
           </div>
         )}
