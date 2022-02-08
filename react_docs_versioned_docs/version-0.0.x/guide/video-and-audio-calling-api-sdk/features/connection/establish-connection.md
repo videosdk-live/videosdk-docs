@@ -12,7 +12,7 @@ pagination_label: Establish Connection
 
 ### Event
 
-- **connection-open** - Whenever connection between two rooms established successfully, this event will trigger and return [Connection](/react/video-and-audio-calling-api-sdk/features/connection/overview#1-connection) list.
+- **connection-open** - Whenever connection between two rooms established successfully, this event will trigger and return [Connection](/react/guide/video-and-audio-calling-api-sdk/features/connection/overview#1-connection) list.
 
 ### Example
 

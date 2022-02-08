@@ -120,4 +120,4 @@ protected void onCreate(Bundle savedInstanceState) {
 }
 ```
 
-### Step 4: All set! Here is the link to the complete sample code on [Github](https://github.com/videosdk-live/videosdk-rtc-android-java-sdk-example). Please refer to the [documentation](/android/video-and-audio-calling-api-sdk/sdk-reference/videosdk-class) for a full list of available methods, events and features of the SDK.
+### Step 4: All set! Here is the link to the complete sample code on [Github](https://github.com/videosdk-live/videosdk-rtc-android-java-sdk-example). Please refer to the [documentation](/android/api/sdk-reference/videosdk-class) for a full list of available methods, events and features of the SDK.

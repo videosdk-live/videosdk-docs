@@ -3,9 +3,6 @@ sidebar_label: Switch Connection Participant
 pagination_label: Switch Connection Participant
 ---
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
 # Switch Particpant from Connected Meeting
 
 ### Method
@@ -35,86 +32,6 @@ import TabItem from '@theme/TabItem';
 after that `P2` from **Meeting_B** will receive an event `switch-meeting`.
 
 ### **Method and Event Code**
-
-<Tabs
-defaultValue="js"
-groupId={"client-group-id"}
-values={[
-{label: 'JavaScript', value: 'js'},
-{label: 'React', value: 'react'},
-{label: 'ReactNative', value: 'reactnative'}
-]}>
-<TabItem value="js">
-
-```js
-// Get meeting B connection
-const connection = meeting.connections.get("<meeting-B-id>");
-
-// Get participant of meeting B
-const connectionParticipant =
-  connection.meeting.participants.get("<participant-id>");
-
-// Here participant from meeting A requests to switch particpant from meeting B to A
-const onClick = () => {
-  const meetingId = "<meeting-A-id>";
-  const token = "JWT";
-  const payload = "payload";
-
-  connectionParticipant.switchTo({ meetingId, token, payload });
-};
-
-// This event will be emitted to participant of Meeting B
-meeting.on(
-  "switch-meeting",
-  ({
-    meetingId,
-    payload,
-    token,
-    connectionParticipantId,
-    connectionMeetingId,
-  }) => {}
-);
-```
-
-</TabItem>
-<TabItem value="react">
-
-```js
-import { useMeeting, useConnection } from "@videosdk.live/react-sdk";
-
-// Get meeting B connection
-const { connection } = useConnection("<meeting-B-id>");
-
-// Get participant of meeting B
-const connectionParticipant =
-  connection.meeting.participants.get("<participant-id>");
-
-// Here participant from meeting A requests to switch particpant from meeting B to A
-const onClick = () => {
-  const meetingId = "<meeting-A-id>";
-  const token = "JWT";
-  const payload = "payload";
-
-  connectionParticipant.switchTo({ meetingId, token, payload });
-};
-
-useMeeting({
-  onSwitchMeeting: ({
-    meetingId,
-    payload,
-    token,
-    connectionParticipantId,
-    connectionMeetingId,
-  }) => {
-    // Resetting token and meetingId at participant side
-    setToken(token);
-    setMeetingId(meetingId);
-  },
-});
-```
-
-</TabItem>
-<TabItem value="reactnative">
 
 ```js
 import { useMeeting, useConnection } from "@videosdk.live/react-native-sdk";
@@ -150,10 +67,7 @@ useMeeting({
 });
 ```
 
-</TabItem>
-</Tabs>
-
-For **React** and **React Native** Developer, you need to slightly modify in [Initialization](/docs/guide/video-and-audio-calling-api-sdk/features/start-join-meeting#2-initialization) config props.
+For  **React Native** Developer, you need to slightly modify in [Initialization](/react-native/guide/video-and-audio-calling-api-sdk/features/start-join-meeting#2-initialization) config props.
 
 ```js
 const App = () => {
@@ -176,6 +90,6 @@ const App = () => {
 
 `reInitialiseMeetingOnConfigChange` prop help you to update token and meeting id at run time, you don't have to rejoin or reinitialize the meeting.
 
-The reason we are using this props is we are resetting meetingId and token at participant side [switch-meeting](/docs/guide/video-and-audio-calling-api-sdk/features/connection/switch-connection-participant#event) event.
+The reason we are using this props is we are resetting meetingId and token at participant side [switch-meeting](/react-native/guide/video-and-audio-calling-api-sdk/features/connection/switch-connection-participant#event) event.
 
 If you not specify this props, MeetingProvider will not able to reset meetingId and token at run time.

@@ -16,6 +16,7 @@ import {
 } from "@docusaurus/theme-common";
 import Logo from "@theme/Logo";
 import IconArrow from "@theme/IconArrow";
+import BrowserOnly from "@docusaurus/BrowserOnly";
 import { translate } from "@docusaurus/Translate";
 import DocSidebarItems from "@theme/DocSidebarItems";
 import styles from "./styles.module.css";
@@ -72,7 +73,7 @@ function DocSidebarDesktop({ path, sidebar, onCollapse, isHidden }) {
     navbar: { hideOnScroll },
     hideableSidebar,
   } = useThemeConfig();
-  const [sdk, setSDK] = useState(window.location.pathname.split('/')[1]);
+  const [sdk, setSDK] = useState();
   const [version, setVersion] = useState("");
   const [versionList, setVersionList] = useState([])
 
@@ -103,36 +104,38 @@ function DocSidebarDesktop({ path, sidebar, onCollapse, isHidden }) {
   }
 
   useEffect(() => {
+    var currentSdk = window.location.pathname.split('/')[1];
     var currentVersion = window.location.pathname.split("/")[2];
     if (currentVersion.match('([0-9])+\.([0-9])+\.([0-9]|[a-z])+'))
       setVersion(currentVersion)
     else {
       setVersion(versionList[0])
     }
-    if (sdk == "react") {
+    if (currentSdk == "react") {
       setVersionList(react_versions)
-    } else if (sdk == "javascript") {
+    } else if (currentSdk == "javascript") {
       setVersionList(javascript_versions)
     }
-     else if (sdk == "react-native") {
+     else if (currentSdk == "react-native") {
       
       setVersionList(react_native_versions)
     }
-     else if (sdk == "android") {
+     else if (currentSdk == "android") {
       
       setVersionList(android_versions)
     }
-     else if (sdk == "ios") {
+     else if (currentSdk == "ios") {
       
       setVersionList(ios_versions)
     }
-     else if (sdk == "flutter") {
+     else if (currentSdk == "flutter") {
       
       setVersionList(flutter_versions)
-    } else if (sdk == "prebuilt") {
+    } else if (currentSdk == "prebuilt") {
       
       setVersionList(prebuilt_versions)
     }
+    setSDK(currentSdk);
   },[])
 
   return (
@@ -149,11 +152,12 @@ function DocSidebarDesktop({ path, sidebar, onCollapse, isHidden }) {
           [styles.menuWithAnnouncementBar]: showAnnouncementBar,
         })}
       >
+        <BrowserOnly>{()=>
         <div className="row">
         {sdk != "docs" && sdk !="prebuilt" ? (
             <select
               onChange={routingSDK}
-              defaultValue={window.location.pathname.split("/")[1]}
+              defaultValue={sdk}
               className="col dropdown--hoverable"
             >
               <option value="react">React</option>
@@ -169,7 +173,8 @@ function DocSidebarDesktop({ path, sidebar, onCollapse, isHidden }) {
                 return <option value={v}>{v}</option>
               })}
             </select>):null}
-          </div>
+          </div>}
+          </BrowserOnly>
         <ul className={clsx(ThemeClassNames.docs.docSidebarMenu, "menu__list")}>
           <DocSidebarItems items={sidebar} activePath={path} level={1} />
         </ul>

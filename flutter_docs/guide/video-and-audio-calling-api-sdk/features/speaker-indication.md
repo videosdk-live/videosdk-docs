@@ -23,7 +23,7 @@ Whenever any participant speaks in meeting, `speaker-changed` event will trigger
 
 For example, the meeting is running with **Alice** and **Bob**. Whenever any of them speaks, `speaker-changed` event will trigger and return the speaker `participantId`.
 
-We can access `speaker-changed` event through [meeting object](/flutter/video-and-audio-calling-api-sdk/features/start-join-meeting#2-initialization).
+We can access `speaker-changed` event through [meeting object](/flutter/guide/video-and-audio-calling-api-sdk/features/start-join-meeting#2-initialization).
 
 ### speaker-changed Event
 

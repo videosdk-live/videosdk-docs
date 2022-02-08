@@ -18,16 +18,6 @@ After getting a single meeting connection, all joined participants of that meeti
 
 ### **Method and Event Code**
 
-<Tabs
-defaultValue="js"
-groupId={"client-group-id"}
-values={[
-{label: 'JavaScript', value: 'js'},
-{label: 'React', value: 'react'},
-{label: 'ReactNative', value: 'reactnative'}
-]}>
-<TabItem value="js">
-
 ```js
 const connection = meeting.connections.get("<connection-id>");
 
@@ -41,51 +31,6 @@ connection.meeting.on("participant-left", (participantId) => {
   console.log(participantId); // participantId who left that connected meeting
 });
 ```
-
-</TabItem>
-<TabItem value="react">
-
-```js
-import { useConnection } from "@videosdk.live/react-sdk";
-
-const { connection } = useConnection("<connection-id>", {
-  onMeeting: {
-    onParticipantJoined: (participant) => {
-      console.log(participant); // Joined participant of that connected meeting
-    },
-    onParticipantLeft: (participantId) => {
-      console.log(participantId); // participantId who left that connected meeting
-    },
-  },
-});
-
-console.log(connection.meeting.participants);
-// Here you will get all joined participants of that connected meeting
-```
-
-</TabItem>
-<TabItem value="reactnative">
-
-```js
-import { useConnection } from "@videosdk.live/react-native-sdk";
-
-const { connection } = useConnection("<connection-id>", {
-  onMeeting: {
-    onParticipantJoined: (participant) => {
-      console.log(participant); // Joined participant of that connected meeting
-    },
-    onParticipantLeft: (participantId) => {
-      console.log(participantId); // participantId who left that connected meeting
-    },
-  },
-});
-
-console.log(connection.meeting.participants);
-// Here you will get all joined participants of that connected meeting
-```
-
-</TabItem>
-</Tabs>
 
 :::info
 Participant you get from `connection.meeting.participants`, will only contain `id` and `displayName`. Any video, audio or share streams will not be provided.

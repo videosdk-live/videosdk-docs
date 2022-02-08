@@ -47,7 +47,7 @@ This guide will provide an overview of how to control other participant webcam a
 
 To achieve this feature, you need to pass `allow_join` persmission while genearting token for meeting initialization. After that you will be able to access participant media methods.
 
-[How to apply permission while generating token?](/ios/video-and-audio-calling-api-sdk/server-setup#generate-accees-token-and-integrate-other-apis)
+[How to apply permission while generating token?](/ios/guide/video-and-audio-calling-api-sdk/server-setup#generate-accees-token-and-integrate-other-apis)
 
 :::
 

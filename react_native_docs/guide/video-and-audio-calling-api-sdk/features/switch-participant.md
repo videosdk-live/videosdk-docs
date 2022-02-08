@@ -3,9 +3,6 @@ sidebar_label: Switch Participant
 pagination_label: Switch Participant
 ---
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
 # Switch Participant
 
 If you are running more than one meeting concurrently and want to switch particular participant over meetings, VideoSDK Provide `switchTo` method to achieve this kind of setup.
@@ -38,59 +35,6 @@ after that `P2` from **Meeting_A** will receive an event `switch-meeting` with *
 
 ### **Method and Event Code**
 
-<Tabs
-defaultValue="js"
-groupId={"client-group-id"}
-values={[
-{label: 'JavaScript', value: 'js'},
-{label: 'React', value: 'react'},
-{label: 'ReactNative', value: 'reactnative'}
-]}>
-<TabItem value="js">
-
-```js
-// Get participant of meeting A
-const Participant = meeting.participants.get("<participant-id>");
-
-const onClick = () => {
-  const meetingId = "<meeting-B-id>"; // <meeting-B-id> || <other-meeting-id>
-  const token = "JWT";
-  const payload = "payload";
-
-  Participant.switchTo({ meetingId, token, payload });
-};
-
-// This event will be emitted to participant P2 of Meeting A.
-meeting.on("switch-meeting", ({ meetingId, payload, token }) => {});
-```
-
-</TabItem>
-<TabItem value="react">
-
-```js
-import { useParticipant, useMeeting } from "@videosdk.live/react-sdk";
-
-const { switchTo } = useParticipant("<participant-id>");
-
-const onClick = () => {
-  const meetingId = "<meeting-B-id>"; // <meeting-B-id> || <other-meeting-id>
-  const token = "JWT";
-  const payload = "payload";
-
-  switchTo({ meetingId, token, payload });
-};
-
-useMeeting({
-  onSwitchMeeting: ({ meetingId, payload, token }) => {
-    // Resetting token and meetingId at participant side
-    setToken(token);
-    setMeetingId(meetingId);
-  },
-});
-```
-
-</TabItem>
-<TabItem value="reactnative">
 
 ```js
 import { useMeeting, useParticipant } from "@videosdk.live/react-native-sdk";
@@ -113,11 +57,7 @@ useMeeting({
   },
 });
 ```
-
-</TabItem>
-</Tabs>
-
-For **React** and **React Native** Developer, you need to slightly modify in [Initialization](/docs/guide/video-and-audio-calling-api-sdk/features/start-join-meeting#2-initialization) config props.
+For **React Native** Developer, you need to slightly modify in [Initialization](/react-native/guide/video-and-audio-calling-api-sdk/features/start-join-meeting#2-initialization) config props.
 
 ```js
 const App = () => {

@@ -23,7 +23,7 @@ slug: manage-participants
 Local participant is used to consume your video & audio streams.
 it contains information about local participant such as displayName, id, quality and streams Map.
 
-You can acces localParticipant from the [meeting object](/android/video-and-audio-calling-api-sdk/features/start-join-meeting#2-initialization).
+You can acces localParticipant from the [meeting object](/android/guide/video-and-audio-calling-api-sdk/features/start-join-meeting#2-initialization).
 
 ### Participant object properties
 
@@ -48,7 +48,7 @@ You can acces localParticipant from the [meeting object](/android/video-and-audi
 
 Other participants Map is used to get all the participants (except you) in the meeting at any given time.
 
-Other participants Map contains same properties as [LocalParticipant](/android/video-and-audio-calling-api-sdk/features/manage-participants#localparticipant-object-properties).
+Other participants Map contains same properties as [LocalParticipant](/android/guide/video-and-audio-calling-api-sdk/features/manage-participants#localparticipant-object-properties).
 
 ### Local And Other Participants
 
@@ -200,15 +200,15 @@ Please refer the [example code](https://github.com/videosdk-live/videosdk-rtc-an
 
 ## 3. Participant Related Events
 
-1. **participant-joined** - Whenever any new participant join the meeting, `participant-joined` event will trigger. For example, the meeting is running with **Alice** and **Bob**, then **Eve** join that meeting, after that `participant-joined` event trigger and return the [participant object](/android/video-and-audio-calling-api-sdk/features/manage-participants#participant-object-properties).
+1. **participant-joined** - Whenever any new participant join the meeting, `participant-joined` event will trigger. For example, the meeting is running with **Alice** and **Bob**, then **Eve** join that meeting, after that `participant-joined` event trigger and return the [participant object](/android/guide/video-and-audio-calling-api-sdk/features/manage-participants#participant-object-properties).
 
-2. **participant-left** - Whenever any participant leave/exit the meeting, `participant-left` event will trigger.For example, the meeting is running with **Alice** and **Bob**, then **Bob** leave that meeting, after that `participant-left` event trigger and return the [participant object](/android/video-and-audio-calling-api-sdk/features/manage-participants#participant-object-properties)
+2. **participant-left** - Whenever any participant leave/exit the meeting, `participant-left` event will trigger.For example, the meeting is running with **Alice** and **Bob**, then **Bob** leave that meeting, after that `participant-left` event trigger and return the [participant object](/android/guide/video-and-audio-calling-api-sdk/features/manage-participants#participant-object-properties)
 
 3. **presenter-changed** - Whenever any participant present/screenshare their screen/window in meeting, `presenter-changed` event will trigger and return the presenter `participantId`.
 
-4. **stream-enabled** - Whenever any participant enabled mic/webcam in meeting, `stream-enabled` event will trigger and return [Stream Map](/android/video-and-audio-calling-api-sdk/features/manage-participants#streams-map-properties).
+4. **stream-enabled** - Whenever any participant enabled mic/webcam in meeting, `stream-enabled` event will trigger and return [Stream Map](/android/guide/video-and-audio-calling-api-sdk/features/manage-participants#streams-map-properties).
 
-5. **stream-disabled** - Whenever any participant disabled mic/webcam in meeting, `stream-disabled` event will trigger and return [Stream Map](/android/video-and-audio-calling-api-sdk/features/manage-participants#streams-map-properties).
+5. **stream-disabled** - Whenever any participant disabled mic/webcam in meeting, `stream-disabled` event will trigger and return [Stream Map](/android/guide/video-and-audio-calling-api-sdk/features/manage-participants#streams-map-properties).
 
 
 ```js
