@@ -40,7 +40,7 @@ function Overview() {
                   links={[
                     {
                       linkName: "Guide",
-                      link: "/docs/guide/prebuilt-video-and-audio-calling/getting-started",
+                      link: "/prebuilt/guide/prebuilt-video-and-audio-calling/getting-started",
                     },
                     {
                       linkName: "API reference",
