@@ -43,7 +43,6 @@
       "items": [
         "guide/video-and-audio-calling-api-sdk/features/play-external-video",
         "guide/video-and-audio-calling-api-sdk/features/go-live-social-media",
-        "guide/video-and-audio-calling-api-sdk/extras/react-native-ios-screen-share",
         "guide/video-and-audio-calling-api-sdk/features/switch-participant",
         {
           "type": "category",
@@ -60,6 +59,14 @@
           ],
           "collapsed": true
         }
+      ],
+      "collapsed": false
+    },
+    {
+      "type": "category",
+      "label": "Extras",
+      "items": [
+        "guide/video-and-audio-calling-api-sdk/extras/react-native-ios-screen-share"
       ],
       "collapsed": false
     }

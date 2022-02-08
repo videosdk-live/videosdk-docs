@@ -34,6 +34,7 @@ module.exports = {
     {
       type: "category",
       label: "ADVANCED FEATURES",
+      collapsed: false,
       items: [
         "guide/video-and-audio-calling-api-sdk/features/play-external-video",
         "guide/video-and-audio-calling-api-sdk/features/go-live-social-media",
@@ -51,7 +52,7 @@ module.exports = {
             "guide/video-and-audio-calling-api-sdk/features/connection/end-connection-meeting",
             "guide/video-and-audio-calling-api-sdk/features/connection/close-connection",
           ],
-          collapsed: true,
+          collapsed: false,
         },
       ],
     },
