@@ -2,24 +2,18 @@ module.exports = {
   guideAudioAndVideoCalling: [
     {
       type: "category",
-      label: "GUIDE",
-      items: ["guide/video-and-audio-calling-api-sdk/getting-started"],
-      collapsed: false,
-    },
-    {
-      type: "category",
-      label: "SETUP",
+      label: "QUICK START",
       items: [
+        "guide/video-and-audio-calling-api-sdk/getting-started",
         "guide/video-and-audio-calling-api-sdk/signup-and-create-api",
         "guide/video-and-audio-calling-api-sdk/javascript-sdk",
         "guide/video-and-audio-calling-api-sdk/server-setup",
-        // "guide/video-and-audio-calling-api-sdk/start-or-join-meeting",
       ],
       collapsed: false,
     },
     {
       type: "category",
-      label: "FEATURES",
+      label: "BASIC FEATURES",
       items: [
         // "guide/video-and-audio-calling-api-sdk/features/initilize-meeting-factory",
         "guide/video-and-audio-calling-api-sdk/features/start-join-meeting",
@@ -31,10 +25,18 @@ module.exports = {
         "guide/video-and-audio-calling-api-sdk/features/toggle-participant-media",
         "guide/video-and-audio-calling-api-sdk/features/send-messages",
         "guide/video-and-audio-calling-api-sdk/features/record-meeting",
-        "guide/video-and-audio-calling-api-sdk/features/play-external-video",
-        "guide/video-and-audio-calling-api-sdk/features/go-live-social-media",
         "guide/video-and-audio-calling-api-sdk/features/speaker-indication",
         "guide/video-and-audio-calling-api-sdk/features/pin-participants",
+        "guide/video-and-audio-calling-api-sdk/features/error-event",
+      ],
+      collapsed: false,
+    },
+    {
+      type: "category",
+      label: "ADVANCED FEATURES",
+      items: [
+        "guide/video-and-audio-calling-api-sdk/features/play-external-video",
+        "guide/video-and-audio-calling-api-sdk/features/go-live-social-media",
         "guide/video-and-audio-calling-api-sdk/features/switch-participant",
         {
           type: "category",
@@ -51,9 +53,7 @@ module.exports = {
           ],
           collapsed: true,
         },
-        "guide/video-and-audio-calling-api-sdk/features/error-event",
       ],
-      collapsed: false,
     },
   ],
   apiSidebar: [
@@ -62,11 +62,11 @@ module.exports = {
       label: "SDK REFERENCE",
       collapsed: false,
       items: [
-            "api/sdk-reference/setup",
-            "api/sdk-reference/meeting-class",
-            "api/sdk-reference/participant-class",
-            "api/sdk-reference/stream-class",
+        "api/sdk-reference/setup",
+        "api/sdk-reference/meeting-class",
+        "api/sdk-reference/participant-class",
+        "api/sdk-reference/stream-class",
       ],
     },
-  ]
+  ],
 };

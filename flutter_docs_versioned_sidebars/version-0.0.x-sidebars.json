@@ -4,14 +4,7 @@
       "type": "category",
       "label": "GUIDE",
       "items": [
-        "guide/video-and-audio-calling-api-sdk/getting-started"
-      ],
-      "collapsed": false
-    },
-    {
-      "type": "category",
-      "label": "SETUP",
-      "items": [
+        "guide/video-and-audio-calling-api-sdk/getting-started",
         "guide/video-and-audio-calling-api-sdk/signup-and-create-api",
         "guide/video-and-audio-calling-api-sdk/flutter-sdk",
         "guide/video-and-audio-calling-api-sdk/server-setup"
@@ -20,7 +13,7 @@
     },
     {
       "type": "category",
-      "label": "FEATURES",
+      "label": "BASIC FEATURES",
       "items": [
         "guide/video-and-audio-calling-api-sdk/features/start-join-meeting",
         "guide/video-and-audio-calling-api-sdk/features/manage-participants",
@@ -31,6 +24,14 @@
         "guide/video-and-audio-calling-api-sdk/features/record-meeting",
         "guide/video-and-audio-calling-api-sdk/features/go-live-social-media",
         "guide/video-and-audio-calling-api-sdk/features/speaker-indication"
+      ],
+      "collapsed": false
+    },
+    {
+      "type": "category",
+      "label": "ADVANCED FEATURES",
+      "items": [
+        "guide/video-and-audio-calling-api-sdk/features/go-live-social-media"
       ],
       "collapsed": false
     }
