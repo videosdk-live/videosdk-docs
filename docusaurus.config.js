@@ -81,29 +81,24 @@ module.exports = {
           label: "API Reference",
           items: [
             {
-              label: "Sign-Up and Create API",
-              to: "react/api/sdk-reference/setup",
-              activeBaseRegex: "/*/api/sdk-reference/*",
-            },
-            {
               label: "Custom SDK References",
               to: "react/api/sdk-reference/setup",
               activeBaseRegex: "/*/api/sdk-reference/*",
             },
             {
               label: "Realtime communication",
-              to: "docs/realtime-communication/intro",
-              activeBaseRegex: "docs/realtime-communication/*",
+              to: "docs/api-reference/realtime-communication/intro",
+              activeBaseRegex: "docs/api-reference/realtime-communication/*",
             },
             {
               label: "Live streaming",
-              to: "docs/live-streaming/intro",
-              activeBaseRegex: "docs/live-streaming/*",
+              to: "docs/api-reference/live-streaming/intro",
+              activeBaseRegex: "docs/api-reference/live-streaming/*",
             },
             {
               label: "Video On Demand",
-              to: "docs/video-on-demand/intro",
-              activeBaseRegex: "docs/video-on-demand/*",
+              to: "docs/api-reference/video-on-demand/intro",
+              activeBaseRegex: "docs/api-reference/video-on-demand/*",
             },
           ],
         },
@@ -156,11 +151,11 @@ module.exports = {
             },
             {
               label: "Prebuilt Video & Audio Calling",
-              href: "/docs/guide/prebuilt-video-and-audio-calling/getting-started",
+              href: "/react/guide/prebuilt-video-and-audio-calling/getting-started",
             },
             {
               label: "Custom Video & Audio Calling",
-              href: "/docs/overview/live-streaming/introduction",
+              href: "/react/overview/live-streaming/introduction",
             },
             {
               label: "Standard Live Streaming",
@@ -177,15 +172,15 @@ module.exports = {
           items: [
             {
               label: "Realtime Communication",
-              to: "/docs/realtime-communication/intro",
+              to: "/docs/api-reference/realtime-communication/intro",
             },
             {
               label: "Live Streaming",
-              to: "docs/live-streaming/intro",
+              to: "docs/api-reference/live-streaming/intro",
             },
             {
               label: "Video On Demand",
-              to: "/docs/video-on-demand/intro",
+              to: "/docs/api-reference/video-on-demand/intro",
             },
           ],
         },

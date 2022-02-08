@@ -406,9 +406,10 @@ article header {
   height: 50px;
 } */
 .navbar__logo {
-  height: auto;
+
+  height: 52px;
   max-width: 250px;
-  padding-top: 0.5rem;
+  
 }
 
 a[class^="sidebarLogo_"] img {

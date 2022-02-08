@@ -18,10 +18,12 @@ export default function SidebarDropdowns() {
 
   function routingSDK(e) {
     setSDK(e.target.value);
+    var currentPath = location.pathname;
     history.push(
         "/" +
-        e.target.value +
-        "/guide/video-and-audio-calling-api-sdk/getting-started"
+      e.target.value +
+      (currentPath.split("/")[e.target.value == versionList[0]?2:3]== "guide" ? 
+        "/guide/video-and-audio-calling-api-sdk/getting-started" : "/api/sdk-reference/setup")
     );
   }
 
