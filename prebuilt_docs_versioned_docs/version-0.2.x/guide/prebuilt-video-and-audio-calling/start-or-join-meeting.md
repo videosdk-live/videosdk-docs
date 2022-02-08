@@ -1,10 +1,10 @@
 ---
-title: Get Started with Video & Audio Call - Video SDK Documentation
+title: Getting Started with Video & Audio Calling
 hide_title: false
 hide_table_of_contents: false
-description: Video SDK enables the opportunity to integrate native IOS, Android & Web SDKs to add live video & audio conferencing to your applications.
-sidebar_label: Getting Started
-pagination_label: Getting Started
+description: video & audio calling sdk will help you to integrate video & audio calling in your application.
+sidebar_label: Start or Join Meeting
+pagination_label: Getting Started Video & Audio Calling
 keywords:
   - audio calling
   - video calling
@@ -12,43 +12,50 @@ keywords:
   - collabration
 image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
-slug: getting-started
+slug: start-or-join-meeting
 ---
 
 import Mermaid from '@theme/Mermaid';
 
-# Video / Audio Getting started
+# Explore video & audio calling
 
 This guide will get you running with the VideoSDK video & audio calling in minutes.
 
 ## Overview
 
-At it's core, VideoSDK RTC is a distributed SFU(Selective Forwarding Unit). It eanbles highly scalable video & audio meetings unlike vanilla webRTC.
+At it's core, VideoSDK RTC is a distributed SFU. It eanbles highly scalable video & audio meetings unlike vanilla webRTC.
 
 VideoSDK enables opportunity to integrate video & audio calling to Web, Android, IOS applications. it provides Programmable SDKs and REST APIs to build up scalable video conferencing applications.
 
-## Steps
+## Terminology
 
-import Card from '@theme/Card';
+#### **Meeting**
 
-<div class="container guide-steps-block">
-  <div class="row ">
-    <div class="col col--6">
-      <Card heading="1. Signup & Create API Key" link="/react/guide/video-and-audio-calling-api-sdk/signup-and-create-api" description="Generate Your API Key" />
-    </div>
-     <div class="col col--6">
-      <Card heading="2. Client Setup" link="/react/guide/video-and-audio-calling-api-sdk/supported-platforms" description="SDK Integration with client" />
-    </div>
-  </div>
-   <div class="row ">
-   <div class="col col--6" >
-      <Card heading="3. Server Setup" link="/react/guide/video-and-audio-calling-api-sdk/server-setup" description="Integrate server with API key"  />
-    </div>
-    <div class="col col--6">
-      <Card heading="4. Start or Join Meeting" link="/react/guide/video-and-audio-calling-api-sdk/features/start-join-meeting" description="Enter in Meeting" />
-    </div>
-  </div>
-</div>
+A Meeting represents real-time audio, video, and/or screen-share session, and is the basic building block for media sharing among participants.
+
+#### **Participants**
+
+Participants are the client applications that are connected to a Meeting and shares video & audio media with one another.
+
+#### **Local Participant**
+
+Local Participant producing audio or video stream from the local client's media sources
+
+#### **Streams**
+
+Streams are indiviual video & audio streams produced by the participants in the meeting
+
+#### **Active Speaker**
+
+Active Speaker represents the participant who is currently producing highest decibels audio stream (in other words speaking)
+
+#### **Active Presenter**
+
+Active Presenter is the participant who is currently sharing his/her screen as a video stream
+
+#### **Main participant**
+
+Main Participant represents the client who shall be displayed on the main screen indicating that he/she is either presenting or speaking
 
 ## Architecture
 

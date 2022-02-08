@@ -81,6 +81,11 @@ module.exports = {
           label: "API Reference",
           items: [
             {
+              label: "Sign-Up and Create API",
+              to: "react/api/sdk-reference/setup",
+              activeBaseRegex: "/*/api/sdk-reference/*",
+            },
+            {
               label: "Custom SDK References",
               to: "react/api/sdk-reference/setup",
               activeBaseRegex: "/*/api/sdk-reference/*",

@@ -27,15 +27,15 @@ import Card from '@theme/Card';
 <div class="container guide-steps-block">
   <div class="row ">
     <div class="col col--6">
-      <Card heading="1. Signup & Create API Key" link="/docs/guide/prebuilt-video-and-audio-calling/signup-and-create-api" description="Generate Your API Key" />
+      <Card heading="1. Signup & Create API Key" link="/prebuilt/guide/prebuilt-video-and-audio-calling/signup-and-create-api" description="Generate Your API Key" />
     </div>
     <div class="col col--6" >
-      <Card heading="2. Client Setup" link="/docs/guide/prebuilt-video-and-audio-calling/using-script" description="Integrate Prebuilt with API key"  />
+      <Card heading="2. Client Setup" link="/prebuilt/guide/prebuilt-video-and-audio-calling/using-script" description="Integrate Prebuilt with API key"  />
     </div>
   </div>
   <div class="row " >
     <div class="col col--6">
-      <Card heading="3. Customize Prebuilt" link="/docs/guide/prebuilt-video-and-audio-calling/features/join-screen" description="Start with customizing the Join screen" />
+      <Card heading="3. Customize Prebuilt" link="/prebuilt/guide/prebuilt-video-and-audio-calling/features/join-screen" description="Start with customizing the Join screen" />
     </div>
     
   </div>
