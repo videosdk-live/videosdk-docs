@@ -6,13 +6,13 @@ import flutter_versions from "../../flutter_docs_versions.json";
 import ios_versions from "../../ios_docs_versions.json";
 import javascript_versions from "../../javascript_docs_versions.json";
 import prebuilt_versions from "../../prebuilt_docs_versions.json";
-import BrowserOnly from "@docusaurus/BrowserOnly";
 import { useLocation, useHistory } from "@docusaurus/router";
 
 export default function SidebarDropdowns() {
   const [sdk, setSDK] = useState();
   const [version, setVersion] = useState("");
   const [versionList, setVersionList] = useState([]);
+  const [viewType, setViewType] = useState();
   const location = useLocation();
   const history = useHistory();
 
@@ -46,8 +46,10 @@ export default function SidebarDropdowns() {
     var currentVersion = location.pathname.split("/")[2];
     if (currentVersion.match("([0-9])+.([0-9])+.([0-9]|[a-z])+")) {
       setVersion(currentVersion);
+      setViewType(location.pathname.split("/")[3])
     } else {
       setVersion(versionList[0]);
+      setViewType(location.pathname.split("/")[2])
     }
   }, [versionList]);
 
@@ -73,12 +75,13 @@ export default function SidebarDropdowns() {
 
   return (
     <div className="row">
-      {sdk != "docs" && sdk != "prebuilt" ? (
+      {(sdk != "docs" && sdk != "prebuilt") || viewType == "api"? (
         <select
           onChange={routingSDK}
           value={sdk}
           className="col dropdown--hoverable"
         >
+          {viewType =="api" ?<option value="prebuilt">Prebuilt</option>:null }
           <option value="react">React</option>
           <option value="javascript">JS</option>
           <option value="react-native">React Native</option>
