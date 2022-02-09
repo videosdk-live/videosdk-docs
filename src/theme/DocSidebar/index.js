@@ -77,7 +77,7 @@ function DocSidebarDesktop({ path, sidebar, onCollapse, isHidden }) {
       {hideOnScroll && <Logo tabIndex={-1} className={styles.sidebarLogo} />}
 
       <nav
-        className={clsx("menu thin-scrollbar", styles.menu, {
+        className={clsx("menu", styles.menu, {
           [styles.menuWithAnnouncementBar]: showAnnouncementBar,
         })}
       >

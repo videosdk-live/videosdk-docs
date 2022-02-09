@@ -25,7 +25,7 @@
         "guide/video-and-audio-calling-api-sdk/features/go-live-social-media",
         "guide/video-and-audio-calling-api-sdk/features/speaker-indication"
       ],
-      "collapsed": false
+      "collapsed": true
     },
     {
       "type": "category",
@@ -33,14 +33,14 @@
       "items": [
         "guide/video-and-audio-calling-api-sdk/features/go-live-social-media"
       ],
-      "collapsed": false
+      "collapsed": true
     }
   ],
   "apiSidebar": [
     {
       "type": "category",
       "label": "SDK REFERENCE",
-      "collapsed": false,
+      "collapsed": true,
       "items": [
         "api/sdk-reference/setup",
         "api/sdk-reference/meeting-builder-widget",

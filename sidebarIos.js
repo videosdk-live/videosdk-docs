@@ -9,7 +9,7 @@ module.exports = {
         "guide/video-and-audio-calling-api-sdk/ios-sdk",
         "guide/video-and-audio-calling-api-sdk/server-setup",
       ],
-      collapsed: false,
+      collapsed: true,
     },
     {
       type: "category",
@@ -24,7 +24,7 @@ module.exports = {
         "guide/video-and-audio-calling-api-sdk/features/record-meeting",
         "guide/video-and-audio-calling-api-sdk/features/speaker-indication",
       ],
-      collapsed: false,
+      collapsed: true,
     },
     {
       type: "category",
@@ -32,14 +32,14 @@ module.exports = {
       items: [
         "guide/video-and-audio-calling-api-sdk/features/go-live-social-media",
       ],
-      collapsed: false,
+      collapsed: true,
     },
   ],
   apiSidebar: [
     {
       type: "category",
       label: "SDK REFERENCE",
-      collapsed: false,
+      collapsed: true,
       items: [
             "api/sdk-reference/setup",
             "api/sdk-reference/video-sdk-class",

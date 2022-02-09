@@ -28,7 +28,7 @@
         "guide/video-and-audio-calling-api-sdk/features/pin-participants",
         "guide/video-and-audio-calling-api-sdk/features/error-event"
       ],
-      "collapsed": false
+      "collapsed": true
     },
     {
       "type": "category",
@@ -59,7 +59,7 @@
     {
       "type": "category",
       "label": "SDK REFERENCE",
-      "collapsed": false,
+      "collapsed": true,
       "items": [
         "api/sdk-reference/setup",
         "api/sdk-reference/use-meeting",

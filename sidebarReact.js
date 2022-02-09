@@ -9,7 +9,7 @@ module.exports = {
         "guide/video-and-audio-calling-api-sdk/react-js-sdk",
         "guide/video-and-audio-calling-api-sdk/server-setup",
       ],
-      collapsed: false,
+      collapsed: true,
     },
     {
       type: "category",
@@ -28,7 +28,7 @@ module.exports = {
         "guide/video-and-audio-calling-api-sdk/features/pin-participants",
         "guide/video-and-audio-calling-api-sdk/features/error-event",
       ],
-      collapsed: false,
+      collapsed: true,
     },
     {
       type: "category",
@@ -50,17 +50,17 @@ module.exports = {
             "guide/video-and-audio-calling-api-sdk/features/connection/end-connection-meeting",
             "guide/video-and-audio-calling-api-sdk/features/connection/close-connection",
           ],
-          collapsed: false,
+          collapsed: true,
         },
       ],
-      collapsed: false,
+      collapsed: true,
     },
   ],
   apiSidebar: [
     {
       type: "category",
       label: "SDK REFERENCE",
-      collapsed: false,
+      collapsed: true,
       items: [
             "api/sdk-reference/setup",
             "api/sdk-reference/use-meeting",

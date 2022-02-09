@@ -1,0 +1,41 @@
+
+::-webkit-scrollbar {
+  width: 3px;
+  height: 3px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: slategrey;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(154, 158, 161);
+}
+.menu__list-item-collapsible .menu__link:hover, .menu__list-item-collapsible .menu__link--active{
+    background: #6A65F1 !important;
+    color: #ffffff;
+}
+
+.menu__link--active::after{
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20version%3D%221.1%22%20%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%3E%0A%20%20%20%3Cpath%20fill%3D%22%23ffffff%22%20d%3D%22M7.41%2C15.41L12%2C10.83L16.59%2C15.41L18%2C14L12%2C8L6%2C14L7.41%2C15.41Z%22%20%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.menu > ul.menu__list .menu__link {
+  font-weight: 700;
+}
+
+.menu > ul.menu__list ul.menu__list .menu__link {
+  font-weight: 500;
+}
+
+.menu > ul.menu__list ul.menu__list ul.menu__list .menu__link {
+  font-weight: 400;
+}
+
+.markdown li + li{
+  color: #a5a5a5;
+}

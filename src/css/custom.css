@@ -15,7 +15,7 @@
   src: url(/fonts/custom/CustomFont-Medium.woff2) format("woff2"),
     url(/fonts/custom/CustomFont-Medium.woff) format("woff");
   font-weight: 500;
-  font-style: normal;
+  font-style: bold;
 }
 
 /* mono font */
@@ -244,11 +244,11 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #ef4444;
+  background: slategrey;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #ef4444;
+  background: rgb(154, 158, 161);
 }
 
 :root[data-theme="light"] .navbar__logo.logo--dark,

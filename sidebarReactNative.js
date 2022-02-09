@@ -18,7 +18,7 @@ module.exports = {
         "guide/video-and-audio-calling-api-sdk/server-setup",
         // "guide/video-and-audio-calling-api-sdk/start-or-join-meeting",
       ],
-      collapsed: false,
+      collapsed: true,
     },
     {
       type: "category",
@@ -57,11 +57,11 @@ module.exports = {
             "guide/video-and-audio-calling-api-sdk/features/connection/end-connection-meeting",
             "guide/video-and-audio-calling-api-sdk/features/connection/close-connection",
           ],
-          collapsed: false,
+          collapsed: true,
         },
         "guide/video-and-audio-calling-api-sdk/features/error-event",
       ],
-      collapsed: false,
+      collapsed: true,
     },
     {
       type: "category",
@@ -69,14 +69,14 @@ module.exports = {
       items: [
         "guide/video-and-audio-calling-api-sdk/extras/react-native-ios-screen-share",
       ],
-      collapsed: false,
+      collapsed: true,
     },
   ],
   apiSidebar: [
     {
       type: "category",
       label: "SDK REFERENCE",
-      collapsed: false,
+      collapsed: true,
       items: [
         "api/sdk-reference/setup",
         "api/sdk-reference/setup-android",

@@ -9,7 +9,7 @@ module.exports = {
         "guide/video-and-audio-calling-api-sdk/javascript-sdk",
         "guide/video-and-audio-calling-api-sdk/server-setup",
       ],
-      collapsed: false,
+      collapsed: true,
     },
     {
       type: "category",
@@ -29,12 +29,12 @@ module.exports = {
         "guide/video-and-audio-calling-api-sdk/features/pin-participants",
         "guide/video-and-audio-calling-api-sdk/features/error-event",
       ],
-      collapsed: false,
+      collapsed: true,
     },
     {
       type: "category",
       label: "ADVANCED FEATURES",
-      collapsed: false,
+      collapsed: true,
       items: [
         "guide/video-and-audio-calling-api-sdk/features/play-external-video",
         "guide/video-and-audio-calling-api-sdk/features/go-live-social-media",
@@ -52,7 +52,7 @@ module.exports = {
             "guide/video-and-audio-calling-api-sdk/features/connection/end-connection-meeting",
             "guide/video-and-audio-calling-api-sdk/features/connection/close-connection",
           ],
-          collapsed: false,
+          collapsed: true,
         },
       ],
     },
@@ -61,7 +61,7 @@ module.exports = {
     {
       type: "category",
       label: "SDK REFERENCE",
-      collapsed: false,
+      collapsed: true,
       items: [
         "api/sdk-reference/setup",
         "api/sdk-reference/meeting-class",

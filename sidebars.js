@@ -23,7 +23,7 @@ module.exports = {
         "overview/dashboard/getting-started",
         //"overview/dashboard/features"
       ],
-      collapsed: false,
+      collapsed: true,
     },
     {
       type: "category",
@@ -32,7 +32,7 @@ module.exports = {
         "overview/video-and-audio-calling-api-sdk/getting-started",
         "overview/video-and-audio-calling-api-sdk/architecture",
       ],
-      collapsed: false,
+      collapsed: true,
     },
     {
       type: "category",
@@ -41,7 +41,7 @@ module.exports = {
         "overview/interactive-live-streaming/getting-started",
         "overview/interactive-live-streaming/architecture",
       ],
-      collapsed: false,
+      collapsed: true,
     },
     // {
     //   type: "category",
@@ -50,7 +50,7 @@ module.exports = {
     //     "overview/real-time-communication/introduction",
     //     // "overview/real-time-communication/features",
     //   ],
-    //   collapsed: false,
+    //   collapsed: true,
     // },
     {
       type: "category",
@@ -61,7 +61,7 @@ module.exports = {
         "overview/live-streaming/getting-started",
         "overview/live-streaming/architecture",
       ],
-      collapsed: false,
+      collapsed: true,
     },
     {
       type: "category",
@@ -72,7 +72,7 @@ module.exports = {
         "overview/video-on-demand/getting-started",
         "overview/video-on-demand/architecture",
       ],
-      collapsed: false,
+      collapsed: true,
     },
   ],
 
@@ -82,7 +82,7 @@ module.exports = {
       type: "category",
       label: "GUIDE",
       items: ["guide/dashboard/getting-started"],
-      collapsed: false,
+      collapsed: true,
     },
     // {
     //   type: "category",
@@ -97,7 +97,7 @@ module.exports = {
     //     "guide/dashboard/profile-and-billing",
     //     "guide/dashboard/start-tour-and-quick-start",
     //   ],
-    //   collapsed: false,
+    //   collapsed: true,
     // },
     // {
     //   type: "category",
@@ -106,7 +106,7 @@ module.exports = {
     //     "guide/dashboard/create-api-key",
     //     "guide/dashboard/domain-whitelisting",
     //   ],
-    //   collapsed: false,
+    //   collapsed: true,
     // },
   ],
 
@@ -115,7 +115,7 @@ module.exports = {
       type: "category",
       label: "GUIDE",
       items: ["guide/prebuilt-video-and-audio-calling/getting-started"],
-      collapsed: false,
+      collapsed: true,
     },
     {
       type: "category",
@@ -129,10 +129,10 @@ module.exports = {
             "guide/prebuilt-video-and-audio-calling/using-script",
             "guide/prebuilt-video-and-audio-calling/using-npm",
           ],
-          collapsed: false,
+          collapsed: true,
         },
       ],
-      collapsed: false,
+      collapsed: true,
     },
     {
       type: "category",
@@ -156,7 +156,7 @@ module.exports = {
         "guide/prebuilt-video-and-audio-calling/features/left-screen",
         "guide/prebuilt-video-and-audio-calling/features/debug-mode",
       ],
-      collapsed: false,
+      collapsed: true,
     },
   ],
 
@@ -165,7 +165,7 @@ module.exports = {
       type: "category",
       label: "GUIDE",
       items: ["guide/video-and-audio-calling-api-sdk/getting-started"],
-      collapsed: false,
+      collapsed: true,
     },
     {
       type: "category",
@@ -190,7 +190,7 @@ module.exports = {
         "guide/video-and-audio-calling-api-sdk/server-setup",
         // "guide/video-and-audio-calling-api-sdk/start-or-join-meeting",
       ],
-      collapsed: false,
+      collapsed: true,
     },
     {
       type: "category",
@@ -228,7 +228,7 @@ module.exports = {
         },
         "guide/video-and-audio-calling-api-sdk/features/error-event",
       ],
-      collapsed: false,
+      collapsed: true,
     },
     {
       type: "category",
@@ -236,7 +236,7 @@ module.exports = {
       items: [
         "guide/video-and-audio-calling-api-sdk/extras/react-native-ios-screen-share",
       ],
-      collapsed: false,
+      collapsed: true,
     },
   ],
 
@@ -245,7 +245,7 @@ module.exports = {
       type: "category",
       label: "GUIDE",
       items: ["guide/standard-live-streaming-api-sdk/getting-started"],
-      collapsed: false,
+      collapsed: true,
     },
     {
       type: "category",
@@ -254,7 +254,7 @@ module.exports = {
         "guide/standard-live-streaming-api-sdk/signup-and-create-api",
         "guide/standard-live-streaming-api-sdk/authentication",
       ],
-      collapsed: false,
+      collapsed: true,
     },
     {
       type: "category",
@@ -269,7 +269,7 @@ module.exports = {
         "guide/standard-live-streaming-api-sdk/features/get-live-stream-details",
         "guide/standard-live-streaming-api-sdk/features/update-live-stream",
       ],
-      collapsed: false,
+      collapsed: true,
     },
   ],
 
@@ -278,7 +278,7 @@ module.exports = {
       type: "category",
       label: "GUIDE",
       items: ["guide/video-on-demand/getting-started"],
-      collapsed: false,
+      collapsed: true,
     },
     {
       type: "category",
@@ -287,7 +287,7 @@ module.exports = {
         "guide/video-on-demand/signup-and-create-api",
         "guide/video-on-demand/authentication",
       ],
-      collapsed: false,
+      collapsed: true,
     },
     {
       type: "category",
@@ -302,7 +302,7 @@ module.exports = {
             "guide/video-on-demand/features/get-file-details",
             "guide/video-on-demand/features/delete-file",
           ],
-          collapsed: false,
+          collapsed: true,
         },
         {
           type: "category",
@@ -313,12 +313,12 @@ module.exports = {
             "guide/video-on-demand/features/get-encoding-job-details",
             "guide/video-on-demand/features/delete-encoding-job",
           ],
-          collapsed: false,
+          collapsed: true,
         },
         "guide/video-on-demand/features/play-video",
       ],
 
-      collapsed: false,
+      collapsed: true,
     },
   ],
 
@@ -330,7 +330,7 @@ module.exports = {
         "api-reference/realtime-communication/intro",
         "api-reference/realtime-communication/architecture",
       ],
-      collapsed: false,
+      collapsed: true,
     },
 
     {
@@ -345,7 +345,7 @@ module.exports = {
         {
           type: "category",
           label: "Sessions",
-          collapsed: false,
+          collapsed: true,
           items: [
             "api-reference/realtime-communication/list-meeting-sessions",
             "api-reference/realtime-communication/get-session-details",
@@ -356,7 +356,7 @@ module.exports = {
         {
           type: "category",
           label: "Recordings",
-          collapsed: false,
+          collapsed: true,
           items: [
             "api-reference/realtime-communication/auth",
             "api-reference/realtime-communication/create-join-meeting",
@@ -365,7 +365,7 @@ module.exports = {
             {
               type: "category",
               label: "Sessions",
-              collapsed: false,
+              collapsed: true,
               items: [
                 "api-reference/realtime-communication/list-meeting-sessions",
                 "api-reference/realtime-communication/get-session-details",
@@ -376,7 +376,7 @@ module.exports = {
             {
               type: "category",
               label: "Recordings",
-              collapsed: false,
+              collapsed: true,
               items: [
                 "api-reference/realtime-communication/list-recordings",
                 "api-reference/realtime-communication/get-recording-details",
@@ -386,12 +386,12 @@ module.exports = {
           ],
         },
       ],
-      collapsed: false,
+      collapsed: true,
     },
     // {
     //   type: "category",
     //   label: "SDK REFERENCE",
-    //   collapsed: false,
+    //   collapsed: true,
     //   items: [
     //     {
     //       type: "category",
@@ -497,7 +497,7 @@ module.exports = {
         //"api-reference/realtime-communication/see-also/demos",
         //"api-reference/realtime-communication/see-also/hippa-healthcare",
       ],
-      collapsed: false,
+      collapsed: true,
     },
   ],
 
@@ -506,7 +506,7 @@ module.exports = {
       type: "category",
       label: "LIVE STREAMING",
       items: ["api-reference/live-streaming/intro"],
-      collapsed: false,
+      collapsed: true,
     },
     /*{
       type: "category",
@@ -515,13 +515,13 @@ module.exports = {
         "api-reference/live-streaming/get-started/features",
         "api-reference/live-streaming/get-started/live-streaming-with-rest-api",
       ],
-      collapsed: false,
+      collapsed: true,
     },
     {
       type: "category",
       label: "TUTORIALS",
       items: ["api-reference/live-streaming/tutorials/live-streaming-tutorial"],
-      collapsed: false,
+      collapsed: true,
     },*/
 
     {
@@ -535,7 +535,7 @@ module.exports = {
         "api-reference/live-streaming/update-live-stream",
         "api-reference/live-streaming/delete-live-stream",
       ],
-      collapsed: false,
+      collapsed: true,
     },
   ],
 
@@ -544,7 +544,7 @@ module.exports = {
       type: "category",
       label: "VIDEO ON DEMAND",
       items: ["api-reference/video-on-demand/intro"],
-      collapsed: false,
+      collapsed: true,
     },
     {
       type: "category",
@@ -557,7 +557,7 @@ module.exports = {
         "api-reference/video-on-demand/storage-api-reference/get-file-details",
         "api-reference/video-on-demand/storage-api-reference/delete-file",
       ],
-      collapsed: false,
+      collapsed: true,
     },
     {
       type: "category",
@@ -569,7 +569,7 @@ module.exports = {
         "api-reference/video-on-demand/encoding-api-reference/get-encoding-job-details",
         "api-reference/video-on-demand/encoding-api-reference/delete-encoding-job",
       ],
-      collapsed: false,
+      collapsed: true,
     },
   ],
 
@@ -578,7 +578,7 @@ module.exports = {
       type: "category",
       label: "GET STARTED",
       items: ["tutorials/introduction"],
-      collapsed: false,
+      collapsed: true,
     },
     {
       type: "category",
@@ -587,7 +587,7 @@ module.exports = {
         {
           type: "category",
           label: "Quickstart",
-          collapsed: false,
+          collapsed: true,
           items: [
             "tutorials/realtime-communication/prebuilt-sdk/quickstart-prebuilt-js",
             "tutorials/realtime-communication/prebuilt-sdk/quickstart-prebuilt-wordpress",
@@ -595,7 +595,7 @@ module.exports = {
           ],
         },
       ],
-      collapsed: false,
+      collapsed: true,
     },
     {
       type: "category",
@@ -604,11 +604,11 @@ module.exports = {
         {
           type: "category",
           label: "Quickstart",
-          collapsed: false,
+          collapsed: true,
           items: ["tutorials/live-streaming/api/quickstart-rest-api"],
         },
       ],
-      collapsed: false,
+      collapsed: true,
     },
     {
       type: "category",
@@ -617,11 +617,11 @@ module.exports = {
         {
           type: "category",
           label: "Quickstart",
-          collapsed: false,
+          collapsed: true,
           items: ["tutorials/video-on-demand/api/quickstart-rest-api"],
         },
       ],
-      collapsed: false,
+      collapsed: true,
     },
   ],
 
@@ -630,7 +630,7 @@ module.exports = {
   //     type: "category",
   //     label: "RESOURCES",
   //     items: ["resources/overview"],
-  //     collapsed: false,
+  //     collapsed: true,
   //   },
   //   {
   //     type: "category",
@@ -647,7 +647,7 @@ module.exports = {
   //           "resources/code-samples/real-time-communication/vue-prebuilt-sdk",
   //           "resources/code-samples/real-time-communication/android-prebuilt-sdk",
   //         ],
-  //         collapsed: false,
+  //         collapsed: true,
   //       },
   //       {
   //         type: "category",
@@ -659,7 +659,7 @@ module.exports = {
   //           "resources/code-samples/real-time-communication/react-native-sdk",
   //           "resources/code-samples/real-time-communication/android-sdk",
   //         ],
-  //         collapsed: false,
+  //         collapsed: true,
   //       },
   //       {
   //         type: "category",
@@ -670,7 +670,7 @@ module.exports = {
   //           "resources/code-samples/live-streaming/live-streaming-react",
   //           "resources/code-samples/live-streaming/live-streaming-react-native",
   //         ],
-  //         collapsed: false,
+  //         collapsed: true,
   //       },
   //       {
   //         type: "category",
@@ -680,10 +680,10 @@ module.exports = {
   //           "resources/code-samples/video-on-demand/react-js-sdk",
   //           "resources/code-samples/video-on-demand/react-native-sdk",
   //         ],
-  //         collapsed: false,
+  //         collapsed: true,
   //       },
   //     ],
-  //     collapsed: false,
+  //     collapsed: true,
   //   },
   // ],
 };
