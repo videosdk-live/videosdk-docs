@@ -44,7 +44,7 @@ function Overview() {
                     },
                     {
                       linkName: "API reference",
-                      link: "/docs/realtime-communication/sdk-reference/prebuilt-sdk-js/setup",
+                      link: "/prebuilt/api/sdk-reference/setup",
                     },
                     {
                       linkName: "Tutorial",
@@ -96,7 +96,7 @@ function Overview() {
                     },
                     {
                       linkName: "API reference",
-                      link: "/docs/live-streaming/intro",
+                      link: "/docs/api-reference/live-streaming/intro",
                     },
                     {
                       linkName: "Tutorial",
@@ -121,7 +121,7 @@ function Overview() {
                     },
                     {
                       linkName: "API reference",
-                      link: "/docs/video-on-demand/intro",
+                      link: "/docs/api-reference/video-on-demand/intro",
                     },
                     {
                       linkName: "Tutorial",

@@ -20,11 +20,10 @@ export default function SidebarDropdowns() {
     setSDK(e.target.value);
     var currentPath = location.pathname;
     history.push(
-      "/" +
-        e.target.value +
-        (currentPath.split("/")[version == versionList[0] ? 2 : 3] == "guide"
-          ? "/guide/video-and-audio-calling-api-sdk/getting-started"
-          : "/api/sdk-reference/setup")
+        "/" +
+      e.target.value +
+      (currentPath.split("/")[version == versionList[0]?2:3]== "guide" ? 
+        "/guide/video-and-audio-calling-api-sdk/getting-started" : "/api/sdk-reference/setup")
     );
   }
 

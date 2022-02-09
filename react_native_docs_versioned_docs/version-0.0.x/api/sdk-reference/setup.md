@@ -48,5 +48,5 @@ yarn add @videosdk.live/react-native-sdk
 
 ## Follow below link if you are setting up for specific plateform
 
-1. [Android](/docs/realtime-communication/sdk-reference/react-native-sdk/setup-android)
-2. [IOS](/docs/realtime-communication/sdk-reference/react-native-sdk/setup-ios)
+1. [Android](/react-native/api/sdk-reference/setup-android)
+2. [IOS](/react-native/api/sdk-reference/setup-ios)

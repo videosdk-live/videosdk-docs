@@ -71,8 +71,8 @@ module.exports = {
             },
             {
               label: "Video on Demand API",
-              to: "docs/api-reference/video-on-demand/getting-started",
-              activeBaseRegex: "docs/api-reference/video-on-demand/*",
+              to: "docs/guide/video-on-demand/getting-started",
+              activeBaseRegex: "docs/guide/video-on-demand/*",
             },
           ],
         },
@@ -163,7 +163,7 @@ module.exports = {
             },
             {
               label: "Video On Demand",
-              href: "/docs/api-reference/video-on-demand/getting-started",
+              href: "/docs/guide/video-on-demand/getting-started",
             },
           ],
         },

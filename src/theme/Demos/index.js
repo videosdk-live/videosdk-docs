@@ -21,7 +21,7 @@ function Demos() {
                 <h5 className="title">Build with Video SDK</h5>
                 <ul className="links">
                   <li>
-                    <a href="/docs/realtime-communication/intro">
+                    <a href="/docs/api-reference/realtime-communication/intro">
                       Real Time Communication Quick Start
                     </a>
                   </li>
@@ -31,7 +31,7 @@ function Demos() {
                     </a>
                   </li>
                   <li>
-                    <a href="/docs/realtime-communication/intro">
+                    <a href="/docs/api-reference/realtime-communication/intro">
                       Real Time Messaging Quick Start
                     </a>
                   </li>

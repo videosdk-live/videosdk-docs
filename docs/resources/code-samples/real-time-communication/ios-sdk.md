@@ -25,4 +25,4 @@ $ git clone https://github.com/videosdk-live/videosdk-rtc-ios-sdk-example
 
 ## documentation
 
-For more information follow, [RTC IOS SDK documentation](/docs/realtime-communication/sdk-reference/ios-sdk/setup).
+For more information follow, [RTC IOS SDK documentation](/ios/api/sdk-reference/setup).

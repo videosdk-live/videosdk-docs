@@ -26,4 +26,4 @@ $ git clone https://github.com/videosdk-live/videosdk-rtc-vue-prebuilt-example
 
 ## documentation
 
-For more information follow, [RTC Prebuilt documentation](/docs/realtime-communication/sdk-reference/prebuilt-sdk-js/setup).
+For more information follow, [RTC Prebuilt documentation](/prebuilt/api/sdk-reference/setup).

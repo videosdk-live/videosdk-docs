@@ -75,4 +75,4 @@ You can perform below actions on recording section :
 
 ![Video SDK Home Dashboard](/img/dashboard/meeting-recording.png)
 
-The last section is for [API Reference](https://docs.videosdk.live/docs/realtime-communication/rest-api-reference/auth/) only.
+The last section is for [API Reference](https://docs.videosdk.live/docs/api-reference/realtime-communication/auth/) only.

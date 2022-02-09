@@ -25,4 +25,4 @@ $ git clone https://github.com/videosdk-live/videosdk-rtc-android-java-sdk-examp
 
 ## documentation
 
-For more information follow, [RTC Android SDK documentation](/docs/realtime-communication/sdk-reference/android-sdk/setup).
+For more information follow, [RTC Android SDK documentation](/android/api/sdk-reference/setup).

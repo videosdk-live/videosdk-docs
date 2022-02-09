@@ -17,19 +17,19 @@ const UseCaseBlocks = [
     title: "Real-time Class Brocasting",
     icon: "",
     text: "Scalable video api with high qulity API",
-    link: "/docs/realtime-communication/intro",
+    link: "/docs/api-reference/realtime-communication/intro",
   },
   {
     title: "Breakout Classrooms",
     icon: "",
     text: "Scalable video api with high qulity API",
-    link: "/docs/realtime-communication/intro",
+    link: "/docs/api-reference/realtime-communication/intro",
   },
   {
     title: "One-to-one Telehealth Consultancy",
     icon: "",
     text: "Ultra low latency with interactive participation.",
-    link: "/docs/realtime-communication/intro",
+    link: "/docs/api-reference/realtime-communication/intro",
   },
   {
     title: "On-demand Telehealth Training",

@@ -25,4 +25,4 @@ $ git clone https://github.com/videosdk-live/videosdk-rtc-react-native-sdk-examp
 
 ## documentation
 
-For more information follow, [RTC React Native documentation](/docs/realtime-communication/sdk-reference/react-native-sdk/setup).
+For more information follow, [RTC React Native documentation](/react-native/api/sdk-reference/setup).
