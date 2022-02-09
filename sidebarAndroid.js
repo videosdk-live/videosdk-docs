@@ -1,5 +1,6 @@
 module.exports = {
-  guideAudioAndVideoCalling: [
+  guideAudioAndVideoCalling:
+    [
     {
       type: "category",
       label: "QUICK START",
@@ -24,7 +25,7 @@ module.exports = {
         "guide/video-and-audio-calling-api-sdk/features/toggle-participant-media",
         "guide/video-and-audio-calling-api-sdk/features/record-meeting",
       ],
-      collapsed: false,
+      collapsed: true,
     },
     {
       type: "category",
@@ -39,7 +40,7 @@ module.exports = {
     {
       type: "category",
       label: "SDK REFERENCE",
-      collapsed: false,
+      collapsed: true,
       items: [
         "api/sdk-reference/setup",
         "api/sdk-reference/video-sdk-class",

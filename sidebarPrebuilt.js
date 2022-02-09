@@ -13,10 +13,10 @@ module.exports = {
             "guide/prebuilt-video-and-audio-calling/using-script",
             "guide/prebuilt-video-and-audio-calling/using-npm",
           ],
-          collapsed: false,
+          collapsed: true,
         },
       ],
-      collapsed: false,
+      collapsed: true,
     },
     {
       type: "category",
@@ -34,7 +34,7 @@ module.exports = {
         "guide/prebuilt-video-and-audio-calling/features/end-meeting",
         "guide/prebuilt-video-and-audio-calling/features/left-screen",
       ],
-      collapsed: false,
+      collapsed: true,
     },
     {
       type: "category",
@@ -47,14 +47,14 @@ module.exports = {
         "guide/prebuilt-video-and-audio-calling/features/whiteboard",
         "guide/prebuilt-video-and-audio-calling/features/debug-mode",
       ],
-      collapsed: false,
+      collapsed: true,
   },
 ],
   apiSidebar: [
     {
       type: "category",
       label: "SDK REFERENCE",
-      collapsed: false,
+      collapsed: true,
       items: ["api/sdk-reference/setup", "api/sdk-reference/video-sdk-meeting"],
     },
   ],
