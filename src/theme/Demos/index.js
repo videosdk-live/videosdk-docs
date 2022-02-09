@@ -26,7 +26,7 @@ function Demos() {
                     </a>
                   </li>
                   <li>
-                    <a href="/docs/realtime-communication/intro">
+                    <a href="/docs/api-reference/realtime-communication/intro">
                       Interactive Live Streaming Quick Start
                     </a>
                   </li>
@@ -36,12 +36,12 @@ function Demos() {
                     </a>
                   </li>
                   <li>
-                    <a href="/docs/live-streaming/intro">
+                    <a href="/docs/guide/standard-live-streaming-api-sdk/intro">
                       Standard Live Streaming Quick Start
                     </a>
                   </li>
                   <li>
-                    <a href="/docs/video-on-demand/intro">
+                    <a href="/docs/api-reference/video-on-demand/intro">
                       Video On Demand Quick Start
                     </a>
                   </li>

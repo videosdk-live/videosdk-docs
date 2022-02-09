@@ -333,37 +333,37 @@ module.exports = {
       collapsed: false,
     },
 
+    {
+      type: "category",
+      label: "REST API REFERENCE",
+      collapsed: true,
+      items: [
+        "api-reference/realtime-communication/rest-api-reference/auth",
+        "api-reference/realtime-communication/rest-api-reference/create-join-meeting",
+        "api-reference/realtime-communication/rest-api-reference/list-all-meetings",
+        "api-reference/realtime-communication/rest-api-reference/get-meeting-details",
         {
           type: "category",
-          label: "REST API REFERENCE",
-          collapsed: true,
+          label: "Sessions",
+          collapsed: false,
           items: [
-            "api-reference/realtime-communication/rest-api-reference/auth",
-            "api-reference/realtime-communication/rest-api-reference/create-join-meeting",
-            "api-reference/realtime-communication/rest-api-reference/list-all-meetings",
-            "api-reference/realtime-communication/rest-api-reference/get-meeting-details",
-            {
-              type: "category",
-              label: "Sessions",
-              collapsed: false,
-              items: [
-                "api-reference/realtime-communication/rest-api-reference/list-meeting-sessions",
-                "api-reference/realtime-communication/rest-api-reference/get-session-details",
-                "api-reference/realtime-communication/rest-api-reference/end-session",
-                "api-reference/realtime-communication/rest-api-reference/remove-participant",
-              ],
-            },
-            {
-              type: "category",
-              label: "Recordings",
-              collapsed: false,
-              items: [
-                "api-reference/realtime-communication/rest-api-reference/list-recordings",
-                "api-reference/realtime-communication/rest-api-reference/get-recording-details",
-                "api-reference/realtime-communication/rest-api-reference/remove-recording",
-              ],
-            },
+            "api-reference/realtime-communication/rest-api-reference/list-meeting-sessions",
+            "api-reference/realtime-communication/rest-api-reference/get-session-details",
+            "api-reference/realtime-communication/rest-api-reference/end-session",
+            "api-reference/realtime-communication/rest-api-reference/remove-participant",
           ],
+        },
+        {
+          type: "category",
+          label: "Recordings",
+          collapsed: false,
+          items: [
+            "api-reference/realtime-communication/rest-api-reference/list-recordings",
+            "api-reference/realtime-communication/rest-api-reference/get-recording-details",
+            "api-reference/realtime-communication/rest-api-reference/remove-recording",
+          ],
+        },
+      ],
       collapsed: false,
     },
     // {
@@ -501,21 +501,20 @@ module.exports = {
       items: ["api-reference/live-streaming/tutorials/live-streaming-tutorial"],
       collapsed: false,
     },*/
-    
-        {
-          type: "category",
-          label: "REST API REFERENCE",
-          items: [
-            "api-reference/live-streaming/api-reference/auth",
-            "api-reference/live-streaming/api-reference/create-live-stream",
-            "api-reference/live-streaming/api-reference/list-live-streams",
-            "api-reference/live-streaming/api-reference/get-live-stream",
-            "api-reference/live-streaming/api-reference/update-live-stream",
-            "api-reference/live-streaming/api-reference/delete-live-stream",
-          ],
-          collapsed: false,
-        },
-      
+
+    {
+      type: "category",
+      label: "REST API REFERENCE",
+      items: [
+        "api-reference/live-streaming/auth",
+        "api-reference/live-streaming/create-live-stream",
+        "api-reference/live-streaming/list-live-streams",
+        "api-reference/live-streaming/get-live-stream",
+        "api-reference/live-streaming/update-live-stream",
+        "api-reference/live-streaming/delete-live-stream",
+      ],
+      collapsed: false,
+    },
   ],
 
   videoondemandSidebar: [
@@ -525,30 +524,30 @@ module.exports = {
       items: ["api-reference/video-on-demand/intro"],
       collapsed: false,
     },
-        {
-          type: "category",
-          label: "STORAGE REST API REFERENCE",
-          items: [
-            "api-reference/video-on-demand/storage-api-reference/auth",
-            "api-reference/video-on-demand/storage-api-reference/create-new-url",
-            "api-reference/video-on-demand/storage-api-reference/upload-file",
-            "api-reference/video-on-demand/storage-api-reference/list-all-files",
-            "api-reference/video-on-demand/storage-api-reference/get-file-details",
-            "api-reference/video-on-demand/storage-api-reference/delete-file",
-          ],
-          collapsed: false,
-        },
-        {
-          type: "category",
-          label: "ENCODING REST API REFERENCE",
-          items: [
-            "api-reference/video-on-demand/encoding-api-reference/auth",
-            "api-reference/video-on-demand/encoding-api-reference/create-encoding-job",
-            "api-reference/video-on-demand/encoding-api-reference/list-all-encoding-jobs",
-            "api-reference/video-on-demand/encoding-api-reference/get-encoding-job-details",
-            "api-reference/video-on-demand/encoding-api-reference/delete-encoding-job",
-          ],
-          collapsed: false,
+    {
+      type: "category",
+      label: "STORAGE REST API REFERENCE",
+      items: [
+        "api-reference/video-on-demand/storage-api-reference/auth",
+        "api-reference/video-on-demand/storage-api-reference/create-new-url",
+        "api-reference/video-on-demand/storage-api-reference/upload-file",
+        "api-reference/video-on-demand/storage-api-reference/list-all-files",
+        "api-reference/video-on-demand/storage-api-reference/get-file-details",
+        "api-reference/video-on-demand/storage-api-reference/delete-file",
+      ],
+      collapsed: false,
+    },
+    {
+      type: "category",
+      label: "ENCODING REST API REFERENCE",
+      items: [
+        "api-reference/video-on-demand/encoding-api-reference/auth",
+        "api-reference/video-on-demand/encoding-api-reference/create-encoding-job",
+        "api-reference/video-on-demand/encoding-api-reference/list-all-encoding-jobs",
+        "api-reference/video-on-demand/encoding-api-reference/get-encoding-job-details",
+        "api-reference/video-on-demand/encoding-api-reference/delete-encoding-job",
+      ],
+      collapsed: false,
     },
   ],
 

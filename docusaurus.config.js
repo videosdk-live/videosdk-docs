@@ -71,8 +71,8 @@ module.exports = {
             },
             {
               label: "Video on Demand API",
-              to: "docs/guide/video-on-demand/getting-started",
-              activeBaseRegex: "docs/guide/video-on-demand/*",
+              to: "docs/api-reference/video-on-demand/getting-started",
+              activeBaseRegex: "docs/api-reference/video-on-demand/*",
             },
           ],
         },
@@ -151,11 +151,11 @@ module.exports = {
             },
             {
               label: "Prebuilt Video & Audio Calling",
-              href: "/react/guide/prebuilt-video-and-audio-calling/getting-started",
+              href: "/prebuilt/guide/prebuilt-video-and-audio-calling/getting-started",
             },
             {
               label: "Custom Video & Audio Calling",
-              href: "/react/overview/live-streaming/introduction",
+              href: "/react/guide/video-and-audio-calling-api-sdk/getting-started",
             },
             {
               label: "Standard Live Streaming",
@@ -163,7 +163,7 @@ module.exports = {
             },
             {
               label: "Video On Demand",
-              href: "/docs/guide/video-on-demand/getting-started",
+              href: "/docs/api-reference/video-on-demand/getting-started",
             },
           ],
         },
