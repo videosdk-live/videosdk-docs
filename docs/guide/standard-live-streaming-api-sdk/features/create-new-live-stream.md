@@ -148,7 +148,7 @@ puts response.read_body
   "record": false,
   "name": "videosdk",
   "streamKey": "eb175-5-4e5-60-aacfce300b",
-  "streamUrl": "rtmp://live.videosdk.live/live",
+  "streamUrl": "rtmp://live.videosdk.live/live/",
   "upstreamUrl": "rtmp://live.videosdk.live/live/...",
   "downstreamUrl": "https://live.videosdk.live/live/.../index.m3u8",
   "recordingUrl": "https://live.videosdk.live/live/.../storage/index.m3u8",

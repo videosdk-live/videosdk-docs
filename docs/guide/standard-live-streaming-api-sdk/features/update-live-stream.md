@@ -117,7 +117,7 @@ puts response.read_body
   "id": "6034a7dfa9cedd724c20cf67",
   "name": "Nickname for livestream",
   "streamKey": "d492a9ed-84ce-448c-84dd-718bdea724a5",
-  "streamUrl": "rtmp://live.videosdk.live/live",
+  "streamUrl": "rtmp://live.videosdk.live/live/",
   "upstreamUrl": "rtmp://live.videosdk.live/live/...",
   "downstreamUrl": "https://live.videosdk.live/live/.../index.m3u8",
   "recordingUrl": "https://live.videosdk.live/live/.../storage/index.m3u8",
