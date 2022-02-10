@@ -27,6 +27,9 @@ module.exports = {
       defaultMode: "light",
       disableSwitch: false,
     },
+    prism: {
+      additionalLanguages: ["powershell"],
+    },
 
     navbar: {
       title: "",
@@ -254,6 +257,7 @@ module.exports = {
       ],
       copyright: `Copyright © ${new Date().getFullYear()} videosdk.live.`,
     },
+    prism: {},
   },
   presets: [
     [
@@ -294,13 +298,6 @@ module.exports = {
         path: "react_docs",
         routeBasePath: "react",
         sidebarPath: require.resolve("./sidebarReact.js"),
-        // lastVersion: "current",
-        // versions: {
-        //   current: {
-        //     label: "Latest : 0.1.x",
-        //     path: "react/0.1.x",
-        //   },
-        // },
         // ... other options
       },
     ],

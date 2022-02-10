@@ -44,6 +44,7 @@
   --custom-content-color-light: #484848;
   --custom-content-color-lightest: #333;
   --custom-content-color-emphasis: #000;
+  --custom-background-color-hover-card: #252a34;
   --custom-border-color: #e0e0e0;
   --custom-color-subtle: #ccc;
   --custom-color-orange-100: #fdf0ea;
@@ -59,6 +60,7 @@
   --custom-shadow-tl: 0 12px 28px 0 rgba(0, 0, 0, 0.2),
     0 2px 4px 0 rgba(0, 0, 0, 0.1);
   --custom-shadow-xl: 0 30px 60px 0 rgba(0, 0, 0, 0.1);
+  --custom-level-1-font-color: #ffffff;
 
   /* Colors */
   --ifm-color-content: var(--custom-content-color);
@@ -142,6 +144,7 @@
 
 :root[data-theme="light"] {
   --custom-background-color: #fdfdfd;
+  --custom-background-color-hover-card-light: #f6f6fc;
 }
 
 :root[data-theme="dark"] {
@@ -259,34 +262,34 @@ element {
   border-color: var(--custom-color-subtle);
 }
 .card {
-  border: 1px solid #f0f0f0;
-  border-top-color: #f0f0f0;
-  border-right-color: #f0f0f0;
-  border-bottom-color: #f0f0f0;
-  border-left-color: #f0f0f0;
-  box-shadow: none;
-  text-decoration: none !important;
-  transition: 0.4s;
+  border: 2px solid #f6f6fc;
+  border-radius: 8px;
 }
 .card__body {
   color: #000;
 }
-html[data-theme="dark"] .card__body {
-  color: var(--custom-content-color-lightest);
-}
-.card:hover {
-  border: 1px solid #6a65f1;
-  border-top-color: #6a65f1;
-  border-right-color: #6a65f1;
-  border-bottom-color: #6a65f1;
-  border-left-color: #6a65f1;
-  text-decoration: none;
-  /* box-shadow: 1px 1px 1px 1px #f0f0f0; */
-  color: #6a65f1;
+
+html[data-theme="dark"] .card {
+  border: 1px solid #252a34;
+  border-radius: 8px;
 }
 
-.card > .card__header > p{
+html[data-theme="dark"] .card:hover {
+  background: var(--custom-background-color-hover-card);
+  border-radius: 8px;
+}
+
+.card:hover {
+  background: var(--custom-background-color-hover-card-light);
+  border-radius: 8px;
+}
+
+.card > .card__header > p {
   color: var(--ifm-color-content);
+}
+
+html[data-theme="dark"] .card__body {
+  color: var(--custom-content-color-lightest);
 }
 
 .docMainContainer_node_modules-\@docusaurus-theme-classic-lib-next-theme-DocPage-styles-module {
@@ -350,37 +353,84 @@ html[data-theme="dark"] .mermaid {
   background-color: white;
 }
 
-.dropdown_menu{
+.dropdown_menu {
   padding-top: 0.5rem;
   padding-bottom: 1rem;
 }
 
-.dropdown_menu >.dropdown{
+.dropdown_menu > .dropdown {
   padding-right: 0px;
   padding-left: 0px;
 }
 
-.dropdown_menu >.dropdown > .dropdown__menu{
+.dropdown_menu > .dropdown > .dropdown__menu {
   margin-left: 1rem;
   width: 100%;
 }
 
-.dropdown_menu>.dropdown.dropdown--right > .navbar__link{
-    flex: 1;
-    padding: 0.5rem;
-    margin-right: 1rem;
-    background: var(--ifm-color-secondary);
-    border-radius: 0.5rem;
+.dropdown_menu > .dropdown.dropdown--right > .navbar__link {
+  flex: 1;
+  padding: 0.5rem;
+  margin-right: 1rem;
+  background: var(--ifm-color-secondary);
+  border-radius: 0.5rem;
 }
-.dropdown_menu>.dropdown.dropdown--left > .navbar__link{
-    flex: 1;
-    padding: 0.5rem;
-    margin-left: 1rem;
-    margin-right: 1rem;
-    background: var(--ifm-color-secondary);
-    border-radius: 0.5rem;
+.dropdown_menu > .dropdown.dropdown--left > .navbar__link {
+  flex: 1;
+  padding: 0.5rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  background: var(--ifm-color-secondary);
+  border-radius: 0.5rem;
 }
 
-.dropdown_menu>.dropdown > .navbar__link::after{
+.dropdown_menu > .dropdown > .navbar__link::after {
   flex: 1;
 }
+
+html[data-theme="dark"] header > h1 {
+  font-family: Lato;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 36px;
+  line-height: 43px;
+  color: var(--custom-level-1-font-color);
+}
+
+html[data-theme="dark"] .theme-doc-markdown > p {
+  font-family: Lato;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: #b2b2b2;
+}
+
+header > h1 {
+  font-family: Lato;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 36px;
+  line-height: 43px;
+  color: #1a1d33;
+}
+.theme-doc-markdown > p {
+  font-family: Lato;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: #4b4b4b;
+}
+
+/* .codeBlockContainer_node_modules-\@docusaurus-theme-classic-lib-next-theme-CodeBlock-styles-module {
+  /* margin-bottom: var(--ifm-leading);
+  border-radius: var(--ifm-global-radius);
+  box-shadow: var(--ifm-global-shadow-lw); */
+/* font-family: Lato;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: #4b4b4b;
+} */
