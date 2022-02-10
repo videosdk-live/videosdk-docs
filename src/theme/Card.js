@@ -6,7 +6,6 @@ const Card = ({ heading, description, link, icon }) => (
     style={{
       marginBottom: 16,
       cursor: "pointer",
-      borderColor: "var(--custom-color-subtle)",
     }}
   >
     <div

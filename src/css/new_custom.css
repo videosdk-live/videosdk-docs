@@ -1,4 +1,3 @@
-
 @font-face {
   font-family: "lato";
   src: url(/fonts/lato/Lato-Regular.ttf) format("truetype");
@@ -28,9 +27,9 @@
   /* 
     Customisation here for both Light and Dark themes
   */
-  --custom-font-base: "lato", BlinkMacSystemFont, -apple-system,
-    "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
-    "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  --custom-font-base: "lato", BlinkMacSystemFont, -apple-system, "Segoe UI",
+    "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+    "Helvetica Neue", "Helvetica", "Arial", sans-serif;
   --custom-font-code: "lato", Menlo, monospace;
   --custom-font-size-base: 1rem;
   --custom-border-radius: 3px;
@@ -95,7 +94,7 @@
   --ifm-heading-font-weight: 700;
   --ifm-font-weight-bold: 500;
 
-    /* Globals */
+  /* Globals */
   --ifm-global-shadow-lw: var(--custom-shadow-lw);
   --ifm-global-shadow-md: var(--custom-shadow-md);
   --ifm-global-shadow-tl: var(--custom-shadow-tl);
@@ -146,7 +145,6 @@
 }
 
 :root[data-theme="dark"] {
-
   --custom-background-color: #1f1f1f;
   --custom-background-color-highlight: #2a2a2a;
   --custom-background-color-diff: #2a2a2a;
@@ -204,12 +202,15 @@
   background: rgb(154, 158, 161);
 }
 
-.menu__list-item-collapsible .menu__link:hover, .menu__list-item-collapsible .menu__link--active{
-    background: #6A65F1 !important;
-    color: #ffffff;
+.menu__list-item-collapsible .menu__link:hover,
+.menu__list-item-collapsible .menu__link--active {
+  background: #6a65f1 !important;
+  color: #ffffff;
+  background: #6a65f1 !important;
+  color: #ffffff;
 }
 
-.menu__link--active::after{
+.menu__link--active::after {
   background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20version%3D%221.1%22%20%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%3E%0A%20%20%20%3Cpath%20fill%3D%22%23ffffff%22%20d%3D%22M7.41%2C15.41L12%2C10.83L16.59%2C15.41L18%2C14L12%2C8L6%2C14L7.41%2C15.41Z%22%20%2F%3E%0A%3C%2Fsvg%3E");
 }
 
@@ -221,12 +222,16 @@
   font-weight: 400;
 }
 
-.menu > ul.menu__list ul.menu__list .menu__list-item-collapsible .menu__link--active{
-    background: none !important;
-    color: var(--ifm-menu-color);
+.menu
+  > ul.menu__list
+  ul.menu__list
+  .menu__list-item-collapsible
+  .menu__link--active {
+  background: none !important;
+  color: var(--ifm-menu-color);
 }
 
-.menu > ul.menu__list ul.menu__list .menu__link--active::after{
+.menu > ul.menu__list ul.menu__list .menu__link--active::after {
   background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20version%3D%221.1%22%20%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%3E%0A%20%20%20%3Cpath%20fill%3D%22%23606770%22%20d%3D%22M7.41%2C15.41L12%2C10.83L16.59%2C15.41L18%2C14L12%2C8L6%2C14L7.41%2C15.41Z%22%20%2F%3E%0A%3C%2Fsvg%3E");
 }
 
@@ -234,6 +239,60 @@
   font-weight: 300;
 }
 
-.markdown li + li{
+.markdown li + li {
   color: #a5a5a5;
+}
+
+a.hash-link {
+  color: var(--custom-color-subtle);
+}
+
+element {
+  margin-bottom: 16px;
+  cursor: pointer;
+  border-color: var(--custom-color-subtle);
+}
+.card {
+  border: 1px solid #f0f0f0;
+  border-top-color: #f0f0f0;
+  border-right-color: #f0f0f0;
+  border-bottom-color: #f0f0f0;
+  border-left-color: #f0f0f0;
+  box-shadow: none;
+  text-decoration: none !important;
+  transition: 0.4s;
+}
+.card__body {
+  color: #000;
+}
+
+.card:hover {
+  border: 1px solid #6a65f1;
+  border-top-color: #6a65f1;
+  border-right-color: #6a65f1;
+  border-bottom-color: #6a65f1;
+  border-left-color: #6a65f1;
+  text-decoration: none;
+  box-shadow: 1px 1px 1px 1px #f0f0f0;
+  color: #6a65f1;
+}
+
+.docMainContainer_node_modules-\@docusaurus-theme-classic-lib-next-theme-DocPage-styles-module {
+  flex-grow: 1;
+  max-width: calc(100% - var(--doc-sidebar-width));
+  margin: auto;
+  align-content: center;
+  display: inline-block;
+  margin-left: 30px;
+}
+
+.navbar__logo {
+  /* flex: 0 0 auto; */
+  height: 3rem;
+  margin-right: 0.5rem;
+}
+
+a[class^="sidebarLogo_"] img {
+  height: 3rem;
+  margin-right: 0.5rem;
 }
