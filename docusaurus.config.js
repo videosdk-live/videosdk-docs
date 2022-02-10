@@ -261,10 +261,6 @@ module.exports = {
       {
         docs: {
           sidebarPath: require.resolve("./sidebars.js"),
-          // Please change this to your repo.
-          //editUrl:
-          //  "https://github.com/facebook/docusaurus/edit/master/website/",
-          // includeCurrentVersion: false,
         },
         blog: {
           showReadingTime: true,
@@ -298,6 +294,13 @@ module.exports = {
         path: "react_docs",
         routeBasePath: "react",
         sidebarPath: require.resolve("./sidebarReact.js"),
+        // lastVersion: "current",
+        // versions: {
+        //   current: {
+        //     label: "Latest : 0.1.x",
+        //     path: "react/0.1.x",
+        //   },
+        // },
         // ... other options
       },
     ],
