@@ -76,30 +76,38 @@ export default function SidebarDropdowns() {
     {
       id:"react",
       value: "React",
+      icon:"/img/icons/libraries/ic_react.svg"
     },
     {
       id:"react-native",
       value: "React Native",
+      
+      icon:"/img/icons/libraries/ic_react.svg"
     },
     {
       id:"javascript",
       value: "Javascript",
+      icon:"/img/icons/libraries/ic_javascript.svg"
     },
     {
       id:"android",
       value: "Android",
+      icon:"/img/icons/libraries/ic_android.svg"
     },
     {
       id:"ios",
       value: "iOS",
+      icon:"/img/icons/libraries/ic_ios.svg"
     },
     {
       id:"flutter",
       value: "Flutter",
+      icon:"/img/icons/libraries/ic_flutter.svg"
     },
     {
       id:"prebuilt",
       value: "Prebuilt",
+      icon:"/img/icons/libraries/ic_javascript.svg"
     },
   ]
 
@@ -112,12 +120,14 @@ export default function SidebarDropdowns() {
     <div className="row dropdown_menu">
       {(sdk != "docs" && sdk != "prebuilt") || viewType == "api" ? (
         <div class="col dropdown dropdown--hoverable dropdown--left">
-        <a class="navbar__link">
-          {getSDKName(sdk)[0]?.value}</a>
+        <div class="navbar__link">
+            {<img src={getSDKName(sdk)[0]?.icon} />}{getSDKName(sdk)[0]?.value}
+          </div>
         <ul class="dropdown__menu">
           {sdkList.map((e, i) => {
-                    return (e.id!="prebuilt"|| viewType == "api"?   <li>
-                      <Link class={ e.id==sdk ? "dropdown__link dropdown__link--active" : "dropdown__link"} href={getSdkRoutingPath(e.id)}><img height = "16px" width = "16px"src = "/img/icons/libraries/react-icon.svg"/>{ e.value}</Link>
+            return (e.id != "prebuilt" || viewType == "api" ?
+              <li>
+                      <Link class={e.id == sdk ? "dropdown__link dropdown__link--active" : "dropdown__link"} href={getSdkRoutingPath(e.id)}><img src={ e.icon}/>{ e.value}</Link>
                     </li>:null)
                   })}
         </ul>
