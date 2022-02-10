@@ -354,26 +354,6 @@ module.exports = {
           ],
         },
         {
-          type: "category",
-          label: "Recordings",
-          collapsed: true,
-          items: [
-            "api-reference/realtime-communication/auth",
-            "api-reference/realtime-communication/create-join-meeting",
-            "api-reference/realtime-communication/list-all-meetings",
-            "api-reference/realtime-communication/get-meeting-details",
-            {
-              type: "category",
-              label: "Sessions",
-              collapsed: true,
-              items: [
-                "api-reference/realtime-communication/list-meeting-sessions",
-                "api-reference/realtime-communication/get-session-details",
-                "api-reference/realtime-communication/end-session",
-                "api-reference/realtime-communication/remove-participant",
-              ],
-            },
-            {
               type: "category",
               label: "Recordings",
               collapsed: true,
@@ -383,8 +363,6 @@ module.exports = {
                 "api-reference/realtime-communication/remove-recording",
               ],
             },
-          ],
-        },
       ],
       collapsed: true,
     },
