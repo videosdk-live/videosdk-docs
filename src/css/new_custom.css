@@ -285,6 +285,10 @@ html[data-theme="dark"] .card__body {
   color: #6a65f1;
 }
 
+.card > .card__header > p{
+  color: var(--ifm-color-content);
+}
+
 .docMainContainer_node_modules-\@docusaurus-theme-classic-lib-next-theme-DocPage-styles-module {
   flex-grow: 1;
   max-width: calc(100% - var(--doc-sidebar-width));
@@ -344,4 +348,39 @@ a[class^="sidebarLogo_"] img {
 
 html[data-theme="dark"] .mermaid {
   background-color: white;
+}
+
+.dropdown_menu{
+  padding-top: 0.5rem;
+  padding-bottom: 1rem;
+}
+
+.dropdown_menu >.dropdown{
+  padding-right: 0px;
+  padding-left: 0px;
+}
+
+.dropdown_menu >.dropdown > .dropdown__menu{
+  margin-left: 1rem;
+  width: 100%;
+}
+
+.dropdown_menu>.dropdown.dropdown--right > .navbar__link{
+    flex: 1;
+    padding: 0.5rem;
+    margin-right: 1rem;
+    background: var(--ifm-color-secondary);
+    border-radius: 0.5rem;
+}
+.dropdown_menu>.dropdown.dropdown--left > .navbar__link{
+    flex: 1;
+    padding: 0.5rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    background: var(--ifm-color-secondary);
+    border-radius: 0.5rem;
+}
+
+.dropdown_menu>.dropdown > .navbar__link::after{
+  flex: 1;
 }

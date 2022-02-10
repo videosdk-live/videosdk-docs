@@ -7,99 +7,135 @@ import ios_versions from "../../ios_docs_versions.json";
 import javascript_versions from "../../javascript_docs_versions.json";
 import prebuilt_versions from "../../prebuilt_docs_versions.json";
 import { useLocation, useHistory } from "@docusaurus/router";
+import Link from "@docusaurus/Link";
 
 export default function SidebarDropdowns() {
   const [sdk, setSDK] = useState();
   const [version, setVersion] = useState("");
   const [versionList, setVersionList] = useState([]);
-  const [viewType, setViewType] = useState();
+  const [viewType, setViewType] = useState("");
   const location = useLocation();
-  const history = useHistory();
 
-  function routingSDK(e) {
-    setSDK(e.target.value);
+  function getSdkRoutingPath(value) {
     var currentPath = location.pathname;
-    history.push(
-        "/" +
-      e.target.value +
-      (currentPath.split("/")[version == versionList[0]?2:3]== "guide" ? 
+    return "/" +
+      value +
+      (currentPath.split("/")[version == versionList[0] ? 2 : 3] == "guide" ?
         "/guide/video-and-audio-calling-api-sdk/getting-started" : "/api/sdk-reference/setup")
-    );
   }
 
-  function routeVersion(e) {
+  function getRouteVersion(value) {
     var currentPath = location.pathname;
-
-    if (e.target.value == versionList[0]) {
+    if (version == value) {
+      return location.pathname
+    }
+    if (value == versionList[0]) {
       currentPath = currentPath.replace(currentPath.split("/")[2], "");
       currentPath = currentPath.replace("//", "/");
     } else {
       currentPath = currentPath.replace(
         currentPath.split("/")[1],
-        sdk + "/" + e.target.value
+        sdk + "/" + value
       );
     }
-    history.push(currentPath);
+    return currentPath;
   }
 
   useEffect(() => {
+    var currentSdk = location.pathname.split("/")[1];
     var currentVersion = location.pathname.split("/")[2];
+    var versions = [];
+    if (currentSdk == "react") {
+      versions = react_versions;
+    } else if (currentSdk == "javascript") {
+      versions = javascript_versions;
+    } else if (currentSdk == "react-native") {
+      versions = react_native_versions;
+    } else if (currentSdk == "android") {
+      versions = android_versions;
+    } else if (currentSdk == "ios") {
+      versions = ios_versions;
+    } else if (currentSdk == "flutter") {
+      versions = flutter_versions;
+    } else if (currentSdk == "prebuilt") {
+      versions = prebuilt_versions;
+    }
+
     if (currentVersion.match("([0-9])+.([0-9])+.([0-9]|[a-z])+")) {
       setVersion(currentVersion);
       setViewType(location.pathname.split("/")[3])
     } else {
-      setVersion(versionList[0]);
+      setVersion(versions[0]);
       setViewType(location.pathname.split("/")[2])
     }
-  }, [versionList]);
-
-  useEffect(() => {
-    var currentSdk = location.pathname.split("/")[1];
-    if (currentSdk == "react") {
-      setVersionList(react_versions);
-    } else if (currentSdk == "javascript") {
-      setVersionList(javascript_versions);
-    } else if (currentSdk == "react-native") {
-      setVersionList(react_native_versions);
-    } else if (currentSdk == "android") {
-      setVersionList(android_versions);
-    } else if (currentSdk == "ios") {
-      setVersionList(ios_versions);
-    } else if (currentSdk == "flutter") {
-      setVersionList(flutter_versions);
-    } else if (currentSdk == "prebuilt") {
-      setVersionList(prebuilt_versions);
-    }
+    setVersionList(versions);
     setSDK(currentSdk);
   }, []);
 
+  const sdkList = [
+    {
+      id:"react",
+      value: "React",
+    },
+    {
+      id:"react-native",
+      value: "React Native",
+    },
+    {
+      id:"javascript",
+      value: "Javascript",
+    },
+    {
+      id:"android",
+      value: "Android",
+    },
+    {
+      id:"ios",
+      value: "iOS",
+    },
+    {
+      id:"flutter",
+      value: "Flutter",
+    },
+    {
+      id:"prebuilt",
+      value: "Prebuilt",
+    },
+  ]
+
+  function getSDKName(value) {
+    var name = sdkList.filter((i) => { return i.id == value });
+    return name;
+  }
+
   return (
-    <div className="row">
-      {(sdk != "docs" && sdk != "prebuilt") || viewType == "api"? (
-        <select
-          onChange={routingSDK}
-          value={sdk}
-          className="col dropdown--hoverable"
-        >
-          {viewType =="api" ?<option value="prebuilt">Prebuilt</option>:null }
-          <option value="react">React</option>
-          <option value="javascript">JS</option>
-          <option value="react-native">React Native</option>
-          <option value="android">Android</option>
-          <option value="ios">IOS</option>
-          <option value="flutter">Flutter</option>
-        </select>
+    <div className="row dropdown_menu">
+      {(sdk != "docs" && sdk != "prebuilt") || viewType == "api" ? (
+        <div class="col dropdown dropdown--hoverable dropdown--left">
+        <a class="navbar__link">
+          {getSDKName(sdk)[0]?.value}</a>
+        <ul class="dropdown__menu">
+          {sdkList.map((e, i) => {
+                    return (e.id!="prebuilt"|| viewType == "api"?   <li>
+                      <Link class={ e.id==sdk ? "dropdown__link dropdown__link--active" : "dropdown__link"} href={getSdkRoutingPath(e.id)}><img height = "16px" width = "16px"src = "/img/icons/libraries/react-icon.svg"/>{ e.value}</Link>
+                    </li>:null)
+                  })}
+        </ul>
+      </div>
       ) : null}
       {sdk != "docs" ? (
-        <select
-          className="col dropdownSidebar"
-          value={version}
-          onChange={routeVersion}
-        >
-          {versionList.map((v) => {
-            return <option value={v}>{v}</option>;
+        <div class={(viewType == "guide" && sdk == "prebuilt") ? "col dropdown dropdown--hoverable dropdown--left" : "dropdown dropdown--hoverable dropdown--right"}>
+        <a class="navbar__link">
+          {version}</a>
+          <ul class="dropdown__menu">
+            {versionList.map((v) => {
+            return <li>
+                      <Link class={ v==version ? "dropdown__link dropdown__link--active" : "dropdown__link"} href={getRouteVersion(v)}>{ v}</Link>
+                    </li>;
           })}
-        </select>
+        </ul>
+      </div>
+        
       ) : null}
     </div>
   );
