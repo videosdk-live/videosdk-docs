@@ -234,7 +234,7 @@ html[data-theme="dark"] .navbar__link:hover,
 }
 html[data-theme="dark"] .navbar__items > .navbar__link--active {
   color: white;
-  border-bottom: 1px solid var(--ifm-color-primary);
+  /* border-bottom: 1px solid var(--ifm-color-primary); */
   font-weight: 700;
 }
 
