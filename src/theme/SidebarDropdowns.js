@@ -6,7 +6,7 @@ import flutter_versions from "../../flutter_docs_versions.json";
 import ios_versions from "../../ios_docs_versions.json";
 import javascript_versions from "../../javascript_docs_versions.json";
 import prebuilt_versions from "../../prebuilt_docs_versions.json";
-import { useLocation, useHistory } from "@docusaurus/router";
+import { useLocation } from "@docusaurus/router";
 import Link from "@docusaurus/Link";
 
 export default function SidebarDropdowns() {
@@ -127,9 +127,11 @@ export default function SidebarDropdowns() {
         <div class="col dropdown dropdown--hoverable dropdown--left">
           <div class="row navbar__link--active">
             {<img src={getSDKName(sdk)[0]?.icon} />}
-            <div class="col" style={{padding:"0px"}}>{getSDKName(sdk)[0]?.value}</div>
-            
-            <img src="/img/icons/ic_arrow_down.svg" />        
+            <div class="col" style={{ padding: "0px" }}>
+              {getSDKName(sdk)[0]?.value}
+            </div>
+
+            <img src="/img/icons/ic_arrow_down.svg" />
           </div>
           <ul class="dropdown__menu">
             {sdkList.map((e, i) => {
@@ -161,8 +163,14 @@ export default function SidebarDropdowns() {
           }
         >
           <a class="row navbar__link--active">
-            <div class="col" style={{padding:"0px"}}>{version}</div>
-            <img src="/img/icons/ic_arrow_down.svg" style={{"padding-left":"8px"}}/> </a>
+            <div class="col" style={{ padding: "0px" }}>
+              {version}
+            </div>
+            <img
+              src="/img/icons/ic_arrow_down.svg"
+              style={{ "padding-left": "8px" }}
+            />{" "}
+          </a>
           <ul class="dropdown__menu">
             {versionList.map((v) => {
               return (

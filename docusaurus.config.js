@@ -278,8 +278,8 @@ module.exports = {
           prism: {
             defaultLanguage: "js",
             plugins: ["line-numbers", "show-language"],
-            theme: require("@kiwicopple/prism-react-renderer/themes/vsDark"),
-            darkTheme: require("@kiwicopple/prism-react-renderer/themes/vsDark"),
+            // theme: require("@kiwicopple/prism-react-renderer/themes/vsDark"),
+            // darkTheme: require("@kiwicopple/prism-react-renderer/themes/vsDark"),
             additionalLanguages: ["Java"],
           },
         },

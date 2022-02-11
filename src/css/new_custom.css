@@ -232,8 +232,10 @@ html[data-theme="dark"] .navbar__link:hover,
 .navbar__link > li > a:hover {
   color: white;
 }
-html[data-theme="dark"] .navbar__link--active {
+html[data-theme="dark"] .navbar__items > .navbar__link--active {
   color: white;
+  font-weight: bolder;
+  border-bottom: 1px solid var(--ifm-color-primary);
 }
 html[data-theme="dark"] .dropdown__link--active,
 .navbar__link--active {
@@ -341,6 +343,41 @@ html[data-theme="dark"] .card {
   border-radius: 8px;
   background: #161616;
 }
+
+html[data-theme="dark"] .pagination-nav__link {
+  border: 2px solid #252a34;
+  border-radius: 8px;
+  flex-grow: 1;
+  line-height: var(--ifm-heading-line-height);
+  padding: var(--ifm-global-spacing);
+  transition: font-color var(--ifm-transition-fast)
+    var(--ifm-transition-timing-default);
+  color: seashell;
+}
+
+html[data-theme="dark"] .pagination-nav__link:hover {
+  color: var(--ifm-color-primary);
+}
+
+.pagination-nav__link {
+  border: 2px solid #f6f6fc;
+  border-radius: 8px;
+  box-shadow: none;
+  flex-grow: 1;
+  line-height: var(--ifm-heading-line-height);
+  padding: var(--ifm-global-spacing);
+  transition: font-color var(--ifm-transition-fast)
+    var(--ifm-transition-timing-default);
+  color: black;
+}
+
+.pagination-nav__link:hover {
+  border: 2px solid #f6f6fc;
+  border-radius: 8px;
+  box-shadow: none;
+  color: var(--ifm-color-primary);
+}
+
 .card__body {
   color: #000;
 }
@@ -453,6 +490,7 @@ html[data-theme="dark"] .mermaid {
   margin-left: 0.5rem;
   background: none;
   border-radius: 0.5rem;
+  color: white;
 }
 .dropdown_menu > .dropdown.dropdown--left > .navbar__link--active {
   flex: 1;
@@ -461,6 +499,7 @@ html[data-theme="dark"] .mermaid {
   margin-right: 1rem;
   background: var(--ifm-color-secondary);
   border-radius: 0.5rem;
+  color: white;
 }
 
 html[data-theme="dark"] header > h1 {
@@ -522,16 +561,14 @@ header > h1 {
   vertical-align: sub;
 }
 
-<<<<<<< Updated upstream
-@media (max-width: 996px){
-.row .col.col.col {
+@media (max-width: 996px) {
+  .row .col.col.col {
     --ifm-col-width: 100%;
     flex-basis: 0;
     margin-left: 0px;
-}}
+  }
+}
 
-=======
->>>>>>> Stashed changes
 html[data-theme="dark"]
   .dropdown_menu
   > .dropdown.dropdown
@@ -554,22 +591,20 @@ html[data-theme="dark"]
 }
 
 div[class^="sidebar_"] {
-  border-right: 2px solid #F6F6FC;
+  border-right: 2px solid #f6f6fc;
 }
 
-.navbar{
+.navbar {
   box-shadow: none;
-  border-bottom: 2px solid #F6F6FC;  
+  border-bottom: 2px solid #f6f6fc;
 }
 
-html[data-theme="dark"]
-div[class^="sidebar_"] {
-  border-right: 2px solid #252A34;
+html[data-theme="dark"] div[class^="sidebar_"] {
+  border-right: 2px solid #252a34;
 }
-html[data-theme="dark"]
-.navbar{
+html[data-theme="dark"] .navbar {
   box-shadow: none;
-  border-bottom: 2px solid #252A34;  
+  border-bottom: 2px solid #252a34;
 }
 
 .prism-code {
@@ -1015,7 +1050,6 @@ pre[class*="language-"] > code[class*="language-"] {
   white-space: pre;
 }
 
-
 .DocSearch-Button .DocSearch-Search-Icon {
   height: 18px;
   width: 18px;
@@ -1167,4 +1201,8 @@ token.property-access {
 
 .token.doc-comment.class-name {
   @apply text-green-500;
+}
+
+html[data-theme="dark"] .table-of-contents__left-border {
+  border-left: 1px solid #252a34;
 }
