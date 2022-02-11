@@ -122,7 +122,7 @@ export default function SidebarDropdowns() {
   }
 
   return (
-    <div className="row dropdown_menu">
+    <div class="row dropdown_menu">
       {(sdk != "docs" && sdk != "prebuilt") || viewType == "api" ? (
         <div class="col dropdown dropdown--hoverable dropdown--left">
           <div height="24px" width="24px" class="row navbar__link--active">
@@ -134,7 +134,7 @@ export default function SidebarDropdowns() {
           <ul class="dropdown__menu">
             {sdkList.map((e, i) => {
               return e.id != "prebuilt" || viewType == "api" ? (
-                <li>
+                <li key={e.id}>
                   <Link
                     class={
                       e.id == sdk
@@ -166,13 +166,13 @@ export default function SidebarDropdowns() {
             </div>
             <img
               src="/img/icons/ic_arrow_down.svg"
-              style={{ "padding-left": "8px" }}
+              style={{ paddingLeft: "8px" }}
             />{" "}
           </a>
           <ul class="dropdown__menu">
             {versionList.map((v) => {
               return (
-                <li>
+                <li key={v}>
                   <Link
                     class={
                       v == version

@@ -239,7 +239,7 @@ html[data-theme="dark"] .navbar__items > .navbar__link--active {
 }
 
 html[data-theme="dark"] .dropdown__link--active,
-.navbar__link--active {
+.navbar__items > .navbar__link--active {
   color: white;
 }
 
@@ -256,7 +256,7 @@ html[data-theme="light"] .dropdown__link--active{
   color: black;
 }
 
-.navbar__link--active {
+.navbar__items > .navbar__link--active {
   color: black;
   font-weight: 700;
 }
@@ -508,7 +508,7 @@ html[data-theme="dark"] .mermaid {
   margin-left: 0.2rem;
   background: none;
   border-radius: 6px;
-  color: #fff;
+  color: var(--ifm-color-content);
 }
 
 .dropdown_menu > .dropdown.dropdown--right > .navbar__link--active:hover {
@@ -522,7 +522,7 @@ html[data-theme="dark"] .mermaid {
   margin-right: 1rem;
   background: var(--ifm-color-secondary);
   border-radius: 6px;
-  color: #fff;
+  color: var(--ifm-color-content);
 }
 
 html[data-theme="dark"] header > h1 {
@@ -1220,4 +1220,41 @@ token.property-access {
 
 html[data-theme="dark"] .table-of-contents__left-border {
   border-left: 1px solid #252a34;
+}
+
+.card-button{
+  border-radius: 4px;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  margin-left: 12px;
+  margin-bottom: 0px;
+  margin-top: 5px;
+}
+
+html[data-theme="dark"]
+.card-button{
+  border: 2px solid #252A34;
+  color: #b2b2b2;
+}
+
+html[data-theme="light"]
+.card-button{
+  border: 2px solid #f6f6fc;
+  color: var(--ifm-color-content);
+}
+
+html[data-theme="dark"]
+.card-button:hover{
+  color: #fff;
+  background: #5568FE;
+  border: 2px solid #5568FE;
+}
+
+html[data-theme="light"]
+.card-button:hover{
+  color: #fff;
+  background: #5568FE;
+  border: 2px solid #5568FE;
 }
