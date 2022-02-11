@@ -36,7 +36,7 @@ function Overview() {
                 <CardLinks
                   title="Prebuilt Video & Audio Calling SDK"
                   text="Invest 90 seconds to develop video & audio calling on web & app"
-                  img="/img/icons/libraries/prebuilt-icon.svg"
+                  img="/img/Group 11380.svg"
                   links={[
                     {
                       linkName: "Guide",
@@ -61,7 +61,7 @@ function Overview() {
                 <CardLinks
                   title="Custom Video & Audio Calling SDK"
                   text="Add 100% customizable video & audio conferencing in native app"
-                  img="/img/icons/libraries/video-call-icon.svg"
+                  img="/img/Group 11381.svg"
                   links={[
                     {
                       linkName: "Guide",
@@ -88,7 +88,7 @@ function Overview() {
                 <CardLinks
                   title="Standard Live Stream API"
                   text="RTMP-in based Live Stream API, including encoding & playback"
-                  img="/img/icons/libraries/live-streaming-icon.svg"
+                  img="/img/Group 11383.svg"
                   links={[
                     {
                       linkName: "Guide",
@@ -113,7 +113,7 @@ function Overview() {
                 <CardLinks
                   title="Video on Demand API"
                   text="Video hosting API with multiple resolution support and global delivery"
-                  img="/img/icons/libraries/vod-icon.svg"
+                  img="/img/Group 11382.svg"
                   links={[
                     {
                       linkName: "Guide",
