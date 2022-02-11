@@ -264,14 +264,12 @@ html[data-theme="dark"] .dropdown__link--active,
   filter: none;
 }
 
-html[data-theme="light"] 
-.menu__link::after {
+html[data-theme="light"] .menu__link::after {
   background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20version%3D%221.1%22%20%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%3E%0A%20%20%20%3Cpath%20fill%3D%22%23000%22%20d%3D%22M7.41%2C15.41L12%2C10.83L16.59%2C15.41L18%2C14L12%2C8L6%2C14L7.41%2C15.41Z%22%20%2F%3E%0A%3C%2Fsvg%3E");
   filter: none;
 }
 
-html[data-theme="light"] 
-.menu__link--active::after {
+html[data-theme="light"] .menu__link--active::after {
   background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20version%3D%221.1%22%20%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%3E%0A%20%20%20%3Cpath%20fill%3D%22%23fff%22%20d%3D%22M7.41%2C15.41L12%2C10.83L16.59%2C15.41L18%2C14L12%2C8L6%2C14L7.41%2C15.41Z%22%20%2F%3E%0A%3C%2Fsvg%3E");
   filter: none;
 }
@@ -283,13 +281,14 @@ html[data-theme="light"]
   padding-bottom: 10px;
 }
 
-html[data-theme="dark"]
-.menu > ul.menu__list .menu__link {
+html[data-theme="dark"] .menu > ul.menu__list .menu__link {
   color: #fff;
 }
 
 html[data-theme="light"]
-.menu > ul.menu__list .menu__link:not(.menu__link--active) {
+  .menu
+  > ul.menu__list
+  .menu__link:not(.menu__link--active) {
   color: #000;
 }
 
@@ -313,7 +312,6 @@ html[data-theme="light"]
   background: var(--ifm-color-secondary) !important;
   color: var(--ifm-menu-color);
 }
-
 
 .menu > ul.menu__list ul.menu__list ul.menu__list .menu__link {
   font-weight: 400;
@@ -524,6 +522,7 @@ header > h1 {
   vertical-align: sub;
 }
 
+<<<<<<< Updated upstream
 @media (max-width: 996px){
 .row .col.col.col {
     --ifm-col-width: 100%;
@@ -531,6 +530,8 @@ header > h1 {
     margin-left: 0px;
 }}
 
+=======
+>>>>>>> Stashed changes
 html[data-theme="dark"]
   .dropdown_menu
   > .dropdown.dropdown
@@ -1016,12 +1017,12 @@ pre[class*="language-"] > code[class*="language-"] {
 
 
 .DocSearch-Button .DocSearch-Search-Icon {
-    height: 18px;
-    width: 18px;
+  height: 18px;
+  width: 18px;
 }
 
 .DocSearch-Button-Placeholder {
-    font-family: 'lato';
+  font-family: "lato";
 }
 
 .method-list-group {
@@ -1097,4 +1098,73 @@ html[data-theme="dark"] .card-text {
 
 html[data-theme="dark"] .sub-heading {
   color: #b2b2b2;
+}
+
+.token.keyword.module,
+.token.property-access,
+token.property-access {
+  color: #5edfff !important;
+}
+
+.token.function {
+  font-style: normal !important;
+  color: #dddba6 !important;
+}
+
+.token.plain,
+.token.plain {
+  color: #42c3fb !important;
+}
+
+.token.parameter,
+.token.punctuation,
+.token.operator,
+.token.console.class-name,
+.token.doc-comment.parameter,
+.token.doc-comment.optional-parameter,
+.token.doc-comment.parameter.punctuation,
+.token.doc-comment.optional-parameter.punctuation {
+  font-style: normal !important;
+  color: #42c3fb !important;
+}
+
+.token.keyword,
+.token.doc-comment.keyword {
+  font-style: normal !important;
+  color: #569cd6 !important;
+}
+
+.token.string {
+  font-style: normal !important;
+  color: #de8971 !important;
+  font-size: small;
+}
+
+.token.console {
+  font-style: normal !important;
+  color: var(--ifm-color-primary) !important;
+}
+
+.token.constant {
+  font-style: normal !important;
+  color: #42c3fb !important;
+}
+
+.token.comment {
+  font-style: normal !important;
+  color: #6e7f6d !important;
+}
+
+.token.number {
+  color: #b5cea8 !important;
+}
+
+.token.boolean {
+  font-style: normal !important;
+  color: #ffbf86 !important;
+  font-size: small;
+}
+
+.token.doc-comment.class-name {
+  @apply text-green-500;
 }

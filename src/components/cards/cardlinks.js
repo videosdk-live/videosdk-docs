@@ -5,7 +5,9 @@ const CardLinks = ({ title, text, links, img }) => {
   return (
     <div
       className="card"
-      style={{ border: "1px solid #ccc", marginBottom: 16 }}
+      style={{
+        marginBottom: 16,
+      }}
     >
       <div class="card__header">
         {/* <h3>{title}</h3> */}
