@@ -211,6 +211,7 @@ module.exports = {
         "guide/video-and-audio-calling-api-sdk/features/speaker-indication",
         "guide/video-and-audio-calling-api-sdk/features/pin-participants",
         "guide/video-and-audio-calling-api-sdk/features/switch-participant",
+        "guide/video-and-audio-calling-api-sdk/features/pubsub",
         {
           type: "category",
           label: "Connect Meetings (BETA)",
