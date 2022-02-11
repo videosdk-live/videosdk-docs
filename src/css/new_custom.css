@@ -31,6 +31,20 @@
   font-style: normal;
 }
 
+/* mono font */
+
+@font-face {
+  font-family: "office code pro";
+  src: url("/fonts/office-code-pro/OfficeCodePro-Regular.eot");
+  src: url("/fonts/office-code-pro/OfficeCodePro-Regular.woff2") format("woff2"),
+    url("/fonts/office-code-pro/OfficeCodePro-Regular.woff") format("woff"),
+    url("/fonts/office-code-pro/OfficeCodePro-Regular.ttf") format("truetype"),
+    url("/fonts/office-code-pro/OfficeCodePro-Regular.otf") format("otf");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root,
 :root[data-theme=""],
 :root[data-theme="dark"] {
@@ -42,7 +56,7 @@
   --custom-font-base: "lato", BlinkMacSystemFont, -apple-system, "Segoe UI",
     "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
     "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-  --custom-font-code: "lato", Menlo, monospace;
+  --custom-font-code: "office code pro", Menlo, monospace;
   --custom-font-size-base: 1rem;
   --custom-border-radius: 3px;
   --custom-border-radius-md: 6px;
@@ -189,7 +203,7 @@
   --ifm-color-gray-900: rgba(224, 235, 247, 0.45);
   --ifm-color-secondary-darker: #000;
   --ifm-color-secondary-dark: #1f1f1f;
-  --ifm-color-secondary: #2a2a2a;
+  --ifm-color-secondary: #252a34;
   --ifm-color-secondary-light: #2f2f2f;
   --ifm-color-secondary-lighter: #313131;
   --ifm-color-secondary-lightest: #333333;
@@ -233,6 +247,7 @@ html[data-theme="dark"] .navbar__link--active {
   background: rgb(154, 158, 161);
 }
 
+.menu__list-item-collapsible:hover .menu__link--active,
 .menu__list-item-collapsible .menu__link--active {
   background: #6a65f1 !important;
   color: #ffffff;
@@ -270,6 +285,12 @@ html[data-theme="light"] .menu__link--active::after {
   color: var(--ifm-menu-color);
 }
 
+.menu > ul.menu__list ul.menu__list .menu__link--active,
+.menu > ul.menu__list ul.menu__list .menu__link:hover {
+  background: var(--ifm-color-secondary) !important;
+  color: var(--ifm-menu-color);
+}
+
 .menu > ul.menu__list ul.menu__list .menu__link--active::after {
   background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20version%3D%221.1%22%20%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%3E%0A%20%20%20%3Cpath%20fill%3D%22%23606770%22%20d%3D%22M7.41%2C15.41L12%2C10.83L16.59%2C15.41L18%2C14L12%2C8L6%2C14L7.41%2C15.41Z%22%20%2F%3E%0A%3C%2Fsvg%3E");
 }
@@ -278,7 +299,7 @@ html[data-theme="light"] .menu__link--active::after {
   font-weight: 300;
 }
 
-.markdown li + li {
+.tabs__item:not(.tabs__item--active) {
   color: #a5a5a5;
 }
 
@@ -510,7 +531,7 @@ html[data-theme="dark"]
   padding: 0px !important;
 }
 
-.prism-code {
+HEAD .prism-code {
   font-family: office code pro;
   background-color: none;
   white-space: normal;
@@ -568,4 +589,70 @@ html[data-theme="dark"]
     display: inline-block;
     width: auto;
   }
+}
+.method-list-group {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.method-list-group li {
+  border-top: 1px solid var(--custom-border-color);
+  padding-top: 12px;
+}
+
+.method-list-group li:last-child {
+  border-bottom: 1px solid var(--custom-border-color);
+}
+
+h4.method-list-item-label {
+  display: flex;
+}
+
+h4.method-list-item-label .method-list-item-label-name {
+  font-family: var(--ifm-font-family-monospace);
+  font-size: 0.85rem;
+}
+
+h4.method-list-item-label .method-list-item-label-badge {
+  font-family: var(--ifm-font-family-monospace);
+  font-size: 0.85rem;
+  padding: 0 5px;
+  font-weight: 300;
+  font-style: italic;
+}
+
+h4.method-list-item-label .method-list-item-validation {
+  font-family: var(--ifm-font-family-monospace);
+  font-size: 0.85rem;
+  padding: 0 5px;
+  font-weight: 300;
+}
+
+.method-list-group .method-list-group {
+  border: 1px solid var(--custom-border-color);
+  border-radius: 8px;
+  margin-bottom: 20px;
+  max-width: 800px;
+}
+
+.method-list-group .method-list-group li {
+  padding: 12px;
+  border-bottom: none;
+}
+
+.method-list-title {
+  margin: 0;
+  padding: 6px 12px;
+}
+
+.method-list-group .method-list-group li div,
+.method-list-group .method-list-group li h4,
+.method-list-group .method-list-group li p {
+  padding: 0;
+  margin: 0;
+}
+
+.method-list-group .method-list-group li h4 {
+  margin-bottom: 4px;
 }
