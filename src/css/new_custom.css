@@ -228,10 +228,15 @@
   background: slategrey;
 }
 
-html[data-theme="dark"] .navbar__link:hover {
+html[data-theme="dark"] .navbar__link:hover,
+.navbar__link > li > a:hover {
   color: white;
 }
 html[data-theme="dark"] .navbar__link--active {
+  color: white;
+}
+html[data-theme="dark"] .dropdown__link--active,
+.navbar__link--active {
   color: white;
 }
 
@@ -675,4 +680,12 @@ h4.method-list-item-label .method-list-item-validation {
 
 .method-list-group .method-list-group li h4 {
   margin-bottom: 4px;
+}
+
+html[data-theme="dark"] .card-text {
+  color: #b2b2b2;
+}
+
+html[data-theme="dark"] .sub-heading {
+  color: #b2b2b2;
 }

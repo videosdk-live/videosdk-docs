@@ -28,7 +28,7 @@ const CardLinks = ({ title, text, links, img }) => {
           }
           {title && <h3 style={{ marginBottom: 0 }}>{title}</h3>}
         </div>
-        <p>{text}</p>
+        <p className="card-text">{text}</p>
       </div>
 
       <div className="card__body">
