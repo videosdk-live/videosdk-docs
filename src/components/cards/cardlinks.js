@@ -12,22 +12,18 @@ const CardLinks = ({ title, text, links, img }) => {
       <div class="card__header">
         {/* <h3>{title}</h3> */}
         {/* <Card heading={title} icon="/img/icons/libraries/react-icon.svg" /> */}
-        <div
-          style={{
-            display: "flex",
-            gap: 20,
-            alignItems: "center",
-            marginBottom: "8px",
-          }}
-        >
+        <div className="card-icon">
           {
             <img
               src={img}
               alt="Image"
-              width="20"
-              style={{ display: "block", maxHeight: "20px" }}
+              style={{
+                display: "block",
+              }}
             />
           }
+        </div>
+        <div className="card-title">
           {title && <h3 style={{ marginBottom: 0 }}>{title}</h3>}
         </div>
         <p className="card-text">{text}</p>
