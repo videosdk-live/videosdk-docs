@@ -25,7 +25,7 @@ function Overview() {
           <h1 class="h1Heading_node_modules-@docusaurus-theme-classic-lib-next-theme-Heading-styles-module">
             Overview
           </h1>
-          <p>
+          <p className="sub-heading">
             Video SDK provides all the services to build interactive video
             product. It includes realtime communication, standard live
             streaming, interactive live streaming and video on demand.
