@@ -18,16 +18,19 @@ export default function SidebarDropdowns() {
 
   function getSdkRoutingPath(value) {
     var currentPath = location.pathname;
-    return "/" +
+    return (
+      "/" +
       value +
-      (currentPath.split("/")[version == versionList[0] ? 2 : 3] == "guide" ?
-        "/guide/video-and-audio-calling-api-sdk/getting-started" : "/api/sdk-reference/setup")
+      (currentPath.split("/")[version == versionList[0] ? 2 : 3] == "guide"
+        ? "/guide/video-and-audio-calling-api-sdk/getting-started"
+        : "/api/sdk-reference/setup")
+    );
   }
 
   function getRouteVersion(value) {
     var currentPath = location.pathname;
     if (version == value) {
-      return location.pathname
+      return location.pathname;
     }
     if (value == versionList[0]) {
       currentPath = currentPath.replace(currentPath.split("/")[2], "");
@@ -63,10 +66,10 @@ export default function SidebarDropdowns() {
 
     if (currentVersion.match("([0-9])+.([0-9])+.([0-9]|[a-z])+")) {
       setVersion(currentVersion);
-      setViewType(location.pathname.split("/")[3])
+      setViewType(location.pathname.split("/")[3]);
     } else {
       setVersion(versions[0]);
-      setViewType(location.pathname.split("/")[2])
+      setViewType(location.pathname.split("/")[2]);
     }
     setVersionList(versions);
     setSDK(currentSdk);
@@ -74,45 +77,47 @@ export default function SidebarDropdowns() {
 
   const sdkList = [
     {
-      id:"react",
+      id: "react",
       value: "React",
-      icon:"/img/icons/libraries/ic_react.svg"
+      icon: "/img/icons/libraries/ic_react.svg",
     },
     {
-      id:"react-native",
+      id: "react-native",
       value: "React Native",
-      
-      icon:"/img/icons/libraries/ic_react.svg"
+
+      icon: "/img/icons/libraries/ic_react.svg",
     },
     {
-      id:"javascript",
+      id: "javascript",
       value: "Javascript",
-      icon:"/img/icons/libraries/ic_javascript.svg"
+      icon: "/img/icons/libraries/ic_javascript.svg",
     },
     {
-      id:"android",
+      id: "android",
       value: "Android",
-      icon:"/img/icons/libraries/ic_android.svg"
+      icon: "/img/icons/libraries/ic_android.svg",
     },
     {
-      id:"ios",
+      id: "ios",
       value: "iOS",
-      icon:"/img/icons/libraries/ic_ios.svg"
+      icon: "/img/icons/libraries/ic_ios.svg",
     },
     {
-      id:"flutter",
+      id: "flutter",
       value: "Flutter",
-      icon:"/img/icons/libraries/ic_flutter.svg"
+      icon: "/img/icons/libraries/ic_flutter.svg",
     },
     {
-      id:"prebuilt",
+      id: "prebuilt",
       value: "Prebuilt",
-      icon:"/img/icons/libraries/ic_javascript.svg"
+      icon: "/img/icons/libraries/ic_javascript.svg",
     },
-  ]
+  ];
 
   function getSDKName(value) {
-    var name = sdkList.filter((i) => { return i.id == value });
+    var name = sdkList.filter((i) => {
+      return i.id == value;
+    });
     return name;
   }
 
@@ -120,32 +125,59 @@ export default function SidebarDropdowns() {
     <div className="row dropdown_menu">
       {(sdk != "docs" && sdk != "prebuilt") || viewType == "api" ? (
         <div class="col dropdown dropdown--hoverable dropdown--left">
-        <div class="navbar__link">
-            {<img src={getSDKName(sdk)[0]?.icon} />}{getSDKName(sdk)[0]?.value}
+          <div class="navbar__link--active">
+            {<img src={getSDKName(sdk)[0]?.icon} />}
+            {getSDKName(sdk)[0]?.value}
           </div>
-        <ul class="dropdown__menu">
-          {sdkList.map((e, i) => {
-            return (e.id != "prebuilt" || viewType == "api" ?
-              <li>
-                      <Link class={e.id == sdk ? "dropdown__link dropdown__link--active" : "dropdown__link"} href={getSdkRoutingPath(e.id)}><img src={ e.icon}/>{ e.value}</Link>
-                    </li>:null)
-                  })}
-        </ul>
-      </div>
+          <ul class="dropdown__menu">
+            {sdkList.map((e, i) => {
+              return e.id != "prebuilt" || viewType == "api" ? (
+                <li>
+                  <Link
+                    class={
+                      e.id == sdk
+                        ? "dropdown__link dropdown__link--active"
+                        : "dropdown__link"
+                    }
+                    href={getSdkRoutingPath(e.id)}
+                  >
+                    <img src={e.icon} />
+                    {e.value}
+                  </Link>
+                </li>
+              ) : null;
+            })}
+          </ul>
+        </div>
       ) : null}
       {sdk != "docs" ? (
-        <div class={(viewType == "guide" && sdk == "prebuilt") ? "col dropdown dropdown--hoverable dropdown--left" : "dropdown dropdown--hoverable dropdown--right"}>
-        <a class="navbar__link">
-          {version}</a>
+        <div
+          class={
+            viewType == "guide" && sdk == "prebuilt"
+              ? "col dropdown dropdown--hoverable dropdown--left"
+              : "dropdown dropdown--hoverable dropdown--right"
+          }
+        >
+          <a class="navbar__link--active">{version}</a>
           <ul class="dropdown__menu">
             {versionList.map((v) => {
-            return <li>
-                      <Link class={ v==version ? "dropdown__link dropdown__link--active" : "dropdown__link"} href={getRouteVersion(v)}>{ v}</Link>
-                    </li>;
-          })}
-        </ul>
-      </div>
-        
+              return (
+                <li>
+                  <Link
+                    class={
+                      v == version
+                        ? "dropdown__link dropdown__link--active"
+                        : "dropdown__link"
+                    }
+                    href={getRouteVersion(v)}
+                  >
+                    {v}
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
       ) : null}
     </div>
   );

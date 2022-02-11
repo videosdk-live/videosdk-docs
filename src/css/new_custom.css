@@ -6,6 +6,18 @@
 }
 
 @font-face {
+  font-family: "office code pro";
+  src: url("/fonts/office-code-pro/OfficeCodePro-Regular.eot");
+  src: url("/fonts/office-code-pro/OfficeCodePro-Regular.woff2") format("woff2"),
+    url("/fonts/office-code-pro/OfficeCodePro-Regular.woff") format("woff"),
+    url("/fonts/office-code-pro/OfficeCodePro-Regular.ttf") format("truetype"),
+    url("/fonts/office-code-pro/OfficeCodePro-Regular.otf") format("otf");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
   font-family: "lato";
   src: url(/fonts/lato/Lato-Bold.ttf) format("truetype");
   font-weight: 700;
@@ -95,6 +107,7 @@
   --ifm-font-size-base: var(--custom-font-size-base);
   --ifm-heading-font-weight: 700;
   --ifm-font-weight-bold: 700;
+  --ifm-navbar-link-color: #666666;
 
   /* Globals */
   --ifm-global-shadow-lw: var(--custom-shadow-lw);
@@ -201,6 +214,21 @@
   background: slategrey;
 }
 
+html[data-theme="dark"] .navbar__link:hover {
+  color: white;
+}
+html[data-theme="dark"] .navbar__link--active {
+  color: white;
+}
+
+.navbar__link:hover {
+  color: black;
+}
+
+.navbar__link--active {
+  color: black;
+}
+
 ::-webkit-scrollbar-thumb:hover {
   background: rgb(154, 158, 161);
 }
@@ -266,14 +294,16 @@ element {
 .card {
   border: 2px solid #f6f6fc;
   border-radius: 8px;
-}
-.card__body {
-  color: #000;
+  box-shadow: none;
 }
 
 html[data-theme="dark"] .card {
   border: 1px solid #252a34;
   border-radius: 8px;
+  background: #161616;
+}
+.card__body {
+  color: #000;
 }
 
 html[data-theme="dark"] .card:hover {
@@ -364,25 +394,25 @@ html[data-theme="dark"] .mermaid {
   padding-left: 0px;
 }
 
-.dropdown_menu >.dropdown.dropdown.dropdown--left > .dropdown__menu{
+.dropdown_menu > .dropdown.dropdown.dropdown--left > .dropdown__menu {
   margin-left: 1rem;
   width: auto;
 }
 
-.dropdown_menu >.dropdown.dropdown.dropdown--right > .dropdown__menu{
+.dropdown_menu > .dropdown.dropdown.dropdown--right > .dropdown__menu {
   width: auto;
   min-width: auto;
   left: 0px;
 }
 
-.dropdown_menu > .dropdown.dropdown--right > .navbar__link {
+.dropdown_menu > .dropdown.dropdown--right > .navbar__link--active {
   flex: 1;
   padding: 0.5rem;
   margin-right: 1rem;
   background: none;
   border-radius: 0.5rem;
 }
-.dropdown_menu > .dropdown.dropdown--left > .navbar__link {
+.dropdown_menu > .dropdown.dropdown--left > .navbar__link--active {
   flex: 1;
   padding: 0.5rem;
   margin-left: 1rem;
@@ -391,7 +421,7 @@ html[data-theme="dark"] .mermaid {
   border-radius: 0.5rem;
 }
 
-.dropdown_menu > .dropdown > .navbar__link::after {
+.dropdown_menu > .dropdown > .navbar__link--active::after {
   flex: 1;
 }
 
@@ -430,53 +460,112 @@ header > h1 {
   color: #4b4b4b;
 }
 
-/* .codeBlockContainer_node_modules-\@docusaurus-theme-classic-lib-next-theme-CodeBlock-styles-module {
-  /* margin-bottom: var(--ifm-leading);
-  border-radius: var(--ifm-global-radius);
-  box-shadow: var(--ifm-global-shadow-lw); */
-/* font-family: Lato;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 24px;
-  color: #4b4b4b;
-} */
-
-.dropdown_menu>.dropdown.dropdown--left > .navbar__link{
-    flex: 1;
-    padding: 0.5rem;
-    margin-left: 1rem;
-    margin-right: 1rem;
-    background: var(--ifm-color-secondary);
-    border-radius: 0.5rem;
+.margin-vert--md {
+  margin-top: 0px !important;
 }
 
-.dropdown_menu>.dropdown.dropdown--left > .navbar__link > img,
-.dropdown_menu>.dropdown.dropdown--left > .dropdown__menu>li > .dropdown__link > img{
-    padding-right: 0.5rem;
-    padding-bottom: -0.5rem;
-    vertical-align: sub;
+.dropdown_menu > .dropdown.dropdown--left > .navbar__link--active {
+  flex: 1;
+  padding: 0.5rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  background: var(--ifm-color-secondary);
+  border-radius: 0.5rem;
+}
+
+.dropdown_menu > .dropdown.dropdown--left > .navbar__link--active > img,
+.dropdown_menu
+  > .dropdown.dropdown--left
+  > .dropdown__menu
+  > li
+  > .dropdown__link
+  > img {
+  padding-right: 0.5rem;
+  padding-bottom: -0.5rem;
+  vertical-align: sub;
 }
 
 html[data-theme="dark"]
-.dropdown_menu>.dropdown.dropdown--left > .navbar__link > img  {
-    filter: invert(1);
+  .dropdown_menu
+  > .dropdown.dropdown--left
+  > .navbar__link--active
+  > img {
+  filter: invert(1);
 }
 html[data-theme="dark"]
-.dropdown_menu>.dropdown.dropdown--left > .dropdown__menu>li > .dropdown__link > img{
-    filter: invert(1);
+  .dropdown_menu
+  > .dropdown.dropdown--left
+  > .dropdown__menu
+  > li
+  > .dropdown__link
+  > img {
+  filter: invert(1);
 }
 
-/* .dropdown_menu>.dropdown.dropdown--right > .dropdown__menu{
-  min-width: 40px !important;
-  left: 0px;
-  width: auto;
-} */
-
-.dropdown_menu>.dropdown > .navbar__link::after{
+.dropdown_menu > .dropdown > .navbar__link--active::after {
   flex: 1;
 }
 
-.menu{
+.menu {
   padding: 0px !important;
+}
+
+.prism-code {
+  font-family: office code pro;
+  background-color: none;
+  white-space: normal;
+  word-break: break-word;
+  font-size: 1rem;
+  outline: none !important;
+}
+
+.prism-code div,
+.prism-code div:focus,
+.prism-code div:active {
+  outline: none !important;
+}
+
+.ButtonTabs {
+  padding-left: 0 !important;
+}
+
+.ButtonTabs .button {
+  width: 100%;
+  display: block;
+  color: var(--custom-content-color) !important;
+  margin-right: 10px;
+  margin-bottom: 8px;
+  border: 2px solid var(--ifm-button-background-color) !important;
+}
+
+.ButtonTabs .button.is-active,
+.ButtonTabs .button:hover,
+.ButtonTabs:hover .button.is-active:hover {
+  border: 2px solid var(--custom-primary) !important;
+  box-shadow: var(--custom-shadow-lw);
+}
+
+/* Disable the border on the active button when hovering across the buttons */
+.ButtonTabs:hover .button.is-active {
+  border: 2px solid var(--ifm-button-background-color) !important;
+}
+
+/* But */
+@media screen and (max-width: 997px) {
+  .ButtonTabs {
+    padding-left: var(--ifm-spacing-horizontal) !important;
+  }
+
+  .ButtonTabs > div {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    -ms-overflow-style: -ms-autohiding-scrollbar !important;
+  }
+
+  .ButtonTabs .button {
+    display: inline-block;
+    width: auto;
+  }
 }
