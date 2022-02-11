@@ -18,7 +18,7 @@ module.exports = {
   overview: [
     {
       type: "category",
-      label: "DASHBOARD",
+      label: "Dashboard",
       items: [
         "overview/dashboard/getting-started",
         //"overview/dashboard/features"
@@ -27,7 +27,7 @@ module.exports = {
     },
     {
       type: "category",
-      label: "VIDEO & AUDIO CALLING",
+      label: "Video & Audio Calling",
       items: [
         "overview/video-and-audio-calling-api-sdk/getting-started",
         "overview/video-and-audio-calling-api-sdk/architecture",
@@ -36,7 +36,7 @@ module.exports = {
     },
     {
       type: "category",
-      label: "INTERACTIVE LIVE STREAMING",
+      label: "Interactive Live Streaming",
       items: [
         "overview/interactive-live-streaming/getting-started",
         "overview/interactive-live-streaming/architecture",
@@ -45,7 +45,7 @@ module.exports = {
     },
     // {
     //   type: "category",
-    //   label: "REAL TIME COMMUNICATION",
+    //   label: "Real Time Communication",
     //   items: [
     //     "overview/real-time-communication/introduction",
     //     // "overview/real-time-communication/features",
@@ -54,7 +54,7 @@ module.exports = {
     // },
     {
       type: "category",
-      label: "STANDARD LIVE STREAMING",
+      label: "Standard Live Streaming",
       items: [
         //"overview/live-streaming/introduction",
         // "overview/live-streaming/features",
@@ -65,7 +65,7 @@ module.exports = {
     },
     {
       type: "category",
-      label: "VIDEO ON DEMAND",
+      label: "Video On Demand",
       items: [
         // "overview/video-on-demand/introduction",
         // "overview/video-on-demand/features",
@@ -80,7 +80,7 @@ module.exports = {
   guideDashboard: [
     {
       type: "category",
-      label: "GUIDE",
+      label: "Guide",
       items: ["guide/dashboard/getting-started"],
       collapsed: true,
     },
@@ -243,13 +243,13 @@ module.exports = {
   guideStandardLiveStreaming: [
     {
       type: "category",
-      label: "GUIDE",
+      label: "Guide",
       items: ["guide/standard-live-streaming-api-sdk/getting-started"],
       collapsed: true,
     },
     {
       type: "category",
-      label: "SETUP",
+      label: "Quick Setup",
       items: [
         "guide/standard-live-streaming-api-sdk/signup-and-create-api",
         "guide/standard-live-streaming-api-sdk/authentication",
@@ -258,7 +258,7 @@ module.exports = {
     },
     {
       type: "category",
-      label: "FEATURES",
+      label: "Basic Features",
       items: [
         "guide/standard-live-streaming-api-sdk/features/create-new-live-stream",
         "guide/standard-live-streaming-api-sdk/features/go-live-with-rtmp",
@@ -276,13 +276,13 @@ module.exports = {
   guideVideoOnDemand: [
     {
       type: "category",
-      label: "GUIDE",
+      label: "Guide",
       items: ["guide/video-on-demand/getting-started"],
       collapsed: true,
     },
     {
       type: "category",
-      label: "SETUP",
+      label: "Quick Setup",
       items: [
         "guide/video-on-demand/signup-and-create-api",
         "guide/video-on-demand/authentication",
@@ -291,7 +291,7 @@ module.exports = {
     },
     {
       type: "category",
-      label: "FEATURES",
+      label: "Features",
       items: [
         {
           type: "category",
@@ -325,7 +325,7 @@ module.exports = {
   realtimeCommunicationSidebar: [
     {
       type: "category",
-      label: "REAL TIME COMMUNICATION",
+      label: "Real Time Communication",
       items: [
         "api-reference/realtime-communication/intro",
         "api-reference/realtime-communication/architecture",
@@ -335,7 +335,7 @@ module.exports = {
 
     {
       type: "category",
-      label: "REST API REFERENCE",
+      label: "Rest API Reference",
       collapsed: true,
       items: [
         "api-reference/realtime-communication/auth",
@@ -468,7 +468,7 @@ module.exports = {
     // },
     {
       type: "category",
-      label: "SEE ALSO",
+      label: "See Also",
       items: [
         //"api-reference/realtime-communication/see-also/architecture",
         "api-reference/realtime-communication/see-also/device-browser-support",
@@ -482,7 +482,7 @@ module.exports = {
   livestreamingSidebar: [
     {
       type: "category",
-      label: "LIVE STREAMING",
+      label: "Live Streaming",
       items: ["api-reference/live-streaming/intro"],
       collapsed: true,
     },
@@ -504,7 +504,7 @@ module.exports = {
 
     {
       type: "category",
-      label: "REST API REFERENCE",
+      label: "Rest API Reference",
       items: [
         "api-reference/live-streaming/auth",
         "api-reference/live-streaming/create-live-stream",
@@ -520,13 +520,13 @@ module.exports = {
   videoondemandSidebar: [
     {
       type: "category",
-      label: "VIDEO ON DEMAND",
+      label: "Video On Demand",
       items: ["api-reference/video-on-demand/intro"],
       collapsed: true,
     },
     {
       type: "category",
-      label: "STORAGE REST API REFERENCE",
+      label: "Storage Rest API Reference",
       items: [
         "api-reference/video-on-demand/storage-api-reference/auth",
         "api-reference/video-on-demand/storage-api-reference/create-new-url",
@@ -539,7 +539,7 @@ module.exports = {
     },
     {
       type: "category",
-      label: "ENCODING REST API REFERENCE",
+      label: "Encoding Rest API Reference",
       items: [
         "api-reference/video-on-demand/encoding-api-reference/auth",
         "api-reference/video-on-demand/encoding-api-reference/create-encoding-job",
@@ -554,7 +554,7 @@ module.exports = {
   tutorials: [
     {
       type: "category",
-      label: "GET STARTED",
+      label: "Get Started",
       items: ["tutorials/introduction"],
       collapsed: true,
     },

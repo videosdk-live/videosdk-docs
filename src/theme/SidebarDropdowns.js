@@ -10,8 +10,8 @@ import { useLocation } from "@docusaurus/router";
 import Link from "@docusaurus/Link";
 
 export default function SidebarDropdowns() {
-  const [sdk, setSDK] = useState();
-  const [version, setVersion] = useState("");
+  const [sdk, setSDK] = useState("React");
+  const [version, setVersion] = useState("0.0.x");
   const [versionList, setVersionList] = useState([]);
   const [viewType, setViewType] = useState("");
   const location = useLocation();
@@ -125,13 +125,11 @@ export default function SidebarDropdowns() {
     <div className="row dropdown_menu">
       {(sdk != "docs" && sdk != "prebuilt") || viewType == "api" ? (
         <div class="col dropdown dropdown--hoverable dropdown--left">
-          <div class="row navbar__link--active">
-            {<img src={getSDKName(sdk)[0]?.icon} />}
-            <div class="col" style={{ padding: "0px" }}>
-              {getSDKName(sdk)[0]?.value}
-            </div>
-
-            <img src="/img/icons/ic_arrow_down.svg" />
+          <div height="24px" width="24px" class="row navbar__link--active">
+            {<img class = "dropdown-logo"src={getSDKName(sdk)[0]?.icon} />}
+            <div class="col" style={{padding:"0px", fontSize:"1rem"}}>{getSDKName(sdk)[0]?.value}</div>
+            
+            <img src="/img/icons/ic_arrow_down.svg" />        
           </div>
           <ul class="dropdown__menu">
             {sdkList.map((e, i) => {
