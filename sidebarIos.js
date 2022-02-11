@@ -13,7 +13,7 @@ module.exports = {
     },
     {
       type: "category",
-      label: "BASIC FEATURES",
+      label: "Basic Features",
       items: [
         "guide/video-and-audio-calling-api-sdk/features/start-join-meeting",
         "guide/video-and-audio-calling-api-sdk/features/manage-participants",
@@ -28,7 +28,7 @@ module.exports = {
     },
     {
       type: "category",
-      label: "ADVANCED FEATURES",
+      label: "Advanced Features",
       items: [
         "guide/video-and-audio-calling-api-sdk/features/go-live-social-media",
       ],
@@ -38,7 +38,7 @@ module.exports = {
   apiSidebar: [
     {
       type: "category",
-      label: "SDK REFERENCE",
+      label: "SDK Reference",
       collapsed: true,
       items: [
             "api/sdk-reference/setup",

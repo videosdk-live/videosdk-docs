@@ -368,7 +368,7 @@ module.exports = {
     },
     // {
     //   type: "category",
-    //   label: "SDK REFERENCE",
+    //   label: "SDK Reference",
     //   collapsed: true,
     //   items: [
     //     {

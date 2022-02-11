@@ -2,7 +2,7 @@ module.exports = {
   guideAudioAndVideoCalling: [
     {
       type: "category",
-      label: "QUICK START",
+      label: "Quick Start",
       items: [
         "guide/video-and-audio-calling-api-sdk/getting-started",
         "guide/video-and-audio-calling-api-sdk/signup-and-create-api",
@@ -13,7 +13,7 @@ module.exports = {
     },
     {
       type: "category",
-      label: "BASIC FEATURES",
+      label: "Basic Features",
       items: [
         // "guide/video-and-audio-calling-api-sdk/features/initilize-meeting-factory",
         "guide/video-and-audio-calling-api-sdk/features/start-join-meeting",
@@ -33,7 +33,7 @@ module.exports = {
     },
     {
       type: "category",
-      label: "ADVANCED FEATURES",
+      label: "Advanced Features",
       collapsed: true,
       items: [
         "guide/video-and-audio-calling-api-sdk/features/play-external-video",
@@ -60,7 +60,7 @@ module.exports = {
   apiSidebar: [
     {
       type: "category",
-      label: "SDK REFERENCE",
+      label: "SDK Reference",
       collapsed: true,
       items: [
         "api/sdk-reference/setup",

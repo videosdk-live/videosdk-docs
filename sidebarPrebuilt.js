@@ -2,7 +2,7 @@ module.exports = {
   guidePrebuiltVideoCalling: [
     {
       type: "category",
-      label: "QUICK START",
+      label: "Quick Start",
       items: [
         "guide/prebuilt-video-and-audio-calling/getting-started",
         "guide/prebuilt-video-and-audio-calling/signup-and-create-api",
@@ -20,7 +20,7 @@ module.exports = {
     },
     {
       type: "category",
-      label: "BASIC FEATURES",
+      label: "Basic Features",
       items: [
         "guide/prebuilt-video-and-audio-calling/features/join-screen",
         "guide/prebuilt-video-and-audio-calling/features/camera-controls",
@@ -38,7 +38,7 @@ module.exports = {
     },
     {
       type: "category",
-      label: "ADVANCED FEATURES",
+      label: "Advanced Features",
       items: [
         "guide/prebuilt-video-and-audio-calling/features/go-live-social-media",
         "guide/prebuilt-video-and-audio-calling/features/customize-branding",
@@ -53,7 +53,7 @@ module.exports = {
   apiSidebar: [
     {
       type: "category",
-      label: "SDK REFERENCE",
+      label: "SDK Reference",
       collapsed: true,
       items: ["api/sdk-reference/setup", "api/sdk-reference/video-sdk-meeting"],
     },
