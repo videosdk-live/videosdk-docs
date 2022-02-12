@@ -34,6 +34,7 @@ import MethodListHeading from '@theme/MethodListHeading';
       <MethodListItemLabel description={"meeting Id"} name="id"  type={"String"} />
       <MethodListItemLabel description={"local participant of the meeting"} name="localParticipant"  type={"Participant"} />
       <MethodListItemLabel description={"all remote participants of the meeting"} name="participants"  type={"Map<String, Participant>"} />
+      <MethodListItemLabel description={"Publisher-Subscriber feature"} name="pubSub"  type={"PubSub"} />
       <MethodListItemLabel description={"Id of the webcam device selected as input video source"} name="selectedWebcamId"  type={"String?"} />
       <MethodListItemLabel description={"Id of the microphone device selected as input audio source"} name="selectedMicId"  type={"String?"} />
     </MethodListGroup>

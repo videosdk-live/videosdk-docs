@@ -1,5 +1,5 @@
 ---
-title: Stream class for IOS SDK.
+title: Stream class for Flutter SDK.
 hide_title: false
 hide_table_of_contents: false
 description: RTC Stream Class enables opportunity to .

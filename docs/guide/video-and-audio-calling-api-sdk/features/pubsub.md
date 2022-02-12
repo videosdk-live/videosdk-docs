@@ -255,7 +255,7 @@ func subscribe(topic: String, forListener listener: PubSubMessageListener)
 | Parameter Name | Type                  | Description                                                                                                                                      |
 | -------------- | --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | topic          | String                | This should be the topic to be subscribed.                                                                                                       |
-| listener       | PubSubMessageListener | This is an object of PubSubMessageListener, which listens for upcoming messages and calls onMessageReceived function, when new message received. |
+| forListener    | PubSubMessageListener | This is an object of PubSubMessageListener, which listens for upcoming messages and calls onMessageReceived function, when new message received. |
 
 </TabItem>
 <TabItem value="flutter">

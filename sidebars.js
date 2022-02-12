@@ -469,6 +469,8 @@ module.exports = {
             "realtime-communication/sdk-reference/flutter-sdk/meeting-class",
             "realtime-communication/sdk-reference/flutter-sdk/participant-class",
             "realtime-communication/sdk-reference/flutter-sdk/stream-class",
+            "realtime-communication/sdk-reference/flutter-sdk/pubsub-message",
+            "realtime-communication/sdk-reference/flutter-sdk/pubsub-options",
           ],
         },
       ],
