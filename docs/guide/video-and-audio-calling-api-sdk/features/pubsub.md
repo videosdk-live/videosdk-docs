@@ -49,12 +49,22 @@ function publish(topic: String, message: String, { persist : Boolean });
 function publish(message: String, { persist : Boolean });
 ```
 
+| Parameter Name | Type   | Description                                                                                                               |
+| -------------- | ------ | ------------------------------------------------------------------------------------------------------------------------- |
+| message        | String | This is the actual message, which will be published to participants, who had subscribed to a particular topic.            |
+| options        | Object | This is an object, which provides an option, such as `persist`, which persists message history for upcoming participants. |
+
 </TabItem>
 <TabItem value="reactnative">
 
 ```js
 function publish(message: String, { persist : Boolean });
 ```
+
+| Parameter Name | Type   | Description                                                                                                               |
+| -------------- | ------ | ------------------------------------------------------------------------------------------------------------------------- |
+| message        | String | This is the actual message, which will be published to participants, who had subscribed to a particular topic.            |
+| options        | Object | This is an object, which provides an option, such as `persist`, which persists message history for upcoming participants. |
 
 </TabItem>
 
