@@ -11,7 +11,7 @@ module.exports = {
           label: "Client Setup",
           items: [
             "guide/video-and-audio-calling-api-sdk/react-native-android-sdk",
-            "guide/video-and-audio-calling-api-sdk/react-native-ios-sdk"
+            "guide/video-and-audio-calling-api-sdk/react-native-ios-sdk",
           ],
           collapsed: true,
         },
@@ -74,19 +74,38 @@ module.exports = {
   ],
   apiSidebar: [
     {
-      type: "category",
-      label: "SDK Reference",
-      collapsed: true,
-      items: [
-        "api/sdk-reference/setup",
-        "api/sdk-reference/setup-android",
-        "api/sdk-reference/setup-ios",
-        "api/sdk-reference/rtc-stream",
-        "api/sdk-reference/use-meeting",
-        "api/sdk-reference/use-participant",
-        "api/sdk-reference/meeting-provider",
-        "api/sdk-reference/meeting-consumer",
-      ],
+      type: "doc",
+      id: "api/sdk-reference/setup",
+    },
+
+    {
+      type: "doc",
+      id: "api/sdk-reference/setup-android",
+    },
+    {
+      type: "doc",
+      id: "api/sdk-reference/setup-ios",
+    },
+    {
+      type: "doc",
+      id: "api/sdk-reference/rtc-stream",
+    },
+
+    {
+      type: "doc",
+      id: "api/sdk-reference/use-meeting",
+    },
+    {
+      type: "doc",
+      id: "api/sdk-reference/use-participant",
+    },
+    {
+      type: "doc",
+      id: "api/sdk-reference/meeting-provider",
+    },
+    {
+      type: "doc",
+      id: "api/sdk-reference/meeting-consumer",
     },
   ],
 };
