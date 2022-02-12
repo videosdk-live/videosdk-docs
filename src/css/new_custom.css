@@ -234,7 +234,6 @@ html[data-theme="dark"] .navbar__link:hover,
 }
 html[data-theme="dark"] .navbar__items > .navbar__link--active {
   color: white;
-  border-bottom: 1px solid var(--ifm-color-primary);
   font-weight: 700;
 }
 
@@ -294,15 +293,25 @@ ul.menu__list .menu__link {
 }
 
 html[data-theme="dark"] ul.menu__list .menu__link {
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--ifm-menu-color);
+}
+
+html[data-theme="dark"] ul.menu__list .menu__link--active {
+  background-color: #6a65f1;
   color: #fff;
 }
 
 html[data-theme="light"] ul.menu__list .menu__link {
-  color: #000;
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--ifm-menu-color);
 }
 
 html[data-theme="light"] ul.menu__list .menu__link--active {
   color: #fff;
+  background-color: #6a65f1;
 }
 
 ul.menu__list ul.menu__list .menu__link {
@@ -404,7 +413,11 @@ html[data-theme="dark"] .card:hover {
 }
 
 html[data-theme="dark"] .card__body {
-  color: var(--custom-content-color-lightest);
+  color: #b2b2b2;
+}
+
+.theme-doc-markdown.markdown > p {
+  margin-top: 16px;
 }
 
 .docMainContainer_node_modules-\@docusaurus-theme-classic-lib-next-theme-DocPage-styles-module {
@@ -450,8 +463,16 @@ a[class^="sidebarLogo_"] img {
   --ifm-footer-link-color: var(--custom-content-color);
 }
 
+html[data-theme="dark"] .footer__title {
+  --ifm-footer-title-color: white;
+}
+
 .footer__title {
-  --ifm-footer-title-color: var(--custom-content-color);
+  --ifm-footer-title-color: #000;
+}
+
+html[data-theme="dark"] .footer__items {
+  color: #b2b2b2;
 }
 
 .badge--secondary {
@@ -504,6 +525,10 @@ html[data-theme="dark"] .mermaid {
   color: var(--ifm-color-content);
 }
 
+[data-theme="dark"] .navbar__link {
+  color: #b2b2b2;
+}
+
 .dropdown_menu > .dropdown.dropdown--right > .navbar__link--active:hover {
   background: var(--ifm-color-secondary);
 }
@@ -518,13 +543,17 @@ html[data-theme="dark"] .mermaid {
   color: var(--ifm-color-content);
 }
 
-html[data-theme="dark"] header > h1 {
+html[data-theme="dark"] .markdown h1:first-child {
   font-family: Lato;
   font-style: normal;
   font-weight: 800;
   font-size: 36px;
   line-height: 43px;
-  color: var(--custom-level-1-font-color);
+  color: #fff;
+  --ifm-h1-font-size: 3rem;
+  margin-bottom: calc(
+    var(--ifm-h1-vertical-rhythm-bottom) * var(--ifm-leading)
+  );
 }
 
 html[data-theme="dark"] .theme-doc-markdown > p {
@@ -536,14 +565,19 @@ html[data-theme="dark"] .theme-doc-markdown > p {
   color: #b2b2b2;
 }
 
-header > h1 {
+.markdown h1:first-child {
   font-family: Lato;
   font-style: normal;
   font-weight: 800;
   font-size: 36px;
   line-height: 43px;
   color: #1a1d33;
+  --ifm-h1-font-size: 3rem;
+  margin-bottom: calc(
+    var(--ifm-h1-vertical-rhythm-bottom) * var(--ifm-leading)
+  );
 }
+
 .theme-doc-markdown > p {
   font-family: Lato;
   font-style: normal;
@@ -1216,6 +1250,23 @@ token.property-access {
   @apply text-green-500;
 }
 
+.navbar {
+  box-shadow: none;
+  border-bottom: 1px solid #efeff5;
+}
+
+div[class^="sidebar_"] {
+  border-right: 1px solid #efeff5;
+}
+
+.container.guide-steps-block > .row {
+  margin-top: 14px;
+}
+
+.table-of-contents__left-border {
+  border-left: 1px solid #efeff5;
+}
+
 html[data-theme="dark"] .table-of-contents__left-border {
   border-left: 1px solid #252a34;
 }
@@ -1277,3 +1328,33 @@ html[data-theme="dark"] .card-title {
   /* identical to box height */
   color: black;
 }
+
+.card-left {
+  margin-left: 10px;
+  border: 1px solid red;
+}
+
+.container.guide-steps-block {
+  margin-left: -18px;
+}
+
+html[data-theme="dark"]
+  .table-of-contents__link.toc-highlight.table-of-contents__link--active {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+html[data-theme="light"] .table-of-contents__link:hover,
+.table-of-contents__link:hover code,
+.table-of-contents__link--active,
+.table-of-contents__link--active code {
+  color: #000;
+  text-decoration: none;
+  font-weight: bold;
+}
+/* .menu__list
+  > .theme-doc-sidebar-item-link.theme-doc-sidebar-item-link-level-1.menu__list-item--active {
+  background: #6a65f1;
+  color: #000;
+} */

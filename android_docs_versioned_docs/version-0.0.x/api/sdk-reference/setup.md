@@ -1,4 +1,5 @@
 ---
+id: setup
 title: Installation steps for RTC Android SDK
 hide_title: false
 hide_table_of_contents: false

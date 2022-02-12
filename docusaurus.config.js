@@ -122,7 +122,7 @@ module.exports = {
         },
         {
           label: "Join Community",
-          href: "https://app.videosdk.live/login",
+          href: "https://discord.gg/f2WsNDN9S5",
           position: "right",
         },
         {
@@ -250,7 +250,7 @@ module.exports = {
             },
             {
               label: "Join the Community",
-              href: "https://discord.gg/Gpmj6eCq5u",
+              href: "https://discord.gg/f2WsNDN9S5",
             },
           ],
         },

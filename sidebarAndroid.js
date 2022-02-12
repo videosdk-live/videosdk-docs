@@ -1,6 +1,5 @@
 module.exports = {
-  guideAudioAndVideoCalling:
-    [
+  guideAudioAndVideoCalling: [
     {
       type: "category",
       label: "Quick Start",
@@ -38,18 +37,32 @@ module.exports = {
 
   apiSidebar: [
     {
-      type: "category",
-      label: "SDK Reference",
-      collapsed: true,
-      items: [
-        "api/sdk-reference/setup",
-        "api/sdk-reference/video-sdk-class",
-        "api/sdk-reference/meeting-class",
-        "api/sdk-reference/participant-class",
-        "api/sdk-reference/stream-class",
-        "api/sdk-reference/meeting-event-listener-class",
-        "api/sdk-reference/participant-event-listener-class",
-      ],
+      type: "doc",
+      id: "api/sdk-reference/setup",
+    },
+    {
+      type: "doc",
+      id: "api/sdk-reference/video-sdk-class",
+    },
+    {
+      type: "doc",
+      id: "api/sdk-reference/meeting-class",
+    },
+    {
+      type: "doc",
+      id: "api/sdk-reference/participant-class",
+    },
+    {
+      type: "doc",
+      id: "api/sdk-reference/stream-class",
+    },
+    {
+      type: "doc",
+      id: "api/sdk-reference/meeting-event-listener-class",
+    },
+    {
+      type: "doc",
+      id: "api/sdk-reference/participant-event-listener-class",
     },
   ],
 };

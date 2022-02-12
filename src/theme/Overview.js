@@ -22,16 +22,19 @@ function Overview() {
           <h1 class="h1Heading_node_modules-@docusaurus-theme-classic-lib-next-theme-Heading-styles-module">
             {user.name ? "Hello, " + user.name : null}
           </h1>
-          <h1 class="h1Heading_node_modules-@docusaurus-theme-classic-lib-next-theme-Heading-styles-module">
+          <h1
+            style={{ marginLeft: "16px" }}
+            class="h1Heading_node_modules-@docusaurus-theme-classic-lib-next-theme-Heading-styles-module"
+          >
             Overview
           </h1>
-          <p className="sub-heading">
+          <p className="sub-heading" style={{ marginLeft: "16px" }}>
             Video SDK provides all the services to build interactive video
             product. It includes realtime communication, standard live
             streaming, interactive live streaming and video on demand.
           </p>
           <div class="container">
-            <div class="row ">
+            <div class="row">
               <div class="col col--6">
                 <CardLinks
                   title="Prebuilt Video & Audio Calling SDK"
@@ -83,9 +86,10 @@ function Overview() {
                 />
               </div>
             </div>
-            <div class="row ">
+            <div class="row" style={{ marginTop: "17px" }}>
               <div class="col col--6">
                 <CardLinks
+                  class="overview-card"
                   title="Standard Live Stream API"
                   text="RTMP-in based Live Stream API, including encoding & playback"
                   img="/img/Group 11383.svg"

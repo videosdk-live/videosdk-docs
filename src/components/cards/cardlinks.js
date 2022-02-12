@@ -26,18 +26,19 @@ const CardLinks = ({ title, text, links, img }) => {
         <div className="card-title">
           {title && <h3 style={{ marginBottom: 0 }}>{title}</h3>}
         </div>
-        <p className="card-text">{text}</p>
+        <p className="card-text" style={{ marginTop: "8px" }}>
+          {text}
+        </p>
       </div>
 
       <div className="card__body row">
-        
         {links.map((link, i) => (
-            <a href={link.link}>
-            <div class="card-button" key={link.link + i} >
+          <a href={link.link}>
+            <div class="card-button" key={link.link + i}>
               {link.linkName}
             </div>
-            </a>
-          ))}
+          </a>
+        ))}
       </div>
     </div>
   );
