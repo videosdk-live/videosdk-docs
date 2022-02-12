@@ -158,6 +158,14 @@ module.exports = {
       ],
       collapsed: false,
     },
+    {
+      type: "category",
+      label: "ADVANCED",
+      items: [
+        "guide/prebuilt-video-and-audio-calling/advanced/browser-compatibility",
+      ],
+      collapsed: false,
+    },
   ],
 
   guideAudioAndVideoCalling: [
