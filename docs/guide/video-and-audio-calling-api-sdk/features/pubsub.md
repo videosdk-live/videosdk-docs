@@ -1,20 +1,20 @@
 ---
-sidebar_label: PubSub
-pagination_label: PubSub
+sidebar_label: PubSub (BETA)
+pagination_label: PubSub (BETA)
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# PubSub
+# PubSub (BETA)
 
-PubSub feature allows the participant to receive messages of the topics which he has subscribed and send messages to other participants.
+PubSub feature allows the participant to send and receive messages of the topics which he has subscribed.
 
 ## Methods
 
 ### publish()
 
-This method is used for publishing message of specific topic.
+This method is use for publishing message of specific topic.
 
 #### Syntax
 
@@ -32,7 +32,7 @@ values={[
 <TabItem value="js">
 
 ```js
-// Coming Soon
+function publish(topic: String, message: String, { persist : Boolean });
 ```
 
 </TabItem>
@@ -40,14 +40,14 @@ values={[
 <TabItem value="react">
 
 ```js
-// Coming Soon
+function publish(message: String, { persist : Boolean });
 ```
 
 </TabItem>
 <TabItem value="reactnative">
 
 ```js
-// Coming Soon
+function publish(message: String, { persist : Boolean });
 ```
 
 </TabItem>
@@ -87,7 +87,7 @@ func publish(topic: String, message: String, options: [String : Any] = [:])
 | message        | String | This is the actual message, which will be published to participants, who had subscribed to a particular topic.            |
 | options        | Object | This is the object which provides an option, such as `persist`, which persists message history for upcoming participants. |
 
-##### Example
+#### Example
 
 <Tabs
 defaultValue="js"
@@ -103,7 +103,9 @@ values={[
 <TabItem value="js">
 
 ```js
-// Coming Soon
+function publishMessage() {
+  meeting?.pubSub?.publish(topic: "CHAT", message: "Hello Everyone!", { persist: true })
+}
 ```
 
 </TabItem>
@@ -111,14 +113,30 @@ values={[
 <TabItem value="react">
 
 ```js
-// Coming Soon
+// importing usePubSub hook from react-sdk
+import { usePubSub } from "@videosdk.live/react-sdk";
+
+// destructure publish method from usePubSub hook
+const { publish } = usePubSub("CHAT");
+
+// publish message
+const message = "Hello Everyone!";
+publish(message, { persist: true });
 ```
 
 </TabItem>
 <TabItem value="reactnative">
 
 ```js
-// Coming Soon
+// importing usePubSub hook from react-native-sdk
+import { usePubSub } from "@videosdk.live/react-native-sdk";
+
+// destructure publish method from usePubSub hook
+const { publish } = usePubSub("CHAT");
+
+// publish message
+const message = "Hello Everyone!";
+publish(message, { persist: true });
 ```
 
 </TabItem>
@@ -134,7 +152,7 @@ values={[
 
 ```js
 func publishMessage() {
-  meeting.pubsub.publish(topic: "CHAT", message: "Hello World!", options: ["persist": true])
+  meeting.pubsub.publish(topic: "CHAT", message: "Hello Everyone!", options: ["persist": true])
 }
 ```
 
@@ -148,7 +166,7 @@ func publishMessage() {
       // Publish a message
       await meeting.pubsub.publish(
         "CHAT", // Topic
-        "Hello", // Message Content
+        "Hello Everyone!", // Message Content
         const PubSubOptions(
           "persist": true // Stores the message in server for future participants
         ),
@@ -193,15 +211,25 @@ values={[
 <TabItem value="react">
 
 ```js
-// Coming Soon
+// react-sdk uses `usePubsub` hook,
+// it automatically subscribes/unsubscribe particular topic by itself..
 ```
+
+:::note
+You can checkout [Sample Code](/docs/guide/video-and-audio-calling-api-sdk/features/pubsub#sample-code) for better understanding.
+:::
 
 </TabItem>
 <TabItem value="reactnative">
 
 ```js
-// Coming Soon
+// react-native-sdk uses `usePubsub` hook,
+// it automatically subscribes/unsubscribe particular topic by itself..
 ```
+
+:::note
+You can checkout [Sample Code](/docs/guide/video-and-audio-calling-api-sdk/features/pubsub#sample-code) for better understanding.
+:::
 
 </TabItem>
 <TabItem value="android">
@@ -236,7 +264,7 @@ func subscribe(topic: String, forListener listener: PubSubMessageListener)
 | topic          | String | This should be the topic to be subscribed.                                  |
 | messageHandler | String | This is a handler function, which will be called when new message received. |
 
-##### Example
+#### Example
 
 <Tabs
 defaultValue="js"
@@ -260,18 +288,27 @@ values={[
 <TabItem value="react">
 
 ```js
-// Coming Soon
+// react-sdk uses `usePubsub` hook,
+// it automatically subscribes/unsubscribe particular topic by itself..
 ```
+
+:::note
+You can checkout [Sample Code](/docs/guide/video-and-audio-calling-api-sdk/features/pubsub#sample-code) for better understanding.
+:::
 
 </TabItem>
 <TabItem value="reactnative">
 
 ```js
-// Coming Soon
+// react-native-sdk uses `usePubsub` hook,
+// it automatically subscribes/unsubscribe particular topic by itself..
 ```
 
-</TabItem>
+:::note
+You can checkout [Sample Code](/docs/guide/video-and-audio-calling-api-sdk/features/pubsub#sample-code) for better understanding.
+:::
 
+</TabItem>
 <TabItem value="android">
 
 ```js
@@ -346,18 +383,27 @@ values={[
 <TabItem value="react">
 
 ```js
-// Coming Soon
+// react-sdk uses `usePubsub` hook,
+// it automatically subscribes/unsubscribe particular topic by itself..
 ```
+
+:::note
+You can checkout [Sample Code](/docs/guide/video-and-audio-calling-api-sdk/features/pubsub#sample-code) for better understanding.
+:::
 
 </TabItem>
 <TabItem value="reactnative">
 
 ```js
-// Coming Soon
+// react-native-sdk uses `usePubsub` hook,
+// it automatically subscribes/unsubscribe particular topic by itself..
 ```
 
-</TabItem>
+:::note
+You can checkout [Sample Code](/docs/guide/video-and-audio-calling-api-sdk/features/pubsub#sample-code) for better understanding.
+:::
 
+</TabItem>
 <TabItem value="android">
 
 ```js
@@ -391,7 +437,7 @@ func unsubscribe(topic: String, forListener listener: PubSubMessageListener)
 | topic          | String | This should be the topic to be unsubscribed.                   |
 | messageHandler | String | This is a handler function, which was passed in `subscribe()`. |
 
-##### Example
+#### Example
 
 <Tabs
 defaultValue="js"
@@ -415,18 +461,27 @@ values={[
 <TabItem value="react">
 
 ```js
-// Coming Soon
+// react-sdk uses `usePubsub` hook,
+// it automatically subscribes/unsubscribe particular topic by itself..
 ```
+
+:::note
+You can checkout [Sample Code](/docs/guide/video-and-audio-calling-api-sdk/features/pubsub#sample-code) for better understanding.
+:::
 
 </TabItem>
 <TabItem value="reactnative">
 
 ```js
-// Coming Soon
+// react-native-sdk uses `usePubsub` hook,
+// it automatically subscribes/unsubscribe particular topic by itself..
 ```
 
-</TabItem>
+:::note
+You can checkout [Sample Code](/docs/guide/video-and-audio-calling-api-sdk/features/pubsub#sample-code) for better understanding.
+:::
 
+</TabItem>
 <TabItem value="android">
 
 ```js
@@ -493,14 +548,44 @@ values={[
 <TabItem value="react">
 
 ```js
-// Coming Soon
+import { usePubSub } from "@videosdk.live/react-sdk";
+
+const MyComponent = () => {
+  // CHAT Topic
+  const { publish, messages } = usePubSub("CHAT");
+
+  // publish message
+  const sendMessage = () => {
+    const message = "Hello People!";
+    publish(message, { persist: true });
+  };
+
+  // get latest messages
+  console.log("Messages : ", messages);
+};
+export default MyComponent;
 ```
 
 </TabItem>
 <TabItem value="reactnative">
 
 ```js
-// Coming Soon
+import { usePubSub } from "@videosdk.live/react-native-sdk";
+
+const MyComponent = () => {
+  // CHAT Topic
+  const { publish, messages } = usePubSub("CHAT");
+
+  // publish message
+  const sendMessage = () => {
+    const message = "Hello People!";
+    publish(message, { persist: true });
+  };
+
+  // get latest messages
+  console.log("Messages : ", messages);
+};
+export default MyComponent;
 ```
 
 </TabItem>
