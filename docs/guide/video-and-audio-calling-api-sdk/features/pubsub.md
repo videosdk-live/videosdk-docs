@@ -35,6 +35,12 @@ values={[
 function publish(topic: String, message: String, { persist : Boolean });
 ```
 
+| Parameter Name | Type   | Description                                                                                                               |
+| -------------- | ------ | ------------------------------------------------------------------------------------------------------------------------- |
+| topic          | String | This should be the topic for which you are publishing a message.                                                          |
+| message        | String | This is the actual message, which will be published to participants, who had subscribed to a particular topic.            |
+| options        | Object | This is an object, which provides an option, such as `persist`, which persists message history for upcoming participants. |
+
 </TabItem>
 
 <TabItem value="react">
@@ -55,8 +61,14 @@ function publish(message: String, { persist : Boolean });
 <TabItem value="android">
 
 ```js
-// Coming Soon
+public void publish(String topic, String message, PubSubPublishOptions options)
 ```
+
+| Parameter Name | Type                 | Description                                                                                                                                       |
+| -------------- | -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
+| topic          | String               | This should be the topic for which you are publishing a message.                                                                                  |
+| message        | String               | This is the actual message, which will be published to participants, who had subscribed to a particular topic.                                    |
+| options        | PubSubPublishOptions | This is an object of PubSubPublishOptions, which provides an option, such as `persist`, which persists message history for upcoming participants. |
 
 </TabItem>
 
@@ -80,15 +92,15 @@ func publish(topic: String, message: String, options: [String : Any] = [:])
   Future<void> publish(
     String topic,
     String message,
-    [PubSubOptions options]
+    [PubSubPublishOptions options]
   )
 ```
 
-| Parameter Name | Type          | Description                                                                                                                                |
-| -------------- | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
-| topic          | String        | This should be the topic for which you are publishing a message.                                                                           |
-| message        | String        | This is the actual message, which will be published to participants, who had subscribed to a particular topic.                             |
-| options        | PubSubOptions | This is an object of PubSubOptions, which provides an option, such as `persist`, which persists message history for upcoming participants. |
+| Parameter Name | Type                 | Description                                                                                                                                       |
+| -------------- | -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
+| topic          | String               | This should be the topic for which you are publishing a message.                                                                                  |
+| message        | String               | This is the actual message, which will be published to participants, who had subscribed to a particular topic.                                    |
+| options        | PubSubPublishOptions | This is an object of PubSubPublishOptions, which provides an option, such as `persist`, which persists message history for upcoming participants. |
 
 </TabItem>
 </Tabs>
@@ -109,7 +121,7 @@ values={[
 <TabItem value="js">
 
 ```js
-function publishMessage() {
+function sendMessage() {
   meeting?.pubSub?.publish(topic: "CHAT", message: "Hello Everyone!", { persist: true })
 }
 ```
@@ -149,7 +161,11 @@ publish(message, { persist: true });
 <TabItem value="android">
 
 ```js
-// Coming Soon
+protected void sendMessage() {
+  PubSubPublishOptions options = new PubSubPublishOptions();
+  options.setPersist(true);
+  meeting.pubSub.publish("CHAT", "Hello from Android", options);
+}
 ```
 
 </TabItem>
@@ -157,7 +173,7 @@ publish(message, { persist: true });
 <TabItem value="ios">
 
 ```js
-func publishMessage() {
+func sendMessage() {
   meeting.pubsub.publish(topic: "CHAT", message: "Hello Everyone!", options: ["persist": true])
 }
 ```
@@ -172,8 +188,8 @@ func publishMessage() {
       // Publish a message
       await meeting.pubSub.publish(
         "CHAT", // Topic
-        "Hello Everyone!", // Message Content
-        const PubSubOptions(
+        "Hello from Flutter!", // Message Content
+        const PubSubPublishOptions(
           "persist": true // Stores the message in server for future participants
         ),
       );
@@ -191,7 +207,7 @@ func publishMessage() {
 
 ### subscribe()
 
-This method is used to subscribe message topic. This method returns a list of messages which were sent earlier.
+This method is used to subscribe for particular topic. This method returns a list of messages which were sent earlier.
 
 #### Syntax
 
@@ -209,8 +225,13 @@ values={[
 <TabItem value="js">
 
 ```js
-// Coming Soon
+function subscribe(topic: String, onMessageReceived: function);
 ```
+
+| Parameter Name    | Type     | Description                                                                   |
+| ----------------- | -------- | ----------------------------------------------------------------------------- |
+| topic             | String   | This should be the topic to be subscribed.                                    |
+| onMessageReceived | function | This is a callback function, which will be called, when new message received. |
 
 </TabItem>
 
@@ -241,8 +262,13 @@ You can checkout [Sample Code](/docs/guide/video-and-audio-calling-api-sdk/featu
 <TabItem value="android">
 
 ```js
-// Coming Soon
+public List<PubSubMessage> subscribe(String topic, PubSubMessageListener listener)
 ```
+
+| Parameter Name | Type                  | Description                                                                                                                                      |
+| -------------- | --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| topic          | String                | This should be the topic to be subscribed.                                                                                                       |
+| listener       | PubSubMessageListener | This is an object of PubSubMessageListener, which listens for upcoming messages and calls onMessageReceived function, when new message received. |
 
 </TabItem>
 
@@ -303,6 +329,11 @@ values={[
 // it automatically subscribes/unsubscribe particular topic by itself..
 ```
 
+| Parameter Name | Type                  | Description                                                                                                                                      |
+| -------------- | --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| topic          | String                | This should be the topic to be subscribed.                                                                                                       |
+| forListener    | PubSubMessageListener | This is an object of PubSubMessageListener, which listens for upcoming messages and calls onMessageReceived function, when new message received. |
+
 :::note
 You can checkout [Sample Code](/docs/guide/video-and-audio-calling-api-sdk/features/pubsub#sample-code) for better understanding.
 :::
@@ -323,7 +354,26 @@ You can checkout [Sample Code](/docs/guide/video-and-audio-calling-api-sdk/featu
 <TabItem value="android">
 
 ```js
-// Coming Soon
+PubSubMessageListener pubSubMessageListener = new PubSubMessageListener() {
+  @Override
+  public void onMessageReceived(PubSubMessage message) {
+    // Logs new message
+    Log.v("New Message Received", "Message : " + message.getMessage());
+  }
+};
+
+@Override
+protected void onCreate(Bundle savedInstanceState) {
+  //...
+
+  // Subscribe for 'CHAT' topic
+  List<PubSubMessage> pubSubMessageList = meeting.pubSub.subscribe("CHAT",pubSubMessageListener);
+
+  // Logs persisted message list
+  for(PubSubMessage message : pubSubMessageList){
+    Log.v("Message List: ", "Message : " + message.getMessage());
+  }
+}
 ```
 
 </TabItem>
@@ -333,8 +383,8 @@ You can checkout [Sample Code](/docs/guide/video-and-audio-calling-api-sdk/featu
 ```js
 class ChatMessageListener: PubSubMessageListener {
     func onMessageReceived(_ message: PubSubMessage) {
+        // Print new message
         print("Message Received:= " + message.message)
-        // show chat message to user
     }
 }
 const listener = ChatMessageListener()
@@ -392,8 +442,13 @@ values={[
 <TabItem value="js">
 
 ```js
-// Coming Soon
+function unsubscribe(topic:String, onMessageReceived: function);
 ```
+
+| Parameter Name    | Type     | Description                                                     |
+| ----------------- | -------- | --------------------------------------------------------------- |
+| topic             | String   | This should be the topic to be unsubscribed.                    |
+| onMessageReceived | function | This is a callback function, which was passed in `subscribe()`. |
 
 </TabItem>
 
@@ -424,8 +479,13 @@ You can checkout [Sample Code](/docs/guide/video-and-audio-calling-api-sdk/featu
 <TabItem value="android">
 
 ```js
-// Coming Soon
+public void unsubscribe(String topic, PubSubMessageListener listener)
 ```
+
+| Parameter Name | Type                  | Description                                                                    |
+| -------------- | --------------------- | ------------------------------------------------------------------------------ |
+| topic          | String                | This should be the topic to be unsubscribed.                                   |
+| listener       | PubSubMessageListener | This is an object of PubSubMessageListener, which was passed in `subscribe()`. |
 
 </TabItem>
 
@@ -438,7 +498,7 @@ func unsubscribe(topic: String, forListener listener: PubSubMessageListener)
 | Parameter Name | Type                  | Description                                                                    |
 | -------------- | --------------------- | ------------------------------------------------------------------------------ |
 | topic          | String                | This should be the topic to be unsubscribed.                                   |
-| listener       | PubSubMessageListener | This is an object of PubSubMessageListener, which was passed in `subscribe()`. |
+| forListener    | PubSubMessageListener | This is an object of PubSubMessageListener, which was passed in `subscribe()`. |
 
 </TabItem>
 
@@ -507,7 +567,10 @@ You can checkout [Sample Code](/docs/guide/video-and-audio-calling-api-sdk/featu
 <TabItem value="android">
 
 ```js
-// Coming Soon
+public void unsubscribe(){
+  // Unsubscribe 'CHAT' topic
+  meeting.pubSub.unsubscribe("CHAT", pubSubMessageListener);
+}
 ```
 
 </TabItem>
@@ -516,7 +579,7 @@ You can checkout [Sample Code](/docs/guide/video-and-audio-calling-api-sdk/featu
 
 ```js
 func unsubscribe() {
-  // unsubscribe to the same listener used in subscribe()
+  // Unsubscribe 'CHAT' topic
   meeting?.pubsub.unsubscribe(topic: "CHAT", forListener: listener)
 }
 ```
@@ -608,7 +671,73 @@ export default MyComponent;
 <TabItem value="android">
 
 ```js
-// Coming Soon
+package live.videosdk.rtc.android.java;
+
+import androidx.appcompat.app.AppCompatActivity;
+import android.os.Bundle;
+import android.util.Log;
+import java.util.List;
+import live.videosdk.rtc.android.Meeting;
+import live.videosdk.rtc.android.lib.PubSubMessage;
+import live.videosdk.rtc.android.listeners.PubSubMessageListener;
+import live.videosdk.rtc.android.model.PubSubPublishOptions;
+
+public class ChatActivity extends AppCompatActivity {
+
+    // Meeting
+    Meeting meeting;
+
+    // PubSubMessageListener
+    private PubSubMessageListener pubSubMessageListener = new PubSubMessageListener() {
+      @Override
+      public void onMessageReceived(PubSubMessage message) {
+          // Logs new message
+          Log.v("New Message Received : ", "Message : " + message.getMessage());
+      }
+    };
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_chat);
+
+        /**
+         * Here, we have created 'MainApplication' class, which extends android.app.Application class.
+         * It has Meeting property and getter and setter methods of Meeting property.
+         * In your android manifest, you must declare the class implementing android.app.Application (add the android:name=".MainApplication" attribute to the existing application tag):
+         * In MainActivity.java, we have set Meeting property.
+         *
+         * For Example: (MainActivity.java)
+         * Meeting meeting = VideoSDK.initMeeting(context, meetingId, ParticipantName, micEnabled, webcamEnabled);
+         * ((MainApplication) this.getApplication()).setMeeting(meeting);
+        */
+
+        // Get Meeting
+        meeting = ((MainApplication) this.getApplication()).getMeeting();
+
+        // Subscribe for 'CHAT' topic
+        List<PubSubMessage> pubSubMessageList = meeting.pubSub.subscribe("CHAT", pubSubMessageListener);
+        for(PubSubMessage message : pubSubMessageList){
+            // Logs persisted messages
+            Log.v("Message List : ", "Message : " + message.getMessage());
+        }
+
+        sendMessage();
+    }
+
+    protected void sendMessage() {
+      PubSubPublishOptions publishOptions = new PubSubPublishOptions();
+      publishOptions.setPersist(true);
+      meeting.pubSub.publish("CHAT", "Hello from Android", publishOptions);
+    }
+
+    @Override
+    protected void onDestroy() {
+      // Unsubscribe for 'CHAT' topic
+      meeting.pubSub.unsubscribe("CHAT", pubSubMessageListener);
+      super.onDestroy();
+    }
+}
 ```
 
 </TabItem>
@@ -715,7 +844,7 @@ class _ChatScreenState extends State<ChatScreen> {
           onPressed: () => meeting.pubSub.publish(
             "CHAT",
             "Hello",
-            const PubSubOptions(persist: true),
+            const PubSubPublishOptions(persist: true),
           ),
         ),
       ),
