@@ -158,6 +158,14 @@ module.exports = {
       ],
       collapsed: false,
     },
+    {
+      type: "category",
+      label: "ADVANCED",
+      items: [
+        "guide/prebuilt-video-and-audio-calling/advanced/browser-compatibility",
+      ],
+      collapsed: false,
+    },
   ],
 
   guideAudioAndVideoCalling: [
@@ -211,6 +219,7 @@ module.exports = {
         "guide/video-and-audio-calling-api-sdk/features/speaker-indication",
         "guide/video-and-audio-calling-api-sdk/features/pin-participants",
         "guide/video-and-audio-calling-api-sdk/features/switch-participant",
+        "guide/video-and-audio-calling-api-sdk/features/pubsub",
         {
           type: "category",
           label: "Connect Meetings (BETA)",
@@ -468,6 +477,8 @@ module.exports = {
             "realtime-communication/sdk-reference/flutter-sdk/meeting-class",
             "realtime-communication/sdk-reference/flutter-sdk/participant-class",
             "realtime-communication/sdk-reference/flutter-sdk/stream-class",
+            "realtime-communication/sdk-reference/flutter-sdk/pubsub-message",
+            "realtime-communication/sdk-reference/flutter-sdk/pubsub-options",
           ],
         },
       ],
