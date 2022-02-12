@@ -317,7 +317,15 @@ values={[
 <TabItem value="js">
 
 ```js
-// Coming Soon
+// Callback function
+function onMessageReceived(data) {
+  console.log(`New message received: ${data.message}`);
+}
+
+function subscribe() {
+  // Subscribe 'CHAT' topic
+  meeting?.pubSub?.subscribe("CHAT", onMessageReceived);
+}
 ```
 
 </TabItem>
@@ -535,7 +543,10 @@ values={[
 <TabItem value="js">
 
 ```js
-// Coming Soon
+function subscribe() {
+  // Unsubscribe 'CHAT' topic
+  meeting?.pubSub?.unsubscribe("CHAT", onMessageReceived);
+}
 ```
 
 </TabItem>
