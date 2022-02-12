@@ -66,6 +66,12 @@ function publish(message: String, { persist : Boolean });
 func publish(topic: String, message: String, options: [String : Any] = [:])
 ```
 
+| Parameter Name | Type   | Description                                                                                                               |
+| -------------- | ------ | ------------------------------------------------------------------------------------------------------------------------- |
+| topic          | String | This should be the topic for which you are publishing a message.                                                          |
+| message        | String | This is the actual message, which will be published to participants, who had subscribed to a particular topic.            |
+| options        | Object | This is the object which provides an option, such as `persist`, which persists message history for upcoming participants. |
+
 </TabItem>
 
 <TabItem value="flutter">
@@ -78,14 +84,14 @@ func publish(topic: String, message: String, options: [String : Any] = [:])
   )
 ```
 
+| Parameter Name | Type          | Description                                                                                                                                |
+| -------------- | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| topic          | String        | This should be the topic for which you are publishing a message.                                                                           |
+| message        | String        | This is the actual message, which will be published to participants, who had subscribed to a particular topic.                             |
+| options        | PubSubOptions | This is an object of PubSubOptions, which provides an option, such as `persist`, which persists message history for upcoming participants. |
+
 </TabItem>
 </Tabs>
-
-| Parameter Name | Type   | Description                                                                                                               |
-| -------------- | ------ | ------------------------------------------------------------------------------------------------------------------------- |
-| topic          | String | This should be the topic for which you are publishing a message.                                                          |
-| message        | String | This is the actual message, which will be published to participants, who had subscribed to a particular topic.            |
-| options        | Object | This is the object which provides an option, such as `persist`, which persists message history for upcoming participants. |
 
 #### Example
 
@@ -164,7 +170,7 @@ func publishMessage() {
   ElevatedButton(
     onPressed: () async {
       // Publish a message
-      await meeting.pubsub.publish(
+      await meeting.pubSub.publish(
         "CHAT", // Topic
         "Hello Everyone!", // Message Content
         const PubSubOptions(
@@ -246,6 +252,11 @@ You can checkout [Sample Code](/docs/guide/video-and-audio-calling-api-sdk/featu
 func subscribe(topic: String, forListener listener: PubSubMessageListener)
 ```
 
+| Parameter Name | Type                  | Description                                                                                                                                      |
+| -------------- | --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| topic          | String                | This should be the topic to be subscribed.                                                                                                       |
+| listener       | PubSubMessageListener | This is an object of PubSubMessageListener, which listens for upcoming messages and calls onMessageReceived function, when new message received. |
+
 </TabItem>
 <TabItem value="flutter">
 
@@ -256,13 +267,13 @@ func subscribe(topic: String, forListener listener: PubSubMessageListener)
   )
 ```
 
-</TabItem>
-</Tabs>
-
 | Parameter Name | Type   | Description                                                                 |
 | -------------- | ------ | --------------------------------------------------------------------------- |
 | topic          | String | This should be the topic to be subscribed.                                  |
 | messageHandler | String | This is a handler function, which will be called when new message received. |
+
+</TabItem>
+</Tabs>
 
 #### Example
 
@@ -343,13 +354,19 @@ func subscribe() {
   ElevatedButton(
     onPressed: () async {
       // Subscribe 'CHAT' topic and get persisted messages
-      var messages = await meeting.pubsub.subscribe(topic: "CHAT", callback: messageCallback);
+      var messages = await meeting.pubSub.subscribe("CHAT", messageHandler);
 
       // Printing message list
       print("Messages: ${messages.messages.map((msg) => msg.message).join(" ")}");
     },
     child: Text("Subscribe"),
   ),
+
+  // Message Handler
+  void messageHandler(msg){
+    // Do something
+    print("New message received: $msg");
+  }
 ```
 
 </TabItem>
@@ -418,6 +435,11 @@ You can checkout [Sample Code](/docs/guide/video-and-audio-calling-api-sdk/featu
 func unsubscribe(topic: String, forListener listener: PubSubMessageListener)
 ```
 
+| Parameter Name | Type                  | Description                                                                    |
+| -------------- | --------------------- | ------------------------------------------------------------------------------ |
+| topic          | String                | This should be the topic to be unsubscribed.                                   |
+| listener       | PubSubMessageListener | This is an object of PubSubMessageListener, which was passed in `subscribe()`. |
+
 </TabItem>
 
 <TabItem value="flutter">
@@ -429,13 +451,13 @@ func unsubscribe(topic: String, forListener listener: PubSubMessageListener)
   )
 ```
 
-</TabItem>
-</Tabs>
-
 | Parameter Name | Type   | Description                                                    |
 | -------------- | ------ | -------------------------------------------------------------- |
 | topic          | String | This should be the topic to be unsubscribed.                   |
 | messageHandler | String | This is a handler function, which was passed in `subscribe()`. |
+
+</TabItem>
+</Tabs>
 
 #### Example
 
@@ -508,17 +530,10 @@ func unsubscribe() {
   ElevatedButton(
     onPressed: () {
       // Unsubscribe 'CHAT' topic
-      await meeting.pubsub.unSubscribe(topic: "CHAT", messageCallback);
-
+      await meeting.pubSub.unSubscribe("CHAT", messageHandler);
     },
     child: Text("UnSubscribe"),
   ),
-
-  // Message Callback
-  void messageCallback(msg){
-    // Do something
-    print("New message received: $msg");
-  }
 ```
 
 </TabItem>
