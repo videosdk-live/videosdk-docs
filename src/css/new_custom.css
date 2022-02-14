@@ -297,7 +297,7 @@ ul.menu__list .menu__link {
 
 html[data-theme="dark"] ul.menu__list .menu__link {
   font-weight: 700;
-  font-size: 14px;
+  font-size: 16px;
   color: var(--ifm-menu-color);
 }
 
@@ -308,7 +308,7 @@ html[data-theme="dark"] ul.menu__list .menu__link--active {
 
 html[data-theme="light"] ul.menu__list .menu__link {
   font-weight: 700;
-  font-size: 14px;
+  font-size: 16px;
   color: var(--ifm-menu-color);
 }
 
@@ -331,7 +331,7 @@ ul.menu__list ul.menu__list .menu__list-item-collapsible .menu__link--active {
 ul.menu__list ul.menu__list .menu__link--active,
 ul.menu__list ul.menu__list .menu__link:hover {
   background: var(--ifm-color-secondary) !important;
-  /* color: var(--ifm-menu-color); */
+  color: var(--ifm-menu-color);
 }
 
 ul.menu__list ul.menu__list ul.menu__list .menu__link {
@@ -401,12 +401,12 @@ html[data-theme="dark"] .pagination-nav__link:hover {
   color: #000;
 }
 
-html[data-theme="dark"] .card:hover {
+html[data-theme="dark"] .container.guide-steps-block>.row>.col > .card:hover {
   background: var(--custom-background-color-hover-card);
   border-radius: 8px;
 }
 
-.card:hover {
+.container.guide-steps-block>.row>.col >  .card:hover {
   background: var(--custom-background-color-hover-card-light);
   border-radius: 8px;
 }
