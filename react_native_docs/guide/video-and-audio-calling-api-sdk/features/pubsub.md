@@ -83,7 +83,7 @@ This method is used to unsubscribe the message topic.
 ```
 
 :::note
-You can checkout [Sample Code](/react-native/video-and-audio-calling-api-sdk/features/pubsub#sample-code) for better understanding.
+You can checkout [Sample Code](/react-native/guide/video-and-audio-calling-api-sdk/features/pubsub#sample-code) for better understanding.
 :::
 
 #### Example
@@ -95,7 +95,7 @@ You can checkout [Sample Code](/react-native/video-and-audio-calling-api-sdk/fea
 ```
 
 :::note
-You can checkout [Sample Code](/guide/video-and-audio-calling-api-sdk/features/pubsub#sample-code) for better understanding.
+You can checkout [Sample Code](/react-native/guide/video-and-audio-calling-api-sdk/features/pubsub#sample-code) for better understanding.
 :::
 
 ## Sample Code

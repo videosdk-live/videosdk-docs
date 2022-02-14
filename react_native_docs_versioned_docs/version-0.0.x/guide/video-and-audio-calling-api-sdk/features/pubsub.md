@@ -55,7 +55,7 @@ This method is used to subscribe for particular topic. This method returns a lis
 ```
 
 :::note
-You can checkout [Sample Code](/docs/guide/video-and-audio-calling-api-sdk/features/pubsub#sample-code) for better understanding.
+You can checkout [Sample Code](/react-native/guide/video-and-audio-calling-api-sdk/features/pubsub#sample-code) for better understanding.
 :::
 
 #### Example
@@ -67,7 +67,7 @@ You can checkout [Sample Code](/docs/guide/video-and-audio-calling-api-sdk/featu
 ```
 
 :::note
-You can checkout [Sample Code](/docs/guide/video-and-audio-calling-api-sdk/features/pubsub#sample-code) for better understanding.
+You can checkout [Sample Code](/react-native/guide/video-and-audio-calling-api-sdk/features/pubsub#sample-code) for better understanding.
 :::
 
 ### unsubscribe()
@@ -83,7 +83,7 @@ This method is used to unsubscribe the message topic.
 ```
 
 :::note
-You can checkout [Sample Code](/docs/guide/video-and-audio-calling-api-sdk/features/pubsub#sample-code) for better understanding.
+You can checkout [Sample Code](/react-native/guide/video-and-audio-calling-api-sdk/features/pubsub#sample-code) for better understanding.
 :::
 
 #### Example
@@ -95,7 +95,7 @@ You can checkout [Sample Code](/docs/guide/video-and-audio-calling-api-sdk/featu
 ```
 
 :::note
-You can checkout [Sample Code](/docs/guide/video-and-audio-calling-api-sdk/features/pubsub#sample-code) for better understanding.
+You can checkout [Sample Code](/react-native/guide/video-and-audio-calling-api-sdk/features/pubsub#sample-code) for better understanding.
 :::
 
 ## Sample Code
