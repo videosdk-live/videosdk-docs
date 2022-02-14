@@ -254,6 +254,10 @@ html[data-theme="light"] .dropdown__link--active {
   margin-top: 6px;
 }
 
+li:first-child> .dropdown__link{
+  margin-top: 0px;
+}
+
 .navbar__link:hover {
   color: black;
 }
