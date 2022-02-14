@@ -125,11 +125,11 @@ export default function SidebarDropdowns() {
     <div class="row dropdown_menu">
       {(sdk != "docs" && sdk != "prebuilt") || viewType == "api" ? (
         <div class="col dropdown dropdown--hoverable dropdown--left">
-          <div height="24px" width="24px" class="row navbar__link--active">
-            {<img class = "dropdown-logo"src={getSDKName(sdk)[0]?.icon} />}
-            <div class="col" style={{padding:"0px", fontSize:"1rem"}}>{getSDKName(sdk)[0]?.value}</div>
-            
-            <img src="/img/icons/ic_arrow_down.svg" />        
+          <div class="row navbar__link--active">
+            {<img class="dropdown-logo" src={getSDKName(sdk)[0]?.icon} />}
+            <div class="col" style={{ padding: "0px", fontSize: "1rem" }}>{getSDKName(sdk)[0]?.value}</div>
+
+            <img src="/img/icons/ic_arrow_down.svg" />
           </div>
           <ul class="dropdown__menu">
             {sdkList.map((e, i) => {
@@ -143,7 +143,7 @@ export default function SidebarDropdowns() {
                     }
                     href={getSdkRoutingPath(e.id)}
                   >
-                    <img src={e.icon} />
+                    <img class="dropdown-logo" src={e.icon} />
                     {e.value}
                   </Link>
                 </li>

@@ -523,10 +523,10 @@ html[data-theme="dark"] .mermaid {
 .dropdown_menu > .dropdown.dropdown--right > .navbar__link--active {
   flex: 1;
   padding: 0.5rem;
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
-  margin-right: 1rem;
-  margin-left: 0.2rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  margin-right: 0.2rem;
+  margin-left: 1rem;
   background: none;
   border-radius: 6px;
   color: var(--ifm-color-content);
@@ -544,7 +544,7 @@ html[data-theme="dark"] .mermaid {
   flex: 1;
   padding: 0.5rem;
   margin-left: 0px;
-  margin-right: 1rem;
+  margin-right: 0px;
   background: var(--ifm-color-secondary);
   border-radius: 6px;
   color: var(--ifm-color-content);
@@ -609,10 +609,10 @@ html[data-theme="dark"] .theme-doc-markdown > p {
   vertical-align: sub;
 }
 
-.dropdown-logo {
+/* .dropdown-logo {
   height: 24px;
   width: 32px;
-}
+} */
 
 @media (max-width: 996px) {
   .row .col.col.col {
