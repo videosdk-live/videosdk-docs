@@ -23,6 +23,7 @@ module.exports = {
         facetFilters: ["content"],
       },
     },
+    autoCollapseSidebarCategories: true,
     colorMode: {
       defaultMode: "light",
       disableSwitch: false,
@@ -274,7 +275,6 @@ module.exports = {
         },
         theme: {
           customCss: [require.resolve("./src/css/new_custom.css")],
-          autoCollapseSidebarCategories: true,
           prism: {
             defaultLanguage: "js",
             plugins: ["line-numbers", "show-language"],
