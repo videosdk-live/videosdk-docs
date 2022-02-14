@@ -5,14 +5,11 @@ const CardLinks = ({ title, text, links, img }) => {
   return (
     <div
       className="card"
-      style={{
-        marginBottom: 16,
-      }}
     >
       <div class="card__header">
         {/* <h3>{title}</h3> */}
         {/* <Card heading={title} icon="/img/icons/libraries/react-icon.svg" /> */}
-        <div className="card-icon">
+        {img && <div className="card-icon">
           {
             <img
               src={img}
@@ -22,16 +19,16 @@ const CardLinks = ({ title, text, links, img }) => {
               }}
             />
           }
-        </div>
+        </div>}
         <div className="card-title">
-          {title && <h3 style={{ marginBottom: 0 }}>{title}</h3>}
+          {title && <p style={{ marginBottom: 0 }}>{title}</p>}
         </div>
         <p className="card-text" style={{ marginTop: "8px" }}>
           {text}
         </p>
       </div>
 
-      <div className="card__body row">
+      <div className="card__body row" style={{ paddingRight: "1.5rem", paddingLeft: "1.5rem" }}>
         {links.map((link, i) => (
           <a href={link.link}>
             <div class="card-button" key={link.link + i}>

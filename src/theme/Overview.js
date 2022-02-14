@@ -35,7 +35,7 @@ function Overview() {
           </p>
           <div class="container">
             <div class="row">
-              <div class="col col--6">
+              <div class="col">
                 <CardLinks
                   title="Prebuilt Video & Audio Calling SDK"
                   text="Invest 90 seconds to develop video & audio calling on web & app"
@@ -60,7 +60,7 @@ function Overview() {
                   ]}
                 />
               </div>
-              <div class="col col--6">
+              <div class="col">
                 <CardLinks
                   title="Custom Video & Audio Calling SDK"
                   text="Add 100% customizable video & audio conferencing in native app"
@@ -87,7 +87,7 @@ function Overview() {
               </div>
             </div>
             <div class="row" style={{ marginTop: "17px" }}>
-              <div class="col col--6">
+              <div class="col">
                 <CardLinks
                   class="overview-card"
                   title="Standard Live Stream API"
@@ -113,7 +113,7 @@ function Overview() {
                   ]}
                 />
               </div>
-              <div class="col col--6">
+              <div class="col">
                 <CardLinks
                   title="Video on Demand API"
                   text="Video hosting API with multiple resolution support and global delivery"

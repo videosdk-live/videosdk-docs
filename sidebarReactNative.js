@@ -35,6 +35,7 @@ module.exports = {
         "guide/video-and-audio-calling-api-sdk/features/send-messages",
         "guide/video-and-audio-calling-api-sdk/features/record-meeting",
         "guide/video-and-audio-calling-api-sdk/features/speaker-indication",
+        "guide/video-and-audio-calling-api-sdk/features/pubsub",
       ],
     },
     {
@@ -59,7 +60,6 @@ module.exports = {
           ],
           collapsed: true,
         },
-        "guide/video-and-audio-calling-api-sdk/features/error-event",
       ],
       collapsed: true,
     },

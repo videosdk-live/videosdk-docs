@@ -28,6 +28,7 @@ module.exports = {
         "guide/video-and-audio-calling-api-sdk/features/speaker-indication",
         "guide/video-and-audio-calling-api-sdk/features/pin-participants",
         "guide/video-and-audio-calling-api-sdk/features/error-event",
+        "guide/video-and-audio-calling-api-sdk/features/pubsub"
       ],
       collapsed: true,
     },
