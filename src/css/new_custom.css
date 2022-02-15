@@ -254,7 +254,7 @@ html[data-theme="light"] .dropdown__link--active {
   margin-top: 6px;
 }
 
-li:first-child> .dropdown__link{
+li:first-child > .dropdown__link {
   margin-top: 0px;
 }
 
@@ -405,12 +405,16 @@ html[data-theme="dark"] .pagination-nav__link:hover {
   color: #000;
 }
 
-html[data-theme="dark"] .container.guide-steps-block>.row>.col > .card:hover {
+html[data-theme="dark"]
+  .container.guide-steps-block
+  > .row
+  > .col
+  > .card:hover {
   background: var(--custom-background-color-hover-card);
   border-radius: 8px;
 }
 
-.container.guide-steps-block>.row>.col >  .card:hover {
+.container.guide-steps-block > .row > .col > .card:hover {
   background: var(--custom-background-color-hover-card-light);
   border-radius: 8px;
 }
@@ -607,6 +611,10 @@ html[data-theme="dark"] .theme-doc-markdown > p {
   > img {
   padding-right: 0.5rem;
   vertical-align: sub;
+}
+
+mask {
+  border: none !important;
 }
 
 @media (max-width: 996px) {
@@ -1174,7 +1182,7 @@ html[data-theme="dark"] .card-text {
   color: #b2b2b2;
 }
 
-.card-text{
+.card-text {
   font-family: Lato;
   font-style: normal;
   font-weight: 500;
@@ -1309,11 +1317,25 @@ html[data-theme="light"] .card-button:hover {
   background: #5568fe;
   border: 2px solid #5568fe;
 }
+
 html[data-theme="dark"] .card-title {
+  width: 315px;
+  /* height: 24px; */
+  margin-top: 20px;
+  font-family: Lato;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 24px;
+  /* identical to box height */
+
   color: #ffffff;
 }
 
 .card-title {
+  width: 315px;
+  /* height: 24px; */
+  margin-top: 20px;
   font-family: Lato;
   font-style: normal;
   font-weight: bold;
@@ -1322,20 +1344,50 @@ html[data-theme="dark"] .card-title {
   color: black;
 }
 
+@media screen and (min-width: 294) {
+  /* html[data-theme="dark"] .card-title {
+    width: 250px;
+    height: 24px;
+    margin-top: 20px;
+    font-family: Lato;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 24px;
+    color: #ffffff;
+  }
+
+  .card-title {
+    width: 250px;
+    height: 24px;
+    margin-top: 20px;
+    font-family: Lato;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 24px;
+    border: 1px solid red;
+    color: black;
+  } */
+  .card-title {
+    color: red;
+  }
+}
+
 .card-left {
   margin-left: 10px;
   border: 1px solid red;
 }
 
-.card-icon{
+.card-icon {
   margin-bottom: 20px;
 }
 
-.card{
+.card {
   height: 100%;
 }
 
-.container > .row > .col{
+.container > .row > .col {
   margin-bottom: 0.5rem;
   margin-top: 0.5rem;
 }
