@@ -453,9 +453,9 @@ function ParticipantView(props) {
 }
 ```
 
-You can implement further features like cloud recording, chat, whiteboard, social media live etc by refereeing official guide of [Video SDK](https://docs.videosdk.live/docs/guide/video-and-audio-calling-api-sdk/getting-started)
+You can implement further features like cloud recording, chat, whiteboard, social media live etc by refereeing official guide of [Video SDK](/react/guide/video-and-audio-calling-api-sdk/getting-started)
 
-For more information, visit our official [Guide](/docs/guide/video-and-audio-calling-api-sdk/getting-started)
+For more information, visit our official [Guide](/react/guide/video-and-audio-calling-api-sdk/getting-started)
 
 
 

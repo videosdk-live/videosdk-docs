@@ -5,6 +5,7 @@ module.exports = {
       label: "Quick Start",
       items: [
         "guide/video-and-audio-calling-api-sdk/getting-started",
+        "guide/video-and-audio-calling-api-sdk/quick-start",
         "guide/video-and-audio-calling-api-sdk/signup-and-create-api",
         "guide/video-and-audio-calling-api-sdk/android-sdk",
         "guide/video-and-audio-calling-api-sdk/server-setup",
