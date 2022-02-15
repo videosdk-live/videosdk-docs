@@ -17,7 +17,7 @@ slug: left-screen
 
 # Left Screen
 
-- Left screen be shoun when participant left the meeting if `redirectOnLeave` parameter is not provided while initializing the meeting.
+- Left screen will be shown when participant left the meeting if `redirectOnLeave` parameter is not provided while initializing the meeting.
 
 ### How it works ?
 
@@ -37,6 +37,8 @@ To configure left screen feature, you need to add lefts screen object in meeting
 
   - `href`: Action button href
 
+- `rejoinButtonEnabled`: If it is set to true then rejoin button will be appeared on the screen else it will be nonapparent.
+
 ```js title="index.html"
 const config = {
   // ...
@@ -45,7 +47,9 @@ const config = {
       label: "Video SDK",
       href: "https://videosdk.live/",
     },
+    rejoinButtonEnabled: true,
   },
+
   // ...
 };
 ```
