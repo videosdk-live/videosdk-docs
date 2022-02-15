@@ -406,6 +406,8 @@ module.exports = {
             "realtime-communication/sdk-reference/react-sdk/setup",
             "realtime-communication/sdk-reference/react-sdk/use-meeting",
             "realtime-communication/sdk-reference/react-sdk/use-participant",
+            "realtime-communication/sdk-reference/react-sdk/use-pubsub",
+            "realtime-communication/sdk-reference/react-sdk/use-connection",
             "realtime-communication/sdk-reference/react-sdk/meeting-provider",
             "realtime-communication/sdk-reference/react-sdk/meeting-consumer",
           ],
