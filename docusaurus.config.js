@@ -31,7 +31,7 @@ module.exports = {
     prism: {
       additionalLanguages: ["powershell"],
     },
-
+    hideableSidebar: true,
     navbar: {
       title: "",
       hideOnScroll: true,
@@ -128,7 +128,7 @@ module.exports = {
         },
         {
           href: "https://github.com/videosdk-live/videosdk.live",
-          className: "navbar-item-github",
+          className: "navbar-item-logo github",
           position: "right",
         },
         // {
