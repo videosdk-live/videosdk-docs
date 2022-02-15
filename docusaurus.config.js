@@ -90,7 +90,7 @@ module.exports = {
               activeBaseRegex: "/*/api/sdk-reference/*",
             },
             {
-              label: "Realtime communication",
+              label: "Rest API Reference",
               to: "docs/api-reference/realtime-communication/intro",
               activeBaseRegex: "docs/api-reference/realtime-communication/*",
             },
@@ -122,7 +122,7 @@ module.exports = {
           position: "right",
         },
         {
-          label: "Join Community",
+          className: "navbar-item-logo discord",
           href: "https://discord.gg/f2WsNDN9S5",
           position: "right",
         },
