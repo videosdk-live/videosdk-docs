@@ -18,9 +18,9 @@ The `VideoSDKMeeting Class` includes properties, methods and events to control u
 const meeting = new VideoSDKMeeting();
 
 meeting.init({
-  name: "your required name",
-  apiKey: "your API key", // generated from app.videosdk.live
-  meetingId: meetingId, //your meeting id
+  name: "Your required name",
+  apiKey: "Your API key", // generated from app.videosdk.live
+  meetingId: "milkyway", //your meeting id
 
   containerId: null,
   redirectOnLeave: "https://www.videosdk.live/",
@@ -50,8 +50,8 @@ meeting.init({
     autoStart: false,
     outputs: [
       {
-        url: "rtmp://live.videosdk.live/live/",
-        streamKey: "b503a4dd-5524-452e-bd2d-4f92fea19248",
+        url: "<stream-url>",
+        streamKey: "<stream-key>",
       },
     ],
   },
