@@ -39,16 +39,10 @@ module.exports = {
         alt: "VideosdK live logo",
         src: "img/videosdk_docs_blacklogo.png",
         srcDark: "img/videosdk_docs_whitelogo.png",
-        href: "https://videosdk.live/",
+        href: "/",
         target: "_self",
       },
       items: [
-        {
-          position: "left",
-          label: "Overview",
-          to: "/",
-          activeBaseRegex: "/$",
-        },
         {
           position: "left",
           label: "Guide",
