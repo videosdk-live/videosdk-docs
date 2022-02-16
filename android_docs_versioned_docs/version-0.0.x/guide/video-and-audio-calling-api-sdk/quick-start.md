@@ -23,9 +23,9 @@ This guide will get you running with the VideoSDK video & audio calling in minut
 
 ## Sample Project
 
-These quick start will help you integrate some of the basic functionalities that VideoSDK provides. You can check out the complete source code for this guide [here](/). Once you are done with the tutorial given below your app shouold look like this.
+These quick start will help you integrate some of the basic functionalities that VideoSDK provides. You can check out the complete source code for this guide [here](/). Once you are done with the tutorial given below your app should look like this.
 
-//Screenshot
+![VideoSDK Android Quick Start Join Screen](/img/quick-start/android-join-screen.jpg) ![VideoSDK Android Quick Start Meeting Screen](/img/quick-start/android-meeting-screen.jpg) 
 
 ## Prerequisites
 
@@ -204,7 +204,7 @@ String sampleToken = "";
       btnJoin.setOnClickListener(v -> {
           Intent intent = new Intent(MainActivity.this, MeetingActivity.class);
           intent.putExtra("token", sampleToken);
-          intent.putExtra("meetingId", etMeetingId.getText());
+          intent.putExtra("meetingId", etMeetingId.getText().toString());
           startActivity(intent);
       });
 
@@ -346,13 +346,12 @@ In `/app/res/layout/activity_meeting.xml`, replace the content with the followin
 </LinearLayout>
 ```
 
-#### Handling the Local Participant
+#### initializing the Meeting
 
 1. Decalre the varibles we will be using to handle the meeting.
 
 ```js title="MeetingActivity.java"
 private Meeting meeting;
-private SurfaceViewRenderer svrLocal;
 
 private boolean micEnabled = true;
 private boolean webcamEnabled = true;
@@ -414,77 +413,44 @@ private final MeetingEventListener meetingEventListener = new MeetingEventListen
 
 ```
 
-3. Meeting is all set and joined. Now the local participant view and actions has to be setup.
+3. Meeting is all set and joined. 
+
+### Handling the Local Participant Toggles
+
+In order add the local participant webcam and mic toggle options, add following code to your `MeetingActivity.java`
 
 ```js title="MeetingActivity.java"
 @Override
 protected void onCreate(Bundle savedInstanceState) {
   super.onCreate(savedInstanceState);
   setContentView(R.layout.activity_meeting);
-
-  svrLocal = findViewById(R.id.svrLocal);
-  svrLocal.init(PeerConnectionUtils.getEglContext(), null);
-  // Local participant listeners
-  setLocalListeners();
+  //...Meeting Setup is Here
 
   // Actions
   setActionListeners();
 }
 
-private void setLocalListeners() {
-  meeting.getLocalParticipant().addEventListener(new ParticipantEventListener() {
-    @Override
-    public void onStreamEnabled(Stream stream) {
-      if (stream.getKind().equalsIgnoreCase("video")) {
-        svrLocal.setVisibility(View.VISIBLE);
-        svrLocal.setZOrderMediaOverlay(true);
-
-        VideoTrack track = (VideoTrack) stream.getTrack();
-        track.addSink(svrLocal);
-
-        webcamEnabled = true;
-        Toast.makeText(MeetingActivity.this, "Webcam enabled", Toast.LENGTH_SHORT).show();
-      } else if (stream.getKind().equalsIgnoreCase("audio")) {
-        micEnabled = true;
-        Toast.makeText(MeetingActivity.this, "Mic enabled", Toast.LENGTH_SHORT).show();
-      }
-    }
-
-    @Override
-    public void onStreamDisabled(Stream stream) {
-        if (stream.getKind().equalsIgnoreCase("video")) {
-          VideoTrack track = (VideoTrack) stream.getTrack();
-          if (track != null) track.removeSink(svrLocal);
-
-          svrLocal.clearImage();
-          svrLocal.setVisibility(View.GONE);
-
-          webcamEnabled = false;
-          Toast.makeText(MeetingActivity.this, "Webcam disabled", Toast.LENGTH_SHORT).show();
-        } else if (stream.getKind().equalsIgnoreCase("audio")) {
-          micEnabled = false;
-          Toast.makeText(MeetingActivity.this, "Mic disabled", Toast.LENGTH_SHORT).show();
-        }
-    }
-  });
-}
 
 private void setActionListeners() {
   // Toggle mic
   findViewById(R.id.btnMic).setOnClickListener(view -> {
     if (micEnabled) {
-        meeting.muteMic();
+      meeting.muteMic();
+      Toast.makeText(MeetingActivity.this, "Mic Muted", Toast.LENGTH_SHORT).show();
     } else {
-        meeting.unmuteMic();
+      meeting.unmuteMic();
+      Toast.makeText(MeetingActivity.this, "Mic Enabled", Toast.LENGTH_SHORT).show();
     }
   });
 
   // Toggle webcam
   findViewById(R.id.btnWebcam).setOnClickListener(view -> {
     if (webcamEnabled) {
-        meeting.disableWebcam();
+      meeting.disableWebcam();
+      Toast.makeText(MeetingActivity.this, "Webcam Disabled", Toast.LENGTH_SHORT).show();
     } else {
-        meeting.enableWebcam();
+      meeting.enableWebcam();
+      Toast.makeText(MeetingActivity.this, "Webcam Enabled", Toast.LENGTH_SHORT).show();
     }
   });
 
@@ -511,7 +477,7 @@ private void showLeaveOrEndDialog() {
 }
 ```
 
-#### Handling the Remote Participants
+#### Handling the Participants View 
 
 We will be showing the list of participants in a recycler view.
 
@@ -691,3 +657,7 @@ protected void onCreate(Bundle savedInstanceState) {
 ### Run and Test
 
 The app is all set to test. Make sure to update teh `sampleToken` in `MainActivity.java`
+
+:::caution
+For this tutorial purpose we used a static token intialize and join the meeting. But for the production version of the app, we recommend you use an Authentication Server which will generate and pass on the token to the Client App. For more details checkout [how to do server setup](/android/guide/video-and-audio-calling-api-sdk/server-setup).
+:::
