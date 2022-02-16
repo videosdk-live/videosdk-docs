@@ -27,29 +27,44 @@ Any participant can start/stop recording any time during the meeting.
 
 ### How it works ?
 
-- While `recordingEnabled` value is set to `true`, you will show recording button as display in below image.
+- While `recording.enabled` value is set to `true`, you will show recording button as display in below image.
 
-- While `recordingEnabled` value is set to `false`, the below recording button will not appear.
+- While `recording.enabled` value is set to `false`, the below recording button will not appear.
 
 ![Go live with VideoSDK](/img/prebuilt/prebuilt-recording.png)
 
 ### Recording Attributes
 
-- `recordingEnabled`: If it is true, then recording button will be visible on top bar of the meeting. If it is false, then recording button won't be available on top bar of the meeting.
+- `recording.enabled`: If it is true, then recording button will be visible on top bar of the meeting. If it is false, then recording button won't be available on top bar of the meeting.
 - `toggleRecording`: If it is true, then other participant can start/stop recording during the meeting. If it is false, then participant can not start/stop recording during the meeting.
-- `recordingWebhookUrl`: It's your [webhook url](https://en.wikipedia.org/wiki/Webhook), where we notify once meeting recording is complete.
-- `autoStartRecording`: It will auto start recording when participant joined
+- `recording.webhookUrl`: It's your [webhook url](https://en.wikipedia.org/wiki/Webhook), where we notify once meeting recording is complete.
+- `recording.autoStart`: It will auto start recording when participant joined
+- `recording.awsDirPath`: It indicates where the recording will get stored.
+- `recording.layout.type` : It will record the meeting based on layout type indicated.
+- `recording.layout.priority` : It will prioritise the view of either pin partcipant or speaker participant for recording.
+- `recording.layout.gridsize` : It will show indicated number of participants on the screen.
 
 ```js title="index.html"
 const config = {
   // ...
-  recordingEnabled: true,
-  recordingWebhookUrl: "yourwebsite.com/callback",
-  autoStartRecording: true,
-  permissions: {
-    // ...
-    toggleRecording: true, // Can toggle meeting recording
+  recording: {
+    enabled: true,
+    webhookUrl: "https://www.videosdk.live/callback",
+    awsDirPath: `/meeting-recordings/${meetingId}/`,
+    autoStart: false,
+
+    layout: {
+      type: "SIDEBAR", // "SPOTLIGHT" | "SIDEBAR" | "GRID"
+      priority: "PIN", // "SPEAKER" | "PIN",
+      gridSize: 3,
+    },
   },
-  // ...
+
+  permissions: {
+    toggleRecording: true,
+    //...
+  },
+
+  //...
 };
 ```
