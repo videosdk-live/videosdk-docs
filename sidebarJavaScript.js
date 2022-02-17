@@ -2,19 +2,6 @@ module.exports = {
   guideAudioAndVideoCalling: [
     {
       type: "category",
-      label: "Introduction",
-      items: [
-        "guide/video-and-audio-calling-api-sdk/release-notes",
-        "guide/video-and-audio-calling-api-sdk/pricing",
-        "guide/video-and-audio-calling-api-sdk/compatibility",
-      ],
-    },
-    {
-      type: "doc",
-      id: "guide/video-and-audio-calling-api-sdk/quick-start",
-    },
-    {
-      type: "category",
       label: "Quick Start",
       items: [
         "guide/video-and-audio-calling-api-sdk/getting-started",
