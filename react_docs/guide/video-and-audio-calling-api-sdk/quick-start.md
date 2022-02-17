@@ -50,12 +50,18 @@ npx create-react-app <PROJECT_NAME>
 
 ```js
 $ npm install "@videosdk.live/react-sdk"
+
+//For the Participants Video
+$ npm install "react-player"
 ```
 
 Or, if you are using Yarn use below command
 
 ```js
 $ yarn add "@videosdk.live/react-sdk"
+
+//For the Participants Video
+$ yarn add "react-player"
 ```
 
 ## Implementing the VideoSDK
@@ -73,7 +79,7 @@ The Joining screen will consist of:
 function App() {
   return (
     <div className="App">
-      <button onClick={() => getMeetingId({ token: sampleToken })} className="button">
+      <button onClick={() => getMeetingId({ token })} className="button">
         Create Meeting
       </button>
       <br /><br />
@@ -89,50 +95,59 @@ function App() {
 }
 ```
 
-2. Declare a few constants and state as mentioned below.
+2. Declare a state for meeting Id and auth token.
 
 ```js title="App.js"
 function App(){
-  //Replace your sampleToken from the VideoSDK dashboard here
-  const sampleToken = "";
 
   //This state will contain the meeting id after generating one or adding in the textfield
   const [meetingId, setMeetingId] = useState();
+
+  const [token, setToken] = useState();
+
+  //Initializing the token on page load
+  useEffect(()=>{
+    setToken(getToken());
+  },[])
 
   //...return method
 }
 ```
 
-3. We need to create a `getMeetingId()` which will generate a meeting id when Create Meeting button is pressed.
+3. We need to create a `getToken()` which will provide us with an auth token and `getMeetingId()` which will generate a meeting id when Create Meeting button is pressed.
 
-```js title="App.js"
-function App(){
+- For this, we will create a new file named `api.js` which will contain all the api call as well as the Auth token.
 
-  //...other constants
+```js title="api.js"
 
-  const getMeetingId = async ({ token }) => {
-    try {
-      const VIDEOSDK_API_ENDPOINT = "https://api.videosdk.live/v1/meetings";
-      const options = {
-        method: "POST",
-        headers: {
-          "Authorization": token,
-        }
-      };
-      const response = await fetch(VIDEOSDK_API_ENDPOINT, options)
-        .then(async (result) => {
-          const { meetingId } = await result.json();
-          setMeetingId(meetingId);
-        })
-        .catch((error) => console.log("error", error));
-      return response;
-    } catch (e) {
-      console.log(e);
-    }
-  };
+//Replace your sampleToken from the VideoSDK dashboard here
+const sampleToken = "";
 
-  //...return method
+export const getToken = () =>{
+    return sampleToken;
 }
+
+const getMeetingId = async ({ token }) => {
+  try {
+    const VIDEOSDK_API_ENDPOINT = "https://api.videosdk.live/v1/meetings";
+    const options = {
+      method: "POST",
+      headers: {
+        "Authorization": token,
+      }
+    };
+    const response = await fetch(VIDEOSDK_API_ENDPOINT, options)
+      .then(async (result) => {
+        const { meetingId } = await result.json();
+        setMeetingId(meetingId);
+      })
+      .catch((error) => console.log("error", error));
+    return response;
+  } catch (e) {
+    console.log(e);
+  }
+};
+
 ```
 
 4. With this join screen is ready to create and join a meeting with respective meeting id and sample token.
@@ -165,7 +180,7 @@ function App(){
               micEnabled: true,
               webcamEnabled: true,
             }}
-            token={sampleToken}
+            token={token}
             joinWithoutUserInteraction={true}
           >
             <MeetingView
@@ -177,7 +192,7 @@ function App(){
             ></MeetingView>
           </MeetingProvider> :
           <>
-            <button onClick={() => getMeetingId({ token: sampleToken })} className="button">Create Meeting</button>
+            <button onClick={() => getMeetingId({ token })} className="button">Create Meeting</button>
             <br /><br />
             <label htmlFor="meetingId">Meeting Id: </label>
             <input type="text" id="meetingId" name="meetingId" /><br /><br />
@@ -186,7 +201,7 @@ function App(){
             }} className="button">Join Meeting</button>
           </>
       }
-    </div >
+    </div>
   );
 }
 ```
@@ -197,6 +212,8 @@ function App(){
 
 It also contains `ParticipantsView` which will show all the particiapnts present in the meeting.
 
+With below code you will have a basic design ready for the layout.
+
 ```js title = App.js
 
 //...function App(){}
@@ -204,41 +221,6 @@ It also contains `ParticipantsView` which will show all the particiapnts present
 const MeetingView = ({
   onMeetingLeave
 }) => {
-
-  //This function will be called when a new participant joins
-  function onParticipantJoined(participant) {
-    console.log(" onParticipantJoined", participant);
-  }
-  
-  //This function will be called when a participant leaves the meeting
-  function onParticipantLeft(participant) {
-    console.log(" onParticipantLeft", participant);
-  }
-
-  //This function will be called when you join the meeting
-  function onMeetingJoined() {
-    console.log("onMeetingJoined");
-  }
-
-  //This function will be called when you leave the meeting
-  function onMeetingLeft() {
-    console.log("onMeetingLeft");
-    onMeetingLeave();
-  }
-
-  // Get Meeting object using useMeeting hook
-  const {
-    meetingId,
-    leave,
-    toggleMic, //method to toggle mic provided by sdk
-    toggleWebcam, //method to toogle webcame provided by sdk
-  } = useMeeting({
-    onParticipantJoined,
-    onParticipantLeft,
-    onMeetingJoined,
-    onMeetingLeft,
-  });
-
 
   return (
     <div
@@ -249,7 +231,127 @@ const MeetingView = ({
       }}
     >
       <div>
-        <button className={"button red"} onClick={leave}>
+        <button className={"button red"}>
+          LEAVE
+        </button>
+        <button className={"button blue"}>
+          toggleMic
+        </button>
+        <button className={"button blue"}>
+          toggleWebcam
+        </button>
+        <h1>Meeting id is : {meetingId}</h1>
+        <div style={{ display: "flex", flex: 1 }}>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              position: "relative",
+              flex: 1,
+              overflowY: "scroll",
+            }}
+          >
+            {/*<ParticipantsView />*/}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+```
+
+3. We will use the `useMeeting` hook to get the callbacks for the events on happening related to the meeting.
+
+- We will create 4 callback functions which will be triggered on the event happens.
+
+```js title = App.js
+
+//...function App(){}
+
+const MeetingView = ({
+  onMeetingLeave
+}) => {
+
+  function onParticipantJoined(participant) {
+    console.log(" onParticipantJoined", participant);
+  }
+
+  function onParticipantLeft(participant) {
+    console.log(" onParticipantLeft", participant);
+  }
+
+  function onMeetingJoined() {
+    console.log("onMeetingJoined");
+  }
+  
+  function onMeetingLeft() {
+    console.log("onMeetingLeft");
+    onMeetingLeave();
+  }
+
+
+  //...return
+
+};
+
+```
+
+- We will pass the callback functions to the `useMeeting` hook and also get the methods to toggle mic and webcam and leave the meeting.
+
+```js title = App.js
+
+//...function App(){}
+
+const MeetingView = ({
+  onMeetingLeave
+}) => {
+
+  //...callback functions
+
+  // Get Meeting object using useMeeting hook
+  const {
+    meetingId,
+    leave,
+    toggleMic,
+    toggleWebcam,
+
+  } = useMeeting({
+    onParticipantJoined,
+    onParticipantLeft,
+    onMeetingJoined,
+    onMeetingLeft,
+  });
+
+  //...return
+};
+
+```
+
+- Now we will set the `onClick` event for our buttons.
+
+```js title = App.js
+
+//...function App(){}
+
+const MeetingView = ({
+  onMeetingLeave
+}) => {
+
+  //...callback functions
+
+  //...useMeeting Hook
+
+  return (
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        backgroundColor: "#D6E9FE",
+      }}
+    >
+      <div>
+        {/*Update this buttons*/}
+        <button className={"button red"} onClick={leave}> 
           LEAVE
         </button>
         <button className={"button blue"} onClick={toggleMic}>
@@ -276,9 +378,13 @@ const MeetingView = ({
     </div>
   );
 };
+
 ```
 
+
 3. `MeetingView` is all set. Lets create the `ParticipantsView` which will show all the participants in the meeting.
+
+- Here we use the `useMeeting` hook to get the participants list and then map it to `ParticipantView`
 
 ```js title="App.js"
 //...function App(){}
@@ -299,56 +405,71 @@ const ParticipantsView = () => {
       }}
     >
       <h2 style={{ color:"#3E84F6"}}>Participants</h2>
-      {chunk([...participants.keys()]).map((k) => (
+      {[...participants.keys()].map((k) => (
         <div style={{ display: "flex" }}>
-          {k.map((l) => (
-            <ParticipantView key={l} participantId={l} />
-          ))}
+            <ParticipantView key={k} participantId={k} />
         </div>
       ))}
     </div>
   );
 }
 
-//Actual View for each participant
+```
+
+4. We will create the `ParticipantView` which will show each participants details.
+
+- We will start with creating the empty `<div>`
+
+```js 
 const ParticipantView = ({ participantId }) => {
 
-  const webcamRef = useRef(null);
-  const micRef = useRef(null);
+  return (
+    <div
+      style={{
+        width: "400px",
+        backgroundColor: "#3E84F6",
+        borderRadius: "8px",
+        overflow: "hidden",
+        margin: "8px",
+        padding: "8px",
+        display: "flex",
+        flex: 1,
+        flexDirection: "column",
+        position: "relative",
+      }}
+    >
+    </div>
+  );
+};
+```
 
-  const onStreamEnabled = (stream) => { };
-  const onStreamDisabled = (stream) => { };
+- Now we will use the `useParticipant` hook to get streams of audio and video for the participant.
+
+```js 
+const ParticipantView = ({ participantId }) => {
 
   const {
     displayName,
     participant,
-    webcamStream, //video stream for the participant
-    micStream, //audio stream for the participant
+    webcamStream,
+    micStream,
     webcamOn,
     micOn,
     isLocal,
-  } = useParticipant(participantId, {
-    onStreamEnabled,
-    onStreamDisabled,
-  });
+  } = useParticipant(participantId);
 
-  useEffect(() => {
-    if (webcamRef.current) {
-      if (webcamOn) {
-        const mediaStream = new MediaStream();
-        mediaStream.addTrack(webcamStream.track);
+  //...return
+};
+```
 
-        webcamRef.current.srcObject = mediaStream;
-        webcamRef.current
-          .play()
-          .catch((error) => 
-            console.error("videoElem.current.play() failed", error)
-          );
-      } else {
-        webcamRef.current.srcObject = null;
-      }
-    }
-  }, [webcamStream, webcamOn]);
+- We will add the `<audio>` for the audio stream and set it up.
+
+```js 
+const ParticipantView = ({ participantId }) => {
+
+  //...useParticipant hook
+
+  const micRef = useRef(null);
 
   useEffect(() => {
     if (micRef.current) {
@@ -384,6 +505,44 @@ const ParticipantView = ({ participantId }) => {
       }}
     >
       <audio ref={micRef} autoPlay muted={isLocal} />
+    </div>
+  );
+};
+```
+
+- Next we will add the `ReactPlayer`
+
+```js 
+const ParticipantView = ({ participantId }) => {
+
+  //...useParticipant hook
+
+  //...mic stream setup
+
+  const mediaStream = useMemo(() => {
+    if (webcamOn) {
+      const mediaStream = new MediaStream();
+      mediaStream.addTrack(webcamStream.track);
+      return mediaStream;
+    }
+  }, [webcamStream, webcamOn]);
+
+  return (
+    <div
+      style={{
+        width: "400px",
+        backgroundColor: "#3E84F6",
+        borderRadius: "8px",
+        overflow: "hidden",
+        margin: "8px",
+        padding: "8px",
+        display: "flex",
+        flex: 1,
+        flexDirection: "column",
+        position: "relative",
+      }}
+    >
+      <audio ref={micRef} autoPlay muted={isLocal} />
 
       <div
         style={{
@@ -398,10 +557,96 @@ const ParticipantView = ({ participantId }) => {
         <div
           style={{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0 }}
         >
-          <video
+          <ReactPlayer
             height={"100%"}
             width={"100%"}
-            ref={webcamRef}
+            url = {mediaStream}
+            playsInline
+            playing={true}
+            style={{
+              backgroundColor: "black",
+              position: "absolute",
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
+              objectFit: "contain",
+            }}
+            autoPlay
+          />
+          <div
+            style={{
+              position: "absolute",
+              top: "8px",
+              right: "8px",
+            }}
+          >
+            <p
+              style={{
+                color: webcamOn ? "green" : "red",
+                fontSize: 16,
+                fontWeight: "bold",
+                opacity: 1,
+              }}
+            >
+              WEB CAM
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  );
+};
+```
+
+- Now we will show the details of the participants.
+
+```js 
+const ParticipantView = ({ participantId }) => {
+
+  //...useParticipant hook
+
+  //...mic stream setup
+
+  //...webcam stream setup
+
+  return (
+    <div
+      style={{
+        width: "400px",
+        backgroundColor: "#3E84F6",
+        borderRadius: "8px",
+        overflow: "hidden",
+        margin: "8px",
+        padding: "8px",
+        display: "flex",
+        flex: 1,
+        flexDirection: "column",
+        position: "relative",
+      }}
+    >
+      <audio ref={micRef} autoPlay muted={isLocal} />
+
+      <div
+        style={{
+          position: "relative",
+          borderRadius: "8px",
+          overflow: "hidden",
+          backgroundColor: "pink",
+          width: "100%",
+          height: 300,
+        }}
+      >
+        <div
+          style={{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0 }}
+        >
+          <ReactPlayer
+            height={"100%"}
+            width={"100%"}
+            url = {mediaStream}
+            playsInline
+            playing={true}
             style={{
               backgroundColor: "black",
               position: "absolute",
@@ -454,6 +699,7 @@ const ParticipantView = ({ participantId }) => {
   );
 };
 ```
+
 
 ### Run and Test
 
