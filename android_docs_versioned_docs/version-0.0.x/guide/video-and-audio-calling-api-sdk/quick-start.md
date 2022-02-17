@@ -43,7 +43,7 @@ Before proceeding, ensure that your development environment meets the following 
 
 Follow the steps to create the environment necessary to add video call into your app.
 
-1. For new projects, in **Android Studio**, create a **Phone and Tablet** Android project with an **Empty Activity**.
+1. For new project in **Android Studio**, create a **Phone and Tablet** Android project with an **Empty Activity**.
 
 :::caution
 After creating the project, Android Studio automatically starts gradle sync. Ensure that the sync succeeds before you continue.
