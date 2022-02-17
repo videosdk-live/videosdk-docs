@@ -34,8 +34,8 @@ These quick start will help you integrate Prebuilt SDK using Javascript . You ca
 
 Before proceeding, ensure that your development environment meets the following requirements:
 
-* A valid VideoSDK account.
-* An active VideoSDK project with temporary token. For details, see [Signup & Create API Key](/prebuilt/guide/video-and-audio-calling-api-sdk/signup-and-create-api).
+- A valid VideoSDK account.
+- An active VideoSDK project with temporary token. For details, see [Signup & Create API Key](/prebuilt/guide/prebuilt-video-and-audio-calling/signup-and-create-api).
 
 ## Implementing Meeting with Prebuilt VideoSDK
 
@@ -148,4 +148,3 @@ and open [http://localhost/index.html](http://localhost/index.html) in your web 
 Stuck anywhere? Check out this [example code](https://github.com/videosdk-live/videosdk-rtc-js-prebuilt-embedded-example) on github or [download](https://github.com/videosdk-live/videosdk-rtc-js-prebuilt-embedded-example/archive/refs/tags/v0.1.1.zip) the full source code and unzip on your computer.
 
 :::
-
