@@ -377,7 +377,39 @@ protected void onCreate(Bundle savedInstanceState) {
           MeetingActivity.this, meetingId, participantName,
           micEnabled, webcamEnabled
   );
+  meeting.join();
+
+  ((TextView)findViewById(R.id.tvMeetingId)).setText(meetingId);
+
+}
+
+```
+
+3. We will create and add the event listeners to the meeting.
+
+```js title="MeetingActivity.java"
+
+@Override
+protected void onCreate(Bundle savedInstanceState) {
+  super.onCreate(savedInstanceState);
+  setContentView(R.layout.activity_meeting);
+
+  final String token = getIntent().getStringExtra("token");
+  final String meetingId = getIntent().getStringExtra("meetingId");
+  final String participantName = "John Doe";
+
+  // pass the token generated from api server
+  VideoSDK.config(token);
+
+  // create a new meeting instance
+  meeting = VideoSDK.initMeeting(
+          MeetingActivity.this, meetingId, participantName,
+          micEnabled, webcamEnabled
+  );
+
+  //With this we will be able to register for the events happening on the meeting.
   meeting.addEventListener(meetingEventListener);
+
   meeting.join();
 
   ((TextView)findViewById(R.id.tvMeetingId)).setText(meetingId);
@@ -413,7 +445,7 @@ private final MeetingEventListener meetingEventListener = new MeetingEventListen
 
 ```
 
-3. Meeting is all set and joined. 
+4. Meeting is all set and joined. 
 
 ### Handling the Local Participant Toggles
 
@@ -461,6 +493,7 @@ private void setActionListeners() {
 
 }
 
+//Confirmation dialog to leave the meeting
 private void showLeaveOrEndDialog() {
   new MaterialAlertDialogBuilder(MeetingActivity.this)
     .setTitle("Leave or End meeting")
@@ -477,7 +510,7 @@ private void showLeaveOrEndDialog() {
 }
 ```
 
-#### Handling the Participants View 
+### Handling the Participants View 
 
 We will be showing the list of participants in a recycler view.
 
@@ -524,43 +557,12 @@ We will be showing the list of participants in a recycler view.
 </FrameLayout>
 ```
 
-2. Create a recycler view adapter which will populate our list.
+2. Create a recycler view adapter which will populate our list. Create `PeerViewHolder` in the adpater.
 
 ```js title="ParticipantAdapter.java"
 public class ParticipantAdapter extends RecyclerView.Adapter<ParticipantAdapter.PeerViewHolder> {
 
-  private final List<Participant> participants = new ArrayList<>();
   private int containerHeight;
-
-  public ParticipantAdapter(Meeting meeting) {
-
-    participants.add(meeting.getLocalParticipant());
-
-    meeting.addEventListener(new MeetingEventListener() {
-      @Override
-      public void onParticipantJoined(Participant participant) {
-        participants.add(participant);
-        notifyItemInserted(participants.size() - 1);
-      }
-
-      @Override
-      public void onParticipantLeft(Participant participant) {
-        int pos = -1;
-        for (int i = 0; i < participants.size(); i++) {
-            if (participants.get(i).getId().equals(participant.getId())) {
-                pos = i;
-                break;
-            }
-        }
-
-        participants.remove(participant);
-
-        if (pos >= 0) {
-            notifyItemRemoved(pos);
-        }
-      }
-    });
-  }
 
   @NonNull
   @Override
@@ -573,53 +575,12 @@ public class ParticipantAdapter extends RecyclerView.Adapter<ParticipantAdapter.
 
   @Override
   public void onBindViewHolder(@NonNull PeerViewHolder holder, int position) {
-    Participant participant = participants.get(position);
-
-    ViewGroup.LayoutParams layoutParams = holder.itemView.getLayoutParams();
-    layoutParams.height = containerHeight / 3;
-    holder.itemView.setLayoutParams(layoutParams);
-
-    holder.tvName.setText(participant.getDisplayName());
-
-    for (Map.Entry<String, Stream> entry : participant.getStreams().entrySet()) {
-        Stream stream = entry.getValue();
-        if (stream.getKind().equalsIgnoreCase("video")) {
-            holder.svrParticipant.setVisibility(View.VISIBLE);
-
-            VideoTrack videoTrack = (VideoTrack) stream.getTrack();
-            videoTrack.addSink(holder.svrParticipant);
-
-            break;
-        }
-    }
-
-    participant.addEventListener(new ParticipantEventListener() {
-      @Override
-      public void onStreamEnabled(Stream stream) {
-          if (stream.getKind().equalsIgnoreCase("video")) {
-              holder.svrParticipant.setVisibility(View.VISIBLE);
-
-              VideoTrack videoTrack = (VideoTrack) stream.getTrack();
-              videoTrack.addSink(holder.svrParticipant);
-          }
-      }
-
-      @Override
-      public void onStreamDisabled(Stream stream) {
-          if (stream.getKind().equalsIgnoreCase("video")) {
-              VideoTrack track = (VideoTrack) stream.getTrack();
-              if (track != null) track.removeSink(holder.svrParticipant);
-
-              holder.svrParticipant.clearImage();
-              holder.svrParticipant.setVisibility(View.GONE);
-          }
-      }
-    });
+    
   }
 
   @Override
   public int getItemCount() {
-      return participants.size();
+      return 0;
   }
 
 
@@ -639,7 +600,118 @@ public class ParticipantAdapter extends RecyclerView.Adapter<ParticipantAdapter.
 }
 ```
 
-3. Add this adapter to the `MeetingActivity.java`
+4. Now we will create the list of `Participant` for the meeting.
+
+```js title="ParticipantAdapter.java"
+public class ParticipantAdapter extends RecyclerView.Adapter<ParticipantAdapter.PeerViewHolder> {
+
+  //Creating a empty list which will store all participants
+  private final List<Participant> participants = new ArrayList<>();
+
+  public ParticipantAdapter(Meeting meeting) {
+
+    //Adding the local participant to the list
+    participants.add(meeting.getLocalParticipant());
+
+    //Adding Meeting Event listener to get the pacrticipant when on joins or leaves the meeting
+    meeting.addEventListener(new MeetingEventListener() {
+      @Override
+      public void onParticipantJoined(Participant participant) {
+          
+        //When new participant joins the meeting add him to the list
+        participants.add(participant);
+        notifyItemInserted(participants.size() - 1);
+      }
+
+      @Override
+      public void onParticipantLeft(Participant participant) {
+
+        //When participant leaves the meeting remove him from the list
+        int pos = -1;
+        for (int i = 0; i < participants.size(); i++) {
+          if (participants.get(i).getId().equals(participant.getId())) {
+            pos = i;
+            break;
+          }
+        }
+
+        participants.remove(participant);
+
+        if (pos >= 0) {
+          notifyItemRemoved(pos);
+        }
+      }
+    });
+  }
+
+  //Make this method return the size of our participant list
+  @Override
+  public int getItemCount() {
+    return participants.size();
+  }
+
+  //...
+
+}
+```
+
+5. We have a list of particpants ready. Lets setup the viewholder to display particpant video.
+
+```js title="PartipantAdapter.java"
+public class ParticipantAdapter extends RecyclerView.Adapter<ParticipantAdapter.PeerViewHolder> {
+
+@Override
+    public void onBindViewHolder(@NonNull PeerViewHolder holder, int position) {
+        Participant participant = participants.get(position);
+
+        ViewGroup.LayoutParams layoutParams = holder.itemView.getLayoutParams();
+        layoutParams.height = containerHeight / 3;
+        holder.itemView.setLayoutParams(layoutParams);
+
+        holder.tvName.setText(participant.getDisplayName());
+
+        //Adding the initial video stream for the participant into the SurfaceViewRenderer
+        for (Map.Entry<String, Stream> entry : participant.getStreams().entrySet()) {
+            Stream stream = entry.getValue();
+            if (stream.getKind().equalsIgnoreCase("video")) {
+                holder.svrParticipant.setVisibility(View.VISIBLE);
+
+                VideoTrack videoTrack = (VideoTrack) stream.getTrack();
+                videoTrack.addSink(holder.svrParticipant);
+
+                break;
+            }
+        }
+
+        //Add Listener to the participant which will update start or stop the video stream of the participant
+        participant.addEventListener(new ParticipantEventListener() {
+            @Override
+            public void onStreamEnabled(Stream stream) {
+                if (stream.getKind().equalsIgnoreCase("video")) {
+                    holder.svrParticipant.setVisibility(View.VISIBLE);
+
+                    VideoTrack videoTrack = (VideoTrack) stream.getTrack();
+                    videoTrack.addSink(holder.svrParticipant);
+                }
+            }
+
+            @Override
+            public void onStreamDisabled(Stream stream) {
+                if (stream.getKind().equalsIgnoreCase("video")) {
+                    VideoTrack track = (VideoTrack) stream.getTrack();
+                    if (track != null) track.removeSink(holder.svrParticipant);
+
+                    holder.svrParticipant.clearImage();
+                    holder.svrParticipant.setVisibility(View.GONE);
+                }
+            }
+        });
+    }
+
+}
+```
+
+6. Add this adapter to the `MeetingActivity.java`
 
 ```js title="MeetingActivity.java"
 @Override
