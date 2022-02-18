@@ -29,6 +29,10 @@ This guide will provide an overview of how participant can start and stop broadc
 
 - `autoStart`: If it is true then live streaming will start automatically when the meeting starts, default value is false (You can't start live streaming during the meeting).
 - `outputs`: It's an array of object that contains RTMP url and stream key from the provided platforms such as Youtube or Facebook.
+- `layout`: This attribute will define who th elive stream layout will look.
+  - `layout.type`: This indicates the type of layout to be used on the live stream.
+  - `layout.priority`: It will prioritise the view of either pin partcipant or speaker participant for livestream.
+  - `layout.gridSize`: It will indicates number of participants shown on the livestream.
 
 ```js title="index.html"
 const config = {
@@ -41,6 +45,11 @@ const config = {
         streamKey: "<STREAM KEY FROM YOUTUBE>",
       },
     ],
+    layout: {
+      type: "SIDEBAR", // "SPOTLIGHT" | "SIDEBAR" | "GRID"
+      priority: "PIN", // "SPEAKER" | "PIN",
+      gridSize: 3,
+    },
   },
   // ...
 };
