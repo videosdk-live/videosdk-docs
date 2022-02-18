@@ -75,7 +75,7 @@ dependencies {
 
 4. Add all the following permissions to AndroidManifest.xml
 
-```js title="AndroidManifest.xml"
+```xml title="AndroidManifest.xml"
 <uses-permission android:name="android.permission.RECORD_AUDIO" />
 <uses-permission android:name="android.permission.CAMERA" />
 <uses-permission android:name="android.permission.INTERNET" />
@@ -107,7 +107,7 @@ public class MainApplication extends Application {
 
 7. Add MainApplication to AndroidManifest.xml
 
-```js title="AndroidManifest.xml"
+```xml title="AndroidManifest.xml"
 <application
     android:name=".MainApplication"
 >
@@ -128,7 +128,7 @@ The Joining screen will consist of:
 
 In `/app/res/layout/activity_main.xml`, replace the content with the following:
 
-```js title="MainActivity.xml"
+```xml title="activity_xml.xml"
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
@@ -271,7 +271,7 @@ private boolean checkSelfPermission(String permission, int requestCode) {
 
 In `/app/res/layout/activity_meeting.xml`, replace the content with the following:
 
-```js title="activty_meeting.xml
+```xml title="activty_meeting.xml
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -516,7 +516,7 @@ We will be showing the list of participants in a recycler view.
 
 1. Create a new layout for the participant view.
 
-```js title="item_remote_peer.xml"
+```xml title="item_remote_peer.xml"
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"

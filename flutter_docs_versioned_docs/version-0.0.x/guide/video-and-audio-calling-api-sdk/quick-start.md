@@ -39,6 +39,10 @@ Follow the steps to create the environment necessary to add video call into your
 
 1. Create a new Flutter project.
 
+```js
+$ flutter create videosdk_flutter_quickstart
+```
+
 2. Once the Flutter project is created, run the following command to add Flutter VideoSDK to the project.
 
 ```js
@@ -48,11 +52,6 @@ $ flutter pub add videosdk
 $ flutter pub add http
 ```
 
-This will add a line like this to your package's pubspec.yaml (and run an implicit flutter pub get):
-```js
-dependencies:
-  videosdk: ^0.0.8
-```
 
 3. Update the `AndroidManifest.xml` for the permissions list we will be using to implement the audio and video features. You can find the `AndroidManifest.xml` file at `<project root>/android/app/src/main/AndroidManifest.xml`
 
@@ -150,16 +149,7 @@ class _JoinScreenState extends State<JoinScreen> {
               style: _buttonStyle,
               onPressed: () async {
                 _meetingID = await createMeeting();
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => MeetingScreen(
-                      token: _token,
-                      meetingId: _meetingID,
-                      displayName: "John Doe",
-                    ),
-                  ),
-                );
+                navigateToMeetingScreen();
               },
               child: const Text("CREATE MEETING"),
             ),
@@ -192,16 +182,7 @@ class _JoinScreenState extends State<JoinScreen> {
             SizedBox(height: 20),
             TextButton(
               onPressed: () async {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => MeetingScreen(
-                      meetingId: _meetingID,
-                      token: _token,
-                      displayName: "John Doe",
-                    ),
-                  ),
-                );
+                navigateToMeetingScreen();
               },
               style: _buttonStyle,
               child: const Text("JOIN MEETING"),
@@ -211,6 +192,20 @@ class _JoinScreenState extends State<JoinScreen> {
       ),
     );
   }
+
+  void navigateToMeetingScreen(){
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => MeetingScreen(
+          token: _token,
+          meetingId: _meetingID,
+          displayName: "John Doe",
+        ),
+      ),
+    );
+  }
+
 }
 ```
 
@@ -317,6 +312,7 @@ class _MeetingScreenState extends State<MeetingScreen> {
   Widget build(BuildContext context) {
     return WillPopScope(
       onWillPop: _onWillPopScope,
+      //MeetingBuilder is a class of @videosdk/rtc.dart
       child: MeetingBuilder(
         meetingId: widget.meetingId,
         displayName: widget.displayName,
@@ -506,6 +502,7 @@ class _MeetingScreenState extends State<MeetingScreen> {
             body: Column(
               children: [
                 Expanded(
+                  //ParticipantGridView will be created in further steps!
                   child: ParticipantGridView(meeting: meeting!),
                 ),
                 Row(
@@ -607,10 +604,12 @@ class _ParticipantGridViewState extends State<ParticipantGridView> {
     return GridView.count(
       crossAxisCount: 2,
       children: [
+        //This Participant Tile will hold local participants view
         ParticipantTile(
           participant: localParticipant!,
           isLocalParticipant: true,
         ),
+        //This will map all other participants
         ...participants.values
             .map((participant) => ParticipantTile(participant: participant))
             .toList()

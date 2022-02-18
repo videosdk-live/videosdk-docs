@@ -64,6 +64,8 @@ $ yarn add "@videosdk.live/react-sdk"
 $ yarn add "react-player"
 ```
 
+3. If you want to use the custom styling from this tutorial, update the `index.css` with the [css provided here](/)
+
 ## Implementing the VideoSDK
 
 ### Creating the Joining Screen
@@ -425,18 +427,7 @@ const ParticipantView = ({ participantId }) => {
 
   return (
     <div
-      style={{
-        width: "400px",
-        backgroundColor: "#3E84F6",
-        borderRadius: "8px",
-        overflow: "hidden",
-        margin: "8px",
-        padding: "8px",
-        display: "flex",
-        flex: 1,
-        flexDirection: "column",
-        position: "relative",
-      }}
+      className='participant-view'
     >
     </div>
   );
@@ -491,18 +482,7 @@ const ParticipantView = ({ participantId }) => {
 
   return (
     <div
-      style={{
-        width: "400px",
-        backgroundColor: "#3E84F6",
-        borderRadius: "8px",
-        overflow: "hidden",
-        margin: "8px",
-        padding: "8px",
-        display: "flex",
-        flex: 1,
-        flexDirection: "column",
-        position: "relative",
-      }}
+      className='participant-view'
     >
       <audio ref={micRef} autoPlay muted={isLocal} />
     </div>
@@ -529,30 +509,12 @@ const ParticipantView = ({ participantId }) => {
 
   return (
     <div
-      style={{
-        width: "400px",
-        backgroundColor: "#3E84F6",
-        borderRadius: "8px",
-        overflow: "hidden",
-        margin: "8px",
-        padding: "8px",
-        display: "flex",
-        flex: 1,
-        flexDirection: "column",
-        position: "relative",
-      }}
+      className='participant-view'
     >
       <audio ref={micRef} autoPlay muted={isLocal} />
 
       <div
-        style={{
-          position: "relative",
-          borderRadius: "8px",
-          overflow: "hidden",
-          backgroundColor: "pink",
-          width: "100%",
-          height: 300,
-        }}
+        className='video-container'
       >
         <div
           style={{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0 }}
@@ -563,15 +525,7 @@ const ParticipantView = ({ participantId }) => {
             url = {mediaStream}
             playsInline
             playing={true}
-            style={{
-              backgroundColor: "black",
-              position: "absolute",
-              top: 0,
-              left: 0,
-              right: 0,
-              bottom: 0,
-              objectFit: "contain",
-            }}
+            className='video'
             autoPlay
           />
           <div
@@ -613,30 +567,12 @@ const ParticipantView = ({ participantId }) => {
 
   return (
     <div
-      style={{
-        width: "400px",
-        backgroundColor: "#3E84F6",
-        borderRadius: "8px",
-        overflow: "hidden",
-        margin: "8px",
-        padding: "8px",
-        display: "flex",
-        flex: 1,
-        flexDirection: "column",
-        position: "relative",
-      }}
+      className='participant-view'
     >
       <audio ref={micRef} autoPlay muted={isLocal} />
 
       <div
-        style={{
-          position: "relative",
-          borderRadius: "8px",
-          overflow: "hidden",
-          backgroundColor: "pink",
-          width: "100%",
-          height: 300,
-        }}
+        className='video-container'
       >
         <div
           style={{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0 }}
@@ -647,15 +583,7 @@ const ParticipantView = ({ participantId }) => {
             url = {mediaStream}
             playsInline
             playing={true}
-            style={{
-              backgroundColor: "black",
-              position: "absolute",
-              top: 0,
-              left: 0,
-              right: 0,
-              bottom: 0,
-              objectFit: "contain",
-            }}
+            className='video'
             autoPlay
           />
           <div
