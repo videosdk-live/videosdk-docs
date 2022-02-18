@@ -148,3 +148,71 @@ and open [http://localhost/index.html](http://localhost/index.html) in your web 
 Stuck anywhere? Check out this [example code](https://github.com/videosdk-live/videosdk-rtc-js-prebuilt-embedded-example) on github or [download](https://github.com/videosdk-live/videosdk-rtc-js-prebuilt-embedded-example/archive/refs/tags/v0.1.1.zip) the full source code and unzip on your computer.
 
 :::
+
+## Dynamic Meeting Link
+
+If you dont want to have same meeting id every time, you can generate a random id each time and use it. Let's see how its done.
+
+1. Create a new `createMeeting.html` file which will consists of a button to create a meeting.
+
+```js title="createMeeting.html"
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Videosdk.live RTC</title>
+      </head>
+    <body>
+        <button onclick="">Create Meeting</button>
+    </body>
+</html>
+```
+
+2. Add a `<script>` which will contain `createMeeting()` which will create and redirect to new meeting. And add this method to `onClick` of `<button>`
+
+Your `<body>` should look something like this.
+
+```js title="createMeeting.html
+<body>
+  <script>
+    function createMeeting() {
+      let meetingId =  'xxxxyxxx'.replace(/[xy]/g, function(c) {
+          var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
+          return v.toString(16);
+      });
+      window.location.href = "http://"+window.location.host+"?meetingId="+meetingId;
+    }
+  </script>
+  <button onclick="">Create Meeting</button>
+</body>
+```
+
+3. Now update your `index.html` to take the `meetingId` fromt he url.
+
+```js title="index.html"
+//...
+<script>
+
+   script.addEventListener("load", function (event) {
+      //Get URL query parameters
+      const url = new URLSearchParams(window.location.search);
+      
+      //...
+
+      const config = {
+        // ...
+        meetingId: url.get("meetingId"), // Get meeting id from params.
+        // ...
+      };
+      
+      const meeting = new VideoSDKMeeting();
+      meeting.init(config);
+    });
+
+</script>
+
+//...
+```
+
+4. Now go to `host/createMeeting.html` and press the button to create a new meeting with random meeting id.
