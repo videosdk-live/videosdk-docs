@@ -29,7 +29,7 @@ These quick start will help you integrate some of the basic functionalities that
 
 ## Screenshots
 
-![VideoSDK JS Quick Start Join Screen](/img/quick-start/js-join-screen.png) ![VideoSDK JS Quick Start Meeting Screen](/img/quick-start/js-grid-screen.png)
+![VideoSDK JS Quick Start Join Screen](/img/quick-start/js-join-screen.PNG) ![VideoSDK JS Quick Start Meeting Screen](/img/quick-start/js-grid-screen.PNG)
 
 ## Prerequisite
 
@@ -206,22 +206,18 @@ In this sample code we have made use of bootstrap for the very basic effects.One
 TOKEN = "";
 ```
 
-```js title="index.js"
+- Now you have your token ; to create meeting and to validate it make use of API_BASE_URL mentioned below in index.js file
+
+```js title="setting up API_BASE_URL index.js"
 // Constants
 const API_BASE_URL = "https://api.videosdk.live";
+```
 
-//DOM elements
-let btnCreateMeeting = document.getElementById("btnCreateMeeting");
-let btnJoinMeeting = document.getElementById("btnJoinMeeting");
-let videoContainer = document.getElementById("videoContainer");
-let participantsList = document.getElementById("participantsList");
-let btnToggleMic = document.getElementById("btnToggleMic");
-let btnToggleWebCam = document.getElementById("btnToggleWebCam");
+- Now you have to validate your token , whether it is empty or not
+
+```js title="token validation index.js"
 //variables
-let meetingId = "";
 let token = "";
-let totalParticipant = 0;
-let participants = [];
 
 //handlers
 async function tokenGeneration() {
@@ -232,6 +228,14 @@ async function tokenGeneration() {
     alert("Please Provide Your Token First");
   }
 }
+```
+
+- After checking your token now it's time to create a meeting which will generate one meeting object made up of multiple parameters. From those parameters we will make use of meetingId and token to validate the meeting
+- The code below in the code block says that if **newMeeting parameter of a meetingHandler set to true , meeting would be created** and **if you have meetingId then you can set newMeeting to false and validate meeting would be initiated.**
+
+```js title="create and validate meeting index.js"
+//variables
+let meetingId = "";
 
 async function meetingHandler(newMeeting) {
   let joinMeetingName = "JS-SDK";
@@ -280,6 +284,22 @@ async function validateMeeting() {
     return meetingId;
   }
 }
+```
+
+- so far you have created a meeting , and if meetingId exists then you have validated it. But to start a meeting ;startMeeting handler is there.
+
+```js title="startMeeting index.js"
+//DOM elements
+let btnCreateMeeting = document.getElementById("btnCreateMeeting");
+let btnJoinMeeting = document.getElementById("btnJoinMeeting");
+let videoContainer = document.getElementById("videoContainer");
+let participantsList = document.getElementById("participantsList");
+let btnToggleMic = document.getElementById("btnToggleMic");
+let btnToggleWebCam = document.getElementById("btnToggleWebCam");
+
+//variables
+let totalParticipant = 0;
+let participants = [];
 
 function startMeeting(token, meetingId, name) {
   // Meeting config
@@ -294,17 +314,18 @@ function startMeeting(token, meetingId, name) {
     maxResolution: "hd", // optional, default: "hd"
   });
 
+  //join meeting
   meeting.join();
+
+  //all remote participants
   participants = meeting.participants;
-  console.log("meeting : ", meeting);
 
   //create Local Participant
-
   if (totalParticipant == 0) {
     createLocalParticipant();
   }
 
-  //participant joined
+  //remote participant joined
   meeting.on("participant-joined", (participant) => {
     let videoElement = createVideoElement(participant.id);
     let audioElement = createAudioElement(participant.id);
@@ -320,7 +341,7 @@ function startMeeting(token, meetingId, name) {
     });
   });
 
-  // participants left
+  //remote participants left
   meeting.on("participant-left", (participant) => {
     let vElement = document.getElementById(`v-${participant.id}`);
     vElement.parentNode.removeChild(vElement);
@@ -331,6 +352,7 @@ function startMeeting(token, meetingId, name) {
     document.getElementById(`p-${participant.id}`).remove();
   });
 
+  //local participant stream-enabled
   meeting.localParticipant.on("stream-enabled", (stream) => {
     setTrack(
       stream,

@@ -25,19 +25,19 @@ This guide will get you running with the VideoSDK video & audio calling in minut
 
 These quick start will help you integrate some of the basic functionalities that VideoSDK provides. You can check out the complete source code for this guide [here](/). Once you are done with the tutorial given below your app should look like this.
 
-![VideoSDK Android Quick Start Join Screen](/img/quick-start/android-join-screen.jpg) ![VideoSDK Android Quick Start Meeting Screen](/img/quick-start/android-meeting-screen.jpg) 
+![VideoSDK Android Quick Start Join Screen](/img/quick-start/android-join-screen.jpg) ![VideoSDK Android Quick Start Meeting Screen](/img/quick-start/android-meeting-screen.jpg)
 
 ## Prerequisites
 
 Before proceeding, ensure that your development environment meets the following requirements:
 
-* Java Development Kit.
-* Android Studio 3.0 or later.
-* Android SDK API Level 16 or higher.
-* A valid VideoSDK account.
-* An active VideoSDK project with temporary token. For details, see [Signup & Create API Key](/android/guide/video-and-audio-calling-api-sdk/signup-and-create-api).
-* A computer with access to the internet.
-* A mobile device that runs Android 4.1 or later.
+- Java Development Kit.
+- Android Studio 3.0 or later.
+- Android SDK API Level 16 or higher.
+- A valid VideoSDK account.
+- An active VideoSDK project with temporary token. For details, see [Signup & Create API Key](/android/guide/video-and-audio-calling-api-sdk/signup-and-create-api).
+- A computer with access to the internet.
+- A mobile device that runs Android 4.1 or later.
 
 ## Project Setup
 
@@ -85,7 +85,6 @@ dependencies {
 
 5. Sync the gradle now. Once the sync is completed successfully, proceed further. If the gradle sync fails you can check if the problem you are facing is present in [Known Issues](/), if not, post us on our [discord community](https://discord.gg/f2WsNDN9S5).
 
-
 6. Extend the android.app.Application class and create MainApplication.java class with the following code
 
 ```js title="MainApplication.java"
@@ -122,9 +121,10 @@ public class MainApplication extends Application {
 #### Creating UI
 
 The Joining screen will consist of:
+
 1. Create Button - This button will create a new meeting for you.
 2. TextField for Meeting ID - This textfield will contain the meeting ID you want to join.
-2. Join Button - This buttom will join the meeting with which the you will be joined.
+3. Join Button - This buttom will join the meeting with which the you will be joined.
 
 In `/app/res/layout/activity_main.xml`, replace the content with the following:
 
@@ -157,7 +157,7 @@ In `/app/res/layout/activity_main.xml`, replace the content with the following:
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginVertical="16dp"
-        android:hint="Enter Meeting ID">  
+        android:hint="Enter Meeting ID">
 
         <EditText
             android:id="@+id/etMeetingId"
@@ -413,7 +413,7 @@ private final MeetingEventListener meetingEventListener = new MeetingEventListen
 
 ```
 
-3. Meeting is all set and joined. 
+3. Meeting is all set and joined.
 
 ### Handling the Local Participant Toggles
 
@@ -477,7 +477,7 @@ private void showLeaveOrEndDialog() {
 }
 ```
 
-#### Handling the Participants View 
+#### Handling the Participants View
 
 We will be showing the list of participants in a recycler view.
 
