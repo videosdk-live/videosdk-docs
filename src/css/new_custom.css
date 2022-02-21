@@ -646,6 +646,14 @@ div[class^="sidebar_"] {
   border-right: 2px solid #f6f6fc;
 }
 
+div[class^="collapsedDocSidebar_"] {
+  border-right: 2px solid #f6f6fc;
+}
+
+html[data-theme="dark"] div[class^="collapsedDocSidebar_"] {
+  border-right: 2px solid #252a34;
+}
+
 .navbar {
   box-shadow: none;
   border-bottom: 2px solid #f6f6fc;
@@ -717,75 +725,6 @@ html[data-theme="dark"] .navbar {
     display: inline-block;
     width: auto;
   }
-}
-
-.token.keyword.module,
-.token.property-access,
-token.property-access {
-  color: #5edfff !important;
-}
-
-.token.function {
-  font-style: normal !important;
-  color: #dddba6 !important;
-}
-
-.token.plain,
-.token.plain {
-  color: #42c3fb !important;
-}
-
-.token.parameter,
-.token.punctuation,
-.token.operator,
-.token.console.class-name,
-.token.doc-comment.parameter,
-.token.doc-comment.optional-parameter,
-.token.doc-comment.parameter.punctuation,
-.token.doc-comment.optional-parameter.punctuation {
-  font-style: normal !important;
-  color: #42c3fb !important;
-}
-
-.token.keyword,
-.token.doc-comment.keyword {
-  font-style: normal !important;
-  color: #569cd6 !important;
-}
-
-.token.string {
-  font-style: normal !important;
-  color: #de8971 !important;
-  font-size: small;
-}
-
-.token.console {
-  font-style: normal !important;
-  color: var(--ifm-color-primary) !important;
-}
-
-.token.constant {
-  font-style: normal !important;
-  color: #42c3fb !important;
-}
-
-.token.comment {
-  font-style: normal !important;
-  color: #6e7f6d !important;
-}
-
-.token.number {
-  color: #b5cea8 !important;
-}
-
-.token.boolean {
-  font-style: normal !important;
-  color: #ffbf86 !important;
-  font-size: small;
-}
-
-.token.doc-comment.class-name {
-  @apply text-green-500;
 }
 
 pre[class*="language-"],
@@ -1194,74 +1133,6 @@ html[data-theme="dark"] .sub-heading {
   color: #b2b2b2;
 }
 
-.token.keyword.module,
-.token.property-access,
-token.property-access {
-  color: #5edfff !important;
-}
-
-.token.function {
-  font-style: normal !important;
-  color: #dddba6 !important;
-}
-
-.token.plain,
-.token.plain {
-  color: #42c3fb !important;
-}
-
-.token.parameter,
-.token.punctuation,
-.token.operator,
-.token.console.class-name,
-.token.doc-comment.parameter,
-.token.doc-comment.optional-parameter,
-.token.doc-comment.parameter.punctuation,
-.token.doc-comment.optional-parameter.punctuation {
-  font-style: normal !important;
-  color: #42c3fb !important;
-}
-
-.token.keyword,
-.token.doc-comment.keyword {
-  font-style: normal !important;
-  color: #569cd6 !important;
-}
-
-.token.string {
-  font-style: normal !important;
-  color: #de8971 !important;
-  font-size: small;
-}
-
-.token.console {
-  font-style: normal !important;
-  color: var(--ifm-color-primary) !important;
-}
-
-.token.constant {
-  font-style: normal !important;
-  color: #42c3fb !important;
-}
-
-.token.comment {
-  font-style: normal !important;
-  color: #6e7f6d !important;
-}
-
-.token.number {
-  color: #b5cea8 !important;
-}
-
-.token.boolean {
-  font-style: normal !important;
-  color: #ffbf86 !important;
-  font-size: small;
-}
-
-.token.doc-comment.class-name {
-  @apply text-green-500;
-}
 
 .navbar {
   box-shadow: none;
@@ -1469,7 +1340,19 @@ html[data-theme="dark"] .discord {
   filter: invert(1);
 }
 
-.button.button--secondary.button--outline:not(.button--active):not(:hover) {
+.button.button--secondary.button--outline:not(.button--active):hover {
   color: var(--ifm-font-color-base);
   border: none;
+  background-color: var(--ifm-color-secondary);
+}
+.button.button--secondary.button--outline:not(.button--active) {
+  color: var(--ifm-font-color-base);
+  border: none;
+  background-color: var(--ifm-background-color);
+}
+
+@media (min-width: 997px){
+  .docSidebarContainer_node_modules-\@docusaurus-theme-classic-lib-next-theme-DocPage-styles-module{
+    border-right: none !important;
+  }
 }

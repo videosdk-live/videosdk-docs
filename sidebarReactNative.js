@@ -6,6 +6,7 @@ module.exports = {
       items: [
         "guide/video-and-audio-calling-api-sdk/getting-started",
         "guide/video-and-audio-calling-api-sdk/signup-and-create-api",
+        "guide/video-and-audio-calling-api-sdk/quick-start",
         {
           type: "category",
           label: "Client Setup",

@@ -25,7 +25,7 @@ This guide will get you running with the VideoSDK video & audio calling in minut
 
 ## Sample Project
 
-These quick start will help you integrate some of the basic functionalities that VideoSDK provides. You can check out the complete source code for this guide [here](/). Once you are done with the tutorial given below your app shouold look like this.
+These quick start will help you integrate some of the basic functionalities that VideoSDK provides. You can check out the complete source code for this guide [here](/). Once you are done with the tutorial given below your app should look like this.
 
 ## Screenshots
 
@@ -61,7 +61,7 @@ These quick start will help you integrate some of the basic functionalities that
 
 3. To run your project ; install live-server using the following commnad.
 
-```js
+```bash
 npm install -g live-server
 ```
 
@@ -89,13 +89,13 @@ Another interesting option is to install library in your app and bundle it using
 
 #### Npm
 
-```js
+```bash
 npm install @videosdk.live/js-sdk
 ```
 
 #### Yarn
 
-```js
+```bash
 yarn add @videosdk.live/js-sdk
 ```
 
@@ -105,7 +105,7 @@ yarn add @videosdk.live/js-sdk
 
 In this sample code we have made use of bootstrap for the very basic effects.One can customise according to their requirements by using either external css (index.css file which has been created in the assets folder) techniques or inline-css
 
-```js title="join-screen"
+```html title="join-screen"
 <html>
   <head>
     <!--favicon-->
@@ -147,9 +147,7 @@ In this sample code we have made use of bootstrap for the very basic effects.One
         </button>
       </div>
     </div>
-    //grid-screen
-    ...
-    //scripts
+    //grid-screen ... //scripts
     <script src="./assets/js/config.js"></script>
     <script src="./assets/js/index.js"></script>
     <script src="https://sdk.videosdk.live/js-sdk/0.0.20/videosdk.js"></script>
@@ -157,10 +155,8 @@ In this sample code we have made use of bootstrap for the very basic effects.One
 </html>
 ```
 
-```js title="grid-screen"
-//join-screen
-...
-//grid-screen
+```html title="grid-screen"
+//join-screen ... //grid-screen
 <div id="grid-screen">
   <div>
     <input
@@ -169,15 +165,9 @@ In this sample code we have made use of bootstrap for the very basic effects.One
       id="lblMeetingId"
       readonly
     />
-    <button class="btn btn-dark" id="btnToggleMic">
-      Unmute Mic
-    </button>
-    <button class="btn btn-dark" id="btnToggleWebCam">
-      Disable Webcam
-    </button>
-    <button class="btn btn-dark" id="btnLeaveMeeting">
-      Leave Meeting
-    </button>
+    <button class="btn btn-dark" id="btnToggleMic">Unmute Mic</button>
+    <button class="btn btn-dark" id="btnToggleWebCam">Disable Webcam</button>
+    <button class="btn btn-dark" id="btnLeaveMeeting">Leave Meeting</button>
   </div>
   <br />
   <div id="videoContainer"></div>
@@ -194,8 +184,7 @@ In this sample code we have made use of bootstrap for the very basic effects.One
     <div id="participantsList"></div>
   </div>
 </div>
-//scripts
-...
+//scripts ...
 ```
 
 ### SDK Implementation
@@ -208,10 +197,12 @@ TOKEN = "";
 
 - Now you have your token ; to create meeting and to validate it make use of API_BASE_URL mentioned below in index.js file
 
-```js title="setting up API_BASE_URL index.js"
+````js title="setting up API_BASE_URL index.js"
+
+```jsx title="index.js"
 // Constants
 const API_BASE_URL = "https://api.videosdk.live";
-```
+````
 
 - Now you have to validate your token , whether it is empty or not
 
@@ -491,6 +482,6 @@ function addDomEvents() {
 
 Once you are all set with the steps mentioned above run your application as mentioned in the code-block below.
 
-```js
+```bash
 live-server --port=8000
 ```
