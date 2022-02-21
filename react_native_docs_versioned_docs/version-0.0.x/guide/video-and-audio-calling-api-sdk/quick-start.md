@@ -33,7 +33,7 @@ These quick start will help you integrate some of the basic functionalities that
 
 - You can create your react-native app using command shown below
 
-```js title="Create React-native app"
+```bash title="Create React-native app"
 npx react-native init appName
 ```
 
@@ -41,14 +41,14 @@ npx react-native init appName
 
 #### npm
 
-```js title="package installation using npm"
+```bash title="package installation using npm"
 npm install react-native-dotenv
 npm install "@videosdk.live/react-native-sdk”
 ```
 
 #### yarn
 
-```js title="package installation using yarn"
+```bash title="package installation using yarn"
 yarn add react-native-dotenv
 yarn add "@videosdk.live/react-native-sdk”
 ```
@@ -732,13 +732,13 @@ export default function ParticipantView({ participantId }) {
 
 ### Android
 
-```js
+```bash
 npx react-native run-android
 ```
 
 ### IOS
 
-```js
+```bash
 npx react-native run-ios
 ```
 

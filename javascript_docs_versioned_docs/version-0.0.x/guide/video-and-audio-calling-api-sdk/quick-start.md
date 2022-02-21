@@ -73,9 +73,11 @@ There are two ways to install JavaScript SDK.
 
 You can import this library using `<script>` tag. The easiest way to get started is to load this library from CDN, and add a couple of lines of code to your web page or app.
 
-```js title="Install via <script>"
+```html title="Install via <script>"
 <html>
-  <head>....</head>
+  <head>
+    ....
+  </head>
   <body>
     .....
     <script src="https://sdk.videosdk.live/js-sdk/0.0.20/videosdk.js"></script>
@@ -197,12 +199,9 @@ TOKEN = "";
 
 - Now you have your token ; to create meeting and to validate it make use of API_BASE_URL mentioned below in index.js file
 
-````js title="setting up API_BASE_URL index.js"
-
-```jsx title="index.js"
-// Constants
+```jsx title="setting up API_BASE_URL index.js"
 const API_BASE_URL = "https://api.videosdk.live";
-````
+```
 
 - Now you have to validate your token , whether it is empty or not
 

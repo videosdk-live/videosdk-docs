@@ -29,10 +29,9 @@ module.exports = {
       disableSwitch: false,
     },
     prism: {
-      theme: require("prism-react-renderer/themes/dracula"),
       additionalLanguages: ["java", "powershell"],
-      theme: require("prism-react-renderer/themes/nightOwl"),
-      additionalLanguages: ["java"],
+      theme: require("prism-react-renderer/themes/vsDark"),
+      // darkTheme: require("prism-react-renderer/themes/vsDark"),
     },
     hideableSidebar: true,
     navbar: {
@@ -271,13 +270,6 @@ module.exports = {
         },
         theme: {
           customCss: [require.resolve("./src/css/new_custom.css")],
-          // prism: {
-          // defaultLanguage: "js",
-          // plugins: ["line-numbers", "show-language"],
-          // theme: require("@kiwicopple/prism-react-renderer/themes/vsDark"),
-          // darkTheme: require("@kiwicopple/prism-react-renderer/themes/vsDark"),
-          // additionalLanguages: ["Java"],
-          // },
         },
         googleAnalytics: {
           trackingID: "G-NR8EYPZFJ7",
