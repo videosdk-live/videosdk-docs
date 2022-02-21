@@ -1370,3 +1370,9 @@ html[data-theme="dark"]
   > code {
   color: #6a65f1;
 }
+
+html[data-theme="dark"]
+  .table-of-contents__link.toc-highlight.table-of-contents__link--active:hover
+  > code {
+  color: white;
+}
