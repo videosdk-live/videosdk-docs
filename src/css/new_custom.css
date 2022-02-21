@@ -1133,7 +1133,6 @@ html[data-theme="dark"] .sub-heading {
   color: #b2b2b2;
 }
 
-
 .navbar {
   box-shadow: none;
   border-bottom: 1px solid #efeff5;
@@ -1351,8 +1350,13 @@ html[data-theme="dark"] .discord {
   background-color: var(--ifm-background-color);
 }
 
-@media (min-width: 997px){
-  .docSidebarContainer_node_modules-\@docusaurus-theme-classic-lib-next-theme-DocPage-styles-module{
+@media (min-width: 997px) {
+  .docSidebarContainer_node_modules-\@docusaurus-theme-classic-lib-next-theme-DocPage-styles-module {
     border-right: none !important;
   }
+}
+
+.react-native-screen-img {
+  height: 500px;
+  max-width: 300px;
 }

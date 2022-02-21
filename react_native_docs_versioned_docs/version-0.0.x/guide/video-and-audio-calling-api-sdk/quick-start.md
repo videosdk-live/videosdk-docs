@@ -27,7 +27,7 @@ This guide will get you running with the VideoSDK video & audio calling in minut
 
 These quick start will help you integrate some of the basic functionalities that VideoSDK provides. You can check out the complete source code for this guide [here](/). Once you are done with the tutorial given below your app should look like this.
 
-![React-Native-Screen](/img/quick-start/react-native-screen.jpeg)
+<img class="react-native-screen-img" src={require('/static/img/quick-start/react-native-screen.png').default} />
 
 ## Create Project
 
@@ -741,3 +741,7 @@ npx react-native run-android
 ```js
 npx react-native run-ios
 ```
+
+:::caution
+For this tutorial purpose we used a static token intialize and join the meeting. But for the production version of the app, we recommend you use an Authentication Server which will generate and pass on the token to the Client App. For more details checkout [how to do server setup](/flutter/guide/video-and-audio-calling-api-sdk/server-setup).
+:::
