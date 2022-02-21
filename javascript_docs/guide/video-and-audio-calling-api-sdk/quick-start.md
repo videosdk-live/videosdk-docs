@@ -29,7 +29,7 @@ These quick start will help you integrate some of the basic functionalities that
 
 ## Screenshots
 
-![VideoSDK JS Quick Start Join Screen](/img/quick-start/js-join-screen.PNG) ![VideoSDK JS Quick Start Meeting Screen](/img/quick-start/js-grid-screen.PNG)
+![VideoSDK JS Quick Start Join Screen](/img/quick-start/js-join-screen.png) ![VideoSDK JS Quick Start Meeting Screen](/img/quick-start/js-grid-screen.png)
 
 ## Prerequisite
 
@@ -147,9 +147,7 @@ In this sample code we have made use of bootstrap for the very basic effects.One
         </button>
       </div>
     </div>
-    //grid-screen
-    ...
-    //scripts
+    //grid-screen ... //scripts
     <script src="./assets/js/config.js"></script>
     <script src="./assets/js/index.js"></script>
     <script src="https://sdk.videosdk.live/js-sdk/0.0.20/videosdk.js"></script>
@@ -158,9 +156,7 @@ In this sample code we have made use of bootstrap for the very basic effects.One
 ```
 
 ```html title="grid-screen"
-//join-screen
-...
-//grid-screen
+//join-screen ... //grid-screen
 <div id="grid-screen">
   <div>
     <input
@@ -169,15 +165,9 @@ In this sample code we have made use of bootstrap for the very basic effects.One
       id="lblMeetingId"
       readonly
     />
-    <button class="btn btn-dark" id="btnToggleMic">
-      Unmute Mic
-    </button>
-    <button class="btn btn-dark" id="btnToggleWebCam">
-      Disable Webcam
-    </button>
-    <button class="btn btn-dark" id="btnLeaveMeeting">
-      Leave Meeting
-    </button>
+    <button class="btn btn-dark" id="btnToggleMic">Unmute Mic</button>
+    <button class="btn btn-dark" id="btnToggleWebCam">Disable Webcam</button>
+    <button class="btn btn-dark" id="btnLeaveMeeting">Leave Meeting</button>
   </div>
   <br />
   <div id="videoContainer"></div>
@@ -194,8 +184,7 @@ In this sample code we have made use of bootstrap for the very basic effects.One
     <div id="participantsList"></div>
   </div>
 </div>
-//scripts
-...
+//scripts ...
 ```
 
 ### SDK Implementation

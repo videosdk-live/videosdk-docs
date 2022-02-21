@@ -29,7 +29,7 @@ These quick start will help you integrate some of the basic functionalities that
 
 ## Screenshots
 
-![VideoSDK JS Quick Start Join Screen](/img/quick-start/js-join-screen.PNG) ![VideoSDK JS Quick Start Meeting Screen](/img/quick-start/js-grid-screen.PNG)
+![VideoSDK JS Quick Start Join Screen](/img/quick-start/js-join-screen.png) ![VideoSDK JS Quick Start Meeting Screen](/img/quick-start/js-grid-screen.png)
 
 ## Prerequisite
 
