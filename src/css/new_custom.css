@@ -1360,3 +1360,7 @@ html[data-theme="dark"] .discord {
   height: 500px;
   max-width: 300px;
 }
+
+html[data-theme="dark"] code {
+  color: white;
+}

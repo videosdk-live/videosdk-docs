@@ -27,7 +27,7 @@ This guide will get you running with the VideoSDK video & audio calling in minut
 
 These quick start will help you integrate some of the basic functionalities that VideoSDK provides. You can check out the complete source code for this guide [here](/). Once you are done with the tutorial given below your app should look like this.
 
-<img class="react-native-screen-img" src={require('/static/img/quick-start/react-native-screen.png').default} />
+<img class="react-native-screen-img" alt="React-Native-Screen" src={require('/static/img/quick-start/react-native-screen.png').default} />
 
 ## Create Project
 
