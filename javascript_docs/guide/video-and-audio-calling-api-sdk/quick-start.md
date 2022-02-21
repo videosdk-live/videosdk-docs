@@ -29,7 +29,7 @@ These quick start will help you integrate some of the basic functionalities that
 
 ## Screenshots
 
-![VideoSDK JS Quick Start Join Screen](/img/quick-start/js-join-screen.png) ![VideoSDK JS Quick Start Meeting Screen](/img/quick-start/js-grid-screen.png)
+![VideoSDK JS Quick Start Join Screen](/img/quick-start/js-join-screen.PNG) ![VideoSDK JS Quick Start Meeting Screen](/img/quick-start/js-grid-screen.PNG)
 
 ## Prerequisite
 
@@ -461,3 +461,7 @@ Once you are all set with the steps mentioned above run your application as ment
 ```bash
 live-server --port=8000
 ```
+
+:::caution
+For this tutorial purpose we used a static token intialize and join the meeting. But for the production version of the app, we recommend you use an Authentication Server which will generate and pass on the token to the Client App. For more details checkout [how to do server setup](/javascript/guide/video-and-audio-calling-api-sdk/server-setup).
+:::

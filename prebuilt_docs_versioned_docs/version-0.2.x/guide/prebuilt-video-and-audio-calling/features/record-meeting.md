@@ -42,7 +42,7 @@ Any participant can start/stop recording any time during the meeting.
 - `recording.awsDirPath`: It indicates where the recording will get stored.
 - `recording.layout.type` : It will record the meeting based on layout type indicated.
 - `recording.layout.priority` : It will prioritise the view of either pin partcipant or speaker participant for recording.
-- `recording.layout.gridsize` : It will show indicated number of participants on the screen.
+- `recording.layout.gridsize` : It will indicates number of participants shown on the screen.
 
 ```js title="index.html"
 const config = {

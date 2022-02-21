@@ -197,3 +197,111 @@ Available permissions are:
 - **allow_mod**: The participant is **allowed to toggle** webcam & mic of other participants.
 
 For other APIs you can follow [Create Meeting & Validate Meeting.](/docs/api-reference/realtime-communication/create-join-meeting)
+
+## Integrate your APIs with Flutter
+
+If you have gone thorugh [Quick Start with Flutter](/flutter/guide/video-and-audio-calling-api-sdk/quick-start) you would have used sample token which authenticated your meetings, which is not an secure way and is not recommended for the production.
+
+To resolve this security concerns we recommend you to setup an server which will geenrate a token for you.
+
+### Setting up Server
+
+<Tabs
+defaultValue="node"
+groupId={"-setup-group-id"}
+values={[
+{label: 'Node.js', value: 'node'},
+{label: 'PHP', value: 'php'},
+]}>
+<TabItem value="node">
+
+```js
+const express = require("express");
+const cors = require("cors");
+const morgan = require("morgan");
+const { default: fetch } = require("node-fetch");
+const jwt = require("jsonwebtoken");
+
+const PORT = 9000;
+const app = express();
+
+app.use(cors());
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(morgan("dev"));
+
+app.get("/get-token", (req, res) => {
+
+  //Replace your API Key here from the VideoSDK Dashboard
+  const API_KEY = "";
+
+  //Replace your Secret Key here from the VideoSDK Dashboard
+  const SECRET_KEY = "";
+
+  const options = { expiresIn: "10m", algorithm: "HS256" };
+
+  const payload = {
+    apikey: API_KEY,
+    permissions: ["allow_join", "allow_mod"], // also accepts "ask_join"
+  };
+
+  const token = jwt.sign(payload, SECRET_KEY, options);
+  res.json({ token });
+});
+
+app.post("/create-meeting/", (req, res) => {
+  const { token, region } = req.body;
+  const url = `https://api.videosdk.live/api/meetings`;
+  const options = {
+    method: "POST",
+    headers: { Authorization: token, "Content-Type": "application/json" },
+    body: JSON.stringify({ region }),
+  };
+
+  fetch(url, options)
+    .then((response) => response.json())
+    .then((result) => res.json(result)) // result will contain meetingId
+    .catch((error) => console.error("error", error));
+});
+```
+
+:::note
+This complete example code can be found [here](https://github.com/videosdk-live/videosdk-rtc-nodejs-sdk-example).
+:::
+
+</TabItem>
+<TabItem value = "php">
+</TabItem>
+</Tabs>
+
+### API Integration
+
+In order to integrate your APIs into the Android app, create following methods and use them where ever required.
+
+```js
+//This method will return an token generated from your server
+
+//Replace your AUTH SERVER URL here.
+String API_AUTH_URL = "";
+
+Future<String> fetchToken() async {
+  final Uri getTokenUrl = Uri.parse('$API_AUTH_URL/get-token');
+  final http.Response tokenResponse = await http.get(getTokenUrl);
+  String authToken = json.decode(tokenResponse.body)['token'];
+
+  return authToken ?? "";
+}
+
+Future<String> createMeeting(String _token) async {
+  final Uri getMeetingIdUrl = Uri.parse('$API_AUTH_URL/create-meeting');
+  final http.Response meetingIdResponse =
+      await http.post(getMeetingIdUrl, headers: {
+    "Authorization": _token,
+  });
+
+  final meetingId = json.decode(meetingIdResponse.body)['meetingId'];
+
+  return meetingId;
+}
+
+```

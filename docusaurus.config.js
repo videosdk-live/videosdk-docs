@@ -30,7 +30,9 @@ module.exports = {
     },
     prism: {
       theme: require("prism-react-renderer/themes/dracula"),
-      additionalLanguages: ['java', 'powershell'],
+      additionalLanguages: ["java", "powershell"],
+      theme: require("prism-react-renderer/themes/nightOwl"),
+      additionalLanguages: ["java"],
     },
     hideableSidebar: true,
     navbar: {
@@ -253,7 +255,6 @@ module.exports = {
       ],
       copyright: `Copyright © ${new Date().getFullYear()} videosdk.live.`,
     },
-    prism: {},
   },
   presets: [
     [
@@ -270,13 +271,13 @@ module.exports = {
         },
         theme: {
           customCss: [require.resolve("./src/css/new_custom.css")],
-          prism: {
-            defaultLanguage: "js",
-            plugins: ["line-numbers", "show-language"],
-            // theme: require("@kiwicopple/prism-react-renderer/themes/vsDark"),
-            // darkTheme: require("@kiwicopple/prism-react-renderer/themes/vsDark"),
-            additionalLanguages: ["Java"],
-          },
+          // prism: {
+          // defaultLanguage: "js",
+          // plugins: ["line-numbers", "show-language"],
+          // theme: require("@kiwicopple/prism-react-renderer/themes/vsDark"),
+          // darkTheme: require("@kiwicopple/prism-react-renderer/themes/vsDark"),
+          // additionalLanguages: ["Java"],
+          // },
         },
         googleAnalytics: {
           trackingID: "G-NR8EYPZFJ7",

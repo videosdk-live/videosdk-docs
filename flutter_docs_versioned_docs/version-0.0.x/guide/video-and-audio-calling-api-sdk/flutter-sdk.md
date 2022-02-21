@@ -83,7 +83,22 @@ android {
 
 If necessary, in the same `build.gradle` you will need to increase `minSdkVersion` of `defaultConfig` up to `21` (currently default Flutter generator set it to `16`).
 
-### Step 3: Import it
+If necessary, in the same `build.gradle` you will need to increase `compileSdkVersion` and `targetSdkVersion` up to `31` (currently default Flutter generator set it to `30`).
+
+## Step 3: iOS Setup
+
+Add the following entry to your Info.plist file, located in `<project root>`/ios/Runner/Info.plist:
+
+```xml
+<key>NSCameraUsageDescription</key>
+<string>$(PRODUCT_NAME) Camera Usage!</string>
+<key>NSMicrophoneUsageDescription</key>
+<string>$(PRODUCT_NAME) Microphone Usage!</string>
+```
+
+This entry allows your app to access camera and microphone.
+
+## Step 4: Import it
 
 Now in your Dart code, you can use:
 

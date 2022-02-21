@@ -25,16 +25,15 @@ This guide will get you running with the VideoSDK video & audio calling in minut
 
 These quick start will help you integrate some of the basic functionalities that VideoSDK provides. You can check out the complete source code for this guide [here](/). Once you are done with the tutorial given below your app should look like this.
 
-![VideoSDK React JS Quick Start Join Screen](/img/quick-start/react-join-screen.png) ![VideoSDK React JS Quick Start Meeting Screen](/img/quick-start/react-meeting-screen.png) 
-
+![VideoSDK React JS Quick Start Join Screen](/img/quick-start/react-join-screen.png) ![VideoSDK React JS Quick Start Meeting Screen](/img/quick-start/react-meeting-screen.png)
 
 ## Prerequisites
 
 Before proceeding, ensure that your development environment meets the following requirements:
 
-* Have Node and NPM installed on your device.
-* A valid VideoSDK account.
-* An active VideoSDK project with temporary token. For details, see [Signup & Create API Key](/react/guide/video-and-audio-calling-api-sdk/signup-and-create-api).
+- Have Node and NPM installed on your device.
+- A valid VideoSDK account.
+- An active VideoSDK project with temporary token. For details, see [Signup & Create API Key](/react/guide/video-and-audio-calling-api-sdk/signup-and-create-api).
 
 ## Project Setup
 
@@ -42,13 +41,13 @@ Follow the steps to create the environment necessary to add video call into your
 
 1. Create a new React App using the below command. Replace `<PROJECT_NAME>` with your project name.
 
-```js
-npx create-react-app <PROJECT_NAME>
+```bash
+$ npx create-react-app <PROJECT_NAME>
 ```
 
 2. Install the VideoSDK using the below mentioned npm command. Make sure you are in your react app directory before you run this command.
 
-```js
+```bash
 $ npm install "@videosdk.live/react-sdk"
 
 //For the Participants Video
@@ -57,58 +56,66 @@ $ npm install "react-player"
 
 Or, if you are using Yarn use below command
 
-```js
+```bash
 $ yarn add "@videosdk.live/react-sdk"
 
 //For the Participants Video
 $ yarn add "react-player"
 ```
 
+3. If you want to use the custom styling from this tutorial, update the `index.css` with the [css provided here](/)
+
 ## Implementing the VideoSDK
 
 ### Creating the Joining Screen
 
 The Joining screen will consist of:
+
 - Create Button - This button will create a new meeting for you.
 - TextField for Meeting ID - This textfield will contain the meeting ID you want to join.
 - Join Button - This buttom will join the meeting with which the you will be joined.
 
 1. To create the basic UI replace the `App()` in the `App.js` file with following code
 
-```js title="App.js"
+```jsx title="App.js"
 function App() {
   return (
     <div className="App">
       <button onClick={() => getMeetingId({ token })} className="button">
         Create Meeting
       </button>
-      <br /><br />
+      <br />
+      <br />
       <label htmlFor="meetingId">Meeting Id: </label>
-      <input type="text" id="meetingId" name="meetingId" /><br /><br />
-      <button onClick={() => {
-        setMeetingId(document.getElementById("meetingId").value)
-      }} className="button">
+      <input type="text" id="meetingId" name="meetingId" />
+      <br />
+      <br />
+      <button
+        onClick={() => {
+          setMeetingId(document.getElementById("meetingId").value);
+        }}
+        className="button"
+      >
         Join Meeting
       </button>
-    </div >
+    </div>
   );
 }
 ```
 
 2. Declare a state for meeting Id and auth token.
 
-```js title="App.js"
-function App(){
-
+```jsx title="App.js"
+function App() {
   //This state will contain the meeting id after generating one or adding in the textfield
   const [meetingId, setMeetingId] = useState();
 
   const [token, setToken] = useState();
 
   //Initializing the token on page load
-  useEffect(()=>{
+  useEffect(() => {
     setToken(getToken());
-  },[])
+  }, []);
 
   //...return method
 }
@@ -118,14 +125,13 @@ function App(){
 
 - For this, we will create a new file named `api.js` which will contain all the api call as well as the Auth token.
 
-```js title="api.js"
-
+```jsx title="api.js"
 //Replace your sampleToken from the VideoSDK dashboard here
 const sampleToken = "";
 
-export const getToken = () =>{
-    return sampleToken;
-}
+export const getToken = () => {
+  return sampleToken;
+};
 
 const getMeetingId = async ({ token }) => {
   try {
@@ -133,8 +139,8 @@ const getMeetingId = async ({ token }) => {
     const options = {
       method: "POST",
       headers: {
-        "Authorization": token,
-      }
+        Authorization: token,
+      },
     };
     const response = await fetch(VIDEOSDK_API_ENDPOINT, options)
       .then(async (result) => {
@@ -147,7 +153,6 @@ const getMeetingId = async ({ token }) => {
     console.log(e);
   }
 };
-
 ```
 
 4. With this join screen is ready to create and join a meeting with respective meeting id and sample token.
@@ -155,52 +160,61 @@ const getMeetingId = async ({ token }) => {
 ### Initalizing the Meeting
 
 Our React JS SDK provides two important hooks API:
+
 - `useMeeting` : Responsible to handle meeting environment.
 - `useParticipant` : Responsible to handle Participant
 
 Also, React Provider and Consumer to listen changes in meeting environment.
+
 - `MeetingProvider` : Meeting Provider is [Context.Provider](https://reactjs.org/docs/context.html#contextprovider) that allows consuming components to subscribe to meeting changes
 - `MeetingConsumer` : Meeting Consumer is [Context.Consumer](https://reactjs.org/docs/context.html#contextconsumer) that subscribes to meeting changes.
 
 1. We will start with adding the `MeetingProvider` to our app. In order to that, replace the update the `return` of the `App()`
 
-```js title="App.js"
-function App(){
-
+```jsx title="App.js"
+function App() {
   //...other constants and methods
 
   return (
     <div className="App">
-      {
-        meetingId ?
-          <MeetingProvider
-            config={{
-              meetingId: meetingId,
-              name: "John Doe",
-              micEnabled: true,
-              webcamEnabled: true,
+      {meetingId ? (
+        <MeetingProvider
+          config={{
+            meetingId: meetingId,
+            name: "John Doe",
+            micEnabled: true,
+            webcamEnabled: true,
+          }}
+          token={token}
+          joinWithoutUserInteraction={true}
+        >
+          <MeetingView
+            onMeetingLeave={() => {
+              setMeetingId("");
             }}
-            token={token}
-            joinWithoutUserInteraction={true}
+          ></MeetingView>
+        </MeetingProvider>
+      ) : (
+        <>
+          <button onClick={() => getMeetingId({ token })} className="button">
+            Create Meeting
+          </button>
+          <br />
+          <br />
+          <label htmlFor="meetingId">Meeting Id: </label>
+          <input type="text" id="meetingId" name="meetingId" />
+          <br />
+          <br />
+          <button
+            onClick={() => {
+              setMeetingId(document.getElementById("meetingId").value);
+            }}
+            className="button"
           >
-            <MeetingView
-              onMeetingLeave={
-                () => {
-                  setMeetingId("")
-                }
-              }
-            ></MeetingView>
-          </MeetingProvider> :
-          <>
-            <button onClick={() => getMeetingId({ token })} className="button">Create Meeting</button>
-            <br /><br />
-            <label htmlFor="meetingId">Meeting Id: </label>
-            <input type="text" id="meetingId" name="meetingId" /><br /><br />
-            <button onClick={() => {
-              setMeetingId(document.getElementById("meetingId").value)
-            }} className="button">Join Meeting</button>
-          </>
-      }
+            Join Meeting
+          </button>
+        </>
+      )}
     </div>
   );
 }
@@ -214,14 +228,10 @@ It also contains `ParticipantsView` which will show all the particiapnts present
 
 With below code you will have a basic design ready for the layout.
 
-```js title = App.js
-
+```jsx title = App.js
 //...function App(){}
 
-const MeetingView = ({
-  onMeetingLeave
-}) => {
-
+const MeetingView = ({ onMeetingLeave }) => {
   return (
     <div
       style={{
@@ -231,15 +241,9 @@ const MeetingView = ({
       }}
     >
       <div>
-        <button className={"button red"}>
-          LEAVE
-        </button>
-        <button className={"button blue"}>
-          toggleMic
-        </button>
-        <button className={"button blue"}>
-          toggleWebcam
-        </button>
+        <button className={"button red"}>LEAVE</button>
+        <button className={"button blue"}>toggleMic</button>
+        <button className={"button blue"}>toggleWebcam</button>
         <h1>Meeting id is : {meetingId}</h1>
         <div style={{ display: "flex", flex: 1 }}>
           <div
@@ -264,14 +268,10 @@ const MeetingView = ({
 
 - We will create 4 callback functions which will be triggered on the event happens.
 
-```js title = App.js
-
+```jsx title = App.js
 //...function App(){}
 
-const MeetingView = ({
-  onMeetingLeave
-}) => {
-
+const MeetingView = ({ onMeetingLeave }) => {
   function onParticipantJoined(participant) {
     console.log(" onParticipantJoined", participant);
   }
@@ -283,39 +283,26 @@ const MeetingView = ({
   function onMeetingJoined() {
     console.log("onMeetingJoined");
   }
-  
+
   function onMeetingLeft() {
     console.log("onMeetingLeft");
     onMeetingLeave();
   }
 
-
   //...return
-
 };
-
 ```
 
 - We will pass the callback functions to the `useMeeting` hook and also get the methods to toggle mic and webcam and leave the meeting.
 
-```js title = App.js
-
+```jsx title = App.js
 //...function App(){}
 
-const MeetingView = ({
-  onMeetingLeave
-}) => {
-
+const MeetingView = ({ onMeetingLeave }) => {
   //...callback functions
 
   // Get Meeting object using useMeeting hook
-  const {
-    meetingId,
-    leave,
-    toggleMic,
-    toggleWebcam,
-
-  } = useMeeting({
+  const { meetingId, leave, toggleMic, toggleWebcam } = useMeeting({
     onParticipantJoined,
     onParticipantLeft,
     onMeetingJoined,
@@ -324,19 +311,14 @@ const MeetingView = ({
 
   //...return
 };
-
 ```
 
 - Now we will set the `onClick` event for our buttons.
 
-```js title = App.js
-
+```jsx title = App.js
 //...function App(){}
 
-const MeetingView = ({
-  onMeetingLeave
-}) => {
-
+const MeetingView = ({ onMeetingLeave }) => {
   //...callback functions
 
   //...useMeeting Hook
@@ -351,7 +333,7 @@ const MeetingView = ({
     >
       <div>
         {/*Update this buttons*/}
-        <button className={"button red"} onClick={leave}> 
+        <button className={"button red"} onClick={leave}>
           LEAVE
         </button>
         <button className={"button blue"} onClick={toggleMic}>
@@ -378,20 +360,17 @@ const MeetingView = ({
     </div>
   );
 };
-
 ```
-
 
 3. `MeetingView` is all set. Lets create the `ParticipantsView` which will show all the participants in the meeting.
 
 - Here we use the `useMeeting` hook to get the participants list and then map it to `ParticipantView`
 
-```js title="App.js"
+```jsx title="App.js"
 //...function App(){}
 
 //This function will accumulate the list of particiapnts and generate the ParticipantView for each participant in the meeting
 const ParticipantsView = () => {
-
   //Get the list of participants
   const { participants } = useMeeting();
 
@@ -404,50 +383,31 @@ const ParticipantsView = () => {
         padding: "8px",
       }}
     >
-      <h2 style={{ color:"#3E84F6"}}>Participants</h2>
+      <h2 style={{ color: "#3E84F6" }}>Participants</h2>
       {[...participants.keys()].map((k) => (
         <div style={{ display: "flex" }}>
-            <ParticipantView key={k} participantId={k} />
+          <ParticipantView key={k} participantId={k} />
         </div>
       ))}
     </div>
   );
-}
-
+};
 ```
 
 4. We will create the `ParticipantView` which will show each participants details.
 
 - We will start with creating the empty `<div>`
 
-```js 
+```jsx
 const ParticipantView = ({ participantId }) => {
-
-  return (
-    <div
-      style={{
-        width: "400px",
-        backgroundColor: "#3E84F6",
-        borderRadius: "8px",
-        overflow: "hidden",
-        margin: "8px",
-        padding: "8px",
-        display: "flex",
-        flex: 1,
-        flexDirection: "column",
-        position: "relative",
-      }}
-    >
-    </div>
-  );
+  return <div className="participant-view"></div>;
 };
 ```
 
 - Now we will use the `useParticipant` hook to get streams of audio and video for the participant.
 
-```js 
+```jsx
 const ParticipantView = ({ participantId }) => {
-
   const {
     displayName,
     participant,
@@ -464,9 +424,8 @@ const ParticipantView = ({ participantId }) => {
 
 - We will add the `<audio>` for the audio stream and set it up.
 
-```js 
+```jsx
 const ParticipantView = ({ participantId }) => {
-
   //...useParticipant hook
 
   const micRef = useRef(null);
@@ -490,20 +449,7 @@ const ParticipantView = ({ participantId }) => {
   }, [micStream, micOn]);
 
   return (
-    <div
-      style={{
-        width: "400px",
-        backgroundColor: "#3E84F6",
-        borderRadius: "8px",
-        overflow: "hidden",
-        margin: "8px",
-        padding: "8px",
-        display: "flex",
-        flex: 1,
-        flexDirection: "column",
-        position: "relative",
-      }}
-    >
+    <div className="participant-view">
       <audio ref={micRef} autoPlay muted={isLocal} />
     </div>
   );
@@ -512,9 +458,8 @@ const ParticipantView = ({ participantId }) => {
 
 - Next we will add the `ReactPlayer`
 
-```js 
+```jsx
 const ParticipantView = ({ participantId }) => {
-
   //...useParticipant hook
 
   //...mic stream setup
@@ -528,50 +473,20 @@ const ParticipantView = ({ participantId }) => {
   }, [webcamStream, webcamOn]);
 
   return (
-    <div
-      style={{
-        width: "400px",
-        backgroundColor: "#3E84F6",
-        borderRadius: "8px",
-        overflow: "hidden",
-        margin: "8px",
-        padding: "8px",
-        display: "flex",
-        flex: 1,
-        flexDirection: "column",
-        position: "relative",
-      }}
-    >
+    <div className="participant-view">
       <audio ref={micRef} autoPlay muted={isLocal} />
 
-      <div
-        style={{
-          position: "relative",
-          borderRadius: "8px",
-          overflow: "hidden",
-          backgroundColor: "pink",
-          width: "100%",
-          height: 300,
-        }}
-      >
+      <div className="video-container">
         <div
           style={{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0 }}
         >
           <ReactPlayer
             height={"100%"}
             width={"100%"}
-            url = {mediaStream}
+            url={mediaStream}
             playsInline
             playing={true}
-            style={{
-              backgroundColor: "black",
-              position: "absolute",
-              top: 0,
-              left: 0,
-              right: 0,
-              bottom: 0,
-              objectFit: "contain",
-            }}
+            className="video"
             autoPlay
           />
           <div
@@ -594,7 +509,6 @@ const ParticipantView = ({ participantId }) => {
           </div>
         </div>
       </div>
-
     </div>
   );
 };
@@ -602,9 +516,8 @@ const ParticipantView = ({ participantId }) => {
 
 - Now we will show the details of the participants.
 
-```js 
+```jsx
 const ParticipantView = ({ participantId }) => {
-
   //...useParticipant hook
 
   //...mic stream setup
@@ -612,50 +525,20 @@ const ParticipantView = ({ participantId }) => {
   //...webcam stream setup
 
   return (
-    <div
-      style={{
-        width: "400px",
-        backgroundColor: "#3E84F6",
-        borderRadius: "8px",
-        overflow: "hidden",
-        margin: "8px",
-        padding: "8px",
-        display: "flex",
-        flex: 1,
-        flexDirection: "column",
-        position: "relative",
-      }}
-    >
+    <div className="participant-view">
       <audio ref={micRef} autoPlay muted={isLocal} />
 
-      <div
-        style={{
-          position: "relative",
-          borderRadius: "8px",
-          overflow: "hidden",
-          backgroundColor: "pink",
-          width: "100%",
-          height: 300,
-        }}
-      >
+      <div className="video-container">
         <div
           style={{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0 }}
         >
           <ReactPlayer
             height={"100%"}
             width={"100%"}
-            url = {mediaStream}
+            url={mediaStream}
             playsInline
             playing={true}
-            style={{
-              backgroundColor: "black",
-              position: "absolute",
-              top: 0,
-              left: 0,
-              right: 0,
-              bottom: 0,
-              objectFit: "contain",
-            }}
+            className="video"
             autoPlay
           />
           <div
@@ -699,7 +582,6 @@ const ParticipantView = ({ participantId }) => {
   );
 };
 ```
-
 
 ### Run and Test
 

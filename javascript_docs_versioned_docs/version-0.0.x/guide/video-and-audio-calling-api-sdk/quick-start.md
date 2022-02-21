@@ -485,3 +485,7 @@ Once you are all set with the steps mentioned above run your application as ment
 ```bash
 live-server --port=8000
 ```
+
+:::caution
+For this tutorial purpose we used a static token intialize and join the meeting. But for the production version of the app, we recommend you use an Authentication Server which will generate and pass on the token to the Client App. For more details checkout [how to do server setup](/javascript/guide/video-and-audio-calling-api-sdk/server-setup).
+:::

@@ -54,6 +54,11 @@ meeting.init({
         streamKey: "<stream-key>",
       },
     ],
+    layout: {
+      type: "SIDEBAR", // "SPOTLIGHT" | "SIDEBAR" | "GRID"
+      priority: "PIN", // "SPEAKER" | "PIN",
+      gridSize: 3,
+    },
   },
 
   recording: {

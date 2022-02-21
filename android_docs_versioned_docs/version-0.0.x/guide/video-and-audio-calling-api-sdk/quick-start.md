@@ -25,19 +25,19 @@ This guide will get you running with the VideoSDK video & audio calling in minut
 
 These quick start will help you integrate some of the basic functionalities that VideoSDK provides. You can check out the complete source code for this guide [here](/). Once you are done with the tutorial given below your app should look like this.
 
-![VideoSDK Android Quick Start Join Screen](/img/quick-start/android-join-screen.jpg) ![VideoSDK Android Quick Start Meeting Screen](/img/quick-start/android-meeting-screen.jpg) 
+![VideoSDK Android Quick Start Join Screen](/img/quick-start/android-join-screen.jpg) ![VideoSDK Android Quick Start Meeting Screen](/img/quick-start/android-meeting-screen.jpg)
 
 ## Prerequisites
 
 Before proceeding, ensure that your development environment meets the following requirements:
 
-* Java Development Kit.
-* Android Studio 3.0 or later.
-* Android SDK API Level 16 or higher.
-* A valid VideoSDK account.
-* An active VideoSDK project with temporary token. For details, see [Signup & Create API Key](/android/guide/video-and-audio-calling-api-sdk/signup-and-create-api).
-* A computer with access to the internet.
-* A mobile device that runs Android 4.1 or later.
+- Java Development Kit.
+- Android Studio 3.0 or later.
+- Android SDK API Level 16 or higher.
+- A valid VideoSDK account.
+- An active VideoSDK project with temporary token. For details, see [Signup & Create API Key](/android/guide/video-and-audio-calling-api-sdk/signup-and-create-api).
+- A computer with access to the internet.
+- A mobile device that runs Android 4.1 or later.
 
 ## Project Setup
 
@@ -75,7 +75,7 @@ dependencies {
 
 4. Add all the following permissions to AndroidManifest.xml
 
-```js title="AndroidManifest.xml"
+```xml title="AndroidManifest.xml"
 <uses-permission android:name="android.permission.RECORD_AUDIO" />
 <uses-permission android:name="android.permission.CAMERA" />
 <uses-permission android:name="android.permission.INTERNET" />
@@ -85,10 +85,9 @@ dependencies {
 
 5. Sync the gradle now. Once the sync is completed successfully, proceed further. If the gradle sync fails you can check if the problem you are facing is present in [Known Issues](/), if not, post us on our [discord community](https://discord.gg/f2WsNDN9S5).
 
-
 6. Extend the android.app.Application class and create MainApplication.java class with the following code
 
-```js title="MainApplication.java"
+```java title="MainApplication.java"
 package live.videosdk.demo;
 
 import android.app.Application;
@@ -107,7 +106,7 @@ public class MainApplication extends Application {
 
 7. Add MainApplication to AndroidManifest.xml
 
-```js title="AndroidManifest.xml"
+```xml title="AndroidManifest.xml"
 <application
     android:name=".MainApplication"
 >
@@ -122,13 +121,14 @@ public class MainApplication extends Application {
 #### Creating UI
 
 The Joining screen will consist of:
+
 1. Create Button - This button will create a new meeting for you.
 2. TextField for Meeting ID - This textfield will contain the meeting ID you want to join.
 3. Join Button - This buttom will join the meeting with which the you will be joined.
 
 In `/app/res/layout/activity_main.xml`, replace the content with the following:
 
-```js title="MainActivity.xml"
+```xml title="activity_main.xml"
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
@@ -157,7 +157,7 @@ In `/app/res/layout/activity_main.xml`, replace the content with the following:
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginVertical="16dp"
-        android:hint="Enter Meeting ID">  
+        android:hint="Enter Meeting ID">
 
         <EditText
             android:id="@+id/etMeetingId"
@@ -180,14 +180,14 @@ In `/app/res/layout/activity_main.xml`, replace the content with the following:
 
 1. Declare the variables `sampleToken` which will hold the **Sample Token** generated from the VideoSDK dashboard
 
-```js title="MainActivity.java"
+```java title="MainActivity.java"
 //Replace with the token you generated from the VideoSDK Dashboard
 String sampleToken = "";
 ```
 
 2. Add the OnClick events to the Join and Create button.
 
-```js title="MainActivity.java"
+```java title="MainActivity.java"
   @Override
   protected void onCreate(Bundle savedInstanceState) {
       super.onCreate(savedInstanceState);
@@ -213,7 +213,7 @@ String sampleToken = "";
 
 3. Add the `createMeeting()` which we specified in the `btnJoin`
 
-```js title="MainActivity.java"
+```java title="MainActivity.java"
 private void createMeeting(String token) {
   AndroidNetworking.post("https://api.videosdk.live/v1/meetings")
     .addHeaders("Authorization", token)
@@ -245,7 +245,7 @@ private void createMeeting(String token) {
 
 4. Since we will be using the Camera and Audio of the device, we need to ask for runtime permissions.
 
-```js title="MainActivity.java"
+```java title="MainActivity.java"
 private static final int PERMISSION_REQ_ID = 22;
 
 private static final String[] REQUESTED_PERMISSIONS = {
@@ -261,6 +261,14 @@ private boolean checkSelfPermission(String permission, int requestCode) {
   return true;
 }
 
+@Override
+protected void onCreate(Bundle savedInstanceState) {
+  //... button listeneres
+  checkSelfPermission(REQUESTED_PERMISSIONS[0], PERMISSION_REQ_ID);
+  checkSelfPermission(REQUESTED_PERMISSIONS[1], PERMISSION_REQ_ID);
+
+}
+
 ```
 
 ### Creating Meeting Screen
@@ -271,7 +279,7 @@ private boolean checkSelfPermission(String permission, int requestCode) {
 
 In `/app/res/layout/activity_meeting.xml`, replace the content with the following:
 
-```js title="activty_meeting.xml
+```xml title="activty_meeting.xml
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -350,7 +358,7 @@ In `/app/res/layout/activity_meeting.xml`, replace the content with the followin
 
 1. Decalre the varibles we will be using to handle the meeting.
 
-```js title="MeetingActivity.java"
+```java title="MeetingActivity.java"
 private Meeting meeting;
 
 private boolean micEnabled = true;
@@ -359,7 +367,7 @@ private boolean webcamEnabled = true;
 
 2. Next step is to intialize a meeting with all the configuration.
 
-```js title="MeetingActivity.java"
+```java title="MeetingActivity.java"
 @Override
 protected void onCreate(Bundle savedInstanceState) {
   super.onCreate(savedInstanceState);
@@ -377,7 +385,39 @@ protected void onCreate(Bundle savedInstanceState) {
           MeetingActivity.this, meetingId, participantName,
           micEnabled, webcamEnabled
   );
+  meeting.join();
+
+  ((TextView)findViewById(R.id.tvMeetingId)).setText(meetingId);
+
+}
+
+```
+
+3. We will create and add the event listeners to the meeting.
+
+```java title="MeetingActivity.java"
+
+@Override
+protected void onCreate(Bundle savedInstanceState) {
+  super.onCreate(savedInstanceState);
+  setContentView(R.layout.activity_meeting);
+
+  final String token = getIntent().getStringExtra("token");
+  final String meetingId = getIntent().getStringExtra("meetingId");
+  final String participantName = "John Doe";
+
+  // pass the token generated from api server
+  VideoSDK.config(token);
+
+  // create a new meeting instance
+  meeting = VideoSDK.initMeeting(
+          MeetingActivity.this, meetingId, participantName,
+          micEnabled, webcamEnabled
+  );
+
+  //With this we will be able to register for the events happening on the meeting.
   meeting.addEventListener(meetingEventListener);
+
   meeting.join();
 
   ((TextView)findViewById(R.id.tvMeetingId)).setText(meetingId);
@@ -413,13 +453,13 @@ private final MeetingEventListener meetingEventListener = new MeetingEventListen
 
 ```
 
-3. Meeting is all set and joined. 
+4. Meeting is all set and joined.
 
 ### Handling the Local Participant Toggles
 
 In order add the local participant webcam and mic toggle options, add following code to your `MeetingActivity.java`
 
-```js title="MeetingActivity.java"
+```java title="MeetingActivity.java"
 @Override
 protected void onCreate(Bundle savedInstanceState) {
   super.onCreate(savedInstanceState);
@@ -461,6 +501,7 @@ private void setActionListeners() {
 
 }
 
+//Confirmation dialog to leave the meeting
 private void showLeaveOrEndDialog() {
   new MaterialAlertDialogBuilder(MeetingActivity.this)
     .setTitle("Leave or End meeting")
@@ -477,13 +518,13 @@ private void showLeaveOrEndDialog() {
 }
 ```
 
-#### Handling the Participants View 
+### Handling the Participants View
 
 We will be showing the list of participants in a recycler view.
 
 1. Create a new layout for the participant view.
 
-```js title="item_remote_peer.xml"
+```xml title="item_remote_peer.xml"
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -524,43 +565,12 @@ We will be showing the list of participants in a recycler view.
 </FrameLayout>
 ```
 
-2. Create a recycler view adapter which will populate our list.
+2. Create a recycler view adapter which will populate our list. Create `PeerViewHolder` in the adpater.
 
-```js title="ParticipantAdapter.java"
+```java title="ParticipantAdapter.java"
 public class ParticipantAdapter extends RecyclerView.Adapter<ParticipantAdapter.PeerViewHolder> {
 
-  private final List<Participant> participants = new ArrayList<>();
   private int containerHeight;
-
-  public ParticipantAdapter(Meeting meeting) {
-
-    participants.add(meeting.getLocalParticipant());
-
-    meeting.addEventListener(new MeetingEventListener() {
-      @Override
-      public void onParticipantJoined(Participant participant) {
-        participants.add(participant);
-        notifyItemInserted(participants.size() - 1);
-      }
-
-      @Override
-      public void onParticipantLeft(Participant participant) {
-        int pos = -1;
-        for (int i = 0; i < participants.size(); i++) {
-            if (participants.get(i).getId().equals(participant.getId())) {
-                pos = i;
-                break;
-            }
-        }
-
-        participants.remove(participant);
-
-        if (pos >= 0) {
-            notifyItemRemoved(pos);
-        }
-      }
-    });
-  }
 
   @NonNull
   @Override
@@ -573,53 +583,12 @@ public class ParticipantAdapter extends RecyclerView.Adapter<ParticipantAdapter.
 
   @Override
   public void onBindViewHolder(@NonNull PeerViewHolder holder, int position) {
-    Participant participant = participants.get(position);
 
-    ViewGroup.LayoutParams layoutParams = holder.itemView.getLayoutParams();
-    layoutParams.height = containerHeight / 3;
-    holder.itemView.setLayoutParams(layoutParams);
-
-    holder.tvName.setText(participant.getDisplayName());
-
-    for (Map.Entry<String, Stream> entry : participant.getStreams().entrySet()) {
-        Stream stream = entry.getValue();
-        if (stream.getKind().equalsIgnoreCase("video")) {
-            holder.svrParticipant.setVisibility(View.VISIBLE);
-
-            VideoTrack videoTrack = (VideoTrack) stream.getTrack();
-            videoTrack.addSink(holder.svrParticipant);
-
-            break;
-        }
-    }
-
-    participant.addEventListener(new ParticipantEventListener() {
-      @Override
-      public void onStreamEnabled(Stream stream) {
-          if (stream.getKind().equalsIgnoreCase("video")) {
-              holder.svrParticipant.setVisibility(View.VISIBLE);
-
-              VideoTrack videoTrack = (VideoTrack) stream.getTrack();
-              videoTrack.addSink(holder.svrParticipant);
-          }
-      }
-
-      @Override
-      public void onStreamDisabled(Stream stream) {
-          if (stream.getKind().equalsIgnoreCase("video")) {
-              VideoTrack track = (VideoTrack) stream.getTrack();
-              if (track != null) track.removeSink(holder.svrParticipant);
-
-              holder.svrParticipant.clearImage();
-              holder.svrParticipant.setVisibility(View.GONE);
-          }
-      }
-    });
   }
 
   @Override
   public int getItemCount() {
-      return participants.size();
+      return 0;
   }
 
 
@@ -639,9 +608,120 @@ public class ParticipantAdapter extends RecyclerView.Adapter<ParticipantAdapter.
 }
 ```
 
-3. Add this adapter to the `MeetingActivity.java`
+4. Now we will create the list of `Participant` for the meeting.
 
-```js title="MeetingActivity.java"
+```java title="ParticipantAdapter.java"
+public class ParticipantAdapter extends RecyclerView.Adapter<ParticipantAdapter.PeerViewHolder> {
+
+  //Creating a empty list which will store all participants
+  private final List<Participant> participants = new ArrayList<>();
+
+  public ParticipantAdapter(Meeting meeting) {
+
+    //Adding the local participant to the list
+    participants.add(meeting.getLocalParticipant());
+
+    //Adding Meeting Event listener to get the pacrticipant when on joins or leaves the meeting
+    meeting.addEventListener(new MeetingEventListener() {
+      @Override
+      public void onParticipantJoined(Participant participant) {
+
+        //When new participant joins the meeting add him to the list
+        participants.add(participant);
+        notifyItemInserted(participants.size() - 1);
+      }
+
+      @Override
+      public void onParticipantLeft(Participant participant) {
+
+        //When participant leaves the meeting remove him from the list
+        int pos = -1;
+        for (int i = 0; i < participants.size(); i++) {
+          if (participants.get(i).getId().equals(participant.getId())) {
+            pos = i;
+            break;
+          }
+        }
+
+        participants.remove(participant);
+
+        if (pos >= 0) {
+          notifyItemRemoved(pos);
+        }
+      }
+    });
+  }
+
+  //Make this method return the size of our participant list
+  @Override
+  public int getItemCount() {
+    return participants.size();
+  }
+
+  //...
+
+}
+```
+
+5. We have a list of particpants ready. Lets setup the viewholder to display particpant video.
+
+```java title="PartipantAdapter.java"
+public class ParticipantAdapter extends RecyclerView.Adapter<ParticipantAdapter.PeerViewHolder> {
+
+@Override
+    public void onBindViewHolder(@NonNull PeerViewHolder holder, int position) {
+        Participant participant = participants.get(position);
+
+        ViewGroup.LayoutParams layoutParams = holder.itemView.getLayoutParams();
+        layoutParams.height = containerHeight / 3;
+        holder.itemView.setLayoutParams(layoutParams);
+
+        holder.tvName.setText(participant.getDisplayName());
+
+        //Adding the initial video stream for the participant into the SurfaceViewRenderer
+        for (Map.Entry<String, Stream> entry : participant.getStreams().entrySet()) {
+            Stream stream = entry.getValue();
+            if (stream.getKind().equalsIgnoreCase("video")) {
+                holder.svrParticipant.setVisibility(View.VISIBLE);
+
+                VideoTrack videoTrack = (VideoTrack) stream.getTrack();
+                videoTrack.addSink(holder.svrParticipant);
+
+                break;
+            }
+        }
+
+        //Add Listener to the participant which will update start or stop the video stream of the participant
+        participant.addEventListener(new ParticipantEventListener() {
+            @Override
+            public void onStreamEnabled(Stream stream) {
+                if (stream.getKind().equalsIgnoreCase("video")) {
+                    holder.svrParticipant.setVisibility(View.VISIBLE);
+
+                    VideoTrack videoTrack = (VideoTrack) stream.getTrack();
+                    videoTrack.addSink(holder.svrParticipant);
+                }
+            }
+
+            @Override
+            public void onStreamDisabled(Stream stream) {
+                if (stream.getKind().equalsIgnoreCase("video")) {
+                    VideoTrack track = (VideoTrack) stream.getTrack();
+                    if (track != null) track.removeSink(holder.svrParticipant);
+
+                    holder.svrParticipant.clearImage();
+                    holder.svrParticipant.setVisibility(View.GONE);
+                }
+            }
+        });
+    }
+
+}
+```
+
+6. Add this adapter to the `MeetingActivity.java`
+
+```java title="MeetingActivity.java"
 @Override
 protected void onCreate(Bundle savedInstanceState) {
 
