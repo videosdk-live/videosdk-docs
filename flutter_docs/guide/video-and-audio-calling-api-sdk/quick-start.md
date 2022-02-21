@@ -25,6 +25,8 @@ This guide will get you running with the VideoSDK video & audio calling in minut
 
 These quick start will help you integrate some of the basic functionalities that VideoSDK provides. You can check out the complete source code for this guide [here](/). Once you are done with the tutorial given below your app should look like this.
 
+![VideoSDK Flutter Quick Start Join Screen](/img/quick-start/flutter-join-screen.jpg) ![VideoSDK Flutter Quick Start Meeting Screen](/img/quick-start/flutter-meeting-screen.jpg) 
+
 ## Prerequisites
 
 Before proceeding, ensure that your development environment meets the following requirements:

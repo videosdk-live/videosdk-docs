@@ -124,7 +124,7 @@ public class MainApplication extends Application {
 The Joining screen will consist of:
 1. Create Button - This button will create a new meeting for you.
 2. TextField for Meeting ID - This textfield will contain the meeting ID you want to join.
-2. Join Button - This buttom will join the meeting with which the you will be joined.
+3. Join Button - This buttom will join the meeting with which the you will be joined.
 
 In `/app/res/layout/activity_main.xml`, replace the content with the following:
 

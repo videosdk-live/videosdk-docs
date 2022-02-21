@@ -29,7 +29,8 @@ module.exports = {
       disableSwitch: false,
     },
     prism: {
-      additionalLanguages: ["powershell"],
+      theme: require("prism-react-renderer/themes/dracula"),
+      additionalLanguages: ['java', 'powershell'],
     },
     hideableSidebar: true,
     navbar: {
