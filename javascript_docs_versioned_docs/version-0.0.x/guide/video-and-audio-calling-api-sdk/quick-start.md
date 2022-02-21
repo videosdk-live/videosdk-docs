@@ -69,7 +69,7 @@ npm install -g live-server
 
 There are two ways to install JavaScript SDK.
 
-### 1)Install via using `<script>` tag
+### 1. Install via using `<script>` tag
 
 You can import this library using `<script>` tag. The easiest way to get started is to load this library from CDN, and add a couple of lines of code to your web page or app.
 
@@ -85,7 +85,7 @@ You can import this library using `<script>` tag. The easiest way to get started
 </html>
 ```
 
-### 2)Install using package manager
+### 2 .Install using package manager
 
 Another interesting option is to install library in your app and bundle it using webpack or rollup.
 
