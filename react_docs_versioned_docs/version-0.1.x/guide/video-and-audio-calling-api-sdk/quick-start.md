@@ -42,13 +42,13 @@ Follow the steps to create the environment necessary to add video call into your
 
 1. Create a new React App using the below command. Replace `<PROJECT_NAME>` with your project name.
 
-```js
-npx create-react-app <PROJECT_NAME>
+```bash
+$ npx create-react-app <PROJECT_NAME>
 ```
 
 2. Install the VideoSDK using the below mentioned npm command. Make sure you are in your react app directory before you run this command.
 
-```js
+```bash
 $ npm install "@videosdk.live/react-sdk"
 
 //For the Participants Video
@@ -57,7 +57,7 @@ $ npm install "react-player"
 
 Or, if you are using Yarn use below command
 
-```js
+```bash
 $ yarn add "@videosdk.live/react-sdk"
 
 //For the Participants Video
@@ -77,7 +77,7 @@ The Joining screen will consist of:
 
 1. To create the basic UI replace the `App()` in the `App.js` file with following code
 
-```js title="App.js"
+```jsx title="App.js"
 function App() {
   return (
     <div className="App">
@@ -99,7 +99,7 @@ function App() {
 
 2. Declare a state for meeting Id and auth token.
 
-```js title="App.js"
+```jsx title="App.js"
 function App(){
 
   //This state will contain the meeting id after generating one or adding in the textfield
@@ -120,7 +120,7 @@ function App(){
 
 - For this, we will create a new file named `api.js` which will contain all the api call as well as the Auth token.
 
-```js title="api.js"
+```jsx title="api.js"
 
 //Replace your sampleToken from the VideoSDK dashboard here
 const sampleToken = "";
@@ -166,7 +166,7 @@ Also, React Provider and Consumer to listen changes in meeting environment.
 
 1. We will start with adding the `MeetingProvider` to our app. In order to that, replace the update the `return` of the `App()`
 
-```js title="App.js"
+```jsx title="App.js"
 function App(){
 
   //...other constants and methods
@@ -216,7 +216,7 @@ It also contains `ParticipantsView` which will show all the particiapnts present
 
 With below code you will have a basic design ready for the layout.
 
-```js title = App.js
+```jsx title = App.js
 
 //...function App(){}
 
@@ -266,7 +266,7 @@ const MeetingView = ({
 
 - We will create 4 callback functions which will be triggered on the event happens.
 
-```js title = App.js
+```jsx title = App.js
 
 //...function App(){}
 
@@ -300,7 +300,7 @@ const MeetingView = ({
 
 - We will pass the callback functions to the `useMeeting` hook and also get the methods to toggle mic and webcam and leave the meeting.
 
-```js title = App.js
+```jsx title = App.js
 
 //...function App(){}
 
@@ -331,7 +331,7 @@ const MeetingView = ({
 
 - Now we will set the `onClick` event for our buttons.
 
-```js title = App.js
+```jsx title = App.js
 
 //...function App(){}
 
@@ -388,7 +388,7 @@ const MeetingView = ({
 
 - Here we use the `useMeeting` hook to get the participants list and then map it to `ParticipantView`
 
-```js title="App.js"
+```jsx title="App.js"
 //...function App(){}
 
 //This function will accumulate the list of particiapnts and generate the ParticipantView for each participant in the meeting
@@ -422,7 +422,7 @@ const ParticipantsView = () => {
 
 - We will start with creating the empty `<div>`
 
-```js 
+```jsx 
 const ParticipantView = ({ participantId }) => {
 
   return (
@@ -436,7 +436,7 @@ const ParticipantView = ({ participantId }) => {
 
 - Now we will use the `useParticipant` hook to get streams of audio and video for the participant.
 
-```js 
+```jsx
 const ParticipantView = ({ participantId }) => {
 
   const {
@@ -455,7 +455,7 @@ const ParticipantView = ({ participantId }) => {
 
 - We will add the `<audio>` for the audio stream and set it up.
 
-```js 
+```jsx 
 const ParticipantView = ({ participantId }) => {
 
   //...useParticipant hook
@@ -492,7 +492,7 @@ const ParticipantView = ({ participantId }) => {
 
 - Next we will add the `ReactPlayer`
 
-```js 
+```jsx 
 const ParticipantView = ({ participantId }) => {
 
   //...useParticipant hook
@@ -556,7 +556,7 @@ const ParticipantView = ({ participantId }) => {
 
 - Now we will show the details of the participants.
 
-```js 
+```jsx 
 const ParticipantView = ({ participantId }) => {
 
   //...useParticipant hook

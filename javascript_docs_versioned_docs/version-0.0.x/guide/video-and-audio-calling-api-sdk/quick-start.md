@@ -61,7 +61,7 @@ These quick start will help you integrate some of the basic functionalities that
 
 3. To run your project ; install live-server using the following commnad.
 
-```js
+```bash
 npm install -g live-server
 ```
 
@@ -89,13 +89,13 @@ Another interesting option is to install library in your app and bundle it using
 
 #### Npm
 
-```js
+```bash
 npm install @videosdk.live/js-sdk
 ```
 
 #### Yarn
 
-```js
+```bash
 yarn add @videosdk.live/js-sdk
 ```
 
@@ -105,7 +105,7 @@ yarn add @videosdk.live/js-sdk
 
 In this sample code we have made use of bootstrap for the very basic effects.One can customise according to their requirements by using either external css (index.css file which has been created in the assets folder) techniques or inline-css
 
-```js title="join-screen"
+```html title="join-screen"
 <html>
   <head>
     <!--favicon-->
@@ -157,7 +157,7 @@ In this sample code we have made use of bootstrap for the very basic effects.One
 </html>
 ```
 
-```js title="grid-screen"
+```html title="grid-screen"
 //join-screen
 ...
 //grid-screen
@@ -206,7 +206,7 @@ In this sample code we have made use of bootstrap for the very basic effects.One
 TOKEN = "";
 ```
 
-```js title="index.js"
+```jsx title="index.js"
 // Constants
 const API_BASE_URL = "https://api.videosdk.live";
 
@@ -469,6 +469,6 @@ function addDomEvents() {
 
 Once you are all set with the steps mentioned above run your application as mentioned in the code-block below.
 
-```js
+```bash
 live-server --port=8000
 ```

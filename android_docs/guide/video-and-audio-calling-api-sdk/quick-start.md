@@ -88,7 +88,7 @@ dependencies {
 
 6. Extend the android.app.Application class and create MainApplication.java class with the following code
 
-```js title="MainApplication.java"
+```java title="MainApplication.java"
 package live.videosdk.demo;
 
 import android.app.Application;
@@ -128,7 +128,7 @@ The Joining screen will consist of:
 
 In `/app/res/layout/activity_main.xml`, replace the content with the following:
 
-```xml title="activity_xml.xml"
+```xml title="activity_main.xml"
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
@@ -180,14 +180,14 @@ In `/app/res/layout/activity_main.xml`, replace the content with the following:
 
 1. Declare the variables `sampleToken` which will hold the **Sample Token** generated from the VideoSDK dashboard
 
-```js title="MainActivity.java"
+```java title="MainActivity.java"
 //Replace with the token you generated from the VideoSDK Dashboard
 String sampleToken = "";
 ```
 
 2. Add the OnClick events to the Join and Create button.
 
-```js title="MainActivity.java"
+```java title="MainActivity.java"
   @Override
   protected void onCreate(Bundle savedInstanceState) {
       super.onCreate(savedInstanceState);
@@ -213,7 +213,7 @@ String sampleToken = "";
 
 3. Add the `createMeeting()` which we specified in the `btnJoin`
 
-```js title="MainActivity.java"
+```java title="MainActivity.java"
 private void createMeeting(String token) {
   AndroidNetworking.post("https://api.videosdk.live/v1/meetings")
     .addHeaders("Authorization", token)
@@ -245,7 +245,7 @@ private void createMeeting(String token) {
 
 4. Since we will be using the Camera and Audio of the device, we need to ask for runtime permissions.
 
-```js title="MainActivity.java"
+```java title="MainActivity.java"
 private static final int PERMISSION_REQ_ID = 22;
 
 private static final String[] REQUESTED_PERMISSIONS = {
@@ -259,6 +259,14 @@ private boolean checkSelfPermission(String permission, int requestCode) {
     return false;
   }
   return true;
+}
+
+@Override
+protected void onCreate(Bundle savedInstanceState) {
+  //... button listeneres
+  checkSelfPermission(REQUESTED_PERMISSIONS[0], PERMISSION_REQ_ID);
+  checkSelfPermission(REQUESTED_PERMISSIONS[1], PERMISSION_REQ_ID);
+
 }
 
 ```
@@ -350,7 +358,7 @@ In `/app/res/layout/activity_meeting.xml`, replace the content with the followin
 
 1. Decalre the varibles we will be using to handle the meeting.
 
-```js title="MeetingActivity.java"
+```java title="MeetingActivity.java"
 private Meeting meeting;
 
 private boolean micEnabled = true;
@@ -359,7 +367,7 @@ private boolean webcamEnabled = true;
 
 2. Next step is to intialize a meeting with all the configuration.
 
-```js title="MeetingActivity.java"
+```java title="MeetingActivity.java"
 @Override
 protected void onCreate(Bundle savedInstanceState) {
   super.onCreate(savedInstanceState);
@@ -387,7 +395,7 @@ protected void onCreate(Bundle savedInstanceState) {
 
 3. We will create and add the event listeners to the meeting.
 
-```js title="MeetingActivity.java"
+```java title="MeetingActivity.java"
 
 @Override
 protected void onCreate(Bundle savedInstanceState) {
@@ -451,7 +459,7 @@ private final MeetingEventListener meetingEventListener = new MeetingEventListen
 
 In order add the local participant webcam and mic toggle options, add following code to your `MeetingActivity.java`
 
-```js title="MeetingActivity.java"
+```java title="MeetingActivity.java"
 @Override
 protected void onCreate(Bundle savedInstanceState) {
   super.onCreate(savedInstanceState);
@@ -559,7 +567,7 @@ We will be showing the list of participants in a recycler view.
 
 2. Create a recycler view adapter which will populate our list. Create `PeerViewHolder` in the adpater.
 
-```js title="ParticipantAdapter.java"
+```java title="ParticipantAdapter.java"
 public class ParticipantAdapter extends RecyclerView.Adapter<ParticipantAdapter.PeerViewHolder> {
 
   private int containerHeight;
@@ -602,7 +610,7 @@ public class ParticipantAdapter extends RecyclerView.Adapter<ParticipantAdapter.
 
 4. Now we will create the list of `Participant` for the meeting.
 
-```js title="ParticipantAdapter.java"
+```java title="ParticipantAdapter.java"
 public class ParticipantAdapter extends RecyclerView.Adapter<ParticipantAdapter.PeerViewHolder> {
 
   //Creating a empty list which will store all participants
@@ -657,7 +665,7 @@ public class ParticipantAdapter extends RecyclerView.Adapter<ParticipantAdapter.
 
 5. We have a list of particpants ready. Lets setup the viewholder to display particpant video.
 
-```js title="PartipantAdapter.java"
+```java title="PartipantAdapter.java"
 public class ParticipantAdapter extends RecyclerView.Adapter<ParticipantAdapter.PeerViewHolder> {
 
 @Override
@@ -713,7 +721,7 @@ public class ParticipantAdapter extends RecyclerView.Adapter<ParticipantAdapter.
 
 6. Add this adapter to the `MeetingActivity.java`
 
-```js title="MeetingActivity.java"
+```java title="MeetingActivity.java"
 @Override
 protected void onCreate(Bundle savedInstanceState) {
 
