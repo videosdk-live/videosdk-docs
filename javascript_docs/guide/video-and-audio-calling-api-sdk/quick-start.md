@@ -20,12 +20,12 @@ import Mermaid from '@theme/Mermaid';
 
 ## Quick Start
 
-VideoSDK enables opportunity to integrate video & audio calling to Web, Android, IOS applications. it provides Programmable SDKs and REST APIs to build up scalable video conferencing applications.
+VideoSDK enables the opportunity to integrate video & audio calling to Web, Android, IOS applications. it provides Programmable SDKs and REST APIs to build up scalable video conferencing applications.
 This guide will get you running with the VideoSDK video & audio calling in minutes.
 
 ## Sample Project
 
-These quick start will help you integrate some of the basic functionalities that VideoSDK provides. You can check out the complete source code for this guide [here](https://github.com/videosdk-live/videosdk-rtc-javascript-sdk-example). Once you are done with the tutorial given below your app should look like this.
+This quick start will help you integrate some of the basic functionalities that VideoSDK provides. You can check out the complete source code for this guide [here](https://github.com/videosdk-live/videosdk-rtc-javascript-sdk-example). Once you are done with the tutorial given below your app should look like this.
 
 ## Screenshots
 
@@ -40,7 +40,7 @@ These quick start will help you integrate some of the basic functionalities that
 
 #### VideoSDK Account
 
-- If you haven't yet a user of VideoSDK you can [click this link](https://app.videosdk.live/login) and be a user of videoSDK.
+- If you haven't yet a user of VideoSDK you can [click this link](https://app.videosdk.live/login) and be a user of VideoSDK.
 - If you are already a user to videoSDK then [follow this link](/javascript/guide/video-and-audio-calling-api-sdk/signup-and-create-api) for generating token for the further usage
 
 ## Create Project
@@ -59,7 +59,7 @@ These quick start will help you integrate some of the basic functionalities that
    |        ├── config.js
 ```
 
-3. To run your project ; install live-server using the following commnad.
+3. To run your project; install live-server using the following command.
 
 ```bash
 npm install -g live-server
@@ -69,13 +69,15 @@ npm install -g live-server
 
 There are two ways to install JavaScript SDK.
 
-### 1)Install via using `<script>` tag
+### 1. Install via using `<script>` tag
 
 You can import this library using `<script>` tag. The easiest way to get started is to load this library from CDN, and add a couple of lines of code to your web page or app.
 
-```js title="Install via <script>"
+```html title="Install via <script>"
 <html>
-  <head>....</head>
+  <head>
+    ....
+  </head>
   <body>
     .....
     <script src="https://sdk.videosdk.live/js-sdk/0.0.20/videosdk.js"></script>
@@ -83,9 +85,9 @@ You can import this library using `<script>` tag. The easiest way to get started
 </html>
 ```
 
-### 2)Install using package manager
+### 2 .Install using package manager
 
-Another interesting option is to install library in your app and bundle it using webpack or rollup.
+Another interesting option is to install the library in your app and bundle it using webpack or rollup.
 
 #### Npm
 
@@ -103,7 +105,7 @@ yarn add @videosdk.live/js-sdk
 
 ### User Interface
 
-In this sample code we have made use of bootstrap for the very basic effects.One can customise according to their requirements by using either external css (index.css file which has been created in the assets folder) techniques or inline-css
+In this sample code, we have made use of bootstrap for the very basic effects. One can customize according to their requirements by using either external CSS (index.css file which has been created in the assets folder) techniques or inline-css
 
 ```html title="join-screen"
 <html>
@@ -195,22 +197,17 @@ In this sample code we have made use of bootstrap for the very basic effects.One
 TOKEN = "";
 ```
 
-```jsx title="index.js"
-// Constants
-const API_BASE_URL = "https://api.videosdk.live";
+- Now you have your token; to create a meeting and to validate it make use of API_BASE_URL mentioned below in index.js file
 
-//DOM elements
-let btnCreateMeeting = document.getElementById("btnCreateMeeting");
-let btnJoinMeeting = document.getElementById("btnJoinMeeting");
-let videoContainer = document.getElementById("videoContainer");
-let participantsList = document.getElementById("participantsList");
-let btnToggleMic = document.getElementById("btnToggleMic");
-let btnToggleWebCam = document.getElementById("btnToggleWebCam");
+```jsx title="setting up API_BASE_URL index.js"
+const API_BASE_URL = "https://api.videosdk.live";
+```
+
+- Now you have to validate your token, whether it is empty or not
+
+```js title="token validation index.js"
 //variables
-let meetingId = "";
 let token = "";
-let totalParticipant = 0;
-let participants = [];
 
 //handlers
 async function tokenGeneration() {
@@ -221,6 +218,14 @@ async function tokenGeneration() {
     alert("Please Provide Your Token First");
   }
 }
+```
+
+- After checking your token now it's time to create a meeting that will generate one meeting object made up of multiple parameters. From those parameters, we will make use of meetingId and token to validate the meeting
+- The code below in the code block says that if **newMeeting parameter of a meetingHandler set to true, meeting would be created** and **if you have meetingId then you can set newMeeting to false and validate meeting would be initiated.**
+
+```js title="create and validate meeting index.js"
+//variables
+let meetingId = "";
 
 async function meetingHandler(newMeeting) {
   let joinMeetingName = "JS-SDK";
@@ -269,6 +274,22 @@ async function validateMeeting() {
     return meetingId;
   }
 }
+```
+
+- so far you have created a meeting, and if meetingId exists then you have validated it. But to start a meeting;startMeeting handler is there.
+
+```js title="startMeeting index.js"
+//DOM elements
+let btnCreateMeeting = document.getElementById("btnCreateMeeting");
+let btnJoinMeeting = document.getElementById("btnJoinMeeting");
+let videoContainer = document.getElementById("videoContainer");
+let participantsList = document.getElementById("participantsList");
+let btnToggleMic = document.getElementById("btnToggleMic");
+let btnToggleWebCam = document.getElementById("btnToggleWebCam");
+
+//variables
+let totalParticipant = 0;
+let participants = [];
 
 function startMeeting(token, meetingId, name) {
   // Meeting config
@@ -283,17 +304,18 @@ function startMeeting(token, meetingId, name) {
     maxResolution: "hd", // optional, default: "hd"
   });
 
+  //join meeting
   meeting.join();
+
+  //all remote participants
   participants = meeting.participants;
-  console.log("meeting : ", meeting);
 
   //create Local Participant
-
   if (totalParticipant == 0) {
     createLocalParticipant();
   }
 
-  //participant joined
+  //remote participant joined
   meeting.on("participant-joined", (participant) => {
     let videoElement = createVideoElement(participant.id);
     let audioElement = createAudioElement(participant.id);
@@ -309,7 +331,7 @@ function startMeeting(token, meetingId, name) {
     });
   });
 
-  // participants left
+  //remote participants left
   meeting.on("participant-left", (participant) => {
     let vElement = document.getElementById(`v-${participant.id}`);
     vElement.parentNode.removeChild(vElement);
@@ -320,6 +342,7 @@ function startMeeting(token, meetingId, name) {
     document.getElementById(`p-${participant.id}`).remove();
   });
 
+  //local participant stream-enabled
   meeting.localParticipant.on("stream-enabled", (stream) => {
     setTrack(
       stream,
@@ -463,5 +486,5 @@ live-server --port=8000
 ```
 
 :::caution
-For this tutorial purpose we used a static token intialize and join the meeting. But for the production version of the app, we recommend you use an Authentication Server which will generate and pass on the token to the Client App. For more details checkout [how to do server setup](/javascript/guide/video-and-audio-calling-api-sdk/server-setup).
+For this tutorial purpose, we used a static token to initialize and join the meeting. But for the production version of the app, we recommend you use an Authentication Server that will generate and pass on the token to the Client App. For more details checkout [how to do server setup](/javascript/guide/video-and-audio-calling-api-sdk/server-setup).
 :::

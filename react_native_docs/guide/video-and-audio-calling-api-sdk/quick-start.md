@@ -52,14 +52,12 @@ values={[
 <TabItem value="npm">
 
 ```js
-npm install react-native-dotenv
 npm install "@videosdk.live/react-native-sdk"
 ```
 </TabItem>
 <TabItem value="yarn">
 
 ```js
-yarn add react-native-dotenv
 yarn add "@videosdk.live/react-native-sdk"
 ```
 </TabItem>
@@ -67,7 +65,7 @@ yarn add "@videosdk.live/react-native-sdk"
 
 ## SDK Integration
 
-### react-native-android
+### Android Setup
 
 #### Update colors.xml file
 
@@ -173,7 +171,7 @@ android.enableDexingArtifactTransform.desugaring=false
 ```
 
 
-### react-native-ios
+### iOS Setup
 
 1. Install `react-native-incallmanager`
 
@@ -227,34 +225,16 @@ Add “libreact-native-webrtc.a” in Link Binary with libraries. In target of m
 
 Add following lines to info.plist (project folder/IOS/projectname/info.plist):
 
-```sh title="IOS/projectname/info.plist"
-	<key>NSCameraUsageDescription</key>
-	<string>Camera permission description</string>
-	<key>NSMicrophoneUsageDescription</key>
-	<string>Microphone permission description</string>
+```html title="IOS/projectname/info.plist"
+<key>NSCameraUsageDescription</key>
+<string>Camera permission description</string>
+<key>NSMicrophoneUsageDescription</key>
+<string>Microphone permission description</string>
 ```
 
-### Final Steps
+### Register Service
 
-- Import Example
-
-The easiest way to start is import `@videosdk.live/react-native-sdk`.
-
-```javascript title="meeting.js"
-import {
-  register,
-  useMeeting,
-  MeetingConsumer,
-  MeetingProvider,
-  useParticipant,
-  RTCView,
-  MediaStream,
-} from "@videosdk.live/react-native-sdk";
-```
-
-- Register services at start of meeting
-
-Call register event from the `index.js` file to initialize services such as incall manager and foreground services.
+Register services at start of meeting by calling register event from the `index.js` file to initialize services such as incall manager and foreground services.
 
 ```js title="index.js"
 // Import the library
@@ -270,18 +250,13 @@ AppRegistry.registerComponent(appName, () => App);
 
 ## Create UI and Implement SDK
 
-- Set your token generated using [this](https://app.videosdk.live/login) to .env file
+- Create `api.js` file which will have the methods to generate `meetingId`. Update the `TOKEN` with the token you genereated from VideoSDK Dashboard.
 
-```js title=".env file"
-TOKEN = "";
-```
+```js title="api.js"
+//Replace your token here which was generated from VideoSDK Dashboard
+const TOKEN = "";
 
-- Get token and validate it
-
-```js title="/src/api.js"
-import { TOKEN } from "@env";
 export const getToken = async () => {
-  console.log(`TOKEN : ${TOKEN}`);
   if (TOKEN == "") {
     console.error("Error: Provide Token First");
   } else if (TOKEN) {
@@ -290,27 +265,9 @@ export const getToken = async () => {
 };
 ```
 
-- To access environment variables have a basic configuration which has shown below
+- Now we will add `createMeeting()` which will generate a new `meetingId` for you.
 
-```js title=".babelrc"
-{
-    "plugins": [
-      ["module:react-native-dotenv", {
-          "moduleName": "@env",
-          "path": ".env",
-          "blocklist": null,
-          "allowlist": null,
-          "safe": false,
-          "allowUndefined": true,
-          "verbose": false
-        }]
-    ]
-  }
-```
-
-- Now one will generate 2 apis , 1) create meeting and 2) validate meeting if meetingId is already there.
-
-```js title="/src/api.js"
+```js title="api.js"
 const API_BASE_URL = "https://api.zujonow.com";
 
 export const createMeeting = async ({ token }) => {
@@ -325,21 +282,6 @@ export const createMeeting = async ({ token }) => {
     .catch((error) => console.error("error", error));
 
   return meetingId;
-};
-
-export const validateMeeting = async ({ meetingId, token }) => {
-  const url = `${API_BASE_URL}/api/meetings/${meetingId}`;
-
-  const options = {
-    method: "POST",
-    headers: { Authorization: token },
-  };
-
-  const result = await fetch(url, options)
-    .then((response) => response.json()) //result will have meeting id
-    .catch((error) => console.error("error", error));
-
-  return result ? result.meetingId === meetingId : false;
 };
 ```
 
@@ -358,15 +300,14 @@ export default function App() {
     const meetingCode = await createMeeting({token});
     setToken(token);
     setMeetingId(meetingCode);
-
   }
 
   useEffect(() => {
     api();
   }, []);
+
   return(...);
 }
-
 ```
 
 - Pass that meetingId to MeetingProvider component
@@ -381,7 +322,8 @@ import {
 import MeetingContainer from './src/MeetingContainer';
 
 export default function App() {
-    ...
+    //...
+
     return token && meetingId ? (
     <SafeAreaView style={{flex: 1, backgroundColor: '#F6F6FF'}}>
       <MeetingProvider
@@ -401,12 +343,10 @@ export default function App() {
     </SafeAreaView>
   ) : null;
 }
-
 ```
+- Create a new file `MeetingContainer.js`
 
-- make use of UseMeeting hook of videoSDK.live/react-native-sdk for performing operations of a meeting
-
-```js title="src/MeetingContainer.js"
+```js title="MeetingContainer.js"
 import React, { useEffect, useRef,useState} from 'react';
 import {
   Button,StyleSheet
@@ -415,66 +355,39 @@ import {
   useMeeting,
 } from '@videosdk.live/react-native-sdk';
 
-
 const MeetingContainer = () => {
+  //Styling for the Button
+  const styles=StyleSheet.create({
+    TouchableOpacityContainer: {
+      backgroundColor: backgroundColor,
+      justifyContent: 'center',
+      alignItems: 'center',
+      padding: 8,
+      marginVertical: 4,
+      marginHorizontal: 4,
+      borderRadius: 4,
+    },
+    ViewContainer: {
+      flexDirection: 'row',
+      padding: 6,
+      flexWrap: 'wrap',
+      borderTopLeftRadius: 6,
+      borderTopRightRadius: 6,
+      backgroundColor: 'rgba(0,0,0, 0.8)',
+      position: 'absolute',
+      bottom: 0,
+      right: 0,
+      left: 0,
+      },
+   });
 
-
-   const styles=StyleSheet.create({
-       TouchableOpacityContainer: {
-        backgroundColor: backgroundColor,
-        justifyContent: 'center',
-        alignItems: 'center',
-        padding: 8,
-        marginVertical: 4,
-        marginHorizontal: 4,
-        borderRadius: 4,
-        },
-   }) ;
-  function onMeetingJoined() {
-    console.log("onMeetingJoined");
-  }
-  function onMeetingLeft() {
-    console.log("on-Meeting-Left");
-  }
-  function onParticipantJoined(participant) {
-    console.log(" onParticipantJoined", participant);
-  }
-
-  function onParticipantLeft(participant) {
-    console.log(" onParticipantLeft", participant);
-  }
-
-  function onSpeakerChanged(activeSpeakerId) {
-    console.log("onSpeakerChanged : ", activeSpeakerId);
-  }
-
-  const { join, leave, toggleMic, toggleWebcam, participants,... } =
-    useMeeting({
-      onMeetingLeft,
-      onMeetingJoined,
-      onParticipantJoined,
-      onSpeakerChanged,
-      ...
-    });
-
-  const [visibleControls, setvisibleControls] = useState(true);
+  //To get the height and width of the window
   const layout = useWindowDimensions();
 
-  //a reference to meeting object
-  const mMeetingRef = useRef();
+  //To toggle visibility of controls
+  const [visibleControls, setvisibleControls] = useState(true);
 
-  //initialising mMeeting object to empty first
-  const mMeeting = useMeeting({});
-
-  //setting meeting object created to mMeetingRef
-  useEffect(() => {
-    mMeetingRef.current = mMeeting;
-  }, [mMeeting]);
-
-  //array Of Id of all participants of the meeting
-  const participantsArrId = [...participants.keys()];
-
-  //basic button design
+  //Add the basic button design
   const Button = ({onPress, buttonText, backgroundColor}) => {
     return (
       <TouchableOpacity
@@ -489,9 +402,55 @@ const MeetingContainer = () => {
 };
 ```
 
-- Now check whether participants exist! , if **participantsArrId.length>0 then show participants grid with controls otherwise show controls only**
+- Make use of `useMeeting` hook of `@videosdk.live/react-native-sdk` for performing operations of a meeting. We will get `join`, `leave`, `toggleMic`, `toogleWebcam` and `participants` from the meeting and pass the `onMeetingJoined()`, `onMeetingLeft()`, `onParticipantJoined()` and `onParticipantLeft()` callback functions.
 
-```js title="src/MeetingContainer.js"
+```js title="MeetingContainer.js"
+//..imports are here
+
+const MeetingContainer = () => {
+   //... styles and button design here
+
+  function onMeetingJoined() {
+    console.log("onMeetingJoined");
+  }
+
+  function onMeetingLeft() {
+    console.log("on-Meeting-Left");
+  }
+
+  function onParticipantJoined(participant) {
+    console.log(" onParticipantJoined", participant);
+  }
+
+  function onParticipantLeft(participant) {
+    console.log(" onParticipantLeft", participant);
+  }
+
+  const { join, leave, toggleMic, toggleWebcam, participants} =
+    useMeeting({
+      onMeetingLeft,
+      onMeetingJoined,
+      onParticipantJoined
+    });
+
+  //a reference to meeting object
+  const mMeetingRef = useRef();
+
+  //initialising mMeeting object to empty first
+  const mMeeting = useMeeting({});
+
+  //setting meeting object created to mMeetingRef
+  useEffect(() => {
+    mMeetingRef.current = mMeeting;
+  }, [mMeeting]);
+
+  return (...);
+};
+```
+
+- Now we will update the `MeetingContainer.js` `return` method to show participants list and the controls to join and leave the meeting along with buttons to toogle mic and webcam.
+
+```js title="MeetingContainer.js"
 import {
   View,
   TouchableOpacity,
@@ -508,32 +467,20 @@ import {
 import ParticipantView from './src/components/ParticipantView';
 
 const MeetingContainer = () => {
-    const styles = StyleSheet.create({
-        ViewContainer: {
-        flexDirection: 'row',
-        padding: 6,
-        flexWrap: 'wrap',
-        borderTopLeftRadius: 6,
-        borderTopRightRadius: 6,
-        backgroundColor: 'rgba(0,0,0, 0.8)',
-        position: 'absolute',
-        bottom: 0,
-        right: 0,
-        left: 0,
-        },
-    });
-    ...
 
-    return (
+   //array Of Id of all participants of the meeting
+  const participantsArrId = [...participants.keys()];
+
+  return (
     <SafeAreaView style={{ flex: 1, backgroundColor: "#161616" }}>
         <View style={{ flex: 1, paddingHorizontal: 8 }}>
-        {participantsArrId.length > 0 ? (
-            <FlatList
-            data={participantsArrId}
-            showsVerticalScrollIndicator={false}
-            renderItem={({ item }) => {
-                return (
-                <TouchableOpacity
+          {participantsArrId.length > 0 ? (
+              <FlatList
+                data={participantsArrId}
+                showsVerticalScrollIndicator={false}
+                renderItem={({ item }) => {
+                  return (
+                  <TouchableOpacity
                     activeOpacity={1}
                     onPress={() => {
                     setvisibleControls(!visibleControls);
@@ -541,62 +488,55 @@ const MeetingContainer = () => {
                     style={{
                     height: layout.height / 2,
                     marginVertical: 3,
-                    }}
-                >
-                    <ParticipantView participantId={item} />
-                </TouchableOpacity>
-                );
-            }}
-            />
-        ) : (
+                    }} >
+                      <ParticipantView participantId={item} />
+                  </TouchableOpacity>
+                  );
+              }} />
+          ) : (
             <View
-            style={{
+              style={{
                 flex: 1,
                 backgroundColor: "#F6F6FF",
                 justifyContent: "center",
                 alignItems: "center",
-            }}
-            >
-            <Text style={{ fontSize: 20 }}>
-                Press Join button to enter meeting.
-            </Text>
+              }} >
+              <Text style={{ fontSize: 20 }}>
+                  Press Join button to enter meeting.
+              </Text>
             </View>
-        )}
+          )}
         </View>
         {visibleControls ? (
-        <View
-            style={styles.ViewContainer}
-        >
+          <View style={styles.ViewContainer} >
             <Button
-            onPress={() => {
-                join();
-            }}
-            buttonText={"JOIN"}
-            backgroundColor={"#6a65f1"}
-            />
+              onPress={() => {
+                  join();
+              }}
+              buttonText={"JOIN"}
+              backgroundColor={"#6a65f1"} />
             <Button
-            onPress={() => {
-                leave();
-            }}
-            buttonText={"LEAVE"}
-            backgroundColor={"red"}
-            />
+              onPress={() => {
+                  leave();
+              }}
+              buttonText={"LEAVE"}
+              backgroundColor={"red"} />
             <Button
-            onPress={toggleMic}
-            buttonText={"TOGGLE MIC"}
-            backgroundColor={"#6a65f1"}
-            />
+              onPress={toggleMic}
+              buttonText={"TOGGLE MIC"}
+              backgroundColor={"#6a65f1"} />
             <Button
-            onPress={toggleWebcam}
-            buttonText={"TOGGLE WEBCAM"}
-            backgroundColor={"#6a65f1"}
-            />
-        </View>
+              onPress={toggleWebcam}
+              buttonText={"TOGGLE WEBCAM"}
+              backgroundColor={"#6a65f1"} />
+          </View>
         ) : null}
     </SafeAreaView>
-    );
+  );
 }
 ```
+
+- Now we will create the `ParticipantView` which will show individual participant's audio and video stream. Fo this we will use `useParticipant` hook.
 
 ```js title="src/components/ParticipantView.js"
 import React from "react";
@@ -628,6 +568,7 @@ export default function ParticipantView({ participantId }) {
     },
   });
 
+  //get the participant details based on participantId
   const { displayName, isLocal, webcamStream, micStream, webcamOn, micOn } =
     useParticipant(participantId, {});
 
@@ -639,8 +580,7 @@ export default function ParticipantView({ participantId }) {
             color: "white",
             fontWeight: "bold",
             fontSize: 16,
-          }}
-        >
+          }} >
           {fText}
         </Text>
         <Text
@@ -648,8 +588,7 @@ export default function ParticipantView({ participantId }) {
             color: "white",
             marginLeft: 4,
             fontSize: 16,
-          }}
-        >
+          }} >
           {sText}
         </Text>
       </View>
@@ -673,8 +612,7 @@ export default function ParticipantView({ participantId }) {
         borderRadius: 8,
         overflow: "hidden",
         flex: 1,
-      }}
-    >
+      }} >
       {webcamOn ? (
         <>
           <RTCView
@@ -683,8 +621,7 @@ export default function ParticipantView({ participantId }) {
             mirror={isLocal ? true : false}
             style={{
               flex: 1,
-            }}
-          />
+            }} />
           <InfoOverLay />
         </>
       ) : (
@@ -695,8 +632,7 @@ export default function ParticipantView({ participantId }) {
               flex: 1,
               justifyContent: "center",
               alignItems: "center",
-            }}
-          >
+            }} >
             <Text style={{ fontSize: 16 }}>NO MEDIA</Text>
           </View>
           <InfoOverLay />

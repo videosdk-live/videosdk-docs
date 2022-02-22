@@ -20,13 +20,13 @@ import TabItem from '@theme/TabItem';
 
 # Quick Start
 
-Prebuilt SDK enables opportunity to integrate real-time communication SDK witout writing explicit code. It just requires 10 minutes to integrate.
+Prebuilt SDK enables the opportunity to integrate real-time communication SDK without writing explicit code. It just requires 10 minutes to integrate.
 
-It supports all the modern frameworks such as plain JavaScript, React JS, Vue and Angular.
+It supports all the modern frameworks such as plain JavaScript, React JS, Vue, and Angular.
 
 ## Sample Project
 
-These quick start will help you integrate Prebuilt SDK using Javascript . You can check out the complete source code for this guide [here](https://github.com/videosdk-live/videosdk-rtc-prebuilt-examples/tree/main/javascript). Once you are done with the tutorial given below your app should look like this.
+This quick start will help you integrate Prebuilt SDK using Javascript. You can check out the complete source code for this guide [here](https://github.com/videosdk-live/videosdk-rtc-prebuilt-examples/tree/main/javascript). Once you are done with the tutorial given below your app should look like this.
 
 ![Prebuilt SDK Example to add video call widget in your web application](/img/prebuilt/prebuilt-grid.png)
 
@@ -39,7 +39,7 @@ Before proceeding, ensure that your development environment meets the following 
 
 ## Implementing Meeting with Prebuilt VideoSDK
 
-1. Create an `index.html` file and add the following `<script>` tag at the end of your code's `<body>` tag. Intialize `VideoSDKMeeting` after the script gets loaded.
+1. Create an `index.html` file and add the following `<script>` tag at the end of your code's `<body>` tag. Initialize `VideoSDKMeeting` after the script gets loaded.
 
 ```html title="index.html"
 <script>
@@ -81,7 +81,7 @@ Before proceeding, ensure that your development environment meets the following 
 
 ### Run and Test
 
-Install any http server if you don't already have one and run the server to join meeting from browser.
+Install any HTTP server if you don't already have one and run the server to join the meeting from the browser.
 
 <Tabs
 defaultValue="node"
@@ -124,7 +124,7 @@ and open [http://localhost:8000](http://localhost:8000) in your web browser
 <TabItem value="wamp">
 
 ```
-Move the html file to C:\wamp\www and start the WAMP server
+Move the HTML file to C:\wamp\www and start the WAMP server
 ```
 
 and open [http://localhost/index.html](http://localhost/index.html) in your web browser
@@ -133,7 +133,7 @@ and open [http://localhost/index.html](http://localhost/index.html) in your web 
 <TabItem value="xampp">
 
 ```
-Move the html file to C:\xampp\htdocs and start the XAMPP server
+Move the HTML file to C:\xampp\htdocs and start the XAMPP server
 ```
 
 and open [http://localhost/index.html](http://localhost/index.html) in your web browser
@@ -145,15 +145,15 @@ and open [http://localhost/index.html](http://localhost/index.html) in your web 
 
 :::note
 
-Stuck anywhere? Check out this [example code](https://github.com/videosdk-live/videosdk-rtc-js-prebuilt-embedded-example) on github or [download](https://github.com/videosdk-live/videosdk-rtc-js-prebuilt-embedded-example/archive/refs/tags/v0.1.1.zip) the full source code and unzip on your computer.
+Stuck anywhere? Check out this [example code](https://github.com/videosdk-live/videosdk-rtc-js-prebuilt-embedded-example) on GitHub or [download](https://github.com/videosdk-live/videosdk-rtc-js-prebuilt-embedded-example/archive/refs/tags/v0.1.1.zip) the full source code and unzip on your computer.
 
 :::
 
 ## Dynamic Meeting Link
 
-If you dont want to have same meeting id every time, you can generate a random id each time and use it. Let's see how its done.
+If you don't want to have the same meeting id every time, you can generate a random id each time and use it. Let's see how it's done.
 
-1. Create a new `createMeeting.html` file which will consists of a button to create a meeting.
+1. Create a new `createMeeting.html` file which will consist of a button to create a meeting.
 
 ```js title="createMeeting.html"
 <html>
@@ -169,7 +169,7 @@ If you dont want to have same meeting id every time, you can generate a random i
 </html>
 ```
 
-2. Add a `<script>` which will contain `createMeeting()` which will create and redirect to new meeting. And add this method to `onClick` of `<button>`
+2. Add a `<script>` which will contain `createMeeting()` which will create and redirect to a new meeting. And add this method to `onClick` of `<button>`
 
 Your `<body>` should look something like this.
 
@@ -188,7 +188,7 @@ Your `<body>` should look something like this.
 </body>
 ```
 
-3. Now update your `index.html` to take the `meetingId` fromt he url.
+3. Now update your `index.html` to take the `meetingId` from the URL.
 
 ```js title="index.html"
 //...
@@ -215,4 +215,4 @@ Your `<body>` should look something like this.
 //...
 ```
 
-4. Now go to `host/createMeeting.html` and press the button to create a new meeting with random meeting id.
+4. Now go to `host/createMeeting.html` and press the button to create a new meeting with a random meeting id.

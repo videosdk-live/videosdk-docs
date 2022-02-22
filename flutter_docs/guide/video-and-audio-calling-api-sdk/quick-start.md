@@ -17,13 +17,13 @@ slug: quick-start
 
 # Quick Start
 
-VideoSDK enables opportunity to integrate video & audio calling to Web, Android, IOS applications. it provides Programmable SDKs and REST APIs to build up scalable video conferencing applications.
+VideoSDK enables the opportunity to integrate video & audio calling to Web, Android, IOS applications. it provides Programmable SDKs and REST APIs to build scalable video conferencing applications.
 
 This guide will get you running with the VideoSDK video & audio calling in minutes.
 
 ## Sample Project
 
-These quick start will help you integrate some of the basic functionalities that VideoSDK provides. You can check out the complete source code for this guide [here](https://github.com/videosdk-live/videosdk-rtc-flutter-sdk-example). Once you are done with the tutorial given below your app should look like this.
+This quick start will help you integrate some of the basic functionalities that VideoSDK provides. You can check out the complete source code for this guide [here](https://github.com/videosdk-live/videosdk-rtc-flutter-sdk-example). Once you are done with the tutorial given below your app should look like this.
 
 ![VideoSDK Flutter Quick Start Join Screen](/img/quick-start/flutter-join-screen.jpg) ![VideoSDK Flutter Quick Start Meeting Screen](/img/quick-start/flutter-meeting-screen.jpg) 
 
@@ -33,11 +33,11 @@ Before proceeding, ensure that your development environment meets the following 
 
 - Flutter SDK installed
 - A valid VideoSDK account.
-- An active VideoSDK project with temporary token. For details, see [Signup & Create API Key](/android/guide/video-and-audio-calling-api-sdk/signup-and-create-api).
+- An active VideoSDK project with a temporary token from the [VideoSDK Dashboard](https://app.videosdk.live/api-keys). For details, see [Signup & Create API Key](/flutter/guide/video-and-audio-calling-api-sdk/signup-and-create-api).
 
 ## Project Setup
 
-Follow the steps to create the environment necessary to add video call into your app.
+Follow the steps to create the environment necessary to add video calls into your app.
 
 1. Create a new Flutter project.
 
@@ -50,11 +50,11 @@ $ flutter create videosdk_flutter_quickstart
 ```js
 $ flutter pub add videosdk
 
-//run this command to add http library inorder create meeting id
+//run this command to add http library to perform network call to generate meetingId
 $ flutter pub add http
 ```
 
-3. Update the `AndroidManifest.xml` for the permissions list we will be using to implement the audio and video features. You can find the `AndroidManifest.xml` file at `<project root>/android/app/src/main/AndroidManifest.xml`
+3. Update the `AndroidManifest.xml` for the permissions we will be using to implement the audio and video features. You can find the `AndroidManifest.xml` file at `<project root>/android/app/src/main/AndroidManifest.xml`
 
 ```js title="AndroidManifest.xml"
 <uses-feature android:name="android.hardware.camera" />
@@ -66,7 +66,7 @@ $ flutter pub add http
 <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
 ```
 
-4. Also you will need to set your build settings to Java 8, because official WebRTC jar now uses static methods in `EglBase` interface. Just add this to your app level `build.gradle`
+4. Also you will need to set your build settings to Java 8 because the official WebRTC jar now uses static methods in `EglBase` interface. Just add this to your app-level `build.gradle`
 
 ```js
 android {
@@ -82,9 +82,9 @@ android {
 
 If necessary, in the same `build.gradle` you will need to increase `compileSdkVersion` and `targetSdkVersion` up to `31` (currently default Flutter generator set it to `30`).
 
-6. Lets complete the iOS Setup for the app.
+6. Let's complete the iOS Setup for the app.
 
-Add the following entry to your Info.plist file, located in `<project root>`/ios/Runner/Info.plist:
+Add the following entries which allow your app to access the camera and microphone to your Info.plist file, located in `<project root>`/ios/Runner/Info.plist:
 
 ```xml
 <key>NSCameraUsageDescription</key>
@@ -93,19 +93,17 @@ Add the following entry to your Info.plist file, located in `<project root>`/ios
 <string>$(PRODUCT_NAME) Microphone Usage!</string>
 ```
 
-This entry allows your app to access camera and microphone.
-
 ## Implementing the VideoSDK
 
 ### Creating the Joining Screen
 
 The Joining screen will consist of:
 
-1. Create Button - This button will create a new meeting for you.
-2. TextField for Meeting ID - This textfield will contain the meeting ID you want to join.
-3. Join Button - This buttom will join the meeting with which the you will be joined.
+- Create Button - This button will create a new meeting for you.
+- TextField for Meeting ID - This text field will contain the meeting ID you want to join.
+- Join Button - This button will join the meeting which you provided.
 
-4. Create a new dart file `join_screen.dart` which will contain our Stateful Widget anemd `JoinScreen`.
+1. Create a new dart file `join_screen.dart` which will contain our Stateful Widget named `JoinScreen`.
 
 Replace the `_token` with the sample token you generated from the VideoSDK Dashboard.
 
@@ -124,7 +122,7 @@ class JoinScreen extends StatefulWidget {
 }
 
 class _JoinScreenState extends State<JoinScreen> {
-  //Repalce the token wiht the sample token you generated from the VideoSDK Dashboard
+  //Repalce the token with the sample token you generated from the VideoSDK Dashboard
   String _token ="";
 
   String _meetingID = "";
@@ -147,10 +145,52 @@ class _JoinScreenState extends State<JoinScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            
+          ],
+        ),
+      ),
+    );
+  }
+
+}
+```
+
+2. Update the `JoinScreen` with two buttons and a text field.
+
+```js title="join_screen.dart"
+class _JoinScreenState extends State<JoinScreen> {
+  //Repalce the token with the sample token you generated from the VideoSDK Dashboard
+  String _token ="";
+
+  String _meetingID = "";
+
+  @override
+  Widget build(BuildContext context) {
+    final ButtonStyle _buttonStyle = TextButton.styleFrom(
+      primary: Colors.white,
+      backgroundColor: Theme.of(context).primaryColor,
+      textStyle: const TextStyle(
+        fontWeight: FontWeight.bold,
+      ),
+    );
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text("VideoSDK RTC"),
+      ),
+      backgroundColor: Theme.of(context).backgroundColor,
+      body: SafeArea(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            //Button to Create Meeting
             TextButton(
               style: _buttonStyle,
               onPressed: () async {
+                //When clicked
+                //Generate a meetingId 
                 _meetingID = await createMeeting();
+
+                //Navigatet to MeetingScreen
                 navigateToMeetingScreen();
               },
               child: const Text("CREATE MEETING"),
@@ -165,6 +205,7 @@ class _JoinScreenState extends State<JoinScreen> {
               ),
             ),
             SizedBox(height: 20),
+            //Textfield for entering meetingId
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 32.0),
               child: TextField(
@@ -182,8 +223,10 @@ class _JoinScreenState extends State<JoinScreen> {
               ),
             ),
             SizedBox(height: 20),
+            //Button to join the meeting
             TextButton(
               onPressed: () async {
+                //Navigate to MeetingScreen
                 navigateToMeetingScreen();
               },
               style: _buttonStyle,
@@ -195,10 +238,13 @@ class _JoinScreenState extends State<JoinScreen> {
     );
   }
 
+  //This is method is called to navigate to MeetingScreen.
+  //It passes the token and meetingId to MeetingScreen as parameters
   void navigateToMeetingScreen(){
     Navigator.push(
       context,
       MaterialPageRoute(
+        //MeetingScreen is created in upcomming steps
         builder: (context) => MeetingScreen(
           token: _token,
           meetingId: _meetingID,
@@ -257,19 +303,17 @@ class MyApp extends StatelessWidget {
 }
 ```
 
-4. The Joining screen is all setup. Now lets create the `MeetingScreen`.
-
 ### Creating the Meeting Screen
 
 1. Create a new `meeting_screen.dart` which will have a Stateful widget named `MeetingScreen`.
 
-`MeetingScreen` accepts following parameter:
+`MeetingScreen` accepts the following parameter:
 
-- `meetingId` : This will be the meeting Id we will joining
-- `token` : Auth Token to oconfigure the Meeting
-- `displayName` : Name with which the participant will be joined
-- `micEnabled` : (Optional) If true, mic will be on when you join the meeting else it will be off.
-- `webcamEnabled` : (Optional) If true, webcam will be on when you join the meeting else it will be off.
+- `meetingId`: This will be the meeting Id we will joining
+- `token`: Auth Token to configure the Meeting
+- `displayName`: Name with which the participant will be joined
+- `micEnabled` : (Optional) If true, the mic will be on when you join the meeting else it will be off.
+- `webcamEnabled`: (Optional) If true, the webcam will be on when you join the meeting else it will be off.
 
 ```js title="meeting_screen.dart"
 import 'package:flutter/material.dart';
@@ -336,7 +380,7 @@ class _MeetingScreenState extends State<MeetingScreen> {
 }
 ```
 
-3. Now we will add `meeting`, `videoStream`, `audioStream` which will store the meeting and the streams for local participant respectively.
+3. Now we will add `meeting`, `videoStream`, `audioStream` which will store the meeting and the streams for local participant.
 
 ```js title="meeting_screen.dart"
 class _MeetingScreenState extends State<MeetingScreen> {
@@ -351,7 +395,7 @@ class _MeetingScreenState extends State<MeetingScreen> {
 }
 ```
 
-4. Now we will update the `builder` to generate meeting view.
+4. Now we will update the `builder` to generate a meeting view.
 
 - Adding the Event listeners for the meeting and setting the state of our local `meeting`
 
@@ -424,7 +468,7 @@ class _MeetingScreenState extends State<MeetingScreen> {
 }
 ```
 
-- We will be showing a Waiting to join screen untill the meeting is joined and then show the meeting view.
+- We will be showing a Waiting to join screen until the meeting is joined and then show the meeting view.
 
 ```js title="meeting_screen.dart"
 class _MeetingScreenState extends State<MeetingScreen> {
@@ -482,21 +526,8 @@ class _MeetingScreenState extends State<MeetingScreen> {
 ```js title="meeting_screen.dart"
 class _MeetingScreenState extends State<MeetingScreen> {
 
-  //...state declartatio
+  //...state declartations
 
-  @override
-  Widget build(BuildContext context) {
-    return WillPopScope(
-      onWillPop: _onWillPopScope,
-      child: MeetingBuilder(
-        //...meetingConfig
-
-        builder: (_meeting) {
-          //... _meeting listener
-
-=======
-
->>>>>>> Stashed changes
   @override
   Widget build(BuildContext context) {
     return WillPopScope(
@@ -559,7 +590,7 @@ class _MeetingScreenState extends State<MeetingScreen> {
 }
 ```
 
-- Add the `_onWillPopScope()` which will handle the meeting leave part on back press.
+- Add the `_onWillPopScope()` which will handle the meeting leave on back button click.
 
 ```js title="meeting_screen.dart"
 class _MeetingScreenState extends State<MeetingScreen> {
@@ -577,7 +608,7 @@ class _MeetingScreenState extends State<MeetingScreen> {
 }
 ```
 
-5. Next we will be creating the `ParticipantGridView` which will be used to show the participants view.
+5. Next we will be creating the `ParticipantGridView` which will be used to show the participant's view.
 
 `ParticipantGridView` maps each participant with a `ParticipantTile`.
 
@@ -761,7 +792,7 @@ class _ParticipantTileState extends State<ParticipantTile> {
 }
 ```
 
-- Now we will create a `RTCVideoView` to show the participant stream and also add other components like name and mic status indicator of the participant.
+- Now we will create `RTCVideoView` to show the participant stream and also add other components like the name and mic status indicator of the participant.
 
 ```js title="participant_tile.dart"
 
@@ -859,12 +890,10 @@ class _ParticipantTileState extends State<ParticipantTile> {
 }
 ```
 
-7. You are all set to run and test the app.
-
 ### Run and Test
 
-The app is all set to test. Make sure to update teh `_token` in `join_screen.dart`
+The app is all set to test. Make sure to update the `_token` in `join_screen.dart`
 
 :::caution
-For this tutorial purpose we used a static token intialize and join the meeting. But for the production version of the app, we recommend you use an Authentication Server which will generate and pass on the token to the Client App. For more details checkout [how to do server setup](/flutter/guide/video-and-audio-calling-api-sdk/server-setup).
+For the tutorial purpose, we used a static token to initialize and join the meeting. But for the production version of the app, we recommend you use an Authentication Server that will generate and pass on the token to the Client App. For more details checkout [how to do server setup](/flutter/guide/video-and-audio-calling-api-sdk/server-setup).
 :::

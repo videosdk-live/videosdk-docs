@@ -17,13 +17,13 @@ slug: quick-start
 
 # Quick Start
 
-VideoSDK enables opportunity to integrate video & audio calling to Web, Android, IOS applications. it provides Programmable SDKs and REST APIs to build up scalable video conferencing applications.
+VideoSDK enables the opportunity to integrate video & audio calling to Web, Android, IOS applications. it provides Programmable SDKs and REST APIs to build up scalable video conferencing applications.
 
 This guide will get you running with the VideoSDK video & audio calling in minutes.
 
 ## Sample Project
 
-These quick start will help you integrate some of the basic functionalities that VideoSDK provides. You can check out the complete source code for this guide [here](https://github.com/videosdk-live/videosdk-rtc-react-sdk-example). Once you are done with the tutorial given below your app should look like this.
+This quick start will help you integrate some of the basic functionalities that VideoSDK provides. You can check out the complete source code for this guide [here](https://github.com/videosdk-live/videosdk-rtc-react-sdk-example). Once you are done with the tutorial given below your app should look like this.
 
 ![VideoSDK React JS Quick Start Join Screen](/img/quick-start/react-join-screen.png) ![VideoSDK React JS Quick Start Meeting Screen](/img/quick-start/react-meeting-screen.png)
 
@@ -33,11 +33,11 @@ Before proceeding, ensure that your development environment meets the following 
 
 - Have Node and NPM installed on your device.
 - A valid VideoSDK account.
-- An active VideoSDK project with temporary token. For details, see [Signup & Create API Key](/react/guide/video-and-audio-calling-api-sdk/signup-and-create-api).
+- An active VideoSDK project with a temporary token. For details, see [Signup & Create API Key](/react/guide/video-and-audio-calling-api-sdk/signup-and-create-api).
 
 ## Project Setup
 
-Follow the steps to create the environment necessary to add video call into your app.
+Follow the steps to create the environment necessary to add video calls into your app.
 
 1. Create a new React App using the below command. Replace `<PROJECT_NAME>` with your project name.
 
@@ -45,7 +45,7 @@ Follow the steps to create the environment necessary to add video call into your
 $ npx create-react-app <PROJECT_NAME>
 ```
 
-2. Install the VideoSDK using the below mentioned npm command. Make sure you are in your react app directory before you run this command.
+2. Install the VideoSDK using the below-mentioned npm command. Make sure you are in your react app directory before you run this command.
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -87,10 +87,10 @@ $ yarn add "react-player"
 The Joining screen will consist of:
 
 - Create Button - This button will create a new meeting for you.
-- TextField for Meeting ID - This textfield will contain the meeting ID you want to join.
-- Join Button - This buttom will join the meeting with which the you will be joined.
+- TextField for Meeting ID - This text field will contain the meeting ID you want to join.
+- Join Button - This button will join the meeting with meetingId you provided.
 
-1. To create the basic UI replace the `App()` in the `App.js` file with following code
+1. To create the basic UI, replace the `App()` in the `App.js` file with the following code
 
 ```jsx title="App.js"
 function App() {
@@ -138,7 +138,7 @@ function App() {
 
 3. We need to create a `getToken()` which will provide us with an auth token and `getMeetingId()` which will generate a meeting id when Create Meeting button is pressed.
 
-- For this, we will create a new file named `api.js` which will contain all the api call as well as the Auth token.
+- For this, we will create a new file named `api.js` which will contain all the API calls as well as the Auth token.
 
 ```jsx title="api.js"
 //Replace your sampleToken from the VideoSDK dashboard here
@@ -170,7 +170,7 @@ const getMeetingId = async ({ token }) => {
 };
 ```
 
-4. With this join screen is ready to create and join a meeting with respective meeting id and sample token.
+4. With this join screen is ready to create and join a meeting with the respective meeting id and sample token.
 
 ### Initalizing the Meeting
 
@@ -179,12 +179,12 @@ Our React JS SDK provides two important hooks API:
 - `useMeeting` : Responsible to handle meeting environment.
 - `useParticipant` : Responsible to handle Participant
 
-Also, React Provider and Consumer to listen changes in meeting environment.
+Also, React Provider and Consumer to listen to changes in the meeting environment.
 
 - `MeetingProvider` : Meeting Provider is [Context.Provider](https://reactjs.org/docs/context.html#contextprovider) that allows consuming components to subscribe to meeting changes
 - `MeetingConsumer` : Meeting Consumer is [Context.Consumer](https://reactjs.org/docs/context.html#contextconsumer) that subscribes to meeting changes.
 
-1. We will start with adding the `MeetingProvider` to our app. In order to that, replace the update the `return` of the `App()`
+1. We will start with adding the `MeetingProvider` to our app. So we will update the `return` of `App()`
 
 ```jsx title="App.js"
 function App() {
@@ -235,13 +235,13 @@ function App() {
 }
 ```
 
-2. Create a new `MeetingView` which will be reponsible for showing the participants and other meeting related operations. We will pass a method to this which will reset the meeting id in the `App()`
+2. Create a new `MeetingView` which will be responsible for showing the participants and other meeting-related operations. We will pass a method to this which will reset the meeting id in the `App()`
 
-`MeetingView` contains three button each performing the leave, toggle mic and toggle webcame operation.
+`MeetingView` contains three buttons each performing the leave, toggle mic, and toggle webcam operation.
 
-It also contains `ParticipantsView` which will show all the particiapnts present in the meeting.
+It also contains `ParticipantsView` which will show all the participants present in the meeting.
 
-With below code you will have a basic design ready for the layout.
+With the below code you will have a basic design ready for the layout.
 
 ```jsx title = App.js
 //...function App(){}
@@ -279,9 +279,9 @@ const MeetingView = ({ onMeetingLeave }) => {
 };
 ```
 
-3. We will use the `useMeeting` hook to get the callbacks for the events on happening related to the meeting.
+3. We will use the `useMeeting` hook to get the callbacks for the events happening related to the meeting.
 
-- We will create 4 callback functions which will be triggered on the event happens.
+- We will create 4 callback functions that will be triggered on the event happens.
 
 ```jsx title = App.js
 //...function App(){}
@@ -377,7 +377,7 @@ const MeetingView = ({ onMeetingLeave }) => {
 };
 ```
 
-3. `MeetingView` is all set. Lets create the `ParticipantsView` which will show all the participants in the meeting.
+3. `MeetingView` is all set. Let's create the `ParticipantsView` which will show all the participants in the meeting.
 
 - Here we use the `useMeeting` hook to get the participants list and then map it to `ParticipantView`
 
@@ -409,7 +409,7 @@ const ParticipantsView = () => {
 };
 ```
 
-4. We will create the `ParticipantView` which will show each participants details.
+4. We will create the `ParticipantView` which will show each participant's details.
 
 - We will start with creating the empty `<div>`
 
@@ -471,7 +471,7 @@ const ParticipantView = ({ participantId }) => {
 };
 ```
 
-- Next we will add the `ReactPlayer`
+- Next, we will add the `ReactPlayer`
 
 ```jsx
 const ParticipantView = ({ participantId }) => {
@@ -600,8 +600,8 @@ const ParticipantView = ({ participantId }) => {
 
 ### Run and Test
 
-The app is ready to create and join a meeting. Make sure to repalce the `sampleToken` from the VideoSDK dashboard into the `App.js`.
+The app is ready to create and join a meeting. Make sure to replace the `sampleToken` from the VideoSDK dashboard into the `App.js`.
 
 :::caution
-For this tutorial purpose we used a static token intialize and join the meeting. But for the production version of the app, we recommend you use an Authentication Server which will generate and pass on the token to the Client App. For more details checkout [how to do server setup](/react/guide/video-and-audio-calling-api-sdk/server-setup).
+For the tutorial purpose, we used a static token to initialize and join the meeting. But for the production version of the app, we recommend you use an Authentication Server that will generate and pass on the token to the Client App. For more details checkout [how to do server setup](/react/guide/video-and-audio-calling-api-sdk/server-setup).
 :::
