@@ -79,5 +79,13 @@ module.exports = {
       type: "doc",
       id: "api/sdk-reference/meeting-consumer",
     },
+    {
+      type: "doc",
+      id: "api/sdk-reference/use-connection",
+    },
+    {
+      type: "doc",
+      id: "api/sdk-reference/use-pubsub",
+    },
   ],
 };

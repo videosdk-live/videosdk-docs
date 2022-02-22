@@ -60,5 +60,13 @@ module.exports = {
       type: "doc",
       id: "api/sdk-reference/stream-class",
     },
+    {
+      type: "doc",
+      id: "api/sdk-reference/pubsubmessage-class",
+    },
+    {
+      type: "doc",
+      id: "api/sdk-reference/pubsuboptions-class",
+    },
   ],
 };

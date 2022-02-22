@@ -43,7 +43,7 @@ import MethodListHeading from '@theme/MethodListHeading';
   <MethodListItemLabel name="__methods" >
     <MethodListGroup>
       <MethodListHeading heading="Methods" />
-      <MethodListItemLabel description={"participant event handler"} name="on(<event-name>, <event-handler>)"  type={"Function"} />
+      <MethodListItemLabel description={"participant event handler"} name="on(Events event, Function handler)"  type={"Function"} />
       <MethodListItemLabel description={"Streams of participant i.e. audio stream, video stream and share stream"} name="streams"  type={"Map<String, Stream>"} />
       <MethodListItemLabel description={"Request participant to enable webcam the participant"} name="enableWebcam()"  type={"Function"} />
       <MethodListItemLabel description={"Disable webcam of the participant"} name="disableWebcam()"  type={"Function"} />
@@ -61,10 +61,10 @@ import MethodListHeading from '@theme/MethodListHeading';
   <MethodListItemLabel name="__events" >
     <MethodListGroup>
       <MethodListHeading heading="Events" />
-      <MethodListItemLabel description={"This event will be emitted when any stream i.e. audio, video or sharescreen, of the participant is enabled."} name="stream-enabled"  type={"Stream"} />
-      <MethodListItemLabel description={"This event will be emitted when any stream i.e. audio, video or sharescreen, of the participant is disabled."} name="stream-disabled"  type={"Stream"} />
-      <MethodListItemLabel description={"This event will be emitted when any stream i.e. audio, video or sharescreen, of the participant is paused."} name="stream-paused"  type={"Stream"} />
-      <MethodListItemLabel description={"This event will be emitted when any stream i.e. audio, video or sharescreen, of the participant is resumed."} name="stream-resumed"  type={"Stream"} />
+      <MethodListItemLabel description={"This event will be emitted when any stream i.e. audio, video or sharescreen, of the participant is enabled."} name="streamEnabled"  type={"Stream"} />
+      <MethodListItemLabel description={"This event will be emitted when any stream i.e. audio, video or sharescreen, of the participant is disabled."} name="streamDisabled"  type={"Stream"} />
+      <MethodListItemLabel description={"This event will be emitted when any stream i.e. audio, video or sharescreen, of the participant is paused."} name="streamPaused"  type={"Stream"} />
+      <MethodListItemLabel description={"This event will be emitted when any stream i.e. audio, video or sharescreen, of the participant is resumed."} name="streamResumed"  type={"Stream"} />
     </MethodListGroup>
   </MethodListItemLabel>
 </MethodListGroup>
@@ -98,12 +98,12 @@ participant.displayName;
 // Set video quality of that participant to low
 participant.setQuality("low");
 
-// Adding event listners in participant
-participant.on("stream-enabled", (Stream stream) {
+// Adding event listeners in participant
+participant.on(Events.streamEnabled, (Stream stream) {
   // this stream is enabled
 });
 
-participant.on("stream-disabled", (Stream stream) {
+participant.on(Events.streamDisabled, (Stream stream) {
   // this stream is disabled
 });
 ```
