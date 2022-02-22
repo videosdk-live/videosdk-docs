@@ -23,7 +23,7 @@ This guide will get you running with the VideoSDK video & audio calling in minut
 
 ## Sample Project
 
-These quick start will help you integrate some of the basic functionalities that VideoSDK provides. You can check out the complete source code for this guide [here](/). Once you are done with the tutorial given below your app should look like this.
+These quick start will help you integrate some of the basic functionalities that VideoSDK provides. You can check out the complete source code for this guide [here](https://github.com/videosdk-live/videosdk-rtc-react-sdk-example). Once you are done with the tutorial given below your app should look like this.
 
 ![VideoSDK React JS Quick Start Join Screen](/img/quick-start/react-join-screen.png) ![VideoSDK React JS Quick Start Meeting Screen](/img/quick-start/react-meeting-screen.png)
 
@@ -47,14 +47,26 @@ $ npx create-react-app <PROJECT_NAME>
 
 2. Install the VideoSDK using the below mentioned npm command. Make sure you are in your react app directory before you run this command.
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs
+defaultValue="npm"
+groupId={"server-group-id"}
+values={[
+{label: 'NPM', value: 'npm'},
+{label: 'Yarn', value: 'yarn'},
+]}>
+<TabItem value="npm">
+
 ```bash
 $ npm install "@videosdk.live/react-sdk"
 
 //For the Participants Video
 $ npm install "react-player"
 ```
-
-Or, if you are using Yarn use below command
+</TabItem>
+<TabItem value="yarn">
 
 ```bash
 $ yarn add "@videosdk.live/react-sdk"
@@ -62,6 +74,9 @@ $ yarn add "@videosdk.live/react-sdk"
 //For the Participants Video
 $ yarn add "react-player"
 ```
+
+</TabItem>
+</Tabs>
 
 3. If you want to use the custom styling from this tutorial, update the `index.css` with the [css provided here](/)
 

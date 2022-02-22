@@ -25,7 +25,7 @@ This guide will get you running with the VideoSDK video & audio calling in minut
 
 ## Sample Project
 
-These quick start will help you integrate some of the basic functionalities that VideoSDK provides. You can check out the complete source code for this guide [here](/). Once you are done with the tutorial given below your app should look like this.
+These quick start will help you integrate some of the basic functionalities that VideoSDK provides. You can check out the complete source code for this guide [here](https://github.com/videosdk-live/videosdk-rtc-javascript-sdk-example). Once you are done with the tutorial given below your app should look like this.
 
 ## Screenshots
 
@@ -41,7 +41,7 @@ These quick start will help you integrate some of the basic functionalities that
 #### VideoSDK Account
 
 - If you haven't yet a user of VideoSDK you can [click this link](https://app.videosdk.live/login) and be a user of videoSDK.
-- If you are already a user to videoSDK then [follow this link](/javascript/guide/video-and-audio-calling-api-sdk/signup-and-create-api) for generating token for the furthure usage
+- If you are already a user to videoSDK then [follow this link](/javascript/guide/video-and-audio-calling-api-sdk/signup-and-create-api) for generating token for the further usage
 
 ## Create Project
 

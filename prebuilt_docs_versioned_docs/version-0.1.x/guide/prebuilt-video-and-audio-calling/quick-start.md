@@ -26,7 +26,7 @@ It supports all the modern frameworks such as plain JavaScript, React JS, Vue an
 
 ## Sample Project
 
-These quick start will help you integrate Prebuilt SDK using Javascript . You can check out the complete source code for this guide [here](/). Once you are done with the tutorial given below your app should look like this.
+These quick start will help you integrate Prebuilt SDK using Javascript . You can check out the complete source code for this guide [here](https://github.com/videosdk-live/videosdk-rtc-prebuilt-examples/tree/main/javascript). Once you are done with the tutorial given below your app should look like this.
 
 ![Prebuilt SDK Example to add video call widget in your web application](/img/prebuilt/prebuilt-grid.png)
 

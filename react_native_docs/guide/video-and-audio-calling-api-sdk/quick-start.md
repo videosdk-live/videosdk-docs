@@ -25,7 +25,7 @@ This guide will get you running with the VideoSDK video & audio calling in minut
 
 ## Sample Project
 
-These quick start will help you integrate some of the basic functionalities that VideoSDK provides. You can check out the complete source code for this guide [here](/). Once you are done with the tutorial given below your app should look like this.
+These quick start will help you integrate some of the basic functionalities that VideoSDK provides. You can check out the complete source code for this guide [here](https://github.com/videosdk-live/videosdk-rtc-react-native-sdk-example). Once you are done with the tutorial given below your app should look like this.
 
 <img class="react-native-screen-img" alt="React-Native-Screen" src={require('/static/img/quick-start/react-native-screen.png').default} />
 
@@ -39,19 +39,31 @@ npx react-native init appName
 
 - Install necessary packages
 
-#### npm
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
-```js title="package installation using npm"
+<Tabs
+defaultValue="npm"
+groupId={"server-group-id"}
+values={[
+{label: 'NPM', value: 'npm'},
+{label: 'Yarn', value: 'yarn'},
+]}>
+<TabItem value="npm">
+
+```js
 npm install react-native-dotenv
-npm install "@videosdk.live/react-native-sdk”
+npm install "@videosdk.live/react-native-sdk"
 ```
+</TabItem>
+<TabItem value="yarn">
 
-#### yarn
-
-```js title="package installation using yarn"
+```js
 yarn add react-native-dotenv
-yarn add "@videosdk.live/react-native-sdk”
+yarn add "@videosdk.live/react-native-sdk"
 ```
+</TabItem>
+</Tabs>
 
 ## SDK Integration
 
@@ -160,102 +172,69 @@ android.enableDexingArtifactTransform.desugaring=false
 -keep class org.webrtc.** { *; }
 ```
 
-#### Final Steps
-
-- Import Example
-
-The easiest way to start is import `@videosdk.live/react-native-sdk`.
-
-```javascript title="meeting.js"
-import {
-  register,
-  useMeeting,
-  MeetingConsumer,
-  MeetingProvider,
-  useParticipant,
-  RTCView,
-  MediaStream,
-} from "@videosdk.live/react-native-sdk";
-```
-
-- Register services at start of meeting
-
-Call register event from the `index.js` file to initialize services such as incall manager and foreground services.
-
-```js title="index.js"
-// Import the library
-import { register } from '@videosdk.live/react-native-sdk';
-import { AppRegistry } from 'react-native';
-import { name as appName } from './app.json';
-import App from './src/App.js';
-​
-// Register the service
-register();
-AppRegistry.registerComponent(appName, () => App);
-```
 
 ### react-native-ios
 
-- step 1: Install incall manager
+1. Install `react-native-incallmanager`
 
-```sh title="Install react-native-incallmanager"
+```sh
 $ yarn add @videosdk.live/react-native-incallmanager
 ```
 
-- step 2: IMPORTANT: Make sure you are using CocoaPods 1.10 or higher.
+2. IMPORTANT: Make sure you are using CocoaPods 1.10 or higher.
 
 To update CocoaPods you simply install the gem again
 
-```gem title="Update cocoapods"
+```gem
 $[sudo] gem install cocoapods
 ```
 
-- Step 3: Manual linking (if react-native-incall-manager is not linked automatically)
+3. Manual linking (if react-native-incall-manager is not linked automatically)
 
-  2.1 Drag node_modules/@videosdk.live/react-native-incall-manager/ios/RNInCallManager.xcodeproj under <your_xcode_project>/Libraries
+  3.1 Drag `node_modules/@videosdk.live/react-native-incall-manager/ios/RNInCallManager.xcodeproj` under `<your_xcode_project>/Libraries`
 
-  2.2 Select <your_xcode_project> --> Build Phases --> Link Binary With Libraries
+  3.2 Select <your_xcode_project> --> Build Phases --> Link Binary With Libraries
 
-- Drag Libraries/RNInCallManager.xcodeproj/Products/libRNInCallManager.a to Link Binary With Libraries
+  3.3 Drag `Libraries/RNInCallManager.xcodeproj/Products/libRNInCallManager.a` to Link Binary With Libraries
 
-  2.3 Select <your_xcode_project> --> Build Settings
-  In Header Search Paths, add $(SRCROOT)/../node_modules/@videosdk.live/react-native-incall-manager/ios/RNInCallManager
+  3.4 Select <your_xcode_project> --> Build Settings
+  In Header Search Paths, add `$(SRCROOT)/../node_modules/@videosdk.live/react-native-incall-manager/ios/RNInCallManager`
 
-- Step 4: Change path of `react-native-webrtc`
+4. Change path of `react-native-webrtc`
 
-```sh title="Change path of react-native-webrtc"
+```sh title="Podfile"
 pod ‘react-native-webrtc’, :path => ‘../node_modules/@videosdk.live/react-native-webrtc’
 ```
 
-- Step 5: Change your platform version
+5. Change your platform version
 
 You have change platform field of podfile to 11.0 or above it, as react-native-webrtc doesn’t support IOS < 11
 platform :ios, ‘11.0’
 
-- Step 6: Install pods
+6. Install pods
 
 After updating the version, you have to install pods.
 
-```sh title="Install pods"
+```sh
 Pod install
 ```
 
-- Step 7: Add “libreact-native-webrtc.a” binary
+7. Add “libreact-native-webrtc.a” binary
 
 Add “libreact-native-webrtc.a” in Link Binary with libraries. In target of main project folder.
 
-- Step 8: Declare permissions in Info.plist :
+8. Declare permissions in Info.plist :
 
-- Add following lines to info.plist (project folder/IOS/projectname/info.plist):
+Add following lines to info.plist (project folder/IOS/projectname/info.plist):
 
-```sh title="Update permissions"
+```sh title="IOS/projectname/info.plist"
 	<key>NSCameraUsageDescription</key>
 	<string>Camera permission description</string>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>Microphone permission description</string>
 ```
 
-#### Final Steps
+### Final Steps
 
 - Import Example
 

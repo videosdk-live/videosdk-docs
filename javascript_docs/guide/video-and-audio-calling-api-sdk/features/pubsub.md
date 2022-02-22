@@ -90,7 +90,7 @@ function unsubscribe(topic:String, onMessageReceived: function);
 
 
 ```js
-function subscribe() {
+function unsubscribe() {
   // Unsubscribe 'CHAT' topic
   meeting?.pubSub?.unsubscribe("CHAT", onMessageReceived);
 }
