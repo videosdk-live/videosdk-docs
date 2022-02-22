@@ -100,5 +100,35 @@ function subscribe() {
 
 
 ```js
-// Coming Soon
+//subscribe to the 'CHAT' on meeting join
+meeting.on("meeting-joined", () => {
+  meeting.pubSub.subscribe("CHAT", (data) => {
+    let { message, senderId, senderName, timestamp } = data;
+    const chatBox = document.getElementById("chatArea");
+    const chatTemplate = `
+        <div style="margin-bottom: 10px; ${
+          meeting.localParticipant.id == senderId && "text-align : right"
+        }">
+          <span style="font-size:12px;">${senderName}</span>
+          <div style="margin-top:5px">
+            <span style="background:${
+              meeting.localParticipant.id == senderId ? "grey" : "crimson"
+            };color:white;padding:5px;border-radius:8px">${message}<span>
+          </div>
+        </div>
+        `;
+    chatBox.insertAdjacentHTML("beforeend", chatTemplate);
+  });
+});
+
+//publish chat meesage on button click
+btnSend.addEventListener("click", async () => {
+  const message = document.getElementById("txtChat").value;
+  console.log("publish : ", message);
+  document.getElementById("txtChat").value = "";
+  meeting.pubSub
+    .publish("CHAT", message, { persist: true })
+    .then((res) => console.log(`response of publish : ${res}`))
+    .catch((err) => console.log(`error of publish : ${err}`));
+});
 ```
