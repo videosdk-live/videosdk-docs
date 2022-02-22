@@ -40,63 +40,6 @@ const { publish } = usePubSub("CHAT");
 const message = "Hello Everyone!";
 publish(message, { persist: true });
 ```
-<br />
-
-### subscribe()
-
-This method is used to subscribe for particular topic. This method returns a list of messages which were sent earlier.
-
-#### Syntax
-
-
-```js
-// react-native-sdk uses `usePubsub` hook,
-// it automatically subscribes/unsubscribe particular topic by itself..
-```
-
-:::note
-You can checkout [Sample Code](/react-native/guide/video-and-audio-calling-api-sdk/features/pubsub#sample-code) for better understanding.
-:::
-
-#### Example
-
-
-```js
-// react-native-sdk uses `usePubsub` hook,
-// it automatically subscribes/unsubscribe particular topic by itself..
-```
-
-:::note
-You can checkout [Sample Code](/react-native/guide/video-and-audio-calling-api-sdk/features/pubsub#sample-code) for better understanding.
-:::
-
-### unsubscribe()
-
-This method is used to unsubscribe the message topic.
-
-#### Syntax
-
-
-```js
-// react-native-sdk uses `usePubsub` hook,
-// it automatically subscribes/unsubscribe particular topic by itself..
-```
-
-:::note
-You can checkout [Sample Code](/react-native/guide/video-and-audio-calling-api-sdk/features/pubsub#sample-code) for better understanding.
-:::
-
-#### Example
-
-
-```js
-// react-native-sdk uses `usePubsub` hook,
-// it automatically subscribes/unsubscribe particular topic by itself..
-```
-
-:::note
-You can checkout [Sample Code](/react-native/guide/video-and-audio-calling-api-sdk/features/pubsub#sample-code) for better understanding.
-:::
 
 ## Sample Code
 

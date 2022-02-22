@@ -40,73 +40,7 @@ const message = "Hello Everyone!";
 publish(message, { persist: true });
 ```
 
-<br />
-
-### subscribe()
-
-This method is used to subscribe for particular topic. This method returns a list of messages which were sent earlier.
-
-#### Syntax
-
-
-```js
-// react-sdk uses `usePubsub` hook,
-// it automatically subscribes/unsubscribe particular topic by itself..
-```
-
-:::note
-You can checkout [Sample Code](/react/guide/video-and-audio-calling-api-sdk/features/pubsub#sample-code) for better understanding.
-:::
-
-#### Example
-
-
-```js
-// react-sdk uses `usePubsub` hook,
-// it automatically subscribes/unsubscribe particular topic by itself..
-```
-
-| Parameter Name | Type                  | Description                                                                                                                                      |
-| -------------- | --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
-| topic          | String                | This should be the topic to be subscribed.                                                                                                       |
-| forListener    | PubSubMessageListener | This is an object of PubSubMessageListener, which listens for upcoming messages and calls onMessageReceived function, when new message received. |
-
-:::note
-You can checkout [Sample Code](/react/guide/video-and-audio-calling-api-sdk/features/pubsub#sample-code) for better understanding.
-:::
-
-### unsubscribe()
-
-This method is used to unsubscribe the message topic.
-
-#### Syntax
-
-
-```js
-// react-sdk uses `usePubsub` hook,
-// it automatically subscribes/unsubscribe particular topic by itself..
-```
-
-:::note
-You can checkout [Sample Code](/react/guide/video-and-audio-calling-api-sdk/features/pubsub#sample-code) for better understanding.
-:::
-
-
-#### Example
-
-
-```js
-// react-sdk uses `usePubsub` hook,
-// it automatically subscribes/unsubscribe particular topic by itself..
-```
-
-:::note
-You can checkout [Sample Code](/react/guide/video-and-audio-calling-api-sdk/features/pubsub#sample-code) for better understanding.
-:::
-
-
 ## Sample Code
-
 
 ```js
 import { usePubSub } from "@videosdk.live/react-sdk";
