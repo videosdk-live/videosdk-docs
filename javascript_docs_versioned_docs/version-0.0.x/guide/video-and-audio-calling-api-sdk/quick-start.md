@@ -17,19 +17,21 @@ slug: quick-start
 ---
 
 import Mermaid from '@theme/Mermaid';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 ## Quick Start
 
 VideoSDK enables the opportunity to integrate video & audio calling to Web, Android, IOS applications. it provides Programmable SDKs and REST APIs to build up scalable video conferencing applications.
 This guide will get you running with the VideoSDK video & audio calling in minutes.
 
-## Sample Project
+<!-- ## Sample Project
 
 This quick start will help you integrate some of the basic functionalities that VideoSDK provides. You can check out the complete source code for this guide [here](https://github.com/videosdk-live/videosdk-rtc-javascript-sdk-example). Once you are done with the tutorial given below your app should look like this.
 
 ## Screenshots
 
-![VideoSDK JS Quick Start Join Screen](/img/quick-start/js-join-screen.png) ![VideoSDK JS Quick Start Meeting Screen](/img/quick-start/js-grid-screen.png)
+![VideoSDK JS Quick Start Join Screen](/img/quick-start/js-join-screen.png) ![VideoSDK JS Quick Start Meeting Screen](/img/quick-start/js-grid-screen.png) -->
 
 ## Prerequisite
 
@@ -38,12 +40,14 @@ This quick start will help you integrate some of the basic functionalities that 
 - Node.js v12+
 - NPM v6+ (comes pre-installed with newer Node versions)
 
-#### VideoSDK Account
+:::info
 
-- If you haven't yet a user of VideoSDK you can [click this link](https://app.videosdk.live/login) and be a user of VideoSDK.
-- If you are already a user to videoSDK then [follow this link](/javascript/guide/video-and-audio-calling-api-sdk/signup-and-create-api) for generating token for the further usage
+One should have a videoSDK account to generate token.
+Visit videoSDK **[dashboard](https://app.videosdk.live/api-keys)** to generate token
 
-## Create Project
+:::
+
+## Project Structure
 
 1. Create one empty project using **mkdir folder_name** on your preferable location.
 2. Set up the structure of your project shown in the directory structure below:
@@ -55,8 +59,8 @@ This quick start will help you integrate some of the basic functionalities that 
    │    ├── css
    |    |    ├── index.css
    │    ├── js
-   |        ├── index.js
-   |        ├── config.js
+   |         ├── index.js
+   |         ├── config.js
 ```
 
 3. To run your project; install live-server using the following command.
@@ -65,15 +69,12 @@ This quick start will help you integrate some of the basic functionalities that 
 npm install -g live-server
 ```
 
-## Integrate SDK
+4. SDK Integration
 
-There are two ways to install JavaScript SDK.
+<Tabs>
+<TabItem value="<script>" label="<script>" default>
 
-### 1. Install via using `<script>` tag
-
-You can import this library using `<script>` tag. The easiest way to get started is to load this library from CDN, and add a couple of lines of code to your web page or app.
-
-```html title="Install via <script>"
+```html
 <html>
   <head>
     ....
@@ -85,29 +86,31 @@ You can import this library using `<script>` tag. The easiest way to get started
 </html>
 ```
 
-### 2 .Install using package manager
-
-Another interesting option is to install the library in your app and bundle it using webpack or rollup.
-
-#### Npm
+</TabItem>
+<TabItem value="npm" label="npm">
 
 ```bash
 npm install @videosdk.live/js-sdk
 ```
 
-#### Yarn
+</TabItem>
+<TabItem value="yarn" label="yarn">
 
 ```bash
 yarn add @videosdk.live/js-sdk
 ```
 
-## Implementation
+</TabItem>
+</Tabs>
 
-### User Interface
+## Start Writing Your Code
 
-In this sample code, we have made use of bootstrap for the very basic effects. One can customize according to their requirements by using either external CSS (index.css file which has been created in the assets folder) techniques or inline-css
+### step 1 : Create UI
 
-```html title="join-screen"
+For this tutorial, we have made use of bootstrap and assests/index.css file for making UI a bit responsive.
+Refer assets/index.css file from [here](/) for basic css effects
+
+```html title="index.html"
 <html>
   <head>
     <!--favicon-->
@@ -117,6 +120,8 @@ In this sample code, we have made use of bootstrap for the very basic effects. O
     />
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="./assets/css/index.css" />
+    <!--add necessary bootstrap links here -->
+    ...
   </head>
   <body class="bg-secondary">
     <!--join-screen-->
@@ -149,7 +154,9 @@ In this sample code, we have made use of bootstrap for the very basic effects. O
         </button>
       </div>
     </div>
-    //grid-screen ... //scripts
+    <!--grid-screen-->
+    ...
+    <!--scripts-->
     <script src="./assets/js/config.js"></script>
     <script src="./assets/js/index.js"></script>
     <script src="https://sdk.videosdk.live/js-sdk/0.0.20/videosdk.js"></script>
@@ -157,8 +164,8 @@ In this sample code, we have made use of bootstrap for the very basic effects. O
 </html>
 ```
 
-```html title="grid-screen"
-//join-screen ... //grid-screen
+```html title="index.html"
+<!--grid screen-->
 <div id="grid-screen">
   <div>
     <input
@@ -186,10 +193,9 @@ In this sample code, we have made use of bootstrap for the very basic effects. O
     <div id="participantsList"></div>
   </div>
 </div>
-//scripts ...
 ```
 
-### SDK Implementation
+### step 2 : Meeting Initialisation
 
 - **config.js file** : set token in this file which is generated from [here](https://app.videosdk.live/login).
 
@@ -197,13 +203,13 @@ In this sample code, we have made use of bootstrap for the very basic effects. O
 TOKEN = "";
 ```
 
-- Now you have your token; to create a meeting and to validate it make use of API_BASE_URL mentioned below in index.js file
+- Now you have your token; to create a meeting make use of API_BASE_URL mentioned below in index.js file
 
-```jsx title="setting up API_BASE_URL index.js"
+```jsx title="setting up API_BASE_URL in index.js"
 const API_BASE_URL = "https://api.videosdk.live";
 ```
 
-- Now you have to validate your token, whether it is empty or not
+- validate your token, whether it is empty or not
 
 ```js title="token validation index.js"
 //variables
@@ -220,8 +226,8 @@ async function tokenGeneration() {
 }
 ```
 
-- After checking your token now it's time to create a meeting that will generate one meeting object made up of multiple parameters. From those parameters, we will make use of meetingId and token to validate the meeting
-- The code below in the code block says that if **newMeeting parameter of a meetingHandler set to true, meeting would be created** and **if you have meetingId then you can set newMeeting to false and validate meeting would be initiated.**
+- After checking your token now it's time to create a meeting that will generate one meeting object made up of multiple parameters.
+- The code below in the code block says that if **newMeeting parameter of a meetingHandler set to true, meeting will be created** and **if you have meetingId then you can set newMeeting to false and join operation will be performed.**
 
 ```js title="create and validate meeting index.js"
 //variables
@@ -246,37 +252,15 @@ async function meetingHandler(newMeeting) {
     document.getElementById("grid-screen").style.display = "inline-block";
     startMeeting(token, meetingId, joinMeetingName);
   } else {
-    meetingId = await validateMeeting();
     document.getElementById("lblMeetingId").value = meetingId;
     document.getElementById("home-screen").style.display = "none";
     document.getElementById("grid-screen").style.display = "inline-block";
     startMeeting(token, meetingId, joinMeetingName);
   }
 }
-
-async function validateMeeting() {
-  meetingId = document.getElementById("txtMeetingCode").value;
-  const url = `${API_BASE_URL}/api/meetings/${meetingId}`;
-  const options = {
-    method: "POST",
-    headers: { Authorization: token },
-  };
-
-  const result = await fetch(url, options)
-    .then((response) => response.json()) //result will have meeting id
-    .catch((error) => {
-      console.error("error", error);
-      alert("Invalid Meeting Id");
-      window.location.href = "/";
-      return;
-    });
-  if (result.meetingId === meetingId) {
-    return meetingId;
-  }
-}
 ```
 
-- so far you have created a meeting, and if meetingId exists then you have validated it. But to start a meeting;startMeeting handler is there.
+- so far you have created a meeting and to start a meeting;startMeeting handler is there.
 
 ```js title="startMeeting index.js"
 //DOM elements
@@ -398,14 +382,8 @@ function createAudioElement(pId) {
 function addParticipantToList({ id, displayName }) {
   totalParticipant++;
   let participantTemplate = document.createElement("div");
-  participantTemplate.className = "row";
-  participantTemplate.style.padding = "4px";
-  participantTemplate.style.marginTop = "1px";
-  participantTemplate.style.marginLeft = "7px";
-  participantTemplate.style.marginRight = "7px";
-  participantTemplate.style.borderRadius = "3px";
-  participantTemplate.style.border = "1px solid rgb(61, 60, 78)";
-  participantTemplate.style.backgroundColor = "rgb(61, 60, 78)";
+  //refer .participant from index.css
+  participantTemplate.className = "participant";
 
   //icon
   let colIcon = document.createElement("div");
@@ -417,6 +395,7 @@ function addParticipantToList({ id, displayName }) {
   let content = document.createElement("div");
   colIcon.className = "col-3";
   colIcon.innerHTML = `${displayName}`;
+  colIcon.style.color = "white";
   participantTemplate.appendChild(content);
   // participants.push({ id, displayName });
 
@@ -445,7 +424,11 @@ function setTrack(stream, videoElem, audioElement, id) {
       .catch((error) => console.error("audioElem.play() failed", error));
   }
 }
+```
 
+- Add dom elements events to your project for toggling mic and webcam
+
+```js title="Dom elements events in index.js"
 //events of DOM elements
 function addDomEvents() {
   btnToggleMic.addEventListener("click", () => {
@@ -469,7 +452,6 @@ function addDomEvents() {
   });
 
   btnLeaveMeeting.addEventListener("click", async () => {
-    // leavemeeting
     meeting.leave();
     document.getElementById("home-screen").style.display = "inline-block";
     document.getElementById("grid-screen").style.display = "none";
