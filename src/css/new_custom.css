@@ -167,11 +167,14 @@
 
   /* Alerts */
   --ifm-alert-color: var(--custom-color-orange-600);
+
+  --ifm-toc-border-color: #f6f6fc;
 }
 
 :root[data-theme="light"] {
   --custom-background-color: #fdfdfd;
   --custom-background-color-hover-card-light: #f6f6fc;
+  --ifm-toc-border-color: #f6f6fc;
 }
 
 :root[data-theme="dark"] {
@@ -213,6 +216,8 @@
 
   /* Card */
   --ifm-card-background-color: var(--custom-background-color-highlight);
+
+  --ifm-toc-border-color: #252a34;
 }
 
 ::-webkit-scrollbar {
@@ -1352,6 +1357,9 @@ html[data-theme="dark"] .discord {
 
 @media (min-width: 997px) {
   .docSidebarContainer_node_modules-\@docusaurus-theme-classic-lib-next-theme-DocPage-styles-module {
+    border-right: none !important;
+  }
+  div[class^="docSidebarContainer_"]{
     border-right: none !important;
   }
 }
