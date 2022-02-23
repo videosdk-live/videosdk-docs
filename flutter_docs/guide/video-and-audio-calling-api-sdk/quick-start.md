@@ -32,8 +32,13 @@ This quick start will help you integrate some of the basic functionalities that 
 Before proceeding, ensure that your development environment meets the following requirements:
 
 - Flutter SDK installed
-- A valid VideoSDK account.
-- An active VideoSDK project with a temporary token from the [VideoSDK Dashboard](https://app.videosdk.live/api-keys). For details, see [Signup & Create API Key](/flutter/guide/video-and-audio-calling-api-sdk/signup-and-create-api).
+
+:::important
+
+One should have a videoSDK account to generate token.
+Visit videoSDK **[dashboard](https://app.videosdk.live/api-keys)** to generate token
+
+:::
 
 ## Project Setup
 
@@ -165,7 +170,6 @@ class _JoinScreenState extends State<JoinScreen> {
       ),
     );
   }
-
 }
 ```
 
@@ -267,7 +271,6 @@ class _JoinScreenState extends State<JoinScreen> {
       ),
     );
   }
-
 }
 ```
 
@@ -398,14 +401,12 @@ class _MeetingScreenState extends State<MeetingScreen> {
 
 ```js title="meeting_screen.dart"
 class _MeetingScreenState extends State<MeetingScreen> {
-
   Meeting? meeting;
 
   Stream? videoStream;
   Stream? audioStream;
 
   //...build
-
 }
 ```
 
@@ -478,7 +479,6 @@ class _MeetingScreenState extends State<MeetingScreen> {
       }
     });
   }
-
 }
 ```
 
