@@ -47,9 +47,14 @@ Visit videoSDK **[dashboard](https://app.videosdk.live/api-keys)** to generate t
 
 :::
 
+## Outcome
+
+![JS-Join Screen](/img/quick-start/js-join-screen.PNG)
+![JS-Grid Screen](/img/quick-start/js-grid-screen.PNG)
+
 ## Project Structure
 
-1. Create one empty project using **mkdir folder_name** on your preferable location.
+1. Create one empty project using `mkdir folder_name` on your preferable location.
 2. Set up the structure of your project shown in the directory structure below:
 
 ```jsx title="Directory Structure"
@@ -105,9 +110,9 @@ yarn add @videosdk.live/js-sdk
 
 ## Start Writing Your Code
 
-### step 1 : Create UI
+### Step 1 : Create UI
 
-For this tutorial, we have made use of bootstrap and assests/index.css file for making UI a bit responsive.
+For this tutorial, we have made use of bootstrap and `assests/index.css` file for making UI a bit responsive.
 Refer assets/index.css file from [here](/) for basic css effects
 
 ```html title="index.html"
@@ -195,7 +200,7 @@ Refer assets/index.css file from [here](/) for basic css effects
 </div>
 ```
 
-### step 2 : Meeting Initialisation
+### Step 2 : Meeting Initialisation
 
 - **config.js file** : set token in this file which is generated from [here](https://app.videosdk.live/login).
 
@@ -203,7 +208,7 @@ Refer assets/index.css file from [here](/) for basic css effects
 TOKEN = "";
 ```
 
-- Now you have your token; to create a meeting make use of API_BASE_URL mentioned below in index.js file
+- Now you have your token; to create a meeting make use of API_BASE_URL mentioned below in `index.js` file
 
 ```jsx title="setting up API_BASE_URL in index.js"
 const API_BASE_URL = "https://api.videosdk.live";

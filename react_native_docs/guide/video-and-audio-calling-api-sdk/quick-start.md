@@ -27,14 +27,34 @@ This guide will get you running with the VideoSDK video & audio calling in minut
 
 These quick start will help you integrate some of the basic functionalities that VideoSDK provides. You can check out the complete source code for this guide [here](https://github.com/videosdk-live/videosdk-rtc-react-native-sdk-example). Once you are done with the tutorial given below your app should look like this.
 
+## Prerequisite
+
+- Node.js v12+
+- NPM v6+ (comes installed with newer Node versions)
+- Android Studio or Xcode installed
+
+## Outcome
+
 <img class="react-native-screen-img" alt="React-Native-Screen" src={require('/static/img/quick-start/react-native-screen.png').default} />
 
-## Create Project
+## Project Structure
 
 - You can create your react-native app using command shown below
 
 ```js title="Create React-native app"
 npx react-native init appName
+```
+
+```jsx title="Directory Structure"
+   ...
+   src
+   ├── components
+   │    ├── ParticipantView.js
+   ├── style
+   │    ├── CustomStyle.js
+   ├── api.js
+   ├── MeetingContainer.js
+   ...
 ```
 
 - Install necessary packages
@@ -54,12 +74,14 @@ values={[
 ```js
 npm install "@videosdk.live/react-native-sdk"
 ```
+
 </TabItem>
 <TabItem value="yarn">
 
 ```js
 yarn add "@videosdk.live/react-native-sdk"
 ```
+
 </TabItem>
 </Tabs>
 
@@ -67,7 +89,7 @@ yarn add "@videosdk.live/react-native-sdk"
 
 ### Android Setup
 
-#### Update colors.xml file
+1. Update colors.xml file
 
 ```xml title="android/app/src/main/res/values/colors.xml"
 <resources>
@@ -78,7 +100,7 @@ yarn add "@videosdk.live/react-native-sdk"
 </resources>
 ```
 
-#### Update AndroidManifest.xml file
+2. Update AndroidManifest.xml file
 
 ```xml title="AndroidManifest.xml"
 <manifest
@@ -115,17 +137,13 @@ yarn add "@videosdk.live/react-native-sdk"
 </manifest>
 ```
 
-#### Link couple of library dependencies manually
-
-1.  Add below lines in `android/app/build.gradle`
+3. Link couple of library dependencies manually
 
 ```java title="android/app/build.gradle"
   dependencies {
     compile project(':rnfgservice') compile project(':rnwebrtc') compile project(':rnincallmanager')
   }
 ```
-
-2.  Add below lines in `android/settings.gradle`
 
 ```gradle title="android/settings.gradle"
 include ':rnwebrtc'
@@ -137,8 +155,6 @@ project(':rnincallmanager').projectDir = new File(rootProject.projectDir, '../no
 include ':rnfgservice'
 project(':rnfgservice').projectDir = new File(rootProject.projectDir, '../node_modules/@videosdk.live/react-native-foreground-service/android')
 ```
-
-3.  Add below lines in `MainApplication.java`
 
 ```java title="MainApplication.java"
 import live.videosdk.rnfgservice.ForegroundServicePackage;
@@ -157,19 +173,14 @@ public class MainApplication extends Application implements ReactApplication {
 }
 ```
 
-4.  Add this line to `android/gradle.properties`:
-
 ```java title="android/gradle.properties"
 /* This one fixes a weird WebRTC runtime problem on some devices. */
 android.enableDexingArtifactTransform.desugaring=false
 ```
 
-5.  Add below line in the `android/app/proguard-rules.pro` (optional: if you are using Proguard):
-
 ```java title="android/app/proguard-rules.pro"
 -keep class org.webrtc.** { *; }
 ```
-
 
 ### iOS Setup
 
@@ -189,14 +200,14 @@ $[sudo] gem install cocoapods
 
 3. Manual linking (if react-native-incall-manager is not linked automatically)
 
-  3.1 Drag `node_modules/@videosdk.live/react-native-incall-manager/ios/RNInCallManager.xcodeproj` under `<your_xcode_project>/Libraries`
+   3.1 Drag `node_modules/@videosdk.live/react-native-incall-manager/ios/RNInCallManager.xcodeproj` under `<your_xcode_project>/Libraries`
 
-  3.2 Select <your_xcode_project> --> Build Phases --> Link Binary With Libraries
+   3.2 Select <your_xcode_project> --> Build Phases --> Link Binary With Libraries
 
-  3.3 Drag `Libraries/RNInCallManager.xcodeproj/Products/libRNInCallManager.a` to Link Binary With Libraries
+   3.3 Drag `Libraries/RNInCallManager.xcodeproj/Products/libRNInCallManager.a` to Link Binary With Libraries
 
-  3.4 Select <your_xcode_project> --> Build Settings
-  In Header Search Paths, add `$(SRCROOT)/../node_modules/@videosdk.live/react-native-incall-manager/ios/RNInCallManager`
+   3.4 Select <your_xcode_project> --> Build Settings
+   In Header Search Paths, add `$(SRCROOT)/../node_modules/@videosdk.live/react-native-incall-manager/ios/RNInCallManager`
 
 4. Change path of `react-native-webrtc`
 
@@ -248,9 +259,11 @@ register();
 AppRegistry.registerComponent(appName, () => App);
 ```
 
-## Create UI and Implement SDK
+## Start Writing Your Code
 
-- Create `api.js` file which will have the methods to generate `meetingId`. Update the `TOKEN` with the token you genereated from VideoSDK Dashboard.
+### Step 1: Meeting Configuration
+
+- Create `api.js` and Update the `TOKEN` with the token you genereated from VideoSDK [Dashboard](https://app.videosdk.live/api-keys).
 
 ```js title="api.js"
 //Replace your token here which was generated from VideoSDK Dashboard
@@ -265,7 +278,7 @@ export const getToken = async () => {
 };
 ```
 
-- Now we will add `createMeeting()` which will generate a new `meetingId` for you.
+- Now we will add `createMeeting()` method to `api.js` which will generate a new `meetingId` for you.
 
 ```js title="api.js"
 const API_BASE_URL = "https://api.zujonow.com";
@@ -285,7 +298,7 @@ export const createMeeting = async ({ token }) => {
 };
 ```
 
-- Let's create a meeting now , you will require 2 things to start a meeting **1)token** and **2)meetingId** to store a meeting Id created.
+- Let's create a meeting now . You will require 2 things **1)token : to start a meeting** and **2)meetingId : to store a meetingId created**.
 
 ```js title="App.js"
 import React, {useState, useEffect} from 'react';
@@ -310,76 +323,58 @@ export default function App() {
 }
 ```
 
-- Pass that meetingId to MeetingProvider component
+- Pass that meetingId to MeetingProvider component of react-native-sdk.
 
 ```js title="App.js"
-import {
-  SafeAreaView,
-} from 'react-native';
-import {
-  MeetingProvider,
-} from '@videosdk.live/react-native-sdk';
-import MeetingContainer from './src/MeetingContainer';
+import { SafeAreaView } from "react-native";
+import { MeetingProvider } from "@videosdk.live/react-native-sdk";
+import MeetingContainer from "./src/MeetingContainer";
 
 export default function App() {
-    //...
+  //...
 
-    return token && meetingId ? (
-    <SafeAreaView style={{flex: 1, backgroundColor: '#F6F6FF'}}>
+  return token && meetingId ? (
+    <SafeAreaView style={{ flex: 1, backgroundColor: "#F6F6FF" }}>
       <MeetingProvider
         config={{
           meetingId,
           micEnabled: false,
           webcamEnabled: false,
-          name: 'Test User',
+          name: "Test User",
           notification: {
-            title: 'Code Sample',
-            message: 'Meeting is running.',
+            title: "Code Sample",
+            message: "Meeting is running.",
           },
         }}
-        token={token}>
+        token={token}
+      >
         <MeetingContainer />
       </MeetingProvider>
     </SafeAreaView>
   ) : null;
 }
 ```
-- Create a new file `MeetingContainer.js`
+
+### Step 2 : Create MeetingContainer
+
+:::tip
+Refer our custom styling from **[here](/)**
+:::
+
+- MeetingContainer is one component whose role is to contain participants of a meeting and UI elements.
 
 ```js title="MeetingContainer.js"
 import React, { useEffect, useRef,useState} from 'react';
 import {
-  Button,StyleSheet
+  Button
 } from 'react-native';
 import {
   useMeeting,
 } from '@videosdk.live/react-native-sdk';
+//refer CustomStyle.js file from the path shown in the tip above
+import {styles} from './src/style/CustomStyle';
 
 const MeetingContainer = () => {
-  //Styling for the Button
-  const styles=StyleSheet.create({
-    TouchableOpacityContainer: {
-      backgroundColor: backgroundColor,
-      justifyContent: 'center',
-      alignItems: 'center',
-      padding: 8,
-      marginVertical: 4,
-      marginHorizontal: 4,
-      borderRadius: 4,
-    },
-    ViewContainer: {
-      flexDirection: 'row',
-      padding: 6,
-      flexWrap: 'wrap',
-      borderTopLeftRadius: 6,
-      borderTopRightRadius: 6,
-      backgroundColor: 'rgba(0,0,0, 0.8)',
-      position: 'absolute',
-      bottom: 0,
-      right: 0,
-      left: 0,
-      },
-   });
 
   //To get the height and width of the window
   const layout = useWindowDimensions();
@@ -408,7 +403,6 @@ const MeetingContainer = () => {
 //..imports are here
 
 const MeetingContainer = () => {
-   //... styles and button design here
 
   function onMeetingJoined() {
     console.log("onMeetingJoined");
@@ -462,81 +456,89 @@ import {
   Button,
   SafeAreaView,
   SectionList,
-  StyleSheet
-} from 'react-native';
-import ParticipantView from './src/components/ParticipantView';
+  StyleSheet,
+} from "react-native";
+import ParticipantView from "./src/components/ParticipantView";
 
 const MeetingContainer = () => {
-
-   //array Of Id of all participants of the meeting
+  //array Of Id of all participants of the meeting
   const participantsArrId = [...participants.keys()];
 
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: "#161616" }}>
-        <View style={{ flex: 1, paddingHorizontal: 8 }}>
-          {participantsArrId.length > 0 ? (
-              <FlatList
-                data={participantsArrId}
-                showsVerticalScrollIndicator={false}
-                renderItem={({ item }) => {
-                  return (
-                  <TouchableOpacity
-                    activeOpacity={1}
-                    onPress={() => {
+      <View style={{ flex: 1, paddingHorizontal: 8 }}>
+        {participantsArrId.length > 0 ? (
+          <FlatList
+            data={participantsArrId}
+            showsVerticalScrollIndicator={false}
+            renderItem={({ item }) => {
+              return (
+                <TouchableOpacity
+                  activeOpacity={1}
+                  onPress={() => {
                     setvisibleControls(!visibleControls);
-                    }}
-                    style={{
+                  }}
+                  style={{
                     height: layout.height / 2,
                     marginVertical: 3,
-                    }} >
-                      <ParticipantView participantId={item} />
-                  </TouchableOpacity>
-                  );
-              }} />
-          ) : (
-            <View
-              style={{
-                flex: 1,
-                backgroundColor: "#F6F6FF",
-                justifyContent: "center",
-                alignItems: "center",
-              }} >
-              <Text style={{ fontSize: 20 }}>
-                  Press Join button to enter meeting.
-              </Text>
-            </View>
-          )}
-        </View>
-        {visibleControls ? (
-          <View style={styles.ViewContainer} >
-            <Button
-              onPress={() => {
-                  join();
-              }}
-              buttonText={"JOIN"}
-              backgroundColor={"#6a65f1"} />
-            <Button
-              onPress={() => {
-                  leave();
-              }}
-              buttonText={"LEAVE"}
-              backgroundColor={"red"} />
-            <Button
-              onPress={toggleMic}
-              buttonText={"TOGGLE MIC"}
-              backgroundColor={"#6a65f1"} />
-            <Button
-              onPress={toggleWebcam}
-              buttonText={"TOGGLE WEBCAM"}
-              backgroundColor={"#6a65f1"} />
+                  }}
+                >
+                  <ParticipantView participantId={item} />
+                </TouchableOpacity>
+              );
+            }}
+          />
+        ) : (
+          <View
+            style={{
+              flex: 1,
+              backgroundColor: "#F6F6FF",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <Text style={{ fontSize: 20 }}>
+              Press Join button to enter meeting.
+            </Text>
           </View>
-        ) : null}
+        )}
+      </View>
+      {visibleControls ? (
+        <View style={styles.ViewContainer}>
+          <Button
+            onPress={() => {
+              join();
+            }}
+            buttonText={"JOIN"}
+            backgroundColor={"#6a65f1"}
+          />
+          <Button
+            onPress={() => {
+              leave();
+            }}
+            buttonText={"LEAVE"}
+            backgroundColor={"red"}
+          />
+          <Button
+            onPress={toggleMic}
+            buttonText={"TOGGLE MIC"}
+            backgroundColor={"#6a65f1"}
+          />
+          <Button
+            onPress={toggleWebcam}
+            buttonText={"TOGGLE WEBCAM"}
+            backgroundColor={"#6a65f1"}
+          />
+        </View>
+      ) : null}
     </SafeAreaView>
   );
-}
+};
 ```
 
-- Now we will create the `ParticipantView` which will show individual participant's audio and video stream. Fo this we will use `useParticipant` hook.
+### Step 3 : Create ParticipantView.
+
+- Now we will create the `ParticipantView` which will show individual participant's audio and video stream. For this we will use `useParticipant` hook.
 
 ```js title="src/components/ParticipantView.js"
 import React from "react";
@@ -546,28 +548,9 @@ import {
   RTCView,
   MediaStream,
 } from "@videosdk.live/react-native-sdk";
+import { styles } from "./src/style/CustomStyle";
 
 export default function ParticipantView({ participantId }) {
-  const styles = StyleSheet.create({
-    InfoOverLayContainer: {
-      backgroundColor: "rgba(0,0,0, 0.5)",
-      position: "absolute",
-      padding: 12,
-      bottom: 0,
-      right: 0,
-      left: 0,
-      borderRadius: 8,
-      flexWrap: "wrap",
-      flexDirection: "row",
-    },
-    TextContainer: {
-      flexDirection: "row",
-      justifyContent: "center",
-      marginHorizontal: 4,
-      marginVertical: 4,
-    },
-  });
-
   //get the participant details based on participantId
   const { displayName, isLocal, webcamStream, micStream, webcamOn, micOn } =
     useParticipant(participantId, {});
@@ -580,7 +563,8 @@ export default function ParticipantView({ participantId }) {
             color: "white",
             fontWeight: "bold",
             fontSize: 16,
-          }} >
+          }}
+        >
           {fText}
         </Text>
         <Text
@@ -588,7 +572,8 @@ export default function ParticipantView({ participantId }) {
             color: "white",
             marginLeft: 4,
             fontSize: 16,
-          }} >
+          }}
+        >
           {sText}
         </Text>
       </View>
@@ -612,7 +597,8 @@ export default function ParticipantView({ participantId }) {
         borderRadius: 8,
         overflow: "hidden",
         flex: 1,
-      }} >
+      }}
+    >
       {webcamOn ? (
         <>
           <RTCView
@@ -621,7 +607,8 @@ export default function ParticipantView({ participantId }) {
             mirror={isLocal ? true : false}
             style={{
               flex: 1,
-            }} />
+            }}
+          />
           <InfoOverLay />
         </>
       ) : (
@@ -632,7 +619,8 @@ export default function ParticipantView({ participantId }) {
               flex: 1,
               justifyContent: "center",
               alignItems: "center",
-            }} >
+            }}
+          >
             <Text style={{ fontSize: 16 }}>NO MEDIA</Text>
           </View>
           <InfoOverLay />
