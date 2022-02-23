@@ -34,10 +34,14 @@ Before proceeding, ensure that your development environment meets the following 
 - Java Development Kit.
 - Android Studio 3.0 or later.
 - Android SDK API Level 16 or higher.
-- A valid VideoSDK account.
-- An active VideoSDK project with a temporary token from the [VideoSDK Dashboard](https://app.videosdk.live/api-keys). For details, see [Signup & Create API Key](/android/guide/video-and-audio-calling-api-sdk/signup-and-create-api).
-- A computer with access to the internet.
 - A mobile device that runs Android 4.1 or later.
+
+:::important
+
+One should have a videoSDK account to generate token.
+Visit videoSDK **[dashboard](https://app.videosdk.live/api-keys)** to generate token
+
+:::
 
 ## Project Setup
 
@@ -65,7 +69,7 @@ allprojects {
 ```js title="app/build.gradle"
 dependencies {
   implementation 'live.videosdk:android-sdk:0.0.7'
-  
+
   //Library to perform Network call to generate a meeting id
   implementation 'com.amitshekhar.android:android-networking:1.0.2'
 
@@ -91,7 +95,6 @@ dependencies {
 package live.videosdk.demo;
 
 import android.app.Application;
-
 import live.videosdk.rtc.android.VideoSDK;
 
 public class MainApplication extends Application {
@@ -107,15 +110,30 @@ public class MainApplication extends Application {
 
 ```xml title="AndroidManifest.xml"
 <application
-    android:name=".MainApplication"
->
+    android:name=".MainApplication" >
   <!-- ... -->
 </application>
 ```
 
+8. Project Structure should look like
+```jsx title="Project Structure"
+   app
+   ├── java
+   │    ├── packagename
+   │         ├── MainActivity.java
+   │         ├── MainApplication.java
+   │         ├── MeetingActivity.java
+   │         ├── ParticipantAdapter.java
+   ├── res
+   │    ├── layout
+   │    │    ├── activity_main.xml
+   │    │    ├── activity_meeting.xml
+   │    │    ├── item_remote_peer.xml
+```
+
 ## Implementing Meeting with VideoSDK
 
-### Creating Joining Screen
+### Step 1: Creating Joining Screen
 
 #### Creating UI
 
@@ -130,49 +148,41 @@ In `/app/res/layout/activity_main.xml`, replace the content with the following:
 ```xml title="activity_main.xml"
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:gravity="center"
-    android:orientation="vertical"
-    tools:context=".MainActivity">
-
-    <Button
-        android:id="@+id/btnCreateMeeting"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:text="Create Meeting" />
-
-    <TextView
-        style="@style/TextAppearance.AppCompat.Headline"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="OR" />
-
-
-    <com.google.android.material.textfield.TextInputLayout
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginVertical="16dp"
-        android:hint="Enter Meeting ID">
-
-        <EditText
-            android:id="@+id/etMeetingId"
-            android:layout_width="250dp"
-            android:layout_height="wrap_content"
-            android:textColor="@color/white" />
-
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <Button
-        android:id="@+id/btnJoinMeeting"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Join Meeting" />
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:gravity="center"
+  android:orientation="vertical"
+  tools:context=".MainActivity">
+  <Button
+    android:id="@+id/btnCreateMeeting"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="16dp"
+    android:text="Create Meeting" />
+  <TextView
+    style="@style/TextAppearance.AppCompat.Headline"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="OR" />
+  <com.google.android.material.textfield.TextInputLayout
+    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginVertical="16dp"
+    android:hint="Enter Meeting ID">
+    <EditText
+      android:id="@+id/etMeetingId"
+      android:layout_width="250dp"
+      android:layout_height="wrap_content"
+      android:textColor="@color/white" />
+  </com.google.android.material.textfield.TextInputLayout>
+  <Button
+    android:id="@+id/btnJoinMeeting"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Join Meeting" />
 </LinearLayout>
-
 ```
 
 #### Integrating Create Meeting API Call
@@ -187,349 +197,289 @@ String sampleToken = "";
 2. Add the `onClick` events to the Join and Create button.
 
 ```java title="MainActivity.java"
+public class MainActivity extends AppCompatActivity {
   @Override
   protected void onCreate(Bundle savedInstanceState) {
-      super.onCreate(savedInstanceState);
-      setContentView(R.layout.activity_main);
+    super.onCreate(savedInstanceState);
+    setContentView(R.layout.activity_main);
 
-      final Button btnCreate = findViewById(R.id.btnCreateMeeting);
-      final Button btnJoin = findViewById(R.id.btnJoinMeeting);
-      final EditText etMeetingId = findViewById(R.id.etMeetingId);
+    final Button btnCreate = findViewById(R.id.btnCreateMeeting);
+    final Button btnJoin = findViewById(R.id.btnJoinMeeting);
+    final EditText etMeetingId = findViewById(R.id.etMeetingId);
 
-      btnCreate.setOnClickListener(v -> {
-        //We will be creating this method in the next step
-        createMeeting(sampleToken);
-      });
+    btnCreate.setOnClickListener(v -> {
+      //We will be creating this method in the next step
+      createMeeting(sampleToken);
+    });
 
-      btnJoin.setOnClickListener(v -> {
-        Intent intent = new Intent(MainActivity.this, MeetingActivity.class);
-        intent.putExtra("token", sampleToken);
-        intent.putExtra("meetingId", etMeetingId.getText().toString());
-        startActivity(intent);
-      });
-
+    btnJoin.setOnClickListener(v -> {
+      Intent intent = new Intent(MainActivity.this, MeetingActivity.class);
+      intent.putExtra("token", sampleToken);
+      intent.putExtra("meetingId", etMeetingId.getText().toString());
+      startActivity(intent);
+    });
   }
+}
 ```
 
 3. Add the `createMeeting()` which we specified in the `onClick` event of `btnCreate`.
 
 ```java title="MainActivity.java"
-private void createMeeting(String token) {
-  //We will make an API call to VideoSDK Server to get a meetingId
-  AndroidNetworking.post("https://api.videosdk.live/v1/meetings")
-    .addHeaders("Authorization", token) //we will pass the token in the Headers
-    .build()
-    .getAsJSONObject(new JSONObjectRequestListener() {
-      @Override
-      public void onResponse(JSONObject response) {
-        try {
-          //Resposne will contain meetingId
-          final String meetingId = response.getString("meetingId");
+public class MainActivity extends AppCompatActivity {
+  //...onCreate
 
-          //Starting the MeetingActivity with recieved meetingId and our sampleToken
-          Intent intent = new Intent(MainActivity.this, MeetingAtivity.class);
-          intent.putExtra("token", sampleToken)
-          intent.putExtra("meetingId", meetingd);
-          startActivity(intent);
-        } catch (JSONException e) {
-          e.printStackTrace();
+  private void createMeeting(String token) {
+    //We will make an API call to VideoSDK Server to get a meetingId
+    AndroidNetworking.post("https://api.videosdk.live/v1/meetings")
+      .addHeaders("Authorization", token) //we will pass the token in the Headers
+      .build()
+      .getAsJSONObject(new JSONObjectRequestListener() {
+        @Override
+        public void onResponse(JSONObject response) {
+          try {
+            //Resposne will contain meetingId
+            final String meetingId = response.getString("meetingId");
+
+            //Starting the MeetingActivity with recieved meetingId and our sampleToken
+            Intent intent = new Intent(MainActivity.this, MeetingAtivity.class);
+            intent.putExtra("token", sampleToken)
+            intent.putExtra("meetingId", meetingd);
+            startActivity(intent);
+          } catch (JSONException e) {
+            e.printStackTrace();
+          }
         }
-      }
 
-      @Override
-      public void onError(ANError anError) {
-        anError.printStackTrace();
-        Toast.makeText(MainActivity.this, anError.getMessage(),
-                Toast.LENGTH_SHORT).show();
-      }
-  });
+        @Override
+        public void onError(ANError anError) {
+          anError.printStackTrace();
+          Toast.makeText(MainActivity.this, anError.getMessage(), Toast.LENGTH_SHORT).show();
+        }
+    });
+  }
 }
 ```
 
 4. Since we will be using the Camera and Audio of the device, we need to ask for runtime permissions.
 
 ```java title="MainActivity.java"
-private static final int PERMISSION_REQ_ID = 22;
+public class MainActivity extends AppCompatActivity {
+  private static final int PERMISSION_REQ_ID = 22;
 
-private static final String[] REQUESTED_PERMISSIONS = {
-  Manifest.permission.RECORD_AUDIO,
-  Manifest.permission.CAMERA
-};
+  private static final String[] REQUESTED_PERMISSIONS = {
+    Manifest.permission.RECORD_AUDIO,
+    Manifest.permission.CAMERA
+  };
 
-private boolean checkSelfPermission(String permission, int requestCode) {
-  if (ContextCompat.checkSelfPermission(this, permission) != PackageManager.PERMISSION_GRANTED) {
-    ActivityCompat.requestPermissions(this, REQUESTED_PERMISSIONS, requestCode);
-    return false;
+  private boolean checkSelfPermission(String permission, int requestCode) {
+    if (ContextCompat.checkSelfPermission(this, permission) != PackageManager.PERMISSION_GRANTED) {
+      ActivityCompat.requestPermissions(this, REQUESTED_PERMISSIONS, requestCode);
+      return false;
+    }
+    return true;
   }
-  return true;
-}
 
-@Override
-protected void onCreate(Bundle savedInstanceState) {
-  //... button listeneres
-  checkSelfPermission(REQUESTED_PERMISSIONS[0], PERMISSION_REQ_ID);
-  checkSelfPermission(REQUESTED_PERMISSIONS[1], PERMISSION_REQ_ID);
+  @Override
+  protected void onCreate(Bundle savedInstanceState) {
+    //... button listeneres
+    checkSelfPermission(REQUESTED_PERMISSIONS[0], PERMISSION_REQ_ID);
+    checkSelfPermission(REQUESTED_PERMISSIONS[1], PERMISSION_REQ_ID);
+  }
 }
 ```
 
-### Creating Meeting Screen
+### Step 2: Creating Meeting Screen
 
 Create a new Activity named `MeetingActivity.java`.
 
 #### Creating the UI for Meeting Screen
 
 In `/app/res/layout/activity_meeting.xml`, replace the content with the following:
-```xml title="activty_meeting.xml
+```xml title="activty_meeting.xml"
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:gravity="center"
+  android:orientation="vertical"
+  tools:context=".MainActivity">
+  <LinearLayout
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:gravity="center"
-    android:orientation="vertical"
-    tools:context=".MainActivity">
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="4dp"
-        android:orientation="horizontal">
-
-        <TextView
-            android:id="@+id/tvMeetingId"
-            style="@style/TextAppearance.AppCompat.Display1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Hello World!" />
-
-        <FrameLayout
-            android:layout_width="80dp"
-            android:layout_height="100dp"
-            android:layout_gravity="end">
-
-            <org.webrtc.SurfaceViewRenderer
-                android:id="@+id/svrLocal"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:visibility="visible" />
-        </FrameLayout>
-    </LinearLayout>
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvParticipants"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1" />
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-
-        <Button
-            android:id="@+id/btnMic"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginVertical="8dp"
-            android:text="Mic"/>
-
-        <Button
-            android:id="@+id/btnLeave"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginVertical="8dp"
-            android:layout_marginHorizontal="8dp"
-            android:text="Leave"/>
-
-        <Button
-            android:id="@+id/btnWebcam"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginVertical="8dp"
-            android:text="Webcam" />
-
-    </LinearLayout>
-
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="4dp"
+    android:orientation="horizontal">
+    <TextView
+      android:id="@+id/tvMeetingId"
+      style="@style/TextAppearance.AppCompat.Display1"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_weight="1"
+      android:text="Hello World!" />
+      <FrameLayout
+        android:layout_width="80dp"
+        android:layout_height="100dp"
+        android:layout_gravity="end">
+        <org.webrtc.SurfaceViewRenderer
+          android:id="@+id/svrLocal"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:visibility="visible" />
+      </FrameLayout>
+  </LinearLayout>
+  <androidx.recyclerview.widget.RecyclerView
+    android:id="@+id/rvParticipants"
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:layout_weight="1" />
+  <LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+    <Button
+      android:id="@+id/btnMic"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginVertical="8dp"
+      android:text="Mic"/>
+    <Button
+      android:id="@+id/btnLeave"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginVertical="8dp"
+      android:layout_marginHorizontal="8dp"
+      android:text="Leave"/>
+    <Button
+      android:id="@+id/btnWebcam"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginVertical="8dp"
+      android:text="Webcam" />
+  </LinearLayout>
 </LinearLayout>
 ```
 
 #### Initializing the Meeting
 
-1. Declare the variables we will be using to handle the meeting.
+We will initialize the meeting with required configurations and add `MeetingEventListener` to the meeting.
 
 ```java title="MeetingActivity.java"
-private Meeting meeting;
+public class MeetingActivity extends AppCompatActivity {
+  //Declare the variables we will be using to handle the meeting
+  private Meeting meeting;
 
-private boolean micEnabled = true;
-private boolean webcamEnabled = true;
-```
-
-2. Next step is to initialize a meeting with all the configurations.
-
-```java title="MeetingActivity.java"
-@Override
-protected void onCreate(Bundle savedInstanceState) {
-  super.onCreate(savedInstanceState);
-  setContentView(R.layout.activity_meeting);
-
-  //Get the meetingId and token from the intent data
-  final String token = getIntent().getStringExtra("token");
-  final String meetingId = getIntent().getStringExtra("meetingId");
-  final String participantName = "John Doe";
-
-  // pass the token generated from api server to configure the VideoSDK
-  VideoSDK.config(token);
-
-  // create a new meeting instance
-  meeting = VideoSDK.initMeeting(
-          MeetingActivity.this, meetingId, participantName,
-          micEnabled, webcamEnabled
-  );
-
-  //Joining the initialized Meeting
-  meeting.join();
-
-  ((TextView)findViewById(R.id.tvMeetingId)).setText(meetingId);
-}
-
-```
-
-3. We will create and add the event listeners to the meeting.
-
-```java title="MeetingActivity.java"
-
-@Override
-protected void onCreate(Bundle savedInstanceState) {
-  super.onCreate(savedInstanceState);
-  setContentView(R.layout.activity_meeting);
-
-  final String token = getIntent().getStringExtra("token");
-  final String meetingId = getIntent().getStringExtra("meetingId");
-  final String participantName = "John Doe";
-
-  // pass the token generated from api server
-  VideoSDK.config(token);
-
-  // create a new meeting instance
-  meeting = VideoSDK.initMeeting(
-          MeetingActivity.this, meetingId, participantName,
-          micEnabled, webcamEnabled
-  );
-
-  //With this we will be able to register for the events happening at the meeting.
-  meeting.addEventListener(meetingEventListener);
-
-  meeting.join();
-
-  ((TextView)findViewById(R.id.tvMeetingId)).setText(meetingId);
-
-}
-
-//Creating the MeetingEventListener
-private final MeetingEventListener meetingEventListener = new MeetingEventListener() {
-  @Override
-  public void onMeetingJoined() {
-    Log.d("#meeting", "onMeetingJoined()");
-  }
+  private boolean micEnabled = true;
+  private boolean webcamEnabled = true;
 
   @Override
-  public void onMeetingLeft() {
-    Log.d("#meeting", "onMeetingLeft()");
-    meeting = null;
-    if (!isDestroyed()) finish();
+  protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    setContentView(R.layout.activity_meeting);
+
+    final String token = getIntent().getStringExtra("token");
+    final String meetingId = getIntent().getStringExtra("meetingId");
+    final String participantName = "John Doe";
+
+    // pass the token generated from api server
+    VideoSDK.config(token);
+    // create a new meeting instance
+    meeting = VideoSDK.initMeeting(
+            MeetingActivity.this, meetingId, participantName,
+            micEnabled, webcamEnabled
+    );
+    //With this we will be able to register for the events happening at the meeting.
+    meeting.addEventListener(meetingEventListener);
+
+    meeting.join();
+    ((TextView)findViewById(R.id.tvMeetingId)).setText(meetingId);
   }
 
-  @Override
-  public void onParticipantJoined(Participant participant) {
-    Toast.makeText(MeetingActivity.this, participant.getDisplayName() + " joined",
-            Toast.LENGTH_SHORT).show();
-  }
-
-  @Override
-  public void onParticipantLeft(Participant participant) {
-    Toast.makeText(MeetingActivity.this, participant.getDisplayName() + " left",
-            Toast.LENGTH_SHORT).show();
-  }
-
-};
-```
-
-
-### Handling the Local Participant Toggles
-
-To add the local participant webcam and mic toggle options, we will set onClickListeners on the button and use `Meeting`'s method to toggle mic and webcam.
-
-```java title="MeetingActivity.java"
-@Override
-protected void onCreate(Bundle savedInstanceState) {
-  super.onCreate(savedInstanceState);
-  setContentView(R.layout.activity_meeting);
-  //...Meeting Setup is Here
-
-  // Actions
-  setActionListeners();
-}
-
-
-private void setActionListeners() {
-  // Toggle mic
-  findViewById(R.id.btnMic).setOnClickListener(view -> {
-    if (micEnabled) {
-      //This will mute the local participant's mic
-      meeting.muteMic();
-      Toast.makeText(MeetingActivity.this, "Mic Muted", Toast.LENGTH_SHORT).show();
-    } else {
-      //This will unmute the local participant's mic
-      meeting.unmuteMic();
-      Toast.makeText(MeetingActivity.this, "Mic Enabled", Toast.LENGTH_SHORT).show();
+  //Creating the MeetingEventListener
+  private final MeetingEventListener meetingEventListener = new MeetingEventListener() {
+    @Override
+    public void onMeetingJoined() {
+      Log.d("#meeting", "onMeetingJoined()");
     }
-  });
 
-  // Toggle webcam
-  findViewById(R.id.btnWebcam).setOnClickListener(view -> {
-    if (webcamEnabled) {
-      //This will disable the local participant's webcam
-      meeting.disableWebcam();
-      Toast.makeText(MeetingActivity.this, "Webcam Disabled", Toast.LENGTH_SHORT).show();
-    } else {
-      //This will enable the local participant's webcam
-      meeting.enableWebcam();
-      Toast.makeText(MeetingActivity.this, "Webcam Enabled", Toast.LENGTH_SHORT).show();
+    @Override
+    public void onMeetingLeft() {
+      Log.d("#meeting", "onMeetingLeft()");
+      meeting = null;
+      if (!isDestroyed()) finish();
     }
-  });
 
-  // Leave meeting
-  findViewById(R.id.btnLeave).setOnClickListener(view -> {
-    showLeaveOrEndDialog();
-  });
+    @Override
+    public void onParticipantJoined(Participant participant) {
+      Toast.makeText(MeetingActivity.this, participant.getDisplayName() + " joined", Toast.LENGTH_SHORT).show();
+    }
 
+    @Override
+    public void onParticipantLeft(Participant participant) {
+      Toast.makeText(MeetingActivity.this, participant.getDisplayName() + " left", Toast.LENGTH_SHORT).show();
+    }
+  };
 }
+```
 
-//Confirmation dialog to leave the meeting
-private void showLeaveOrEndDialog() {
-  new MaterialAlertDialogBuilder(MeetingActivity.this)
-    .setTitle("Leave or End meeting")
-    .setMessage("Leave from meeting or end the meeting for everyone ?")
-    .setPositiveButton("Leave", (dialog, which) -> {
+### Step 3: Handling the Participants
+
+#### Local Participant Toggles
+
+To add the local participant webcam and mic toggle options, we will set `onClickListener` on the button and use `Meeting`'s method to toggle mic and webcam.
+
+```java title="MeetingActivity.java"
+public class MeetingActivity extends AppCompatActivity {
+  @Override
+  protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    setContentView(R.layout.activity_meeting);
+    //...Meeting Setup is Here
+
+    // Actions
+    setActionListeners();
+  }
+
+  private void setActionListeners() {
+    // Toggle mic
+    findViewById(R.id.btnMic).setOnClickListener(view -> {
+      if (micEnabled) {
+        //This will mute the local participant's mic
+        meeting.muteMic();
+        Toast.makeText(MeetingActivity.this, "Mic Muted", Toast.LENGTH_SHORT).show();
+      } else {
+        //This will unmute the local participant's mic
+        meeting.unmuteMic();
+        Toast.makeText(MeetingActivity.this, "Mic Enabled", Toast.LENGTH_SHORT).show();
+      }
+    });
+
+    // Toggle webcam
+    findViewById(R.id.btnWebcam).setOnClickListener(view -> {
+      if (webcamEnabled) {
+        //This will disable the local participant's webcam
+        meeting.disableWebcam();
+        Toast.makeText(MeetingActivity.this, "Webcam Disabled", Toast.LENGTH_SHORT).show();
+      } else {
+        //This will enable the local participant's webcam
+        meeting.enableWebcam();
+        Toast.makeText(MeetingActivity.this, "Webcam Enabled", Toast.LENGTH_SHORT).show();
+      }
+    });
+
+    // Leave meeting
+    findViewById(R.id.btnLeave).setOnClickListener(view -> {
       //This will make the local participant leave the meeting
       meeting.leave();
-      finish();
-    })
-    .setNegativeButton("End", (dialog, which) -> {
-      //This will end the meeting for all participants
-      meeting.end();
-      finish();
-    })
-    .show();
+    });
+  }
 }
 ```
 
-### Handling the Participants View
+#### Handling the Participants View
 
 We will be showing the list of participants in a recycler view.
 
-1. Create a new layout for the participant view name `item_remote_peer.xml` in the `res/layout` folder.
+1. Create a new layout for the participant view named `item_remote_peer.xml` in the `res/layout` folder.
 
 ```xml title="item_remote_peer.xml"
 <?xml version="1.0" encoding="utf-8"?>
@@ -539,35 +489,28 @@ We will be showing the list of participants in a recycler view.
   android:layout_width="match_parent"
   android:layout_height="wrap_content"
   tools:layout_height="200dp">
-
   <ImageView
     android:layout_width="100dp"
     android:layout_height="100dp"
     android:layout_gravity="center"
     app:tint="@color/white" />
-
-  <!--SurfaceViewRenderer will show the participant video-->
   <org.webrtc.SurfaceViewRenderer
     android:id="@+id/svrParticipant"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:visibility="gone" />
-
   <FrameLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_gravity="bottom"
     android:background="@color/black">
-
     <TextView
       android:id="@+id/tvName"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:layout_gravity="center"
       android:textColor="@color/white" />
-
   </FrameLayout>
-
 </FrameLayout>
 ```
 
@@ -582,9 +525,7 @@ public class ParticipantAdapter extends RecyclerView.Adapter<ParticipantAdapter.
   @Override
   public PeerViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
     containerHeight = parent.getHeight();
-
-    return new PeerViewHolder(LayoutInflater.from(parent.getContext())
-            .inflate(R.layout.item_remote_peer, parent, false));
+    return new PeerViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.item_remote_peer, parent, false));
   }
 
   @Override
@@ -597,14 +538,10 @@ public class ParticipantAdapter extends RecyclerView.Adapter<ParticipantAdapter.
       return 0;
   }
 
-
   static class PeerViewHolder extends RecyclerView.ViewHolder {
     //SurfaceViewRenderer to show Video Stream
     public SurfaceViewRenderer svrParticipant;
-
-    //To show Participant Name
     public TextView tvName;
-
     public View itemView;
 
     PeerViewHolder(@NonNull View view) {
@@ -627,7 +564,6 @@ public class ParticipantAdapter extends RecyclerView.Adapter<ParticipantAdapter.
   private final List<Participant> participants = new ArrayList<>();
 
   public ParticipantAdapter(Meeting meeting) {
-
     //Adding the local participant to the list
     participants.add(meeting.getLocalParticipant());
 
@@ -635,7 +571,6 @@ public class ParticipantAdapter extends RecyclerView.Adapter<ParticipantAdapter.
     meeting.addEventListener(new MeetingEventListener() {
       @Override
       public void onParticipantJoined(Participant participant) {
-
         //When new participant joins the meeting add him to the list
         participants.add(participant);
         notifyItemInserted(participants.size() - 1);
@@ -643,7 +578,6 @@ public class ParticipantAdapter extends RecyclerView.Adapter<ParticipantAdapter.
 
       @Override
       public void onParticipantLeft(Participant participant) {
-
         //When participant leaves the meeting remove him from the list
         int pos = -1;
         for (int i = 0; i < participants.size(); i++) {
@@ -667,9 +601,7 @@ public class ParticipantAdapter extends RecyclerView.Adapter<ParticipantAdapter.
   public int getItemCount() {
     return participants.size();
   }
-
   //...
-
 }
 ```
 
@@ -693,14 +625,11 @@ public class ParticipantAdapter extends RecyclerView.Adapter<ParticipantAdapter.
       Stream stream = entry.getValue();
       if (stream.getKind().equalsIgnoreCase("video")) {
         holder.svrParticipant.setVisibility(View.VISIBLE);
-
         VideoTrack videoTrack = (VideoTrack) stream.getTrack();
         videoTrack.addSink(holder.svrParticipant);
-
         break;
       }
     }
-
     //Add Listener to the participant which will update start or stop the video stream of the participant
     participant.addEventListener(new ParticipantEventListener() {
       @Override
@@ -732,17 +661,15 @@ public class ParticipantAdapter extends RecyclerView.Adapter<ParticipantAdapter.
 ```java title="MeetingActivity.java"
 @Override
 protected void onCreate(Bundle savedInstanceState) {
-
   //Meeting Setup...
   //...
-
   final RecyclerView rvParticipants = findViewById(R.id.rvParticipants);
   rvParticipants.setLayoutManager(new GridLayoutManager(this, 2));
   rvParticipants.setAdapter(new ParticipantAdapter(meeting));
 }
 ```
 
-### Run and Test
+### Step 4: Run and Test
 
 The app is all set to test. Make sure to update the `sampleToken` in `MainActivity.java`
 
