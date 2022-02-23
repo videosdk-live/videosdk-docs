@@ -89,7 +89,7 @@ import CardLinks from '/src/components/cards/cardlinks';
           },
           {
             linkName: "Android",
-            link: "https://github.com/videosdk-live/videosdk-rtc-android-sdk-example",
+            link: "https://github.com/videosdk-live/videosdk-rtc-android-java-sdk-example",
           },
           {
             linkName: "iOS",
