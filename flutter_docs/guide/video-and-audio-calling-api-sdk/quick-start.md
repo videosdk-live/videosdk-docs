@@ -25,7 +25,7 @@ This guide will get you running with the VideoSDK video & audio calling in minut
 
 This quick start will help you integrate some of the basic functionalities that VideoSDK provides. You can check out the complete source code for this guide [here](https://github.com/videosdk-live/videosdk-rtc-flutter-sdk-example). Once you are done with the tutorial given below your app should look like this.
 
-![VideoSDK Flutter Quick Start Join Screen](/img/quick-start/flutter-join-screen.jpg) ![VideoSDK Flutter Quick Start Meeting Screen](/img/quick-start/flutter-meeting-screen.jpg) 
+![VideoSDK Flutter Quick Start Join Screen](/img/quick-start/flutter-join-screen.jpg) ![VideoSDK Flutter Quick Start Meeting Screen](/img/quick-start/flutter-meeting-screen.jpg)
 
 ## Prerequisites
 
@@ -45,7 +45,21 @@ Follow the steps to create the environment necessary to add video calls into you
 $ flutter create videosdk_flutter_quickstart
 ```
 
-2. Once the Flutter project is created, run the following command to add Flutter VideoSDK to the project.
+2. Directory Structure
+
+```js title="Directory Structure"
+root-Folder Name
+   ├── ...
+   ├── lib
+   │    ├── join_screen.dart
+        ├── main.dart
+        ├── meeting_screen.dart
+        ├── participant_grid_view.dart
+        ├── participant_tile.dart
+
+```
+
+3. Once the Flutter project is created, run the following command to add Flutter VideoSDK to the project.
 
 ```js
 $ flutter pub add videosdk
@@ -54,7 +68,7 @@ $ flutter pub add videosdk
 $ flutter pub add http
 ```
 
-3. Update the `AndroidManifest.xml` for the permissions we will be using to implement the audio and video features. You can find the `AndroidManifest.xml` file at `<project root>/android/app/src/main/AndroidManifest.xml`
+4. Update the `AndroidManifest.xml` for the permissions we will be using to implement the audio and video features. You can find the `AndroidManifest.xml` file at `<project root>/android/app/src/main/AndroidManifest.xml`
 
 ```js title="AndroidManifest.xml"
 <uses-feature android:name="android.hardware.camera" />
@@ -66,7 +80,7 @@ $ flutter pub add http
 <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
 ```
 
-4. Also you will need to set your build settings to Java 8 because the official WebRTC jar now uses static methods in `EglBase` interface. Just add this to your app-level `build.gradle`
+5. Also you will need to set your build settings to Java 8 because the official WebRTC jar now uses static methods in `EglBase` interface. Just add this to your app-level `build.gradle`
 
 ```js
 android {
@@ -78,11 +92,11 @@ android {
 }
 ```
 
-5. If necessary, in the same `build.gradle` you will need to increase `minSdkVersion` of `defaultConfig` up to `21` (currently default Flutter generator set it to `16`).
+6. If necessary, in the same `build.gradle` you will need to increase `minSdkVersion` of `defaultConfig` up to `21` (currently default Flutter generator set it to `16`).
 
 If necessary, in the same `build.gradle` you will need to increase `compileSdkVersion` and `targetSdkVersion` up to `31` (currently default Flutter generator set it to `30`).
 
-6. Let's complete the iOS Setup for the app.
+7. Let's complete the iOS Setup for the app.
 
 Add the following entries which allow your app to access the camera and microphone to your Info.plist file, located in `<project root>`/ios/Runner/Info.plist:
 
@@ -93,9 +107,9 @@ Add the following entries which allow your app to access the camera and micropho
 <string>$(PRODUCT_NAME) Microphone Usage!</string>
 ```
 
-## Implementing the VideoSDK
+## Start Writing Your Code
 
-### Creating the Joining Screen
+### Step 1 : Creating the Joining Screen
 
 The Joining screen will consist of:
 
@@ -105,7 +119,7 @@ The Joining screen will consist of:
 
 1. Create a new dart file `join_screen.dart` which will contain our Stateful Widget named `JoinScreen`.
 
-Replace the `_token` with the sample token you generated from the VideoSDK Dashboard.
+Replace the `_token` with the sample token you generated from the [VideoSDK Dashboard](https://app.videosdk.live/api-keys).
 
 ```js title="join_screen.dart"
 import 'dart:convert';
@@ -145,7 +159,7 @@ class _JoinScreenState extends State<JoinScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            
+
           ],
         ),
       ),
@@ -187,7 +201,7 @@ class _JoinScreenState extends State<JoinScreen> {
               style: _buttonStyle,
               onPressed: () async {
                 //When clicked
-                //Generate a meetingId 
+                //Generate a meetingId
                 _meetingID = await createMeeting();
 
                 //Navigatet to MeetingScreen
@@ -303,7 +317,7 @@ class MyApp extends StatelessWidget {
 }
 ```
 
-### Creating the Meeting Screen
+### Step 2 : Creating the Meeting Screen
 
 1. Create a new `meeting_screen.dart` which will have a Stateful widget named `MeetingScreen`.
 
@@ -890,7 +904,7 @@ class _ParticipantTileState extends State<ParticipantTile> {
 }
 ```
 
-### Run and Test
+## Run and Test
 
 The app is all set to test. Make sure to update the `_token` in `join_screen.dart`
 

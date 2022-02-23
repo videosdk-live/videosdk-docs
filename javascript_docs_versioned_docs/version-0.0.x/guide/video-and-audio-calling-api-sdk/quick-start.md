@@ -1,5 +1,5 @@
 ---
-title: Get Started with Video & Audio Calling Using Javascript
+title: Quick Start
 hide_title: false
 hide_table_of_contents: false
 description: Video SDK enables the opportunity to integrate native IOS, Android & Web SDKs to add live video & audio conferencing to your applications.
@@ -19,8 +19,6 @@ slug: quick-start
 import Mermaid from '@theme/Mermaid';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-
-## Quick Start
 
 VideoSDK enables the opportunity to integrate video & audio calling to Web, Android, IOS applications. it provides Programmable SDKs and REST APIs to build up scalable video conferencing applications.
 This guide will get you running with the VideoSDK video & audio calling in minutes.

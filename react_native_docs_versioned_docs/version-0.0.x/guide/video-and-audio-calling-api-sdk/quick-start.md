@@ -1,5 +1,5 @@
 ---
-title: Get Started with Video & Audio Calling Using React-Native
+title: Quick Start
 hide_title: false
 hide_table_of_contents: false
 description: Video SDK enables the opportunity to integrate native IOS, Android & Web SDKs to add live video & audio conferencing to your applications.
@@ -18,8 +18,6 @@ slug: quick-start
 
 import Mermaid from '@theme/Mermaid';
 
-## Quick Start
-
 VideoSDK enables opportunity to integrate video & audio calling to Web, Android, IOS applications. it provides Programmable SDKs and REST APIs to build up scalable video conferencing applications.
 This guide will get you running with the VideoSDK video & audio calling in minutes.
 
@@ -27,15 +25,13 @@ This guide will get you running with the VideoSDK video & audio calling in minut
 
 These quick start will help you integrate some of the basic functionalities that VideoSDK provides. You can check out the complete source code for this guide [here](https://github.com/videosdk-live/videosdk-rtc-react-native-sdk-example). Once you are done with the tutorial given below your app should look like this.
 
+<img class="react-native-screen-img" alt="React-Native-Screen" src={require('/static/img/quick-start/react-native-screen.png').default} />
+
 ## Prerequisite
 
 - Node.js v12+
 - NPM v6+ (comes installed with newer Node versions)
 - Android Studio or Xcode installed
-
-## Outcome
-
-<img class="react-native-screen-img" alt="React-Native-Screen" src={require('/static/img/quick-start/react-native-screen.png').default} />
 
 ## Project Structure
 
@@ -46,6 +42,8 @@ npx react-native init appName
 ```
 
 ```jsx title="Directory Structure"
+  root-Folder Name
+   ├──
    ...
    src
    ├── components
