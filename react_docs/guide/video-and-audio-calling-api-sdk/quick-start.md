@@ -33,7 +33,7 @@ Before proceeding, ensure that your development environment meets the following 
 
 - Have Node and NPM installed on your device.
 - A valid VideoSDK account.
-- An active VideoSDK project with a temporary token. For details, see [Signup & Create API Key](/react/guide/video-and-audio-calling-api-sdk/signup-and-create-api).
+- An active VideoSDK project with a [temporary token](https://app.videosdk.live/api-keys). For details, see [Signup & Create API Key](/react/guide/video-and-audio-calling-api-sdk/signup-and-create-api).
 
 ## Project Setup
 
@@ -80,9 +80,24 @@ $ yarn add "react-player"
 
 3. If you want to use the custom styling from this tutorial, update the `index.css` with the [css provided here](/)
 
+4. Your project structure should look like.
+
+```jsx title="Project Structure"
+   root
+   ├── node_modules
+   ├── public
+   ├── src
+   │    ├── api.js
+   │    ├── App.js
+   │    ├── App.css
+   │    ├── index.js
+   │    ├── index.js
+   .    .
+```
+
 ## Implementing the VideoSDK
 
-### Creating the Joining Screen
+### Step 1: Creating the Joining Screen
 
 The Joining screen will consist of:
 
@@ -90,31 +105,24 @@ The Joining screen will consist of:
 - TextField for Meeting ID - This text field will contain the meeting ID you want to join.
 - Join Button - This button will join the meeting with meetingId you provided.
 
-1. To create the basic UI, replace the `App()` in the `App.js` file with the following code
+1. To create the basic UI, add `JoinScreen()` in the `App.js` file with the following code
 
-```jsx title="App.js"
+```jsx title="App.js" 
 function App() {
-  return (
-    <div className="App">
-      <button onClick={() => getMeetingId({ token })} className="button">
-        Create Meeting
-      </button>
-      <br />
-      <br />
-      <label htmlFor="meetingId">Meeting Id: </label>
-      <input type="text" id="meetingId" name="meetingId" />
-      <br />
-      <br />
-      <button
-        onClick={() => {
-          setMeetingId(document.getElementById("meetingId").value);
-        }}
-        className="button"
-      >
-        Join Meeting
-      </button>
-    </div>
-  );
+  function JoinScreen(){
+    return <>
+        <h3>Join Screen</h3>
+        <button onClick={async () => setMeetingId( await getMeetingId({ token }))} className="button">Create Meeting</button>
+        <br /><br />
+        <label htmlFor="meetingId">Meeting Id: </label>
+        <input type="text" id="meetingId" name="meetingId" /><br /><br />
+        <button onClick={() => {
+          setMeetingId(document.getElementById("meetingId").value)
+        }} className="button">Join Meeting</button>
+      </>
+  }
+
+  return <JoinScreen/>;
 }
 ```
 
@@ -170,9 +178,7 @@ const getMeetingId = async ({ token }) => {
 };
 ```
 
-4. With this join screen is ready to create and join a meeting with the respective meeting id and sample token.
-
-### Initalizing the Meeting
+### Step 2: Create Meeting View
 
 Our React JS SDK provides two important hooks API:
 
@@ -210,25 +216,7 @@ function App() {
           ></MeetingView>
         </MeetingProvider>
       ) : (
-        <>
-          <button onClick={() => getMeetingId({ token })} className="button">
-            Create Meeting
-          </button>
-          <br />
-          <br />
-          <label htmlFor="meetingId">Meeting Id: </label>
-          <input type="text" id="meetingId" name="meetingId" />
-          <br />
-          <br />
-          <button
-            onClick={() => {
-              setMeetingId(document.getElementById("meetingId").value);
-            }}
-            className="button"
-          >
-            Join Meeting
-          </button>
-        </>
+        <JoinScreen/>
       )}
     </div>
   );
@@ -237,51 +225,11 @@ function App() {
 
 2. Create a new `MeetingView` which will be responsible for showing the participants and other meeting-related operations. We will pass a method to this which will reset the meeting id in the `App()`
 
-`MeetingView` contains three buttons each performing the leave, toggle mic, and toggle webcam operation.
-
-It also contains `ParticipantsView` which will show all the participants present in the meeting.
-
-With the below code you will have a basic design ready for the layout.
-
-```jsx title = App.js
-//...function App(){}
-
-const MeetingView = ({ onMeetingLeave }) => {
-  return (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        backgroundColor: "#D6E9FE",
-      }}
-    >
-      <div>
-        <button className={"button red"}>LEAVE</button>
-        <button className={"button blue"}>toggleMic</button>
-        <button className={"button blue"}>toggleWebcam</button>
-        <h1>Meeting id is : {meetingId}</h1>
-        <div style={{ display: "flex", flex: 1 }}>
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              position: "relative",
-              flex: 1,
-              overflowY: "scroll",
-            }}
-          >
-            {/*<ParticipantsView />*/}
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-};
-```
-
-3. We will use the `useMeeting` hook to get the callbacks for the events happening related to the meeting.
+- We will use the `useMeeting` hook to get the callbacks for the events happening related to the meeting.
 
 - We will create 4 callback functions that will be triggered on the event happens.
+
+- And pass the callback functions to the `useMeeting` hook and also get the methods to toggle mic and webcam and leave the meeting.
 
 ```jsx title = App.js
 //...function App(){}
@@ -304,18 +252,6 @@ const MeetingView = ({ onMeetingLeave }) => {
     onMeetingLeave();
   }
 
-  //...return
-};
-```
-
-- We will pass the callback functions to the `useMeeting` hook and also get the methods to toggle mic and webcam and leave the meeting.
-
-```jsx title = App.js
-//...function App(){}
-
-const MeetingView = ({ onMeetingLeave }) => {
-  //...callback functions
-
   // Get Meeting object using useMeeting hook
   const { meetingId, leave, toggleMic, toggleWebcam } = useMeeting({
     onParticipantJoined,
@@ -328,16 +264,16 @@ const MeetingView = ({ onMeetingLeave }) => {
 };
 ```
 
-- Now we will set the `onClick` event for our buttons.
+3. `MeetingView` contains three buttons each performing the leave, toggle mic, and toggle webcam operation.
+
+It also contains `ParticipantsView` which will show all the participants present in the meeting.
+
+With the below code you will have a basic design ready for the layout.
 
 ```jsx title = App.js
 //...function App(){}
 
 const MeetingView = ({ onMeetingLeave }) => {
-  //...callback functions
-
-  //...useMeeting Hook
-
   return (
     <div
       style={{
@@ -347,16 +283,9 @@ const MeetingView = ({ onMeetingLeave }) => {
       }}
     >
       <div>
-        {/*Update this buttons*/}
-        <button className={"button red"} onClick={leave}>
-          LEAVE
-        </button>
-        <button className={"button blue"} onClick={toggleMic}>
-          toggleMic
-        </button>
-        <button className={"button blue"} onClick={toggleWebcam}>
-          toggleWebcam
-        </button>
+        <button className={"button"} onClick={leave}>LEAVE</button>
+        <button className={"button"} onClick={toggleMic}> toggleMic</button>
+        <button className={"button"} onClick={toggleWebcam}>toggleWebcam</button>
         <h1>Meeting id is : {meetingId}</h1>
         <div style={{ display: "flex", flex: 1 }}>
           <div
@@ -366,8 +295,7 @@ const MeetingView = ({ onMeetingLeave }) => {
               position: "relative",
               flex: 1,
               overflowY: "scroll",
-            }}
-          >
+            }} >
             <ParticipantsView />
           </div>
         </div>
@@ -377,7 +305,7 @@ const MeetingView = ({ onMeetingLeave }) => {
 };
 ```
 
-3. `MeetingView` is all set. Let's create the `ParticipantsView` which will show all the participants in the meeting.
+4. `MeetingView` is all set. Let's create the `ParticipantsView` which will show all the participants in the meeting.
 
 - Here we use the `useMeeting` hook to get the participants list and then map it to `ParticipantView`
 
@@ -409,7 +337,7 @@ const ParticipantsView = () => {
 };
 ```
 
-4. We will create the `ParticipantView` which will show each participant's details.
+5. We will create the `ParticipantView` which will show each participant's details.
 
 - We will start with creating the empty `<div>`
 
@@ -471,7 +399,7 @@ const ParticipantView = ({ participantId }) => {
 };
 ```
 
-- Next, we will add the `ReactPlayer`
+- Next, we will add the `ReactPlayer` and Participant Details
 
 ```jsx
 const ParticipantView = ({ participantId }) => {
@@ -492,9 +420,7 @@ const ParticipantView = ({ participantId }) => {
       <audio ref={micRef} autoPlay muted={isLocal} />
 
       <div className="video-container">
-        <div
-          style={{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0 }}
-        >
+        <div style={{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0 }} >
           <ReactPlayer
             height={"100%"}
             width={"100%"}
@@ -502,75 +428,11 @@ const ParticipantView = ({ participantId }) => {
             playsInline
             playing={true}
             className="video"
-            autoPlay
-          />
-          <div
-            style={{
-              position: "absolute",
-              top: "8px",
-              right: "8px",
-            }}
-          >
-            <p
-              style={{
+            autoPlay />
+          <div style={{position: "absolute", top: "8px", right: "8px", }}>
+            <p style={{
                 color: webcamOn ? "green" : "red",
-                fontSize: 16,
-                fontWeight: "bold",
-                opacity: 1,
-              }}
-            >
-              WEB CAM
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-};
-```
-
-- Now we will show the details of the participants.
-
-```jsx
-const ParticipantView = ({ participantId }) => {
-  //...useParticipant hook
-
-  //...mic stream setup
-
-  //...webcam stream setup
-
-  return (
-    <div className="participant-view">
-      <audio ref={micRef} autoPlay muted={isLocal} />
-
-      <div className="video-container">
-        <div
-          style={{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0 }}
-        >
-          <ReactPlayer
-            height={"100%"}
-            width={"100%"}
-            url={mediaStream}
-            playsInline
-            playing={true}
-            className="video"
-            autoPlay
-          />
-          <div
-            style={{
-              position: "absolute",
-              top: "8px",
-              right: "8px",
-            }}
-          >
-            <p
-              style={{
-                color: webcamOn ? "green" : "red",
-                fontSize: 16,
-                fontWeight: "bold",
-                opacity: 1,
-              }}
-            >
+                fontSize: 16, fontWeight: "bold", opacity: 1, }} >
               WEB CAM
             </p>
           </div>
@@ -598,7 +460,7 @@ const ParticipantView = ({ participantId }) => {
 };
 ```
 
-### Run and Test
+### Step 3: Run and Test
 
 The app is ready to create and join a meeting. Make sure to replace the `sampleToken` from the VideoSDK dashboard into the `App.js`.
 
