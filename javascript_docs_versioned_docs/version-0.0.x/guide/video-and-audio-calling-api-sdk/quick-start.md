@@ -47,6 +47,11 @@ Visit videoSDK **[dashboard](https://app.videosdk.live/api-keys)** to generate t
 
 :::
 
+## Outcome
+
+![JS-Join Screen](/img/quick-start/js-join-screen.PNG)
+![JS-Grid Screen](/img/quick-start/js-grid-screen.PNG)
+
 ## Project Structure
 
 1. Create one empty project using **mkdir folder_name** on your preferable location.
