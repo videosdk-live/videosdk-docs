@@ -1354,6 +1354,9 @@ html[data-theme="dark"] .discord {
   .docSidebarContainer_node_modules-\@docusaurus-theme-classic-lib-next-theme-DocPage-styles-module {
     border-right: none !important;
   }
+  div[class^="docSidebarContainer_"]{
+    border-right: none !important;
+  }
 }
 
 .react-native-screen-img {
