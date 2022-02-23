@@ -40,7 +40,7 @@ This quick start will help you integrate some of the basic functionalities that 
 - Node.js v12+
 - NPM v6+ (comes pre-installed with newer Node versions)
 
-:::info
+:::important
 
 One should have a videoSDK account to generate token.
 Visit videoSDK **[dashboard](https://app.videosdk.live/api-keys)** to generate token
