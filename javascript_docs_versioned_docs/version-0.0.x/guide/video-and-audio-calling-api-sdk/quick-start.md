@@ -464,6 +464,12 @@ function addDomEvents() {
 }
 ```
 
+:::note
+
+Stuck anywhere? Check out this [example code](https://github.com/videosdk-live/videosdk-rtc-javascript-sdk-example) on GitHub
+
+:::
+
 ## Run your code
 
 Once you are all set with the steps mentioned above run your application as mentioned in the code-block below.
