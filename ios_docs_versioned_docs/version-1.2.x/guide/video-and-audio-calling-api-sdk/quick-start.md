@@ -25,6 +25,9 @@ This guide will get you running with the VideoSDK video & audio calling in minut
 
 These quick start will help you integrate some of the basic functionalities that VideoSDK provides. You can check out the complete source code for this guide [here](/). Once you are done with the tutorial given below your app should look like this.
 
+![VideoSDK iOS Quick Start Join Screen](/img/quick-start/ios-join-screen.png) ![VideoSDK iOS Quick Start Meeting Screen](/img/quick-start/ios-meeting-screen.png)
+
+
 ## Prerequisites
 
 Before proceeding, ensure that your development environment meets the following requirements:
@@ -71,14 +74,10 @@ $ pod 'VideoSDKRTC', :git => 'https://github.com/videosdk-live/videosdk-rtc-ios-
 
 ### Creating Joining Screen
 
-#### Creating UI
-
 The Joining screen will consist of:
 1. Create Button - This button will create a new meeting for you.
 2. TextField for Meeting ID - This textfield will contain the meeting ID you want to join.
 3. Join Button - This buttom will join the meeting with which the you will be joined.
-
---- JOinScreen Ui
 
 1. Create a new `APIService.swift` file which will include the API call for creating the meeting. Update your token in the `AUTH_TOKEN`.
 
@@ -143,6 +142,13 @@ meeting = VideoSDK.initMeeting(
     micEnabled: micEnabled, // optional, default: true
     webcamEnabled: videoEnabled // optional, default: true
 )
+
+ // listener
+meeting?.addEventListener(self)
+
+// join
+meeting?.join()
+
 ```
 
 3. Once our meeting is initialized we will add the `MeetingEventListener`
