@@ -45,11 +45,6 @@ Visit videoSDK **[dashboard](https://app.videosdk.live/api-keys)** to generate t
 
 :::
 
-## Outcome
-
-![JS-Join Screen](/img/quick-start/js-join-screen.png)
-![JS-Grid Screen](/img/quick-start/js-grid-screen.png)
-
 ## Project Structure
 
 1. Create one empty project using `mkdir folder_name` on your preferable location.
@@ -130,32 +125,28 @@ Refer assets/index.css file from [here](/) for basic css effects
     <!--join-screen-->
     <div
       id="join-screen"
-      class="flex flex-column align-items-center justify-content-center h-100"
+      class="flex flex-row align-items-center justify-content-center h-100"
     >
-      <div class="mb-4">
-        <button
-          class="btn btn-primary"
-          id="btnCreateMeeting"
-          onclick="meetingHandler(true)"
-        >
-          Create Meeting
-        </button>
-      </div>
-      <h4 class="text-white">OR</h4>
-      <div class="d-flex flex-row">
-        <input
-          type="text"
-          id="txtMeetingCode"
-          placeholder="Enter Meeting Code .."
-        />
-        <button
-          id="btnJoinMeeting"
-          onclick="meetingHandler(false)"
-          class="btn btn-primary"
-        >
-          Join
-        </button>
-      </div>
+      <button
+        class="btn btn-primary"
+        id="btnCreateMeeting"
+        onclick="meetingHandler(true)"
+      >
+        New Meeting
+      </button>
+
+      <input
+        type="text"
+        id="txtMeetingCode"
+        placeholder="Enter Meeting Code .."
+      />
+      <button
+        id="btnJoinMeeting"
+        onclick="meetingHandler(false)"
+        class="btn btn-primary"
+      >
+        Join
+      </button>
     </div>
     <!--grid-screen-->
     ...
@@ -219,10 +210,9 @@ const API_BASE_URL = "https://api.videosdk.live";
 let token = "";
 
 //handlers
-async function tokenGeneration() {
+async function tokenValidation() {
   if (TOKEN != "") {
     token = TOKEN;
-    console.log("token : ", token);
   } else {
     alert("Please Provide Your Token First");
   }
@@ -238,8 +228,17 @@ let meetingId = "";
 
 async function meetingHandler(newMeeting) {
   let joinMeetingName = "JS-SDK";
-  console.log(newMeeting);
-  tokenGeneration();
+
+  //request permission for accessing media(mic/webcam)
+  navigator.mediaDevices
+    .getUserMedia({
+      video: true,
+      audio: true,
+    })
+    .then((stream) => {});
+
+  //token validation
+  tokenValidation();
   if (newMeeting) {
     const url = `${API_BASE_URL}/api/meetings`;
     const options = {
@@ -255,6 +254,7 @@ async function meetingHandler(newMeeting) {
     document.getElementById("grid-screen").style.display = "inline-block";
     startMeeting(token, meetingId, joinMeetingName);
   } else {
+    meetingId = document.getElementById("txtMeetingCode").value;
     document.getElementById("lblMeetingId").value = meetingId;
     document.getElementById("home-screen").style.display = "none";
     document.getElementById("grid-screen").style.display = "inline-block";
@@ -263,20 +263,15 @@ async function meetingHandler(newMeeting) {
 }
 ```
 
-- so far you have created a meeting and to start a meeting;startMeeting handler is there.
+- so far you have created a meeting and to start a meeting;`startMeeting handler` is there.
 
 ```js title="startMeeting index.js"
 //DOM elements
 let btnCreateMeeting = document.getElementById("btnCreateMeeting");
 let btnJoinMeeting = document.getElementById("btnJoinMeeting");
 let videoContainer = document.getElementById("videoContainer");
-let participantsList = document.getElementById("participantsList");
 let btnToggleMic = document.getElementById("btnToggleMic");
 let btnToggleWebCam = document.getElementById("btnToggleWebCam");
-
-//variables
-let totalParticipant = 0;
-let participants = [];
 
 function startMeeting(token, meetingId, name) {
   // Meeting config
@@ -298,36 +293,7 @@ function startMeeting(token, meetingId, name) {
   participants = meeting.participants;
 
   //create Local Participant
-  if (totalParticipant == 0) {
-    createLocalParticipant();
-  }
-
-  //remote participant joined
-  meeting.on("participant-joined", (participant) => {
-    let videoElement = createVideoElement(participant.id);
-    let audioElement = createAudioElement(participant.id);
-
-    participant.on("stream-enabled", (stream) => {
-      setTrack(stream, videoElement, audioElement, participant.id);
-    });
-    videoContainer.appendChild(videoElement);
-    videoContainer.appendChild(audioElement);
-    addParticipantToList({
-      id: participant.id,
-      displayName: participant.displayName,
-    });
-  });
-
-  //remote participants left
-  meeting.on("participant-left", (participant) => {
-    let vElement = document.getElementById(`v-${participant.id}`);
-    vElement.parentNode.removeChild(vElement);
-    let aElement = document.getElementById(`a-${participant.id}`);
-    aElement.parentNode.removeChild(aElement);
-    participants = new Map(meeting.participants);
-    //remove it from participant list participantId;
-    document.getElementById(`p-${participant.id}`).remove();
-  });
+  createParticipant(meeting.localParticipant.id);
 
   //local participant stream-enabled
   meeting.localParticipant.on("stream-enabled", (stream) => {
@@ -339,73 +305,109 @@ function startMeeting(token, meetingId, name) {
     );
   });
 
+  //remote participant joined
+  meeting.on("participant-joined", (participant) => {...});
+
+  //remote participants left
+  meeting.on("participant-left", (participant) => {...});
+
   addDomEvents();
 }
 
-//createLocalParticipant
-function createLocalParticipant() {
-  navigator.mediaDevices
-    .getUserMedia({
-      video: true,
-      // audio: true,
-    })
-    .then((stream) => {
-      joinPageWebcam.srcObject = stream;
-      joinPageWebcam.play();
-    });
+function setTrack(stream, videoElem, audioElement, id) {...}
+function setTrack(stream, videoElem, audioElement, id) {...}
+```
 
-  localParticipant = createVideoElement(meeting.localParticipant.id);
-  localParticipantAudio = createAudioElement(meeting.localParticipant.id);
-  addParticipantToList({
-    id: meeting.localParticipant.id,
-    displayName: meeting.localParticipant.displayName,
-  });
-  videoContainer.appendChild(localParticipant);
+- Write a method createParticipant which will create both local and remote participants.
+
+```js title=index.js
+...
+//createParticipant
+function createParticipant(participant) {
+
+  //create videoElem of participant
+  let participantVideo = createVideoElement(
+    participant.id,
+    participant.displayName
+  );
+
+  //create audioEle of participant
+  let participantAudio = createAudioElement(participant.id);
+
+  //append video and audio of participant to videoContainer div
+  videoContainer.appendChild(participantVideo);
+  videoContainer.appendChild(participantAudio);
 }
 
 // creating video element
-function createVideoElement(pId) {
+function createVideoElement(id, name) {
+  let videoFrame = document.createElement("div");
+  videoFrame.classList.add("video-frame");
+
+  //create video
   let videoElement = document.createElement("video");
-  videoElement.classList.add("video-frame");
-  videoElement.setAttribute("id", `v-${pId}`);
-  return videoElement;
+  videoElement.classList.add("video");
+  videoElement.setAttribute("id", `v-${id}`);
+  videoElement.setAttribute("autoplay", true);
+  videoFrame.appendChild(videoElement);
+
+  //add overlay
+  let overlay = document.createElement("div");
+  overlay.classList.add("overlay");
+  overlay.innerHTML = `Name : ${name}`;
+
+  videoFrame.appendChild(overlay);
+  return videoFrame;
 }
 
 // creating audio element
 function createAudioElement(pId) {
   let audioElement = document.createElement("audio");
-  audioElement.setAttribute("autoPlay", "false");
-  audioElement.setAttribute("playsInline", "true");
+  audioElement.setAttribute("autoPlay", false);
+  audioElement.setAttribute("playsInline", "false");
   audioElement.setAttribute("controls", "false");
   audioElement.setAttribute("id", `a-${pId}`);
+  audioElement.style.display = "none";
   return audioElement;
 }
+```
 
-//add participant to list
-function addParticipantToList({ id, displayName }) {
-  totalParticipant++;
-  let participantTemplate = document.createElement("div");
-  //refer .participant from index.css
-  participantTemplate.className = "participant";
+- `participant-joined` event is called when other participants join the meeting and `participant-left` event is called when participants leave the meeting.
 
-  //icon
-  let colIcon = document.createElement("div");
-  colIcon.className = "col-2";
-  colIcon.innerHTML = "Icon";
-  participantTemplate.appendChild(colIcon);
+```js title="index.js"
+function startMeeting(token, meetingId, name) {
+  ...
 
-  //name
-  let content = document.createElement("div");
-  colIcon.className = "col-3";
-  colIcon.innerHTML = `${displayName}`;
-  colIcon.style.color = "white";
-  participantTemplate.appendChild(content);
-  // participants.push({ id, displayName });
+  //participant joined
+  meeting.on("participant-joined", (participant) => {
+    createParticipant(participant);
+    participant.on("stream-enabled", (stream) => {
+      console.log("Stream ENable : ", stream);
+      setTrack(
+        stream,
+        document.querySelector(`#v-${participant.id}`),
+        document.getElementById(`a-${participant.id}`),
+        participant.id
+      );
+    });
+  });
 
-  participantsList.appendChild(participantTemplate);
-  participantsList.appendChild(document.createElement("br"));
+  // participants left
+  meeting.on("participant-left", (participant) => {
+    let vElement = document.querySelector(`#v-${participant.id}`);
+    vElement.parentNode.removeChild(vElement);
+    let aElement = document.getElementById(`a-${participant.id}`);
+    aElement.parentNode.removeChild(aElement);
+    participants = new Map(meeting.participants);
+    //remove it from participant list participantId;
+    document.getElementById(`p-${participant.id}`).remove();
+  });
 }
+```
 
+- To manage streams (audio/video) of any participant , create `setTrack handler`.
+
+```js title="index.js"
 function setTrack(stream, videoElem, audioElement, id) {
   if (stream.kind == "video") {
     const mediaStream = new MediaStream();
@@ -429,10 +431,9 @@ function setTrack(stream, videoElem, audioElement, id) {
 }
 ```
 
-- Add dom elements events to your project for toggling mic and webcam
+- To manage some common functionalities such as toggleMic and toggleWebcam add dom element events as shown below.
 
-```js title="Dom elements events in index.js"
-//events of DOM elements
+```js title="index.js"
 function addDomEvents() {
   btnToggleMic.addEventListener("click", () => {
     if (btnToggleMic.innerText == "Unmute Mic") {
@@ -455,12 +456,19 @@ function addDomEvents() {
   });
 
   btnLeaveMeeting.addEventListener("click", async () => {
+    // leavemeeting
     meeting.leave();
-    document.getElementById("home-screen").style.display = "inline-block";
+    document.getElementById("join-screen").style.display = "inline-block";
     document.getElementById("grid-screen").style.display = "none";
   });
 }
 ```
+
+:::note
+
+Stuck anywhere? Check out this [example code](https://github.com/videosdk-live/videosdk-rtc-javascript-sdk-example) on GitHub
+
+:::
 
 ## Run your code
 
@@ -469,6 +477,11 @@ Once you are all set with the steps mentioned above run your application as ment
 ```bash
 live-server --port=8000
 ```
+
+#### **It's outcome will look like this**
+
+![JS-Join Screen](/img/quick-start/js-join-screen.PNG)
+![JS-Grid Screen](/img/quick-start/js-grid-screen.PNG)
 
 :::caution
 For this tutorial purpose, we used a static token to initialize and join the meeting. But for the production version of the app, we recommend you use an Authentication Server that will generate and pass on the token to the Client App. For more details checkout [how to do server setup](/javascript/guide/video-and-audio-calling-api-sdk/server-setup).
