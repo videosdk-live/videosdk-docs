@@ -368,6 +368,7 @@ function createVideoElement(pId) {
   let videoElement = document.createElement("video");
   videoElement.classList.add("video-frame");
   videoElement.setAttribute("id", `v-${pId}`);
+  videoElement.setAttribute("autoplay", true);
   return videoElement;
 }
 
