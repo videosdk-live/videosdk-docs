@@ -21,13 +21,6 @@ VideoSDK enables opportunity to integrate video & audio calling to Web, Android,
 
 This guide will get you running with the VideoSDK video & audio calling in minutes.
 
-## Sample Project
-
-These quick start will help you integrate some of the basic functionalities that VideoSDK provides. You can check out the complete source code for this guide [here](/). Once you are done with the tutorial given below your app should look like this.
-
-![VideoSDK iOS Quick Start Join Screen](/img/quick-start/ios-join-screen.png) ![VideoSDK iOS Quick Start Meeting Screen](/img/quick-start/ios-meeting-screen.png)
-
-
 ## Prerequisites
 
 Before proceeding, ensure that your development environment meets the following requirements:
@@ -339,9 +332,19 @@ extension MeetingViewController: ParticipantEventListener {
 }
 ```
 
+:::note
+
+Stuck anywhere? Check out this [example code](https://github.com/videosdk-live/videosdk-rtc-ios-sdk-example) on GitHub
+
+:::
+
 ### Run and Test
 
 The app is all set to test. Make sure to update the `AUTH_TOKEN` in `APIService`
+
+Your app should look like this after the implementation.
+
+![VideoSDK iOS Quick Start Join Screen](/img/quick-start/ios-join-screen.png) ![VideoSDK iOS Quick Start Meeting Screen](/img/quick-start/ios-meeting-screen.png)
 
 :::caution
 For this tutorial purpose we used a static token intialize and join the meeting. But for the production version of the app, we recommend you use an Authentication Server which will generate and pass on the token to the Client App. For more details checkout [how to do server setup](/ios/guide/video-and-audio-calling-api-sdk/server-setup).

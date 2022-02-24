@@ -94,7 +94,7 @@ $ yarn add "react-player"
    .    .
 ```
 
-## Implementing the VideoSDK
+## Start Writing Your Code
 
 ### Step 1: Creating the Joining Screen
 

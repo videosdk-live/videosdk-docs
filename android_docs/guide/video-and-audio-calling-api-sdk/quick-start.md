@@ -125,7 +125,7 @@ public class MainApplication extends Application {
    │    │    ├── item_remote_peer.xml
 ```
 
-## Implementing Meeting with VideoSDK
+## Start Writing Your Code
 
 ### Step 1: Creating Joining Screen
 
