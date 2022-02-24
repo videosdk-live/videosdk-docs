@@ -279,7 +279,7 @@ export const getToken = async () => {
 - Now we will add `createMeeting()` method to `api.js` which will generate a new `meetingId` for you.
 
 ```js title="api.js"
-const API_BASE_URL = "https://api.zujonow.com";
+const API_BASE_URL = "https://api.videosdk.live";
 
 export const createMeeting = async ({ token }) => {
   const url = `${API_BASE_URL}/api/meetings`;
