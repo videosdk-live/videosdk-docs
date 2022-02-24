@@ -21,12 +21,6 @@ VideoSDK enables the opportunity to integrate video & audio calling to Web, Andr
 
 This guide will get you running with the VideoSDK video & audio calling in minutes.
 
-## Sample Project
-
-This quick start will help you integrate some of the basic functionalities that VideoSDK provides. You can check out the complete source code for this guide [here](https://github.com/videosdk-live/videosdk-rtc-react-sdk-example). Once you are done with the tutorial given below your app should look like this.
-
-![VideoSDK React JS Quick Start Join Screen](/img/quick-start/react-join-screen.png) ![VideoSDK React JS Quick Start Meeting Screen](/img/quick-start/react-meeting-screen.png)
-
 ## Prerequisites
 
 Before proceeding, ensure that your development environment meets the following requirements:
@@ -452,10 +446,19 @@ const ParticipantView = ({ participantId }) => {
   );
 };
 ```
+:::note
+
+Stuck anywhere? Check out this [example code](https://github.com/videosdk-live/videosdk-rtc-react-sdk-example) on GitHub
+
+:::
 
 ### Step 3: Run and Test
 
 The app is ready to create and join a meeting. Make sure to replace the `sampleToken` from the VideoSDK dashboard into the `App.js`.
+
+Your app should look like this after the implementation.
+
+![VideoSDK React JS Quick Start Join Screen](/img/quick-start/react-join-screen.png) ![VideoSDK React JS Quick Start Meeting Screen](/img/quick-start/react-meeting-screen.png)
 
 :::caution
 For the tutorial purpose, we used a static token to initialize and join the meeting. But for the production version of the app, we recommend you use an Authentication Server that will generate and pass on the token to the Client App. For more details checkout [how to do server setup](/react/guide/video-and-audio-calling-api-sdk/server-setup).

@@ -21,12 +21,6 @@ VideoSDK enables the opportunity to integrate video & audio calling to Web, Andr
 
 This guide will get you running with the VideoSDK video & audio calling in minutes.
 
-## Sample Project
-
-This quick start will help you integrate some of the basic functionalities that VideoSDK provides. You can check out the complete source code for this guide [here](https://github.com/videosdk-live/videosdk-rtc-ios-sdk-example). Once you are done with the tutorial given below your app should look like this.
-
-![VideoSDK Android Quick Start Join Screen](/img/quick-start/android-join-screen.jpg) ![VideoSDK Android Quick Start Meeting Screen](/img/quick-start/android-meeting-screen.jpg)
-
 ## Prerequisites
 
 Before proceeding, ensure that your development environment meets the following requirements:
@@ -669,9 +663,19 @@ protected void onCreate(Bundle savedInstanceState) {
 }
 ```
 
+:::note
+
+Stuck anywhere? Check out this [example code](https://github.com/videosdk-live/videosdk-rtc-android-java-sdk-example) on GitHub
+
+:::
+
 ### Step 4: Run and Test
 
 The app is all set to test. Make sure to update the `sampleToken` in `MainActivity.java`
+
+Your app should look like this after the implementation.
+
+![VideoSDK Android Quick Start Join Screen](/img/quick-start/android-join-screen.jpg) ![VideoSDK Android Quick Start Meeting Screen](/img/quick-start/android-meeting-screen.jpg)
 
 :::caution
 For the tutorial purpose, we used a static token to initialize and join the meeting. But for the production version of the app, we recommend you use an Authentication Server that will generate and pass on the token to the Client App. For more details checkout [how to do server setup](/android/guide/video-and-audio-calling-api-sdk/server-setup).

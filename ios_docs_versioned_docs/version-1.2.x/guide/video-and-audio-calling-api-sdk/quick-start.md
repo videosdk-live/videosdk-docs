@@ -218,8 +218,6 @@ extension MeetingViewController: MeetingEventListener {
 }
 ```
 
--- add participants view 
-
 4. Now we will add the `ParticipantEventListener` to listen for the chnages in the stream of the participants.
 
 ```js
