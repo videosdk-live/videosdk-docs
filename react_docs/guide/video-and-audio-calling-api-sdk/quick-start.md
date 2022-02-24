@@ -21,12 +21,6 @@ VideoSDK enables the opportunity to integrate video & audio calling to Web, Andr
 
 This guide will get you running with the VideoSDK video & audio calling in minutes.
 
-## Sample Project
-
-This quick start will help you integrate some of the basic functionalities that VideoSDK provides. You can check out the complete source code for this guide [here](https://github.com/videosdk-live/videosdk-rtc-react-sdk-example). Once you are done with the tutorial given below your app should look like this.
-
-![VideoSDK React JS Quick Start Join Screen](/img/quick-start/react-join-screen.png) ![VideoSDK React JS Quick Start Meeting Screen](/img/quick-start/react-meeting-screen.png)
-
 ## Prerequisites
 
 Before proceeding, ensure that your development environment meets the following requirements:
@@ -116,15 +110,17 @@ The Joining screen will consist of:
 function App() {
   function JoinScreen(){
     return <>
-        <h3>Join Screen</h3>
-        <button onClick={async () => setMeetingId( await getMeetingId({ token }))} className="button">Create Meeting</button>
-        <br /><br />
-        <label htmlFor="meetingId">Meeting Id: </label>
-        <input type="text" id="meetingId" name="meetingId" /><br /><br />
-        <button onClick={() => {
-          setMeetingId(document.getElementById("meetingId").value)
-        }} className="button">Join Meeting</button>
-      </>
+      <button onClick={async () => setMeetingId( await getMeetingId({ token }))} className="button">Create Meeting</button>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <input type="text" id="meetingId" name="meetingId" placeholder='Enter MeetingId'/>&nbsp;
+      <button onClick={() => {
+        if(!document.getElementById("meetingId").value){
+          alert("Meeting Id is required");
+          return;
+        }
+        setMeetingId(document.getElementById("meetingId").value)
+      }} className="button" >Join</button>
+    </>
   }
 
   return <JoinScreen/>;
@@ -283,13 +279,12 @@ const MeetingView = ({ onMeetingLeave }) => {
     <div
       style={{
         display: "flex",
-        flexDirection: "column",
-        backgroundColor: "#D6E9FE",
+        flexDirection: "column"
       }}
     >
       <div>
-        <button className={"button"} onClick={leave}>LEAVE</button>
-        <button className={"button"} onClick={toggleMic}> toggleMic</button>
+        <button className={"button"} onClick={leave}>LEAVE</button>&nbsp;&nbsp;
+        <button className={"button"} onClick={toggleMic}> toggleMic</button>&nbsp;&nbsp;
         <button className={"button"} onClick={toggleWebcam}>toggleWebcam</button>
         <h1>Meeting id is : {meetingId}</h1>
         <div style={{ display: "flex", flex: 1 }}>
@@ -323,21 +318,23 @@ const ParticipantsView = () => {
   const { participants } = useMeeting();
 
   return (
-    <div
-      style={{
-        display: "flex",
-        flexWrap: "wrap",
-        flexDirection: "column",
-        padding: "8px",
-      }}
-    >
+    <>
       <h2 style={{ color: "#3E84F6" }}>Participants</h2>
-      {[...participants.keys()].map((k) => (
-        <div style={{ display: "flex" }}>
-          <ParticipantView key={k} participantId={k} />
-        </div>
-      ))}
-    </div>
+      <div
+        style={{
+          display: "flex",
+          flexWrap: "wrap",
+          flexDirection: "row",
+          padding: "8px",
+        }}
+      >
+        {[...participants.keys()].map((k) => (
+          <div style={{ }}>
+              <ParticipantView key={k} participantId={k} />
+          </div>
+        ))}
+      </div>
+    </>
   );
 };
 ```
@@ -423,51 +420,45 @@ const ParticipantView = ({ participantId }) => {
   return (
     <div className="participant-view">
       <audio ref={micRef} autoPlay muted={isLocal} />
-
-      <div className="video-container">
-        <div style={{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0 }} >
+      <div
+        className='video-container'>
+        <div
+          style={{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0 }}>
           <ReactPlayer
-            height={"100%"}
+            height={"auto"}
             width={"100%"}
-            url={mediaStream}
+            url = {mediaStream}
             playsInline
             playing={true}
             className="video"
-            autoPlay />
-          <div style={{position: "absolute", top: "8px", right: "8px", }}>
-            <p style={{
-                color: webcamOn ? "green" : "red",
-                fontSize: 16, fontWeight: "bold", opacity: 1, }} >
-              WEB CAM
+            autoPlay          
+          />
+            <p style={{ position: "absolute",  right: "8px", bottom:"0px", color:"white", fontWeight:"bold"}}>
+              WEB CAM {webcamOn? " ON ": " OFF " }
             </p>
-          </div>
+
+            <p className="overlay" style={{ position: "absolute",  left: "8px", bottom:"0px" , color:"white", fontWeight:"bold"}}>
+              MIC {micOn? " ON ": " OFF " }
+            </p>
         </div>
       </div>
-      <table>
-        {[
-          { k: "Name", v: displayName },
-          { k: "webcamOn", v: webcamOn ? "YES" : "NO" },
-          { k: "micOn", v: micOn ? "YES" : "NO" },
-          { k: "isLocal", v: isLocal ? "YES" : "NO" },
-        ].map(({ k, v }) => (
-          <tr key={k}>
-            <td style={{ border: "1px solid #fff", padding: 4 }}>
-              <h3 style={{ margin: 0, padding: 0, color: "#fff" }}>{k}</h3>
-            </td>
-            <td style={{ border: "1px solid #fff", padding: 4 }}>
-              <h3 style={{ margin: 0, padding: 0, color: "#fff" }}>{v}</h3>
-            </td>
-          </tr>
-        ))}
-      </table>
     </div>
   );
 };
 ```
+:::note
+
+Stuck anywhere? Check out this [example code](https://github.com/videosdk-live/videosdk-rtc-react-sdk-example) on GitHub
+
+:::
 
 ### Step 3: Run and Test
 
 The app is ready to create and join a meeting. Make sure to replace the `sampleToken` from the VideoSDK dashboard into the `App.js`.
+
+Your app should look like this after the implementation.
+
+![VideoSDK React JS Quick Start Join Screen](/img/quick-start/react-join-screen.png) ![VideoSDK React JS Quick Start Meeting Screen](/img/quick-start/react-meeting-screen.png)
 
 :::caution
 For the tutorial purpose, we used a static token to initialize and join the meeting. But for the production version of the app, we recommend you use an Authentication Server that will generate and pass on the token to the Client App. For more details checkout [how to do server setup](/react/guide/video-and-audio-calling-api-sdk/server-setup).

@@ -24,18 +24,14 @@ Prebuilt SDK enables the opportunity to integrate real-time communication SDK wi
 
 It supports all the modern frameworks such as plain JavaScript, React JS, Vue, and Angular.
 
-## Sample Project
-
-This quick start will help you integrate Prebuilt SDK using Javascript. You can check out the complete source code for this guide [here](https://github.com/videosdk-live/videosdk-rtc-prebuilt-examples/tree/main/javascript). Once you are done with the tutorial given below your app should look like this.
-
-![Prebuilt SDK Example to add video call widget in your web application](/img/prebuilt/prebuilt-grid.png)
-
 ## Prerequisites
 
-Before proceeding, ensure that your development environment meets the following requirements:
+:::important
 
-- A valid VideoSDK account.
-- An active VideoSDK project with temporary token. For details, see [Signup & Create API Key](/prebuilt/guide/prebuilt-video-and-audio-calling/signup-and-create-api).
+One should have a videoSDK account to generate token.
+Visit videoSDK **[dashboard](https://app.videosdk.live/api-keys)** to generate token
+
+:::
 
 ## Implementing Meeting with Prebuilt VideoSDK
 

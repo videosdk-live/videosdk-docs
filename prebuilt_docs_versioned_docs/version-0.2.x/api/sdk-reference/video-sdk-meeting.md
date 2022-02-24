@@ -40,7 +40,7 @@ meeting.init({
   branding: {
     enabled: true,
     logoURL:
-      "https://static.zujonow.com/videosdk.live/videosdk_logo_circle_big.png",
+      "https://static.videosdk.live/videosdk.live/videosdk_logo_circle_big.png",
     name: "Prebuilt",
     poweredBy: false,
   },

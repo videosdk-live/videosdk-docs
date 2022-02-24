@@ -21,19 +21,18 @@ VideoSDK enables the opportunity to integrate video & audio calling to Web, Andr
 
 This guide will get you running with the VideoSDK video & audio calling in minutes.
 
-## Sample Project
-
-This quick start will help you integrate some of the basic functionalities that VideoSDK provides. You can check out the complete source code for this guide [here](https://github.com/videosdk-live/videosdk-rtc-flutter-sdk-example). Once you are done with the tutorial given below your app should look like this.
-
-![VideoSDK Flutter Quick Start Join Screen](/img/quick-start/flutter-join-screen.jpg) ![VideoSDK Flutter Quick Start Meeting Screen](/img/quick-start/flutter-meeting-screen.jpg)
-
 ## Prerequisites
 
 Before proceeding, ensure that your development environment meets the following requirements:
 
 - Flutter SDK installed
-- A valid VideoSDK account.
-- An active VideoSDK project with a temporary token from the [VideoSDK Dashboard](https://app.videosdk.live/api-keys). For details, see [Signup & Create API Key](/flutter/guide/video-and-audio-calling-api-sdk/signup-and-create-api).
+
+:::important
+
+One should have a videoSDK account to generate token.
+Visit videoSDK **[dashboard](https://app.videosdk.live/api-keys)** to generate token
+
+:::
 
 ## Project Setup
 
@@ -904,9 +903,19 @@ class _ParticipantTileState extends State<ParticipantTile> {
 }
 ```
 
+:::note
+
+Stuck anywhere? Check out this [example code](https://github.com/videosdk-live/videosdk-rtc-flutter-sdk-example) on GitHub
+
+:::
+
 ## Run and Test
 
 The app is all set to test. Make sure to update the `_token` in `join_screen.dart`
+
+Your app should look like this after the implementation.
+
+![VideoSDK Flutter Quick Start Join Screen](/img/quick-start/flutter-join-screen.jpg) ![VideoSDK Flutter Quick Start Meeting Screen](/img/quick-start/flutter-meeting-screen.jpg)
 
 :::caution
 For the tutorial purpose, we used a static token to initialize and join the meeting. But for the production version of the app, we recommend you use an Authentication Server that will generate and pass on the token to the Client App. For more details checkout [how to do server setup](/flutter/guide/video-and-audio-calling-api-sdk/server-setup).

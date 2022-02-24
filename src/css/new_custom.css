@@ -436,13 +436,13 @@ html[data-theme="dark"] .card__body {
   margin-top: 16px;
 }
 
-.docMainContainer_node_modules-\@docusaurus-theme-classic-lib-next-theme-DocPage-styles-module {
+main[class^="docMainContainer_"] {
   flex-grow: 1;
   max-width: calc(100% - var(--doc-sidebar-width));
   margin: auto;
   align-content: center;
   display: inline-block;
-  margin-left: 30px;
+  padding-left: 30px;
 }
 
 .navbar__logo {

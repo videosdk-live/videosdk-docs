@@ -21,11 +21,6 @@ import Mermaid from '@theme/Mermaid';
 VideoSDK enables opportunity to integrate video & audio calling to Web, Android, IOS applications. it provides Programmable SDKs and REST APIs to build up scalable video conferencing applications.
 This guide will get you running with the VideoSDK video & audio calling in minutes.
 
-## Sample Project
-
-These quick start will help you integrate some of the basic functionalities that VideoSDK provides. You can check out the complete source code for this guide [here](https://github.com/videosdk-live/videosdk-rtc-react-native-sdk-example). Once you are done with the tutorial given below your app should look like this.
-
-<img class="react-native-screen-img" alt="React-Native-Screen" src={require('/static/img/quick-start/react-native-screen.png').default} />
 
 ## Prerequisite
 
@@ -279,7 +274,7 @@ export const getToken = async () => {
 - Now we will add `createMeeting()` method to `api.js` which will generate a new `meetingId` for you.
 
 ```js title="api.js"
-const API_BASE_URL = "https://api.zujonow.com";
+const API_BASE_URL = "https://api.videosdk.live";
 
 export const createMeeting = async ({ token }) => {
   const url = `${API_BASE_URL}/api/meetings`;
@@ -628,6 +623,11 @@ export default function ParticipantView({ participantId }) {
   );
 }
 ```
+:::note
+
+Stuck anywhere? Check out this [example code](https://github.com/videosdk-live/videosdk-rtc-react-native-sdk-example) on GitHub
+
+:::
 
 ## Run your application
 
@@ -642,6 +642,10 @@ npx react-native run-android
 ```js
 npx react-native run-ios
 ```
+
+Your app should look like this after the implementation.
+
+<img class="react-native-screen-img" alt="React-Native-Screen" src={require('/static/img/quick-start/react-native-screen.png').default} />
 
 :::caution
 For this tutorial purpose we used a static token intialize and join the meeting. But for the production version of the app, we recommend you use an Authentication Server which will generate and pass on the token to the Client App. For more details checkout [how to do server setup](/react-native/guide/video-and-audio-calling-api-sdk/server-setup).
