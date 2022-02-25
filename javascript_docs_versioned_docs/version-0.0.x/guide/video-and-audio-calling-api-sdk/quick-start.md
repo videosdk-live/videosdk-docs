@@ -270,6 +270,7 @@ async function meetingHandler(newMeeting) {
 let btnCreateMeeting = document.getElementById("btnCreateMeeting");
 let btnJoinMeeting = document.getElementById("btnJoinMeeting");
 let videoContainer = document.getElementById("videoContainer");
+let btnLeaveMeeting = document.getElementById("btnLeaveMeeting");
 let btnToggleMic = document.getElementById("btnToggleMic");
 let btnToggleWebCam = document.getElementById("btnToggleWebCam");
 
@@ -314,7 +315,6 @@ function startMeeting(token, meetingId, name) {
   addDomEvents();
 }
 
-function setTrack(stream, videoElem, audioElement, id) {...}
 function setTrack(stream, videoElem, audioElement, id) {...}
 ```
 
