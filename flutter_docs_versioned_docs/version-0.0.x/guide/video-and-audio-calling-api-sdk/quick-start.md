@@ -270,7 +270,7 @@ class _JoinScreenState extends State<JoinScreen> {
 }
 ```
 
-2. Add the `createMeeting()` in the `JoinScreen` which will generate a new meeting id.
+3. Add the `createMeeting()` in the `JoinScreen` which will generate a new meeting id.
 
 ```js title="join_screen.dart"
 class _JoinScreenState extends State<JoinScreen> {
@@ -293,7 +293,7 @@ class _JoinScreenState extends State<JoinScreen> {
 }
 ```
 
-3. Make the `JoinScreen` as your home in the `main.dart` as shown below.
+4. Make the `JoinScreen` as your home in the `main.dart` as shown below.
 
 ```js title="main.dart"
 void main() {
