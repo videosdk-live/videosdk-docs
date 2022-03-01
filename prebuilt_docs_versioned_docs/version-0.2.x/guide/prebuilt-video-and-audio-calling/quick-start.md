@@ -1,10 +1,10 @@
 ---
-title: Quick Start with Prebuilt JS
+title: Quick Start with Prebuilt SDK
 hide_title: false
 hide_table_of_contents: false
 description: Video SDK enables the opportunity to integrate native IOS, Android & Web SDKs to add live video & audio conferencing to your applications.
-sidebar_label: Quick Start with Prebuilt JS
-pagination_label: Quick Start with Prebuilt JS
+sidebar_label: Quick Start with Prebuilt SDK
+pagination_label: Quick Start with Prebuilt SDK
 keywords:
   - audio calling
   - video calling
@@ -29,7 +29,7 @@ It supports all the modern frameworks such as plain JavaScript, React JS, Vue, a
 :::important
 
 One should have a videoSDK account to generate token.
-Visit videoSDK **[dashboard](https://app.videosdk.live/api-keys)** to generate token
+Visit our **[Dashboard](https://app.videosdk.live/api-keys)** to generate token
 
 :::
 
@@ -75,7 +75,7 @@ Visit videoSDK **[dashboard](https://app.videosdk.live/api-keys)** to generate t
 </script>
 ```
 
-### Run and Test
+## Run and Test
 
 Install any HTTP server if you don't already have one and run the server to join the meeting from the browser.
 
@@ -145,70 +145,3 @@ Stuck anywhere? Check out this [example code](https://github.com/videosdk-live/v
 
 :::
 
-## Dynamic Meeting Link
-
-If you don't want to have the same meeting id every time, you can generate a random id each time and use it. Let's see how it's done.
-
-1. Create a new `createMeeting.html` file which will consist of a button to create a meeting.
-
-```js title="createMeeting.html"
-<html>
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Videosdk.live RTC</title>
-      </head>
-    <body>
-        <button onclick="">Create Meeting</button>
-    </body>
-</html>
-```
-
-2. Add a `<script>` which will contain `createMeeting()` which will create and redirect to a new meeting. And add this method to `onClick` of `<button>`
-
-Your `<body>` should look something like this.
-
-```js title="createMeeting.html
-<body>
-  <script>
-    function createMeeting() {
-      let meetingId =  'xxxxyxxx'.replace(/[xy]/g, function(c) {
-          var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
-          return v.toString(16);
-      });
-      window.location.href = "http://"+window.location.host+"?meetingId="+meetingId;
-    }
-  </script>
-  <button onclick="">Create Meeting</button>
-</body>
-```
-
-3. Now update your `index.html` to take the `meetingId` from the URL.
-
-```js title="index.html"
-//...
-<script>
-
-   script.addEventListener("load", function (event) {
-      //Get URL query parameters
-      const url = new URLSearchParams(window.location.search);
-      
-      //...
-
-      const config = {
-        // ...
-        meetingId: url.get("meetingId"), // Get meeting id from params.
-        // ...
-      };
-      
-      const meeting = new VideoSDKMeeting();
-      meeting.init(config);
-    });
-
-</script>
-
-//...
-```
-
-4. Now go to `host/createMeeting.html` and press the button to create a new meeting with a random meeting id.

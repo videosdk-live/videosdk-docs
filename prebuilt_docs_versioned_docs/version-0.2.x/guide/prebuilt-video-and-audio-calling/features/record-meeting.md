@@ -3,8 +3,8 @@ title: Prebuilt  Recording Meeting Video & Audio Call | Video SDK Embed Docs
 hide_title: false
 hide_table_of_contents: false
 description: Record Meeting features prebuilt Video SDK embedded is an easy-to-use video calling API. Video SDK Prebuilt makes it easy for developers to add video calls 10 in minutes to any website or app.
-sidebar_label: Record Meeting
-pagination_label: Record Meeting
+sidebar_label: Cloud Recording
+pagination_label: Cloud Recording
 keywords:
   - Start Recording meeting
   - Stop Recording meeting

@@ -7,6 +7,7 @@ module.exports = {
         "guide/prebuilt-video-and-audio-calling/getting-started",
         "guide/prebuilt-video-and-audio-calling/signup-and-create-api",
         "guide/prebuilt-video-and-audio-calling/quick-start",
+        "guide/prebuilt-video-and-audio-calling/dynamic-meeting-link",
         {
           type: "category",
           label: "Client Setup",
@@ -29,7 +30,6 @@ module.exports = {
         "guide/prebuilt-video-and-audio-calling/features/redirect-on-leave",
         "guide/prebuilt-video-and-audio-calling/features/screenshare",
         "guide/prebuilt-video-and-audio-calling/features/send-messages",
-        "guide/prebuilt-video-and-audio-calling/features/record-meeting",
         "guide/prebuilt-video-and-audio-calling/features/pin-participants",
         "guide/prebuilt-video-and-audio-calling/features/remove-participant",
         "guide/prebuilt-video-and-audio-calling/features/end-meeting",
@@ -41,6 +41,7 @@ module.exports = {
       type: "category",
       label: "Advanced Features",
       items: [
+        "guide/prebuilt-video-and-audio-calling/features/record-meeting",
         "guide/prebuilt-video-and-audio-calling/features/go-live-social-media",
         "guide/prebuilt-video-and-audio-calling/features/customize-branding",
         "guide/prebuilt-video-and-audio-calling/features/customize-permissions",
