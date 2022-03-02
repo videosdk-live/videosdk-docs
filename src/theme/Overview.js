@@ -1,9 +1,17 @@
 import React, { useEffect, useState } from "react";
 import CardLinks from "../components/cards/cardlinks";
 import Cookies from "js-cookie";
+import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
+
 function Overview() {
   const [user, setUser] = useState({});
   const [mode, setMode] = useState("");
+
+  const { siteConfig, siteMetadata } = useDocusaurusContext();
+  useEffect(() => {
+    console.log("siteConfig : ", siteConfig);
+    console.log("siteMetaData : ", siteMetadata);
+  }, []);
 
   // useEffect(() => {
   //   // getUser();
@@ -36,20 +44,24 @@ function Overview() {
   };
 
   return (
-    <div
-      id="home-page"
-      className="dark xs:ml-10 sm:ml-20 md:ml-24 lg:ml-32 xl:ml-52 mt-12"
-    >
-      <span className="flex flex-row">
-        <span className="bg-black dark:bg-white p-1 rounded-sm text-xs dark:text-black text-white basis-20px">
-          What's new
-        </span>
-        <span className="text-white text-xs p-0.7 justify-around rounded-sm bg-slate-800 mt-1">
-          New features are here
-        </span>
-      </span>
-      <p className="dark:text-white text-black  text-lg">Overview</p>
+    <div id="home-page" className="dark">
+      <div className="dark:bg-white bg-black h-10 w-10" />
     </div>
+
+    // <div
+    //   id="home-page"
+    //   className="dark xs:ml-10 sm:ml-20 md:ml-24 lg:ml-32 xl:ml-52 mt-12"
+    // >
+    //   <span className="flex flex-row">
+    //     <span className="p-1 rounded-sm text-xs dark:bg-white  bg-black basis-20px">
+    //       <span className="dark:text-black text-white">What's new</span>
+    //     </span>
+    //     <span className=" text-xs p-0.7 justify-around rounded-sm mt-1">
+    //       New features are here
+    //     </span>
+    //   </span>
+    //   <p className="text-lg">Overview</p>
+    // </div>
     // <div
     //   className="font-serif"
     //   class="container padding-top--md padding-bottom--lg"
