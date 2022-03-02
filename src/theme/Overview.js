@@ -1,50 +1,42 @@
-import React, { useEffect, useState } from "react";
-import CardLinks from "../components/cards/cardlinks";
-import Cookies from "js-cookie";
-import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
+import React, { useEffect, useMemo, useState } from "react";
 
 function Overview() {
-  const [user, setUser] = useState({});
-  const [mode, setMode] = useState("");
+  const [docusaurusTheme, setDocusaurusTheme] = useState(
+    localStorage.getItem("theme")
+  );
 
-  const { siteConfig, siteMetadata } = useDocusaurusContext();
+  const isDarkTheme = useMemo(
+    () => docusaurusTheme === "dark",
+    [docusaurusTheme]
+  );
+
   useEffect(() => {
-    console.log("siteConfig : ", siteConfig);
-    console.log("siteMetaData : ", siteMetadata);
+    const originalSetItem = localStorage.setItem;
+
+    localStorage.setItem = function (key, value) {
+      const event = new Event("localStorageItemInserted");
+
+      event.value = value;
+      event.key = key;
+
+      document.dispatchEvent(event);
+
+      originalSetItem.apply(this, arguments);
+    };
+
+    const localStorageSetHandler = function (e) {
+      setDocusaurusTheme(e.value);
+    };
+
+    document.addEventListener(
+      "localStorageItemInserted",
+      localStorageSetHandler,
+      false
+    );
   }, []);
 
-  // useEffect(() => {
-  //   // getUser();
-  //   console.log("theme has been changed");
-  //   if (
-  //     localStorage.theme === "dark" ||
-  //     (!("theme" in localStorage) &&
-  //       window.matchMedia("(prefers-color-scheme: dark)").matches)
-  //   ) {
-  //     // document.documentElement.classList.add("dark");
-  //     document.getElementById("home-page").classList.add("dark");
-  //   } else {
-  //     // document.documentElement.classList.remove("dark");
-  //     document.getElementById("home-page").classList.remove("dark");
-  //   }
-
-  //   // Whenever the user explicitly chooses light mode
-  //   localStorage.theme = "light";
-
-  //   // Whenever the user explicitly chooses dark mode
-  //   localStorage.theme = "dark";
-
-  //   // Whenever the user explicitly chooses to respect the OS preference
-  //   localStorage.removeItem("theme");
-  // }, []);
-
-  const getUser = async () => {
-    const user = await Cookies.get("user");
-    setUser(JSON.parse(user));
-  };
-
   return (
-    <div id="home-page" className="dark">
+    <div id="home-page" className={isDarkTheme ? "dark" : ""}>
       <div className="dark:bg-white bg-black h-10 w-10" />
     </div>
 
