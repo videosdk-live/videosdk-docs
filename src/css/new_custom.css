@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 @font-face {
   font-family: "lato";
   src: url(/fonts/lato/Lato-Regular.ttf) format("truetype");
@@ -257,6 +261,7 @@ html[data-theme="light"] .dropdown__link--active {
 .dropdown__link {
   font-size: 1rem;
   margin-top: 6px;
+  display: flex;
 }
 
 li:first-child > .dropdown__link {
@@ -1359,7 +1364,7 @@ html[data-theme="dark"] .discord {
   .docSidebarContainer_node_modules-\@docusaurus-theme-classic-lib-next-theme-DocPage-styles-module {
     border-right: none !important;
   }
-  div[class^="docSidebarContainer_"]{
+  div[class^="docSidebarContainer_"] {
     border-right: none !important;
   }
 }
@@ -1383,4 +1388,43 @@ html[data-theme="dark"]
   .table-of-contents__link.toc-highlight.table-of-contents__link--active:hover
   > code {
   color: white;
+}
+
+.navbar__item.navbar__link > svg {
+  display: inline-block;
+}
+
+.markdown > h1 {
+  font-size: xx-large;
+  font-weight: 800;
+}
+
+.markdown > h2 {
+  font-size: xx-large;
+  font-weight: 800;
+}
+
+.card__header > h3 {
+  font-weight: bolder;
+  font-size: large;
+}
+.anchor {
+  font-size: x-large;
+  font-weight: 800;
+}
+
+.navbar__item > span {
+  display: flex;
+}
+
+.navbar__item > span > svg {
+  margin-top: 4px;
+}
+
+.footer__link-item > span {
+  display: flex;
+}
+
+.footer__link-item > span > svg {
+  margin-top: 7px;
 }
