@@ -6,7 +6,6 @@
       "items": [
         "guide/video-and-audio-calling-api-sdk/getting-started",
         "guide/video-and-audio-calling-api-sdk/signup-and-create-api",
-        "guide/video-and-audio-calling-api-sdk/quick-start",
         {
           "type": "category",
           "label": "Client Setup",
@@ -16,7 +15,8 @@
           ],
           "collapsed": false
         },
-        "guide/video-and-audio-calling-api-sdk/server-setup"
+        "guide/video-and-audio-calling-api-sdk/server-setup",
+        "guide/video-and-audio-calling-api-sdk/quick-start"
       ],
       "collapsed": true
     },
@@ -42,8 +42,8 @@
       "type": "category",
       "label": "Advanced Features",
       "items": [
-        "guide/video-and-audio-calling-api-sdk/features/play-external-video",
         "guide/video-and-audio-calling-api-sdk/features/go-live-social-media",
+        "guide/video-and-audio-calling-api-sdk/features/play-external-video",
         "guide/video-and-audio-calling-api-sdk/features/switch-participant",
         {
           "type": "category",
