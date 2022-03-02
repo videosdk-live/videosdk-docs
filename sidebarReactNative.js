@@ -16,8 +16,14 @@ module.exports = {
           collapsed: true,
         },
         "guide/video-and-audio-calling-api-sdk/server-setup",
+      ],
+      collapsed: true,
+    },
+    {
+      type: "category",
+      label: "Quick Start Guide",
+      items: [
         "guide/video-and-audio-calling-api-sdk/quick-start",
-        // "guide/video-and-audio-calling-api-sdk/start-or-join-meeting",
       ],
       collapsed: true,
     },
@@ -25,7 +31,6 @@ module.exports = {
       type: "category",
       label: "Basic Features",
       items: [
-        // "guide/video-and-audio-calling-api-sdk/features/initilize-meeting-factory",
         "guide/video-and-audio-calling-api-sdk/features/start-join-meeting",
         "guide/video-and-audio-calling-api-sdk/features/manage-participants",
         "guide/video-and-audio-calling-api-sdk/features/leave-end-meeting",
@@ -34,7 +39,6 @@ module.exports = {
         "guide/video-and-audio-calling-api-sdk/features/screenshare",
         "guide/video-and-audio-calling-api-sdk/features/toggle-participant-media",
         "guide/video-and-audio-calling-api-sdk/features/send-messages",
-        "guide/video-and-audio-calling-api-sdk/features/record-meeting",
         "guide/video-and-audio-calling-api-sdk/features/speaker-indication",
         "guide/video-and-audio-calling-api-sdk/features/pubsub",
       ],
@@ -43,6 +47,7 @@ module.exports = {
       type: "category",
       label: "Advanced Features",
       items: [
+        "guide/video-and-audio-calling-api-sdk/features/record-meeting",
         "guide/video-and-audio-calling-api-sdk/features/go-live-social-media",
         "guide/video-and-audio-calling-api-sdk/features/play-external-video",
         "guide/video-and-audio-calling-api-sdk/features/switch-participant",

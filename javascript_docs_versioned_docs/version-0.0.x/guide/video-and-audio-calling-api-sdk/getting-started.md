@@ -34,26 +34,26 @@ import Card from '@theme/Card';
 <div class="container guide-steps-block">
   <div class="row ">
     <div class="col col--6">
-      <Card heading="1. Signup & Create API Key" link="/javascript/guide/video-and-audio-calling-api-sdk/signup-and-create-api" description="Generate Your API Key frmo Video SDK Dashboard" />
+      <Card heading="1. Signup & Create API Key" link="/javascript/guide/video-and-audio-calling-api-sdk/signup-and-create-api" description="Generate your API key and Secret from Video SDK." />
     </div>
      <div class="col col--6">
-      <Card heading="2. Client Setup" link="/javascript/guide/video-and-audio-calling-api-sdk/supported-platforms" description="SDK Integration with client" />
+      <Card heading="2. Client Setup" link="/javascript/guide/video-and-audio-calling-api-sdk/supported-platforms" description="Easy to integrate SDK with cross-channel support." />
     </div>
   </div>
   <div class="row ">
    <div class="col col--6" >
-      <Card heading="3. Server Setup" link="/javascript/guide/video-and-audio-calling-api-sdk/server-setup" description="Setup secured authentication via server"  />
+      <Card heading="3. Server Setup" link="/javascript/guide/video-and-audio-calling-api-sdk/server-setup" description="Setup secured server authentication and authorization."  />
     </div>
     <div class="col col--6">
-      <Card heading="4. Quick Start" link="/javascript/guide/video-and-audio-calling-api-sdk/features/start-join-meeting" description="Get started with JS SDK from the scratch" />
+      <Card heading="4. Quick Start" link="/javascript/guide/video-and-audio-calling-api-sdk/quick-start" description="Get started with step by step guide of integrating Video SDK." />
     </div>
   </div>
   <div class="row ">
    <div class="col col--6" >
-      <Card heading="5. Basic Features" link="/javascript/guide/video-and-audio-calling-api-sdk/server-setup" description="Setup secured authentication via server"  />
+      <Card heading="5. Basic Features" link="/javascript/guide/video-and-audio-calling-api-sdk/server-setup" description="Explore basic features such as join, leave and customise."  />
     </div>
     <div class="col col--6">
-      <Card heading="6. Advanced Features" link="/javascript/guide/video-and-audio-calling-api-sdk/features/start-join-meeting" description="Get started with JS SDK from the scratch" />
+      <Card heading="6. Advanced Features" link="/javascript/guide/video-and-audio-calling-api-sdk/features/start-join-meeting" description="Explore advanced features such as screen sharing, recording and live streaming." />
     </div>
   </div>
 </div>

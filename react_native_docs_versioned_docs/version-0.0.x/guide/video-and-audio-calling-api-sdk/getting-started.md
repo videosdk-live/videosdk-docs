@@ -34,31 +34,31 @@ import Card from '@theme/Card';
 <div class="container guide-steps-block">
   <div class="row ">
     <div class="col col--6">
-      <Card heading="1. Signup & Create API Key" link="/react-native/guide/video-and-audio-calling-api-sdk/signup-and-create-api" description="Get your API key and secret" />
+      <Card heading="1. Signup & Create API Key" link="/react-native/guide/video-and-audio-calling-api-sdk/signup-and-create-api" description="Generate your API key and Secret from Video SDK." />
     </div>
      <div class="col col--6">
-      <Card heading="2. Client Setup" link="/react-native/guide/video-and-audio-calling-api-sdk/supported-platforms" description="Get started with client integration" />
+      <Card heading="2. Client Setup" link="/react-native/guide/video-and-audio-calling-api-sdk/react-native-android-sdk" description="Easy to integrate SDK with cross-channel support." />
     </div>
   </div>
   <div class="row ">
    <div class="col col--6" >
-      <Card heading="3. Server Setup" link="/react-native/guide/video-and-audio-calling-api-sdk/server-setup" description="Setup secure authentication with your server"  />
+      <Card heading="3. Server Setup" link="/react-native/guide/video-and-audio-calling-api-sdk/server-setup" description="Setup secured server authentication and authorization."  />
     </div>
     <div class="col col--6">
-      <Card heading="4. Quick Start" link="/react-native/guide/video-and-audio-calling-api-sdk/features/start-join-meeting" description="Get started from the scratch step by step guide" />
+      <Card heading="4. Quick Start" link="/react-native/guide/video-and-audio-calling-api-sdk/quick-start" description="Get started with step by step guide of integrating Video SDK." />
     </div>
   </div>
   <div class="row ">
     <div class="col col--6">
-      <Card heading="6. Basic Features" link="/react-native/guide/video-and-audio-calling-api-sdk/features/start-join-meeting" description="Start and Join in the meeting" />
+      <Card heading="6. Basic Features" link="/react-native/guide/video-and-audio-calling-api-sdk/features/start-join-meeting" description="Explore basic features such as join, leave and customise." />
     </div>
    <div class="col col--6" >
-      <Card heading="7. Advanced Features" link="/react-native/guide/video-and-audio-calling-api-sdk/server-setup" description="Go live on social media using RTMP"  />
+      <Card heading="7. Advanced Features" link="/react-native/guide/video-and-audio-calling-api-sdk/features/recording-meeting" description="Explore advanced features such as screen sharing, recording and live streaming."  />
     </div>
   </div>
   <div class="row ">
     <div class="col col--6">
-      <Card heading="6. Extras" link="/react-native/guide/video-and-audio-calling-api-sdk/features/start-join-meeting" description="Share screen in native iOS" />
+      <Card heading="6. Extras" link="/react-native/guide/video-and-audio-calling-api-sdk/extras/react-native-ios-screen-share" description="Share screen in native iOS" />
     </div>
   </div>
 </div>

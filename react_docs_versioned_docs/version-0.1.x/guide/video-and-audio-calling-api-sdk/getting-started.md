@@ -34,26 +34,26 @@ import Card from '@theme/Card';
 <div class="container guide-steps-block">
   <div class="row ">
     <div class="col col--6">
-      <Card heading="1. Signup & Create API Key" link="/react/guide/video-and-audio-calling-api-sdk/signup-and-create-api" description="Generate Your API Key" />
+      <Card heading="1. Signup & Create API Key" link="/react/guide/video-and-audio-calling-api-sdk/signup-and-create-api" description="Generate your API key and Secret from Video SDK." />
     </div>
      <div class="col col--6">
-      <Card heading="2. Client Setup" link="/react/guide/video-and-audio-calling-api-sdk/react-js-sdk" description="SDK Integration with client" />
+      <Card heading="2. Client Setup" link="/react/guide/video-and-audio-calling-api-sdk/react-js-sdk" description="Easy to integrate SDK with cross-channel support." />
     </div>
   </div>
   <div class="row ">
    <div class="col col--6" >
-      <Card heading="3. Server Setup" link="/react/guide/video-and-audio-calling-api-sdk/server-setup" description="Integrate server with API key"  />
+      <Card heading="3. Server Setup" link="/react/guide/video-and-audio-calling-api-sdk/server-setup" description="Setup secured server authentication and authorization."  />
     </div>
     <div class="col col--6">
-      <Card heading="4. Quick Start" link="/react/guide/video-and-audio-calling-api-sdk/quick-start" description="Enter in Meeting" />
+      <Card heading="4. Quick Start" link="/react/guide/video-and-audio-calling-api-sdk/quick-start" description="Get started with step by step guide of integrating Video SDK." />
     </div>
   </div>
   <div class="row ">
    <div class="col col--6" >
-      <Card heading="5. Basic Features" link="/react/guide/video-and-audio-calling-api-sdk/features/start-join-meeting" description="Integrate server with API key"  />
+      <Card heading="5. Basic Features" link="/react/guide/video-and-audio-calling-api-sdk/features/start-join-meeting" description="Explore basic features such as join, leave and customise sessions."  />
     </div>
     <div class="col col--6">
-      <Card heading="6. Advanced Features" link="/react/guide/video-and-audio-calling-api-sdk/features/play-external-video" description="Enter in Meeting" />
+      <Card heading="6. Advanced Features" link="/react/guide/video-and-audio-calling-api-sdk/features/play-external-video" description="Explore advanced features such as screen sharing, recording and live streaming." />
     </div>
   </div>
 </div>
