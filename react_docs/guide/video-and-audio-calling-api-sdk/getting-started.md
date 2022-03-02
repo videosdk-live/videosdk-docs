@@ -37,15 +37,23 @@ import Card from '@theme/Card';
       <Card heading="1. Signup & Create API Key" link="/react/guide/video-and-audio-calling-api-sdk/signup-and-create-api" description="Generate Your API Key" />
     </div>
      <div class="col col--6">
-      <Card heading="2. Client Setup" link="/react/guide/video-and-audio-calling-api-sdk/supported-platforms" description="SDK Integration with client" />
+      <Card heading="2. Client Setup" link="/react/guide/video-and-audio-calling-api-sdk/react-js-sdk" description="SDK Integration with client" />
     </div>
   </div>
-   <div class="row ">
+  <div class="row ">
    <div class="col col--6" >
       <Card heading="3. Server Setup" link="/react/guide/video-and-audio-calling-api-sdk/server-setup" description="Integrate server with API key"  />
     </div>
     <div class="col col--6">
-      <Card heading="4. Start or Join Meeting" link="/react/guide/video-and-audio-calling-api-sdk/features/start-join-meeting" description="Enter in Meeting" />
+      <Card heading="4. Quick Start" link="/react/guide/video-and-audio-calling-api-sdk/quick-start" description="Enter in Meeting" />
+    </div>
+  </div>
+  <div class="row ">
+   <div class="col col--6" >
+      <Card heading="5. Basic Features" link="/react/guide/video-and-audio-calling-api-sdk/features/start-join-meeting" description="Integrate server with API key"  />
+    </div>
+    <div class="col col--6">
+      <Card heading="6. Advanced Features" link="/react/guide/video-and-audio-calling-api-sdk/features/play-external-video" description="Enter in Meeting" />
     </div>
   </div>
 </div>
