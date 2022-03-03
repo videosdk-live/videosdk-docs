@@ -32,10 +32,8 @@ module.exports = {
         "guide/video-and-audio-calling-api-sdk/features/screenshare",
         "guide/video-and-audio-calling-api-sdk/features/toggle-participant-media",
         "guide/video-and-audio-calling-api-sdk/features/send-messages",
-        "guide/video-and-audio-calling-api-sdk/features/record-meeting",
         "guide/video-and-audio-calling-api-sdk/features/speaker-indication",
         "guide/video-and-audio-calling-api-sdk/features/pin-participants",
-        "guide/video-and-audio-calling-api-sdk/features/pubsub",
         "guide/video-and-audio-calling-api-sdk/features/error-event",
       ],
       collapsed: true,
@@ -44,9 +42,11 @@ module.exports = {
       type: "category",
       label: "Advanced Features",
       items: [
+        "guide/video-and-audio-calling-api-sdk/features/record-meeting",
         "guide/video-and-audio-calling-api-sdk/features/play-external-video",
         "guide/video-and-audio-calling-api-sdk/features/go-live-social-media",
         "guide/video-and-audio-calling-api-sdk/features/switch-participant",
+        "guide/video-and-audio-calling-api-sdk/features/pubsub",
         {
           type: "category",
           label: "Connect Meetings (BETA)",

@@ -33,7 +33,6 @@
         "guide/video-and-audio-calling-api-sdk/features/send-messages",
         "guide/video-and-audio-calling-api-sdk/features/speaker-indication",
         "guide/video-and-audio-calling-api-sdk/features/pin-participants",
-        "guide/video-and-audio-calling-api-sdk/features/pubsub",
         "guide/video-and-audio-calling-api-sdk/features/error-event"
       ],
       "collapsed": true
@@ -46,6 +45,7 @@
         "guide/video-and-audio-calling-api-sdk/features/play-external-video",
         "guide/video-and-audio-calling-api-sdk/features/go-live-social-media",
         "guide/video-and-audio-calling-api-sdk/features/switch-participant",
+        "guide/video-and-audio-calling-api-sdk/features/pubsub",
         {
           "type": "category",
           "label": "Connect Meetings (BETA)",
