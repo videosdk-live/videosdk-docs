@@ -264,6 +264,7 @@ module.exports = {
           sidebarPath: require.resolve("./sidebars.js"),
         },
         blog: {
+          path: "blog",
           showReadingTime: true,
           // Please change this to your repo.
           //editUrl:

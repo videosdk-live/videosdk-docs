@@ -2,6 +2,16 @@ module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     // extends: {
+    colors: {
+      green: {
+        600: "#053016",
+        700: "#72C894",
+        500: "#0F9143",
+      },
+      slate: {
+        900: "#1e1e1",
+      },
+    },
     fontFamily: {
       sans: ["lato", "office code pro"],
       serif: ["lato", "office code pro"],
@@ -9,7 +19,10 @@ module.exports = {
     },
     fontSize: {
       xs: ".72rem",
-      lg: "30px",
+      sm: "16px",
+      md: "24px",
+      lg: "36px",
+      xl: "50px",
     },
     screens: {
       xs: { min: "230px", max: "639px" },
