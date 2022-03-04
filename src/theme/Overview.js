@@ -83,11 +83,21 @@ function Overview() {
             </h6>
           </a>
         </div>
+        <div className="hidden xl2:block">
+          <a
+            href={link}
+            className="rounded bg-white h-11 w-48 flex flex-row mt-10"
+          >
+            <h6 className="text-black text-sm font-semibold ml-3 mt-3">
+              {text}
+            </h6>
+          </a>
+        </div>
       </>
     );
   };
   return (
-    <div className="inline-block xs:mr-10 sm:mr-20 md:mr-24 xl2:block lg:mr-32 xl:mr-60 xs:ml-10 sm:ml-20 md:ml-24 lg:ml-32 xl:ml-52 mt-12">
+    <div className="inline-block xs:mr-10 sm:mr-20 xl2:w-4/5 md:mr-24 xl2:mr-44  lg:mr-32 xl:mr-40 xs:ml-10 sm:ml-20 md:ml-24 lg:ml-32 xl:ml-52 xl2:ml-52 mt-12">
       <span className="flex flex-row">
         <span className="p-1 rounded-sm text-xs bg-white">
           <span>What's new</span>
@@ -121,7 +131,17 @@ function Overview() {
         don't have to deal with browser compatibility issues. With Video SDK
         everyone wins!
       </p>
-      <div className="feature-box"></div>
+      <p className="hidden xl2:block text-md font-medium mt-4">
+        Video SDK is the easiest way to add real-time video and audio calls to
+        any web or mobile app with just a few lines of code. With our
+        easy-to-use APIs, you simply embed a video call widget into your
+        existing app. Users also can build custom video UI with our front-end
+        libraries and REST APIs that work across devices and browsers, so you
+        don't have to deal with browser compatibility issues. With Video SDK
+        everyone wins!
+      </p>
+      <div className="hidden xl:block lg:block sm:block xs:block md:block feature-box"></div>
+      <div className="hidden xl2:block w-full h-96 mt-7 rounded-lg bg-slate-900"></div>
       {/* info quick-start */}
       <div className="hidden md:block sm:block xs:block">
         <div className="flex flex-row bg-green-600 h-44 w-96 mt-10 rounded-lg">
@@ -249,20 +269,142 @@ function Overview() {
         <h1 className="text-lg font-extrabold mb-10 mt-7">
           Supported platform or framework
         </h1>
-        <div className="flex flex-row -ml-3">
-          {SDKListGroup1.map((sdk) => {
-            return <SDKCard {...sdk} />;
-          })}
+
+        <div className="hidden xl2:block">
+          <div className="flex justify-between ">
+            <div className="bg-slate-900 rounded-lg  w-full flex">
+              <img
+                src="./svgs/mini-react.svg"
+                alt="SDK"
+                className="h-10 w-10 ml-5 mb-3 mt-3"
+              />
+              <div className="font-semibold ml-3 mt-5">"title"</div>
+            </div>
+            <div className="ml-3 bg-slate-900 rounded-lg  w-full flex">
+              <img
+                src="./svgs/mini-react.svg"
+                alt="SDK"
+                className="h-10 w-10 ml-5 mb-3 mt-3"
+              />
+              <div className="font-semibold ml-3 mt-5">"title"</div>
+            </div>
+            <div className="ml-3 bg-slate-900 rounded-lg  w-full flex">
+              <img
+                src="./svgs/mini-react.svg"
+                alt="SDK"
+                className="h-10 w-10 ml-5 mb-3 mt-3"
+              />
+              <div className="font-semibold ml-3 mt-5">"title"</div>
+            </div>
+          </div>
+
+          {/* //2nd row */}
+          <div className="flex justify-between mt-3">
+            <div className="bg-slate-900 rounded-lg  w-full flex">
+              <img
+                src="./svgs/mini-react.svg"
+                alt="SDK"
+                className="h-10 w-10 ml-5 mb-3 mt-3"
+              />
+              <div className="font-semibold ml-3 mt-5">"title"</div>
+            </div>
+            <div className="ml-3 bg-slate-900 rounded-lg  w-full flex">
+              <img
+                src="./svgs/mini-react.svg"
+                alt="SDK"
+                className="h-10 w-10 ml-5 mb-3 mt-3"
+              />
+              <div className="font-semibold ml-3 mt-5">"title"</div>
+            </div>
+            <div className="ml-3 bg-slate-900 rounded-lg  w-full flex">
+              <img
+                src="./svgs/mini-react.svg"
+                alt="SDK"
+                className="h-10 w-10 ml-5 mb-3 mt-3"
+              />
+              <div className="font-semibold ml-3 mt-5">"title"</div>
+            </div>
+          </div>
         </div>
-        <div className="flex flex-row mt-3 -ml-3">
-          {SDKListGroup2.map((sdk) => {
-            return <SDKCard {...sdk} />;
-          })}
+
+        <div className="hidden sm:block md:block lg:block xl:block">
+          <div className="flex flex-row -ml-3">
+            {SDKListGroup1.map((sdk) => {
+              return <SDKCard {...sdk} />;
+            })}
+          </div>
+          <div className="flex flex-row mt-3 -ml-3">
+            {SDKListGroup2.map((sdk) => {
+              return <SDKCard {...sdk} />;
+            })}
+          </div>
         </div>
       </div>
 
       {/* quickstart */}
       <h1 className="text-lg font-extrabold mt-10 mb-10">QuickStart</h1>
+      <div className="hidden xl2:block">
+        <div className="flex flex-row">
+          <div className="flex flex-col basis-1/2 h-48 mr-3 prebuilt">
+            <h3 className="text-md font-extrabold mt-5 ml-6">Prebuilt SDK</h3>
+            <div className="font-extrabold ml-6 mt-3">
+              A pre-built solution with code showing you how to integrate video
+              calling to your platform in 10 minutes.
+            </div>
+            <a
+              href="/prebuilt/guide/prebuilt-video-and-audio-calling/getting-started"
+              className="text-black bg-white h-9 w-36 rounded ml-6 mt-5 "
+            >
+              <div className="ml-6 mt-1">Try it - it's free</div>
+            </a>
+          </div>
+          <div className="flex flex-col basis-1/2 h-48 custom">
+            <h3 className="text-md font-extrabold mt-5 ml-6">Custom SDK</h3>
+            <div className="font-extrabold ml-6 mt-3">
+              Fully featured SDK that allows you to integrate and customize your
+              own video calling solution from scratch.
+            </div>
+            <div className="flex flex-row">
+              <a
+                href="/react/guide/video-and-audio-calling-api-sdk/getting-started"
+                className="mt-5 ml-6"
+              >
+                <img src="./svgs/mini-react.svg" />
+              </a>
+              <a
+                href="/javascript/guide/video-and-audio-calling-api-sdk/getting-started"
+                className="mt-5 ml-1"
+              >
+                <img src="./svgs/mini-js.svg" />
+              </a>
+              <a
+                href="/flutter/guide/video-and-audio-calling-api-sdk/getting-started"
+                className="mt-5 ml-1"
+              >
+                <img src="./svgs/mini-flutter.svg" />
+              </a>
+              <a
+                href="/ios/guide/video-and-audio-calling-api-sdk/getting-started"
+                className="mt-5 ml-1"
+              >
+                <img src="./svgs/mini-ios.svg" />
+              </a>
+              <a
+                href="/android/guide/video-and-audio-calling-api-sdk/getting-started"
+                className="mt-5 ml-1"
+              >
+                <img src="./svgs/mini-android.svg" />
+              </a>
+              <a
+                href="/react-native/guide/video-and-audio-calling-api-sdk/getting-started"
+                className="mt-5 ml-1"
+              >
+                <img src="./svgs/mini-react.svg" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
       <div className="hidden sm:block xs:block">
         <div className="flex flex-col">
           <div className="flex flex-col basis-1/2 h-96 w-full mr-3 prebuilt">
@@ -285,6 +427,7 @@ function Overview() {
               own video calling solution from scratch.
             </div>
             <div className="flex flex-row mb-10">
+              Q{" "}
               <a
                 href="/react/guide/video-and-audio-calling-api-sdk/getting-started"
                 className="mt-12 ml-6"
@@ -404,6 +547,11 @@ function Overview() {
               No credit card required
             </h6>
           </div>
+          <div className="hidden xl2:block">
+            <h6 className="font-semibold text-px18 mt-7">
+              No credit card required
+            </h6>
+          </div>
           <div className="hidden md:block lg:block xl:block">
             <h6 className="font-semibold text-sm mt-7">
               No credit card required
@@ -414,8 +562,15 @@ function Overview() {
             text="Start Building For Free"
           />
         </div>
-        <div className="ml-7 mt-3">
-          <img src="./svgs/mask-group.svg" />
+        <div className="hidden xl:block lg:block md:block sm:block xs:block">
+          <div className="ml-7 mt-3">
+            <img src="./svgs/mask-group.svg" />
+          </div>
+        </div>
+        <div className="hidden xl2:block">
+          <div className="ml-96 mt-3">
+            <img src="./svgs/mask-group.svg" />
+          </div>
         </div>
       </div>
     </div>

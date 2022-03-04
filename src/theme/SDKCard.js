@@ -14,6 +14,12 @@ const SDKCard = ({ title, icon }) => {
           <div className="font-semibold ml-3 mt-5">{title}</div>
         </div>
       </div>
+      <div className="hidden xl2:block">
+        <div className=" bg-slate-900 w-full flex">
+          <img src={icon} alt="SDK" className="h-10 w-10 ml-5 mt-3" />
+          <div className="font-semibold ml-3 mt-5">{title}</div>
+        </div>
+      </div>
     </>
   );
 };

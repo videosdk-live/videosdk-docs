@@ -1498,3 +1498,7 @@ html[data-theme="dark"]
     #9665e9 96.54%
   );
 }
+
+.w-80-resource {
+  width: 377px;
+}

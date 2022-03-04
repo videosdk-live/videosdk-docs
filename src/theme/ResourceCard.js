@@ -2,6 +2,17 @@ import React from "react";
 const ResourceCard = ({ title, description, link }) => {
   return (
     <>
+      <div className="hidden xl2:block">
+        <div className="rounded-lg w-80-resource h-48 bg-slate-900 flex flex-col m-auto mr-2">
+          <h2 className="font-bold text-px18 ml-5 mt-7 leading-4">{title}</h2>
+          <p className="text-px18 font-medium ml-5 mt-4 leading-5 mr-2">
+            {description}
+          </p>
+          <a href={link} className="ml-80 mt-12">
+            <img src="./svgs/link-icon.svg" />
+          </a>
+        </div>
+      </div>
       <div className="hidden sm:block xs:block">
         <div className="rounded-lg w-60 h-80 bg-slate-900 flex flex-col m-auto mr-2">
           <h2 className="font-bold text-px28 ml-5 mt-7 ">{title}</h2>
