@@ -87,7 +87,7 @@ function Overview() {
     );
   };
   return (
-    <div className="inline-block xs:mr-10 sm:mr-20 md:mr-24 lg:mr-32 xl:mr-60 xs:ml-10 sm:ml-20 md:ml-24 lg:ml-32 xl:ml-52 mt-12">
+    <div className="inline-block xs:mr-10 sm:mr-20 md:mr-24 xl2:block lg:mr-32 xl:mr-60 xs:ml-10 sm:ml-20 md:ml-24 lg:ml-32 xl:ml-52 mt-12">
       <span className="flex flex-row">
         <span className="p-1 rounded-sm text-xs bg-white">
           <span>What's new</span>
