@@ -37,13 +37,7 @@ Video SDK enables easy to use one-to-one and group call support with voice only 
 
 
 
----- OLD -----
-
-# Getting Started with Prebuilt Video & Audio Calling
-
-Prebuilt SDK is an easy-to-use video meeting SDK. Embed video meetings into an application or website with the API allowing your team to build faster and ship more often.
-
-## Steps
+# Next Steps
 
 import Card from '@theme/Card';
 
@@ -58,9 +52,20 @@ import Card from '@theme/Card';
   </div>
   <div class="row " >
     <div class="col col--6">
-      <Card heading="3. Customize Prebuilt" link="/prebuilt/guide/prebuilt-video-and-audio-calling/features/join-screen" description="Start with customizing the Join screen" />
+      <Card heading="3. Quick Start" link="/prebuilt/guide/prebuilt-video-and-audio-calling/quick-start" description="Get started easily with prebuilt SDK" />
     </div>
-    
+    <div class="col col--6">
+      <Card heading="4. Generate Meeting Link" link="/prebuilt/guide/prebuilt-video-and-audio-calling/dynamic-meeting-link" description="Generate dynamic meeting link with just couple of lines of code." />
+    </div>
+  </div>
+
+  <div class="row " >
+    <div class="col col--6">
+      <Card heading="5. Basic Features" link="/prebuilt/guide/prebuilt-video-and-audio-calling/features/join-screen" description="Start with customizing the Join screen" />
+    </div>
+    <div class="col col--6">
+      <Card heading="6. Advanced Features" link="/prebuilt/guide/prebuilt-video-and-audio-calling/features/recording-meeting" description="Start with customizing the cloud recordings" />
+    </div>
   </div>
 </div>
 
