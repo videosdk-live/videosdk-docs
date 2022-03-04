@@ -11,6 +11,7 @@ module.exports = {
       slate: {
         900: "#1e1e1",
       },
+      black: "#000000",
     },
     fontFamily: {
       sans: ["lato", "office code pro"],
@@ -20,7 +21,10 @@ module.exports = {
     fontSize: {
       xs: ".72rem",
       sm: "16px",
+      px18: "18px",
       md: "24px",
+      px28: "28px",
+      px32: "32px",
       lg: "36px",
       xl: "50px",
     },

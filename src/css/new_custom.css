@@ -1479,7 +1479,7 @@ html[data-theme="dark"]
   margin-top: 10px;
   /* margin-left: 3px; */
   font-weight: 600;
-  font-size: 16px;
+  font-size: 24px;
 }
 .prebuilt {
   background: linear-gradient(99.37deg, #6246fb 0.88%, #4aa5fd 102.26%);
@@ -1488,4 +1488,13 @@ html[data-theme="dark"]
 .custom {
   background: linear-gradient(90deg, #ee6e91 0%, #7964e7 100%);
   border-radius: 8px;
+}
+
+.bg-gradient-to-r {
+  background: linear-gradient(
+    92.19deg,
+    #ee6e91 3.85%,
+    #de4ce3 50.19%,
+    #9665e9 96.54%
+  );
 }
