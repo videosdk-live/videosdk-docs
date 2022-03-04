@@ -27,7 +27,7 @@ import Card from '@theme/Card';
 <div class="container guide-steps-block">
   <div class="row ">
     <div class="col col--6">
-      <Card heading="1.  Get your API key and Secret" link="/react/guide/video-and-audio-calling-api-sdk/signup-and-create-api" description="Generate your API key and Secret from Video SDK." />
+      <Card heading="1. Get your API key and Secret" link="/react/guide/video-and-audio-calling-api-sdk/signup-and-create-api" description="Generate your API key and Secret from Video SDK." />
     </div>
      <div class="col col--6">
       <Card heading="2. Client Setup for React JS" link="/react/guide/video-and-audio-calling-api-sdk/react-js-sdk" description="Easy to integrate SDK with cross-channel support." />

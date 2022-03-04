@@ -1,6 +1,6 @@
 ---
 title: Get Started with Video & Audio Call - Video SDK Documentation
-hide_title: false
+hide_title: true
 hide_table_of_contents: false
 description: Video SDK enables the opportunity to integrate native IOS, Android & Web SDKs to add live video & audio conferencing to your applications.
 sidebar_label: Getting Started
@@ -17,15 +17,9 @@ slug: getting-started
 
 import Mermaid from '@theme/Mermaid';
 
-# Video / Audio Getting started
+import GettingStarted from '../../../mdx/introduction/_getting-started.mdx';
 
-This guide will get you running with the VideoSDK video & audio calling in minutes.
-
-## Overview
-
-At it's core, VideoSDK RTC is a distributed SFU(Selective Forwarding Unit). It eanbles highly scalable video & audio meetings unlike vanilla webRTC.
-
-VideoSDK enables opportunity to integrate video & audio calling to Web, Android, IOS applications. it provides Programmable SDKs and REST APIs to build up scalable video conferencing applications.
+<GettingStarted title="Get Started with React Native" />
 
 ## Steps
 
@@ -34,18 +28,18 @@ import Card from '@theme/Card';
 <div class="container guide-steps-block">
   <div class="row ">
     <div class="col col--6">
-      <Card heading="1. Signup & Create API Key" link="/react-native/guide/video-and-audio-calling-api-sdk/signup-and-create-api" description="Generate your API key and Secret from Video SDK." />
+      <Card heading="1. Get your API key and Secret" link="/react-native/guide/video-and-audio-calling-api-sdk/signup-and-create-api" description="Generate your API key and Secret from Video SDK." />
     </div>
      <div class="col col--6">
-      <Card heading="2. Client Setup" link="/react-native/guide/video-and-audio-calling-api-sdk/react-native-android-sdk" description="Easy to integrate SDK with cross-channel support." />
+      <Card heading="2. Client Setup for React JS" link="/react-native/guide/video-and-audio-calling-api-sdk/react-native-android-sdk" description="Easy to integrate SDK with cross-channel support." />
     </div>
   </div>
   <div class="row ">
    <div class="col col--6" >
-      <Card heading="3. Server Setup" link="/react-native/guide/video-and-audio-calling-api-sdk/server-setup" description="Setup secured server authentication and authorization."  />
+      <Card heading="3. Authentication and Tokens" link="/react-native/guide/video-and-audio-calling-api-sdk/server-setup" description="Setup secured server authentication and authorization."  />
     </div>
     <div class="col col--6">
-      <Card heading="4. Quick Start" link="/react-native/guide/video-and-audio-calling-api-sdk/quick-start" description="Get started with step by step guide of integrating Video SDK." />
+      <Card heading="4. Start a Voice / Video Call" link="/react-native/guide/video-and-audio-calling-api-sdk/quick-start" description="Get started with step by step guide of integrating Video SDK." />
     </div>
   </div>
   <div class="row ">
