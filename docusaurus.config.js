@@ -25,8 +25,8 @@ module.exports = {
     },
     autoCollapseSidebarCategories: true,
     colorMode: {
-      defaultMode: "light",
-      disableSwitch: false,
+      defaultMode: "dark",
+      disableSwitch: true,
       respectPrefersColorScheme: true,
     },
     prism: {

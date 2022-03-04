@@ -15,9 +15,9 @@ const SDKCard = ({ title, icon }) => {
         </div>
       </div>
       <div className="hidden xl2:block">
-        <div className=" bg-slate-900 w-full flex">
-          <img src={icon} alt="SDK" className="h-10 w-10 ml-5 mt-3" />
-          <div className="font-semibold ml-3 mt-5">{title}</div>
+        <div className="ml-3 bg-slate-900 rounded-lg  w-80-sdkplatforms flex">
+          <img src={icon} alt="SDK" className="h-10 w-10 ml-5 mt-5" />
+          <div className="font-semibold ml-5 mt-7">{title}</div>
         </div>
       </div>
     </>

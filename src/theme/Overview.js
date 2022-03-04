@@ -166,9 +166,9 @@ function Overview() {
           </div>
         </div>
       </div>
-      <div className="hidden lg:block xl:block">
+      <div className="hidden lg:block xl:block ">
         <div className="flex flex-row bg-green-600 h-28 w-96 mt-10 rounded-lg">
-          <div className="w-2 bg-green-500"></div>
+          <div className="w-2 bg-green-500 "></div>
           <div className="flex flex-col">
             <div className="jump-to-quicstart-header flex flex-row ml-8 mt-5">
               <img src="./svgs/thought.svg" className="h-6 w-6" />
@@ -189,6 +189,30 @@ function Overview() {
           </div>
         </div>
       </div>
+
+      <div className="hidden  xl2:block">
+        <div className="flex flex-row bg-green-600 h-28 w-full mt-10 rounded-lg">
+          <div className="w-2 bg-green-500 "></div>
+          <div className="flex flex-col">
+            <div className="jump-to-quicstart-header flex flex-row ml-8 mt-5">
+              <img src="./svgs/thought.svg" className="h-6 w-6" />
+              <h6 className="font-extrabold text-px28 text-green-700 leading-3 mt-2 ml-3 ">
+                JUMP TO QUICKSTART
+              </h6>
+            </div>
+            <div className="text-md ml-8 mt-3 text-green-700">
+              Keep reading to know more about VideosSDK, or{" "}
+              <a
+                className="underline hover:text-green-700 text-md"
+                href="/react/guide/video-and-audio-calling-api-sdk/quick-start"
+              >
+                click here
+              </a>{" "}
+              to jump to our quickstart guides that get you started.
+            </div>
+          </div>
+        </div>
+      </div>
       {/* features */}
       {/* mobile & tab view */}
       <div className="hidden xs:block mt-10">
@@ -196,35 +220,45 @@ function Overview() {
         <div className="flex flex-row mt-3 ">
           <div className="feature-icon-xs">
             <img className="h-24 w-24 ml-4" src="./svgs/feature-icon1.svg" />
-            <span className="featue-icon-text-xs -ml-2">Video Meeting</span>
+            <span className="leading-12 featue-icon-text-xs -ml-2">
+              Video Meeting
+            </span>
           </div>
           <div className="feature-icon-xs">
             <img className="h-24 w-24 ml-7" src="./svgs/feature-icon2.svg" />
-            <span className="featue-icon-text-xs -ml-9">
+            <span className="leading-12 featue-icon-text-xs -ml-9">
               Interactive Whiteboard
             </span>
           </div>
           <div className="feature-icon-xs">
             <img className="h-24 w-24 ml-3" src="./svgs/feature-icon3.svg" />
-            <span className="featue-icon-text-xs -ml-2">Screen Sharing</span>
+            <span className="leading-12 featue-icon-text-xs -ml-2">
+              Screen Sharing
+            </span>
           </div>
           <div className="feature-icon-xs">
             <img className="h-24 w-24 ml-4" src="./svgs/feature-icon4.svg" />
-            <span className="featue-icon-text-xs -ml-2">Pin Participant</span>
+            <span className="leading-12 featue-icon-text-xs -ml-2">
+              Pin Participant
+            </span>
           </div>
         </div>
-        <div className="feature-icons-xs flex flex-row mt-5 ">
+        <div className="feature-icons-xs flex flex-row mt-8 ">
           <div className="ml-48">
             <img className="h-24 w-24 -ml-4" src="./svgs/feature-icon5.svg" />
-            <span className="featue-icon-text-xs -ml-5 mt-4">RTMP Out</span>
+            <span className="leading-12 featue-icon-text-xs -ml-5 mt-4">
+              RTMP Out
+            </span>
           </div>
           <div className="ml-44">
             <img className="h-24 w-24" src="./svgs/feature-icon6.svg" />
-            <span className="featue-icon-text-xs ml-5">Chat</span>
+            <span className="leading-12 featue-icon-text-xs ml-5">Chat</span>
           </div>
           <div className="ml-44">
             <img className="h-24 w-24" src="./svgs/feature-icon7.svg" />
-            <span className="featue-icon-text-xs -ml-4">Record Meeting</span>
+            <span className="leading-12 featue-icon-text-xs -ml-4">
+              Record Meeting
+            </span>
           </div>
         </div>
       </div>
@@ -263,70 +297,69 @@ function Overview() {
           </div>
         </div>
       </div>
+      <div className="hidden xl2:block mt-10 ">
+        <h1 className="text-lg font-extrabold">Features</h1>
+        <div className="flex flex-row mt-3 ml-3">
+          <div>
+            <img className="h-22 w-22" src="./svgs/feature-icon1.svg" />
+            <span className="ml-5 font-semibold mt-2 text-px18 ">
+              Video
+            </span>{" "}
+            <span className="ml-2 font-semibold text-px18">Meeting</span>
+          </div>
+          <div className="ml-32">
+            <img className="h-22 w-22" src="./svgs/feature-icon2.svg" />
+            <span className="ml-0 font-semibold mt-2 w-10 text-px18">
+              Interactive Whiteboard
+            </span>
+          </div>
+          <div className="ml-24">
+            <img className="h-22 w-22" src="./svgs/feature-icon3.svg" />
+            <span className="ml-3 font-semibold mt-2 text-px18">
+              Screen
+            </span>{" "}
+            <span className="ml-3 font-semibold text-px18">Sharing</span>
+          </div>
+          <div className="ml-32">
+            <img className="h-22 w-22" src="./svgs/feature-icon4.svg" />
+            <span className="ml-7 font-semibold mt-2 text-px18">Pin</span>{" "}
+            <span className="ml-1 font-semibold text-px18">Participants</span>
+          </div>
+          <div className="ml-28">
+            <img className="h-22 w-22" src="./svgs/feature-icon5.svg" />
+            <span className="ml-4 font-semibold mt-2 text-px18">RTMP</span>{" "}
+            <span className="ml-5 font-semibold text-px18">Out</span>
+          </div>
+          <div className="ml-32">
+            <img className="h-22 w-22 mt-1" src="./svgs/feature-icon6.svg" />
+            <span className="ml-5 font-semibold mt-2 text-px18">Chat</span>
+          </div>
+          <div className="ml-32">
+            <img className="h-22 w-22" src="./svgs/feature-icon7.svg" />
+            <span className="ml-4 font-semibold mt-2 text-px18">
+              Record
+            </span>{" "}
+            <span className="ml-3 font-semibold text-px18">Meeting</span>
+          </div>
+        </div>
+      </div>
       {/* Supported platforms */}
-
-      <div className="flex flex-col mt-10 ">
+      <div className="flex flex-col mt-16 ">
         <h1 className="text-lg font-extrabold mb-10 mt-7">
           Supported platform or framework
         </h1>
-
         <div className="hidden xl2:block">
-          <div className="flex justify-between ">
-            <div className="bg-slate-900 rounded-lg  w-full flex">
-              <img
-                src="./svgs/mini-react.svg"
-                alt="SDK"
-                className="h-10 w-10 ml-5 mb-3 mt-3"
-              />
-              <div className="font-semibold ml-3 mt-5">"title"</div>
-            </div>
-            <div className="ml-3 bg-slate-900 rounded-lg  w-full flex">
-              <img
-                src="./svgs/mini-react.svg"
-                alt="SDK"
-                className="h-10 w-10 ml-5 mb-3 mt-3"
-              />
-              <div className="font-semibold ml-3 mt-5">"title"</div>
-            </div>
-            <div className="ml-3 bg-slate-900 rounded-lg  w-full flex">
-              <img
-                src="./svgs/mini-react.svg"
-                alt="SDK"
-                className="h-10 w-10 ml-5 mb-3 mt-3"
-              />
-              <div className="font-semibold ml-3 mt-5">"title"</div>
-            </div>
+          <div className="flex justify-between">
+            {SDKListGroup1.map((sdk) => {
+              return <SDKCard {...sdk} />;
+            })}
           </div>
-
-          {/* //2nd row */}
           <div className="flex justify-between mt-3">
-            <div className="bg-slate-900 rounded-lg  w-full flex">
-              <img
-                src="./svgs/mini-react.svg"
-                alt="SDK"
-                className="h-10 w-10 ml-5 mb-3 mt-3"
-              />
-              <div className="font-semibold ml-3 mt-5">"title"</div>
-            </div>
-            <div className="ml-3 bg-slate-900 rounded-lg  w-full flex">
-              <img
-                src="./svgs/mini-react.svg"
-                alt="SDK"
-                className="h-10 w-10 ml-5 mb-3 mt-3"
-              />
-              <div className="font-semibold ml-3 mt-5">"title"</div>
-            </div>
-            <div className="ml-3 bg-slate-900 rounded-lg  w-full flex">
-              <img
-                src="./svgs/mini-react.svg"
-                alt="SDK"
-                className="h-10 w-10 ml-5 mb-3 mt-3"
-              />
-              <div className="font-semibold ml-3 mt-5">"title"</div>
-            </div>
+            {SDKListGroup2.map((sdk) => {
+              return <SDKCard {...sdk} />;
+            })}
           </div>
         </div>
-
         <div className="hidden sm:block md:block lg:block xl:block">
           <div className="flex flex-row -ml-3">
             {SDKListGroup1.map((sdk) => {
@@ -342,7 +375,7 @@ function Overview() {
       </div>
 
       {/* quickstart */}
-      <h1 className="text-lg font-extrabold mt-10 mb-10">QuickStart</h1>
+      <h1 className="text-lg font-extrabold mt-6 mb-10">QuickStart</h1>
       <div className="hidden xl2:block">
         <div className="flex flex-row">
           <div className="flex flex-col basis-1/2 h-48 mr-3 prebuilt">
@@ -405,11 +438,11 @@ function Overview() {
           </div>
         </div>
       </div>
-      <div className="hidden sm:block xs:block">
+      <div className="hidden xs:block">
         <div className="flex flex-col">
           <div className="flex flex-col basis-1/2 h-96 w-full mr-3 prebuilt">
-            <h3 className="text-px32 font-extrabold mt-5 ml-6">Prebuilt SDK</h3>
-            <div className="font-extrabold text-px28 ml-6 mt-3 mr-3">
+            <h3 className="text-lg font-extrabold mt-5 ml-6">Prebuilt SDK</h3>
+            <div className="font-extrabold text-lg ml-6 mt-3 mr-3">
               A pre-built solution with code showing you how to integrate video
               calling to your platform in 10 minutes.
             </div>
@@ -421,13 +454,13 @@ function Overview() {
             </a>
           </div>
           <div className="flex flex-col basis-1/2 w-full mt-10 h-96 custom">
-            <h3 className="text-px32 font-extrabold mt-5 ml-6">Custom SDK</h3>
-            <div className="font-extrabold ml-6 text-px28 mt-3 mr-3">
+            <h3 className="text-lg font-extrabold mt-5 ml-6">Custom SDK</h3>
+            <div className="font-extrabold ml-6 text-lg mt-3 mr-3">
               Fully featured SDK that allows you to integrate and customize your
               own video calling solution from scratch.
             </div>
             <div className="flex flex-row mb-10">
-              Q{" "}
+              {" "}
               <a
                 href="/react/guide/video-and-audio-calling-api-sdk/getting-started"
                 className="mt-12 ml-6"
@@ -468,7 +501,7 @@ function Overview() {
           </div>
         </div>
       </div>
-      <div className="hidden xl:block lg:block md:block">
+      <div className="hidden sm:block  xl:block lg:block md:block">
         <div className="flex flex-row">
           <div className="flex flex-col basis-1/2 h-48 mr-3 prebuilt">
             <h3 className="text-md font-extrabold mt-5 ml-6">Prebuilt SDK</h3>
@@ -564,12 +597,12 @@ function Overview() {
         </div>
         <div className="hidden xl:block lg:block md:block sm:block xs:block">
           <div className="ml-7 mt-3">
-            <img src="./svgs/mask-group.svg" />
+            <img src="./img/mask-group.png" />
           </div>
         </div>
         <div className="hidden xl2:block">
-          <div className="ml-96 mt-3">
-            <img src="./svgs/mask-group.svg" />
+          <div className="ml-96-png mt-3">
+            <img src="./img/mask-group.png" />
           </div>
         </div>
       </div>

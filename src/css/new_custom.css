@@ -1475,6 +1475,13 @@ html[data-theme="dark"]
   font-weight: 600;
   font-size: 16px;
 }
+.featue-icon-text-2xl {
+  width: 90px;
+  margin-top: 10px;
+  margin-left: 10px;
+  font-weight: 600;
+  font-size: 16px;
+}
 .featue-icon-text-xs {
   margin-top: 10px;
   /* margin-left: 3px; */
@@ -1501,4 +1508,13 @@ html[data-theme="dark"]
 
 .w-80-resource {
   width: 377px;
+}
+
+.w-80-sdkplatforms {
+  width: 500px;
+  height: 80px;
+}
+
+.ml-96-png {
+  margin-left: 500px;
 }
