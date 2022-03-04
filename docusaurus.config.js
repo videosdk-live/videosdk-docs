@@ -25,8 +25,9 @@ module.exports = {
     },
     autoCollapseSidebarCategories: true,
     colorMode: {
-      defaultMode: "light",
-      disableSwitch: false,
+      defaultMode: "dark",
+      disableSwitch: true,
+      respectPrefersColorScheme: true,
     },
     prism: {
       additionalLanguages: ["java", "powershell"],
@@ -263,6 +264,7 @@ module.exports = {
           sidebarPath: require.resolve("./sidebars.js"),
         },
         blog: {
+          path: "blog",
           showReadingTime: true,
           // Please change this to your repo.
           //editUrl:
@@ -280,6 +282,18 @@ module.exports = {
     ],
   ],
   plugins: [
+    async function myPlugin(context, options) {
+      return {
+        name: "docusaurus-tailwindcss",
+        configurePostCss(postcssOptions) {
+          // Appends TailwindCSS and AutoPrefixer.
+          postcssOptions.plugins.push(require("tailwindcss"));
+          postcssOptions.plugins.push(require("autoprefixer"));
+          return postcssOptions;
+        },
+      };
+    },
+    // "docusaurus-tailwindcss",
     [
       "@docusaurus/plugin-content-docs",
       {
