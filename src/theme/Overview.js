@@ -268,9 +268,7 @@ function Overview() {
         <div className="flex flex-row mt-3 -ml-11 p-auto">
           <div className="feature-icon">
             <img className="h-20 w-20" src="./svgs/feature-icon1.svg" />
-            <span className="font-semibold mt-2 text-px18 ">
-              Video
-            </span>{" "}
+            <span className="font-semibold mt-2 text-px18 ">Video</span>{" "}
             <span className="font-semibold text-px18 ">Meeting</span>
             {/* <span className="featue-icon-text">Video Meeting</span> */}
           </div>
@@ -283,9 +281,7 @@ function Overview() {
           </div>
           <div className="feature-icon">
             <img className="h-20 w-20" src="./svgs/feature-icon3.svg" />
-            <span className="font-semibold mt-2 text-px18 ">
-              Screen
-            </span>{" "}
+            <span className="font-semibold mt-2 text-px18 ">Screen</span>{" "}
             <span className="font-semibold text-px18 ">Sharing</span>
           </div>
           <div className="feature-icon">
@@ -295,22 +291,18 @@ function Overview() {
           </div>
           <div className="feature-icon">
             <img className="h-20 w-20" src="./svgs/feature-icon5.svg" />
-            <span className="font-semibold mt-2 text-px18 ">
-              RTMP
-            </span>{" "}
+            <span className="font-semibold mt-2 text-px18 ">RTMP</span>{" "}
             <span className="font-semibold text-px18 ">Out</span>
           </div>
           <div className="feature-icon">
             <img className="h-20 w-20 -mt-6" src="./svgs/feature-icon6.svg" />
-            
+
             <span className="font-semibold text-px18 mt-2">Chat</span>
-            <span className="font-semibold text-px18">{" "}</span>
+            <span className="font-semibold text-px18"> </span>
           </div>
           <div className="feature-icon">
             <img className="h-20 w-20" src="./svgs/feature-icon7.svg" />
-            <span className="font-semibold mt-2 text-px18 ">
-              Record
-            </span>{" "}
+            <span className="font-semibold mt-2 text-px18 ">Record</span>{" "}
             <span className="font-semibold text-px18 ">Meeting</span>
           </div>
         </div>
@@ -466,9 +458,9 @@ function Overview() {
             </div>
             <a
               href="/prebuilt/guide/prebuilt-video-and-audio-calling/getting-started"
-              className="text-black bg-white h-9 w-48 rounded ml-6 mt-12 mb-10 "
+              className="text-black bg-white h-10 w-56 rounded ml-6 mt-12 mb-10 "
             >
-              <div className="ml-6 text-md">Try it - it's free</div>
+              <div className="ml-6 text-px28">Try it - it's free</div>
             </a>
           </div>
           <div className="flex flex-col basis-1/2 w-full mt-10 h-96 custom">
