@@ -31,7 +31,6 @@ module.exports = {
         "guide/video-and-audio-calling-api-sdk/features/camera-controls",
         "guide/video-and-audio-calling-api-sdk/features/mic-controls",
         "guide/video-and-audio-calling-api-sdk/features/toggle-participant-media",
-        "guide/video-and-audio-calling-api-sdk/features/pubsub",
       ],
       collapsed: true,
     },
@@ -40,7 +39,8 @@ module.exports = {
       label: "Advanced Features",
       items: [
         "guide/video-and-audio-calling-api-sdk/features/record-meeting",
-        "guide/video-and-audio-calling-api-sdk/features/go-live-social-media",
+        "guide/video-and-audio-calling-api-sdk/features/go-live-social-media",        
+        "guide/video-and-audio-calling-api-sdk/features/pubsub",
       ],
     },
   ],

@@ -1,6 +1,6 @@
 ---
 title: Sign up for free account Custom Video SDK
-hide_title: false
+hide_title: true
 hide_table_of_contents: false
 description: Video SDK Sign up. Get started with 10,000 minutes free every month! Programmable Video SDKs and Rest APIs to build up scalable video conferencing applications.
 sidebar_label: Get your API Key and Secret

@@ -40,7 +40,6 @@ module.exports = {
         "guide/video-and-audio-calling-api-sdk/features/toggle-participant-media",
         "guide/video-and-audio-calling-api-sdk/features/send-messages",
         "guide/video-and-audio-calling-api-sdk/features/speaker-indication",
-        "guide/video-and-audio-calling-api-sdk/features/pubsub",
       ],
     },
     {
@@ -50,6 +49,7 @@ module.exports = {
         "guide/video-and-audio-calling-api-sdk/features/record-meeting",
         "guide/video-and-audio-calling-api-sdk/features/go-live-social-media",
         "guide/video-and-audio-calling-api-sdk/features/play-external-video",
+        "guide/video-and-audio-calling-api-sdk/features/pubsub",
         "guide/video-and-audio-calling-api-sdk/features/switch-participant",
         {
           type: "category",
@@ -64,8 +64,9 @@ module.exports = {
             "guide/video-and-audio-calling-api-sdk/features/connection/end-connection-meeting",
             "guide/video-and-audio-calling-api-sdk/features/connection/close-connection",
           ],
+          
           collapsed: true,
-        },
+        }
       ],
       collapsed: true,
     },

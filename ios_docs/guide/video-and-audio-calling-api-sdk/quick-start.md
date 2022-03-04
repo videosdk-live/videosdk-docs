@@ -27,7 +27,7 @@ Before proceeding, ensure that your development environment meets the following 
 
 * iOS development environment
 * A valid VideoSDK account.
-* An active VideoSDK project with temporary token. For details, see [Signup & Create API Key](/android/guide/video-and-audio-calling-api-sdk/signup-and-create-api).
+* An active VideoSDK project with temporary token. For details, see [Get your API key and Secret key](/ios/guide/video-and-audio-calling-api-sdk/signup-and-create-api).
 
 ## Project Setup
 

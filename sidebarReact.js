@@ -45,8 +45,8 @@ module.exports = {
         "guide/video-and-audio-calling-api-sdk/features/record-meeting",
         "guide/video-and-audio-calling-api-sdk/features/play-external-video",
         "guide/video-and-audio-calling-api-sdk/features/go-live-social-media",
-        "guide/video-and-audio-calling-api-sdk/features/switch-participant",
         "guide/video-and-audio-calling-api-sdk/features/pubsub",
+        "guide/video-and-audio-calling-api-sdk/features/switch-participant",
         {
           type: "category",
           label: "Connect Meetings (BETA)",

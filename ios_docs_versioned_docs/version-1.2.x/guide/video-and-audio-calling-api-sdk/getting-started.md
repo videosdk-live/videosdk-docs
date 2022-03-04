@@ -34,18 +34,18 @@ import Card from '@theme/Card';
 <div class="container guide-steps-block">
   <div class="row ">
     <div class="col col--6">
-      <Card heading="1. Signup & Create API Key" link="/ios/guide/video-and-audio-calling-api-sdk/signup-and-create-api" description="Generate your API key and Secret from Video SDK." />
+      <Card heading="1. Get your API key and Secret" link="/ios/guide/video-and-audio-calling-api-sdk/signup-and-create-api" description="Generate your API key and Secret from Video SDK." />
     </div>
      <div class="col col--6">
-      <Card heading="2. Client Setup" link="/ios/guide/video-and-audio-calling-api-sdk/ios-sdk" description="Easy to integrate SDK with cross-channel support." />
+      <Card heading="2. Client Setup for iOS" link="/ios/guide/video-and-audio-calling-api-sdk/ios-sdk" description="Easy to integrate SDK with cross-channel support." />
     </div>
   </div>
   <div class="row ">
    <div class="col col--6" >
-      <Card heading="3. Server Setup" link="/ios/guide/video-and-audio-calling-api-sdk/server-setup" description="Setup secured server authentication and authorization."  />
+      <Card heading="3. Authentication and Tokens" link="/ios/guide/video-and-audio-calling-api-sdk/server-setup" description="Setup secured server authentication and authorization."  />
     </div>
     <div class="col col--6">
-      <Card heading="4. Quick Start" link="/ios/guide/video-and-audio-calling-api-sdk/quick-start" description="Get started with step by step guide of integrating Video SDK." />
+      <Card heading="4. Start a Voice / Video Call" link="/ios/guide/video-and-audio-calling-api-sdk/quick-start" description="Get started with step by step guide of integrating Video SDK." />
     </div>
   </div>
   <div class="row ">
@@ -53,7 +53,7 @@ import Card from '@theme/Card';
       <Card heading="5. Basic Features" link="/ios/guide/video-and-audio-calling-api-sdk/features/start-join-meeting" description="Explore basic features such as join, leave and customise sessions."  />
     </div>
     <div class="col col--6">
-      <Card heading="6. Advanced Features" link="/ios/guide/video-and-audio-calling-api-sdk/features/go-live-social-media" description="Explore advanced features such as screen sharing, recording and live streaming." />
+      <Card heading="6. Advanced Features" link="/ios/guide/video-and-audio-calling-api-sdk/features/go-live-social-media" description="Explore advanced features such as screen sharing, recording and live streaming" />
     </div>
   </div>
 </div>
