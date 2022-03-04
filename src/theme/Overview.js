@@ -458,9 +458,9 @@ function Overview() {
             </div>
             <a
               href="/prebuilt/guide/prebuilt-video-and-audio-calling/getting-started"
-              className="text-black bg-white h-10 w-56 rounded ml-6 mt-12 mb-10 "
+              className="text-black bg-white h-14 w-64 rounded ml-6 mt-12 mb-10 "
             >
-              <div className="ml-6 text-px28">Try it - it's free</div>
+              <div className="ml-6 text-px32">Try it - it's free</div>
             </a>
           </div>
           <div className="flex flex-col basis-1/2 w-full mt-10 h-96 custom">
