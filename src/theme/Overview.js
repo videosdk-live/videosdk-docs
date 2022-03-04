@@ -268,32 +268,50 @@ function Overview() {
         <div className="flex flex-row mt-3 -ml-11 p-auto">
           <div className="feature-icon">
             <img className="h-20 w-20" src="./svgs/feature-icon1.svg" />
-            <span className="featue-icon-text">Video Meeting</span>
+            <span className="font-semibold mt-2 text-px18 ">
+              Video
+            </span>{" "}
+            <span className="font-semibold text-px18 ">Meeting</span>
+            {/* <span className="featue-icon-text">Video Meeting</span> */}
           </div>
           <div className="feature-icon">
             <img className="h-20 w-20" src="./svgs/feature-icon2.svg" />
-            <span className="featue-icon-text">Interactive Whiteboard</span>
+            <span className="font-semibold mt-2 text-px18 ">
+              Interactive
+            </span>{" "}
+            <span className="font-semibold text-px18 ">Whiteboard</span>
           </div>
           <div className="feature-icon">
             <img className="h-20 w-20" src="./svgs/feature-icon3.svg" />
-            <span className="featue-icon-text">Screen Sharing</span>
+            <span className="font-semibold mt-2 text-px18 ">
+              Screen
+            </span>{" "}
+            <span className="font-semibold text-px18 ">Sharing</span>
           </div>
           <div className="feature-icon">
             <img className="h-20 w-20" src="./svgs/feature-icon4.svg" />
-            <span className="ml-7 font-semibold mt-2">Pin</span>{" "}
-            <span className="ml-1 font-semibold">Participants</span>
+            <span className="font-semibold text-px18 mt-2">Pin</span>{" "}
+            <span className="font-semibold text-px18">Participants</span>
           </div>
           <div className="feature-icon">
             <img className="h-20 w-20" src="./svgs/feature-icon5.svg" />
-            <span className="featue-icon-text">RTMP Out</span>
+            <span className="font-semibold mt-2 text-px18 ">
+              RTMP
+            </span>{" "}
+            <span className="font-semibold text-px18 ">Out</span>
           </div>
           <div className="feature-icon">
-            <img className="h-20 w-20" src="./svgs/feature-icon6.svg" />
-            <span className="ml-5 font-semibold mt-2">Chat</span>
+            <img className="h-20 w-20 -mt-6" src="./svgs/feature-icon6.svg" />
+            
+            <span className="font-semibold text-px18 mt-2">Chat</span>
+            <span className="font-semibold text-px18">{" "}</span>
           </div>
           <div className="feature-icon">
             <img className="h-20 w-20" src="./svgs/feature-icon7.svg" />
-            <span className="featue-icon-text">Record Meeting</span>
+            <span className="font-semibold mt-2 text-px18 ">
+              Record
+            </span>{" "}
+            <span className="font-semibold text-px18 ">Meeting</span>
           </div>
         </div>
       </div>
