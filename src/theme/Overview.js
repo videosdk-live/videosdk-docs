@@ -9,7 +9,7 @@ const blogs = require("../../.docusaurus/docusaurus-plugin-content-blog/default/
 
 function Overview() {
   return (
-    <div>
+    <div className={"bg-gray-900"}>
       <SectionContainer>
         {/* starting section */}
         <div>
