@@ -3,7 +3,7 @@ title: Video & Audio Calling API | Video SDK Embed Docs
 hide_title: false
 hide_table_of_contents: false
 description: Prebuilt Video SDK Embedded is an easy-to-use audio video calling API. Embed video meetings add live video & audio conferencing to your applications or website.
-sidebar_label: Prebuilt SDK Overview
+sidebar_label: Getting Started
 pagination_label: Getting Started Prebuilt Video & Audio Calling
 keywords:
   - embed video meetings
@@ -15,29 +15,6 @@ image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
 slug: getting-started
 ---
-
-# Prebuilt SDK Overview
-
-Video SDK enables easy to use one-to-one and group call support with voice only and voice + video call modes.
-
-## Features
-| Functions | Description |
-|-----------|-------------|
-| Audio and Video Call | Send and receive local and remote videos and audio from multiple participants |
-| Screen Sharing | Enables the user to share the screen to other users in the room. |
-| Rich Chat | Enables the user to send messages . |
-| RTMP Streaming | Enables going live to RTMP compatible streaming services such as YouTube or Twitch. |
-| Cloud Recording | Record and store composed cloud recordings to your favorate storage provider. |
-| Dynamic Layout | Chage layout of meeting, recording and live streaming on-fly. |
-
-## Known issues
-| Version | Impact |
-|-----------|-------------|
-| 1.x.x | Blackout videos in newer version of safari and chrome |
-
-
-
----- OLD -----
 
 # Getting Started with Prebuilt Video & Audio Calling
 
@@ -60,9 +37,7 @@ import Card from '@theme/Card';
     <div class="col col--6">
       <Card heading="3. Customize Prebuilt" link="/prebuilt/guide/prebuilt-video-and-audio-calling/features/join-screen" description="Start with customizing the Join screen" />
     </div>
-    <div class="col col--6">
-      <Card heading="3. Customize Prebuilt" link="/prebuilt/guide/prebuilt-video-and-audio-calling/features/join-screen" description="Start with customizing the Join screen" />
-    </div>
+    
   </div>
 </div>
 

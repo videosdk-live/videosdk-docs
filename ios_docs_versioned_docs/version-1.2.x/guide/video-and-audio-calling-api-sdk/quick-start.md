@@ -3,7 +3,7 @@ title: Quick Start with iOS
 hide_title: false
 hide_table_of_contents: false
 description: Video SDK enables the opportunity to integrate native IOS, Android & Web SDKs to add live video & audio conferencing to your applications.
-sidebar_label: Start a Voice / Video Call
+sidebar_label: Quick Start with iOS
 pagination_label: Quick Start with iOS
 keywords:
   - audio calling
@@ -27,7 +27,7 @@ Before proceeding, ensure that your development environment meets the following 
 
 * iOS development environment
 * A valid VideoSDK account.
-* An active VideoSDK project with temporary token. For details, see [Get your API key and Secret key](/ios/guide/video-and-audio-calling-api-sdk/signup-and-create-api).
+* An active VideoSDK project with temporary token. For details, see [Signup & Create API Key](/android/guide/video-and-audio-calling-api-sdk/signup-and-create-api).
 
 ## Project Setup
 

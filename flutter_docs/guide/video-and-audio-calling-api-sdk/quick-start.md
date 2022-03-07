@@ -3,7 +3,7 @@ title: Quick Start with Flutter
 hide_title: false
 hide_table_of_contents: false
 description: Video SDK enables the opportunity to integrate native IOS, Android & Web SDKs to add live video & audio conferencing to your applications.
-sidebar_label: Start a Voice / Video Call
+sidebar_label: Quick Start with Flutter
 pagination_label: Quick Start with Flutter
 keywords:
   - audio calling

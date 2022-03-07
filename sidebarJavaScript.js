@@ -2,20 +2,13 @@ module.exports = {
   guideAudioAndVideoCalling: [
     {
       type: "category",
-      label: "Introduction",
+      label: "Quick Start",
       items: [
         "guide/video-and-audio-calling-api-sdk/getting-started",
         "guide/video-and-audio-calling-api-sdk/signup-and-create-api",
+        "guide/video-and-audio-calling-api-sdk/quick-start",
         "guide/video-and-audio-calling-api-sdk/javascript-sdk",
         "guide/video-and-audio-calling-api-sdk/server-setup",
-      ],
-      collapsed: true,
-    },
-    {
-      type: "category",
-      label: "Quick Start Guide",
-      items: [
-        "guide/video-and-audio-calling-api-sdk/quick-start"
       ],
       collapsed: true,
     },
@@ -36,6 +29,7 @@ module.exports = {
         "guide/video-and-audio-calling-api-sdk/features/speaker-indication",
         "guide/video-and-audio-calling-api-sdk/features/pin-participants",
         "guide/video-and-audio-calling-api-sdk/features/error-event",
+        "guide/video-and-audio-calling-api-sdk/features/pubsub",
       ],
       collapsed: true,
     },
@@ -46,7 +40,6 @@ module.exports = {
       items: [
         "guide/video-and-audio-calling-api-sdk/features/play-external-video",
         "guide/video-and-audio-calling-api-sdk/features/go-live-social-media",
-        "guide/video-and-audio-calling-api-sdk/features/pubsub",
         "guide/video-and-audio-calling-api-sdk/features/switch-participant",
         {
           type: "category",

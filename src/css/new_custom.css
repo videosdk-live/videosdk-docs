@@ -1438,6 +1438,14 @@ html[data-theme="dark"]
   color: #ef433c;
 }
 
+.image-box {
+  background: linear-gradient(
+    98.98deg,
+    #6a65f1 -0.57%,
+    rgba(133, 29, 216, 0.6) 99.12%
+  );
+}
+
 /* .bg-white {
   background-color: var(--custom-bg-white);
   color: var(--custom-bg-white-font-color);
