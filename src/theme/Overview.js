@@ -44,7 +44,7 @@ function MainCard({
         onlyTitle
           ? "md:w-full"
           : `h-full ${
-              fullWidth ? "md:max-w-sm lg:max-w-full max-w-full" : ""
+              fullWidth ? "md:max-w-sm lg:max-w-full max-w-full" : "xl:max-w-sm"
             }  md:h-auto`
       } `}
       // cursor-pointer
@@ -233,17 +233,18 @@ function QuickstartPart() {
                     <div className="h-9 w-9 flex ">
                       {CustomSDKArray.map((item, index) => {
                         return (
-                          // <a href={item.link} className="">
-                          <button
+                          <a
+                            href={item.link}
                             className={`bg-white-250 text-black p-2 rounded-md flex items-center justify-center ${
                               index == 0 ? "" : "md:ml-3 ml-1"
                             }`}
                           >
-                            <div>
-                              <item.Icon />
-                            </div>
-                          </button>
-                          // </a>
+                            <button>
+                              <div>
+                                <item.Icon />
+                              </div>
+                            </button>
+                          </a>
                         );
                       })}
                     </div>
@@ -345,16 +346,33 @@ function Overview() {
     { Icon: RecordMeetingIcon, title: "Record Meeting" },
   ];
 
+  const tabletFeaturesArray1 = [
+    { title: "Video Meeting", imgLink: "./svgs/feature-icon1.svg" },
+    { title: "Interactive Whiteboard", imgLink: "./svgs/feature-icon2.svg" },
+    { title: "Screen Sharing", imgLink: "./svgs/feature-icon3.svg" },
+    { title: "Pin Participant", imgLink: "./svgs/feature-icon4.svg" },
+    { title: "RTMP Out", imgLink: "./svgs/feature-icon5.svg" },
+  ];
+
+  const tabletFeaturesArray2 = [
+    { title: "Chat", imgLink: "./svgs/feature-icon6.svg" },
+    { title: "Record Meeting", imgLink: "./svgs/feature-icon7.svg" },
+  ];
+
   const mobileFeaturesArray1 = [
-    { Icon: VideoMeetingIcon, title: "Video Meeting" },
-    { Icon: WhiteboardIcon, title: "Interactive Whiteboard" },
-    { Icon: ScreenShareIcon, title: "Screen Sharing" },
+    { title: "Video Meeting", imgLink: "./svgs/feature-icon1.svg" },
+    { title: "Interactive Whiteboard", imgLink: "./svgs/feature-icon2.svg" },
+    { title: "Screen Sharing", imgLink: "./svgs/feature-icon3.svg" },
   ];
 
   const mobileFeaturesArray2 = [
-    { Icon: RTMPOutIcon, title: "RTMP Out" },
-    { Icon: ChatIcon, title: "Chat" },
-    { Icon: RecordMeetingIcon, title: "Record Meeting" },
+    { title: "Pin Participant", imgLink: "./svgs/feature-icon4.svg" },
+    { title: "RTMP Out", imgLink: "./svgs/feature-icon5.svg" },
+    { title: "Chat", imgLink: "./svgs/feature-icon6.svg" },
+  ];
+
+  const mobileFeaturesArray3 = [
+    { title: "Record Meeting", imgLink: "./svgs/feature-icon7.svg" },
   ];
 
   return (
@@ -378,7 +396,9 @@ function Overview() {
           )}
 
           <div className="mt-4">
-            <p className="text-4xl font-medium text-white-100">Overview</p>
+            <p className="md:text-4xl text-2xl font-medium text-white-100">
+              Overview
+            </p>
             <p className="text-base text-gray-250 mt-4">
               Video SDK is the easiest way to add real-time video and audio
               calls to any web or mobile app with just a few lines of code. With
@@ -389,40 +409,44 @@ function Overview() {
               issues. With Video SDK everyone wins!
             </p>
             <div className="mt-11 ">
-              <div className="bg-gray-750 h-96"></div>
+              <div className="image-box flex justify-center rounded-lg xs:h-48 bg-gray-750 h-96 mt-7">
+                <img
+                  src="./img/image-box.png"
+                  className="mt-5 xs:p-2 sm:p-2 mb-5 object-contain"
+                />
+              </div>
             </div>
           </div>
         </div>
 
         {/* jump to quickstart */}
-        <div className="mt-16">
+        <div className="md:mt-16 mt-8">
           <div className="flex">
             <div className="bg-green-500  w-2 rounded-l-lg "></div>
             <div className="bg-green-600 rounded-r-lg flex  flex-col flex-1 p-6 ">
               <div className="flex">
                 <QuickStartIcon />
-                <p className="text-green-700 text-lg font-medium ml-4">
+                <p className="text-green-700 md:text-lg text-base font-semibold ml-4">
                   JUMP TO QUICKSTART
                 </p>
               </div>
-              <div className="text-green-700 text-lg mt-4 flex">
-                <p className="">Keep reading to know more about VideoSDK,</p>
+
+              <div className="xl:text-lg text-base text-green-700 mt-4">
+                Keep reading to know more about VideosSDK, or{" "}
                 <a
                   className="underline hover:text-green-500 hover:underline"
                   href="/react/guide/video-and-audio-calling-api-sdk/quick-start"
                 >
-                  <p className="ml-0.5 font-bold">
-                    or click here to jump to our quickstart guides
-                  </p>
-                </a>
-                <p className="ml-1">that get you started.</p>
+                  click here to jump to our quickstart guides
+                </a>{" "}
+                that get you started.
               </div>
             </div>
           </div>
         </div>
 
         {/* Feature Section */}
-        <div className="md:mt-20 mt-24 w-full">
+        <div className="md:mt-20 mt-16 w-full">
           <p className="lg:text-5xl md:text-4xl text-2xl font-semibold text-white-100 ">
             Features
           </p>
@@ -441,16 +465,12 @@ function Overview() {
               ))}
             </div>
           </div>
-          <div className="lg:hidden block mt-6">
+          <div className="hidden md:block  mt-6">
             <div className="flex justify-between md:p-3 p-0 ">
-              {mobileFeaturesArray1.map((item) => (
+              {tabletFeaturesArray1.map((item, index) => (
                 <div>
-                  <div className="bg-gray-700 rounded-full md:h-28 md:w-28 h-20 w-20 flex items-center justify-center  ">
-                    <item.Icon />
-                    {/* <img
-                      className="h-22 w-22 "
-                      src="./svgs/feature-icon2.svg"
-                    /> */}
+                  <div className={`${index == 0 ? "ml-0" : "ml-2"}`}>
+                    <img src={`${item.imgLink}`} />
                   </div>
                   <p className="text-base md:text-lg text-white-100  mt-4 break-words md:w-28 w-[98px] text-center">
                     {item.title}
@@ -458,11 +478,52 @@ function Overview() {
                 </div>
               ))}
             </div>
-            <div className="flex justify-between md:p-3 p-0 ">
-              {mobileFeaturesArray2.map((item) => (
+            <div className="flex items-center justify-center md:p-3 p-0 md:mt-0 mt-4">
+              {tabletFeaturesArray2.map((item, index) => (
                 <div>
-                  <div className="bg-gray-700  rounded-full md:h-28 md:w-28 h-20 w-20 flex items-center justify-center  ">
-                    <item.Icon />
+                  <div className={`${index == 0 ? "ml-0" : "ml-2"}`}>
+                    <img src={`${item.imgLink}`} />
+                  </div>
+                  <p className="text-base md:text-lg text-white-100  mt-4 break-words md:w-28 w-[98px] text-center">
+                    {item.title}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="md:hidden xs:block mt-6">
+            <div className="flex justify-between md:p-3 p-0 ">
+              {mobileFeaturesArray1.map((item, index) => (
+                <div>
+                  <div className={`${index == 0 ? "ml-0" : "ml-2"}`}>
+                    {/* <item.Icon /> */}
+                    <img className="h-24 w-24" src={`${item.imgLink}`} />
+                  </div>
+                  <p className="text-base md:text-lg text-white-100  mt-4 break-words md:w-28 w-[98px] text-center">
+                    {item.title}
+                  </p>
+                </div>
+              ))}
+            </div>
+            <div className="flex justify-between md:p-3 p-0 md:mt-0 mt-4">
+              {mobileFeaturesArray2.map((item, index) => (
+                <div>
+                  <div className={`${index == 0 ? "ml-0" : "ml-2"}`}>
+                    <img className="h-24 w-24" src={`${item.imgLink}`} />
+                  </div>
+                  <p className="text-base md:text-lg text-white-100  mt-4 break-words md:w-28 w-[98px] text-center">
+                    {item.title}
+                  </p>
+                </div>
+              ))}
+            </div>
+            <div className="flex justify-between md:p-3 p-0 md:mt-0 mt-4">
+              {mobileFeaturesArray3.map((item) => (
+                <div>
+                  <div
+                  // className="bg-gray-700  rounded-full md:h-28 md:w-28 h-20 w-20 flex items-center justify-center  "
+                  >
+                    <img className="h-24 w-24" src={`${item.imgLink}`} />
                   </div>
                   <p className="text-base md:text-lg text-white-100  mt-4 break-words md:w-28 w-[98px] text-center">
                     {item.title}
@@ -475,7 +536,7 @@ function Overview() {
 
         {/* supported Platforms */}
 
-        <div className="md:mt-16 mt-24 w-full">
+        <div className="md:mt-16 mt-20 w-full">
           <p className="lg:text-5xl md:text-4xl text-2xl font-semibold text-white-100">
             Supported platform or framework
           </p>
