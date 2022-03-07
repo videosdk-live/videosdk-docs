@@ -3,7 +3,7 @@ title: Quick Start with React JS
 hide_title: false
 hide_table_of_contents: false
 description: Video SDK enables the opportunity to integrate native IOS, Android & Web SDKs to add live video & audio conferencing to your applications.
-sidebar_label: Quick Start with React JS
+sidebar_label: Start a Voice / Video Call
 pagination_label: Quick Start with React JS
 keywords:
   - audio calling
