@@ -126,7 +126,7 @@ function Overview() {
         <div className="image-box flex justify-center rounded-lg xs:h-48 bg-slate-900 h-96 mt-7">
           <img
             src="./img/image-box.png"
-            className="mt-5 xs:p-2 sm:p-2 sm:w-96 mb-5 object-contain"
+            className="mt-5 xs:p-2 sm:p-2 mb-5 object-contain"
           />
         </div>
         <div className="flex flex-row bg-green-600 sm:h-32 md:h-32 xl:h-32 h-44 mt-10 rounded-lg">
