@@ -27,7 +27,7 @@ module.exports = {
     colorMode: {
       defaultMode: "dark",
       disableSwitch: true,
-      respectPrefersColorScheme: true,
+      respectPrefersColorScheme: false,
     },
     prism: {
       additionalLanguages: ["java", "powershell"],
