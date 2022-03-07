@@ -219,17 +219,18 @@ function QuickstartPart() {
                   : " linear-gradient(90deg, #EE6E91 0%, #7964E7 100%)"
               }
               descriptionStyle={
-                "text-white-100 md:text-lg text-base font-semibold"
+                "text-white-100 md:text-base text-base font-medium"
               }
               borderRadius={"rounded-lg"}
               fullWidth={true}
               EndPart={() => {
                 return index == 0 ? (
-                  <div className="mt-6">
-                    <a href="/prebuilt/guide/prebuilt-video-and-audio-calling/getting-started">
-                      <div className="bg-white-100 text-black p-2 rounded-md max-w-fit">
-                        Try it - it’s free
-                      </div>
+                  <div className="mt-[35px]">
+                    <a
+                      href="/prebuilt/guide/prebuilt-video-and-audio-calling/getting-started"
+                      className="bg-white-100 text-black p-2 rounded-md max-w-fit"
+                    >
+                      Try it - it’s free
                     </a>
                   </div>
                 ) : (
@@ -360,10 +361,10 @@ function Overview() {
     { title: "Interactive Whiteboard", imgLink: "./svgs/feature-icon2.svg" },
     { title: "Screen Sharing", imgLink: "./svgs/feature-icon3.svg" },
     { title: "Pin Participant", imgLink: "./svgs/feature-icon4.svg" },
-    { title: "RTMP Out", imgLink: "./svgs/feature-icon5.svg" },
   ];
 
   const tabletFeaturesArray2 = [
+    { title: "RTMP Out", imgLink: "./svgs/feature-icon5.svg" },
     { title: "Chat", imgLink: "./svgs/feature-icon6.svg" },
     { title: "Record Meeting", imgLink: "./svgs/feature-icon7.svg" },
   ];
@@ -405,7 +406,7 @@ function Overview() {
           )}
 
           <div className="mt-4">
-            <p className="md:text-4xl text-2xl font-medium text-white-100">
+            <p className="md:text-4xl text-2xl font-semibold text-white-100">
               Overview
             </p>
             <p className="text-base text-gray-250 mt-4">
@@ -456,7 +457,7 @@ function Overview() {
 
         {/* Feature Section */}
         <div className="md:mt-20 mt-16 w-full">
-          <p className="lg:text-5xl md:text-4xl text-2xl font-semibold text-white-100 ">
+          <p className="lg:text-4xl md:text-4xl text-2xl font-semibold text-white-100 ">
             Features
           </p>
 
@@ -546,7 +547,7 @@ function Overview() {
         {/* supported Platforms */}
 
         <div className="md:mt-16 mt-20 w-full">
-          <p className="lg:text-5xl md:text-4xl text-2xl font-semibold text-white-100">
+          <p className="lg:text-4xl md:text-4xl text-2xl font-semibold text-white-100">
             Supported platform or framework
           </p>
           <div className="mt-9">
@@ -556,7 +557,7 @@ function Overview() {
 
         {/* QuickStart */}
         <div className="mt-20">
-          <p className="lg:text-5xl md:text-4xl text-2xl  font-semibold text-white-100">
+          <p className="lg:text-4xl md:text-4xl text-2xl  font-semibold text-white-100">
             Quickstart
           </p>
           <div className="mt-9">
@@ -566,7 +567,7 @@ function Overview() {
 
         {/* Resource */}
         <div className="mt-20">
-          <p className="lg:text-5xl md:text-4xl text-2xl font-semibold text-white-100">
+          <p className="lg:text-4xl md:text-4xl text-2xl font-semibold text-white-100">
             Resource
           </p>
           <div className="mt-9">
@@ -596,9 +597,20 @@ function Overview() {
               />
             </div>
             <div>
-              <div>
-                <img src="./img/mask-group.png" />
+              <div className="hidden xl:block lg:block md:block sm:block xs:block">
+                <div className="ml-7 ">
+                  <img src="./img/mask-group.png" />
+                </div>
               </div>
+              <div className="hidden 2xl::block">
+                <div className="ml-96-png mt-3">
+                  <img src="./img/mask-group.png" />
+                </div>
+              </div>
+
+              {/* <div>
+                <img src="./img/mask-group.png" />
+              </div> */}
             </div>
           </div>
         </div>
