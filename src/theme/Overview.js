@@ -35,11 +35,12 @@ function MainCard({
   descriptionStyle,
   borderRadius,
   fullWidth,
+  quickstart,
 }) {
   return (
     <div
       style={{ backgroundImage: `${backgroundColor}` }}
-      className={`${fullWidth ? "p-3 md:p-6" : "p-3 md:p-3"} ${
+      className={`${fullWidth ? "p-3 md:p-5" : "p-3 md:p-5"} ${
         borderRadius ? borderRadius : "rounded"
       } bg-gray-750 ${
         onlyTitle
@@ -68,7 +69,7 @@ function MainCard({
               className={`${
                 titleStyle
                   ? `${titleStyle}`
-                  : `text-xs font-medium text-white-100 md:text-base mb-0`
+                  : `text-xs font-medium text-white-100 md:text-lg mb-0`
               }`}
             >
               {Title}
@@ -76,12 +77,12 @@ function MainCard({
           </div>
         </div>
         {Description && (
-          <div className="mt-4">
+          <div className={`mt-0 ${quickstart ? "pr-28" : ""}`}>
             <p
               className={`${
                 descriptionStyle
                   ? descriptionStyle
-                  : `text-xs text-gray-500 break-words md:text-sm`
+                  : `text-xs text-gray-500 break-words md:text-sm w-12 pr-4`
               }`}
             >
               {Description}
@@ -117,7 +118,7 @@ function PlatformPart() {
   return (
     <>
       <div className="md:block hidden">
-        <div className="grid grid-cols-2 gap-3 mt-4 md:gap-5  md:flex md:flex-row md:justify-between">
+        <div className="grid grid-cols-2 gap-3 mt-4 md:gap-3  md:flex md:flex-row md:justify-between">
           {platformArray.map((item, index) => {
             return (
               <MainCard
@@ -129,7 +130,7 @@ function PlatformPart() {
             );
           })}
         </div>
-        <div className="grid grid-cols-2 gap-3 mt-4 md:gap-5  md:flex md:flex-row md:justify-between">
+        <div className="grid grid-cols-2 gap-3 mt-3 md:gap-3  md:flex md:flex-row md:justify-between">
           {platformArray2.map((item, index) => {
             return (
               <MainCard
@@ -165,7 +166,7 @@ function QuickstartPart() {
     {
       title: "Prebulit SDK",
       description:
-        "A pre-built solution with code showing you how to integrate video calling to your platform in 10 minutes.",
+        "A pre-built solution with code showing you how to \n integrate video calling to your platform in 10 minutes.",
     },
     {
       title: "Custom SDK",
@@ -202,7 +203,10 @@ function QuickstartPart() {
   ];
 
   return (
-    <div className="flex md:flex-row flex-col">
+    <div
+      // className="grid grid-cols-2 gap-3 "
+      className="flex md:flex-row flex-col "
+    >
       {QuickStartArray.map((item, index) => {
         return (
           <div
@@ -211,7 +215,9 @@ function QuickstartPart() {
             <MainCard
               key={index}
               Title={item.title}
-              titleStyle={"md:text-2xl text-xl text-white-100 font-bold mb-0"}
+              titleStyle={
+                "md:text-2xl text-xl text-white-100 font-extrabold mb-0"
+              }
               Description={item.description}
               backgroundColor={
                 index == 0
@@ -219,19 +225,30 @@ function QuickstartPart() {
                   : " linear-gradient(90deg, #EE6E91 0%, #7964E7 100%)"
               }
               descriptionStyle={
-                "text-white-100 md:text-base text-base font-medium"
+                "text-white-100 md:text-base text-base font-medium mt-2"
               }
               borderRadius={"rounded-lg"}
               fullWidth={true}
+              quickstart={true}
               EndPart={() => {
                 return index == 0 ? (
-                  <div className="mt-[35px]">
-                    <a
-                      href="/prebuilt/guide/prebuilt-video-and-audio-calling/getting-started"
-                      className="bg-white-100 text-black p-2 rounded-md max-w-fit"
-                    >
-                      Try it - it’s free
-                    </a>
+                  // <div className="mt-9">
+                  // <a
+                  //   href="/prebuilt/guide/prebuilt-video-and-audio-calling/getting-started"
+                  //   className="bg-white-100 text-black p-2 rounded-md max-w-fit h-9"
+                  // >
+                  //   Try it - it’s free
+                  // </a>
+                  // </div>
+                  <div className="mt-6">
+                    <div className="h-9  flex  ">
+                      <a
+                        href="/prebuilt/guide/prebuilt-video-and-audio-calling/getting-started"
+                        className="bg-white-100 text-black p-1.5 rounded-md max-w-fit text-center"
+                      >
+                        Try it - it’s free
+                      </a>
+                    </div>
                   </div>
                 ) : (
                   <div className="mt-6">
@@ -311,9 +328,11 @@ function ResourcePart() {
             <MainCard
               key={index}
               Title={item.title}
-              titleStyle={"md:text-xl text-lg text-white-100 font-bold"}
+              titleStyle={
+                "md:text-xl text-lg text-white-100 font-extrabold mb-3 "
+              }
               Description={item.description}
-              descriptionStyle={"text-gray-250 md:text-lg text-base lg:h-12"}
+              descriptionStyle={"text-gray-250 md:text-lg text-base mt-0 "}
               borderRadius={"rounded-lg"}
               EndPart={() => {
                 return (
@@ -406,7 +425,7 @@ function Overview() {
           )}
 
           <div className="mt-4">
-            <p className="md:text-4xl text-2xl font-semibold text-white-100">
+            <p className="lg:text-4xl md:text-3xl text-2xl font-semibold text-white-100">
               Overview
             </p>
             <p className="text-base text-gray-250 mt-4">
@@ -433,7 +452,7 @@ function Overview() {
         <div className="md:mt-16 mt-8">
           <div className="flex">
             <div className="bg-green-500  w-2 rounded-l-lg "></div>
-            <div className="bg-green-600 rounded-r-lg flex  flex-col flex-1 p-6 ">
+            <div className="bg-green-600 rounded-r-lg flex  flex-col flex-1 p-5 ">
               <div className="flex">
                 <QuickStartIcon />
                 <p className="text-green-700 md:text-lg text-base font-semibold ml-4">
@@ -441,10 +460,10 @@ function Overview() {
                 </p>
               </div>
 
-              <div className="xl:text-lg text-base text-green-700 mt-4">
+              <div className="xl:text-lg text-base text-green-700 mt-0">
                 Keep reading to know more about VideosSDK, or{" "}
                 <a
-                  className="underline hover:text-green-500 text-green-700"
+                  className="underline hover:text-green-500 text-green-700 font-bold"
                   href="/react/guide/video-and-audio-calling-api-sdk/quick-start"
                 >
                   click here to jump to our quickstart guides
@@ -456,19 +475,24 @@ function Overview() {
         </div>
 
         {/* Feature Section */}
-        <div className="md:mt-20 mt-16 w-full">
-          <p className="lg:text-4xl md:text-4xl text-2xl font-semibold text-white-100 ">
+        <div className="md:mt-20 mt-10 w-full">
+          <p className="lg:text-4xl md:text-3xl text-2xl font-extrabold text-white-100 ">
             Features
           </p>
-
           <div className="lg:block hidden mt-6">
             <div className="flex justify-between py-5 px-0">
-              {featuresArray.map((item) => (
-                <div>
-                  <div className="bg-gray-700  rounded-full h-28 w-28 flex items-center justify-center  ">
-                    <item.Icon />
-                  </div>
-                  <p className="text-lg text-white-100  mt-4 break-words w-28 text-center">
+              {featuresArray.map((item, index) => (
+                <div className="feature-icon">
+                  {index == 4 || index == 5 ? (
+                    <div className="bg-gray-700 -mt-7  rounded-full h-20 w-20 flex items-center justify-center  ">
+                      <item.Icon />
+                    </div>
+                  ) : (
+                    <div className="bg-gray-700  rounded-full h-20 w-20 flex items-center justify-center  ">
+                      <item.Icon />
+                    </div>
+                  )}
+                  <p className="text-lg text-white-100 leading-6 mt-4 break-words w-28 text-center">
                     {item.title}
                   </p>
                 </div>
@@ -520,11 +544,7 @@ function Overview() {
             <div className="flex justify-between md:p-3 p-0 md:mt-0 mt-4">
               {mobileFeaturesArray2.map((item, index) => (
                 <div className="feature-icon">
-                  <div
-                    className={`${index == 0 ? "ml-0" : "ml-2"} ${
-                      index == 0 ? "mt-6" : "mt-0"
-                    }`}
-                  >
+                  <div className={`${index == 0 ? "ml-0" : "ml-2"}`}>
                     <img className="h-24 w-24" src={`${item.imgLink}`} />
                   </div>
                   <p className="text-base md:text-lg text-white-100  mt-4 break-words md:w-28 w-[98px] text-center">
@@ -552,7 +572,7 @@ function Overview() {
 
         {/* supported Platforms */}
 
-        <div className="md:mt-16 mt-20 w-full">
+        <div className="md:mt-16 mt-10 w-full">
           <p className="lg:text-4xl md:text-4xl text-2xl font-semibold text-white-100">
             Supported platform or framework
           </p>
@@ -562,8 +582,8 @@ function Overview() {
         </div>
 
         {/* QuickStart */}
-        <div className="mt-20">
-          <p className="lg:text-4xl md:text-4xl text-2xl  font-semibold text-white-100">
+        <div className="md:mt-20 mt-10">
+          <p className="lg:text-4xl md:text-4xl text-2xl  font-extrabold text-white-100">
             Quickstart
           </p>
           <div className="mt-9">
@@ -572,7 +592,7 @@ function Overview() {
         </div>
 
         {/* Resource */}
-        <div className="mt-20">
+        <div className="md:mt-20 mt-10">
           <p className="lg:text-4xl md:text-4xl text-2xl font-semibold text-white-100">
             Resource
           </p>
@@ -582,20 +602,20 @@ function Overview() {
         </div>
 
         {/* CTA */}
-        <div className="mt-20 mb-10">
+        <div className="md:mt-20 mt-16  mb-10">
           <div
             style={{
               backgroundImage:
                 "linear-gradient(92.19deg, #EE6E91 3.85%, #DE4CE3 50.19%, #9665E9 96.54%)",
             }}
-            className="flex flex-row rounded-lg p-5"
+            className="flex flex-row rounded-lg px-12 py-8"
           >
             <div className="flex flex-col flex-1">
               <div className="flex flex-col flex-1">
                 <p className="lg:text-4xl md:text-lg text-base text-white-100 font-extrabold  text-center md:text-left">
                   Get 10,000 minutes free every month
                 </p>
-                <p className="text-white-150 text-base mt-0 text-center md:text-left">
+                <p className="text-white-150 text-base mt-0 text-center font-semibold md:text-left">
                   No credit card required
                 </p>
               </div>
