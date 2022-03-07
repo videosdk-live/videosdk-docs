@@ -3,7 +3,7 @@ module.exports = function (context, options) {
     name: "postcss-tailwindcss-loader",
     configurePostCss(postcssOptions) {
       postcssOptions.plugins.push(
-        require("postcss-import"),
+        // require("postcss-import"),
         require("tailwindcss"),
         require("postcss-preset-env")({
           autoprefixer: {

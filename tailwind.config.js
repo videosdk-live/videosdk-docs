@@ -2,6 +2,7 @@ module.exports = {
   corePlugins: { preflight: false },
   important: "#tailwind",
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
+  // content: ["./src/**/Overview.js"],
   theme: {
     // extends: {
     colors: {
