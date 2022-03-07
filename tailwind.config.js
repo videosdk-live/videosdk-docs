@@ -1,4 +1,6 @@
 module.exports = {
+  corePlugins: { preflight: false },
+  important: "#tailwind",
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     // extends: {

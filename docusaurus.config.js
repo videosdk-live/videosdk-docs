@@ -282,18 +282,19 @@ module.exports = {
     ],
   ],
   plugins: [
-    async function myPlugin(context, options) {
-      return {
-        name: "docusaurus-tailwindcss",
-        configurePostCss(postcssOptions) {
-          // Appends TailwindCSS and AutoPrefixer.
-          postcssOptions.plugins.push(require("tailwindcss"));
-          postcssOptions.plugins.push(require("autoprefixer"));
-          return postcssOptions;
-        },
-      };
-    },
+    // async function myPlugin(context, options) {
+    //   return {
+    //     name: "docusaurus-tailwindcss",
+    //     configurePostCss(postcssOptions) {
+    //       // Appends TailwindCSS and AutoPrefixer.
+    //       postcssOptions.plugins.push(require("tailwindcss"));
+    //       postcssOptions.plugins.push(require("autoprefixer"));
+    //       return postcssOptions;
+    //     },
+    //   };
+    // },
     // "docusaurus-tailwindcss",
+    "docusaurus-tailwindcss-loader",
     [
       "@docusaurus/plugin-content-docs",
       {
