@@ -2,29 +2,384 @@ import React, { useEffect, useMemo, useState } from "react";
 import ReactIcon from "../../static/icon/ReactIcon";
 import SDKCard from "./SDKCard";
 // import ResourceCard from "./ResourceCard";
-import { Button } from "react-scroll";
 import SectionContainer from "../components/Layout/SectionContainer";
 import QuickStartIcon from "../../static/icon/QuickStartIcon";
+import VideoMeetingIcon from "../../static/icon/VideoMeetingIcon";
+import WhiteboardIcon from "../../static/icon/WhiteboardIcon";
+import ScreenShareIcon from "../../static/icon/ScreenShareIcon";
+import RTMPOutIcon from "../../static/icon/RTMPOutIcon";
+import PinParticipantIcon from "../../static/icon/PinParticipantIcon";
+import ChatIcon from "../../static/icon/ChatIcon";
+import RecordMeetingIcon from "../../static/icon/RecordMeetingIcon";
+import JSIcon from "../../static/icon/JSIcon";
+import FlutterIcon from "../../static/icon/FlutterIcon";
+import IOSIcon from "../../static/icon/IOSIcon";
+import AndroidIcon from "../../static/icon/AndroidIcon";
+import CustomReactIcon from "../../static/icon/Home_customsdk/CustomReactIcon";
+import CustomJSIcon from "../../static/icon/Home_customsdk/CustomJSIcon";
+import CustomFlutterIcon from "../../static/icon/Home_customsdk/CustomFlutterIcon";
+import CustomAndroidIcon from "../../static/icon/Home_customsdk/CustomAndroidIcon";
+import CustomIOSIcon from "../../static/icon/Home_customsdk/CustomIOSIcon";
+import ExternalLinkIcon from "../../static/icon/ExternalLinkIcon";
 const blogs = require("../../.docusaurus/docusaurus-plugin-content-blog/default/blog-post-list-prop-default.json");
 
-function Overview() {
+function MainCard({
+  Title,
+  Icon,
+  Description,
+  onlyTitle,
+  EndPart,
+  backgroundColor,
+  titleStyle,
+  descriptionStyle,
+  borderRadius,
+  fullWidth,
+}) {
   return (
-    <div className={"bg-gray-900"}>
+    <div
+      style={{ backgroundImage: `${backgroundColor}` }}
+      className={`${fullWidth ? "p-2 md:p-6" : "p-2 md:p-3"} ${
+        borderRadius ? borderRadius : "rounded"
+      } bg-gray-750 ${
+        onlyTitle
+          ? "md:w-full"
+          : `h-full ${
+              fullWidth ? "md:max-w-sm lg:max-w-full max-w-full" : ""
+            }  md:h-auto`
+      } `}
+      // cursor-pointer
+    >
+      <div>
+        <div className="flex flex-row">
+          {Icon && (
+            <div
+              className={`flex  items-center justify-center md:rounded-md rounded-sm md:w-12 md:h-12 w-8 h-8`}
+            >
+              <Icon className="w-8 h-8" />
+            </div>
+          )}
+          <div
+            className={`flex items-center justify-center ${
+              Icon ? "ml-2 md:ml-3 " : "ml-0"
+            }overflow-hidden `}
+          >
+            <p
+              className={`${
+                titleStyle
+                  ? `${titleStyle}`
+                  : `text-xs font-medium text-white-100 md:text-base`
+              }`}
+            >
+              {Title}
+            </p>
+          </div>
+        </div>
+        {Description && (
+          <div className="mt-4">
+            <p
+              className={`${
+                descriptionStyle
+                  ? descriptionStyle
+                  : `text-xs text-gray-500 break-words md:text-sm`
+              }`}
+            >
+              {Description}
+            </p>
+          </div>
+        )}
+        {EndPart && <EndPart />}
+      </div>
+    </div>
+  );
+}
+
+function PlatformPart() {
+  const platformArray = [
+    { Icon: ReactIcon, title: "React" },
+    { Icon: JSIcon, title: "JavaScript" },
+    { Icon: ReactIcon, title: "React Native" },
+  ];
+
+  const platformArray2 = [
+    { Icon: FlutterIcon, title: "Flutter" },
+    { Icon: AndroidIcon, title: "Android" },
+    { Icon: IOSIcon, title: "iOS" },
+  ];
+  const mobileplatformArray = [
+    { Icon: ReactIcon, title: "React" },
+    { Icon: JSIcon, title: "JavaScript" },
+    { Icon: ReactIcon, title: "React Native" },
+    { Icon: FlutterIcon, title: "Flutter" },
+    { Icon: AndroidIcon, title: "Android" },
+    { Icon: IOSIcon, title: "iOS" },
+  ];
+  return (
+    <>
+      <div className="md:block hidden">
+        <div className="grid grid-cols-2 gap-3 mt-4 md:gap-5  md:flex md:flex-row md:justify-between">
+          {platformArray.map((item, index) => {
+            return (
+              <MainCard
+                key={index}
+                Title={item.title}
+                Icon={item.Icon}
+                onlyTitle={true}
+              />
+            );
+          })}
+        </div>
+        <div className="grid grid-cols-2 gap-3 mt-4 md:gap-5  md:flex md:flex-row md:justify-between">
+          {platformArray2.map((item, index) => {
+            return (
+              <MainCard
+                key={index}
+                Title={item.title}
+                Icon={item.Icon}
+                onlyTitle={true}
+              />
+            );
+          })}
+        </div>
+      </div>
+      <div className="md:hidden block">
+        <div className="grid grid-cols-2 gap-3 mt-4 md:gap-5  md:flex md:flex-row md:justify-between">
+          {mobileplatformArray.map((item, index) => {
+            return (
+              <MainCard
+                key={index}
+                Title={item.title}
+                Icon={item.Icon}
+                onlyTitle={true}
+              />
+            );
+          })}
+        </div>
+      </div>
+    </>
+  );
+}
+
+function QuickstartPart() {
+  const QuickStartArray = [
+    {
+      title: "Prebulit SDK",
+      description:
+        "A pre-built solution with code showing you how to integrate video calling to your platform in 10 minutes.",
+    },
+    {
+      title: "Custom SDK",
+      description:
+        "Fully featured SDK that allows you to integrate and customize your own video calling solution from scratch.",
+    },
+  ];
+
+  const CustomSDKArray = [
+    {
+      Icon: CustomReactIcon,
+      link: "/react/guide/video-and-audio-calling-api-sdk/getting-started",
+    },
+    {
+      Icon: CustomJSIcon,
+      link: "/javascript/guide/video-and-audio-calling-api-sdk/getting-started",
+    },
+    {
+      Icon: CustomFlutterIcon,
+      link: "/flutter/guide/video-and-audio-calling-api-sdk/getting-started",
+    },
+    {
+      Icon: CustomReactIcon,
+      link: "/react-native/guide/video-and-audio-calling-api-sdk/getting-started",
+    },
+    {
+      Icon: CustomAndroidIcon,
+      link: "/android/guide/video-and-audio-calling-api-sdk/getting-started",
+    },
+    {
+      Icon: CustomIOSIcon,
+      link: "/ios/guide/video-and-audio-calling-api-sdk/getting-started",
+    },
+  ];
+  return (
+    <div className="flex md:flex-row flex-col">
+      {QuickStartArray.map((item, index) => {
+        return (
+          <div
+            className={`${index == 1 ? "md:ml-4 ml-0 md:mt-0 mt-3" : "ml-0"} `}
+          >
+            <MainCard
+              key={index}
+              Title={item.title}
+              titleStyle={"md:text-2xl text-xl text-white-100 font-bold"}
+              Description={item.description}
+              backgroundColor={
+                index == 0
+                  ? "linear-gradient(99.37deg, #6246FB 0.88%, #4AA5FD 102.26%)"
+                  : " linear-gradient(90deg, #EE6E91 0%, #7964E7 100%)"
+              }
+              descriptionStyle={
+                "text-white-100 md:text-lg text-base font-semibold"
+              }
+              borderRadius={"rounded-lg"}
+              fullWidth={true}
+              EndPart={() => {
+                return index == 0 ? (
+                  <div className="mt-6">
+                    <button className="bg-gray-100 text-black p-2 rounded-md ">
+                      Try it - it’s free
+                    </button>
+                  </div>
+                ) : (
+                  <div className="mt-6">
+                    <div className="h-9 w-9 flex ">
+                      {CustomSDKArray.map((item, index) => {
+                        return (
+                          // <a href={item.link} className="">
+                          <button
+                            className={`bg-white-250 text-black p-2 rounded-md flex items-center justify-center ${
+                              index == 0 ? "" : "md:ml-3 ml-1"
+                            }`}
+                          >
+                            <div>
+                              <item.Icon />
+                            </div>
+                          </button>
+                          // </a>
+                        );
+                      })}
+                    </div>
+                  </div>
+                );
+              }}
+            />
+          </div>
+        );
+      })}
+    </div>
+  );
+}
+
+let Button = ({ link, text }) => {
+  return (
+    <>
+      <div className="mt-16">
+        <a href={link} className="rounded bg-white-100  flex flex-row p-3">
+          <h6 className="text-black text-md font-semibold ">{text}</h6>
+        </a>
+      </div>
+    </>
+  );
+};
+
+function ResourcePart() {
+  const ResourceArray = [
+    {
+      title: "Prebuilt SDK Guide",
+      description:
+        "End to End Tutorials to integrate Prebuilt SDK on your platform.",
+      link: "/prebuilt/guide/prebuilt-video-and-audio-calling/getting-started",
+    },
+    {
+      title: "Custom SDK Guide",
+      description:
+        "End to End tutorials to integrate Custom SDK on various platforms.",
+      link: "/react/api/sdk-reference/setup",
+    },
+    {
+      title: "API Reference",
+      description:
+        "Complete reference to our  APIs that you can use to interact with the SDK.",
+      link: "docs/api-reference/realtime-communication/intro",
+    },
+    {
+      title: "Code Sample",
+      description:
+        "A pre-built code showing you how to integrate video calling to your platform.",
+      link: "/docs/code-sample/overview",
+    },
+  ];
+  return (
+    <div className="lg:flex lg:flex-row lg:gap-0  flex-col grid grid-cols-2 gap-3">
+      {ResourceArray.map((item, index) => {
+        return (
+          <div className={`${index == 0 ? "ml-0" : "lg:ml-2 xl:ml-4 ml-0 "} `}>
+            <MainCard
+              key={index}
+              Title={item.title}
+              titleStyle={"md:text-xl text-lg text-white-100 font-bold"}
+              Description={item.description}
+              descriptionStyle={"text-gray-250 md:text-lg text-base"}
+              borderRadius={"rounded-lg"}
+              EndPart={() => {
+                return (
+                  <div className="mt-6">
+                    <div className="h-9  flex items-end justify-end">
+                      <a href={item.link} className="">
+                        <button
+                          className={`text-black p-2 rounded-md flex items-center justify-center ${
+                            index == 0 ? "" : "ml-3"
+                          }`}
+                        >
+                          <ExternalLinkIcon />
+                        </button>
+                      </a>
+                    </div>
+                  </div>
+                );
+              }}
+            />
+          </div>
+        );
+      })}
+    </div>
+  );
+}
+
+function Overview() {
+  const featuresArray = [
+    { Icon: VideoMeetingIcon, title: "Video Meeting" },
+    { Icon: WhiteboardIcon, title: "Interactive Whiteboard" },
+    { Icon: ScreenShareIcon, title: "Screen Sharing" },
+    { Icon: PinParticipantIcon, title: "Pin Participant" },
+    { Icon: RTMPOutIcon, title: "RTMP Out" },
+    { Icon: ChatIcon, title: "Chat" },
+    { Icon: RecordMeetingIcon, title: "Record Meeting" },
+  ];
+
+  const mobileFeaturesArray1 = [
+    { Icon: VideoMeetingIcon, title: "Video Meeting" },
+    { Icon: WhiteboardIcon, title: "Interactive Whiteboard" },
+    { Icon: ScreenShareIcon, title: "Screen Sharing" },
+  ];
+
+  const mobileFeaturesArray2 = [
+    { Icon: RTMPOutIcon, title: "RTMP Out" },
+    { Icon: ChatIcon, title: "Chat" },
+    { Icon: RecordMeetingIcon, title: "Record Meeting" },
+  ];
+
+  return (
+    <div>
       <SectionContainer>
         {/* starting section */}
         <div>
-          <div className="flex ">
-            <div className="bg-white text-black p-1 rounded-l-sm">
-              <p className="text-xs">What's new</p>
+          {blogs.items.length > 0 && (
+            <div className="flex ">
+              <div className="bg-white-100 text-black p-1 rounded-l-sm">
+                <p className="text-xs">What's new</p>
+              </div>
+              {blogs.items.map((blog) => {
+                return (
+                  <div className="bg-gray-750 text-white-100 p-1 rounded-r-sm">
+                    <p className="text-xs"> {blog.title}</p>
+                  </div>
+                );
+              })}
             </div>
-            <div className="bg-slate-900 text-white p-1 rounded-r-sm">
-              <p className="text-xs">What's new</p>
-            </div>
-          </div>
+          )}
 
           <div className="mt-4">
-            <p className="text-4xl font-medium text-white">Overview</p>
-            <p className="text-base text-[#B2B2B2] mt-4">
+            <p className="text-4xl font-medium text-white-100">Overview</p>
+            <p className="text-base text-gray-250 mt-4">
               Video SDK is the easiest way to add real-time video and audio
               calls to any web or mobile app with just a few lines of code. With
               our easy-to-use APIs, you simply embed a video call widget into
@@ -34,7 +389,7 @@ function Overview() {
               issues. With Video SDK everyone wins!
             </p>
             <div className="mt-11 ">
-              <div className="bg-slate-900 h-96"></div>
+              <div className="bg-gray-750 h-96"></div>
             </div>
           </div>
         </div>
@@ -42,15 +397,140 @@ function Overview() {
         {/* jump to quickstart */}
         <div className="mt-16">
           <div className="flex">
-            <div>hi</div>
-            <div>hello</div>
-          </div>
-          {/* <div className="bg-[#053016] rounded-lg flex p-3">
-            <div className="bg-[#0F9143] w-2 rounded-l-lg h-9"></div>
-            <div>
-              <QuickStartIcon />
+            <div className="bg-green-500  w-2 rounded-l-lg "></div>
+            <div className="bg-green-600 rounded-r-lg flex  flex-col flex-1 p-6 ">
+              <div className="flex">
+                <QuickStartIcon />
+                <p className="text-green-700 text-lg font-medium ml-4">
+                  JUMP TO QUICKSTART
+                </p>
+              </div>
+              <div className="text-green-700 text-lg mt-4 flex">
+                <p className="">Keep reading to know more about VideoSDK,</p>
+                <a
+                  className="underline hover:text-green-500 hover:underline"
+                  href="/react/guide/video-and-audio-calling-api-sdk/quick-start"
+                >
+                  <p className="ml-0.5 font-bold">
+                    or click here to jump to our quickstart guides
+                  </p>
+                </a>
+                <p className="ml-1">that get you started.</p>
+              </div>
             </div>
-          </div> */}
+          </div>
+        </div>
+
+        {/* Feature Section */}
+        <div className="md:mt-20 mt-24 w-full">
+          <p className="lg:text-5xl md:text-4xl text-2xl font-semibold text-white-100 ">
+            Features
+          </p>
+
+          <div className="lg:block hidden mt-6">
+            <div className="flex justify-between py-5 px-0">
+              {featuresArray.map((item) => (
+                <div>
+                  <div className="bg-gray-700  rounded-full h-28 w-28 flex items-center justify-center  ">
+                    <item.Icon />
+                  </div>
+                  <p className="text-lg text-white-100  mt-4 break-words w-28 text-center">
+                    {item.title}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="lg:hidden block mt-6">
+            <div className="flex justify-between md:p-3 p-0 ">
+              {mobileFeaturesArray1.map((item) => (
+                <div>
+                  <div className="bg-gray-700 rounded-full md:h-28 md:w-28 h-20 w-20 flex items-center justify-center  ">
+                    <item.Icon />
+                    {/* <img
+                      className="h-22 w-22 "
+                      src="./svgs/feature-icon2.svg"
+                    /> */}
+                  </div>
+                  <p className="text-base md:text-lg text-white-100  mt-4 break-words md:w-28 w-[98px] text-center">
+                    {item.title}
+                  </p>
+                </div>
+              ))}
+            </div>
+            <div className="flex justify-between md:p-3 p-0 ">
+              {mobileFeaturesArray2.map((item) => (
+                <div>
+                  <div className="bg-gray-700  rounded-full md:h-28 md:w-28 h-20 w-20 flex items-center justify-center  ">
+                    <item.Icon />
+                  </div>
+                  <p className="text-base md:text-lg text-white-100  mt-4 break-words md:w-28 w-[98px] text-center">
+                    {item.title}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* supported Platforms */}
+
+        <div className="md:mt-16 mt-24 w-full">
+          <p className="lg:text-5xl md:text-4xl text-2xl font-semibold text-white-100">
+            Supported platform or framework
+          </p>
+          <div className="mt-9">
+            <PlatformPart />
+          </div>
+        </div>
+
+        {/* QuickStart */}
+        <div className="mt-20">
+          <p className="lg:text-5xl md:text-4xl text-2xl  font-semibold text-white-100">
+            Quickstart
+          </p>
+          <div className="mt-9">
+            <QuickstartPart />
+          </div>
+        </div>
+
+        {/* Resource */}
+        <div className="mt-20">
+          <p className="lg:text-5xl md:text-4xl text-2xl font-semibold text-white-100">
+            Resource
+          </p>
+          <div className="mt-9">
+            <ResourcePart />
+          </div>
+        </div>
+
+        {/* CTA */}
+        <div className="mt-20 mb-10">
+          <div
+            style={{
+              backgroundImage:
+                "linear-gradient(92.19deg, #EE6E91 3.85%, #DE4CE3 50.19%, #9665E9 96.54%)",
+            }}
+            className="flex flex-row rounded-lg p-8"
+          >
+            <div className="flex flex-col items-start justify-center flex-1">
+              <p className="lg:text-4xl md:text-3xl text-base text-white-100 font-bold">
+                Get 10,000 minutes free every month
+              </p>
+              <p className="text-white-150 text-base mt-5">
+                No credit card required
+              </p>
+              <Button
+                link="https://app.videosdk.live/login"
+                text="Start Building For Free"
+              />
+            </div>
+            <div>
+              <div>
+                <img src="./img/mask-group.png" />
+              </div>
+            </div>
+          </div>
         </div>
       </SectionContainer>
     </div>

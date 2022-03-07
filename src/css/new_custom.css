@@ -1434,8 +1434,11 @@ html[data-theme="dark"]
 .footer__link-item > span > svg {
   margin-top: 7px;
 }
+.footer__link-item > :hover {
+  color: #ef433c;
+}
 
-.bg-white {
+/* .bg-white {
   background-color: var(--custom-bg-white);
   color: var(--custom-bg-white-font-color);
 }
@@ -1486,7 +1489,7 @@ html[data-theme="dark"]
 }
 .featue-icon-text-xs {
   margin-top: 10px;
-  /* margin-left: 3px; */
+ 
   font-weight: 600;
   font-size: 24px;
 }
@@ -1519,4 +1522,4 @@ html[data-theme="dark"]
 
 .ml-96-png {
   margin-left: 500px;
-}
+} */
