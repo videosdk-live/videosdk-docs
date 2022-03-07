@@ -1,0 +1,23 @@
+<h1> {props.title} </h1> 
+
+This guide will help you to generate API key and secret from dashboard. 
+- **API Key** is unique identifier used to authenticate a user calling to Video SDK API. 
+- **Secret Key** cryptography relies on using the same key to encode and then later decode a message. Thus, only those who know the "secret" can read the message.
+
+### Step 1. Generate API Key from Dashboard
+
+Go to [Video SDK Dashboard](https://app.videosdk.live/), navigate to [<ins>**API Keys**</ins>](https://app.videosdk.live/api-keys). Click on **ADD NEW** button to generate your own API key and Secret for the project.
+
+![Video SDK Home Dashboard](/img/tutorial/add-new-key.jpg)
+
+### Step 2. Enter your Project Name
+Enter your project name as shown below. Project name will help you to organise API keys and secrets for multiple projects and environments.
+
+![Video SDK Home Dashboard](/img/tutorial/create-project.jpg)
+
+### Step 3. Use API key / Secret or Token
+After submitting your project name, you can follow either of two paths:
+1. **Development Env:** You can just click on **Generate Token** and get started with the project setup.
+2. **Production Env:** For production, please setup authentication server to authenticate and authorize all the users.
+
+![Video SDK Home Dashboard](/img/tutorial/generated-key.jpg)

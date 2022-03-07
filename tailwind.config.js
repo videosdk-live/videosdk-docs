@@ -1,6 +1,7 @@
 module.exports = {
   mode: "jit",
-
+  corePlugins: { preflight: false },
+  important: "#tailwind",
   purge: [
     "./src/**/*.{js,jsx,ts,tsx}",
     "./pages/**/*.{js,ts,jsx,tsx}",

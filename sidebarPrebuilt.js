@@ -6,8 +6,6 @@ module.exports = {
       items: [
         "guide/prebuilt-video-and-audio-calling/getting-started",
         "guide/prebuilt-video-and-audio-calling/signup-and-create-api",
-        "guide/prebuilt-video-and-audio-calling/quick-start",
-        "guide/prebuilt-video-and-audio-calling/dynamic-meeting-link",
         {
           type: "category",
           label: "Client Setup",
@@ -17,6 +15,9 @@ module.exports = {
           ],
           collapsed: true,
         },
+        "guide/prebuilt-video-and-audio-calling/quick-start",
+        "guide/prebuilt-video-and-audio-calling/dynamic-meeting-link",
+        
       ],
       collapsed: true,
     },

@@ -34,18 +34,26 @@ import Card from '@theme/Card';
 <div class="container guide-steps-block">
   <div class="row ">
     <div class="col col--6">
-      <Card heading="1. Signup & Create API Key" link="/flutter/guide/video-and-audio-calling-api-sdk/signup-and-create-api" description="Generate Your API Key" />
+      <Card heading="1. Signup & Create API Key" link="/flutter/guide/video-and-audio-calling-api-sdk/signup-and-create-api" description="Generate your API key and Secret from Video SDK." />
     </div>
      <div class="col col--6">
-      <Card heading="2. Client Setup" link="/flutter/guide/video-and-audio-calling-api-sdk/supported-platforms" description="SDK Integration with client" />
+      <Card heading="2. Client Setup" link="/flutter/guide/video-and-audio-calling-api-sdk/supported-platforms" description="Easy to integrate SDK with cross-channel support." />
     </div>
   </div>
-   <div class="row ">
+  <div class="row ">
    <div class="col col--6" >
-      <Card heading="3. Server Setup" link="/flutter/guide/video-and-audio-calling-api-sdk/server-setup" description="Integrate server with API key"  />
+      <Card heading="3. Server Setup" link="/flutter/guide/video-and-audio-calling-api-sdk/server-setup" description="Setup secured server authentication and authorization."  />
     </div>
     <div class="col col--6">
-      <Card heading="4. Start or Join Meeting" link="/flutter/guide/video-and-audio-calling-api-sdk/features/start-join-meeting" description="Enter in Meeting" />
+      <Card heading="4. Quick Start" link="/flutter/guide/video-and-audio-calling-api-sdk/quick-start" description="Get started with step by step guide of integrating Video SDK." />
+    </div>
+  </div>
+  <div class="row ">
+   <div class="col col--6" >
+      <Card heading="5. Basic Features" link="/flutter/guide/video-and-audio-calling-api-sdk/server-setup" description="Explore basic features such as join, leave and customise sessions."  />
+    </div>
+    <div class="col col--6">
+      <Card heading="6. Advanced Features" link="/flutter/guide/video-and-audio-calling-api-sdk/features/recording-meeting" description="Explore advanced features such as screen sharing, recording and live streaming." />
     </div>
   </div>
 </div>

@@ -1,26 +1,27 @@
 import React, { useEffect, useMemo, useState } from "react";
 import ReactIcon from "../../static/icon/ReactIcon";
 import SDKCard from "./SDKCard";
-// import ResourceCard from "./ResourceCard";
-import SectionContainer from "../components/Layout/SectionContainer";
-import QuickStartIcon from "../../static/icon/QuickStartIcon";
+import ResourceCard from "./ResourceCard";
 import VideoMeetingIcon from "../../static/icon/VideoMeetingIcon";
 import WhiteboardIcon from "../../static/icon/WhiteboardIcon";
 import ScreenShareIcon from "../../static/icon/ScreenShareIcon";
-import RTMPOutIcon from "../../static/icon/RTMPOutIcon";
 import PinParticipantIcon from "../../static/icon/PinParticipantIcon";
+import RTMPOutIcon from "../../static/icon/RTMPOutIcon";
 import ChatIcon from "../../static/icon/ChatIcon";
 import RecordMeetingIcon from "../../static/icon/RecordMeetingIcon";
+import SectionContainer from "../components/Layout/SectionContainer";
+import QuickStartIcon from "../../static/icon/QuickStartIcon";
+import ExternalLinkIcon from "../../static/icon/ExternalLinkIcon";
 import JSIcon from "../../static/icon/JSIcon";
 import FlutterIcon from "../../static/icon/FlutterIcon";
-import IOSIcon from "../../static/icon/IOSIcon";
 import AndroidIcon from "../../static/icon/AndroidIcon";
+import IOSIcon from "../../static/icon/IOSIcon";
 import CustomReactIcon from "../../static/icon/Home_customsdk/CustomReactIcon";
 import CustomJSIcon from "../../static/icon/Home_customsdk/CustomJSIcon";
 import CustomFlutterIcon from "../../static/icon/Home_customsdk/CustomFlutterIcon";
 import CustomAndroidIcon from "../../static/icon/Home_customsdk/CustomAndroidIcon";
 import CustomIOSIcon from "../../static/icon/Home_customsdk/CustomIOSIcon";
-import ExternalLinkIcon from "../../static/icon/ExternalLinkIcon";
+
 const blogs = require("../../.docusaurus/docusaurus-plugin-content-blog/default/blog-post-list-prop-default.json");
 
 function MainCard({
@@ -67,7 +68,7 @@ function MainCard({
               className={`${
                 titleStyle
                   ? `${titleStyle}`
-                  : `text-xs font-medium text-white-100 md:text-base`
+                  : `text-xs font-medium text-white-100 md:text-base mb-0`
               }`}
             >
               {Title}
@@ -199,6 +200,7 @@ function QuickstartPart() {
       link: "/ios/guide/video-and-audio-calling-api-sdk/getting-started",
     },
   ];
+
   return (
     <div className="flex md:flex-row flex-col">
       {QuickStartArray.map((item, index) => {
@@ -209,7 +211,7 @@ function QuickstartPart() {
             <MainCard
               key={index}
               Title={item.title}
-              titleStyle={"md:text-2xl text-xl text-white-100 font-bold"}
+              titleStyle={"md:text-2xl text-xl text-white-100 font-bold mb-0"}
               Description={item.description}
               backgroundColor={
                 index == 0
@@ -224,9 +226,11 @@ function QuickstartPart() {
               EndPart={() => {
                 return index == 0 ? (
                   <div className="mt-6">
-                    <button className="bg-gray-100 text-black p-2 rounded-md ">
-                      Try it - it’s free
-                    </button>
+                    <a href="/prebuilt/guide/prebuilt-video-and-audio-calling/getting-started">
+                      <div className="bg-white-100 text-black p-2 rounded-md max-w-fit">
+                        Try it - it’s free
+                      </div>
+                    </a>
                   </div>
                 ) : (
                   <div className="mt-6">
@@ -239,11 +243,11 @@ function QuickstartPart() {
                               index == 0 ? "" : "md:ml-3 ml-1"
                             }`}
                           >
-                            <button>
-                              <div>
-                                <item.Icon />
-                              </div>
-                            </button>
+                            {/* <button> */}
+                            {/* <div> */}
+                            <item.Icon />
+                            {/* </div> */}
+                            {/* </button> */}
                           </a>
                         );
                       })}
@@ -264,7 +268,7 @@ let Button = ({ link, text }) => {
     <>
       <div className="mt-16">
         <a href={link} className="rounded bg-white-100  flex flex-row p-3">
-          <h6 className="text-black text-md font-semibold ">{text}</h6>
+          <h6 className="text-black text-md font-semibold mb-0">{text}</h6>
         </a>
       </div>
     </>
@@ -283,13 +287,13 @@ function ResourcePart() {
       title: "Custom SDK Guide",
       description:
         "End to End tutorials to integrate Custom SDK on various platforms.",
-      link: "/react/api/sdk-reference/setup",
+      link: "/prebuilt/guide/prebuilt-video-and-audio-calling/getting-started",
     },
     {
       title: "API Reference",
       description:
         "Complete reference to our  APIs that you can use to interact with the SDK.",
-      link: "docs/api-reference/realtime-communication/intro",
+      link: "/react/api/sdk-reference/setup",
     },
     {
       title: "Code Sample",
@@ -314,14 +318,19 @@ function ResourcePart() {
                 return (
                   <div className="mt-6">
                     <div className="h-9  flex items-end justify-end">
-                      <a href={item.link} className="">
-                        <button
+                      <a
+                        href={item.link}
+                        className={`text-black p-2 rounded-md flex items-center justify-center ${
+                          index == 0 ? "" : "ml-3"
+                        }`}
+                      >
+                        {/* <button
                           className={`text-black p-2 rounded-md flex items-center justify-center ${
                             index == 0 ? "" : "ml-3"
                           }`}
-                        >
-                          <ExternalLinkIcon />
-                        </button>
+                        > */}
+                        <ExternalLinkIcon />
+                        {/* </button> */}
                       </a>
                     </div>
                   </div>
@@ -376,7 +385,7 @@ function Overview() {
   ];
 
   return (
-    <div>
+    <div id="tailwind">
       <SectionContainer>
         {/* starting section */}
         <div>
@@ -434,7 +443,7 @@ function Overview() {
               <div className="xl:text-lg text-base text-green-700 mt-4">
                 Keep reading to know more about VideosSDK, or{" "}
                 <a
-                  className="underline hover:text-green-500 hover:underline"
+                  className="underline hover:text-green-500 text-green-700"
                   href="/react/guide/video-and-audio-calling-api-sdk/quick-start"
                 >
                   click here to jump to our quickstart guides
@@ -465,7 +474,7 @@ function Overview() {
               ))}
             </div>
           </div>
-          <div className="hidden md:block  mt-6">
+          <div className="hidden md:block lg:hidden mt-6">
             <div className="flex justify-between md:p-3 p-0 ">
               {tabletFeaturesArray1.map((item, index) => (
                 <div>
@@ -491,7 +500,7 @@ function Overview() {
               ))}
             </div>
           </div>
-          <div className="md:hidden xs:block mt-6">
+          <div className="md:hidden sm:block  mt-6">
             <div className="flex justify-between md:p-3 p-0 ">
               {mobileFeaturesArray1.map((item, index) => (
                 <div>
