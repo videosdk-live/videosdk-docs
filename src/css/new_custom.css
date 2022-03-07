@@ -1520,3 +1520,11 @@ html[data-theme="dark"]
 .ml-96-png {
   margin-left: 500px;
 }
+
+.image-box {
+  background: linear-gradient(
+    98.98deg,
+    #6a65f1 -0.57%,
+    rgba(133, 29, 216, 0.6) 99.12%
+  );
+}
