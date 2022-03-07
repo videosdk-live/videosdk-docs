@@ -313,11 +313,11 @@ function ResourcePart() {
               Title={item.title}
               titleStyle={"md:text-xl text-lg text-white-100 font-bold"}
               Description={item.description}
-              descriptionStyle={"text-gray-250 md:text-lg text-base"}
+              descriptionStyle={"text-gray-250 md:text-lg text-base lg:h-12"}
               borderRadius={"rounded-lg"}
               EndPart={() => {
                 return (
-                  <div className="mt-6">
+                  <div className="mt-4">
                     <div className="h-9  flex items-end justify-end">
                       <a
                         href={item.link}
@@ -478,7 +478,7 @@ function Overview() {
           <div className="hidden md:block lg:hidden mt-6">
             <div className="flex justify-between md:p-3 p-0 ">
               {tabletFeaturesArray1.map((item, index) => (
-                <div>
+                <div className="feature-icon">
                   <div className={`${index == 0 ? "ml-0" : "ml-2"}`}>
                     <img src={`${item.imgLink}`} />
                   </div>
@@ -490,13 +490,15 @@ function Overview() {
             </div>
             <div className="flex items-center justify-center md:p-3 p-0 md:mt-0 mt-4">
               {tabletFeaturesArray2.map((item, index) => (
-                <div>
-                  <div className={`${index == 0 ? "ml-0" : "ml-2"}`}>
-                    <img src={`${item.imgLink}`} />
+                <div className={`${index == 0 ? "-ml-13" : "ml-24"}`}>
+                  <div className="feature-icon">
+                    <div className={`${index == 2 ? "mt-6" : "mt-0"}`}>
+                      <img src={`${item.imgLink}`} />
+                    </div>
+                    <p className="text-base md:text-lg text-white-100  mt-4 break-words md:w-28 w-[98px] text-center">
+                      {item.title}
+                    </p>
                   </div>
-                  <p className="text-base md:text-lg text-white-100  mt-4 break-words md:w-28 w-[98px] text-center">
-                    {item.title}
-                  </p>
                 </div>
               ))}
             </div>
@@ -504,7 +506,7 @@ function Overview() {
           <div className="md:hidden sm:block  mt-6">
             <div className="flex justify-between md:p-3 p-0 ">
               {mobileFeaturesArray1.map((item, index) => (
-                <div>
+                <div className="feature-icon">
                   <div className={`${index == 0 ? "ml-0" : "ml-2"}`}>
                     {/* <item.Icon /> */}
                     <img className="h-24 w-24" src={`${item.imgLink}`} />
@@ -517,7 +519,7 @@ function Overview() {
             </div>
             <div className="flex justify-between md:p-3 p-0 md:mt-0 mt-4">
               {mobileFeaturesArray2.map((item, index) => (
-                <div>
+                <div className="feature-icon">
                   <div className={`${index == 0 ? "ml-0" : "ml-2"}`}>
                     <img className="h-24 w-24" src={`${item.imgLink}`} />
                   </div>
@@ -529,7 +531,7 @@ function Overview() {
             </div>
             <div className="flex justify-between md:p-3 p-0 md:mt-0 mt-4">
               {mobileFeaturesArray3.map((item) => (
-                <div>
+                <div className="feture-icon">
                   <div
                   // className="bg-gray-700  rounded-full md:h-28 md:w-28 h-20 w-20 flex items-center justify-center  "
                   >
