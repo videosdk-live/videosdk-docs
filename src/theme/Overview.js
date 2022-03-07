@@ -144,9 +144,9 @@ function Overview() {
                 className="underline hover:text-green-700"
                 href="/react/guide/video-and-audio-calling-api-sdk/quick-start"
               >
-                click here
+                click here to jump to our quickstart guides
               </a>{" "}
-              to jump to our quickstart guides that get you started.
+              that get you started.
             </div>
           </div>
         </div>
