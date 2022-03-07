@@ -39,7 +39,7 @@ function MainCard({
   return (
     <div
       style={{ backgroundImage: `${backgroundColor}` }}
-      className={`${fullWidth ? "p-2 md:p-6" : "p-2 md:p-3"} ${
+      className={`${fullWidth ? "p-3 md:p-6" : "p-3 md:p-3"} ${
         borderRadius ? borderRadius : "rounded"
       } bg-gray-750 ${
         onlyTitle
@@ -267,7 +267,7 @@ function QuickstartPart() {
 let Button = ({ link, text }) => {
   return (
     <>
-      <div className="mt-16">
+      <div className="mt-0">
         <a href={link} className="rounded bg-white-100  flex flex-row p-3">
           <h6 className="text-black text-md font-semibold mb-0">{text}</h6>
         </a>
@@ -520,7 +520,11 @@ function Overview() {
             <div className="flex justify-between md:p-3 p-0 md:mt-0 mt-4">
               {mobileFeaturesArray2.map((item, index) => (
                 <div className="feature-icon">
-                  <div className={`${index == 0 ? "ml-0" : "ml-2"}`}>
+                  <div
+                    className={`${index == 0 ? "ml-0" : "ml-2"} ${
+                      index == 0 ? "mt-6" : "mt-0"
+                    }`}
+                  >
                     <img className="h-24 w-24" src={`${item.imgLink}`} />
                   </div>
                   <p className="text-base md:text-lg text-white-100  mt-4 break-words md:w-28 w-[98px] text-center">
@@ -584,35 +588,30 @@ function Overview() {
               backgroundImage:
                 "linear-gradient(92.19deg, #EE6E91 3.85%, #DE4CE3 50.19%, #9665E9 96.54%)",
             }}
-            className="flex flex-row rounded-lg p-8"
+            className="flex flex-row rounded-lg p-5"
           >
-            <div className="flex flex-col items-start justify-center flex-1">
-              <p className="lg:text-4xl md:text-3xl text-base text-white-100 font-bold">
-                Get 10,000 minutes free every month
-              </p>
-              <p className="text-white-150 text-base mt-5">
-                No credit card required
-              </p>
-              <Button
-                link="https://app.videosdk.live/login"
-                text="Start Building For Free"
-              />
+            <div className="flex flex-col flex-1">
+              <div className="flex flex-col flex-1">
+                <p className="lg:text-4xl md:text-lg text-base text-white-100 font-extrabold  text-center md:text-left">
+                  Get 10,000 minutes free every month
+                </p>
+                <p className="text-white-150 text-base mt-0 text-center md:text-left">
+                  No credit card required
+                </p>
+              </div>
+              <div className="flex items-center justify-center md:items-start md:justify-start ">
+                <Button
+                  link="https://app.videosdk.live/login"
+                  text="Start Building For Free"
+                />
+              </div>
             </div>
             <div>
-              <div className="hidden xl:block lg:block md:block sm:block xs:block">
-                <div className="ml-7 ">
+              <div className="hidden  md:block ">
+                <div className=" ">
                   <img src="./img/mask-group.png" />
                 </div>
               </div>
-              <div className="hidden 2xl::block">
-                <div className="ml-96-png mt-3">
-                  <img src="./img/mask-group.png" />
-                </div>
-              </div>
-
-              {/* <div>
-                <img src="./img/mask-group.png" />
-              </div> */}
             </div>
           </div>
         </div>
