@@ -1476,6 +1476,7 @@ html[data-theme="dark"]
   justify-content: center;
 }
 
+
 .feature-icon-xs {
   display: flex;
   flex-direction: column;
@@ -1531,3 +1532,10 @@ html[data-theme="dark"]
 .ml-96-png {
   margin-left: 500px;
 } */
+
+.feature-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
