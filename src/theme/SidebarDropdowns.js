@@ -127,7 +127,9 @@ export default function SidebarDropdowns() {
         <div class="col dropdown dropdown--hoverable dropdown--left">
           <div class="row navbar__link--active">
             {<img class="dropdown-logo" src={getSDKName(sdk)[0]?.icon} />}
-            <div class="col" style={{ padding: "0px", fontSize: "1rem" }}>{getSDKName(sdk)[0]?.value}</div>
+            <div class="col" style={{ padding: "0px", fontSize: "1rem" }}>
+              {getSDKName(sdk)[0]?.value}
+            </div>
 
             <img src="/img/icons/ic_arrow_down.svg" />
           </div>

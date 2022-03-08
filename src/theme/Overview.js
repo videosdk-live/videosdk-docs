@@ -2,6 +2,7 @@ import React, { useEffect, useMemo, useState } from "react";
 import ReactIcon from "../../static/icon/ReactIcon";
 import SDKCard from "./SDKCard";
 import ResourceCard from "./ResourceCard";
+import ReactTooltip from "react-tooltip";
 import VideoMeetingIcon from "../../static/icon/VideoMeetingIcon";
 import WhiteboardIcon from "../../static/icon/WhiteboardIcon";
 import ScreenShareIcon from "../../static/icon/ScreenShareIcon";
@@ -17,6 +18,7 @@ import FlutterIcon from "../../static/icon/FlutterIcon";
 import AndroidIcon from "../../static/icon/AndroidIcon";
 import IOSIcon from "../../static/icon/IOSIcon";
 import CustomReactIcon from "../../static/icon/Home_customsdk/CustomReactIcon";
+import CustomReactNativeIcon from "../../static/icon/Home_customsdk/CustomReactNativeIcon";
 import CustomJSIcon from "../../static/icon/Home_customsdk/CustomJSIcon";
 import CustomFlutterIcon from "../../static/icon/Home_customsdk/CustomFlutterIcon";
 import CustomAndroidIcon from "../../static/icon/Home_customsdk/CustomAndroidIcon";
@@ -77,7 +79,7 @@ function MainCard({
           </div>
         </div>
         {Description && (
-          <div className={`mt-0 ${quickstart ? "pr-28" : ""}`}>
+          <div className={`mt-0 ${quickstart ? "sm:pr-28 pr-5" : ""}`}>
             <p
               className={`${
                 descriptionStyle
@@ -179,26 +181,32 @@ function QuickstartPart() {
     {
       Icon: CustomReactIcon,
       link: "/react/guide/video-and-audio-calling-api-sdk/getting-started",
+      tooltip: "React",
     },
     {
       Icon: CustomJSIcon,
       link: "/javascript/guide/video-and-audio-calling-api-sdk/getting-started",
+      tooltip: "JavaScript",
     },
     {
       Icon: CustomFlutterIcon,
       link: "/flutter/guide/video-and-audio-calling-api-sdk/getting-started",
+      tooltip: "Flutter",
     },
     {
-      Icon: CustomReactIcon,
+      Icon: CustomReactNativeIcon,
       link: "/react-native/guide/video-and-audio-calling-api-sdk/getting-started",
+      tooltip: "React Native",
     },
     {
       Icon: CustomAndroidIcon,
       link: "/android/guide/video-and-audio-calling-api-sdk/getting-started",
+      tooltip: "Andorid",
     },
     {
       Icon: CustomIOSIcon,
       link: "/ios/guide/video-and-audio-calling-api-sdk/getting-started",
+      tooltip: "iOS",
     },
   ];
 
@@ -232,22 +240,12 @@ function QuickstartPart() {
               quickstart={true}
               EndPart={() => {
                 return index == 0 ? (
-                  // <div className="mt-9">
-                  // <a
-                  //   href="/prebuilt/guide/prebuilt-video-and-audio-calling/getting-started"
-                  //   className="bg-white-100 text-black p-2 rounded-md max-w-fit h-9"
-                  // >
-                  //   Try it - it’s free
-                  // </a>
-                  // </div>
                   <div className="mt-6">
                     <div className="h-9  flex  ">
-                      <a
-                        href="/prebuilt/guide/prebuilt-video-and-audio-calling/getting-started"
-                        className="bg-white-100 text-black p-1.5 rounded-md max-w-fit text-center"
-                      >
-                        Try it - it’s free
-                      </a>
+                      <Button
+                        link="/prebuilt/guide/prebuilt-video-and-audio-calling/getting-started"
+                        text="Try it - it’s free"
+                      />
                     </div>
                   </div>
                 ) : (
@@ -256,16 +254,22 @@ function QuickstartPart() {
                       {CustomSDKArray.map((item, index) => {
                         return (
                           <a
+                            data-tip
+                            data-for={item.tooltip}
                             href={item.link}
                             className={`bg-white-250 text-black p-2 rounded-md flex items-center justify-center ${
                               index == 0 ? "" : "md:ml-3 ml-1"
                             }`}
                           >
-                            {/* <button> */}
-                            {/* <div> */}
                             <item.Icon />
-                            {/* </div> */}
-                            {/* </button> */}
+                            <ReactTooltip
+                              type="light"
+                              id={item.tooltip}
+                              place="bottom"
+                              effect="solid"
+                            >
+                              {item.tooltip}
+                            </ReactTooltip>
                           </a>
                         );
                       })}
@@ -285,7 +289,10 @@ let Button = ({ link, text }) => {
   return (
     <>
       <div className="mt-0">
-        <a href={link} className="rounded bg-white-100  flex flex-row p-3">
+        <a
+          href={link}
+          className="rounded bg-white-100 hover:bg-white-150 flex flex-row p-3"
+        >
           <h6 className="text-black text-md font-semibold mb-0">{text}</h6>
         </a>
       </div>
@@ -332,7 +339,9 @@ function ResourcePart() {
                 "md:text-xl text-lg text-white-100 font-extrabold mb-3 "
               }
               Description={item.description}
-              descriptionStyle={"text-gray-250 md:text-lg text-base mt-0 "}
+              descriptionStyle={
+                "text-gray-250 md:text-lg text-base mt-0 lg:w-44 lg:pr-7 xl:pr-2 xl:w-56 2xl:pr-10 2xl:w-72 "
+              }
               borderRadius={"rounded-lg"}
               EndPart={() => {
                 return (
@@ -340,7 +349,7 @@ function ResourcePart() {
                     <div className="h-9  flex items-end justify-end">
                       <a
                         href={item.link}
-                        className={`text-black p-2 rounded-md flex items-center justify-center ${
+                        className={`text-black hover:bg-white-150 p-2 rounded-md flex items-center justify-center ${
                           index == 0 ? "" : "ml-3"
                         }`}
                       >
@@ -392,12 +401,14 @@ function Overview() {
     { title: "Video Meeting", imgLink: "./svgs/feature-icon1.svg" },
     { title: "Interactive Whiteboard", imgLink: "./svgs/feature-icon2.svg" },
     { title: "Screen Sharing", imgLink: "./svgs/feature-icon3.svg" },
+    // { title: "Pin Participant", imgLink: "./svgs/feature-icon4.svg" },
   ];
 
   const mobileFeaturesArray2 = [
     { title: "Pin Participant", imgLink: "./svgs/feature-icon4.svg" },
     { title: "RTMP Out", imgLink: "./svgs/feature-icon5.svg" },
     { title: "Chat", imgLink: "./svgs/feature-icon6.svg" },
+    // { title: "Record Meeting", imgLink: "./svgs/feature-icon7.svg" },
   ];
 
   const mobileFeaturesArray3 = [
@@ -441,7 +452,7 @@ function Overview() {
               <div className="image-box flex justify-center rounded-lg bg-gray-750 h-48 sm:h-96 md:h-96 lg:h-96 xl:h-96 2xl:h-96 mt-7">
                 <img
                   src="./img/image-box.png"
-                  className="mt-5 mb-5 object-contain "
+                  className="mt-5 mb-5 object-contain p-1 sm:p-0 md:p-0 lg:p-0 xl:p-0 2xl:p-0 "
                 />
               </div>
             </div>
@@ -527,41 +538,38 @@ function Overview() {
               ))}
             </div>
           </div>
-          <div className="md:hidden sm:block  mt-6">
-            <div className="flex justify-between md:p-3 p-0 ">
+          <div className="sm:hidden block mt-6">
+            <div className="flex justify-between -ml-3">
               {mobileFeaturesArray1.map((item, index) => (
                 <div className="feature-icon">
                   <div className={`${index == 0 ? "ml-0" : "ml-2"}`}>
-                    {/* <item.Icon /> */}
-                    <img className="h-24 w-24" src={`${item.imgLink}`} />
+                    <img className="h-16 w-16" src={`${item.imgLink}`} />
                   </div>
-                  <p className="text-base md:text-lg text-white-100  mt-4 break-words md:w-28 w-[98px] text-center">
+                  <p className="text-base md:text-lg text-white-150  mt-0 break-words md:w-28 w-[98px] text-center">
                     {item.title}
                   </p>
                 </div>
               ))}
             </div>
-            <div className="flex justify-between md:p-3 p-0 md:mt-0 mt-4">
+            <div className="flex justify-between -ml-3">
               {mobileFeaturesArray2.map((item, index) => (
                 <div className="feature-icon">
-                  <div className={`${index == 0 ? "ml-0" : "ml-2"}`}>
-                    <img className="h-24 w-24" src={`${item.imgLink}`} />
+                  <div className={`${index != 0 ? "-mt-6" : "mt-0"}`}>
+                    <img className="h-16 w-16" src={`${item.imgLink}`} />
                   </div>
-                  <p className="text-base md:text-lg text-white-100  mt-4 break-words md:w-28 w-[98px] text-center">
+                  <p className="text-base md:text-lg text-white-150  mt-0 break-words md:w-28 w-[98px] text-center">
                     {item.title}
                   </p>
                 </div>
               ))}
             </div>
-            <div className="flex justify-between md:p-3 p-0 md:mt-0 mt-4">
-              {mobileFeaturesArray3.map((item) => (
-                <div className="feture-icon">
-                  <div
-                  // className="bg-gray-700  rounded-full md:h-28 md:w-28 h-20 w-20 flex items-center justify-center  "
-                  >
-                    <img className="h-24 w-24" src={`${item.imgLink}`} />
+            <div className="text-center">
+              {mobileFeaturesArray3.map((item, index) => (
+                <div className="feature-icon">
+                  <div>
+                    <img className="h-16 w-16" src={`${item.imgLink}`} />
                   </div>
-                  <p className="text-base md:text-lg text-white-100  mt-4 break-words md:w-28 w-[98px] text-center">
+                  <p className="text-base md:text-lg text-white-150  mt-0 break-words md:w-28 w-[98px] text-center">
                     {item.title}
                   </p>
                 </div>
