@@ -592,7 +592,6 @@ const App = () => {
       config={{
         meetingId: "<Id-on-meeting>",
         name: "<Name-of-participant>",
-        participantId:'Id-of-participant' // optional,  default: SDK will generate
         micEnabled: "<Flag-to-enable-mic>",
         webcamEnabled: "<Flag-to-enable-webcam>",
         maxResolution: "<Maximum-resolution>",
