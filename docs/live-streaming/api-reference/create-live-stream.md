@@ -130,6 +130,7 @@ puts response.read_body
   "userId": "607adacdaeba2c4d217d5fea443d",
   "name": "videosdk",
   "streamKey": "e83fb175-5606-4ee5-b960-aacfce300ba6",
+  "streamUrl": "rtmp://live.videosdk.live/live/",
   "upstreamUrl": "rtmp://live.videosdk.live/live/e83fb175-5606-4ee5-b960-aacfce300ba6",
   "downstreamUrl": "https://live.videosdk.live/live/e83fb175-5606-4ee5-b960-aacfce300ba6/index.m3u8",
   "recordingUrl": "https://live.videosdk.live/live/e83fb175-5606-4ee5-b960-aacfce300ba6/storage/index.m3u8",
@@ -185,6 +186,7 @@ import MethodListHeading from '@theme/MethodListHeading';
       <MethodListItemLabel name="id"  type={"string"} />
       <MethodListItemLabel name="name"  type={"string"} />
       <MethodListItemLabel name="streamKey"  type={"string"} />
+      <MethodListItemLabel name="streamUrl"  type={"string"} />
       <MethodListItemLabel name="upstreamUrl"  type={"string"} />
       <MethodListItemLabel name="downstreamUrl"  type={"string"} />
       <MethodListItemLabel name="recordingUrl"  type={"string"} />

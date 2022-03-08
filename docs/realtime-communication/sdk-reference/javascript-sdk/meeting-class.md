@@ -37,6 +37,7 @@ import MethodListHeading from '@theme/MethodListHeading';
     <MethodListGroup>
       <MethodListHeading heading="Properties" />
       <MethodListItemLabel name="meetingId" option={"required"} type={"string"} />
+      <MethodListItemLabel name="participantId" option={"optional"} type={"string"} />
       <MethodListItemLabel name="name" option={"optional"} type={"string"} />
       <MethodListItemLabel name="micEnabled" option={"optional"} type={"bool"} defaultValue={"true"} />
       <MethodListItemLabel name="webcamEnabled" option={"optional"} type={"bool"} defaultValue={"true"} />

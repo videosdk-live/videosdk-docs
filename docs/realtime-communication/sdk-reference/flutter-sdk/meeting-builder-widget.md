@@ -35,6 +35,7 @@ import MethodListHeading from '@theme/MethodListHeading';
     <MethodListItemLabel name="meetingId" type={"String"} />
     <MethodListItemLabel name="displayName" type={"String"}   />
     <MethodListItemLabel name="token" type={"String"}   />
+    <MethodListItemLabel name="participantId" type={"String"}   />
     <MethodListItemLabel name="micEnabled" type={"Bool"}   />
     <MethodListItemLabel name="webcamEnabled" type={"Bool"}   />
     <MethodListItemLabel name="notification" type={"NotificationInfo"}   />
