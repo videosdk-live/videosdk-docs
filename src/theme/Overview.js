@@ -435,7 +435,7 @@ function Overview() {
             </div>
           )}
 
-          <div className="mt-4">
+          <div className={`${blogs.items.length > 0 ? "mt-4" : ""}`}>
             <p className="lg:text-4xl md:text-3xl text-2xl font-semibold text-white-100">
               Overview
             </p>
