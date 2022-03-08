@@ -438,10 +438,10 @@ function Overview() {
               issues. With Video SDK everyone wins!
             </p>
             <div className="mt-11 ">
-              <div className="image-box flex justify-center rounded-lg xs:h-48 bg-gray-750 h-96 mt-7">
+              <div className="image-box flex justify-center rounded-lg bg-gray-750 h-48 sm:h-96 md:h-96 lg:h-96 xl:h-96 2xl:h-96 mt-7">
                 <img
                   src="./img/image-box.png"
-                  className="mt-5 xs:p-2 sm:p-2 mb-5 object-contain"
+                  className="mt-5 mb-5 object-contain "
                 />
               </div>
             </div>
