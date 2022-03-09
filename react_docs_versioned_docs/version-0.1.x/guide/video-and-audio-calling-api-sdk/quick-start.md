@@ -1,6 +1,6 @@
 ---
 title: Quick Start with React JS
-hide_title: false
+hide_title: true
 hide_table_of_contents: false
 description: Video SDK enables the opportunity to integrate native IOS, Android & Web SDKs to add live video & audio conferencing to your applications.
 sidebar_label: Start a Voice / Video Call
@@ -15,9 +15,11 @@ sidebar_position: 1
 slug: quick-start
 ---
 
-# Quick Start
+# Build a Video Calling App Using VideoSDK in a React Project
 
-VideoSDK enables the opportunity to integrate video & audio calling to Web, Android, IOS applications. it provides Programmable SDKs and REST APIs to build up scalable video conferencing applications.
+VideoSDK enables you to embed the video calling feature into your React application in minutes.
+
+In this quickstart, we are going to explore group calling feature of Video SDK. We will go through step by step guide of integrating video calling with React Video SDK
 
 This guide will get you running with the VideoSDK video & audio calling in minutes.
 
@@ -25,7 +27,12 @@ This guide will get you running with the VideoSDK video & audio calling in minut
 
 Before proceeding, ensure that your development environment meets the following requirements:
 
+- Video SDK Developer Account (Not having one, follow **[Video SDK Dashboard](https://app.videosdk.live/)**)
+- Basic understanding of React
+- **[React Video SDK](https://www.npmjs.com/package/@videosdk.live/react-sdk)**
 - Have Node and NPM installed on your device.
+- The basic understanding of Hooks (useState, useRef, useEffect)
+- React Context API (optional)
 
 :::important
 
@@ -34,17 +41,21 @@ Visit videoSDK **[dashboard](https://app.videosdk.live/api-keys)** to generate t
 
 :::
 
-## Project Setup
+## Getting Started with the Code!
 
 Follow the steps to create the environment necessary to add video calls into your app.
 
-1. Create a new React App using the below command. Replace `<PROJECT_NAME>` with your project name.
+### Create new react app
+
+Create a new React App using the below command.
 
 ```bash
-$ npx create-react-app <PROJECT_NAME>
+$ npx create-react-app videosdk-rtc-react-app
 ```
 
-2. Install the VideoSDK using the below-mentioned npm command. Make sure you are in your react app directory before you run this command.
+### Install Video SDK
+
+Install the VideoSDK using the below-mentioned npm command. Make sure you are in your react app directory before you run this command.
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -64,6 +75,7 @@ $ npm install "@videosdk.live/react-sdk"
 //For the Participants Video
 $ npm install "react-player"
 ```
+
 </TabItem>
 <TabItem value="yarn">
 
@@ -77,9 +89,9 @@ $ yarn add "react-player"
 </TabItem>
 </Tabs>
 
-3. If you want to use the custom styling from this tutorial, update the `index.css` with the [css provided here](/)
+### Structure of the project
 
-4. Your project structure should look like.
+Your project structure should look like this.
 
 ```jsx title="Project Structure"
    root
@@ -94,286 +106,255 @@ $ yarn add "react-player"
    .    .
 ```
 
-## Start Writing Your Code
+We are going to use functional components to leverage react's reusable component architecture. There will be components for users, videos and controls (mic, camera, leave) over the video.
 
-### Step 1: Creating the Joining Screen
+### App Architecture
 
-The Joining screen will consist of:
+App will contain a container component which includes user component with videos. Each video component will have conrols button for mic, camera and leave meeting button.
 
-- Create Button - This button will create a new meeting for you.
-- TextField for Meeting ID - This text field will contain the meeting ID you want to join.
-- Join Button - This button will join the meeting with meetingId you provided.
+![VideoSDK React JS Quick Start Architecture](/img/quick-start/react-component-structure.jpg)
 
-1. To create the basic UI, add `JoinScreen()` in the `App.js` file with the following code
+We are goting to work on two files:
 
-```jsx title="App.js" 
-function App() {
-  function JoinScreen(){
-    return <>
-      <button onClick={async () => setMeetingId( await getMeetingId({ token }))} className="button">Create Meeting</button>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      <input type="text" id="meetingId" name="meetingId" placeholder='Enter MeetingId'/>&nbsp;
-      <button onClick={() => {
-        if(!document.getElementById("meetingId").value){
-          alert("Meeting Id is required");
-          return;
-        }
-        setMeetingId(document.getElementById("meetingId").value)
-      }} className="button" >Join</button>
-    </>
-  }
+- API.js: Responsible to handle API calls such as generating unique meetingId and token
+- App.js: Responsible to render container and meeting join.
 
-  return <JoinScreen/>;
-}
-```
+### Step 1: Get started with API.js
 
-2. Declare a state for meeting Id and auth token.
+Before jumping to anything else, we have write API to generate unique meetingId. You will require auth token, you can generate it using either by using [videosdk-rtc-api-server-examples](https://github.com/videosdk-live/videosdk-rtc-api-server-examples) or generate it from the [Video SDK Dashboard](https://app.videosdk.live/api-keys) for developer.
 
-```jsx title="App.js"
-function App() {
-  //This state will contain the meeting id after generating one or adding in the textfield
-  const [meetingId, setMeetingId] = useState();
+```js title="API.js"
+export const authToken = "<Generated-from-dashbaord>";
+// API call to create meeting
+export const createMeeting = async ({ token }) => {
+  const res = await fetch(`https://api.videosdk.live/v1/meetings`, {
+    method: "POST",
+    headers: {
+      authorization: `${authToken}`,
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ region: "sg001" }),
+  });
 
-  const [token, setToken] = useState();
-
-  //Initializing the token on page load
-  useEffect(() => {
-    setToken(getToken());
-  }, []);
-
-  //...return method
-}
-```
-
-3. We need to create a `getToken()` which will provide us with an auth token and `getMeetingId()` which will generate a meeting id when Create Meeting button is pressed.
-
-- For this, we will create a new file named `api.js` which will contain all the API calls as well as the Auth token.
-
-```jsx title="api.js"
-//Replace your sampleToken from the VideoSDK dashboard here
-const sampleToken = "";
-
-export const getToken = () => {
-  return sampleToken;
-};
-
-const getMeetingId = async ({ token }) => {
-  try {
-    const VIDEOSDK_API_ENDPOINT = "https://api.videosdk.live/v1/meetings";
-    const options = {
-      method: "POST",
-      headers: {
-        Authorization: token,
-      },
-    };
-    const response = await fetch(VIDEOSDK_API_ENDPOINT, options)
-      .then(async (result) => {
-        const { meetingId } = await result.json();
-        setMeetingId(meetingId);
-      })
-      .catch((error) => console.log("error", error));
-    return response;
-  } catch (e) {
-    console.log(e);
-  }
+  const { meetingId } = await res.json();
+  return meetingId;
 };
 ```
 
-### Step 2: Create Meeting View
+### Step 2: Wireframe App.js with all the components
 
-Our React JS SDK provides two important hooks API:
+To build up wireframe of App.js, we are going to use Video SDK Hooks and Context Providers. Video SDK provideos MeetingProvider, MeetingConsumer, useMeeting and useParticipant hooks. Let's understand each of them.
 
-- `useMeeting` : Responsible to handle meeting environment.
-- `useParticipant` : Responsible to handle Participant
+First we will explore Context Provider and Consumer. Context is primarily used when some data needs to be accessible by many components at different nesting levels.
 
-Also, React Provider and Consumer to listen to changes in the meeting environment.
+- **MeetingProvider**: It is Context Provider. It accepts value `config` and `token` as props. The Provider component accepts a value prop to be passed to consuming components that are descendants of this Provider. One Provider can be connected to many consumers. Providers can be nested to override values deeper within the tree.
+- **MeetingConsumer**: It is Context Consumer. All consumers that are descendants of a Provider will re-render whenever the Provider’s value prop changes.
+- **useMeeting**: It is meeting react hook API for meeting. It includes all the information related to meeting such as participants, streams etc.
+- **useParticipant**: It is participant hook API. useParticipant hook is responsible to handle all the events and props related to one particular participant such as join, leave, mute etc.
 
-- `MeetingProvider` : Meeting Provider is [Context.Provider](https://reactjs.org/docs/context.html#contextprovider) that allows consuming components to subscribe to meeting changes
-- `MeetingConsumer` : Meeting Consumer is [Context.Consumer](https://reactjs.org/docs/context.html#contextconsumer) that subscribes to meeting changes.
+Meeting Context helps to listen on all the changes when participant joines meeting or changes mic or camera etc.
 
-1. We will start with adding the `MeetingProvider` to our app. So we will update the `return` of `App()`
+Let's get started with change couple of lines of code in App.js
 
-```jsx title="App.js"
+```js title="App.js"
+import "./App.css";
+import React, { useEffect, useRef, useState } from "react";
+import {
+  MeetingProvider,
+  MeetingConsumer,
+  useMeeting,
+  useParticipant,
+} from "@videosdk.live/react-sdk";
+import { authToken, createMeeting } from "./API";
+
+function JoinScreen() {
+  return null;
+}
+
+function VideoComponent(props) {
+  return null;
+}
+
+function Controls(props) {
+  return null;
+}
+
+function Container(props) {
+  return null;
+}
+
 function App() {
-  //...other constants and methods
+  const [meetingId, setMeetingId] = useState(null);
+
+  const getMeetingAndToken = async (id) => {
+    const meetingId =
+      id == null ? await createMeeting({ token: authToken }) : id;
+    setMeetingId(meetingId);
+  };
+
+  return authToken && meetingId ? (
+    <MeetingProvider
+      config={{
+        meetingId,
+        micEnabled: true,
+        webcamEnabled: false,
+        name: "C.V. Raman",
+      }}
+      token={authToken}
+    >
+      <MeetingConsumer>
+        {() => <Container meetingId={meetingId} />}
+      </MeetingConsumer>
+    </MeetingProvider>
+  ) : (
+    <JoinScreen getMeetingAndToken={getMeetingAndToken} />
+  );
+}
+
+export default App;
+```
+
+### Step 3: Implment Join Screen
+
+Join screen will work as medium to either schedule new meeting or to join existing meeting.
+
+```js title="JoinScreen Component"
+function JoinScreen({ getMeetingAndToken }) {
+  const [meetingId, setMeetingId] = useState(null);
+  const onClick = async () => {
+    await getMeetingAndToken(meetingId);
+  };
+  return (
+    <div>
+      <input
+        type="text"
+        placeholder="Enter Meeting Id"
+        onChange={(e) => {
+          setMeetingId(e.target.value);
+        }}
+      />
+      <button onClick={onClick}>Join</button>
+      {" or "}
+      <button onClick={onClick}>Create Meeting</button>
+    </div>
+  );
+}
+```
+
+#### Output
+
+![VideoSDK React JS Quick Start Join Screen](/img/quick-start/react-join-screen.jpeg)
+
+### Step 4: Implement Container and Controls
+
+Next step is to create a container and controls to manage features such as join, leave, mute and unmute.
+
+```js title="Container Component"
+function Container(props) {
+  const [joined, setJoined] = useState(false);
+  const { join } = useMeeting();
+  const { participants } = useMeeting();
+  const joinMeeting = () => {
+    setJoined(true);
+    join();
+  };
 
   return (
-    <div className="App">
-      {meetingId ? (
-        <MeetingProvider
-          config={{
-            meetingId: meetingId,
-            name: "John Doe",
-            micEnabled: true,
-            webcamEnabled: true,
-          }}
-          token={token}
-          joinWithoutUserInteraction={true}
-        >
-          <MeetingView
-            onMeetingLeave={() => {
-              setMeetingId("");
-            }}
-          ></MeetingView>
-        </MeetingProvider>
+    <div className="container">
+      <h3>Meeting Id: {props.meetingId}</h3>
+      {joined ? (
+        <div>
+          <Controls />
+          {[...participants.keys()].map((participantId) => (
+            <VideoComponent participantId={participantId} />
+          ))}
+        </div>
       ) : (
-        <JoinScreen/>
+        <button onClick={joinMeeting}>Join</button>
       )}
     </div>
   );
 }
 ```
 
-2. Create a new `MeetingView` which will be responsible for showing the participants and other meeting-related operations. We will pass a method to this which will reset the meeting id in the `App()`
-
-- We will use the `useMeeting` hook to get the callbacks for the events happening related to the meeting.
-
-- We will create 4 callback functions that will be triggered on the event happens.
-
-- And pass the callback functions to the `useMeeting` hook and also get the methods to toggle mic and webcam and leave the meeting.
-
-```jsx title = App.js
-//...function App(){}
-
-const MeetingView = ({ onMeetingLeave }) => {
-  function onParticipantJoined(participant) {
-    console.log(" onParticipantJoined", participant);
-  }
-
-  function onParticipantLeft(participant) {
-    console.log(" onParticipantLeft", participant);
-  }
-
-  function onMeetingJoined() {
-    console.log("onMeetingJoined");
-  }
-
-  function onMeetingLeft() {
-    console.log("onMeetingLeft");
-    onMeetingLeave();
-  }
-
-  // Get Meeting object using useMeeting hook
-  const { meetingId, leave, toggleMic, toggleWebcam } = useMeeting({
-    onParticipantJoined,
-    onParticipantLeft,
-    onMeetingJoined,
-    onMeetingLeft,
-  });
-
-  //...return
-};
-```
-
-3. `MeetingView` contains three buttons each performing the leave, toggle mic, and toggle webcam operation.
-
-It also contains `ParticipantsView` which will show all the participants present in the meeting.
-
-With the below code you will have a basic design ready for the layout.
-
-```jsx title = App.js
-//...function App(){}
-
-const MeetingView = ({ onMeetingLeave }) => {
+```js title="Controls Component"
+function Controls() {
+  const { leave, toggleMic, toggleWebcam } = useMeeting();
   return (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "column"
-      }}
-    >
-      <div>
-        <button className={"button"} onClick={leave}>LEAVE</button>&nbsp;&nbsp;
-        <button className={"button"} onClick={toggleMic}> toggleMic</button>&nbsp;&nbsp;
-        <button className={"button"} onClick={toggleWebcam}>toggleWebcam</button>
-        <h1>Meeting id is : {meetingId}</h1>
-        <div style={{ display: "flex", flex: 1 }}>
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              position: "relative",
-              flex: 1,
-              overflowY: "scroll",
-            }} >
-            <ParticipantsView />
-          </div>
-        </div>
-      </div>
+    <div>
+      <button onClick={leave}>Leave</button>
+      <button onClick={toggleMic}>toggleMic</button>
+      <button onClick={toggleWebcam}>toggleWebcam</button>
     </div>
   );
-};
+}
 ```
 
-4. `MeetingView` is all set. Let's create the `ParticipantsView` which will show all the participants in the meeting.
+#### Output of Container Component
 
-- Here we use the `useMeeting` hook to get the participants list and then map it to `ParticipantView`
+![VideoSDK React JS Quick Start  Container Component](/img/quick-start/react-container.jpeg)
 
-```jsx title="App.js"
-//...function App(){}
+#### Output of Controls Component
 
-//This function will accumulate the list of particiapnts and generate the ParticipantView for each participant in the meeting
-const ParticipantsView = () => {
-  //Get the list of participants
-  const { participants } = useMeeting();
+![VideoSDK React JS Quick Start  Container Component](/img/quick-start/react-container-controls.jpeg)
 
-  return (
-    <>
-      <h2 style={{ color: "#3E84F6" }}>Participants</h2>
-      <div
-        style={{
-          display: "flex",
-          flexWrap: "wrap",
-          flexDirection: "row",
-          padding: "8px",
-        }}
-      >
-        {[...participants.keys()].map((k) => (
-          <div style={{ }}>
-              <ParticipantView key={k} participantId={k} />
-          </div>
-        ))}
-      </div>
-    </>
-  );
-};
+### Step 5: Implement Video Componenty
+
+Before implementing video component, We need to understand couple of concepts.
+
+#### 1. Forwarding Ref for mic and camera
+
+Ref forwarding is a technique for automatically passing a ref through a component to one of its children.
+We are going to use Refs to attach audio and video tracks with components.
+
+```js title="Forwarding Ref for mic and camera"
+const webcamRef = useRef(null);
+const micRef = useRef(null);
 ```
 
-5. We will create the `ParticipantView` which will show each participant's details.
+#### 2. useParticipant Hook
 
-- We will start with creating the empty `<div>`
+useParticipant hook is responsible to handle all the properties and events of one participar participant joined in the meeting. It will take participantId as argument.
 
-```jsx
-const ParticipantView = ({ participantId }) => {
-  return <div className="participant-view"></div>;
-};
+```js title="useParticipant Hook"
+const { webcamStream, micStream, webcamOn, micOn } = useParticipant(
+  props.participantId
+);
 ```
 
-- Now we will use the `useParticipant` hook to get streams of audio and video for the participant.
+#### 3. MediaStream API
 
-```jsx
-const ParticipantView = ({ participantId }) => {
-  const {
-    displayName,
-    participant,
-    webcamStream,
-    micStream,
-    webcamOn,
-    micOn,
-    isLocal,
-  } = useParticipant(participantId);
+MediaStream is useful to add MediaTrack to the audio / video tag to play the audio or video.
 
-  //...return
-};
+```js title="MediaStream API"
+const webcamRef = useRef(null);
+const mediaStream = new MediaStream();
+mediaStream.addTrack(webcamStream.track);
+
+webcamRef.current.srcObject = mediaStream;
+webcamRef.current
+  .play()
+  .catch((error) => console.error("videoElem.current.play() failed", error));
 ```
 
-- We will add the `<audio>` for the audio stream and set it up.
+#### 4. Implemeting Video Component
 
-```jsx
-const ParticipantView = ({ participantId }) => {
-  //...useParticipant hook
+Now let's use all this API to create Video Component
 
+```js title="Video Component"
+function VideoComponent(props) {
   const micRef = useRef(null);
+  const { webcamStream, micStream, webcamOn, micOn } = useParticipant(
+    props.participantId
+  );
+
+  const videoStream = useMemo(() => {
+    if (webcamOn) {
+      const mediaStream = new MediaStream();
+      mediaStream.addTrack(webcamStream.track);
+      return mediaStream;
+    }
+  }, [webcamStream, webcamOn]);
 
   useEffect(() => {
     if (micRef.current) {
@@ -394,72 +375,36 @@ const ParticipantView = ({ participantId }) => {
   }, [micStream, micOn]);
 
   return (
-    <div className="participant-view">
-      <audio ref={micRef} autoPlay muted={isLocal} />
+    <div key={props.participantId}>
+      {micOn && micRef && <audio ref={micRef} autoPlay />}
+      {webcamOn && (
+        <ReactPlayer
+          //
+          playsinline // very very imp prop
+          pip={false}
+          light={false}
+          controls={true}
+          muted={true}
+          playing={true}
+          //
+          url={videoStream}
+          //
+          height={"100px"}
+          width={"100px"}
+          onError={(err) => {
+            console.log(err, "participant video error");
+          }}
+        />
+      )}
     </div>
   );
-};
+}
 ```
 
-- Next, we will add the `ReactPlayer` and Participant Details
+#### Final Output
 
-```jsx
-const ParticipantView = ({ participantId }) => {
-  //...useParticipant hook
+We are done with implementation of customised video calling app in reeact js using Video SDK. To explore more features go through Basic and Advanced features.
 
-  //...mic stream setup
+import ReactPlayer from 'react-player'
 
-  const mediaStream = useMemo(() => {
-    if (webcamOn) {
-      const mediaStream = new MediaStream();
-      mediaStream.addTrack(webcamStream.track);
-      return mediaStream;
-    }
-  }, [webcamStream, webcamOn]);
-
-  return (
-    <div className="participant-view">
-      <audio ref={micRef} autoPlay muted={isLocal} />
-      <div
-        className='video-container'>
-        <div
-          style={{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0 }}>
-          <ReactPlayer
-            height={"auto"}
-            width={"100%"}
-            url = {mediaStream}
-            playsInline
-            playing={true}
-            className="video"
-            autoPlay          
-          />
-            <p style={{ position: "absolute",  right: "8px", bottom:"0px", color:"white", fontWeight:"bold"}}>
-              WEB CAM {webcamOn? " ON ": " OFF " }
-            </p>
-
-            <p className="overlay" style={{ position: "absolute",  left: "8px", bottom:"0px" , color:"white", fontWeight:"bold"}}>
-              MIC {micOn? " ON ": " OFF " }
-            </p>
-        </div>
-      </div>
-    </div>
-  );
-};
-```
-:::note
-
-Stuck anywhere? Check out this [example code](https://github.com/videosdk-live/videosdk-rtc-react-sdk-example) on GitHub
-
-:::
-
-### Step 3: Run and Test
-
-The app is ready to create and join a meeting. Make sure to replace the `sampleToken` from the VideoSDK dashboard into the `App.js`.
-
-Your app should look like this after the implementation.
-
-![VideoSDK React JS Quick Start Join Screen](/img/quick-start/react-join-screen.png) ![VideoSDK React JS Quick Start Meeting Screen](/img/quick-start/react-meeting-screen.png)
-
-:::caution
-For the tutorial purpose, we used a static token to initialize and join the meeting. But for the production version of the app, we recommend you use an Authentication Server that will generate and pass on the token to the Client App. For more details checkout [how to do server setup](/react/guide/video-and-audio-calling-api-sdk/server-setup).
-:::
+<ReactPlayer controls url='/img/quick-start/react-final-video.mp4' width={"100%"} />

@@ -32,6 +32,7 @@
     "raw-loader": "^4.0.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+    "react-player": "^2.9.0",
     "react-random-shapes": "^0.6.0",
     "react-scroll": "^1.8.3",
     "react-tooltip": "^4.2.21",
