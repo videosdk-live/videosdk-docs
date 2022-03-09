@@ -720,8 +720,12 @@ mask {
   }
   .navbar__link--active > .col {
     max-width: fit-content;
-    margin-right: 120px;
+    /* margin-right: 120px; */
     margin-top: 3px;
+  }
+  .dropdown.dropdown--left > .navbar__link--active > .col {
+    margin-left: -110px;
+    margin-top: 4px;
   }
 
   .row.navbar__link--active > col::after {

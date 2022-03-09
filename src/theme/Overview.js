@@ -374,46 +374,46 @@ function ResourcePart() {
 }
 
 function Overview() {
-  const featuresArray = [
-    { Icon: VideoMeetingIcon, title: "Video Meeting" },
-    { Icon: WhiteboardIcon, title: "Interactive Whiteboard" },
-    { Icon: ScreenShareIcon, title: "Screen Sharing" },
-    { Icon: PinParticipantIcon, title: "Pin Participant" },
-    { Icon: RTMPOutIcon, title: "RTMP Out" },
-    { Icon: ChatIcon, title: "Chat" },
-    { Icon: RecordMeetingIcon, title: "Record Meeting" },
-  ];
+  // const featuresArray = [
+  //   { Icon: VideoMeetingIcon, title: "Video Meeting" },
+  //   { Icon: WhiteboardIcon, title: "Interactive Whiteboard" },
+  //   { Icon: ScreenShareIcon, title: "Screen Sharing" },
+  //   { Icon: PinParticipantIcon, title: "Pin Participant" },
+  //   { Icon: RTMPOutIcon, title: "RTMP Out" },
+  //   { Icon: ChatIcon, title: "Chat" },
+  //   { Icon: RecordMeetingIcon, title: "Record Meeting" },
+  // ];
 
-  const tabletFeaturesArray1 = [
-    { title: "Video Meeting", imgLink: "./svgs/feature-icon1.svg" },
-    { title: "Interactive Whiteboard", imgLink: "./svgs/feature-icon2.svg" },
-    { title: "Screen Sharing", imgLink: "./svgs/feature-icon3.svg" },
-    { title: "Pin Participant", imgLink: "./svgs/feature-icon4.svg" },
-  ];
+  // const tabletFeaturesArray1 = [
+  //   { title: "Video Meeting", imgLink: "./svgs/feature-icon1.svg" },
+  //   { title: "Interactive Whiteboard", imgLink: "./svgs/feature-icon2.svg" },
+  //   { title: "Screen Sharing", imgLink: "./svgs/feature-icon3.svg" },
+  //   { title: "Pin Participant", imgLink: "./svgs/feature-icon4.svg" },
+  // ];
 
-  const tabletFeaturesArray2 = [
-    { title: "RTMP Out", imgLink: "./svgs/feature-icon5.svg" },
-    { title: "Chat", imgLink: "./svgs/feature-icon6.svg" },
-    { title: "Record Meeting", imgLink: "./svgs/feature-icon7.svg" },
-  ];
+  // const tabletFeaturesArray2 = [
+  //   { title: "RTMP Out", imgLink: "./svgs/feature-icon5.svg" },
+  //   { title: "Chat", imgLink: "./svgs/feature-icon6.svg" },
+  //   { title: "Record Meeting", imgLink: "./svgs/feature-icon7.svg" },
+  // ];
 
-  const mobileFeaturesArray1 = [
-    { title: "Video Meeting", imgLink: "./svgs/feature-icon1.svg" },
-    { title: "Interactive Whiteboard", imgLink: "./svgs/feature-icon2.svg" },
-    { title: "Screen Sharing", imgLink: "./svgs/feature-icon3.svg" },
-    // { title: "Pin Participant", imgLink: "./svgs/feature-icon4.svg" },
-  ];
+  // const mobileFeaturesArray1 = [
+  //   { title: "Video Meeting", imgLink: "./svgs/feature-icon1.svg" },
+  //   { title: "Interactive Whiteboard", imgLink: "./svgs/feature-icon2.svg" },
+  //   { title: "Screen Sharing", imgLink: "./svgs/feature-icon3.svg" },
+  //   // { title: "Pin Participant", imgLink: "./svgs/feature-icon4.svg" },
+  // ];
 
-  const mobileFeaturesArray2 = [
-    { title: "Pin Participant", imgLink: "./svgs/feature-icon4.svg" },
-    { title: "RTMP Out", imgLink: "./svgs/feature-icon5.svg" },
-    { title: "Chat", imgLink: "./svgs/feature-icon6.svg" },
-    // { title: "Record Meeting", imgLink: "./svgs/feature-icon7.svg" },
-  ];
+  // const mobileFeaturesArray2 = [
+  //   { title: "Pin Participant", imgLink: "./svgs/feature-icon4.svg" },
+  //   { title: "RTMP Out", imgLink: "./svgs/feature-icon5.svg" },
+  //   { title: "Chat", imgLink: "./svgs/feature-icon6.svg" },
+  //   // { title: "Record Meeting", imgLink: "./svgs/feature-icon7.svg" },
+  // ];
 
-  const mobileFeaturesArray3 = [
-    { title: "Record Meeting", imgLink: "./svgs/feature-icon7.svg" },
-  ];
+  // const mobileFeaturesArray3 = [
+  //   { title: "Record Meeting", imgLink: "./svgs/feature-icon7.svg" },
+  // ];
 
   return (
     <div id="tailwind">
@@ -421,21 +421,43 @@ function Overview() {
         {/* starting section */}
         <div>
           {blogs.items.length > 0 && (
-            <div className="flex ">
-              <div className="bg-white-100 text-black p-1 rounded-l-sm">
-                <p className="text-xs">What's new</p>
+            <div className="flex mt-3">
+              <div className="bg-white-100 text-black h-6 w-20 p-1.5 rounded-sm">
+                <p className="text-xs leading-3 justify-center font-medium items-center">
+                  What's new
+                </p>
               </div>
               {blogs.items.map((blog) => {
                 return (
-                  <div className="bg-gray-750 text-white-100 p-1 rounded-r-sm">
-                    <p className="text-xs"> {blog.title}</p>
+                  <div className="bg-gray-750 text-white-100 p-2 h-6 rounded-sm">
+                    <p className="text-xs -mt-1"> {blog.title}</p>
                   </div>
                 );
               })}
             </div>
           )}
 
-          <div className="mt-4">
+          {/* QuickStart */}
+          <div className="md:mt-4 mt-10">
+            <p className="lg:text-4xl md:text-4xl text-2xl  font-extrabold text-white-100">
+              Quickstart
+            </p>
+            <div className="mt-9">
+              <QuickstartPart />
+            </div>
+          </div>
+
+          {/* Resource */}
+          <div className="md:mt-20 mt-10">
+            <p className="lg:text-4xl md:text-4xl text-2xl font-semibold text-white-100">
+              Resources
+            </p>
+            <div className="mt-9">
+              <ResourcePart />
+            </div>
+          </div>
+
+          {/* <div className="mt-4">
             <p className="lg:text-4xl md:text-3xl text-2xl font-semibold text-white-100">
               Overview
             </p>
@@ -456,11 +478,11 @@ function Overview() {
                 />
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
 
         {/* jump to quickstart */}
-        <div className="md:mt-16 mt-8">
+        {/* <div className="md:mt-16 mt-8">
           <div className="flex">
             <div className="bg-green-500  w-2 rounded-l-lg "></div>
             <div className="bg-green-600 rounded-r-lg flex  flex-col flex-1 p-5 ">
@@ -483,10 +505,10 @@ function Overview() {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
 
         {/* Feature Section */}
-        <div className="md:mt-20 mt-10 w-full">
+        {/* <div className="md:mt-20 mt-10 w-full">
           <p className="lg:text-4xl md:text-3xl text-2xl font-extrabold text-white-100 ">
             Features
           </p>
@@ -576,36 +598,15 @@ function Overview() {
               ))}
             </div>
           </div>
-        </div>
+        </div> */}
 
         {/* supported Platforms */}
-
         <div className="md:mt-16 mt-10 w-full">
           <p className="lg:text-4xl md:text-4xl text-2xl font-semibold text-white-100">
             Supported platform or framework
           </p>
           <div className="mt-9">
             <PlatformPart />
-          </div>
-        </div>
-
-        {/* QuickStart */}
-        <div className="md:mt-20 mt-10">
-          <p className="lg:text-4xl md:text-4xl text-2xl  font-extrabold text-white-100">
-            Quickstart
-          </p>
-          <div className="mt-9">
-            <QuickstartPart />
-          </div>
-        </div>
-
-        {/* Resource */}
-        <div className="md:mt-20 mt-10">
-          <p className="lg:text-4xl md:text-4xl text-2xl font-semibold text-white-100">
-            Resource
-          </p>
-          <div className="mt-9">
-            <ResourcePart />
           </div>
         </div>
 
