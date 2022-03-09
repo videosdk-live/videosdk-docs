@@ -449,7 +449,7 @@ function Overview() {
 
           {/* Resource */}
           <div className="md:mt-20 mt-10">
-            <p className="lg:text-4xl md:text-4xl text-2xl font-semibold text-white-100">
+            <p className="lg:text-4xl md:text-4xl text-2xl font-extrabold text-white-100">
               Resources
             </p>
             <div className="mt-9">
@@ -602,7 +602,7 @@ function Overview() {
 
         {/* supported Platforms */}
         <div className="md:mt-16 mt-10 w-full">
-          <p className="lg:text-4xl md:text-4xl text-2xl font-semibold text-white-100">
+          <p className="lg:text-4xl md:text-4xl text-2xl font-extrabold text-white-100">
             Supported platform or framework
           </p>
           <div className="mt-9">
