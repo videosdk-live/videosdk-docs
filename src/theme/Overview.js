@@ -23,6 +23,7 @@ import CustomJSIcon from "../../static/icon/Home_customsdk/CustomJSIcon";
 import CustomFlutterIcon from "../../static/icon/Home_customsdk/CustomFlutterIcon";
 import CustomAndroidIcon from "../../static/icon/Home_customsdk/CustomAndroidIcon";
 import CustomIOSIcon from "../../static/icon/Home_customsdk/CustomIOSIcon";
+import ReactNewIcon from "../../static/icon/ReactNewIcon";
 
 const blogs = require("../../.docusaurus/docusaurus-plugin-content-blog/default/blog-post-list-prop-default.json");
 
@@ -38,13 +39,14 @@ function MainCard({
   borderRadius,
   fullWidth,
   quickstart,
+  imgLink,
 }) {
   return (
     <div
       style={{ backgroundImage: `${backgroundColor}` }}
-      className={`${fullWidth ? "p-3 md:p-5" : "p-3 md:p-5"} ${
-        borderRadius ? borderRadius : "rounded"
-      } bg-gray-750 ${
+      className={`${
+        fullWidth ? "p-3 md:p-5" : onlyTitle ? "p-3 md:p-2" : "p-3 md:p-5"
+      } ${borderRadius ? borderRadius : "rounded"} bg-gray-750 ${
         onlyTitle
           ? "md:w-full"
           : `h-full ${
@@ -55,11 +57,12 @@ function MainCard({
     >
       <div>
         <div className="flex flex-row">
-          {Icon && (
+          {(Icon || imgLink) && (
             <div
               className={`flex  items-center justify-center md:rounded-md rounded-sm md:w-12 md:h-12 w-8 h-8`}
             >
-              <Icon className="w-8 h-8" />
+              <img src={imgLink} />
+              {/* <Icon className="w-8 h-8" /> */}
             </div>
           )}
           <div
@@ -99,24 +102,33 @@ function MainCard({
 
 function PlatformPart() {
   const platformArray = [
-    { Icon: ReactIcon, title: "React" },
-    { Icon: JSIcon, title: "JavaScript" },
-    { Icon: ReactIcon, title: "React Native" },
+    { Icon: ReactNewIcon, title: "React", imgLink: "./svgs/react.svg" },
+    { Icon: JSIcon, title: "JavaScript", imgLink: "./svgs/js.svg" },
+    {
+      Icon: ReactIcon,
+      title: "React Native",
+      imgLink: "./svgs/react-native.svg",
+    },
   ];
 
   const platformArray2 = [
-    { Icon: FlutterIcon, title: "Flutter" },
-    { Icon: AndroidIcon, title: "Android" },
-    { Icon: IOSIcon, title: "iOS" },
+    { Icon: FlutterIcon, title: "Flutter", imgLink: "./svgs/flutter.svg" },
+    { Icon: AndroidIcon, title: "Android", imgLink: "./svgs/android.svg" },
+    { Icon: IOSIcon, title: "iOS", imgLink: "./svgs/ios.svg" },
   ];
   const mobileplatformArray = [
-    { Icon: ReactIcon, title: "React" },
-    { Icon: JSIcon, title: "JavaScript" },
-    { Icon: ReactIcon, title: "React Native" },
-    { Icon: FlutterIcon, title: "Flutter" },
-    { Icon: AndroidIcon, title: "Android" },
-    { Icon: IOSIcon, title: "iOS" },
+    { Icon: ReactIcon, title: "React", imgLink: "./svgs/react.svg" },
+    { Icon: JSIcon, title: "JavaScript", imgLink: "./svgs/js.svg" },
+    {
+      Icon: ReactIcon,
+      title: "React Native",
+      imgLink: "./svgs/react-native.svg",
+    },
+    { Icon: FlutterIcon, title: "Flutter", imgLink: "./svgs/flutter.svg" },
+    { Icon: AndroidIcon, title: "Android", imgLink: "./svgs/android.svg" },
+    { Icon: IOSIcon, title: "iOS", imgLink: "./svgs/ios.svg" },
   ];
+
   return (
     <>
       <div className="md:block hidden">
@@ -128,6 +140,7 @@ function PlatformPart() {
                 Title={item.title}
                 Icon={item.Icon}
                 onlyTitle={true}
+                imgLink={item.imgLink}
               />
             );
           })}
@@ -140,6 +153,7 @@ function PlatformPart() {
                 Title={item.title}
                 Icon={item.Icon}
                 onlyTitle={true}
+                imgLink={item.imgLink}
               />
             );
           })}
@@ -154,6 +168,7 @@ function PlatformPart() {
                 Title={item.title}
                 Icon={item.Icon}
                 onlyTitle={true}
+                imgLink={item.imgLink}
               />
             );
           })}
