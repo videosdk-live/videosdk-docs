@@ -452,7 +452,8 @@ function Overview() {
           )}
 
           {/* QuickStart */}
-          <div className="md:mt-4 mt-10">
+          {/* <div className="md:mt-4 mt-10"> */}
+          <div>
             <p className="lg:text-4xl md:text-4xl text-2xl  font-extrabold text-white-100">
               Quickstart
             </p>
