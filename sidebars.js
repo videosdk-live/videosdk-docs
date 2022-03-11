@@ -18,61 +18,61 @@ module.exports = {
   overview: [
     {
       type: "category",
-      label: "DASHBOARD",
+      label: "Dashboard",
       items: [
         "overview/dashboard/getting-started",
         //"overview/dashboard/features"
       ],
-      collapsed: false,
+      collapsed: true,
     },
     {
       type: "category",
-      label: "VIDEO & AUDIO CALLING",
+      label: "Video & Audio Calling",
       items: [
         "overview/video-and-audio-calling-api-sdk/getting-started",
         "overview/video-and-audio-calling-api-sdk/architecture",
       ],
-      collapsed: false,
+      collapsed: true,
     },
     {
       type: "category",
-      label: "INTERACTIVE LIVE STREAMING",
+      label: "Interactive Live Streaming",
       items: [
         "overview/interactive-live-streaming/getting-started",
         "overview/interactive-live-streaming/architecture",
       ],
-      collapsed: false,
+      collapsed: true,
     },
     // {
     //   type: "category",
-    //   label: "REAL TIME COMMUNICATION",
+    //   label: "Real Time Communication",
     //   items: [
     //     "overview/real-time-communication/introduction",
     //     // "overview/real-time-communication/features",
     //   ],
-    //   collapsed: false,
+    //   collapsed: true,
     // },
     {
       type: "category",
-      label: "STANDARD LIVE STREAMING",
+      label: "Standard Live Streaming",
       items: [
         //"overview/live-streaming/introduction",
         // "overview/live-streaming/features",
         "overview/live-streaming/getting-started",
         "overview/live-streaming/architecture",
       ],
-      collapsed: false,
+      collapsed: true,
     },
     {
       type: "category",
-      label: "VIDEO ON DEMAND",
+      label: "Video On Demand",
       items: [
         // "overview/video-on-demand/introduction",
         // "overview/video-on-demand/features",
         "overview/video-on-demand/getting-started",
         "overview/video-on-demand/architecture",
       ],
-      collapsed: false,
+      collapsed: true,
     },
   ],
 
@@ -80,9 +80,9 @@ module.exports = {
   guideDashboard: [
     {
       type: "category",
-      label: "GUIDE",
+      label: "Guide",
       items: ["guide/dashboard/getting-started"],
-      collapsed: false,
+      collapsed: true,
     },
     // {
     //   type: "category",
@@ -97,7 +97,7 @@ module.exports = {
     //     "guide/dashboard/profile-and-billing",
     //     "guide/dashboard/start-tour-and-quick-start",
     //   ],
-    //   collapsed: false,
+    //   collapsed: true,
     // },
     // {
     //   type: "category",
@@ -106,7 +106,7 @@ module.exports = {
     //     "guide/dashboard/create-api-key",
     //     "guide/dashboard/domain-whitelisting",
     //   ],
-    //   collapsed: false,
+    //   collapsed: true,
     // },
   ],
 
@@ -115,7 +115,7 @@ module.exports = {
       type: "category",
       label: "GUIDE",
       items: ["guide/prebuilt-video-and-audio-calling/getting-started"],
-      collapsed: false,
+      collapsed: true,
     },
     {
       type: "category",
@@ -129,10 +129,10 @@ module.exports = {
             "guide/prebuilt-video-and-audio-calling/using-script",
             "guide/prebuilt-video-and-audio-calling/using-npm",
           ],
-          collapsed: false,
+          collapsed: true,
         },
       ],
-      collapsed: false,
+      collapsed: true,
     },
     {
       type: "category",
@@ -156,7 +156,7 @@ module.exports = {
         "guide/prebuilt-video-and-audio-calling/features/left-screen",
         "guide/prebuilt-video-and-audio-calling/features/debug-mode",
       ],
-      collapsed: false,
+      collapsed: true,
     },
     {
       type: "category",
@@ -173,7 +173,7 @@ module.exports = {
       type: "category",
       label: "GUIDE",
       items: ["guide/video-and-audio-calling-api-sdk/getting-started"],
-      collapsed: false,
+      collapsed: true,
     },
     {
       type: "category",
@@ -198,7 +198,7 @@ module.exports = {
         "guide/video-and-audio-calling-api-sdk/server-setup",
         // "guide/video-and-audio-calling-api-sdk/start-or-join-meeting",
       ],
-      collapsed: false,
+      collapsed: true,
     },
     {
       type: "category",
@@ -219,7 +219,6 @@ module.exports = {
         "guide/video-and-audio-calling-api-sdk/features/speaker-indication",
         "guide/video-and-audio-calling-api-sdk/features/pin-participants",
         "guide/video-and-audio-calling-api-sdk/features/switch-participant",
-        "guide/video-and-audio-calling-api-sdk/features/pubsub",
         {
           type: "category",
           label: "Connect Meetings (BETA)",
@@ -237,7 +236,7 @@ module.exports = {
         },
         "guide/video-and-audio-calling-api-sdk/features/error-event",
       ],
-      collapsed: false,
+      collapsed: true,
     },
     {
       type: "category",
@@ -245,29 +244,29 @@ module.exports = {
       items: [
         "guide/video-and-audio-calling-api-sdk/extras/react-native-ios-screen-share",
       ],
-      collapsed: false,
+      collapsed: true,
     },
   ],
 
   guideStandardLiveStreaming: [
     {
       type: "category",
-      label: "GUIDE",
+      label: "Guide",
       items: ["guide/standard-live-streaming-api-sdk/getting-started"],
-      collapsed: false,
+      collapsed: true,
     },
     {
       type: "category",
-      label: "SETUP",
+      label: "Quick Setup",
       items: [
         "guide/standard-live-streaming-api-sdk/signup-and-create-api",
         "guide/standard-live-streaming-api-sdk/authentication",
       ],
-      collapsed: false,
+      collapsed: true,
     },
     {
       type: "category",
-      label: "FEATURES",
+      label: "Basic Features",
       items: [
         "guide/standard-live-streaming-api-sdk/features/create-new-live-stream",
         "guide/standard-live-streaming-api-sdk/features/go-live-with-rtmp",
@@ -278,29 +277,29 @@ module.exports = {
         "guide/standard-live-streaming-api-sdk/features/get-live-stream-details",
         "guide/standard-live-streaming-api-sdk/features/update-live-stream",
       ],
-      collapsed: false,
+      collapsed: true,
     },
   ],
 
   guideVideoOnDemand: [
     {
       type: "category",
-      label: "GUIDE",
+      label: "Guide",
       items: ["guide/video-on-demand/getting-started"],
-      collapsed: false,
+      collapsed: true,
     },
     {
       type: "category",
-      label: "SETUP",
+      label: "Quick Setup",
       items: [
         "guide/video-on-demand/signup-and-create-api",
         "guide/video-on-demand/authentication",
       ],
-      collapsed: false,
+      collapsed: true,
     },
     {
       type: "category",
-      label: "FEATURES",
+      label: "Features",
       items: [
         {
           type: "category",
@@ -311,7 +310,7 @@ module.exports = {
             "guide/video-on-demand/features/get-file-details",
             "guide/video-on-demand/features/delete-file",
           ],
-          collapsed: false,
+          collapsed: true,
         },
         {
           type: "category",
@@ -322,271 +321,250 @@ module.exports = {
             "guide/video-on-demand/features/get-encoding-job-details",
             "guide/video-on-demand/features/delete-encoding-job",
           ],
-          collapsed: false,
+          collapsed: true,
         },
         "guide/video-on-demand/features/play-video",
       ],
 
-      collapsed: false,
+      collapsed: true,
     },
   ],
 
   realtimeCommunicationSidebar: [
     {
       type: "category",
-      label: "REAL TIME COMMUNICATION",
+      label: "Real Time Communication",
       items: [
-        "realtime-communication/intro",
-        "realtime-communication/architecture",
+        "api-reference/realtime-communication/intro",
+        "api-reference/realtime-communication/architecture",
       ],
-      collapsed: false,
+      collapsed: true,
     },
 
     {
       type: "category",
-      label: "API REFERENCE",
+      label: "Rest API Reference",
+      collapsed: true,
       items: [
+        "api-reference/realtime-communication/auth",
+        "api-reference/realtime-communication/create-join-meeting",
+        "api-reference/realtime-communication/list-all-meetings",
+        "api-reference/realtime-communication/get-meeting-details",
         {
           type: "category",
-          label: "REST API REFERENCE",
+          label: "Sessions",
           collapsed: true,
           items: [
-            "realtime-communication/rest-api-reference/auth",
-            "realtime-communication/rest-api-reference/create-join-meeting",
-            "realtime-communication/rest-api-reference/list-all-meetings",
-            "realtime-communication/rest-api-reference/get-meeting-details",
-            {
-              type: "category",
-              label: "Sessions",
-              collapsed: false,
-              items: [
-                "realtime-communication/rest-api-reference/list-meeting-sessions",
-                "realtime-communication/rest-api-reference/get-session-details",
-                "realtime-communication/rest-api-reference/end-session",
-                "realtime-communication/rest-api-reference/remove-participant",
-              ],
-            },
-            {
+            "api-reference/realtime-communication/list-meeting-sessions",
+            "api-reference/realtime-communication/get-session-details",
+            "api-reference/realtime-communication/end-session",
+            "api-reference/realtime-communication/remove-participant",
+          ],
+        },
+        {
               type: "category",
               label: "Recordings",
-              collapsed: false,
+              collapsed: true,
               items: [
-                "realtime-communication/rest-api-reference/list-recordings",
-                "realtime-communication/rest-api-reference/get-recording-details",
-                "realtime-communication/rest-api-reference/remove-recording",
+                "api-reference/realtime-communication/list-recordings",
+                "api-reference/realtime-communication/get-recording-details",
+                "api-reference/realtime-communication/remove-recording",
               ],
             },
-          ],
-        },
       ],
-      collapsed: false,
+      collapsed: true,
     },
+    // {
+    //   type: "category",
+    //   label: "SDK Reference",
+    //   collapsed: true,
+    //   items: [
+    //     {
+    //       type: "category",
+    //       label: "PREBUILT SDK JS",
+    //       collapsed: true,
+    //       items: [
+    //         "api-reference/realtime-communication/sdk-reference/prebuilt-sdk-js/setup",
+    //         "api-reference/realtime-communication/sdk-reference/prebuilt-sdk-js/video-sdk-meeting",
+    //       ],
+    //     },
+    //     {
+    //       type: "category",
+    //       label: "JAVASCRIPT SDK",
+    //       collapsed: true,
+    //       items: [
+    //         "api-reference/realtime-communication/sdk-reference/javascript-sdk/setup",
+    //         "api-reference/realtime-communication/sdk-reference/javascript-sdk/meeting-class",
+    //         "api-reference/realtime-communication/sdk-reference/javascript-sdk/participant-class",
+    //         "api-reference/realtime-communication/sdk-reference/javascript-sdk/stream-class",
+    //       ],
+    //     },
+    //     {
+    //       type: "category",
+    //       label: "REACT SDK",
+    //       collapsed: true,
+    //       items: [
+    //         "api-reference/realtime-communication/sdk-reference/react-sdk/setup",
+    //         "api-reference/realtime-communication/sdk-reference/react-sdk/use-meeting",
+    //         "api-reference/realtime-communication/sdk-reference/react-sdk/use-participant",
+    //         "api-reference/realtime-communication/sdk-reference/react-sdk/meeting-provider",
+    //         "api-reference/realtime-communication/sdk-reference/react-sdk/meeting-consumer",
+    //       ],
+    //     },
+    //     {
+    //       type: "category",
+    //       label: "REACT NATIVE SDK",
+    //       collapsed: true,
+    //       items: [
+    //         "api-reference/realtime-communication/sdk-reference/react-native-sdk/setup",
+    //         "api-reference/realtime-communication/sdk-reference/react-native-sdk/setup-android",
+    //         "api-reference/realtime-communication/sdk-reference/react-native-sdk/setup-ios",
+    //         "api-reference/realtime-communication/sdk-reference/react-native-sdk/rtc-stream",
+    //         "api-reference/realtime-communication/sdk-reference/react-native-sdk/use-meeting",
+    //         "api-reference/realtime-communication/sdk-reference/react-native-sdk/use-participant",
+    //         "api-reference/realtime-communication/sdk-reference/react-native-sdk/meeting-provider",
+    //         "api-reference/realtime-communication/sdk-reference/react-native-sdk/meeting-consumer",
+    //       ],
+    //     },
+    //     {
+    //       type: "category",
+    //       label: "ELECTRON SDK",
+    //       collapsed: true,
+    //       items: ["api-reference/realtime-communication/sdk-reference/electron-sdk/setup"],
+    //     },
+    //     {
+    //       type: "category",
+    //       label: "ANDROID SDK",
+    //       collapsed: true,
+    //       items: [
+    //         "api-reference/realtime-communication/sdk-reference/android-sdk/setup",
+    //         "api-reference/realtime-communication/sdk-reference/android-sdk/video-sdk-class",
+    //         "api-reference/realtime-communication/sdk-reference/android-sdk/meeting-class",
+    //         "api-reference/realtime-communication/sdk-reference/android-sdk/participant-class",
+    //         "api-reference/realtime-communication/sdk-reference/android-sdk/stream-class",
+    //         "api-reference/realtime-communication/sdk-reference/android-sdk/meeting-event-listener-class",
+    //         "api-reference/realtime-communication/sdk-reference/android-sdk/participant-event-listener-class",
+    //       ],
+    //     },
+    //     {
+    //       type: "category",
+    //       label: "IOS SDK",
+    //       collapsed: true,
+    //       items: [
+    //         "api-reference/realtime-communication/sdk-reference/ios-sdk/setup",
+    //         "api-reference/realtime-communication/sdk-reference/ios-sdk/video-sdk-class",
+    //         "api-reference/realtime-communication/sdk-reference/ios-sdk/meeting-class",
+    //         "api-reference/realtime-communication/sdk-reference/ios-sdk/participant-class",
+    //         "api-reference/realtime-communication/sdk-reference/ios-sdk/stream-class",
+    //         "api-reference/realtime-communication/sdk-reference/ios-sdk/meeting-event-listener-class",
+    //         "api-reference/realtime-communication/sdk-reference/ios-sdk/participant-event-listener-class",
+    //       ],
+    //     },
+    //     {
+    //       type: "category",
+    //       label: "FLUTTER SDK",
+    //       collapsed: true,
+    //       items: [
+    //         "api-reference/realtime-communication/sdk-reference/flutter-sdk/setup",
+    //         "api-reference/realtime-communication/sdk-reference/flutter-sdk/meeting-builder-widget",
+    //         "api-reference/realtime-communication/sdk-reference/flutter-sdk/meeting-class",
+    //         "api-reference/realtime-communication/sdk-reference/flutter-sdk/participant-class",
+    //         "api-reference/realtime-communication/sdk-reference/flutter-sdk/stream-class",
+    //       ],
+    //     },
+    //   ],
+    // },
     {
       type: "category",
-      label: "SDK REFERENCE",
-      collapsed: false,
+      label: "See Also",
       items: [
-        {
-          type: "category",
-          label: "PREBUILT SDK JS",
-          collapsed: true,
-          items: [
-            "realtime-communication/sdk-reference/prebuilt-sdk-js/setup",
-            "realtime-communication/sdk-reference/prebuilt-sdk-js/video-sdk-meeting",
-          ],
-        },
-        {
-          type: "category",
-          label: "JAVASCRIPT SDK",
-          collapsed: true,
-          items: [
-            "realtime-communication/sdk-reference/javascript-sdk/setup",
-            "realtime-communication/sdk-reference/javascript-sdk/meeting-class",
-            "realtime-communication/sdk-reference/javascript-sdk/participant-class",
-            "realtime-communication/sdk-reference/javascript-sdk/stream-class",
-          ],
-        },
-        {
-          type: "category",
-          label: "REACT SDK",
-          collapsed: true,
-          items: [
-            "realtime-communication/sdk-reference/react-sdk/setup",
-            "realtime-communication/sdk-reference/react-sdk/use-meeting",
-            "realtime-communication/sdk-reference/react-sdk/use-participant",
-            "realtime-communication/sdk-reference/react-sdk/meeting-provider",
-            "realtime-communication/sdk-reference/react-sdk/meeting-consumer",
-          ],
-        },
-        {
-          type: "category",
-          label: "REACT NATIVE SDK",
-          collapsed: true,
-          items: [
-            "realtime-communication/sdk-reference/react-native-sdk/setup",
-            "realtime-communication/sdk-reference/react-native-sdk/setup-android",
-            "realtime-communication/sdk-reference/react-native-sdk/setup-ios",
-            "realtime-communication/sdk-reference/react-native-sdk/rtc-stream",
-            "realtime-communication/sdk-reference/react-native-sdk/use-meeting",
-            "realtime-communication/sdk-reference/react-native-sdk/use-participant",
-            "realtime-communication/sdk-reference/react-native-sdk/meeting-provider",
-            "realtime-communication/sdk-reference/react-native-sdk/meeting-consumer",
-          ],
-        },
-        {
-          type: "category",
-          label: "ELECTRON SDK",
-          collapsed: true,
-          items: ["realtime-communication/sdk-reference/electron-sdk/setup"],
-        },
-        {
-          type: "category",
-          label: "ANDROID SDK",
-          collapsed: true,
-          items: [
-            "realtime-communication/sdk-reference/android-sdk/setup",
-            "realtime-communication/sdk-reference/android-sdk/video-sdk-class",
-            "realtime-communication/sdk-reference/android-sdk/meeting-class",
-            "realtime-communication/sdk-reference/android-sdk/participant-class",
-            "realtime-communication/sdk-reference/android-sdk/stream-class",
-            "realtime-communication/sdk-reference/android-sdk/meeting-event-listener-class",
-            "realtime-communication/sdk-reference/android-sdk/participant-event-listener-class",
-          ],
-        },
-        {
-          type: "category",
-          label: "IOS SDK",
-          collapsed: true,
-          items: [
-            "realtime-communication/sdk-reference/ios-sdk/setup",
-            "realtime-communication/sdk-reference/ios-sdk/video-sdk-class",
-            "realtime-communication/sdk-reference/ios-sdk/meeting-class",
-            "realtime-communication/sdk-reference/ios-sdk/participant-class",
-            "realtime-communication/sdk-reference/ios-sdk/stream-class",
-            "realtime-communication/sdk-reference/ios-sdk/meeting-event-listener-class",
-            "realtime-communication/sdk-reference/ios-sdk/participant-event-listener-class",
-          ],
-        },
-        {
-          type: "category",
-          label: "FLUTTER SDK",
-          collapsed: true,
-          items: [
-            "realtime-communication/sdk-reference/flutter-sdk/setup",
-            "realtime-communication/sdk-reference/flutter-sdk/meeting-builder-widget",
-            "realtime-communication/sdk-reference/flutter-sdk/meeting-class",
-            "realtime-communication/sdk-reference/flutter-sdk/participant-class",
-            "realtime-communication/sdk-reference/flutter-sdk/stream-class",
-            "realtime-communication/sdk-reference/flutter-sdk/pubsub-message",
-            "realtime-communication/sdk-reference/flutter-sdk/pubsub-options",
-          ],
-        },
+        //"api-reference/realtime-communication/see-also/architecture",
+        "api-reference/realtime-communication/see-also/device-browser-support",
+        //"api-reference/realtime-communication/see-also/demos",
+        //"api-reference/realtime-communication/see-also/hippa-healthcare",
       ],
-    },
-    {
-      type: "category",
-      label: "SEE ALSO",
-      items: [
-        //"realtime-communication/see-also/architecture",
-        "realtime-communication/see-also/device-browser-support",
-        //"realtime-communication/see-also/demos",
-        //"realtime-communication/see-also/hippa-healthcare",
-      ],
-      collapsed: false,
+      collapsed: true,
     },
   ],
 
   livestreamingSidebar: [
     {
       type: "category",
-      label: "LIVE STREAMING",
-      items: ["live-streaming/intro"],
-      collapsed: false,
+      label: "Live Streaming",
+      items: ["api-reference/live-streaming/intro"],
+      collapsed: true,
     },
     /*{
       type: "category",
       label: "GET STARTED",
       items: [
-        "live-streaming/get-started/features",
-        "live-streaming/get-started/live-streaming-with-rest-api",
+        "api-reference/live-streaming/get-started/features",
+        "api-reference/live-streaming/get-started/live-streaming-with-rest-api",
       ],
-      collapsed: false,
+      collapsed: true,
     },
     {
       type: "category",
       label: "TUTORIALS",
-      items: ["live-streaming/tutorials/live-streaming-tutorial"],
-      collapsed: false,
+      items: ["api-reference/live-streaming/tutorials/live-streaming-tutorial"],
+      collapsed: true,
     },*/
+
     {
       type: "category",
-      label: "API REFERENCE",
-      collapsed: false,
+      label: "Rest API Reference",
       items: [
-        {
-          type: "category",
-          label: "REST API REFERENCE",
-          items: [
-            "live-streaming/api-reference/auth",
-            "live-streaming/api-reference/create-live-stream",
-            "live-streaming/api-reference/list-live-streams",
-            "live-streaming/api-reference/get-live-stream",
-            "live-streaming/api-reference/update-live-stream",
-            "live-streaming/api-reference/delete-live-stream",
-          ],
-          collapsed: false,
-        },
+        "api-reference/live-streaming/auth",
+        "api-reference/live-streaming/create-live-stream",
+        "api-reference/live-streaming/list-live-streams",
+        "api-reference/live-streaming/get-live-stream",
+        "api-reference/live-streaming/update-live-stream",
+        "api-reference/live-streaming/delete-live-stream",
       ],
+      collapsed: true,
     },
   ],
 
   videoondemandSidebar: [
     {
       type: "category",
-      label: "VIDEO ON DEMAND",
-      items: ["video-on-demand/intro"],
-      collapsed: false,
+      label: "Video On Demand",
+      items: ["api-reference/video-on-demand/intro"],
+      collapsed: true,
     },
     {
       type: "category",
-      label: "API REFERENCE",
+      label: "Storage Rest API Reference",
       items: [
-        {
-          type: "category",
-          label: "STORAGE REST API REFERENCE",
-          items: [
-            "video-on-demand/storage-api-reference/auth",
-            "video-on-demand/storage-api-reference/create-new-url",
-            "video-on-demand/storage-api-reference/upload-file",
-            "video-on-demand/storage-api-reference/list-all-files",
-            "video-on-demand/storage-api-reference/get-file-details",
-            "video-on-demand/storage-api-reference/delete-file",
-          ],
-          collapsed: false,
-        },
-        {
-          type: "category",
-          label: "ENCODING REST API REFERENCE",
-          items: [
-            "video-on-demand/encoding-api-reference/auth",
-            "video-on-demand/encoding-api-reference/create-encoding-job",
-            "video-on-demand/encoding-api-reference/list-all-encoding-jobs",
-            "video-on-demand/encoding-api-reference/get-encoding-job-details",
-            "video-on-demand/encoding-api-reference/delete-encoding-job",
-          ],
-          collapsed: false,
-        },
+        "api-reference/video-on-demand/storage-api-reference/auth",
+        "api-reference/video-on-demand/storage-api-reference/create-new-url",
+        "api-reference/video-on-demand/storage-api-reference/upload-file",
+        "api-reference/video-on-demand/storage-api-reference/list-all-files",
+        "api-reference/video-on-demand/storage-api-reference/get-file-details",
+        "api-reference/video-on-demand/storage-api-reference/delete-file",
       ],
-      collapsed: false,
+      collapsed: true,
+    },
+    {
+      type: "category",
+      label: "Encoding Rest API Reference",
+      items: [
+        "api-reference/video-on-demand/encoding-api-reference/auth",
+        "api-reference/video-on-demand/encoding-api-reference/create-encoding-job",
+        "api-reference/video-on-demand/encoding-api-reference/list-all-encoding-jobs",
+        "api-reference/video-on-demand/encoding-api-reference/get-encoding-job-details",
+        "api-reference/video-on-demand/encoding-api-reference/delete-encoding-job",
+      ],
+      collapsed: true,
     },
   ],
 
   tutorials: [
     {
       type: "category",
-      label: "GET STARTED",
+      label: "Get Started",
       items: ["tutorials/introduction"],
-      collapsed: false,
+      collapsed: true,
     },
     {
       type: "category",
@@ -595,7 +573,7 @@ module.exports = {
         {
           type: "category",
           label: "Quickstart",
-          collapsed: false,
+          collapsed: true,
           items: [
             "tutorials/realtime-communication/prebuilt-sdk/quickstart-prebuilt-js",
             "tutorials/realtime-communication/prebuilt-sdk/quickstart-prebuilt-wordpress",
@@ -603,7 +581,7 @@ module.exports = {
           ],
         },
       ],
-      collapsed: false,
+      collapsed: true,
     },
     {
       type: "category",
@@ -612,11 +590,11 @@ module.exports = {
         {
           type: "category",
           label: "Quickstart",
-          collapsed: false,
+          collapsed: true,
           items: ["tutorials/live-streaming/api/quickstart-rest-api"],
         },
       ],
-      collapsed: false,
+      collapsed: true,
     },
     {
       type: "category",
@@ -625,11 +603,11 @@ module.exports = {
         {
           type: "category",
           label: "Quickstart",
-          collapsed: false,
+          collapsed: true,
           items: ["tutorials/video-on-demand/api/quickstart-rest-api"],
         },
       ],
-      collapsed: false,
+      collapsed: true,
     },
   ],
 
@@ -638,7 +616,7 @@ module.exports = {
   //     type: "category",
   //     label: "RESOURCES",
   //     items: ["resources/overview"],
-  //     collapsed: false,
+  //     collapsed: true,
   //   },
   //   {
   //     type: "category",
@@ -655,7 +633,7 @@ module.exports = {
   //           "resources/code-samples/real-time-communication/vue-prebuilt-sdk",
   //           "resources/code-samples/real-time-communication/android-prebuilt-sdk",
   //         ],
-  //         collapsed: false,
+  //         collapsed: true,
   //       },
   //       {
   //         type: "category",
@@ -667,7 +645,7 @@ module.exports = {
   //           "resources/code-samples/real-time-communication/react-native-sdk",
   //           "resources/code-samples/real-time-communication/android-sdk",
   //         ],
-  //         collapsed: false,
+  //         collapsed: true,
   //       },
   //       {
   //         type: "category",
@@ -678,7 +656,7 @@ module.exports = {
   //           "resources/code-samples/live-streaming/live-streaming-react",
   //           "resources/code-samples/live-streaming/live-streaming-react-native",
   //         ],
-  //         collapsed: false,
+  //         collapsed: true,
   //       },
   //       {
   //         type: "category",
@@ -688,10 +666,10 @@ module.exports = {
   //           "resources/code-samples/video-on-demand/react-js-sdk",
   //           "resources/code-samples/video-on-demand/react-native-sdk",
   //         ],
-  //         collapsed: false,
+  //         collapsed: true,
   //       },
   //     ],
-  //     collapsed: false,
+  //     collapsed: true,
   //   },
   // ],
 };

@@ -244,11 +244,11 @@ func onRecordingStoppped() {
 <TabItem value="flutter">
 
 ```js
-meeting.on(Events.recordingStarted, () {
+meeting.on("recording-started", () {
   print("meeting recording started");
 });
 //
-meeting.on(Events.recordingStopped, () {
+meeting.on("recording-stopped", () {
   print("meeting recording stopped");
 });
 ```

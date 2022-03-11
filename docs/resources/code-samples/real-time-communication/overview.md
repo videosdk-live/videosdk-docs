@@ -26,7 +26,7 @@ slug: code-samples
 $ git clone https://github.com/videosdk-live/videosdk-rtc-nodejs-sdk-example
 ```
 
-For more information follow, [Auth documentation](/docs/realtime-communication/rest-api-reference/auth).
+For more information follow, [Auth documentation](/docs/api-reference/realtime-communication/auth).
 
 ## Client SDK Code Samples
 
@@ -36,7 +36,7 @@ For more information follow, [Auth documentation](/docs/realtime-communication/r
 $ git clone https://github.com/videosdk-live/videosdk-rtc-android-webview-example
 ```
 
-For more information follow, [Prebuilt documentation](/docs/realtime-communication/sdk-reference/prebuilt-sdk-js/setup).
+For more information follow, [Prebuilt documentation](/prebuilt/api/sdk-reference/setup).
 
 ### 2. [React JS Code Sample](https://github.com/videosdk-live/videosdk-rtc-react-sdk-example)
 
@@ -44,7 +44,7 @@ For more information follow, [Prebuilt documentation](/docs/realtime-communicati
 $ git clone https://github.com/videosdk-live/videosdk-rtc-react-sdk-example
 ```
 
-For more information follow, [React JS documentation](/docs/realtime-communication/sdk-reference/react-sdk/setup).
+For more information follow, [React JS documentation](/react/api/sdk-reference/setup).
 
 ### 3. [React Native Code Sample](https://github.com/videosdk-live/videosdk-rtc-react-native-sdk-example)
 
@@ -52,4 +52,4 @@ For more information follow, [React JS documentation](/docs/realtime-communicati
 $ git clone https://github.com/videosdk-live/videosdk-rtc-react-native-sdk-example
 ```
 
-For more information follow, [React Native documentation](/docs/realtime-communication/sdk-reference/react-native-sdk/setup).
+For more information follow, [React Native documentation](/react-native/api/sdk-reference/setup).

@@ -1,7 +1,7 @@
 ---
 title: Code Samples | Video SDK
 hide_title: false
-hide_table_of_contents: false
+hide_table_of_contents: true
 description: video sdk code sample will help you to integrate our SDK into your application easily.
 sidebar_label: Code Samples
 pagination_label: Code Samples
@@ -19,47 +19,163 @@ slug: overview
 
 A collection of Code Samples for you to explore and learn.
 
-### 1. Prebuilt Video & Audio Calling SDK
+import CardLinks from '/src/components/cards/cardlinks';
 
-- [JS Prebuilt Code Sample](https://github.com/videosdk-live/videosdk-rtc-js-prebuilt-embedded-example)
-- [Angular Prebuilt Code Sample](https://github.com/videosdk-live/videosdk-rtc-angular-prebuilt-example)
-- [React Prebuilt Code Sample](https://github.com/videosdk-live/videosdk-rtc-react-prebuilt-example)
-- [Vue Prebuilt Code Sample](https://github.com/videosdk-live/videosdk-rtc-vue-prebuilt-example)
-- [Android Prebuilt Webview Code Sample](https://github.com/videosdk-live/videosdk-rtc-android-prebuilt-webview-example)
-- [iOS Prebuilt Webview Code Sample](https://github.com/videosdk-live/videosdk-rtc-ios-prebuilt-webview-example)
-
-### 2. Prebuilt Video & Audio Calling Example
-
-- [React Prebuilt Open Source Example](https://github.com/videosdk-live/videosdk-rtc-react-prebuilt-ui)
-- [React Native Open Source Example](https://github.com/videosdk-live/videosdk-rtc-react-native-prebuilt-ui)
-
-### 3. Custom Video & Audio Calling SDK
-
-- [JS Code Sample](https://github.com/videosdk-live/videosdk-rtc-javascript-sdk-example)
-- [React JS Code Sample](https://github.com/videosdk-live/videosdk-rtc-react-sdk-example)
-- [React Native Code Sample](https://github.com/videosdk-live/videosdk-rtc-react-native-sdk-example)
-- [Android Code Sample](https://github.com/videosdk-live/videosdk-rtc-android-java-sdk-example)
-- [IOS Code Sample](https://github.com/videosdk-live/videosdk-rtc-ios-sdk-example)
-- [Flutter Code Sample](https://github.com/videosdk-live/videosdk-rtc-flutter-sdk-example)
-
-### 4. Standard Live Stream API
-
-- [RTC to RTMP Server Code Sample](https://github.com/videosdk-live/videosdk-rtc-to-rtmp)
-- [Live Streaming React Code Sample](https://github.com/videosdk-live/videosdk-live-streaming-react-api-example)
-- [Live Streaming React Native Code Sample](https://github.com/videosdk-live/videosdk-live-streaming-react-native-api-example)
-
-### 5. Video on Demand API
-
-- [Video On Demand React Code Sample](https://github.com/videosdk-live/videosdk-vod-react-api-example)
-- [Video On Demand React Native Code Sample](https://github.com/videosdk-live/videosdk-vod-react-native-api-example)
-
-### 6. Auth API Server
-
-- [Dotnet Auth API Server Code Sample](https://github.com/videosdk-live/videosdk-rtc-api-server-examples/tree/main/dotnet)
-- [Go Auth API Server Code Sample](https://github.com/videosdk-live/videosdk-rtc-api-server-examples/tree/main/go)
-- [Java Auth API Server Code Sample](https://github.com/videosdk-live/videosdk-rtc-api-server-examples/tree/main/java)
-- [NodeJs Auth API Server Code Sample](https://github.com/videosdk-live/videosdk-rtc-api-server-examples/tree/main/nodejs)
-- [Php Auth API Server Code Sample](https://github.com/videosdk-live/videosdk-rtc-api-server-examples/tree/main/php)
-- [Python Auth API Server Code Sample](https://github.com/videosdk-live/videosdk-rtc-api-server-examples/tree/main/python)
-- [Ruby Auth API Server Code Sample](https://github.com/videosdk-live/videosdk-rtc-api-server-examples/tree/main/ruby)
-- [Rust Auth API Server Code Sample](https://github.com/videosdk-live/videosdk-rtc-api-server-examples/tree/main/rust)
+<div class="container" style={{padding:"0px"}}>
+  <div class="row ">
+    <div class="col ">  
+      <CardLinks
+        title="Prebuilt Video & Audio Calling SDK"
+        links={[
+          {
+            linkName: "Javascript",
+            link: "https://github.com/videosdk-live/videosdk-rtc-js-prebuilt-embedded-example",
+          },
+          {
+            linkName: "Angular",
+            link: "https://github.com/videosdk-live/videosdk-rtc-angular-prebuilt-example",
+          },
+          {
+            linkName: "React",
+            link: "https://github.com/videosdk-live/videosdk-rtc-react-prebuilt-example",
+          },
+          {
+            linkName: "Vue",
+            link: "https://github.com/videosdk-live/videosdk-rtc-vue-prebuilt-example",
+          },
+          {
+            linkName: "Android Prebuilt Webview",
+            link: "https://github.com/videosdk-live/videosdk-rtc-android-prebuilt-webview-example",
+          },
+          {
+            linkName: "iOS Prebuilt Webview",
+            link: "https://github.com/videosdk-live/videosdk-rtc-ios-prebuilt-webview-example",
+          },
+        ]}
+      />
+    </div>
+    <div class="col">  
+      <CardLinks
+        title="Prebuilt Video & Audio Calling Example"
+        links={[
+          {
+            linkName: "React Prebuilt Open Source",
+            link: "https://github.com/videosdk-live/videosdk-rtc-react-prebuilt-ui",
+          },
+          {
+            linkName: "React Native Prebuilt Open Source",
+            link: "https://github.com/videosdk-live/videosdk-rtc-react-native-prebuilt-ui",
+          }
+        ]}
+      />
+    </div>
+  </div>
+  <div class="row ">
+    <div class="col ">  
+      <CardLinks
+        title="Custom Video & Audio Calling SDK"
+        links={[
+          {
+            linkName: "Javascript",
+            link: "https://github.com/videosdk-live/videosdk-rtc-javascript-sdk-example",
+          },
+          {
+            linkName: "React",
+            link: "https://github.com/videosdk-live/videosdk-rtc-react-sdk-example",
+          },
+          {
+            linkName: "React Native",
+            link: "https://github.com/videosdk-live/videosdk-rtc-react-native-sdk-example",
+          },
+          {
+            linkName: "Android",
+            link: "https://github.com/videosdk-live/videosdk-rtc-android-java-sdk-example",
+          },
+          {
+            linkName: "iOS",
+            link: "https://github.com/videosdk-live/videosdk-rtc-ios-sdk-example",
+          },
+          {
+            linkName: "Flutter",
+            link: "https://github.com/videosdk-live/videosdk-rtc-flutter-sdk-example",
+          },
+        ]}
+      />
+    </div>
+    <div class="col">  
+      <CardLinks
+        title="Standard Live Stream API"
+        links={[
+          {
+            linkName: "RTC to RTMP Server",
+            link: "https://github.com/videosdk-live/videosdk-rtc-to-rtmp",
+          },
+          {
+            linkName: "React",
+            link: "https://github.com/videosdk-live/videosdk-live-streaming-react-api-example",
+          },
+          {
+            linkName: "React Native",
+            link: "https://github.com/videosdk-live/videosdk-live-streaming-react-native-api-example",
+          }
+        ]}
+      />
+    </div>
+  </div>
+  <div class="row ">
+    <div class="col">  
+      <CardLinks
+        title="Video On Demand API"
+        links={[
+          {
+            linkName: "React",
+            link: "https://github.com/videosdk-live/videosdk-vod-react-api-example",
+          },
+          {
+            linkName: "React Native",
+            link: "https://github.com/videosdk-live/videosdk-vod-react-native-api-example",
+          }
+        ]}
+      />
+    </div>
+    <div class="col">  
+      <CardLinks
+        title="Auth API Server"
+        links={[
+          {
+            linkName: "Dotnet",
+            link: "https://github.com/videosdk-live/videosdk-rtc-api-server-examples/tree/main/dotnet",
+          },
+          {
+            linkName: "Go",
+            link: "https://github.com/videosdk-live/videosdk-rtc-api-server-examples/tree/main/go",
+          },
+          {
+            linkName: "Java",
+            link: "https://github.com/videosdk-live/videosdk-rtc-api-server-examples/tree/main/java",
+          },
+          {
+            linkName: "Node JS",
+            link: "https://github.com/videosdk-live/videosdk-rtc-api-server-examples/tree/main/nodejs",
+          },
+          {
+            linkName: "PHP",
+            link: "https://github.com/videosdk-live/videosdk-rtc-api-server-examples/tree/main/php",
+          },
+          {
+            linkName: "Python",
+            link: "https://github.com/videosdk-live/videosdk-rtc-api-server-examples/tree/main/python",
+          },
+          {
+            linkName: "Ruby",
+            link: "https://github.com/videosdk-live/videosdk-rtc-api-server-examples/tree/main/ruby",
+          },
+          {
+            linkName: "Rust",
+            link: "https://github.com/videosdk-live/videosdk-rtc-api-server-examples/tree/main/rust",
+          },
+        ]}
+      />
+    </div>
+  </div>
+</div>

@@ -458,7 +458,7 @@ class LocalParticipantState extends State<LocalParticipant> {
   _initStreamListners() {
    // Participant `stream-enabled` event, discussed in next section "Participant Related Events"
     widget.localParticipant.on(
-      Events.streamEnabled,
+      "stream-enabled",
       (Stream _stream) {
         setState(
           () {
@@ -473,7 +473,7 @@ class LocalParticipantState extends State<LocalParticipant> {
     );
     // Participant `stream-disabled` event, discussed in next section "Participant Related Events"
     widget.localParticipant.on(
-      Events.streamDisabled,
+      "stream-disabled",
       (Stream _stream) {
         if (_stream.kind == 'video') {
           if (videoStream?.id == _stream.id) {
@@ -615,12 +615,12 @@ class RemoteParticipantState extends State<RemoteParticipant> {
   Stream? audioStream;
   @override
   initState() {
-    _initStreamListeners();
+    _initStreamListners();
     super.initState();
   }
-  _initStreamListeners() {
-    // Participant `streamEnabled` event, discussed in next section "Participant Related Events"
-    widget.participant.on(Events.streamEnabled, (Stream _stream) {
+  _initStreamListners() {
+    // Participant `stream-enabled` event, discussed in next section "Participant Related Events"
+    widget.participant.on("stream-enabled", (Stream _stream) {
       setState(() {
         if (_stream.kind == 'video') {
           videoStream = _stream;
@@ -630,8 +630,8 @@ class RemoteParticipantState extends State<RemoteParticipant> {
       });
     });
 
-    // Participant `streamDisabled` event, discussed in next section "Participant Related Events"
-    widget.participant.on(Events.streamDisabled, (Stream _stream) {
+    // Participant `stream-disabled` event, discussed in next section "Participant Related Events"
+    widget.participant.on("stream-disabled", (Stream _stream) {
       if (_stream.kind == 'video') {
         if (videoStream?.id == _stream.id) {
           setState(() {
@@ -974,12 +974,12 @@ extension MeetingViewController: ParticipantEventListener {
 
 ```js
 // Adding event listner
-meeting.on(Events.participantJoined, (Participant participant) {
+meeting.on("participant-joined", (Participant participant) {
   print("new participant => $participant");
   },
 );
 
-meeting.on(Events.participantLeft, (Participant participant) {
+meeting.on("participant-left", (Participant participant) {
   print("new participant => $participant");
   },
 );

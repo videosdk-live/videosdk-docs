@@ -25,4 +25,4 @@ $ git clone https://github.com/videosdk-live/videosdk-rtc-react-sdk-example
 
 ## documentation
 
-For more information follow, [RTC React JS documentation](/docs/realtime-communication/sdk-reference/react-sdk/setup).
+For more information follow, [RTC React JS documentation](/react/api/sdk-reference/setup).

@@ -23,16 +23,18 @@ module.exports = {
         facetFilters: ["content"],
       },
     },
-    googleAnalytics: {
-      trackingID: "G-NR8EYPZFJ7",
-      // Optional fields.
-      anonymizeIP: true, // Should IPs be anonymized?
-    },
+    autoCollapseSidebarCategories: true,
     colorMode: {
-      defaultMode: "light",
-      disableSwitch: false,
+      defaultMode: "dark",
+      disableSwitch: true,
+      respectPrefersColorScheme: false,
     },
-
+    prism: {
+      additionalLanguages: ["java", "powershell"],
+      theme: require("prism-react-renderer/themes/vsDark"),
+      // darkTheme: require("prism-react-renderer/themes/vsDark"),
+    },
+    hideableSidebar: true,
     navbar: {
       title: "",
       hideOnScroll: true,
@@ -40,16 +42,10 @@ module.exports = {
         alt: "VideosdK live logo",
         src: "img/videosdk_docs_blacklogo.png",
         srcDark: "img/videosdk_docs_whitelogo.png",
-        href: "https://videosdk.live/",
+        href: "/",
         target: "_self",
       },
       items: [
-        {
-          position: "left",
-          label: "Overview",
-          to: "/",
-          activeBaseRegex: "/$",
-        },
         {
           position: "left",
           label: "Guide",
@@ -61,13 +57,13 @@ module.exports = {
             },
             {
               label: "Prebuilt Video & Audio Calling SDK",
-              to: "docs/guide/prebuilt-video-and-audio-calling/getting-started",
-              activeBaseRegex: "docs/guide/prebuilt-video-and-audio-calling/*",
+              to: "prebuilt/guide/prebuilt-video-and-audio-calling/getting-started",
+              activeBaseRegex: "/*/prebuilt-video-and-audio-calling/*",
             },
             {
               label: "Custom Video & Audio Calling SDK",
-              to: "docs/guide/video-and-audio-calling-api-sdk/getting-started",
-              activeBaseRegex: "docs/guide/video-and-audio-calling-api-sdk/*",
+              to: "react/guide/video-and-audio-calling-api-sdk/getting-started",
+              activeBaseRegex: "/*/video-and-audio-calling-api-sdk/*",
             },
             {
               label: "Standard Live Streaming API",
@@ -86,19 +82,24 @@ module.exports = {
           label: "API Reference",
           items: [
             {
-              label: "Realtime communication",
-              to: "docs/realtime-communication/intro",
-              activeBaseRegex: "docs/realtime-communication/*",
+              label: "Custom SDK References",
+              to: "react/api/sdk-reference/setup",
+              activeBaseRegex: "/*/api/sdk-reference/*",
+            },
+            {
+              label: "Rest API Reference",
+              to: "docs/api-reference/realtime-communication/intro",
+              activeBaseRegex: "docs/api-reference/realtime-communication/*",
             },
             {
               label: "Live streaming",
-              to: "docs/live-streaming/intro",
-              activeBaseRegex: "docs/live-streaming/*",
+              to: "docs/api-reference/live-streaming/intro",
+              activeBaseRegex: "docs/api-reference/live-streaming/*",
             },
             {
               label: "Video On Demand",
-              to: "docs/video-on-demand/intro",
-              activeBaseRegex: "docs/video-on-demand/*",
+              to: "docs/api-reference/video-on-demand/intro",
+              activeBaseRegex: "docs/api-reference/video-on-demand/*",
             },
           ],
         },
@@ -118,15 +119,15 @@ module.exports = {
           position: "right",
         },
         {
-          label: "Join Community",
-          href: "https://app.videosdk.live/login",
+          className: "navbar-item-logo discord",
+          href: "https://discord.gg/f2WsNDN9S5",
           position: "right",
         },
         {
           href: "https://github.com/videosdk-live/videosdk.live",
-          className: "navbar-item-github",
+          className: "navbar-item-logo github",
           position: "right",
-        }
+        },
         // {
         //   type: "docsVersionDropdown",
         //   dropdownActiveClassDisabled: true,
@@ -151,11 +152,11 @@ module.exports = {
             },
             {
               label: "Prebuilt Video & Audio Calling",
-              href: "/docs/guide/prebuilt-video-and-audio-calling/getting-started",
+              href: "/prebuilt/guide/prebuilt-video-and-audio-calling/getting-started",
             },
             {
               label: "Custom Video & Audio Calling",
-              href: "/docs/overview/live-streaming/introduction",
+              href: "/react/guide/video-and-audio-calling-api-sdk/getting-started",
             },
             {
               label: "Standard Live Streaming",
@@ -172,15 +173,15 @@ module.exports = {
           items: [
             {
               label: "Realtime Communication",
-              to: "/docs/realtime-communication/intro",
+              to: "/docs/api-reference/realtime-communication/intro",
             },
             {
               label: "Live Streaming",
-              to: "docs/live-streaming/intro",
+              to: "docs/api-reference/live-streaming/intro",
             },
             {
               label: "Video On Demand",
-              to: "/docs/video-on-demand/intro",
+              to: "/docs/api-reference/video-on-demand/intro",
             },
           ],
         },
@@ -247,7 +248,7 @@ module.exports = {
             },
             {
               label: "Join the Community",
-              href: "https://discord.gg/Gpmj6eCq5u",
+              href: "https://discord.gg/f2WsNDN9S5",
             },
           ],
         },
@@ -261,40 +262,109 @@ module.exports = {
       {
         docs: {
           sidebarPath: require.resolve("./sidebars.js"),
-          // Please change this to your repo.
-          //editUrl:
-          //  "https://github.com/facebook/docusaurus/edit/master/website/",
-          // includeCurrentVersion: false,
         },
         blog: {
+          path: "blog",
           showReadingTime: true,
           // Please change this to your repo.
           //editUrl:
           //  "https://github.com/facebook/docusaurus/edit/master/website/blog/",
         },
         theme: {
-          customCss: [require.resolve("./src/css/custom.css")],
-          prism: {
-            defaultLanguage: "js",
-            plugins: ["line-numbers", "show-language"],
-            theme: require("@kiwicopple/prism-react-renderer/themes/vsDark"),
-            darkTheme: require("@kiwicopple/prism-react-renderer/themes/vsDark"),
-            additionalLanguages: ["Java"],
-          },
+          customCss: [require.resolve("./src/css/new_custom.css")],
         },
+        googleAnalytics: {
+          trackingID: "G-NR8EYPZFJ7",
+          // Optional fields.
+          anonymizeIP: true, // Should IPs be anonymized?
+        },
+      },
+    ],
+  ],
+  plugins: [
+    "docusaurus-tailwindcss-loader",
+    [
+      "@docusaurus/plugin-content-docs",
+      {
+        id: "react_docs",
+        path: "react_docs",
+        routeBasePath: "react",
+        sidebarPath: require.resolve("./sidebarReact.js"),
+        // ... other options
+      },
+    ],
+    [
+      "@docusaurus/plugin-content-docs",
+      {
+        id: "android_docs",
+        path: "android_docs",
+        routeBasePath: "android",
+        sidebarPath: require.resolve("./sidebarAndroid.js"),
+        // ... other options
+      },
+    ],
+
+    [
+      "@docusaurus/plugin-content-docs",
+      {
+        id: "ios_docs",
+        path: "ios_docs",
+        routeBasePath: "ios",
+        sidebarPath: require.resolve("./sidebarIos.js"),
+        // ... other options
+      },
+    ],
+    [
+      "@docusaurus/plugin-content-docs",
+      {
+        id: "flutter_docs",
+        path: "flutter_docs",
+        routeBasePath: "flutter",
+        sidebarPath: require.resolve("./sidebarFlutter.js"),
+        // ... other options
+      },
+    ],
+    [
+      "@docusaurus/plugin-content-docs",
+      {
+        id: "react_native_docs",
+        path: "react_native_docs",
+        routeBasePath: "react-native",
+        sidebarPath: require.resolve("./sidebarReactNative.js"),
+        // ... other options
+      },
+    ],
+    [
+      "@docusaurus/plugin-content-docs",
+      {
+        id: "javascript_docs",
+        path: "javascript_docs",
+        routeBasePath: "javascript",
+        sidebarPath: require.resolve("./sidebarJavaScript.js"),
+        // ... other options
+      },
+    ],
+    [
+      "@docusaurus/plugin-content-docs",
+      {
+        id: "prebuilt_docs",
+        path: "prebuilt_docs",
+        routeBasePath: "prebuilt",
+        sidebarPath: require.resolve("./sidebarPrebuilt.js"),
+        // ... other options
       },
     ],
   ],
   scripts: [
     {
       // Page sense
-      src: 'https://cdn-in.pagesense.io/js/zujotechpvtltd/8c69e67587b74006a3927185dd663808.js',
+      src: "https://cdn-in.pagesense.io/js/zujotechpvtltd/8c69e67587b74006a3927185dd663808.js",
       async: true,
     },
     {
       // Zoho Sales IQ
-      src: 'https://salesiq.zoho.in/widget',
+      src: "https://salesiq.zoho.in/widget",
       async: true,
-    }
-  ]
+    },
+  ],
 };

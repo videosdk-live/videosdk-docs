@@ -98,16 +98,7 @@ COMING SOON!
 <TabItem value="flutter">
 
 ```js
-// only works for android
-
-ElevatedButton(
-  onPressed: meeting.disableScreenShare,
-  child: Text("Disable Screen Share"),
-),
-ElevatedButton(
-  onPressed: meeting.enableScreenShare,
-  child: Text("Dnable Screen Share"),
-),
+COMING SOON!
 ```
 
 </TabItem>

@@ -5,40 +5,37 @@ const CardLinks = ({ title, text, links, img }) => {
   return (
     <div
       className="card"
-      style={{ border: "1px solid #ccc", marginBottom: 16 }}
     >
       <div class="card__header">
         {/* <h3>{title}</h3> */}
         {/* <Card heading={title} icon="/img/icons/libraries/react-icon.svg" /> */}
-        <div
-          style={{
-            display: "flex",
-            gap: 20,
-            alignItems: "center",
-            marginBottom: "8px",
-          }}
-        >
+        {img && <div className="card-icon">
           {
             <img
               src={img}
               alt="Image"
-              width="20"
-              style={{ display: "block", maxHeight: "20px" }}
+              style={{
+                display: "block",
+              }}
             />
           }
-          {title && <h3 style={{ marginBottom: 0 }}>{title}</h3>}
+        </div>}
+        <div className="card-title">
+          {title && <p style={{ marginBottom: 0 }}>{title}</p>}
         </div>
-        <p>{text}</p>
+        <p className="card-text" style={{ marginTop: "8px" }}>
+          {text}
+        </p>
       </div>
 
-      <div className="card__body">
-        <ul>
-          {links.map((link, i) => (
-            <li key={link.link + i} style={{ marginBottom: "16px" }}>
-              <a href={link.link}>{link.linkName}</a>
-            </li>
-          ))}
-        </ul>
+      <div className="card__body row" style={{ paddingRight: "1.5rem", paddingLeft: "1.5rem" }}>
+        {links.map((link, i) => (
+          <a href={link.link}>
+            <div class="card-button" key={link.link + i}>
+              {link.linkName}
+            </div>
+          </a>
+        ))}
       </div>
     </div>
   );

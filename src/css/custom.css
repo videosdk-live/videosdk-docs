@@ -15,7 +15,7 @@
   src: url(/fonts/custom/CustomFont-Medium.woff2) format("woff2"),
     url(/fonts/custom/CustomFont-Medium.woff) format("woff");
   font-weight: 500;
-  font-style: normal;
+  font-style: bold;
 }
 
 /* mono font */
@@ -244,11 +244,11 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #ef4444;
+  background: slategrey;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #ef4444;
+  background: rgb(154, 158, 161);
 }
 
 :root[data-theme="light"] .navbar__logo.logo--dark,
@@ -402,9 +402,14 @@ article header {
 
 /* Sidebar */
 
+/* .dropdown {
+  height: 50px;
+} */
 .navbar__logo {
-  height: auto;
+
+  height: 52px;
   max-width: 250px;
+  
 }
 
 a[class^="sidebarLogo_"] img {
@@ -449,6 +454,11 @@ a[class^="sidebarLogo_"] img {
   }
 }
 
+.navbar {
+  align-items: center;
+  justify-items: center;
+}
+
 .navbar__toggle svg {
   width: 21px;
 }
@@ -465,6 +475,26 @@ a[class^="sidebarLogo_"] img {
 .navbar-sidebar__items .menu .menu__link {
   color: var(--ifm-color-content);
   display: block;
+}
+.dropdownSidebarVersion {
+  width: 90%;
+  margin-left: 15px;
+}
+
+.dropdownSidebar {
+  height: 40px;
+  background-color: white;
+}
+
+.dropdownSidebar:hover {
+  height: 41px;
+  box-shadow: 1px 1px #a93c04;
+}
+
+html[data-theme="dark"] .dropdownSidebar {
+  height: 40px;
+  background-color: #1f1f1f;
+  color: white;
 }
 
 .navbar-sidebar__items .menu .menu__link .badge {
@@ -582,7 +612,7 @@ a.card:hover {
 }
 
 .menu > ul.menu__list ul.menu__list {
-  border-left: 1px solid var(--custom-border-color);
+  /* border-left: 1px solid var(--custom-border-color); */
   margin-left: 0;
   padding-left: var(--ifm-menu-link-padding-horizontal);
 }
@@ -590,7 +620,7 @@ a.card:hover {
 .menu > ul.menu__list ul.menu__list .menu__link {
   border-radius: 0;
   font-size: 0.9rem;
-  margin-left: calc(var(--ifm-menu-link-padding-horizontal) * -1);
+  margin-left: calc(var(--ifm-menu-link-padding-horizontal) * 0.5);
   padding-left: var(--ifm-menu-link-padding-horizontal);
 }
 
@@ -698,15 +728,14 @@ div[class^="sidebar_"] .menu {
   /* overflow: hidden; */
   background: var(--ifm-sidebar-background);
   margin-right: calc(var(--ifm-spacing-horizontal) * -1);
-  padding-bottom: var(--ifm-spacing-vertical);
-}
-
-div[class^="sidebar_"] .menu {
-  margin-right: calc(var(--ifm-spacing-horizontal) * -1);
+  /* padding-bottom: var(--ifm-spacing-vertical); */
+  padding: 0px;
 }
 
 div[class^="sidebar_"] .menu .menu__link {
   padding-right: var(--ifm-menu-link-padding-horizontal);
+  padding-top: var(--ifm-menu-link-padding-vertical);
+  padding-bottom: var(--ifm-menu-link-padding-vertical);
 }
 
 div[class^="sidebar_"]
@@ -727,7 +756,7 @@ div[class^="sidebar_"]
 @media (min-width: 997px) {
   div[class^="sidebar_"] {
     padding-right: var(--ifm-spacing-horizontal);
-    padding-left: var(--ifm-spacing-horizontal);
+    padding-left: calc(var(--ifm-spacing-horizontal) * 0.5);
     height: 100vh;
     overflow-y: auto;
     /* border-right: 1px solid #8a8f96;  */

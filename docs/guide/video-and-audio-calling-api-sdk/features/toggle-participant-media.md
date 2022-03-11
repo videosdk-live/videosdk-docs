@@ -343,7 +343,7 @@ func onWebcamRequested(participantId: String?, accept: @escaping () -> Void, rej
 
 ```js
 // Handle Webcam Requested
-widget.meeting.on(Events.webcamRequested, ({ accept, reject }) {
+widget.meeting.on("webcam-requested", ({ accept, reject }) {
     // callback function to accept the request
     accept();
 
@@ -352,7 +352,7 @@ widget.meeting.on(Events.webcamRequested, ({ accept, reject }) {
 }, );
 
 // Handle Mic Requested
-widget.meeting.on(Events.micRequested, ({ accept, reject }) {
+widget.meeting.on("mic-requested", ({ accept, reject }) {
      // callback function to accept the request
     accept();
 

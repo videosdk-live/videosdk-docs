@@ -25,4 +25,4 @@ $ git clone https://github.com/videosdk-live/videosdk-rtc-nodejs-sdk-example
 
 ## documentation
 
-For more information follow, [RTC Auth documentation](/docs/realtime-communication/rest-api-reference/auth).
+For more information follow, [RTC Auth documentation](/docs/api-reference/realtime-communication/auth).

@@ -6,7 +6,7 @@ import styles from "./HomepageFeatures.module.css";
 const FeatureList = [
   {
     title: "Realtime Communication SDK",
-    link: "/docs/realtime-communication/intro",
+    link: "/docs/api-reference/realtime-communication/intro",
     description: (
       <>
         Realtime communication SDK provides seamless support to integrate

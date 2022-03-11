@@ -271,8 +271,8 @@ yarn add @videosdk.live/react-native-sdk
 
 <p>Follow below link if you are setting up for specific plateform</p>
 <ul>
-  <li><a href="https://docs.videosdk.live/docs/realtime-communication/sdk-reference/react-native-sdk/setup-android">Android Setup</a></li>
-  <li><a href="https://docs.videosdk.live/docs/realtime-communication/sdk-reference/react-native-sdk/setup-ios">IOS Setup</a></li>
+  <li><a href="https://docs.videosdk.live/react-native/api/sdk-reference/setup-android">Android Setup</a></li>
+  <li><a href="https://docs.videosdk.live/react-native/api/sdk-reference/setup-ios">IOS Setup</a></li>
 </ul>
 
 </TabItem>
@@ -297,7 +297,7 @@ dependencies {
 
 <br/>
 
-<p>Follow <a target="_blank" href="https://docs.videosdk.live/docs/realtime-communication/sdk-reference/android-sdk/setup/">setup docs</a> for more information</p>
+<p>Follow <a target="_blank" href="https://docs.videosdk.live/android/api/sdk-reference/setup/">setup docs</a> for more information</p>
 
 </TabItem>
 <TabItem value="ios">
@@ -334,7 +334,7 @@ let package = Package(
 
 <br/>
 
-<p>Follow <a target="_blank" href="https://docs.videosdk.live/docs/realtime-communication/sdk-reference/ios-sdk/setup">setup docs</a> for more information</p>
+<p>Follow <a target="_blank" href="https://docs.videosdk.live/ios/api/sdk-reference/setup">setup docs</a> for more information</p>
 
 </TabItem>
 <TabItem value="flutter">

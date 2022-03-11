@@ -270,11 +270,11 @@ func onLivestreamStopped() {
 <TabItem value="flutter">
 
 ```js
-meeting.on(Events.livestreamStarted, () {
+meeting.on("livestream-started", () {
   print("meeting livestream started");
 });
 //
-meeting.on(Events.livestreamStopped, () {
+meeting.on("livestream-stopped", () {
   print("meeting livestream stopped");
 });
 

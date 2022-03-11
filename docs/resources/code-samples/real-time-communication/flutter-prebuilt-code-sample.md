@@ -25,4 +25,4 @@ git clone https://github.com/videosdk-live/videosdk-rtc-flutter-sdk-example.git
 
 ## documentation
 
-For more information follow, [RTC Flutter SDK documentation](/docs/realtime-communication/sdk-reference/flutter-sdk/setup).
+For more information follow, [RTC Flutter SDK documentation](/flutter/api/sdk-reference/setup).
