@@ -255,11 +255,19 @@ function QuickstartPart() {
               EndPart={() => {
                 return index == 0 ? (
                   <div className="mt-6">
-                    <div className="h-9  flex  ">
-                      <Button
+                    <div className="h-9 flex">
+                      <a
+                        href={
+                          "/prebuilt/guide/prebuilt-video-and-audio-calling/getting-started"
+                        }
+                        className="rounded bg-white-100 text-black font-semibold  hover:cursor-pointer hover:bg-white-150 flex flex-row items-center justify-center p-3"
+                      >
+                        Try it - it’s free
+                      </a>
+                      {/* <Button
                         link="/prebuilt/guide/prebuilt-video-and-audio-calling/getting-started"
                         text="Try it - it’s free"
-                      />
+                      /> */}
                     </div>
                   </div>
                 ) : (
@@ -307,7 +315,7 @@ let Button = ({ link, text }) => {
           href={link}
           className="rounded bg-white-100 hover:bg-white-150 flex flex-row p-3"
         >
-          <h6 className="text-black text-md font-semibold mb-0">{text}</h6>
+          <h6 className="text-black text-base font-semibold mb-0">{text}</h6>
         </a>
       </div>
     </>
