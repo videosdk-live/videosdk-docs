@@ -326,7 +326,7 @@ function ResourcePart() {
       title: "Custom SDK Guide",
       description:
         "End to End tutorials to integrate Custom SDK on various platforms.",
-      link: "/prebuilt/guide/prebuilt-video-and-audio-calling/getting-started",
+      link: "react/guide/video-and-audio-calling-api-sdk/getting-started",
     },
     {
       title: "API Reference",
