@@ -23,7 +23,6 @@ import CustomJSIcon from "../../static/icon/Home_customsdk/CustomJSIcon";
 import CustomFlutterIcon from "../../static/icon/Home_customsdk/CustomFlutterIcon";
 import CustomAndroidIcon from "../../static/icon/Home_customsdk/CustomAndroidIcon";
 import CustomIOSIcon from "../../static/icon/Home_customsdk/CustomIOSIcon";
-import ReactNewIcon from "../../static/icon/ReactNewIcon";
 
 const blogs = require("../../.docusaurus/docusaurus-plugin-content-blog/default/blog-post-list-prop-default.json");
 
@@ -102,7 +101,7 @@ function MainCard({
 
 function PlatformPart() {
   const platformArray = [
-    { Icon: ReactNewIcon, title: "React", imgLink: "./svgs/react.svg" },
+    { Icon: ReactIcon, title: "React", imgLink: "./svgs/react.svg" },
     { Icon: JSIcon, title: "JavaScript", imgLink: "./svgs/js.svg" },
     {
       Icon: ReactIcon,
