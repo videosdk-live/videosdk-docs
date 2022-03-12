@@ -60,11 +60,6 @@ module.exports = {
           label: "Guide",
           items: [
             {
-              label: "Dashboard",
-              to: "docs/guide/dashboard/getting-started",
-              activeBaseRegex: "docs/guide/dashboard/*",
-            },
-            {
               label: "Prebuilt Video & Audio Calling SDK",
               to: "prebuilt/guide/prebuilt-video-and-audio-calling/getting-started",
               activeBaseRegex: "/*/prebuilt-video-and-audio-calling/*",
