@@ -15,6 +15,7 @@ module.exports = {
     locales: ["en"],
   },
   themeConfig: {
+    defaultMode: "dark",
     image: "img/videosdklive-thumbnail.jpg",
     algolia: {
       apiKey: "6b125a23a26dc2bf6a8a0cb51a66a3f7",
@@ -39,7 +40,7 @@ module.exports = {
       title: "",
       hideOnScroll: true,
       logo: {
-        alt: "VideosdK live logo",
+        alt: "Video SDK logo",
         src: "img/videosdk_docs_blacklogo.png",
         srcDark: "img/videosdk_docs_whitelogo.png",
         href: "/",
@@ -142,76 +143,111 @@ module.exports = {
     },
     footer: {
       style: "dark",
+      logo: {
+        alt: "Video SDK logo",
+        src: "img/videosdk_docs_blacklogo.png",
+        srcDark: "img/videosdk_docs_whitelogo.png",
+        href: "/",
+        width: 500,
+      },
       links: [
         {
-          title: "Guide",
+          title: "Get started",
           items: [
             {
-              label: "Dashboard",
-              href: "/docs/guide/dashboard/getting-started",
+              label: "Sign Up",
+              href: "https://app.videosdk.live/signup",
             },
             {
-              label: "Prebuilt Video & Audio Calling",
+              label: "Get Started with Prebuilt SDK",
               href: "/prebuilt/guide/prebuilt-video-and-audio-calling/getting-started",
             },
             {
-              label: "Custom Video & Audio Calling",
+              label: "Get Started with Custom SDK",
               href: "/react/guide/video-and-audio-calling-api-sdk/getting-started",
             },
             {
-              label: "Standard Live Streaming",
+              label: "Get Started with Live Streaming",
               href: "/docs/guide/standard-live-streaming-api-sdk/getting-started",
             },
             {
-              label: "Video On Demand",
+              label: "Get Started with VOD",
               href: "/docs/guide/video-on-demand/getting-started",
             },
           ],
         },
         {
-          title: "API Reference",
+          title: "4 Steps Quickstart",
           items: [
             {
-              label: "Realtime Communication",
-              to: "/docs/api-reference/realtime-communication/intro",
+              label: "Quick Start: Prebuilt JS SDK",
+              to: "/prebuilt/guide/prebuilt-video-and-audio-calling/quick-start",
             },
             {
-              label: "Live Streaming",
-              to: "docs/api-reference/live-streaming/intro",
+              label: "Quick Start: React JS SDK",
+              to: "/react/guide/video-and-audio-calling-api-sdk/quick-start",
             },
             {
-              label: "Video On Demand",
-              to: "/docs/api-reference/video-on-demand/intro",
+              label: "Quick Start: JavaScript SDK",
+              to: "/javascript/guide/video-and-audio-calling-api-sdk/quick-start",
             },
+            {
+              label: "Quick Start: React Native SDK",
+              to: "/react-native/guide/video-and-audio-calling-api-sdk/quick-start",
+            },
+            {
+              label: "Quick Start: React Native SDK",
+              to: "/react-native/guide/video-and-audio-calling-api-sdk/quick-start",
+            },
+            {
+              label: "Quick Start: Android SDK",
+              to: "/android/guide/video-and-audio-calling-api-sdk/getting-started",
+            },
+            {
+              label: "Quick Start: iOS SDK",
+              to: "/ios/guide/video-and-audio-calling-api-sdk/quick-start",
+            },
+            {
+              label: "Quick Start: Flutter SDK",
+              to: "/flutter/guide/video-and-audio-calling-api-sdk/getting-started",
+            }
           ],
         },
         {
-          title: "Tutorials",
+          title: "For developers",
           items: [
             {
-              label: "Video Conferencing Java Script",
-              to: "/docs/tutorials/realtime-communication/js-sdk/quickstart-js",
+              label: "Developer Blog",
+              to: "https://www.videosdk.live/blog/tag/product",
             },
             {
-              label: "Video Conferencing with Wordpress",
-              to: "/docs/tutorials/realtime-communication/prebuilt-sdk/quickstart-prebuilt-wordpress",
+              label: "API Reference",
+              to: "/react/api/sdk-reference/setup",
             },
             {
-              label: "Live Streaming Quickstart",
-              to: "/docs/tutorials/live-streaming/api/quickstart-rest-api",
+              label: "Resouces",
+              to: "/docs/tutorials/introduction",
             },
             {
-              label: "Video on Demand Quickstart",
-              to: "/docs/tutorials/realtime-communication/js-sdk/quickstart-js",
+              label: "Code Samples",
+              to: "/docs/code-sample/overview",
             },
+            {
+              label: "Product Updates",
+              to: "https://www.videosdk.live/blog/tag/product-updates",
+            }
           ],
         },
         {
-          title: "Community",
+          title: "Join Community",
           items: [
             {
               label: "Discord Community",
               href: "https://discord.gg/Gpmj6eCq5u",
+            },
+            {
+              label: "Github",
+              href: "https://github.com/videosdk-live",
             },
             {
               label: "Stack Overflow",
@@ -222,34 +258,38 @@ module.exports = {
               href: "https://twitter.com/video_sdk",
             },
             {
-              label: "LinkedIn",
-              href: "https://www.linkedin.com/company/videosdk",
+              label: "Reddit",
+              href: "https://www.reddit.com/r/videosdk/",
             },
             {
-              label: "Medium",
-              href: "https://medium.com/video-sdk",
+              label: "Youtube",
+              href: "https://www.youtube.com/c/VideoSDK",
             },
           ],
         },
         {
-          title: "More",
+          title: "Company",
           items: [
             {
-              label: "GitHub",
-              href: "https://github.com/videosdk-live",
+              label: "Contact Us",
+              href: "https://www.videosdk.live/contact",
             },
             {
-              label: "NPM",
-              href: "https://www.npmjs.com/org/videosdk.live",
+              label: "Pricing",
+              href: "https://www.videosdk.live/pricing",
             },
             {
-              label: "Start Project",
-              href: "https://app.videosdk.live",
+              label: "Support",
+              href: "https://www.videosdk.live/support",
             },
             {
-              label: "Join the Community",
-              href: "https://discord.gg/f2WsNDN9S5",
+              label: "Terms of Use",
+              href: "https://www.videosdk.live/terms-of-use",
             },
+            {
+              label: "Privacy Policy",
+              href: "https://www.videosdk.live/privacy-policy",
+            }
           ],
         },
       ],
