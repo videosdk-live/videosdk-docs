@@ -16,6 +16,15 @@ module.exports = {
   },
   themeConfig: {
     defaultMode: "dark",
+    announcementBar: {
+      id: "legacy_docs",
+      content:
+        'We are excited to announce that we have updated our documentation portal 🎉 <a target="_blank" rel="noopener noreferrer" href="https://legacy-docs.videosdk.live">Switch to old documentation ↗</a>',
+      backgroundColor: "#6246FB",
+      textColor: "#fff",
+      isCloseable: false,
+    },
+
     image: "img/videosdklive-thumbnail.jpg",
     algolia: {
       apiKey: "6b125a23a26dc2bf6a8a0cb51a66a3f7",
@@ -125,7 +134,7 @@ module.exports = {
           position: "right",
         },
         {
-          href: "https://github.com/videosdk-live/videosdk.live",
+          href: "https://github.com/videosdk-live",
           className: "navbar-item-logo github",
           position: "right",
         },

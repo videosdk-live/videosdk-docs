@@ -24,7 +24,6 @@ import CustomJSIcon from "../../static/icon/Home_customsdk/CustomJSIcon";
 import CustomFlutterIcon from "../../static/icon/Home_customsdk/CustomFlutterIcon";
 import CustomAndroidIcon from "../../static/icon/Home_customsdk/CustomAndroidIcon";
 import CustomIOSIcon from "../../static/icon/Home_customsdk/CustomIOSIcon";
-import ReactNewIcon from "../../static/icon/ReactIcon";
 
 const blogs = require("../../.docusaurus/docusaurus-plugin-content-blog/default/blog-post-list-prop-default.json");
 
@@ -103,8 +102,8 @@ function MainCard({
 
 function PlatformPart() {
   const platformArray = [
-    { Icon: ReactNewIcon, title: "React", imgLink: "./svgs/react.svg", link: "/react/guide/video-and-audio-calling-api-sdk/getting-started" },
-    { Icon: JSIcon, title: "JavaScript", imgLink: "./svgs/js.svg", link: "/react-native/guide/video-and-audio-calling-api-sdk/getting-started" },
+    { Icon: ReactIcon, title: "React", imgLink: "./svgs/react.svg" },
+    { Icon: JSIcon, title: "JavaScript", imgLink: "./svgs/js.svg" },
     {
       Icon: ReactIcon,
       title: "React Native",
@@ -262,11 +261,19 @@ function QuickstartPart() {
               EndPart={() => {
                 return index == 0 ? (
                   <div className="mt-6">
-                    <div className="h-9  flex  ">
-                      <Button
+                    <div className="h-9 flex">
+                      <a
+                        href={
+                          "/prebuilt/guide/prebuilt-video-and-audio-calling/getting-started"
+                        }
+                        className="rounded bg-white-100 text-black font-semibold  hover:cursor-pointer hover:bg-white-150 flex flex-row items-center justify-center p-3"
+                      >
+                        Try it - it’s free
+                      </a>
+                      {/* <Button
                         link="/prebuilt/guide/prebuilt-video-and-audio-calling/getting-started"
                         text="Try it - it’s free"
-                      />
+                      /> */}
                     </div>
                   </div>
                 ) : (
@@ -314,7 +321,7 @@ let Button = ({ link, text }) => {
           href={link}
           className="rounded bg-white-100 hover:bg-white-150 flex flex-row p-3"
         >
-          <h6 className="text-black text-md font-semibold mb-0">{text}</h6>
+          <h6 className="text-black text-base font-semibold mb-0">{text}</h6>
         </a>
       </div>
     </>
@@ -333,7 +340,7 @@ function ResourcePart() {
       title: "Custom SDK Guide",
       description:
         "End to End tutorials to integrate Custom SDK on various platforms.",
-      link: "/prebuilt/guide/prebuilt-video-and-audio-calling/getting-started",
+      link: "react/guide/video-and-audio-calling-api-sdk/getting-started",
     },
     {
       title: "API Reference",
