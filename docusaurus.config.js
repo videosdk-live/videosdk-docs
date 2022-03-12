@@ -133,7 +133,7 @@ module.exports = {
           position: "right",
         },
         {
-          href: "https://github.com/videosdk-live/videosdk.live",
+          href: "https://github.com/videosdk-live",
           className: "navbar-item-logo github",
           position: "right",
         },
