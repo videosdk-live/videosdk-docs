@@ -102,13 +102,13 @@ function MainCard({
 
 function PlatformPart() {
   const platformArray = [
-    { Icon: ReactIcon, title: "React", imgLink: "./svgs/react.svg" },
-    { Icon: JSIcon, title: "JavaScript", imgLink: "./svgs/js.svg" },
+    { Icon: ReactIcon, title: "React", imgLink: "./svgs/react.svg", link: "/react/guide/video-and-audio-calling-api-sdk/getting-started" },
+    { Icon: JSIcon, title: "JavaScript", imgLink: "./svgs/js.svg", link: "/javascript/guide/video-and-audio-calling-api-sdk/getting-started" },
     {
       Icon: ReactIcon,
       title: "React Native",
       imgLink: "./svgs/react-native.svg",
-      link: "/javascript/guide/video-and-audio-calling-api-sdk/getting-started"
+      link: "/react-native/guide/video-and-audio-calling-api-sdk/getting-started"
     },
   ];
 
