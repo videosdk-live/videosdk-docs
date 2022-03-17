@@ -27,8 +27,8 @@ Before proceeding, ensure that your development environment meets the following 
 
 - Java Development Kit.
 - Android Studio 3.0 or later.
-- Android SDK API Level 16 or higher.
-- A mobile device that runs Android 4.1 or later.
+- Android SDK API Level 18 or higher.
+- A mobile device that runs Android 4.3 or later.
 
 :::important
 
@@ -37,53 +37,87 @@ Visit videoSDK **[dashboard](https://app.videosdk.live/api-keys)** to generate t
 
 :::
 
-## Project Setup
+## Getting Started with the Code!
 
 Follow the steps to create the environment necessary to add video calls into your app.
 
-1. For a new project in **Android Studio**, create a **Phone and Tablet** Android project with an **Empty Activity**.
+### Create new Android Project
+
+For a new project in **Android Studio**, create a **Phone and Tablet** Android project with an **Empty Activity**.
+
+![VideoSDK Android Quick Start New Project](/img/quick-start/android_newProject.png) 
 
 :::caution
 After creating the project, Android Studio automatically starts gradle sync. Ensure that the sync succeeds before you continue.
 :::
 
-2. Add the repo to project's `build.gradle` file.
+### Integrate Video SDK
+
+1. Add the repo to project's `build.gradle` file.
 
 ```js title="build.gradle"
 allprojects {
   repositories {
-    // ...
+     // ...
     maven { url 'https://jitpack.io' }
   }
 }
 ```
 
-3. Add the dependency in `app/build.gradle`:
+2. Add the dependency in `app/build.gradle`
 
 ```js title="app/build.gradle"
 dependencies {
-  implementation 'live.videosdk:android-sdk:0.0.7'
+  implementation 'live.videosdk:android-sdk:0.0.12'
 
   //Library to perform Network call to generate a meeting id
   implementation 'com.amitshekhar.android:android-networking:1.0.2'
 
   // other app dependencies
-}
+  }
 ```
 
-4. Add all the following permissions to `AndroidManifest.xml`
+### Add permissions into your project
+
+In `/app/Manifests/AndroidManifest.xml`, add the following permissions after `</application>`.
 
 ```xml title="AndroidManifest.xml"
 <uses-permission android:name="android.permission.RECORD_AUDIO" />
 <uses-permission android:name="android.permission.CAMERA" />
 <uses-permission android:name="android.permission.INTERNET" />
-<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 <uses-permission android:name="android.permission.BLUETOOTH" />
 ```
 
-5. Sync the gradle now. Once the sync is completed successfully, proceed further. If the gradle sync fails, you can check the problem you are facing in [Known Issues](/), if not found, post us on our [discord community](https://discord.gg/f2WsNDN9S5).
+### Structure of the project
 
-6. Extend the `android.app.Application` class and create `MainApplication.java` class with the following code
+Your project structure should look like this.
+
+```jsx title="Project Structure"
+   app
+   ├── java
+   │    ├── packagename
+   │         ├── JoinActivity.java
+   │         ├── MainApplication.java
+   │         ├── MeetingActivity.java
+   │         ├── ParticipantAdapter.java
+   ├── res
+   │    ├── layout
+   │    │    ├── activity_join.xml
+   │    │    ├── activity_meeting.xml
+   │    │    ├── item_remote_peer.xml
+```
+
+### App Architecture
+
+<div style={{textAlign: 'center'}}>
+
+![VideoSDK Android Quick Start App Structure](/img/quick-start/android_AppStructure.jpg) 
+
+</div>
+
+### Step 1: Initialize VideoSDK
+
+1. Create `MainApplication.java` class which will extend the `android.app.Application` class with the following code
 
 ```java title="MainApplication.java"
 package live.videosdk.demo;
@@ -100,34 +134,16 @@ public class MainApplication extends Application {
 }
 ```
 
-7. Add `MainApplication` to `AndroidManifest.xml`
+2. Add `MainApplication` to `AndroidManifest.xml`
 
 ```xml title="AndroidManifest.xml"
 <application
     android:name=".MainApplication" >
-  <!-- ... -->
+   <!-- ... -->
 </application>
 ```
 
-8. Project Structure should look like
-```jsx title="Project Structure"
-   app
-   ├── java
-   │    ├── packagename
-   │         ├── MainActivity.java
-   │         ├── MainApplication.java
-   │         ├── MeetingActivity.java
-   │         ├── ParticipantAdapter.java
-   ├── res
-   │    ├── layout
-   │    │    ├── activity_main.xml
-   │    │    ├── activity_meeting.xml
-   │    │    ├── item_remote_peer.xml
-```
-
-## Start Writing Your Code
-
-### Step 1: Creating Joining Screen
+### Step 2: Creating Joining Screen
 
 #### Creating UI
 
@@ -137,9 +153,9 @@ The Joining screen will consist of:
 2. TextField for Meeting ID - This text field will contain the meeting ID you want to join.
 3. Join Button - This button will join the meeting with `meetingId` you provided.
 
-In `/app/res/layout/activity_main.xml`, replace the content with the following:
+In `/app/res/layout/activity_join.xml`, replace the content with the following:
 
-```xml title="activity_main.xml"
+```xml title="activity_join.xml"
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
   xmlns:tools="http://schemas.android.com/tools"
@@ -147,7 +163,7 @@ In `/app/res/layout/activity_main.xml`, replace the content with the following:
   android:layout_height="match_parent"
   android:gravity="center"
   android:orientation="vertical"
-  tools:context=".MainActivity">
+  tools:context=".JoinActivity">
   <Button
     android:id="@+id/btnCreateMeeting"
     android:layout_width="wrap_content"
@@ -179,23 +195,23 @@ In `/app/res/layout/activity_main.xml`, replace the content with the following:
 </LinearLayout>
 ```
 
-#### Integrating Create Meeting API Call
+#### Integratiion of Create Meeting API
 
-1. Declare the variables `sampleToken` which will hold the **Sample Token** [generated from the VideoSDK dashboard](https://app.videosdk.live/api-keys)
+1. Declare the variables `sampleToken` which will hold the **Sample Token**  generated from the [VideoSDK dashboard](https://app.videosdk.live/api-keys)
 
-```java title="MainActivity.java"
+```java title="JoinActivity.java"
 //Replace with the token you generated from the VideoSDK Dashboard
 String sampleToken = "";
 ```
 
 2. Add the `onClick` events to the Join and Create button.
 
-```java title="MainActivity.java"
-public class MainActivity extends AppCompatActivity {
+```java title="JoinActivity.java"
+public class JoinActivity extends AppCompatActivity {
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-    setContentView(R.layout.activity_main);
+    setContentView(R.layout.activity_join);
 
     final Button btnCreate = findViewById(R.id.btnCreateMeeting);
     final Button btnJoin = findViewById(R.id.btnJoinMeeting);
@@ -207,19 +223,22 @@ public class MainActivity extends AppCompatActivity {
     });
 
     btnJoin.setOnClickListener(v -> {
-      Intent intent = new Intent(MainActivity.this, MeetingActivity.class);
+      Intent intent = new Intent(JoinActivity.this, MeetingActivity.class);
       intent.putExtra("token", sampleToken);
       intent.putExtra("meetingId", etMeetingId.getText().toString());
       startActivity(intent);
     });
+  }
+
+  private void createMeeting(String token) {
   }
 }
 ```
 
 3. Add the `createMeeting()` which we specified in the `onClick` event of `btnCreate`.
 
-```java title="MainActivity.java"
-public class MainActivity extends AppCompatActivity {
+```java title="JoinActivity.java"
+public class JoinActivity extends AppCompatActivity {
   //...onCreate
 
   private void createMeeting(String token) {
@@ -235,7 +254,7 @@ public class MainActivity extends AppCompatActivity {
             final String meetingId = response.getString("meetingId");
 
             //Starting the MeetingActivity with recieved meetingId and our sampleToken
-            Intent intent = new Intent(MainActivity.this, MeetingAtivity.class);
+            Intent intent = new Intent(JoinActivity.this, MeetingAtivity.class);
             intent.putExtra("token", sampleToken)
             intent.putExtra("meetingId", meetingd);
             startActivity(intent);
@@ -247,7 +266,7 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void onError(ANError anError) {
           anError.printStackTrace();
-          Toast.makeText(MainActivity.this, anError.getMessage(), Toast.LENGTH_SHORT).show();
+          Toast.makeText(JoinActivity.this, anError.getMessage(), Toast.LENGTH_SHORT).show();
         }
     });
   }
@@ -256,8 +275,8 @@ public class MainActivity extends AppCompatActivity {
 
 4. Since we will be using the Camera and Audio of the device, we need to ask for runtime permissions.
 
-```java title="MainActivity.java"
-public class MainActivity extends AppCompatActivity {
+```java title="JoinActivity.java"
+public class JoinActivity extends AppCompatActivity {
   private static final int PERMISSION_REQ_ID = 22;
 
   private static final String[] REQUESTED_PERMISSIONS = {
@@ -282,7 +301,7 @@ public class MainActivity extends AppCompatActivity {
 }
 ```
 
-### Step 2: Creating Meeting Screen
+### Step 3: Creating Meeting Screen
 
 Create a new Activity named `MeetingActivity.java`.
 
@@ -298,7 +317,7 @@ In `/app/res/layout/activity_meeting.xml`, replace the content with the followin
   android:layout_height="match_parent"
   android:gravity="center"
   android:orientation="vertical"
-  tools:context=".MainActivity">
+  tools:context=".JoinActivity">
   <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -385,6 +404,7 @@ public class MeetingActivity extends AppCompatActivity {
     meeting.addEventListener(meetingEventListener);
 
     meeting.join();
+
     ((TextView)findViewById(R.id.tvMeetingId)).setText(meetingId);
   }
 
@@ -415,9 +435,7 @@ public class MeetingActivity extends AppCompatActivity {
 }
 ```
 
-### Step 3: Handling the Participants
-
-#### Local Participant Toggles
+### Step 4: Local Participant Toggles
 
 To add the local participant webcam and mic toggle options, we will set `onClickListener` on the button and use `Meeting`'s method to toggle mic and webcam.
 
@@ -469,9 +487,9 @@ public class MeetingActivity extends AppCompatActivity {
 }
 ```
 
-#### Handling the Participants View
+### Step 5: Handling the Participants View
 
-We will be showing the list of participants in a recycler view.
+We will be showing the list of participant in a recycler view.
 
 1. Create a new layout for the participant view named `item_remote_peer.xml` in the `res/layout` folder.
 
@@ -508,7 +526,7 @@ We will be showing the list of participants in a recycler view.
 </FrameLayout>
 ```
 
-2. Create a recycler view adapter named `ParticipantAdapter` which will show the participants list. Create `PeerViewHolder` in the adapter which will extend `RecyclerView.ViewHolder`.
+2. Create a recycler view adapter named `ParticipantAdapter` which will show the participant list. Create `PeerViewHolder` in the adapter which will extend `RecyclerView.ViewHolder`.
 
 ```java title="ParticipantAdapter.java"
 public class ParticipantAdapter extends RecyclerView.Adapter<ParticipantAdapter.PeerViewHolder> {
@@ -549,7 +567,7 @@ public class ParticipantAdapter extends RecyclerView.Adapter<ParticipantAdapter.
 }
 ```
 
-4. Now we will create the list of `Participant` for the meeting. We will initialize this list in the constructor of the `ParticipantAdapter`
+3. Now we will create the list of `Participant` for the meeting. We will initialize this list in the constructor of the `ParticipantAdapter`
 
 ```java title="ParticipantAdapter.java"
 public class ParticipantAdapter extends RecyclerView.Adapter<ParticipantAdapter.PeerViewHolder> {
@@ -599,7 +617,7 @@ public class ParticipantAdapter extends RecyclerView.Adapter<ParticipantAdapter.
 }
 ```
 
-5. We have a list of participants ready. Let's set up the view holder to display a particpant video.
+4. Now We have a list of participants. Let's set up the view holder to display a particpant video.
 
 ```java title="PartipantAdapter.java"
 public class ParticipantAdapter extends RecyclerView.Adapter<ParticipantAdapter.PeerViewHolder> {
@@ -650,7 +668,7 @@ public class ParticipantAdapter extends RecyclerView.Adapter<ParticipantAdapter.
 }
 ```
 
-6. Add this adapter to the `MeetingActivity.java`
+5. Add this adapter to the `MeetingActivity.java`
 
 ```java title="MeetingActivity.java"
 @Override
@@ -669,13 +687,17 @@ Stuck anywhere? Check out this [example code](https://github.com/videosdk-live/v
 
 :::
 
-### Step 4: Run and Test
+### Step 6: Run and Test
 
-The app is all set to test. Make sure to update the `sampleToken` in `MainActivity.java`
+The app is all set to test. Make sure to update the `sampleToken` in `JoinActivity.java`
 
 Your app should look like this after the implementation.
 
-![VideoSDK Android Quick Start Join Screen](/img/quick-start/android-join-screen.jpg) ![VideoSDK Android Quick Start Meeting Screen](/img/quick-start/android-meeting-screen.jpg)
+<div style={{textAlign: 'center'}}>
+
+![VideoSDK Android Quick Start Join Screen](/img/quick-start/android-join-screen.jpg)  &nbsp;  ![VideoSDK Android Quick Start Meeting Screen](/img/quick-start/android-meeting-screen.jpg)
+ 
+</div>
 
 :::caution
 For the tutorial purpose, we used a static token to initialize and join the meeting. But for the production version of the app, we recommend you use an Authentication Server that will generate and pass on the token to the Client App. For more details checkout [how to do server setup](/android/guide/video-and-audio-calling-api-sdk/server-setup).
