@@ -214,7 +214,7 @@ function App() {
 export default App;
 ```
 
-### Step 3: Implment Join Screen
+### Step 3: Implement Join Screen
 
 Join screen will work as medium to either schedule new meeting or to join existing meeting.
 
