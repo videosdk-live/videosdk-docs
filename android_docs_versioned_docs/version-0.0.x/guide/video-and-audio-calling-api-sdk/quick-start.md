@@ -195,7 +195,7 @@ In `/app/res/layout/activity_join.xml`, replace the content with the following:
 </LinearLayout>
 ```
 
-#### Integratiion of Create Meeting API
+#### Integration of Create Meeting API
 
 1. Declare the variables `sampleToken` which will hold the **Sample Token**  generated from the [VideoSDK dashboard](https://app.videosdk.live/api-keys)
 
