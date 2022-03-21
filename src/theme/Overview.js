@@ -3,7 +3,7 @@ import ReactIcon from "../../static/icon/ReactIcon";
 import SDKCard from "./SDKCard";
 import ResourceCard from "./ResourceCard";
 import ReactTooltip from "react-tooltip";
-import Link from '@docusaurus/Link';
+import Link from "@docusaurus/Link";
 import VideoMeetingIcon from "../../static/icon/VideoMeetingIcon";
 import WhiteboardIcon from "../../static/icon/WhiteboardIcon";
 import ScreenShareIcon from "../../static/icon/ScreenShareIcon";
@@ -24,7 +24,6 @@ import CustomJSIcon from "../../static/icon/Home_customsdk/CustomJSIcon";
 import CustomFlutterIcon from "../../static/icon/Home_customsdk/CustomFlutterIcon";
 import CustomAndroidIcon from "../../static/icon/Home_customsdk/CustomAndroidIcon";
 import CustomIOSIcon from "../../static/icon/Home_customsdk/CustomIOSIcon";
-
 const blogs = require("../../.docusaurus/docusaurus-plugin-content-blog/default/blog-post-list-prop-default.json");
 
 function MainCard({
@@ -108,14 +107,29 @@ function PlatformPart() {
       Icon: ReactIcon,
       title: "React Native",
       imgLink: "./svgs/react-native.svg",
-      link: "/javascript/guide/video-and-audio-calling-api-sdk/getting-started"
+      link: "/javascript/guide/video-and-audio-calling-api-sdk/getting-started",
     },
   ];
 
   const platformArray2 = [
-    { Icon: FlutterIcon, title: "Flutter", imgLink: "./svgs/flutter.svg", link: "/flutter/guide/video-and-audio-calling-api-sdk/getting-started" },
-    { Icon: AndroidIcon, title: "Android", imgLink: "./svgs/android.svg", link: "/android/guide/video-and-audio-calling-api-sdk/getting-started" },
-    { Icon: IOSIcon, title: "iOS", imgLink: "./svgs/ios.svg", link: "/ios/guide/video-and-audio-calling-api-sdk/getting-started" },
+    {
+      Icon: FlutterIcon,
+      title: "Flutter",
+      imgLink: "./svgs/flutter.svg",
+      link: "/flutter/guide/video-and-audio-calling-api-sdk/getting-started",
+    },
+    {
+      Icon: AndroidIcon,
+      title: "Android",
+      imgLink: "./svgs/android.svg",
+      link: "/android/guide/video-and-audio-calling-api-sdk/getting-started",
+    },
+    {
+      Icon: IOSIcon,
+      title: "iOS",
+      imgLink: "./svgs/ios.svg",
+      link: "/ios/guide/video-and-audio-calling-api-sdk/getting-started",
+    },
   ];
   const mobileplatformArray = [
     { Icon: ReactIcon, title: "React", imgLink: "./svgs/react.svg" },
@@ -143,7 +157,7 @@ function PlatformPart() {
                   Icon={item.Icon}
                   onlyTitle={true}
                   imgLink={item.imgLink}
-                />  
+                />
               </Link>
             );
           })}
@@ -151,7 +165,7 @@ function PlatformPart() {
         <div className="grid grid-cols-2 gap-3 mt-3 md:gap-3  md:flex md:flex-row md:justify-between">
           {platformArray2.map((item, index) => {
             return (
-              <Link to={item.link} className="w-full" >
+              <Link to={item.link} className="w-full">
                 <MainCard
                   key={index}
                   Title={item.title}
@@ -359,7 +373,11 @@ function ResourcePart() {
     <div className="lg:flex lg:flex-row lg:gap-0  flex-col grid grid-cols-2 gap-3">
       {ResourceArray.map((item, index) => {
         return (
-          <div className={`${index == 0 ? "ml-0" : "lg:ml-2 xl:ml-4 ml-0 "} w-full`}>
+          <div
+            className={`${
+              index == 0 ? "ml-0" : "lg:ml-2 xl:ml-4 ml-0 "
+            } w-full`}
+          >
             <MainCard
               key={index}
               Title={item.title}
