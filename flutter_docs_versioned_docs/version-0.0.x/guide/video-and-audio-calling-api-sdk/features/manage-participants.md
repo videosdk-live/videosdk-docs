@@ -23,7 +23,7 @@ slug: manage-participants
 Local participant is used to consume your video & audio streams.
 it contains information about local participant such as displayName, id, quality and streams Map.
 
-You can acces localParticipant from the [meeting object](/flutter/guide/video-and-audio-calling-api-sdk/features/start-join-meeting#2-initialization).
+You can access localParticipant from the [meeting object](/flutter/guide/video-and-audio-calling-api-sdk/features/start-join-meeting#2-initialization).
 
 ### Participant object properties
 
@@ -50,277 +50,388 @@ Other participants Map is used to get all the participants (except you) in the m
 
 Other participants Map contains same properties as [LocalParticipant](/flutter/guide/video-and-audio-calling-api-sdk/features/manage-participants#localparticipant-object-properties).
 
-### Local And Other Participants
+### ParticipantTile
 
-```js title="LocalParticipant.dart"
+```js title=participant_tile.dart
 import 'package:flutter/material.dart';
-import 'package:videosdk/meeting.dart';
-import 'package:videosdk/participant.dart';
-import 'package:flutter_webrtc/flutter_webrtc.dart';
-import 'package:videosdk/stream.dart';
+import 'package:videosdk/rtc.dart';
+import 'package:visibility_detector/visibility_detector.dart';
 
-class LocalParticipant extends StatefulWidget {
-  final Participant localParticipant;
-  final Meeting meeting;
-  LocalParticipant({
-    Key? key,
-    required this.localParticipant,
-    required this.meeting,
-  }) : super(key: key);
+import '../../utils/toast.dart';
+
+class ParticipantTile extends StatefulWidget {
+  final Participant participant;
+  final bool isLocalParticipant;
+  const ParticipantTile(
+      {Key? key, required this.participant, this.isLocalParticipant = false})
+      : super(key: key);
+
   @override
-  LocalParticipantState createState() => LocalParticipantState();
+  State<ParticipantTile> createState() => _ParticipantTileState();
 }
-class LocalParticipantState extends State<LocalParticipant> {
+
+class _ParticipantTileState extends State<ParticipantTile> {
+  Stream? shareStream;
   Stream? videoStream;
   Stream? audioStream;
+  String? quality;
+
+  bool shouldRenderVideo = true;
+
   @override
-  initState() {
-    _initStreamListners();
+  void initState() {
+    _initStreamListeners();
     super.initState();
+
+    widget.participant.streams.forEach((key, Stream stream) {
+      setState(() {
+        if (stream.kind == 'video') {
+          videoStream = stream;
+        } else if (stream.kind == 'audio') {
+          audioStream = stream;
+        } else if (stream.kind == 'share') {
+          shareStream = stream;
+        }
+      });
+    });
   }
-  _initStreamListners() {
-   // Participant `stream-enabled` event, discussed in next section "Participant Related Events"
-    widget.localParticipant.on(
-      "stream-enabled",
-      (Stream _stream) {
-        setState(
-          () {
-            if (_stream.kind == 'video') {
-              videoStream = _stream;
-            } else if (_stream.kind == 'audio') {
-              audioStream = _stream;
-            }
-          },
-        );
-      },
-    );
-    // Participant `stream-disabled` event, discussed in next section "Participant Related Events"
-    widget.localParticipant.on(
-      "stream-disabled",
-      (Stream _stream) {
-        if (_stream.kind == 'video') {
-          if (videoStream?.id == _stream.id) {
-            setState(
-              () {
-                videoStream = null;
-              },
-            );
+
+  @override
+  Widget build(BuildContext context) {
+    return VisibilityDetector(
+      key: Key("tile_${widget.participant.id}"),
+      onVisibilityChanged: (visibilityInfo) {
+        if (visibilityInfo.visibleFraction > 0 && !shouldRenderVideo) {
+          if (videoStream?.track.paused ?? true) {
+            videoStream?.track.resume();
           }
-        } else if (_stream.kind == 'audio') {
-          if (audioStream?.id == _stream.id) {
-            setState(
-              () {
-                audioStream = null;
-              },
-            );
-          }
+          setState(() => shouldRenderVideo = true);
+        } else if (visibilityInfo.visibleFraction == 0 && shouldRenderVideo) {
+          videoStream?.track.pause();
+          setState(() => shouldRenderVideo = false);
         }
       },
-    );
-  }
-  Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Container(
-          child: Column(
-            children: [
-              Text(
-                'Name: ${widget.localParticipant.displayName}',
-                overflow: TextOverflow.fade,
-              ),
-              Text(
-                'Video On: ${videoStream != null ? "Yes" : "No"}',
-                overflow: TextOverflow.fade,
-              ),
-              Text(
-                'Audio On: ${audioStream != null ? "Yes" : "No"}',
-                overflow: TextOverflow.fade,
-              ),
-            ],
+      child: Container(
+        margin: const EdgeInsets.all(4.0),
+        decoration: BoxDecoration(
+          color: Theme.of(context).backgroundColor.withOpacity(1),
+          border: Border.all(
+            color: Colors.white38,
           ),
         ),
-        Container(
-          height: 240.0,
-          width: 240.0,
-          child: videoStream?.renderer != null && videoStream?.track != null
-              ? RTCVideoView(
-                  videoStream?.renderer as RTCVideoRenderer,
-                  objectFit: RTCVideoViewObjectFit.RTCVideoViewObjectFitCover,
-                )
-              : FittedBox(
-                  fit: BoxFit.contain,
-                  child: Icon(Icons.person),
+        child: AspectRatio(
+          aspectRatio: 1,
+          child: Padding(
+            padding: const EdgeInsets.all(4.0),
+            child: Stack(
+              children: [
+                videoStream != null && shouldRenderVideo
+                    ? RTCVideoView(
+                        videoStream?.renderer as RTCVideoRenderer,
+                        objectFit:
+                            RTCVideoViewObjectFit.RTCVideoViewObjectFitCover,
+                      )
+                    : const Center(
+                        child: Icon(
+                          Icons.person,
+                          size: 180.0,
+                          color: Color.fromARGB(140, 255, 255, 255),
+                        ),
+                      ),
+                Positioned(
+                  bottom: 0,
+                  left: 0,
+                  child: FittedBox(
+                    fit: BoxFit.scaleDown,
+                    child: Container(
+                      padding: const EdgeInsets.all(2.0),
+                      decoration: BoxDecoration(
+                        color:
+                            Theme.of(context).backgroundColor.withOpacity(0.2),
+                        border: Border.all(
+                          color: Colors.white24,
+                        ),
+                        borderRadius: BorderRadius.circular(4.0),
+                      ),
+                      child: Text(
+                        widget.participant.displayName,
+                        textAlign: TextAlign.center,
+                        style: const TextStyle(
+                          color: Colors.white,
+                          fontSize: 10.0,
+                        ),
+                      ),
+                    ),
+                  ),
                 ),
-        ),
-        Wrap(
-          children: [
-            ElevatedButton(
-              onPressed: widget.meeting.disableWebcam,
-              child: Text("disableWebcam"),
-            ),
-            ElevatedButton(
-              onPressed: widget.meeting.enableWebcam,
-              child: Text("enableWebcam"),
-            ),
-            ElevatedButton(
-              onPressed: widget.meeting.muteMic,
-              child: Text("muteMic"),
-            ),
-            ElevatedButton(
-              onPressed: widget.meeting.unmuteMic,
-              child: Text("unmuteMic"),
-            ),
-            ElevatedButton(
-              onPressed: widget.meeting.join,
-              child: Text("join"),
-            ),
-            ElevatedButton(
-              onPressed: widget.meeting.leave,
-              child: Text("leave"),
-            ),
-          ],
-        ),
-      ],
-    );
-  }
-}
-
-```
-
-```js title="ListParticipants.dart"
-import 'package:flutter/material.dart';
-import 'package:flutter_webrtc/flutter_webrtc.dart';
-import 'package:videosdk/participant.dart';
-import 'package:videosdk/stream.dart';
-
-class ListParticipants extends StatelessWidget {
-  final Map<String, Participant> participants;
-  const ListParticipants({
-    Key? key,
-    required this.participants,
-  }) : super(key: key);
-  @override
-  Widget build(BuildContext context) {
-    return Wrap(
-      children: [
-        for (dynamic participant in participants.values)
-          Container(
-            key: ValueKey('${participant.id}_container'),
-            width: 240.0,
-            height: 240.0,
-            child: RemoteParticipant(
-              key: ValueKey(participant.id),
-              participant: participants[participant.id]!,
+                Positioned(
+                  top: 0,
+                  left: 0,
+                  child: InkWell(
+                    child: Container(
+                      padding: const EdgeInsets.all(4),
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: audioStream != null
+                            ? Theme.of(context).backgroundColor
+                            : Colors.red,
+                      ),
+                      child: Icon(
+                        audioStream != null ? Icons.mic : Icons.mic_off,
+                        size: 16,
+                      ),
+                    ),
+                    onTap: widget.isLocalParticipant
+                        ? null
+                        : () {
+                            if (audioStream != null) {
+                              widget.participant.disableMic();
+                            } else {
+                              toastMsg("Mic requested");
+                              widget.participant.enableMic();
+                            }
+                          },
+                  ),
+                ),
+                Positioned(
+                  top: 0,
+                  right: 0,
+                  child: InkWell(
+                    child: Container(
+                      padding: const EdgeInsets.all(4),
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: videoStream != null
+                            ? Theme.of(context).backgroundColor
+                            : Colors.red,
+                      ),
+                      child: Icon(
+                        videoStream != null
+                            ? Icons.videocam
+                            : Icons.videocam_off,
+                        size: 16,
+                      ),
+                    ),
+                    onTap: widget.isLocalParticipant
+                        ? null
+                        : () {
+                            if (videoStream != null) {
+                              widget.participant.disableWebcam();
+                            } else {
+                              toastMsg("Webcam requested");
+                              widget.participant.enableWebcam();
+                            }
+                          },
+                  ),
+                ),
+                if (!widget.isLocalParticipant)
+                  Positioned(
+                    bottom: 0,
+                    right: 0,
+                    child: InkWell(
+                      child: Container(
+                        padding: const EdgeInsets.all(4),
+                        decoration: const BoxDecoration(
+                          shape: BoxShape.circle,
+                          color: Colors.red,
+                        ),
+                        child: const Icon(
+                          Icons.logout,
+                          size: 16,
+                        ),
+                      ),
+                      onTap: () {
+                        showDialog(
+                            context: context,
+                            builder: (context) => AlertDialog(
+                                  title: const Text("Are you sure ?"),
+                                  actions: [
+                                    TextButton(
+                                      child: const Text("Yes"),
+                                      onPressed: () {
+                                        widget.participant.remove();
+                                        toastMsg("Participant removed");
+                                        Navigator.of(context).pop();
+                                      },
+                                    ),
+                                    TextButton(
+                                      child: const Text("No"),
+                                      onPressed: () {
+                                        Navigator.of(context).pop();
+                                      },
+                                    )
+                                  ],
+                                ));
+                      },
+                    ),
+                  ),
+              ],
             ),
           ),
-      ],
+        ),
+      ),
     );
   }
-}
-```
 
-```js title="RemoteParticipant.dart"
-
-import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
-import 'package:flutter_webrtc/flutter_webrtc.dart';
-import 'package:videosdk/participant.dart';
-import 'package:videosdk/stream.dart';
-
-class RemoteParticipant extends StatefulWidget {
-  final Participant participant;
-  RemoteParticipant({Key? key, required this.participant}) : super(key: key);
-  @override
-  RemoteParticipantState createState() => RemoteParticipantState();
-}
-class RemoteParticipantState extends State<RemoteParticipant> {
-  Stream? videoStream;
-  Stream? audioStream;
-  @override
-  initState() {
-    _initStreamListners();
-    super.initState();
-  }
-  _initStreamListners() {
-    // Participant `stream-enabled` event, discussed in next section "Participant Related Events"
-    widget.participant.on("stream-enabled", (Stream _stream) {
+  _initStreamListeners() {
+    widget.participant.on(Events.streamEnabled, (Stream _stream) {
       setState(() {
         if (_stream.kind == 'video') {
           videoStream = _stream;
         } else if (_stream.kind == 'audio') {
           audioStream = _stream;
+        } else if (_stream.kind == 'share') {
+          shareStream = _stream;
         }
       });
     });
 
-    // Participant `stream-disabled` event, discussed in next section "Participant Related Events"
-    widget.participant.on("stream-disabled", (Stream _stream) {
-      if (_stream.kind == 'video') {
-        if (videoStream?.id == _stream.id) {
-          setState(() {
-            videoStream = null;
-          });
+    widget.participant.on(Events.streamDisabled, (Stream _stream) {
+      setState(() {
+        if (_stream.kind == 'video' && videoStream?.id == _stream.id) {
+          videoStream = null;
+        } else if (_stream.kind == 'audio' && audioStream?.id == _stream.id) {
+          audioStream = null;
+        } else if (_stream.kind == 'share' && shareStream?.id == _stream.id) {
+          shareStream = null;
         }
-      } else if (_stream.kind == 'audio') {
-        if (audioStream?.id == _stream.id) {
-          setState(() {
-            audioStream = null;
-          });
+      });
+    });
+
+    widget.participant.on(Events.streamPaused, (Stream _stream) {
+      setState(() {
+        if (_stream.kind == 'video' && videoStream?.id == _stream.id) {
+          videoStream = _stream;
+        } else if (_stream.kind == 'audio' && audioStream?.id == _stream.id) {
+          audioStream = _stream;
+        } else if (_stream.kind == 'share' && shareStream?.id == _stream.id) {
+          shareStream = _stream;
         }
-      }
+      });
+    });
+
+    widget.participant.on(Events.streamResumed, (Stream _stream) {
+      setState(() {
+        if (_stream.kind == 'video' && videoStream?.id == _stream.id) {
+          videoStream = _stream;
+        } else if (_stream.kind == 'audio' && audioStream?.id == _stream.id) {
+          audioStream = _stream;
+        } else if (_stream.kind == 'share' && shareStream?.id == _stream.id) {
+          shareStream = _stream;
+        }
+      });
     });
   }
+}
+```
+
+```js title=participant_grid_view.dart
+import 'dart:developer';
+import 'package:flutter/material.dart';
+import 'package:videosdk/rtc.dart';
+import 'participant_tile.dart';
+
+class ParticipantGridView extends StatefulWidget {
+  final Meeting meeting;
+  const ParticipantGridView({
+    Key? key,
+    required this.meeting,
+  }) : super(key: key);
+
   @override
-  Widget build(BuildContext context) {
-    return Container(
-      height: 240.0,
-      width: 240.0,
-      child: Stack(
-        fit: StackFit.expand,
-        children: [
-          if (videoStream?.renderer != null && videoStream?.track != null)
-            RTCVideoView(
-              videoStream?.renderer as RTCVideoRenderer,
-              objectFit: RTCVideoViewObjectFit.RTCVideoViewObjectFitCover,
-            )
-          else
-            Container(
-              child: FittedBox(
-                fit: BoxFit.contain,
-                child: Icon(
-                  Icons.person,
-                ),
-              ),
-            ),
-        ],
-      ),
-    );
-  }
+  State<ParticipantGridView> createState() => _ParticipantGridViewState();
 }
 
+class _ParticipantGridViewState extends State<ParticipantGridView> {
+  String? activeSpeakerId;
+  Participant? localParticipant;
+  Map<String, Participant> participants = {};
+
+  @override
+  void initState() {
+    // Initialize participants
+    localParticipant = widget.meeting.localParticipant;
+    participants = widget.meeting.participants;
+
+    // Setting meeting event listeners
+    setMeetingListeners(widget.meeting);
+    super.initState();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return GridView.count(
+      crossAxisCount: 2,
+      children: [
+        ParticipantTile(
+          participant: localParticipant!,
+          isLocalParticipant: true,
+        ),
+        ...participants.values
+            .map((participant) => ParticipantTile(participant: participant))
+            .toList()
+      ],
+    );
+  }
+
+  void setMeetingListeners(Meeting _meeting) {
+    // Called when participant joined meeting
+    _meeting.on(
+      Events.participantJoined,
+      (Participant participant) {
+        final newParticipants = participants;
+        newParticipants[participant.id] = participant;
+        setState(() {
+          participants = newParticipants;
+        });
+      },
+    );
+
+    // Called when participant left meeting
+    _meeting.on(
+      Events.participantLeft,
+      (participantId) {
+        final newParticipants = participants;
+
+        newParticipants.remove(participantId);
+        setState(() {
+          participants = newParticipants;
+        });
+      },
+    );
+
+    // Called when speaker is changed
+    _meeting.on(Events.speakerChanged, (_activeSpeakerId) {
+      setState(() {
+        activeSpeakerId = _activeSpeakerId;
+      });
+
+      log("meeting speaker-changed => $_activeSpeakerId");
+    });
+  }
+}
 ```
 
 ## 3. Participant Related Events
 
-1. **participant-joined** - Whenever any new participant join the meeting, `participant-joined` event will trigger. For example, the meeting is running with **Alice** and **Bob**, then **Eve** join that meeting, after that `participant-joined` event trigger and return the [participant object](/flutter/guide/video-and-audio-calling-api-sdk/features/manage-participants#participant-object-properties).
+1. **participantJoined** - Whenever any new participant join the meeting, `participantJoined` event will trigger. For example, the meeting is running with **Alice** and **Bob**, then **Eve** join that meeting, after that `participantJoined` event trigger and return the [participant object](/flutter/guide/video-and-audio-calling-api-sdk/features/manage-participants#participant-object-properties).
 
-2. **participant-left** - Whenever any participant leave/exit the meeting, `participant-left` event will trigger.For example, the meeting is running with **Alice** and **Bob**, then **Bob** leave that meeting, after that `participant-left` event trigger and return the [participant object](/flutter/guide/video-and-audio-calling-api-sdk/features/manage-participants#participant-object-properties)
+2. **participantLeft** - Whenever any participant leave/exit the meeting, `participantLeft` event will trigger.For example, the meeting is running with **Alice** and **Bob**, then **Bob** leave that meeting, after that `participantLeft` event trigger and return the [participant object](/flutter/guide/video-and-audio-calling-api-sdk/features/manage-participants#participant-object-properties)
 
-3. **presenter-changed** - Whenever any participant present/screenshare their screen/window in meeting, `presenter-changed` event will trigger and return the presenter `participantId`.
+3. **presenterChanged** - Whenever any participant present/screenshare their screen/window in meeting, `presenterChanged` event will trigger and return the presenter `participantId`.
 
-4. **stream-enabled** - Whenever any participant enabled mic/webcam in meeting, `stream-enabled` event will trigger and return [Stream Map](/flutter/guide/video-and-audio-calling-api-sdk/features/manage-participants#streams-map-properties).
+4. **streamEnabled** - Whenever any participant enabled mic/webcam in meeting, `streamEnabled` event will trigger and return [Stream Map](/flutter/guide/video-and-audio-calling-api-sdk/features/manage-participants#streams-map-properties).
 
-5. **stream-disabled** - Whenever any participant disabled mic/webcam in meeting, `stream-disabled` event will trigger and return [Stream Map](/flutter/guide/video-and-audio-calling-api-sdk/features/manage-participants#streams-map-properties).
-
+5. **streamDisabled** - Whenever any participant disabled mic/webcam in meeting, `streamDisabled` event will trigger and return [Stream Map](/flutter/guide/video-and-audio-calling-api-sdk/features/manage-participants#streams-map-properties).
 
 ```js
 // Adding event listner
-meeting.on("participant-joined", (Participant participant) {
+meeting.on(Events.participantJoined, (Participant participant) {
   print("new participant => $participant");
   },
 );
 
-meeting.on("participant-left", (Participant participant) {
+meeting.on(Events.participantLeft, (Participant participant) {
   print("new participant => $participant");
   },
 );
