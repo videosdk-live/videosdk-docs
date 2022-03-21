@@ -22,7 +22,7 @@ module.exports = {
         'We are excited to announce that we have updated our documentation portal 🎉 <a target="_blank" rel="noopener noreferrer" href="https://legacy-docs.videosdk.live">Switch to old documentation ↗</a>',
       backgroundColor: "#6246FB",
       textColor: "#fff",
-      isCloseable: false,
+      isCloseable: true,
     },
 
     image: "img/videosdklive-thumbnail.jpg",
@@ -90,6 +90,16 @@ module.exports = {
         },
         {
           position: "left",
+          label: "Tutorials",
+          to: "/docs/tutorials/introduction",
+        },
+        {
+          position: "left",
+          label: "Code Samples",
+          to: "/docs/code-sample/overview",
+        },
+        {
+          position: "left",
           label: "Experiment Lab",
           items: [
             {
@@ -113,16 +123,6 @@ module.exports = {
               activeBaseRegex: "docs/api-reference/video-on-demand/*",
             },
           ],
-        },
-        {
-          position: "left",
-          label: "Tutorials",
-          to: "/docs/tutorials/introduction",
-        },
-        {
-          position: "left",
-          label: "Code Samples",
-          to: "/docs/code-sample/overview",
         },
 
         {

@@ -57,7 +57,7 @@ Create an `index.html` file and add the following `<script>` tag at the end of y
   });
 
   script.src =
-    "https://sdk.videosdk.live/rtc-js-prebuilt/0.3.0/rtc-js-prebuilt.js";
+    "https://sdk.videosdk.live/rtc-js-prebuilt/0.3.1/rtc-js-prebuilt.js";
   document.getElementsByTagName("head")[0].appendChild(script);
 </script>
 ```
