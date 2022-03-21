@@ -3,6 +3,7 @@ import ReactIcon from "../../static/icon/ReactIcon";
 import SDKCard from "./SDKCard";
 import ResourceCard from "./ResourceCard";
 import ReactTooltip from "react-tooltip";
+import Link from '@docusaurus/Link';
 import VideoMeetingIcon from "../../static/icon/VideoMeetingIcon";
 import WhiteboardIcon from "../../static/icon/WhiteboardIcon";
 import ScreenShareIcon from "../../static/icon/ScreenShareIcon";
@@ -45,7 +46,7 @@ function MainCard({
       style={{ backgroundImage: `${backgroundColor}` }}
       className={`${
         fullWidth ? "p-3 md:p-5" : onlyTitle ? "p-3 md:p-2" : "p-3 md:p-5"
-      } ${borderRadius ? borderRadius : "rounded"} bg-gray-750 ${
+      } ${borderRadius ? borderRadius : "rounded"} bg-gray-750   ${
         onlyTitle
           ? "md:w-full"
           : `h-full ${
@@ -107,13 +108,14 @@ function PlatformPart() {
       Icon: ReactIcon,
       title: "React Native",
       imgLink: "./svgs/react-native.svg",
+      link: "/javascript/guide/video-and-audio-calling-api-sdk/getting-started"
     },
   ];
 
   const platformArray2 = [
-    { Icon: FlutterIcon, title: "Flutter", imgLink: "./svgs/flutter.svg" },
-    { Icon: AndroidIcon, title: "Android", imgLink: "./svgs/android.svg" },
-    { Icon: IOSIcon, title: "iOS", imgLink: "./svgs/ios.svg" },
+    { Icon: FlutterIcon, title: "Flutter", imgLink: "./svgs/flutter.svg", link: "/flutter/guide/video-and-audio-calling-api-sdk/getting-started" },
+    { Icon: AndroidIcon, title: "Android", imgLink: "./svgs/android.svg", link: "/android/guide/video-and-audio-calling-api-sdk/getting-started" },
+    { Icon: IOSIcon, title: "iOS", imgLink: "./svgs/ios.svg", link: "/ios/guide/video-and-audio-calling-api-sdk/getting-started" },
   ];
   const mobileplatformArray = [
     { Icon: ReactIcon, title: "React", imgLink: "./svgs/react.svg" },
@@ -134,26 +136,30 @@ function PlatformPart() {
         <div className="grid grid-cols-2 gap-3 mt-4 md:gap-3  md:flex md:flex-row md:justify-between">
           {platformArray.map((item, index) => {
             return (
-              <MainCard
-                key={index}
-                Title={item.title}
-                Icon={item.Icon}
-                onlyTitle={true}
-                imgLink={item.imgLink}
-              />
+              <Link to={item.link} className="w-full">
+                <MainCard
+                  key={index}
+                  Title={item.title}
+                  Icon={item.Icon}
+                  onlyTitle={true}
+                  imgLink={item.imgLink}
+                />  
+              </Link>
             );
           })}
         </div>
         <div className="grid grid-cols-2 gap-3 mt-3 md:gap-3  md:flex md:flex-row md:justify-between">
           {platformArray2.map((item, index) => {
             return (
-              <MainCard
-                key={index}
-                Title={item.title}
-                Icon={item.Icon}
-                onlyTitle={true}
-                imgLink={item.imgLink}
-              />
+              <Link to={item.link} className="w-full" >
+                <MainCard
+                  key={index}
+                  Title={item.title}
+                  Icon={item.Icon}
+                  onlyTitle={true}
+                  imgLink={item.imgLink}
+                />
+              </Link>
             );
           })}
         </div>
@@ -244,7 +250,7 @@ function QuickstartPart() {
               backgroundColor={
                 index == 0
                   ? "linear-gradient(99.37deg, #6246FB 0.88%, #4AA5FD 102.26%)"
-                  : " linear-gradient(90deg, #EE6E91 0%, #7964E7 100%)"
+                  : "linear-gradient(90deg, #EE6E91 0%, #7964E7 100%)"
               }
               descriptionStyle={
                 "text-white-100 md:text-base text-base font-medium mt-2"
@@ -255,11 +261,19 @@ function QuickstartPart() {
               EndPart={() => {
                 return index == 0 ? (
                   <div className="mt-6">
-                    <div className="h-9  flex  ">
-                      <Button
+                    <div className="h-9 flex">
+                      <a
+                        href={
+                          "/prebuilt/guide/prebuilt-video-and-audio-calling/getting-started"
+                        }
+                        className="rounded bg-white-100 text-black font-semibold  hover:cursor-pointer hover:bg-white-150 flex flex-row items-center justify-center p-3"
+                      >
+                        Try it - it’s free
+                      </a>
+                      {/* <Button
                         link="/prebuilt/guide/prebuilt-video-and-audio-calling/getting-started"
                         text="Try it - it’s free"
-                      />
+                      /> */}
                     </div>
                   </div>
                 ) : (
@@ -307,7 +321,7 @@ let Button = ({ link, text }) => {
           href={link}
           className="rounded bg-white-100 hover:bg-white-150 flex flex-row p-3"
         >
-          <h6 className="text-black text-md font-semibold mb-0">{text}</h6>
+          <h6 className="text-black text-base font-semibold mb-0">{text}</h6>
         </a>
       </div>
     </>
@@ -326,7 +340,7 @@ function ResourcePart() {
       title: "Custom SDK Guide",
       description:
         "End to End tutorials to integrate Custom SDK on various platforms.",
-      link: "/prebuilt/guide/prebuilt-video-and-audio-calling/getting-started",
+      link: "react/guide/video-and-audio-calling-api-sdk/getting-started",
     },
     {
       title: "API Reference",
@@ -345,7 +359,7 @@ function ResourcePart() {
     <div className="lg:flex lg:flex-row lg:gap-0  flex-col grid grid-cols-2 gap-3">
       {ResourceArray.map((item, index) => {
         return (
-          <div className={`${index == 0 ? "ml-0" : "lg:ml-2 xl:ml-4 ml-0 "} `}>
+          <div className={`${index == 0 ? "ml-0" : "lg:ml-2 xl:ml-4 ml-0 "} w-full`}>
             <MainCard
               key={index}
               Title={item.title}
@@ -453,7 +467,7 @@ function Overview() {
 
           {/* QuickStart */}
           <div className="md:mt-4 mt-10">
-            <p className="lg:text-4xl md:text-4xl text-2xl  font-extrabold text-white-100">
+            <p className="lg:text-4xl md:text-4xl text-2xl  font-extrabold text-black-100 dark:text-white-100">
               Quickstart
             </p>
             <div className="mt-9">
@@ -463,7 +477,7 @@ function Overview() {
 
           {/* Resource */}
           <div className="md:mt-20 mt-10">
-            <p className="lg:text-4xl md:text-4xl text-2xl font-extrabold text-white-100">
+            <p className="lg:text-4xl md:text-4xl text-2xl font-extrabold text-black-100 dark:text-white-100">
               Resources
             </p>
             <div className="mt-9">
@@ -616,7 +630,7 @@ function Overview() {
 
         {/* supported Platforms */}
         <div className="md:mt-16 mt-10 w-full">
-          <p className="lg:text-4xl md:text-4xl text-2xl font-extrabold text-white-100">
+          <p className="lg:text-4xl md:text-4xl text-2xl font-extrabold text-black-100 dark:text-white-100">
             Supported platform or framework
           </p>
           <div className="mt-9">
