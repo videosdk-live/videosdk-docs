@@ -71,6 +71,7 @@ VideoSDK.config(token: <server token here>)
 // Intialize meeting
 let meeting = VideoSDK.initMeeting(
     meetingId: <meetingId>,
+    participantId: <participantId>, // optional
     participantName: <your name>,
     micEnabled: true,
     webcamEnabled: true)

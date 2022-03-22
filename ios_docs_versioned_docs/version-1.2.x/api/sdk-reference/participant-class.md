@@ -66,6 +66,13 @@ import MethodListHeading from '@theme/MethodListHeading';
         <MethodListHeading heading="removeStream(streamId): void" />
         <MethodListItemLabel name="streamId"  type={"String"} />
       </MethodListGroup>
+      <MethodListGroup>
+        <MethodListHeading heading="removeAllStreams(): void" />
+      </MethodListGroup>
+      <MethodListGroup>
+        <MethodListHeading heading="setQuality(quality): void" />
+        <MethodListItemLabel name="quality"  type={"VideoQuality"} />
+      </MethodListGroup>
     </MethodListGroup>
   </MethodListItemLabel>
 </MethodListGroup>
@@ -78,4 +85,13 @@ participant.addEventListener(self);
 
 // Attach video / audio stream to participant
 participant.addStream(stream);
+
+// Removes video / audio stream from the participant
+participant.removeStream(stream)
+
+// Removes all streams for the participant
+participant.removeAllStreams()
+
+// Setting up the video-quality of participant
+participant.setQuality(VideoQuality.high)
 ```

@@ -39,8 +39,16 @@ import MethodListHeading from '@theme/MethodListHeading';
 
 ```js title="Example of onParticipantJoined()"
 extension MeetingViewController: ParticipantEventListener {
-  func onStreamEnabled(_ stream: MediaStream, forParticipant participant: Participant) {
-    // Display stream in UI view
-  }
+    /// Called after participant stream is enabled
+    /// - Parameters:
+    ///   - stream: stream which is started
+    ///   - participant: participant object
+    func onStreamEnabled(_ stream: MediaStream, forParticipant participant: Participant)
+    
+    /// Called after participant stream is disabled
+    /// - Parameters:
+    ///   - stream: stream which is disabled
+    ///   - participant: participant object
+    func onStreamDisabled(_ stream: MediaStream, forParticipant participant: Participant)
 }
 ```
