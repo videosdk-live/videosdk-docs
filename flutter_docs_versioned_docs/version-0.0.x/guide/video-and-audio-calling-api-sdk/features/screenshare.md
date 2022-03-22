@@ -77,9 +77,7 @@ When a Local participant share the screen, `streamEnabled` Event on the `Partici
 ```js
 meeting.localParticipant.on(Events.streamEnabled, (Stream _stream) {
     if (_stream.kind == 'share') {
-        setState(() {
-          screenShareStream = _stream;
-        });
+        screenShareStream = _stream;
       }
     });
 ```
@@ -94,8 +92,6 @@ meeting.on(Events.presenterChanged, (_activePresenterId) {
 
     Stream? _stream = activePresenterParticipant?.streams.values.singleWhere((e) => e.kind == "share");
 
-    setState(() {
-        remoteParticipantShareStream = _stream;
-    });
+    remoteParticipantShareStream = _stream;
 });
 ```
