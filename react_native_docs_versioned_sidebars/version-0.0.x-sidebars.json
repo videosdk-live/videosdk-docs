@@ -51,6 +51,8 @@
         "guide/video-and-audio-calling-api-sdk/features/go-live-social-media",
         "guide/video-and-audio-calling-api-sdk/features/play-external-video",
         "guide/video-and-audio-calling-api-sdk/features/pubsub",
+        "guide/video-and-audio-calling-api-sdk/features/set-video-quality",
+        "guide/video-and-audio-calling-api-sdk/features/pause-resume-video-stream",
         "guide/video-and-audio-calling-api-sdk/features/switch-participant",
         {
           "type": "category",
@@ -84,7 +86,6 @@
       "type": "doc",
       "id": "api/sdk-reference/setup"
     },
-
     {
       "type": "doc",
       "id": "api/sdk-reference/setup-android"
@@ -97,7 +98,6 @@
       "type": "doc",
       "id": "api/sdk-reference/rtc-stream"
     },
-
     {
       "type": "doc",
       "id": "api/sdk-reference/use-meeting"
