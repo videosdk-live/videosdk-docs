@@ -16,7 +16,7 @@ function generateCode({
 		code += "cURL ";
 
 		//add headers if any
-		if (headers) {
+		if (headers.length != 0) {
 			headers.forEach(element => {
 				code += "\t-H \'" + element.key + ": " + element.value + "\' \\ \n"
 			});
@@ -33,10 +33,11 @@ function generateCode({
 		}
 
 		//attach query parameters if any to the url
-		if (queryParameters) {
+		if (queryParameters.length != 0) {
 			code += "?"
 			queryParameters.forEach(element => {
-				code += element.key + "=" + element.value + "&"
+				if (element.required)
+					code += element.key + "=" + element.value + "&"
 			});
 			code = code.slice(0, code.length - 1);
 		}
@@ -44,30 +45,17 @@ function generateCode({
 	}
 	//language = nodeJs
 	else if (language == "node") {
-		//request declaration
-		code += "var request = require(\"request\");\n";
+		//node-fetch declaration
+		code += "import fetch from 'node-fetch';\n";
 
 		//creating options
-		code += "var options = {\n";
+		code += "const options = {\n";
 
 		//adding method tye
 		code += "\tmethod: \"" + methodType + "\",\n";
 
-		//add url with query parameters
-		if (queryParameters) {
-			code += "\turl: \"" + apiEndpoint + "?";
-			queryParameters.forEach(element => {
-				code += element.key + "=" + element.value + "&"
-			});
-			code = code.slice(0, code.length - 1);
-			code += "\",\n"
-		}
-		else {
-			code += "\turl: \"" + apiEndpoint + "\",\n";
-		}
-
 		//add headers if any
-		if (headers) {
+		if (headers.length != 0) {
 			code += "\theaders: {\n"
 			headers.forEach(element => {
 				code += "\t\t\"" + element.key + "\": \"" + element.value + "\",\n"
@@ -82,8 +70,23 @@ function generateCode({
 		//close options json
 		code += "};\n"
 
+		//add url with query parameters
+		if (queryParameters.length != 0) {
+			code += "const url= \"" + apiEndpoint + "?";
+			queryParameters.forEach(element => {
+				if (element.required)
+					code += element.key + "=" + element.value + "&"
+			});
+			code = code.slice(0, code.length - 1);
+			code += "\";\n"
+		}
+		else {
+			code += "const url= \"" + apiEndpoint + "\";\n";
+		}
+
 		//fire the request
-		code += "request(options, function (error, response, body) {\n\tif (error) throw new Error(error);\n\n\tconsole.log(body);\n});"
+		code += "const response = await fetch(url, options);\n"
+		code += "const data = await response.json();\nconsole.log(data);"
 	}
 	//language = php
 	else if (language == "php") {
@@ -92,7 +95,7 @@ function generateCode({
 		code += "$curl = curl_init();\n";
 
 		//create body data if applicable
-		if (postParameters) {
+		if (postParameters.length != 0) {
 			code += "$data = array(\n";
 			// JSON.parse(postParameters).forEach((key,value) => {
 			// 	code += "\t\"" + key + "\" => \"" + value + "\",\n";
@@ -108,10 +111,11 @@ function generateCode({
 		code += "curl_setopt_array($curl, array(\n"
 
 		//add url with query paramters
-		if (queryParameters) {
+		if (queryParameters.length != 0) {
 			code += "\tCURLOPT_URL => \"" + apiEndpoint + "?";
 			queryParameters.forEach(element => {
-				code += element.key + "=" + element.value + "&"
+				if (element.required)
+					code += element.key + "=" + element.value + "&"
 			});
 			code = code.slice(0, code.length - 1);
 			code += "\",\n"
@@ -123,10 +127,10 @@ function generateCode({
 		code += "\tCURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,\n\tCURLOPT_RETURNTRANSFER => true,\n\tCURLOPT_ENCODING => '',\n\tCURLOPT_MAXREDIRS => 10,\n\tCURLOPT_TIMEOUT => 0,\n\tCURLOPT_FOLLOWLOCATION => true,\n\tCURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,\n"
 
 		//add method type
-		code += "\tCURLOPT_CUSTOMREQUEST => 'POST',\n"
+		code += "\tCURLOPT_CUSTOMREQUEST => '" + methodType + "',\n"
 
 		//adding headers if any
-		if (headers) {
+		if (headers.length != 0) {
 			code += "\tCURLOPT_HTTPHEADER => array(\n"
 			headers.forEach(element => {
 				code += "\t\t\'" + element.key + ": " + element.value + "\',\n"
@@ -136,7 +140,7 @@ function generateCode({
 		}
 
 		//adding post body parameter
-		if (postParameters) {
+		if (postParameters.length != 0) {
 			code += "\tCURLOPT_POSTFIELDS => json_encode($data),\n"
 		}
 
@@ -149,17 +153,18 @@ function generateCode({
 	}
 	//language = python
 	else if (language == "python") {
-		//ipmort requests
+		//import requests
 		code += "import requests\n";
 
 		//create url
 		code += "url = \"" + apiEndpoint;
 
 		//add query parameters if any
-		if (queryParameters) {
+		if (queryParameters.length != 0) {
 			code += "?"
 			queryParameters.forEach(element => {
-				code += element.key + "=" + element.value + "&"
+				if (element.required)
+					code += element.key + "=" + element.value + "&"
 			});
 			code = code.slice(0, code.length - 1);
 		}
@@ -167,7 +172,7 @@ function generateCode({
 		code += "\"\n";
 
 		//create headers if any
-		if (headers) {
+		if (headers.length != 0) {
 			code += "headers = {"
 			headers.forEach(element => {
 				code += "\'" + element.key + "\' : \'" + element.value + "\',"
@@ -177,7 +182,7 @@ function generateCode({
 		}
 
 		//creating the request
-		code += "response = requests.request(\"" + methodType + "\", url, "
+		code += "response = requests.request(\"" + methodType + "\", url,"
 
 		//if methodType is post add the body parameters
 		if (methodType == "POST") {
@@ -185,9 +190,14 @@ function generateCode({
 		}
 
 		//add headers to the request if present
-		if (headers) {
+		if (headers.length != 0) {
 			code += "headers = headers"
 		}
+
+		//remove trailing comma if any
+		if (code.slice(code.length - 1, code.length) == ",")
+			code = code.slice(0, code.length - 1)
+
 		//close request
 		code += ");\n";
 
@@ -201,7 +211,7 @@ function parametersToJson(parameters) {
 	var json = "{";
 	parameters.forEach(element => {
 		if (element.required) {
-			json += "\"" + element.key + "\" : \"" + element.value + "\"";
+			json += "\"" + element.key + "\" : \"" + element.value + "\",";
 		}
 	});
 	json = json.slice(0, json.length - 1);
@@ -209,7 +219,7 @@ function parametersToJson(parameters) {
 	return json;
 }
 
-const MethodRequest = ({
+const MethodRequestResponse = ({
 	headers,
 	methodType,
 	postParameters,
@@ -240,46 +250,53 @@ const MethodRequest = ({
 
 	return (
 		<div>
-			<div className="bg-gray-800 rounded-md">
-				<div className="bg-gray-500 rounded-t-md p-2 flex flex-row">
-					<div className={methodType === "POST" ? "text-green-500 pl-2 pr-2 pt-1 pb-1 bg-gray-750 rounded-md font-semibold" : "text-cyan-500 pl-2 pr-2 pt-1 pb-1 bg-gray-800 rounded-md"}>
-						{methodType}
-					</div>
-					<div className="flex-1 p-1">
-						{apiEndpoint}
-					</div>
-					<div class="navbar__item dropdown dropdown--hoverable dropdown--right">
-						<a href="#" class="navbar__link">{language.value}</a>
-						<ul class="dropdown__menu">
-							{
-								languageList.map((v) => {
-									return <li>
-										<a class="dropdown__link" onClick={(e) => {
-											setLanguage(v);
-										}}>{v.value}</a>
-									</li>
-								})
-							}
-						</ul>
-					</div>
+			<div className="bg-[#333A47] rounded-t-lg pt-4 pb-4 pl-3 flex flex-row flex-wrap align-middle">
+				<div className="text-[#72C894] text-sm font-bold">
+					{methodType}
 				</div>
-				<div>
-					<CodeBlock language="jsx">
-						{generateCode({ headers, methodType, postParameters, queryParameters, apiEndpoint, language: language.id })}
-					</CodeBlock>
+				<div className="text-[#7D8EAD] text-sm font-medium pl-[3px] pr-[3px]">
+					|
+				</div>
+				<div className="flex-1 text-[#7D8EAD] text-sm font-medium">
+					{apiEndpoint}
+				</div>
+				<div className="dropdown dropdown--hoverable dropdown--right">
+					<div className="flex flex-row pr-3 cursor-pointers">
+						<div className="text-sm text-white-1">
+							{language.value}
+						</div>
+						<img
+							src="/img/icons/ic_arrow_down.svg"
+							className="pl-2 colored_ic_arrow_down"
+						/>
+					</div>
+					<ul className="dropdown__menu mt-4 min-w-fit bg-[#252a34]">
+						{
+							languageList.map((v) => {
+								return <li key={v.id}>
+									<a className="dropdown__link text-sm cursor-pointer" onClick={(e) => {
+										setLanguage(v);
+									}}>{v.value}</a>
+								</li>
+							})
+						}
+					</ul>
 				</div>
 			</div>
-			<div className="bg-gray-800 rounded-md">
-				<div className="bg-gray-500 rounded-t-md p-2 flex flex-row">
-					<div className="flex-1 p-1">
-						Response
-					</div>
+			<div className="method_code_block">
+				<CodeBlock language="jsx">
+					{generateCode({ headers, methodType, postParameters, queryParameters, apiEndpoint, language: language.id })}
+				</CodeBlock>
+			</div>
+			<div className="bg-[#333A47] rounded-t-lg pt-4 pb-4 pl-3 flex lg:flex-row flex-col align-middle">
+				<div className="flex-1 text-sm font-bold text-white-1">
+					RESPONSE
 				</div>
-				<div>
-					<CodeBlock language="jsx">
-						{JSON.stringify(response)}
-					</CodeBlock>
-				</div>
+			</div>
+			<div className="method_code_block">
+				<CodeBlock language="jsx">
+					{JSON.stringify(response, null, 2)}
+				</CodeBlock>
 			</div>
 		</div>
 	);
@@ -288,30 +305,26 @@ const MethodRequest = ({
 const MethodDescription = ({ description, postParameters, queryParameters }) => {
 	return (
 		<div className="flex flex-col">
-			<div>
+			<div className="text-gray-250">
 				{description}
 			</div>
-
-			{console.log(postParameters, queryParameters)}
-
-			{postParameters && <div>
-				<div className="text-lg mt-8 font-bold">
+			{postParameters.length != 0 && <div>
+				<div className="text-xl mt-12 font-bold">
 					Body Parameters
 				</div>
-				<div className="bg-gray-750 mt-3 h-0.5"></div>
-				{postParameters.map(parameter => {
-					console.log(parameter);
-					return <MethodParameter {...parameter} />
+				<div className="bg-[#252A34] mt-3 mb-1 h-[1px]"></div>
+				{postParameters.map((parameter, index) => {
+					return <MethodParameter parameterName={parameter.key} description={parameter.description} required={parameter.required} showDivider = {index != postParameters.length-1}/>
 				})}
 			</div>}
 
-			{queryParameters && <div>
-				<div className="text-lg mt-8 font-bold">
+			{queryParameters.length != 0 && <div>
+				<div className="text-xl mt-12 font-bold">
 					Query Parameters
 				</div>
-				<div className="bg-gray-750 mt-3 h-0.5"></div>
-				{queryParameters.map(parameter => {
-					return <MethodParameter {...parameter} />
+				<div className="bg-[#252A34] mt-3 mb-1 h-[1px]"></div>
+				{queryParameters.map((parameter, index) => {
+					return <MethodParameter parameterName={parameter.key} description={parameter.description} required={parameter.required} showDivider = {index != queryParameters.length-1}/>
 				})}
 			</div>}
 
@@ -319,99 +332,56 @@ const MethodDescription = ({ description, postParameters, queryParameters }) => 
 	);
 };
 
-const MethodParameter = ({ key, required, description }) => {
+const MethodParameter = ({ parameterName, required, description, showDivider }) => {
 	return (
-		<div className="w-full">
+		<div className="w-full" id={parameterName}>
 			<div className="flex flex-row pt-4">
-				{console.log(key)}
-				<div className="font-semibold">
-					{key}
+				<div className="font-semibold pr-1.5">
+					<a href={"#" + parameterName} className="font-bold pr-1.5 leading-6 text-base text-white-100">{parameterName}</a>
 				</div>
 
 				{required ?
-					<div className="text-red-600 text-xs">
+					<div className="text-primary font-semibold text-[10px] leading-7">
 						REQUIRED
 					</div>
 					:
-					<div className=" text-slate-500 text-xs">
-						optional
+					<div className=" text-slate-400 text-[10px] font-medium leading-7">
+						OPTIONAL
 					</div>
 				}
 
 			</div>
-			<div>
+			<div className="text-grayb3 text-sm">
 				{description}
 			</div>
-			<div className="bg-gray-750 mt-3 h-0.5"></div>
+
+			{showDivider && <div className="bg-[#252A34] mt-3 h-[1px]"></div>}
 		</div>
 	);
 };
-
-const data = {
-	headers: [
-		{
-			key: "Authorization",
-			value: "$YOUR_TOKEN"
-		},
-		{
-			key: "Content-Type",
-			value: "application/json"
-		}
-	],
-	methodType: "POST",
-	postParameters: [
-		{
-			key: "region",
-			value: "sg001",
-			description: "Region for the room",
-			required: true,
-		},
-		{
-			key: "customId",
-			value: "xyz",
-			description: "Custom Id",
-			required: false,
-		}
-	],
-	queryParameters: [
-		{
-			key: "page",
-			value: "1",
-			description: "Current Page number",
-			required: false,
-		},
-		{
-			key: "perPage",
-			value: "10",
-			description: "Items per page",
-			required: false,
-		}
-	],
-	apiEndpoint: "https://api.videosdk.live/v2/rooms",
-	response: {
-		meetingId: "asdf-asdf-asdf"
-	}
-}
 
 function Method({
 	headers,
 	methodType,
 	postParameters,
+	queryParameters,
 	description,
-	apiEndPoint
+	apiEndpoint, response
 }) {
 	return (
-		<div
-			id="tailwind"
-			className="w-full flex flex-col content-center"
-		>
+		<div id="tailwind">
 			<div className="flex lg:flex-row flex-col w-full" >
-				<div className="lg:w-1/2 w-full sticky self-start flex-grow">
-					<MethodDescription description={description} {...data} />
+				<div className="lg:w-1/2 w-full lg:sticky self-start lg:pr-[18px] flex-grow top-10">
+					<MethodDescription description={description} queryParameters={queryParameters} postParameters={postParameters} />
 				</div>
-				<div className="lg:w-1/2 w-full lg:pt-0 pt-4 lg:pl-4 sticky self-start flex-grow">
-					<MethodRequest
-						{...data}
+				<div className="lg:w-1/2 w-full lg:pt-0 pt-4 lg:pl-[18px] lg:sticky self-start flex-grow top-10">
+					<MethodRequestResponse
+						headers={headers}
+						methodType={methodType}
+						postParameters={postParameters}
+						apiEndpoint={apiEndpoint}
+						queryParameters={queryParameters}
+						response={response}
 					/>
 				</div>
 			</div>
