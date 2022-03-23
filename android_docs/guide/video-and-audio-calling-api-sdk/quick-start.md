@@ -62,7 +62,7 @@ allprojects {
 
 ```js title="app/build.gradle"
 dependencies {
-  implementation 'live.videosdk:android-sdk:0.0.11'
+  implementation 'live.videosdk:android-sdk:0.0.12'
 
   //Library to perform Network call to generate a meeting id
   implementation 'com.amitshekhar.android:android-networking:1.0.2'

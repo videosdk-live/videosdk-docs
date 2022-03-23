@@ -58,6 +58,7 @@ export default function SidebarDropdowns() {
   }
 
   useEffect(() => {
+    console.log("location.path : ", location.pathname);
     var currentSdk = location.pathname.split("/")[1];
     var currentVersion = location.pathname.split("/")[2];
     var versions = [];
@@ -136,6 +137,7 @@ export default function SidebarDropdowns() {
     return name;
   }
 
+  console.log("Sdk  : ", sdk);
   return (
     <div className="row dropdown_menu">
       {(sdk != "docs" && sdk != "prebuilt" && sdk != "api-reference") || viewType == "api" ? (

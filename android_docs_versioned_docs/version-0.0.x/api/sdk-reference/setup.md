@@ -45,7 +45,7 @@ allprojects {
 
 ```js title="app/build.gradle"
 dependencies {
-		implementation 'live.videosdk:android-sdk:0.0.11'
+		implementation 'live.videosdk:android-sdk:0.0.12'
 
 		// other app dependencies
 }
