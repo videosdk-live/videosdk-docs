@@ -84,7 +84,7 @@ module.exports = {
             {
               label: "Rest API Reference",
               to: "api-reference/realtime-communication/intro",
-              activeBaseRegex: "docs/api-reference/realtime-communication/*",
+              activeBaseRegex: "api-reference/*/realtime-communication/*",
             },
           ],
         },
