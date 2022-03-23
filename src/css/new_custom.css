@@ -1548,9 +1548,9 @@ html[data-theme="dark"]
 .footer__link-item > span > svg {
   margin-top: 7px;
 }
-.footer__link-item > :hover {
+/* .footer__link-item > :hover {
   color: #ef433c;
-}
+} */
 
 .image-box {
   background: linear-gradient(
