@@ -1,24 +1,24 @@
 ---
-title: PubSubOptions class for Flutter SDK.
+title: PubSubPublishOptions class for Flutter SDK.
 hide_title: false
 hide_table_of_contents: false
-description: PubSubOptions Class
-sidebar_label: PubSubOptions Class
-pagination_label: PubSubOptions Class
+description: PubSubPublishOptions Class
+sidebar_label: PubSubPublishOptions Class
+pagination_label: PubSubPublishOptions Class
 keywords:
   - RTC Flutter
   - PubSub
-  - PubSubOptions
+  - PubSubPublishOptions
 image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
 slug: pubsub-options-class
 ---
 
-# PubSubOptions Class
+# PubSubPublishOptions Class
 
-## using PubSubOptions Class
+## using PubSubPublishOptions Class
 
-The `PubSubOptions` includes properties of PubSub options.
+The `PubSubPublishOptions class` includes properties of PubSub options.
 
 import MethodListGroup from '@theme/MethodListGroup';
 import MethodListItemLabel from '@theme/MethodListItemLabel';

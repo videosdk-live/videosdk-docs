@@ -19,7 +19,7 @@ slug: pubsub-message-class
 
 ## using PubSubMessage Class
 
-The `PubSubMessage` includes properties of PubSub message.
+The `PubSubMessage class` includes properties of PubSub message.
 
 import MethodListGroup from '@theme/MethodListGroup';
 import MethodListItemLabel from '@theme/MethodListItemLabel';

@@ -90,7 +90,9 @@ When other participant(Except you) share their screen, `presenterChanged` Event 
 meeting.on(Events.presenterChanged, (_activePresenterId) {
     Participant? activePresenterParticipant = meeting.participants[_activePresenterId];
 
-    Stream? _stream = activePresenterParticipant?.streams.values.singleWhere((e) => e.kind == "share");
+    Stream? _stream = activePresenterParticipant?
+                        .streams.values
+                        .singleWhere((e) => e.kind == "share");
 
     remoteParticipantShareStream = _stream;
 });

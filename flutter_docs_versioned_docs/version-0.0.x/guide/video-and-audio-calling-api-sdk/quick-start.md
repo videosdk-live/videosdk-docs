@@ -99,14 +99,14 @@ Update the `AndroidManifest.xml` for the permissions we will be using to impleme
 `<project root>/android/app/src/main/AndroidManifest.xml`
 
 ```js title="AndroidManifest.xml"
-  <uses-feature android:name="android.hardware.camera" />
-  <uses-feature android:name="android.hardware.camera.autofocus" />
-  <uses-permission android:name="android.permission.CAMERA" />
-  <uses-permission android:name="android.permission.RECORD_AUDIO" />
-  <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-  <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
-  <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
-  <uses-permission android:name="android.permission.INTERNET"/>
+<uses-feature android:name="android.hardware.camera" />
+<uses-feature android:name="android.hardware.camera.autofocus" />
+<uses-permission android:name="android.permission.CAMERA" />
+<uses-permission android:name="android.permission.RECORD_AUDIO" />
+<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+<uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+<uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+<uses-permission android:name="android.permission.INTERNET"/>
 ```
 
 Also you will need to set your build settings to Java 8 because the official WebRTC jar now uses static methods in `EglBase` interface. Just add this to your app-level `build.gradle`
@@ -215,6 +215,10 @@ class JoinScreen extends StatelessWidget {
 }
 ```
 
+#### Output
+
+![VideoSDK Flutter Quick Start Join Screen](/img/quick-start/flutter-join-screen-widget.jpg)
+
 ### Step 3 : Creating the MeetingControls
 
 Let's create meeting_controls.dart file and create MeetingControls StateLess Widget.
@@ -268,6 +272,10 @@ class MeetingControls extends StatelessWidget {
   }
 }
 ```
+
+#### Output
+
+![VideoSDK Flutter Quick Start Meeting Controls](/img/quick-start/flutter-meeting-controls.jpg)
 
 ### Step 4 : Creating ParticipantTile
 
@@ -430,6 +438,12 @@ class _MeetingScreenState extends State<MeetingScreen> {
 
 ### Step 6 : Change main.dart
 
+Let's change `main.dart` file.
+
+Remove boilerplate code from the `main.dart`. Create `VideoSDKQuickStart` StatefulWidget and pass it to `MaterialApp`.
+
+`VideoSDKQuickStart` widget will return `MeetingScreen` if meeting is active, otherwise return `JoinScreen`.
+
 ```js title="main.dart"
 import 'package:flutter/material.dart';
 import 'api.dart';
@@ -494,11 +508,11 @@ The app is all set to test. Make sure to update the `token` in `api.dart`
 
 Your app should look like this after the implementation.
 
+import ReactPlayer from 'react-player'
+
 <div style={{textAlign: 'center'}}>
 
-<img src="/img/quick-start/flutter-join-screen.jpg" width="250" />
-&nbsp;&nbsp;&nbsp;&nbsp;
-<img src="/img/quick-start/flutter-meeting-screen.jpg" width="250" />
+<ReactPlayer controls url='/img/quick-start/flutter-final-video.mp4' height="560px" width={"100%"}/>
 
 </div>
 
