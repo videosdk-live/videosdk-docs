@@ -92,6 +92,20 @@ dependencyResolutionManagement{
 
 </Tabs>
 
+
+2. Add the following dependency in your app's `app/build.gradle`.
+
+```js title="app/build.gradle"
+dependencies {
+  implementation 'live.videosdk:android-sdk:0.0.13'
+
+  // library to perform Network call to generate a meeting id
+  implementation 'com.amitshekhar.android:android-networking:1.0.2'
+
+  // other app dependencies
+  }
+```
+
 ### Add permissions into your project
 
 In `/app/Manifests/AndroidManifest.xml`, add the following permissions after `</application>`.
