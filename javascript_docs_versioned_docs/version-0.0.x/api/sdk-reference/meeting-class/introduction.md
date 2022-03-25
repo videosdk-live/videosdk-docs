@@ -6,6 +6,7 @@ title: Intro to Meeting Class
 ---
 
 <div class="api">
+
 ## Introduction
 
 The `Meeting Class` includes methods and events for managing meetings, participants, video & audio streams, data channels and UI customisation.
