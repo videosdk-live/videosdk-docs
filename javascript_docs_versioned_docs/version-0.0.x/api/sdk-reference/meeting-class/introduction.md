@@ -9,11 +9,11 @@ title: Intro to Meeting Class
 
 ## Introduction
 
-The `Meeting Class` includes methods and events for managing meetings, participants, video & audio streams, data channels and UI customisation.
+The `Meeting` Class includes properties, methods and events for managing a meeting, participants, video, audio and share streams, messaging and UI customisation.
 
 ### Meeting Initialization
 
-You don't ever need to call the `Meeting Class` constructor directly. Instead use one of the factory methods `initMeeting()`.
+You can initialize the meeting using a factory method provided by the SDK called `initMeeting()`. By passing the parameters according to the need, it will generate a new `Meeting` class and the initiated meeting will be returned.
 
 ### initMeeting()
 
@@ -29,33 +29,33 @@ const meeting = VideoSDK.initMeeting({
 
 ### Meeting Initialization Parameters
 
-#### meetingId
+### meetingId
 
 - `type` : String
 - `meetingId` represents the meetingId for the current meeting
-- `required`
+- `required`: `true`
 
-#### name
+### name
 
 - `type` : String
 - `name` represents name for a participant who joins the meeting
 - `required`
 
-#### micEnabled
+### micEnabled
 
 - `type` : boolean
 - `name` represents whether mic is enabled or not
 - `optional`
 - `default` : true
 
-#### webcamEnabled
+### webcamEnabled
 
 - `type` : boolean
 - `name` represents whether webcam is enabled or not
 - `optional`
 - `default` : true
 
-#### maxResolution
+### maxResolution
 
 - `type` : String
 - `name` represents name for a participant who joins the meeting

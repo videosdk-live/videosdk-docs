@@ -70,6 +70,7 @@
       "type": "doc",
       "id": "api/sdk-reference/setup"
     },
+    { "type": "doc", "id": "api/sdk-reference/initMeeting" },
     {
       "type": "category",
       "label": "Meeting Class",
