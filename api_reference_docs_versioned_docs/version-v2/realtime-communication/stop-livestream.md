@@ -6,9 +6,9 @@ hide_table_of_contents: true
 
 # Stop Livestream
 
-import Method from '../../../src/theme/Method'
+import Method from '../../../src/theme/RestApiMethodContainer'
 import data from './data.json'
 
-<Method 
+<Method
 {...data.stopLivestream}
 />

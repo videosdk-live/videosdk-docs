@@ -6,9 +6,9 @@ hide_table_of_contents: true
 
 # Start Livestream
 
-import Method from '../../src/theme/Method'
+import Method from '../../src/theme/RestApiMethodContainer'
 import data from './data.json'
 
-<Method 
+<Method
 {...data.startLivestream}
 />

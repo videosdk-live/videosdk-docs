@@ -6,7 +6,7 @@ hide_table_of_contents: true
 
 # Create Room
 
-import Method from '../../../src/theme/Method'
+import Method from '../../../src/theme/RestApiMethodContainer'
 
 <Method 
 description="When you get a dispute, contacting your customer is always the best first step. If that doesn’t work, you can submit evidence to help us resolve the dispute in your favor. You can do this in your dashboard, but if you prefer, you can use the API to submit evidence programmatically.
