@@ -96,12 +96,12 @@ const generateNodeCode = ({
   }
   //add url with query parameters
   if (queryParameters.length != 0) {
-    code += 'const url= "' + apiEndpoint + "?";
+    code += 'const url= `' + apiEndpoint + "?";
     queryParameters.forEach((element) => {
       if (element.required) code += element.key + "=" + element.value + "&";
     });
     code = code.slice(0, code.length - 1);
-    code += '";\n';
+    code += '`;\n';
   } else {
     code += 'const url= `' + apiEndpoint + '`;\n';
   }
@@ -147,10 +147,15 @@ const generatePhpCode = ({
   code += "curl_setopt_array($curl, array(\n";
 
   //add url with query paramters
-  if (queryParameters.length != 0) {
+  if (queryParameters.length != 0 && hasRequiredParams(queryParameters)) {
     if (/\${([A-z])\w+}/.test(apiEndpoint)) {
       var match = apiEndpoint.match(/\${([A-z])\w+}/);
-      code += '\tCURLOPT_URL => "' + apiEndpoint.slice(0, match.index) + "' . $" + match[0].slice(2, match[0].length - 1) + "?";
+      code += '\tCURLOPT_URL => "' + apiEndpoint.slice(0, match.index) + '" . $' + match[0].slice(2, match[0].length - 1);
+      if(apiEndpoint.length > apiEndpoint.slice(0, match.index).length+match[0].length)
+        code+= " . '"+ apiEndpoint.slice(match.index + match[0].index , apiEndpoint.length)+"?";
+      else
+        code+= "?"
+
     } else {
       code += '\tCURLOPT_URL => "' + apiEndpoint + "?";
     }
@@ -163,7 +168,11 @@ const generatePhpCode = ({
   } else {
     if (/\${([A-z])\w+}/.test(apiEndpoint)) {
       var match = apiEndpoint.match(/\${([A-z])\w+}/);
-      code += '\tCURLOPT_URL => "' + apiEndpoint.slice(0, match.index) + '" . $' + match[0].slice(2, match[0].length - 1) + ',\n';
+      code += '\tCURLOPT_URL => "' + apiEndpoint.slice(0, match.index) + '" . $' + match[0].slice(2, match[0].length - 1) ;
+      if(apiEndpoint.length > apiEndpoint.slice(0, match.index).length+match[0].length)
+        code+= " . '"+ apiEndpoint.slice((match.index + match[0].length) , apiEndpoint.length)+"',\n";
+      else
+        code+= ',\n';
     } else {
       code += '\tCURLOPT_URL => "' + apiEndpoint + '",\n';
     }
@@ -218,7 +227,9 @@ const generatePythonCode = ({
     var match = apiEndpoint.match(/\${([A-z])\w+}/);
     code += match[0].slice(2, match[0].length - 1) + ' = "your_' + match[0].slice(2, match[0].length - 1) + '"\n'
     code += 'url = "' + apiEndpoint.slice(0, match.index) + '" + ' + match[0].slice(2, match[0].length - 1);
-    if (queryParameters.length != 0) {
+    if(apiEndpoint.length > apiEndpoint.slice(0, match.index).length+match[0].length)
+        code+= ' + "'+ apiEndpoint.slice((match.index + match[0].length) , apiEndpoint.length)+'"';
+    if (queryParameters.length != 0 && hasRequiredParams(queryParameters)) {
       code += '+ "'
     } else {
       //close url string quotations
@@ -226,15 +237,14 @@ const generatePythonCode = ({
     }
   } else {
     code += 'url = "' + apiEndpoint;
-    if (queryParameters.length == 0) {
+    if (queryParameters.length == 0 || !hasRequiredParams(queryParameters)) {
       //close url string quotations
       code += '"\n';
     }
-
   }
 
   //add query parameters if any
-  if (queryParameters.length != 0) {
+  if (queryParameters.length != 0 && hasRequiredParams(queryParameters)) {
     code += "?";
     queryParameters.forEach((element) => {
       if (element.required) code += element.key + "=" + element.value + "&";
@@ -348,7 +358,11 @@ const MethodRequestResponse = ({
 }) => {
   const getDefaultRestApiGroupId = () => {
     try {
-      return JSON.parse(localStorage.getItem("rest-api-group-id"))
+      var selectedLanguage = JSON.parse(localStorage.getItem("rest-api-group-id"));
+      if(selectedLanguage)
+        return selectedLanguage;
+      else
+        return { id: "node", value: "NodeJS" }
     } catch (err) {
       return { id: "node", value: "NodeJS" }
     }
