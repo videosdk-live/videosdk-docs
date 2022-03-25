@@ -39,7 +39,7 @@ Visit videoSDK **[dashboard](https://app.videosdk.live/api-keys)** to generate t
 
 ## Getting Started with the Code!
 
-Follow the steps to create the environment necessary to add video calls into your app.
+Follow the steps to add Video Call into your app.
 
 ### Create new Android Project
 
@@ -53,8 +53,8 @@ After creating the project, Android Studio automatically starts gradle sync. Ens
 
 ### Integrate Video SDK
 
-1. If your Android Studio Version is older than Android Studio Bumblebees, add the repository to project's `build.gradle` file. <br/>
-If your are using Android Studio Bumblebees or newer Version, add the repository to `settings.gradle` file.
+- If your Android Studio Version is older than Android Studio Bumblebees, add the repository to project's `build.gradle` file.
+- If your are using Android Studio Bumblebees or newer Version, add the repository to `settings.gradle` file.
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -92,8 +92,7 @@ dependencyResolutionManagement{
 
 </Tabs>
 
-
-2. Add the following dependency in your app's `app/build.gradle`.
+- Add the following dependency in your app's `app/build.gradle`.
 
 ```js title="app/build.gradle"
 dependencies {
@@ -108,7 +107,7 @@ dependencies {
 
 ### Add permissions into your project
 
-In `/app/Manifests/AndroidManifest.xml`, add the following permissions after `</application>`.
+- In `/app/Manifests/AndroidManifest.xml`, add the following permissions after `</application>`.
 
 ```xml title="AndroidManifest.xml"
 <uses-permission android:name="android.permission.RECORD_AUDIO" />
@@ -229,14 +228,16 @@ In `/app/res/layout/activity_join.xml` file, replace the content with the follow
 
 #### Integration of Create Meeting API
 
-1. Declare the variables `sampleToken` which will hold the generated token from the [VideoSDK dashboard](https://app.videosdk.live/api-keys)
+1. Declare the variables `sampleToken` which will hold the generated token from the [VideoSDK dashboard](https://app.videosdk.live/api-keys). This token will use in VideoSDK config as well as generating meetingId.
+
+**Note** : This generated token is only valid for ten minutes, if you want to regenerate you can do it as well by clicking the same link.
 
 ```java title="JoinActivity.java"
 //Replace with the token you generated from the VideoSDK Dashboard
 String sampleToken = "";
 ```
 
-2. Add the `onClick` events for the Join and Create button.
+2. On **Join Button** `onClick` events, we will naviagte to `MeetingActivity` with token and meetingId.
 
 ```java title="JoinActivity.java"
 public class JoinActivity extends AppCompatActivity {
@@ -267,7 +268,7 @@ public class JoinActivity extends AppCompatActivity {
 }
 ```
 
-3. Now we will write some code for integrating create meeting API under `createMeeting` method.
+3. For **Create Button**, under `createMeeting` method we will gnerate meetingId by calling API and navigate to `MeetingActivity` with token and generated meetingId.
 
 ```java title="JoinActivity.java"
 public class JoinActivity extends AppCompatActivity {
@@ -305,7 +306,7 @@ public class JoinActivity extends AppCompatActivity {
 }
 ```
 
-4. Our App is completely based on audio and video commutation, that's why we need to ask for runtime permissions `RECORD_AUDIO` and `CAMERA`.
+4. Our App is completely based on audio and video commutation, that's why we need to ask for runtime permissions `RECORD_AUDIO` and `CAMERA`. So, we will implement permission logic on `JoinActivity`.
 
 ```java title="JoinActivity.java"
 public class JoinActivity extends AppCompatActivity {
