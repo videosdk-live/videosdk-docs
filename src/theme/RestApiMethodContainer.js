@@ -1,6 +1,18 @@
 import React, { useState } from "react";
 import CodeBlock from "@theme/CodeBlock";
 
+const hasRequiredParams = (parameters)=>{
+  console.log("params", parameters);
+  var hasRequiredParameter = false;
+  parameters.forEach(param=>{
+    if(param.required){
+      hasRequiredParameter = true;
+    }
+  })
+  console.log("params",hasRequiredParameter);
+  return hasRequiredParameter;
+}
+
 const generateCurlCode = ({
   headers,
   methodType,
@@ -22,7 +34,8 @@ const generateCurlCode = ({
 
   //add post method and its body parameters
   if (methodType == "POST") {
-    code += "\t-d '" + parametersToJson(postParameters) + "' \\ \n";
+    if(hasRequiredParams(postParameters))
+      code += "\t-d '" + parametersToJson(postParameters) + "' \\ \n";
     code += "\t-XPOST " + apiEndpoint;
   }
   //add get method
@@ -70,7 +83,7 @@ const generateNodeCode = ({
   }
 
   //add body parameters if method type is post
-  if (methodType == "POST")
+  if (methodType == "POST" && hasRequiredParams(postParameters))
     code +=
       "\tbody: JSON.stringyfy(" + parametersToJson(postParameters) + "),\n";
 
@@ -113,7 +126,7 @@ const generatePhpCode = ({
   code += "$curl = curl_init();\n";
 
   //create body data if applicable
-  if (postParameters.length != 0) {
+  if (postParameters.length != 0 && hasRequiredParams(postParameters)) {
     code += "$data = array(\n";
     // JSON.parse(postParameters).forEach((key,value) => {
     // 	code += "\t\"" + key + "\" => \"" + value + "\",\n";
@@ -199,10 +212,6 @@ const generatePythonCode = ({
   //import requests
   code += "import requests\n";
 
-
-  console.log("Testing", /\${([A-z])\w+}/.test(apiEndpoint))
-  console.log("Testing", apiEndpoint.match(/\${([A-z])\w+}/))
-
   //create url
   //check if has ${param} in the url
   if (/\${([A-z])\w+}/.test(apiEndpoint)) {
@@ -250,7 +259,7 @@ const generatePythonCode = ({
   code += 'response = requests.request("' + methodType + '", url,';
 
   //if methodType is post add the body parameters
-  if (methodType == "POST") {
+  if (methodType == "POST" && hasRequiredParams(postParameters)) {
     code += "json = " + parametersToJson(postParameters) + ",";
   }
 

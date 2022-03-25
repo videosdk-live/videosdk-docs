@@ -63,7 +63,7 @@
         "key": "status",
         "value": "enabled",
         "description": "Status can have two values: enabled | disabled",
-        "required": true
+        "required": false
       }
     ],
     "queryParameters": [],
