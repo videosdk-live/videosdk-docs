@@ -40,7 +40,7 @@
       "label": "Advanced Features",
       "items": [
         "guide/video-and-audio-calling-api-sdk/features/record-meeting",
-        "guide/video-and-audio-calling-api-sdk/features/go-live-social-media", 
+        "guide/video-and-audio-calling-api-sdk/features/go-live-social-media",
         "guide/video-and-audio-calling-api-sdk/features/pubsub",
         "guide/video-and-audio-calling-api-sdk/features/set-video-quality",
         "guide/video-and-audio-calling-api-sdk/features/pause-resume-video-stream"
@@ -67,18 +67,6 @@
     {
       "type": "doc",
       "id": "api/sdk-reference/stream-class"
-    },
-    {
-      "type": "doc",
-      "id": "api/sdk-reference/pubsub-class"
-    },
-    {
-      "type": "doc",
-      "id": "api/sdk-reference/pubsub-publish-options-class"
-    },
-    {
-      "type": "doc",
-      "id": "api/sdk-reference/pubsub-message-class"
     },
     {
       "type": "doc",
