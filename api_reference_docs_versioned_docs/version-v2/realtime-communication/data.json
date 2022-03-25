@@ -80,7 +80,7 @@
         "methodType": "GET",
         "postParameters": [],
         "queryParameters":[],
-        "apiEndpoint": "https://api.videosdk.live/v2/rooms/:roomId",
+        "apiEndpoint": "https://api.videosdk.live/v2/rooms/${roomId}",
         "response": {
             "meetingId": "asdf-asdf-asdf"
         }

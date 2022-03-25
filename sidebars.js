@@ -346,7 +346,6 @@ module.exports = {
       label: "Rest API Reference",
       collapsed: true,
       items: [
-        "api-reference/realtime-communication/create-room",
         "api-reference/realtime-communication/auth",
         "api-reference/realtime-communication/create-join-meeting",
         "api-reference/realtime-communication/list-all-meetings",

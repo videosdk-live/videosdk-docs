@@ -77,6 +77,10 @@ const generateNodeCode = ({
   //close options json
   code += "};\n";
 
+  if (/\${([A-z])\w+}/.test(apiEndpoint)) {
+    var match = apiEndpoint.match(/\${([A-z])\w+}/);
+    code += "const " + match[0].slice(2, match[0].length - 1) + ' = "your_' + match[0].slice(2, match[0].length - 1) + '";\n'
+  }
   //add url with query parameters
   if (queryParameters.length != 0) {
     code += 'const url= "' + apiEndpoint + "?";
@@ -86,7 +90,7 @@ const generateNodeCode = ({
     code = code.slice(0, code.length - 1);
     code += '";\n';
   } else {
-    code += 'const url= "' + apiEndpoint + '";\n';
+    code += 'const url= `' + apiEndpoint + '`;\n';
   }
 
   //fire the request
@@ -121,19 +125,35 @@ const generatePhpCode = ({
     code += ");\n";
   }
 
+  if (/\${([A-z])\w+}/.test(apiEndpoint)) {
+    var match = apiEndpoint.match(/\${([A-z])\w+}/);
+    code += "$" + match[0].slice(2, match[0].length - 1) + ' = "your_' + match[0].slice(2, match[0].length - 1) + '";\n'
+  }
+
   //creating curl request
   code += "curl_setopt_array($curl, array(\n";
 
   //add url with query paramters
   if (queryParameters.length != 0) {
-    code += '\tCURLOPT_URL => "' + apiEndpoint + "?";
+    if (/\${([A-z])\w+}/.test(apiEndpoint)) {
+      var match = apiEndpoint.match(/\${([A-z])\w+}/);
+      code += '\tCURLOPT_URL => "' + apiEndpoint.slice(0, match.index) + "' . $" + match[0].slice(2, match[0].length - 1) + "?";
+    } else {
+      code += '\tCURLOPT_URL => "' + apiEndpoint + "?";
+    }
+
     queryParameters.forEach((element) => {
       if (element.required) code += element.key + "=" + element.value + "&";
     });
     code = code.slice(0, code.length - 1);
     code += '",\n';
   } else {
-    code += "\tCURLOPT_URL => " + apiEndpoint + ",\n";
+    if (/\${([A-z])\w+}/.test(apiEndpoint)) {
+      var match = apiEndpoint.match(/\${([A-z])\w+}/);
+      code += '\tCURLOPT_URL => "' + apiEndpoint.slice(0, match.index) + '" . $' + match[0].slice(2, match[0].length - 1) + ',\n';
+    } else {
+      code += '\tCURLOPT_URL => "' + apiEndpoint + '",\n';
+    }
   }
 
   //extras
@@ -179,8 +199,30 @@ const generatePythonCode = ({
   //import requests
   code += "import requests\n";
 
+
+  console.log("Testing", /\${([A-z])\w+}/.test(apiEndpoint))
+  console.log("Testing", apiEndpoint.match(/\${([A-z])\w+}/))
+
   //create url
-  code += 'url = "' + apiEndpoint;
+  //check if has ${param} in the url
+  if (/\${([A-z])\w+}/.test(apiEndpoint)) {
+    var match = apiEndpoint.match(/\${([A-z])\w+}/);
+    code += match[0].slice(2, match[0].length - 1) + ' = "your_' + match[0].slice(2, match[0].length - 1) + '"\n'
+    code += 'url = "' + apiEndpoint.slice(0, match.index) + '" + ' + match[0].slice(2, match[0].length - 1);
+    if (queryParameters.length != 0) {
+      code += '+ "'
+    } else {
+      //close url string quotations
+      code += '\n';
+    }
+  } else {
+    code += 'url = "' + apiEndpoint;
+    if (queryParameters.length == 0) {
+      //close url string quotations
+      code += '"\n';
+    }
+
+  }
 
   //add query parameters if any
   if (queryParameters.length != 0) {
@@ -189,9 +231,10 @@ const generatePythonCode = ({
       if (element.required) code += element.key + "=" + element.value + "&";
     });
     code = code.slice(0, code.length - 1);
+    //close url string quotations
+    code += '"\n';
   }
-  //close url string quotations
-  code += '"\n';
+
 
   //create headers if any
   if (headers.length != 0) {
@@ -221,7 +264,7 @@ const generatePythonCode = ({
     code = code.slice(0, code.length - 1);
 
   //close request
-  code += ");\n";
+  code += ")\n";
 
   //print response
   code += "print(response.text)";
@@ -294,7 +337,16 @@ const MethodRequestResponse = ({
   queryParameters,
   response,
 }) => {
-  const [language, setLanguage] = useState({ id: "node", value: "NodeJS" });
+  const getDefaultRestApiGroupId = () => {
+    try {
+      return JSON.parse(localStorage.getItem("rest-api-group-id"))
+    } catch (err) {
+      return { id: "node", value: "NodeJS" }
+    }
+  }
+
+  const [language, setLanguage] = useState(getDefaultRestApiGroupId());
+
   const languageList = [
     {
       id: "curl",
@@ -339,6 +391,7 @@ const MethodRequestResponse = ({
                   <a
                     className="dropdown__link text-sm cursor-pointer"
                     onClick={(e) => {
+                      localStorage.setItem("rest-api-group-id", JSON.stringify(v))
                       setLanguage(v);
                     }}
                   >
@@ -351,7 +404,7 @@ const MethodRequestResponse = ({
         </div>
       </div>
       <div className="method_code_block">
-        <CodeBlock language="jsx">
+        <CodeBlock language="js">
           {generateCode({
             headers,
             methodType,
