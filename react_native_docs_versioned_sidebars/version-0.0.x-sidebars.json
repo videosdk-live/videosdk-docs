@@ -39,7 +39,8 @@
         "guide/video-and-audio-calling-api-sdk/features/mic-controls",
         "guide/video-and-audio-calling-api-sdk/features/screenshare",
         "guide/video-and-audio-calling-api-sdk/features/toggle-participant-media",
-        "guide/video-and-audio-calling-api-sdk/features/speaker-indication"
+        "guide/video-and-audio-calling-api-sdk/features/speaker-indication",
+        "guide/video-and-audio-calling-api-sdk/features/error-event"
       ],
       "collapsed": true
     },
@@ -51,6 +52,8 @@
         "guide/video-and-audio-calling-api-sdk/features/go-live-social-media",
         "guide/video-and-audio-calling-api-sdk/features/play-external-video",
         "guide/video-and-audio-calling-api-sdk/features/pubsub",
+        "guide/video-and-audio-calling-api-sdk/features/set-participant-video-quality",
+        "guide/video-and-audio-calling-api-sdk/features/pause-resume-stream",
         "guide/video-and-audio-calling-api-sdk/features/switch-participant",
         {
           "type": "category",
@@ -84,7 +87,6 @@
       "type": "doc",
       "id": "api/sdk-reference/setup"
     },
-
     {
       "type": "doc",
       "id": "api/sdk-reference/setup-android"
@@ -97,7 +99,6 @@
       "type": "doc",
       "id": "api/sdk-reference/rtc-stream"
     },
-
     {
       "type": "doc",
       "id": "api/sdk-reference/use-meeting"
