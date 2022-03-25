@@ -53,29 +53,44 @@ After creating the project, Android Studio automatically starts gradle sync. Ens
 
 ### Integrate Video SDK
 
-1. Add the repo to project's `build.gradle` file.
+1. If your Android Studio Version is older than Android Studio Bumblebees, add the repository to project's `build.gradle` file. <br/>
+If your are using Android Studio Bumblebees or newer Version, add the repository to `settings.gradle` file.
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs
+defaultValue="2021.1.1"
+groupId={"android-studio-version"}
+values={[{label: 'Android Studio Version < 2021.1.1', value: '<2021.1.1'},{label: 'Android Studio Version 2021.1.1', value: '2021.1.1'},]}>
+
+<TabItem value="<2021.1.1">
 
 ```js title="build.gradle"
 allprojects {
   repositories {
-     // ...
+    // ...
     maven { url 'https://jitpack.io' }
+    jcenter()
   }
 }
 ```
+</TabItem>
 
-2. Add the dependency in `app/build.gradle`
+<TabItem value="2021.1.1">
 
-```js title="app/build.gradle"
-dependencies {
-  implementation 'live.videosdk:android-sdk:0.0.12'
-
-  // library to perform Network call to generate a meeting id
-  implementation 'com.amitshekhar.android:android-networking:1.0.2'
-
-  // other app dependencies
+```js title="settings.gradle"
+dependencyResolutionManagement{
+  repositories {
+    // ...
+    maven { url 'https://jitpack.io' }
+    jcenter()
   }
+}
 ```
+</TabItem>
+
+</Tabs>
 
 ### Add permissions into your project
 
@@ -85,7 +100,6 @@ In `/app/Manifests/AndroidManifest.xml`, add the following permissions after `</
 <uses-permission android:name="android.permission.RECORD_AUDIO" />
 <uses-permission android:name="android.permission.CAMERA" />
 <uses-permission android:name="android.permission.INTERNET" />
-<uses-permission android:name="android.permission.BLUETOOTH" />
 ```
 
 ### Structure of the project
@@ -301,6 +315,15 @@ public class JoinActivity extends AppCompatActivity {
 }
 ```
 
+#### Output
+
+<div style={{textAlign: 'center'}}>
+
+![VideoSDK Android Quick Start joining Screen](/img/quick-start/android-join-screen.jpg)
+
+</div>
+
+
 ### Step 3: Creating Meeting Screen
 
 Create a new Activity named `MeetingActivity.java`.
@@ -488,6 +511,13 @@ public class MeetingActivity extends AppCompatActivity {
   }
 }
 ```
+#### Output
+
+<div style={{textAlign: 'center'}}>
+
+<img style={{height: '200px'}} src="/img/quick-start/android_controls.jpeg" />
+
+</div>
 
 ### Step 5: Handling the Participants View
 
@@ -695,11 +725,15 @@ The app is all set to test. Make sure to update the `sampleToken` in `JoinActivi
 
 Your app should look like this after the implementation.
 
+import ReactPlayer from 'react-player'
+
 <div style={{textAlign: 'center'}}>
 
-![VideoSDK Android Quick Start Join Screen](/img/quick-start/android-join-screen.jpg) &nbsp; ![VideoSDK Android Quick Start Meeting Screen](/img/quick-start/android-meeting-screen.jpg)
+<ReactPlayer controls url="/img/quick-start/android-final-video.mp4" height="500px" width={"100%"} />
 
 </div>
+
+<br/>
 
 :::caution
 For the tutorial purpose, we used a static token to initialize and join the meeting. But for the production version of the app, we recommend you use an Authentication Server that will generate and pass on the token to the Client App. For more details checkout [how to do server setup](/android/guide/video-and-audio-calling-api-sdk/server-setup).

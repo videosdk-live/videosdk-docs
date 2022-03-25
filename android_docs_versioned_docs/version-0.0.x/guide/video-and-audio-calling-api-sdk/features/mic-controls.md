@@ -26,7 +26,7 @@ This guide will provide an overview of how to use enable and disable Mic in a me
 2. **Disable Mic** - By using `muteMic()` function, a participant can stop publishing audio to other participants.
 3. **Change Mic** - By using `changeMic()` function, a participant can change mic.
 
-### Enable, Disable, Change Mic
+### 1. Enable, Disable Mic
 
 ```js
   btnMic.setOnClickListener(new View.OnClickListener() {
@@ -42,4 +42,72 @@ This guide will provide an overview of how to use enable and disable Mic in a me
 
       }
   });
+```
+
+### 2. Change Mic
+
+### Get all audio Devices
+
+- By using  `meeting.getMics()` function, a participant can get all the mics.
+
+```js
+  private Set<AppRTCAudioManager.AudioDevice> getMics() {
+    Set<AppRTCAudioManager.AudioDevice> mics = meeting.getMics();
+    return mics; // returns all mics
+  }
+```
+
+### Change audio Device
+
+- Local participant can change the Mic using `changeMic(AppRTCAudioManager.AudioDevice device)` method of meeting class.
+
+- Parameters that can be passed to change the mic are
+
+  | Audio Device                                   | Usage                         |
+  | ---------------------------------------------- | ----------------------------- |
+  | AppRTCAudioManager.AudioDevice.BLUETOOTH       | For Bluetooth Device.         |
+  | AppRTCAudioManager.AudioDevice.WIRED_HEADSET   | For Wired Handset Device.     |
+  | AppRTCAudioManager.AudioDevice.SPEAKER_PHONE   | For Inbuilt - Speaker Device  |
+  | AppRTCAudioManager.AudioDevice.EARPIECE        | For Earpiece Device           |
+
+
+- When a Local participant changes the Mic, `AppRTCAudioManager.AudioManagerEvents()` is triggered which can be set to `Meeting` class by using `meeting.setAudioDeviceChangeListener()`
+
+```js
+
+  btnChangeMic.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View v) {
+        // Change Mic in Meeting
+        meeting.changeMic(AppRTCAudioManager.AudioDevice.BLUETOOTH);
+      }
+  });
+
+  private void setAudioDeviceListeners() {
+    meeting.setAudioDeviceChangeListener(new AppRTCAudioManager.AudioManagerEvents() {
+         @Override
+        public void onAudioDeviceChanged(AppRTCAudioManager.AudioDevice selectedAudioDevice, Set<AppRTCAudioManager.AudioDevice> availableAudioDevices) {
+            switch (selectedAudioDevice) {
+                case BLUETOOTH:
+                  Toast.makeText(MainActivity.this, "Selected AudioDevice: BLUETOOTH", Toast.LENGTH_SHORT).show();
+                  break;
+                case WIRED_HEADSET:
+                  Toast.makeText(MainActivity.this, "Selected AudioDevice: WIRED_HEADSET", Toast.LENGTH_SHORT).show();
+                  break;
+                case SPEAKER_PHONE:
+                  Toast.makeText(MainActivity.this, "Selected AudioDevice: SPEAKER_PHONE", Toast.LENGTH_SHORT).show();
+                  break;
+                case EARPIECE:
+                  Toast.makeText(MainActivity.this, "Selected AudioDevice: EARPIECE", Toast.LENGTH_SHORT).show();
+                  break;
+               }
+        }
+    });
+  }
+
+  @Override
+    protected void onCreate(Bundle savedInstanceState) {
+       // ...
+       setAudioDeviceListeners();
+    }
 ```
