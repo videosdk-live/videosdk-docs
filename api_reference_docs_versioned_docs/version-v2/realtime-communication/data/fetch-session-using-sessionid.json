@@ -1,0 +1,48 @@
+{
+  "fetchSessionUsingSessionId": {
+    "description": "If you want to get details of a particular session, then you can pass sessionId as the parameter and get all the information.",
+    "headers": [],
+    "methodType": "GET",
+    "postParameters": [],
+    "queryParameters": [],
+    "parameters": [
+      {
+        "key": "sessionId",
+        "value": "sessionId",
+        "required": true
+      }
+    ],
+    "apiEndpoint": "https://api.videosdk.live/v2/sessions/${sessionId}",
+    "response": {
+      "userId": "5f7edbb14c938bcd42944527",
+      "roomId": "abc-xyzw-lmno",
+      "customRoomId": "testing-room",
+      "start": "2022-02-22T07:26:43.863Z",
+      "end": "2022-02-22T07:48:32.553Z",
+      "participants": [
+        {
+          "_id": "621490341a4fb00409e38ca6",
+          "participantId": "hasm43",
+          "name": "test-1",
+          "timelog": [
+            {
+              "start": "2022-02-22T07:26:44.465Z",
+              "end": "2022-02-22T07:48:32.553Z"
+            }
+          ]
+        }
+      ],
+      "activeDuration": 0,
+      "userMeeting": {
+        "roomId": "f6jj-4awu-fxoy",
+        "id": "61976abbd8bf222ff7e493eb"
+      },
+      "chatLink": "https://dev-cdn.videosdk.live/chats/abc-xyzw-lmno-621490331a4fb00409e38ca4-5f7edbb14c938bcd42944527.csv",
+      "id": "621490331a4fb00409e38ca4",
+      "links": {
+        "get_room": "https://api.videosdk.live/v2/rooms/abc-xyzw-lmno"
+      },
+      "status": "ended"
+    }
+  }
+}

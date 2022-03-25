@@ -1,0 +1,46 @@
+{
+  "createRoom": {
+    "description": "Creating your room is now as easy as eating a piece of cake, just call the following API as shown in the example and you've successfully created your own room. You can optionally pass region and customRoomId of your own to create your room. If you don't pass region, the default region will be used.",
+    "headers": [
+      {
+        "key": "Authorization",
+        "value": "$YOUR_TOKEN"
+      },
+      {
+        "key": "Content-Type",
+        "value": "application/json"
+      }
+    ],
+    "methodType": "POST",
+    "postParameters": [
+      {
+        "key": "region",
+        "value": "sg001",
+        "description": "Region for the room",
+        "required": false
+      },
+      {
+        "key": "customRoomId",
+        "value": "xyz",
+        "description": "Custom Id",
+        "required": false
+      }
+    ],
+    "queryParameters": [],
+    "parameters": [],
+    "apiEndpoint": "https://api.videosdk.live/v2/rooms",
+    "response": {
+      "roomId": "abc-xyzw-lmno",
+      "customRoomId": "final-testing",
+      "userId": "5f7edbb14c938bcd42944527",
+      "region": "sg001",
+      "createdAt": "2022-03-25T04:49:11.024Z",
+      "updatedAt": "2022-03-25T04:49:11.024Z",
+      "id": "623d49c760a18e699abcc8a4",
+      "links": {
+        "get_room": "https://api.videosdk.live/v2/rooms/abc-xyzw-lmno",
+        "get_session": "https://api.videosdk.live/v2/sessions/"
+      }
+    }
+  }
+}
