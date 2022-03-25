@@ -1,5 +1,17 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import CodeBlock from "@theme/CodeBlock";
+
+const hasRequiredParams = (parameters) => {
+  console.log("params", parameters);
+  var hasRequiredParameter = false;
+  parameters.forEach((param) => {
+    if (param.required) {
+      hasRequiredParameter = true;
+    }
+  });
+  console.log("params", hasRequiredParameter);
+  return hasRequiredParameter;
+};
 
 const generateCurlCode = ({
   headers,
@@ -22,7 +34,8 @@ const generateCurlCode = ({
 
   //add post method and its body parameters
   if (methodType == "POST") {
-    code += "\t-d '" + parametersToJson(postParameters) + "' \\ \n";
+    if (hasRequiredParams(postParameters))
+      code += "\t-d '" + parametersToJson(postParameters) + "' \\ \n";
     code += "\t-XPOST " + apiEndpoint;
   }
   //add get method
@@ -70,7 +83,7 @@ const generateNodeCode = ({
   }
 
   //add body parameters if method type is post
-  if (methodType == "POST")
+  if (methodType == "POST" && hasRequiredParams(postParameters))
     code +=
       "\tbody: JSON.stringyfy(" + parametersToJson(postParameters) + "),\n";
 
@@ -79,18 +92,23 @@ const generateNodeCode = ({
 
   if (/\${([A-z])\w+}/.test(apiEndpoint)) {
     var match = apiEndpoint.match(/\${([A-z])\w+}/);
-    code += "const " + match[0].slice(2, match[0].length - 1) + ' = "your_' + match[0].slice(2, match[0].length - 1) + '";\n'
+    code +=
+      "const " +
+      match[0].slice(2, match[0].length - 1) +
+      ' = "your_' +
+      match[0].slice(2, match[0].length - 1) +
+      '";\n';
   }
   //add url with query parameters
   if (queryParameters.length != 0) {
-    code += 'const url= "' + apiEndpoint + "?";
+    code += "const url= `" + apiEndpoint + "?";
     queryParameters.forEach((element) => {
       if (element.required) code += element.key + "=" + element.value + "&";
     });
     code = code.slice(0, code.length - 1);
-    code += '";\n';
+    code += "`;\n";
   } else {
-    code += 'const url= `' + apiEndpoint + '`;\n';
+    code += "const url= `" + apiEndpoint + "`;\n";
   }
 
   //fire the request
@@ -113,7 +131,7 @@ const generatePhpCode = ({
   code += "$curl = curl_init();\n";
 
   //create body data if applicable
-  if (postParameters.length != 0) {
+  if (postParameters.length != 0 && hasRequiredParams(postParameters)) {
     code += "$data = array(\n";
     // JSON.parse(postParameters).forEach((key,value) => {
     // 	code += "\t\"" + key + "\" => \"" + value + "\",\n";
@@ -127,17 +145,35 @@ const generatePhpCode = ({
 
   if (/\${([A-z])\w+}/.test(apiEndpoint)) {
     var match = apiEndpoint.match(/\${([A-z])\w+}/);
-    code += "$" + match[0].slice(2, match[0].length - 1) + ' = "your_' + match[0].slice(2, match[0].length - 1) + '";\n'
+    code +=
+      "$" +
+      match[0].slice(2, match[0].length - 1) +
+      ' = "your_' +
+      match[0].slice(2, match[0].length - 1) +
+      '";\n';
   }
 
   //creating curl request
   code += "curl_setopt_array($curl, array(\n";
 
   //add url with query paramters
-  if (queryParameters.length != 0) {
+  if (queryParameters.length != 0 && hasRequiredParams(queryParameters)) {
     if (/\${([A-z])\w+}/.test(apiEndpoint)) {
       var match = apiEndpoint.match(/\${([A-z])\w+}/);
-      code += '\tCURLOPT_URL => "' + apiEndpoint.slice(0, match.index) + "' . $" + match[0].slice(2, match[0].length - 1) + "?";
+      code +=
+        '\tCURLOPT_URL => "' +
+        apiEndpoint.slice(0, match.index) +
+        '" . $' +
+        match[0].slice(2, match[0].length - 1);
+      if (
+        apiEndpoint.length >
+        apiEndpoint.slice(0, match.index).length + match[0].length
+      )
+        code +=
+          " . '" +
+          apiEndpoint.slice(match.index + match[0].index, apiEndpoint.length) +
+          "?";
+      else code += "?";
     } else {
       code += '\tCURLOPT_URL => "' + apiEndpoint + "?";
     }
@@ -150,7 +186,20 @@ const generatePhpCode = ({
   } else {
     if (/\${([A-z])\w+}/.test(apiEndpoint)) {
       var match = apiEndpoint.match(/\${([A-z])\w+}/);
-      code += '\tCURLOPT_URL => "' + apiEndpoint.slice(0, match.index) + '" . $' + match[0].slice(2, match[0].length - 1) + ',\n';
+      code +=
+        '\tCURLOPT_URL => "' +
+        apiEndpoint.slice(0, match.index) +
+        '" . $' +
+        match[0].slice(2, match[0].length - 1);
+      if (
+        apiEndpoint.length >
+        apiEndpoint.slice(0, match.index).length + match[0].length
+      )
+        code +=
+          " . '" +
+          apiEndpoint.slice(match.index + match[0].length, apiEndpoint.length) +
+          "',\n";
+      else code += ",\n";
     } else {
       code += '\tCURLOPT_URL => "' + apiEndpoint + '",\n';
     }
@@ -199,33 +248,47 @@ const generatePythonCode = ({
   //import requests
   code += "import requests\n";
 
-
-  console.log("Testing", /\${([A-z])\w+}/.test(apiEndpoint))
-  console.log("Testing", apiEndpoint.match(/\${([A-z])\w+}/))
+  console.log("Testing", /\${([A-z])\w+}/.test(apiEndpoint));
+  console.log("Testing", apiEndpoint.match(/\${([A-z])\w+}/));
 
   //create url
   //check if has ${param} in the url
   if (/\${([A-z])\w+}/.test(apiEndpoint)) {
     var match = apiEndpoint.match(/\${([A-z])\w+}/);
-    code += match[0].slice(2, match[0].length - 1) + ' = "your_' + match[0].slice(2, match[0].length - 1) + '"\n'
-    code += 'url = "' + apiEndpoint.slice(0, match.index) + '" + ' + match[0].slice(2, match[0].length - 1);
-    if (queryParameters.length != 0) {
-      code += '+ "'
+    code +=
+      match[0].slice(2, match[0].length - 1) +
+      ' = "your_' +
+      match[0].slice(2, match[0].length - 1) +
+      '"\n';
+    code +=
+      'url = "' +
+      apiEndpoint.slice(0, match.index) +
+      '" + ' +
+      match[0].slice(2, match[0].length - 1);
+    if (
+      apiEndpoint.length >
+      apiEndpoint.slice(0, match.index).length + match[0].length
+    )
+      code +=
+        ' + "' +
+        apiEndpoint.slice(match.index + match[0].length, apiEndpoint.length) +
+        '"';
+    if (queryParameters.length != 0 && hasRequiredParams(queryParameters)) {
+      code += '+ "';
     } else {
       //close url string quotations
-      code += '\n';
+      code += "\n";
     }
   } else {
     code += 'url = "' + apiEndpoint;
-    if (queryParameters.length == 0) {
+    if (queryParameters.length == 0 || !hasRequiredParams(queryParameters)) {
       //close url string quotations
       code += '"\n';
     }
-
   }
 
   //add query parameters if any
-  if (queryParameters.length != 0) {
+  if (queryParameters.length != 0 && hasRequiredParams(queryParameters)) {
     code += "?";
     queryParameters.forEach((element) => {
       if (element.required) code += element.key + "=" + element.value + "&";
@@ -234,7 +297,6 @@ const generatePythonCode = ({
     //close url string quotations
     code += '"\n';
   }
-
 
   //create headers if any
   if (headers.length != 0) {
@@ -250,7 +312,7 @@ const generatePythonCode = ({
   code += 'response = requests.request("' + methodType + '", url,';
 
   //if methodType is post add the body parameters
-  if (methodType == "POST") {
+  if (methodType == "POST" && hasRequiredParams(postParameters)) {
     code += "json = " + parametersToJson(postParameters) + ",";
   }
 
@@ -339,11 +401,16 @@ const MethodRequestResponse = ({
 }) => {
   const getDefaultRestApiGroupId = () => {
     try {
-      return JSON.parse(localStorage.getItem("rest-api-group-id"))
+      var selectedLanguage = JSON.parse(
+        localStorage.getItem("rest-api-group-id")
+      );
+      if (selectedLanguage) return selectedLanguage;
+      else return { id: "node", value: "NodeJS" };
     } catch (err) {
-      return { id: "node", value: "NodeJS" }
+      console.log("error", err);
+      return { id: "node", value: "NodeJS" };
     }
-  }
+  };
 
   const [language, setLanguage] = useState(getDefaultRestApiGroupId());
 
@@ -365,6 +432,10 @@ const MethodRequestResponse = ({
       value: "Python",
     },
   ];
+
+  useEffect(() => {
+    console.log("language", language);
+  }, [language]);
 
   return (
     <div>
@@ -391,7 +462,10 @@ const MethodRequestResponse = ({
                   <a
                     className="dropdown__link text-sm cursor-pointer"
                     onClick={(e) => {
-                      localStorage.setItem("rest-api-group-id", JSON.stringify(v))
+                      localStorage.setItem(
+                        "rest-api-group-id",
+                        JSON.stringify(v)
+                      );
                       setLanguage(v);
                     }}
                   >
@@ -431,6 +505,7 @@ const MethodDescription = ({
   description,
   postParameters,
   queryParameters,
+  parameters,
 }) => {
   return (
     <div className="flex flex-col">
@@ -457,6 +532,23 @@ const MethodDescription = ({
           <div className="text-xl mt-12 font-bold">Query Parameters</div>
           <div className="bg-[#252A34] mt-3 mb-1 h-[1px]"></div>
           {queryParameters.map((parameter, index) => {
+            return (
+              <MethodParameter
+                parameterName={parameter.key}
+                description={parameter.description}
+                required={parameter.required}
+                showDivider={index != queryParameters.length - 1}
+              />
+            );
+          })}
+        </div>
+      )}
+
+      {parameters.length != 0 && (
+        <div>
+          <div className="text-xl mt-12 font-bold">Parameters</div>
+          <div className="bg-[#252A34] mt-3 mb-1 h-[1px]"></div>
+          {parameters.map((parameter, index) => {
             return (
               <MethodParameter
                 parameterName={parameter.key}
@@ -515,6 +607,7 @@ function RestApiMethodContainer({
   description,
   apiEndpoint,
   response,
+  parameters,
 }) {
   return (
     <div id="tailwind">
@@ -524,6 +617,7 @@ function RestApiMethodContainer({
             description={description}
             queryParameters={queryParameters}
             postParameters={postParameters}
+            parameters={parameters}
           />
         </div>
         <div className="lg:w-1/2 w-full lg:pt-0 pt-4 lg:pl-[18px] lg:sticky self-start flex-grow top-10">

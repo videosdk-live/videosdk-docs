@@ -7,7 +7,7 @@ hide_table_of_contents: true
 # Fetch Recording using `recordingId`
 
 import Method from '../../../src/theme/RestApiMethodContainer'
-import data from './data.json'
+import data from './data/fetch-recording-using-recordingId.json'
 
 <Method
 {...data.fetchRecordingUsingRecordingId}

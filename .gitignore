@@ -21,3 +21,6 @@ yarn-error.log*
 
 #zip
 docusaurus.zip
+
+yarn.lock
+package-lock.json

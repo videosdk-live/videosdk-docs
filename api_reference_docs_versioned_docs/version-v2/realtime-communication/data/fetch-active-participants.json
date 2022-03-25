@@ -1,0 +1,70 @@
+{
+  "fetchActiveParticipants": {
+    "description": "All the active participants in a session can be fetched through this API. The response will contain the list of active participants in the session.",
+    "headers": [],
+    "methodType": "GET",
+    "postParameters": [],
+    "queryParameters": [
+      {
+        "key": "page",
+        "value": "1",
+        "description": "Page number for the sessions",
+        "required": false
+      },
+      {
+        "key": "perPage",
+        "value": "10",
+        "description": "Number of Participants you want per page",
+        "required": false
+      }
+    ],
+    "parameters": [
+      {
+        "key": "sessionId",
+        "description": "sessionId of a particular session",
+        "required": true
+      }
+    ],
+    "apiEndpoint": "https://api.videosdk.live/v2/sessions/${sessionId}/participants/active",
+    "response": {
+      "pageInfo": {
+        "currentPage": 1,
+        "perPage": 2,
+        "lastPage": 5,
+        "total": 10
+      },
+      "data": {
+        "id": "61763c2597b0c743cf454204",
+        "roomId": "abc-xyzw-lmno",
+        "customRoomId": "testing-room",
+        "participants": [
+          {
+            "participantId": "ylgjhgeh",
+            "name": "Demo-3",
+            "timelog": [
+              {
+                "start": "2021-10-25T05:10:30.129Z",
+                "end": null
+              }
+            ]
+          },
+
+          {
+            "participantId": "x9mwdb2l",
+            "name": "Demo-5",
+            "timelog": [
+              {
+                "start": "2021-10-25T05:10:41.865Z",
+                "end": null
+              }
+            ]
+          }
+        ],
+        "links": {
+          "get_room": "https://api.videosdk.live/v2/rooms/abc-xyzw-lmno",
+          "get_session": "https://api.videosdk.live/v2/sessions/"
+        }
+      }
+    }
+  }
+}

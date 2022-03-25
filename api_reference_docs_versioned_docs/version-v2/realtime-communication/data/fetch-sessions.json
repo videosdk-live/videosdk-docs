@@ -1,0 +1,79 @@
+{
+  "fetchSessions": {
+    "description": "You can fetch details of all your sessions in a room by calling this endpoint. Optionally, if you don't specify a room id, you will fetch all the sessions of all your rooms.",
+    "headers": [],
+    "methodType": "GET",
+    "postParameters": [],
+    "queryParameters": [
+      {
+        "key": "roomId",
+        "value": "xyz",
+        "description": "RoomId for which you want to fetch the sessions",
+        "required": true
+      },
+      {
+        "key": "customRoomId",
+        "value": "xyz",
+        "description": "RoomId for which you want to fetch the sessions",
+        "required": false
+      },
+      {
+        "key": "page",
+        "value": "1",
+        "description": "Page number for the sessions",
+        "required": false
+      },
+      {
+        "key": "perPage",
+        "value": "10",
+        "description": "Number of sessions you want per page",
+        "required": false
+      }
+    ],
+    "parameters": [],
+    "apiEndpoint": "https://api.videosdk.live/v2/sessions",
+    "response": {
+      "pageInfo": {
+        "currentPage": 1,
+        "perPage": 2,
+        "lastPage": 5,
+        "total": 10
+      },
+      "data": [
+        {
+          "id": "621497578bea0d0404c35c4c",
+          "roomId": "abc-xyzw-lmno",
+          "start": "2022-02-22T07:57:11.505Z",
+          "end": null,
+          "participants": [
+            {
+              "participantId": "but3ihic",
+              "name": "Jacques",
+              "timelog": [
+                {
+                  "start": "2022-02-22T07:57:13.420Z",
+                  "end": null
+                }
+              ]
+            },
+            {
+              "participantId": "mcg1jq0s",
+              "name": "Rahul",
+              "timelog": [
+                {
+                  "start": "2022-02-22T07:57:50.210Z",
+                  "end": null
+                }
+              ]
+            }
+          ],
+          "status": "ongoing",
+          "links": {
+            "get_room": "https://api.videosdk.live/v2/rooms/abc-xyzw-lmno",
+            "get_session": "https://api.videosdk.live/v2/sessions/621497578bea0d0404c35c4c"
+          }
+        }
+      ]
+    }
+  }
+}
