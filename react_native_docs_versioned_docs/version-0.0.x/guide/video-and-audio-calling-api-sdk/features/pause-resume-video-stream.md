@@ -17,17 +17,19 @@ slug: pause-resume-video-stream
 
 # Participant Video Stream
 
-- Using this feature, you can pause/resume participant's video stream.
+Whenver you wish to stop/resume downlaod stream(webcam and screenShare) of participant, you can simply do it by using `pause`, `resume` methods.
 
 ## Pause video stream
 
 - `pause()` method is used to pause videostream of a participant.
+- By usinf this methods, webcam stema of that partivpant will not dwonload
 
 ```js
-const { webcamStream } = useParticipant(participantId);
+// get webcamStream of particular participant
+const { webcamStream } = useParticipant("<ParticipantId>");
 
 const onPressed = () => {
-  // Pause video stream
+  // pause video stream
   webcamStream.pause();
 };
 ```
@@ -37,10 +39,11 @@ const onPressed = () => {
 - `resume()` method is used to resume videostream of a participant.
 
 ```js
+// get webcamStream of particular participant
 const { webcamStream } = useParticipant(participantId);
 
 const onPressed = () => {
-  // Pause video stream
+  // resume video stream
   webcamStream.resume();
 };
 ```
