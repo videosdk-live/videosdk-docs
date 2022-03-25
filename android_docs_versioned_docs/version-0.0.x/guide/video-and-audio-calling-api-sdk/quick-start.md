@@ -124,7 +124,7 @@ Your project structure should look like this.
    app
    ├── java
    │    ├── packagename
-   │         ├── JoinActivity.java
+   │         ├── JoinActivity.java 
    │         ├── MainApplication.java
    │         ├── MeetingActivity.java
    │         ├── ParticipantAdapter.java
@@ -134,6 +134,12 @@ Your project structure should look like this.
    │    │    ├── activity_meeting.xml
    │    │    ├── item_remote_peer.xml
 ```
+
+:::note
+
+You have to set JoinActivity as Launcher activity.
+
+:::
 
 ### App Architecture
 
@@ -148,8 +154,6 @@ Your project structure should look like this.
 1. Create `MainApplication.java` class which will extend the `android.app.Application`.
 
 ```java title="MainApplication.java"
-package live.videosdk.demo;
-
 import android.app.Application;
 import live.videosdk.rtc.android.VideoSDK;
 
@@ -282,9 +286,9 @@ public class JoinActivity extends AppCompatActivity {
             final String meetingId = response.getString("meetingId");
 
             // starting the MeetingActivity with recieved meetingId and our sampleToken
-            Intent intent = new Intent(JoinActivity.this, MeetingAtivity.class);
-            intent.putExtra("token", sampleToken)
-            intent.putExtra("meetingId", meetingd);
+            Intent intent = new Intent(JoinActivity.this, MeetingActivity.class);
+            intent.putExtra("token", sampleToken);
+            intent.putExtra("meetingId", meetingId);
             startActivity(intent);
           } catch (JSONException e) {
             e.printStackTrace();
@@ -349,64 +353,56 @@ In `/app/res/layout/activity_meeting.xml` file, replace the content with the fol
 ```xml title="activty_meeting.xml"
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-  xmlns:app="http://schemas.android.com/apk/res-auto"
-  xmlns:tools="http://schemas.android.com/tools"
-  android:layout_width="match_parent"
-  android:layout_height="match_parent"
-  android:gravity="center"
-  android:orientation="vertical"
-  tools:context=".JoinActivity">
-  <LinearLayout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_marginBottom="4dp"
-    android:orientation="horizontal">
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
     <TextView
-      android:id="@+id/tvMeetingId"
-      style="@style/TextAppearance.AppCompat.Display1"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_weight="1"
-      android:text="Hello World!" />
-      <FrameLayout
-        android:layout_width="80dp"
-        android:layout_height="100dp"
-        android:layout_gravity="end">
-        <org.webrtc.SurfaceViewRenderer
-          android:id="@+id/svrLocal"
-          android:layout_width="match_parent"
-          android:layout_height="match_parent"
-          android:visibility="visible" />
-      </FrameLayout>
-  </LinearLayout>
-  <androidx.recyclerview.widget.RecyclerView
-    android:id="@+id/rvParticipants"
-    android:layout_width="match_parent"
-    android:layout_height="0dp"
-    android:layout_weight="1" />
-  <LinearLayout
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content">
-    <Button
-      android:id="@+id/btnMic"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_marginVertical="8dp"
-      android:text="Mic"/>
-    <Button
-      android:id="@+id/btnLeave"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_marginVertical="8dp"
-      android:layout_marginHorizontal="8dp"
-      android:text="Leave"/>
-    <Button
-      android:id="@+id/btnWebcam"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_marginVertical="8dp"
-      android:text="Webcam" />
-  </LinearLayout>
+        android:id="@+id/tvMeetingId"
+        style="@style/TextAppearance.AppCompat.Display1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hello World!" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvParticipants"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/btnMic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="8dp"
+            android:text="Mic"/>
+
+        <Button
+            android:id="@+id/btnLeave"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="8dp"
+            android:layout_marginHorizontal="8dp"
+            android:text="Leave"/>
+
+        <Button
+            android:id="@+id/btnWebcam"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="8dp"
+            android:text="Webcam" />
+
+    </LinearLayout>
+
+
 </LinearLayout>
 ```
 
