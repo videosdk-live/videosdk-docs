@@ -292,7 +292,7 @@ function QuickstartPart() {
                   </div>
                 ) : (
                   <div className="mt-6">
-                    <div className="h-9 w-9 flex ">
+                    <div className="custom-icons h-9 w-9 flex ">
                       {CustomSDKArray.map((item, index) => {
                         return (
                           <a

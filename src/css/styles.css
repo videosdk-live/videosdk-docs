@@ -1658,8 +1658,8 @@ html[data-theme="dark"]
   justify-content: center;
 }
 
-.method_code_block > div> div>pre>[class*="codeBlockLines"] {
-  background-color: #252A34 !important;
+.method_code_block > div > div > pre > [class*="codeBlockLines"] {
+  background-color: #252a34 !important;
   box-shadow: none;
 }
 
@@ -1667,7 +1667,7 @@ html[data-theme="dark"]
   box-shadow: none;
 }
 
-.method_code_block > div> div>pre {
+.method_code_block > div > div > pre {
   border-bottom-left-radius: 8px !important;
   border-bottom-right-radius: 8px !important;
   border-top-left-radius: 0px !important;
@@ -1676,5 +1676,20 @@ html[data-theme="dark"]
 }
 
 .colored_ic_arrow_down {
-  filter: invert(61%) sepia(4%) saturate(2550%) hue-rotate(180deg) brightness(90%) contrast(85%);
+  filter: invert(61%) sepia(4%) saturate(2550%) hue-rotate(180deg)
+    brightness(90%) contrast(85%);
+}
+
+.api > h2 {
+  margin-top: 25px;
+  margin-bottom: 25px;
+  font-size: x-large;
+}
+
+.api > h3 {
+  font-size: large;
+}
+
+.api > h4 {
+  font-size: medium;
 }
