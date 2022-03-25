@@ -22,7 +22,7 @@ module.exports = {
         'We are excited to announce that we have updated our documentation portal 🎉 <a target="_blank" rel="noopener noreferrer" href="https://legacy-docs.videosdk.live">Switch to old documentation ↗</a>',
       backgroundColor: "#6246FB",
       textColor: "#fff",
-      isCloseable: false,
+      isCloseable: true,
     },
 
     image: "img/videosdklive-thumbnail.jpg",
@@ -70,16 +70,6 @@ module.exports = {
               to: "react/guide/video-and-audio-calling-api-sdk/getting-started",
               activeBaseRegex: "/*/video-and-audio-calling-api-sdk/*",
             },
-            {
-              label: "Standard Live Streaming API",
-              to: "docs/guide/standard-live-streaming-api-sdk/getting-started",
-              activeBaseRegex: "docs/guide/standard-live-streaming-api-sdk/*",
-            },
-            {
-              label: "Video on Demand API",
-              to: "docs/guide/video-on-demand/getting-started",
-              activeBaseRegex: "docs/guide/video-on-demand/*",
-            },
           ],
         },
         {
@@ -96,16 +86,6 @@ module.exports = {
               to: "docs/api-reference/realtime-communication/intro",
               activeBaseRegex: "docs/api-reference/realtime-communication/*",
             },
-            {
-              label: "Live streaming",
-              to: "docs/api-reference/live-streaming/intro",
-              activeBaseRegex: "docs/api-reference/live-streaming/*",
-            },
-            {
-              label: "Video On Demand",
-              to: "docs/api-reference/video-on-demand/intro",
-              activeBaseRegex: "docs/api-reference/video-on-demand/*",
-            },
           ],
         },
         {
@@ -118,6 +98,33 @@ module.exports = {
           label: "Code Samples",
           to: "/docs/code-sample/overview",
         },
+        {
+          position: "left",
+          label: "Experiment Lab",
+          items: [
+            {
+              label: "Guide / Standard Live Streaming API",
+              to: "docs/guide/standard-live-streaming-api-sdk/getting-started",
+              activeBaseRegex: "docs/guide/standard-live-streaming-api-sdk/*",
+            },
+            {
+              label: "Guide / Video On Demand API",
+              to: "docs/guide/video-on-demand/getting-started",
+              activeBaseRegex: "docs/guide/video-on-demand/*",
+            },
+            {
+              label: "Api-Reference / Live Streaming",
+              to: "docs/api-reference/live-streaming/intro",
+              activeBaseRegex: "docs/api-reference/live-streaming/*",
+            },
+            {
+              label: "Api-reference / Video On Demand",
+              to: "docs/api-reference/video-on-demand/intro",
+              activeBaseRegex: "docs/api-reference/video-on-demand/*",
+            },
+          ],
+        },
+
         {
           label: "Start Project",
           href: "https://app.videosdk.live/login",
@@ -214,7 +221,7 @@ module.exports = {
             {
               label: "Quick Start: Flutter SDK",
               to: "/flutter/guide/video-and-audio-calling-api-sdk/getting-started",
-            }
+            },
           ],
         },
         {
@@ -239,7 +246,7 @@ module.exports = {
             {
               label: "Product Updates",
               to: "https://www.videosdk.live/blog/tag/product-updates",
-            }
+            },
           ],
         },
         {
@@ -293,7 +300,7 @@ module.exports = {
             {
               label: "Privacy Policy",
               href: "https://www.videosdk.live/privacy-policy",
-            }
+            },
           ],
         },
       ],

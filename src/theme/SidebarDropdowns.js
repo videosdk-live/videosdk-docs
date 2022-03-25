@@ -30,21 +30,43 @@ export default function SidebarDropdowns() {
   function getRouteVersion(value) {
     var currentPath = location.pathname;
     if (version == value) {
-      return location.pathname;
-    }
-    if (value == versionList[0]) {
-      currentPath = currentPath.replace(currentPath.split("/")[2], "");
-      currentPath = currentPath.replace("//", "/");
+      return currentPath;
     } else {
-      currentPath = currentPath.replace(
-        currentPath.split("/")[1],
-        sdk + "/" + value
-      );
+      if (value == versionList[0]) {
+        currentPath = currentPath.replace(currentPath.split("/")[2], "");
+        currentPath = currentPath.replace("//", "/");
+      } else {
+        if (version == [versionList[0]]) {
+          currentPath = currentPath.replace(
+            currentPath.split("/")[1],
+            sdk + "/" + value
+          );
+        } else {
+          currentPath = currentPath.replace(currentPath.split("/")[2], value);
+        }
+      }
     }
+    var newPath =
+      "/" +
+      currentPath.split("/")[1] +
+      (value == versionList[0] ? "" : "/" + value + "");
+    console.log(newPath);
+    newPath =
+      newPath +
+      (sdk == "prebuilt"
+        ? "/guide/prebuilt-video-and-audio-calling/getting-started"
+        : sdk == "api-reference"
+        ? "/realtime-communication/intro"
+        : currentPath.split("/")[version == versionList[0] ? 2 : 3] == "guide"
+        ? "/guide/video-and-audio-calling-api-sdk/getting-started"
+        : "/api/sdk-reference/setup");
+    console.log(newPath);
+    return newPath;
     return currentPath;
   }
 
   useEffect(() => {
+    console.log("location.path : ", location.pathname);
     var currentSdk = location.pathname.split("/")[1];
     var currentVersion = location.pathname.split("/")[2];
     var versions = [];
@@ -121,6 +143,7 @@ export default function SidebarDropdowns() {
     return name;
   }
 
+  console.log("Sdk  : ", sdk);
   return (
     <div class="row dropdown_menu">
       {(sdk != "docs" && sdk != "prebuilt") || viewType == "api" ? (
