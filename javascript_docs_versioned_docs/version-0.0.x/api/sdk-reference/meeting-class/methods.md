@@ -10,16 +10,22 @@ title: Meeting Class Methods
 ### join()
 
 - It is used to join a meeting.
-- By default after meeting initialization of meeting by [`initMeeting()`](./) provides a new instance of [Meeting](./) but it will not automatically join the meeting.
+- After meeting initialization by [`initMeeting()`](./) it returns a new instance of [Meeting](./). However by default, it will not automatically join the meeting. Hence, to join the meeting you should call `join()`.
 
-- Events associated with `join()` method :
+#### Events associated with `join()` method:
 
-  - Local Participant will receive a [`meeting-joined`](./) event, when successfully joined.
-  - Remote Participant will receive a [`participant-joined`](./) event with `participant`.
+- Local Participant will receive a [`meeting-joined`](./) event, when successfully joined.
+- Remote Participant will receive a [`participant-joined`](./) event with the newly joined [`Participant`](./) object inside the event callback.
 
-- When `join()` is called and the permission in the token is `ask_join`, then direct joining is not preformed.
-  - In this case `onEntryRequested()` will be emitted to the participant with permission `allow_join`. Once the participant with permission `allow_join` responds to the request, `onEntryResponded({participantId, decision})`.
-  - If the `decision` is `allowed`, participant will be joined else if `decision` is `denied` participant showed not be joined.
+#### Participant having `ask_join` permission inside token
+
+- If a token contains the permission `ask_join`, then the participant will not join the meeting directly after calling `join()`, but an event will be emitted to the participant having the permission `allow_join` called [`entry-requested`](./).
+
+- After the decision from the remote participant, an event will be emitted to participant called [`entry-responded`](./). This event will contain the decision made by the remote participant.
+
+#### Participant having `allow_join` permission inside token
+
+- If a token containing the parmission `allow_join`, then the participant will join the meeting derectly after calling `join()`.
 
 #### Parameters
 
