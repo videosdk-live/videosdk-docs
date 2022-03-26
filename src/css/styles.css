@@ -1693,3 +1693,10 @@ html[data-theme="dark"]
 .sdk-api-ref > h4 {
   font-size: medium;
 }
+
+.sdk-api-ref-only-h4 > h3 {
+  font-size: xx-large;
+}
+.sdk-api-ref-only-h4 > h4 {
+  font-size: large;
+}
