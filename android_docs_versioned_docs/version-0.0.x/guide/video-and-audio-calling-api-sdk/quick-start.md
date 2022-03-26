@@ -75,6 +75,7 @@ allprojects {
   }
 }
 ```
+
 </TabItem>
 
 <TabItem value="2021.1.1">
@@ -88,6 +89,7 @@ dependencyResolutionManagement{
   }
 }
 ```
+
 </TabItem>
 
 </Tabs>
@@ -123,7 +125,7 @@ Your project structure should look like this.
    app
    ├── java
    │    ├── packagename
-   │         ├── JoinActivity.java 
+   │         ├── JoinActivity.java
    │         ├── MainApplication.java
    │         ├── MeetingActivity.java
    │         ├── ParticipantAdapter.java
@@ -342,7 +344,6 @@ public class JoinActivity extends AppCompatActivity {
 
 </div>
 
-
 ### Step 3: Creating Meeting Screen
 
 Create a new Activity named `MeetingActivity.java`.
@@ -409,11 +410,16 @@ In `/app/res/layout/activity_meeting.xml` file, replace the content with the fol
 
 #### Initializing the Meeting
 
-We will initialize the meeting with required configurations and implement `MeetingEventListener` for listening events such as **Meeting Join/Left** and **Participant Join/Left**.
+After getting token and meetigId from `JoinActivity`,
+
+1. Configure **VideoSDK** with token.
+2. Initialize the meeting with required params such as `meetingId`, `participantName`, `micEnabled`, `webcamEnabled`
+3. Add `MeetingEventListener` for listening events such as **Meeting Join/Left** and **Participant Join/Left**.
+4. Join the room with `meeting.join()` method.
 
 ```java title="MeetingActivity.java"
 public class MeetingActivity extends AppCompatActivity {
-  //Declare the variables we will be using to handle the meeting
+  // declare the variables we will be using to handle the meeting
   private Meeting meeting;
 
   private boolean micEnabled = true;
@@ -428,16 +434,18 @@ public class MeetingActivity extends AppCompatActivity {
     final String meetingId = getIntent().getStringExtra("meetingId");
     final String participantName = "John Doe";
 
-    // pass the token generated from dashboard
+    // 1. Configuration VideoSDK with Token
     VideoSDK.config(token);
-    // create a new meeting instance
+    // 2. Initialize VideoSDK Meeting
     meeting = VideoSDK.initMeeting(
             MeetingActivity.this, meetingId, participantName,
             micEnabled, webcamEnabled
     );
-    // add event listener for listening upcoming events
+
+    // 3. Add event listener for listening upcoming events
     meeting.addEventListener(meetingEventListener);
 
+    //4. Join VideoSDK Meeting
     meeting.join();
 
     ((TextView)findViewById(R.id.tvMeetingId)).setText(meetingId);
@@ -472,7 +480,7 @@ public class MeetingActivity extends AppCompatActivity {
 
 ### Step 4: Handle Local Participant Media
 
-To **enbale/disable** local participant(You) webcam and mic, we will use `Meeting` class method `enableWebcam` / `disableWebcam` for camera and `muteMic` / `unmuteMic` for mic.
+After successfully enter into the meeting, it's time to **enable/disable** local participant(You) webcam and mic, for that we will use `Meeting` class method `enableWebcam` / `disableWebcam` for camera and `muteMic` / `unmuteMic` for mic.
 
 ```java title="MeetingActivity.java"
 public class MeetingActivity extends AppCompatActivity {
@@ -522,6 +530,7 @@ public class MeetingActivity extends AppCompatActivity {
   }
 }
 ```
+
 #### Output
 
 <div style={{textAlign: 'center'}}>
