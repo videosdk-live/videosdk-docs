@@ -82,12 +82,23 @@
       ]
     },
     {
-      "type": "doc",
-      "id": "api/sdk-reference/participant-class"
+      "type": "category",
+      "label": "participant Class",
+      "items": [
+        "api/sdk-reference/participant-class/introduction",
+        "api/sdk-reference/participant-class/properties",
+        "api/sdk-reference/participant-class/methods",
+        "api/sdk-reference/participant-class/events"
+      ]
     },
     {
-      "type": "doc",
-      "id": "api/sdk-reference/stream-class"
+      "type": "category",
+      "label": "Stream Class",
+      "items": [
+        "api/sdk-reference/stream-class/introduction",
+        "api/sdk-reference/stream-class/properties",
+        "api/sdk-reference/stream-class/methods"
+      ]
     }
   ]
 }
