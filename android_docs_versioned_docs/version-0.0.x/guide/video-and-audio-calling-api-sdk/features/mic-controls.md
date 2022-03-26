@@ -24,31 +24,32 @@ This guide will provide an overview of how to use enable and disable Mic in a me
 
 1. **Enable Mic** - By using `unmuteMic()` function, a participant can publish audio to other participants.
 2. **Disable Mic** - By using `muteMic()` function, a participant can stop publishing audio to other participants.
-3. **Change Mic** - By using `changeMic()` function, a participant can change mic.
 
 ### 1. Enable, Disable Mic
 
 ```js
+  private boolean micEnabled = false;
+
   btnMic.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View v) {
-
-        // Toggle participant mic in meeting
-        if (micEnabled) {
-          meeting.muteMic();
-        } else {
-          meeting.unmuteMic();
-        }
-
+          // Toggle participant mic in meeting
+          if (micEnabled) {
+              meeting.muteMic();
+              micEnabled = false;
+          } else {
+              meeting.unmuteMic();
+              micEnabled = true;
+          }
       }
   });
 ```
 
-### 2. Change Mic
+### 2. Change Audio Device
 
-### Get all audio Devices
+#### Get all audio Devices
 
-- By using  `meeting.getMics()` function, a participant can get all the mics.
+- By using `meeting.getMics()` function, a participant can get all the connected mics.
 
 ```js
   private Set<AppRTCAudioManager.AudioDevice> getMics() {
@@ -57,19 +58,18 @@ This guide will provide an overview of how to use enable and disable Mic in a me
   }
 ```
 
-### Change audio Device
+#### Select audio Device
 
-- Local participant can change the Mic using `changeMic(AppRTCAudioManager.AudioDevice device)` method of meeting class.
+- Local participant can change the audio device using `changeMic(AppRTCAudioManager.AudioDevice device)` method of meeting class.
 
-- Parameters that can be passed to change the mic are
+- Parameters that can be passed to `changeMic` are
 
-  | Audio Device                                   | Usage                         |
-  | ---------------------------------------------- | ----------------------------- |
-  | AppRTCAudioManager.AudioDevice.BLUETOOTH       | For Bluetooth Device.         |
-  | AppRTCAudioManager.AudioDevice.WIRED_HEADSET   | For Wired Handset Device.     |
-  | AppRTCAudioManager.AudioDevice.SPEAKER_PHONE   | For Inbuilt - Speaker Device  |
-  | AppRTCAudioManager.AudioDevice.EARPIECE        | For Earpiece Device           |
-
+  | Audio Devices                                | Usage                        |
+  | -------------------------------------------- | ---------------------------- |
+  | AppRTCAudioManager.AudioDevice.BLUETOOTH     | For Bluetooth Device.        |
+  | AppRTCAudioManager.AudioDevice.WIRED_HEADSET | For Wired Handset Device.    |
+  | AppRTCAudioManager.AudioDevice.SPEAKER_PHONE | For Inbuilt - Speaker Device |
+  | AppRTCAudioManager.AudioDevice.EARPIECE      | For Earpiece Device          |
 
 - When a Local participant changes the Mic, `AppRTCAudioManager.AudioManagerEvents()` is triggered which can be set to `Meeting` class by using `meeting.setAudioDeviceChangeListener()`
 

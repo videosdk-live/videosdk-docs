@@ -42,7 +42,7 @@
         "guide/video-and-audio-calling-api-sdk/features/record-meeting",
         "guide/video-and-audio-calling-api-sdk/features/go-live-social-media",
         "guide/video-and-audio-calling-api-sdk/features/pubsub",
-        "guide/video-and-audio-calling-api-sdk/features/set-video-quality",
+        "guide/video-and-audio-calling-api-sdk/features/set-participant-video-quality",
         "guide/video-and-audio-calling-api-sdk/features/pause-resume-video-stream"
       ]
     }

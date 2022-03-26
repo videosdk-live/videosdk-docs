@@ -15,13 +15,13 @@ sidebar_position: 1
 slug: pause-resume-video-stream
 ---
 
-# Participant Video Stream
+# Pause/Resume Video Stream
 
-- Using this feature, you can pause/resume participant's video stream.
+Whenver you wish to stop/resume downlaod stream(webcam, screenShare and mic) of participant, you can simply do it by using `pause`, `resume` methods.
 
 ## Pause video stream
 
-- `pause()` method is used to pause videostream of a participant.
+- `pause()` method is used for pause stream(webcam, screenShare and mic) of a particular participant.
 
 ```js
   btnPause.setOnClickListener(new View.OnClickListener() {
@@ -37,7 +37,7 @@ slug: pause-resume-video-stream
 
 ## Resume video stream
 
-- `resume()` method is used to resume videostream of a participant.
+- `resume()` method is used to resume stream(webcam, screenShare and mic) of a particular participant.
 
 ```js
   btnResume.setOnClickListener(new View.OnClickListener() {
