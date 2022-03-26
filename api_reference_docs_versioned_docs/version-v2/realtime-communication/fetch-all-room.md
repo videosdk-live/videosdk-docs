@@ -1,14 +1,14 @@
 ---
 sidebar_position: 3
-sidebar_label: Fetch A Room
+sidebar_label: Fetch Rooms
 hide_table_of_contents: true
 ---
 
-# Fetch A Room
+# Fetch Rooms
 
 import Method from '../../../src/theme/RestApiMethodContainer'
-import data from './data/fetch-room.json'
+import data from './data/fetch-all-room.json'
 
 <Method
-{...data.fetchRoom}
+{...data.fetchAllRoom}
 />

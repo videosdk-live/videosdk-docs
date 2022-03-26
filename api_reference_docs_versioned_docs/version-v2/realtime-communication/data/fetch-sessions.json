@@ -1,37 +1,46 @@
 {
   "fetchSessions": {
-    "description": "You can fetch details of all your sessions in a room by calling this endpoint. Optionally, if you don't specify a room id, you will fetch all the sessions of all your rooms.",
-    "headers": [],
+    "description": "This API let you fetch details of all your sessions of room by passing roomId or customRoomId as parameter. Optionally, if you don't specify a roomid or customRoomId, you will fetch all the sessions of all your rooms.",
+    "headers": [
+      {
+        "key": "Authorization",
+        "value": "$YOUR_TOKEN"
+      },
+      {
+        "key": "Content-Type",
+        "value": "application/json"
+      }
+    ],
     "methodType": "GET",
     "postParameters": [],
     "queryParameters": [
       {
         "key": "roomId",
         "value": "xyz",
-        "description": "RoomId for which you want to fetch the sessions",
+        "description": "The ID of the Room.",
         "required": true
       },
       {
         "key": "customRoomId",
         "value": "xyz",
-        "description": "RoomId for which you want to fetch the sessions",
+        "description": "Customize Room id which you had specified in Create Room API.",
         "required": false
       },
       {
         "key": "page",
         "value": "1",
-        "description": "Page number for the sessions",
+        "description": "Page number for the sessions. DEFAULT : 1",
         "required": false
       },
       {
         "key": "perPage",
-        "value": "10",
-        "description": "Number of sessions you want per page",
+        "value": "20",
+        "description": "Number of sessions you want per page. DEFAULT : 20",
         "required": false
       }
     ],
     "parameters": [],
-    "apiEndpoint": "https://api.videosdk.live/v2/sessions",
+    "apiEndpoint": "https://api.videosdk.live/v2/sessions/",
     "response": {
       "pageInfo": {
         "currentPage": 1,
@@ -44,7 +53,7 @@
           "id": "621497578bea0d0404c35c4c",
           "roomId": "abc-xyzw-lmno",
           "start": "2022-02-22T07:57:11.505Z",
-          "end": null,
+          "end": "2022-02-22T07:58:11.505Z",
           "participants": [
             {
               "participantId": "but3ihic",
@@ -52,7 +61,7 @@
               "timelog": [
                 {
                   "start": "2022-02-22T07:57:13.420Z",
-                  "end": null
+                  "end": "2022-02-22T07:59:13.420Z"
                 }
               ]
             },
@@ -62,12 +71,12 @@
               "timelog": [
                 {
                   "start": "2022-02-22T07:57:50.210Z",
-                  "end": null
+                  "end": "2022-02-22T07:59:13.420Z"
                 }
               ]
             }
           ],
-          "status": "ongoing",
+          "status": "ended",
           "links": {
             "get_room": "https://api.videosdk.live/v2/rooms/abc-xyzw-lmno",
             "get_session": "https://api.videosdk.live/v2/sessions/621497578bea0d0404c35c4c"

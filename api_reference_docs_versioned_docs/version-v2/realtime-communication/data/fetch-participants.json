@@ -1,20 +1,29 @@
 {
   "fetchParticipants": {
-    "description": "The number of participants in a session can be fetched by calling this API. You need to pass sessionId as a parameter for which you need the details. It will include both active as well as inactive participants in the session.",
-    "headers": [],
+    "description": "This API let you fetch a number of total participants in a room session by passing sessionId as a parameter",
+    "headers": [
+      {
+        "key": "Authorization",
+        "value": "$YOUR_TOKEN"
+      },
+      {
+        "key": "Content-Type",
+        "value": "application/json"
+      }
+    ],
     "methodType": "GET",
     "postParameters": [],
     "queryParameters": [
       {
         "key": "page",
         "value": "1",
-        "description": "Page number for the sessions",
+        "description": "Page number for the participants. DEFAULT : 1",
         "required": false
       },
       {
         "key": "perPage",
-        "value": "10",
-        "description": "Number of Participants you want per page",
+        "value": "20",
+        "description": "Number of participants you want per page. DEFAULT : 20",
         "required": false
       }
     ],
@@ -22,6 +31,7 @@
       {
         "key": "sessionId",
         "value": "sessionId",
+        "description": "The ID of the Session.",
         "required": true
       }
     ],

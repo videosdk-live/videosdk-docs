@@ -25,7 +25,7 @@ module.exports = {
           items: [
             "realtime-communication/fetch-session",
             "realtime-communication/fetch-session-using-sessionid",
-            "realtime-communication/fetch-participants"
+            "realtime-communication/fetch-participants",
           ],
         },
         {
@@ -36,7 +36,7 @@ module.exports = {
             "realtime-communication/start-recording",
             "realtime-communication/stop-recording",
             "realtime-communication/fetch-recordings",
-            "realtime-communication/fetch-recording-using-recordingId"
+            "realtime-communication/fetch-recording-using-recordingId",
           ],
         },
         {
@@ -47,7 +47,7 @@ module.exports = {
             "realtime-communication/start-livestream",
             "realtime-communication/stop-livestream",
             "realtime-communication/fetch-livestreams",
-            "realtime-communication/fetch-livestream-using-livestreamId"
+            "realtime-communication/fetch-livestream-using-livestreamId",
           ],
         },
         {
@@ -58,7 +58,7 @@ module.exports = {
             "realtime-communication/start-hlsStream",
             "realtime-communication/stop-hlsStream",
             "realtime-communication/fetch-hlsStreams",
-            "realtime-communication/fetch-hlsStream-using-hlsStreamId"
+            "realtime-communication/fetch-hlsStream-using-hlsStreamId",
           ],
         },
         {
@@ -67,7 +67,7 @@ module.exports = {
           collapsed: true,
           items: [
             "realtime-communication/combine-stream-start",
-            "realtime-communication/combine-stream-stop"
+            "realtime-communication/combine-stream-stop",
           ],
         },
       ],
@@ -76,11 +76,8 @@ module.exports = {
     {
       type: "category",
       label: "See Also",
-      items: [
-        "realtime-communication/see-also/device-browser-support",
-      ],
+      items: ["realtime-communication/see-also/device-browser-support"],
       collapsed: true,
     },
   ],
-
-}
+};

@@ -1,42 +1,44 @@
 {
   "fetchActiveParticipants": {
-    "description": "All the active participants in a session can be fetched through this API. The response will contain the list of active participants in the session.",
-    "headers": [],
+    "description": "This API let you fetch a number of currently active participants in a room session by passing sessionId as a parameter.",
+    "headers": [
+      {
+        "key": "Authorization",
+        "value": "$YOUR_TOKEN"
+      },
+      {
+        "key": "Content-Type",
+        "value": "application/json"
+      }
+    ],
     "methodType": "GET",
     "postParameters": [],
     "queryParameters": [
       {
         "key": "page",
         "value": "1",
-        "description": "Page number for the sessions",
+        "description": "Page number for the participants. DEFAULT : 1",
         "required": false
       },
       {
         "key": "perPage",
-        "value": "10",
-        "description": "Number of Participants you want per page",
+        "value": "20",
+        "description": "Number of participants you want per page. DEFAULT : 20",
         "required": false
       }
     ],
     "parameters": [
       {
         "key": "sessionId",
-        "description": "sessionId of a particular session",
+        "description": "The ID of the Session.",
         "required": true
       }
     ],
     "apiEndpoint": "https://api.videosdk.live/v2/sessions/${sessionId}/participants/active",
     "response": {
-      "pageInfo": {
-        "currentPage": 1,
-        "perPage": 2,
-        "lastPage": 5,
-        "total": 10
-      },
       "data": {
         "id": "61763c2597b0c743cf454204",
         "roomId": "abc-xyzw-lmno",
-        "customRoomId": "testing-room",
         "participants": [
           {
             "participantId": "ylgjhgeh",
@@ -61,9 +63,9 @@
           }
         ],
         "links": {
-          "get_room": "https://api.videosdk.live/v2/rooms/abc-xyzw-lmno",
-          "get_session": "https://api.videosdk.live/v2/sessions/"
-        }
+          "get_all_participants": "https://dev-api.videosdk.live/v2/sessions/623f196307fe9e04525f88e6/participants",
+          "get_session": "https://dev-api.videosdk.live/v2/sessions/623f196307fe9e04525f88e6"
+      }
       }
     }
   }

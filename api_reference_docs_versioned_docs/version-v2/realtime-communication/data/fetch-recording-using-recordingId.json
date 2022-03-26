@@ -1,6 +1,6 @@
 {
   "fetchRecordingUsingRecordingId": {
-    "description": "If you want a specific recording details then you can use this API and pass the recordingId as parameter.",
+    "description": "This API let you fetch a particular recording info by passing recording Id as parameter.",
     "headers": [],
     "methodType": "GET",
     "postParameters": [],
@@ -8,7 +8,7 @@
     "parameters": [
       {
         "key": "recordingId",
-        "value": "The recordingId of the recording to fetch.",
+        "description": "The ID of the Recording.",
         "required": true
       }
     ],
@@ -29,7 +29,6 @@
           "format": "mov,mp4,m4a,3gp,3g2,mj2",
           "duration": 55.055
         },
-        "jobId": null,
         "filePath": "uploads/videos/61d6e871d1617e097b41699b.mp4",
         "size": 17023255,
         "type": "video",
@@ -39,7 +38,7 @@
         "ratio": {
           "1080": 309204.5227499773
         },
-        "fileUrl": "https://dev-cdn.videosdk.live/uploads/videos/61d6e871d1617e097b41699b.mp4",
+        "fileUrl": "https://cdn.videosdk.live/uploads/videos/61d6e871d1617e097b41699b.mp4",
         "id": "61d6e871d1617e097b41699b"
       },
       "id": "61d6e834e1326304a9e73dac"
