@@ -5,7 +5,7 @@ sidebar_label: Events
 pagination_label: Meeting Class Events
 ---
 
-<div class="api">
+<div class="sdk-api-ref">
 
 ### Events.meeting-joined
 

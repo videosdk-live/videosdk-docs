@@ -1680,16 +1680,16 @@ html[data-theme="dark"]
     brightness(90%) contrast(85%);
 }
 
-.api > h2 {
+.sdk-api-ref > h2 {
   margin-top: 25px;
   margin-bottom: 25px;
   font-size: x-large;
 }
 
-.api > h3 {
+.sdk-api-ref > h3 {
   font-size: large;
 }
 
-.api > h4 {
+.sdk-api-ref > h4 {
   font-size: medium;
 }

@@ -5,46 +5,74 @@ pagination_label: Meeting Class Properties
 title: Meeting Class Properties
 ---
 
-<div class="api">
+<div class="sdk-api-ref">
 
 ### id
 
-- `type`: String
-- `id` represents the meetingId for the current meeting
+- type: `String`
+
+- Unique id of the meeting where the participant has joined.
+
+---
 
 ### activeSpeakerId
 
-- `type`: String
-- `id` represents the activeSpeakerId for the current meeting
+- type: `String`
+
+- It will be the `id` of the participant who is actively speaking in the meeting. If no participant is speaking, at that time value of `activeSpeakerId` will be `null`.
+
+---
 
 ### activePresenterId
 
-- `type`: String
-- `id` represents the activePresenterId for the current meeting
+- type: `String`
+
+- It will be the `id` of the participant who started `Presenting` / `Screen sharing` in the meeting. If no participant is sharing the screen, at that time value of `activePresenterId` will be `null`.
+
+---
 
 ### mainParticipantId
 
-- `type`: String
-- `id` represents the mainParticipantId for the current meeting
+- type: `String`
+
+- It will be the `id` of the participant who is th emain speaker of the meeting, it will change according to `activePresenterId` and `activePresenterId`.
+
+- If you want to display only one participnat webcam video or screen share video, then this property can be used at that time.
+
+---
 
 ### localParticipant
 
-- `type`: Participant
-- `localParticipant` represents the local participant of the meeting
+- type: [Participant](./)
+
+- It will the instance of [Participant](./) class for the local participant who joined the meeting.
+
+---
 
 ### participants
 
-- `type`: Map<String, Participant>
-- `participants` represents all remote participants in the meeting
+- type: [`Map`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map) of [Participant](./)
+
+- `Map<String, Participant>`
+
+  - Map<`participantId`, [Participant](./)>
+
+- It will contain all joined participants in the meeting except the `localParticipant`.
+
+- This will be the [`Map`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map) what will container all participants attached with the key as id of that participant.
+
+```javascript
+const remoteParticipantId = "ajf897";
+
+const remoteParticipant = patricipants.get(remoteParticipantId);
+```
+
+---
 
 ### pubSub
 
-- `type`: PubSub
-- `pubSub` represents Publisher-Subscriber feature
+---
 
-### messages `deprecated`
-
-- `type`: Array<{senderId: string, text: string, timestamp: number}>
-- `messages` represents chat feature
+### pinnedParticipants
 
 </div>
