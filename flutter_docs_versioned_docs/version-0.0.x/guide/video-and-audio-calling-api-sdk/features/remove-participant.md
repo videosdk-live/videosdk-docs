@@ -17,6 +17,8 @@ slug: remove-participant
 
 # Remove Participant
 
+- Whenever any participant (having privileges) wants to remove other participant in meeting, he/she can do it with this feature.
+
 - `Participant` class provides the `remove()` method to remove participant from the meeting.
 
 ```js

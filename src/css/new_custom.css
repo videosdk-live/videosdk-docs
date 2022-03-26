@@ -1657,3 +1657,11 @@ html[data-theme="dark"]
   align-items: center;
   justify-content: center;
 }
+
+#h2 {
+  font-size: x-large;
+}
+
+#h3 {
+  font-size: large;
+}

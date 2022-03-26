@@ -1,121 +1,21 @@
 ---
 title: Meeting class for Flutter SDK.
-hide_title: false
+hide_title: true
 hide_table_of_contents: false
 description: RTC Meeting Class provides features to implement custom meeting layout in your application.
-sidebar_label: Meeting Class
-pagination_label: Meeting Class
+sidebar_label: Methods
+pagination_label: Meeting Class Methods
 keywords:
-  - RTC IOS
+  - RTC Flutter
   - Meeting Class
   - Video API
   - Video Conferencing
 image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
-slug: meeting-class
+slug: meeting-class-methods
 ---
 
-# Meeting Class
-
-## Using Meeting Class {#h2}
-
-The `Meeting Class` includes methods and events for managing meetings, participants, video & audio streams, data channels and UI customisation.
-
-import MethodListGroup from '@theme/MethodListGroup';
-import MethodListItemLabel from '@theme/MethodListItemLabel';
-import MethodListHeading from '@theme/MethodListHeading';
-
-## Properties {#h2}
-
-### id {#h3}
-
-- `type`: String
-- `id` represents the meetingId for the current meeting
-
-### localParticipant {#h3}
-
-- `type`: Participant
-- `localParticipant` represents the local participant of the meeting
-
-### participants {#h3}
-
-- `type`: Map<String, Participant>
-- `participants` represents all remote participants in the meeting
-
-### pubSub {#h3}
-
-- `type`: PubSub
-- `pubSub` represents Publisher-Subscriber feature
-
-### selectedWebcamId {#h3}
-
-- `type`: String?
-- `selectedWebcamId` represents the id of currently selected webcam
-
-### selectedMicId {#h3}
-
-- `type`: String?
-- `selectedWebcamId` represents the id of currently selected mic
-
-## Events
-
-### Events.meetingJoined {#h3}
-
-- `Events.meetingJoined` will be emitted when local participant joins the meeting successfully
-
-### Events.meetingLeft {#h3}
-
-- `Events.meetingLeft` will be emitted when local participant leaves the meeting
-
-### Events.entryRequested {#h3}
-
-- `Events.entryRequested` will be emitted when remote participant requests for entry in your meeting
-
-### Events.entryResponded {#h3}
-
-- `Events.entryResponded` will be emitted when meeting host responds to your entry request
-
-### Events.micRequested {#h3}
-
-- `Events.micRequested` will be emitted when mic is requested
-
-### Events.webcamRequested {#h3}
-
-- `Events.webcamRequested` will be emitted when webcam is requested
-
-### Events.participantJoined {#h3}
-
-- `Events.participantJoined` will be emitted when new participant joins the meeting
-
-### Events.participantLeft {#h3}
-
-- `Events.participantLeft` will be emitted when any participant from the meeting leaves
-
-### Events.recordingStarted {#h3}
-
-- `Events.recordingStarted` will be emitted when recording of the meeting is started successfully
-
-### Events.recordingStopped {#h3}
-
-- `Events.recordingStopped` will be emitted when recording of the meeting is stopped
-
-### Events.liveStreamStarted {#h3}
-
-- `Events.liveStreamStarted` will be emitted when live streaming of the meeting in social media is started successfully
-
-### Events.liveStreamStopped {#h3}
-
-- `Events.liveStreamStopped` emitted when live streaming of the meeting is stopped
-
-### Events.speakerChanged {#h3}
-
-- `Events.speakerChanged` will be emitted when active speaker is changed
-
-### Events.presenterChanged {#h3}
-
-- `Events.presenterChanged` will be emitted when any participant started presenting
-
-## Methods {#h2}
+# Meeting Class Methods
 
 ### join() {#h3}
 
@@ -219,22 +119,3 @@ import MethodListHeading from '@theme/MethodListHeading';
 - Return Type : `void`
 - `on()` is used to handle custom events.
 - This method takes an event and handler. Handler function will be called when given event is emitted.
-
-## Example
-
-```js title="Play with meeting instance"
-// Join the meeting
-meeting?.join();
-
-// Get local participants
-meeting?.localParticipant;
-
-// Get remote participants
-meeting?.participants;
-
-// Adding event listner
-meeting.on(Events.participantJoined, (Participant participant) {
-  print("new participant => $participant");
-  },
-);
-```

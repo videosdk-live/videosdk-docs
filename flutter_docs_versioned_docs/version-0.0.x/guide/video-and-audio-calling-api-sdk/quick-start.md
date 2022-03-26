@@ -166,7 +166,7 @@ The JoinScreen will consist of:
 
 - Create Meeting Button - This button will create a new meeting for you.
 - Meeting ID TextField - This text field will contain the meeting ID, you want to join.
-- Join Button - This button will join the meeting which you provided.
+- Join Button - This button will join the meeting, which you have provided.
 
 JoinScreen will accept 3 functions in constructor.
 

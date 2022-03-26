@@ -25,7 +25,7 @@ Flutter SDK is client for real-time communication for android and ios devices. I
 
 ### Minimum OS/SDK versions
 
-Android: minSdkVersion >= 21
+Android: minSdkVersion >= 23
 
 <!-- ### IOS: > 11 -->
 
@@ -56,6 +56,8 @@ Ensure the following permission is present in your Android Manifest file, locate
 <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
 <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+<uses-permission android:name="android.permission.INTERNET"/>
+
 ```
 
 If you need to use a Bluetooth device, please add:
@@ -79,13 +81,13 @@ android {
 }
 ```
 
-If necessary, in the same `build.gradle` you will need to increase `minSdkVersion` of `defaultConfig` up to `21` (currently default Flutter generator set it to `16`).
+If necessary, in the same `build.gradle` you will need to increase `minSdkVersion` of `defaultConfig` up to `23` (currently default Flutter generator set it to `16`).
 
 If necessary, in the same `build.gradle` you will need to increase `compileSdkVersion` and `targetSdkVersion` up to `31` (currently default Flutter generator set it to `30`).
 
 ## Step 3: iOS Setup
 
-Add the following entry to your Info.plist file, located in `<project root>`/ios/Runner/Info.plist:
+Add the following entry to your Info.plist file, located at `<project root>`/ios/Runner/Info.plist:
 
 ```xml
 <key>NSCameraUsageDescription</key>

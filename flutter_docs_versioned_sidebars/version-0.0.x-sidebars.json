@@ -61,8 +61,15 @@
       "id": "api/sdk-reference/meeting-builder-widget"
     },
     {
-      "type": "doc",
-      "id": "api/sdk-reference/meeting-class"
+      "type": "category",
+      "label": "Meeting Class",
+      "items": [
+        "api/sdk-reference/meeting-introduction",
+        "api/sdk-reference/meeting-properties",
+        "api/sdk-reference/meeting-methods",
+        "api/sdk-reference/meeting-events",
+        "api/sdk-reference/meeting-example"
+      ]
     },
     {
       "type": "doc",
