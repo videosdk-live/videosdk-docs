@@ -2,14 +2,12 @@ import React, { useEffect, useState } from "react";
 import CodeBlock from "@theme/CodeBlock";
 
 const hasRequiredParams = (parameters) => {
-  console.log("params", parameters);
   var hasRequiredParameter = false;
   parameters.forEach((param) => {
     if (param.required) {
       hasRequiredParameter = true;
     }
   });
-  console.log("params", hasRequiredParameter);
   return hasRequiredParameter;
 };
 
@@ -248,9 +246,6 @@ const generatePythonCode = ({
   //import requests
   code += "import requests\n";
 
-  console.log("Testing", /\${([A-z])\w+}/.test(apiEndpoint));
-  console.log("Testing", apiEndpoint.match(/\${([A-z])\w+}/));
-
   //create url
   //check if has ${param} in the url
   if (/\${([A-z])\w+}/.test(apiEndpoint)) {
@@ -407,7 +402,6 @@ const MethodRequestResponse = ({
       if (selectedLanguage) return selectedLanguage;
       else return { id: "node", value: "NodeJS" };
     } catch (err) {
-      console.log("error", err);
       return { id: "node", value: "NodeJS" };
     }
   };
@@ -433,9 +427,7 @@ const MethodRequestResponse = ({
     },
   ];
 
-  useEffect(() => {
-    console.log("language", language);
-  }, [language]);
+  useEffect(() => {}, [language]);
 
   return (
     <div>
@@ -510,51 +502,51 @@ const MethodDescription = ({
   return (
     <div className="flex flex-col">
       <div className="text-gray-250">{description}</div>
-      {postParameters.length != 0 && (
+      {postParameters?.length != 0 && (
         <div>
           <div className="text-xl mt-12 font-bold">Body Parameters</div>
           <div className="bg-[#252A34] mt-3 mb-1 h-[1px]"></div>
-          {postParameters.map((parameter, index) => {
+          {postParameters?.map((parameter, index) => {
             return (
               <MethodParameter
                 parameterName={parameter.key}
                 description={parameter.description}
                 required={parameter.required}
-                showDivider={index != postParameters.length - 1}
+                showDivider={index != postParameters?.length - 1}
               />
             );
           })}
         </div>
       )}
 
-      {queryParameters.length != 0 && (
+      {queryParameters?.length != 0 && (
         <div>
           <div className="text-xl mt-12 font-bold">Query Parameters</div>
           <div className="bg-[#252A34] mt-3 mb-1 h-[1px]"></div>
-          {queryParameters.map((parameter, index) => {
+          {queryParameters?.map((parameter, index) => {
             return (
               <MethodParameter
                 parameterName={parameter.key}
                 description={parameter.description}
                 required={parameter.required}
-                showDivider={index != queryParameters.length - 1}
+                showDivider={index != queryParameters?.length - 1}
               />
             );
           })}
         </div>
       )}
 
-      {parameters.length != 0 && (
+      {parameters?.length != 0 && (
         <div>
           <div className="text-xl mt-12 font-bold">Parameters</div>
           <div className="bg-[#252A34] mt-3 mb-1 h-[1px]"></div>
-          {parameters.map((parameter, index) => {
+          {parameters?.map((parameter, index) => {
             return (
               <MethodParameter
                 parameterName={parameter.key}
                 description={parameter.description}
                 required={parameter.required}
-                showDivider={index != queryParameters.length - 1}
+                showDivider={index != queryParameters?.length - 1}
               />
             );
           })}
