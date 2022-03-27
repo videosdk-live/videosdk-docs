@@ -11,79 +11,21 @@ title: Video SDK Meeting Class
 
 The `Meeting` class includes properties, methods and events for managing a meeting, participants, video, audio and share streams, messaging and UI customisation.
 
+import LinksGrid from '../../../../../src/theme/LinksGrid'
+import properties from './../data/properties.json'
+import methods from './../data/methods.json'
+import events from './../data/events.json'
+
 ## Meeting Properties
 
-- [id](./)
-- [activeSpeakerId](./)
-- [activePresenterId](./)
-- [mainParticipantId](./)
-- [localParticipant](./)
-- [participants](./)
-- [pubSub](./)
-- [pinnedParticipants](./)
+<LinksGrid links={properties} />
 
 ## Meeting Methods
 
-- [join](./)
-- [leave](./)
-- [end](./)
-- [muteMic](./)
-- [unmuteMic](./)
-- [disableWebcam](./)
-- [enableWebcam](./)
-- [disableScreenShare](./)
-- [enableScreenShare](./)
-- [startRecording](./)
-- [stopRecording](./)
-- [startLivestream](./)
-- [stopLivestream](./)
-- [startHls](./)
-- [stopHls](./)
-- [getMics](./)
-- [getWebcams](./)
-- [changeMic](./)
-- [changeWebcam](./)
-- [setWebcamQuality](./)
-- [startWhiteboard](./)
-- [stopWhiteboard](./)
-- [startVideo](./)
-- [stopVideo](./)
-- [resumeVideo](./)
-- [pauseVideo](./)
-- [seekVideo](./)
-- [on](./)
-- [off](./)
+<LinksGrid links={methods} />
 
 ## Meeting Events
 
-- [error](./)
-- [meeting-joined](./)
-- [meeting-left](./)
-- [participant-joined](./)
-- [participant-left](./)
-- [speaker-changed](./)
-- [presenter-changed](./)
-- [main-participant-changed](./)
-- [chat-message](./)
-- [entry-requested](./)
-- [entry-responded](./)
-- [recording-started](./)
-- [recording-stopped](./)
-- [livestream-started](./)
-- [livestream-stopped](./)
-- [hls-started](./)
-- [hls-stopped](./)
-- [whiteboard-started](./)
-- [whiteboard-stopped](./)
-- [video-state-changed](./)
-- [video-seeked](./)
-- [mic-requested](./)
-- [webcam-requested](./)
-- [stream-enabled](./)
-- [stream-disabled](./)
-- [pin-state-changed](./)
-- [connection-open](./)
-- [connection-close](./)
-- [switch-meeting](./)
+<LinksGrid links={events} />
 
 </div>

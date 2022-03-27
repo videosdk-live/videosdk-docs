@@ -27,13 +27,9 @@ title: Meeting Class Methods
 
 - If a token containing the parmission `allow_join`, then the participant will join the meeting derectly after calling `join()`.
 
-#### Parameters
-
-- `null`
-
 #### Returns
 
-- `null`
+- _`void`_
 
 ---
 
@@ -46,13 +42,9 @@ title: Meeting Class Methods
 - Local participant will receive a [`meeting-left`](./) event.
 - All remote participants will receive a [`participant-left`](./) event with `participantId` string from the event callback.
 
-#### Parameters
-
-- `null`
-
 #### Returns
 
-- `null`
+- _`void`_
 
 ---
 
@@ -65,43 +57,9 @@ title: Meeting Class Methods
 
 - All [participants](./) and [localParticipant](./), will be emitted [`meeting-left`](./) event.
 
-#### Parameters
-
-- `null`
-
 #### Returns
 
-- `null`
-
----
-
-### unmuteMic()
-
-- It is used to enable self microphone.
-- `stream-enabled` event will be emitted with [`stream`](./) object from the event callback, inside that [participant](./) object.
-
-#### Parameters
-
-- `null`
-
-#### Returns
-
-- `null`
-
----
-
-### muteMic()
-
-- It is used to disable self microphone.
-- `stream-disabled` event will be emitted with [`stream`](./) object from the event callback, inside that [participant](./) object.
-
-#### Parameters
-
-- `null`
-
-#### Returns
-
-- `null`
+- _`void`_
 
 ---
 
@@ -110,13 +68,9 @@ title: Meeting Class Methods
 - It is used to enable self camera.
 - `stream-enabled` event will be emitted with [`stream`](./) object from the event callback, inside that [participant](./) object.
 
-#### Parameters
-
-- `null`
-
 #### Returns
 
-- `null`
+- _`void`_
 
 ---
 
@@ -125,13 +79,31 @@ title: Meeting Class Methods
 - It is used to enable self camera.
 - `stream-disabled` event will be emitted with [`stream`](./) object from the event callback, inside that [participant](./) object.
 
-#### Parameters
+#### Returns
 
-- `null`
+- _`void`_
+
+---
+
+### unmuteMic()
+
+- It is used to enable self microphone.
+- `stream-enabled` event will be emitted with [`stream`](./) object from the event callback, inside that [participant](./) object.
 
 #### Returns
 
-- `null`
+- _`void`_
+
+---
+
+### muteMic()
+
+- It is used to disable self microphone.
+- `stream-disabled` event will be emitted with [`stream`](./) object from the event callback, inside that [participant](./) object.
+
+#### Returns
+
+- _`void`_
 
 ---
 
@@ -140,13 +112,9 @@ title: Meeting Class Methods
 - it is used to enable screen-sharing.
 - `stream-enabled` event will be emitted with [`stream`](./) object from the event callback, inside that [participant](./) object.
 
-#### Parameters
-
-- `null`
-
 #### Returns
 
-- `null`
+- _`void`_
 
 ---
 
@@ -155,13 +123,9 @@ title: Meeting Class Methods
 - It is used to disable screen-sharing.
 - `stream-disabled` event will be emitted with [`stream`](./) object from the event callback, inside that [participant](./) object.
 
-#### Parameters
-
-- `null`
-
 #### Returns
 
-- `null`
+- _`void`_
 
 ---
 
@@ -170,58 +134,40 @@ title: Meeting Class Methods
 - It is used to start meeting recording.
 - All [participants](./) and [localParticipant](./), will receive `recording-started` event.
 
+- `webhookUrl` will be triggered when the recording is completed and stored into server. Read more about webhooks [here](https://en.wikipedia.org/wiki/Webhook).
+
+- `awsDirPath` will be the path for the your S3 bucket where you want to store recordings to. To allow us to store recording in your S3 bucket, you will need to fill this form by providing the required values. [VideoSDK AWS S3 Integration](https://zfrmz.in/RVlFLFiturVJ7Q97fr23)
+
 #### Parameters
 
-- `webhookUrl`
-  - It will be triggered when the recording is completed and stored into server. Read more about webhooks [here](https://en.wikipedia.org/wiki/Webhook).
-  - type: `String`
-  - default: `null`
-  - `OPTIONAL`
-- `awsDirPath`
-  - It will be the path for the your S3 bucket where you want to store recordings to. To allow us to store recording in your S3 bucket, you will need to fill this form by providing the required values. [VideoSDK AWS S3 Integration](https://zfrmz.in/RVlFLFiturVJ7Q97fr23)
-  - type: `String`
-  - default: `null`
-  - `OPTIONAL`
-- `config`
-  - Configurations for meeting recording.
-  - type: `Object`
-  - values:
-    - `layout`:
-      - Configuration for the meeting recording layout.
-      - type: `Object`
-      - values:
-        - `type`:
-          - type: `String`
-          - value: `GRID` | `SPOTLIGHT` | `SIDEBAR`
-          - defaultValue: `SIDEBAR`
-        - `priority`:
-          - type: `String`
-          - value: `SPEAKER` | `PIN`
-          - defaultValue: `SPEAKER`
-        - `gridSize`:
-          - type: `Number`
-          - value: `1 to 25`
-          - defaultValue: 25
-      - defaultValue:
-        - `type`: `SIDEBAR`
-        - `priority`: `SPEAKER`
-        - `gridSize`: 25
-  - `OPTIONAL`
+- **webhookUrl**: String
+- **awsDirPath**: String
+- **config**:
+  - **layout**:
+    - **type**: _"GRID"_ | _"SPOTLIGHT"_ | _"SIDEBAR"_
+    - **priority**: _"SPEAKER"_ | _"PIN"_
+    - **gridSize**: Number _`max 25`_
 
 #### Returns
 
-- `null`
+- _`void`_
 
 #### Example
 
 ```javascript
-startRecording("https://webhook.your-api-server.com", "/meeting-recordings/", {
+const webhookUrl = "https://webhook.your-api-server.com";
+
+const awsDirPath = "/meeting-recordings/";
+
+const config = {
   layout: {
     type: "SPOTLIGHT",
     priority: "PIN",
     gridSize: 9,
   },
-});
+};
+
+startRecording(webhookUrl, awsDirPath, config);
 ```
 
 ---
@@ -231,13 +177,9 @@ startRecording("https://webhook.your-api-server.com", "/meeting-recordings/", {
 - It is used to stop meeting recording.
 - All [participants](./) and [localParticipant](./), will receive `recording-stopped` event.
 
-#### Parameters
-
-- `null`
-
 #### Returns
 
-- `null`
+- _`void`_
 
 #### Example
 
@@ -255,65 +197,42 @@ stopRecording();
 
 #### Parameters
 
-- `outputs`
-  - Outputs RTMP configuration where you want to start livestream your meeting.
-  - type: `Array`
-  - values: `Array<{ url, streamKey }>`
-  - `REQUIRED`
-- `config`
-  - Configurations for meeting livestreaming.
-  - type: `Object`
-  - values:
-    - `layout`:
-      - Configuration for the meeting livestreaming layout.
-      - type: `Object`
-      - values:
-        - `type`:
-          - type: `String`
-          - value: `GRID` | `SPOTLIGHT` | `SIDEBAR`
-          - defaultValue: `SIDEBAR`
-        - `priority`:
-          - type: `String`
-          - value: `SPEAKER` | `PIN`
-          - defaultValue: `SPEAKER`
-        - `gridSize`:
-          - type: `Number`
-          - value: `1 to 25`
-          - defaultValue: 25
-      - defaultValue:
-        - `type`: `SIDEBAR`
-        - `priority`: `SPEAKER`
-        - `gridSize`: 25
-  - `OPTIONAL`
+- **outputs**: Array<{ **url**: String, **streamKey**: String }>
+- **config**:
+  - **layout**:
+    - **type**: _"GRID"_ | _"SPOTLIGHT"_ | _"SIDEBAR"_
+    - **priority**: _"SPEAKER"_ | _"PIN"_
+    - **gridSize**: Number _`max 25`_
 
 #### Returns
 
-- `null`
+- _`void`_
 
 ---
 
 #### Example
 
 ```javascript
-startLivestream(
-  [
-    {
-      url: "rtmp://a.rtmp.youtube.com/live2",
-      streamKey: "<YOUR_STREAM_KEY>",
-    },
-    {
-      url: "",
-      streamKey: "",
-    },
-  ],
+const outputs = [
   {
-    layout: {
-      type: "SPOTLIGHT",
-      priority: "PIN",
-      gridSize: 9,
-    },
-  }
-);
+    url: "rtmp://a.rtmp.youtube.com/live2",
+    streamKey: "<STREAM_KEY>",
+  },
+  {
+    url: "rtmps://",
+    streamKey: "<STREAM_KEY>",
+  },
+];
+
+const config = {
+  layout: {
+    type: "SPOTLIGHT",
+    priority: "PIN",
+    gridSize: 9,
+  },
+};
+
+startLivestream(outputs, config);
 ```
 
 ### stopLivestream()
@@ -321,13 +240,9 @@ startLivestream(
 - It is used to stop meeting livestreaming.
 - All [participants](./) and [localParticipant](./), will receive `livestream-stopped` event.
 
-#### Parameters
-
-- `null`
-
 #### Returns
 
-- `null`
+- _`void`_
 
 #### Example
 
@@ -345,46 +260,28 @@ stopLivestream();
 
 #### Parameters
 
-- `config`
-  - Configurations for meeting livestreaming.
-  - type: `Object`
-  - values:
-    - `layout`:
-      - Configuration for the meeting livestreaming layout.
-      - type: `Object`
-      - values:
-        - `type`:
-          - type: `String`
-          - value: `GRID` | `SPOTLIGHT` | `SIDEBAR`
-          - defaultValue: `SIDEBAR`
-        - `priority`:
-          - type: `String`
-          - value: `SPEAKER` | `PIN`
-          - defaultValue: `SPEAKER`
-        - `gridSize`:
-          - type: `Number`
-          - value: `1 to 25`
-          - defaultValue: 25
-      - defaultValue:
-        - `type`: `SIDEBAR`
-        - `priority`: `SPEAKER`
-        - `gridSize`: 25
-  - `OPTIONAL`
+- **config**:
+  - **layout**:
+    - **type**: _"GRID"_ | _"SPOTLIGHT"_ | _"SIDEBAR"_
+    - **priority**: _"SPEAKER"_ | _"PIN"_
+    - **gridSize**: Number _`max 25`_
 
 #### Returns
 
-- `null`
+- _`void`_
 
 #### Example
 
 ```javascript
-startHls({
+const config = {
   layout: {
     type: "SPOTLIGHT",
     priority: "PIN",
     gridSize: 9,
   },
-});
+};
+
+startHls(config);
 ```
 
 ---
@@ -394,13 +291,9 @@ startHls({
 - It is used to stop meeting HLS.
 - All [participants](./) and [localParticipant](./), will receive `hls-stopped` event.
 
-#### Parameters
-
-- `null`
-
 #### Returns
 
-- `null`
+- _`void`_
 
 #### Example
 
@@ -410,58 +303,110 @@ stopHls();
 
 ---
 
-### getMics()
-
----
-
 ### getWebcams()
 
----
+- It will return all camera devices connected.
 
-### changeMic()
+#### Returns
+
+- Promise<{ **deviceId**: string; **lable**: string }[]>
+
+#### Example
+
+```javascript
+const handleGetWebcams = async () => {
+  const webcams = await getWebcams();
+
+  console.log(webcams);
+};
+
+handleGetWebcams();
+```
 
 ---
 
 ### changeWebcam()
 
-- Return Type : `void`
-- `changeWebcam` is used to change self camera.
-- Local Participant and Remote Participant will receive `Events.streamEnabled` event with `stream` object and `Events.streamDisabled` event with `stream` object.
+- It is used to change the webcam device.
+- If multiple webcam devices are connected, then by using `changeWebcam()` one can change the mic device.
+
+#### Parameters
+
+- **deviceId**: String
+
+#### Returns
+
+- _`void`_
+
+#### Example
+
+```javascript
+changeWebcam(deviceId);
+```
 
 ---
 
 ### setWebcamQuality()
 
----
+- It is used to set the webcam quality.
+- By using `setWebcamQuality()`, uploading of the webcam stream quality of [localParticipant](./) can be changed from `low` to `high` or vice versa.
 
-### startWhiteboard()
+#### Parameters
 
----
+- **quality**: _"low"_ | _"med"_ | _"high"_
 
-### stopWhiteboard()
+#### Returns
 
----
+- _`void`_
 
-### startVideo()
+#### Example
 
-- Return Type : `void`
-- `startVideo()` triggers video-state-changed event with status "started"
-
----
-
-### stopVideo()
+```javascript
+setWebcamQuality("high");
+```
 
 ---
 
-### resumeVideo()
+### getMics()
+
+- It will return all mic devices connected.
+
+#### Returns
+
+- Promise<{ **deviceId**: string; **lable**: string }[]>
+
+#### Example
+
+```javascript
+const handleGetMics = async () => {
+  const mics = await getMics();
+
+  console.log(mics);
+};
+
+handleGetMics();
+```
 
 ---
 
-### pauseVideo()
+### changeMic()
 
----
+- It is used to change the mic device.
+- If multiple mic devices are connected, then by using `changeMic()` one can change the mic device.
 
-### seekVideo()
+#### Parameters
+
+- **deviceId**: String
+
+#### Returns
+
+- _`void`_
+
+#### Example
+
+```javascript
+changeMic(deviceId);
+```
 
 ---
 

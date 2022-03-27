@@ -5,7 +5,7 @@ pagination_label: Meeting Class Properties
 title: Meeting Class Properties
 ---
 
-<div class="sdk-api-ref">
+<div class="sdk-api-ref-only-h4">
 
 ### id
 
@@ -28,16 +28,6 @@ title: Meeting Class Properties
 - type: `String`
 
 - It will be the `id` of the participant who started `Presenting` / `Screen sharing` in the meeting. If no participant is sharing the screen, at that time value of `activePresenterId` will be `null`.
-
----
-
-### mainParticipantId
-
-- type: `String`
-
-- It will be the `id` of the participant who is th emain speaker of the meeting, it will change according to `activePresenterId` and `activePresenterId`.
-
-- If you want to display only one participnat webcam video or screen share video, then this property can be used at that time.
 
 ---
 
@@ -73,6 +63,6 @@ const remoteParticipant = patricipants.get(remoteParticipantId);
 
 ---
 
-### pinnedParticipants
+### connections
 
 </div>

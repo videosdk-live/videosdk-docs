@@ -83,7 +83,7 @@
     },
     {
       "type": "category",
-      "label": "participant Class",
+      "label": "Participant Class",
       "items": [
         "api/sdk-reference/participant-class/introduction",
         "api/sdk-reference/participant-class/properties",
@@ -99,6 +99,19 @@
         "api/sdk-reference/stream-class/properties",
         "api/sdk-reference/stream-class/methods"
       ]
+    },
+    {
+      "type": "category",
+      "label": "Connection",
+      "items": [
+        "api/sdk-reference/connection/connection-class",
+        "api/sdk-reference/connection/connection-meeting-class",
+        "api/sdk-reference/connection/connection-participant-class"
+      ]
+    },
+    {
+      "type": "doc",
+      "id": "api/sdk-reference/error-codes"
     }
   ]
 }
