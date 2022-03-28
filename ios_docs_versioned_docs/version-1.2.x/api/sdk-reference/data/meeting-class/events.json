@@ -1,0 +1,82 @@
+[
+  {
+    "href": "./events#meeting-joined",
+    "label": "meeting-joined"
+  },
+  {
+    "href": "./events#meeting-left",
+    "label": "meeting-left"
+  },
+  {
+    "href": "./events#participant-joined",
+    "label": "participant-joined"
+  },
+  {
+    "href": "./events#participant-left",
+    "label": "participant-left"
+  },
+  {
+    "href": "./events#speaker-changed",
+    "label": "speaker-changed"
+  },
+  {
+    "href": "./events#presenter-changed",
+    "label": "presenter-changed"
+  },
+  {
+    "href": "./events#error",
+    "label": "error"
+  },
+  {
+    "href": "./events#entry-requested",
+    "label": "entry-requested"
+  },
+  {
+    "href": "./events#entry-responded",
+    "label": "entry-responded"
+  },
+  {
+    "href": "./events#webcam-requested",
+    "label": "webcam-requested"
+  },
+  {
+    "href": "../events#mic-requested",
+    "label": "mic-requested"
+  },
+  {
+    "href": "./events#recording-started",
+    "label": "recording-started"
+  },
+  {
+    "href": "./events#recording-stopped",
+    "label": "recording-stopped"
+  },
+  {
+    "href": "./events#livestream-started",
+    "label": "livestream-started"
+  },
+  {
+    "href": "./events#livestream-stopped",
+    "label": "livestream-stopped"
+  },
+  {
+    "href": "./events#hls-started",
+    "label": "hls-started"
+  },
+  {
+    "href": "./events#hls-stopped",
+    "label": "hls-stopped"
+  },
+  {
+    "href": "./events#connection-open",
+    "label": "connection-open"
+  },
+  {
+    "href": "./events#connection-close",
+    "label": "connection-close"
+  },
+  {
+    "href": "./events#switch-meeting",
+    "label": "switch-meeting"
+  }
+]

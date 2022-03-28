@@ -14,6 +14,7 @@ You can initialize the meeting using a factory method provided by the SDK called
 ```js title="Swift"
 let meeting = VideoSDK.initMeeting(
   meetingId: "abc-1234-xyz",
+  participantId: "JD", // optional
   participantName: "John Doe",
   micEnabled: true,
   webcamEnabled: true
@@ -21,6 +22,8 @@ let meeting = VideoSDK.initMeeting(
 ```
 
 ## Meeting Initialization Parameters
+
+---
 
 ### meetingId
 
@@ -31,12 +34,7 @@ let meeting = VideoSDK.initMeeting(
 
 Please refer this documentation to craete a room.
 
-### participantName
-
-- Name of the participant who will be joining the meeting, this name will be displayed to other participants in the same meeting.
-
-  - type : String
-  - `REQUIRED`
+---
 
 ### participantId
 
@@ -44,6 +42,17 @@ Please refer this documentation to craete a room.
 
   - type : `String`
   - `OPTIONAL`
+  
+---
+
+### participantName
+
+- Name of the participant who will be joining the meeting, this name will be displayed to other participants in the same meeting.
+
+  - type : String
+  - `REQUIRED`
+
+---
 
 ### micEnabled
 
@@ -53,6 +62,8 @@ Please refer this documentation to craete a room.
   - defaultValue : true
   - `OPTIONAL`
 
+---
+
 ### webcamEnabled
 
 - Whether `webcam` of the participant will be on while joining the meeting. If it is set to `false`, then webcam of that participant will be `disabled` by default, but can be `enabled` or `disabled` later.
@@ -61,16 +72,10 @@ Please refer this documentation to craete a room.
   - defaultValue : true
   - `OPTIONAL`
 
-### maxResolution
-
-- Sets the maximum upload resolution of that participant's webcam stream.
-
-  - type: `String`
-  - value: `sd` | `hd`
-  - defaultValue: `sd`
-  - `OPTIONAL`
 
 ## Returns
+
+### meeting
 
 - After initializing the meeting, `initMeeting()` will return a new [`Meeting`](/javascript/api/sdk-reference/meeting-class/introduction) instance.
 
