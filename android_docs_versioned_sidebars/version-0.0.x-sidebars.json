@@ -63,7 +63,8 @@
         "api/sdk-reference/meeting-class/introduction",
         "api/sdk-reference/meeting-class/properties",
         "api/sdk-reference/meeting-class/methods",
-        "api/sdk-reference/meeting-class/meeting-event-listener-class"
+        "api/sdk-reference/meeting-class/meeting-event-listener-class",
+        "api/sdk-reference/meeting-class/pubSub"
       ]
     },
     {
@@ -84,14 +85,6 @@
         "api/sdk-reference/stream-class/properties",
         "api/sdk-reference/stream-class/methods"
       ]
-    },
-    {
-      "type": "doc",
-      "id": "api/sdk-reference/meeting-event-listener-class"
-    },
-    {
-      "type": "doc",
-      "id": "api/sdk-reference/participant-event-listener-class"
     }
   ]
 }
