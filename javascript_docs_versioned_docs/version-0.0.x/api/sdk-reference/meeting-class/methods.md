@@ -410,6 +410,46 @@ changeMic(deviceId);
 
 ---
 
+### connectTo()
+
+- This method is used for establishing connection to another meeting
+
+#### Parameters
+
+- meetingId
+
+  - type : `String`
+
+  - meetingId of another meeting
+
+- payload
+
+  - type : `String`
+
+  - Any arbitrary payload data for the connection
+
+#### Events associated with `connectTo()`:
+
+- `connection-close` event of meeting class is triggered whenever `meeting.connectTo()` being called for both local and remote participants.
+
+#### Returns
+
+- `void`
+
+#### Example
+
+```jsx
+//create connection to meeting B
+meeting.connectTo({ meetingId: "meeting_B_ID", payload: "arbitraty text" });
+
+//  This event will be emitted to participants of both meetings, Meeting A & Meeting B
+meeting.on("connection-open", (connection) => {
+  console.log("Connection", connection);
+});
+```
+
+---
+
 ### on()
 
 ---

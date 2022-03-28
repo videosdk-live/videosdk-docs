@@ -104,6 +104,7 @@
       "type": "category",
       "label": "Connection",
       "items": [
+        "api/sdk-reference/connection/introduction",
         "api/sdk-reference/connection/connection-class",
         "api/sdk-reference/connection/connection-meeting-class",
         "api/sdk-reference/connection/connection-participant-class"

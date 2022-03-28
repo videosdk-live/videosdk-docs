@@ -5,6 +5,13 @@ sidebar_label: Introduction
 pagination_label: Video SDK Participant Class
 ---
 
+<div class="sdk-api-ref">
+
+import properties from './../data/participant-class/properties.json'
+import methods from './../data/participant-class/methods.json'
+import events from './../data/participant-class/events.json'
+import LinksGrid from '../../../../../src/theme/LinksGrid'
+
 Participant class includes all the properties, methods and events related to all the participants joined in a particular meeting.
 
 ## Get local and remote participants
@@ -18,21 +25,83 @@ const participants = meeting.participants;
 
 ## Participant Properties
 
-- [id](./)
-- [displayName](./)
-- [streams](./)
+<div class="links-grid">
+
+<div>
+
+- [id](./properties.md#id)
+
+</div>
+<div>
+
+- [displayName](./properties.md#displayname)
+
+</div>
+<div>
+
+- [streams](./properties.md#streams)
+
+</div>
+
+</div>
 
 ## Participant Methods
 
-- [enableWebcam](./)
-- [disableWebcam](./)
-- [enableMic](./)
-- [disableMic](./)
-- [setQuality](./)
-- [pin](./)
-- [unpin](./)
+<div class="links-grid">
+
+<div>
+
+- [enableWebcam](./methods.md#enablewebcam)
+
+</div>
+<div>
+
+- [disableWebcam](./methods.md#disablewebcam)
+
+</div>
+<div>
+
+- [enableMic](./methods.md#enablemic)
+
+</div>
+<div>
+
+- [disableMic](./methods.md#disablemic)
+
+</div>
+<div>
+
+- [setQuality](./methods.md#setquality)
+
+</div>
+<div>
+
+- [pin](./methods.md#pin)
+
+</div>
+<div>
+
+- [unpin](./methods.md#unpin)
+
+</div>
+
+</div>
 
 ## Participant Events
 
-- [stream-enabled](./)
-- [stream-disabled](./)
+<div class="links-grid">
+
+<div>
+
+- [stream-enabled](./events.md#eventsstream-enabled)
+
+</div>
+<div>
+
+- [stream-disabled](./events.md#eventsstream-disabled)
+
+</div>
+
+</div>
+
+</div>

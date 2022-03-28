@@ -5,7 +5,7 @@ sidebar_label: Properties
 pagination_label: Participant Class Properties
 ---
 
-<div class="sdk-api-ref">
+<div class="sdk-api-ref-only-h4">
 
 ### id
 
@@ -28,7 +28,5 @@ pagination_label: Participant Class Properties
 - type: `Map<String,name>`
 
 - It will represents the stream for that particular participant who has joined the meeting. Steams could be `audio` , `video` or `share`.
-
----
 
 </div>

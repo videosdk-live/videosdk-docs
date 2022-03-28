@@ -12,6 +12,9 @@ You can initialize the meeting using a factory method provided by the SDK called
 ## initMeeting()
 
 ```js title="Javascript"
+//meeting configuration using videoSDK
+VideoSDK.config("<your token>");
+
 const meeting = VideoSDK.initMeeting({
   meetingId: "abc-1234-xyz",
   name: "John Doe",

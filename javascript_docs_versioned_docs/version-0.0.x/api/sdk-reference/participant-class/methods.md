@@ -5,55 +5,110 @@ sidebar_label: Methods
 pagination_label: Participant Class Methods
 ---
 
+<div class="sdk-api-ref-only-h4">
+
 ### enableWebcam()
 
-- Return Type : `void`
 - `enableWebcam()` is used to enable self camera.
+
+#### Events associated with `enableWebcam()` :
+
 - Local Participant and Remote Participant will receive a `Events.streamEnabled` event with `stream` object.
+
+#### Returns
+
+- `void`
 
 ---
 
 ### disableWebcam()
 
-- Return Type : `void`
 - `disableWebcam()` is used to disable self camera.
+
+#### Events associated with `disableWebcam()` :
+
 - Local Participant and Remote Participant will receive a `Events.streamDisabled` event with `stream` object.
+
+#### Returns
+
+- `void`
 
 ---
 
 ### enableMic()
 
-- Return Type : `void`
 - `enableMic()` is used to enable self microphone.
+
+#### Events associated with `enableMic()` :
+
 - Local Participant and Remote Participant will receive a `Events.streamDisabled` event with `stream` object.
+
+#### Returns
+
+- `void`
 
 ---
 
 ### disableMic()
 
-- Return Type : `void`
 - `disableMic()` is used to disable self microphone.
+
+#### Events associated with `disableMic()`:
+
 - Local Participant and Remote Participant will receive a `Events.streamEnabled` event with `stream` object.
 
+#### Returns
+
+- `void`
+
 ---
 
-### setQuality (quality: low | med | high)
+### setQuality()
 
-- Return Type : `void`
 - `setQuality()` is used to set the quality of the participant's video stream.
 
+#### Parameters
+
+- `quality`: low | med | high
+
+#### Returns
+
+- `void`
+
 ---
 
-### pin (SHARE_AND_CAM | CAM | SHARE | null)
+### pin()
 
-- Return Type : `void`
 - `pin()` is used to pin the participant.
+
+#### Events associated with `pin()` :
+
 - Local Participant and Remote Participant will receive an `Events.pin-state-changed` event with `meeting` object.
+
+#### Parameters
+
+- `type` : SHARE_AND_CAM | CAM | SHARE | null
+
+#### Returns
+
+- `void`
 
 ---
 
-### unpin (SHARE_AND_CAM | CAM | SHARE | null)
+### unpin()
 
-- Return Type : `void`
 - `unpin()` is used to pin the participant.
+
+#### Events associated with `unpin()` :
+
 - Local Participant and Remote Participant will receive an `Events.pin-state-changed` event with `meeting` object.
+
+#### Parameters
+
+- `type` : SHARE_AND_CAM | CAM | SHARE | null
+
+#### Returns
+
+- `void`
+
+</div>

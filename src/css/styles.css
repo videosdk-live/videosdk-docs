@@ -1694,9 +1694,17 @@ html[data-theme="dark"]
   font-size: medium;
 }
 
-.sdk-api-ref-only-h4 > h3 {
+.sdk-api-ref-only-h4 > h2 {
   font-size: xx-large;
+}
+
+.sdk-api-ref-only-h4 > h3 {
+  font-size: x-large;
 }
 .sdk-api-ref-only-h4 > h4 {
   font-size: large;
+}
+
+.links-grid {
+  @apply grid grid-cols-3;
 }
