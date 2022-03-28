@@ -6,6 +6,7 @@ import flutter_versions from "../../flutter_docs_versions.json";
 import ios_versions from "../../ios_docs_versions.json";
 import javascript_versions from "../../javascript_docs_versions.json";
 import prebuilt_versions from "../../prebuilt_docs_versions.json";
+import api_reference_versions from "../../api_reference_docs_versions.json";
 import { useLocation } from "@docusaurus/router";
 import Link from "@docusaurus/Link";
 
@@ -29,22 +30,35 @@ export default function SidebarDropdowns() {
 
   function getRouteVersion(value) {
     var currentPath = location.pathname;
+    //check if version being viewed and change version is same or not
     if (version == value) {
       return location.pathname;
     }
+
+    //check if change version is latest
     if (value == versionList[0]) {
       currentPath = currentPath.replace(currentPath.split("/")[2], "");
       currentPath = currentPath.replace("//", "/");
     } else {
-      currentPath = currentPath.replace(
-        currentPath.split("/")[1],
-        sdk + "/" + value
-      );
+
+      //check current viewing version is latest
+      if (version == [versionList[0]]) {
+        currentPath = currentPath.replace(
+          currentPath.split("/")[1],
+          sdk + "/" + value
+        );
+      } else {
+        currentPath = currentPath.replace(
+          currentPath.split("/")[2],
+          value
+        );
+      }
     }
     return currentPath;
   }
 
   useEffect(() => {
+    console.log("location.path : ", location.pathname);
     var currentSdk = location.pathname.split("/")[1];
     var currentVersion = location.pathname.split("/")[2];
     var versions = [];
@@ -62,9 +76,11 @@ export default function SidebarDropdowns() {
       versions = flutter_versions;
     } else if (currentSdk == "prebuilt") {
       versions = prebuilt_versions;
+    } else if (currentSdk == "api-reference") {
+      versions = api_reference_versions;
     }
 
-    if (currentVersion.match("([0-9])+.([0-9])+.([0-9]|[a-z])+")) {
+    if (currentVersion.match("([0-9])+.([0-9])+.([0-9]|[a-z])+") || currentVersion.match("v([0-9])+")) {
       setVersion(currentVersion);
       setViewType(location.pathname.split("/")[3]);
     } else {
@@ -121,31 +137,32 @@ export default function SidebarDropdowns() {
     return name;
   }
 
+  console.log("Sdk  : ", sdk);
   return (
-    <div class="row dropdown_menu">
-      {(sdk != "docs" && sdk != "prebuilt") || viewType == "api" ? (
-        <div class="col dropdown dropdown--hoverable dropdown--left">
-          <div class="row navbar__link--active">
-            {<img class="dropdown-logo" src={getSDKName(sdk)[0]?.icon} />}
-            <div class="col" style={{ padding: "0px", fontSize: "1rem" }}>
+    <div className="row dropdown_menu">
+      {(sdk != "docs" && sdk != "prebuilt" && sdk != "api-reference") || viewType == "api" ? (
+        <div className="col dropdown dropdown--hoverable dropdown--left">
+          <div className="row navbar__link--active">
+            {<img className="dropdown-logo" src={getSDKName(sdk)[0]?.icon} />}
+            <div className="col" style={{ padding: "0px", fontSize: "1rem" }}>
               {getSDKName(sdk)[0]?.value}
             </div>
 
             <img src="/img/icons/ic_arrow_down.svg" />
           </div>
-          <ul class="dropdown__menu">
+          <ul className="dropdown__menu">
             {sdkList.map((e, i) => {
               return e.id != "prebuilt" || viewType == "api" ? (
                 <li key={e.id}>
                   <Link
-                    class={
+                    className={
                       e.id == sdk
                         ? "dropdown__link dropdown__link--active"
                         : "dropdown__link"
                     }
                     href={getSdkRoutingPath(e.id)}
                   >
-                    <img class="dropdown-logo" src={e.icon} />
+                    <img className="dropdown-logo" src={e.icon} />
                     {e.value}
                   </Link>
                 </li>
@@ -156,34 +173,34 @@ export default function SidebarDropdowns() {
       ) : null}
       {sdk != "docs" ? (
         <div
-          class={
-            viewType == "guide" && sdk == "prebuilt"
+          className={
+            (viewType == "guide" && sdk == "prebuilt") || sdk == "api-reference"
               ? "col dropdown dropdown--hoverable dropdown--left"
               : "dropdown dropdown--hoverable dropdown--right"
           }
         >
-          <a class="row navbar__link--active">
-            <div class="col" style={{ padding: "0px" }}>
-              {version}
+          <a className="row navbar__link--active">
+            <div className="col" style={{ padding: "0px" }}>
+              {sdk == "api-reference" ? "/" + version : version}
             </div>
             <img
               src="/img/icons/ic_arrow_down.svg"
               style={{ paddingLeft: "8px" }}
             />{" "}
           </a>
-          <ul class="dropdown__menu">
+          <ul className="dropdown__menu">
             {versionList.map((v) => {
               return (
                 <li key={v}>
                   <Link
-                    class={
+                    className={
                       v == version
                         ? "dropdown__link dropdown__link--active"
                         : "dropdown__link"
                     }
                     href={getRouteVersion(v)}
                   >
-                    {v}
+                    {sdk == "api-reference" ? "/" + v : v}
                   </Link>
                 </li>
               );
