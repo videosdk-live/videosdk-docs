@@ -98,7 +98,6 @@ title: Video SDK useMeeting Hook
 </div>
 </div>
 
-
 ## Methods
 
 <div class="links-grid">

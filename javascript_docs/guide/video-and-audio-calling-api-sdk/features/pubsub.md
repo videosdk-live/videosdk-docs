@@ -3,7 +3,6 @@ sidebar_label: PubSub (BETA)
 pagination_label: PubSub (BETA)
 ---
 
-
 # PubSub (BETA)
 
 PubSub feature allows the participant to send and receive messages of the topics which he has subscribed.
@@ -16,7 +15,6 @@ This method is use for publishing message of specific topic.
 
 #### Syntax
 
-
 ```js
 function publish(topic: String, message: String, { persist : Boolean });
 ```
@@ -27,9 +25,7 @@ function publish(topic: String, message: String, { persist : Boolean });
 | message        | String | This is the actual message, which will be published to participants, who had subscribed to a particular topic.            |
 | options        | Object | This is an object, which provides an option, such as `persist`, which persists message history for upcoming participants. |
 
-
 #### Example
-
 
 ```js
 function sendMessage() {
@@ -45,7 +41,6 @@ This method is used to subscribe for particular topic. This method returns a lis
 
 #### Syntax
 
-
 ```js
 function subscribe(topic: String, onMessageReceived: function);
 ```
@@ -56,7 +51,6 @@ function subscribe(topic: String, onMessageReceived: function);
 | onMessageReceived | function | This is a callback function, which will be called, when new message received. |
 
 #### Example
-
 
 ```js
 // Callback function
@@ -76,7 +70,6 @@ This method is used to unsubscribe the message topic.
 
 #### Syntax
 
-
 ```js
 function unsubscribe(topic:String, onMessageReceived: function);
 ```
@@ -88,7 +81,6 @@ function unsubscribe(topic:String, onMessageReceived: function);
 
 #### Example
 
-
 ```js
 function unsubscribe() {
   // Unsubscribe 'CHAT' topic
@@ -97,7 +89,6 @@ function unsubscribe() {
 ```
 
 ## Sample Code
-
 
 ```js
 //subscribe to the 'CHAT' on meeting join

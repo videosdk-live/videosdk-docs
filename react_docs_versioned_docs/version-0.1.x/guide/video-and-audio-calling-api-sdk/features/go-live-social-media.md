@@ -26,7 +26,6 @@ This guide will provide an overview of how participant can start and stop broadc
 
 ### Start And Stop Live Stream
 
-
 ```js
 const onPress = () => {
   // Start Live Stream
@@ -47,7 +46,6 @@ const onPress = () => {
 1. **livestream-started** - Whenever broadcasting of meeting started, `livestream-started` event will trigger.
 
 2. **livestream-stopped** - Whenever broadcasting of meeting stopped, `livestream-stopped` event will trigger.
-
 
 ```js
 import { useMeeting } from "@videosdk.live/react-sdk";

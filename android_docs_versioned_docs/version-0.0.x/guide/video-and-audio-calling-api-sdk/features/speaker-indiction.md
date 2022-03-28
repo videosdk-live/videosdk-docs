@@ -27,7 +27,6 @@ We can access `speaker-changed` event through [meeting object](/android/guide/vi
 
 ### speaker-changed Event
 
-
 ```js
 private final MeetingEventListener meetingEventListener = new MeetingEventListener() {
      // ...

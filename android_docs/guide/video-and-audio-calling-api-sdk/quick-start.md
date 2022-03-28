@@ -108,6 +108,7 @@ public class MainApplication extends Application {
 ```
 
 8. Project Structure should look like
+
 ```jsx title="Project Structure"
    app
    ├── java
@@ -287,6 +288,7 @@ Create a new Activity named `MeetingActivity.java`.
 #### Creating the UI for Meeting Screen
 
 In `/app/res/layout/activity_meeting.xml`, replace the content with the following:
+
 ```xml title="activty_meeting.xml"
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"

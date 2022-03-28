@@ -15,7 +15,7 @@ sidebar_position: 1
 slug: server-setup
 ---
 
-import ServerSetup from '../../../../mdx/introduction/_server-setup.mdx';
+import ServerSetup from '../../../../mdx/introduction/\_server-setup.mdx';
 
 # Server Setup
 
@@ -231,7 +231,6 @@ app.use(express.urlencoded({ extended: true }));
 app.use(morgan("dev"));
 
 app.get("/get-token", (req, res) => {
-
   //Replace your API Key here from the VideoSDK Dashboard
   const API_KEY = "";
 

@@ -87,11 +87,10 @@ const {connection} = useConnection({
 
 ### participants
 
-- type : `[Participant]` 
+- type : `[Participant]`
 - It will have all the participants present in the meeting.
 
 ---
-
 
 ### meeting
 

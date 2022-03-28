@@ -27,7 +27,6 @@ We can access `speaker-changed` event through [meeting object](/react/guide/vide
 
 ### speaker-changed Event
 
-
 ```js
 import { useMeeting } from "@videosdk.live/react-sdk";
 

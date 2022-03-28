@@ -14,9 +14,7 @@ module.exports = {
     {
       type: "category",
       label: "Quick Start Guide",
-      items: [
-        "guide/video-and-audio-calling-api-sdk/quick-start",
-      ],
+      items: ["guide/video-and-audio-calling-api-sdk/quick-start"],
       collapsed: true,
     },
     {
@@ -29,7 +27,7 @@ module.exports = {
         "guide/video-and-audio-calling-api-sdk/features/camera-controls",
         "guide/video-and-audio-calling-api-sdk/features/mic-controls",
         "guide/video-and-audio-calling-api-sdk/features/toggle-participant-media",
-        "guide/video-and-audio-calling-api-sdk/features/speaker-indication"
+        "guide/video-and-audio-calling-api-sdk/features/speaker-indication",
       ],
       collapsed: true,
     },
@@ -39,7 +37,7 @@ module.exports = {
       items: [
         "guide/video-and-audio-calling-api-sdk/features/record-meeting",
         "guide/video-and-audio-calling-api-sdk/features/go-live-social-media",
-        "guide/video-and-audio-calling-api-sdk/features/pubsub"
+        "guide/video-and-audio-calling-api-sdk/features/pubsub",
       ],
       collapsed: true,
     },

@@ -55,7 +55,6 @@ Other participants Map contains same properties as [LocalParticipant](/react/gui
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-
 ```js
 import { useParticipant } from "@videosdk.live/react-sdk";
 
@@ -151,7 +150,6 @@ const ParticipantView = ({ participantId }) => {
 4. **stream-enabled** - Whenever any participant enabled mic/webcam in meeting, `stream-enabled` event will trigger and return [Stream Map](/react/guide/video-and-audio-calling-api-sdk/features/manage-participants#streams-map-properties).
 
 5. **stream-disabled** - Whenever any participant disabled mic/webcam in meeting, `stream-disabled` event will trigger and return [Stream Map](/react/guide/video-and-audio-calling-api-sdk/features/manage-participants#streams-map-properties).
-
 
 ```js
 import { useMeeting, useParticipant } from "@videosdk.live/react-sdk";

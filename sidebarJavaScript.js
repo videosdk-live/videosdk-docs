@@ -14,9 +14,7 @@ module.exports = {
     {
       type: "category",
       label: "Quick Start Guide",
-      items: [
-        "guide/video-and-audio-calling-api-sdk/quick-start"
-      ],
+      items: ["guide/video-and-audio-calling-api-sdk/quick-start"],
       collapsed: true,
     },
     {

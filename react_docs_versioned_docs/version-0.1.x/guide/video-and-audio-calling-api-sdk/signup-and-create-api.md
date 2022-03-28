@@ -15,7 +15,6 @@ sidebar_position: 1
 slug: signup-and-create-api
 ---
 
-import APISecret from '../../../../mdx/introduction/_api-key.mdx';
+import APISecret from '../../../../mdx/introduction/\_api-key.mdx';
 
 <APISecret title="Get your API key and Secret key" />
-

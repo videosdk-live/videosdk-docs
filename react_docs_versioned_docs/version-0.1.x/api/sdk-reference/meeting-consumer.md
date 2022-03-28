@@ -19,18 +19,16 @@ It requires <a href="https://reactjs.org/docs/render-props.html#using-props-othe
     //All Event Callbacks can be specified here
   }}
 >
-  {
-    ({ 
-      meetingId, 
-      //All Properties can be specified here
+  {({
+    meetingId,
+    //All Properties can be specified here
 
-      join,
-      leave,
-      //All methods can be specified here
-    }) => {
-      return <MeetingView />;
-    }
-  }
+    join,
+    leave,
+    //All methods can be specified here
+  }) => {
+    return <MeetingView />;
+  }}
 </MeetingConsumer>
 ```
 
@@ -121,7 +119,6 @@ It requires <a href="https://reactjs.org/docs/render-props.html#using-props-othe
 
 </div>
 </div>
-
 
 ## Methods
 
@@ -387,4 +384,3 @@ It requires <a href="https://reactjs.org/docs/render-props.html#using-props-othe
 
 </div>
 </div>
-

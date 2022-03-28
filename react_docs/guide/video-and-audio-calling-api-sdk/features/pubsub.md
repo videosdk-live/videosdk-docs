@@ -15,7 +15,6 @@ This method is use for publishing message of specific topic.
 
 #### Syntax
 
-
 ```js
 function publish(message: String, { persist : Boolean });
 ```
@@ -26,7 +25,6 @@ function publish(message: String, { persist : Boolean });
 | options        | Object | This is an object, which provides an option, such as `persist`, which persists message history for upcoming participants. |
 
 #### Example
-
 
 ```js
 // importing usePubSub hook from react-sdk

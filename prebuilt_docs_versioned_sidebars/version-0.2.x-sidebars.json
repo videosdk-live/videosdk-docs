@@ -5,7 +5,8 @@
       "label": "Quick Start",
       "items": [
         "guide/prebuilt-video-and-audio-calling/getting-started",
-        "guide/prebuilt-video-and-audio-calling/signup-and-create-api",{
+        "guide/prebuilt-video-and-audio-calling/signup-and-create-api",
+        {
           "type": "category",
           "label": "Client Setup",
           "items": [
@@ -16,7 +17,6 @@
         },
         "guide/prebuilt-video-and-audio-calling/quick-start",
         "guide/prebuilt-video-and-audio-calling/dynamic-meeting-link"
-        
       ],
       "collapsed": true
     },

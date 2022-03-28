@@ -44,9 +44,7 @@
     {
       "type": "category",
       "label": "See Also",
-      "items": [
-        "realtime-communication/see-also/device-browser-support"
-      ],
+      "items": ["realtime-communication/see-also/device-browser-support"],
       "collapsed": true
     }
   ]
