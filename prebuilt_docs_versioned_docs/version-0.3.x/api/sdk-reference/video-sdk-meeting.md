@@ -29,6 +29,7 @@ meeting.init({
   webcamEnabled: true,
   participantCanToggleSelfWebcam: true,
   participantCanToggleSelfMic: true,
+  participantCanLeave: true, // if false, leave button won't be visible
 
   chatEnabled: true,
   screenShareEnabled: true,
@@ -36,49 +37,50 @@ meeting.init({
   whiteboardEnabled: true,
   raiseHandEnabled: true,
 
-  recordingEnabled: true,
-  recordingWebhookUrl: "https://www.videosdk.live/callback",
-  recordingAWSDirPath: `/meeting-recordings/${meetingId}/`, // automatically save recording in this s3 path
-  autoStartRecording: true, // auto start recording on participant joined
+  recording: {
+    autoStart: true, // auto start recording on participant joined
+    enabled: true,
+    webhookUrl: "https://www.videosdk.live/callback",
+    awsDirPath: `/meeting-recordings/${meetingId}/`, // automatically save recording in this s3 path
+  },
 
-  brandingEnabled: true,
-  brandLogoURL: "https://picsum.photos/200",
-  brandName: "Awesome startup",
-  poweredBy: true,
-
-  participantCanLeave: true, // if false, leave button won't be visible
-
-  // Live stream meeting to youtube
   livestream: {
     autoStart: true,
-    outputs: [
-      {
-        url: "rtmp://x.rtmp.youtube.com/live2",
-        streamKey: "<STREAM KEY FROM YOUTUBE>",
-      },
-    ],
+    enabled: true,
+  },
+
+  layout: {
+    type: "SPOTLIGHT", // "SPOTLIGHT" | "SIDEBAR" | "GRID"
+    priority: "PIN", // "SPEAKER" | "PIN",
+    // gridSize: 3,
+  },
+
+  branding: {
+    enabled: true,
+    logoURL:
+      "https://static.zujonow.com/videosdk.live/videosdk_logo_circle_big.png",
+    name: "Prebuilt",
+    poweredBy: false,
   },
 
   permissions: {
+    pin: true,
     askToJoin: false, // Ask joined participants for entry in meeting
     toggleParticipantMic: true, // Can toggle other participant's mic
     toggleParticipantWebcam: true, // Can toggle other participant's webcam
     drawOnWhiteboard: true, // Can draw on whiteboard
     toggleWhiteboard: true, // Can toggle whiteboard
     toggleRecording: true, // Can toggle meeting recording
+    toggleLivestream: true, //can toggle live stream
     removeParticipant: true, // Can remove participant
     endMeeting: true, // Can end meeting
+    changeLayout: true, //can change layout
   },
 
   joinScreen: {
     visible: true, // Show the join screen ?
     title: "Daily scrum", // Meeting title
     meetingUrl: window.location.href, // Meeting joining url
-  },
-
-  pin: {
-    allowed: true, // participant can pin any participant in meeting
-    layout: "SPOTLIGHT", // meeting layout - GRID | SPOTLIGHT | SIDEBAR
   },
 
   leftScreen: {
