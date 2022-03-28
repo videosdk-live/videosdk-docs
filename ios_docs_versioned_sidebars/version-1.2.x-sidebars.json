@@ -73,6 +73,14 @@
     {
       "type": "doc",
       "id": "api/sdk-reference/participant-event-listener-class"
+    },
+    {
+      "type": "doc",
+      "id": "api/sdk-reference/pubsub-class"
+    },
+    {
+      "type": "doc",
+      "id": "api/sdk-reference/pubsub-message-class"
     }
   ]
 }

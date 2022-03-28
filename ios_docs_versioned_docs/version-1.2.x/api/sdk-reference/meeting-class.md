@@ -25,21 +25,25 @@ import MethodListGroup from '@theme/MethodListGroup';
 import MethodListItemLabel from '@theme/MethodListItemLabel';
 import MethodListHeading from '@theme/MethodListHeading';
 
-### Properties
+## Properties
 
-<MethodListGroup>
-  <MethodListItemLabel name="__properties"  >
-    <MethodListGroup>
-      <MethodListHeading heading="Properties" />
-      <MethodListItemLabel name="id"  type={"String"} />
-      <MethodListItemLabel name="localParticipant"  type={"Participant"} />
-      <MethodListItemLabel name="participants"  type={"[String : Participant]"} />
-      <MethodListItemLabel name="pubsub"  type={"PubSub"} />
-    </MethodListGroup>
-  </MethodListItemLabel>
-</MethodListGroup>
+### id
+- `id` will be of type `String`
+- `id` represents the current meeting with unique string value.
 
-### Events
+### localParticipant
+- `localParticipant` will be of type `Participant`
+- `localParticipant` represents the local participant of the meeting.
+
+### participants
+- `participants` will be of type `[String:Participant]`
+- `participants` represents all the remote participants of the meeting.
+
+### pubsub
+- `pubsub` will be of type `PubSub`
+- `pubsub` represents publisher-subscriber feature.
+
+## Events
 
 <MethodListGroup>
   <MethodListItemLabel name="__events" >
