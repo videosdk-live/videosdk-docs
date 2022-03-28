@@ -559,7 +559,7 @@ const {
 
 #### Event callback parameters
 
-- **connection**: [Connection](./)
+- **connection**: [Connection](../use-connection.md)
 
 #### Example
 

@@ -105,6 +105,10 @@
     {
       "type": "doc",
       "id": "api/sdk-reference/use-pubsub"
+    },
+    {
+      "type": "doc",
+      "id": "api/sdk-reference/error-codes"
     }
   ]
 }

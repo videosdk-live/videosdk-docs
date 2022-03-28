@@ -10,7 +10,7 @@ A React component that subscribes to context changes. Meeting Consumer updated t
 
 It requires <a href="https://reactjs.org/docs/render-props.html#using-props-other-than-render">function as child</a>. The function receives the current context value and returns a React node.
 
-```jsx title="Meeting Provider"
+```js title="Meeting Provider"
 <MeetingConsumer
   {...{
     onParticipantJoined: (participant) => {

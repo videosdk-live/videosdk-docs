@@ -5,8 +5,6 @@ pagination_label: Intro to Video SDK usePubSub Hook
 title: Video SDK usePubSub Hook
 ---
 
-<div class="sdk-api-ref">
-
 ## usePubSub Hook
 
 `usePubSub` hook abstracts pubsub class and takes all the properties and events as parameters and returns all the properties and methods to work pubsub instance.
@@ -28,8 +26,6 @@ function onOldMessagesReceived(messages) {
 
 const { publish, messages } = usePubSub(topic, { onMessageReceived, onOldMessagesReceived });
 ```
-
-<div class="sdk-api-ref-only-h4">
 
 ## Parameters
 
@@ -63,7 +59,7 @@ const { publish, messages } = usePubSub(topic, { onMessageReceived, onOldMessage
 
 - `message` will be the message to be send for the particular topic.
 
-- `options` is an object, which provides an option, such as `persist`, which persists message history for upcoming participants.
+- `options` is an object, which provides an option, such as `persist`, which persists message for upcoming participants.
 
 #### Parameters
 
@@ -99,6 +95,3 @@ sendMessage("Hello");
   topic: String
 }
 ```
-
-</div>
-</div>
