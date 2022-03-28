@@ -35,49 +35,88 @@ const {connection} = useConnection({
 });
 ```
 
-import MethodListGroup from '@theme/MethodListGroup';
-import MethodListItemLabel from '@theme/MethodListItemLabel';
-import MethodListHeading from '@theme/MethodListHeading';
+## Parameters
 
-### Parameters
+### connectionId
 
-<MethodListGroup>
-  <MethodListItemLabel name="__namedParameters" option={"required"} type={"object"} >
-    <MethodListGroup>
-      <MethodListHeading heading="Parameters" />
-      <MethodListItemLabel name="connectionId" option={"required"} type={"String"} />
-      <MethodListItemLabel name="onMeeting" option={"optional"} type={"object"}>
-        <MethodListGroup>
-          <MethodListItemLabel name="onParticipantJoined" option={"optional"} type={"callback"} />
-          <MethodListItemLabel name="onParticipantLeft" option={"optional"} type={"callback"} />
-          <MethodListItemLabel name="onChatMessage" option={"optional"} type={"callback"} />
-        </MethodListGroup>
-      </MethodListItemLabel>
-    </MethodListGroup>
-  </MethodListItemLabel>
-</MethodListGroup>
+- type : `String`
+- `REQUIRED`
 
-### Returns
+- `connectionId` represents the `meetingId` you wan to connect to.
 
-<MethodListGroup>
-  <MethodListItemLabel name="__returns" option={"required"} type={"object"} >
-    <MethodListGroup>
-      <MethodListHeading heading="Returns" />
-      <MethodListItemLabel name="connection" type={"object"} >
-      <MethodListGroup>
-          <MethodListItemLabel name="id" type={"string"} />
-          <MethodListItemLabel name="close" type={"callback"} />
-          <MethodListItemLabel name="payload" type={"object"} />
-          <MethodListItemLabel name="meeting" type={"object"} >
-          <MethodListGroup>
-          <MethodListItemLabel name="id" type={"string"} />
-          <MethodListItemLabel name="sendChatMessage" type={"function"} />
-          <MethodListItemLabel name="end" type={"function"} />
-          <MethodListItemLabel name="participants" type={"[object]"} />
-           </MethodListGroup> 
-           </MethodListItemLabel>
-        </MethodListGroup>
-       </MethodListItemLabel>
-    </MethodListGroup>
-  </MethodListItemLabel>
-</MethodListGroup>
+---
+
+### onMeeting
+
+- type : `Object`
+- `OPTIONAL`
+
+- `onMeeting` is a object of `onParticipantJoined`, `onParticipantLeft` and `onChatMessage` callbacks for the meeting you are connected to.
+
+- #### onParticipantJoined()
+
+  - This event callback is triggered when a new participant joins the connected meeting.
+
+- #### onParticipantLeft()
+
+  - This event callback is triggered when a participant leaves the connected meeting.
+
+- #### onChatMessage()
+
+  - This event callback is triggered when a new message is received in the connected meeting.
+
+---
+
+## Returns
+
+- `useConnection` returns an object of `Connection` which has following properties and methods.
+
+### id
+
+- type : `String`
+- It represents the meetingId of the meeting you have established a connection with.
+
+---
+
+### payload
+
+- type : `Object`
+- It will hold all the payload details you send when the connection was opened.
+
+---
+
+### participants
+
+- type : `[Participant]` 
+- It will have all the participants present in the meeting.
+
+---
+
+
+### meeting
+
+- `meeting` will be of type `object` which will have `id`, `sendChatMessage()`, `end()` and `participants`.
+
+- ### id
+
+  - `id` will have `meetingId` for the meeting you are connected to.
+
+- ### sendChatMessage()
+
+  - `sendChatMessage()` is used to send chat mesasge to the meeting you are connected to.
+
+  - `onChatMessage()` will be triggered for all the participants.
+
+- ### end()
+
+  - `end()` is used to end the meeting with whic hyou are connected.
+
+---
+
+## Method
+
+### close()
+
+- `close()` is used to close the connection to a meeting.
+
+- `onConnectionClose` is triggered when the connection gets closed for each participant.

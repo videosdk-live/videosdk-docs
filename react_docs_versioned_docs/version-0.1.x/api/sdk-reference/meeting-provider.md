@@ -10,7 +10,7 @@ Every Context object in `react-js` comes with a Provider React component that al
 
 ## Meeting Provider
 
-```jsx title="Meeting Provider"
+```js title="Meeting Provider"
 <MeetingProvider
   config={{
     meetingId: "meeting-id",
@@ -23,26 +23,65 @@ Every Context object in `react-js` comes with a Provider React component that al
 ></MeetingProvider>
 ```
 
-import MethodListGroup from '@theme/MethodListGroup';
-import MethodListItemLabel from '@theme/MethodListItemLabel';
-import MethodListHeading from '@theme/MethodListHeading';
+## MeetingProvider Parameters
 
-### Parameters
+---
 
-<MethodListGroup>
-  <MethodListItemLabel name="__namedParameters" option={"required"} type={"object"} >
-    <MethodListGroup>
-      <MethodListHeading heading="Parameters" />
-      <MethodListItemLabel name="config" option={"required"} type={"object"} >
-        <MethodListGroup>
-        <MethodListItemLabel name="meetingId" option={"required"} type={"string"} />
-        <MethodListItemLabel name="micEnabled" option={"required"} type={"boolean"} />
-        <MethodListItemLabel name="webcamEnabled" option={"required"} type={"boolean"} />
-        <MethodListItemLabel name="name" option={"required"} type={"string"} />
-        </MethodListGroup>
-      </MethodListItemLabel>
-      <MethodListItemLabel name="token" option={"required"} type={"string"} />
-      <MethodListItemLabel name="joinWithoutUserInteraction" option={"optional"} type={"boolean"} />
-    </MethodListGroup>
-  </MethodListItemLabel>
-</MethodListGroup>
+### meetingId
+
+- Unique Id of the meeting where that participant will be joining.
+
+  - type : `String`
+  - `REQUIRED`
+
+Please refer this documentation to craete a room.
+
+---
+
+### name
+
+- Name of the participant who will be joining the meeting, this name will be displayed to other participants in the same meeting.
+
+  - type : String
+  - `REQUIRED`
+
+---
+
+### micEnabled
+
+- Whether `mic` of the participant will be on while joining the meeting. If it is set to `false`, then mic of that participant will be `disabled` by default, but can be `enabled` or `disabled` later.
+
+  - type: `Boolean`
+  - `REQUIRED`
+
+---
+
+### webcamEnabled
+
+- Whether `webcam` of the participant will be on while joining the meeting. If it is set to `false`, then webcam of that participant will be `disabled` by default, but can be `enabled` or `disabled` later.
+
+  - type: `Boolean`
+  - `REQUIRED`
+
+---
+
+### token
+
+- The auth token generated from your server.
+
+  - type: `String`
+  - `REQUIRED`
+
+---
+
+### joinWithoutInteraction
+
+- If `joinWithoutInteraction` is `true`, participant will directly join the meeting with requring to explicitly calling `join()`.
+
+- If `joinWithoutInteraction` is `false`, participant has to call `join()` to join the meeting.
+
+  - type: `Boolean`
+  - default: false
+  - `OPTIONAL`
+
+---

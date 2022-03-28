@@ -1700,3 +1700,7 @@ html[data-theme="dark"]
 .sdk-api-ref-only-h4 > h4 {
   font-size: large;
 }
+
+.links-grid {
+  @apply grid grid-cols-3;
+}
