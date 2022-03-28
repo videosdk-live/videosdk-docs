@@ -1548,9 +1548,9 @@ html[data-theme="dark"]
 .footer__link-item > span > svg {
   margin-top: 7px;
 }
-.footer__link-item > :hover {
+/* .footer__link-item > :hover {
   color: #ef433c;
-}
+} */
 
 .image-box {
   background: linear-gradient(
@@ -1656,4 +1656,55 @@ html[data-theme="dark"]
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+.method_code_block > div > div > pre > [class*="codeBlockLines"] {
+  background-color: #252a34 !important;
+  box-shadow: none;
+}
+
+.method_code_block > [class*="codeBlockContainer"] {
+  box-shadow: none;
+}
+
+.method_code_block > div > div > pre {
+  border-bottom-left-radius: 8px !important;
+  border-bottom-right-radius: 8px !important;
+  border-top-left-radius: 0px !important;
+  border-top-right-radius: 0px !important;
+  box-shadow: none;
+}
+
+.colored_ic_arrow_down {
+  filter: invert(61%) sepia(4%) saturate(2550%) hue-rotate(180deg)
+    brightness(90%) contrast(85%);
+}
+
+.sdk-api-ref > h2 {
+  margin-top: 25px;
+  margin-bottom: 25px;
+  font-size: x-large;
+}
+
+.sdk-api-ref > h3 {
+  font-size: large;
+}
+
+.sdk-api-ref > h4 {
+  font-size: medium;
+}
+
+.sdk-api-ref-only-h4 > h2 {
+  font-size: xx-large;
+}
+
+.sdk-api-ref-only-h4 > h3 {
+  font-size: x-large;
+}
+.sdk-api-ref-only-h4 > h4 {
+  font-size: large;
+}
+
+.links-grid {
+  @apply grid grid-cols-3;
 }

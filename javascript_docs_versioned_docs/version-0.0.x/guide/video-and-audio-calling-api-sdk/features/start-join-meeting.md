@@ -34,7 +34,7 @@ After the successful installation of videoSDK, the next step is to integrate vid
 
 ## 1. Configuration
 
-To configure a meeting, you will need [generated token](/javascript/guide/video-and-audio-calling-api-sdk/server-setup#generate-accees-token-and-integrate-other-apis) and [meetingId](/docs/api-reference/realtime-communication/create-join-meeting#create-meeting), we had discussed in [Server Setup](/javascript/guide/video-and-audio-calling-api-sdk/server-setup).
+To configure a meeting, you will need [generated token](/javascript/guide/video-and-audio-calling-api-sdk/server-setup#generate-accees-token-and-integrate-other-apis) and [meetingId](/api-reference/v1/realtime-communication/create-join-meeting#create-meeting), we had discussed in [Server Setup](/javascript/guide/video-and-audio-calling-api-sdk/server-setup).
 This code snippet calls API from local server
 
 **Scenario 1** - Suppose you **don't have** any meetingId, you can simply generate meetingId by invoking `create-meeting` API.

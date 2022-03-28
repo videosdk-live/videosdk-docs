@@ -21,17 +21,17 @@ function Demos() {
                 <h5 className="title">Build with Video SDK</h5>
                 <ul className="links">
                   <li>
-                    <a href="/docs/api-reference/realtime-communication/intro">
+                    <a href="/api-reference/v1/realtime-communication/intro">
                       Real Time Communication Quick Start
                     </a>
                   </li>
                   <li>
-                    <a href="/docs/api-reference/realtime-communication/intro">
+                    <a href="/api-reference/v1/realtime-communication/intro">
                       Interactive Live Streaming Quick Start
                     </a>
                   </li>
                   <li>
-                    <a href="/docs/api-reference/realtime-communication/intro">
+                    <a href="/api-reference/v1/realtime-communication/intro">
                       Real Time Messaging Quick Start
                     </a>
                   </li>
