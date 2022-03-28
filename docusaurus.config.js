@@ -83,8 +83,8 @@ module.exports = {
             },
             {
               label: "Rest API Reference",
-              to: "docs/api-reference/realtime-communication/intro",
-              activeBaseRegex: "docs/api-reference/realtime-communication/*",
+              to: "api-reference/realtime-communication/intro",
+              activeBaseRegex: "api-reference/*/realtime-communication/*",
             },
           ],
         },
@@ -322,7 +322,7 @@ module.exports = {
           //  "https://github.com/facebook/docusaurus/edit/master/website/blog/",
         },
         theme: {
-          customCss: [require.resolve("./src/css/new_custom.css")],
+          customCss: [require.resolve("./src/css/styles.css")],
         },
         googleAnalytics: {
           trackingID: "G-NR8EYPZFJ7",
@@ -402,6 +402,24 @@ module.exports = {
         path: "prebuilt_docs",
         routeBasePath: "prebuilt",
         sidebarPath: require.resolve("./sidebarPrebuilt.js"),
+        // ... other options
+      },
+    ],
+    [
+      "@docusaurus/plugin-content-docs",
+      {
+        id: "api_reference_docs",
+        path: "api_reference_docs",
+        routeBasePath: "api-reference",
+        sidebarPath: require.resolve("./sidebarApiReference.js"),
+        versions: {
+          v2: {
+            label: "/v2",
+          },
+          v1: {
+            label: "/v1",
+          },
+        },
         // ... other options
       },
     ],

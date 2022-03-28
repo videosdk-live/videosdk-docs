@@ -11,7 +11,7 @@ const HeroBlocks = [
     title: "API Reference",
     icon: "",
     text: "Get to know about video sdk",
-    link: "/docs/api-reference/realtime-communication/intro",
+    link: "/api-reference/v1/realtime-communication/intro",
   },
   {
     title: "Tutorials",

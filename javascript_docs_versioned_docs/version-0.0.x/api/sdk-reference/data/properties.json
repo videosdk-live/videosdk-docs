@@ -1,0 +1,9 @@
+[
+  { "href": "./properties#id", "label": "id" },
+  { "href": "./properties#activeSpeakerId", "label": "activeSpeakerId" },
+  { "href": "./properties#activePresenterId", "label": "activePresenterId" },
+  { "href": "./properties#localParticipant", "label": "localParticipant" },
+  { "href": "./properties#participants", "label": "participants" },
+  { "href": "./properties#pubSub", "label": "pubSub" },
+  { "href": "./properties#connections", "label": "connections" }
+]

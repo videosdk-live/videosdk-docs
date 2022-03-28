@@ -40,6 +40,8 @@ module.exports = {
       slate: colors.slate,
 
       // gray: colors.gray, default gray color
+      primary: "#5568FE",
+      grayb3:"#b3b3b3",
 
       gray: {
         100: "#eeeeee",
