@@ -78,7 +78,8 @@
         "api/sdk-reference/meeting-class/introduction",
         "api/sdk-reference/meeting-class/properties",
         "api/sdk-reference/meeting-class/methods",
-        "api/sdk-reference/meeting-class/events"
+        "api/sdk-reference/meeting-class/events",
+        "api/sdk-reference/meeting-class/pubsub"
       ]
     },
     {
