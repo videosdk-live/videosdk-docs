@@ -9,7 +9,7 @@ This feature allows participant for establishing connection and getting informat
 
 For example, there are two meetings running parallelly Meeting A and Meeting B, in case one of the participant from Meeting A wants to access information of Meeting B without joining it, now this can be achieved by establishing connection between meetings, so that participants of Meeting A and Meeting B will get all the updates from each other.
 
-## For This feature, we introduce three new entities/classes
+## Classes / Entities
 
 ### [Connection](./connection-class.md)
 

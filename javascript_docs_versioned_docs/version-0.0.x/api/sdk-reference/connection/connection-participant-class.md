@@ -38,7 +38,7 @@ pagination_label: Connection Participant Class
 
 #### Events associated with `switchTo()`
 
-- `meeting.switch-meeting` event will be emitted whenever `switchTo()` method is called.
+- Meeting class `switch-meeting` event will be emitted whenever `switchTo()` method is called.
 
 #### Returns
 
