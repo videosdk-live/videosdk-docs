@@ -12,9 +12,9 @@ title: Video SDK Meeting Class
 The `Meeting` class includes properties, methods and events for managing a meeting, participants, video, audio and share streams, messaging and UI customisation.
 
 import LinksGrid from '../../../../../src/theme/LinksGrid'
-import properties from './../data/properties.json'
-import methods from './../data/methods.json'
-import events from './../data/events.json'
+import properties from './../data/meeting-class/properties.json'
+import methods from './../data/meeting-class/methods.json'
+import events from './../data/meeting-class/events.json'
 
 ## Meeting Properties
 

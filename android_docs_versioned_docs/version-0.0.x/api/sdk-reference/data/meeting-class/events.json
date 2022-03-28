@@ -1,6 +1,6 @@
 [
     {
-      "href": "./meeting-event-listener-class#onMeetingJoined()",
+      "href": "./meeting-event-listener-class#onMeetingJoined",
       "label": "onMeetingJoined()"
     },
     {
@@ -56,7 +56,7 @@
       "label": "onLivestreamStopped()"
     },
     {
-      "href": "./meeting-event-listener-class#onExternalCallStarted()",
+      "href": "./meeting-event-listener-class#onExternalCallStarted",
       "label": "onExternalCallStarted()"
     }
   ]
