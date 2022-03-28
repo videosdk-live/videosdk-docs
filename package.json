@@ -9,7 +9,7 @@
     "deploy": "docusaurus deploy",
     "clear": "docusaurus clear && rm -rf docusaurus.zip",
     "serve": "docusaurus serve",
-    "start": "npm run serve -- --build --port 3342 --host 127.0.0.1",
+    "start": "npm run serve -- --port 3342 --host localhost",
     "dev": "docusaurus start",
     "zip": "zip -vr docusaurus.zip build .docusaurus",
     "build:zip": "yarn clear && yarn build && yarn zip",
