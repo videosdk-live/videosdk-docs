@@ -1,0 +1,130 @@
+---
+sidebar_position: 2
+sidebar_label: Initializing a Meeting
+pagination_label: Initializing a Meeting
+title: Initializing a Meeting
+---
+
+<div class="sdk-api-ref">
+
+## initialize()
+
+To initialize the meeting, first you have to initialize the `MediasoupClient`.
+You can initialize the `MediasoupClient` using `initialize()` method provided by the SDK.
+
+#### Parameters
+
+- **context**: Context
+
+#### Returns
+
+- _`void`_
+
+```js title="initialize"
+  initialize(Context context)
+```
+
+---
+
+## config()
+
+Now, you have to set `token` property of `VideoSDK` class.
+By using `config()` method, you can set the `token` property of `VideoSDK` class.
+
+#### Parameters
+
+- **token**: String   
+
+#### Returns
+
+- _`void`_
+
+```js title="config"
+ config(String token)
+```
+
+---
+
+
+## initMeeting()
+
+Now, you can initialize the meeting using a factory method provided by the SDK called `initMeeting()`. By passing the parameters according to the need, it will generate a new `Meeting` class and the initiated meeting will be returned.
+
+```js title="initMeeting"
+   initMeeting(
+        Context context, 
+        String meetingId, 
+        String name, 
+        boolean micEnabled,
+        boolean webcamEnabled
+      )
+```
+
+## Parameters
+
+### context
+
+- Context of that activity.
+
+  - type : Context
+  - `REQUIRED`
+
+### meetingId
+
+- Unique Id of the meeting where that participant will be joining.
+
+  - type : `String`
+  - `REQUIRED`
+
+ Please refer this documentation to create a room.
+
+### name
+
+- Name of the participant who will be joining the meeting, this name will be displayed to other participants in the same meeting.
+
+  - type : String
+  - `REQUIRED`
+
+### micEnabled
+
+- Whether `mic` of the participant will be on while joining the meeting. If it is set to `false`, then mic of that participant will be `disabled` by default, but can be `enabled` or `disabled` later.
+
+  - type: `Boolean`
+  - `REQUIRED`
+
+### webcamEnabled
+
+- Whether `webcam` of the participant will be on while joining the meeting. If it is set to `false`, then webcam of that participant will be `disabled` by default, but can be `enabled` or `disabled` later.
+
+  - type: `Boolean`
+  - `REQUIRED`
+
+
+## Returns
+
+### meeting
+
+- After initializing the meeting, `initMeeting()` will return a new [`Meeting`](/javascript/api/sdk-reference/meeting-class/introduction) instance.
+
+---
+
+## Example
+
+```js title="initMeeting"
+
+VideoSDK.initialize(getApplicationContext());
+
+// Configure the token
+VideoSDK.config(token);  // pass the token generated from VideoSDK Dashboard
+
+// Initialize the meeting
+Meeting meeting = VideoSDK.initMeeting({
+  MainActivity.this,
+  "abc-1234-xyz", 
+  "John Doe", 
+  true, 
+  true, 
+});
+```
+
+</div>

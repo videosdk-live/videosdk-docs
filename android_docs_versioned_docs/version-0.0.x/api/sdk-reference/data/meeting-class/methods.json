@@ -1,0 +1,71 @@
+[
+    {
+      "href": "./methods#join",
+      "label": "join"
+    },
+    {
+      "href": "./methods#leave",
+      "label": "leave"
+    },
+    {
+      "href": "./methods#end",
+      "label": "end"
+    },
+    {
+      "href": "./methods#enableWebcam",
+      "label": "enableWebcam"
+    },
+    {
+      "href": "./methods#disableWebcam",
+      "label": "disableWebcam"
+    },
+    {
+      "href": "./methods#unmuteMic",
+      "label": "unmuteMic"
+    },
+    {
+      "href": "./methods#muteMic",
+      "label": "muteMic"
+    },
+    {
+      "href": "./methods#enableScreenShare",
+      "label": "enableScreenShare"
+    },
+    {
+      "href": "./methods#disableScreenShare",
+      "label": "disableScreenShare"
+    },
+    {
+      "href": "./methods#startRecording",
+      "label": "startRecording"
+    },
+    {
+      "href": "./methods#stopRecording",
+      "label": "stopRecording"
+    },
+    {
+      "href": "./methods#startLivestream",
+      "label": "startLivestream"
+    },
+    {
+      "href": "./methods#stopLivestream",
+      "label": "stopLivestream"
+    },
+    {
+      "href": "./methods#getMics",
+      "label": "getMics"
+    },
+    {
+      "href": "./methods#changeMic",
+      "label": "changeMic"
+    },
+    {
+      "href": "./methods#setAudioDeviceChangeListener",
+      "label": "setAudioDeviceChangeListener"
+    },
+    {
+      "href": "./methods#changeWebcam",
+      "label": "changeWebcam"
+    }
+  ]
+  

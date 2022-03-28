@@ -54,11 +54,17 @@
     },
     {
       "type": "doc",
-      "id": "api/sdk-reference/video-sdk-class"
+      "id": "api/sdk-reference/initMeeting"
     },
     {
-      "type": "doc",
-      "id": "api/sdk-reference/meeting-class"
+      "type": "category",
+      "label": "Meeting Class",
+      "items": [
+        "api/sdk-reference/meeting-class/introduction",
+        "api/sdk-reference/meeting-class/properties",
+        "api/sdk-reference/meeting-class/methods",
+        "api/sdk-reference/meeting-class/meeting-event-listener-class"
+      ]
     },
     {
       "type": "doc",
