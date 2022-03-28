@@ -17,7 +17,7 @@ slug: set-participant-video-quality
 
 # Set Particpant Video Quality
 
-- This feature allows participants to set other participant's video quality during the meeting.
+This feature allows participants to set other participant's video quality during the meeting.
 
 ## Set Quality
 

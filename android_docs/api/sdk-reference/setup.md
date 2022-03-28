@@ -59,8 +59,6 @@ dependencies {
 <uses-permission android:name="android.permission.RECORD_AUDIO" />
 <uses-permission android:name="android.permission.CAMERA" />
 <uses-permission android:name="android.permission.INTERNET" />
-<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-<uses-permission android:name="android.permission.BLUETOOTH" />
 ```
 
 ### Step 2: Extend the `android.app.Application` class and create `MainApplication.java` class with the following code:

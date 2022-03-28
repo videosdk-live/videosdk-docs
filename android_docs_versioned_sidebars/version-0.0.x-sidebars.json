@@ -30,7 +30,8 @@
         "guide/video-and-audio-calling-api-sdk/features/camera-controls",
         "guide/video-and-audio-calling-api-sdk/features/mic-controls",
         "guide/video-and-audio-calling-api-sdk/features/toggle-participant-media",
-        "guide/video-and-audio-calling-api-sdk/features/screenshare"
+        "guide/video-and-audio-calling-api-sdk/features/screenshare",
+        "guide/video-and-audio-calling-api-sdk/features/speaker-indiction"
       ],
       "collapsed": true
     },
@@ -39,8 +40,10 @@
       "label": "Advanced Features",
       "items": [
         "guide/video-and-audio-calling-api-sdk/features/record-meeting",
-        "guide/video-and-audio-calling-api-sdk/features/go-live-social-media", 
-        "guide/video-and-audio-calling-api-sdk/features/pubsub"
+        "guide/video-and-audio-calling-api-sdk/features/go-live-social-media",
+        "guide/video-and-audio-calling-api-sdk/features/pubsub",
+        "guide/video-and-audio-calling-api-sdk/features/set-participant-video-quality",
+        "guide/video-and-audio-calling-api-sdk/features/pause-resume-video-stream"
       ]
     }
   ],
