@@ -47,7 +47,7 @@ import events from "./../data/meeting-class/events.json";
 </div>
 <div>
 
-- [pubsub](./pubsub.md)
+- [pubsub](./pubsub)
 
 </div>
 <div>
