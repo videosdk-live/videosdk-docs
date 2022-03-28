@@ -1,13 +1,13 @@
 ---
 sidebar_position: 2
-sidebar_label: Update Room
+sidebar_label: Update A Room
 hide_table_of_contents: true
 ---
 
-# Update Room
+# Update A Room
 
 import Method from '../../../src/theme/RestApiMethodContainer'
-import data from './data.json'
+import data from './data/update-room.json'
 
 <Method
 {...data.updateRoom}

@@ -15,7 +15,7 @@ sidebar_position: 1
 slug: server-setup
 ---
 
-import Mermaid from '@theme/Mermaid';
+import ServerSetup from '../../../../mdx/introduction/_server-setup.mdx';
 
 # Server Setup
 

@@ -1,0 +1,41 @@
+{
+  "updateRoom": {
+    "description": "Update the status of your room by passing status as body parameter. It will change the status if it is different from the current status.",
+    "headers": [
+      {
+        "key": "Authorization",
+        "value": "$YOUR_TOKEN"
+      },
+      {
+        "key": "Content-Type",
+        "value": "application/json"
+      }
+    ],
+    "methodType": "POST",
+    "postParameters": [
+      {
+        "key": "status",
+        "value": "enabled",
+        "description": "Status can have two values: enabled | disabled",
+        "required": true
+      }
+    ],
+    "queryParameters": [],
+    "parameters": [],
+    "apiEndpoint": "https://api.videosdk.live/v2/rooms/${roomId}",
+    "response": {
+      "status": "disabled",
+      "roomId": "abcd-xyzw-lmno",
+      "customRoomId": "demo-testing",
+      "userId": "5f7edbb14c938bcd42944527",
+      "region": "sg001",
+      "createdAt": "2022-03-22T09:15:36.167Z",
+      "updatedAt": "2022-03-23T06:13:04.614Z",
+      "id": "623993b8dbc5a3845961115c",
+      "links": {
+        "get_room": "https://api.videosdk.live/v2/rooms/abc-xyzw-lmno",
+        "get_session": "https://api.videosdk.live/v2/sessions/"
+      }
+    }
+  }
+}

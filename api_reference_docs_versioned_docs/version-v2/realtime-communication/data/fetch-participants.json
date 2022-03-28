@@ -1,0 +1,109 @@
+{
+  "fetchParticipants": {
+    "description": "This API let you fetch a number of total participants in a room session by passing sessionId as a parameter",
+    "headers": [
+      {
+        "key": "Authorization",
+        "value": "$YOUR_TOKEN"
+      },
+      {
+        "key": "Content-Type",
+        "value": "application/json"
+      }
+    ],
+    "methodType": "GET",
+    "postParameters": [],
+    "queryParameters": [
+      {
+        "key": "page",
+        "value": "1",
+        "description": "Page number for the participants. DEFAULT : 1",
+        "required": false
+      },
+      {
+        "key": "perPage",
+        "value": "20",
+        "description": "Number of participants you want per page. DEFAULT : 20",
+        "required": false
+      }
+    ],
+    "parameters": [
+      {
+        "key": "sessionId",
+        "value": "sessionId",
+        "description": "The ID of the Session.",
+        "required": true
+      }
+    ],
+    "apiEndpoint": "https://api.videosdk.live/v2/sessions/${sessionId}/participants",
+    "response": {
+      "pageInfo": {
+        "currentPage": 1,
+        "perPage": 2,
+        "lastPage": 5,
+        "total": 10
+      },
+      "data": {
+        "id": "61763c2597b0c743cf454204",
+        "roomId": "abc-xyzw-lmno",
+        "customRoomId": "testing-room",
+        "participants": [
+          {
+            "participantId": "a1pu7evl",
+            "name": "Demo-1",
+            "timelog": [
+              {
+                "start": "2021-10-25T05:09:58.934Z",
+                "end": "2021-10-25T05:28:45.002Z"
+              }
+            ]
+          },
+          {
+            "participantId": "x2hwiee0",
+            "name": "Demo-2",
+            "timelog": [
+              {
+                "start": "2021-10-25T05:10:22.905Z",
+                "end": "2021-10-25T05:28:45.430Z"
+              }
+            ]
+          },
+          {
+            "participantId": "ylgjhgeh",
+            "name": "Demo-3",
+            "timelog": [
+              {
+                "start": "2021-10-25T05:10:30.129Z",
+                "end": null
+              }
+            ]
+          },
+          {
+            "participantId": "jkkyiiqo",
+            "name": "Demo-4",
+            "timelog": [
+              {
+                "start": "2021-10-25T05:10:36.354Z",
+                "end": "2021-10-25T05:28:45.638Z"
+              }
+            ]
+          },
+          {
+            "participantId": "x9mwdb2l",
+            "name": "Demo-5",
+            "timelog": [
+              {
+                "start": "2021-10-25T05:10:41.865Z",
+                "end": null
+              }
+            ]
+          }
+        ],
+        "links": {
+          "get_room": "https://api.videosdk.live/v2/rooms/abc-xyzw-lmno",
+          "get_session": "https://api.videosdk.live/v2/sessions/"
+        }
+      }
+    }
+  }
+}
