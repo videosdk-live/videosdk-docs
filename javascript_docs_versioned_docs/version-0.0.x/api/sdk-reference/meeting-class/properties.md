@@ -45,7 +45,7 @@ title: Meeting Class Properties
 
   - Map<`participantId`, [Participant](../participant-class/introduction.md)>
 
-- It will contain all joined participants in the meeting except the `localParticipant`.
+- It will contain all joined participants in the meeting except the [`localParticipant`](../participant-class/introduction.md).
 
 - This will be the [`Map`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map) what will container all participants attached with the key as id of that participant.
 
@@ -61,6 +61,6 @@ const remoteParticipant = patricipants.get(remoteParticipantId);
 
 - type : `Map<String,Connection>`
 
-- Whenever any connection is being made with other meeting using `meeting.connectTo` , it will get stored to connections property of a meeting class.
+- Whenever any connection is being made with other meeting using [`meeting.connectTo`](./methods.md#connectto) , it will get stored to connections property of a meeting class.
 
 </div>
