@@ -15,9 +15,7 @@ module.exports = {
     {
       type: "category",
       label: "Quick Start Guide",
-      items: [
-        "guide/video-and-audio-calling-api-sdk/quick-start",
-      ],
+      items: ["guide/video-and-audio-calling-api-sdk/quick-start"],
       collapsed: false,
     },
     {
@@ -39,7 +37,7 @@ module.exports = {
       label: "Advanced Features",
       items: [
         "guide/video-and-audio-calling-api-sdk/features/record-meeting",
-        "guide/video-and-audio-calling-api-sdk/features/go-live-social-media",        
+        "guide/video-and-audio-calling-api-sdk/features/go-live-social-media",
         "guide/video-and-audio-calling-api-sdk/features/pubsub",
       ],
     },

@@ -13,7 +13,6 @@ pagination_label: End Connection Meeting
 
 **Meeting_A** is connected with **Meeting_B**, participant of **Meeting_A** wants to end **Meeting_B**, now **Meeting_A** participant will use `connection.meeting.end` to end **Meeting_B** and all the participants joined in **Meeting_B** will leave.
 
-
 ```js
 import { useConnection } from "@videosdk.live/react-native-sdk";
 

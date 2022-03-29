@@ -31,20 +31,23 @@ import MethodListHeading from '@theme/MethodListHeading';
   <MethodListItemLabel name="__listeners" >
     <MethodListGroup>
       <MethodListHeading heading="Listeners" />
-      <MethodListItemLabel name="onMeetingJoined()"  type={"void"} />
-      <MethodListItemLabel name="onMeetingLeft()"  type={"void"} />
-      <MethodListItemLabel name="onParticipantJoined(Participant participant)"  type={"void"} />
-      <MethodListItemLabel name="onParticipantLeft(Participant participant)"  type={"void"} />
-      <MethodListItemLabel name="onEntryRequested(String id, String name)"  type={"void"} />
-      <MethodListItemLabel name="onEntryResponded(String id, String decision)"  type={"void"} />
-      <MethodListItemLabel name="onPresenterChanged(String participantId)"  type={"void"} />
-      <MethodListItemLabel name="onSpeakerChanged(String participantId)"  type={"void"} />
-      <MethodListItemLabel name="onRecordingStarted()"  type={"void"} />
-      <MethodListItemLabel name="onRecordingStopped()"  type={"void"} />
-      <MethodListItemLabel name="onLivestreamStarted()"  type={"void"} />
-      <MethodListItemLabel name="onLivestreamStopped()"  type={"void"} />
-      <MethodListItemLabel name="onMicRequested(String participantId, MicRequestListener listener)"  type={"void"} />
-      <MethodListItemLabel name="onWebcamRequested(String participantId, WebcamRequestListener listener)"  type={"void"} />
+      <MethodListItemLabel description={"emitted when local participant joined the meeting successfully"} name="onMeetingJoined()"  type={"void"} />
+      <MethodListItemLabel description={"emitted when local participant left the meeting"} name="onMeetingLeft()"  type={"void"} />
+      <MethodListItemLabel description={"emitted when new participant joined the meeting"} name="onParticipantJoined(Participant participant)"  
+      type={"void"} />
+      <MethodListItemLabel description={"emitted when any participant left the meeting"} name="onParticipantLeft(Participant participant)"  type={"void"} />
+      <MethodListItemLabel description={"emitted when remote participant requested for entry in the meeting"} name="onEntryRequested(String id, String name)"  type={"void"} />
+      <MethodListItemLabel description={"emitted when meeting host responded to participant's joining request"} 
+      name="onEntryResponded(String id, String decision)"  type={"void"} />
+      <MethodListItemLabel description={"emitted when any participant shared the screen"} name="onPresenterChanged(String participantId)"  type={"void"} />
+      <MethodListItemLabel description={"emitted when active speaker is changed"} name="onSpeakerChanged(String participantId)"  type={"void"} />
+      <MethodListItemLabel description={"emitted when recording of the meeting is started successfully"} name="onRecordingStarted()"  type={"void"} />
+      <MethodListItemLabel description={"emitted when recording of the meeting is stopped"} name="onRecordingStopped()"  type={"void"} />
+      <MethodListItemLabel description={"emitted when live streaming of the meeting in social media is started successfully"} name="onLivestreamStarted()"  type={"void"} />
+      <MethodListItemLabel description={"emitted when live streaming of the meeting is stopped"} name="onLivestreamStopped()"  type={"void"} />
+      <MethodListItemLabel description={"emitted when remote participant asked you to toggle the Mic"} name="onMicRequested(String participantId, MicRequestListener listener)"  type={"void"} />
+      <MethodListItemLabel description={"emitted when remote participant asked you to toggle the Webcam"} name="onWebcamRequested(String participantId, WebcamRequestListener listener)"  type={"void"} />
+      <MethodListItemLabel description={"emitted when local participant answer/dial the phone call"} name="onExternalCallStarted()"  type={"void"} />
     </MethodListGroup>
   </MethodListItemLabel>
 </MethodListGroup>

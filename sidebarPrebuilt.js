@@ -17,7 +17,6 @@ module.exports = {
         },
         "guide/prebuilt-video-and-audio-calling/quick-start",
         "guide/prebuilt-video-and-audio-calling/dynamic-meeting-link",
-        
       ],
       collapsed: true,
     },

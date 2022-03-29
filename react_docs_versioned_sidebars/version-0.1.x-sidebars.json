@@ -72,19 +72,31 @@
     },
     {
       "type": "doc",
-      "id": "api/sdk-reference/use-meeting"
-    },
-    {
-      "type": "doc",
-      "id": "api/sdk-reference/use-participant"
-    },
-    {
-      "type": "doc",
       "id": "api/sdk-reference/meeting-provider"
     },
     {
       "type": "doc",
       "id": "api/sdk-reference/meeting-consumer"
+    },
+    {
+      "type": "category",
+      "label": "useMeeting Hook",
+      "items": [
+        "api/sdk-reference/use-meeting/introduction",
+        "api/sdk-reference/use-meeting/properties",
+        "api/sdk-reference/use-meeting/methods",
+        "api/sdk-reference/use-meeting/events"
+      ]
+    },
+    {
+      "type": "category",
+      "label": "useParticipant Hook",
+      "items": [
+        "api/sdk-reference/use-participant/introduction",
+        "api/sdk-reference/use-participant/properties",
+        "api/sdk-reference/use-participant/methods",
+        "api/sdk-reference/use-participant/events"
+      ]
     },
     {
       "type": "doc",
@@ -93,6 +105,10 @@
     {
       "type": "doc",
       "id": "api/sdk-reference/use-pubsub"
+    },
+    {
+      "type": "doc",
+      "id": "api/sdk-reference/error-codes"
     }
   ]
 }

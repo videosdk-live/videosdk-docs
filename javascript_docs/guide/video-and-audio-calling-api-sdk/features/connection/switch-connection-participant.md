@@ -66,7 +66,6 @@ meeting.on(
 );
 ```
 
-
 `reInitialiseMeetingOnConfigChange` prop help you to update token and meeting id at run time, you don't have to rejoin or reinitialize the meeting.
 
 The reason we are using this props is we are resetting meetingId and token at participant side [switch-meeting](/javascript/guide/video-and-audio-calling-api-sdk/features/connection/switch-connection-participant#event) event.

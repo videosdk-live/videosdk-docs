@@ -17,7 +17,7 @@ slug: introduction
 
 # Live Streaming API
 
-## introduction
+## Introduction
 
 Live streming lets you stream your live videos with just few lines of code. Reach to your audience across the globe.
 

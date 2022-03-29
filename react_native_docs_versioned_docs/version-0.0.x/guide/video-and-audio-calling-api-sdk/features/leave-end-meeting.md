@@ -27,7 +27,6 @@ This guide will provide an overview of how to implement leave or end feature in 
 
 ### Leave And End Meeting
 
-
 ```js
 const onPress = () => {
   // Leave Meeting

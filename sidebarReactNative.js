@@ -22,9 +22,7 @@ module.exports = {
     {
       type: "category",
       label: "Quick Start Guide",
-      items: [
-        "guide/video-and-audio-calling-api-sdk/quick-start",
-      ],
+      items: ["guide/video-and-audio-calling-api-sdk/quick-start"],
       collapsed: true,
     },
     {
@@ -64,9 +62,9 @@ module.exports = {
             "guide/video-and-audio-calling-api-sdk/features/connection/end-connection-meeting",
             "guide/video-and-audio-calling-api-sdk/features/connection/close-connection",
           ],
-          
+
           collapsed: true,
-        }
+        },
       ],
       collapsed: true,
     },

@@ -15,7 +15,6 @@ sidebar_position: 1
 slug: server-setup
 ---
 
-
-import ServerSetup from '../../../../mdx/introduction/_server-setup.mdx';
+import ServerSetup from '../../../../mdx/introduction/\_server-setup.mdx';
 
 <ServerSetup />

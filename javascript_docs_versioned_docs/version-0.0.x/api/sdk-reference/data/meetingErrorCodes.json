@@ -1,0 +1,97 @@
+[
+  {
+    "type": "INVALID_API_KEY",
+    "code": 4001,
+    "message": "'apikey' provided in the token is empty or invalid, please verify it on the dashboard."
+  },
+  {
+    "type": "INVALID_TOKEN",
+    "code": 4002,
+    "message": "'token' is empty or invalid or might have expired."
+  },
+
+  {
+    "type": "INVALID_MEETING_ID",
+    "code": 4003,
+    "message": "'meetingId' is empty or invalid, please verify it or generate new meetingId using the API."
+  },
+
+  {
+    "type": "INVALID_PARTICIPANT_ID",
+    "code": 4004,
+    "message": "'participantId' is empty or invalid, it shouldn't contain any whitespaces."
+  },
+
+  {
+    "type": "DUPLICATE_PARTICIPANT",
+    "code": 4005,
+    "message": "Leaving meeting, since this 'participantId' joined from another device."
+  },
+
+  {
+    "type": "ACCOUNT_DEACTIVATED",
+    "code": 4006,
+    "message": "It seems your account is deactivated by VideoSDK for some reason, you can reach out to us at support@videosdk.live."
+  },
+
+  {
+    "type": "ACCOUNT_DISCONTINUED",
+    "code": 4007
+  },
+  {
+    "type": "INVALID_PERMISSIONS",
+    "code": 4008,
+    "message": "'permissions' provided in the token are invalid, please don't use 'allow_join' or 'allow_mod' with 'ask_join'."
+  },
+  {
+    "type": "START_RECORDING_FAILED",
+    "code": 4011,
+    "message": "Recording start request failed due to an unknown error."
+  },
+  {
+    "type": "STOP_RECORDING_FAILED",
+    "code": 4012,
+    "message": "Recording stop request failed due to an unknown error."
+  },
+  {
+    "type": "START_LIVESTREAM_FAILED",
+    "code": 4013,
+    "message": "Livestream start request failed due to an unknown error."
+  },
+  {
+    "type": "STOP_LIVESTREAM_FAILED",
+    "code": 4014,
+    "message": "Livestream stop request failed due to an unknown error."
+  },
+  {
+    "type": "INVALID_LIVESTREAM_CONFIG",
+    "code": 4015,
+    "message": "Livestream 'outputs' configuration provided was invalid."
+  },
+  {
+    "type": "START_HLS_FAILED",
+    "code": 4016,
+    "message": "HLS start request failed due to an unknown error."
+  },
+  {
+    "type": "STOP_HLS_FAILED",
+    "code": 4017,
+    "message": "HLS stop request failed due to an unknown error."
+  },
+
+  {
+    "type": "RECORDING_FAILED",
+    "code": 5001,
+    "message": "Recording stopped due to an unknown error."
+  },
+  {
+    "type": "LIVESTREAM_FAILED",
+    "code": 5002,
+    "message": "Livestream stopped due to an unknown error."
+  },
+  {
+    "type": "HLS_FAILED",
+    "code": 5003,
+    "message": "HLS stopped due to an unknown error."
+  }
+]

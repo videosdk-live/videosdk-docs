@@ -1,6 +1,6 @@
 {
   "validateRoom": {
-    "description": "You can use the following API to validate the room you're joining using the roomId.",
+    "description": "This API let you validate the provided roomId or customRoomId.",
     "headers": [
       {
         "key": "Authorization",
@@ -11,14 +11,15 @@
         "value": "application/json"
       }
     ],
-    "methodType": "POST",
+    "methodType": "GET",
     "postParameters": [],
     "queryParameters": [],
     "parameters": [
       {
         "key": "roomId",
-        "value": "your roomId",
-        "required": false
+        "value": "hello-world",
+        "description": "Your roomId or customRoomId.",
+        "required": true
       }
     ],
     "apiEndpoint": "https://api.videosdk.live/v2/rooms/validate/${roomId}",

@@ -57,7 +57,6 @@ Currently the below regions are supported:
 In case you are not providing any region code, the default region will be `sg001`.
 :::
 
-
 ```js
 const getToken = async () => {
   try {
@@ -197,7 +196,6 @@ After joining, you will be able to Manage Participant in a meeting.
 </div>
 
 </div>
-
 
 ```js
 const onPress = () => {

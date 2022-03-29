@@ -312,7 +312,6 @@ class RemoteParticipantState extends State<RemoteParticipant> {
 
 5. **stream-disabled** - Whenever any participant disabled mic/webcam in meeting, `stream-disabled` event will trigger and return [Stream Map](/flutter/guide/video-and-audio-calling-api-sdk/features/manage-participants#streams-map-properties).
 
-
 ```js
 // Adding event listner
 meeting.on("participant-joined", (Participant participant) {

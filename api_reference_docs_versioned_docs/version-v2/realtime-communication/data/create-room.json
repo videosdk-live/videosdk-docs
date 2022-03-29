@@ -1,6 +1,6 @@
 {
   "createRoom": {
-    "description": "Creating your room is now as easy as eating a piece of cake, just call the following API as shown in the example and you've successfully created your own room. You can optionally pass region and customRoomId of your own to create your room. If you don't pass region, the default region will be used.",
+    "description": "This API let you create unique meetingId.",
     "headers": [
       {
         "key": "Authorization",
@@ -16,13 +16,13 @@
       {
         "key": "region",
         "value": "sg001",
-        "description": "Region for the room",
+        "description": "You can take advantage of regional API to decrease latency in video calling. `sg001` for Singapore, SG. `uk001` for London, UK. `us001` for Fremont, CA. Default region: `sg001`.",
         "required": false
       },
       {
         "key": "customRoomId",
         "value": "xyz",
-        "description": "Custom Id",
+        "description": "Customize Room id for better understanding.",
         "required": false
       }
     ],

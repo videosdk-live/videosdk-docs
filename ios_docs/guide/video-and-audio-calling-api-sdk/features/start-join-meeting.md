@@ -57,7 +57,6 @@ Currently the below regions are supported:
 In case you are not providing any region code, the default region will be `sg001`.
 :::
 
-
 ```js
 // Update server url here.
 let LOCAL_SERVER_URL = "http://192.168.0.101:9000"

@@ -1,6 +1,6 @@
 {
   "fetchRecordings": {
-    "description": "All the details of recordings of your room can be retreived by this API. You need to pass either roomId or sessionId to get the information.",
+    "description": "This API let you fetch details of your recording  by passing roomId and sessionId as query parameters.",
     "headers": [],
     "methodType": "GET",
     "postParameters": [],
@@ -8,25 +8,25 @@
       {
         "key": "roomId",
         "value": "xyz",
-        "description": "RoomId for which the recording is to be fetched",
+        "description": "The ID of the Room.",
         "required": true
       },
       {
         "key": "sessionId",
         "value": "xyz",
-        "description": "sessionId for which the recording is to be fetched",
+        "description": "The ID of the Session.",
         "required": true
       },
       {
         "key": "page",
         "value": "1",
-        "description": "Page number for the sessions",
+        "description": "Page number for the recording. DEFAULT : 1",
         "required": false
       },
       {
         "key": "perPage",
         "value": "10",
-        "description": "Number of Recordings you want per page",
+        "description": "Number of recordings you want per page. DEFAULT : 20",
         "required": false
       }
     ],
@@ -56,7 +56,6 @@
               "format": "mov,mp4,m4a,3gp,3g2,mj2",
               "duration": 55.055
             },
-            "jobId": null,
             "filePath": "uploads/videos/61d6e871d1617e097b41699b.mp4",
             "size": 17023255,
             "type": "video",
@@ -66,7 +65,7 @@
             "ratio": {
               "1080": 309204.5227499773
             },
-            "fileUrl": "https://dev-cdn.videosdk.live/uploads/videos/61d6e871d1617e097b41699b.mp4",
+            "fileUrl": "https://cdn.videosdk.live/uploads/videos/61d6e871d1617e097b41699b.mp4",
             "id": "61d6e871d1617e097b41699b"
           },
           "id": "61d6e834e1326304a9e73dac"

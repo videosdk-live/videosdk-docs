@@ -1,0 +1,6 @@
+[
+  { "href": "./properties#id", "label": "id" },
+  { "href": "./properties#kind", "label": "kind" },
+  { "href": "./properties#codec", "label": "codec" },
+  { "href": "./properties#track", "label": "track" }
+]

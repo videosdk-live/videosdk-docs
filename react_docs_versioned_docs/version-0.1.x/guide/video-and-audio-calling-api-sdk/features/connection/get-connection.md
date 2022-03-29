@@ -9,7 +9,6 @@ pagination_label: Get Connection
 
 After successfully established connections, you will be able to get all the connected meetings from `Meeting` class parameter called `connections`.
 
-
 ```js
 import { useMeeting } from "@videosdk.live/react-sdk";
 
@@ -27,7 +26,6 @@ However, you can also consider connected `meetingId` as a `connectionId`.
 :::note
 For React developer, videosdk.live introduce new hook called `useConnection`, which can handle single connected meeting by passing id.
 :::
-
 
 ```js
 import { useConnection } from "@videosdk.live/react-sdk";

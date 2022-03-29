@@ -129,7 +129,6 @@ meeting by providing name, meetingId, micEnabled, webcamEnabled & maxResolution.
 
 </div>
 
-
 ```js
 import 'package:flutter/material.dart';
 import 'package:videosdk/rtc.dart';
@@ -182,7 +181,6 @@ After joining, you will be able to Manage Participant in a meeting.
 </div>
 
 </div>
-
 
 ```js
 // Join the meeting

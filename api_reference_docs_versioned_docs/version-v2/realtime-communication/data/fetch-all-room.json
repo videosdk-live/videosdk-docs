@@ -1,0 +1,61 @@
+{
+  "fetchAllRoom": {
+    "description": "This API let you fetch all of your rooms.",
+    "headers": [
+      {
+        "key": "Authorization",
+        "value": "$YOUR_TOKEN"
+      },
+      {
+        "key": "Content-Type",
+        "value": "application/json"
+      }
+    ],
+    "methodType": "GET",
+    "postParameters": [],
+    "queryParameters": [
+      {
+        "key": "page",
+        "value": "1",
+        "description": "Page number for the rooms. DEFAULT : 1",
+        "required": false
+      },
+      {
+        "key": "perPage",
+        "value": "20",
+        "description": "Number of rooms you want per page. DEFAULT : 20",
+        "required": false
+      }
+    ],
+    "parameters": [],
+    "apiEndpoint": "https://api.videosdk.live/v2/rooms/?page=1&perPage=20",
+    "response": {
+      "pageInfo": {
+        "currentPage": 1,
+        "perPage": 1,
+        "lastPage": 5,
+        "total": 10
+      },
+      "data": [
+        {
+          "roomId": "abcd-efgh-lmno",
+          "customRoomId": "final-testing",
+          "region": "us001",
+          "createdAt": "2022-03-25T04:19:32.380Z",
+          "updatedAt": "2022-03-25T04:19:32.380Z",
+          "user": {
+            "email": "tech@zujo.io",
+            "name": "Zujonow",
+            "discontinuedReason": null,
+            "id": "5f7edbb14c938bcd42944527"
+          },
+          "id": "623d42d472498060cccb51f2",
+          "links": {
+            "get_room": "https://api.videosdk.live/v2/rooms/abc-xyzw-lmno",
+            "get_session": "https://api.videosdk.live/v2/sessions/"
+          }
+        }
+      ]
+    }
+  }
+}
