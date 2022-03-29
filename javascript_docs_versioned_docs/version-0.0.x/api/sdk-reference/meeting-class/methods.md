@@ -10,18 +10,18 @@ title: Meeting Class Methods
 ### join()
 
 - It is used to join a meeting.
-- After meeting initialization by [`initMeeting()`](../initMeeting.md) it returns a new instance of [Meeting](../meeting-class/introduction.md). However by default, it will not automatically join the meeting. Hence, to join the meeting you should call `join()`.
+- After meeting initialization by [`initMeeting()`](../initMeeting.md) it returns a new instance of [Meeting](../meeting-class/introduction.md). However, by default, it will not automatically join the meeting. Hence, to join the meeting you should call `join()`.
 
 #### Events associated with `join()`:
 
-- Local Participant will receive a [`meeting-joined`](../meeting-class/events.md#meeting-joined) event, when successfully joined.
+- Local Participant will receive a [`meeting-joined`](../meeting-class/events.md#meeting-joined) event when successfully joined.
 - Remote Participant will receive a [`participant-joined`](../meeting-class/events.md#participant-joined) event with the newly joined [`Participant`](../participant-class/introduction.md) object from the event callback.
 
 #### Participant having `ask_join` permission inside token
 
 - If a token contains the permission `ask_join`, then the participant will not join the meeting directly after calling `join()`, but an event will be emitted to the participant having the permission `allow_join` called [`entry-requested`](../meeting-class/events.md#entry-requested).
 
-- After the decision from the remote participant, an event will be emitted to participant called [`entry-responded`](../meeting-class/events.md#entry-responded). This event will contain the decision made by the remote participant.
+- After the decision from the remote participant, an event will be emitted to the participant called [`entry-responded`](../meeting-class/events.md#entry-responded). This event will contain the decision made by the remote participant.
 
 #### Participant having `allow_join` permission inside token
 
@@ -134,9 +134,9 @@ title: Meeting Class Methods
 - It is used to start meeting recording.
 - All [participants](../participant-class/introduction.md) and [localParticipant](../participant-class/introduction.md), will receive `recording-started` event.
 
-- `webhookUrl` will be triggered when the recording is completed and stored into server. Read more about webhooks [here](https://en.wikipedia.org/wiki/Webhook).
+- `webhookUrl` will be triggered when the recording is completed and stored in the server. Read more about webhooks [here](https://en.wikipedia.org/wiki/Webhook).
 
-- `awsDirPath` will be the path for the your S3 bucket where you want to store recordings to. To allow us to store recording in your S3 bucket, you will need to fill this form by providing the required values. [VideoSDK AWS S3 Integration](https://zfrmz.in/RVlFLFiturVJ7Q97fr23)
+- `awsDirPath` will be the path for your S3 bucket to which you want to store recordings. To allow us to store the recording in your S3 bucket, you will need to fill out this form by providing the required values. [VideoSDK AWS S3 Integration](https://zfrmz.in/RVlFLFiturVJ7Q97fr23)
 
 #### Parameters
 
@@ -191,9 +191,9 @@ stopRecording();
 
 ### startLivestream()
 
-- It is used to start meeting livestreaming.
-- You will be able to start livestream the meeting to another platforms such as Youtube, Facebook, etc. that supports `rtmp` streaming.
-- All [participants](../participant-class/introduction.md) and [localParticipant](../participant-class/introduction.md), will receive `livestream-started` event.
+- It is used to start meeting live streaming.
+- You will be able to start live stream meetings to other platforms such as Youtube, Facebook, etc. that support `RTMP` streaming.
+- All [participants](../participant-class/introduction.md) and [localParticipant](../participant-class/introduction.md) will receive the `livestream-started` event.
 
 #### Parameters
 
@@ -256,7 +256,7 @@ stopLivestream();
 
 - It is used to start meeting HLS.
 - You will be able to start HLS and watch the live stream of meeting over HLS.
-- All [participants](../participant-class/introduction.md) and [localParticipant](../participant-class/introduction.md), will receive `hls-started` event.
+- All [participants](../participant-class/introduction.md) and [localParticipant](../participant-class/introduction.md), will receive the `hls-started` event.
 
 #### Parameters
 
@@ -430,7 +430,7 @@ changeMic(deviceId);
 
 #### Events associated with `connectTo()`:
 
-- `connection-close` event of meeting class is triggered whenever `meeting.connectTo()` being called for both local and remote participants.
+- `connection-open` event of meeting class is triggered whenever `meeting.connectTo()` being called for both local and remote participants.
 
 #### Returns
 
