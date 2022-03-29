@@ -7,7 +7,7 @@ pagination_label: Participant Class Events
 
 <div class="sdk-api-ref-only-h4">
 
-### Events.stream-enabled
+### stream-enabled
 
 - `Events.stream-enabled` will be emitted when any partcipant consumes or produces stream of any type
 
@@ -21,7 +21,7 @@ participant.on("stream-enabled", () => {
 
 ---
 
-### Events.stream-disabled
+### stream-disabled
 
 - `Events.stream-disabled` will be emitted when any partcipant stops consuming or producing stream of any type
 

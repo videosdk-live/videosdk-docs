@@ -10,18 +10,18 @@ title: Meeting Class Methods
 ### join()
 
 - It is used to join a meeting.
-- After meeting initialization by [`initMeeting()`](./) it returns a new instance of [Meeting](./). However by default, it will not automatically join the meeting. Hence, to join the meeting you should call `join()`.
+- After meeting initialization by [`initMeeting()`](../initMeeting.md) it returns a new instance of [Meeting](../meeting-class/introduction.md). However by default, it will not automatically join the meeting. Hence, to join the meeting you should call `join()`.
 
 #### Events associated with `join()`:
 
-- Local Participant will receive a [`meeting-joined`](./) event, when successfully joined.
-- Remote Participant will receive a [`participant-joined`](./) event with the newly joined [`Participant`](./) object from the event callback.
+- Local Participant will receive a [`meeting-joined`](../meeting-class/events.md#meeting-joined) event, when successfully joined.
+- Remote Participant will receive a [`participant-joined`](../meeting-class/events.md#participant-joined) event with the newly joined [`Participant`](../participant-class/introduction.md) object from the event callback.
 
 #### Participant having `ask_join` permission inside token
 
-- If a token contains the permission `ask_join`, then the participant will not join the meeting directly after calling `join()`, but an event will be emitted to the participant having the permission `allow_join` called [`entry-requested`](./).
+- If a token contains the permission `ask_join`, then the participant will not join the meeting directly after calling `join()`, but an event will be emitted to the participant having the permission `allow_join` called [`entry-requested`](../meeting-class/events.md#entry-requested).
 
-- After the decision from the remote participant, an event will be emitted to participant called [`entry-responded`](./). This event will contain the decision made by the remote participant.
+- After the decision from the remote participant, an event will be emitted to participant called [`entry-responded`](../meeting-class/events.md#entry-responded). This event will contain the decision made by the remote participant.
 
 #### Participant having `allow_join` permission inside token
 
@@ -39,8 +39,8 @@ title: Meeting Class Methods
 
 #### Events associated with `leave()`:
 
-- Local participant will receive a [`meeting-left`](./) event.
-- All remote participants will receive a [`participant-left`](./) event with `participantId` string from the event callback.
+- Local participant will receive a [`meeting-left`](../meeting-class/events.md#meeting-left) event.
+- All remote participants will receive a [`participant-left`](../meeting-class/events.md#participant-left) event with `participantId` string from the event callback.
 
 #### Returns
 
@@ -51,11 +51,11 @@ title: Meeting Class Methods
 ### end()
 
 - It is used to end the current running session.
-- By calling `end()`, all joined [participants](./) including [localParticipant](./) of that session will leave the meeting.
+- By calling `end()`, all joined [participants](../participant-class/introduction.md) including [localParticipant](../participant-class/introduction.md) of that session will leave the meeting.
 
 #### Events associated with `end()`:
 
-- All [participants](./) and [localParticipant](./), will be emitted [`meeting-left`](./) event.
+- All [participants](../participant-class/introduction.md) and [localParticipant](../participant-class/introduction.md), will be emitted [`meeting-left`](../meeting-class/events.md#meeting-left) event.
 
 #### Returns
 
@@ -66,7 +66,7 @@ title: Meeting Class Methods
 ### enableWebcam()
 
 - It is used to enable self camera.
-- `stream-enabled` event will be emitted with [`stream`](./) object from the event callback, inside that [participant](./) object.
+- `stream-enabled` event will be emitted with [`stream`](../stream-class/introduction.md) object from the event callback, inside that [participant](../participant-class/introduction.md) object.
 
 #### Returns
 
@@ -77,7 +77,7 @@ title: Meeting Class Methods
 ### disableWebcam()
 
 - It is used to enable self camera.
-- `stream-disabled` event will be emitted with [`stream`](./) object from the event callback, inside that [participant](./) object.
+- `stream-disabled` event will be emitted with [`stream`](../stream-class/introduction.md) object from the event callback, inside that [participant](../participant-class/introduction.md) object.
 
 #### Returns
 
@@ -88,7 +88,7 @@ title: Meeting Class Methods
 ### unmuteMic()
 
 - It is used to enable self microphone.
-- `stream-enabled` event will be emitted with [`stream`](./) object from the event callback, inside that [participant](./) object.
+- `stream-enabled` event will be emitted with [`stream`](../stream-class/introduction.md) object from the event callback, inside that [participant](../participant-class/introduction.md) object.
 
 #### Returns
 
@@ -99,7 +99,7 @@ title: Meeting Class Methods
 ### muteMic()
 
 - It is used to disable self microphone.
-- `stream-disabled` event will be emitted with [`stream`](./) object from the event callback, inside that [participant](./) object.
+- `stream-disabled` event will be emitted with [`stream`](../stream-class/introduction.md) object from the event callback, inside that [participant](../participant-class/introduction.md) object.
 
 #### Returns
 
@@ -110,7 +110,7 @@ title: Meeting Class Methods
 ### enableScreenShare()
 
 - it is used to enable screen-sharing.
-- `stream-enabled` event will be emitted with [`stream`](./) object from the event callback, inside that [participant](./) object.
+- `stream-enabled` event will be emitted with [`stream`](../stream-class/introduction.md) object from the event callback, inside that [participant](../participant-class/introduction.md) object.
 
 #### Returns
 
@@ -121,7 +121,7 @@ title: Meeting Class Methods
 ### disableScreenShare()
 
 - It is used to disable screen-sharing.
-- `stream-disabled` event will be emitted with [`stream`](./) object from the event callback, inside that [participant](./) object.
+- `stream-disabled` event will be emitted with [`stream`](../stream-class/introduction.md) object from the event callback, inside that [participant](../participant-class/introduction.md) object.
 
 #### Returns
 
@@ -132,7 +132,7 @@ title: Meeting Class Methods
 ### startRecording()
 
 - It is used to start meeting recording.
-- All [participants](./) and [localParticipant](./), will receive `recording-started` event.
+- All [participants](../participant-class/introduction.md) and [localParticipant](../participant-class/introduction.md), will receive `recording-started` event.
 
 - `webhookUrl` will be triggered when the recording is completed and stored into server. Read more about webhooks [here](https://en.wikipedia.org/wiki/Webhook).
 
@@ -175,7 +175,7 @@ startRecording(webhookUrl, awsDirPath, config);
 ### stopRecording()
 
 - It is used to stop meeting recording.
-- All [participants](./) and [localParticipant](./), will receive `recording-stopped` event.
+- All [participants](../participant-class/introduction.md) and [localParticipant](../participant-class/introduction.md), will receive `recording-stopped` event.
 
 #### Returns
 
@@ -193,7 +193,7 @@ stopRecording();
 
 - It is used to start meeting livestreaming.
 - You will be able to start livestream the meeting to another platforms such as Youtube, Facebook, etc. that supports `rtmp` streaming.
-- All [participants](./) and [localParticipant](./), will receive `livestream-started` event.
+- All [participants](../participant-class/introduction.md) and [localParticipant](../participant-class/introduction.md), will receive `livestream-started` event.
 
 #### Parameters
 
@@ -238,7 +238,7 @@ startLivestream(outputs, config);
 ### stopLivestream()
 
 - It is used to stop meeting livestreaming.
-- All [participants](./) and [localParticipant](./), will receive `livestream-stopped` event.
+- All [participants](../participant-class/introduction.md) and [localParticipant](../participant-class/introduction.md), will receive `livestream-stopped` event.
 
 #### Returns
 
@@ -256,7 +256,7 @@ stopLivestream();
 
 - It is used to start meeting HLS.
 - You will be able to start HLS and watch the live stream of meeting over HLS.
-- All [participants](./) and [localParticipant](./), will receive `hls-started` event.
+- All [participants](../participant-class/introduction.md) and [localParticipant](../participant-class/introduction.md), will receive `hls-started` event.
 
 #### Parameters
 
@@ -289,7 +289,7 @@ startHls(config);
 ### stopHls()
 
 - It is used to stop meeting HLS.
-- All [participants](./) and [localParticipant](./), will receive `hls-stopped` event.
+- All [participants](../participant-class/introduction.md) and [localParticipant](../participant-class/introduction.md), will receive `hls-stopped` event.
 
 #### Returns
 
@@ -349,7 +349,7 @@ changeWebcam(deviceId);
 ### setWebcamQuality()
 
 - It is used to set the webcam quality.
-- By using `setWebcamQuality()`, uploading of the webcam stream quality of [localParticipant](./) can be changed from `low` to `high` or vice versa.
+- By using `setWebcamQuality()`, uploading of the webcam stream quality of [localParticipant](../participant-class/introduction.md) can be changed from `low` to `high` or vice versa.
 
 #### Parameters
 
@@ -452,8 +452,40 @@ meeting.on("connection-open", (connection) => {
 
 ### on()
 
+#### Parameters
+
+- eventType : [`event of meeting class`](./events.md)
+- listener : `function`
+
+#### Returns
+
+- `void`
+
+#### Example
+
+```js
+//for meeting-any-event
+meeting.on("meeting-any-event", listener);
+```
+
 ---
 
 ### off()
+
+#### Parameters
+
+- eventType : [`event of meeting class`](./events.md)
+- listener : `function`
+
+#### Returns
+
+- `void`
+
+#### Example
+
+```js
+//for meeting-any-event
+meeting.off("meeting-any-event", listener);
+```
 
 </div>

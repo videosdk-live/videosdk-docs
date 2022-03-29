@@ -5,7 +5,7 @@ pagination_label: PubSub
 title: PubSub
 ---
 
-- `PubSub` one of the properties of a `Meeting Class` is used for messaging purpose for an ongoing meeting
+- `PubSub` one of the properties of a [Meeting Class](../meeting-class/introduction.md) is used for messaging purpose for an ongoing meeting
 
 <div class="sdk-api-ref-only-h4">
 

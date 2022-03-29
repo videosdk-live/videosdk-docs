@@ -93,12 +93,12 @@ const participants = meeting.participants;
 
 <div>
 
-- [stream-enabled](./events.md#eventsstream-enabled)
+- [stream-enabled](./events.md#stream-enabled)
 
 </div>
 <div>
 
-- [stream-disabled](./events.md#eventsstream-disabled)
+- [stream-disabled](./events.md#stream-disabled)
 
 </div>
 

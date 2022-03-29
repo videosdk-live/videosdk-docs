@@ -33,19 +33,17 @@ title: Meeting Class Properties
 
 ### localParticipant
 
-- type: [Participant](./)
+- type: [Participant](../participant-class/introduction.md)
 
-- It will be the instance of [Participant](./) class for the local participant(You) who joined the meeting.
-
----
+- It will be the instance of [Participant](../participant-class/introduction.md) class for the local participant(You) who joined the meeting.
 
 ### participants
 
-- type: [`Map`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map) of [Participant](./)
+- type: [`Map`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map) of [Participant](../participant-class/introduction.md)
 
 - `Map<String, Participant>`
 
-  - Map<`participantId`, [Participant](./)>
+  - Map<`participantId`, [Participant](../participant-class/introduction.md)>
 
 - It will contain all joined participants in the meeting except the `localParticipant`.
 
@@ -61,8 +59,8 @@ const remoteParticipant = patricipants.get(remoteParticipantId);
 
 ### connections
 
-- type : `Map<Connection>`
+- type : `Map<String,Connection>`
 
-- Whenever any connection is being made with other meeting using `meeting.connectTo` , it will get stored to connections property of a meeting class
+- Whenever any connection is being made with other meeting using `meeting.connectTo` , it will get stored to connections property of a meeting class.
 
 </div>
