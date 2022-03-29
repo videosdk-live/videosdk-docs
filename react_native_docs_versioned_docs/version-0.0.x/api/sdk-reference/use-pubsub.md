@@ -24,7 +24,10 @@ function onOldMessagesReceived(messages) {
   console.log("Old Messages:", messages);
 }
 
-const { publish, messages } = usePubSub(topic, { onMessageReceived, onOldMessagesReceived });
+const { publish, messages } = usePubSub(topic, {
+  onMessageReceived,
+  onOldMessagesReceived,
+});
 ```
 
 ## Parameters
@@ -47,7 +50,7 @@ const { publish, messages } = usePubSub(topic, { onMessageReceived, onOldMessage
 
 - `onOldMessagesReceived()` will be triggered once when you subscribe to the topic and will receive all the old messages present for that topic as an array of message object.
 
-- `message` published with `persist` as `true` will only be available for thorugh this callback. 
+- `message` published with `persist` as `true` will only be available for thorugh this callback.
 
 ---
 
@@ -64,7 +67,7 @@ const { publish, messages } = usePubSub(topic, { onMessageReceived, onOldMessage
 #### Parameters
 
 - **message** : String
-- **options** 
+- **options**
   - **persist** : boolean
 
 #### Example
@@ -72,9 +75,9 @@ const { publish, messages } = usePubSub(topic, { onMessageReceived, onOldMessage
 ```js
 const { publish, messages } = usePubSub("CHAT");
 
-const sendMessage = (message) =>{
-  publish(message, {persist : true});
-}
+const sendMessage = (message) => {
+  publish(message, { persist: true });
+};
 
 sendMessage("Hello");
 ```

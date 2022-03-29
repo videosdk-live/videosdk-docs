@@ -89,6 +89,6 @@ title: userPatricipant Hook Properties
 - type : `{ cam: bool, share: bool }`
 - `pinState` represent the current pin state for the participant.
   - `cam` will be true if the participants video is pinned.
-  - `share` will be true if the participants screen share is pinned. 
+  - `share` will be true if the participants screen share is pinned.
 
 </div>

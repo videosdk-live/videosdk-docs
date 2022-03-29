@@ -28,23 +28,28 @@ import MethodListHeading from '@theme/MethodListHeading';
 ## Constructor
 
 ### Meeting(String meetingId, Participant localParticipant)
+
 - return type : `void`
 
 ## Properties
 
 ### getmeetingId()
+
 - `getmeetingId()` will return `meetingId`, which represents the meetingId for the current meeting
 - return type : `void`
 
 ### getLocalParticipant()
+
 - `getLocalParticipant()` will return Local participant
 - return type :`Participant`
 
 ### getParticipants()
+
 - `getParticipants()` will return all Remote participant
 - return type : `void`
 
 ### pubSub()
+
 - `pubSub()` will return object of `PubSub` class
 - return type : `PubSub`
 

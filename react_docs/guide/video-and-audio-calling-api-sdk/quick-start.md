@@ -309,7 +309,8 @@ const MeetingView = ({ onMeetingLeave }) => {
         <button className={"button"} onClick={toggleMic}>
           {" "}
           toggleMic
-        </button>&nbsp;&nbsp;
+        </button>
+        &nbsp;&nbsp;
         <button className={"button"} onClick={toggleWebcam}>
           toggleWebcam
         </button>

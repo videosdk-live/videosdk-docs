@@ -122,5 +122,4 @@ pagination_label: Participant Class Methods
 
 - _`void`_
 
-
 </div>

@@ -32,7 +32,7 @@ title: PubSub Class Methods
 PubSubMessageListener pubSubMessageListener = new PubSubMessageListener() {
     @Override
     public void onMessageReceived(PubSubMessage message) {
-        Log.d("#message", "onMessageReceived: " + message.getMessage());  
+        Log.d("#message", "onMessageReceived: " + message.getMessage());
     }
 };
 

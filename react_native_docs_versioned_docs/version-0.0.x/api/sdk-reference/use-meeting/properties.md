@@ -101,7 +101,7 @@ title: useMeeting Hook Properties
 
 ### localScreenShareOn
 
--  type : `boolean`
+- type : `boolean`
 - `localScreenShareOn` will be `true` if the local participants screen share is on else `false`.
 
 ---
