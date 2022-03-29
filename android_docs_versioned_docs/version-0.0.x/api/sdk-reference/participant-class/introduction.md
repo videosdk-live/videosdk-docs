@@ -25,31 +25,31 @@ Map<String, Participant> participants = meeting.getParticipants();
 
 ## Participant Properties
 
-<div class="links-grid">
+<div class="row">
 
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [getId()](./properties#getid)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [getDisplayName()](./properties#getdisplayname)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [getQuality()](./properties#getquality)
 
 </div>
 
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [isLocal()](./properties#islocal)
 
 </div>
 
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [getStreams()](./properties#getstreams)
 
@@ -59,39 +59,39 @@ Map<String, Participant> participants = meeting.getParticipants();
 
 ## Participant Methods
 
-<div class="links-grid">
+<div class="row">
 
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [enableWebcam()](./methods#enablewebcam)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [disableWebcam()](./methods#disablewebcam)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [enableMic()](./methods#enablemic)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [disableMic()](./methods#disablemic)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [remove()](./methods#remove)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [setQuality()](./methods#setquality)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 </div>
 
@@ -99,14 +99,14 @@ Map<String, Participant> participants = meeting.getParticipants();
 
 ## Participant Events
 
-<div class="links-grid">
+<div class="row">
 
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [onStreamEnabled](./participant-event-listener-class#onstreamenabled)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [onStreamDisabled](./participant-event-listener-class#onstreamdisabled)
 

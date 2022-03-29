@@ -13,23 +13,23 @@ pagination_label: Video SDK Participant Class
 
 ## Participant Properties
 
-<div class="links-grid">
-<div>
+<div class="row">
+<div class="col col--4 margin-bottom--lg" >
 
 - [id](properties#id)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [displayName](properties#displayName)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [isLocal](properties#isLocal)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [streams](properties#streams)
 
@@ -38,38 +38,38 @@ pagination_label: Video SDK Participant Class
 
 ## Participant Methods
 
-<div class="links-grid">
-<div>
+<div class="row">
+<div class="col col--4 margin-bottom--lg" >
 
 - [enableWebcam](methods#enableWebcam)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [disableWebcam](methods#disableWebcam)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [enableMic](methods#enableMic)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [disableMic](methods#disableMic)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [setQuality](methods#setQuality)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [remove](methods#remove)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [on](methods#on)
 
@@ -78,23 +78,23 @@ pagination_label: Video SDK Participant Class
 
 ## Participant Events
 
-<div class="links-grid">
-<div>
+<div class="row">
+<div class="col col--4 margin-bottom--lg" >
 
 - [streamEnabled](events#streamEnabled)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [streamDisabled](events#streamDisabled)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [streamPaused](events#streamPaused)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [streamResumed](events#streamResumed)
 

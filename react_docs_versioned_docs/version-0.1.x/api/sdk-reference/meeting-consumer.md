@@ -34,86 +34,86 @@ It requires <a href="https://reactjs.org/docs/render-props.html#using-props-othe
 
 ## Properties
 
-<div class="links-grid">
-<div>
+<div class="row">
+<div class="col col--4 margin-bottom--lg" >
 
 - [meetingId](./use-meeting/properties#meetingid)
 
 </div>
 
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [meeting](./use-meeting/properties#meeting)
 
 </div>
 
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [localParticipant](./use-meeting/properties#localparticipant)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [mainParticipant](./use-meeting/properties#mainparticipant)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [onMainParticipantChanged](./use-meeting/properties#onmainparticipantchanged)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [activeSpeakerId](./use-meeting/properties#activespeakerid)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [presenterId](./use-meeting/properties#presenterid)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [pinnedParticipants](./use-meeting/properties#pinnedparticipants)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [participants](./use-meeting/properties#participants)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [localMicOn](./use-meeting/properties#localmicon)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [localWebcamOn](./use-meeting/properties#localwebcamon)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [localScreenShareOn](./use-meeting/properties#localscreenshareon)
 
 </div>
 
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [isRecording](./use-meeting/properties#isrecording)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [isLiveStreaming](./use-meeting/properties#islivestreaming)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [connections](./use-meeting/properties#connections)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [messages](./use-meeting/properties#messages)
 
@@ -122,143 +122,143 @@ It requires <a href="https://reactjs.org/docs/render-props.html#using-props-othe
 
 ## Methods
 
-<div class="links-grid">
-<div>
+<div class="row">
+<div class="col col--4 margin-bottom--lg" >
 
 - [join](./use-meeting/methods#join)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [leave](./use-meeting/methods#leave)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [end](./use-meeting/methods#end)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [enableWebcam](./use-meeting/methods#enablewebcam)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [disableWebcam](./use-meeting/methods#disablewebcam)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [toggleWebcam](./use-meeting/methods#togglewebcam)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [unmuteMic](./use-meeting/methods#unmutemic)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [muteMic](./use-meeting/methods#mutemic)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [toggleMic](./use-meeting/methods#togglemic)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [enableScreenShare](./use-meeting/methods#enablescreenshare)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [disableScreenShare](./use-meeting/methods#disablescreenshare)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [toggleScreenShare](./use-meeting/methods#togglescreenshare)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [startRecording](./use-meeting/methods#startrecording)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [stopRecording](./use-meeting/methods#stoprecording)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [startLivestream](./use-meeting/methods#startlivestream)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [stopLivestream](./use-meeting/methods#stoplivestream)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [startHls](./use-meeting/methods#starthls)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [stopHls](./use-meeting/methods#stophls)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [getWebcams](./use-meeting/methods#getwebcams)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [changeWebcam](./use-meeting/methods#changewebcam)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [getMics](./use-meeting/methods#getmics)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [changeMic](./use-meeting/methods#changemic)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [startVideo](./use-meeting/methods#startvideo)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [stopVideo](./use-meeting/methods#stopvideo)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [pauseVideo](./use-meeting/methods#pausevideo)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [resumeVideo](./use-meeting/methods#resumevideo)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [seekVideo](./use-meeting/methods#seekvideo)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [connectTo](./use-meeting/methods#connectto)
 
@@ -267,118 +267,118 @@ It requires <a href="https://reactjs.org/docs/render-props.html#using-props-othe
 
 ## Event Callbacks
 
-<div class="links-grid">
-<div>
+<div class="row">
+<div class="col col--4 margin-bottom--lg" >
 
 - [onParticipantJoined](./use-meeting/events#onparticipantjoined)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [onParticipantLeft](./use-meeting/events#onparticipantleft)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [onSpeakerChanged](./use-meeting/events#onspeakerchanged)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [onPresenterChanged](./use-meeting/events#onpresenterchanged)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [onMainParticipantChanged](./use-meeting/events#onmainparticipantchanged)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [onEntryRequested](./use-meeting/events#onentryrequested)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [onRecordingStarted](./use-meeting/events#onrecordingstarted)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [onRecordingStopped](./use-meeting/events#onrecordingstopped)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [onMeetingJoined](./use-meeting/events#onmeetingjoined)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [onMeetingLeft](./use-meeting/events#onmeetingleft)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [onLiveStreamStarted](./use-meeting/events#onlivestreamstarted)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [onLiveStreamStopped](./use-meeting/events#onlivestreamstopped)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [onHlsStarted](./use-meeting/events#onhlsstarted)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [onHlsStopped](./use-meeting/events#onhlsstopped)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [onVideoStateChanged](./use-meeting/events#onvideostatechanged)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [onVideoSeeked](./use-meeting/events#onvideoseeked)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [onPinStateChanged](./use-meeting/events#onpinstatechanged)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [onWebcamRequested](./use-meeting/events#onwebcamrequested)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [onMicRequested](./use-meeting/events#onmicrequested)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [onSwitchMeeting](./use-meeting/events#onswitchmeeting)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [onConnectionOpen](./use-meeting/events#onconnectionopen)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [onConnectionClose](./use-meeting/events#onconnectionclose)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [onError](./use-meeting/events#onerror)
 

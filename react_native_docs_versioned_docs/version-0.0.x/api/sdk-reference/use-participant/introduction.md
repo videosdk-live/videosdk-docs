@@ -13,63 +13,63 @@ title: Video SDK useParticipant Hook
 
 ## Properties
 
-<div class="links-grid">
-<div>
+<div class="row">
+<div class="col col--4 margin-bottom--lg" >
 
 - [displayName](./properties#displayname)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [participant](./properties#participant)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [webcamStream](./properties#webcamstream)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [micStream](./properties#micstream)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [screenShareStream](./properties#screensharestream)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [webcamOn](./properties#webcamon)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [micOn](./properties#micon)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [screenShareOn](./properties#screenshareon)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [isLocal](./properties#islocal)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [isActiveSpeaker](./properties#isactivespeaker)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [isMainParticipant](./properties#ismainparticipant)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [pinState](./properties#pinstate)
 
@@ -78,43 +78,43 @@ title: Video SDK useParticipant Hook
 
 ## Methods
 
-<div class="links-grid">
-<div>
+<div class="row">
+<div class="col col--4 margin-bottom--lg" >
 
 - [enableMic](./methods#enablemic)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [disableMic](./methods#disablemic)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [enableWebcam](./methods#enablewebcam)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [disableWebcam](./methods#disablewebcam)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [setQuality](./methods#setquality)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [pin](./methods#pin)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [unPin](./methods#unpin)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [switchTo](./methods#switchto)
 
@@ -123,13 +123,13 @@ title: Video SDK useParticipant Hook
 
 ## Event Callbacks
 
-<div class="links-grid">
-<div>
+<div class="row">
+<div class="col col--4 margin-bottom--lg" >
 
 - [onStreamEnabled](./events#onstreamenabled)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [onStreamDisabled](./events#onstreamdisabled)
 

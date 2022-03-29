@@ -25,29 +25,29 @@ let participants = meeting.participants;
 
 ## Participant Properties
 
-<div class="links-grid">
+<div class="row">
 
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [id](./properties#id)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [displayName](./properties#displayname)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [videoQuality](./properties#videoquality)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [isLocal](./properties#islocal)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [streams](./properties#streams)
 
@@ -57,34 +57,34 @@ let participants = meeting.participants;
 
 ## Participant Methods
 
-<div class="links-grid">
+<div class="row">
 
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [enableWebcam](./methods#enablewebcam)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [disableWebcam](./methods#disablewebcam)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [enableMic](./methods#enablemic)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [disableMic](./methods#disablemic)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [setQuality](./methods#setquality)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [remove](./methods#remove)
 
@@ -94,14 +94,14 @@ let participants = meeting.participants;
 
 ## Participant Events
 
-<div class="links-grid">
+<div class="row">
 
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [onStreamEnabled](./events#onStreamEnabled)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [onStreamDisabled](./events#onStreamDisabled)
 

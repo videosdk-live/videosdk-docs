@@ -1704,10 +1704,6 @@ html[data-theme="dark"]
 .sdk-api-ref-only-h4 > h4 {
   font-size: large;
 }
-
-.links-grid {
-  @apply grid grid-cols-3;
-}
 .__react_component_tooltip {
   display: none !important;
   visibility: hidden;
