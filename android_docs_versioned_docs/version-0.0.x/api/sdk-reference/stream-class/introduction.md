@@ -11,7 +11,7 @@ import properties from './../data/stream-class/properties.json'
 import methods from './../data/stream-class/methods.json'
 import LinksGrid from '../../../../../src/theme/LinksGrid'
 
-Stream class is responsible for handeling audio, video and screen sharing streams.
+Stream class is responsible for handling audio, video and screen sharing streams.
 
 Stream class defines instance of audio, video and shared screen stream of participants.
 

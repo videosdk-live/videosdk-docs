@@ -13,7 +13,7 @@ pagination_label: Participant Class Methods
 
 #### Events associated with `enableWebcam()` :
 
-- Local Participant and Remote Participant will receive a `Events.onStreamEnabled` event with `stream` object.
+- Every Participant will receive a `onStreamEnabled` event with `stream` object.
 
 #### Returns
 
@@ -27,7 +27,7 @@ pagination_label: Participant Class Methods
 
 #### Events associated with `disableWebcam()` :
 
-- Local Participant and Remote Participant will receive a `Events.onStreamDisabled` event with `stream` object.
+- Every Participant will receive a `onStreamDisabled` event with `stream` object.
 
 #### Returns
 
@@ -41,7 +41,7 @@ pagination_label: Participant Class Methods
 
 #### Events associated with `enableMic()` :
 
-- Local Participant and Remote Participant will receive a `Events.onStreamEnabled` event with `stream` object.
+- Every Participant will receive a `onStreamEnabled` event with `stream` object.
 
 #### Returns
 
@@ -55,7 +55,7 @@ pagination_label: Participant Class Methods
 
 #### Events associated with `disableMic()`:
 
-- Local Participant and Remote Participant will receive a `Events.onStreamDisabled` event with `stream` object.
+- Every Participant will receive a `onStreamDisabled` event with `stream` object.
 
 #### Returns
 
