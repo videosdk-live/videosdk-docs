@@ -28,20 +28,6 @@ title: useMeeting Hook Properties
 
 ---
 
-### mainParticipant
-
-- type : `Participant`
-- `mainParticipant` represents `Participant` object for the main participant of the meeting.
-
----
-
-### onMainParticipantChanged
-
-- type : `Event`
-- `onMainParticipantChanged` is triggered when the main participant of the meeting changes.
-
----
-
 ### activeSpeakerId
 
 - type : `string`
