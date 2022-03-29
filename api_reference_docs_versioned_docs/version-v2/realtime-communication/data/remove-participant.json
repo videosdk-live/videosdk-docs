@@ -7,7 +7,7 @@
       {
         "key": "participantId",
         "value": "participantId",
-        "description": "The participantId of the participant to be removed",
+        "description": "The unique ID of participant.",
         "required": true
       }
     ],
@@ -15,7 +15,7 @@
     "parameters": [
       {
         "key": "roomId",
-        "description": "The roomId",
+        "description": "The ID of the room.",
         "value": "roomId",
         "required": true
       }

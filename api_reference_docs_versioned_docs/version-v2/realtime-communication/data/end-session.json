@@ -8,14 +8,8 @@
     "parameters": [
       {
         "key": "roomId",
-        "description": "Room Id",
+        "description": "Your roomId or customRoomId.",
         "value": "roomId",
-        "required": true
-      },
-      {
-        "key": "customRoomId",
-        "description": "Custom room id",
-        "value": "customRoomId",
         "required": true
       }
     ],
