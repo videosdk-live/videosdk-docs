@@ -148,6 +148,12 @@ title: Methods returned by useMeeting Hook
 
 - Every Participant will receive a callback on [`onStreamEnabled()`](../use-participant/events#onstreamenabled) of the `useParticipant()` hook with `Stream` object if screen share is turned on.
 
+:::caution
+
+For React Native iOS Screen Share feature, you need to follow this guide [React Native iOS Screen Share](/react-native/guide/video-and-audio-calling-api-sdk/extras/react-native-ios-screen-share)
+
+:::
+
 ---
 
 ### startRecording()
@@ -187,7 +193,9 @@ const config = {
   },
 };
 
-const { startRecording } = useMeeting();
+const {
+  startRecording
+} = useMeeting();
 
 startRecording(webhookUrl, awsDirPath, config);
 ```
@@ -221,7 +229,7 @@ startRecording(webhookUrl, awsDirPath, config);
 
 #### Events associated with `startLiveStream()`:
 
-- Every participant will receive a callback on [`onLiveStreamStarted()`](./events#onlivestreamstarted)
+- Every participant will receive a callback on [`onLiveStreamStarted()`]((./events#onlivestreamstarted))
 
 #### Example
 
@@ -245,7 +253,9 @@ const config = {
   },
 };
 
-const { startLiveStream } = useMeeting();
+const {
+  startLiveStream
+} = useMeeting();
 
 startLivestream(outputs, config);
 ```
@@ -258,7 +268,7 @@ startLivestream(outputs, config);
 
 #### Events associated with `stopLiveStream()`:
 
-- Every participant will receive a callback on [`onLiveStreamStopped()`](./events#onlivestreamstopped)
+- Every participant will receive a callback on [`onLiveStreamStopped()`]((./events#onlivestreamstopped))
 
 ---
 
@@ -278,7 +288,7 @@ startLivestream(outputs, config);
 
 #### Events associated with `startHls()`:
 
-- Every participant will receive a callback on [`onHlsStarted()`](./events#onhlsstarted)>
+- Every participant will receive a callback on [`onHlsStarted()`]((./events#onhlsstarted))
 
 #### Example
 
@@ -291,7 +301,9 @@ const config = {
   },
 };
 
-const { startHls } = useMeeting();
+const {
+  startHls
+} = useMeeting();
 
 startHls(config);
 ```
@@ -304,7 +316,7 @@ startHls(config);
 
 #### Events associated with `stopHls()`:
 
-- Every participant will receive a callback on [`onHlsStopped()`](./events#onhlsstopped)
+- Every participant will receive a callback on [`onHlsStopped()`]((./events#onhlsstopped))
 
 ---
 
@@ -319,7 +331,9 @@ startHls(config);
 #### Example
 
 ```javascript
-const { getMics } = useMeeting();
+const {
+  getMics
+} = useMeeting();
 
 const handleGetMics = async () => {
   const mics = await getMics();
@@ -343,7 +357,9 @@ handleGetMics();
 #### Example
 
 ```javascript
-const { getWebcams } = useMeeting();
+const {
+  getWebcams
+} = useMeeting();
 
 const handleGetWebcams = async () => {
   const webcams = await getWebcams();
