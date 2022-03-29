@@ -1712,3 +1712,21 @@ html[data-theme="dark"]
   display: none !important;
   visibility: hidden;
 }
+
+[class*="backToTopButton"]:hover::after {
+  background-color: #000 !important;
+}
+[class*="backToTopButton"]:hover {
+  background-color: #fff !important;
+}
+
+[class*="backToTopButton"]::after {
+  background-color: #fff !important;
+}
+[class*="backToTopButton"] {
+  background-color: var(--ifm-code-background-dark) !important;
+}
+
+[class*="announcementBarClose"] {
+  color: #fff !important;
+}

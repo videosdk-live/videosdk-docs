@@ -9,9 +9,11 @@ title: Methods returned by useParticipant Hook
 
 ### enableMic()
 
-- `enableMic()` is used to enable mic of the local participant.
+- `enableMic()` is used to enable mic of participant.
 
 #### Events associated with `enableMic()`:
+
+- First the participant will get a callback on [`onMicRequested()`](../use-meeting/events#onmicrequested) and once the participant accepts the request mic will be enabled.
 
 - Every Participant will receive a callback on [`onStreamEnabled()`](./events#onstreamenabled) of the `useParticipant()` hook with `Stream` object.
 
@@ -19,7 +21,7 @@ title: Methods returned by useParticipant Hook
 
 ### disableMic()
 
-- `disableMic()` is used to disable mic of the local participant.
+- `disableMic()` is used to disable mic of participant.
 
 #### Events associated with `disableMic()`:
 
@@ -29,9 +31,11 @@ title: Methods returned by useParticipant Hook
 
 ### enableWebcam()
 
-- `enableWebcam()` is used to enable webcam of the local participant.
+- `enableWebcam()` is used to enable webcam of participant.
 
 #### Events associated with `enableWebcam()`:
+
+- First the participant will get a callback on [`onWebcamRequested()`](../use-meeting/events#onwebcamrequested) and once the participant accepts the request webcam will be enabled.
 
 - Every Participant will receive a callback on [`onStreamEnabled()`](./events#onstreamenabled) of the `useParticipant()` hook with `Stream` object.
 
@@ -39,7 +43,7 @@ title: Methods returned by useParticipant Hook
 
 ### disableWebcam()
 
-- `disableWebcam()` is used to disable webcam of the local participant.
+- `disableWebcam()` is used to disable webcam of participant.
 
 #### Events associated with `disableWebcam()`:
 

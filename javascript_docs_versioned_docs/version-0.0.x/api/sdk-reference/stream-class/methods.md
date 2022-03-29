@@ -13,7 +13,7 @@ pagination_label: Participant Class Methods
 
 #### Events associated with `resume()` :
 
-- Local Participant and Remote Participant will receive a `Events.stream-enabled` event with `stream` object.
+- Local Participant and Remote Participant will receive a `stream-enabled` event with `stream` object.
 
 #### Returns
 
@@ -27,7 +27,7 @@ pagination_label: Participant Class Methods
 
 #### Events associated with `pause()`:
 
-- Local Participant and Remote Participant will receive a `Events.stream-disabled` event with `stream` object.
+- Local Participant and Remote Participant will receive a `stream-disabled` event with `stream` object.
 
 #### Returns
 
