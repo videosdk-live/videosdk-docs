@@ -10,7 +10,7 @@ pagination_label: Participant Class Methods
 ### enableWebcam()
 
 - It is used to enable self camera.
-- Local Participant and Remote Participant will receive a `streamEnabled` event with `stream` object.
+- Every Participant will receive a `streamEnabled` event with `stream` object.
 
 #### Returns
 
@@ -27,7 +27,7 @@ participant.enableWebcam();
 ### disableWebcam()
 
 - It is used to disable self camera.
-- Local Participant and Remote Participant will receive a `streamDisabled` event with `stream` object.
+- Every Participant will receive a `streamDisabled` event with `stream` object.
 
 #### Returns
 
@@ -44,7 +44,7 @@ participant.disableWebcam();
 ### enableMic()
 
 - It is used to enable self microphone.
-- Local Participant and Remote Participant will receive a `streamEnabled` event with `stream` object.
+- Every Participant will receive a `streamEnabled` event with `stream` object.
 
 #### Returns
 
@@ -61,7 +61,7 @@ participant.enableMic();
 ### disableMic()
 
 - It is used to disable self microphone.
-- Local Participant and Remote Participant will receive a `streamDisabled` event with `stream` object.
+- Every Participant will receive a `streamDisabled` event with `stream` object.
 
 #### Returns
 

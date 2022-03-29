@@ -87,7 +87,7 @@ pagination_label: Participant Class Methods
 
 #### Events associated with `pin()` :
 
-- Local Participant and Remote Participant will receive an `pin-state-changed` event with `meeting` object.
+- Every Participant will receive an `pin-state-changed` event with `meeting` object.
 
 #### Parameters
 
@@ -105,7 +105,7 @@ pagination_label: Participant Class Methods
 
 #### Events associated with `unpin()` :
 
-- Local Participant and Remote Participant will receive an `pin-state-changed` event with `meeting` object.
+- Every Participant will receive an `pin-state-changed` event with `meeting` object.
 
 #### Parameters
 
