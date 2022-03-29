@@ -16,11 +16,11 @@ Participant class includes all the properties, methods and events related to all
 
 ## Get local and remote participants
 
-You can get the local streams and participant meta from `meeting.localParticipant`. And a Map of joined participants is always available via `meeting.participants`.
+You can get the local streams and participant meta from meeting.localParticipant. And a Map of joined participants is always available via meeting.participants.
 
-```js title="Javascript"
-const localParticipant = meeting.localParticipant;
-const participants = meeting.participants;
+```js title="swift"
+let localParticipant = meeting.localParticipant;
+let participants = meeting.participants;
 ```
 
 ## Participant Properties
@@ -29,17 +29,27 @@ const participants = meeting.participants;
 
 <div>
 
-- [id](./properties.md#id)
+- [id](./properties#id)
 
 </div>
 <div>
 
-- [displayName](./properties.md#displayname)
+- [displayName](./properties#displayname)
 
 </div>
 <div>
 
-- [streams](./properties.md#streams)
+- [videoQuality](./properties#videoquality)
+
+</div>
+<div>
+
+- [isLocal](./properties#islocal)
+
+</div>
+<div>
+
+- [streams](./properties#streams)
 
 </div>
 
@@ -51,37 +61,32 @@ const participants = meeting.participants;
 
 <div>
 
-- [enableWebcam](./methods.md#enablewebcam)
+- [enableWebcam](./methods#enablewebcam)
 
 </div>
 <div>
 
-- [disableWebcam](./methods.md#disablewebcam)
+- [disableWebcam](./methods#disablewebcam)
 
 </div>
 <div>
 
-- [enableMic](./methods.md#enablemic)
+- [enableMic](./methods#enablemic)
 
 </div>
 <div>
 
-- [disableMic](./methods.md#disablemic)
+- [disableMic](./methods#disablemic)
 
 </div>
 <div>
 
-- [setQuality](./methods.md#setquality)
+- [setQuality](./methods#setquality)
 
 </div>
 <div>
 
-- [pin](./methods.md#pin)
-
-</div>
-<div>
-
-- [unpin](./methods.md#unpin)
+- [remove](./methods#remove)
 
 </div>
 
@@ -93,12 +98,12 @@ const participants = meeting.participants;
 
 <div>
 
-- [stream-enabled](./events.md#stream-enabled)
+- [onStreamEnabled](./events#onStreamEnabled)
 
 </div>
 <div>
 
-- [stream-disabled](./events.md#stream-disabled)
+- [onStreamDisabled](./events#onStreamDisabled)
 
 </div>
 

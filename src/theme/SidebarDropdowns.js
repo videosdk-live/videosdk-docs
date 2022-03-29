@@ -91,6 +91,11 @@ export default function SidebarDropdowns() {
 
   const sdkList = [
     {
+      id: "javascript",
+      value: "Javascript",
+      icon: "/img/icons/libraries/ic_javascript.svg",
+    },
+    {
       id: "react",
       value: "React",
       icon: "/img/icons/libraries/ic_react.svg",
@@ -100,11 +105,6 @@ export default function SidebarDropdowns() {
       value: "React Native",
 
       icon: "/img/icons/libraries/ic_react.svg",
-    },
-    {
-      id: "javascript",
-      value: "Javascript",
-      icon: "/img/icons/libraries/ic_javascript.svg",
     },
     {
       id: "android",
