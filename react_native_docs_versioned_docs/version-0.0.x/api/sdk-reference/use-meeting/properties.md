@@ -96,12 +96,3 @@ title: useMeeting Hook Properties
 
 - type : `Map<string, Connection>`
 - `connection` will be map of Connections which will have all the connections for the connected meeting.
-
----
-
-### messages (Depricated)
-
-- type : `Map<string, Object>`
-- `messages` will be map of string containing the messages of the meeting .
-
-</div>
