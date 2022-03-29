@@ -44,7 +44,7 @@ title: Methods returned by useMeeting Hook
 
 - `end()` is used to end a meeting for all participants.
 
-#### Events associated with `leave()`:
+#### Events associated with `end()`:
 
 - All remote participants and local participant will receive a [`onParticipantLeft`](./events#onparticipantleft) event with [`Participant`](../use-participant/introduction.md) object from the event callback.
 
@@ -308,7 +308,7 @@ startHls(config);
 
 - `stopHls()` is used to stop the HLS streaming.
 
-#### Events associated with `startHls()`:
+#### Events associated with `stopHls()`:
 
 - Every participant will receive a callback on [`onHlsStopped()`](./events#onhlsstopped)
 
