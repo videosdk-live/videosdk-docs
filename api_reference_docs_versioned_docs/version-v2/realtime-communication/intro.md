@@ -42,3 +42,8 @@ Programmable API enables opportunity to create and manage rooms directly from yo
 ### 4. Custom Meetings Interface SDK
 
 Our front-end sdk provides fine control to design custom user interface and experience specifically for your needs.
+
+import RestApiEndpointContainer from "../../../src/theme/RestApiEndpointContainer.js"
+import endpointList from "./endpointList.json"
+
+<RestApiEndpointContainer endpointSections={endpointList}/>

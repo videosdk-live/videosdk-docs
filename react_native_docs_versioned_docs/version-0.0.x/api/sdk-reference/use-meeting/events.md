@@ -436,7 +436,7 @@ const {
 
 ---
 
-### onWebcamRequested
+### onWebcamRequested()
 
 - This event will be triggered to the participant `B` when any other participant `A` requests to enable webcam of participant `B`.
 - On accepting the request, webcam of participant `B` will be enabled.

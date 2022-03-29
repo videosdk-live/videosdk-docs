@@ -42,7 +42,7 @@ const {connection} = useConnection({
 - type : `String`
 - `REQUIRED`
 
-- `connectionId` represents the `meetingId` you wan to connect to.
+- `connectionId` represents the `meetingId` you are connected to.
 
 ---
 
