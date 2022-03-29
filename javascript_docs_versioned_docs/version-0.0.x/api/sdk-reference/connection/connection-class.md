@@ -8,7 +8,7 @@ pagination_label: Connection Class
 
 Connection class is used for making connections to different rooms, and it also provides facility to switch between rooms of a meeting
 
-Whenever a new connection establishes between meetings, a Connection instance is created inside Meeting class property connections.
+Whenever a new connection establishes between meetings, a Connection instance is created inside [Meeting](../meeting-class/introduction.md) property connections.
 
 ## Properties
 
