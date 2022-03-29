@@ -1,5 +1,5 @@
 ---
-title: ParticipantEventListener Class 
+title: ParticipantEventListener Class
 sidebar_position: 1
 sidebar_label: ParticipantEventListener
 pagination_label: ParticipantEventListener Class
@@ -9,7 +9,7 @@ pagination_label: ParticipantEventListener Class
 
 ### implementation
 
-- You can implement all the methods of `ParticipantEventListener` abstract Class and add the listener to `Participant` class using the  `addEventListener()` method of `Participant` Class.
+- You can implement all the methods of `ParticipantEventListener` abstract Class and add the listener to `Participant` class using the `addEventListener()` method of `Participant` Class.
 
 ---
 
@@ -19,7 +19,7 @@ pagination_label: ParticipantEventListener Class
 
 #### Event callback parameters
 
-- **stream**: Stream
+- **stream**: [Stream](../stream-class/introduction.md)
 
 ---
 
@@ -29,7 +29,7 @@ pagination_label: ParticipantEventListener Class
 
 #### Event callback parameters
 
-- **stream**: Stream
+- **stream**: [Stream](../stream-class/introduction.md)
 
 ---
 

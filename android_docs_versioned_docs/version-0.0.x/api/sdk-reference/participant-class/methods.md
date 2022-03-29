@@ -83,8 +83,8 @@ pagination_label: Participant Class Methods
 
 #### Events associated with `remove()` :
 
-- Local participant will receive a [`onMeetingLeft`](./) event.
-- All remote participants will receive a [`onParticipantLeft`](./) event with `participantId` string from the event callback.
+- Local participant will receive a [`onMeetingLeft`](../meeting-class/meeting-event-listener-class.md#onmeetingleft) event.
+- All remote participants will receive a [`onParticipantLeft`](../meeting-class/meeting-event-listener-class.md#onparticipantleft) event with `participantId` string from the event callback.
 
 #### Returns
 
@@ -121,6 +121,5 @@ pagination_label: Participant Class Methods
 #### Returns
 
 - _`void`_
-
 
 </div>
