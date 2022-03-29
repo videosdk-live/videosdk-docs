@@ -7,14 +7,21 @@ title: Initializing a Meeting
 
 <div class="sdk-api-ref">
 
+## config()
+
+Before initializing the meeting, you will need to first provide `token`. Please refer this [documentation](/api-reference/realtime-communication/intro/) to generate a token.
+
+```js
+//meeting configuration using videoSDK
+
+VideoSDK.config("<your token>");
+```
+
 You can initialize the meeting using a factory method provided by the SDK called `initMeeting()`. By passing the parameters according to the need, it will generate a new `Meeting` class and then return the initiated meeting.
 
 ## initMeeting()
 
 ```js title="Javascript"
-//meeting configuration using videoSDK
-VideoSDK.config("<your token>");
-
 const meeting = VideoSDK.initMeeting({
   meetingId: "abc-1234-xyz",
   name: "John Doe",

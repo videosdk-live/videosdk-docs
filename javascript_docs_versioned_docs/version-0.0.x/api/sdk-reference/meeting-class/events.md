@@ -312,10 +312,15 @@ meeting.on("livestream-stopped", () => {
 
 - This event will be emitted when `HLS` of the meeting is started.
 
+#### Event callback parameters
+
+- **data**: { **downstreamUrl**: String; }
+  - **downstreamUrl**: String
+
 #### Example
 
 ```javascript
-meeting.on("hls-started", () => {
+meeting.on("hls-started", ({ downstreamUrl }) => {
   //
 });
 ```

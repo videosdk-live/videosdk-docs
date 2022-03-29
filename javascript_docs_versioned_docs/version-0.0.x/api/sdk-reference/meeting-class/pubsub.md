@@ -5,65 +5,30 @@ pagination_label: PubSub
 title: PubSub
 ---
 
-- `PubSub` one of the properties of a [Meeting Class](../meeting-class/introduction.md) is used for messaging purpose for an ongoing meeting
+- `PubSub` one of the property of a [Meeting Class](../meeting-class/introduction.md) is used for messaging purpose for an ongoing meeting
 
 <div class="sdk-api-ref-only-h4">
 
-## Properties
-
-### message
-
-- type : `String`
-
-- Message that has been published on this topic currently
-
-### senderId
-
-- type : `String`
-
-- id of a sender who has bublished this message.
-
-### senderName
-
-- type : `String`
-
-- name of a sender who has bublished this message.
-
-### timesatmp
-
-- type : `DateTime`
-
-- timestamp of when a message has been published.
-
-### topic
-
-- type : `String`
-
-- topic name on which message has been published.
-
----
-
 ## Methods
 
-### Publish()
+### publish()
 
 - `publish()` is used to publish messages on a specified topic in the meeting.
+
+- While publishing message, if you provide `persist` as `true`, then it will persist the message throughout the meeting and one will get all old messages of a meeting, otherwise not.
 
 #### Parameters
 
 - topic :
 
   - type : `String`
-  - Participants can deliver messages to that particular topic.
 
 - message :
 
   - type: `String`
-  - Any arbitrary message you want to publish.
 
 - persist :
   - type : `Boolean`
-  - If provided true, it will persist the message throughout the meeting and one will get all old messages of a meeting, otherwise not.
 
 #### Returns
 
@@ -72,15 +37,21 @@ title: PubSub
 #### Example
 
 ```js
-//write this block on btnClick event
-meeting.pubSub.publish("CHAT", message, { persist: true });
+const topic = "CHAT";
+
+const _handlePublishChat = (message) => {
+  //
+  meeting.pubSub.publish(topic, message, { persist: true });
+};
+
+_handlePublishChat("Hello world!");
 ```
 
 ---
 
 ### subscribe()
 
-- `subscribe()` is used to subscribe a particular topic to get all the messages of that particular topic in the meeting.
+- `subscribe()` is used to subscribe a particular topic to get all the messages of that particular topic in the meeting. While `publish()` subscribe callback will be invoked.
 
 #### Parameters
 
@@ -91,20 +62,29 @@ meeting.pubSub.publish("CHAT", message, { persist: true });
 
 - callback :
   - type : `function`
-  - in callback you will get `newMessage` object which contains [pubsub properties](#properties)
+  - in callback you will get `newMessage` object which contains [Pubsub message data](#pubsub-message-data)
 
 #### Returns
 
-- `array of persisted message object`
+- This will return ols messages for this topic if you passed `persist` to `true` thile [publish](#publish)
+
+- Array<[message](#pubsub-message-data)>
 
 #### Example
 
 ```js
+const topic = "CHAT";
 
-//subscribing messages on topic CHAT
-let oldMessages=await meeting.pubSub.subscribe("CHAT", (newMessage) => {
-    console.log(newMessage);
-}
+const _handleChat = (newMessage) => {
+  //
+  console.log(newMessage);
+};
+
+const _handleSubscribePubSub = async () => {
+  let oldMessages = await meeting.pubSub.subscribe("CHAT", _handleChat);
+
+  console.log(oldMessages);
+};
 ```
 
 ---
@@ -129,8 +109,51 @@ let oldMessages=await meeting.pubSub.subscribe("CHAT", (newMessage) => {
 #### Example
 
 ```js
-//unsubscribing messages on topic CHAT
-meeting.pubSub.unsubscribe("CHAT", callback);
+const topic = "CHAT";
+
+// same handler used for meeting.pubSub.subscribe()
+const _handleChat = (newMessage) => {
+  //
+  console.log(newMessage);
+};
+
+const _handleUnsubscribePubSub = async () => {
+  meeting.pubSub.unsubscribe("CHAT", _handleChat);
+};
 ```
+
+---
+
+## Pubsub message data
+
+### message
+
+- type : `String`
+
+- Message that has been published on this topic currently
+
+### senderId
+
+- type : `String`
+
+- id of a sender who has published this message.
+
+### senderName
+
+- type : `String`
+
+- name of a sender who has published this message.
+
+### timesatmp
+
+- type : `DateTime`
+
+- timestamp of when a message has been published.
+
+### topic
+
+- type : `String`
+
+- topic name on which message has been published.
 
 </div>

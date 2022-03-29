@@ -33,13 +33,13 @@ title: PubSub
 
 - type : `String`
 
-- id of a sender who has bublished this message.
+- id of a sender who has published this message.
 
 ### senderName
 
 - type : `String`
 
-- name of a sender who has bublished this message.
+- name of a sender who has published this message.
 
 ### timesatmp
 
