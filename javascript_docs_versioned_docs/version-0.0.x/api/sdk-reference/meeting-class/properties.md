@@ -61,7 +61,7 @@ const remoteParticipant = patricipants.get(remoteParticipantId);
 
 ### connections
 
-- type : `Map<Connection>`
+- type : `Map<String,Connection>`
 
 - Whenever any connection is being made with other meeting using `meeting.connectTo` , it will get stored to connections property of a meeting class
 

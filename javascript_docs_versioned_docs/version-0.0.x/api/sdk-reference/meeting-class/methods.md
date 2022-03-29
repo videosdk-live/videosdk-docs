@@ -452,8 +452,40 @@ meeting.on("connection-open", (connection) => {
 
 ### on()
 
+#### Parameters
+
+- eventType : [`event of meeting class`](./events.md)
+- listener : `function`
+
+#### Returns
+
+- `void`
+
+#### Example
+
+```js
+//for meeting-any-event
+meeting.on("meeting-any-event", listener);
+```
+
 ---
 
 ### off()
+
+#### Parameters
+
+- eventType : [`event of meeting class`](./events.md)
+- listener : `function`
+
+#### Returns
+
+- `void`
+
+#### Example
+
+```js
+//for meeting-any-event
+meeting.off("meeting-any-event", listener);
+```
 
 </div>

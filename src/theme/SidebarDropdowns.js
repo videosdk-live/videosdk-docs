@@ -121,11 +121,6 @@ export default function SidebarDropdowns() {
       value: "Flutter",
       icon: "/img/icons/libraries/ic_flutter.svg",
     },
-    {
-      id: "prebuilt",
-      value: "Prebuilt",
-      icon: "/img/icons/libraries/ic_javascript.svg",
-    },
   ];
 
   function getSDKName(value) {
@@ -137,8 +132,7 @@ export default function SidebarDropdowns() {
 
   return (
     <div className="row dropdown_menu">
-      {(sdk != "docs" && sdk != "prebuilt" && sdk != "api-reference") ||
-      viewType == "api" ? (
+      {sdk != "docs" && sdk != "prebuilt" && sdk != "api-reference" ? (
         <div className="col dropdown dropdown--hoverable dropdown--left">
           <div className="row navbar__link--active">
             {<img className="dropdown-logo" src={getSDKName(sdk)[0]?.icon} />}
@@ -172,7 +166,9 @@ export default function SidebarDropdowns() {
       {sdk != "docs" ? (
         <div
           className={
-            (viewType == "guide" && sdk == "prebuilt") || sdk == "api-reference"
+            (viewType == "guide" && sdk == "prebuilt") ||
+            (viewType == "api" && sdk == "prebuilt") ||
+            sdk == "api-reference"
               ? "col dropdown dropdown--hoverable dropdown--left"
               : "dropdown dropdown--hoverable dropdown--right"
           }
