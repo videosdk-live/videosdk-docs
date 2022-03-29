@@ -28,30 +28,38 @@ import MethodListHeading from '@theme/MethodListHeading';
 ## Properties
 
 ### getId()
+
 - `getId()` will return Id of stream
 - return type : `String`
 
 ### getKind()
+
 - `getKind()` will return kind of stream, which can `audio`,`video` or `share`
 - return type : `String`
 
 ### getTrack()
+
 - `getTrack()` will return a MediaStreamTrack object stored in the MediaStream object
 - return type : `MediaStreamTrack`
 
 ### getProducer()
+
 - `getProducer()` will return a producer of stream
 - return type : `Producer`
 
 ### getConsumer()
+
 - `getConsumer()` will return a consumer of stream
 - return type : `Consumer`
+
 ## Methods
 
 ### pause()
+
 - By using `pause()` function, a participant can pause the stream of Remote Participant
 - return type : `void`
 
 ### resume()
+
 - By using `resume()` function, a participant can resume the stream of Remote Participant
 - return type : `void`

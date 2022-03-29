@@ -21,7 +21,7 @@ Every Context object in `react-js` comes with a Provider React component that al
       title: "Code Sample",
       message: "Meeting is running.",
     },
-    participantId: "xyz"
+    participantId: "xyz",
   }}
   token={"token"}
   joinWithoutUserInteraction // Boolean
@@ -99,6 +99,7 @@ Please refer this [documentation](/api-reference/realtime-communication/create-r
   - `OPTIONAL`
 
   - **title** : String
+
     - Represent the title fo the notification.
 
   - **message** : String

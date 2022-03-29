@@ -31,7 +31,7 @@ It supports the following OS/SDK versions.
 ## Installation
 
 1. If your Android Studio Version is older than Android Studio Bumblebees, add the repository to project's `build.gradle` file. <br/>
-If your are using Android Studio Bumblebees or newer Version, add the repository to `settings.gradle` file.
+   If your are using Android Studio Bumblebees or newer Version, add the repository to `settings.gradle` file.
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -52,6 +52,7 @@ allprojects {
   }
 }
 ```
+
 </TabItem>
 
 <TabItem value="2021.1.1">
@@ -65,6 +66,7 @@ dependencyResolutionManagement{
   }
 }
 ```
+
 </TabItem>
 
 </Tabs>
@@ -92,7 +94,7 @@ dependencies {
 <uses-permission android:name="android.permission.INTERNET" />
 ```
 
-### Step 2:  Create `MainApplication.java` class which will extend the `android.app.Application`.
+### Step 2: Create `MainApplication.java` class which will extend the `android.app.Application`.
 
 ```js title="MainApplication.java"
 package live.videosdk.demo;

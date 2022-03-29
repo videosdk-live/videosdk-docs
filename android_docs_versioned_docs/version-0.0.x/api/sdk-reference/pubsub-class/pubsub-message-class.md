@@ -29,7 +29,7 @@ title: PubSubMessage Class
 
 - type: `String`
 
-- `getTopic()` will return name of the  message topic.
+- `getTopic()` will return name of the message topic.
 
 ---
 

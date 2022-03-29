@@ -110,7 +110,7 @@
     {
       "type": "category",
       "label": "useMeeting Hook",
-      "items":[
+      "items": [
         "api/sdk-reference/use-meeting/introduction",
         "api/sdk-reference/use-meeting/properties",
         "api/sdk-reference/use-meeting/methods",
@@ -120,7 +120,7 @@
     {
       "type": "category",
       "label": "useParticipant Hook",
-      "items":[
+      "items": [
         "api/sdk-reference/use-participant/introduction",
         "api/sdk-reference/use-participant/properties",
         "api/sdk-reference/use-participant/methods",
