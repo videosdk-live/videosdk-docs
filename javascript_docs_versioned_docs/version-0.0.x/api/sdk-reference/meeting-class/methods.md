@@ -376,7 +376,7 @@ handleGetMics();
 
 ### connectTo()
 
-- This method is used for establishing connection to another meeting
+- This method is used for establishing the connection to other meetings.
 
 #### Parameters
 
@@ -394,8 +394,7 @@ handleGetMics();
 
 #### Events associated with `connectTo()`:
 
-- # `connection-open` event of meeting class is triggered whenever `meeting.connectTo()` being called for both local and remote participants.
-- [`connection-open`](./events.md#connection-open) event of meeting class is triggered whenever `meeting.connectTo()` being called for both local and remote participants.
+- [`connection-open`](./events.md#connection-open) event of meeting class is triggered to all participants whenever `meeting.connectTo()` being called.
 
 #### Returns
 
