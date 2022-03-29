@@ -78,7 +78,7 @@ module.exports = {
           items: [
             {
               label: "Custom SDK References",
-              to: "react/api/sdk-reference/setup",
+              to: "javascript/api/sdk-reference/setup",
               activeBaseRegex:
                 "/react|flutter|react-native|javascript|ios|android/api/sdk-reference/*",
             },
