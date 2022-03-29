@@ -142,7 +142,7 @@ stopRecording()
 ### startLivestream()
 
 - It is used to start meeting livestreaming.
-- You will be able to start livestream the meeting to another platforms such as Youtube, Facebook, etc. that supports `rtmp` streaming.
+- You will be able to start live stream meetings to other platforms such as Youtube, Facebook, etc. that support `RTMP` streaming.
 - All [participants](./) and [localParticipant](./), will receive `onLivestreamStarted` event.
 
 #### Parameters

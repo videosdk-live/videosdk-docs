@@ -178,7 +178,7 @@ meeting.stopRecording();
 ### startLivestream()
 
 - It is used to start meeting livestreaming.
-- You will be able to start livestream the meeting to another platforms such as Youtube, Facebook, etc. that supports `rtmp` streaming.
+- You will be able to start live stream meetings to other platforms such as Youtube, Facebook, etc. that support `RTMP` streaming.
 - All [participants](./properties.md#getparticipants) and [localParticipant](./properties.md#getlocalparticipant), will receive [`onLivestreamStarted`](./meeting-event-listener-class#onlivestreamstarted) event.
 
 #### Parameters
@@ -244,7 +244,7 @@ for (int i = 0; i < mics.size(); i++) {
 ### changeMic()
 
 - It is used to change the mic device.
-- If multiple mic devices are connected, then by using `changeMic()` one can change the mic device.
+- If multiple mic devices are connected, by using `changeMic()` one can change the mic device.
 
 #### Parameters
 

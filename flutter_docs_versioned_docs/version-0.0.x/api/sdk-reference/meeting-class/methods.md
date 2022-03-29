@@ -241,7 +241,7 @@ print(webcams);
 ### changeWebcam()
 
 - It is used to change the webcam device.
-- If multiple webcam devices are connected, then by using `changeWebcam()`, one can change the camera device.
+- If multiple webcam devices are connected, by using `changeWebcam()`, one can change the camera device.
 
 #### Parameters
 
