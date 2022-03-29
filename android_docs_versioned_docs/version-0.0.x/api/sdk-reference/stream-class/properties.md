@@ -11,7 +11,7 @@ pagination_label: Stream Class Properties
 
 - type: `String`
 
-- `getId()` will return the id for that stream .
+- `getId()` will return id for that stream .
 
 ---
 
@@ -19,7 +19,7 @@ pagination_label: Stream Class Properties
 
 - type: `String`
 
-- `getKind()` will return `kind`.`kind` represents the type of stream which could be `audio` | `video` or `share` .
+- `getKind()` will return `kind`, which represents the type of stream which could be `audio` | `video` or `share` .
 
 ---
 
@@ -35,7 +35,7 @@ pagination_label: Stream Class Properties
 
 - type: `Producer`
 
-- `getProducer()` will return a producer of stream.
+- `getProducer()` will return a producer of that stream.
 
 ---
 
@@ -43,7 +43,7 @@ pagination_label: Stream Class Properties
 
 - type: `Consumer`
 
-- `getConsumer()` will return a consumer of stream.
+- `getConsumer()` will return a consumer of that stream.
 
 
 </div>

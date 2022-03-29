@@ -48,7 +48,8 @@ By using `config()` method, you can set the `token` property of `VideoSDK` class
 
 ## initMeeting()
 
-Now, you can initialize the meeting using a factory method provided by the SDK called `initMeeting()`. By passing the parameters according to the need, it will generate a new `Meeting` class and the initiated meeting will be returned.
+- Now, you can initialize the meeting using a factory method provided by the SDK called `initMeeting()`. 
+- `initMeeting()`  will generate a new `Meeting` class and the initiated meeting will be returned.
 
 ```js title="initMeeting"
    initMeeting(
@@ -64,7 +65,7 @@ Now, you can initialize the meeting using a factory method provided by the SDK c
 
 ### context
 
-- Context of that activity.
+- Context of activity.
 
   - type : Context
   - `REQUIRED`
@@ -75,9 +76,6 @@ Now, you can initialize the meeting using a factory method provided by the SDK c
 
   - type : `String`
   - `REQUIRED`
-
- Please refer this documentation to create a room.
-
 ### name
 
 - Name of the participant who will be joining the meeting, this name will be displayed to other participants in the same meeting.

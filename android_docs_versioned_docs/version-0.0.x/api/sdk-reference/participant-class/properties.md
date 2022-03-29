@@ -19,7 +19,7 @@ pagination_label: Participant Class Properties
 
 - type: `String`
 
-- It will return the `displayName` of the participant who has the meeting.
+- It will return the `displayName` of the participant who has joined the meeting.
 
 ---
 
@@ -27,7 +27,7 @@ pagination_label: Participant Class Properties
 
 - type: `String`
 
-- `getQuality()` will return quality of participant's stream.Steam could be `audio` , `video` or `share`.
+- `getQuality()` will return quality of participant's stream. Steam could be `audio` , `video` or `share`.
 
 ---
 

@@ -66,6 +66,18 @@
     {
       "href": "./methods#changeWebcam",
       "label": "changeWebcam"
+    },
+    {
+      "href": "./methods#addEventListener",
+      "label": "addEventListener"
+    },
+    {
+      "href": "./methods#removeEventListener",
+      "label": "removeEventListener"
+    },
+    {
+      "href": "./methods#removeAllListeners",
+      "label": "removeAllListeners"
     }
   ]
   

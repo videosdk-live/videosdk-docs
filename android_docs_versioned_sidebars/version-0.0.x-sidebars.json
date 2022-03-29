@@ -63,8 +63,7 @@
         "api/sdk-reference/meeting-class/introduction",
         "api/sdk-reference/meeting-class/properties",
         "api/sdk-reference/meeting-class/methods",
-        "api/sdk-reference/meeting-class/meeting-event-listener-class",
-        "api/sdk-reference/meeting-class/pubSub"
+        "api/sdk-reference/meeting-class/meeting-event-listener-class"
       ]
     },
     {
@@ -84,6 +83,17 @@
         "api/sdk-reference/stream-class/introduction",
         "api/sdk-reference/stream-class/properties",
         "api/sdk-reference/stream-class/methods"
+      ]
+    },
+    {
+      "type": "category",
+      "label": "PubSub Class",
+      "items": [
+        "api/sdk-reference/pubsub-class/introduction",
+        "api/sdk-reference/pubsub-class/methods",
+        "api/sdk-reference/pubsub-class/pubsub-message-class",
+        "api/sdk-reference/pubsub-class/pubsub-publish-options-class",
+        "api/sdk-reference/pubsub-class/pubsub-message-listener-class"
       ]
     }
   ]

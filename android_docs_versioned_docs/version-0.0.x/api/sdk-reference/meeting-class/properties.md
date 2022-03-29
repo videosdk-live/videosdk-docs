@@ -17,19 +17,19 @@ title: Meeting Class Properties
 
 ### getLocalParticipant()
 
-- type: [Participant](./)
+- type: [Participant](../participant-class/introduction)
 
-- It will return the instance of [Participant](./) class for the local participant who joined the meeting.
+- It will return the instance of [Participant](../participant-class/introduction) class for the local participant who joined the meeting.
 
 ---
 
 ### getParticipants()
 
-- type: [`Map`](https://developer.android.com/reference/java/util/Map) of [Participant](./)
+- type: [`Map`](https://developer.android.com/reference/java/util/Map) of [Participant](../participant-class/introduction)
 
 - `Map<String, Participant>`
 
-  - Map<`participantId`, [Participant](./)>
+  - Map<`participantId`, [Participant](../participant-class/introduction)>
 
 - It will contain all joined participants in the meeting except the `localParticipant`.
 
@@ -45,5 +45,9 @@ Participant participant = meeting.getParticipants().get(remoteParticipantId);
 
 ### pubSub
 
+- type: [`PubSub`](../pubsub-class/introduction)
+- It is used to enable Publisher-Subscriber feature in [`meeting`](introduction) class.
+
+Learn more about `PubSub`, [here](../pubsub-class/introduction)
 
 </div>

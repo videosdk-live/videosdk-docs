@@ -27,17 +27,17 @@ import events from "./../data/meeting-class/events.json";
 </div>
 <div>
 
-- [getLocalParticipant()](./properties#getLocalParticipant)
+- [getLocalParticipant()](./properties#getlocalparticipant)
 
 </div>
 <div>
 
-- [getParticipants()](./properties#getParticipants)
+- [getParticipants()](./properties#getparticipants)
 
 </div>
 <div>
 
-- [pubSub](./properties#pubSub)
+- [pubSub](./properties#pubsub)
 
 </div>
 
@@ -49,102 +49,102 @@ import events from "./../data/meeting-class/events.json";
 
 <div>
 
-- [join](./methods#join)
+- [join()](./methods#join)
 
 </div>
 <div>
 
-- [leave](./methods#leave)
+- [leave()](./methods#leave)
 
 </div>
 <div>
 
-- [end](./methods#end)
+- [end()](./methods#end)
 
 </div>
 <div>
 
-- [enableWebcam](./methods#enablewebcam)
+- [enableWebcam()](./methods#enablewebcam)
 
 </div>
 <div>
 
-- [disableWebcam](./methods#disablewebcam)
+- [disableWebcam()](./methods#disablewebcam)
 
 </div>
 <div>
 
-- [unmuteMic](./methods#unmutemic)
+- [unmuteMic()](./methods#unmutemic)
 
 </div>
 <div>
 
-- [muteMic](./methods#mutemic)
+- [muteMic()](./methods#mutemic)
 
 </div>
 <div>
 
-- [enableScreenShare](./methods#enablescreenshare)
+- [enableScreenShare()](./methods#enablescreenshare)
 
 </div>
 <div>
 
-- [disableScreenShare](./methods#disablescreenshare)
+- [disableScreenShare()](./methods#disablescreenshare)
 
 </div>
 <div>
 
-- [startRecording](./methods#startrecording)
+- [startRecording()](./methods#startrecording)
 
 </div>
 <div>
 
-- [stopRecording](./methods#stoprecording)
+- [stopRecording()](./methods#stoprecording)
 
 </div>
 <div>
 
-- [startLiveStream](./methods#startlivestream)
+- [startLiveStream()](./methods#startlivestream)
 
 </div>
 <div>
 
-- [stopLiveStream](./methods#stoplivestream)
+- [stopLiveStream()](./methods#stoplivestream)
 
 </div>
 <div>
 
-- [getMics](./methods#getmics)
+- [getMics()](./methods#getmics)
 
 </div>
 <div>
 
-- [changeMic](./methods#changemic)
+- [changeMic()](./methods#changemic)
 
 </div>
 <div>
 
-- [setAudioDeviceChangeListener](./methods#setAudioDeviceChangeListener)
+- [setAudioDeviceChangeListener()](./methods#setaudiodevicechangelistener)
 
 </div>
 <div>
 
-- [changeWebcam](./methods#changeWebcam)
+- [changeWebcam()](./methods#changewebcam)
 
 </div>
 <div>
 
-- [addEventListener](./methods#addEventListener)
+- [addEventListener()](./methods#addeventlistener)
 
 </div>
 <div>
 
-- [removeEventListener](./methods#removeEventListener)
+- [removeEventListener()](./methods#removeeventlistener)
 
 </div>
 <div>
 
-- [removeAllListeners](./methods#removeAllListeners)
+- [removeAllListeners()](./methods#removealllisteners)
 
 </div>
 
@@ -156,77 +156,77 @@ import events from "./../data/meeting-class/events.json";
 
 <div>
 
-- [onMeetingJoined](./meeting-event-listener-class#meeting-joined)
+- [onMeetingJoined](./meeting-event-listener-class#meetingjoined)
 
 </div>
 <div>
 
-- [onMeetingLeft](./meeting-event-listener-class#onMeetingLeft)
+- [onMeetingLeft](./meeting-event-listener-class#onmeetingleft)
 
 </div>
 <div>
 
-- [onParticipantJoined](./meeting-event-listener-class#onParticipantJoined)
+- [onParticipantJoined](./meeting-event-listener-class#onparticipantjoined)
 
 </div>
 <div>
 
-- [onParticipantLeft](./meeting-event-listener-class#onParticipantLeft)
+- [onParticipantLeft](./meeting-event-listener-class#onparticipantleft)
 
 </div>
 <div>
 
-- [onSpeakerChanged](./meeting-event-listener-class#onSpeakerChanged)
+- [onSpeakerChanged](./meeting-event-listener-class#onspeakerchanged)
 
 </div>
 <div>
 
-- [onPresenterChanged](./meeting-event-listener-class#onPresenterChanged)
+- [onPresenterChanged](./meeting-event-listener-class#onpresenterchanged)
 
 </div>
 <div>
 
-- [onEntryRequested](./meeting-event-listener-class#onEntryRequested)
+- [onEntryRequested](./meeting-event-listener-class#onentryrequested)
 
 </div>
 <div>
 
-- [onEntryResponded](./meeting-event-listener-class#onEntryResponded)
+- [onEntryResponded](./meeting-event-listener-class#onentryresponded)
 
 </div>
 <div>
 
-- [onWebcamRequested](./meeting-event-listener-class#onWebcamRequested)
+- [onWebcamRequested](./meeting-event-listener-class#onwebcamrequested)
 
 </div>
 <div>
 
-- [onMicRequested](./meeting-event-listener-class#onMicRequested)
+- [onMicRequested](./meeting-event-listener-class#onmicrequested)
 
 </div>
 <div>
 
-- [onRecordingStarted](./meeting-event-listener-class#onRecordingStarted)
+- [onRecordingStarted](./meeting-event-listener-class#onrecordingstarted)
 
 </div>
 <div>
 
-- [onRecordingStopped](./meeting-event-listener-class#onRecordingStopped)
+- [onRecordingStopped](./meeting-event-listener-class#onrecordingstopped)
 
 </div>
 <div>
 
-- [onLivestreamStarted](./meeting-event-listener-class#onLivestreamStarted)
+- [onLivestreamStarted](./meeting-event-listener-class#onlivestreamstarted)
 
 </div>
 <div>
 
-- [onLivestreamStopped](./meeting-event-listener-class#lonLivestreamStopped)
+- [onLivestreamStopped](./meeting-event-listener-class#onlivestreamstopped)
 
 </div>
 <div>
 
-- [onExternalCallStarted](./meeting-event-listener-class#onExternalCallStarted)
+- [onExternalCallStarted](./meeting-event-listener-class#onexternalcallstarted)
 
 </div>
 

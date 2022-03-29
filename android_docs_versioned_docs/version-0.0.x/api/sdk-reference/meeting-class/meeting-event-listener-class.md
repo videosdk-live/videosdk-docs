@@ -28,7 +28,7 @@ title: MeetingEventListener Class
 
 ### onMeetingJoined()
 
-- This event will be emitted when a [localParticipant](./) successfully joined the meeting.
+- This event will be emitted when a [localParticipant](./properties#getlocalparticipant) successfully joined the meeting.
 
 #### Example
 
@@ -43,7 +43,7 @@ title: MeetingEventListener Class
 
 ### onMeetingLeft()
 
-- This event will be emitted when a [localParticipant](./) left the meeting.
+- This event will be emitted when a [localParticipant](./properties#getlocalparticipant) left the meeting.
 
 #### Example
 
@@ -58,11 +58,11 @@ title: MeetingEventListener Class
 
 ### onParticipantJoined()
 
-- This event will be emitted when a new [participant](./) joined the meeting.
+- This event will be emitted when a new [participant](../participant-class/introduction) joined the meeting.
 
 #### Event callback parameters
 
-- **participant**: [Participant](./)
+- **participant**: [Participant](../participant-class/introduction)
 
 #### Example
 
@@ -77,11 +77,11 @@ title: MeetingEventListener Class
 
 ### onParticipantLeft
 
-- This event will be emitted when a joined [participant](./) left the meeting.
+- This event will be emitted when a joined [participant](../participant-class/introduction) left the meeting.
 
 #### Event callback parameters
 
-- **participant**: [Participant](./)
+- **participant**: [Participant](../participant-class/introduction)
 
 #### Example
 
@@ -117,7 +117,7 @@ title: MeetingEventListener Class
 
 ### onPresenterChanged()
 
-- This event will be emitted when any [participant](./) starts or stops screen sharing.
+- This event will be emitted when any [participant](../participant-class/introduction) starts or stops screen sharing.
 - It will pass `participantId` as an event callback parameter.
 - If a participant stops screensharing, then this event will pass `null` as en event callback parameter.
 
@@ -139,8 +139,8 @@ title: MeetingEventListener Class
 
 ### onEntryRequested()
 
-- This event will be emitted when a new [participant](./) who is trying to join the meeting, is having permission **`ask_join`** in token.
-- This event will only be emitted to the [participants](./) in the meeting, who is having the permission **`allow_join`** in token.
+- This event will be emitted when a new [participant](../participant-class/introduction) who is trying to join the meeting, is having permission **`ask_join`** in token.
+- This event will only be emitted to the [participants](./properties#getparticipants) in the meeting, who is having the permission **`allow_join`** in token.
 - This event will pass following parameters as an event parameters, `participantId` and `name` of the new participant who is trying to join the meeting, `allow()` and `deny()` to take required actions.
 
 #### Event callback parameters
@@ -162,8 +162,8 @@ title: MeetingEventListener Class
 ### onEntryResponded()
 
 - This event will be emitted when the `join()` request is responded.
-- This event will be emitted to the [participants](./) in the meeting, who is having the permission **`allow_join`** in token.
-- This event will be also emitted to the [participant](./) who requested to join the meeting.
+- This event will be emitted to the [participants](./properties#getparticipants) in the meeting, who is having the permission **`allow_join`** in token.
+- This event will be also emitted to the [participant](../participant-class/introduction) who requested to join the meeting.
 
 #### Event callback parameters
 

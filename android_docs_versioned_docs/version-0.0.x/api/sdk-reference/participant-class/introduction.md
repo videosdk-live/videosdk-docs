@@ -29,29 +29,29 @@ Map<String, Participant> participants = meeting.getParticipants();
 
 <div>
 
-- [getId()](./properties.md#getId())
+- [getId()](./properties#getid)
 
 </div>
 <div>
 
-- [getDisplayName()](./properties.md#getDisplayName())
+- [getDisplayName()](./properties#getdisplayname)
 
 </div>
 <div>
 
-- [getQuality()](./properties.md#getQuality())
-
-</div>
-
-<div>
-
-- [isLocal()](./properties.md#isLocal())
+- [getQuality()](./properties#getquality)
 
 </div>
 
 <div>
 
-- [getStreams()](./properties.md#getStreams())
+- [isLocal()](./properties#islocal)
+
+</div>
+
+<div>
+
+- [getStreams()](./properties#getstreams)
 
 </div>
 
@@ -63,32 +63,32 @@ Map<String, Participant> participants = meeting.getParticipants();
 
 <div>
 
-- [enableWebcam()](./methods.md#enablewebcam())
+- [enableWebcam()](./methods#enablewebcam)
 
 </div>
 <div>
 
-- [disableWebcam()](./methods.md#disablewebcam())
+- [disableWebcam()](./methods#disablewebcam)
 
 </div>
 <div>
 
-- [enableMic()](./methods.md#enablemic())
+- [enableMic()](./methods#enablemic)
 
 </div>
 <div>
 
-- [disableMic()](./methods.md#disablemic())
+- [disableMic()](./methods#disablemic)
 
 </div>
 <div>
 
-- [remove()](./methods.md#remove())
+- [remove()](./methods#remove)
 
 </div>
 <div>
 
-- [setQuality()](./methods.md#setquality())
+- [setQuality()](./methods#setquality)
 
 </div>
 <div>
@@ -103,12 +103,12 @@ Map<String, Participant> participants = meeting.getParticipants();
 
 <div>
 
-- [stream-enabled](./events.md#eventsstream-enabled)
+- [onStreamEnabled](./participant-event-listener-class#onstreamenabled)
 
 </div>
 <div>
 
-- [stream-disabled](./events.md#eventsstream-disabled)
+- [onStreamDisabled](./participant-event-listener-class#onstreamdisabled)
 
 </div>
 

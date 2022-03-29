@@ -4,55 +4,55 @@
       "label": "onMeetingJoined()"
     },
     {
-      "href": "./meeting-event-listener-class#meeting-left",
+      "href": "./meeting-event-listener-class#onMeetingLeft",
       "label": "onMeetingLeft()"
     },
     {
-      "href": "./meeting-event-listener-class#participant-joined",
+      "href": "./meeting-event-listener-class#onParticipantJoined",
       "label": "onParticipantJoined()"
     },
     {
-      "href": "./meeting-event-listener-class#participant-left",
+      "href": "./meeting-event-listener-class#onParticipantLeft",
       "label": "onParticipantLeft()"
     },
     {
-      "href": "./meeting-event-listener-class#speaker-changed",
+      "href": "./meeting-event-listener-class#onSpeakerChanged",
       "label": "onSpeakerChanged()"
     },
     {
-      "href": "./meeting-event-listener-class#presenter-changed",
+      "href": "./meeting-event-listener-class#onPresenterChanged",
       "label": "onPresenterChanged()"
     },
     {
-      "href": "./meeting-event-listener-class#entry-requested",
+      "href": "./meeting-event-listener-class#onEntryRequested",
       "label": "onEntryRequested()"
     },
     {
-      "href": "./meeting-event-listener-class#entry-responded",
+      "href": "./meeting-event-listener-class#onEntryResponded",
       "label": "onEntryResponded()"
     },
     {
-      "href": "./meeting-event-listener-class#webcam-requested",
+      "href": "./meeting-event-listener-class#onWebcamRequested",
       "label": "onWebcamRequested()"
     },
     {
-      "href": "../meeting-event-listener-class#mic-requested",
+      "href": "../meeting-event-listener-class#onMicRequested",
       "label": "onMicRequested()"
     },
     {
-      "href": "./meeting-event-listener-class#recording-started",
+      "href": "./meeting-event-listener-class#onRecordingStarted",
       "label": "onRecordingStarted()"
     },
     {
-      "href": "./meeting-event-listener-class#recording-stopped",
+      "href": "./meeting-event-listener-class#onRecordingStopped",
       "label": "onRecordingStopped()"
     },
     {
-      "href": "./meeting-event-listener-class#livestream-started",
+      "href": "./meeting-event-listener-class#onLivestreamStarted",
       "label": "onLivestreamStarted()"
     },
     {
-      "href": "./meeting-event-listener-class#livestream-stopped",
+      "href": "./meeting-event-listener-class#onLivestreamStopped",
       "label": "onLivestreamStopped()"
     },
     {
