@@ -102,17 +102,17 @@ It requires <a href="https://reactjs.org/docs/render-props.html#using-props-othe
 
 <div>
 
-- [isRecording](./properties#isrecording)
+- [isRecording](./use-meeting/properties#isrecording)
 
 </div>
 <div>
 
-- [isLiveStreaming](./properties#islivestreaming)
+- [isLiveStreaming](./use-meeting/properties#islivestreaming)
 
 </div>
 <div>
 
-- [connections](./properties#connections)
+- [connections](./use-meeting/properties#connections)
 
 </div>
 <div>

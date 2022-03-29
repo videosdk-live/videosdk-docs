@@ -40,7 +40,7 @@ const onPress = () => {
 ```
 :::caution
 
-For React Native iOS Screen Share feature, you need to follow this guide [React Native iOS Screen Share](/docs/guide/video-and-audio-calling-api-sdk/extras/react-native-ios-screen-share)
+For React Native iOS Screen Share feature, you need to follow this guide [React Native iOS Screen Share](/react-native/guide/video-and-audio-calling-api-sdk/extras/react-native-ios-screen-share)
 :::
 
 <!-- ## How to Create App Group in Apple Store
