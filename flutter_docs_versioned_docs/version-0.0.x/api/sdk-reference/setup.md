@@ -16,13 +16,11 @@ slug: setup
 
 # Setup
 
-## Setting up Flutter SDK
-
 Flutter SDK is client for real-time communication for android and ios devices. It inherits the same terminology as all other SDKs does.
 
 ## Minimum OS/SDK versions
 
-### Android: minSdkVersion >= 21
+Android: minSdkVersion >= 23
 
 <!-- ### IOS: > 11 -->
 
@@ -30,15 +28,15 @@ Flutter SDK is client for real-time communication for android and ios devices. I
 
 ### Step 1: Add this package in your flutter project
 
-#### Run this command:
+Run this command:
 
-```
+```js
 flutter pub add videosdk
 ```
 
 This will add a line like this to your package's pubspec.yaml (and run an implicit flutter pub get):
 
-```
+```js
 dependencies:
   videosdk: ^0.0.11
 ```
@@ -49,6 +47,6 @@ Alternatively, your editor might support or flutter pub get. Check the docs for 
 
 Now in your Dart code, you can use:
 
-```
-import 'package:videosdk/rtc.dart';
+```js
+import "package:videosdk/rtc.dart";
 ```

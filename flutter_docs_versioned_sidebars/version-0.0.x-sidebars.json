@@ -58,38 +58,46 @@
     },
     {
       "type": "doc",
-      "id": "api/sdk-reference/meeting-builder-widget"
+      "id": "api/sdk-reference/meeting-builder/introduction"
     },
     {
       "type": "category",
       "label": "Meeting Class",
       "items": [
-        "api/sdk-reference/meeting-introduction",
-        "api/sdk-reference/meeting-properties",
-        "api/sdk-reference/meeting-methods",
-        "api/sdk-reference/meeting-events",
-        "api/sdk-reference/meeting-example"
+        "api/sdk-reference/meeting-class/introduction",
+        "api/sdk-reference/meeting-class/properties",
+        "api/sdk-reference/meeting-class/methods",
+        "api/sdk-reference/meeting-class/events"
       ]
     },
     {
-      "type": "doc",
-      "id": "api/sdk-reference/participant-class"
+      "type": "category",
+      "label": "Participant Class",
+      "items": [
+        "api/sdk-reference/participant-class/introduction",
+        "api/sdk-reference/participant-class/properties",
+        "api/sdk-reference/participant-class/methods",
+        "api/sdk-reference/participant-class/events"
+      ]
     },
     {
-      "type": "doc",
-      "id": "api/sdk-reference/stream-class"
+      "type": "category",
+      "label": "Stream Class",
+      "items": [
+        "api/sdk-reference/stream-class/introduction",
+        "api/sdk-reference/stream-class/properties",
+        "api/sdk-reference/stream-class/methods"
+      ]
     },
     {
-      "type": "doc",
-      "id": "api/sdk-reference/pubsub-class"
-    },
-    {
-      "type": "doc",
-      "id": "api/sdk-reference/pubsubmessage-class"
-    },
-    {
-      "type": "doc",
-      "id": "api/sdk-reference/pubsuboptions-class"
+      "type": "category",
+      "label": "PubSub Class",
+      "items": [
+        "api/sdk-reference/pubsub-class/introduction",
+        "api/sdk-reference/pubsub-class/methods",
+        "api/sdk-reference/pubsub-class/pubsub-message-class",
+        "api/sdk-reference/pubsub-class/pubsub-publish-options-class"
+      ]
     }
   ]
 }
