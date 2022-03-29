@@ -1,8 +1,8 @@
 {
   "removeParticipant": {
-    "description": "Remove a participant by passing roomId in params and participantId in body parameters.",
+    "description": "This API lets you remove participant by passing roomId in params and participantId in body parameters.",
     "headers": [],
-    "methodType": "GET",
+    "methodType": "POST",
     "postParameters": [
       {
         "key": "participantId",
@@ -52,8 +52,8 @@
       "roomId": "abcd-efgh-lmno",
       "status": "ongoing",
       "links": {
-        "get_room": "https://dev-api.videosdk.live/v2/rooms/abcd-efgh-lmno",
-        "get_session": "https://dev-api.videosdk.live/v2/sessions/"
+        "get_room": "https://api.videosdk.live/v2/rooms/abcd-efgh-lmno",
+        "get_session": "https://api.videosdk.live/v2/sessions/"
       }
     }
   }

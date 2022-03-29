@@ -1,8 +1,8 @@
 {
   "endSession": {
-    "description": "End session by passing roomId in parameter. You need to either pass roomId or customRoomId in parameter to end that session.",
+    "description": "This API lets you end session by passing  either roomId or customRoomId in params.",
     "headers": [],
-    "methodType": "GET",
+    "methodType": "POST",
     "postParameters": [],
     "queryParameters": [],
     "parameters": [
@@ -51,8 +51,8 @@
       "roomId": "abcd-efgh-lmnop",
       "status": "ongoing",
       "links": {
-        "get_room": "https://dev-api.videosdk.live/v2/rooms/abcd-efgh-lmnop",
-        "get_session": "https://dev-api.videosdk.live/v2/sessions/"
+        "get_room": "https://api.videosdk.live/v2/rooms/abcd-efgh-lmnop",
+        "get_session": "https://api.videosdk.live/v2/sessions/"
       }
     }
   }
