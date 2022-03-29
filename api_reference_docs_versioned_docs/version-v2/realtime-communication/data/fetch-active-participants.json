@@ -63,8 +63,8 @@
           }
         ],
         "links": {
-          "get_all_participants": "https://dev-api.videosdk.live/v2/sessions/623f196307fe9e04525f88e6/participants",
-          "get_session": "https://dev-api.videosdk.live/v2/sessions/623f196307fe9e04525f88e6"
+          "get_all_participants": "https://api.videosdk.live/v2/sessions/61763c2597b0c743cf454204/participants",
+          "get_session": "https://api.videosdk.live/v2/sessions/"
         }
       }
     }

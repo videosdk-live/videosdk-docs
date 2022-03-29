@@ -16,7 +16,7 @@ Participant class includes all the properties, methods and events related to all
 
 ## Get local and remote participants
 
-You can get the local streams and participant meta from meeting.localParticipant. And a Map of joined participants is always available via meeting.participants.
+You can get the local streams and participant meta from `meeting.localParticipant`. And a Map of joined participants is always available via `meeting.participants`.
 
 ```js title="Javascript"
 const localParticipant = meeting.localParticipant;
