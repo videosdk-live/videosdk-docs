@@ -61,7 +61,7 @@
           }
         ],
         "links": {
-          "get_room": "https://api.videosdk.live/v2/rooms/abc-xyzw-lmno",
+          "get_all_participants": "https://dev-api.videosdk.live/v2/sessions/61763c2597b0c743cf454204/participants",
           "get_session": "https://api.videosdk.live/v2/sessions/"
         }
       }
