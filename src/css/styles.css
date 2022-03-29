@@ -1708,7 +1708,6 @@ html[data-theme="dark"]
 .links-grid {
   @apply grid grid-cols-3;
 }
-
 .__react_component_tooltip {
   display: none !important;
   visibility: hidden;
