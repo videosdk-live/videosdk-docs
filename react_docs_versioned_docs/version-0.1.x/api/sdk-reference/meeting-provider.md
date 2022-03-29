@@ -17,6 +17,7 @@ Every Context object in `react-js` comes with a Provider React component that al
     micEnabled: true,
     webcamEnabled: true,
     name: "Participant Name",
+    participantId: "xyz",
   }}
   token={"token"}
   joinWithoutUserInteraction // Boolean
@@ -34,7 +35,7 @@ Every Context object in `react-js` comes with a Provider React component that al
   - type : `String`
   - `REQUIRED`
 
-Please refer this documentation to craete a room.
+Please refer this [documentation](/api-reference/realtime-communication/create-room) to craete a room.
 
 ---
 
@@ -82,6 +83,15 @@ Please refer this documentation to craete a room.
 
   - type: `Boolean`
   - default: false
+  - `OPTIONAL`
+
+---
+
+### participantId
+
+- You can specify your custom participantId here.
+
+  - type: `String`
   - `OPTIONAL`
 
 ---
