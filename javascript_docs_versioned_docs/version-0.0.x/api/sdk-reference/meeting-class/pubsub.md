@@ -6,7 +6,6 @@ title: PubSub
 ---
 
 - `PubSub` one of the properties of a `Meeting Class` is used for messaging purpose for an ongoing meeting
-- You can make use of pubsub for messaging purpose using `meeting.purpose`
 
 <div class="sdk-api-ref-only-h4">
 
@@ -14,23 +13,23 @@ title: PubSub
 
 ### Publish()
 
-- `publish()` is used to publish messages in the meeting.
+- `publish()` is used to publish messages on a specified topic in the meeting.
 
 #### Parameters
 
 - topic :
 
   - type : `String`
-  - participants can deliever and get messages with the help of topic name.
+  - Participants can deliver messages to that particular topic.
 
 - message :
 
   - type: `String`
-  - Any arbuitrary message you want to publish.
+  - Any arbitrary message you want to publish.
 
 - persist :
   - type : `Boolean`
-  - Keeping it true will help getting old messages of an ongoing meeting
+  - If provided true, it will persist the message throughout the meeting, otherwise it will not.
 
 #### Returns
 
@@ -47,14 +46,14 @@ meeting.pubSub.publish("CHAT", message, { persist: true });
 
 ### subscribe()
 
-- `publish()` is used to subscribe a particular topic to get all messages of that topic in the meeting
+- `subscribe()` is used to subscribe a particular topic to get all the messages of that particular topic in the meeting.
 
 #### Parameters
 
 - topic :
 
   - type : `String`
-  - participants can deliever and get messages with the help of topic name.
+  - Participants can listen to messages on that particular topic.
 
 - listener : `function`
 

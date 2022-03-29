@@ -35,7 +35,7 @@ title: Meeting Class Properties
 
 - type: [Participant](./)
 
-- It will the instance of [Participant](./) class for the local participant who joined the meeting.
+- It will be the instance of [Participant](./) class for the local participant(You) who joined the meeting.
 
 ---
 
