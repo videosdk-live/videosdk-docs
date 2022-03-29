@@ -90,8 +90,8 @@ meeting.listeners.onSpeackerChanged(participantId: participantId)
 #### Event callback parameters
 
 - **participantId**: String?
-- **accept**: Function
-- **reject**: Function
+- **accept**: Closure
+- **reject**: Closure
 
 #### Example
 
@@ -113,8 +113,8 @@ meeting.listeners.onMicRequested(participantId: participantId) {
 #### Event callback parameters
 
 - **participantId**: String?
-- **accept**: Function
-- **reject**: Function
+- **accept**: Closure
+- **reject**: Closure
 
 #### Example
 
