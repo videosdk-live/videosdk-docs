@@ -18,29 +18,29 @@ import events from "./../data/meeting-class/events.json";
 
 ## Meeting Properties
 
-<div class="links-grid">
+<div class="row">
 
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [id](./properties.md#id)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [localParticipant](./properties.md#localparticipant)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [participants](./properties.md#participants)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [pubsub](./pubsub)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [listeners](./properties.md#listeners)
 
@@ -50,59 +50,59 @@ import events from "./../data/meeting-class/events.json";
 
 ## Meeting Methods
 
-<div class="links-grid">
+<div class="row">
 
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [join](./methods.md#join)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [leave](./methods.md#leave)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [end](./methods.md#end)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [enableWebcam](./methods.md#enablewebcam)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [disableWebcam](./methods.md#disablewebcam)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [unmuteMic](./methods.md#unmutemic)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [muteMic](./methods.md#mutemic)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [startRecording](./methods.md#startrecording)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [stopRecording](./methods.md#stoprecording)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [startLiveStream](./methods.md#startlivestream)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [stopLiveStream](./methods.md#startlivestream)
 
@@ -112,59 +112,59 @@ import events from "./../data/meeting-class/events.json";
 
 ## Meeting Events
 
-<div class="links-grid">
+<div class="row">
 
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [onMeetingJoined](./events.md#on-meeting-joined)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [onMeetingLeft](./events.md#on-meeting-left)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [onParticipantJoined](./events.md#on-participant-joined)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [onParticipantLeft](./events.md#on-participant-left)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [onSpeakerChanged](./events.md#on-speaker-changed)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [onMicRequested](./events.md#on-mic-requested)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [onWebcamRequested](./events.md#on-webcam-requested)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [onRecordingStarted](./events.md#on-recording-started)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [onRecordingStoppped](./events.md#on-recording-stopped)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [onLivestreamStarted](./events.md#on-livestream-started)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [onLivestreamStopped](./events.md#on-livestream-stopped)
 

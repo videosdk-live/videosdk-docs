@@ -2,68 +2,68 @@
   {
     "title": "Room",
     "description": "Room refers to a meeting. With this API endpoints you will be able to fetch and validate rooms",
-    "endpoints":[
+    "endpoints": [
       {
-        "methodType":"POST",
-        "api":"https://api.videosdk.live/v2/rooms",
-        "link":"/api-reference/realtime-communication/create-room"
+        "methodType": "POST",
+        "api": "/v2/rooms",
+        "link": "/api-reference/realtime-communication/create-room"
       },
       {
-        "methodType":"POST",
-        "api":"https://api.videosdk.live/v2/rooms/validate/${roomId}",
-        "link":"/api-reference/realtime-communication/validate-room"
+        "methodType": "POST",
+        "api": "/v2/rooms/validate/${roomId}",
+        "link": "/api-reference/realtime-communication/validate-room"
       },
       {
-        "methodType":"GET",
-        "api":"https://api.videosdk.live/v2/rooms/",
-        "link":"/api-reference/realtime-communication/fetch-all-room"
+        "methodType": "GET",
+        "api": "/v2/rooms/",
+        "link": "/api-reference/realtime-communication/fetch-all-room"
       },
       {
-        "methodType":"GET",
-        "api":"https://api.videosdk.live/v2/rooms/${roomId}",
-        "link":"/api-reference/realtime-communication/fetch-room-details"
+        "methodType": "GET",
+        "api": "/v2/rooms/${roomId}",
+        "link": "/api-reference/realtime-communication/fetch-room-details"
       }
     ]
   },
   {
     "title": "Session",
     "description": "Session refers to a single instance of a meeting. With this API endpoints you can access details of sessions and its participants",
-    "endpoints":[
+    "endpoints": [
       {
-        "methodType":"GET",
-        "api":"https://api.videosdk.live/v2/sessions/",
-        "link":"/api-reference/realtime-communication/fetch-session"
+        "methodType": "GET",
+        "api": "/v2/sessions/",
+        "link": "/api-reference/realtime-communication/fetch-session"
       },
       {
-        "methodType":"GET",
-        "api":"https://api.videosdk.live/v2/sessions/${sessionId}",
-        "link":"/api-reference/realtime-communication/fetch-session-using-sessionid"
+        "methodType": "GET",
+        "api": "/v2/sessions/${sessionId}",
+        "link": "/api-reference/realtime-communication/fetch-session-using-sessionid"
       },
       {
-        "methodType":"GET",
-        "api":"https://api.videosdk.live/v2/sessions/${sessionId}/participants",
-        "link":"/api-reference/realtime-communication/fetch-participants"
+        "methodType": "GET",
+        "api": "/v2/sessions/${sessionId}/participants",
+        "link": "/api-reference/realtime-communication/fetch-participants"
       },
       {
-        "methodType":"GET",
-        "api":"https://api.videosdk.live/v2/sessions/${sessionId}/participants/active",
-        "link":"/api-reference/realtime-communication/fetch-active-participants"
+        "methodType": "GET",
+        "api": "/v2/sessions/${sessionId}/participants/active",
+        "link": "/api-reference/realtime-communication/fetch-active-participants"
       }
     ]
   },
   {
     "title": "Recordings",
     "description": "This API Endpoints will allow you to fetch your meeting recordings.",
-    "endpoints":[
+    "endpoints": [
       {
-        "methodType":"GET",
-        "api":"https://api.videosdk.live/v2/recordings",
-        "link":"/api-reference/realtime-communication/fetch-recordings"
+        "methodType": "GET",
+        "api": "/v2/recordings",
+        "link": "/api-reference/realtime-communication/fetch-recordings"
       },
       {
-        "methodType":"GET",
-        "api":"https://api.videosdk.live/v2/recordings/${recordingId}",
-        "link":"/api-reference/realtime-communication/fetch-recording-using-recordingId"
+        "methodType": "GET",
+        "api": "/v2/recordings/${recordingId}",
+        "link": "/api-reference/realtime-communication/fetch-recording-using-recordingId"
       }
     ]
   }

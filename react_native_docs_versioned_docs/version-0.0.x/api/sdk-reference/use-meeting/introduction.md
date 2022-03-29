@@ -13,85 +13,85 @@ title: Video SDK useMeeting Hook
 
 ## Properties
 
-<div class="links-grid">
-<div>
+<div class="row">
+<div class="col col--4 margin-bottom--lg" >
 
 - [meetingId](./properties#meetingid)
 
 </div>
 
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [meeting](./properties#meeting)
 
 </div>
 
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [localParticipant](./properties#localparticipant)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [mainParticipant](./properties#mainparticipant)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [onMainParticipantChanged](./properties#onmainparticipantchanged)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [activeSpeakerId](./properties#activespeakerid)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [presenterId](./properties#presenterid)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [pinnedParticipants](./properties#pinnedparticipants)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [participants](./properties#participants)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [localMicOn](./properties#localmicon)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [localWebcamOn](./properties#localwebcamon)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [localScreenShareOn](./properties#localscreenshareon)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [isRecording](./properties#isrecording)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [isLiveStreaming](./properties#islivestreaming)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [connections](./properties#connections)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [messages](./properties#messages)
 
@@ -100,143 +100,143 @@ title: Video SDK useMeeting Hook
 
 ## Methods
 
-<div class="links-grid">
-<div>
+<div class="row">
+<div class="col col--4 margin-bottom--lg" >
 
 - [join](./methods#join)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [leave](./methods#leave)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [end](./methods#end)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [enableWebcam](./methods#enablewebcam)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [disableWebcam](./methods#disablewebcam)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [toggleWebcam](./methods#togglewebcam)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [unmuteMic](./methods#unmutemic)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [muteMic](./methods#mutemic)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [toggleMic](./methods#togglemic)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [enableScreenShare](./methods#enablescreenshare)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [disableScreenShare](./methods#disablescreenshare)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [toggleScreenShare](./methods#togglescreenshare)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [startRecording](./methods#startrecording)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [stopRecording](./methods#stoprecording)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [startLivestream](./methods#startlivestream)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [stopLivestream](./methods#stoplivestream)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [startHls](./methods#starthls)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [stopHls](./methods#stophls)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [getWebcams](./methods#getwebcams)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [changeWebcam](./methods#changewebcam)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [getMics](./methods#getmics)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [changeMic](./methods#changemic)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [startVideo](./methods#startvideo)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [stopVideo](./methods#stopvideo)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [pauseVideo](./methods#pausevideo)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [resumeVideo](./methods#resumevideo)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [seekVideo](./methods#seekvideo)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [connectTo](./methods#connectto)
 
@@ -245,118 +245,118 @@ title: Video SDK useMeeting Hook
 
 ## Event Callbacks
 
-<div class="links-grid">
-<div>
+<div class="row">
+<div class="col col--4 margin-bottom--lg" >
 
 - [onParticipantJoined](./events#onparticipantjoined)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [onParticipantLeft](./events#onparticipantleft)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [onSpeakerChanged](./events#onspeakerchanged)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [onPresenterChanged](./events#onpresenterchanged)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [onMainParticipantChanged](./events#onmainparticipantchanged)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [onEntryRequested](./events#onentryrequested)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [onRecordingStarted](./events#onrecordingstarted)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [onRecordingStopped](./events#onrecordingstopped)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [onMeetingJoined](./events#onmeetingjoined)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [onMeetingLeft](./events#onmeetingleft)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [onLiveStreamStarted](./events.md#onlivestreamstarted)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [onLiveStreamStopped](./events.md#onlivestreamstopped)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [onHlsStarted](./events.md#onhlsstarted)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [onHlsStopped](./events.md#onhlsstopped)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [onVideoStateChanged](./events#onvideostatechanged)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [onVideoSeeked](./events#onvideoseeked)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [onPinStateChanged](./events#onpinstatechanged)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [onWebcamRequested](./events#onwebcamrequested)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [onMicRequested](./events#onmicrequested)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [onSwitchMeeting](./events#onswitchmeeting)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [onConnectionOpen](./events#onconnectionopen)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [onConnectionClose](./events#onconnectionclose)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [onError](./events#onerror)
 
