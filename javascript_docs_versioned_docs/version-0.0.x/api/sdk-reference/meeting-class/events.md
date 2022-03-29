@@ -312,10 +312,15 @@ meeting.on("livestream-stopped", () => {
 
 - This event will be emitted when `HLS` of the meeting is started.
 
+#### Event callback parameters
+
+- **data**: { **downstreamUrl**: String; }
+  - **downstreamUrl**: String
+
 #### Example
 
 ```javascript
-meeting.on("hls-started", () => {
+meeting.on("hls-started", ({ downstreamUrl }) => {
   //
 });
 ```
@@ -338,7 +343,7 @@ meeting.on("hls-stopped", () => {
 
 ### connection-open
 
-- This event will be emitted when a new connection is open with another meeting.
+- This event will be emitted when a new connection is open with other meeting.
 
 #### Event callback parameters
 
@@ -356,7 +361,7 @@ meeting.on("connection-open", (connection) => {
 
 ### connection-close
 
-- This event will be emitted when a connection is closed with another meeting.
+- This event will be emitted when a connection is closed with other meeting.
 
 #### Event callback parameters
 
@@ -374,7 +379,7 @@ meeting.on("connection-close", (connectionId) => {
 
 ### switch-meeting
 
-- This event will be emitted when participant is requested to switch to another meeting.
+- This event will emit at participant side who is going to be switch with arguments `meetingId`, `payload` and `token`.
 
 #### Event callback parameters
 

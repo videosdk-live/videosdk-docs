@@ -35,6 +35,6 @@ pagination_label: Participant Class Properties
 
 - type: `MediaStreamTrack`
 
-- It is used to track stream.
+- It represents a single media track within a stream.
 
 </div>

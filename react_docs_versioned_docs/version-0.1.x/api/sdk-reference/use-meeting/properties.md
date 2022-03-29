@@ -28,20 +28,6 @@ title: useMeeting Hook Properties
 
 ---
 
-### mainParticipant
-
-- type : `Participant`
-- `mainParticipant` represents [`Participant`](../use-participant/introduction.md) object for the main participant of the meeting.
-
----
-
-### onMainParticipantChanged
-
-- type : `Event`
-- `onMainParticipantChanged` is triggered when the main participant of the meeting changes.
-
----
-
 ### activeSpeakerId
 
 - type : `string`
@@ -110,12 +96,5 @@ title: useMeeting Hook Properties
 
 - type : `Map<string, Connection>`
 - `connection` will be map of Connections which will have all the connections for the connected meeting.
-
----
-
-### messages (Depricated)
-
-- type : `Map<string, Object>`
-- `messages` will be map of string containing the messages of the meeting .
 
 </div>

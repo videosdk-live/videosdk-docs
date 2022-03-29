@@ -310,7 +310,7 @@ handleGetWebcams();
 ### changeWebcam()
 
 - It is used to change the webcam device.
-- If multiple webcam devices are connected, then by using `changeWebcam()` one can change the mic device.
+- If multiple webcam devices are connected, by using `changeWebcam()` one can change the camera device.
 
 #### Parameters
 
@@ -362,7 +362,7 @@ handleGetMics();
 ### changeMic()
 
 - It is used to change the mic device.
-- If multiple mic devices are connected, then by using `changeMic()` one can change the mic device.
+- If multiple mic devices are connected, by using `changeMic()` one can change the mic device.
 
 #### Parameters
 

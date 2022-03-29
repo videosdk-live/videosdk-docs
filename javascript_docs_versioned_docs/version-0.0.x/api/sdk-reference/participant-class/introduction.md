@@ -16,7 +16,7 @@ Participant class includes all the properties, methods and events related to all
 
 ## Get local and remote participants
 
-You can get the local streams and participant meta from meeting.localParticipant. And a Map of joined participants is always available via meeting.participants.
+You can get the local streams and participant meta from `meeting.localParticipant`. And a Map of joined participants is always available via `meeting.participants`.
 
 ```js title="Javascript"
 const localParticipant = meeting.localParticipant;
@@ -25,19 +25,19 @@ const participants = meeting.participants;
 
 ## Participant Properties
 
-<div class="links-grid">
+<div class="row">
 
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [id](./properties.md#id)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [displayName](./properties.md#displayname)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [streams](./properties.md#streams)
 
@@ -47,39 +47,39 @@ const participants = meeting.participants;
 
 ## Participant Methods
 
-<div class="links-grid">
+<div class="row">
 
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [enableWebcam](./methods.md#enablewebcam)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [disableWebcam](./methods.md#disablewebcam)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [enableMic](./methods.md#enablemic)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [disableMic](./methods.md#disablemic)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [setQuality](./methods.md#setquality)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [pin](./methods.md#pin)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [unpin](./methods.md#unpin)
 
@@ -89,14 +89,14 @@ const participants = meeting.participants;
 
 ## Participant Events
 
-<div class="links-grid">
+<div class="row">
 
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [stream-enabled](./events.md#stream-enabled)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--lg" >
 
 - [stream-disabled](./events.md#stream-disabled)
 

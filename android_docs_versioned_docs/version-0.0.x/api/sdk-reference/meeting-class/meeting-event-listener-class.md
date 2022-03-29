@@ -11,7 +11,7 @@ title: MeetingEventListener Class
 
 ### implementation
 
-- You can implement all the methods of `MeetingEventListener` abstract Class and add the listener to `Meeting` class using the  `addEventListener()` method of `Meeting` Class.
+- You can implement all the methods of `MeetingEventListener` abstract Class and add the listener to `Meeting` class using the `addEventListener()` method of `Meeting` Class.
 
 #### Example
 
@@ -136,7 +136,6 @@ title: MeetingEventListener Class
 
 ---
 
-
 ### onEntryRequested()
 
 - This event will be emitted when a new [participant](../participant-class/introduction) who is trying to join the meeting, is having permission **`ask_join`** in token.
@@ -198,7 +197,7 @@ title: MeetingEventListener Class
  public void onWebcamRequested(String participantId, WebcamRequestListener listener) {
      // if accept request
      listener.accept();
-    
+
      // if reject request
      listener.reject();
  }
@@ -221,7 +220,7 @@ title: MeetingEventListener Class
  public void onMicRequested(String participantId, MicRequestListener listener) {
      // if accept request
      listener.accept();
-    
+
      // if reject request
      listener.reject();
  }

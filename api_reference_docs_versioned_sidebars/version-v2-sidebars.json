@@ -1,50 +1,39 @@
 {
-  "realtimeCommunicationSidebar": [
+  "apiSidebar": [
     {
-      "type": "category",
-      "label": "Real Time Communication",
-      "items": [
-        "realtime-communication/intro",
-        "realtime-communication/architecture"
-      ],
-      "collapsed": true
+      "type": "doc",
+      "id": "realtime-communication/intro"
     },
     {
       "type": "category",
-      "label": "Rest API Reference",
+      "label": "Room APIs",
       "collapsed": true,
       "items": [
         "realtime-communication/create-room",
         "realtime-communication/validate-room",
         "realtime-communication/fetch-all-room",
-        "realtime-communication/fetch-room-details",
-        {
-          "type": "category",
-          "label": "Sessions",
-          "collapsed": true,
-          "items": [
-            "realtime-communication/fetch-session",
-            "realtime-communication/fetch-session-using-sessionid",
-            "realtime-communication/fetch-participants",
-            "realtime-communication/fetch-active-participants"
-          ]
-        },
-        {
-          "type": "category",
-          "label": "Recordings",
-          "collapsed": true,
-          "items": [
-            "realtime-communication/fetch-recordings",
-            "realtime-communication/fetch-recording-using-recordingId"
-          ]
-        }
+        "realtime-communication/fetch-room-details"
       ]
     },
     {
       "type": "category",
-      "label": "See Also",
-      "items": ["realtime-communication/see-also/device-browser-support"],
-      "collapsed": true
+      "label": "Session APIs",
+      "collapsed": true,
+      "items": [
+        "realtime-communication/fetch-session",
+        "realtime-communication/fetch-session-using-sessionid",
+        "realtime-communication/fetch-participants",
+        "realtime-communication/fetch-active-participants"
+      ]
+    },
+    {
+      "type": "category",
+      "label": "Recording APIs",
+      "collapsed": true,
+      "items": [
+        "realtime-communication/fetch-recordings",
+        "realtime-communication/fetch-recording-using-recordingId"
+      ]
     }
   ]
 }

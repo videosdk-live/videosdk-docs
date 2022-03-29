@@ -142,37 +142,37 @@ import MethodListHeading from '@theme/MethodListHeading';
 
 - Return Type : `void`
 - `enableWebcam()` is used to enable self camera.
-- Local Participant and Remote Participant will receive a `Events.streamEnabled` event with `stream` object.
+- Every Participant will receive a `Events.streamEnabled` event with `stream` object.
 
 ### disableWebcam() {#h3}
 
 - Return Type : `void`
 - `disableWebcam()` is used to disable self camera.
-- Local Participant and Remote Participant will receive a `Events.streamDisabled` event with `stream` object.
+- Every Participant will receive a `Events.streamDisabled` event with `stream` object.
 
 ### unmuteMic() {#h3}
 
 - Return Type : `void`
 - `unmuteMic()` is used to enable self microphone.
-- Local Participant and Remote Participant will receive a `Events.streamEnabled` event with `stream` object.
+- Every Participant will receive a `Events.streamEnabled` event with `stream` object.
 
 ### muteMic() {#h3}
 
 - Return Type : `void`
 - `muteMic()` is used to disable self microphone.
-- Local Participant and Remote Participant will receive a `Events.streamDisabled` event with `stream` object.
+- Every Participant will receive a `Events.streamDisabled` event with `stream` object.
 
 ### enableScreenShare() {#h3}
 
 - Return Type : `void`
 - `enableScreenShare()` is used to enable screen-sharing.
-- Local Participant and Remote Participant will receive a `Events.streamEnabled` event with `stream` object.
+- Every Participant will receive a `Events.streamEnabled` event with `stream` object.
 
 ### disableScreenShare() {#h3}
 
 - Return Type : `void`
 - `disableScreenShare()` is used to disable screen-sharing.
-- Local Participant and Remote Participant will receive a `Events.streamDisabled` event with `stream` object.
+- Every Participant will receive a `Events.streamDisabled` event with `stream` object.
 
 ### getWebcams() {#h3}
 
@@ -188,31 +188,31 @@ import MethodListHeading from '@theme/MethodListHeading';
 
 - Return Type : `void`
 - `changeWebcam` is used to change self camera.
-- Local Participant and Remote Participant will receive `Events.streamEnabled` event with `stream` object and `Events.streamDisabled` event with `stream` object.
+- Every Participant will receive `Events.streamEnabled` event with `stream` object and `Events.streamDisabled` event with `stream` object.
 
 ### startRecording() {#h3}
 
 - Return Type : `void`
 - `startRecording()` is used to start meeting recording.
-- Local Participant and Remote Participant will receive `Events.recordingStarted` event.
+- Every Participant will receive `Events.recordingStarted` event.
 
 ### stopRecording() {#h3}
 
 - Return Type : `void`
 - `stopRecording()` is used to stop meeting recording.
-- Local Participant and Remote Participant will receive `Events.recordingStopped` event.
+- Every Participant will receive `Events.recordingStopped` event.
 
 ### startLivestream() {#h3}
 
 - Return Type : `void`
 - `startLivestream()` is used to start meeting livestreaming.
-- Local Participant and Remote Participant will receive `Events.liveStreamStarted` event.
+- Every Participant will receive `Events.liveStreamStarted` event.
 
 ### stopLivestream() {#h3}
 
 - Return Type : `void`
 - `stopLivestream()` is used to stop meeting livestreaming.
-- Local Participant and Remote Participant will receive `Events.liveStreamStopped` event.
+- Every Participant will receive `Events.liveStreamStopped` event.
 
 ### on(Events event, Function handler) {#h3}
 

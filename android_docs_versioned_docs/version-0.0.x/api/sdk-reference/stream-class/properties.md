@@ -45,5 +45,4 @@ pagination_label: Stream Class Properties
 
 - `getConsumer()` will return a consumer of that stream.
 
-
 </div>

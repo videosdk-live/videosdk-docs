@@ -9,7 +9,7 @@ pagination_label: Participant Class Events
 
 ### stream-enabled
 
-- `Events.stream-enabled` will be emitted when any partcipant consumes or produces stream of any type
+- `stream-enabled` will be emitted when any partcipant consumes or produces stream of any type
 
 #### Example
 
@@ -23,7 +23,7 @@ participant.on("stream-enabled", () => {
 
 ### stream-disabled
 
-- `Events.stream-disabled` will be emitted when any partcipant stops consuming or producing stream of any type
+- `stream-disabled` will be emitted when any partcipant stops consuming or producing stream of any type
 
 #### Example
 

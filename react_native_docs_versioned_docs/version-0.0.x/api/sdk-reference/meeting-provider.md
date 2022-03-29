@@ -21,7 +21,7 @@ Every Context object in `react-js` comes with a Provider React component that al
       title: "Code Sample",
       message: "Meeting is running.",
     },
-    participantId: "xyz"
+    participantId: "xyz",
   }}
   token={"token"}
   joinWithoutUserInteraction // Boolean
@@ -39,7 +39,7 @@ Every Context object in `react-js` comes with a Provider React component that al
   - type : `String`
   - `REQUIRED`
 
-Please refer this [documentation](/api-reference/realtime-communication/create-room) to craete a room.
+Please refer this [documentation](/api-reference/realtime-communication/create-room) to create a room.
 
 ---
 
@@ -77,6 +77,8 @@ Please refer this [documentation](/api-reference/realtime-communication/create-r
   - type: `String`
   - `REQUIRED`
 
+Please refer this [documentation](/api-reference/realtime-communication/intro) to generate a token.
+
 ---
 
 ### joinWithoutInteraction
@@ -99,6 +101,7 @@ Please refer this [documentation](/api-reference/realtime-communication/create-r
   - `OPTIONAL`
 
   - **title** : String
+
     - Represent the title fo the notification.
 
   - **message** : String

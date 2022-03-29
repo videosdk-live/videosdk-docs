@@ -1705,9 +1705,9 @@ html[data-theme="dark"]
   font-size: large;
 }
 
-.links-grid {
+/* .links-grid {
   @apply grid grid-cols-3;
-}
+} */
 
 [class*="type-dark"] {
   display: none !important;
