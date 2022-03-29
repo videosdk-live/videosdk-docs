@@ -51,11 +51,11 @@ title: Meeting Class Methods
 ### end()
 
 - It is used to end the current running session.
-- By calling `end()`, all joined [participants](properties#getparticipants) including [localParticipant](properties#getlocalparticipant) of that session will leave the meeting.
+- By calling `end()`, all joined [participants](properties#getparticipants) including [localParticipant](./properties.md#getlocalparticipant) of that session will leave the meeting.
 
 #### Events associated with `end()`:
 
-- All [participants](propertiesproperties#getparticipants) and [localParticipant](properties#getlocalparticipant), will be emitted [`onMeetingLeft`](./meeting-event-listener-class#onmeetingleft) event.
+- All [participants](./properties.md#getparticipants) and [localParticipant](./properties.md#getlocalparticipant), will be emitted [`onMeetingLeft`](./meeting-event-listener-class#onmeetingleft) event.
 
 #### Returns
 
@@ -125,7 +125,7 @@ title: Meeting Class Methods
 ### disableScreenShare()
 
 - It is used to disable screen-sharing.
-- With [`stream`](../stream-class/introduction) object `onStreamDisabled` event and with participantId  as `null`, [`onPresenterChanged()`](./meeting-event-listener-class#onpresenterchanged) event will be emitted from the event callback.
+- With [`stream`](../stream-class/introduction) object `onStreamDisabled` event and with participantId as `null`, [`onPresenterChanged()`](./meeting-event-listener-class#onpresenterchanged) event will be emitted from the event callback.
 
 #### Returns
 
@@ -136,7 +136,7 @@ title: Meeting Class Methods
 ### startRecording()
 
 - It is used to start meeting recording.
-- All [participants](propertiesproperties#getparticipants) and [localParticipant](properties#getlocalparticipant), will receive `onRecordingStarted` event.
+- All [participants](./properties.md#getparticipants) and [localParticipant](./properties.md#getlocalparticipant), will receive `onRecordingStarted` event.
 
 - `webhookUrl` will be triggered when the recording is completed and stored into server. Read more about webhooks [here](https://en.wikipedia.org/wiki/Webhook).
 
@@ -161,7 +161,7 @@ meeting.startRecording(webhookUrl);
 ### stopRecording()
 
 - It is used to stop meeting recording.
-- All [participants](propertiesproperties#getparticipants) and [localParticipant](properties#getlocalparticipant), will receive `onRecordingStopped` event.
+- All [participants](./properties.md#getparticipants) and [localParticipant](./properties.md#getlocalparticipant), will receive `onRecordingStopped` event.
 
 #### Returns
 
@@ -179,7 +179,7 @@ meeting.stopRecording();
 
 - It is used to start meeting livestreaming.
 - You will be able to start livestream the meeting to another platforms such as Youtube, Facebook, etc. that supports `rtmp` streaming.
-- All [participants](propertiesproperties#getparticipants) and [localParticipant](properties#getlocalparticipant), will receive [`onLivestreamStarted`](./meeting-event-listener-class#onlivestreamstarted) event.
+- All [participants](./properties.md#getparticipants) and [localParticipant](./properties.md#getlocalparticipant), will receive [`onLivestreamStarted`](./meeting-event-listener-class#onlivestreamstarted) event.
 
 #### Parameters
 
@@ -206,7 +206,7 @@ meeting.startLivestream(outputs);
 ### stopLivestream()
 
 - It is used to stop meeting livestreaming.
-- All [participants](propertiesproperties#getparticipants) and [localParticipant](properties#getlocalparticipant), will receive [`onLivestreamStopped`](./meeting-event-listener-class#onlivestreamstopped) event.
+- All [participants](./properties.md#getparticipants) and [localParticipant](./properties.md#getlocalparticipant), will receive [`onLivestreamStopped`](./meeting-event-listener-class#onlivestreamstopped) event.
 
 #### Returns
 
@@ -284,7 +284,7 @@ meeting.changeWebcam();
 
 #### Parameters
 
-- **audioManagerEvents**: AppRTCAudioManager.AudioManagerEvents 
+- **audioManagerEvents**: AppRTCAudioManager.AudioManagerEvents
 
 #### Returns
 
@@ -345,6 +345,5 @@ meeting.changeWebcam();
 #### Returns
 
 - _`void`_
-
 
 </div>

@@ -24,14 +24,14 @@ title: useMeeting Hook Properties
 ### localParticipant
 
 - type : `Participant`
-- `localParticipant` represents `Participant` object for the local participant
+- `localParticipant` represents [`Participant`](../use-participant/introduction.md) object for the local participant
 
 ---
 
 ### mainParticipant
 
 - type : `Participant`
-- `mainParticipant` represents `Participant` object for the main participant of the meeting.
+- `mainParticipant` represents [`Participant`](../use-participant/introduction.md) object for the main participant of the meeting.
 
 ---
 

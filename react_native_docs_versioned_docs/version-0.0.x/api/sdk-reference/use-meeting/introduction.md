@@ -98,7 +98,6 @@ title: Video SDK useMeeting Hook
 </div>
 </div>
 
-
 ## Methods
 
 <div class="links-grid">
@@ -299,22 +298,22 @@ title: Video SDK useMeeting Hook
 </div>
 <div>
 
-- [onLiveStreamStarted](./events#onlivestreamstarted)
+- [onLiveStreamStarted](./events.md#onlivestreamstarted)
 
 </div>
 <div>
 
-- [onLiveStreamStopped](./events#onlivestreamstopped)
+- [onLiveStreamStopped](./events.md#onlivestreamstopped)
 
 </div>
 <div>
 
-- [onHlsStarted](./events#onhlsstarted)
+- [onHlsStarted](./events.md#onhlsstarted)
 
 </div>
 <div>
 
-- [onHlsStopped](./events#onhlsstopped)
+- [onHlsStopped](./events.md#onhlsstopped)
 
 </div>
 <div>

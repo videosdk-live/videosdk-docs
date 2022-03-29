@@ -9,8 +9,8 @@ title: Initializing a Meeting
 
 ## initialize()
 
-To initialize the meeting, first you have to initialize the `MediasoupClient`.
-You can initialize the `MediasoupClient` using `initialize()` method provided by the SDK.
+To initialize the meeting, first you have to initialize the `VideoSDK`.
+You can initialize the `VideoSDK` using `initialize()` method provided by the SDK.
 
 #### Parameters
 
@@ -21,7 +21,7 @@ You can initialize the `MediasoupClient` using `initialize()` method provided by
 - _`void`_
 
 ```js title="initialize"
-  initialize(Context context)
+  VideoSDK.initialize(Context context)
 ```
 
 ---
@@ -33,29 +33,28 @@ By using `config()` method, you can set the `token` property of `VideoSDK` class
 
 #### Parameters
 
-- **token**: String   
+- **token**: String
 
 #### Returns
 
 - _`void`_
 
 ```js title="config"
- config(String token)
+ VideoSDK.config(String token)
 ```
 
 ---
 
-
 ## initMeeting()
 
-- Now, you can initialize the meeting using a factory method provided by the SDK called `initMeeting()`. 
-- `initMeeting()`  will generate a new `Meeting` class and the initiated meeting will be returned.
+- Now, you can initialize the meeting using a factory method provided by the SDK called `initMeeting()`.
+- `initMeeting()` will generate a new [`Meeting`](./meeting-class/introduction.md) class and the initiated meeting will be returned.
 
 ```js title="initMeeting"
-   initMeeting(
-        Context context, 
-        String meetingId, 
-        String name, 
+   VideoSDK.initMeeting(
+        Context context,
+        String meetingId,
+        String name,
         boolean micEnabled,
         boolean webcamEnabled
       )
@@ -76,6 +75,7 @@ By using `config()` method, you can set the `token` property of `VideoSDK` class
 
   - type : `String`
   - `REQUIRED`
+
 ### name
 
 - Name of the participant who will be joining the meeting, this name will be displayed to other participants in the same meeting.
@@ -97,12 +97,11 @@ By using `config()` method, you can set the `token` property of `VideoSDK` class
   - type: `Boolean`
   - `REQUIRED`
 
-
 ## Returns
 
 ### meeting
 
-- After initializing the meeting, `initMeeting()` will return a new [`Meeting`](/javascript/api/sdk-reference/meeting-class/introduction) instance.
+- After initializing the meeting, `initMeeting()` will return a new [`Meeting`](./meeting-class/introduction.md) instance.
 
 ---
 
@@ -118,10 +117,10 @@ VideoSDK.config(token);  // pass the token generated from VideoSDK Dashboard
 // Initialize the meeting
 Meeting meeting = VideoSDK.initMeeting({
   MainActivity.this,
-  "abc-1234-xyz", 
-  "John Doe", 
-  true, 
-  true, 
+  "abc-1234-xyz",
+  "John Doe",
+  true,
+  true,
 });
 ```
 

@@ -36,7 +36,7 @@ title: Methods returned by useMeeting Hook
 #### Events associated with `leave()`:
 
 - Local participant will receive a [`onMeetingLeft`](./events#onmeetingleft) event.
-- All remote participants will receive a [`onParticipantLeft`](./events#onparticipantleft) event with `Participant` object from the event callback.
+- All remote participants will receive a [`onParticipantLeft`](./events#onparticipantleft) event with [`Participant`](../use-participant/introduction.md) object from the event callback.
 
 ---
 
@@ -46,7 +46,7 @@ title: Methods returned by useMeeting Hook
 
 #### Events associated with `leave()`:
 
-- All remote participants and local participant will receive a [`onParticipantLeft`](./events#onparticipantleft) event with `Participant` object from the event callback.
+- All remote participants and local participant will receive a [`onParticipantLeft`](./events#onparticipantleft) event with [`Participant`](../use-participant/introduction.md) object from the event callback.
 
 ---
 
@@ -56,7 +56,7 @@ title: Methods returned by useMeeting Hook
 
 #### Events associated with `enableMic()`:
 
-- Every Participant will receive a callback on [`onStreamEnabled()`](../use-participant/events#onstreamenabled) of the `useParticipant()` hook with `Stream` object.
+- Every Participant will receive a callback on [`onStreamEnabled()`](../use-participant/events#onstreamenabled) of the [`useParticipant()`](../use-participant/introduction.md) hook with `Stream` object.
 
 ---
 
@@ -66,7 +66,7 @@ title: Methods returned by useMeeting Hook
 
 #### Events associated with `disableMic()`:
 
-- Every Participant will receive a callback on [`onStreamDisabled()`](../use-participant/events#onstreamdisabled) of the `useParticipant()` hook with `Stream` object.
+- Every Participant will receive a callback on [`onStreamDisabled()`](../use-participant/events#onstreamdisabled) of the [`useParticipant()`](../use-participant/introduction.md) hook with `Stream` object.
 
 ---
 
@@ -76,9 +76,9 @@ title: Methods returned by useMeeting Hook
 
 #### Events associated with `toggleMic()`:
 
-- Every Participant will receive a callback on [`onStreamDisabled()`](../use-participant/events#onstreamdisabled) of the `useParticipant()` hook with `Stream` object if mic is turned off.
+- Every Participant will receive a callback on [`onStreamDisabled()`](../use-participant/events#onstreamdisabled) of the [`useParticipant()`](../use-participant/introduction.md) hook with `Stream` object if mic is turned off.
 
-- Every Participant will receive a callback on [`onStreamEnabled()`](../use-participant/events#onstreamenabled) of the `useParticipant()` hook with `Stream` object if mic is turned on.
+- Every Participant will receive a callback on [`onStreamEnabled()`](../use-participant/events#onstreamenabled) of the [`useParticipant()`](../use-participant/introduction.md) hook with `Stream` object if mic is turned on.
 
 ---
 
@@ -88,7 +88,7 @@ title: Methods returned by useMeeting Hook
 
 #### Events associated with `enableWebcam()`:
 
-- Every Participant will receive a callback on [`onStreamEnabled()`](../use-participant/events#onstreamenabled) of the `useParticipant()` hook with `Stream` object.
+- Every Participant will receive a callback on [`onStreamEnabled()`](../use-participant/events#onstreamenabled) of the [`useParticipant()`](../use-participant/introduction.md) hook with `Stream` object.
 
 ---
 
@@ -98,7 +98,7 @@ title: Methods returned by useMeeting Hook
 
 #### Events associated with `disableWebcam()`:
 
-- Every Participant will receive a callback on [`onStreamDisabled()`](../use-participant/events#onstreamdisabled) of the `useParticipant()` hook with `Stream` object.
+- Every Participant will receive a callback on [`onStreamDisabled()`](../use-participant/events#onstreamdisabled) of the [`useParticipant()`](../use-participant/introduction.md) hook with `Stream` object.
 
 ---
 
@@ -108,9 +108,9 @@ title: Methods returned by useMeeting Hook
 
 #### Events associated with `toggleWebcam()`:
 
-- Every Participant will receive a callback on [`onStreamDisabled()`](../use-participant/events#onstreamdisabled) of the `useParticipant()` hook with `Stream` object if webcam is turned off.
+- Every Participant will receive a callback on [`onStreamDisabled()`](../use-participant/events#onstreamdisabled) of the [`useParticipant()`](../use-participant/introduction.md) hook with `Stream` object if webcam is turned off.
 
-- Every Participant will receive a callback on [`onStreamEnabled()`](../use-participant/events#onstreamenabled) of the `useParticipant()` hook with `Stream` object if webcam is turned on.
+- Every Participant will receive a callback on [`onStreamEnabled()`](../use-participant/events#onstreamenabled) of the [`useParticipant()`](../use-participant/introduction.md) hook with `Stream` object if webcam is turned on.
 
 ---
 
@@ -120,7 +120,7 @@ title: Methods returned by useMeeting Hook
 
 #### Events associated with `enableScreenShare()`:
 
-- Every Participant will receive a callback on [`onStreamEnabled()`](../use-participant/events#onstreamenabled) of the `useParticipant()` hook with `Stream` object.
+- Every Participant will receive a callback on [`onStreamEnabled()`](../use-participant/events#onstreamenabled) of the [`useParticipant()`](../use-participant/introduction.md) hook with `Stream` object.
 
 - `onPresenterChanged()` will also receive a callback with the `presenterId`.
 
@@ -132,7 +132,7 @@ title: Methods returned by useMeeting Hook
 
 #### Events associated with `disableScreenShare()`:
 
-- Every Participant will receive a callback on [`onStreamDisabled()`](../use-participant/events#onstreamdisabled) of the `useParticipant()` hook with `Stream` object.
+- Every Participant will receive a callback on [`onStreamDisabled()`](../use-participant/events#onstreamdisabled) of the [`useParticipant()`](../use-participant/introduction.md) hook with `Stream` object.
 
 - `onPresenterChanged()` will also receive a callback with the `presenterId`.
 
@@ -144,9 +144,9 @@ title: Methods returned by useMeeting Hook
 
 #### Events associated with `toggleScreenShare()`:
 
-- Every Participant will receive a callback on [`onStreamDisabled()`](../use-participant/events#onstreamdisabled) of the `useParticipant()` hook with `Stream` object if screen share is turned off.
+- Every Participant will receive a callback on [`onStreamDisabled()`](../use-participant/events#onstreamdisabled) of the [`useParticipant()`](../use-participant/introduction.md) hook with `Stream` object if screen share is turned off.
 
-- Every Participant will receive a callback on [`onStreamEnabled()`](../use-participant/events#onstreamenabled) of the `useParticipant()` hook with `Stream` object if screen share is turned on.
+- Every Participant will receive a callback on [`onStreamEnabled()`](../use-participant/events#onstreamenabled) of the [`useParticipant()`](../use-participant/introduction.md) hook with `Stream` object if screen share is turned on.
 
 ---
 

@@ -121,8 +121,8 @@ const {
 
 ### onEntryRequested()
 
-- This event will be triggered when a new [participant](./) who is trying to join the meeting, is having permission **`ask_join`** in token.
-- This event will only be triggered to the [participants](./) in the meeting, who is having the permission **`allow_join`** in token.
+- This event will be triggered when a new [participant](../use-participant/introduction.md) who is trying to join the meeting, is having permission **`ask_join`** in token.
+- This event will only be triggered to the [participants](../use-participant/introduction.md) in the meeting, who is having the permission **`allow_join`** in token.
 - This event will pass following parameters as an event parameters, `participantId` and `name` of the new participant who is trying to join the meeting, `allow()` and `deny()` to take required actions.
 
 #### Event callback parameters
@@ -162,8 +162,8 @@ const {
 ### onEntryResponded()
 
 - This event will be triggered when the `join()` request is responded.
-- This event will be triggered to the [participants](./) in the meeting, who is having the permission **`allow_join`** in token.
-- This event will be also triggered to the [participant](./) who requested to join the meeting.
+- This event will be triggered to the [participants](../use-participant/introduction.md) in the meeting, who is having the permission **`allow_join`** in token.
+- This event will be also triggered to the [participant](../use-participant/introduction.md) who requested to join the meeting.
 
 #### Event callback parameters
 
