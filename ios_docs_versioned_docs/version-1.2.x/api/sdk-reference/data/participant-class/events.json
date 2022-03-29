@@ -1,0 +1,10 @@
+[
+  {
+    "href": "./events#onStreamEnabled",
+    "label": "onStreamEnabled"
+  },
+  {
+    "href": "./events#onStreamDisabled",
+    "label": "onStreamDisabled"
+  }
+]
