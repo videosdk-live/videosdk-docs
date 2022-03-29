@@ -214,7 +214,7 @@ startRecording(webhookUrl, awsDirPath, config);
 
 - `startLiveStream()` is used to start meeting livestreaming.
 
-- You will be able to start livestream the meeting to another platforms such as Youtube, Facebook, etc. that supports `rtmp` streaming.
+- You will be able to start live stream meetings to other platforms such as Youtube, Facebook, etc. that support `RTMP` streaming.
 
 #### Parameters
 
@@ -364,8 +364,8 @@ handleGetWebcams();
 
 ### changeMic()
 
-- `changeMic()`is used to change the webcam device.
-- If multiple webcam devices are connected, then by using `changeMic()` one can change the mic device.
+- It is used to change the mic device.
+- If multiple mic devices are connected, by using `changeMic()` one can change the mic device.
 
 #### Parameters
 
@@ -376,7 +376,7 @@ handleGetWebcams();
 ### changeWebcam()
 
 - `changeWebcam()` is used to change the webcam device.
-- If multiple webcam devices are connected, then by using `changeWebcam()` one can change the mic device.
+- If multiple webcam devices are connected, by using `changeWebcam()` one can change the camera device.
 
 #### Parameters
 
@@ -386,7 +386,7 @@ handleGetWebcams();
 
 ### startVideo()
 
-- `startVideo()` is used to start playing the video in th emeeting.
+- `startVideo()` is used to start playing external video in th meeting.
 
 #### Parameters
 
@@ -400,7 +400,7 @@ handleGetWebcams();
 
 ### stopVideo()
 
-- `stopVideo()` stops playing the video in the meeting.
+- `stopVideo()` stops playing external video in th meeting.
 
 #### Events associated with `stopVideo()`:
 
@@ -424,7 +424,7 @@ handleGetWebcams();
 
 ### resumeVideo()
 
-- `resumeVideo()` resumes playing the video in the meeting.
+- `resumeVideo()` resumes playing external video in th meeting.
 
 #### Events associated with `resumeVideo()`:
 

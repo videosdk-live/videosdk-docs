@@ -32,7 +32,8 @@ let meeting = VideoSDK.initMeeting(
   - type : `String`
   - `REQUIRED`
 
-Please refer this documentation to craete a room.
+
+Please refer this [documentation](/api-reference/realtime-communication/create-room) to create a room.
 
 ---
 
@@ -42,7 +43,7 @@ Please refer this documentation to craete a room.
 
   - type : `String`
   - `OPTIONAL`
-  
+
 ---
 
 ### participantName
@@ -71,7 +72,6 @@ Please refer this documentation to craete a room.
   - type: `Boolean`
   - defaultValue : true
   - `OPTIONAL`
-
 
 ## Returns
 

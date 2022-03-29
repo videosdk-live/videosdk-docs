@@ -97,28 +97,6 @@ const {
 
 ---
 
-### onMainParticipantChanged()
-
-- This event callback is triggered when main participant of the meeting changes.
-
-#### Example
-
-```js
-function onMainParticipantChanged(participant) {
-  console.log(" onMainParticipantChanged", participant);
-}
-
-const {
-  meetingId
-  ...
-} = useMeeting({
-  onMainParticipantChanged,
-  ...
-});
-```
-
----
-
 ### onEntryRequested()
 
 - This event will be triggered when a new [participant](../use-participant/introduction.md) who is trying to join the meeting, is having permission **`ask_join`** in token.
