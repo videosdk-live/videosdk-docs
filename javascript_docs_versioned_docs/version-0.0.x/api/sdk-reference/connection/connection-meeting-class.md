@@ -123,7 +123,7 @@ connection.meeting.end();
 
 ### participant-joined
 
-- `participant-joined` event will be emitted when any participant joins the connected meeting
+- `participant-joined` event will be emitted when any participant joins the connected meetings.
 
 #### Example
 
@@ -137,7 +137,7 @@ connection.meeting.on("participant-joined", () => {
 
 ### participant-left
 
-- `participant-left` event will be emitted when any participant leaves the connected meeting
+- `participant-left` event will be emitted when any participant leaves the connected meetings.
 
 #### Example
 
@@ -151,7 +151,7 @@ connection.meeting.on("participant-left", () => {
 
 ### chat-message
 
-- `chat-message` event will be emitted when any participant send messages in the connected meeting
+- `chat-message` event will be emitted when any participant send messages in the connected meeting.
 
 #### Example
 

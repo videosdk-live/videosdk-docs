@@ -64,6 +64,7 @@ $ npm install "@videosdk.live/react-sdk"
 //For the Participants Video
 $ npm install "react-player"
 ```
+
 </TabItem>
 <TabItem value="yarn">
 
@@ -106,24 +107,42 @@ The Joining screen will consist of:
 
 1. To create the basic UI, add `JoinScreen()` in the `App.js` file with the following code
 
-```jsx title="App.js" 
+```jsx title="App.js"
 function App() {
-  function JoinScreen(){
-    return <>
-      <button onClick={async () => setMeetingId( await getMeetingId({ token }))} className="button">Create Meeting</button>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      <input type="text" id="meetingId" name="meetingId" placeholder='Enter MeetingId'/>&nbsp;
-      <button onClick={() => {
-        if(!document.getElementById("meetingId").value){
-          alert("Meeting Id is required");
-          return;
-        }
-        setMeetingId(document.getElementById("meetingId").value)
-      }} className="button" >Join</button>
-    </>
+  function JoinScreen() {
+    return (
+      <>
+        <button
+          onClick={async () => setMeetingId(await getMeetingId({ token }))}
+          className="button"
+        >
+          Create Meeting
+        </button>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input
+          type="text"
+          id="meetingId"
+          name="meetingId"
+          placeholder="Enter MeetingId"
+        />
+        &nbsp;
+        <button
+          onClick={() => {
+            if (!document.getElementById("meetingId").value) {
+              alert("Meeting Id is required");
+              return;
+            }
+            setMeetingId(document.getElementById("meetingId").value);
+          }}
+          className="button"
+        >
+          Join
+        </button>
+      </>
+    );
   }
 
-  return <JoinScreen/>;
+  return <JoinScreen />;
 }
 ```
 
@@ -217,7 +236,7 @@ function App() {
           ></MeetingView>
         </MeetingProvider>
       ) : (
-        <JoinScreen/>
+        <JoinScreen />
       )}
     </div>
   );
@@ -279,13 +298,21 @@ const MeetingView = ({ onMeetingLeave }) => {
     <div
       style={{
         display: "flex",
-        flexDirection: "column"
+        flexDirection: "column",
       }}
     >
       <div>
-        <button className={"button"} onClick={leave}>LEAVE</button>&nbsp;&nbsp;
-        <button className={"button"} onClick={toggleMic}> toggleMic</button>&nbsp;&nbsp;
-        <button className={"button"} onClick={toggleWebcam}>toggleWebcam</button>
+        <button className={"button"} onClick={leave}>
+          LEAVE
+        </button>
+        &nbsp;&nbsp;
+        <button className={"button"} onClick={toggleMic}>
+          {" "}
+          toggleMic
+        </button>&nbsp;&nbsp;
+        <button className={"button"} onClick={toggleWebcam}>
+          toggleWebcam
+        </button>
         <h1>Meeting id is : {meetingId}</h1>
         <div style={{ display: "flex", flex: 1 }}>
           <div
@@ -295,7 +322,8 @@ const MeetingView = ({ onMeetingLeave }) => {
               position: "relative",
               flex: 1,
               overflowY: "scroll",
-            }} >
+            }}
+          >
             <ParticipantsView />
           </div>
         </div>
@@ -329,8 +357,8 @@ const ParticipantsView = () => {
         }}
       >
         {[...participants.keys()].map((k) => (
-          <div style={{ }}>
-              <ParticipantView key={k} participantId={k} />
+          <div style={{}}>
+            <ParticipantView key={k} participantId={k} />
           </div>
         ))}
       </div>
@@ -420,32 +448,50 @@ const ParticipantView = ({ participantId }) => {
   return (
     <div className="participant-view">
       <audio ref={micRef} autoPlay muted={isLocal} />
-      <div
-        className='video-container'>
+      <div className="video-container">
         <div
-          style={{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0 }}>
+          style={{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0 }}
+        >
           <ReactPlayer
             height={"auto"}
             width={"100%"}
-            url = {mediaStream}
+            url={mediaStream}
             playsInline
             playing={true}
             className="video"
-            autoPlay          
+            autoPlay
           />
-            <p style={{ position: "absolute",  right: "8px", bottom:"0px", color:"white", fontWeight:"bold"}}>
-              WEB CAM {webcamOn? " ON ": " OFF " }
-            </p>
+          <p
+            style={{
+              position: "absolute",
+              right: "8px",
+              bottom: "0px",
+              color: "white",
+              fontWeight: "bold",
+            }}
+          >
+            WEB CAM {webcamOn ? " ON " : " OFF "}
+          </p>
 
-            <p className="overlay" style={{ position: "absolute",  left: "8px", bottom:"0px" , color:"white", fontWeight:"bold"}}>
-              MIC {micOn? " ON ": " OFF " }
-            </p>
+          <p
+            className="overlay"
+            style={{
+              position: "absolute",
+              left: "8px",
+              bottom: "0px",
+              color: "white",
+              fontWeight: "bold",
+            }}
+          >
+            MIC {micOn ? " ON " : " OFF "}
+          </p>
         </div>
       </div>
     </div>
   );
 };
 ```
+
 :::note
 
 Stuck anywhere? Check out this [example code](https://github.com/videosdk-live/videosdk-rtc-react-sdk-example) on GitHub

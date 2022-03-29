@@ -129,7 +129,6 @@ meeting by providing name, meetingId, micEnabled, webcamEnabled & maxResolution.
 
 </div>
 
-
 ```js
 import 'package:flutter/material.dart';
 import 'package:videosdk/rtc.dart';
@@ -144,20 +143,8 @@ class MyApp extends StatelessWidget {
             webcamEnabled: "<Flag-to-enable-webcam>",
             token: "<Authentication-token>",
             builder: (Meeting: meeting) {
-
-                return Container(
-                    child: Column(
-                        children: [
-                            ListParticipants(
-                                participants: meeting.participants,
-                            ),
-                            LocalParticipant(
-                                localParticipant: meeting.localParticipant,
-                                meeting: meeting as Meeting,
-                            )
-                        ],
-                    ),
-                );
+                // Do Something
+                return Container(); // Returning widget
             }
         );
     }
@@ -182,7 +169,6 @@ After joining, you will be able to Manage Participant in a meeting.
 </div>
 
 </div>
-
 
 ```js
 // Join the meeting

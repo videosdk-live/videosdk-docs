@@ -6,9 +6,9 @@ pagination_label: Connection Class
 
 <div class="sdk-api-ref-only-h4">
 
-Connection class is used for making connections to different rooms and it also provides fascility to switch between rooms of a meeting.
+Connection class is used for making connections to different rooms, and it also provides facility to switch between rooms of a meeting
 
-Whenever a new connection establishes between meetings, Connection instance is created inside Meeting class property connections
+Whenever a new connection establishes between meetings, a Connection instance is created inside [Meeting](../meeting-class/introduction.md) property connections.
 
 ## Properties
 
@@ -36,7 +36,7 @@ Whenever a new connection establishes between meetings, Connection instance is c
 
 ### close()
 
-- `close()` is used to closes the connection with the meeting
+- `close()` is used to close the connection with the meeting.
 
 #### Events associated with `close()`:
 

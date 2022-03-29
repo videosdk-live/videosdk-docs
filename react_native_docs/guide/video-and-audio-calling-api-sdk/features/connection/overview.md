@@ -21,10 +21,10 @@ Whenever new connection establish between meetings, **Connection** instance is c
 
 #### **Connection object properties** :
 
-| Property Name | Type                                                                                                              | Description                                   |
-| ------------- | ----------------------------------------------------------------------------------------------------------------- | --------------------------------------------- |
-| id            | string                                                                                                            | Unique id of the connection.                  |
-| payload       | string                                                                                                            | The payload you define during the connection. |
+| Property Name | Type                                                                                                                      | Description                                   |
+| ------------- | ------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------- |
+| id            | string                                                                                                                    | Unique id of the connection.                  |
+| payload       | string                                                                                                                    | The payload you define during the connection. |
 | meeting       | [ConnectionMeeting](/react-native/guide/video-and-audio-calling-api-sdk/features/connection/overview#2-connectionmeeting) | Connected Meeting Instance.                   |
 
 ### 2. ConnectionMeeting
@@ -33,9 +33,9 @@ This entity is the instance of connected Meeting.
 
 #### **ConnectionMeeting object properties** :
 
-| Property Name | Type                                                                                                                               | Description                          |
-| ------------- | ---------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------ |
-| id            | string                                                                                                                             | Unique id of the connection meeting. |
+| Property Name | Type                                                                                                                                       | Description                          |
+| ------------- | ------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------ |
+| id            | string                                                                                                                                     | Unique id of the connection meeting. |
 | participants  | Map of [ConnectionParticipants](/react-native/guide/video-and-audio-calling-api-sdk/features/connection/overview#3-connectionparticipants) | Participants of connected meeting.   |
 
 :::note

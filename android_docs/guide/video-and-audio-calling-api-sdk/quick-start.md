@@ -77,8 +77,6 @@ dependencies {
 <uses-permission android:name="android.permission.RECORD_AUDIO" />
 <uses-permission android:name="android.permission.CAMERA" />
 <uses-permission android:name="android.permission.INTERNET" />
-<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-<uses-permission android:name="android.permission.BLUETOOTH" />
 ```
 
 5. Sync the gradle now. Once the sync is completed successfully, proceed further. If the gradle sync fails, you can check the problem you are facing in [Known Issues](/), if not found, post us on our [discord community](https://discord.gg/f2WsNDN9S5).
@@ -110,6 +108,7 @@ public class MainApplication extends Application {
 ```
 
 8. Project Structure should look like
+
 ```jsx title="Project Structure"
    app
    ├── java
@@ -289,6 +288,7 @@ Create a new Activity named `MeetingActivity.java`.
 #### Creating the UI for Meeting Screen
 
 In `/app/res/layout/activity_meeting.xml`, replace the content with the following:
+
 ```xml title="activty_meeting.xml"
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"

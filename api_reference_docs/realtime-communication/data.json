@@ -1,677 +1,676 @@
 {
-    "createRoom": {
-        "description":"When you get a dispute, contacting your customer is always the best first step. If that doesn’t work, you can submit evidence to help us resolve the dispute in your favor. You can do this in your dashboard, but if you prefer, you can use the API to submit evidence programmatically. Depending on your dispute type, different evidence fields will give you a better chance of winning your dispute. To figure out which evidence fields to provide, see our guide to dispute types.",
-        "headers": [
-            {
-                "key": "Authorization",
-                "value": "$YOUR_TOKEN"
-            },
-            {
-                "key": "Content-Type",
-                "value": "application/json"
-            }
-        ],
-        "methodType": "POST",
-        "postParameters": [
-            {
-                "key": "region",
-                "value": "sg001",
-                "description": "Region for the room",
-                "required": true
-            },
-            {
-                "key": "customId",
-                "value": "xyz",
-                "description": "Custom Id",
-                "required": false
-            }
-        ],
-        "queryParameters": [
-            {
-                "key": "page",
-                "value": "1",
-                "description": "Current Page number",
-                "required": false
-            },
-            {
-                "key": "perPage",
-                "value": "10",
-                "description": "Items per page",
-                "required": false
-            }
-        ],
-        "apiEndpoint": "https://api.videosdk.live/v2/rooms",
-        "response": {
-            "meetingId": "asdf-asdf-asdf"
-        }
-    },
-
-    "updateRoom": {
-        "description":"When you get a dispute, contacting your customer is always the best first step. If that doesn’t work, you can submit evidence to help us resolve the dispute in your favor. You can do this in your dashboard, but if you prefer, you can use the API to submit evidence programmatically. Depending on your dispute type, different evidence fields will give you a better chance of winning your dispute. To figure out which evidence fields to provide, see our guide to dispute types.",
-        "headers": [
-            {
-                "key": "Authorization",
-                "value": "$YOUR_TOKEN"
-            },
-            {
-                "key": "Content-Type",
-                "value": "application/json"
-            }
-        ],
-        "methodType": "POST",
-        "postParameters": [
-            {
-                "key": "status",
-                "value": "enabled",
-                "description": "Status can have two values: enabled | disabled",
-                "required": true
-            }
-        ],
-        "queryParameters":[],
-        "apiEndpoint": "https://api.videosdk.live/v2/rooms/:roomId",
-        "response": {
-            "meetingId": "asdf-asdf-asdf"
-        }
-    },
-
-    "fetchRoom": {
-        "description":"When you get a dispute, contacting your customer is always the best first step. If that doesn’t work, you can submit evidence to help us resolve the dispute in your favor. You can do this in your dashboard, but if you prefer, you can use the API to submit evidence programmatically. Depending on your dispute type, different evidence fields will give you a better chance of winning your dispute. To figure out which evidence fields to provide, see our guide to dispute types.",
-        "headers": [],
-        "methodType": "GET",
-        "postParameters": [],
-        "queryParameters":[],
-        "apiEndpoint": "https://api.videosdk.live/v2/rooms/:roomId",
-        "response": {
-            "meetingId": "asdf-asdf-asdf"
-        }
-    },
-    "fetchSessions": {
-        "description":"When you get a dispute, contacting your customer is always the best first step. If that doesn’t work, you can submit evidence to help us resolve the dispute in your favor. You can do this in your dashboard, but if you prefer, you can use the API to submit evidence programmatically. Depending on your dispute type, different evidence fields will give you a better chance of winning your dispute. To figure out which evidence fields to provide, see our guide to dispute types.",
-        "headers": [],
-        "methodType": "GET",
-        "postParameters": [],
-        "queryParameters":[
-            {
-                "key": "roomId",
-                "value": "xyz",
-                "description": "RoomId for which you want to fetch the sessions",
-                "required": true
-            },
-            {
-                "key": "page",
-                "value": "1",
-                "description": "Page number for the sessions",
-                "required": false
-            },
-            {
-                "key": "perPage",
-                "value": "10",
-                "description": "Number of sessions you want per page",
-                "required": false
-            }
-        ],
-        "apiEndpoint": "https://api.videosdk.live/v2/sessions",
-        "response": {
-            "meetingId": "asdf-asdf-asdf"
-        }
-    },
-
-    "fetchSessionUsingSessionId": {
-        "description":"When you get a dispute, contacting your customer is always the best first step. If that doesn’t work, you can submit evidence to help us resolve the dispute in your favor. You can do this in your dashboard, but if you prefer, you can use the API to submit evidence programmatically. Depending on your dispute type, different evidence fields will give you a better chance of winning your dispute. To figure out which evidence fields to provide, see our guide to dispute types.",
-        "headers": [],
-        "methodType": "GET",
-        "postParameters": [],
-        "queryParameters":[],
-        "apiEndpoint": "https://api.videosdk.live/v2/sessions/:sessionId",
-        "response": {
-            "meetingId": "asdf-asdf-asdf"
-        }
-    },
-
-    "fetchParticipants": {
-        "description":"When you get a dispute, contacting your customer is always the best first step. If that doesn’t work, you can submit evidence to help us resolve the dispute in your favor. You can do this in your dashboard, but if you prefer, you can use the API to submit evidence programmatically. Depending on your dispute type, different evidence fields will give you a better chance of winning your dispute. To figure out which evidence fields to provide, see our guide to dispute types.",
-        "headers": [],
-        "methodType": "GET",
-        "postParameters": [],
-        "queryParameters":[
-            {
-                "key": "page",
-                "value": "1",
-                "description": "Page number for the sessions",
-                "required": false
-            },
-            {
-                "key": "perPage",
-                "value": "10",
-                "description": "Number of Participants you want per page",
-                "required": false
-            }
-        ],
-        "apiEndpoint": "https://api.videosdk.live/v2/sessions/:sessionId/participants",
-        "response": {
-            "meetingId": "asdf-asdf-asdf"
-        }
-    },
-
-    "startRecording": {
-        "description":"When you get a dispute, contacting your customer is always the best first step. If that doesn’t work, you can submit evidence to help us resolve the dispute in your favor. You can do this in your dashboard, but if you prefer, you can use the API to submit evidence programmatically. Depending on your dispute type, different evidence fields will give you a better chance of winning your dispute. To figure out which evidence fields to provide, see our guide to dispute types.",
-        "headers": [
-            {
-                "key": "Authorization",
-                "value": "$YOUR_TOKEN"
-            },
-            {
-                "key": "Content-Type",
-                "value": "application/json"
-            }
-        ],
-        "methodType": "POST",
-        "postParameters": [
-            {
-                "key": "roomId",
-                "value": "xyz",
-                "description": "RoomId for which the recording is to be started",
-                "required": true
-            },
-            {
-                "key": "url",
-                "value": "https://www.google.com",
-                "description": "Url for the recording",
-                "required": true
-            },
-            {
-                "key": "height",
-                "value": "480",
-                "description": "Height of the recording",
-                "required": true
-            },
-            {
-                "key": "width",
-                "value": "480",
-                "description": "Width of the Recording",
-                "required": true
-            },
-            {
-                "key": "mimeType",
-                "value": "mp4",
-                "description": "MIME type for your recording",
-                "required": true
-            },
-            {
-                "key": "audioBitsPerSecond",
-                "value": "30",
-                "description": "Audio Bits per second",
-                "required": true
-            },
-            {
-                "key": "videoBitsPerSecond",
-                "value": "30",
-                "description": "Video Bits per second",
-                "required": true
-            },
-            {
-                "key": "frameSize",
-                "value": "120",
-                "description": "Frame Size",
-                "required": true
-            }
-        ],
-        "queryParameters":[],
-        "apiEndpoint": "https://api.videosdk.live/v2/recordings/start",
-        "response": {
-            "meetingId": "asdf-asdf-asdf"
-        }
-    },
-
-    "stopRecording": {
-        "description":"When you get a dispute, contacting your customer is always the best first step. If that doesn’t work, you can submit evidence to help us resolve the dispute in your favor. You can do this in your dashboard, but if you prefer, you can use the API to submit evidence programmatically. Depending on your dispute type, different evidence fields will give you a better chance of winning your dispute. To figure out which evidence fields to provide, see our guide to dispute types.",
-        "headers": [],
-        "methodType": "POST",
-        "postParameters": [],
-        "queryParameters":[
-            {
-                "key": "roomId",
-                "value": "xyz",
-                "description": "RoomId for which the recording is to be ended",
-                "required": true
-            }
-        ],
-        "apiEndpoint": "https://api.videosdk.live/v2/recordings/end",
-        "response": {
-            "meetingId": "asdf-asdf-asdf"
-        }
-    },
-
-    "fetchRecordings": {
-        "description":"When you get a dispute, contacting your customer is always the best first step. If that doesn’t work, you can submit evidence to help us resolve the dispute in your favor. You can do this in your dashboard, but if you prefer, you can use the API to submit evidence programmatically. Depending on your dispute type, different evidence fields will give you a better chance of winning your dispute. To figure out which evidence fields to provide, see our guide to dispute types.",
-        "headers": [],
-        "methodType": "GET",
-        "postParameters": [],
-        "queryParameters":[
-            {
-                "key": "roomId",
-                "value": "xyz",
-                "description": "RoomId for which the recording is to be fetched",
-                "required": true
-            },
-            {
-                "key": "sessionId",
-                "value": "xyz",
-                "description": "sessionId for which the recording is to be fetched",
-                "required": true
-            },
-            {
-                "key": "page",
-                "value": "1",
-                "description": "Page number for the sessions",
-                "required": false
-            },
-            {
-                "key": "perPage",
-                "value": "10",
-                "description": "Number of Recordings you want per page",
-                "required": false
-            }
-        ],
-        "apiEndpoint": "https://api.videosdk.live/v2/recordings",
-        "response": {
-            "meetingId": "asdf-asdf-asdf"
-        }
-    },
-
-    "fetchRecordingUsingRecordingId": {
-        "description":"When you get a dispute, contacting your customer is always the best first step. If that doesn’t work, you can submit evidence to help us resolve the dispute in your favor. You can do this in your dashboard, but if you prefer, you can use the API to submit evidence programmatically. Depending on your dispute type, different evidence fields will give you a better chance of winning your dispute. To figure out which evidence fields to provide, see our guide to dispute types.",
-        "headers": [],
-        "methodType": "GET",
-        "postParameters": [],
-        "queryParameters":[],
-        "apiEndpoint": "https://api.videosdk.live/v2/recordings/:recordingId",
-        "response": {
-            "meetingId": "asdf-asdf-asdf"
-        }
-    },
-
-    "startLivestream": {
-        "description":"When you get a dispute, contacting your customer is always the best first step. If that doesn’t work, you can submit evidence to help us resolve the dispute in your favor. You can do this in your dashboard, but if you prefer, you can use the API to submit evidence programmatically. Depending on your dispute type, different evidence fields will give you a better chance of winning your dispute. To figure out which evidence fields to provide, see our guide to dispute types.",
-        "headers": [
-            {
-                "key": "Authorization",
-                "value": "$YOUR_TOKEN"
-            },
-            {
-                "key": "Content-Type",
-                "value": "application/json"
-            }
-        ],
-        "methodType": "POST",
-        "postParameters": [
-            {
-                "key": "roomId",
-                "value": "xyz",
-                "description": "RoomId for which the livestream is to be started",
-                "required": true
-            },
-            {
-                "key": "url",
-                "value": "https://www.google.com",
-                "description": "Url for the livestream",
-                "required": true
-            },
-            {
-                "key": "height",
-                "value": "480",
-                "description": "Height of the livestream",
-                "required": true
-            },
-            {
-                "key": "width",
-                "value": "480",
-                "description": "Width of the livestream",
-                "required": true
-            },
-            {
-                "key": "mimeType",
-                "value": "mp4",
-                "description": "MIME type for your livestream",
-                "required": true
-            },
-            {
-                "key": "audioBitsPerSecond",
-                "value": "30",
-                "description": "Audio Bits per second",
-                "required": true
-            },
-            {
-                "key": "videoBitsPerSecond",
-                "value": "30",
-                "description": "Video Bits per second",
-                "required": true
-            },
-            {
-                "key": "frameSize",
-                "value": "120",
-                "description": "Frame Size",
-                "required": true
-            }
-        ],
-        "queryParameters":[],
-        "apiEndpoint": "https://api.videosdk.live/v2/livestreams/start",
-        "response": {
-            "meetingId": "asdf-asdf-asdf"
-        }
-    },
-
-    "stopLivestream": {
-        "description":"When you get a dispute, contacting your customer is always the best first step. If that doesn’t work, you can submit evidence to help us resolve the dispute in your favor. You can do this in your dashboard, but if you prefer, you can use the API to submit evidence programmatically. Depending on your dispute type, different evidence fields will give you a better chance of winning your dispute. To figure out which evidence fields to provide, see our guide to dispute types.",
-        "headers": [],
-        "methodType": "POST",
-        "postParameters": [],
-        "queryParameters":[
-            {
-                "key": "roomId",
-                "value": "xyz",
-                "description": "RoomId for which the livestream is to be ended",
-                "required": true
-            }
-        ],
-        "apiEndpoint": "https://api.videosdk.live/v2/livestreams/end",
-        "response": {
-            "meetingId": "asdf-asdf-asdf"
-        }
-    },
-
-    "fetchLivestreams": {
-        "description":"When you get a dispute, contacting your customer is always the best first step. If that doesn’t work, you can submit evidence to help us resolve the dispute in your favor. You can do this in your dashboard, but if you prefer, you can use the API to submit evidence programmatically. Depending on your dispute type, different evidence fields will give you a better chance of winning your dispute. To figure out which evidence fields to provide, see our guide to dispute types.",
-        "headers": [],
-        "methodType": "GET",
-        "postParameters": [],
-        "queryParameters":[
-            {
-                "key": "roomId",
-                "value": "xyz",
-                "description": "RoomId for which the livestream is to be fetched",
-                "required": true
-            },
-            {
-                "key": "sessionId",
-                "value": "xyz",
-                "description": "sessionId for which the livestream is to be fetched",
-                "required": true
-            },
-            {
-                "key": "page",
-                "value": "1",
-                "description": "Page number for the livestream",
-                "required": false
-            },
-            {
-                "key": "perPage",
-                "value": "10",
-                "description": "Number of Recordings you want per page",
-                "required": false
-            }
-        ],
-        "apiEndpoint": "https://api.videosdk.live/v2/livestreams",
-        "response": {
-            "meetingId": "asdf-asdf-asdf"
-        }
-    },
-
-    "fetchLivestreamUsingLivestreamId": {
-        "description":"When you get a dispute, contacting your customer is always the best first step. If that doesn’t work, you can submit evidence to help us resolve the dispute in your favor. You can do this in your dashboard, but if you prefer, you can use the API to submit evidence programmatically. Depending on your dispute type, different evidence fields will give you a better chance of winning your dispute. To figure out which evidence fields to provide, see our guide to dispute types.",
-        "headers": [],
-        "methodType": "GET",
-        "postParameters": [],
-        "queryParameters":[],
-        "apiEndpoint": "https://api.videosdk.live/v2/livestreams/:livestreamId",
-        "response": {
-            "meetingId": "asdf-asdf-asdf"
-        }
-    },
-
-    "startHLSstream": {
-        "description":"When you get a dispute, contacting your customer is always the best first step. If that doesn’t work, you can submit evidence to help us resolve the dispute in your favor. You can do this in your dashboard, but if you prefer, you can use the API to submit evidence programmatically. Depending on your dispute type, different evidence fields will give you a better chance of winning your dispute. To figure out which evidence fields to provide, see our guide to dispute types.",
-        "headers": [
-            {
-                "key": "Authorization",
-                "value": "$YOUR_TOKEN"
-            },
-            {
-                "key": "Content-Type",
-                "value": "application/json"
-            }
-        ],
-        "methodType": "POST",
-        "postParameters": [
-            {
-                "key": "roomId",
-                "value": "xyz",
-                "description": "RoomId for which the hlsstream is to be started",
-                "required": true
-            },
-            {
-                "key": "url",
-                "value": "https://www.google.com",
-                "description": "Url for the hlsstream",
-                "required": true
-            },
-            {
-                "key": "height",
-                "value": "480",
-                "description": "Height of the hlsstream",
-                "required": true
-            },
-            {
-                "key": "width",
-                "value": "480",
-                "description": "Width of the hlsstream",
-                "required": true
-            },
-            {
-                "key": "mimeType",
-                "value": "mp4",
-                "description": "MIME type for your hlsstream",
-                "required": true
-            },
-            {
-                "key": "audioBitsPerSecond",
-                "value": "30",
-                "description": "Audio Bits per second",
-                "required": true
-            },
-            {
-                "key": "videoBitsPerSecond",
-                "value": "30",
-                "description": "Video Bits per second",
-                "required": true
-            },
-            {
-                "key": "frameSize",
-                "value": "120",
-                "description": "Frame Size",
-                "required": true
-            }
-        ],
-        "queryParameters":[],
-        "apiEndpoint": "https://api.videosdk.live/v2/hlsstreams/start",
-        "response": {
-            "meetingId": "asdf-asdf-asdf"
-        }
-    },
-
-    "stopHLSstream": {
-        "description":"When you get a dispute, contacting your customer is always the best first step. If that doesn’t work, you can submit evidence to help us resolve the dispute in your favor. You can do this in your dashboard, but if you prefer, you can use the API to submit evidence programmatically. Depending on your dispute type, different evidence fields will give you a better chance of winning your dispute. To figure out which evidence fields to provide, see our guide to dispute types.",
-        "headers": [],
-        "methodType": "POST",
-        "postParameters": [],
-        "queryParameters":[
-            {
-                "key": "roomId",
-                "value": "xyz",
-                "description": "RoomId for which the hlsstream is to be ended",
-                "required": true
-            }
-        ],
-        "apiEndpoint": "https://api.videosdk.live/v2/hlsstreams/end",
-        "response": {
-            "meetingId": "asdf-asdf-asdf"
-        }
-    },
-
-    "fetchHLSstreams": {
-        "description":"When you get a dispute, contacting your customer is always the best first step. If that doesn’t work, you can submit evidence to help us resolve the dispute in your favor. You can do this in your dashboard, but if you prefer, you can use the API to submit evidence programmatically. Depending on your dispute type, different evidence fields will give you a better chance of winning your dispute. To figure out which evidence fields to provide, see our guide to dispute types.",
-        "headers": [],
-        "methodType": "GET",
-        "postParameters": [],
-        "queryParameters":[
-            {
-                "key": "roomId",
-                "value": "xyz",
-                "description": "RoomId for which the hlsstream is to be fetched",
-                "required": true
-            },
-            {
-                "key": "sessionId",
-                "value": "xyz",
-                "description": "sessionId for which the hlsstream is to be fetched",
-                "required": true
-            },
-            {
-                "key": "page",
-                "value": "1",
-                "description": "Page number for the hlsstreams",
-                "required": false
-            },
-            {
-                "key": "perPage",
-                "value": "10",
-                "description": "Number of HLSstreams you want per page",
-                "required": false
-            }
-        ],
-        "apiEndpoint": "https://api.videosdk.live/v2/hlsstreams",
-        "response": {
-            "meetingId": "asdf-asdf-asdf"
-        }
-    },
-
-    "fetchHLSstreamUsingHLSstreamId": {
-        "description":"When you get a dispute, contacting your customer is always the best first step. If that doesn’t work, you can submit evidence to help us resolve the dispute in your favor. You can do this in your dashboard, but if you prefer, you can use the API to submit evidence programmatically. Depending on your dispute type, different evidence fields will give you a better chance of winning your dispute. To figure out which evidence fields to provide, see our guide to dispute types.",
-        "headers": [],
-        "methodType": "GET",
-        "postParameters": [],
-        "queryParameters":[],
-        "apiEndpoint": "https://api.videosdk.live/v2/hlsstreams/:hlsStreamId",
-        "response": {
-            "meetingId": "asdf-asdf-asdf"
-        }
-    },
-
-    "startCombineStream": {
-        "description":"When you get a dispute, contacting your customer is always the best first step. If that doesn’t work, you can submit evidence to help us resolve the dispute in your favor. You can do this in your dashboard, but if you prefer, you can use the API to submit evidence programmatically. Depending on your dispute type, different evidence fields will give you a better chance of winning your dispute. To figure out which evidence fields to provide, see our guide to dispute types.",
-        "headers": [
-            {
-                "key": "Authorization",
-                "value": "$YOUR_TOKEN"
-            },
-            {
-                "key": "Content-Type",
-                "value": "application/json"
-            }
-        ],
-        "methodType": "POST",
-        "postParameters": [
-            {
-                "key": "roomId",
-                "value": "xyz",
-                "description": "RoomId for which the hlsstream is to be started",
-                "required": true
-            },
-            {
-                "key": "record",
-                "value": "true",
-                "description": "true will start the recording where as false will not.",
-                "required": true
-            },
-            {
-                "key": "live",
-                "value": "true",
-                "description": "true will start the livestream where as false will not.",
-                "required": true
-            },
-            {
-                "key": "hls",
-                "value": "true",
-                "description": "true will start the HLS Stream where as false will not.",
-                "required": true
-            },
-            {
-                "key": "url",
-                "value": "https://www.google.com",
-                "description": "Url for the hlsstream",
-                "required": true
-            },
-            {
-                "key": "height",
-                "value": "480",
-                "description": "Height of the hlsstream",
-                "required": true
-            },
-            {
-                "key": "width",
-                "value": "480",
-                "description": "Width of the hlsstream",
-                "required": true
-            },
-            {
-                "key": "mimeType",
-                "value": "mp4",
-                "description": "MIME type for your hlsstream",
-                "required": true
-            },
-            {
-                "key": "audioBitsPerSecond",
-                "value": "30",
-                "description": "Audio Bits per second",
-                "required": true
-            },
-            {
-                "key": "videoBitsPerSecond",
-                "value": "30",
-                "description": "Video Bits per second",
-                "required": true
-            },
-            {
-                "key": "frameSize",
-                "value": "120",
-                "description": "Frame Size",
-                "required": true
-            }
-        ],
-        "queryParameters":[],
-        "apiEndpoint": "https://api.videosdk.live/v2/combinestreams/start",
-        "response": {
-            "meetingId": "asdf-asdf-asdf"
-        }
-    },
-
-    "stopCombineStream": {
-        "description":"When you get a dispute, contacting your customer is always the best first step. If that doesn’t work, you can submit evidence to help us resolve the dispute in your favor. You can do this in your dashboard, but if you prefer, you can use the API to submit evidence programmatically. Depending on your dispute type, different evidence fields will give you a better chance of winning your dispute. To figure out which evidence fields to provide, see our guide to dispute types.",
-        "headers": [],
-        "methodType": "POST",
-        "postParameters": [],
-        "queryParameters":[
-            {
-                "key": "roomId",
-                "value": "xyz",
-                "description": "RoomId for which the streams are to be ended",
-                "required": true
-            }
-        ],
-        "apiEndpoint": "https://api.videosdk.live/v2/combinestreams/end",
-        "response": {
-            "meetingId": "asdf-asdf-asdf"
-        }
+  "createRoom": {
+    "description": "When you get a dispute, contacting your customer is always the best first step. If that doesn’t work, you can submit evidence to help us resolve the dispute in your favor. You can do this in your dashboard, but if you prefer, you can use the API to submit evidence programmatically. Depending on your dispute type, different evidence fields will give you a better chance of winning your dispute. To figure out which evidence fields to provide, see our guide to dispute types.",
+    "headers": [
+      {
+        "key": "Authorization",
+        "value": "$YOUR_TOKEN"
+      },
+      {
+        "key": "Content-Type",
+        "value": "application/json"
+      }
+    ],
+    "methodType": "POST",
+    "postParameters": [
+      {
+        "key": "region",
+        "value": "sg001",
+        "description": "Region for the room",
+        "required": true
+      },
+      {
+        "key": "customId",
+        "value": "xyz",
+        "description": "Custom Id",
+        "required": false
+      }
+    ],
+    "queryParameters": [
+      {
+        "key": "page",
+        "value": "1",
+        "description": "Current Page number",
+        "required": false
+      },
+      {
+        "key": "perPage",
+        "value": "10",
+        "description": "Items per page",
+        "required": false
+      }
+    ],
+    "apiEndpoint": "https://api.videosdk.live/v2/rooms",
+    "response": {
+      "meetingId": "asdf-asdf-asdf"
     }
+  },
 
+  "updateRoom": {
+    "description": "When you get a dispute, contacting your customer is always the best first step. If that doesn’t work, you can submit evidence to help us resolve the dispute in your favor. You can do this in your dashboard, but if you prefer, you can use the API to submit evidence programmatically. Depending on your dispute type, different evidence fields will give you a better chance of winning your dispute. To figure out which evidence fields to provide, see our guide to dispute types.",
+    "headers": [
+      {
+        "key": "Authorization",
+        "value": "$YOUR_TOKEN"
+      },
+      {
+        "key": "Content-Type",
+        "value": "application/json"
+      }
+    ],
+    "methodType": "POST",
+    "postParameters": [
+      {
+        "key": "status",
+        "value": "enabled",
+        "description": "Status can have two values: enabled | disabled",
+        "required": true
+      }
+    ],
+    "queryParameters": [],
+    "apiEndpoint": "https://api.videosdk.live/v2/rooms/:roomId",
+    "response": {
+      "meetingId": "asdf-asdf-asdf"
+    }
+  },
+
+  "fetchRoom": {
+    "description": "When you get a dispute, contacting your customer is always the best first step. If that doesn’t work, you can submit evidence to help us resolve the dispute in your favor. You can do this in your dashboard, but if you prefer, you can use the API to submit evidence programmatically. Depending on your dispute type, different evidence fields will give you a better chance of winning your dispute. To figure out which evidence fields to provide, see our guide to dispute types.",
+    "headers": [],
+    "methodType": "GET",
+    "postParameters": [],
+    "queryParameters": [],
+    "apiEndpoint": "https://api.videosdk.live/v2/rooms/:roomId",
+    "response": {
+      "meetingId": "asdf-asdf-asdf"
+    }
+  },
+  "fetchSessions": {
+    "description": "When you get a dispute, contacting your customer is always the best first step. If that doesn’t work, you can submit evidence to help us resolve the dispute in your favor. You can do this in your dashboard, but if you prefer, you can use the API to submit evidence programmatically. Depending on your dispute type, different evidence fields will give you a better chance of winning your dispute. To figure out which evidence fields to provide, see our guide to dispute types.",
+    "headers": [],
+    "methodType": "GET",
+    "postParameters": [],
+    "queryParameters": [
+      {
+        "key": "roomId",
+        "value": "xyz",
+        "description": "RoomId for which you want to fetch the sessions",
+        "required": true
+      },
+      {
+        "key": "page",
+        "value": "1",
+        "description": "Page number for the sessions",
+        "required": false
+      },
+      {
+        "key": "perPage",
+        "value": "10",
+        "description": "Number of sessions you want per page",
+        "required": false
+      }
+    ],
+    "apiEndpoint": "https://api.videosdk.live/v2/sessions",
+    "response": {
+      "meetingId": "asdf-asdf-asdf"
+    }
+  },
+
+  "fetchSessionUsingSessionId": {
+    "description": "When you get a dispute, contacting your customer is always the best first step. If that doesn’t work, you can submit evidence to help us resolve the dispute in your favor. You can do this in your dashboard, but if you prefer, you can use the API to submit evidence programmatically. Depending on your dispute type, different evidence fields will give you a better chance of winning your dispute. To figure out which evidence fields to provide, see our guide to dispute types.",
+    "headers": [],
+    "methodType": "GET",
+    "postParameters": [],
+    "queryParameters": [],
+    "apiEndpoint": "https://api.videosdk.live/v2/sessions/:sessionId",
+    "response": {
+      "meetingId": "asdf-asdf-asdf"
+    }
+  },
+
+  "fetchParticipants": {
+    "description": "When you get a dispute, contacting your customer is always the best first step. If that doesn’t work, you can submit evidence to help us resolve the dispute in your favor. You can do this in your dashboard, but if you prefer, you can use the API to submit evidence programmatically. Depending on your dispute type, different evidence fields will give you a better chance of winning your dispute. To figure out which evidence fields to provide, see our guide to dispute types.",
+    "headers": [],
+    "methodType": "GET",
+    "postParameters": [],
+    "queryParameters": [
+      {
+        "key": "page",
+        "value": "1",
+        "description": "Page number for the sessions",
+        "required": false
+      },
+      {
+        "key": "perPage",
+        "value": "10",
+        "description": "Number of Participants you want per page",
+        "required": false
+      }
+    ],
+    "apiEndpoint": "https://api.videosdk.live/v2/sessions/:sessionId/participants",
+    "response": {
+      "meetingId": "asdf-asdf-asdf"
+    }
+  },
+
+  "startRecording": {
+    "description": "When you get a dispute, contacting your customer is always the best first step. If that doesn’t work, you can submit evidence to help us resolve the dispute in your favor. You can do this in your dashboard, but if you prefer, you can use the API to submit evidence programmatically. Depending on your dispute type, different evidence fields will give you a better chance of winning your dispute. To figure out which evidence fields to provide, see our guide to dispute types.",
+    "headers": [
+      {
+        "key": "Authorization",
+        "value": "$YOUR_TOKEN"
+      },
+      {
+        "key": "Content-Type",
+        "value": "application/json"
+      }
+    ],
+    "methodType": "POST",
+    "postParameters": [
+      {
+        "key": "roomId",
+        "value": "xyz",
+        "description": "RoomId for which the recording is to be started",
+        "required": true
+      },
+      {
+        "key": "url",
+        "value": "https://www.google.com",
+        "description": "Url for the recording",
+        "required": true
+      },
+      {
+        "key": "height",
+        "value": "480",
+        "description": "Height of the recording",
+        "required": true
+      },
+      {
+        "key": "width",
+        "value": "480",
+        "description": "Width of the Recording",
+        "required": true
+      },
+      {
+        "key": "mimeType",
+        "value": "mp4",
+        "description": "MIME type for your recording",
+        "required": true
+      },
+      {
+        "key": "audioBitsPerSecond",
+        "value": "30",
+        "description": "Audio Bits per second",
+        "required": true
+      },
+      {
+        "key": "videoBitsPerSecond",
+        "value": "30",
+        "description": "Video Bits per second",
+        "required": true
+      },
+      {
+        "key": "frameSize",
+        "value": "120",
+        "description": "Frame Size",
+        "required": true
+      }
+    ],
+    "queryParameters": [],
+    "apiEndpoint": "https://api.videosdk.live/v2/recordings/start",
+    "response": {
+      "meetingId": "asdf-asdf-asdf"
+    }
+  },
+
+  "stopRecording": {
+    "description": "When you get a dispute, contacting your customer is always the best first step. If that doesn’t work, you can submit evidence to help us resolve the dispute in your favor. You can do this in your dashboard, but if you prefer, you can use the API to submit evidence programmatically. Depending on your dispute type, different evidence fields will give you a better chance of winning your dispute. To figure out which evidence fields to provide, see our guide to dispute types.",
+    "headers": [],
+    "methodType": "POST",
+    "postParameters": [],
+    "queryParameters": [
+      {
+        "key": "roomId",
+        "value": "xyz",
+        "description": "RoomId for which the recording is to be ended",
+        "required": true
+      }
+    ],
+    "apiEndpoint": "https://api.videosdk.live/v2/recordings/end",
+    "response": {
+      "meetingId": "asdf-asdf-asdf"
+    }
+  },
+
+  "fetchRecordings": {
+    "description": "When you get a dispute, contacting your customer is always the best first step. If that doesn’t work, you can submit evidence to help us resolve the dispute in your favor. You can do this in your dashboard, but if you prefer, you can use the API to submit evidence programmatically. Depending on your dispute type, different evidence fields will give you a better chance of winning your dispute. To figure out which evidence fields to provide, see our guide to dispute types.",
+    "headers": [],
+    "methodType": "GET",
+    "postParameters": [],
+    "queryParameters": [
+      {
+        "key": "roomId",
+        "value": "xyz",
+        "description": "RoomId for which the recording is to be fetched",
+        "required": true
+      },
+      {
+        "key": "sessionId",
+        "value": "xyz",
+        "description": "sessionId for which the recording is to be fetched",
+        "required": true
+      },
+      {
+        "key": "page",
+        "value": "1",
+        "description": "Page number for the sessions",
+        "required": false
+      },
+      {
+        "key": "perPage",
+        "value": "10",
+        "description": "Number of Recordings you want per page",
+        "required": false
+      }
+    ],
+    "apiEndpoint": "https://api.videosdk.live/v2/recordings",
+    "response": {
+      "meetingId": "asdf-asdf-asdf"
+    }
+  },
+
+  "fetchRecordingUsingRecordingId": {
+    "description": "When you get a dispute, contacting your customer is always the best first step. If that doesn’t work, you can submit evidence to help us resolve the dispute in your favor. You can do this in your dashboard, but if you prefer, you can use the API to submit evidence programmatically. Depending on your dispute type, different evidence fields will give you a better chance of winning your dispute. To figure out which evidence fields to provide, see our guide to dispute types.",
+    "headers": [],
+    "methodType": "GET",
+    "postParameters": [],
+    "queryParameters": [],
+    "apiEndpoint": "https://api.videosdk.live/v2/recordings/:recordingId",
+    "response": {
+      "meetingId": "asdf-asdf-asdf"
+    }
+  },
+
+  "startLivestream": {
+    "description": "When you get a dispute, contacting your customer is always the best first step. If that doesn’t work, you can submit evidence to help us resolve the dispute in your favor. You can do this in your dashboard, but if you prefer, you can use the API to submit evidence programmatically. Depending on your dispute type, different evidence fields will give you a better chance of winning your dispute. To figure out which evidence fields to provide, see our guide to dispute types.",
+    "headers": [
+      {
+        "key": "Authorization",
+        "value": "$YOUR_TOKEN"
+      },
+      {
+        "key": "Content-Type",
+        "value": "application/json"
+      }
+    ],
+    "methodType": "POST",
+    "postParameters": [
+      {
+        "key": "roomId",
+        "value": "xyz",
+        "description": "RoomId for which the livestream is to be started",
+        "required": true
+      },
+      {
+        "key": "url",
+        "value": "https://www.google.com",
+        "description": "Url for the livestream",
+        "required": true
+      },
+      {
+        "key": "height",
+        "value": "480",
+        "description": "Height of the livestream",
+        "required": true
+      },
+      {
+        "key": "width",
+        "value": "480",
+        "description": "Width of the livestream",
+        "required": true
+      },
+      {
+        "key": "mimeType",
+        "value": "mp4",
+        "description": "MIME type for your livestream",
+        "required": true
+      },
+      {
+        "key": "audioBitsPerSecond",
+        "value": "30",
+        "description": "Audio Bits per second",
+        "required": true
+      },
+      {
+        "key": "videoBitsPerSecond",
+        "value": "30",
+        "description": "Video Bits per second",
+        "required": true
+      },
+      {
+        "key": "frameSize",
+        "value": "120",
+        "description": "Frame Size",
+        "required": true
+      }
+    ],
+    "queryParameters": [],
+    "apiEndpoint": "https://api.videosdk.live/v2/livestreams/start",
+    "response": {
+      "meetingId": "asdf-asdf-asdf"
+    }
+  },
+
+  "stopLivestream": {
+    "description": "When you get a dispute, contacting your customer is always the best first step. If that doesn’t work, you can submit evidence to help us resolve the dispute in your favor. You can do this in your dashboard, but if you prefer, you can use the API to submit evidence programmatically. Depending on your dispute type, different evidence fields will give you a better chance of winning your dispute. To figure out which evidence fields to provide, see our guide to dispute types.",
+    "headers": [],
+    "methodType": "POST",
+    "postParameters": [],
+    "queryParameters": [
+      {
+        "key": "roomId",
+        "value": "xyz",
+        "description": "RoomId for which the livestream is to be ended",
+        "required": true
+      }
+    ],
+    "apiEndpoint": "https://api.videosdk.live/v2/livestreams/end",
+    "response": {
+      "meetingId": "asdf-asdf-asdf"
+    }
+  },
+
+  "fetchLivestreams": {
+    "description": "When you get a dispute, contacting your customer is always the best first step. If that doesn’t work, you can submit evidence to help us resolve the dispute in your favor. You can do this in your dashboard, but if you prefer, you can use the API to submit evidence programmatically. Depending on your dispute type, different evidence fields will give you a better chance of winning your dispute. To figure out which evidence fields to provide, see our guide to dispute types.",
+    "headers": [],
+    "methodType": "GET",
+    "postParameters": [],
+    "queryParameters": [
+      {
+        "key": "roomId",
+        "value": "xyz",
+        "description": "RoomId for which the livestream is to be fetched",
+        "required": true
+      },
+      {
+        "key": "sessionId",
+        "value": "xyz",
+        "description": "sessionId for which the livestream is to be fetched",
+        "required": true
+      },
+      {
+        "key": "page",
+        "value": "1",
+        "description": "Page number for the livestream",
+        "required": false
+      },
+      {
+        "key": "perPage",
+        "value": "10",
+        "description": "Number of Recordings you want per page",
+        "required": false
+      }
+    ],
+    "apiEndpoint": "https://api.videosdk.live/v2/livestreams",
+    "response": {
+      "meetingId": "asdf-asdf-asdf"
+    }
+  },
+
+  "fetchLivestreamUsingLivestreamId": {
+    "description": "When you get a dispute, contacting your customer is always the best first step. If that doesn’t work, you can submit evidence to help us resolve the dispute in your favor. You can do this in your dashboard, but if you prefer, you can use the API to submit evidence programmatically. Depending on your dispute type, different evidence fields will give you a better chance of winning your dispute. To figure out which evidence fields to provide, see our guide to dispute types.",
+    "headers": [],
+    "methodType": "GET",
+    "postParameters": [],
+    "queryParameters": [],
+    "apiEndpoint": "https://api.videosdk.live/v2/livestreams/:livestreamId",
+    "response": {
+      "meetingId": "asdf-asdf-asdf"
+    }
+  },
+
+  "startHLSstream": {
+    "description": "When you get a dispute, contacting your customer is always the best first step. If that doesn’t work, you can submit evidence to help us resolve the dispute in your favor. You can do this in your dashboard, but if you prefer, you can use the API to submit evidence programmatically. Depending on your dispute type, different evidence fields will give you a better chance of winning your dispute. To figure out which evidence fields to provide, see our guide to dispute types.",
+    "headers": [
+      {
+        "key": "Authorization",
+        "value": "$YOUR_TOKEN"
+      },
+      {
+        "key": "Content-Type",
+        "value": "application/json"
+      }
+    ],
+    "methodType": "POST",
+    "postParameters": [
+      {
+        "key": "roomId",
+        "value": "xyz",
+        "description": "RoomId for which the hlsstream is to be started",
+        "required": true
+      },
+      {
+        "key": "url",
+        "value": "https://www.google.com",
+        "description": "Url for the hlsstream",
+        "required": true
+      },
+      {
+        "key": "height",
+        "value": "480",
+        "description": "Height of the hlsstream",
+        "required": true
+      },
+      {
+        "key": "width",
+        "value": "480",
+        "description": "Width of the hlsstream",
+        "required": true
+      },
+      {
+        "key": "mimeType",
+        "value": "mp4",
+        "description": "MIME type for your hlsstream",
+        "required": true
+      },
+      {
+        "key": "audioBitsPerSecond",
+        "value": "30",
+        "description": "Audio Bits per second",
+        "required": true
+      },
+      {
+        "key": "videoBitsPerSecond",
+        "value": "30",
+        "description": "Video Bits per second",
+        "required": true
+      },
+      {
+        "key": "frameSize",
+        "value": "120",
+        "description": "Frame Size",
+        "required": true
+      }
+    ],
+    "queryParameters": [],
+    "apiEndpoint": "https://api.videosdk.live/v2/hlsstreams/start",
+    "response": {
+      "meetingId": "asdf-asdf-asdf"
+    }
+  },
+
+  "stopHLSstream": {
+    "description": "When you get a dispute, contacting your customer is always the best first step. If that doesn’t work, you can submit evidence to help us resolve the dispute in your favor. You can do this in your dashboard, but if you prefer, you can use the API to submit evidence programmatically. Depending on your dispute type, different evidence fields will give you a better chance of winning your dispute. To figure out which evidence fields to provide, see our guide to dispute types.",
+    "headers": [],
+    "methodType": "POST",
+    "postParameters": [],
+    "queryParameters": [
+      {
+        "key": "roomId",
+        "value": "xyz",
+        "description": "RoomId for which the hlsstream is to be ended",
+        "required": true
+      }
+    ],
+    "apiEndpoint": "https://api.videosdk.live/v2/hlsstreams/end",
+    "response": {
+      "meetingId": "asdf-asdf-asdf"
+    }
+  },
+
+  "fetchHLSstreams": {
+    "description": "When you get a dispute, contacting your customer is always the best first step. If that doesn’t work, you can submit evidence to help us resolve the dispute in your favor. You can do this in your dashboard, but if you prefer, you can use the API to submit evidence programmatically. Depending on your dispute type, different evidence fields will give you a better chance of winning your dispute. To figure out which evidence fields to provide, see our guide to dispute types.",
+    "headers": [],
+    "methodType": "GET",
+    "postParameters": [],
+    "queryParameters": [
+      {
+        "key": "roomId",
+        "value": "xyz",
+        "description": "RoomId for which the hlsstream is to be fetched",
+        "required": true
+      },
+      {
+        "key": "sessionId",
+        "value": "xyz",
+        "description": "sessionId for which the hlsstream is to be fetched",
+        "required": true
+      },
+      {
+        "key": "page",
+        "value": "1",
+        "description": "Page number for the hlsstreams",
+        "required": false
+      },
+      {
+        "key": "perPage",
+        "value": "10",
+        "description": "Number of HLSstreams you want per page",
+        "required": false
+      }
+    ],
+    "apiEndpoint": "https://api.videosdk.live/v2/hlsstreams",
+    "response": {
+      "meetingId": "asdf-asdf-asdf"
+    }
+  },
+
+  "fetchHLSstreamUsingHLSstreamId": {
+    "description": "When you get a dispute, contacting your customer is always the best first step. If that doesn’t work, you can submit evidence to help us resolve the dispute in your favor. You can do this in your dashboard, but if you prefer, you can use the API to submit evidence programmatically. Depending on your dispute type, different evidence fields will give you a better chance of winning your dispute. To figure out which evidence fields to provide, see our guide to dispute types.",
+    "headers": [],
+    "methodType": "GET",
+    "postParameters": [],
+    "queryParameters": [],
+    "apiEndpoint": "https://api.videosdk.live/v2/hlsstreams/:hlsStreamId",
+    "response": {
+      "meetingId": "asdf-asdf-asdf"
+    }
+  },
+
+  "startCombineStream": {
+    "description": "When you get a dispute, contacting your customer is always the best first step. If that doesn’t work, you can submit evidence to help us resolve the dispute in your favor. You can do this in your dashboard, but if you prefer, you can use the API to submit evidence programmatically. Depending on your dispute type, different evidence fields will give you a better chance of winning your dispute. To figure out which evidence fields to provide, see our guide to dispute types.",
+    "headers": [
+      {
+        "key": "Authorization",
+        "value": "$YOUR_TOKEN"
+      },
+      {
+        "key": "Content-Type",
+        "value": "application/json"
+      }
+    ],
+    "methodType": "POST",
+    "postParameters": [
+      {
+        "key": "roomId",
+        "value": "xyz",
+        "description": "RoomId for which the hlsstream is to be started",
+        "required": true
+      },
+      {
+        "key": "record",
+        "value": "true",
+        "description": "true will start the recording where as false will not.",
+        "required": true
+      },
+      {
+        "key": "live",
+        "value": "true",
+        "description": "true will start the livestream where as false will not.",
+        "required": true
+      },
+      {
+        "key": "hls",
+        "value": "true",
+        "description": "true will start the HLS Stream where as false will not.",
+        "required": true
+      },
+      {
+        "key": "url",
+        "value": "https://www.google.com",
+        "description": "Url for the hlsstream",
+        "required": true
+      },
+      {
+        "key": "height",
+        "value": "480",
+        "description": "Height of the hlsstream",
+        "required": true
+      },
+      {
+        "key": "width",
+        "value": "480",
+        "description": "Width of the hlsstream",
+        "required": true
+      },
+      {
+        "key": "mimeType",
+        "value": "mp4",
+        "description": "MIME type for your hlsstream",
+        "required": true
+      },
+      {
+        "key": "audioBitsPerSecond",
+        "value": "30",
+        "description": "Audio Bits per second",
+        "required": true
+      },
+      {
+        "key": "videoBitsPerSecond",
+        "value": "30",
+        "description": "Video Bits per second",
+        "required": true
+      },
+      {
+        "key": "frameSize",
+        "value": "120",
+        "description": "Frame Size",
+        "required": true
+      }
+    ],
+    "queryParameters": [],
+    "apiEndpoint": "https://api.videosdk.live/v2/combinestreams/start",
+    "response": {
+      "meetingId": "asdf-asdf-asdf"
+    }
+  },
+
+  "stopCombineStream": {
+    "description": "When you get a dispute, contacting your customer is always the best first step. If that doesn’t work, you can submit evidence to help us resolve the dispute in your favor. You can do this in your dashboard, but if you prefer, you can use the API to submit evidence programmatically. Depending on your dispute type, different evidence fields will give you a better chance of winning your dispute. To figure out which evidence fields to provide, see our guide to dispute types.",
+    "headers": [],
+    "methodType": "POST",
+    "postParameters": [],
+    "queryParameters": [
+      {
+        "key": "roomId",
+        "value": "xyz",
+        "description": "RoomId for which the streams are to be ended",
+        "required": true
+      }
+    ],
+    "apiEndpoint": "https://api.videosdk.live/v2/combinestreams/end",
+    "response": {
+      "meetingId": "asdf-asdf-asdf"
+    }
+  }
 }

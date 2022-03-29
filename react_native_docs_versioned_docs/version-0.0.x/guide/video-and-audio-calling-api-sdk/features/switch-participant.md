@@ -35,7 +35,6 @@ after that `P2` from **Meeting_A** will receive an event `switch-meeting` with *
 
 ### **Method and Event Code**
 
-
 ```js
 import { useMeeting, useParticipant } from "@videosdk.live/react-native-sdk";
 
@@ -57,6 +56,7 @@ useMeeting({
   },
 });
 ```
+
 For **React Native** Developer, you need to slightly modify in [Initialization](/react-native/guide/video-and-audio-calling-api-sdk/features/start-join-meeting#2-initialization) config props.
 
 ```js

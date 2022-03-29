@@ -57,7 +57,6 @@ Currently the below regions are supported:
 In case you are not providing any region code, the default region will be `sg001`.
 :::
 
-
 ```js
 const getToken = async () => {
   try {
@@ -150,7 +149,6 @@ NOTE : For React & React native developer, you have
 
 </div>
 
-
 ```js
 import { MeetingProvider, useMeeting } from "@videosdk.live/react-native-sdk";
 
@@ -203,7 +201,6 @@ After joining, you will be able to Manage Participant in a meeting.
 </div>
 
 </div>
-
 
 ```js
 const onPress = () => {

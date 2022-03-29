@@ -16,7 +16,6 @@ slug: server-setup
 ---
 
 import Mermaid from '@theme/Mermaid';
-import ServerSetup from '../../../mdx/introduction/_server-setup.mdx';
+import ServerSetup from '../../../mdx/introduction/\_server-setup.mdx';
 
 <ServerSetup />
-

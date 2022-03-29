@@ -33,7 +33,6 @@ after that `P2` from **Meeting_B** will receive an event `switch-meeting`.
 
 ### **Method and Event Code**
 
-
 ```js
 import { useMeeting, useConnection } from "@videosdk.live/react-sdk";
 

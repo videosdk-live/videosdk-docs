@@ -18,7 +18,6 @@ import TabItem from '@theme/TabItem';
 
 ### **Method and Event Code**
 
-
 ```js
 import { Alert } from "react-native";
 import { useConnection } from "@videosdk.live/react-native-sdk";

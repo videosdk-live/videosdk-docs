@@ -52,7 +52,6 @@ private var recordingStarted = false
 
 2. **recording-stopped** - Whenever any participant stop meeting recording, then `recording-stopped` event will trigger.
 
-
 ```js
 /// Called after recording starts
 func onRecordingStarted() {

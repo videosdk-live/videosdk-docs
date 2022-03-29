@@ -1,0 +1,7 @@
+[
+    { "href": "./properties#getId", "label": "getId()" },
+    { "href": "./properties#getDisplayName", "label": "getDisplayName()" },
+    { "href": "./properties#getQuality", "label": "getQuality()" },
+    { "href": "./properties#isLocal", "label": "isLocal()" },
+    { "href": "./properties#getStreams", "label": "getStreams()" }
+  ]

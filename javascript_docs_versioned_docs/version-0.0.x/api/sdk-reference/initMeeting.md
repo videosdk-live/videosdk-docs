@@ -7,7 +7,7 @@ title: Initializing a Meeting
 
 <div class="sdk-api-ref">
 
-You can initialize the meeting using a factory method provided by the SDK called `initMeeting()`. By passing the parameters according to the need, it will generate a new `Meeting` class and the initiated meeting will be returned.
+You can initialize the meeting using a factory method provided by the SDK called `initMeeting()`. By passing the parameters according to the need, it will generate a new `Meeting` class and then return the initiated meeting.
 
 ## initMeeting()
 
@@ -35,7 +35,7 @@ const meeting = VideoSDK.initMeeting({
   - type : `String`
   - `REQUIRED`
 
-Please refer this documentation to craete a room.
+Please refer this [documentation](/api-reference/realtime-communication/create-room) to craete a room.
 
 ---
 

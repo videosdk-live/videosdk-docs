@@ -81,7 +81,7 @@ function DocSidebarDesktop({ path, sidebar, onCollapse, isHidden }) {
           [styles.menuWithAnnouncementBar]: showAnnouncementBar,
         })}
       >
-        <SidebarDropdowns/>
+        <SidebarDropdowns />
         <ul className={clsx(ThemeClassNames.docs.docSidebarMenu, "menu__list")}>
           <DocSidebarItems items={sidebar} activePath={path} level={1} />
         </ul>
@@ -93,25 +93,25 @@ function DocSidebarDesktop({ path, sidebar, onCollapse, isHidden }) {
 
 const DocSidebarMobileSecondaryMenu = ({ toggleSidebar, sidebar, path }) => (
   <div>
-  <SidebarDropdowns/>
-  <ul className={clsx(ThemeClassNames.docs.docSidebarMenu, "menu__list")}>
-    <DocSidebarItems
-      items={sidebar}
-      activePath={path}
-      onItemClick={(item) => {
-        // Mobile sidebar should only be closed if the category has a link
-        if (item.type === "category" && item.href) {
-          toggleSidebar();
-        }
+    <SidebarDropdowns />
+    <ul className={clsx(ThemeClassNames.docs.docSidebarMenu, "menu__list")}>
+      <DocSidebarItems
+        items={sidebar}
+        activePath={path}
+        onItemClick={(item) => {
+          // Mobile sidebar should only be closed if the category has a link
+          if (item.type === "category" && item.href) {
+            toggleSidebar();
+          }
 
-        if (item.type === "link") {
-          toggleSidebar();
-        }
-      }}
-      level={1}
-    />
+          if (item.type === "link") {
+            toggleSidebar();
+          }
+        }}
+        level={1}
+      />
     </ul>
-    </div>
+  </div>
 );
 
 function DocSidebarMobile(props) {

@@ -25,7 +25,6 @@ public void publish(String topic, String message, PubSubPublishOptions options)
 | message        | String               | This is the actual message, which will be published to participants, who had subscribed to a particular topic.                                    |
 | options        | PubSubPublishOptions | This is an object of PubSubPublishOptions, which provides an option, such as `persist`, which persists message history for upcoming participants. |
 
-
 #### Example
 
 ```js
@@ -36,13 +35,11 @@ protected void sendMessage() {
 }
 ```
 
-
 ### subscribe()
 
 This method is used to subscribe for particular topic. This method returns a list of messages which were sent earlier.
 
 #### Syntax
-
 
 ```js
 public List<PubSubMessage> subscribe(String topic, PubSubMessageListener listener)
@@ -54,7 +51,6 @@ public List<PubSubMessage> subscribe(String topic, PubSubMessageListener listene
 | listener       | PubSubMessageListener | This is an object of PubSubMessageListener, which listens for upcoming messages and calls onMessageReceived function, when new message received. |
 
 #### Example
-
 
 ```js
 PubSubMessageListener pubSubMessageListener = new PubSubMessageListener() {
@@ -85,7 +81,6 @@ This method is used to unsubscribe the message topic.
 
 #### Syntax
 
-
 ```js
 public void unsubscribe(String topic, PubSubMessageListener listener)
 ```
@@ -97,7 +92,6 @@ public void unsubscribe(String topic, PubSubMessageListener listener)
 
 #### Example
 
-
 ```js
 public void unsubscribe(){
   // Unsubscribe 'CHAT' topic
@@ -106,7 +100,6 @@ public void unsubscribe(){
 ```
 
 ## Sample Code
-
 
 ```js
 package live.videosdk.rtc.android.java;

@@ -79,7 +79,13 @@ module.exports = {
             {
               label: "Custom SDK References",
               to: "react/api/sdk-reference/setup",
-              activeBaseRegex: "/*/api/sdk-reference/*",
+              activeBaseRegex:
+                "/react|flutter|react-native|javascript|ios|android/api/sdk-reference/*",
+            },
+            {
+              label: "Prebuilt SDK Reference",
+              to: "prebuilt/api/sdk-reference/setup",
+              activeBaseRegex: "/prebuilt/api/sdk-reference/*",
             },
             {
               label: "Rest API Reference",
@@ -207,12 +213,8 @@ module.exports = {
               to: "/react-native/guide/video-and-audio-calling-api-sdk/quick-start",
             },
             {
-              label: "Quick Start: React Native SDK",
-              to: "/react-native/guide/video-and-audio-calling-api-sdk/quick-start",
-            },
-            {
               label: "Quick Start: Android SDK",
-              to: "/android/guide/video-and-audio-calling-api-sdk/getting-started",
+              to: "/android/guide/video-and-audio-calling-api-sdk/quick-start",
             },
             {
               label: "Quick Start: iOS SDK",
@@ -220,7 +222,7 @@ module.exports = {
             },
             {
               label: "Quick Start: Flutter SDK",
-              to: "/flutter/guide/video-and-audio-calling-api-sdk/getting-started",
+              to: "/flutter/guide/video-and-audio-calling-api-sdk/quick-start",
             },
           ],
         },

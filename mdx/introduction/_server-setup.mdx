@@ -1,6 +1,5 @@
 # Setup Authentication Server and Tokens
 
-
 ### Why we use token based Authentication ?
 
 Token based authentication allow users to verify their identity by providing generated API key and secrets.
@@ -9,7 +8,6 @@ Token based authentication allow users to verify their identity by providing gen
 - Your client obtains token from your backend server.
 - For token validation, client will pass this token to VideoSDK.
 - VideoSDK server will only allow entry in meeting if the token is valid.
-
 
 To begin working with the VideoSDK, you need to setup a server that can authenticate & validate your API key and secret which we generated in the previous step. Follow this [Get your API key and Secret](signup-and-create-api) if you haven't generated API key and secret.
 
@@ -25,7 +23,6 @@ For server setup, you'll need the following APIs:
 You can integrate this APIs in client side also but we will suggest to use it at server side for better security.
 :::
 
-
 ### Generate Accees Token
 
 To manage secured communication, every participant that connects to meeting needs a access token. By substituting `apikey` and `permissions` in it.
@@ -36,4 +33,3 @@ Available permissions are:
 - **allow_join**: The participant is **allowed to join** the meeting directly.
 - **ask_join**: The participant requires to **ask for permission to join** the meeting.
 - **allow_mod**: The participant is **allowed to toggle** webcam & mic of other participants.
-

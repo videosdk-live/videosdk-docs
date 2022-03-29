@@ -16,10 +16,9 @@ slug: getting-started
 ---
 
 import Mermaid from '@theme/Mermaid';
-import GettingStarted from '../../../mdx/introduction/_getting-started.mdx';
+import GettingStarted from '../../../mdx/introduction/\_getting-started.mdx';
 
 <GettingStarted title="Get Started with React JS" />
-
 
 ## Steps
 

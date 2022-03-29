@@ -1,10 +1,10 @@
 ---
 sidebar_position: 1
-sidebar_label: Fetch Sessions using SessionId
+sidebar_label: Fetch A Session
 hide_table_of_contents: true
 ---
 
-# Fetch Session using `sessionId`
+# Fetch A Session
 
 import Method from '../../src/theme/RestApiMethodContainer'
 import data from './data.json'

@@ -5,32 +5,65 @@ pagination_label: PubSub
 title: PubSub
 ---
 
-- `PubSub` one of the properties of a `Meeting Class` is used for messaging purpose for an ongoing meeting
-- You can make use of pubsub for messaging purpose using `meeting.purpose`
+- `PubSub` one of the properties of a [Meeting Class](../meeting-class/introduction.md) is used for messaging purpose for an ongoing meeting
 
 <div class="sdk-api-ref-only-h4">
+
+## Properties
+
+### message
+
+- type : `String`
+
+- Message that has been published on this topic currently
+
+### senderId
+
+- type : `String`
+
+- id of a sender who has bublished this message.
+
+### senderName
+
+- type : `String`
+
+- name of a sender who has bublished this message.
+
+### timesatmp
+
+- type : `DateTime`
+
+- timestamp of when a message has been published.
+
+### topic
+
+- type : `String`
+
+- topic name on which message has been published.
+
+---
 
 ## Methods
 
 ### Publish()
 
-- `publish()` is used to publish messages in the meeting.
+- `publish()` is used to publish messages on a specified topic in the meeting.
 
 #### Parameters
 
 - topic :
 
   - type : `String`
-  - participants can deliever and get messages with the help of topic name.
+  - Participants can deliver messages to that particular topic.
 
 - message :
 
   - type: `String`
-  - Any arbuitrary message you want to publish.
+  - Any arbitrary message you want to publish.
 
 - persist :
   - type : `Boolean`
-  - Keeping it true will help getting old messages of an ongoing meeting
+  - If provided true, it will persist the message throughout the meeting and one will get all old messages of a meeting, otherwise not.
 
 #### Returns
 
@@ -47,14 +80,45 @@ meeting.pubSub.publish("CHAT", message, { persist: true });
 
 ### subscribe()
 
-- `publish()` is used to subscribe a particular topic to get all messages of that topic in the meeting
+- `subscribe()` is used to subscribe a particular topic to get all the messages of that particular topic in the meeting.
 
 #### Parameters
 
 - topic :
 
   - type : `String`
-  - participants can deliever and get messages with the help of topic name.
+  - Participants can listen to messages on that particular topic.
+
+- callback :
+  - type : `function`
+  - in callback you will get `newMessage` object which contains [pubsub properties](#properties)
+
+#### Returns
+
+- `array of persisted message object`
+
+#### Example
+
+```js
+
+//subscribing messages on topic CHAT
+let oldMessages=await meeting.pubSub.subscribe("CHAT", (newMessage) => {
+    console.log(newMessage);
+}
+```
+
+---
+
+### unsubscribe()
+
+- `unsubscribe()` is used to unsubscribe a particular topic on which you have subscribed priviously.
+
+#### Parameters
+
+- topic :
+
+  - type : `String`
+  - callback : `function`
 
 - listener : `function`
 
@@ -65,11 +129,8 @@ meeting.pubSub.publish("CHAT", message, { persist: true });
 #### Example
 
 ```js
-
-//subscribing messages on topic CHAT
-let oldMessages=await meeting.pubSub.subscribe("CHAT", (newMessage) => {
-    console.log(newMessage);
-}
+//unsubscribing messages on topic CHAT
+meeting.pubSub.unsubscribe("CHAT", callback);
 ```
 
 </div>
