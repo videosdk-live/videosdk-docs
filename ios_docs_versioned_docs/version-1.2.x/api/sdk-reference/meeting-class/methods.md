@@ -173,7 +173,7 @@ startLivestream(outputs: outputs)
 
 #### Example
 
-```javascript
+```swift
 stopLivestream();
 ```
 

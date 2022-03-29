@@ -1,30 +1,26 @@
 [
   {
-    "href": "./methods#enablewebcam",
-    "label": "enablewebcam"
+    "href": "./methods#enableWebcam",
+    "label": "enableWebcam"
   },
   {
-    "href": "./methods#disablewebcam",
-    "label": "disablewebcam"
+    "href": "./methods#disableWebcam",
+    "label": "disableWebcam"
   },
   {
-    "href": "./methods#enablemic",
-    "label": "enablemic"
+    "href": "./methods#enableMic",
+    "label": "enableMic"
   },
   {
-    "href": "./methods#disablemic",
-    "label": "disablemic"
+    "href": "./methods#disableMic",
+    "label": "disableMic"
   },
   {
-    "href": "./methods#setquality",
+    "href": "./methods#remove",
+    "label": "remove"
+  },
+  {
+    "href": "./methods#setQuality",
     "label": "setquality"
-  },
-  {
-    "href": "./methods#pin",
-    "label": "pin"
-  },
-  {
-    "href": "./methods#unpin",
-    "label": "unpin"
   }
 ]

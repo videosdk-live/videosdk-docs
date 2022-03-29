@@ -61,32 +61,28 @@
         "api/sdk-reference/meeting-class/introduction",
         "api/sdk-reference/meeting-class/properties",
         "api/sdk-reference/meeting-class/methods",
-        "api/sdk-reference/meeting-class/events"
+        "api/sdk-reference/meeting-class/events",
+        "api/sdk-reference/meeting-class/pubsub"
       ]
     },
     {
-      "type": "doc",
-      "id": "api/sdk-reference/participant-class"
+      "type": "category",
+      "label": "Participant Class",
+      "items": [
+        "api/sdk-reference/participant-class/introduction",
+        "api/sdk-reference/participant-class/properties",
+        "api/sdk-reference/participant-class/methods",
+        "api/sdk-reference/participant-class/events"
+      ]
     },
     {
-      "type": "doc",
-      "id": "api/sdk-reference/stream-class"
-    },
-    {
-      "type": "doc",
-      "id": "api/sdk-reference/meeting-event-listener-class"
-    },
-    {
-      "type": "doc",
-      "id": "api/sdk-reference/participant-event-listener-class"
-    },
-    {
-      "type": "doc",
-      "id": "api/sdk-reference/pubsub-class"
-    },
-    {
-      "type": "doc",
-      "id": "api/sdk-reference/pubsub-message-class"
+      "type": "category",
+      "label": "Stream Class",
+      "items": [
+        "api/sdk-reference/stream-class/introduction",
+        "api/sdk-reference/stream-class/properties",
+        "api/sdk-reference/stream-class/methods"
+      ]
     }
   ]
 }

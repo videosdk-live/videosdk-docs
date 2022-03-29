@@ -38,7 +38,15 @@ title: Meeting Class Properties
 ```swift
 let remoteParticipantId = "ajf897";
 
-let remoteParticipant = patricipants[remoteParticipantId];
+let remoteParticipant = participants[remoteParticipantId];
 ```
+
+---
+
+### listeners
+
+- type: `MeetingMulticastDelegate`
+
+- It will listens the events of [Meeting](./) class for the local participant who joined the meeting.
 
 </div>

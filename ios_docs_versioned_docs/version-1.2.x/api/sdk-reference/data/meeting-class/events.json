@@ -1,82 +1,46 @@
 [
   {
     "href": "./events#meeting-joined",
-    "label": "meeting-joined"
+    "label": "onMeetingJoined"
   },
   {
     "href": "./events#meeting-left",
-    "label": "meeting-left"
+    "label": "onMeetingLeft"
   },
   {
     "href": "./events#participant-joined",
-    "label": "participant-joined"
+    "label": "onParticipantJoined"
   },
   {
     "href": "./events#participant-left",
-    "label": "participant-left"
+    "label": "onParticipantLeft"
   },
   {
     "href": "./events#speaker-changed",
-    "label": "speaker-changed"
-  },
-  {
-    "href": "./events#presenter-changed",
-    "label": "presenter-changed"
-  },
-  {
-    "href": "./events#error",
-    "label": "error"
-  },
-  {
-    "href": "./events#entry-requested",
-    "label": "entry-requested"
-  },
-  {
-    "href": "./events#entry-responded",
-    "label": "entry-responded"
+    "label": "onSpeakerChanged"
   },
   {
     "href": "./events#webcam-requested",
-    "label": "webcam-requested"
+    "label": "onWebcamRequested"
   },
   {
     "href": "../events#mic-requested",
-    "label": "mic-requested"
+    "label": "onMicRequested"
   },
   {
     "href": "./events#recording-started",
-    "label": "recording-started"
+    "label": "onRecordingStarted"
   },
   {
     "href": "./events#recording-stopped",
-    "label": "recording-stopped"
+    "label": "onRecordingStoppped"
   },
   {
     "href": "./events#livestream-started",
-    "label": "livestream-started"
+    "label": "onLivestreamStarted"
   },
   {
     "href": "./events#livestream-stopped",
-    "label": "livestream-stopped"
-  },
-  {
-    "href": "./events#hls-started",
-    "label": "hls-started"
-  },
-  {
-    "href": "./events#hls-stopped",
-    "label": "hls-stopped"
-  },
-  {
-    "href": "./events#connection-open",
-    "label": "connection-open"
-  },
-  {
-    "href": "./events#connection-close",
-    "label": "connection-close"
-  },
-  {
-    "href": "./events#switch-meeting",
-    "label": "switch-meeting"
+    "label": "onLivestreamStopped"
   }
 ]

@@ -37,7 +37,12 @@ import events from "./../data/meeting-class/events.json";
 </div>
 <div>
 
-- [pubsub](./properties.md#pubsub)
+- [pubsub](./pubsub)
+
+</div>
+<div>
+
+- [listeners](./properties.md#listeners)
 
 </div>
 
@@ -70,11 +75,6 @@ import events from "./../data/meeting-class/events.json";
 <div>
 
 - [disableWebcam](./methods.md#disablewebcam)
-
-</div>
-<div>
-
-- [switchWebcam](./methods.md#switchwebcam)
 
 </div>
 <div>
@@ -121,7 +121,7 @@ import events from "./../data/meeting-class/events.json";
 </div>
 <div>
 
-- [onMeetingLeft](./on-meeting-left)
+- [onMeetingLeft](./events.md#on-meeting-left)
 
 </div>
 <div>
@@ -132,6 +132,21 @@ import events from "./../data/meeting-class/events.json";
 <div>
 
 - [onParticipantLeft](./events.md#on-participant-left)
+
+</div>
+<div>
+
+- [onSpeakerChanged](./events.md#on-speaker-changed)
+
+</div>
+<div>
+
+- [onMicRequested](./events.md#on-mic-requested)
+
+</div>
+<div>
+
+- [onWebcamRequested](./events.md#on-webcam-requested)
 
 </div>
 <div>
@@ -152,21 +167,6 @@ import events from "./../data/meeting-class/events.json";
 <div>
 
 - [onLivestreamStopped](./events.md#on-livestream-stopped)
-
-</div>
-<div>
-
-- [onSpeakerChanged](./events.md#on-speaker-changed)
-
-</div>
-<div>
-
-- [onMicRequested](./events.md#on-mic-requested)
-
-</div>
-<div>
-
-- [onWebcamRequested](./events.md#on-webcam-requested)
 
 </div>
 

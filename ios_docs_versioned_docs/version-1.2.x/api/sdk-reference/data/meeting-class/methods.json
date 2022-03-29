@@ -28,14 +28,6 @@
     "label": "muteMic"
   },
   {
-    "href": "./methods#enableScreenShare",
-    "label": "enableScreenShare"
-  },
-  {
-    "href": "./methods#disableScreenShare",
-    "label": "disableScreenShare"
-  },
-  {
     "href": "./methods#startRecording",
     "label": "startRecording"
   },
@@ -50,41 +42,5 @@
   {
     "href": "./methods#stopLivestream",
     "label": "stopLivestream"
-  },
-  {
-    "href": "./methods#startHls",
-    "label": "startHls"
-  },
-  {
-    "href": "./methods#stopHls",
-    "label": "stopHls"
-  },
-  {
-    "href": "./methods#getWebcams",
-    "label": "getWebcams"
-  },
-  {
-    "href": "./methods#changeWebcam",
-    "label": "changeWebcam"
-  },
-  {
-    "href": "./methods#setWebcamQuality",
-    "label": "setWebcamQuality"
-  },
-  {
-    "href": "./methods#getMics",
-    "label": "getMics"
-  },
-  {
-    "href": "./methods#changeMic",
-    "label": "changeMic"
-  },
-  {
-    "href": "./methods#on",
-    "label": "on"
-  },
-  {
-    "href": "./methods#off",
-    "label": "off"
   }
 ]
