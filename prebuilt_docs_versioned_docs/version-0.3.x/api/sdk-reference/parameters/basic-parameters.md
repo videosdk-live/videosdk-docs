@@ -1,8 +1,8 @@
 ---
 sidebar_position: 1
-sidebar_label: Basic Feature's Parameters
-pagination_label: Basic Feature's Parameters
-title: Basic Feature's Parameters
+sidebar_label: Basic Features
+pagination_label: Basic Features
+title: Basic Features
 ---
 
 <div class="sdk-api-ref-only-h4">
