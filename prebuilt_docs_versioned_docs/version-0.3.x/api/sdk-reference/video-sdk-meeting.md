@@ -14,93 +14,19 @@ The `VideoSDKMeeting Class` includes properties, methods and events to control u
 
 ### init()
 
+- `VideoSDKMeeting` class is used to initialize meeting for prebuilt SDK. One can pass parameters as per their meeting requirement to the `init()` method.
+
 ```js title="Javascript"
 const meeting = new VideoSDKMeeting();
 
 meeting.init({
-  name: "John Doe",
-  apiKey: "YOUR API KEY", // generated from app.videosdk.live
-  meetingId: "milkyway", // enter your meeting id
-
-  containerId: null,
-  redirectOnLeave: "https://www.videosdk.live/",
-
-  micEnabled: true,
-  webcamEnabled: true,
-  participantCanToggleSelfWebcam: true,
-  participantCanToggleSelfMic: true,
-  participantCanLeave: true, // if false, leave button won't be visible
-
-  chatEnabled: true,
-  screenShareEnabled: true,
-  pollEnabled: true,
-  whiteboardEnabled: true,
-  raiseHandEnabled: true,
-
-  recording: {
-    autoStart: true, // auto start recording on participant joined
-    enabled: true,
-    webhookUrl: "https://www.videosdk.live/callback",
-    awsDirPath: `/meeting-recordings/${meetingId}/`, // automatically save recording in this s3 path
-  },
-
-  livestream: {
-    autoStart: true,
-    enabled: true,
-  },
-
-  layout: {
-    type: "SPOTLIGHT", // "SPOTLIGHT" | "SIDEBAR" | "GRID"
-    priority: "PIN", // "SPEAKER" | "PIN",
-    // gridSize: 3,
-  },
-
-  branding: {
-    enabled: true,
-    logoURL:
-      "https://static.zujonow.com/videosdk.live/videosdk_logo_circle_big.png",
-    name: "Prebuilt",
-    poweredBy: false,
-  },
-
-  permissions: {
-    pin: true,
-    askToJoin: false, // Ask joined participants for entry in meeting
-    toggleParticipantMic: true, // Can toggle other participant's mic
-    toggleParticipantWebcam: true, // Can toggle other participant's webcam
-    drawOnWhiteboard: true, // Can draw on whiteboard
-    toggleWhiteboard: true, // Can toggle whiteboard
-    toggleRecording: true, // Can toggle meeting recording
-    toggleLivestream: true, //can toggle live stream
-    removeParticipant: true, // Can remove participant
-    endMeeting: true, // Can end meeting
-    changeLayout: true, //can change layout
-  },
-
-  joinScreen: {
-    visible: true, // Show the join screen ?
-    title: "Daily scrum", // Meeting title
-    meetingUrl: window.location.href, // Meeting joining url
-  },
-
-  leftScreen: {
-    // visible when redirect on leave not provieded
-    actionButton: {
-      // optional action button
-      label: "Video SDK Live", // action button label
-      href: "https://videosdk.live/", // action button href
-    },
-  },
-
-  notificationSoundEnabled: true,
-
-  debug: true, // pop up error during invalid config or netwrok error
-
-  maxResolution: "sd", // "hd" or "sd"
+  //parameters
 });
 ```
 
-import MethodListGroup from '@theme/MethodListGroup';
+- Have a look to [`parameters`](./parameters/basic-parameters)
+
+<!-- import MethodListGroup from '@theme/MethodListGroup';
 import MethodListItemLabel from '@theme/MethodListItemLabel';
 import MethodListHeading from '@theme/MethodListHeading';
 
@@ -170,4 +96,4 @@ import MethodListHeading from '@theme/MethodListHeading';
       <MethodListItemLabel name="notificationSoundEnabled" option={"optional"} type={"string"} />
     </MethodListGroup>
   </MethodListItemLabel>
-</MethodListGroup>
+</MethodListGroup> -->

@@ -61,6 +61,23 @@
     {
       "type": "doc",
       "id": "api/sdk-reference/video-sdk-meeting"
+    },
+    {
+      "type": "category",
+      "label": "init() Parameters",
+      "items": [
+        "api/sdk-reference/parameters/basic-parameters",
+        "api/sdk-reference/parameters/permissions",
+        "api/sdk-reference/parameters/branding",
+        "api/sdk-reference/parameters/layout",
+        "api/sdk-reference/parameters/live-stream",
+        "api/sdk-reference/parameters/recording",
+        "api/sdk-reference/parameters/left-screen"
+      ]
+    },
+    {
+      "type": "doc",
+      "id": "api/sdk-reference/example"
     }
   ]
 }
