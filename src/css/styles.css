@@ -296,7 +296,7 @@ li:first-child > .dropdown__link {
 
 .menu__list-item-collapsible:hover .menu__link--active,
 .menu__list-item-collapsible .menu__link--active {
-  background: #6a65f1 !important;
+  background: var(--ifm-color-primary) !important;
   color: #ffffff;
 }
 
@@ -329,7 +329,7 @@ html[data-theme="dark"] ul.menu__list .menu__link {
 }
 
 html[data-theme="dark"] ul.menu__list .menu__link--active {
-  background-color: #6a65f1;
+  background-color: var(--ifm-color-primary);
   color: #fff;
 }
 
@@ -341,7 +341,7 @@ html[data-theme="light"] ul.menu__list .menu__link {
 
 html[data-theme="light"] ul.menu__list .menu__link--active {
   color: #fff;
-  background-color: #6a65f1;
+  background-color: var(--ifm-color-primary);
 }
 
 ul.menu__list ul.menu__list .menu__link {
@@ -1501,7 +1501,7 @@ html[data-theme="dark"] code {
 html[data-theme="dark"]
   .table-of-contents__link.toc-highlight.table-of-contents__link:hover
   > code {
-  color: #6a65f1;
+  color: var(--ifm-color-primary);
 }
 
 html[data-theme="dark"]
@@ -1555,7 +1555,7 @@ html[data-theme="dark"]
 .image-box {
   background: linear-gradient(
     98.98deg,
-    #6a65f1 -0.57%,
+    var(--ifm-color-primary) -0.57%,
     rgba(133, 29, 216, 0.6) 99.12%
   );
 }
