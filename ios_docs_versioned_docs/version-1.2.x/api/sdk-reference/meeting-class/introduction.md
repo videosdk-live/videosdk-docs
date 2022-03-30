@@ -22,17 +22,17 @@ import events from "./../data/meeting-class/events.json";
 
 <div class="col col--4 margin-bottom--lg" >
 
-- [id](./properties.md#id)
+- [id](./properties#id)
 
 </div>
 <div class="col col--4 margin-bottom--lg" >
 
-- [localParticipant](./properties.md#localparticipant)
+- [localParticipant](./properties#localparticipant)
 
 </div>
 <div class="col col--4 margin-bottom--lg" >
 
-- [participants](./properties.md#participants)
+- [participants](./properties#participants)
 
 </div>
 <div class="col col--4 margin-bottom--lg" >
@@ -42,7 +42,7 @@ import events from "./../data/meeting-class/events.json";
 </div>
 <div class="col col--4 margin-bottom--lg" >
 
-- [listeners](./properties.md#listeners)
+- [listeners](./properties#listeners)
 
 </div>
 
@@ -54,57 +54,57 @@ import events from "./../data/meeting-class/events.json";
 
 <div class="col col--4 margin-bottom--lg" >
 
-- [join](./methods.md#join)
+- [join](./methods#join)
 
 </div>
 <div class="col col--4 margin-bottom--lg" >
 
-- [leave](./methods.md#leave)
+- [leave](./methods#leave)
 
 </div>
 <div class="col col--4 margin-bottom--lg" >
 
-- [end](./methods.md#end)
+- [end](./methods#end)
 
 </div>
 <div class="col col--4 margin-bottom--lg" >
 
-- [enableWebcam](./methods.md#enablewebcam)
+- [enableWebcam](./methods#enablewebcam)
 
 </div>
 <div class="col col--4 margin-bottom--lg" >
 
-- [disableWebcam](./methods.md#disablewebcam)
+- [disableWebcam](./methods#disablewebcam)
 
 </div>
 <div class="col col--4 margin-bottom--lg" >
 
-- [unmuteMic](./methods.md#unmutemic)
+- [unmuteMic](./methods#unmutemic)
 
 </div>
 <div class="col col--4 margin-bottom--lg" >
 
-- [muteMic](./methods.md#mutemic)
+- [muteMic](./methods#mutemic)
 
 </div>
 <div class="col col--4 margin-bottom--lg" >
 
-- [startRecording](./methods.md#startrecording)
+- [startRecording](./methods#startrecording)
 
 </div>
 <div class="col col--4 margin-bottom--lg" >
 
-- [stopRecording](./methods.md#stoprecording)
+- [stopRecording](./methods#stoprecording)
 
 </div>
 <div class="col col--4 margin-bottom--lg" >
 
-- [startLiveStream](./methods.md#startlivestream)
+- [startLiveStream](./methods#startlivestream)
 
 </div>
 <div class="col col--4 margin-bottom--lg" >
 
-- [stopLiveStream](./methods.md#startlivestream)
+- [stopLiveStream](./methods#startlivestream)
 
 </div>
 
@@ -116,57 +116,57 @@ import events from "./../data/meeting-class/events.json";
 
 <div class="col col--4 margin-bottom--lg" >
 
-- [onMeetingJoined](./events.md#on-meeting-joined)
+- [onMeetingJoined](./events#on-meeting-joined)
 
 </div>
 <div class="col col--4 margin-bottom--lg" >
 
-- [onMeetingLeft](./events.md#on-meeting-left)
+- [onMeetingLeft](./events#on-meeting-left)
 
 </div>
 <div class="col col--4 margin-bottom--lg" >
 
-- [onParticipantJoined](./events.md#on-participant-joined)
+- [onParticipantJoined](./events#on-participant-joined)
 
 </div>
 <div class="col col--4 margin-bottom--lg" >
 
-- [onParticipantLeft](./events.md#on-participant-left)
+- [onParticipantLeft](./events#on-participant-left)
 
 </div>
 <div class="col col--4 margin-bottom--lg" >
 
-- [onSpeakerChanged](./events.md#on-speaker-changed)
+- [onSpeakerChanged](./events#on-speaker-changed)
 
 </div>
 <div class="col col--4 margin-bottom--lg" >
 
-- [onMicRequested](./events.md#on-mic-requested)
+- [onMicRequested](./events#on-mic-requested)
 
 </div>
 <div class="col col--4 margin-bottom--lg" >
 
-- [onWebcamRequested](./events.md#on-webcam-requested)
+- [onWebcamRequested](./events#on-webcam-requested)
 
 </div>
 <div class="col col--4 margin-bottom--lg" >
 
-- [onRecordingStarted](./events.md#on-recording-started)
+- [onRecordingStarted](./events#on-recording-started)
 
 </div>
 <div class="col col--4 margin-bottom--lg" >
 
-- [onRecordingStoppped](./events.md#on-recording-stopped)
+- [onRecordingStoppped](./events#on-recording-stopped)
 
 </div>
 <div class="col col--4 margin-bottom--lg" >
 
-- [onLivestreamStarted](./events.md#on-livestream-started)
+- [onLivestreamStarted](./events#on-livestream-started)
 
 </div>
 <div class="col col--4 margin-bottom--lg" >
 
-- [onLivestreamStopped](./events.md#on-livestream-stopped)
+- [onLivestreamStopped](./events#on-livestream-stopped)
 
 </div>
 
