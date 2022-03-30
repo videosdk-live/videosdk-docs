@@ -67,12 +67,18 @@
       "label": "init() Parameters",
       "items": [
         "api/sdk-reference/parameters/basic-parameters",
-        "api/sdk-reference/parameters/permissions",
-        "api/sdk-reference/parameters/branding",
-        "api/sdk-reference/parameters/layout",
-        "api/sdk-reference/parameters/live-stream",
-        "api/sdk-reference/parameters/recording",
-        "api/sdk-reference/parameters/left-screen"
+        {
+          "type": "category",
+          "label": "Advance features",
+          "items": [
+            "api/sdk-reference/parameters/advance-parameters/permissions",
+            "api/sdk-reference/parameters/advance-parameters/branding",
+            "api/sdk-reference/parameters/advance-parameters/layout",
+            "api/sdk-reference/parameters/advance-parameters/live-stream",
+            "api/sdk-reference/parameters/advance-parameters/recording",
+            "api/sdk-reference/parameters/advance-parameters/left-screen"
+          ]
+        }
       ]
     },
     {
