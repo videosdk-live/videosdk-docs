@@ -122,7 +122,7 @@ title: Methods returned by useMeeting Hook
 
 - Every Participant will receive a callback on [`onStreamEnabled()`](../use-participant/events#onstreamenabled) of the [`useParticipant()`](../use-participant/introduction.md) hook with `Stream` object.
 
-- `onPresenterChanged()` will also receive a callback with the `presenterId`.
+- [`onPresenterChanged()`](./events#onpresenterchanged) will also receive a callback with the `presenterId`.
 
 ---
 
@@ -134,7 +134,7 @@ title: Methods returned by useMeeting Hook
 
 - Every Participant will receive a callback on [`onStreamDisabled()`](../use-participant/events#onstreamdisabled) of the [`useParticipant()`](../use-participant/introduction.md) hook with `Stream` object.
 
-- `onPresenterChanged()` will also receive a callback with the `presenterId`.
+- [`onPresenterChanged()`](./events#onpresenterchanged) will also receive a callback with the `presenterId`.
 
 ---
 
@@ -394,7 +394,7 @@ handleGetWebcams();
 
 #### Events associated with `startVideo()`:
 
-- [`onVideoStateChanged()`](./events#onvideostatechanged) callback is called for all the participants with `status` as `started`
+- [`onVideoStateChanged()`](./events#onvideostatechanged) event will trigger to all the participant with `status` as `started`
 
 ---
 
@@ -404,7 +404,7 @@ handleGetWebcams();
 
 #### Events associated with `stopVideo()`:
 
-- [`onVideoStateChanged()`](./events#onvideostatechanged) callback is called for all the participants with `status` as `stopped`
+- [`onVideoStateChanged()`](./events#onvideostatechanged) event will trigger to all the participant with `status` as `stopped`
 
 ---
 
@@ -418,7 +418,7 @@ handleGetWebcams();
 
 #### Events associated with `pauseVideo()`:
 
-- [`onVideoStateChanged()`](./events#onvideostatechanged) callback is called for all the participants with `status` as `paused`
+- [`onVideoStateChanged()`](./events#onvideostatechanged) event will trigger to all the participant with `status` as `paused`
 
 ---
 
@@ -428,7 +428,7 @@ handleGetWebcams();
 
 #### Events associated with `resumeVideo()`:
 
-- [`onVideoStateChanged()`](./events#onvideostatechanged) callback is called for all the participants with `status` as `resumed`
+- [`onVideoStateChanged()`](./events#onvideostatechanged) event will trigger to all the participant with `status` as `resumed`
 
 ---
 
@@ -442,7 +442,7 @@ handleGetWebcams();
 
 #### Events associated with `seekVideo()`:
 
-- [`onVideoSeeked()`](./events#onvideoseeked) callback is called for all the participants with `currentTime`
+- [`onVideoSeeked()`](./events#onvideoseeked) event will trigger to all the participant with `currentTime`
 
 ---
 
@@ -457,6 +457,6 @@ handleGetWebcams();
 
 #### Events associated with `connectTo()`:
 
-- [`onConnectionOpen()`](./events#onconnectionopen) callback is called for all the participants.
+- [`onConnectionOpen()`](./events#onconnectionopen) event will trigger to all the participant.
 
 </div>

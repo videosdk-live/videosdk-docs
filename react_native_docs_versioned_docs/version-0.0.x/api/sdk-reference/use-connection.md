@@ -55,15 +55,15 @@ const {connection} = useConnection({
 
 - #### onParticipantJoined()
 
-  - This event callback is triggered when a new participant joins the connected meeting.
+  - This event callback is trigger when a new participant joins the connected meeting.
 
 - #### onParticipantLeft()
 
-  - This event callback is triggered when a participant leaves the connected meeting.
+  - This event callback is trigger when a participant leaves the connected meeting.
 
 - #### onChatMessage()
 
-  - This event callback is triggered when a new message is received in the connected meeting.
+  - This event callback is trigger when a new message is received in the connected meeting.
 
 ---
 
@@ -116,6 +116,6 @@ const {connection} = useConnection({
 
 ### close()
 
-- `close()` is used to close the connection to a meeting.
+- `close()` is used to close the connection with meeting.
 
 - `onConnectionClose` is triggered when the connection gets closed for each participant.

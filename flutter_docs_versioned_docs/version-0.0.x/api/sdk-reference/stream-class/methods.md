@@ -9,7 +9,7 @@ title: Stream Class Methods
 
 ### pause()
 
-- It is used to pause the stream.
+- By using `pause()`, a participant can pause the stream of Remote Participant.
 - All participants will receive a [`streamPaused`](../participant-class/events#streampaused) event with [`stream`](introduction) object
 
 #### Returns
@@ -26,7 +26,7 @@ stream.pause();
 
 ### resume()
 
-- It is used to resume the stream.
+- By using `resume()`, a participant can resume the stream of Remote Participant.
 - All participants will receive a [`streamResumed`](../participant-class/events#streamresumed) event with [`stream`](introduction) object
 
 #### Returns

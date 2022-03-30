@@ -9,7 +9,7 @@ title: Video SDK useParticipant Hook
 
 ## Introduction
 
-`useParticipant` abstracts participant class. It take events as partameters and returns participant properties and methods.
+`useParticipant` abstracts participant class. It takes participantId, events as partameters and returns participant properties and methods.
 
 ## Properties
 
@@ -64,16 +64,7 @@ title: Video SDK useParticipant Hook
 - [isActiveSpeaker](./properties#isactivespeaker)
 
 </div>
-<div class="col col--4 margin-bottom--lg" >
 
-- [isMainParticipant](./properties#ismainparticipant)
-
-</div>
-<div class="col col--4 margin-bottom--lg" >
-
-- [pinState](./properties#pinstate)
-
-</div>
 </div>
 
 ## Methods
@@ -102,16 +93,6 @@ title: Video SDK useParticipant Hook
 <div class="col col--4 margin-bottom--lg" >
 
 - [setQuality](./methods#setquality)
-
-</div>
-<div class="col col--4 margin-bottom--lg" >
-
-- [pin](./methods#pin)
-
-</div>
-<div class="col col--4 margin-bottom--lg" >
-
-- [unPin](./methods#unpin)
 
 </div>
 <div class="col col--4 margin-bottom--lg" >

@@ -61,34 +61,6 @@ title: Methods returned by useParticipant Hook
 
 ---
 
-### pin()
-
-- `pin()` is used to pin a participant in the meeting.
-
-#### Parameter
-
-- **type** : _"SHARE_AND_CAM"_ | _"CAM"_ | _"SHARE"_ | null
-
-#### Events associated with `pin()`:
-
-- Every Participant will get an event callback on [`onPinStateChanged()`](../use-meeting/events#onpinstatechanged) of `useMeeting` hook.
-
----
-
-### unPin()
-
-- `unPin()` is used to unpin a participant in the meeting.
-
-#### Parameter
-
-- **type** : _"SHARE_AND_CAM"_ | _"CAM"_ | _"SHARE"_ | null
-
-#### Events associated with `unPin()`:
-
-- Every Participant will get an event callback on [`onPinStateChanged()`](../use-meeting/events#onpinstatechanged) of `useMeeting` hook.
-
----
-
 ### switchTo()
 
 - If you want a participant from a connected meeting to be switched from one meeting to another meeting, `switchTo()` method is used. This method accept `meetingId`, `token` and `payload` as an object.

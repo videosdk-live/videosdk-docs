@@ -24,7 +24,7 @@ title: userPatricipant Hook Properties
 ### webcamStream
 
 - type : `MediaTrackStream`
-- `webcamStream` represents stream for participant's webcam
+- `webcamStream` represents stream of participant's webcam
 
 ---
 
@@ -38,7 +38,7 @@ title: userPatricipant Hook Properties
 ### screenShareStream
 
 - type : `MediaTrackStream`
-- `screenShareStream` represents stream for participant's screen share
+- `screenShareStream` represents stream of participant's screen share
 
 ---
 
@@ -76,19 +76,5 @@ title: userPatricipant Hook Properties
 - `isActiveSpeaker` is true if the participant is active speaker else false.
 
 ---
-
-### isMainParticipant
-
-- type : `boolean`
-- `isMainParticipant` is true if the participant is main participant fo rthe meeting else false
-
----
-
-### pinState
-
-- type : `{ cam: bool, share: bool }`
-- `pinState` represent the current pin state for the participant.
-  - `cam` will be true if the participants video is pinned.
-  - `share` will be true if the participants screen share is pinned.
 
 </div>

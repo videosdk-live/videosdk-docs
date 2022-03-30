@@ -81,38 +81,5 @@ pagination_label: Participant Class Methods
 
 ---
 
-### pin()
-
-- `pin()` is used to pin the participant.
-
-#### Events associated with `pin()` :
-
-- Every Participant will receive an `pin-state-changed` event with `meeting` object.
-
-#### Parameters
-
-- `type` : SHARE_AND_CAM | CAM | SHARE | null
-
-#### Returns
-
-- `void`
-
----
-
-### unpin()
-
-- `unpin()` is used to pin the participant.
-
-#### Events associated with `unpin()` :
-
-- Every Participant will receive an `pin-state-changed` event with `meeting` object.
-
-#### Parameters
-
-- `type` : SHARE_AND_CAM | CAM | SHARE | null
-
-#### Returns
-
-- `void`
 
 </div>

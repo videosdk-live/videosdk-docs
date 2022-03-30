@@ -329,7 +329,7 @@ meeting.on("hls-started", ({ downstreamUrl }) => {
 
 ### hls-stopped
 
-- This event will be emitted when `HLS` of the meeting is started.
+- This event will be emitted when `HLS` of the meeting is stopped.
 
 #### Example
 
