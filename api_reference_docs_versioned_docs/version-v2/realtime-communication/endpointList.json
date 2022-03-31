@@ -1,7 +1,7 @@
 [
   {
     "title": "Room",
-    "description": "Room refers to a meeting. With this API endpoints you will be able to fetch and validate rooms",
+    "description": "To communicate or interact with others in audio or video call, you need `Room` for that. You can `create`, `validate` and `fetch` Rooms using Room APIs.",
     "endpoints": [
       {
         "methodType": "POST",
@@ -27,7 +27,7 @@
   },
   {
     "title": "Session",
-    "description": "Session refers to a single instance of a meeting. With this API endpoints you can access details of sessions and its participants",
+    "description": "Session refers to a single instance of a meeting. If you take multiple meetings with same `roomId`, then multiple session is created for that partcular roomId. With this API endpoints you can access details of sessions and its participants.",
     "endpoints": [
       {
         "methodType": "GET",
@@ -53,7 +53,7 @@
   },
   {
     "title": "Recordings",
-    "description": "This API Endpoints will allow you to fetch your meeting recordings.",
+    "description": "In order to fetch recorded meeting, this Recording APIs will allow you to fetch meeting recordings",
     "endpoints": [
       {
         "methodType": "GET",
