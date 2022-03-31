@@ -22,10 +22,8 @@
       "items": [
         "realtime-communication/fetch-session",
         "realtime-communication/fetch-session-using-sessionid",
-        "realtime-communication/end-session",
         "realtime-communication/fetch-participants",
-        "realtime-communication/fetch-active-participants",
-        "realtime-communication/remove-participant"
+        "realtime-communication/fetch-active-participants"
       ]
     },
     {

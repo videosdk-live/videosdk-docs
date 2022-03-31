@@ -38,6 +38,6 @@ import data from './data/generate-token.json'
     - `allow_mod`
     - `ask_join`
 
-- Then, you will sign this payload with your `SECRET`and jwt options.
+- Then, you will sign this payload with your `SECRET` and jwt options.
 
 - You can learn more, [here](https://jwt.io/introduction)
