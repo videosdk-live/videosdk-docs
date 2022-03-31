@@ -19,28 +19,28 @@ Stream class defines instance of audio, video and shared screen stream of partic
 
 <div class="row">
 
-<div class="col col--4 margin-bottom--lg" >
+<div class="col col--4 margin-bottom--sm" >
 
 - [getId()](./properties#getid)
 
 </div>
-<div class="col col--4 margin-bottom--lg" >
+<div class="col col--4 margin-bottom--sm" >
 
 - [getKind()](./properties#getkind)
 
 </div>
-<div class="col col--4 margin-bottom--lg" >
+<div class="col col--4 margin-bottom--sm" >
 
 - [getTrack()](./properties#gettrack)
 
 </div>
-<div class="col col--4 margin-bottom--lg" >
+<div class="col col--4 margin-bottom--sm" >
 
 - [getProducer()](./properties#getproducer)
 
 </div>
 
-<div class="col col--4 margin-bottom--lg" >
+<div class="col col--4 margin-bottom--sm" >
 
 - [getConsumer()](./properties#getconsumer)
 
@@ -52,12 +52,12 @@ Stream class defines instance of audio, video and shared screen stream of partic
 
 <div class="row">
 
-<div class="col col--4 margin-bottom--lg" >
+<div class="col col--4 margin-bottom--sm" >
 
 - [resume()](methods#resume)
 
 </div>
-<div class="col col--4 margin-bottom--lg" >
+<div class="col col--4 margin-bottom--sm" >
 
 - [pause()](./methods#pause)
 

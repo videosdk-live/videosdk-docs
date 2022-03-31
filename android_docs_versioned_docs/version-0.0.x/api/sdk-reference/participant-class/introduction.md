@@ -27,29 +27,29 @@ Map<String, Participant> participants = meeting.getParticipants();
 
 <div class="row">
 
-<div class="col col--4 margin-bottom--lg" >
+<div class="col col--4 margin-bottom--sm" >
 
 - [getId()](./properties#getid)
 
 </div>
-<div class="col col--4 margin-bottom--lg" >
+<div class="col col--4 margin-bottom--sm" >
 
 - [getDisplayName()](./properties#getdisplayname)
 
 </div>
-<div class="col col--4 margin-bottom--lg" >
+<div class="col col--4 margin-bottom--sm" >
 
 - [getQuality()](./properties#getquality)
 
 </div>
 
-<div class="col col--4 margin-bottom--lg" >
+<div class="col col--4 margin-bottom--sm" >
 
 - [isLocal()](./properties#islocal)
 
 </div>
 
-<div class="col col--4 margin-bottom--lg" >
+<div class="col col--4 margin-bottom--sm" >
 
 - [getStreams()](./properties#getstreams)
 
@@ -61,37 +61,37 @@ Map<String, Participant> participants = meeting.getParticipants();
 
 <div class="row">
 
-<div class="col col--4 margin-bottom--lg" >
+<div class="col col--4 margin-bottom--sm" >
 
 - [enableWebcam()](./methods#enablewebcam)
 
 </div>
-<div class="col col--4 margin-bottom--lg" >
+<div class="col col--4 margin-bottom--sm" >
 
 - [disableWebcam()](./methods#disablewebcam)
 
 </div>
-<div class="col col--4 margin-bottom--lg" >
+<div class="col col--4 margin-bottom--sm" >
 
 - [enableMic()](./methods#enablemic)
 
 </div>
-<div class="col col--4 margin-bottom--lg" >
+<div class="col col--4 margin-bottom--sm" >
 
 - [disableMic()](./methods#disablemic)
 
 </div>
-<div class="col col--4 margin-bottom--lg" >
+<div class="col col--4 margin-bottom--sm" >
 
 - [remove()](./methods#remove)
 
 </div>
-<div class="col col--4 margin-bottom--lg" >
+<div class="col col--4 margin-bottom--sm" >
 
 - [setQuality()](./methods#setquality)
 
 </div>
-<div class="col col--4 margin-bottom--lg" >
+<div class="col col--4 margin-bottom--sm" >
 
 </div>
 
@@ -101,12 +101,12 @@ Map<String, Participant> participants = meeting.getParticipants();
 
 <div class="row">
 
-<div class="col col--4 margin-bottom--lg" >
+<div class="col col--4 margin-bottom--sm" >
 
 - [onStreamEnabled](./participant-event-listener-class#onstreamenabled)
 
 </div>
-<div class="col col--4 margin-bottom--lg" >
+<div class="col col--4 margin-bottom--sm" >
 
 - [onStreamDisabled](./participant-event-listener-class#onstreamdisabled)
 

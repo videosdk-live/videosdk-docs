@@ -1,37 +1,37 @@
 ---
 sidebar_position: 1
-sidebar_label: recording Parameter
-pagination_label: recording Parameter
-title: recording Parameter
+sidebar_label: Recording Parameters
+pagination_label: Recording Parameters
+title: Recording Parameters
 ---
 
 <div class="sdk-api-ref-only-h4">
 
 ## recording
 
-- type : `json object`
+- type: `object`
 
 ### enabled
 
-- type : `Boolean`
+- type: `Boolean`
 
 - `recording.enabled` enables partcipant to record the meeting.
 
 ### webhookUrl
 
-- type : `Boolean`
+- type: `Boolean`
 
-- `recording.webhookUrl` represents web hook url of a recording
+- `recording.webhookUrl`, represents web hook url called when the recording of the meeting is created.
 
 ### awsDirPath
 
-- type : `Boolean`
+- type: `Boolean`
 
-- `recording.awsDirPath` represents the path where your recording will get stored
+- `recording.awsDirPath` represents the path where recording will get stored.
 
 ### autostart
 
-- type : `Boolean`
+- type: `Boolean`
 
 - `recording.autostart` autostarts recording if set to `true` when meeting gets started.
 

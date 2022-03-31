@@ -64,12 +64,12 @@
     },
     {
       "type": "category",
-      "label": "init() Parameters",
+      "label": "init()",
       "items": [
         "api/sdk-reference/parameters/basic-parameters",
         {
           "type": "category",
-          "label": "Advance features",
+          "label": "Advanced Features",
           "items": [
             "api/sdk-reference/parameters/advance-parameters/permissions",
             "api/sdk-reference/parameters/advance-parameters/branding",
