@@ -19,7 +19,7 @@ title: Basic Features
 
 - type: `String`
 
-- Enter any arbitrary meetingId _or_ an id generated with the reference of [create-room](http://localhost:3000/api-reference/realtime-communication/create-room)
+- Enter any arbitrary meetingId _or_ an id generated with the reference of [Create-Room](/api-reference/realtime-communication/create-room)
 
 ---
 
