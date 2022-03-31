@@ -11,7 +11,7 @@ pagination_label: Meeting Class Events
 
 ### onMeetingJoined
 
-- This event will be emitted when a [localParticipant](./) successfully joined the meeting.
+- This event will be emitted when a [localParticipant](./properties#localparticipant) successfully joined the meeting.
 
 #### Example
 
@@ -23,7 +23,7 @@ pagination_label: Meeting Class Events
 
 ### onMeetingLeft
 
-- This event will be emitted when a [localParticipant](./) left the meeting.
+- This event will be emitted when a [localParticipant](./properties#localparticipant) left the meeting.
 
 #### Example
 
@@ -35,11 +35,11 @@ meeting.listeners.onMeetingLeft()
 
 ### onParticipantJoined
 
-- This event will be emitted when a new [participant](./) joined the meeting.
+- This event will be emitted when a new [participant](../participant-class/introduction) joined the meeting.
 
 #### Event callback parameters
 
-- **participant**: [Participant](./)
+- **participant**: [Participant](../participant-class/introduction)
 
 #### Example
 
@@ -51,11 +51,11 @@ meeting.listeners.onParticipantJoined(participant)
 
 ### onParticipantLeft
 
-- This event will be emitted when a joined [participant](./) left the meeting.
+- This event will be emitted when a joined [participant](../participant-class/introduction) left the meeting.
 
 #### Event callback parameters
 
-- **participant**: [Participant](./)
+- **participant**: [Participant](../participant-class/introduction)
 
 #### Example
 

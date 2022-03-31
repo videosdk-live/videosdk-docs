@@ -66,7 +66,7 @@ _handlePublishChat("Hello world!");
 
 #### Returns
 
-- This will return ols messages for this topic if you passed `persist` to `true` thile [publish](#publish)
+- This will return old messages for this topic, if you passed `persist` to `true` while [publish](#publish)
 
 - Array<[message](#pubsub-message-data)>
 
@@ -142,18 +142,18 @@ const _handleUnsubscribePubSub = async () => {
 
 - type : `String`
 
-- name of a sender who has published this message.
+- Name of a sender who has published this message.
 
 ### timesatmp
 
 - type : `DateTime`
 
-- timestamp of when a message has been published.
+- Timestamp of when a message has been published.
 
 ### topic
 
 - type : `String`
 
-- topic name on which message has been published.
+- Name of the topic.
 
 </div>

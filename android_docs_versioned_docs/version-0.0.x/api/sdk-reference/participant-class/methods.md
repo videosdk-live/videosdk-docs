@@ -13,7 +13,7 @@ pagination_label: Participant Class Methods
 
 #### Events associated with `enableWebcam()` :
 
-- First the participant will get a callback on [onWebcamRequested()](../meeting-class/meeting-event-listener-class#onwebcamrequested) and once the participant accepts the request webcam will be enabled.
+- First the participant will get a callback on [onWebcamRequested()](../meeting-class/meeting-event-listener-class#onwebcamrequested) and once the participant accepts the request, webcam will be enabled.
 
 - Every Participant will receive a `streamEnabled` event of `ParticipantEventListener` Class with `stream` object.
 
@@ -43,7 +43,7 @@ pagination_label: Participant Class Methods
 
 #### Events associated with `enableMic()` :
 
-- First the participant will get a callback on [onMicRequested()](../meeting-class/meeting-event-listener-class#onmicrequested) and once the participant accepts the request mic will be enabled.
+- First the participant will get a callback on [onMicRequested()](../meeting-class/meeting-event-listener-class#onmicrequested) and once the participant accepts the request, mic will be enabled.
 
 - Every Participant will receive a `streamEnabled` event of `ParticipantEventListener` Class with `stream` object.
 
@@ -88,7 +88,7 @@ pagination_label: Participant Class Methods
 #### Events associated with `remove()` :
 
 - Local participant will receive a [`onMeetingLeft`](../meeting-class/meeting-event-listener-class.md#onmeetingleft) event.
-- All remote participants will receive a [`onParticipantLeft`](../meeting-class/meeting-event-listener-class.md#onparticipantleft) event with `participantId` string from the event callback.
+- All remote participants will receive a [`onParticipantLeft`](../meeting-class/meeting-event-listener-class.md#onparticipantleft) event with `participantId`.
 
 #### Returns
 

@@ -21,7 +21,7 @@ title: PubSubMessage Class
 
 - type: [`String`](https://api.dart.dev/stable/2.15.1/dart-core/String-class.html)
 
-- This is the actual content of the pubsub message.
+- Message that has been published on the specific topic.
 
 ---
 
@@ -29,7 +29,7 @@ title: PubSubMessage Class
 
 - type: [`String`](https://api.dart.dev/stable/2.15.1/dart-core/String-class.html)
 
-- This is the name of the topic of the pubsub message.
+- Name of the topic.
 
 ---
 
@@ -53,6 +53,6 @@ title: PubSubMessage Class
 
 - type: [`DateTime`](https://api.dart.dev/stable/2.15.1/dart-core/DateTime-class.html)
 
-- This is a timestamp at which, the pubsub message was sent.
+- Timestamp of when a message has been published.
 
 </div>

@@ -9,11 +9,13 @@ pagination_label: Participant Class Methods
 
 ### enableWebcam()
 
-- `enableWebcam()` is used to enable self camera.
+- `enableWebcam()` is used to enable webcam of participant.
 
-#### Events associated with `enableWebcam()` :
+#### Events associated with `enableWebcam()`:
 
-- Every Participant will receive a `onStreamEnabled` event with `stream` object.
+- First the participant will get a callback on [`onWebcamRequested()`](../meeting-class/events#onwebcamrequested) and once the participant accepts the request, webcam will be enabled.
+
+- Every Participant will receive a [`onStreamEnabled()`](./events#onstreamenabled) event with stream object.
 
 #### Returns
 
@@ -23,11 +25,11 @@ pagination_label: Participant Class Methods
 
 ### disableWebcam()
 
-- `disableWebcam()` is used to disable self camera.
+- `disableWebcam()` is used to disable webcam of participant.
 
-#### Events associated with `disableWebcam()` :
+#### Events associated with `disableWebcam()`:
 
-- Every Participant will receive a `onStreamDisabled` event with `stream` object.
+- Every Participant will receive a [`onStreamDisabled()`](./events#onstreamdisabled) event with stream object.
 
 #### Returns
 
@@ -37,11 +39,13 @@ pagination_label: Participant Class Methods
 
 ### enableMic()
 
-- `enableMic()` is used to enable self microphone.
+- `enableMic()` is used to enable mic of participant.
 
-#### Events associated with `enableMic()` :
+#### Events associated with `enableMic()`:
 
-- Every Participant will receive a `onStreamEnabled` event with `stream` object.
+- First the participant will get a callback on [`onMicRequested()`](../meeting-class/events#onmicrequested) and once the participant accepts the request, mic will be enabled.
+
+- Every Participant will receive a [`onStreamEnabled()`](./events#onstreamenabled) event with stream object.
 
 #### Returns
 
@@ -51,17 +55,18 @@ pagination_label: Participant Class Methods
 
 ### disableMic()
 
-- `disableMic()` is used to disable self microphone.
+- `disableMic()` is used to disable mic of participant.
 
 #### Events associated with `disableMic()`:
 
-- Every Participant will receive a `onStreamDisabled` event with `stream` object.
+- Every Participant will receive a [`onStreamDisabled()`](./events#onstreamdisabled) event with stream object.
 
 #### Returns
 
 - `void`
 
 ---
+
 
 ### setQuality()
 

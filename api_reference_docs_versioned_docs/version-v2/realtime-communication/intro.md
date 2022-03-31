@@ -53,7 +53,7 @@ VideoSDK provides REST APIs for RealTime Communication, which includes APIs for 
 <h2> Authentication </h2>
 <div >
 The VideoSDK API uses access token to authenticate api requests.
-In REST APIs, token will be passed in a header field called "Authorization".
+In REST APIs, token will be passed in a header field called `Authorization`.
 
 In order to generate authentication token, you will need `API_KEY` and `SECRET`, which you can get them from [here](https://app.videosdk.live/api-keys).
 

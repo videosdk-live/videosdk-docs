@@ -15,13 +15,13 @@ title: Meeting Class Methods
 #### Events associated with `join()`:
 
 - Local Participant will receive a [`meetingJoined`](events#meetingJoined) event, when successfully joined.
-- Remote Participant will receive a [`participantJoined`](events#meetingJoined) event with the newly joined [`Participant`](../participant-class/introduction.md) object from the event handler.
+- Remote Participant will receive a [`participantJoined`](events#participantjoined) event with the newly joined [`Participant`](../participant-class/introduction.md) object from the event handler.
 
 #### Participant having `ask_join` permission inside token
 
-- If a token contains the permission `ask_join`, then the participant will not join the meeting directly after calling `join()`, but an event will be emitted to the participant having the permission `allow_join` called [`entryRequested`](events#entryRequested).
+- If a token contains the permission `ask_join`, then the participant will not join the meeting directly after calling `join()`, but an event will be emitted to the participant having the permission `allow_join` called [`entryRequested`](events#entryrequested).
 
-- After the decision from the remote participant, an event will be emitted to participant called [`entryResponded`](events#entryResponded). This event will contain the decision made by the remote participant.
+- After the decision from the remote participant, an event will be emitted to participant called [`entryResponded`](events#entryresponded). This event will contain the decision made by the remote participant.
 
 #### Participant having `allow_join` permission inside token
 
@@ -39,8 +39,8 @@ title: Meeting Class Methods
 
 #### Events associated with `leave()`:
 
-- Local participant will receive a [`meetingLeft`](events#meetingLeft) event.
-- All remote participants will receive a [`participantLeft`](events#participantLeft) event with `participantId` string from the event handler.
+- Local participant will receive a [`meetingLeft`](events#meetingleft) event.
+- All remote participants will receive a [`participantLeft`](events#participantleft) event with `participantId` string from the event handler.
 
 #### Returns
 
@@ -66,7 +66,7 @@ title: Meeting Class Methods
 ### enableWebcam()
 
 - It is used to enable self camera.
-- [`streamEnabled`](../participant-class/events#streamEnabled) event will be emitted with [`stream`](../stream-class/introduction) object from the event handler, inside that [participant](../participant-class/introduction) object.
+- [`streamEnabled`](../participant-class/events#streamenabled) event will be emitted with [`stream`](../stream-class/introduction) object from the event handler, inside that [participant](../participant-class/introduction) object.
 
 #### Returns
 
@@ -77,7 +77,7 @@ title: Meeting Class Methods
 ### disableWebcam()
 
 - It is used to enable self camera.
-- [`streamDisabled`](../participant-class/events#streamDisabled) event will be emitted with [`stream`](../stream-class/introduction) object from the event handler, inside that [participant](../participant-class/introduction) object.
+- [`streamDisabled`](../participant-class/events#streamdisabled) event will be emitted with [`stream`](../stream-class/introduction) object from the event handler, inside that [participant](../participant-class/introduction) object.
 
 #### Returns
 
@@ -88,7 +88,7 @@ title: Meeting Class Methods
 ### unmuteMic()
 
 - It is used to enable self microphone.
-- [`streamEnabled`](../participant-class/events#streamEnabled) event will be emitted with [`stream`](../stream-class/introduction) object from the event handler, inside that [participant](../participant-class/introduction) object.
+- [`streamEnabled`](../participant-class/events#streamenabled) event will be emitted with [`stream`](../stream-class/introduction) object from the event handler, inside that [participant](../participant-class/introduction) object.
 
 #### Returns
 
@@ -99,7 +99,7 @@ title: Meeting Class Methods
 ### muteMic()
 
 - It is used to disable self microphone.
-- [`streamDisabled`](../participant-class/events#streamDisabled) event will be emitted with [`stream`](../stream-class/introduction) object from the event handler, inside that [participant](../participant-class/introduction) object.
+- [`streamDisabled`](../participant-class/events#streamdisabled) event will be emitted with [`stream`](../stream-class/introduction) object from the event handler, inside that [participant](../participant-class/introduction) object.
 
 #### Returns
 
@@ -110,7 +110,8 @@ title: Meeting Class Methods
 ### enableScreenShare()
 
 - it is used to enable screen-sharing.
-- [`streamEnabled`](../participant-class/events#streamEnabled) event will be emitted with [`stream`](../stream-class/introduction) object from the event handler, inside that [participant](../participant-class/introduction) object.
+- [`streamEnabled`](../participant-class/events#streamenabled) event will be emitted with [`stream`](../stream-class/introduction) object from the event handler, inside that [participant](../participant-class/introduction) object.
+- [presenterChanged](./events#presenterchanged) will also receive a callback with the `presenterId`.
 
 #### Returns
 
@@ -121,7 +122,8 @@ title: Meeting Class Methods
 ### disableScreenShare()
 
 - It is used to disable screen-sharing.
-- [`streamDisabled`](../participant-class/events#streamDisabled) event will be emitted with [`stream`](../stream-class/introduction) object from the event handler, inside that [participant](../participant-class/introduction) object.
+- [`streamDisabled`](../participant-class/events#streamdisabled) event will be emitted with [`stream`](../stream-class/introduction) object from the event handler, inside that [participant](../participant-class/introduction) object.
+- [presenterChanged](./events#presenterchanged) will also receive a callback with the `null`.
 
 #### Returns
 
@@ -132,7 +134,7 @@ title: Meeting Class Methods
 ### startRecording()
 
 - It is used to start meeting recording.
-- All [participants](properties#participants) and [localParticipant](properties#localparticipant), will receive [`recordingStarted`](events#recordingStarted) event.
+- All [participants](properties#participants) and [localParticipant](properties#localparticipant), will receive [`recordingStarted`](events#recordingstarted) event.
 
 - `webhookUrl` will be triggered when the recording is completed and stored into server. Read more about webhooks [here](https://en.wikipedia.org/wiki/Webhook).
 
@@ -157,7 +159,7 @@ meeting.startRecording(webhookUrl);
 ### stopRecording()
 
 - It is used to stop meeting recording.
-- All [participants](properties#participants) and [localParticipant](properties#localparticipant), will receive [`recordingStopped`](events#recordingStopped) event.
+- All [participants](properties#participants) and [localParticipant](properties#localparticipant), will receive [`recordingStopped`](events#recordingstopped) event.
 
 #### Returns
 
@@ -175,7 +177,7 @@ meeting.stopRecording();
 
 - It is used to start meeting livestreaming.
 - You will be able to start livestream the meeting to another platforms such as Youtube, Facebook, etc. that supports [`rtmp`](https://en.wikipedia.org/wiki/Real-Time_Messaging_Protocol) streaming.
-- All [participants](properties#participants) and [localParticipant](properties#localparticipant), will receive [`liveStreamStarted`](events#liveStreamStarted) event.
+- All [participants](properties#participants) and [localParticipant](properties#localparticipant), will receive [`liveStreamStarted`](events#livestreamstarted) event.
 
 #### Parameters
 
@@ -207,7 +209,7 @@ meeting.startLivestream(outputs);
 ### stopLivestream()
 
 - It is used to stop meeting livestreaming.
-- All [participants](properties#participants) and [localParticipant](properties#localparticipant), will receive [`livestreamStopped`](events#liveStreamStopped) event.
+- All [participants](properties#participants) and [localParticipant](properties#localparticipant), will receive [`livestreamStopped`](events#livestreamstopped) event.
 
 #### Returns
 
@@ -255,24 +257,6 @@ print(webcams);
 
 ```javascript
 meeting.changeWebcam(deviceId);
-```
-
----
-
-### getMics()
-
-- It will return all mic devices connected.
-
-#### Returns
-
-- List< [`MediaDeviceInfo`](https://api.flutter.dev/flutter/dart-html/MediaDeviceInfo-class.html) >
-
-#### Example
-
-```javascript
-List<MediaDeviceInfo> mics = meeting.getMics();
-
-print(mics);
 ```
 
 ---

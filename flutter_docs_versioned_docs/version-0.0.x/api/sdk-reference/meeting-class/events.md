@@ -61,7 +61,7 @@ meeting.on(Events.participantJoined, (participant) {
 
 #### Event handler parameters
 
-- **participant**: [Participant](./)
+- **participant**: [Participant](../participant-class/introduction)
 
 #### Example
 

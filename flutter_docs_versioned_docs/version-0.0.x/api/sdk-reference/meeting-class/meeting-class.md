@@ -52,11 +52,6 @@ import MethodListHeading from '@theme/MethodListHeading';
 - `type`: String?
 - `selectedWebcamId` represents the id of currently selected webcam
 
-### selectedMicId {#h3}
-
-- `type`: String?
-- `selectedWebcamId` represents the id of currently selected mic
-
 ## Events
 
 ### Events.meetingJoined {#h3}

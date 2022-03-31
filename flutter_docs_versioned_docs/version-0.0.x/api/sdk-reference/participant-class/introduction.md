@@ -21,12 +21,12 @@ pagination_label: Video SDK Participant Class
 </div>
 <div class="col col--4 margin-bottom--lg" >
 
-- [displayName](properties#displayName)
+- [displayName](properties#displayname)
 
 </div>
 <div class="col col--4 margin-bottom--lg" >
 
-- [isLocal](properties#isLocal)
+- [isLocal](properties#islocal)
 
 </div>
 <div class="col col--4 margin-bottom--lg" >
@@ -41,27 +41,27 @@ pagination_label: Video SDK Participant Class
 <div class="row">
 <div class="col col--4 margin-bottom--lg" >
 
-- [enableWebcam](methods#enableWebcam)
+- [enableWebcam](methods#enablewebcam)
 
 </div>
 <div class="col col--4 margin-bottom--lg" >
 
-- [disableWebcam](methods#disableWebcam)
+- [disableWebcam](methods#disablewebcam)
 
 </div>
 <div class="col col--4 margin-bottom--lg" >
 
-- [enableMic](methods#enableMic)
+- [enableMic](methods#enablemic)
 
 </div>
 <div class="col col--4 margin-bottom--lg" >
 
-- [disableMic](methods#disableMic)
+- [disableMic](methods#disablemic)
 
 </div>
 <div class="col col--4 margin-bottom--lg" >
 
-- [setQuality](methods#setQuality)
+- [setQuality](methods#setquality)
 
 </div>
 <div class="col col--4 margin-bottom--lg" >
@@ -81,22 +81,22 @@ pagination_label: Video SDK Participant Class
 <div class="row">
 <div class="col col--4 margin-bottom--lg" >
 
-- [streamEnabled](events#streamEnabled)
+- [streamEnabled](events#streamenabled)
 
 </div>
 <div class="col col--4 margin-bottom--lg" >
 
-- [streamDisabled](events#streamDisabled)
+- [streamDisabled](events#streamdisabled)
 
 </div>
 <div class="col col--4 margin-bottom--lg" >
 
-- [streamPaused](events#streamPaused)
+- [streamPaused](events#streampaused)
 
 </div>
 <div class="col col--4 margin-bottom--lg" >
 
-- [streamResumed](events#streamResumed)
+- [streamResumed](events#streamresumed)
 
 </div>
 </div>

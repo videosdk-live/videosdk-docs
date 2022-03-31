@@ -9,51 +9,12 @@ title: PubSub
 
 <div class="sdk-api-ref-only-h4">
 
-## Properties
-
-### id
-
-- type : `String`
-
-- Unique id of the message.
-
-### topic
-
-- type : `String`
-
-- topic name on which message has been published.
-
-### message
-
-- type : `String`
-
-- Message that has been published on the specific topic.
-
-### senderId
-
-- type : `String`
-
-- id of a sender who has published this message.
-
-### senderName
-
-- type : `String`
-
-- name of a sender who has published this message.
-
-### timesatmp
-
-- type : `DateTime`
-
-- timestamp of when a message has been published.
-
----
-
 ## Methods
 
 ### Publish()
 
 - `publish()` is used to publish messages on a specified topic in the meeting.
+- While publishing message, if you provide `persist` as `true`, then it will persist the message throughout the meeting and newly joined partcipant will get all old messages of a meeting, otherwise not.
 
 #### Parameters
 
@@ -68,7 +29,7 @@ title: PubSub
   - Any arbitrary message you want to publish.
 
 - options :
-  - type : `[String:Any]`
+  - type : `[Object:Any]`
   - specifies the options for the message.
 
 #### Returns
@@ -97,11 +58,13 @@ meeting.pubSub.publish(topic: "CHAT", message: message, options: { persist: true
 
 - forListener :
   - type : `PubSubMessageListener`
-  - in this listener, you will get `callback` for subscribe the topic, which contains [pubsub properties](#properties)
+  - in this listener, you will get `callback` for subscribe the topic, which contains [Pubsub message data](#pubsub-message-data)
 
 #### Returns
 
-- `array of persisted message object`
+- This will return old messages for this topic, if you passed `persist` to `true` while [publish](#publish)
+
+- Array<[message](#pubsub-message-data)>
 
 #### Example
 
@@ -122,7 +85,6 @@ meeting.pubsub.subscribe(topic: "CHAT", forListener: self)
 - topic :
 
   - type : `String`
-  - Participants can listen to messages on that particular topic.
 
 - forListener :
   - type : `PubSubMessageListener`
@@ -143,14 +105,13 @@ meeting.pubSub.unsubscribe("CHAT");
 
 ### getMessagesForTopic()
 
-- `getMessagesForTopic()` is used to retrieve messages for specified topic.
+- `getMessagesForTopic()` is used to retrieve messages for specified topic which are `persisted`.
 
 #### Parameters
 
 - topic :
 
   - type : `String`
-  - Participants can listen to messages on that particular topic.
 
 #### Returns
 
@@ -162,5 +123,45 @@ meeting.pubSub.unsubscribe("CHAT");
 //getting all the messages of topic CHAT
 let messages = meeting.pubSub.getMessagesForTopic("CHAT");
 ```
+
+## Pubsub message data
+
+### id
+
+- type : `String`
+
+- Unique id of the message.
+
+### message
+
+- type : `String`
+
+- Message that has been published on the specific topic.
+
+### senderId
+
+- type : `String`
+
+- id of a sender who has published this message.
+
+### senderName
+
+- type : `String`
+
+- Name of a sender who has published this message.
+
+### timesatmp
+
+- type : `DateTime`
+
+- Timestamp of when a message has been published.
+
+### topic
+
+- type : `String`
+
+- Name of the topic.
+
+---
 
 </div>

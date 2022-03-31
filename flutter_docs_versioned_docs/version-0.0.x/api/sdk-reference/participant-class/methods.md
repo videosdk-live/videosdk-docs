@@ -9,7 +9,11 @@ pagination_label: Participant Class Methods
 
 ### enableWebcam()
 
-- It is used to enable self camera.
+- `enableWebcam()` is used to enable participant's camera.
+
+#### Events associated with `enableWebcam()`:
+
+- First the participant will get a callback on [webcamRequested](../meeting-class/events#webcamrequested) and once the participant accepts the request, webcam will be enabled.
 - Every Participant will receive a `streamEnabled` event with `stream` object.
 
 #### Returns
@@ -26,7 +30,10 @@ participant.enableWebcam();
 
 ### disableWebcam()
 
-- It is used to disable self camera.
+- `disableWebcam()` is used to disable participant camera.
+
+#### Events associated with `disableWebcam()`:
+
 - Every Participant will receive a `streamDisabled` event with `stream` object.
 
 #### Returns
@@ -43,7 +50,11 @@ participant.disableWebcam();
 
 ### enableMic()
 
-- It is used to enable self microphone.
+- `enableMic()` is used to enable participant microphone.
+
+#### Events associated with `enableMic()`:
+
+- First the participant will get a callback on [micRequested](../meeting-class/events#micrequested) and once the participant accepts the request, mic will be enabled.
 - Every Participant will receive a `streamEnabled` event with `stream` object.
 
 #### Returns
@@ -60,7 +71,10 @@ participant.enableMic();
 
 ### disableMic()
 
-- It is used to disable self microphone.
+- `disableMic()` is used to disable participant microphone.
+
+#### Events associated with `disableMic()`:
+
 - Every Participant will receive a `streamDisabled` event with `stream` object.
 
 #### Returns

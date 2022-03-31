@@ -7,26 +7,12 @@ title: Stream Class Methods
 
 <div class="sdk-api-ref-only-h4">
 
-### pause()
-
-- By using `pause()`, a participant can pause the stream of Remote Participant.
-- All participants will receive a [`streamPaused`](../participant-class/events#streampaused) event with [`stream`](introduction) object
-
-#### Returns
-
-- _`void`_
-
-#### Example
-
-```js
-stream.pause();
-```
-
----
-
 ### resume()
 
 - By using `resume()`, a participant can resume the stream of Remote Participant.
+
+#### Events associated with `resume()` :
+
 - All participants will receive a [`streamResumed`](../participant-class/events#streamresumed) event with [`stream`](introduction) object
 
 #### Returns
@@ -37,6 +23,26 @@ stream.pause();
 
 ```js
 stream.resume();
+```
+
+---
+
+### pause()
+
+- By using `pause()`, a participant can pause the stream of Remote Participant.
+
+#### Events associated with `pause()` :
+
+- All participants will receive a [`streamPaused`](../participant-class/events#streampaused) event with [`stream`](introduction) object
+
+#### Returns
+
+- _`void`_
+
+#### Example
+
+```js
+stream.pause();
 ```
 
 </div>

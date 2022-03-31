@@ -11,10 +11,6 @@ pagination_label: Participant Class Methods
 
 - By using `resume()`, a participant can resume the stream of Remote Participant.
 
-#### Events associated with `resume()` :
-
-- Every Participant will receive a [`streamEnabled`](../participant-class/participant-event-listener-class.md#onstreamenabled) event of `ParticipantEventListener` Class with `stream` object.
-
 #### Returns
 
 - `void`
@@ -24,10 +20,6 @@ pagination_label: Participant Class Methods
 ### pause()
 
 - By using `pause()`, a participant can pause the stream of Remote Participant.
-
-#### Events associated with `pause()`:
-
-- Every Participant will receive a [`streamDisabled`](../participant-class/participant-event-listener-class.md#onstreamdisabled) event of `ParticipantEventListener` Class with `stream` object.
 
 #### Returns
 

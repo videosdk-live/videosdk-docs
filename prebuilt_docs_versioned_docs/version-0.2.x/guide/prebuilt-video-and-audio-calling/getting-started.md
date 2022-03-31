@@ -37,7 +37,7 @@ Video SDK enables easy to use one-to-one and group call support with voice only 
 | ------- | ----------------------------------------------------- |
 | 1.x.x   | Blackout videos in newer version of safari and chrome |
 
-# Next Steps
+# Steps
 
 import Card from '@theme/Card';
 

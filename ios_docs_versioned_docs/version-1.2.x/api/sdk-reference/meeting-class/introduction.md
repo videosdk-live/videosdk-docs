@@ -104,7 +104,7 @@ import events from "./../data/meeting-class/events.json";
 </div>
 <div class="col col--4 margin-bottom--lg" >
 
-- [stopLiveStream](./methods#startlivestream)
+- [stopLiveStream](./methods#stoplivestream)
 
 </div>
 

@@ -98,12 +98,12 @@ let participants = meeting.participants;
 
 <div class="col col--4 margin-bottom--lg" >
 
-- [onStreamEnabled](./events#onStreamEnabled)
+- [onStreamEnabled](./events#onstreamenabled)
 
 </div>
 <div class="col col--4 margin-bottom--lg" >
 
-- [onStreamDisabled](./events#onStreamDisabled)
+- [onStreamDisabled](./events#onstreamdisabled)
 
 </div>
 

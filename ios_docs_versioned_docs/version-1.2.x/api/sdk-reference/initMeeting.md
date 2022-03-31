@@ -59,7 +59,7 @@ Please refer this [documentation](/api-reference/realtime-communication/create-r
 
 - Name of the participant who will be joining the meeting, this name will be displayed to other participants in the same meeting.
 
-  - type : String
+  - type : `String`
   - `REQUIRED`
 
 ---

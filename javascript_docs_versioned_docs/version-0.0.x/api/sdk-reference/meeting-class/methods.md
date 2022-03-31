@@ -40,7 +40,7 @@ title: Meeting Class Methods
 #### Events associated with `leave()`:
 
 - Local participant will receive a [`meeting-left`](../meeting-class/events.md#meeting-left) event.
-- All remote participants will receive a [`participant-left`](../meeting-class/events.md#participant-left) event with `participantId` string from the event callback.
+- All remote participants will receive a [`participant-left`](../meeting-class/events.md#participant-left) event with `participantId`.
 
 #### Returns
 

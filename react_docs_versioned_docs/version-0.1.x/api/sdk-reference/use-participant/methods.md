@@ -13,7 +13,7 @@ title: Methods returned by useParticipant Hook
 
 #### Events associated with `enableMic()`:
 
-- First the participant will get a callback on [`onMicRequested()`](../use-meeting/events#onmicrequested) and once the participant accepts the request mic will be enabled.
+- First the participant will get a callback on [`onMicRequested()`](../use-meeting/events#onmicrequested) and once the participant accepts the request, mic will be enabled.
 
 - Every Participant will receive a callback on [`onStreamEnabled()`](./events#onstreamenabled) of the `useParticipant()` hook with `Stream` object.
 
@@ -35,7 +35,7 @@ title: Methods returned by useParticipant Hook
 
 #### Events associated with `enableWebcam()`:
 
-- First the participant will get a callback on [`onWebcamRequested()`](../use-meeting/events#onwebcamrequested) and once the participant accepts the request webcam will be enabled.
+- First the participant will get a callback on [`onWebcamRequested()`](../use-meeting/events#onwebcamrequested) and once the participant accepts the request, webcam will be enabled.
 
 - Every Participant will receive a callback on [`onStreamEnabled()`](./events#onstreamenabled) of the `useParticipant()` hook with `Stream` object.
 

@@ -138,16 +138,6 @@ import events from '../data/events.json'
 </div>
 <div class="col col--4 margin-bottom--lg" >
 
-- [getMics](./methods#getmics)
-
-</div>
-<div class="col col--4 margin-bottom--lg" >
-
-- [changeMic](./methods#changemic)
-
-</div>
-<div class="col col--4 margin-bottom--lg" >
-
 - [on](./methods#on)
 
 </div>
@@ -159,72 +149,72 @@ import events from '../data/events.json'
 
 <div class="col col--4 margin-bottom--lg" >
 
-- [MeetingJoined](./events.md#meetingjoined)
+- [meetingJoined](./events.md#meetingjoined)
 
 </div>
 <div class="col col--4 margin-bottom--lg" >
 
-- [MeetingLeft](./events.md#meetingleft)
+- [meetingLeft](./events.md#meetingleft)
 
 </div>
 <div class="col col--4 margin-bottom--lg" >
 
-- [ParticipantJoined](./events.md#participantjoined)
+- [participantJoined](./events.md#participantjoined)
 
 </div>
 <div class="col col--4 margin-bottom--lg" >
 
-- [ParticipantLeft](./events.md#participantleft)
+- [participantLeft](./events.md#participantleft)
 
 </div>
 <div class="col col--4 margin-bottom--lg" >
 
-- [SpeakerChanged](./events.md#speakerchanged)
+- [speakerChanged](./events.md#speakerchanged)
 
 </div>
 <div class="col col--4 margin-bottom--lg" >
 
-- [PresenterChanged](./events.md#presenterchanged)
+- [presenterChanged](./events.md#presenterchanged)
 
 </div>
 <div class="col col--4 margin-bottom--lg" >
 
-- [EntryRequested](./events.md#entryrequested)
+- [entryRequested](./events.md#entryrequested)
 
 </div>
 <div class="col col--4 margin-bottom--lg" >
 
-- [EntryResponded](./events.md#entryresponded)
+- [entryResponded](./events.md#entryresponded)
 
 </div>
 <div class="col col--4 margin-bottom--lg" >
 
-- [WebcamRequested](./events.md#webcamrequested)
+- [webcamRequested](./events.md#webcamrequested)
 
 </div>
 <div class="col col--4 margin-bottom--lg" >
 
-- [MicRequested](./events.md#micrequested)
+- [micRequested](./events.md#micrequested)
 
 </div>
 <div class="col col--4 margin-bottom--lg" >
 
-- [RecordingStarted](./events.md#recordingstarted)
+- [recordingStarted](./events.md#recordingstarted)
 
 </div>
 <div class="col col--4 margin-bottom--lg" >
 
-- [RecordingStopped](./events.md#recordingstopped)
+- [recordingStopped](./events.md#recordingstopped)
 
 </div>
 <div class="col col--4 margin-bottom--lg" >
 
-- [LivestreamStarted](./events.md#livestreamstarted)
+- [livestreamStarted](./events.md#livestreamstarted)
 
 </div>
 <div class="col col--4 margin-bottom--lg" >
 
-- [LivestreamStopped](./events.md#livestreamstopped)
+- [livestreamStopped](./events.md#livestreamstopped)
 
 </div>
 

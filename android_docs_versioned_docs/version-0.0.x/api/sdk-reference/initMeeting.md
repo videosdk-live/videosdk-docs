@@ -78,6 +78,8 @@ Please refer this [documentation](/api-reference/realtime-communication/intro/) 
   - type : `String`
   - `REQUIRED`
 
+Please refer this [documentation](/api-reference/realtime-communication/create-room) to create a room.
+
 ### name
 
 - Name of the participant who will be joining the meeting, this name will be displayed to other participants in the same meeting.
