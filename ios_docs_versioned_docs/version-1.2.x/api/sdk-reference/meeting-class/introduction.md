@@ -9,7 +9,7 @@ title: Video SDK Meeting Class
 
 ## Introduction
 
-The `Meeting` class includes properties, methods and events for managing a meeting, participants, video, audio and share streams, messaging and UI customisation.
+The `Meeting` class includes properties, methods and events for managing a meeting, participants, video, audio and share streams, messaging and UI customization.
 
 import LinksGrid from "../../../../../src/theme/LinksGrid";
 import properties from "./../data/meeting-class/properties.json";
@@ -116,57 +116,57 @@ import events from "./../data/meeting-class/events.json";
 
 <div class="col col--4 margin-bottom--lg" >
 
-- [onMeetingJoined](./events#on-meeting-joined)
+- [onMeetingJoined](./events#onmeetingjoined)
 
 </div>
 <div class="col col--4 margin-bottom--lg" >
 
-- [onMeetingLeft](./events#on-meeting-left)
+- [onMeetingLeft](./events#onmeetingleft)
 
 </div>
 <div class="col col--4 margin-bottom--lg" >
 
-- [onParticipantJoined](./events#on-participant-joined)
+- [onParticipantJoined](./events#onparticipantjoined)
 
 </div>
 <div class="col col--4 margin-bottom--lg" >
 
-- [onParticipantLeft](./events#on-participant-left)
+- [onParticipantLeft](./events#onparticipantleft)
 
 </div>
 <div class="col col--4 margin-bottom--lg" >
 
-- [onSpeakerChanged](./events#on-speaker-changed)
+- [onSpeakerChanged](./events#onspeakerchanged)
 
 </div>
 <div class="col col--4 margin-bottom--lg" >
 
-- [onMicRequested](./events#on-mic-requested)
+- [onMicRequested](./events#onmicrequested)
 
 </div>
 <div class="col col--4 margin-bottom--lg" >
 
-- [onWebcamRequested](./events#on-webcam-requested)
+- [onWebcamRequested](./events#onwebcamrequested)
 
 </div>
 <div class="col col--4 margin-bottom--lg" >
 
-- [onRecordingStarted](./events#on-recording-started)
+- [onRecordingStarted](./events#onrecordingstarted)
 
 </div>
 <div class="col col--4 margin-bottom--lg" >
 
-- [onRecordingStoppped](./events#on-recording-stopped)
+- [onRecordingStopped](./events#onrecordingstopped)
 
 </div>
 <div class="col col--4 margin-bottom--lg" >
 
-- [onLivestreamStarted](./events#on-livestream-started)
+- [onLivestreamStarted](./events#onlivestreamstarted)
 
 </div>
 <div class="col col--4 margin-bottom--lg" >
 
-- [onLivestreamStopped](./events#on-livestream-stopped)
+- [onLivestreamStopped](./events#onlivestreamstopped)
 
 </div>
 

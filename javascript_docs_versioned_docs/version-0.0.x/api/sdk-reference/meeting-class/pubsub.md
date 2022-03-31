@@ -15,7 +15,7 @@ title: PubSub
 
 - `publish()` is used to publish messages on a specified topic in the meeting.
 
-- While publishing message, if you provide `persist` as `true`, then it will persist the message throughout the meeting and one will get all old messages of a meeting, otherwise not.
+- While publishing message, if you provide `persist` as `true`, then it will persist the message throughout the meeting and newly joined partcipant will get all old messages of a meeting, otherwise not.
 
 #### Parameters
 
@@ -130,7 +130,7 @@ const _handleUnsubscribePubSub = async () => {
 
 - type : `String`
 
-- Message that has been published on this topic currently
+- Message that has been published on the specific topic.
 
 ### senderId
 

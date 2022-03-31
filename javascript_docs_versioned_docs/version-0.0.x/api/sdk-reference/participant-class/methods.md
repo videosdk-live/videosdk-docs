@@ -45,7 +45,7 @@ pagination_label: Participant Class Methods
 
 - First the participant will get a callback on [`mic-requested`](../meeting-class/events#mic-requested) and once the participant accepts the request mic will be enabled.
 
-- Every Participant will receive a `stream-disabled` event with `stream` object.
+- Every Participant will receive a `stream-enabled` event with `stream` object.
 
 #### Returns
 
@@ -59,7 +59,7 @@ pagination_label: Participant Class Methods
 
 #### Events associated with `disableMic()`:
 
-- Every Participant will receive a `stream-enabled` event with `stream` object.
+- Every Participant will receive a `stream-disabled` event with `stream` object.
 
 #### Returns
 
@@ -80,6 +80,5 @@ pagination_label: Participant Class Methods
 - `void`
 
 ---
-
 
 </div>

@@ -25,7 +25,7 @@ title: Methods returned by useMeeting Hook
 
 #### Participant having `allow_join` permission inside token
 
-- If a token containing the parmission `allow_join`, then the participant will join the meeting derectly after calling `join()`.
+- If a token containing the permission `allow_join`, then the participant will join the meeting derectly after calling `join()`.
 
 ---
 

@@ -140,14 +140,14 @@ meeting.listeners.onRecordingStarted()
 
 ---
 
-### onRecordingStoppped
+### onRecordingStopped
 
 - This event will be emitted when recording of the meeting is stopped.
 
 #### Example
 
 ```swift
-meeting.listeners.onRecordingStoppped()
+meeting.listeners.onRecordingStopped()
 ```
 
 ---

@@ -40,7 +40,7 @@ Whenever a new connection establishes between meetings, a Connection instance is
 
 #### Events associated with `close()`:
 
-- `connection-close` event of meeting class is triggered whenever `connection.close()` being called for both local and remote participants.
+- `connection-close` event of meeting class is triggered to all participant whenever `connection.close()` being called.
 
 #### Returns
 

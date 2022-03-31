@@ -39,7 +39,7 @@ You can get Local and Remote Participant from `useMeeting` Hook.
 ### Accessing Participants
 
 ```js title="index.js"
-import { useMeeting } from "@videosdk.live/react-sdk";
+import { useMeeting } from "@videosdk.live/react-native-sdk";
 
 const {
   // Access localParticipant
@@ -75,13 +75,13 @@ For accessing single participant object you need to provide `id` in params, you 
 ```js title="participant.js"
 // 1. Using useParticipant Hook
 
-import { useParticipant } from "@videosdk.live/react-sdk";
+import { useParticipant } from "@videosdk.live/react-native-sdk";
 
 const participant = useParticipant("<participant-id>");
 
 // 2. Using useMeeting Hook
 
-import { useMeeting } from "@videosdk.live/react-sdk";
+import { useMeeting } from "@videosdk.live/react-native-sdk";
 
 const { participants } = useMeeting();
 
@@ -97,7 +97,7 @@ We will get participant properties from useMetting hook, participant is always i
 We will create array of pariticpantIds using `[...participants.keys()]` and it will result something like this `['participant-one-id','participant-two-id',...]`
 
 ```js title="index.js"
-import { useParticipant, useMeeting } from "@videosdk.live/react-sdk";
+import { useParticipant, useMeeting } from "@videosdk.live/react-native-sdk";
 
 const { participants } = useMeeting();
 {
@@ -114,7 +114,7 @@ const { participants } = useMeeting();
 In this step, we will create `ParticipantView` component which accept `participantId` as props and responsible for handling video and audio streams for particular participant.
 
 ```js title="index.js"
-import { useParticipant, useMeeting } from "@videosdk.live/react-sdk";
+import { useParticipant, useMeeting } from "@videosdk.live/react-native-sdk";
 
 const { participants } = useMeeting();
 {
@@ -144,7 +144,7 @@ const ParticipantView = ({ participantId }) => {
 In this step, we will get particular participant webcam and mic stream from useParticpant hook and set to the `<audio>` and `<video>` component.
 
 ```js title="index.js"
-import { useParticipant, useMeeting } from "@videosdk.live/react-sdk";
+import { useParticipant, useMeeting } from "@videosdk.live/react-native-sdk";
 
 const { participants } = useMeeting();
 {

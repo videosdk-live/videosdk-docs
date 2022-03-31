@@ -27,7 +27,7 @@ title: PubSub
 
 - type : `String`
 
-- Message that has been published on this topic currently
+- Message that has been published on the specific topic.
 
 ### senderId
 

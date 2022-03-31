@@ -17,15 +17,15 @@ title: Meeting Class Properties
 
 ### localParticipant
 
-- type: [Participant](./)
+- type: [Participant](../participant-class/introduction)
 
-- It will the instance of [Participant](./) class for the local participant who joined the meeting.
+- It will be the instance of [Participant](../participant-class/introduction) class for the local participant(You) who joined the meeting.
 
 ---
 
 ### participants
 
-- type: [`[Dictionary]`](https://developer.apple.com/documentation/swift/dictionary) of [Participant](./)
+- type: [`[Dictionary]`](https://developer.apple.com/documentation/swift/dictionary) of [Participant](../participant-class/introduction)
 
 - [`String`: `Participant`]
 
@@ -47,6 +47,6 @@ let remoteParticipant = participants[remoteParticipantId];
 
 - type: `MeetingMulticastDelegate`
 
-- It will listens the events of [Meeting](./) class for the local participant who joined the meeting.
+- It will listens the events of [Meeting](./introduction) class for the local participant who joined the meeting.
 
 </div>

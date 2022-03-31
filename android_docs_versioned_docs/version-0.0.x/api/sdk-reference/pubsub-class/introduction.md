@@ -9,7 +9,7 @@ pagination_label: Video SDK PubSub Class
 
 ## Introduction
 
-PubSub class provides the methods to implement Publisher-Subscriber feature in your Flutter Application.
+PubSub class provides the methods to implement Publisher-Subscriber feature in your Application.
 
 ## PubSub Methods
 
@@ -17,13 +17,13 @@ PubSub class provides the methods to implement Publisher-Subscriber feature in y
 
 <div  class="col col--4 margin-bottom--lg" >
 
-- [subscribe()](methods#subscribe)
+- [publish()](methods#publish)
 
 </div>
 
 <div  class="col col--4 margin-bottom--lg" >
 
-- [publish()](methods#publish)
+- [subscribe()](methods#subscribe)
 
 </div>
 

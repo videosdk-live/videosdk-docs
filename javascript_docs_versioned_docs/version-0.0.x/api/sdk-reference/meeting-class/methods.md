@@ -25,7 +25,7 @@ title: Meeting Class Methods
 
 #### Participant having `allow_join` permission inside token
 
-- If a token containing the parmission `allow_join`, then the participant will join the meeting derectly after calling `join()`.
+- If a token containing the permission `allow_join`, then the participant will join the meeting derectly after calling `join()`.
 
 #### Returns
 
@@ -112,6 +112,8 @@ title: Meeting Class Methods
 - it is used to enable screen-sharing.
 - [`stream-enabled`](../participant-class/events.md#stream-enabled) event will be emitted with [`stream`](../stream-class/introduction.md) object from the event callback, inside that [participant](../participant-class/introduction.md) object.
 
+- [`presenter-changed`](./events#presenter-changed) will also receive a callback with the `presenterId`.
+
 #### Returns
 
 - _`void`_
@@ -122,6 +124,8 @@ title: Meeting Class Methods
 
 - It is used to disable screen-sharing.
 - [`stream-disabled`](../participant-class/events.md#stream-disabled) event will be emitted with [`stream`](../stream-class/introduction.md) object from the event callback, inside that [participant](../participant-class/introduction.md) object.
+
+- [`presenter-changed`](./events#presenter-changed) will also receive a callback with the `null`.
 
 #### Returns
 

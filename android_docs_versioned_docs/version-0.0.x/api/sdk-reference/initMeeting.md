@@ -31,6 +31,8 @@ You can initialize the `VideoSDK` using `initialize()` method provided by the SD
 Now, you have to set `token` property of `VideoSDK` class.
 By using `config()` method, you can set the `token` property of `VideoSDK` class.
 
+Please refer this [documentation](/api-reference/realtime-communication/intro/) to generate a token.
+
 #### Parameters
 
 - **token**: String

@@ -2,7 +2,7 @@
 title: Participant class for android SDK.
 hide_title: false
 hide_table_of_contents: false
-description: The `Participant Class` includes methods and events for participants and their associated video & audio streams, data channels and UI customisation.
+description: The `Participant Class` includes methods and events for participants and their associated video & audio streams, data channels and UI customization.
 sidebar_label: Participant Class
 pagination_label: Participant Class
 keywords:
@@ -19,7 +19,7 @@ slug: participant-class
 
 ## using Participant Class
 
-The `Participant Class` includes methods and events for participants and their associated video & audio streams, data channels and UI customisation.
+The `Participant Class` includes methods and events for participants and their associated video & audio streams, data channels and UI customization.
 
 import MethodListGroup from '@theme/MethodListGroup';
 import MethodListItemLabel from '@theme/MethodListItemLabel';
