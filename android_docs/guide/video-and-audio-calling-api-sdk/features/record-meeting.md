@@ -50,7 +50,6 @@ findViewById(R.id.btnRecording).setOnClickListener(view -> {
 
 2. **recording-stopped** - Whenever any participant stop meeting recording, then `recording-stopped` event will trigger.
 
-
 ```js
 new MeetingEventListener() {
   @Override

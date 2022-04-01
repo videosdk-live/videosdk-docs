@@ -28,7 +28,6 @@ This guide will provide an overview of how to implement start and stop Meeting R
 
 ### Start And Stop Recording
 
-
 ```js
 // Start Recording
 meeting.startRecording('<webhookUrl>');

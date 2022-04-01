@@ -24,7 +24,6 @@ After using this method, `connection-open` event will be emitted at both meeting
 
 #### **Method and Event Code**
 
-
 ```js
 import { useMeeting } from "@videosdk.live/react-sdk";
 

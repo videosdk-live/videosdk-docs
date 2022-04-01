@@ -196,7 +196,7 @@ Available permissions are:
 - **ask_join**: The participant requires to **ask for permission to join** the meeting.
 - **allow_mod**: The participant is **allowed to toggle** webcam & mic of other participants.
 
-For other APIs you can follow [Create Meeting & Validate Meeting.](/docs/api-reference/realtime-communication/create-join-meeting)
+For other APIs you can follow [Create Meeting & Validate Meeting.](/api-reference/v1/realtime-communication/create-join-meeting)
 
 ## Integrate your APIs with Flutter
 
@@ -231,7 +231,6 @@ app.use(express.urlencoded({ extended: true }));
 app.use(morgan("dev"));
 
 app.get("/get-token", (req, res) => {
-
   //Replace your API Key here from the VideoSDK Dashboard
   const API_KEY = "";
 

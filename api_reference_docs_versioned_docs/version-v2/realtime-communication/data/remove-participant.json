@@ -1,0 +1,60 @@
+{
+  "removeParticipant": {
+    "description": "This API let you remove participant by passing roomId in params and participantId in body parameters.",
+    "headers": [],
+    "methodType": "POST",
+    "postParameters": [
+      {
+        "key": "participantId",
+        "value": "participantId",
+        "description": "The unique ID of participant.",
+        "required": true
+      }
+    ],
+    "queryParameters": [],
+    "parameters": [
+      {
+        "key": "roomId",
+        "description": "The ID of the room.",
+        "value": "roomId",
+        "required": true
+      }
+    ],
+    "apiEndpoint": "https://api.videosdk.live/v2/sessions/${roomId}/participants/remove-participant",
+    "response": {
+      "start": "2022-03-29T05:21:42.829Z",
+      "end": null,
+      "participants": [
+        {
+          "_id": "62429767903bdf001299cacb",
+          "participantId": "demo-1",
+          "name": "John",
+          "timelog": [
+            {
+              "start": "2022-03-29T05:21:43.663Z",
+              "end": null
+            }
+          ]
+        },
+        {
+          "_id": "62429771903bdf001299cae4",
+          "participantId": "demo-2",
+          "name": "recorder",
+          "timelog": [
+            {
+              "start": "2022-03-29T05:21:53.917Z",
+              "end": "2022-03-29T05:21:54.469Z"
+            }
+          ]
+        }
+      ],
+      "id": "62429766903bdf001299cac5",
+      "roomId": "abcd-efgh-lmno",
+      "status": "ongoing",
+      "links": {
+        "get_room": "https://api.videosdk.live/v2/rooms/abcd-efgh-lmno",
+        "get_session": "https://api.videosdk.live/v2/sessions/"
+      }
+    }
+  }
+}

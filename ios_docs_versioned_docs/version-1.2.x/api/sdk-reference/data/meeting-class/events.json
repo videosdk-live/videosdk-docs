@@ -1,0 +1,46 @@
+[
+  {
+    "href": "./events#meeting-joined",
+    "label": "onMeetingJoined"
+  },
+  {
+    "href": "./events#meeting-left",
+    "label": "onMeetingLeft"
+  },
+  {
+    "href": "./events#participant-joined",
+    "label": "onParticipantJoined"
+  },
+  {
+    "href": "./events#participant-left",
+    "label": "onParticipantLeft"
+  },
+  {
+    "href": "./events#speaker-changed",
+    "label": "onSpeakerChanged"
+  },
+  {
+    "href": "./events#webcam-requested",
+    "label": "onWebcamRequested"
+  },
+  {
+    "href": "../events#mic-requested",
+    "label": "onMicRequested"
+  },
+  {
+    "href": "./events#recording-started",
+    "label": "onRecordingStarted"
+  },
+  {
+    "href": "./events#recording-stopped",
+    "label": "onRecordingStopped"
+  },
+  {
+    "href": "./events#livestream-started",
+    "label": "onLivestreamStarted"
+  },
+  {
+    "href": "./events#livestream-stopped",
+    "label": "onLivestreamStopped"
+  }
+]

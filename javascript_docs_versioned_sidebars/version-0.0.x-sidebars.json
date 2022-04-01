@@ -70,17 +70,50 @@
       "type": "doc",
       "id": "api/sdk-reference/setup"
     },
+    { "type": "doc", "id": "api/sdk-reference/initMeeting" },
     {
-      "type": "doc",
-      "id": "api/sdk-reference/meeting-class"
+      "type": "category",
+      "label": "Meeting Class",
+      "items": [
+        "api/sdk-reference/meeting-class/introduction",
+        "api/sdk-reference/meeting-class/properties",
+        "api/sdk-reference/meeting-class/methods",
+        "api/sdk-reference/meeting-class/events",
+        "api/sdk-reference/meeting-class/pubsub"
+      ]
+    },
+    {
+      "type": "category",
+      "label": "Participant Class",
+      "items": [
+        "api/sdk-reference/participant-class/introduction",
+        "api/sdk-reference/participant-class/properties",
+        "api/sdk-reference/participant-class/methods",
+        "api/sdk-reference/participant-class/events"
+      ]
+    },
+    {
+      "type": "category",
+      "label": "Stream Class",
+      "items": [
+        "api/sdk-reference/stream-class/introduction",
+        "api/sdk-reference/stream-class/properties",
+        "api/sdk-reference/stream-class/methods"
+      ]
+    },
+    {
+      "type": "category",
+      "label": "Connection",
+      "items": [
+        "api/sdk-reference/connection/introduction",
+        "api/sdk-reference/connection/connection-class",
+        "api/sdk-reference/connection/connection-meeting-class",
+        "api/sdk-reference/connection/connection-participant-class"
+      ]
     },
     {
       "type": "doc",
-      "id": "api/sdk-reference/participant-class"
-    },
-    {
-      "type": "doc",
-      "id": "api/sdk-reference/stream-class"
+      "id": "api/sdk-reference/error-codes"
     }
   ]
 }

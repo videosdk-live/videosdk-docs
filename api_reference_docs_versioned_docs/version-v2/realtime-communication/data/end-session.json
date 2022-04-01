@@ -1,0 +1,53 @@
+{
+  "endSession": {
+    "description": "This API let you end session by passing  either roomId or customRoomId in params.",
+    "headers": [],
+    "methodType": "POST",
+    "postParameters": [],
+    "queryParameters": [],
+    "parameters": [
+      {
+        "key": "roomId",
+        "description": "Your roomId or customRoomId.",
+        "value": "roomId",
+        "required": true
+      }
+    ],
+    "apiEndpoint": "https://api.videosdk.live/v2/sessions/${roomId}/end",
+    "response": {
+      "start": "2022-03-29T05:21:42.829Z",
+      "end": null,
+      "participants": [
+        {
+          "_id": "62429767903bdf001299cacb",
+          "participantId": "demo-1",
+          "name": "John",
+          "timelog": [
+            {
+              "start": "2022-03-29T05:21:43.663Z",
+              "end": null
+            }
+          ]
+        },
+        {
+          "_id": "62429771903bdf001299cae4",
+          "participantId": "demo-2",
+          "name": "recorder",
+          "timelog": [
+            {
+              "start": "2022-03-29T05:21:53.917Z",
+              "end": "2022-03-29T05:21:54.469Z"
+            }
+          ]
+        }
+      ],
+      "id": "62429766903bdf001299cac5",
+      "roomId": "abcd-efgh-lmnop",
+      "status": "ongoing",
+      "links": {
+        "get_room": "https://api.videosdk.live/v2/rooms/abcd-efgh-lmnop",
+        "get_session": "https://api.videosdk.live/v2/sessions/"
+      }
+    }
+  }
+}

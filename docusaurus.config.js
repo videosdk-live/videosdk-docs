@@ -78,13 +78,19 @@ module.exports = {
           items: [
             {
               label: "Custom SDK References",
-              to: "react/api/sdk-reference/setup",
-              activeBaseRegex: "/*/api/sdk-reference/*",
+              to: "javascript/api/sdk-reference/setup",
+              activeBaseRegex:
+                "/react|flutter|react-native|javascript|ios|android/api/sdk-reference/*",
+            },
+            {
+              label: "Prebuilt SDK Reference",
+              to: "prebuilt/api/sdk-reference/setup",
+              activeBaseRegex: "/prebuilt/api/sdk-reference/*",
             },
             {
               label: "Rest API Reference",
-              to: "docs/api-reference/realtime-communication/intro",
-              activeBaseRegex: "docs/api-reference/realtime-communication/*",
+              to: "api-reference/realtime-communication/intro",
+              activeBaseRegex: "api-reference/*/realtime-communication/*",
             },
           ],
         },
@@ -207,12 +213,8 @@ module.exports = {
               to: "/react-native/guide/video-and-audio-calling-api-sdk/quick-start",
             },
             {
-              label: "Quick Start: React Native SDK",
-              to: "/react-native/guide/video-and-audio-calling-api-sdk/quick-start",
-            },
-            {
               label: "Quick Start: Android SDK",
-              to: "/android/guide/video-and-audio-calling-api-sdk/getting-started",
+              to: "/android/guide/video-and-audio-calling-api-sdk/quick-start",
             },
             {
               label: "Quick Start: iOS SDK",
@@ -220,7 +222,7 @@ module.exports = {
             },
             {
               label: "Quick Start: Flutter SDK",
-              to: "/flutter/guide/video-and-audio-calling-api-sdk/getting-started",
+              to: "/flutter/guide/video-and-audio-calling-api-sdk/quick-start",
             },
           ],
         },
@@ -322,7 +324,7 @@ module.exports = {
           //  "https://github.com/facebook/docusaurus/edit/master/website/blog/",
         },
         theme: {
-          customCss: [require.resolve("./src/css/new_custom.css")],
+          customCss: [require.resolve("./src/css/styles.css")],
         },
         googleAnalytics: {
           trackingID: "G-NR8EYPZFJ7",
@@ -402,6 +404,24 @@ module.exports = {
         path: "prebuilt_docs",
         routeBasePath: "prebuilt",
         sidebarPath: require.resolve("./sidebarPrebuilt.js"),
+        // ... other options
+      },
+    ],
+    [
+      "@docusaurus/plugin-content-docs",
+      {
+        id: "api_reference_docs",
+        path: "api_reference_docs",
+        routeBasePath: "api-reference",
+        sidebarPath: require.resolve("./sidebarApiReference.js"),
+        versions: {
+          v2: {
+            label: "/v2",
+          },
+          v1: {
+            label: "/v1",
+          },
+        },
         // ... other options
       },
     ],

@@ -15,7 +15,7 @@ sidebar_position: 1
 slug: record-live-stream
 ---
 
-# Live Stream  - Record Live Stream
+# Live Stream - Record Live Stream
 
 ## Why ?
 

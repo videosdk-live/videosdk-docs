@@ -15,7 +15,6 @@ This method is use for publishing message of specific topic.
 
 #### Syntax
 
-
 ```js
   Future<void> publish(
     String topic,
@@ -30,9 +29,7 @@ This method is use for publishing message of specific topic.
 | message        | String               | This is the actual message, which will be published to participants, who had subscribed to a particular topic.                                    |
 | options        | PubSubPublishOptions | This is an object of PubSubPublishOptions, which provides an option, such as `persist`, which persists message history for upcoming participants. |
 
-
 #### Example
-
 
 ```js
   // publish()
@@ -61,7 +58,6 @@ This method is used to subscribe for particular topic. This method returns a lis
 
 #### Syntax
 
-
 ```js
   Future<PubSubMessages> subscribe(
     String topic,
@@ -74,9 +70,7 @@ This method is used to subscribe for particular topic. This method returns a lis
 | topic          | String | This should be the topic to be subscribed.                                  |
 | messageHandler | String | This is a handler function, which will be called when new message received. |
 
-
 #### Example
-
 
 ```js
   // subscribe()
@@ -98,13 +92,11 @@ This method is used to subscribe for particular topic. This method returns a lis
   }
 ```
 
-
 ### unsubscribe()
 
 This method is used to unsubscribe the message topic.
 
 #### Syntax
-
 
 ```js
   Future<void> unsubscribe(
@@ -118,9 +110,7 @@ This method is used to unsubscribe the message topic.
 | topic          | String | This should be the topic to be unsubscribed.                   |
 | messageHandler | String | This is a handler function, which was passed in `subscribe()`. |
 
-
 #### Example
-
 
 ```js
   // unsubscribe
@@ -133,9 +123,7 @@ This method is used to unsubscribe the message topic.
   ),
 ```
 
-
 ## Sample Code
-
 
 ```js
 import 'package:flutter/material.dart';

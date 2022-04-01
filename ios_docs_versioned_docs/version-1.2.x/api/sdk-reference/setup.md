@@ -17,7 +17,7 @@ slug: setup
 
 # Setup
 
-## Setting up IOS sdk
+## Setting up iOS sdk
 
 IOS SDK is client for real-time communication for ios devices. It inherits the same terminology as all other SDKs does.
 
@@ -71,6 +71,7 @@ VideoSDK.config(token: <server token here>)
 // Intialize meeting
 let meeting = VideoSDK.initMeeting(
     meetingId: <meetingId>,
+    participantId: <participantId>, // optional
     participantName: <your name>,
     micEnabled: true,
     webcamEnabled: true)

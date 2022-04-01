@@ -58,17 +58,13 @@ yarn add @videosdk.live/js-sdk
 
 Then in your application code:
 
-```js title="Webpack/node-style require"
+```js
+// Webpack/node-style require
 const VideoSDK = require("@videosdk.live/js-sdk");
 
-VideoSDK.config("<token>")
+// or
 
-VideoSDK.initMeeting({...})
-```
-
-Or
-
-```js title="ES6 import"
+// es6 import
 import { VideoSDK } from "@videosdk.live/js-sdk";
 
 VideoSDK.config("<token>")

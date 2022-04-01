@@ -1,0 +1,10 @@
+[
+  {
+    "href": "./methods#resume",
+    "label": "resume"
+  },
+  {
+    "href": "./methods#pause",
+    "label": "pause"
+  }
+]

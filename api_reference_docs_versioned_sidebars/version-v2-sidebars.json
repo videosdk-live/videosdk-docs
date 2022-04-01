@@ -1,0 +1,39 @@
+{
+  "apiSidebar": [
+    {
+      "type": "doc",
+      "id": "realtime-communication/intro"
+    },
+    {
+      "type": "category",
+      "label": "Room APIs",
+      "collapsed": true,
+      "items": [
+        "realtime-communication/create-room",
+        "realtime-communication/validate-room",
+        "realtime-communication/fetch-all-room",
+        "realtime-communication/fetch-room-details"
+      ]
+    },
+    {
+      "type": "category",
+      "label": "Session APIs",
+      "collapsed": true,
+      "items": [
+        "realtime-communication/fetch-session",
+        "realtime-communication/fetch-session-using-sessionid",
+        "realtime-communication/fetch-participants",
+        "realtime-communication/fetch-active-participants"
+      ]
+    },
+    {
+      "type": "category",
+      "label": "Recording APIs",
+      "collapsed": true,
+      "items": [
+        "realtime-communication/fetch-recordings",
+        "realtime-communication/fetch-recording-using-recordingId"
+      ]
+    }
+  ]
+}

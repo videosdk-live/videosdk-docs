@@ -32,7 +32,6 @@ This guide will provide an overview of how to implement chat and raise hand in a
 
 ### Send Message And Raised Hand
 
-
 ```js
 const onPress = () => {
   // Sending Message
@@ -49,7 +48,6 @@ const onPress = () => {
 ### Events
 
 1. **chat-message** - Whenever any participant sending message/raise hand in the meeting, then `chat-message` event will trigger and return senderId, senderName, timeStamp, text and type `(RAISE_HAND/CHAT)`.
-
 
 ```js
 import { useMeeting } from "@videosdk.live/react-native-sdk";

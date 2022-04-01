@@ -83,7 +83,6 @@ participant?.disableWebcam()
    - `accept()` - Callback function to accept the request.
    - `reject()` - Callback function to reject the request.
 
-
 ```js
 /// Called when host requests to turn on the mic/audio
 func onMicRequested(participantId: String?, accept: @escaping () -> Void, reject: @escaping () -> Void) {

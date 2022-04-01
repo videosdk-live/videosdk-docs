@@ -8,7 +8,7 @@ The entry point into real-time communication SDK.
 
 ## The Meeting Class
 
-The `Meeting Class` includes methods and events for managing meetings, participants, video & audio streams, data channels and UI customisation.
+The `Meeting Class` includes methods and events for managing meetings, participants, video & audio streams, data channels and UI customization.
 
 You don't ever need to call the `Meeting Class` constructor directly. Instead use one of the factory methods.
 

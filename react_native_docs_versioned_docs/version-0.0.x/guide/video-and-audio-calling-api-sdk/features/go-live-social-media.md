@@ -47,7 +47,6 @@ const onPress = () => {
 
 2. **livestream-stopped** - Whenever broadcasting of meeting stopped, `livestream-stopped` event will trigger.
 
-
 ```js
 import { useMeeting } from "@videosdk.live/react-native-sdk";
 

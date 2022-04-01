@@ -111,3 +111,12 @@ This guide will provide an overview of how to use enable and disable Mic in a me
        setAudioDeviceListeners();
     }
 ```
+
+- To use Bluetooth device, you must declare `BLUETOOTH` permission in `AndroidManifest.xml` file.
+
+```js
+<manifest ... >
+<uses-permission android:name="android.permission.BLUETOOTH" />
+//...
+</manifest>
+```

@@ -3,7 +3,6 @@ sidebar_label: Establish Connection
 pagination_label: Establish Connection
 ---
 
-
 # Establish Connection between Meetings
 
 ### Methods

@@ -106,7 +106,6 @@ const ParticipantView = ({ participantId }) => {
 
 5. **stream-disabled** - Whenever any participant disabled mic/webcam in meeting, `stream-disabled` event will trigger and return [Stream Map](/react-native/guide/video-and-audio-calling-api-sdk/features/manage-participants#streams-map-properties).
 
-
 ```js
 import { useMeeting, useParticipant } from "@videosdk.live/react-native-sdk";
 

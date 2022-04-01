@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # usePubSub Hook
 
-`usePubSub` hook abstracts pubsub class and takes all the properties and events as parameters and returns all the properties and methods to work pubsub instance.
+`usePubSub` takes all the properties and events as parameters and returns all the properties and methods to work pubsub instance.
 
 ## usePubSub example
 
