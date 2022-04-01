@@ -1,22 +1,22 @@
 ---
-title: External Call Video & Audio Call - Video SDK Docs
+title: External Call Detection Video & Audio Call - Video SDK Docs
 hide_title: false
 hide_table_of_contents: false
-sidebar_label: External Call
-pagination_label: External Call
+sidebar_label: External Call Detection
+pagination_label: External Call Detection
 keywords:
-  - External Call
+  - External Call Detection
   - audio calling
   - video calling
   - real-time communication
 image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
-slug: external-call
+slug: external-call-detection
 ---
 
-# External Call
+# External Call Detection
 
-External call feature in videoSDK let you know, participant is on the call during meeting.
+External call detection feature in videoSDK let you know, participant is on the call during meeting.
 
 Whenever local participant accept the incoming call or place outgoing call, `externalcall-started` event will trigger.`externalcall-started` event only received by localParticipant.
 
