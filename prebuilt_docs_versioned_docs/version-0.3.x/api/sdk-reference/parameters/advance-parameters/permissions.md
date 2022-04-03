@@ -67,11 +67,11 @@ title: Permissions Parameters
 
 - `toggleRecording` enables participant to toggle recording if set to `true`
 
-### toggleLivestream
+### toggleLiveStream
 
 - type: `Boolean`
 
-- `toggleLivestream` enables participant to toggle live streaming if set to `true`
+- `toggleLiveStream` enables participant to toggle live streaming if set to `true`
 
 ### changeLayout
 
@@ -92,7 +92,7 @@ meeting.init({
     drawOnWhiteboard: true,
     toggleWhiteboard: true,
     toggleRecording: true,
-    toggleLivestream: true,
+    toggleLiveStream: true,
     changeLayout: true,
   },
   //other params
