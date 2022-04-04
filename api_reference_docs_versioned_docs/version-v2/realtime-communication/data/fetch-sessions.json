@@ -16,26 +16,30 @@
     "queryParameters": [
       {
         "key": "roomId",
-        "value": "xyz",
-        "description": "The ID of the Room.",
+        "values": "",
+        "defaultValue": "",
+        "description": "#### The ID of the Room.",
         "required": true
       },
       {
         "key": "customRoomId",
-        "value": "xyz",
-        "description": "Customize Room id which you had specified in Create Room API.",
+        "values": "",
+        "defaultValue": "",
+        "description": "#### Customize Room id which you had specified in Create Room API.",
         "required": false
       },
       {
         "key": "page",
-        "value": "1",
-        "description": "Page number for the sessions. DEFAULT : 1",
+        "values": "`1`",
+        "defaultValue": "`1`",
+        "description": "#### Page number for the sessions. DEFAULT : 1",
         "required": false
       },
       {
         "key": "perPage",
-        "value": "20",
-        "description": "Number of sessions you want per page. DEFAULT : 20",
+        "values": "`20`",
+        "defaultValue": "`20`",
+        "description": "#### Number of sessions you want per page. DEFAULT : 20",
         "required": false
       }
     ],

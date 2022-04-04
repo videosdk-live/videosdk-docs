@@ -16,22 +16,25 @@
     "queryParameters": [
       {
         "key": "page",
-        "value": "1",
-        "description": "Page number for the participants. DEFAULT : 1",
+        "values": "`1`",
+        "defaultValue": "",
+        "description": "#### Page number for the participants.",
         "required": false
       },
       {
         "key": "perPage",
-        "value": "20",
-        "description": "Number of participants you want per page. DEFAULT : 20",
+        "values": "`20`",
+        "defaultValue": "",
+        "description": "#### Number of participants you want per page.",
         "required": false
       }
     ],
     "parameters": [
       {
         "key": "sessionId",
-        "value": "sessionId",
-        "description": "The ID of the Session.",
+        "values": "`sessionId`",
+        "defaultValue": "",
+        "description": "#### The ID of the Session.",
         "required": true
       }
     ],

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import CodeBlock from "@theme/CodeBlock";
+import Markdown from "markdown-to-jsx";
 
 const hasRequiredParams = (parameters) => {
   var hasRequiredParameter = false;
@@ -493,6 +494,32 @@ const MethodRequestResponse = ({
   );
 };
 
+// const MethodDescription = ({
+//   description,
+//   postParameters,
+//   queryParameters,
+//   parameters,
+// }) => {
+//   let md = `${description}\n ${
+//     postParameters.length != 0 &&
+//     postParameters.map((parameter, index) => {
+//       <MethodParameter
+//         parameterName={parameter.key}
+//         defaultValue={parameter.defaultValue}
+//         values={parameter.values}
+//         description={parameter.description}
+//         required={parameter.required}
+//         showDivider={index != postParameters?.length - 1}
+//       />;
+//     })
+//   }  `;
+//   return (
+//     <div>
+//       <Markdown children={md}></Markdown>
+//     </div>
+//   );
+// };
+
 const MethodDescription = ({
   description,
   postParameters,
@@ -504,13 +531,17 @@ const MethodDescription = ({
       <div className="text-gray-250">{description}</div>
       {postParameters?.length != 0 && (
         <div>
-          <div className="text-xl mt-12 font-bold">Body Parameters</div>
+          <div className="text-2xl mt-12 font-bold text-white-100">
+            Body Parameters
+          </div>
           <div className="bg-[#252A34] mt-3 mb-1 h-[1px]"></div>
           {postParameters?.map((parameter, index) => {
             return (
               <MethodParameter
                 parameterName={parameter.key}
                 description={parameter.description}
+                values={parameter.values}
+                defaultValue={parameter.defaultValue}
                 required={parameter.required}
                 showDivider={index != postParameters?.length - 1}
               />
@@ -521,13 +552,17 @@ const MethodDescription = ({
 
       {queryParameters?.length != 0 && (
         <div>
-          <div className="text-xl mt-12 font-bold">Query Parameters</div>
+          <div className="text-2xl mt-12 font-bold text-white-100">
+            Query Parameters
+          </div>
           <div className="bg-[#252A34] mt-3 mb-1 h-[1px]"></div>
           {queryParameters?.map((parameter, index) => {
             return (
               <MethodParameter
                 parameterName={parameter.key}
                 description={parameter.description}
+                values={parameter.values}
+                defaultValue={parameter.defaultValue}
                 required={parameter.required}
                 showDivider={index != queryParameters?.length - 1}
               />
@@ -538,11 +573,15 @@ const MethodDescription = ({
 
       {parameters?.length != 0 && (
         <div>
-          <div className="text-xl mt-12 font-bold">Parameters</div>
+          <div className="text-2xl mt-12 font-bold text-white-100">
+            Parameters
+          </div>
           <div className="bg-[#252A34] mt-3 mb-1 h-[1px]"></div>
           {parameters?.map((parameter, index) => {
             return (
               <MethodParameter
+                values={parameter.values}
+                defaultValue={parameter.defaultValue}
                 parameterName={parameter.key}
                 description={parameter.description}
                 required={parameter.required}
@@ -556,35 +595,83 @@ const MethodDescription = ({
   );
 };
 
+// const MethodParameter = ({
+//   parameterName,
+//   required,
+//   values,
+//   defaultValue,
+//   description,
+//   showDivider,
+// }) => {
+//   let md = `${parameterName} \n - ${description} \n ${
+//     values != "" ? "- values : " + values : ""
+//   } \n ${defaultValue != "" ? "- defaultValue : " + defaultValue : ""} \n ${
+//     required ? "- `REQUIRED`" : "- `OPTIONAL`"
+//   }\n ${showDivider ? "---" : ""}`;
+//   return (
+//     <div>
+//       <Markdown children={md}></Markdown>
+//     </div>
+//   );
+// };
+
 const MethodParameter = ({
   parameterName,
   required,
+  values,
+  defaultValue,
   description,
   showDivider,
 }) => {
+  let md = `${values != "" ? "#### value  :    " + values : ""} \n${
+    defaultValue != "" ? "#### DefaultValue  :    " + defaultValue : ""
+  }\n ${description} `;
+
+  let mdParmName = `## ${parameterName}`;
   return (
     <div className="w-full" id={parameterName}>
       <div className="flex flex-row pt-4">
-        <div className="font-semibold pr-1.5">
-          <a
-            href={"#" + parameterName}
-            className="font-bold pr-1.5 leading-6 text-base text-white-100"
-          >
-            {parameterName}
+        <div>
+          <a href={"#" + parameterName}>
+            <Markdown
+              options={{
+                overrides: {
+                  h2: {
+                    props: {
+                      className: "font-semibold pr-1.5 text-white-100 mb-5",
+                    },
+                  },
+                },
+              }}
+              children={mdParmName}
+            ></Markdown>
           </a>
         </div>
 
         {required ? (
-          <div className="text-primary font-semibold text-[10px] leading-7">
+          <div className="text-primary font-semibold text-[10px] leading-7 mt-1">
             REQUIRED
           </div>
         ) : (
-          <div className=" text-slate-400 text-[10px] font-medium leading-7">
+          <div className=" text-slate-400 text-[10px] font-medium leading-7 mt-1">
             OPTIONAL
           </div>
         )}
       </div>
-      <div className="text-grayb3 text-sm">{description}</div>
+      <div>
+        <Markdown
+          options={{
+            overrides: {
+              h4: {
+                props: {
+                  className: "text-gray-250 text-sm",
+                },
+              },
+            },
+          }}
+          children={md}
+        ></Markdown>
+      </div>
 
       {showDivider && <div className="bg-[#252A34] mt-3 h-[1px]"></div>}
     </div>

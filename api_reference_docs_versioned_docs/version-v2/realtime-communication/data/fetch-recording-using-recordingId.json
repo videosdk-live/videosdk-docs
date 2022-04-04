@@ -8,7 +8,9 @@
     "parameters": [
       {
         "key": "recordingId",
-        "description": "The ID of the Recording.",
+        "defaultValue": "",
+        "values": "",
+        "description": "#### The ID of the Recording.",
         "required": true
       }
     ],

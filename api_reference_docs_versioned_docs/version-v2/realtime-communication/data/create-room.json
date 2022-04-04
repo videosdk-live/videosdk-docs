@@ -15,14 +15,16 @@
     "postParameters": [
       {
         "key": "region",
-        "value": "sg001",
-        "description": "You can take advantage of regional API to decrease latency in video calling. `sg001` for Singapore, SG. `uk001` for London, UK. `us001` for Fremont, CA. Default region: `sg001`.",
-        "required": false
+        "values": "`sg001` | `uk001` | `us001` | `eu001`",
+        "description": "#### You can take advantage of regional API to decrease latency in video calling.",
+        "required": false,
+        "defaultValue": "`sg001`"
       },
       {
         "key": "customRoomId",
-        "value": "xyz",
-        "description": "Customize Room id for better understanding.",
+        "values": "",
+        "defaultValue": "",
+        "description": "#### Customize Room id for better understanding.",
         "required": false
       }
     ],

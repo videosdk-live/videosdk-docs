@@ -17,8 +17,9 @@
     "parameters": [
       {
         "key": "roomId",
-        "value": "hello-world",
-        "description": "Your roomId or customRoomId.",
+        "values": "",
+        "defaultValue": "",
+        "description": "#### Your roomId or customRoomId.",
         "required": true
       }
     ],

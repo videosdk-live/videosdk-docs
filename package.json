@@ -27,6 +27,7 @@
     "docusaurus-tailwindcss-loader": "file:plugins/docusaurus-tailwindcss-loader",
     "file-loader": "^6.2.0",
     "js-cookie": "^3.0.1",
+    "markdown-to-jsx": "^7.1.7",
     "mermaid": "^8.13.4",
     "postcss": "^8.2.8",
     "postcss-preset-env": "^7.4.2",
