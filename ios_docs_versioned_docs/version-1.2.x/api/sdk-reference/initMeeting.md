@@ -7,6 +7,16 @@ title: Initializing a Meeting
 
 <div class="api">
 
+## config()
+
+Before initializing the meeting, you will need to first provide `token`. Please refer this [documentation](/api-reference/realtime-communication/intro/) to generate a token.
+
+```js
+//meeting configuration using videoSDK
+
+VideoSDK.config("<your token>");
+```
+
 You can initialize the meeting using a factory method provided by the SDK called `initMeeting()`. By passing the parameters according to the need, it will generate a new `Meeting` class and the initiated meeting will be returned.
 
 ## initMeeting()
@@ -32,7 +42,6 @@ let meeting = VideoSDK.initMeeting(
   - type : `String`
   - `REQUIRED`
 
-
 Please refer this [documentation](/api-reference/realtime-communication/create-room) to create a room.
 
 ---
@@ -50,7 +59,7 @@ Please refer this [documentation](/api-reference/realtime-communication/create-r
 
 - Name of the participant who will be joining the meeting, this name will be displayed to other participants in the same meeting.
 
-  - type : String
+  - type : `String`
   - `REQUIRED`
 
 ---

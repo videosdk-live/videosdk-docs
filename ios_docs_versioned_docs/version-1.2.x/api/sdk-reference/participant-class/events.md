@@ -9,7 +9,7 @@ pagination_label: Participant Class Events
 
 ### onStreamEnabled
 
-- `onStreamEnabled` will be emitted when any partcipant consumes or produces stream of any type
+- `onStreamEnabled` is a callback which gets triggered whenever a participant's video, audio or screen share stream is enabled.
 
 #### Example
 
@@ -23,7 +23,7 @@ participantListener.onStreamEnabled(stream: `MediaStream`, forParticipant: `Part
 
 ### onStreamDisabled
 
-- `onStreamDisabled` will be emitted when any partcipant stops consuming or producing stream of any type
+- `onStreamDisabled` is a callback which gets triggered whenever a participant's video, audio or screen share stream is disabled.
 
 #### Example
 

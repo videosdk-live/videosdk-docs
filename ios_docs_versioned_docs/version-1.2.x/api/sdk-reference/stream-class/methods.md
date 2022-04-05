@@ -9,7 +9,7 @@ pagination_label: Participant Class Methods
 
 ### resume()
 
-- `resume()` is used to resume the stream.
+- By using `resume()`, a participant can resume the stream of Remote Participant.
 
 #### Returns
 
@@ -19,7 +19,7 @@ pagination_label: Participant Class Methods
 
 ### pause()
 
-- `pause()` is used to pause the stream.
+- By using `pause()`, a participant can pause the stream of Remote Participant.
 
 #### Returns
 

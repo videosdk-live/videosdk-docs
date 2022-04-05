@@ -1,35 +1,35 @@
 ---
 sidebar_position: 1
-sidebar_label: liveStream Parameter
-pagination_label: liveStream Parameter
-title: liveStream Parameter
+sidebar_label: LiveStream Parameters
+pagination_label: LiveStream Parameters
+title: LiveStream Parameters
 ---
 
 <div class="sdk-api-ref-only-h4">
 
 ## livestream
 
-- type : `json obect`
+- type: `object`
 
 ### enabled
 
-- type : `Boolean`
+- type: `Boolean`
 
 - `livestream.enabled` enables partcipant for live streaming.
 
 ### autostart
 
-- type : `Boolean`
+- type: `Boolean`
 
 - `livestream.autostart` autostart live streaming if set to `true` when meeting gets started.
 
 ### outputs
 
-- type : `json object array`
+- type: `json object array`
 
 - {streamKey,url}
 
-  - type : `json object`
+  - type: `{ url: String, streamKey: String }[]`
 
   - here you have to mention your streamKey and url of live streaming platform.
 

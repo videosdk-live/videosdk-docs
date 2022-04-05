@@ -1,10 +1,10 @@
 ---
 sidebar_position: 4
-sidebar_label: Validate A Room
+sidebar_label: Validate a Room
 hide_table_of_contents: true
 ---
 
-# Validate A Room
+# Validate a Room
 
 import Method from '../../../src/theme/RestApiMethodContainer'
 import data from './data/validate-room.json'

@@ -1,10 +1,10 @@
 ---
 sidebar_position: 1
-sidebar_label: Create A Room
+sidebar_label: Create a Room
 hide_table_of_contents: true
 ---
 
-# Create A Room
+# Create a Room
 
 import Method from '../../../src/theme/RestApiMethodContainer'
 import data from './data/create-room.json'

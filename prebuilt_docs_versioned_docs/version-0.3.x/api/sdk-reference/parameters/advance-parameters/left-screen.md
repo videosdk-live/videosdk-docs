@@ -1,19 +1,19 @@
 ---
 sidebar_position: 1
-sidebar_label: leftScreen feature Parameter
-pagination_label: leftScreen feature Parameter
-title: leftScreen feature Parameter
+sidebar_label: LeftScreen Parameters
+pagination_label: LeftScreen Parameters
+title: LeftScreen Parameters
 ---
 
 <div class="sdk-api-ref-only-h4">
 
 ## leftScreen
 
-- type : `json object`
+- type: `object`
 
 ### actionButton
 
-- type : `json object`
+- type: `object`
 
 - with the help of `leftScreen.actionButton` host of the meeting can customize button on left screen page
 
@@ -25,7 +25,7 @@ title: leftScreen feature Parameter
 
 ### rejoinButtonEnabled
 
-- type : `Boolean`
+- type: `Boolean`
 
 - If set to true one can see rejoin button on left screen page.
 

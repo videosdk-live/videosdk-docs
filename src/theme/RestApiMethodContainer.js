@@ -638,7 +638,8 @@ const MethodParameter = ({
                 overrides: {
                   h2: {
                     props: {
-                      className: "font-semibold pr-1.5 text-white-100 mb-5",
+                      className:
+                        "font-semibold text-xl pr-1.5 text-white-100 mb-5",
                     },
                   },
                 },
@@ -664,7 +665,7 @@ const MethodParameter = ({
             overrides: {
               h4: {
                 props: {
-                  className: "text-gray-250 text-sm",
+                  className: "text-gray-250 text-base font-normal",
                 },
               },
             },

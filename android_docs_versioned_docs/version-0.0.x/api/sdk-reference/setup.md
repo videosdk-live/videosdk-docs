@@ -75,7 +75,7 @@ dependencyResolutionManagement{
 
 ```js title="app/build.gradle"
 dependencies {
-  implementation 'live.videosdk:android-sdk:0.0.13'
+  implementation 'live.videosdk:android-sdk:0.0.14'
 
   // library to perform Network call to generate a meeting id
   implementation 'com.amitshekhar.android:android-networking:1.0.2'
@@ -152,4 +152,4 @@ protected void onCreate(Bundle savedInstanceState) {
 }
 ```
 
-### Step 4: All set! Here is the link to the complete sample code on [Github](https://github.com/videosdk-live/videosdk-rtc-android-java-sdk-example). Please refer to the [documentation](initMeeting) for a full list of available methods, events and features of the SDK.
+ All set! Here is the link to the complete sample code on [Github](https://github.com/videosdk-live/videosdk-rtc-android-java-sdk-example). Please refer to the [documentation](initMeeting) for a full list of available methods, events and features of the SDK.

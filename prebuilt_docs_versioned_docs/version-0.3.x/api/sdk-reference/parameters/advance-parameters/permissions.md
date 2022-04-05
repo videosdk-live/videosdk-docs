@@ -1,79 +1,81 @@
 ---
 sidebar_position: 1
-sidebar_label: Permissions Parameter
-pagination_label: Permissions Parameter
-title: Permissions Parameter
+sidebar_label: Permissions Parameters
+pagination_label: Permissions Parameters
+title: Permissions Parameters
 ---
 
 <div class="sdk-api-ref-only-h4">
 
 ## permissions
 
-- type : `json object`
+- type: `object`
 
 ### pin
 
-- type : `Boolean`
+- type: `Boolean`
 
-- `pin` represents whether participant can be pinned or not
+- `pin` represents whether participant can be `pin` other self or participants or not.
 
 ### askToJoin
 
-- type : `Boolean`
+- type: `Boolean`
 
-- `askToJoin` represents whether participant can request to join in the meeting or not
+- `askToJoin` represents whether participant can request to join in the meeting or not.
+- If it is `false`, then participant will directly join the meeting
 
 ### toggleParticipantWebcam
 
-- type : `Boolean`
+- type: `Boolean`
 
-- `toggleParticipantWebcam` represents whether participant can toggle other participant's webcam or not
+- `toggleParticipantWebcam` represents whether participant can toggle other participant's webcam or not.
 
 ### toggleParticipantMic
 
-- type : `Boolean`
+- type: `Boolean`
 
-- `toggleParticipantMic` represents whether participant can toggle other participant's mic or not
+- `toggleParticipantMic` represents whether participant can toggle other participant's mic or not.
 
 ### removeParticipant
 
-- type : `Boolean`
+- type: `Boolean`
 
-- `removeParticipant` represents whether participant can be removed or not
+- `removeParticipant` represents whether participant can remove other participant or not.
 
 ### endMeeting
 
-- type : `Boolean`
+- type: `Boolean`
 
-- `endMeeting` represents whether host can end meeting or not
+- `endMeeting` represents whether participant can end meeting or not.
+- If it is `true`, then participant can end the meeting and all joined participants will be removed from the meeting.
 
 ### drawOnWhiteboard
 
-- type : `Boolean`
+- type: `Boolean`
 
-- `drawOnWhiteboard` represents whether participant have permission to draw on white board or not
+- `drawOnWhiteboard` represents whether participant have permission to draw on white board or not.
 
 ### toggleWhiteboard
 
-- type : `Boolean`
+- type: `Boolean`
 
-- `toggleWhiteboard` enables participant to toggle white board if set to `true`
+- `toggleWhiteboard` enables participant to toggle white board if set to `true`.
 
 ### toggleRecording
 
-- type : `Boolean`
+- type: `Boolean`
 
 - `toggleRecording` enables participant to toggle recording if set to `true`
 
-### toggleLivestream
+### toggleLiveStream
 
-- type : `Boolean`
+- type: `Boolean`
 
-- `toggleLivestream` enables participant to toggle live streaming if set to `true`
+- `toggleLiveStream` enables participant to toggle live streaming if set to `true`
 
 ### changeLayout
 
-- type : `Boolean`
+- type: `Boolean`
 
 - `changeLayout` enables participant to change the layout of a meeting when set to `true`
 
@@ -90,7 +92,7 @@ meeting.init({
     drawOnWhiteboard: true,
     toggleWhiteboard: true,
     toggleRecording: true,
-    toggleLivestream: true,
+    toggleLiveStream: true,
     changeLayout: true,
   },
   //other params

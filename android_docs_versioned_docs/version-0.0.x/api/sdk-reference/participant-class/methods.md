@@ -9,9 +9,11 @@ pagination_label: Participant Class Methods
 
 ### enableWebcam()
 
-- `enableWebcam()` is used to enable self camera.
+- `enableWebcam()` is used to enable participant's camera.
 
 #### Events associated with `enableWebcam()` :
+
+- First the participant will get a callback on [onWebcamRequested()](../meeting-class/meeting-event-listener-class#onwebcamrequested) and once the participant accepts the request, webcam will be enabled.
 
 - Every Participant will receive a `streamEnabled` event of `ParticipantEventListener` Class with `stream` object.
 
@@ -23,7 +25,7 @@ pagination_label: Participant Class Methods
 
 ### disableWebcam()
 
-- `disableWebcam()` is used to disable self camera.
+- `disableWebcam()` is used to disable participant camera.
 
 #### Events associated with `disableWebcam()` :
 
@@ -37,9 +39,11 @@ pagination_label: Participant Class Methods
 
 ### enableMic()
 
-- `enableMic()` is used to enable self microphone.
+- `enableMic()` is used to enable participant microphone.
 
 #### Events associated with `enableMic()` :
+
+- First the participant will get a callback on [onMicRequested()](../meeting-class/meeting-event-listener-class#onmicrequested) and once the participant accepts the request, mic will be enabled.
 
 - Every Participant will receive a `streamEnabled` event of `ParticipantEventListener` Class with `stream` object.
 
@@ -51,7 +55,7 @@ pagination_label: Participant Class Methods
 
 ### disableMic()
 
-- `disableMic()` is used to disable self microphone.
+- `disableMic()` is used to disable participant microphone.
 
 #### Events associated with `disableMic()`:
 
@@ -84,7 +88,7 @@ pagination_label: Participant Class Methods
 #### Events associated with `remove()` :
 
 - Local participant will receive a [`onMeetingLeft`](../meeting-class/meeting-event-listener-class.md#onmeetingleft) event.
-- All remote participants will receive a [`onParticipantLeft`](../meeting-class/meeting-event-listener-class.md#onparticipantleft) event with `participantId` string from the event callback.
+- All remote participants will receive a [`onParticipantLeft`](../meeting-class/meeting-event-listener-class.md#onparticipantleft) event with `participantId`.
 
 #### Returns
 

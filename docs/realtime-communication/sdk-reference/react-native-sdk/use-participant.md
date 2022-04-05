@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # useParticipant Hook
 
-`useParticipant` abstracts participant class. It take events as partameters and returns participant properties and methods.
+`useParticipant` abstracts participant class. It takes participantId, events as partameters and returns participant properties and methods.
 
 ## useParticipant hook
 
@@ -63,7 +63,6 @@ import MethodListHeading from '@theme/MethodListHeading';
       <MethodListItemLabel name="screenShareOn" option={"optional"} type={"boolean"} />
       <MethodListItemLabel name="isLocal" option={"optional"} type={"boolean"} />
       <MethodListItemLabel name="isActiveSpeaker" option={"optional"} type={"boolean"} />
-      <MethodListItemLabel name="isMainParticipant" option={"optional"} type={"boolean"} />
       <MethodListItemLabel name="pinState" option={"optional"} type={"{ cam: bool, share: bool }"} />
       <MethodListItemLabel name="setQuality()" option={"optional"} type={"callback"} />
       <MethodListItemLabel name="enableMic()" option={"optional"} type={"callback"} />

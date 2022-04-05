@@ -1,13 +1,11 @@
 ---
 sidebar_position: 1
-sidebar_label: PubSubMessage Class
-pagination_label: PubSubMessage Class
-title: PubSubMessage Class
+sidebar_label: Properties
+pagination_label: Properties
+title: Properties
 ---
 
 <div class="sdk-api-ref-only-h4">
-
-## Properties
 
 ### getId()
 
@@ -21,7 +19,7 @@ title: PubSubMessage Class
 
 - type: `String`
 
-- `getMessage()` will return actual content of the pubsub message.
+- `getMessage()` will return message that has been published on the specific topic.
 
 ---
 
@@ -37,7 +35,7 @@ title: PubSubMessage Class
 
 - type: `String`
 
-- `getSenderId()` will return id of the participant, who has sent the pubsub message.
+- `getSenderId()` will return id of the participant, who has sent the message.
 
 ---
 

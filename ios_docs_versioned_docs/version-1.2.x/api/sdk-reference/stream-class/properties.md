@@ -11,7 +11,7 @@ pagination_label: Participant Class Properties
 
 - type: `String`
 
-- Represnts the id for that stream .
+- Represents the id for that stream .
 
 ---
 

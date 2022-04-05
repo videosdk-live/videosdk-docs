@@ -19,7 +19,7 @@ slug: meeting-class
 
 ## Using Meeting Class {#h2}
 
-The `Meeting Class` includes methods and events for managing meetings, participants, video & audio streams, data channels and UI customisation.
+The `Meeting Class` includes methods and events for managing meetings, participants, video & audio streams, data channels and UI customization.
 
 import MethodListGroup from '@theme/MethodListGroup';
 import MethodListItemLabel from '@theme/MethodListItemLabel';
@@ -51,11 +51,6 @@ import MethodListHeading from '@theme/MethodListHeading';
 
 - `type`: String?
 - `selectedWebcamId` represents the id of currently selected webcam
-
-### selectedMicId {#h3}
-
-- `type`: String?
-- `selectedWebcamId` represents the id of currently selected mic
 
 ## Events
 

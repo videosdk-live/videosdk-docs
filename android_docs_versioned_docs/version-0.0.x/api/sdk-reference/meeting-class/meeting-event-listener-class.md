@@ -290,7 +290,7 @@ title: MeetingEventListener Class
 
 ### onExternalCallStarted()
 
-- This event will be emitted when any call answer/dial by participant.
+- This event will be emitted when local particpant receive incoming call.
 
 #### Example
 

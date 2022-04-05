@@ -1,49 +1,48 @@
 ---
 sidebar_position: 1
-sidebar_label: Branding Feature Parameter
-pagination_label: Branding Feature Parameter
-title: Branding Feature Parameter
+sidebar_label: Branding Parameters
+pagination_label: Branding Parameters
+title: Branding Parameters
 ---
 
 <div class="sdk-api-ref-only-h4">
 
 ## branding
 
-- type : `json object`
+- type: `object`
 
 ### enabled
 
-- type : `Boolean`
+- type: `Boolean`
 
-- if true then one can promote their brand
+- If `true`, then branding will be visible on topbar of the meeting layout.
 
 ### logoURL
 
-- type : `String`
+- type: `String`
 
-- url of your brand logo to be shown on the meeting screen
+- `url` of your brand logo, to be shown on the topbar of the meeting screen layout.
 
 ### name
 
-- type : `String`
+- type: `String`
 
-- it represents your brand name
+- It represents your brand name, that will be shown on the topbar of the meeting screen layout.
 
 ### poweredBy
 
-- type : `Boolean`
+- type: `Boolean`
 
-- it enables poweredBy feature of prebuiltSDK SDK.
+- It it is `true`, powered by [videosdk.live](https://www.videosdk.live) will be shown below the branch name else it eill be hidden.
 
 ```js
 meeting.init({
   //other params
   branding: {
     enabled: true,
-    logoURL:
-      "https://static.zujonow.com/videosdk.live/videosdk_logo_circle_big.png",
+    logoURL: "https://your-brand.logo",
     name: "Prebuilt",
-    poweredBy: false,
+    poweredBy: true,
   },
   //other params
 });

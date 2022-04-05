@@ -13,7 +13,7 @@ title: Methods returned by useParticipant Hook
 
 #### Events associated with `enableMic()`:
 
-- First the participant will get a callback on [`onMicRequested()`](../use-meeting/events#onmicrequested) and once the participant accepts the request mic will be enabled.
+- First the participant will get a callback on [`onMicRequested()`](../use-meeting/events#onmicrequested) and once the participant accepts the request, mic will be enabled.
 
 - Every Participant will receive a callback on [`onStreamEnabled()`](./events#onstreamenabled) of the `useParticipant()` hook with `Stream` object.
 
@@ -35,7 +35,7 @@ title: Methods returned by useParticipant Hook
 
 #### Events associated with `enableWebcam()`:
 
-- First the participant will get a callback on [`onWebcamRequested()`](../use-meeting/events#onwebcamrequested) and once the participant accepts the request webcam will be enabled.
+- First the participant will get a callback on [`onWebcamRequested()`](../use-meeting/events#onwebcamrequested) and once the participant accepts the request, webcam will be enabled.
 
 - Every Participant will receive a callback on [`onStreamEnabled()`](./events#onstreamenabled) of the `useParticipant()` hook with `Stream` object.
 
@@ -58,34 +58,6 @@ title: Methods returned by useParticipant Hook
 #### Parameter
 
 - **quality** : _"low"_ | _"med"_ | _"high"_
-
----
-
-### pin()
-
-- `pin()` is used to pin a participant in the meeting.
-
-#### Parameter
-
-- **type** : _"SHARE_AND_CAM"_ | _"CAM"_ | _"SHARE"_ | null
-
-#### Events associated with `pin()`:
-
-- Every Participant will get an event callback on [`onPinStateChanged()`](../use-meeting/events#onpinstatechanged) of `useMeeting` hook.
-
----
-
-### unPin()
-
-- `unPin()` is used to unpin a participant in the meeting.
-
-#### Parameter
-
-- **type** : _"SHARE_AND_CAM"_ | _"CAM"_ | _"SHARE"_ | null
-
-#### Events associated with `unPin()`:
-
-- Every Participant will get an event callback on [`onPinStateChanged()`](../use-meeting/events#onpinstatechanged) of `useMeeting` hook.
 
 ---
 

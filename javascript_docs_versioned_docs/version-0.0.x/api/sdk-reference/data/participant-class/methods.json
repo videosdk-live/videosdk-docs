@@ -18,13 +18,5 @@
   {
     "href": "./methods#setquality",
     "label": "setquality"
-  },
-  {
-    "href": "./methods#pin",
-    "label": "pin"
-  },
-  {
-    "href": "./methods#unpin",
-    "label": "unpin"
   }
 ]

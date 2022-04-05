@@ -9,9 +9,53 @@ pagination_label: useMeeting Hook Event Callbacks
 
 ---
 
+### onMeetingJoined()
+
+- This event callback is trigger when a local participant joins the meeting.
+
+#### Example
+
+```js
+function onMeetingJoined() {
+  console.log("onMeetingJoined");
+}
+
+const {
+  meetingId
+  ...
+} = useMeeting({
+  onMeetingJoined,
+  ...
+});
+```
+
+---
+
+### onMeetingLeft()
+
+- This event callback is trigger when local participant leaves the meeting.
+
+#### Example
+
+```js
+function onMeetingLeft() {
+  console.log("onMeetingLeft");
+}
+
+const {
+  meetingId
+  ...
+} = useMeeting({
+  onMeetingLeft,
+  ...
+});
+```
+
+---
+
 ### onParticipantJoined()
 
-- This event callback is triggered when a new participant joins the meeting.
+- This event callback is trigger when a new participant joins the meeting.
 
 #### Example
 
@@ -33,7 +77,7 @@ const {
 
 ### onParticipantLeft()
 
-- This event callback is triggered when a participant leaves the meeting.
+- This event callback is trigger when a participant leaves the meeting.
 
 #### Example
 
@@ -55,7 +99,9 @@ const {
 
 ### onSpeakerChanged()
 
-- This event callback is triggered when active speaker of the meeting is changed.
+- This event will be emitted when a active speaker changed.
+- If you want to know which participant is actively speaking, then this event will be used.
+- If no participant is actively speaking, then this event will pass `null` as en event callback parameter.
 
 #### Example
 
@@ -77,7 +123,9 @@ const {
 
 ### onPresenterChanged()
 
-- This event callback is triggered when screen share presenter changes for the meeting.
+- This event will be emitted when any participant starts or stops screen sharing.
+- It will pass `participantId` as an event callback parameter.
+- If a participant stops screensharing, then this event will pass `null` as en event callback parameter.
 
 #### Example
 
@@ -174,13 +222,13 @@ const {
 
 ### onRecordingStarted()
 
-- This event callback is triggered when meeting recording is started.
+- This event callback is trigger when meeting recording is started.
 
 #### Example
 
 ```js
 function onRecordingStarted() {
-  console.log(" onRecordingStarted");
+  console.log("onRecordingStarted");
 }
 
 const {
@@ -196,13 +244,13 @@ const {
 
 ### onRecordingStopped()
 
-- This event callback is triggered when meeting recording is stopped.
+- This event callback is trigger when meeting recording is stopped.
 
 #### Example
 
 ```js
 function onRecordingStopped() {
-  console.log(" onRecordingStopped");
+  console.log("onRecordingStopped");
 }
 
 const {
@@ -216,59 +264,15 @@ const {
 
 ---
 
-### onMeetingJoined()
-
-- This event callback is triggered when a local participant joins the meeting.
-
-#### Example
-
-```js
-function onMeetingJoined() {
-  console.log("onMeetingJoined");
-}
-
-const {
-  meetingId
-  ...
-} = useMeeting({
-  onMeetingJoined,
-  ...
-});
-```
-
----
-
-### onMeetingLeft()
-
-- This event callback is triggered when local participant leaves the meeting.
-
-#### Example
-
-```js
-function onMeetingLeft() {
-  console.log("onMeetingLeft");
-}
-
-const {
-  meetingId
-  ...
-} = useMeeting({
-  onMeetingLeft,
-  ...
-});
-```
-
----
-
 ### onLiveStreamStarted()
 
-- This event callback is triggered when meeting live stream is started.
+- This event callback is trigger when meeting live stream is started.
 
 #### Example
 
 ```js
-function onLiveStreamStarted(data){
-  console.log("onLiveStreamStarted example", data);
+function onLiveStreamStarted(){
+  console.log("onLiveStreamStarted");
 }
 
 const {
@@ -284,13 +288,13 @@ const {
 
 ### onLiveStreamStopped()
 
-- This event callback is triggered when meeting live stream is stopped.
+- This event callback is trigger when meeting live stream is stopped.
 
 #### Example
 
 ```js
-function onLiveStreamStopped(data){
-  console.log("onLiveStreamStopped example", data);
+function onLiveStreamStopped(){
+  console.log("onLiveStreamStopped");
 }
 
 const {
@@ -306,13 +310,18 @@ const {
 
 ### onHlsStarted()
 
-- This event callback is triggered when meeting `HLS` is started.
+- This event callback is trigger when meeting `HLS` is started.
+
+#### Event callback parameters
+
+- **data**: { **downstreamUrl**: String; }
+  - **downstreamUrl**: String
 
 #### Example
 
 ```js
-function onHlsStarted(){
-  console.log("onHlsStarted");
+function onHlsStarted({ downstreamUrl }){
+  console.log("onHlsStarted",downstreamUrl);
 }
 
 const {
@@ -328,7 +337,7 @@ const {
 
 ### onHlsStopped()
 
-- This event callback is triggered when meeting `HLS` is stopped.
+- This event callback is trigger when meeting `HLS` is stopped.
 
 #### Example
 
@@ -350,7 +359,7 @@ const {
 
 ### onVideoStateChanged()
 
-- This event callback is triggered when state of the video playing the meeting is changed.
+- This event callback is trigger when state of the external video change during the meeting.
 
 #### Example
 
@@ -372,7 +381,7 @@ const {
 
 ### onVideoSeeked()
 
-- This event callback is triggered when video playing the meeting is seeked to a particular time interval.
+- This event callback is trigger when video playing the meeting is seeked to a particular time interval.
 
 #### Example
 
@@ -386,28 +395,6 @@ const {
   ...
 } = useMeeting({
   onVideoSeeked,
-  ...
-});
-```
-
----
-
-### onPinStateChanged()
-
-- This event callback is triggered when the pin state of participant is changed in the meeting.
-
-#### Example
-
-```js
-function onPinStateChanged (data) {
-  console.log("onPinStateChanged", data);
-}
-
-const {
-  meetingId
-  ...
-} = useMeeting({
-  onPinStateChanged,
   ...
 });
 ```

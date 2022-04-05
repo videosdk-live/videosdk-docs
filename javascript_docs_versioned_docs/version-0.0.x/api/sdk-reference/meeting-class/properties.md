@@ -63,4 +63,12 @@ const remoteParticipant = patricipants.get(remoteParticipantId);
 
 - Whenever any connection is being made with other meeting using [`meeting.connectTo`](./methods.md#connectto) , it will get stored to connections property of a meeting class.
 
+---
+
+### pubSub
+
+- It is used to enable Publisher-Subscriber feature in [`meeting`](introduction) class.
+
+Learn more about `PubSub`, [here](./pubsub)
+
 </div>

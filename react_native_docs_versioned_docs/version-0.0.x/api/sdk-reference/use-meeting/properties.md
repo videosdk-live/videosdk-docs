@@ -24,7 +24,7 @@ title: useMeeting Hook Properties
 ### localParticipant
 
 - type : `Participant`
-- `localParticipant` represents `Participant` object for the local participant
+- It will be the instance of [`Participant`](../use-participant/introduction.md) object for the local participant (You).
 
 ---
 
@@ -39,7 +39,7 @@ title: useMeeting Hook Properties
 
 - type : `Map` of `Participant`
   - `Map<participantId, Participant>`
-- `participants` will `Map<Participant>` containing all the participants of the meeting.
+- Contains all the connected participants of the meeting.
 
 ---
 
@@ -95,6 +95,6 @@ title: useMeeting Hook Properties
 ### connections
 
 - type : `Map<string, Connection>`
-- `connection` will be map of Connections which will have all the connections for the connected meeting.
+- Whenever any connection is being made with other meeting using [`connectTo`](./methods.md#connectto) , it will get stored to connections property of a meeting class.
 
 </div>

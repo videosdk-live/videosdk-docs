@@ -14,17 +14,19 @@ PubSub class provides the methods to implement Publisher-Subscriber feature in y
 ## PubSub Methods
 
 <div class="row">
-<div class="col col--4 margin-bottom--lg" >
 
-- [subscribe](methods#subscribe)
-
-</div>
-<div class="col col--4 margin-bottom--lg" >
+<div class="col col--4 margin-bottom--sm" >
 
 - [publish](methods#publish)
 
 </div>
-<div class="col col--4 margin-bottom--lg" >
+<div class="col col--4 margin-bottom--sm" >
+
+- [subscribe](methods#subscribe)
+
+</div>
+
+<div class="col col--4 margin-bottom--sm" >
 
 - [unsubscribe](methods#unsubscribe)
 

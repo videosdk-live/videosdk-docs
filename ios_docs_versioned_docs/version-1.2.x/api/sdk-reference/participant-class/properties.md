@@ -19,7 +19,7 @@ pagination_label: Participant Class Properties
 
 - type: `String`
 
-- It will be the `displayName` of the participant who has the meeting.
+- It will be the `displayName` of the participant..
 
 ---
 
@@ -27,7 +27,7 @@ pagination_label: Participant Class Properties
 
 - type: enum `VideoQuality`
 
-- It will be the `videoQuality` of the participant who has the meeting.
+- It will be the `videoQuality` of the participant.
 
 ---
 
@@ -36,6 +36,7 @@ pagination_label: Participant Class Properties
 - type: `Bool`
 
 - It is the `status` of participant (is it remote or local?) who has the meeting.
+- It will represents whether the participant is [`LocalParticipant`](../meeting-class/properties#localparticipant)(You) or not. If it is true, then participant is [`LocalParticipant`](../meeting-class/properties#localparticipant) otherwise RemoteParticipant.
 
 ---
 

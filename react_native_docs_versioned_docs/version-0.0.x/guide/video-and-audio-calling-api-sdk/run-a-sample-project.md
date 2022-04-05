@@ -44,7 +44,7 @@ import APISecret from '../../../../mdx/introduction/\_api-key.mdx';
 Clone the repository to your local environment.
 
 ```js
-git clone https://github.com/videosdk-live/videosdk-rtc-react-sdk-example.git
+git clone https://github.com/videosdk-live/videosdk-rtc-react-native-sdk-example.git
 ```
 
 ### Step 2: Copy the .env.example file to .env file.

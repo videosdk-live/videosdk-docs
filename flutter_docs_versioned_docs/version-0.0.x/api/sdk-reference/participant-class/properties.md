@@ -27,7 +27,8 @@ pagination_label: Participant Class Properties
 
 - type: [`bool`](https://api.flutter.dev/flutter/dart-core/bool-class.html)
 
-- It will represents whether the participant is [`LocalParticipant`](../meeting-class/properties#localparticipant) or not. If it is true, then participant is [`LocalParticipant`](../meeting-class/properties#localparticipant) otherwise RemoteParticipant.
+- It will represents whether the participant is [`LocalParticipant`](../meeting-class/properties#localparticipant)(You) or not. If it is true, then participant is [`LocalParticipant`](../meeting-class/properties#localparticipant) otherwise RemoteParticipant.
+
 
 ---
 

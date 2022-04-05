@@ -7,16 +7,54 @@ title: PubSub Class Methods
 
 <div class="sdk-api-ref-only-h4">
 
+### publish()
+
+- `publish()` is used to publish messages on a specified topic in the meeting.
+
+#### Parameters
+
+- topic
+
+  - type: [`String`](https://api.dart.dev/stable/2.15.1/dart-core/String-class.html)
+  - This is the name of the topic, for which message will be published.
+
+- message
+
+  - type: [`String`](https://api.dart.dev/stable/2.15.1/dart-core/String-class.html)
+  - This is the actual message.
+
+- options
+  - type: [`PubSubPublishOptions`](pubsub-publish-options-class)
+  - This specifies the options for publish.
+
+#### Returns
+
+- _`Future<void>`_
+
+#### Example
+
+```js
+// Publishing message
+meeting.pubSub
+    .publish(
+      "CHAT",
+      "Hii",
+      const PubSubPublishOptions(persist: true),
+    );
+```
+
+---
+
 ### subscribe()
 
-- It is used to subscribe a message topic for pubsub messages.
+- `subscribe()` is used to subscribe a particular topic to get all the messages of that particular topic in the meeting.
 
 #### Parameters
 
 - topic:
 
   - type: [`String`](https://api.dart.dev/stable/2.15.1/dart-core/String-class.html)
-  - This is the name of the topic to be subscribed.
+  - Participants can listen to messages on that particular topic.
 
 - messageHandler:
 
@@ -48,47 +86,9 @@ subscribePubSubTopic();
 
 ---
 
-### publish()
-
-- It is used to publish message for a topic.
-
-#### Parameters
-
-- topic
-
-  - type: [`String`](https://api.dart.dev/stable/2.15.1/dart-core/String-class.html)
-  - This is the name of the topic, for which message will be published.
-
-- message
-
-  - type: [`String`](https://api.dart.dev/stable/2.15.1/dart-core/String-class.html)
-  - This is the actual content of pubsub message.
-
-- options
-  - type: [`PubSubPublishOptions`](pubsub-publish-options-class)
-  - This specifies the options for publish.
-
-#### Returns
-
-- _`Future<void>`_
-
-#### Example
-
-```js
-// Publishing message
-meeting.pubSub
-    .publish(
-      "CHAT",
-      "Hii",
-      const PubSubPublishOptions(persist: true),
-    );
-```
-
----
-
 ### unsubscribe()
 
-- It is used to unsubscribe from a message topic.
+- `unsubscribe()` is used to unsubscribe a particular topic on which you have subscribed priviously.
 
 #### Parameters
 

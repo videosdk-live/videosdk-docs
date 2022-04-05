@@ -9,7 +9,7 @@ title: Video SDK Meeting Class
 
 ## Introduction
 
-The `Meeting` class includes properties, methods and events for managing a meeting, participants, video, audio and share streams, messaging and UI customisation.
+The `Meeting` class includes properties, methods and events for managing a meeting, participants, video, audio and share streams, messaging and UI customization.
 
 import LinksGrid from "../../../../../src/theme/LinksGrid";
 import properties from "./../data/meeting-class/properties.json";
@@ -20,27 +20,27 @@ import events from "./../data/meeting-class/events.json";
 
 <div class="row">
 
-<div class="col col--4 margin-bottom--lg" >
+<div class="col col--4 margin-bottom--sm" >
 
 - [id](./properties#id)
 
 </div>
-<div class="col col--4 margin-bottom--lg" >
+<div class="col col--4 margin-bottom--sm" >
 
 - [localParticipant](./properties#localparticipant)
 
 </div>
-<div class="col col--4 margin-bottom--lg" >
+<div class="col col--4 margin-bottom--sm" >
 
 - [participants](./properties#participants)
 
 </div>
-<div class="col col--4 margin-bottom--lg" >
+<div class="col col--4 margin-bottom--sm" >
 
 - [pubsub](./pubsub)
 
 </div>
-<div class="col col--4 margin-bottom--lg" >
+<div class="col col--4 margin-bottom--sm" >
 
 - [listeners](./properties#listeners)
 
@@ -52,59 +52,59 @@ import events from "./../data/meeting-class/events.json";
 
 <div class="row">
 
-<div class="col col--4 margin-bottom--lg" >
+<div class="col col--4 margin-bottom--sm" >
 
 - [join](./methods#join)
 
 </div>
-<div class="col col--4 margin-bottom--lg" >
+<div class="col col--4 margin-bottom--sm" >
 
 - [leave](./methods#leave)
 
 </div>
-<div class="col col--4 margin-bottom--lg" >
+<div class="col col--4 margin-bottom--sm" >
 
 - [end](./methods#end)
 
 </div>
-<div class="col col--4 margin-bottom--lg" >
+<div class="col col--4 margin-bottom--sm" >
 
 - [enableWebcam](./methods#enablewebcam)
 
 </div>
-<div class="col col--4 margin-bottom--lg" >
+<div class="col col--4 margin-bottom--sm" >
 
 - [disableWebcam](./methods#disablewebcam)
 
 </div>
-<div class="col col--4 margin-bottom--lg" >
+<div class="col col--4 margin-bottom--sm" >
 
 - [unmuteMic](./methods#unmutemic)
 
 </div>
-<div class="col col--4 margin-bottom--lg" >
+<div class="col col--4 margin-bottom--sm" >
 
 - [muteMic](./methods#mutemic)
 
 </div>
-<div class="col col--4 margin-bottom--lg" >
+<div class="col col--4 margin-bottom--sm" >
 
 - [startRecording](./methods#startrecording)
 
 </div>
-<div class="col col--4 margin-bottom--lg" >
+<div class="col col--4 margin-bottom--sm" >
 
 - [stopRecording](./methods#stoprecording)
 
 </div>
-<div class="col col--4 margin-bottom--lg" >
+<div class="col col--4 margin-bottom--sm" >
 
 - [startLiveStream](./methods#startlivestream)
 
 </div>
-<div class="col col--4 margin-bottom--lg" >
+<div class="col col--4 margin-bottom--sm" >
 
-- [stopLiveStream](./methods#startlivestream)
+- [stopLiveStream](./methods#stoplivestream)
 
 </div>
 
@@ -114,59 +114,59 @@ import events from "./../data/meeting-class/events.json";
 
 <div class="row">
 
-<div class="col col--4 margin-bottom--lg" >
+<div class="col col--4 margin-bottom--sm" >
 
-- [onMeetingJoined](./events#on-meeting-joined)
-
-</div>
-<div class="col col--4 margin-bottom--lg" >
-
-- [onMeetingLeft](./events#on-meeting-left)
+- [onMeetingJoined](./events#onmeetingjoined)
 
 </div>
-<div class="col col--4 margin-bottom--lg" >
+<div class="col col--4 margin-bottom--sm" >
 
-- [onParticipantJoined](./events#on-participant-joined)
-
-</div>
-<div class="col col--4 margin-bottom--lg" >
-
-- [onParticipantLeft](./events#on-participant-left)
+- [onMeetingLeft](./events#onmeetingleft)
 
 </div>
-<div class="col col--4 margin-bottom--lg" >
+<div class="col col--4 margin-bottom--sm" >
 
-- [onSpeakerChanged](./events#on-speaker-changed)
-
-</div>
-<div class="col col--4 margin-bottom--lg" >
-
-- [onMicRequested](./events#on-mic-requested)
+- [onParticipantJoined](./events#onparticipantjoined)
 
 </div>
-<div class="col col--4 margin-bottom--lg" >
+<div class="col col--4 margin-bottom--sm" >
 
-- [onWebcamRequested](./events#on-webcam-requested)
-
-</div>
-<div class="col col--4 margin-bottom--lg" >
-
-- [onRecordingStarted](./events#on-recording-started)
+- [onParticipantLeft](./events#onparticipantleft)
 
 </div>
-<div class="col col--4 margin-bottom--lg" >
+<div class="col col--4 margin-bottom--sm" >
 
-- [onRecordingStoppped](./events#on-recording-stopped)
-
-</div>
-<div class="col col--4 margin-bottom--lg" >
-
-- [onLivestreamStarted](./events#on-livestream-started)
+- [onSpeakerChanged](./events#onspeakerchanged)
 
 </div>
-<div class="col col--4 margin-bottom--lg" >
+<div class="col col--4 margin-bottom--sm" >
 
-- [onLivestreamStopped](./events#on-livestream-stopped)
+- [onMicRequested](./events#onmicrequested)
+
+</div>
+<div class="col col--4 margin-bottom--sm" >
+
+- [onWebcamRequested](./events#onwebcamrequested)
+
+</div>
+<div class="col col--4 margin-bottom--sm" >
+
+- [onRecordingStarted](./events#onrecordingstarted)
+
+</div>
+<div class="col col--4 margin-bottom--sm" >
+
+- [onRecordingStopped](./events#onrecordingstopped)
+
+</div>
+<div class="col col--4 margin-bottom--sm" >
+
+- [onLivestreamStarted](./events#onlivestreamstarted)
+
+</div>
+<div class="col col--4 margin-bottom--sm" >
+
+- [onLivestreamStopped](./events#onlivestreamstopped)
 
 </div>
 

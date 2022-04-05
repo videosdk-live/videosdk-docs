@@ -40,7 +40,7 @@ title: Meeting Class Methods
 #### Events associated with `leave()`:
 
 - Local participant will receive a [`onMeetingLeft`](./meeting-event-listener-class#onmeetingleft) event.
-- All remote participants will receive a [`onParticipantLeft`](./meeting-event-listener-class#onparticipantleft) event with `participantId` string from the event callback.
+- All remote participants will receive a [`onParticipantLeft`](./meeting-event-listener-class#onparticipantleft) event with `participantId`.
 
 #### Returns
 
@@ -66,7 +66,7 @@ title: Meeting Class Methods
 ### enableWebcam()
 
 - It is used to enable self camera.
-- `onStreamEnabled` event of `ParticipantEventListener` will be emitted with [`stream`](../stream-class/introduction) object from the event callback.
+- [`onStreamEnabled`](../participant-class/participant-event-listener-class#onstreamenabled) event of `ParticipantEventListener` will be emitted with [`stream`](../stream-class/introduction) object from the event callback.
 
 #### Returns
 
@@ -77,7 +77,7 @@ title: Meeting Class Methods
 ### disableWebcam()
 
 - It is used to disable self camera.
-- `onStreamDisabled` event of `ParticipantEventListener` will be emitted with [`stream`](../stream-class/introduction) object from the event callback.
+- [`onStreamDisabled`](../participant-class/participant-event-listener-class#onstreamdisabled) event of `ParticipantEventListener` will be emitted with [`stream`](../stream-class/introduction) object from the event callback.
 
 #### Returns
 
@@ -88,7 +88,7 @@ title: Meeting Class Methods
 ### unmuteMic()
 
 - It is used to enable self microphone.
-- `onStreamEnabled` event of `ParticipantEventListener` will be emitted with [`stream`](../stream-class/introduction) object from the event callback.
+- [`onStreamEnabled`](../participant-class/participant-event-listener-class#onstreamenabled) event of `ParticipantEventListener` will be emitted with [`stream`](../stream-class/introduction) object from the event callback.
 
 #### Returns
 
@@ -99,7 +99,7 @@ title: Meeting Class Methods
 ### muteMic()
 
 - It is used to disable self microphone.
-- `onStreamDisabled` event of `ParticipantEventListener` will be emitted with [`stream`](../stream-class/introduction) object from the event callback.
+- [`onStreamDisabled`](../participant-class/participant-event-listener-class#onstreamdisabled) event of `ParticipantEventListener` will be emitted with [`stream`](../stream-class/introduction) object from the event callback.
 
 #### Returns
 
@@ -110,7 +110,10 @@ title: Meeting Class Methods
 ### enableScreenShare()
 
 - it is used to enable screen-sharing.
-- With [`stream`](../stream-class/introduction) object ,`onStreamEnabled` event , and with participantId [`onPresenterChanged()`](./meeting-event-listener-class#onpresenterchanged) event will be emitted from the event callback.
+
+- [`onStreamEnabled`](../participant-class/participant-event-listener-class#onstreamenabled) event of `ParticipantEventListener` will be emitted with [`stream`](../stream-class/introduction) object from the event callback.
+
+- [`onPresenterChanged()`](./meeting-event-listener-class#onpresenterchanged) event will be trigget to all participant with `participantId`.
 
 #### Parameters
 
@@ -125,7 +128,10 @@ title: Meeting Class Methods
 ### disableScreenShare()
 
 - It is used to disable screen-sharing.
-- With [`stream`](../stream-class/introduction) object `onStreamDisabled` event and with participantId as `null`, [`onPresenterChanged()`](./meeting-event-listener-class#onpresenterchanged) event will be emitted from the event callback.
+
+- [`onStreamDisabled`](../participant-class/participant-event-listener-class#onstreamdisabled) event of `ParticipantEventListener` will be emitted with [`stream`](../stream-class/introduction) object from the event callback.
+
+- [`onPresenterChanged()`](./meeting-event-listener-class#onpresenterchanged) event will be trigget to all participant with `null`.
 
 #### Returns
 

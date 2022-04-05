@@ -9,25 +9,25 @@ title: Layout Feature Parameter
 
 ## layout
 
-- type : `json object`
+- type: `object`
 
 ### type
 
-- type : `String`
+- type: `String`
 
 - `layout.type` represents the type of layout which can be `SPOTLIGHT` | `SIDEBAR` | `GRID`
 
 ### priority
 
-- type : `String`
+- type: `String`
 
 - `layout.priority` represents the priority of layout type which can be `SPEAKER` | `PIN`
 
 ### gridSize
 
-- type : `Number`
+- type: `Number`
 
-- `layout.gridSize` represents an on screen participants to be shown if `layout.type` set to `true`
+- `layout.gridSize` represents the maximum participants to be shown on the meeting screen. Max value should be **`25`**
 
 ```js
 meeting.init({

@@ -33,7 +33,7 @@
   },
   {
     "href": "./events#recording-stopped",
-    "label": "onRecordingStoppped"
+    "label": "onRecordingStopped"
   },
   {
     "href": "./events#livestream-started",

@@ -9,38 +9,40 @@ title: Basic Features
 
 ## apiKey
 
-- type : `String`
+- type: `String`
 
-- apiKey of videoSDK generated from [videoSDK api-keys](https://app.videosdk.live/api-keys)
+- ApiKey of Video SDK generated from [app.videosdk.live/api-keys](https://app.videosdk.live/api-keys)
 
 ---
 
 ## meetingId
 
-- type : `String`
+- type: `String`
 
-- enter any arbitrary meetingId or an id generated with the reference of [create-room](http://localhost:3000/api-reference/realtime-communication/create-room)
+- Enter any arbitrary meetingId _or_ an id generated with the reference of [Create-Room](/api-reference/realtime-communication/create-room)
 
 ---
 
 ## name
 
-- type : `String`
+- type: `String`
 
-- Name of participant to be shown in the meeting.
+- Name of participant who will join the meeting.
 
 ---
 
 ## containerId
 
-- type : `String`
+- type: `String`
 
 - In the `containerId` you need to specify an `id of your dom element` which will help you rendering your meeting in that particular portion which could be your entire page or any element of a page.
+
+- If nothing provided, then the meeting will be rendered in full screen.
 
 ```js
 meeting.init({
   //othe params
-  containerId: "videoSDK",
+  containerId: "meeting-container-id",
   //other params
 });
 ```
@@ -48,7 +50,7 @@ meeting.init({
 ```html
 <html>
   <body>
-    <div id="videoSDK"></div>
+    <div id="meeting-container-id"></div>
   </body>
 </html>
 ```
@@ -57,87 +59,79 @@ meeting.init({
 
 ## redirectOnLeave
 
-- type : `String`
+- type: `String`
 
-- `redirectOnLeave` will lead you to the specified url when you leave the meeting
+- `redirectOnLeave` will redirect that participant to the specified url, when a participant leave the meeting.
 
 ---
 
 ## micEnabled
 
-- type : `Boolean`
+- type: `Boolean`
 
-- If set to true `micEnabled` represents the initial state of your mic when you join the meeting
+- If set to true `micEnabled` represents the initial state of **mic** when a participant join the meeting.
 
 ---
 
 ## webcamEnabled
 
-- type : `Boolean`
+- type: `Boolean`
 
-- If set to true `webcamEnabled` represents the initial state of your mic when you join the meeting
+- If set to true `webcamEnabled` represents the initial state of **webcam** when a participant join the meeting.
 
 ---
 
 ## participantCanToggleSelfWebcam
 
-- type : `Boolean`
+- type: `Boolean`
 
-- when true you can enable/disable self webcam.
+- When `true`, participant will be able to enable or disable self webcam.
 
 ---
 
 ## participantCanToggleSelfMic
 
-- type : `Boolean`
+- type: `Boolean`
 
-- when true you can mute/unmute self mic.
+- When `true`, participant will be able to enable or disable self mic.
 
 ---
 
 ## participantCanLeave
 
-- type : `Boolean`
+- type: `Boolean`
 
-- if true then participant will be able to leave the meeting
+- If `true`, then leave button will be visible on topbar of meeting layout.
 
 ---
 
 ## chatEnabled
 
-- type : `Boolean`
+- type: `Boolean`
 
-- if true then participant will be able to chat during the meeting
+- If `true`, then participant will be able to chat during the meeting.
 
 ---
 
 ## screenShareEnabled
 
-- type : `Boolean`
+- type: `Boolean`
 
-- if true then participant will be able to share his/her screen in the meeting
-
----
-
-## pollEnabled
-
-- type : `Boolean`
-
-- if true then participant will be able to create poll in the meeting
+- If `true`, then participant will be able to share their screen in the meeting.
 
 ---
 
 ## whiteboardEnabled
 
-- type : `Boolean`
+- type: `Boolean`
 
-- if true then participant will be able to access white board in the meeting
+- If `true`, then participant will be able to see the white board status.
 
 ---
 
 ## raiseHandEnabled
 
-- type : `Boolean`
+- type: `Boolean`
 
 - if true then participant will be able to raise his/her hand in the meeting
 
@@ -145,25 +139,25 @@ meeting.init({
 
 ## joinScreen
 
-- type : `json object`
+- type: `object`
 
 ### visible
 
-- type : `Boolean`
+- type: `Boolean`
 
-- `joinScreen.visible` if set to `true` then joinScreen will be visible to enter the meeting
+- `joinScreen.visible`. If set to `true`, then joinScreen will be visible to enter the meeting.
 
 ### title
 
-- type : `String`
+- type: `String`
 
-- `joinScreen.title` represents the title of the meeting
+- `joinScreen.title`. Represents the title of the meeting.
 
 ### meetingUrl
 
-- type : `String`
+- type: `String`
 
-- `joinScreen.meetingUrl` represents meeting joining url
+- `joinScreen.meetingUrl`. Represents meeting joining url.
 
 ```js
 meeting.init({
@@ -181,41 +175,33 @@ meeting.init({
 
 ## maxResolution
 
-- type : `String`
+- type: `String`
 
-- `maxResolution` sets the meeting resolution which can either be `hd` | `sd`
+- `maxResolution`, sets the max webcam resolution which can either be `hd` | `sd`
 
 ---
 
 ## debug
 
-- type : `Boolean`
+- type: `Boolean`
 
-- Setting `debug` to `true` will show an error which may cause during the meeting
-
----
-
-## isRecorder
-
-- type : `Boolean`
-
-- `isRecorder` specifies that one have access to start recording or not
+- Setting `debug` to `true` will show an error which may cause during the meeting.
 
 ---
 
 ## participantId
 
-- type : `String`
+- type: `String`
 
-- If participant wants to explicitly specify his/her id , then it can be managed using `participantId`
+- If participant wants to explicitly specify their **`id`** , then it can be managed using `participantId`.
 
 ---
 
 ## joinWithoutUserInteraction
 
-- type : `Boolean`
+- type: `Boolean`
 
-- partcipant can directly join the meeting if `joinWithoutUserInteraction` set to `true`
+- Partcipant can directly join the meeting if `joinWithoutUserInteraction` set to `true`.
 
 ---
 

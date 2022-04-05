@@ -8,6 +8,7 @@
       {
         "key": "roomId",
         "values": "",
+        "value": "xyz",
         "defaultValue": "",
         "description": "#### The ID of the Room.",
         "required": true
@@ -15,6 +16,7 @@
       {
         "key": "sessionId",
         "values": "",
+        "value": "xyz",
         "defaultValue": "",
         "description": "#### The ID of the Session.",
         "required": true

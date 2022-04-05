@@ -15,7 +15,7 @@ pagination_label: ParticipantEventListener Class
 
 ### onStreamEnabled()
 
-- `onStreamEnabled()` will be emitted when any partcipant consumes or produces stream of any type.
+- `onStreamEnabled()` is a callback which gets triggered whenever a participant's video, audio or screen share stream is enabled.
 
 #### Event callback parameters
 
@@ -25,7 +25,7 @@ pagination_label: ParticipantEventListener Class
 
 ### onStreamDisabled()
 
-- `onStreamDisabled()` will be emitted when any partcipant stops consuming or producing stream of any type.
+- `onStreamDisabled()` is a callback which gets triggered whenever a participant's video, audio or screen share stream is disabled.
 
 #### Event callback parameters
 

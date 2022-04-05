@@ -9,7 +9,7 @@ pagination_label: Participant Class Events
 
 ### stream-enabled
 
-- `stream-enabled` will be emitted when any partcipant consumes or produces stream of any type
+- `stream-enabled` is a callback which gets triggered whenever a participant's video, audio or screen share stream is enabled.
 
 #### Example
 
@@ -23,7 +23,7 @@ participant.on("stream-enabled", () => {
 
 ### stream-disabled
 
-- `stream-disabled` will be emitted when any partcipant stops consuming or producing stream of any type
+- `stream-disabled` is a callback which gets triggered whenever a participant's video, audio or screen share stream is disabled.
 
 #### Example
 

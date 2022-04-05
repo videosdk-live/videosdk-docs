@@ -7,7 +7,7 @@ title: Video SDK usePubSub Hook
 
 ## usePubSub Hook
 
-`usePubSub` hook abstracts pubsub class and takes all the properties and events as parameters and returns all the properties and methods to work pubsub instance.
+`usePubSub` takes all the properties and events as parameters and returns all the properties and methods to work pubsub instance.
 
 ## usePubSub example
 
@@ -34,9 +34,9 @@ const { publish, messages } = usePubSub(topic, {
 
 ### topic
 
-- `topic` is a required parameter of `string` type.
+- type : `String`
 
-- `topic` represents the topic for which the pub-sub topic for which the `publish()` and `subscribe()` should be called.
+- Represents the topic for which you are publishing and getting a message.
 
 ---
 
@@ -50,7 +50,7 @@ const { publish, messages } = usePubSub(topic, {
 
 - `onOldMessagesReceived()` will be triggered once when you subscribe to the topic and will receive all the old messages present for that topic as an array of message object.
 
-- `message` published with `persist` as `true` will only be available for thorugh this callback.
+- `message` published with `persist` as `true` will only be available thorugh this callback.
 
 ---
 
@@ -60,15 +60,23 @@ const { publish, messages } = usePubSub(topic, {
 
 - `publish()` is used to publish the the message for the the particular `topic`.
 
-- `message` will be the message to be send for the particular topic.
-
-- `options` is an object, which provides an option, such as `persist`, which persists message for upcoming participants.
-
 #### Parameters
 
-- **message** : String
-- **options**
-  - **persist** : boolean
+##### message
+
+- type : `String`
+
+- Message that has been published on the specific topic.
+
+---
+
+##### options
+
+- type : `Object`
+
+- This is an object, which provides an option, such as persist, which persists message history for upcoming participants if provide `persist: true`.
+
+---
 
 #### Example
 

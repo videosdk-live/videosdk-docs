@@ -10,28 +10,32 @@ sidebar_position: 1
 
 ```jsx title="useConnection react hook"
 import {
-  useConnection,
-} from "@videosdk.live/react-sdk";
+    useConnection,
+} from "@videosdk.live/react-native-sdk";
 
 function onParticipantJoined(participant) {
-  console.log("Participant Joined", participant);
+    console.log("Participant Joined", participant);
 }
 
-function onParticipantLeft(){
-  console.log("Participant left");
+function onParticipantLeft() {
+    console.log("Participant left");
 }
 
 function onChatMessage(message) {
-  console.log("Chat Message: ", message)
+    console.log("Chat Message: ", message)
 }
 
-const {connection} = useConnection({
-  connectionId,
-  {
-    onParticipantJoined,
-    onParticipantLeft,
-    onChatMessage
-  }
+const {
+    connection
+} = useConnection({
+    connectionId,
+    onMeeting: {
+        {
+            onParticipantJoined,
+            onParticipantLeft,
+            onChatMessage
+        }
+    }
 });
 ```
 
@@ -42,7 +46,7 @@ const {connection} = useConnection({
 - type : `String`
 - `REQUIRED`
 
-- `connectionId` represents the `meetingId` you are connected to.
+- `connectionId` represents the `meetingId` you had passed in [`connectTo()`](./use-meeting/methods#connectto).
 
 ---
 
@@ -55,15 +59,15 @@ const {connection} = useConnection({
 
 - #### onParticipantJoined()
 
-  - This event callback is triggered when a new participant joins the connected meeting.
+  - This event callback is trigger when a new participant joins the connected meeting.
 
 - #### onParticipantLeft()
 
-  - This event callback is triggered when a participant leaves the connected meeting.
+  - This event callback is trigger when a participant leaves the connected meeting.
 
 - #### onChatMessage()
 
-  - This event callback is triggered when a new message is received in the connected meeting.
+  - This event callback is trigger when a new message is received in the connected meeting.
 
 ---
 
@@ -80,15 +84,15 @@ const {connection} = useConnection({
 
 ### payload
 
-- type : `Object`
-- It will hold all the payload details you send when the connection was opened.
+- type : `String`
+- Any arbitrary payload you define during the connection.
 
 ---
 
 ### participants
 
 - type : `[Participant]`
-- It will have all the participants present in the meeting.
+- Represents Participants of connected meeting.
 
 ---
 
@@ -102,13 +106,28 @@ const {connection} = useConnection({
 
 - ### sendChatMessage()
 
-  - `sendChatMessage()` is used to send chat mesasge to the meeting you are connected to.
+  - If you want to communicate participants of connected meetings, it can be achieved by `sendChatMessage`.
 
-  - `onChatMessage()` will be triggered for all the participants.
+  - **Paramaters** - message : `String`
+
+  - When any participant of Meeting A sends a chat message to Meeting B, then [`onChatMessage`](#onchatmessage) event will be emitted to all participants of Meeting B.
+
+#### Example
+
+```js
+connection.meeting.sendChatMessage("Hi there, from MARS!");
+```
 
 - ### end()
 
-  - `end()` is used to end the meeting with whic hyou are connected.
+  - `end()` is used to end the connected meeting.
+  - After executing this method, all participants of that meeting will leave automatically.
+
+#### Example
+
+```js
+connection.meeting.end();
+```
 
 ---
 
@@ -116,6 +135,12 @@ const {connection} = useConnection({
 
 ### close()
 
-- `close()` is used to close the connection to a meeting.
+- `close()` is used to close the connection with meeting.
 
-- `onConnectionClose` is triggered when the connection gets closed for each participant.
+- [`onConnectionClose`](./use-meeting/events#onconnectionclose) event of meeting class is triggered to all participant whenever `connection.close()` being called.
+
+#### Example
+
+```js
+connection.close();
+```

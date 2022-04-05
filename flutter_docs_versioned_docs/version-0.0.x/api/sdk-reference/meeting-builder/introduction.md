@@ -42,7 +42,6 @@ MeetingBuilder(
   - type : `String`
   - `REQUIRED`
 
-
 Please refer this [documentation](/api-reference/realtime-communication/create-room) to create a room.
 
 ---
@@ -53,6 +52,8 @@ Please refer this [documentation](/api-reference/realtime-communication/create-r
 
   - type: `String`
   - `REQUIRED`
+
+Please refer this [documentation](/api-reference/realtime-communication/intro/) to generate a token.
 
 ---
 
