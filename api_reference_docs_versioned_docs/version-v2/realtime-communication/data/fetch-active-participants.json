@@ -18,14 +18,14 @@
         "key": "page",
         "values": "`1`",
         "defaultValue": "",
-        "description": "#### Page number for the participants. DEFAULT : 1",
+        "description": "#### Page number for the participants. ",
         "required": false
       },
       {
         "key": "perPage",
         "values": "`20`",
         "defaultValue": "",
-        "description": "#### Number of participants you want per page. DEFAULT : 20",
+        "description": "#### Number of participants you want per page.",
         "required": false
       }
     ],
