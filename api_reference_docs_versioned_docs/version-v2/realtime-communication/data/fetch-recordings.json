@@ -23,14 +23,14 @@
       },
       {
         "key": "page",
-        "values": "`1`",
+        "values": "",
         "defaultValue": "`1`",
         "description": "#### Page number for the recording",
         "required": false
       },
       {
         "key": "perPage",
-        "values": "`10`",
+        "values": "",
         "defaultValue": "`20`",
         "description": "#### Number of recordings you want per page.",
         "required": false

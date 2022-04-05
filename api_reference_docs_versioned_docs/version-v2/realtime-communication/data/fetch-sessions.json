@@ -31,14 +31,14 @@
       },
       {
         "key": "page",
-        "values": "`1`",
+        "values": "",
         "defaultValue": "`1`",
         "description": "#### Page number for the sessions.",
         "required": false
       },
       {
         "key": "perPage",
-        "values": "`20`",
+        "values": "",
         "defaultValue": "`20`",
         "description": "#### Number of sessions you want per page.",
         "required": false

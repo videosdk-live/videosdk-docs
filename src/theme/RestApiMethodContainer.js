@@ -531,7 +531,7 @@ const MethodDescription = ({
       <div className="text-gray-250">{description}</div>
       {postParameters?.length != 0 && (
         <div>
-          <div className="text-2xl mt-12 font-bold text-white-100">
+          <div className="text-2xl mt-12 font-extrabold text-white-100">
             Body Parameters
           </div>
           <div className="bg-[#252A34] mt-3 mb-1 h-[1px]"></div>
@@ -552,7 +552,7 @@ const MethodDescription = ({
 
       {queryParameters?.length != 0 && (
         <div>
-          <div className="text-2xl mt-12 font-bold text-white-100">
+          <div className="text-2xl mt-12 font-extrabold text-white-100">
             Query Parameters
           </div>
           <div className="bg-[#252A34] mt-3 mb-1 h-[1px]"></div>
@@ -573,7 +573,7 @@ const MethodDescription = ({
 
       {parameters?.length != 0 && (
         <div>
-          <div className="text-2xl mt-12 font-bold text-white-100">
+          <div className="text-2xl mt-12 font-extrabold text-white-100">
             Parameters
           </div>
           <div className="bg-[#252A34] mt-3 mb-1 h-[1px]"></div>
@@ -624,7 +624,7 @@ const MethodParameter = ({
   showDivider,
 }) => {
   let md = `${values != "" ? "#### value  :    " + values : ""} \n${
-    defaultValue != "" ? "#### DefaultValue  :    " + defaultValue : ""
+    defaultValue != "" ? "#### defaultValue  :    " + defaultValue : ""
   }\n ${description} `;
 
   let mdParmName = `## ${parameterName}`;
@@ -639,7 +639,7 @@ const MethodParameter = ({
                   h2: {
                     props: {
                       className:
-                        "font-semibold text-xl pr-1.5 text-white-100 mb-5",
+                        "font-semibold text-xl pr-1.5 text-white-100 mb-1.5",
                     },
                   },
                 },
@@ -665,7 +665,7 @@ const MethodParameter = ({
             overrides: {
               h4: {
                 props: {
-                  className: "text-gray-250 text-base font-normal",
+                  className: "text-gray-250 text-base font-normal mb-1",
                 },
               },
             },
@@ -674,7 +674,7 @@ const MethodParameter = ({
         ></Markdown>
       </div>
 
-      {showDivider && <div className="bg-[#252A34] mt-3 h-[1px]"></div>}
+      {showDivider && <div className="bg-[#252A34] mt-5 h-[1px]"></div>}
     </div>
   );
 };

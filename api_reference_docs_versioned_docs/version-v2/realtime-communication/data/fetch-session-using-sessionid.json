@@ -17,7 +17,7 @@
     "parameters": [
       {
         "key": "sessionId",
-        "values": "`sessionId`",
+        "values": "",
         "defaultValue": "",
         "description": "#### The ID of the Session.",
         "required": true

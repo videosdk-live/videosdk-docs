@@ -16,15 +16,15 @@
     "queryParameters": [
       {
         "key": "page",
-        "values": "`1`",
-        "defaultValue": "",
+        "values": "",
+        "defaultValue": "`1`",
         "description": "#### Page number for the participants. ",
         "required": false
       },
       {
         "key": "perPage",
-        "values": "`20`",
-        "defaultValue": "",
+        "values": "",
+        "defaultValue": "`20`",
         "description": "#### Number of participants you want per page.",
         "required": false
       }
