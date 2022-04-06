@@ -1,0 +1,19 @@
+{
+  "stopRecording": {
+    "description": "This API let you stop recording of your room.",
+    "headers": [],
+    "methodType": "POST",
+    "postParameters": [
+      {
+        "key": "roomId",
+        "value": "xyz",
+        "description": "RoomId for which the recording is to be ended",
+        "required": true
+      }
+    ],
+    "queryParameters": [],
+    "parameters": [],
+    "apiEndpoint": "https://api.videosdk.live/v2/recordings/end",
+    "response": "Recording stopped successfully"
+  }
+}

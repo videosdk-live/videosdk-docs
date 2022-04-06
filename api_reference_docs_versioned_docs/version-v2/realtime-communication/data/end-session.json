@@ -3,17 +3,23 @@
     "description": "This API let you end session by passing  either roomId or customRoomId in params.",
     "headers": [],
     "methodType": "POST",
-    "postParameters": [],
-    "queryParameters": [],
-    "parameters": [
+    "postParameters": [
       {
         "key": "roomId",
         "description": "Your roomId or customRoomId.",
         "value": "roomId",
         "required": true
+      },
+      {
+        "key": "sessionId",
+        "description": "Your sessionId",
+        "value": "roomId",
+        "required": false
       }
     ],
-    "apiEndpoint": "https://api.videosdk.live/v2/sessions/${roomId}/end",
+    "queryParameters": [],
+    "parameters": [],
+    "apiEndpoint": "https://api.videosdk.live/v2/sessions/end",
     "response": {
       "start": "2022-03-29T05:21:42.829Z",
       "end": null,

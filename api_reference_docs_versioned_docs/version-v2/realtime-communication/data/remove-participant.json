@@ -9,18 +9,23 @@
         "value": "participantId",
         "description": "The unique ID of participant.",
         "required": true
-      }
-    ],
-    "queryParameters": [],
-    "parameters": [
+      },
       {
         "key": "roomId",
         "description": "The ID of the room.",
         "value": "roomId",
         "required": true
+      },
+      {
+        "key": "sessionId",
+        "description": "The ID of the session.",
+        "value": "sessionId",
+        "required": false
       }
     ],
-    "apiEndpoint": "https://api.videosdk.live/v2/sessions/${roomId}/participants/remove-participant",
+    "queryParameters": [],
+    "parameters": [],
+    "apiEndpoint": "https://api.videosdk.live/v2/sessions/participants/remove",
     "response": {
       "start": "2022-03-29T05:21:42.829Z",
       "end": null,

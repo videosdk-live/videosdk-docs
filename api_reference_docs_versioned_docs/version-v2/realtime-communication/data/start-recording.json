@@ -1,0 +1,46 @@
+{
+  "startRecording": {
+    "description": "This API let you record your room.",
+    "headers": [
+      {
+        "key": "Authorization",
+        "value": "$YOUR_TOKEN"
+      },
+      {
+        "key": "Content-Type",
+        "value": "application/json"
+      }
+    ],
+    "methodType": "POST",
+    "postParameters": [
+      {
+        "key": "roomId",
+        "value": "abcd-efgh-ijkl",
+        "description": "RoomId for which the recording is to be started",
+        "required": true
+      },
+      {
+        "key": "config",
+        "value": "{layout: {type: `SPOTLIGHT`, priority:`PIN`, gridSize: `5`}}",
+        "description": "Configuration object for the recording",
+        "required": true
+      },
+      {
+        "key": "webhookUrl",
+        "value": "https://www.google.com",
+        "description": "Url for the recording",
+        "required": false
+      },
+      {
+        "key": "awsDirPath",
+        "value": "Your-AWS-S3-Directory-Path",
+        "description": "AWS Directory Path",
+        "required": false
+      }
+    ],
+    "queryParameters": [],
+    "parameters": [],
+    "apiEndpoint": "https://api.videosdk.live/v2/recordings/start",
+    "response": "Recording started successfully"
+  }
+}

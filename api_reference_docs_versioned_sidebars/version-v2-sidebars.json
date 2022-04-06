@@ -23,7 +23,9 @@
         "realtime-communication/fetch-session",
         "realtime-communication/fetch-session-using-sessionid",
         "realtime-communication/fetch-participants",
-        "realtime-communication/fetch-active-participants"
+        "realtime-communication/fetch-active-participants",
+        "realtime-communication/remove-participant",
+        "realtime-communication/end-session"
       ]
     },
     {
@@ -32,7 +34,18 @@
       "collapsed": true,
       "items": [
         "realtime-communication/fetch-recordings",
-        "realtime-communication/fetch-recording-using-recordingId"
+        "realtime-communication/fetch-recording-using-recordingId",
+        "realtime-communication/start-recording",
+        "realtime-communication/stop-recording"
+      ]
+    },
+    {
+      "type": "category",
+      "label": "Livestream APIs",
+      "collapsed": true,
+      "items": [
+        "realtime-communication/start-livestream",
+        "realtime-communication/stop-livestream"
       ]
     }
   ]

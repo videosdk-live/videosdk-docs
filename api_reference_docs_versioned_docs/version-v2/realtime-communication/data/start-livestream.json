@@ -1,0 +1,40 @@
+{
+  "startLivestream": {
+    "description": "This API let you start a livestream",
+    "headers": [
+      {
+        "key": "Authorization",
+        "value": "$YOUR_TOKEN"
+      },
+      {
+        "key": "Content-Type",
+        "value": "application/json"
+      }
+    ],
+    "methodType": "POST",
+    "postParameters": [
+      {
+        "key": "roomId",
+        "value": "xyz",
+        "description": "RoomId for which the livestream is to be started",
+        "required": true
+      },
+      {
+        "key": "outputs",
+        "value": "[ {'streamKey': 'Your_StreamKey', 'url': 'RTMP-URL'} ]",
+        "description": "Output object",
+        "required": true
+      },
+      {
+        "key": "Config",
+        "value": "layout: {'type': 'SPOTLIGHT', 'priority': 'PIN', 'gridSize': 5}",
+        "description": "Your config object",
+        "required": true
+      }
+    ],
+    "queryParameters": [],
+    "parameters": [],
+    "apiEndpoint": "https://api.videosdk.live/v2/livestreams/start",
+    "response": "Livestream started successfully"
+  }
+}

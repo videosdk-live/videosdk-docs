@@ -1,0 +1,19 @@
+{
+  "stopLivestream": {
+    "description": "This API let you stop a livestream",
+    "headers": [],
+    "methodType": "POST",
+    "postParameters": [
+      {
+        "key": "roomId",
+        "value": "abcd-efgh-lmno",
+        "description": "RoomId for which the livestream is to be ended",
+        "required": true
+      }
+    ],
+    "queryParameters": [],
+    "parameters": [],
+    "apiEndpoint": "https://api.videosdk.live/v2/livestreams/end",
+    "response": "Livestream ended successfully"
+  }
+}
