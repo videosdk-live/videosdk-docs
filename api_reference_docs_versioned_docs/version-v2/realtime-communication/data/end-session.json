@@ -1,6 +1,6 @@
 {
   "endSession": {
-    "description": "This API let you end session by passing  either roomId or customRoomId in params.",
+    "description": "This API let you end session by passing  either roomId or sessionId in body params.",
     "headers": [],
     "methodType": "POST",
     "postParameters": [
