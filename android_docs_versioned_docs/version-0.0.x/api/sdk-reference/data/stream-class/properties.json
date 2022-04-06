@@ -1,0 +1,7 @@
+[
+  { "href": "./properties#getId", "label": "getId()" },
+  { "href": "./properties#getKind", "label": "getKind()" },
+  { "href": "./properties#getTrack", "label": "getTrack()" },
+  { "href": "./properties#getProducer", "label": "getProducer()" },
+  { "href": "./properties#getConsumer", "label": "getConsumer()" }
+]

@@ -1,12 +1,11 @@
 import React from "react";
 import clsx from "clsx";
 import Link from "@docusaurus/Link";
-import styles from "./HomepageFeatures.module.css";
 
 const FeatureList = [
   {
     title: "Realtime Communication SDK",
-    link: "/docs/api-reference/realtime-communication/intro",
+    link: "/api-reference/v1/realtime-communication/intro",
     description: (
       <>
         Realtime communication SDK provides seamless support to integrate

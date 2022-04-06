@@ -26,7 +26,7 @@ slug: code-samples
 $ git clone https://github.com/videosdk-live/videosdk-rtc-nodejs-sdk-example
 ```
 
-For more information follow, [Auth documentation](/docs/api-reference/realtime-communication/auth).
+For more information follow, [Auth documentation](/api-reference/v1/realtime-communication/auth).
 
 ## Client SDK Code Samples
 

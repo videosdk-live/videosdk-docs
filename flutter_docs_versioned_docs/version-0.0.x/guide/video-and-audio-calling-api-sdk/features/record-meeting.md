@@ -28,7 +28,6 @@ This guide will provide an overview of how to implement start and stop Meeting R
 
 ### Start And Stop Recording
 
-
 ```js
 // Start Recording
 meeting.startRecording('<webhookUrl>');
@@ -38,16 +37,16 @@ meeting.stopRecording(),
 
 ### Events
 
-1. **recording-started** - Whenever any participant start meeting recording, then `recording-started` event will trigger.
+1. **recordingStarted** - Whenever any participant start meeting recording, then `recordingStarted` event will trigger.
 
-2. **recording-stopped** - Whenever any participant stop meeting recording, then `recording-stopped` event will trigger.
+2. **recordingStopped** - Whenever any participant stop meeting recording, then `recordingStopped` event will trigger.
 
 ```js
-meeting.on("recording-started", () {
+meeting.on(Events.recordingStarted, () {
   print("meeting recording started");
 });
 //
-meeting.on("recording-stopped", () {
+meeting.on(Events.recordingStopped, () {
   print("meeting recording stopped");
 });
 ```

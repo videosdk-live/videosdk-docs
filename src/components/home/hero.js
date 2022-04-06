@@ -1,7 +1,6 @@
 import React from "react";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import clsx from "clsx";
-import styles from "./hero.module.css";
 function HomeHero() {
   const { siteConfig } = useDocusaurusContext();
   return (

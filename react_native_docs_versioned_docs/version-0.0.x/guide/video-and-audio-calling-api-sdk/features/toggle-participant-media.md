@@ -53,7 +53,6 @@ To achieve this feature, you need to pass `allow_join` persmission while geneart
 
 ### Request Media Methods
 
-
 ```js
 import { useParticipant } from "@videosdk.live/react-native-sdk";
 
@@ -88,7 +87,6 @@ const onPress = () => {
 
    - `accept()` - Callback function to accept the request.
    - `reject()` - Callback function to reject the request.
-
 
 ```js
 import { useMeeting } from "@videosdk.live/react-native-sdk";

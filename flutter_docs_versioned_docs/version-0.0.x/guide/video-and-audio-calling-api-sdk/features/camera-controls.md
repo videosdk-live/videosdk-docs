@@ -30,7 +30,6 @@ This guide will provide an overview of how to implement enable, disable and swit
 
 ### Enable, Disable And Switch Webcam
 
-
 ```js
 ElevatedButton(
   onPressed: meeting.disableWebcam,
@@ -46,7 +45,4 @@ ElevatedButton(
   },
   child: Text("changeWebcam"),
 ),
-
-// changeWebcam() method is coming soon in flutter.
 ```
-

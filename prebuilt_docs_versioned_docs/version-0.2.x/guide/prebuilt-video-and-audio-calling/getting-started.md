@@ -21,23 +21,23 @@ slug: getting-started
 Video SDK enables easy to use one-to-one and group call support with voice only and voice + video call modes.
 
 ## Features
-| Functions | Description |
-|-----------|-------------|
-| Audio and Video Call | Send and receive local and remote videos and audio from multiple participants |
-| Screen Sharing | Enables the user to share the screen to other users in the room. |
-| Rich Chat | Enables the user to send messages . |
-| RTMP Streaming | Enables going live to RTMP compatible streaming services such as YouTube or Twitch. |
-| Cloud Recording | Record and store composed cloud recordings to your favorate storage provider. |
-| Dynamic Layout | Chage layout of meeting, recording and live streaming on-fly. |
+
+| Functions            | Description                                                                         |
+| -------------------- | ----------------------------------------------------------------------------------- |
+| Audio and Video Call | Send and receive local and remote videos and audio from multiple participants       |
+| Screen Sharing       | Enables the user to share the screen to other users in the room.                    |
+| Rich Chat            | Enables the user to send messages .                                                 |
+| RTMP Streaming       | Enables going live to RTMP compatible streaming services such as YouTube or Twitch. |
+| Cloud Recording      | Record and store composed cloud recordings to your favorate storage provider.       |
+| Dynamic Layout       | Chage layout of meeting, recording and live streaming on-fly.                       |
 
 ## Known issues
-| Version | Impact |
-|-----------|-------------|
-| 1.x.x | Blackout videos in newer version of safari and chrome |
 
+| Version | Impact                                                |
+| ------- | ----------------------------------------------------- |
+| 1.x.x   | Blackout videos in newer version of safari and chrome |
 
-
-# Next Steps
+# Steps
 
 import Card from '@theme/Card';
 
@@ -119,7 +119,7 @@ values={[
   });
 
   script.src =
-    "https://sdk.videosdk.live/rtc-js-prebuilt/0.1.29/rtc-js-prebuilt.js";
+    "https://sdk.videosdk.live/rtc-js-prebuilt/0.2.6/rtc-js-prebuilt.js";
   document.getElementsByTagName("head")[0].appendChild(script);
 </script>
 ```

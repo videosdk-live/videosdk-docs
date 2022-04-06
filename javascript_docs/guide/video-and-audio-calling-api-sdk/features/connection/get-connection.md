@@ -12,7 +12,6 @@ import TabItem from '@theme/TabItem';
 
 After successfully established connections, you will be able to get all the connected meetings from `Meeting` class parameter called `connections`.
 
-
 ```js
 console.log(meeting.connections);
 // In response, you will get Map of all connected meetings

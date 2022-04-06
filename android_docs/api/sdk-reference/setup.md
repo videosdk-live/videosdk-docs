@@ -45,7 +45,7 @@ allprojects {
 
 ```js title="app/build.gradle"
 dependencies {
-		implementation 'live.videosdk:android-sdk:0.0.7'
+		implementation 'live.videosdk:android-sdk:0.0.12'
 
 		// other app dependencies
 }
@@ -59,8 +59,6 @@ dependencies {
 <uses-permission android:name="android.permission.RECORD_AUDIO" />
 <uses-permission android:name="android.permission.CAMERA" />
 <uses-permission android:name="android.permission.INTERNET" />
-<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-<uses-permission android:name="android.permission.BLUETOOTH" />
 ```
 
 ### Step 2: Extend the `android.app.Application` class and create `MainApplication.java` class with the following code:
@@ -121,4 +119,4 @@ protected void onCreate(Bundle savedInstanceState) {
 }
 ```
 
-### Step 4: All set! Here is the link to the complete sample code on [Github](https://github.com/videosdk-live/videosdk-rtc-android-java-sdk-example). Please refer to the [documentation](/android/api/sdk-reference/videosdk-class) for a full list of available methods, events and features of the SDK.
+All set! Here is the link to the complete sample code on [Github](https://github.com/videosdk-live/videosdk-rtc-android-java-sdk-example). Please refer to the [documentation](/android/api/sdk-reference/videosdk-class) for a full list of available methods, events and features of the SDK.

@@ -21,7 +21,6 @@ import Mermaid from '@theme/Mermaid';
 VideoSDK enables opportunity to integrate video & audio calling to Web, Android, IOS applications. it provides Programmable SDKs and REST APIs to build up scalable video conferencing applications.
 This guide will get you running with the VideoSDK video & audio calling in minutes.
 
-
 ## Prerequisite
 
 - Node.js v12+
@@ -623,6 +622,7 @@ export default function ParticipantView({ participantId }) {
   );
 }
 ```
+
 :::note
 
 Stuck anywhere? Check out this [example code](https://github.com/videosdk-live/videosdk-rtc-react-native-sdk-example) on GitHub

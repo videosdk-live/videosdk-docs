@@ -7,7 +7,7 @@ pagination_label: Overview
 
 This feature allows participant for establishing connection and getting information from other meetings. Also, a participant will have basic control over other running meetings.
 
-For example, there are two meetings are running parallelly **Meeting A** and **Meeting B**, in case one of the participant from **Meeting A** wants to access information of **Meeting B** without joining it, now this can be achieved by establishing connection between meetings, so that participants of **Meeting A** and **Meeting B** will get all the updates from each other.
+For example, there are two meetings running parallelly **Meeting A** and **Meeting B**, in case one of the participant from **Meeting A** wants to access information of **Meeting B** without joining it, now this can be achieved by establishing connection between meetings, so that participants of **Meeting A** and **Meeting B** will get all the updates from each other.
 
 For This feature, we introduce three new entities/classes :
 
@@ -21,10 +21,10 @@ Whenever new connection establish between meetings, **Connection** instance is c
 
 #### **Connection object properties** :
 
-| Property Name | Type                                                                                                              | Description                                   |
-| ------------- | ----------------------------------------------------------------------------------------------------------------- | --------------------------------------------- |
-| id            | string                                                                                                            | Unique id of the connection.                  |
-| payload       | string                                                                                                            | The payload you define during the connection. |
+| Property Name | Type                                                                                                                    | Description                                   |
+| ------------- | ----------------------------------------------------------------------------------------------------------------------- | --------------------------------------------- |
+| id            | string                                                                                                                  | Unique id of the connection.                  |
+| payload       | string                                                                                                                  | The payload you define during the connection. |
 | meeting       | [ConnectionMeeting](/javascript/guide/video-and-audio-calling-api-sdk/features/connection/overview#2-connectionmeeting) | Connected Meeting Instance.                   |
 
 ### 2. ConnectionMeeting
@@ -33,9 +33,9 @@ This entity is the instance of connected Meeting.
 
 #### **ConnectionMeeting object properties** :
 
-| Property Name | Type                                                                                                                               | Description                          |
-| ------------- | ---------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------ |
-| id            | string                                                                                                                             | Unique id of the connection meeting. |
+| Property Name | Type                                                                                                                                     | Description                          |
+| ------------- | ---------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------ |
+| id            | string                                                                                                                                   | Unique id of the connection meeting. |
 | participants  | Map of [ConnectionParticipants](/javascript/guide/video-and-audio-calling-api-sdk/features/connection/overview#3-connectionparticipants) | Participants of connected meeting.   |
 
 :::note

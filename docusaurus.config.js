@@ -15,6 +15,16 @@ module.exports = {
     locales: ["en"],
   },
   themeConfig: {
+    defaultMode: "dark",
+    announcementBar: {
+      id: "legacy_docs",
+      content:
+        'We are excited to announce that we have updated our documentation portal 🎉 <a target="_blank" rel="noopener noreferrer" href="https://legacy-docs.videosdk.live">Switch to old documentation ↗</a>',
+      backgroundColor: "#6246FB",
+      textColor: "#fff",
+      isCloseable: true,
+    },
+
     image: "img/videosdklive-thumbnail.jpg",
     algolia: {
       apiKey: "6b125a23a26dc2bf6a8a0cb51a66a3f7",
@@ -39,7 +49,7 @@ module.exports = {
       title: "",
       hideOnScroll: true,
       logo: {
-        alt: "VideosdK live logo",
+        alt: "Video SDK logo",
         src: "img/videosdk_docs_blacklogo.png",
         srcDark: "img/videosdk_docs_whitelogo.png",
         href: "/",
@@ -51,11 +61,6 @@ module.exports = {
           label: "Guide",
           items: [
             {
-              label: "Dashboard",
-              to: "docs/guide/dashboard/getting-started",
-              activeBaseRegex: "docs/guide/dashboard/*",
-            },
-            {
               label: "Prebuilt Video & Audio Calling SDK",
               to: "prebuilt/guide/prebuilt-video-and-audio-calling/getting-started",
               activeBaseRegex: "/*/prebuilt-video-and-audio-calling/*",
@@ -65,16 +70,6 @@ module.exports = {
               to: "react/guide/video-and-audio-calling-api-sdk/getting-started",
               activeBaseRegex: "/*/video-and-audio-calling-api-sdk/*",
             },
-            {
-              label: "Standard Live Streaming API",
-              to: "docs/guide/standard-live-streaming-api-sdk/getting-started",
-              activeBaseRegex: "docs/guide/standard-live-streaming-api-sdk/*",
-            },
-            {
-              label: "Video on Demand API",
-              to: "docs/guide/video-on-demand/getting-started",
-              activeBaseRegex: "docs/guide/video-on-demand/*",
-            },
           ],
         },
         {
@@ -83,23 +78,19 @@ module.exports = {
           items: [
             {
               label: "Custom SDK References",
-              to: "react/api/sdk-reference/setup",
-              activeBaseRegex: "/*/api/sdk-reference/*",
+              to: "javascript/api/sdk-reference/setup",
+              activeBaseRegex:
+                "/react|flutter|react-native|javascript|ios|android/api/sdk-reference/*",
+            },
+            {
+              label: "Prebuilt SDK Reference",
+              to: "prebuilt/api/sdk-reference/setup",
+              activeBaseRegex: "/prebuilt/api/sdk-reference/*",
             },
             {
               label: "Rest API Reference",
-              to: "docs/api-reference/realtime-communication/intro",
-              activeBaseRegex: "docs/api-reference/realtime-communication/*",
-            },
-            {
-              label: "Live streaming",
-              to: "docs/api-reference/live-streaming/intro",
-              activeBaseRegex: "docs/api-reference/live-streaming/*",
-            },
-            {
-              label: "Video On Demand",
-              to: "docs/api-reference/video-on-demand/intro",
-              activeBaseRegex: "docs/api-reference/video-on-demand/*",
+              to: "api-reference/realtime-communication/intro",
+              activeBaseRegex: "api-reference/*/realtime-communication/*",
             },
           ],
         },
@@ -114,6 +105,33 @@ module.exports = {
           to: "/docs/code-sample/overview",
         },
         {
+          position: "left",
+          label: "Experiment Lab",
+          items: [
+            {
+              label: "Guide / Standard Live Streaming API",
+              to: "docs/guide/standard-live-streaming-api-sdk/getting-started",
+              activeBaseRegex: "docs/guide/standard-live-streaming-api-sdk/*",
+            },
+            {
+              label: "Guide / Video On Demand API",
+              to: "docs/guide/video-on-demand/getting-started",
+              activeBaseRegex: "docs/guide/video-on-demand/*",
+            },
+            {
+              label: "Api-Reference / Live Streaming",
+              to: "docs/api-reference/live-streaming/intro",
+              activeBaseRegex: "docs/api-reference/live-streaming/*",
+            },
+            {
+              label: "Api-reference / Video On Demand",
+              to: "docs/api-reference/video-on-demand/intro",
+              activeBaseRegex: "docs/api-reference/video-on-demand/*",
+            },
+          ],
+        },
+
+        {
           label: "Start Project",
           href: "https://app.videosdk.live/login",
           position: "right",
@@ -124,7 +142,7 @@ module.exports = {
           position: "right",
         },
         {
-          href: "https://github.com/videosdk-live/videosdk.live",
+          href: "https://github.com/videosdk-live",
           className: "navbar-item-logo github",
           position: "right",
         },
@@ -142,76 +160,107 @@ module.exports = {
     },
     footer: {
       style: "dark",
+      logo: {
+        alt: "Video SDK logo",
+        src: "img/videosdk_docs_blacklogo.png",
+        srcDark: "img/videosdk_docs_whitelogo.png",
+        href: "/",
+        width: 500,
+      },
       links: [
         {
-          title: "Guide",
+          title: "Get started",
           items: [
             {
-              label: "Dashboard",
-              href: "/docs/guide/dashboard/getting-started",
+              label: "Sign Up",
+              href: "https://app.videosdk.live/signup",
             },
             {
-              label: "Prebuilt Video & Audio Calling",
+              label: "Get Started with Prebuilt SDK",
               href: "/prebuilt/guide/prebuilt-video-and-audio-calling/getting-started",
             },
             {
-              label: "Custom Video & Audio Calling",
+              label: "Get Started with Custom SDK",
               href: "/react/guide/video-and-audio-calling-api-sdk/getting-started",
             },
             {
-              label: "Standard Live Streaming",
+              label: "Get Started with Live Streaming",
               href: "/docs/guide/standard-live-streaming-api-sdk/getting-started",
             },
             {
-              label: "Video On Demand",
+              label: "Get Started with VOD",
               href: "/docs/guide/video-on-demand/getting-started",
             },
           ],
         },
         {
-          title: "API Reference",
+          title: "4 Steps Quickstart",
           items: [
             {
-              label: "Realtime Communication",
-              to: "/docs/api-reference/realtime-communication/intro",
+              label: "Quick Start: Prebuilt JS SDK",
+              to: "/prebuilt/guide/prebuilt-video-and-audio-calling/quick-start",
             },
             {
-              label: "Live Streaming",
-              to: "docs/api-reference/live-streaming/intro",
+              label: "Quick Start: React JS SDK",
+              to: "/react/guide/video-and-audio-calling-api-sdk/quick-start",
             },
             {
-              label: "Video On Demand",
-              to: "/docs/api-reference/video-on-demand/intro",
+              label: "Quick Start: JavaScript SDK",
+              to: "/javascript/guide/video-and-audio-calling-api-sdk/quick-start",
+            },
+            {
+              label: "Quick Start: React Native SDK",
+              to: "/react-native/guide/video-and-audio-calling-api-sdk/quick-start",
+            },
+            {
+              label: "Quick Start: Android SDK",
+              to: "/android/guide/video-and-audio-calling-api-sdk/quick-start",
+            },
+            {
+              label: "Quick Start: iOS SDK",
+              to: "/ios/guide/video-and-audio-calling-api-sdk/quick-start",
+            },
+            {
+              label: "Quick Start: Flutter SDK",
+              to: "/flutter/guide/video-and-audio-calling-api-sdk/quick-start",
             },
           ],
         },
         {
-          title: "Tutorials",
+          title: "For developers",
           items: [
             {
-              label: "Video Conferencing Java Script",
-              to: "/docs/tutorials/realtime-communication/js-sdk/quickstart-js",
+              label: "Developer Blog",
+              to: "https://www.videosdk.live/blog/tag/product",
             },
             {
-              label: "Video Conferencing with Wordpress",
-              to: "/docs/tutorials/realtime-communication/prebuilt-sdk/quickstart-prebuilt-wordpress",
+              label: "API Reference",
+              to: "/react/api/sdk-reference/setup",
             },
             {
-              label: "Live Streaming Quickstart",
-              to: "/docs/tutorials/live-streaming/api/quickstart-rest-api",
+              label: "Resouces",
+              to: "/docs/tutorials/introduction",
             },
             {
-              label: "Video on Demand Quickstart",
-              to: "/docs/tutorials/realtime-communication/js-sdk/quickstart-js",
+              label: "Code Samples",
+              to: "/docs/code-sample/overview",
+            },
+            {
+              label: "Product Updates",
+              to: "https://www.videosdk.live/blog/tag/product-updates",
             },
           ],
         },
         {
-          title: "Community",
+          title: "Join Community",
           items: [
             {
               label: "Discord Community",
               href: "https://discord.gg/Gpmj6eCq5u",
+            },
+            {
+              label: "Github",
+              href: "https://github.com/videosdk-live",
             },
             {
               label: "Stack Overflow",
@@ -222,33 +271,37 @@ module.exports = {
               href: "https://twitter.com/video_sdk",
             },
             {
-              label: "LinkedIn",
-              href: "https://www.linkedin.com/company/videosdk",
+              label: "Reddit",
+              href: "https://www.reddit.com/r/videosdk/",
             },
             {
-              label: "Medium",
-              href: "https://medium.com/video-sdk",
+              label: "Youtube",
+              href: "https://www.youtube.com/c/VideoSDK",
             },
           ],
         },
         {
-          title: "More",
+          title: "Company",
           items: [
             {
-              label: "GitHub",
-              href: "https://github.com/videosdk-live",
+              label: "Contact Us",
+              href: "https://www.videosdk.live/contact",
             },
             {
-              label: "NPM",
-              href: "https://www.npmjs.com/org/videosdk.live",
+              label: "Pricing",
+              href: "https://www.videosdk.live/pricing",
             },
             {
-              label: "Start Project",
-              href: "https://app.videosdk.live",
+              label: "Support",
+              href: "https://www.videosdk.live/support",
             },
             {
-              label: "Join the Community",
-              href: "https://discord.gg/f2WsNDN9S5",
+              label: "Terms of Use",
+              href: "https://www.videosdk.live/terms-of-use",
+            },
+            {
+              label: "Privacy Policy",
+              href: "https://www.videosdk.live/privacy-policy",
             },
           ],
         },
@@ -271,7 +324,7 @@ module.exports = {
           //  "https://github.com/facebook/docusaurus/edit/master/website/blog/",
         },
         theme: {
-          customCss: [require.resolve("./src/css/new_custom.css")],
+          customCss: [require.resolve("./src/css/styles.css")],
         },
         googleAnalytics: {
           trackingID: "G-NR8EYPZFJ7",
@@ -351,6 +404,24 @@ module.exports = {
         path: "prebuilt_docs",
         routeBasePath: "prebuilt",
         sidebarPath: require.resolve("./sidebarPrebuilt.js"),
+        // ... other options
+      },
+    ],
+    [
+      "@docusaurus/plugin-content-docs",
+      {
+        id: "api_reference_docs",
+        path: "api_reference_docs",
+        routeBasePath: "api-reference",
+        sidebarPath: require.resolve("./sidebarApiReference.js"),
+        versions: {
+          v2: {
+            label: "/v2",
+          },
+          v1: {
+            label: "/v1",
+          },
+        },
         // ... other options
       },
     ],

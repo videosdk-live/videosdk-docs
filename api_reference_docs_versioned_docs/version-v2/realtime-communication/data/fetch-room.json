@@ -1,0 +1,45 @@
+{
+  "fetchRoom": {
+    "description": "This API let you fetch a particular room info by passing roomId or customRoomId as parameter.",
+    "headers": [
+      {
+        "key": "Authorization",
+        "value": "$YOUR_TOKEN"
+      },
+      {
+        "key": "Content-Type",
+        "value": "application/json"
+      }
+    ],
+    "methodType": "GET",
+    "postParameters": [],
+    "queryParameters": [],
+    "parameters": [
+      {
+        "key": "roomId",
+        "value": "hello-world",
+        "description": "Your roomId or customRoomId.",
+        "required": false
+      }
+    ],
+    "apiEndpoint": "https://api.videosdk.live/v2/rooms/${roomId}",
+    "response": {
+      "roomId": "abcd-efgh-lmno",
+      "customRoomId": "final-testing",
+      "region": "us001",
+      "createdAt": "2022-03-25T04:19:32.380Z",
+      "updatedAt": "2022-03-25T04:19:32.380Z",
+      "user": {
+        "email": "john@videosdk.live",
+        "name": "John",
+        "discontinuedReason": null,
+        "id": "5f7edbb14c938bcd42944527"
+      },
+      "id": "623d42d472498060cccb51f2",
+      "links": {
+        "get_room": "https://api.videosdk.live/v2/rooms/abc-xyzw-lmno",
+        "get_session": "https://api.videosdk.live/v2/sessions/"
+      }
+    }
+  }
+}

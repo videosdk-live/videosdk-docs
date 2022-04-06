@@ -70,7 +70,7 @@ Visit videoSDK **[dashboard](https://app.videosdk.live/api-keys)** to generate t
   });
 
   script.src =
-    "https://sdk.videosdk.live/rtc-js-prebuilt/0.2.0/rtc-js-prebuilt.js";
+    "https://sdk.videosdk.live/rtc-js-prebuilt/0.2.6/rtc-js-prebuilt.js";
   document.getElementsByTagName("head")[0].appendChild(script);
 </script>
 ```
@@ -153,15 +153,15 @@ If you don't want to have the same meeting id every time, you can generate a ran
 
 ```js title="createMeeting.html"
 <html>
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Videosdk.live RTC</title>
-      </head>
-    <body>
-        <button onclick="">Create Meeting</button>
-    </body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Videosdk.live RTC</title>
+  </head>
+  <body>
+    <button onclick="">Create Meeting</button>
+  </body>
 </html>
 ```
 
@@ -193,7 +193,7 @@ Your `<body>` should look something like this.
    script.addEventListener("load", function (event) {
       //Get URL query parameters
       const url = new URLSearchParams(window.location.search);
-      
+
       //...
 
       const config = {
@@ -201,7 +201,7 @@ Your `<body>` should look something like this.
         meetingId: url.get("meetingId"), // Get meeting id from params.
         // ...
       };
-      
+
       const meeting = new VideoSDKMeeting();
       meeting.init(config);
     });

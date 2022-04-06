@@ -57,7 +57,7 @@ meeting.on("presenter-changed", (participantId) => {});
 <TabItem value="react">
 
 ```js
-import { useMeeting, useParticipant } from "@videosdk.live/react-sdk";
+import { useMeeting, useParticipant } from "@videosdk.live/react-native-sdk";
 
   /** useMeeting hooks events */
 const {

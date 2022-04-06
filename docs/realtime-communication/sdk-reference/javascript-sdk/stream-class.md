@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # Stream Class
 
-Stream class is responsible for handeling audio, video and screen sharing streams.
+Stream class is responsible for handling audio, video and screen sharing streams.
 
 ## Stream Class
 

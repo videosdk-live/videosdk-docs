@@ -1,0 +1,51 @@
+{
+  "realtimeCommunicationSidebar": [
+    {
+      "type": "category",
+      "label": "Real Time Communication",
+      "items": [
+        "realtime-communication/intro",
+        "realtime-communication/architecture"
+      ],
+      "collapsed": true
+    },
+    {
+      "type": "category",
+      "label": "Rest API Reference",
+      "collapsed": true,
+      "items": [
+        "realtime-communication/auth",
+        "realtime-communication/create-join-meeting",
+        "realtime-communication/list-all-meetings",
+        "realtime-communication/get-meeting-details",
+        {
+          "type": "category",
+          "label": "Sessions",
+          "collapsed": true,
+          "items": [
+            "realtime-communication/list-meeting-sessions",
+            "realtime-communication/get-session-details",
+            "realtime-communication/end-session",
+            "realtime-communication/remove-participant"
+          ]
+        },
+        {
+          "type": "category",
+          "label": "Recordings",
+          "collapsed": true,
+          "items": [
+            "realtime-communication/list-recordings",
+            "realtime-communication/get-recording-details",
+            "realtime-communication/remove-recording"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "category",
+      "label": "See Also",
+      "items": ["realtime-communication/see-also/device-browser-support"],
+      "collapsed": true
+    }
+  ]
+}

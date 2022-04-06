@@ -1,0 +1,70 @@
+[
+  {
+    "title": "Room",
+    "description": "To communicate or interact with others in audio or video call, you need `Room` for that. You can `create`, `validate` and `fetch` Rooms using Room APIs.",
+    "endpoints": [
+      {
+        "methodType": "POST",
+        "api": "/v2/rooms",
+        "link": "/api-reference/realtime-communication/create-room"
+      },
+      {
+        "methodType": "POST",
+        "api": "/v2/rooms/validate/${roomId}",
+        "link": "/api-reference/realtime-communication/validate-room"
+      },
+      {
+        "methodType": "GET",
+        "api": "/v2/rooms/",
+        "link": "/api-reference/realtime-communication/fetch-all-room"
+      },
+      {
+        "methodType": "GET",
+        "api": "/v2/rooms/${roomId}",
+        "link": "/api-reference/realtime-communication/fetch-room-details"
+      }
+    ]
+  },
+  {
+    "title": "Session",
+    "description": "Session refers to a single instance of a meeting. If you take multiple meetings with same `roomId`, then multiple session is created for that partcular roomId. With this API endpoints you can access details of sessions and its participants.",
+    "endpoints": [
+      {
+        "methodType": "GET",
+        "api": "/v2/sessions/",
+        "link": "/api-reference/realtime-communication/fetch-session"
+      },
+      {
+        "methodType": "GET",
+        "api": "/v2/sessions/${sessionId}",
+        "link": "/api-reference/realtime-communication/fetch-session-using-sessionid"
+      },
+      {
+        "methodType": "GET",
+        "api": "/v2/sessions/${sessionId}/participants",
+        "link": "/api-reference/realtime-communication/fetch-participants"
+      },
+      {
+        "methodType": "GET",
+        "api": "/v2/sessions/${sessionId}/participants/active",
+        "link": "/api-reference/realtime-communication/fetch-active-participants"
+      }
+    ]
+  },
+  {
+    "title": "Recordings",
+    "description": "In order to fetch recorded meeting, this Recording APIs will allow you to fetch meeting recordings",
+    "endpoints": [
+      {
+        "methodType": "GET",
+        "api": "/v2/recordings",
+        "link": "/api-reference/realtime-communication/fetch-recordings"
+      },
+      {
+        "methodType": "GET",
+        "api": "/v2/recordings/${recordingId}",
+        "link": "/api-reference/realtime-communication/fetch-recording-using-recordingId"
+      }
+    ]
+  }
+]

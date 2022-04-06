@@ -34,7 +34,6 @@ This guide will provide an overview of how participant can start, stop, resume a
 
 ### Start, Stop, Pause, Resume, and Seek External Video
 
-
 ```js
 const onPress = () => {
   // Start Video

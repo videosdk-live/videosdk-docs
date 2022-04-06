@@ -33,7 +33,6 @@ We have depicted a specific constant with code and message in the below table.
 
 ### Event Code
 
-
 ```js
 import { Constants, useMeeting } from "@videosdk.live/react-sdk";
 

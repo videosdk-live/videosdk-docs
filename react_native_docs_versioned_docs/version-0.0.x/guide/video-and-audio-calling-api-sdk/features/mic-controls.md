@@ -28,7 +28,6 @@ This guide will provide an overview of how to use enable and disable Mic in a me
 
 ### Enable, Disable, Change Mic
 
-
 ```js
 const onPress = () => {
   // Enable Mic in Meeting

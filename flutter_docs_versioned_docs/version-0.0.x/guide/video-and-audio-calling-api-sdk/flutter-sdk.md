@@ -2,7 +2,7 @@
 title: Start a Video & Audio Call in Flutter SDK - Video SDK Docs
 hide_title: false
 hide_table_of_contents: false
-description: Build customizable real-time video & audio calling applications in Flutter SDK using Video SDK add live Video & Audio conferencing to your applications.
+description: Build customizable real-time video & audio calling applications in Flutter SDK with Video SDK add live Video & Audio conferencing to your applications.
 sidebar_label: "Client Setup for Flutter"
 pagination_label: "Client Setup for Flutter"
 keywords:
@@ -23,13 +23,11 @@ Flutter SDK is natively written SDK using Dart. It is compatible with both IOS a
 
 Flutter SDK is client for real-time communication for android and ios devices. It inherits the same terminology as all other SDKs does.
 
-## Minimum OS/SDK versions
+### Minimum OS/SDK versions
 
-### Android: minSdkVersion >= 21
+Android: minSdkVersion >= 23
 
 <!-- ### IOS: > 11 -->
-
-## Use this package as a library
 
 ### Step 1: Add this package in your flutter project
 
@@ -43,7 +41,7 @@ This will add a line like this to your package's pubspec.yaml (and run an implic
 
 ```
 dependencies:
-  videosdk: ^0.0.8
+  videosdk: ^0.0.11
 ```
 
 ### Step 2: Update AndroidManifest.xml file for the permissions
@@ -58,6 +56,8 @@ Ensure the following permission is present in your Android Manifest file, locate
 <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
 <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+<uses-permission android:name="android.permission.INTERNET"/>
+
 ```
 
 If you need to use a Bluetooth device, please add:
@@ -81,13 +81,13 @@ android {
 }
 ```
 
-If necessary, in the same `build.gradle` you will need to increase `minSdkVersion` of `defaultConfig` up to `21` (currently default Flutter generator set it to `16`).
+If necessary, in the same `build.gradle` you will need to increase `minSdkVersion` of `defaultConfig` up to `23` (currently default Flutter generator set it to `16`).
 
 If necessary, in the same `build.gradle` you will need to increase `compileSdkVersion` and `targetSdkVersion` up to `31` (currently default Flutter generator set it to `30`).
 
 ## Step 3: iOS Setup
 
-Add the following entry to your Info.plist file, located in `<project root>`/ios/Runner/Info.plist:
+Add the following entry to your Info.plist file, located at `<project root>`/ios/Runner/Info.plist:
 
 ```xml
 <key>NSCameraUsageDescription</key>
@@ -103,11 +103,7 @@ This entry allows your app to access camera and microphone.
 Now in your Dart code, you can use:
 
 ```js
-import "package:videosdk/meeting.dart";
-import "package:videosdk/meeting_builder.dart";
-import "package:videosdk/participant.dart";
 import "package:videosdk/rtc.dart";
-import "package:videosdk/stream.dart";
 ```
 
 ---

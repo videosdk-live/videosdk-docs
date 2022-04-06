@@ -40,7 +40,6 @@ If any participant's webcam is pinned but not screenshare, then calling `pin("SH
 
 ### Pin And Unpin a Participant
 
-
 ```js
 const onPress = () => {
   // Pin both webcam and screenshare of that participant
@@ -67,7 +66,6 @@ const onPress = () => {
 ### pin-state-changed Event
 
 Whenever any participant got pinned or unpinned by any participant, `pin-state-changed` event will be triggered.
-
 
 ```js
 import { useMeeting } from "@videosdk.live/react-sdk";

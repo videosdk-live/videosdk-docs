@@ -3,7 +3,6 @@ sidebar_label: PubSub (BETA)
 pagination_label: PubSub (BETA)
 ---
 
-
 # PubSub (BETA)
 
 PubSub feature allows the participant to send and receive messages of the topics which he has subscribed.
@@ -16,7 +15,6 @@ This method is use for publishing message of specific topic.
 
 #### Syntax
 
-
 ```js
 func publish(topic: String, message: String, options: [String : Any] = [:])
 ```
@@ -28,7 +26,6 @@ func publish(topic: String, message: String, options: [String : Any] = [:])
 | options        | Object | This is the object which provides an option, such as `persist`, which persists message history for upcoming participants. |
 
 #### Example
-
 
 ```js
 func sendMessage() {
@@ -44,7 +41,6 @@ This method is used to subscribe for particular topic. This method returns a lis
 
 #### Syntax
 
-
 ```js
 func subscribe(topic: String, forListener listener: PubSubMessageListener)
 ```
@@ -55,7 +51,6 @@ func subscribe(topic: String, forListener listener: PubSubMessageListener)
 | forListener    | PubSubMessageListener | This is an object of PubSubMessageListener, which listens for upcoming messages and calls onMessageReceived function, when new message received. |
 
 #### Example
-
 
 ```js
 class ChatMessageListener: PubSubMessageListener {
@@ -78,7 +73,6 @@ This method is used to unsubscribe the message topic.
 
 #### Syntax
 
-
 ```js
 func unsubscribe(topic: String, forListener listener: PubSubMessageListener)
 ```
@@ -90,7 +84,6 @@ func unsubscribe(topic: String, forListener listener: PubSubMessageListener)
 
 #### Example
 
-
 ```js
 func unsubscribe() {
   // Unsubscribe 'CHAT' topic
@@ -99,7 +92,6 @@ func unsubscribe() {
 ```
 
 ## Sample Code
-
 
 ```js
 import UIKit

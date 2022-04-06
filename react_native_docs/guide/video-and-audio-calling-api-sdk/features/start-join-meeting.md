@@ -34,7 +34,7 @@ After the successful installation of videoSDK, the next step is to integrate vid
 
 ## 1. Configuration
 
-To configure a meeting, you will need [generated token](/react-native/guide/video-and-audio-calling-api-sdk/server-setup#generate-accees-token-and-integrate-other-apis) and [meetingId](/docs/api-reference/realtime-communication/create-join-meeting#create-meeting), we had discussed in [Server Setup](/react-native/guide/video-and-audio-calling-api-sdk/server-setup).
+To configure a meeting, you will need [generated token](/react-native/guide/video-and-audio-calling-api-sdk/server-setup#generate-accees-token-and-integrate-other-apis) and [meetingId](/api-reference/v1/realtime-communication/create-join-meeting#create-meeting), we had discussed in [Server Setup](/react-native/guide/video-and-audio-calling-api-sdk/server-setup).
 This code snippet calls API from local server
 
 **Scenario 1** - Suppose you **don't have** any meetingId, you can simply generate meetingId by invoking `create-meeting` API.
@@ -53,10 +53,10 @@ Currently the below regions are supported:
 - `sg001` Region Code for Singapore, SG.
 - `uk001` Region Code for London, UK.
 - `us001` Region Code for Fremont, CA.
+- `eu001` Region Code for Frankfurt, DE.
 
 In case you are not providing any region code, the default region will be `sg001`.
 :::
-
 
 ```js
 const getToken = async () => {
@@ -150,7 +150,6 @@ NOTE : For React & React native developer, you have
 
 </div>
 
-
 ```js
 import { MeetingProvider, useMeeting } from "@videosdk.live/react-native-sdk";
 
@@ -203,7 +202,6 @@ After joining, you will be able to Manage Participant in a meeting.
 </div>
 
 </div>
-
 
 ```js
 const onPress = () => {

@@ -31,7 +31,6 @@ VideoSDK enables opportunity to integrate video & audio calling to Web, Android,
 
 import Card from '@theme/Card';
 
-
 <div class="container guide-steps-block">
   <div class="row ">
     <div class="col col--6">
@@ -57,7 +56,7 @@ import Card from '@theme/Card';
       <Card heading="6. Advanced Features" link="/javascript/guide/video-and-audio-calling-api-sdk/features/start-join-meeting" description="Explore advanced features such as screen sharing, recording and live streaming." />
     </div>
   </div>
-</div>    
+</div>
 
 ## Architecture
 

@@ -28,7 +28,6 @@ This guide will provide an overview of how to use enable and disable Screen Shar
 
 ### Enable, Disable Screen Share
 
-
 ```js
 const onPress = () => {
   // Enabling ScreenShare
@@ -38,9 +37,10 @@ const onPress = () => {
   meeting?.disableScreenShare();
 };
 ```
+
 :::caution
 
-For React Native iOS Screen Share feature, you need to follow this guide [React Native iOS Screen Share](/docs/guide/video-and-audio-calling-api-sdk/extras/react-native-ios-screen-share)
+For React Native iOS Screen Share feature, you need to follow this guide [React Native iOS Screen Share](/react-native/guide/video-and-audio-calling-api-sdk/extras/react-native-ios-screen-share)
 :::
 
 <!-- ## How to Create App Group in Apple Store

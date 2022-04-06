@@ -1,0 +1,46 @@
+{
+  "createRoom": {
+    "description": "This API let you create unique meetingId.",
+    "headers": [
+      {
+        "key": "Authorization",
+        "value": "$YOUR_TOKEN"
+      },
+      {
+        "key": "Content-Type",
+        "value": "application/json"
+      }
+    ],
+    "methodType": "POST",
+    "postParameters": [
+      {
+        "key": "region",
+        "value": "sg001",
+        "description": "You can take advantage of regional API to decrease latency in video calling. `sg001` for Singapore, SG. `uk001` for London, UK. `eu001` for Frankfurt, DE. `us001` for Fremont, CA. Default region: `sg001`.",
+        "required": false
+      },
+      {
+        "key": "customRoomId",
+        "value": "xyz",
+        "description": "Customize Room id for better understanding.",
+        "required": false
+      }
+    ],
+    "queryParameters": [],
+    "parameters": [],
+    "apiEndpoint": "https://api.videosdk.live/v2/rooms",
+    "response": {
+      "roomId": "abc-xyzw-lmno",
+      "customRoomId": "final-testing",
+      "userId": "5f7edbb14c938bcd42944527",
+      "region": "sg001",
+      "createdAt": "2022-03-25T04:49:11.024Z",
+      "updatedAt": "2022-03-25T04:49:11.024Z",
+      "id": "623d49c760a18e699abcc8a4",
+      "links": {
+        "get_room": "https://api.videosdk.live/v2/rooms/abc-xyzw-lmno",
+        "get_session": "https://api.videosdk.live/v2/sessions/"
+      }
+    }
+  }
+}

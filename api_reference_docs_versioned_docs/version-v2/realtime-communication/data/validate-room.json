@@ -1,0 +1,39 @@
+{
+  "validateRoom": {
+    "description": "This API let you validate the provided roomId or customRoomId.",
+    "headers": [
+      {
+        "key": "Authorization",
+        "value": "$YOUR_TOKEN"
+      },
+      {
+        "key": "Content-Type",
+        "value": "application/json"
+      }
+    ],
+    "methodType": "GET",
+    "postParameters": [],
+    "queryParameters": [],
+    "parameters": [
+      {
+        "key": "roomId",
+        "value": "hello-world",
+        "description": "Your roomId or customRoomId.",
+        "required": true
+      }
+    ],
+    "apiEndpoint": "https://api.videosdk.live/v2/rooms/validate/${roomId}",
+    "response": {
+      "roomId": "abc-xyzw-lmno",
+      "customRoomId": "demo-room",
+      "userId": "5f7edbb14c938bcd42944527",
+      "createdAt": "2022-03-24T11:12:12.619Z",
+      "updatedAt": "2022-03-24T11:12:12.619Z",
+      "id": "623c520c6b0631c41cc98e81",
+      "links": {
+        "get_room": "https://api.videosdk.live/v2/rooms/abc-xyzw-lmno",
+        "get_session": "https://api.videosdk.live/v2/sessions/"
+      }
+    }
+  }
+}
