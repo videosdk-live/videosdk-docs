@@ -41,7 +41,7 @@
     },
     {
       "type": "category",
-      "label": "Livestream APIs",
+      "label": "Live Streaming APIs",
       "collapsed": true,
       "items": [
         "realtime-communication/start-livestream",
