@@ -42,7 +42,9 @@ module.exports = {
       // gray: colors.gray, default gray color
       primary: "#5568FE",
       grayb3: "#b3b3b3",
-
+      customgray:{
+        300: "#454545"
+      },
       gray: {
         100: "#eeeeee",
         200: "#e0e0e0",
