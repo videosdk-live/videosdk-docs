@@ -62,7 +62,7 @@ meeting.init({
     drawOnWhiteboard: true, // Can draw on whiteboard
     toggleWhiteboard: true, // Can toggle whiteboard
     toggleRecording: true, // Can toggle meeting recording
-    toggleLiveStream: true, //can toggle live stream
+    toggleLivestream: true, //can toggle live stream
     removeParticipant: true, // Can remove participant
     endMeeting: true, // Can end meeting
     changeLayout: true, //can change layout
