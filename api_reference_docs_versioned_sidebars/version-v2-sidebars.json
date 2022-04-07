@@ -45,7 +45,9 @@
       "collapsed": true,
       "items": [
         "realtime-communication/start-livestream",
-        "realtime-communication/stop-livestream"
+        "realtime-communication/stop-livestream",
+        "realtime-communication/start-hlsStream",
+        "realtime-communication/stop-hlsStream"
       ]
     }
   ]

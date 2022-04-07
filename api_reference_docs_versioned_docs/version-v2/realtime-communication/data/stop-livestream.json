@@ -1,6 +1,6 @@
 {
   "stopLivestream": {
-    "description": "This API let you stop a livestream",
+    "description": "This API let you stop a livestream by passing roomId as a body parameter.",
     "headers": [],
     "methodType": "POST",
     "postParameters": [
@@ -14,6 +14,6 @@
     "queryParameters": [],
     "parameters": [],
     "apiEndpoint": "https://api.videosdk.live/v2/livestreams/end",
-    "response": "Livestream stopped successfully"
+    "response": "Livestream ended successfully"
   }
 }
