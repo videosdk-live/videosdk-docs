@@ -623,9 +623,12 @@ const MethodParameter = ({
   description,
   showDivider,
 }) => {
-  let md = `${values != "" ? "#### value  :    " + values : ""} \n${
-    defaultValue != "" ? "#### defaultValue  :    " + defaultValue : ""
-  }\n ${description} `;
+  let md =
+    values && defaultValue
+      ? `${"#### values  :    " + values} \n${
+          defaultValue && "#### defaultValue  :    " + defaultValue
+        }\n ${description} `
+      : `${description} `;
 
   let mdParmName = `## ${parameterName}`;
   return (

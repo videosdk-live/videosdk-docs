@@ -7,13 +7,13 @@
       {
         "key": "roomId",
         "value": "xyz",
-        "description": "RoomId for which the recording is to be ended",
+        "description": "The ID of the Room.",
         "required": true
       }
     ],
     "queryParameters": [],
     "parameters": [],
     "apiEndpoint": "https://api.videosdk.live/v2/recordings/end",
-    "response": "Recording stopped successfully"
+    "response": "Recording ended successfully"
   }
 }
