@@ -84,7 +84,7 @@ const generateNodeCode = ({
   //add body parameters if method type is post
   if (methodType == "POST" && hasRequiredParams(postParameters))
     code +=
-      "\tbody: JSON.stringyfy(" + parametersToJson(postParameters) + "),\n";
+      "\tbody: JSON.stringify(" + parametersToJson(postParameters) + "),\n";
 
   //close options json
   code += "};\n";

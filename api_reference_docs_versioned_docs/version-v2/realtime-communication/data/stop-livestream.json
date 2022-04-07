@@ -1,6 +1,6 @@
 {
   "stopLivestream": {
-    "description": "This API let you stop a livestream",
+    "description": "This API let you stop a livestream by passing roomId as a body parameter.",
     "headers": [],
     "methodType": "POST",
     "postParameters": [

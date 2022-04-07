@@ -1,6 +1,6 @@
 {
   "startRecording": {
-    "description": "This API let you record your room.",
+    "description": "This API let you record your room by passing roomId and config object as body parameters.",
     "headers": [
       {
         "key": "Authorization",

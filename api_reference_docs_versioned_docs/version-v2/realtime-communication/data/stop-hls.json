@@ -1,0 +1,19 @@
+{
+  "stopHLSstream": {
+    "description": "This API let you stop a HLS stream by passing roomID as a body parameter.",
+    "headers": [],
+    "methodType": "POST",
+    "postParameters": [
+      {
+        "key": "roomId",
+        "value": "xyz",
+        "description": "RoomId for which the hlsstream is to be ended",
+        "required": true
+      }
+    ],
+    "queryParameters": [],
+    "parameters": [],
+    "apiEndpoint": "https://api.videosdk.live/v2/hls/end",
+    "response": "HLS ended successfully"
+  }
+}

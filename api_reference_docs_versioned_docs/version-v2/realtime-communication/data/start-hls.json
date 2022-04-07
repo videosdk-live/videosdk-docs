@@ -1,6 +1,6 @@
 {
-  "startLivestream": {
-    "description": "This API let you start a livestream by passing roomId, outputs and config object as body parameters.",
+  "startHLSstream": {
+    "description": "This API let you start an HLS stream by passing roomId and config object as body parameters.",
     "headers": [
       {
         "key": "Authorization",
@@ -16,13 +16,7 @@
       {
         "key": "roomId",
         "value": "xyz",
-        "description": "RoomId for which the livestream is to be started",
-        "required": true
-      },
-      {
-        "key": "outputs",
-        "value": "[ {'streamKey': 'Your_StreamKey', 'url': 'RTMP-URL'} ]",
-        "description": "Output object",
+        "description": "RoomId for which the hlsstream is to be started",
         "required": true
       },
       {
@@ -34,7 +28,9 @@
     ],
     "queryParameters": [],
     "parameters": [],
-    "apiEndpoint": "https://api.videosdk.live/v2/livestreams/start",
-    "response": "Livestream started successfully"
+    "apiEndpoint": "https://api.videosdk.live/v2/hls/start",
+    "response": {
+      "downstreamUrl": "some_url"
+    }
   }
 }
