@@ -1,5 +1,6 @@
 {
   "endSession": {
+    "title": "End Session",
     "description": "This API let you end session by passing  either roomId or sessionId as body parameters.",
     "headers": [],
     "methodType": "POST",

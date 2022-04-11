@@ -1,5 +1,6 @@
 {
   "fetchRecordings": {
+    "title": "Fetch Recordings",
     "description": "This API let you fetch details of your recording  by passing roomId and sessionId as query parameters.",
     "headers": [],
     "methodType": "GET",
@@ -7,30 +8,24 @@
     "queryParameters": [
       {
         "key": "roomId",
-        "values": "",
         "value": "xyz",
-        "defaultValue": "",
         "description": "#### The ID of the Room.",
         "required": true
       },
       {
         "key": "sessionId",
-        "values": "",
         "value": "xyz",
-        "defaultValue": "",
         "description": "#### The ID of the Session.",
         "required": true
       },
       {
         "key": "page",
-        "values": "",
         "defaultValue": "`1`",
         "description": "#### Page number for the recording",
         "required": false
       },
       {
         "key": "perPage",
-        "values": "",
         "defaultValue": "`20`",
         "description": "#### Number of recordings you want per page.",
         "required": false

@@ -1,5 +1,6 @@
 {
   "createRoom": {
+    "title": "Create a Room",
     "description": "This API let you create unique meetingId.",
     "headers": [
       {
@@ -22,8 +23,6 @@
       },
       {
         "key": "customRoomId",
-        "values": "",
-        "defaultValue": "",
         "description": "#### Customize Room id for better understanding.",
         "required": false
       }

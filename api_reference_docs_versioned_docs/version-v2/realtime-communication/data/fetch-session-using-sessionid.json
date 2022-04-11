@@ -1,5 +1,6 @@
 {
   "fetchSessionUsingSessionId": {
+    "title": "Fetch a Session",
     "description": "This API let you fetch a particular session info by passing session Id as parameter.",
     "headers": [
       {
@@ -17,8 +18,6 @@
     "parameters": [
       {
         "key": "sessionId",
-        "values": "",
-        "defaultValue": "",
         "description": "#### The ID of the Session.",
         "required": true
       }

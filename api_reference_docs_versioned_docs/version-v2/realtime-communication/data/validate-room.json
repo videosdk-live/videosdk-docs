@@ -1,5 +1,6 @@
 {
   "validateRoom": {
+    "title": "Validate a Room",
     "description": "This API let you validate the provided roomId or customRoomId.",
     "headers": [
       {
@@ -17,8 +18,6 @@
     "parameters": [
       {
         "key": "roomId",
-        "values": "",
-        "defaultValue": "",
         "description": "#### Your roomId or customRoomId.",
         "required": true
       }

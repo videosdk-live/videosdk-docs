@@ -53,8 +53,18 @@
   },
   {
     "title": "Recordings",
-    "description": "In order to fetch recorded meeting, this Recording APIs will allow you to fetch meeting recordings",
+    "description": "This Recording APIs will allow you to start / stop / fetch meeting recordings.",
     "endpoints": [
+      {
+        "methodType": "POST",
+        "api": "/v2/recordings/start",
+        "link": "/api-reference/realtime-communication/start-recording"
+      },
+      {
+        "methodType": "POST",
+        "api": "/v2/recordings/stop",
+        "link": "/api-reference/realtime-communication/stop-recording"
+      },
       {
         "methodType": "GET",
         "api": "/v2/recordings",
@@ -64,6 +74,32 @@
         "methodType": "GET",
         "api": "/v2/recordings/${recordingId}",
         "link": "/api-reference/realtime-communication/fetch-recording-using-recordingId"
+      }
+    ]
+  },
+  {
+    "title": "Live Stream",
+    "description": "This Live Stream APIs will allow you to start / stop RTMP and HLS stream of meeting.",
+    "endpoints": [
+      {
+        "methodType": "POST",
+        "api": "/v2/livestreams/start",
+        "link": "/api-reference/realtime-communication/start-livestream"
+      },
+      {
+        "methodType": "POST",
+        "api": "/v2/livestreams/stop",
+        "link": "/api-reference/realtime-communication/stop-livestream"
+      },
+      {
+        "methodType": "POST",
+        "api": "/v2/hls/start",
+        "link": "/api-reference/realtime-communication/start-hlsStream"
+      },
+      {
+        "methodType": "POST",
+        "api": "/v2/hls/stop",
+        "link": "/api-reference/realtime-communication/stop-hlsStream"
       }
     ]
   }

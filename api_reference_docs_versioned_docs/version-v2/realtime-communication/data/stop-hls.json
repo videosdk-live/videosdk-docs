@@ -1,5 +1,6 @@
 {
   "stopHLSstream": {
+    "title": "Stop HLS Livestream",
     "description": "This API let you stop a HLS stream by passing roomID as a body parameter.",
     "headers": [],
     "methodType": "POST",
@@ -7,7 +8,7 @@
       {
         "key": "roomId",
         "value": "xyz",
-        "description": "RoomId for which the hlsstream is to be ended",
+        "description": "The ID of the Room.",
         "required": true
       }
     ],

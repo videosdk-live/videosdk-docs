@@ -1,5 +1,6 @@
 {
   "removeParticipant": {
+    "title": "Remove Participant",
     "description": "This API let you remove participant by passing roomId or sessionId and participantId as body parameters.",
     "headers": [],
     "methodType": "POST",

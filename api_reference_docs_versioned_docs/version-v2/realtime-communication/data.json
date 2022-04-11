@@ -110,7 +110,7 @@
       {
         "key": "roomId",
         "value": "xyz",
-        "description": "RoomId for which the hlsstream is to be started",
+        "description": "The ID of the Room.",
         "required": true
       },
       {

@@ -33,10 +33,10 @@
       "label": "Recording APIs",
       "collapsed": true,
       "items": [
-        "realtime-communication/fetch-recordings",
-        "realtime-communication/fetch-recording-using-recordingId",
         "realtime-communication/start-recording",
-        "realtime-communication/stop-recording"
+        "realtime-communication/stop-recording",
+        "realtime-communication/fetch-recordings",
+        "realtime-communication/fetch-recording-using-recordingId"
       ]
     },
     {

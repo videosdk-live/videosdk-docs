@@ -628,6 +628,12 @@ const MethodParameter = ({
       ? `${"#### values  :    " + values} \n${
           defaultValue && "#### defaultValue  :    " + defaultValue
         }\n ${description} `
+      : values
+      ? `${"#### values  :    " + values} \n ${description} `
+      : defaultValue
+      ? `${
+          defaultValue && "#### defaultValue  :    " + defaultValue
+        }\n ${description} `
       : `${description} `;
 
   let mdParmName = `## ${parameterName}`;
@@ -691,11 +697,13 @@ function RestApiMethodContainer({
   apiEndpoint,
   response,
   parameters,
+  title,
 }) {
   return (
     <div id="tailwind">
       <div className="flex lg:flex-row flex-col w-full">
         <div className="lg:w-1/2 w-full lg:sticky self-start lg:pr-[18px] flex-grow top-10">
+          <p class="font-bold text-4xl text-white-100	">{title}</p>
           <MethodDescription
             description={description}
             queryParameters={queryParameters}

@@ -1,5 +1,6 @@
 {
   "startHLSstream": {
+    "title": "Start HLS Stream",
     "description": "This API let you start an HLS stream by passing roomId and config object as body parameters.",
     "headers": [
       {
@@ -16,14 +17,14 @@
       {
         "key": "roomId",
         "value": "xyz",
-        "description": "RoomId for which the hlsstream is to be started",
+        "description": "The ID of the Room.",
         "required": true
       },
       {
-        "key": "Config",
-        "value": "layout: {'type': 'SPOTLIGHT', 'priority': 'PIN', 'gridSize': 5}",
-        "description": "Your config object",
-        "required": true
+        "key": "config",
+        "value": "{layout: {type: `SPOTLIGHT`, priority:`PIN`, gridSize: 5}}",
+        "description": "Config object contains layout object which accept _`type`_  with value **GRID** | **SPOTLIGHT** | **SIDEBAR**. _`priority`_ with value **SPEAKER** | **PIN** ,and _`gridSize`_ which accept number <=25.",
+        "required": false
       }
     ],
     "queryParameters": [],

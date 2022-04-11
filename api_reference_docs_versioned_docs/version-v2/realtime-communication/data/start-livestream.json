@@ -1,5 +1,6 @@
 {
   "startLivestream": {
+    "title": "Start Livestream",
     "description": "This API let you start a livestream by passing roomId, outputs and config object as body parameters.",
     "headers": [
       {
@@ -16,20 +17,20 @@
       {
         "key": "roomId",
         "value": "xyz",
-        "description": "RoomId for which the livestream is to be started",
+        "description": "The ID of the Room.",
         "required": true
       },
       {
         "key": "outputs",
-        "value": "[ {'streamKey': 'Your_StreamKey', 'url': 'RTMP-URL'} ]",
-        "description": "Output object",
+        "value": "[ {'streamKey': 'Platform_StreamKey', 'url': 'RTMP-URL'} ]",
+        "description": "**Array of object** which contains multiple platfroms `streamKey` and `url`.",
         "required": true
       },
       {
-        "key": "Config",
-        "value": "layout: {'type': 'SPOTLIGHT', 'priority': 'PIN', 'gridSize': 5}",
-        "description": "Your config object",
-        "required": true
+        "key": "config",
+        "value": "{layout: {type: `SPOTLIGHT`, priority:`PIN`, gridSize: 5}}",
+        "description": "Config object contains layout object which accept _`type`_  with value **GRID** | **SPOTLIGHT** | **SIDEBAR**. _`priority`_ with value **SPEAKER** | **PIN** ,and _`gridSize`_ which accept number <=25.",
+        "required": false
       }
     ],
     "queryParameters": [],

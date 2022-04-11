@@ -308,7 +308,7 @@
       {
         "key": "roomId",
         "value": "xyz",
-        "description": "RoomId for which the livestream is to be started",
+        "description": "The ID of the Room.",
         "required": true
       },
       {
@@ -370,7 +370,7 @@
       {
         "key": "roomId",
         "value": "xyz",
-        "description": "RoomId for which the livestream is to be ended",
+        "description": "The ID of the Room.",
         "required": true
       }
     ],
@@ -446,7 +446,7 @@
       {
         "key": "roomId",
         "value": "xyz",
-        "description": "RoomId for which the hlsstream is to be started",
+        "description": "The ID of the Room.",
         "required": true
       },
       {
@@ -508,7 +508,7 @@
       {
         "key": "roomId",
         "value": "xyz",
-        "description": "RoomId for which the hlsstream is to be ended",
+        "description": "The ID of the Room.",
         "required": true
       }
     ],
@@ -584,7 +584,7 @@
       {
         "key": "roomId",
         "value": "xyz",
-        "description": "RoomId for which the hlsstream is to be started",
+        "description": "The ID of the Room.",
         "required": true
       },
       {
