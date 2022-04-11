@@ -20,7 +20,7 @@
         "required": true
       },
       {
-        "key": "Config",
+        "key": "config",
         "value": "layout: {'type': 'SPOTLIGHT', 'priority': 'PIN', 'gridSize': 5}",
         "description": "Your config object",
         "required": true
@@ -30,7 +30,7 @@
     "parameters": [],
     "apiEndpoint": "https://api.videosdk.live/v2/hls/start",
     "response": {
-      "downstreamUrl": "some_url"
+      "downstreamUrl": "https://cdn.videosdk.live/meetings-hls/2e2bb932-e00f-4e5f-b35d-73d3079e6bf5/index.m3u8"
     }
   }
 }

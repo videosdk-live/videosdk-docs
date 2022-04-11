@@ -26,7 +26,7 @@
         "required": true
       },
       {
-        "key": "Config",
+        "key": "config",
         "value": "layout: {'type': 'SPOTLIGHT', 'priority': 'PIN', 'gridSize': 5}",
         "description": "Your config object",
         "required": true
