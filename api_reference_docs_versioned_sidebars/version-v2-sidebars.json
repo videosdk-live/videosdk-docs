@@ -36,7 +36,8 @@
         "realtime-communication/start-recording",
         "realtime-communication/stop-recording",
         "realtime-communication/fetch-recordings",
-        "realtime-communication/fetch-recording-using-recordingId"
+        "realtime-communication/fetch-recording-using-recordingId",
+        "realtime-communication/delete-recording"
       ]
     },
     {
