@@ -67,7 +67,7 @@ module.exports = {
             },
             {
               label: "Custom Video & Audio Calling SDK",
-              to: "react/guide/video-and-audio-calling-api-sdk/getting-started",
+              to: "javascript/guide/video-and-audio-calling-api-sdk/getting-started",
               activeBaseRegex: "/*/video-and-audio-calling-api-sdk/*",
             },
           ],
