@@ -53,7 +53,7 @@
   },
   {
     "title": "Recordings",
-    "description": "This Recording APIs will allow you to start / stop / fetch meeting recordings.",
+    "description": "This Recording APIs will allow you to start / stop / fetch / delete meeting recordings.",
     "endpoints": [
       {
         "methodType": "POST",
@@ -74,6 +74,11 @@
         "methodType": "GET",
         "api": "/v2/recordings/${recordingId}",
         "link": "/api-reference/realtime-communication/fetch-recording-using-recordingId"
+      },
+      {
+        "methodType": "DELETE",
+        "api": "/v2/recordings/${recordingId}",
+        "link": "/api-reference/realtime-communication/delete-recording"
       }
     ]
   },
