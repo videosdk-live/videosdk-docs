@@ -130,7 +130,7 @@ Refer assets/index.css file from [here](/) for basic css effects
       <button
         class="btn btn-primary"
         id="btnCreateMeeting"
-        onclick="meetingHandler(true)"
+        onclick="joinMeeting(true)"
       >
         New Meeting
       </button>
@@ -142,7 +142,7 @@ Refer assets/index.css file from [here](/) for basic css effects
       />
       <button
         id="btnJoinMeeting"
-        onclick="meetingHandler(false)"
+        onclick="joinMeeting(false)"
         class="btn btn-primary"
       >
         Join
@@ -157,6 +157,12 @@ Refer assets/index.css file from [here](/) for basic css effects
   </body>
 </html>
 ```
+
+- An outcome of the above code block will be same as shown in an image below.
+
+![JS-Join Screen](/img/quick-start/js-join-screen.png)
+
+- Now to create grid of participants you will require one main container (`div`) which will dynamically contain sub container (`div`) for each participant.
 
 ```html title="index.html"
 <!--grid screen-->
@@ -173,37 +179,26 @@ Refer assets/index.css file from [here](/) for basic css effects
     <button class="btn btn-dark" id="btnLeaveMeeting">Leave Meeting</button>
   </div>
   <br />
+  <!-- main container where partcipant's grid will be formed dynamically -->
   <div id="videoContainer"></div>
-  <div
-    style="
-          position: absolute;
-          top: 10px;
-          right: 0px;
-          height: 50%;
-          overflow-y: scroll;
-        "
-  >
-    <h3>Participants List</h3>
-    <div id="participantsList"></div>
-  </div>
 </div>
 ```
 
 ### Step 2 : Meeting Initialisation
 
-- **config.js file** : set token in this file which is generated from [here](https://app.videosdk.live/login).
+- **config.js file** : Set token of videoSDK in `config.js` file which you can generate from [VideoSDK Dashboard](https://app.videosdk.live/login).
 
 ```js title="config.js"
 TOKEN = "";
 ```
 
-- Now you have your token; to create a meeting make use of API_BASE_URL mentioned below in `index.js` file
+- After setting up token you have access to videoSDK's endpoints by setting the URL mentioned below to your `index.js` file
 
 ```jsx title="setting up API_BASE_URL in index.js"
 const API_BASE_URL = "https://api.videosdk.live";
 ```
 
-- validate your token, whether it is empty or not
+- The next step is to validate token whether it is empty or not in order to minimize risk of getting error while passing token to videoSDK's endpoints.
 
 ```js title="token validation index.js"
 //variables
@@ -219,51 +214,78 @@ async function tokenValidation() {
 }
 ```
 
-- After checking your token now it's time to create a meeting that will generate one meeting object made up of multiple parameters.
-- The code below in the code block says that if **newMeeting parameter of a meetingHandler set to true, meeting will be created** and **if you have meetingId then you can set newMeeting to false and join operation will be performed.**
+- After checking your token now it's time to create a meeting that will generate one meeting object made up of multiple parameters. To refer more about meeting object refer [meeting class](../../api/sdk-reference/meeting-class/)
+- The code below in the code block says that if **newMeeting parameter of a joinMeeting set to true, meeting will be created** and **if you have meetingId then you can set newMeeting to false and join operation will be performed.**
 
 ```js title="create and validate meeting index.js"
 //variables
 let meetingId = "";
+let joinMeetingName = "";
+let stream = {};
 
-async function meetingHandler(newMeeting) {
-  let joinMeetingName = "JS-SDK";
+async function create() {
+  //...
+}
+async function join() {
+  //...
+}
+async function startMeeting(token, meetingId, name) {
+  //...
+}
+
+async function joinMeeting(newMeeting) {
+  joinMeetingName = "JS-SDK";
 
   //request permission for accessing media(mic/webcam)
-  navigator.mediaDevices
-    .getUserMedia({
-      video: true,
-      audio: true,
-    })
-    .then((stream) => {});
+  stream = await navigator.mediaDevices.getUserMedia({
+    video: true,
+    audio: true,
+  });
 
   //token validation
   tokenValidation();
   if (newMeeting) {
-    const url = `${API_BASE_URL}/api/meetings`;
-    const options = {
-      method: "POST",
-      headers: { Authorization: token, "Content-Type": "application/json" },
-    };
-
-    const { meetingId } = await fetch(url, options)
-      .then((response) => response.json())
-      .catch((error) => alert("error", error));
-    document.getElementById("lblMeetingId").value = meetingId;
-    document.getElementById("home-screen").style.display = "none";
-    document.getElementById("grid-screen").style.display = "inline-block";
-    startMeeting(token, meetingId, joinMeetingName);
+    create();
   } else {
-    meetingId = document.getElementById("txtMeetingCode").value;
-    document.getElementById("lblMeetingId").value = meetingId;
-    document.getElementById("home-screen").style.display = "none";
-    document.getElementById("grid-screen").style.display = "inline-block";
-    startMeeting(token, meetingId, joinMeetingName);
+    join();
   }
 }
 ```
 
-- so far you have created a meeting and to start a meeting;`startMeeting handler` is there.
+- Have a look to code block below that depict how you can create a meeting using VideoSDK
+
+```js title="create()"
+async function create() {
+  const url = `${API_BASE_URL}/api/meetings`;
+  const options = {
+    method: "POST",
+    headers: { Authorization: token, "Content-Type": "application/json" },
+  };
+
+  const { meetingId } = await fetch(url, options)
+    .then((response) => response.json())
+    .catch((error) => alert("error", error));
+  document.getElementById("lblMeetingId").value = meetingId;
+  document.getElementById("home-screen").style.display = "none";
+  document.getElementById("grid-screen").style.display = "inline-block";
+  startMeeting(token, meetingId, joinMeetingName);
+}
+```
+
+- If meeting object exist then to join a meeting you need to set following
+
+```js title="join()"
+async function join() {
+  meetingId = document.getElementById("txtMeetingCode").value;
+  document.getElementById("lblMeetingId").value = meetingId;
+  document.getElementById("home-screen").style.display = "none";
+  document.getElementById("grid-screen").style.display = "inline-block";
+  startMeeting(token, meetingId, joinMeetingName);
+}
+```
+
+- so far you have created a meetingId by using VideoSDK endpoint ; now to start a meeting you have to initialize meeting object of [meeting-class](../../api/sdk-reference/meeting-class/) to gain advantage of VideoSDK [meeting-class](../../api/sdk-reference/meeting-class/)
+- For that you need to have a function `startMeeting`as shown in code block below.
 
 ```js title="startMeeting index.js"
 //DOM elements
@@ -293,24 +315,57 @@ function startMeeting(token, meetingId, name) {
   //all remote participants
   participants = meeting.participants;
 
-  //create Local Participant
-  createParticipant(meeting.localParticipant.id);
+  //for Local Participant join
+  meeting.on("meeting-joined",()=>{
+    createParticipant(meeting.localParticipant);
 
-  //local participant stream-enabled
-  meeting.localParticipant.on("stream-enabled", (stream) => {
+    //local participant stream-enabled
+    meeting.localParticipant.on("stream-enabled", (stream) => {
     setTrack(
       stream,
       localParticipant,
       localParticipantAudio,
       meeting.localParticipant.id
     );
+    });
+    //local participant stream-disabled
+    meeting.localParticipant.on("stream-disabled", (stream) => {
+      console.log("local participant stream disabled");
+      setTrack(
+        stream,
+        document.getElementById(`v-${meeting.localParticipant.id}`),
+        document.getElementById(`a-${meeting.localParticipant.id}`),
+        meeting.localParticipant.id
+      );
+    });
+  });
+
+  //for remote participant join
+  meeting.on("participant-joined", (participant) => {
+    createParticipant(participant);
+    participant.on("stream-enabled", (stream) => {
+      console.log("Stream ENable : ", stream);
+      setTrack(
+        stream,
+        document.querySelector(`#v-${participant.id}`),
+        document.getElementById(`a-${participant.id}`),
+        participant.id
+      );
+    });
+  });
+
+  //for any participant left
+  meeting.on("participant-left", (participant) => {
+    let vElement = document.querySelector(`#v-${participant.id}`);
+    vElement.parentNode.removeChild(vElement);
+    let aElement = document.getElementById(`a-${participant.id}`);
+    aElement.parentNode.removeChild(aElement);
+    participants = new Map(meeting.participants);
+    //remove it from participant list participantId;
+    document.getElementById(`p-${participant.id}`).remove();
   });
 
   //remote participant joined
-  meeting.on("participant-joined", (participant) => {...});
-
-  //remote participants left
-  meeting.on("participant-left", (participant) => {...});
 
   addDomEvents();
 }
@@ -318,7 +373,7 @@ function startMeeting(token, meetingId, name) {
 function setTrack(stream, videoElem, audioElement, id) {...}
 ```
 
-- Write a method createParticipant which will create both local and remote participants.
+- Write a method createParticipant which will create video and audio element dynamically when any participant joins the meeting.
 
 ```js title=index.js
 ...
@@ -369,39 +424,6 @@ function createAudioElement(pId) {
   audioElement.setAttribute("id", `a-${pId}`);
   audioElement.style.display = "none";
   return audioElement;
-}
-```
-
-- `participant-joined` event is called when other participants join the meeting and `participant-left` event is called when participants leave the meeting.
-
-```js title="index.js"
-function startMeeting(token, meetingId, name) {
-  ...
-
-  //participant joined
-  meeting.on("participant-joined", (participant) => {
-    createParticipant(participant);
-    participant.on("stream-enabled", (stream) => {
-      console.log("Stream ENable : ", stream);
-      setTrack(
-        stream,
-        document.querySelector(`#v-${participant.id}`),
-        document.getElementById(`a-${participant.id}`),
-        participant.id
-      );
-    });
-  });
-
-  // participants left
-  meeting.on("participant-left", (participant) => {
-    let vElement = document.querySelector(`#v-${participant.id}`);
-    vElement.parentNode.removeChild(vElement);
-    let aElement = document.getElementById(`a-${participant.id}`);
-    aElement.parentNode.removeChild(aElement);
-    participants = new Map(meeting.participants);
-    //remove it from participant list participantId;
-    document.getElementById(`p-${participant.id}`).remove();
-  });
 }
 ```
 
@@ -480,7 +502,6 @@ live-server --port=8000
 
 #### **It's outcome will look like this**
 
-![JS-Join Screen](/img/quick-start/js-join-screen.png)
 ![JS-Grid Screen](/img/quick-start/js-grid-screen.png)
 
 :::caution
