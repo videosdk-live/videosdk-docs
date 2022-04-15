@@ -504,6 +504,14 @@ live-server --port=8000
 
 ![JS-Grid Screen](/img/quick-start/js-grid-screen.png)
 
+#### Final Output
+
+We are done with implementation of customised video calling app in js using Video SDK. To explore more features go through Basic and Advanced features.
+
+import ReactPlayer from 'react-player'
+
+<ReactPlayer controls url='/img/quick-start/js-final-video.mp4' width={"100%"} />
+
 :::caution
 For this tutorial purpose, we used a static token to initialize and join the meeting. But for the production version of the app, we recommend you use an Authentication Server that will generate and pass on the token to the Client App. For more details checkout [how to do server setup](/javascript/guide/video-and-audio-calling-api-sdk/server-setup).
 :::
