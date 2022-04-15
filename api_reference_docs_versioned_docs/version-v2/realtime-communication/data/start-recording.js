@@ -25,7 +25,7 @@ const startRecording = {
       value:
         "https://www.example.com/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.l0sImlhdCI6MTY0OTkyNjI1MCwiZXhwIjoxNjwNTMxMDUwf&meetingId=74v5-v21l-n1ey&participantId=RECORDER_ID",
       description:
-        "[Customize Layout of Meeting Recording](/docs/tutorials/recording-room/quickstart-templateurl).",
+        "[Customize Layout of Meeting Recording](/docs/tutorials/customized-layout).",
       required: false,
     },
     {

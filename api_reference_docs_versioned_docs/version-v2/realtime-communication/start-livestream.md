@@ -8,8 +8,8 @@ hide_table_of_contents: true
 # 
 
 import Method from '../../../src/theme/RestApiMethodContainer'
-import data from './data/start-livestream.json'
+import {startLivestream} from './data/start-livestream.js'
 
 <Method
-{...data.startLivestream}
+{...startLivestream}
 />

@@ -8,7 +8,7 @@ hide_table_of_contents: true
 #
 
 import Method from '../../../src/theme/RestApiMethodContainer'
-import {startRecording} from './data/demo.js'
+import {startRecording} from './data/start-recording.js'
 
 <Method
 {...startRecording}
