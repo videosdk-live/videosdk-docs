@@ -21,6 +21,12 @@
         "required": true
       },
       {
+        "key": "templateUrl",
+        "value": "https://www.example.com/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.l0sImlhdCI6MTY0OTkyNjI1MCwiZXhwIjoxNjwNTMxMDUwf&meetingId=74v5-v21l-n1ey&participantId=RECORDER_ID",
+        "description": "For more infromation : [Customized Layout](/docs/tutorials/recording-room/quickstart-templateurl).",
+        "required": false
+      },
+      {
         "key": "config",
         "value": "{layout: {type: `SPOTLIGHT`, priority:`PIN`, gridSize: 5}}",
         "description": "Config object contains layout object which accept _`type`_  with value **GRID** | **SPOTLIGHT** | **SIDEBAR**. _`priority`_ with value **SPEAKER** | **PIN** ,and _`gridSize`_ which accept number <=25.",

@@ -609,6 +609,7 @@ module.exports = {
       ],
       collapsed: true,
     },
+    "tutorials/recording-room/quickstart-templateurl",
   ],
 
   // resources: [
