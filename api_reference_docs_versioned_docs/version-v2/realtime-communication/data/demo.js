@@ -31,7 +31,13 @@ const startRecording = {
     {
       key: "config",
       value: "{layout: {type: `SPOTLIGHT`, priority:`PIN`, gridSize: 5}}",
-      description: `- **config**: - **layout**:- **type**: _"GRID"_ | _"SPOTLIGHT"_ | _"SIDEBAR"_`,
+      description: `
+- **config**:
+  - **layout**:
+    - **type**: _"GRID"_ | _"SPOTLIGHT"_ | _"SIDEBAR"_
+    - **priority**: _"SPEAKER"_ | _"PIN"_
+    - **gridSize**: Number _\`max 25\`_
+`,
       required: false,
     },
     {
