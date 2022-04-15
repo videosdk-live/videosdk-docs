@@ -323,8 +323,8 @@ function startMeeting(token, meetingId, name) {
     meeting.localParticipant.on("stream-enabled", (stream) => {
     setTrack(
       stream,
-      localParticipant,
-      localParticipantAudio,
+      document.getElementById(`v-${meeting.localParticipant.id}`),
+        document.getElementById(`a-${meeting.localParticipant.id}`),
       meeting.localParticipant.id
     );
     });
@@ -347,7 +347,7 @@ function startMeeting(token, meetingId, name) {
       console.log("Stream ENable : ", stream);
       setTrack(
         stream,
-        document.querySelector(`#v-${participant.id}`),
+        document.querySelector(`v-${participant.id}`),
         document.getElementById(`a-${participant.id}`),
         participant.id
       );
@@ -356,7 +356,7 @@ function startMeeting(token, meetingId, name) {
 
   //for any participant left
   meeting.on("participant-left", (participant) => {
-    let vElement = document.querySelector(`#v-${participant.id}`);
+    let vElement = document.querySelector(`v-${participant.id}`);
     vElement.parentNode.removeChild(vElement);
     let aElement = document.getElementById(`a-${participant.id}`);
     aElement.parentNode.removeChild(aElement);
