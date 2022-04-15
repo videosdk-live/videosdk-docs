@@ -1,6 +1,7 @@
 {
   "removeParticipant": {
-    "description": "This API let you remove participant by passing roomId in params and participantId in body parameters.",
+    "title": "Remove Participant",
+    "description": "This API let you remove participant by passing roomId or sessionId and participantId as body parameters.",
     "headers": [],
     "methodType": "POST",
     "postParameters": [
@@ -9,18 +10,23 @@
         "value": "participantId",
         "description": "The unique ID of participant.",
         "required": true
-      }
-    ],
-    "queryParameters": [],
-    "parameters": [
+      },
       {
         "key": "roomId",
         "description": "The ID of the room.",
         "value": "roomId",
         "required": true
+      },
+      {
+        "key": "sessionId",
+        "description": "The ID of the session.",
+        "value": "sessionId",
+        "required": false
       }
     ],
-    "apiEndpoint": "https://api.videosdk.live/v2/sessions/${roomId}/participants/remove-participant",
+    "queryParameters": [],
+    "parameters": [],
+    "apiEndpoint": "https://api.videosdk.live/v2/sessions/participants/remove",
     "response": {
       "start": "2022-03-29T05:21:42.829Z",
       "end": null,
@@ -39,7 +45,7 @@
         {
           "_id": "62429771903bdf001299cae4",
           "participantId": "demo-2",
-          "name": "recorder",
+          "name": "William",
           "timelog": [
             {
               "start": "2022-03-29T05:21:53.917Z",

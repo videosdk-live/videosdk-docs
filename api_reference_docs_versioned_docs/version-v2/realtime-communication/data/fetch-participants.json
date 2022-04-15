@@ -1,5 +1,6 @@
 {
   "fetchParticipants": {
+    "title": "Fetch Participants",
     "description": "This API let you fetch a number of total participants in a room session by passing sessionId as a parameter",
     "headers": [
       {
@@ -16,22 +17,21 @@
     "queryParameters": [
       {
         "key": "page",
-        "value": "1",
-        "description": "Page number for the participants. DEFAULT : 1",
+        "defaultValue": "`1`",
+        "description": "#### Page number for the participants.",
         "required": false
       },
       {
         "key": "perPage",
-        "value": "20",
-        "description": "Number of participants you want per page. DEFAULT : 20",
+        "defaultValue": "`20`",
+        "description": "#### Number of participants you want per page.",
         "required": false
       }
     ],
     "parameters": [
       {
         "key": "sessionId",
-        "value": "sessionId",
-        "description": "The ID of the Session.",
+        "description": "#### The ID of the Session.",
         "required": true
       }
     ],

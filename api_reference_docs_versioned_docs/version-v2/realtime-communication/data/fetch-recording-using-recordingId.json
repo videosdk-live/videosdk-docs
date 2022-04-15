@@ -1,5 +1,6 @@
 {
   "fetchRecordingUsingRecordingId": {
+    "title": "Fetch a Recording",
     "description": "This API let you fetch a particular recording info by passing recording Id as parameter.",
     "headers": [],
     "methodType": "GET",
@@ -8,7 +9,7 @@
     "parameters": [
       {
         "key": "recordingId",
-        "description": "The ID of the Recording.",
+        "description": "#### The ID of the Recording.",
         "required": true
       }
     ],

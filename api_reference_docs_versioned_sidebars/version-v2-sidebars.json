@@ -23,7 +23,9 @@
         "realtime-communication/fetch-session",
         "realtime-communication/fetch-session-using-sessionid",
         "realtime-communication/fetch-participants",
-        "realtime-communication/fetch-active-participants"
+        "realtime-communication/fetch-active-participants",
+        "realtime-communication/end-session",
+        "realtime-communication/remove-participant"
       ]
     },
     {
@@ -31,8 +33,29 @@
       "label": "Recording APIs",
       "collapsed": true,
       "items": [
+        "realtime-communication/start-recording",
+        "realtime-communication/stop-recording",
         "realtime-communication/fetch-recordings",
-        "realtime-communication/fetch-recording-using-recordingId"
+        "realtime-communication/fetch-recording-using-recordingId",
+        "realtime-communication/delete-recording"
+      ]
+    },
+    {
+      "type": "category",
+      "label": "Live Streaming APIs",
+      "collapsed": true,
+      "items": [
+        "realtime-communication/start-livestream",
+        "realtime-communication/stop-livestream"
+      ]
+    },
+    {
+      "type": "category",
+      "label": "HLS Streaming APIs",
+      "collapsed": true,
+      "items": [
+        "realtime-communication/start-hlsStream",
+        "realtime-communication/stop-hlsStream"
       ]
     }
   ]

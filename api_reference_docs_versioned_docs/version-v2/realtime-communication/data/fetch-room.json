@@ -1,5 +1,6 @@
 {
   "fetchRoom": {
+    "title": "Fetch a Room",
     "description": "This API let you fetch a particular room info by passing roomId or customRoomId as parameter.",
     "headers": [
       {
@@ -17,8 +18,7 @@
     "parameters": [
       {
         "key": "roomId",
-        "value": "hello-world",
-        "description": "Your roomId or customRoomId.",
+        "description": "#### Your roomId or customRoomId.",
         "required": false
       }
     ],

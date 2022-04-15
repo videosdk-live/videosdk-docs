@@ -609,6 +609,7 @@ module.exports = {
       ],
       collapsed: true,
     },
+    "tutorials/customized-layout",
   ],
 
   // resources: [
