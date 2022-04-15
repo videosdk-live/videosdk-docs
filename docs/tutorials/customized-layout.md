@@ -5,7 +5,7 @@ sidebar_label: Customized Layout
 hide_table_of_contents: true
 ---
 
-- This feature allows you to start recording / HLS / LiveStream with Customized Layout by providing `templateUrl`.
+- This feature allows you to start recording / HLS / Livestream with Customized Layout by providing `templateUrl`.
 
 - `templateUrl` is a webpage URL of your hosted meeting.
 
@@ -19,7 +19,7 @@ hide_table_of_contents: true
 ## How it works?
 
 After providing `templateUrl`, now its Vidoe SDK server job is to pass that `templateUrl` in the Video SDK Composer, after the Video SDK Composer joins that meeting as a recorder with provided
-`token` and `meetingId` then record / HLS / LiveStream the whole meeting.
+`token` and `meetingId` then record / HLS / Livestream the whole meeting.
 
 ### Step 1 : Create Template URL
 
@@ -39,7 +39,7 @@ _`https://www.example.com/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.l0sImlhdCI
 
 - Now we will add this `templateUrl` to the body of the [StartRecording](/api-reference/realtime-communication/start-recording) API.
 
-- Here, we took the [Recording](/api-reference/realtime-communication/start-recording) API example, if you want go with [LiveStream](/api-reference/realtime-communication/start-livestream) or [Hls](/api-reference/realtime-communication/start-hlsStream) the same steps will be consider.
+- Here, we took the [Recording](/api-reference/realtime-communication/start-recording) API example, if you want go with [Livestream](/api-reference/realtime-communication/start-livestream) or [Hls](/api-reference/realtime-communication/start-hlsStream) the same steps will be consider.
 
 ```js
 const startRecording = () => {
@@ -104,8 +104,8 @@ meeting = window.ZujoSDK.initMeeting({
 
 :::note
 
-- During the Meeting init, you can't modify recorder `participantId`, because it will affect the Video SDK Composer to record / HLS / LiveStream of the meeting.
+- During the Meeting init, you can't modify recorder `participantId`, because it will affect the Video SDK Composer to record / HLS / Livestream of the meeting.
 
-- Do make sure these changes should be in the live environment, otherwise, Video SDK Composer will not able to record / HLS / LiveStream of the meeting.
+- Do make sure these changes should be in the live environment, otherwise, Video SDK Composer will not able to record / HLS / Livestream of the meeting.
 
 :::
