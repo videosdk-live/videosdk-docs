@@ -1,0 +1,49 @@
+{
+  "fetchAllHLS": {
+    "title": "Fetch all HLS",
+    "description": "This API let you fetch all HLS streams.",
+    "headers": [],
+    "methodType": "GET",
+    "postParameters": [],
+    "queryParameters": [
+      {
+        "key": "page",
+        "defaultValue": "`1`",
+        "description": "#### Page number for the rooms.",
+        "required": false
+      },
+      {
+        "key": "perPage",
+        "defaultValue": "`20`",
+        "description": "#### Number of rooms you want per page.",
+        "required": false
+      }
+    ],
+    "parameters": [],
+    "apiEndpoint": "https://api.videosdk.live/v2/hls/",
+    "response": {
+      "pageInfo": {
+        "currentPage": 1,
+        "perPage": 20,
+        "lastPage": 7,
+        "total": 125
+      },
+      "data": [
+        {
+          "sessionId": "abcde94c96e17e03fb0abcde4",
+          "streamKey": "abcdefgh-ijkl-mnop-1234-abcdefghijkl",
+          "start": "2022-04-19T09:18:13.432Z",
+          "end": "2022-04-19T09:19:34.552Z",
+          "roomId": "abcd-efgh-ijkl",
+          "duration": 75.173,
+          "links": {
+            "get_room": "https://api.videosdk.live/v2/rooms/abcd-efgh-ijkl",
+            "get_session": "https://api.videosdk.live/v2/sessions/abcde94c96e17e03fb0abcde4"
+          },
+          "downstreamUrl": "https://cdn.videosdk.live/meetings-hls/abcdefgh-ijkl-mnop-1234-abcdefghijkl/index.m3u8",
+          "id": "abcdef9879288c1f48339f64"
+        }
+      ]
+    }
+  }
+}

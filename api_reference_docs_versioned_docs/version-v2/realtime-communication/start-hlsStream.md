@@ -1,7 +1,7 @@
 ---
 title: Start HLS Stream | Video SDK
 sidebar_position: 1
-sidebar_label: Start HLS Stream
+sidebar_label: Start HLS
 hide_table_of_contents: true
 ---
 

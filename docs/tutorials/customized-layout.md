@@ -90,10 +90,10 @@ const participantId = querParamsParticipantId
   : randomIdString();
 
 // Meeting config
-window.ZujoSDK.config(querParamsToken ? querParamsToken : token);
+window.VideoSDK.config(querParamsToken ? querParamsToken : token);
 
 // Meeting Init
-meeting = window.ZujoSDK.initMeeting({
+meeting = window.VideoSDK.initMeeting({
   meetingId: querParamsMeetingId ? querParamsMeetingId : meetingId,
   participantId: participantId,
   name: name,

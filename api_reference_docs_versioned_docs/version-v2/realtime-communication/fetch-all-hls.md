@@ -1,15 +1,15 @@
 ---
-title: Stop HLS Stream | Video SDK
+title: Fetch all HLS | Video SDK
 sidebar_position: 1
-sidebar_label: Stop HLS
+sidebar_label: Fetch all HLS
 hide_table_of_contents: true
 ---
 
 #
 
 import Method from '../../../src/theme/RestApiMethodContainer'
-import data from './data/stop-hls.json'
+import data from './data/fetch-all-hls.json'
 
 <Method
-{...data.stopHLSstream}
+{...data.fetchAllHLS}
 />

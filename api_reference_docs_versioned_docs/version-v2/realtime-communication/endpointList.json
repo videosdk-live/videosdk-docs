@@ -111,6 +111,16 @@
         "methodType": "POST",
         "api": "/v2/hls/stop",
         "link": "/api-reference/realtime-communication/stop-hlsStream"
+      },
+      {
+        "methodType": "GET",
+        "api": "/v2/hls/",
+        "link": "/api-reference/realtime-communication/fetch-all-hls"
+      },
+      {
+        "methodType": "GET",
+        "api": "/v2/hls/${HlsId}",
+        "link": "/api-reference/realtime-communication/fetch-an-hls"
       }
     ]
   }

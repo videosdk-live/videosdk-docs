@@ -55,7 +55,9 @@
       "collapsed": true,
       "items": [
         "realtime-communication/start-hlsStream",
-        "realtime-communication/stop-hlsStream"
+        "realtime-communication/stop-hlsStream",
+        "realtime-communication/fetch-all-hls",
+        "realtime-communication/fetch-an-hls"
       ]
     }
   ]
