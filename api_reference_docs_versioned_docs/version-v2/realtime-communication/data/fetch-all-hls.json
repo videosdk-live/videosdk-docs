@@ -7,15 +7,27 @@
     "postParameters": [],
     "queryParameters": [
       {
+        "key": "roomId",
+        "value": "xyz",
+        "description": "#### The ID of the Room.",
+        "required": true
+      },
+      {
+        "key": "sessionId",
+        "value": "xyz",
+        "description": "#### The ID of the Session.",
+        "required": false
+      },
+      {
         "key": "page",
         "defaultValue": "`1`",
-        "description": "#### Page number for the rooms.",
+        "description": "#### Page number for the recording",
         "required": false
       },
       {
         "key": "perPage",
         "defaultValue": "`20`",
-        "description": "#### Number of rooms you want per page.",
+        "description": "#### Number of recordings you want per page.",
         "required": false
       }
     ],
