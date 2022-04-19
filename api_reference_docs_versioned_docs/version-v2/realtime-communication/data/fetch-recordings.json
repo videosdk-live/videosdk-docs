@@ -16,7 +16,7 @@
         "key": "sessionId",
         "value": "xyz",
         "description": "#### The ID of the Session.",
-        "required": true
+        "required": false
       },
       {
         "key": "page",

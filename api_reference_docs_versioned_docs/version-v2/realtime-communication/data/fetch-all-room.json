@@ -29,7 +29,7 @@
       }
     ],
     "parameters": [],
-    "apiEndpoint": "https://api.videosdk.live/v2/rooms/?page=1&perPage=20",
+    "apiEndpoint": "https://api.videosdk.live/v2/rooms",
     "response": {
       "pageInfo": {
         "currentPage": 1,
