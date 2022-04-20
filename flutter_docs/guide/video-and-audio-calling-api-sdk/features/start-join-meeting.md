@@ -61,7 +61,6 @@ In case you are not providing any region code, the default region will be `sg001
 import 'dart:convert';
 import 'package:http/http.dart' as http; // For API Calling, you need to add third party package "http"
 import 'package:videosdk/rtc.dart';
-import 'package:videosdk/meeting.dart';
 
 // States Defined in Stateful Component.
 String? meetingId;
@@ -129,7 +128,6 @@ meeting by providing name, meetingId, micEnabled, webcamEnabled & maxResolution.
 
 </div>
 
-
 ```js
 import 'package:flutter/material.dart';
 import 'package:videosdk/rtc.dart';
@@ -182,7 +180,6 @@ After joining, you will be able to Manage Participant in a meeting.
 </div>
 
 </div>
-
 
 ```js
 // Join the meeting

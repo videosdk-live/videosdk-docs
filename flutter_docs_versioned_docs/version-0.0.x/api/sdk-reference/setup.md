@@ -38,7 +38,7 @@ This will add a line like this to your package's pubspec.yaml (and run an implic
 
 ```js
 dependencies:
-  videosdk: ^0.0.11
+  videosdk: ^0.0.12
 ```
 
 Alternatively, your editor might support or flutter pub get. Check the docs for your editor to learn more.

@@ -40,7 +40,7 @@ This will add a line like this to your package's pubspec.yaml (and run an implic
 
 ```
 dependencies:
-  videosdk: ^0.0.9
+  videosdk: ^0.0.12
 ```
 
 Alternatively, your editor might support or flutter pub get. Check the docs for your editor to learn more.
@@ -50,9 +50,5 @@ Alternatively, your editor might support or flutter pub get. Check the docs for 
 Now in your Dart code, you can use:
 
 ```
-import 'package:videosdk/meeting.dart';
-import 'package:videosdk/meeting_builder.dart';
-import 'package:videosdk/participant.dart';
 import 'package:videosdk/rtc.dart';
-import 'package:videosdk/stream.dart';
 ```

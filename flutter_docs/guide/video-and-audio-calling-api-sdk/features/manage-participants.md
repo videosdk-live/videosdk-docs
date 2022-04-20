@@ -54,10 +54,7 @@ Other participants Map contains same properties as [LocalParticipant](/flutter/g
 
 ```js title="LocalParticipant.dart"
 import 'package:flutter/material.dart';
-import 'package:videosdk/meeting.dart';
-import 'package:videosdk/participant.dart';
-import 'package:flutter_webrtc/flutter_webrtc.dart';
-import 'package:videosdk/stream.dart';
+import 'package:videosdk/rtc.dart';
 
 class LocalParticipant extends StatefulWidget {
   final Participant localParticipant;
@@ -189,9 +186,7 @@ class LocalParticipantState extends State<LocalParticipant> {
 
 ```js title="ListParticipants.dart"
 import 'package:flutter/material.dart';
-import 'package:flutter_webrtc/flutter_webrtc.dart';
-import 'package:videosdk/participant.dart';
-import 'package:videosdk/stream.dart';
+import 'package:videosdk/rtc.dart';
 
 class ListParticipants extends StatelessWidget {
   final Map<String, Participant> participants;
@@ -223,9 +218,7 @@ class ListParticipants extends StatelessWidget {
 
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:flutter_webrtc/flutter_webrtc.dart';
-import 'package:videosdk/participant.dart';
-import 'package:videosdk/stream.dart';
+import 'package:videosdk/rtc.dart';
 
 class RemoteParticipant extends StatefulWidget {
   final Participant participant;
@@ -311,7 +304,6 @@ class RemoteParticipantState extends State<RemoteParticipant> {
 4. **stream-enabled** - Whenever any participant enabled mic/webcam in meeting, `stream-enabled` event will trigger and return [Stream Map](/flutter/guide/video-and-audio-calling-api-sdk/features/manage-participants#streams-map-properties).
 
 5. **stream-disabled** - Whenever any participant disabled mic/webcam in meeting, `stream-disabled` event will trigger and return [Stream Map](/flutter/guide/video-and-audio-calling-api-sdk/features/manage-participants#streams-map-properties).
-
 
 ```js
 // Adding event listner
