@@ -1,0 +1,22 @@
+[
+  {
+    "href": "./methods#enablewebcam",
+    "label": "enablewebcam"
+  },
+  {
+    "href": "./methods#disablewebcam",
+    "label": "disablewebcam"
+  },
+  {
+    "href": "./methods#enablemic",
+    "label": "enablemic"
+  },
+  {
+    "href": "./methods#disablemic",
+    "label": "disablemic"
+  },
+  {
+    "href": "./methods#setquality",
+    "label": "setquality"
+  }
+]

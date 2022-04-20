@@ -1,0 +1,5 @@
+[
+  { "href": "./properties#id", "label": "id" },
+  { "href": "./properties#displayName", "label": "displayName" },
+  { "href": "./properties#streams", "label": "streams" }
+]

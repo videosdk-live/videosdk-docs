@@ -346,7 +346,6 @@ module.exports = {
       label: "Rest API Reference",
       collapsed: true,
       items: [
-        "api-reference/realtime-communication/create-room",
         "api-reference/realtime-communication/auth",
         "api-reference/realtime-communication/create-join-meeting",
         "api-reference/realtime-communication/list-all-meetings",
@@ -363,15 +362,15 @@ module.exports = {
           ],
         },
         {
-              type: "category",
-              label: "Recordings",
-              collapsed: true,
-              items: [
-                "api-reference/realtime-communication/list-recordings",
-                "api-reference/realtime-communication/get-recording-details",
-                "api-reference/realtime-communication/remove-recording",
-              ],
-            },
+          type: "category",
+          label: "Recordings",
+          collapsed: true,
+          items: [
+            "api-reference/realtime-communication/list-recordings",
+            "api-reference/realtime-communication/get-recording-details",
+            "api-reference/realtime-communication/remove-recording",
+          ],
+        },
       ],
       collapsed: true,
     },
@@ -610,6 +609,7 @@ module.exports = {
       ],
       collapsed: true,
     },
+    "tutorials/customized-layout",
   ],
 
   // resources: [

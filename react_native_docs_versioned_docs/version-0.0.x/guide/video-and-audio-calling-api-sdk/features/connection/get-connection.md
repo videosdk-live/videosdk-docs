@@ -9,7 +9,6 @@ pagination_label: Get Connection
 
 After successfully established connections, you will be able to get all the connected meetings from `Meeting` class parameter called `connections`.
 
-
 ```js
 import { useMeeting } from "@videosdk.live/react-native-sdk";
 

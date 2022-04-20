@@ -40,7 +40,6 @@ export default function SidebarDropdowns() {
       currentPath = currentPath.replace(currentPath.split("/")[2], "");
       currentPath = currentPath.replace("//", "/");
     } else {
-
       //check current viewing version is latest
       if (version == [versionList[0]]) {
         currentPath = currentPath.replace(
@@ -48,17 +47,13 @@ export default function SidebarDropdowns() {
           sdk + "/" + value
         );
       } else {
-        currentPath = currentPath.replace(
-          currentPath.split("/")[2],
-          value
-        );
+        currentPath = currentPath.replace(currentPath.split("/")[2], value);
       }
     }
     return currentPath;
   }
 
   useEffect(() => {
-    console.log("location.path : ", location.pathname);
     var currentSdk = location.pathname.split("/")[1];
     var currentVersion = location.pathname.split("/")[2];
     var versions = [];
@@ -80,7 +75,10 @@ export default function SidebarDropdowns() {
       versions = api_reference_versions;
     }
 
-    if (currentVersion.match("([0-9])+.([0-9])+.([0-9]|[a-z])+") || currentVersion.match("v([0-9])+")) {
+    if (
+      currentVersion.match("([0-9])+.([0-9])+.([0-9]|[a-z])+") ||
+      currentVersion.match("v([0-9])+")
+    ) {
       setVersion(currentVersion);
       setViewType(location.pathname.split("/")[3]);
     } else {
@@ -93,6 +91,11 @@ export default function SidebarDropdowns() {
 
   const sdkList = [
     {
+      id: "javascript",
+      value: "Javascript",
+      icon: "/img/icons/libraries/ic_javascript.svg",
+    },
+    {
       id: "react",
       value: "React",
       icon: "/img/icons/libraries/ic_react.svg",
@@ -102,11 +105,6 @@ export default function SidebarDropdowns() {
       value: "React Native",
 
       icon: "/img/icons/libraries/ic_react.svg",
-    },
-    {
-      id: "javascript",
-      value: "Javascript",
-      icon: "/img/icons/libraries/ic_javascript.svg",
     },
     {
       id: "android",
@@ -123,11 +121,6 @@ export default function SidebarDropdowns() {
       value: "Flutter",
       icon: "/img/icons/libraries/ic_flutter.svg",
     },
-    {
-      id: "prebuilt",
-      value: "Prebuilt",
-      icon: "/img/icons/libraries/ic_javascript.svg",
-    },
   ];
 
   function getSDKName(value) {
@@ -137,10 +130,9 @@ export default function SidebarDropdowns() {
     return name;
   }
 
-  console.log("Sdk  : ", sdk);
   return (
     <div className="row dropdown_menu">
-      {(sdk != "docs" && sdk != "prebuilt" && sdk != "api-reference") || viewType == "api" ? (
+      {sdk != "docs" && sdk != "prebuilt" && sdk != "api-reference" ? (
         <div className="col dropdown dropdown--hoverable dropdown--left">
           <div className="row navbar__link--active">
             {<img className="dropdown-logo" src={getSDKName(sdk)[0]?.icon} />}
@@ -174,7 +166,9 @@ export default function SidebarDropdowns() {
       {sdk != "docs" ? (
         <div
           className={
-            (viewType == "guide" && sdk == "prebuilt") || sdk == "api-reference"
+            (viewType == "guide" && sdk == "prebuilt") ||
+            (viewType == "api" && sdk == "prebuilt") ||
+            sdk == "api-reference"
               ? "col dropdown dropdown--hoverable dropdown--left"
               : "dropdown dropdown--hoverable dropdown--right"
           }

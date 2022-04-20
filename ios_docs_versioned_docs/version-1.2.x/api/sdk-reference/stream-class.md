@@ -34,6 +34,8 @@ import MethodListHeading from '@theme/MethodListHeading';
       <MethodListItemLabel name="id"  type={"String"} />
       <MethodListItemLabel name="kind"  type={"StreamKind"} description="StreamKind is ENUM with possible values of video, audio and share" />
       <MethodListItemLabel name="track"  type={"RTCMediaStreamTrack"} />
+      <MethodListItemLabel name="producer"  type={"Producer"} />
+      <MethodListItemLabel name="consumer"  type={"Consumer"} />
     </MethodListGroup>
   </MethodListItemLabel>
 </MethodListGroup>

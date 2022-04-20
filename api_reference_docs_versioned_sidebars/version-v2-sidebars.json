@@ -1,83 +1,64 @@
 {
-  "realtimeCommunicationSidebar": [
+  "apiSidebar": [
     {
-      "type": "category",
-      "label": "Real Time Communication",
-      "items": [
-        "realtime-communication/intro",
-        "realtime-communication/architecture"
-      ],
-      "collapsed": true
+      "type": "doc",
+      "id": "realtime-communication/intro"
     },
     {
       "type": "category",
-      "label": "Rest API Reference",
+      "label": "Room APIs",
       "collapsed": true,
       "items": [
         "realtime-communication/create-room",
-        "realtime-communication/update-room",
-        "realtime-communication/fetch-room-details",
-        {
-          "type": "category",
-          "label": "Sessions",
-          "collapsed": true,
-          "items": [
-            "realtime-communication/fetch-session",
-            "realtime-communication/fetch-session-using-sessionid",
-            "realtime-communication/fetch-participants"
-          ]
-        },
-        {
-          "type": "category",
-          "label": "Recordings",
-          "collapsed": true,
-          "items": [
-            "realtime-communication/start-recording",
-            "realtime-communication/stop-recording",
-            "realtime-communication/fetch-recordings",
-            "realtime-communication/fetch-recording-using-recordingId"
-          ]
-        },
-        {
-          "type": "category",
-          "label": "Livestreams",
-          "collapsed": true,
-          "items": [
-            "realtime-communication/start-livestream",
-            "realtime-communication/stop-livestream",
-            "realtime-communication/fetch-livestreams",
-            "realtime-communication/fetch-livestream-using-livestreamId"
-          ]
-        },
-        {
-          "type": "category",
-          "label": "HLS Stream",
-          "collapsed": true,
-          "items": [
-            "realtime-communication/start-hlsStream",
-            "realtime-communication/stop-hlsStream",
-            "realtime-communication/fetch-hlsStreams",
-            "realtime-communication/fetch-hlsStream-using-hlsStreamId"
-          ]
-        },
-        {
-          "type": "category",
-          "label": "Combined Stream",
-          "collapsed": true,
-          "items": [
-            "realtime-communication/combine-stream-start",
-            "realtime-communication/combine-stream-stop"
-          ]
-        }
+        "realtime-communication/validate-room",
+        "realtime-communication/fetch-all-room",
+        "realtime-communication/fetch-room-details"
       ]
     },
     {
       "type": "category",
-      "label": "See Also",
+      "label": "Session APIs",
+      "collapsed": true,
       "items": [
-        "realtime-communication/see-also/device-browser-support"
-      ],
-      "collapsed": true
+        "realtime-communication/fetch-session",
+        "realtime-communication/fetch-session-using-sessionid",
+        "realtime-communication/fetch-participants",
+        "realtime-communication/fetch-active-participants",
+        "realtime-communication/end-session",
+        "realtime-communication/remove-participant"
+      ]
+    },
+    {
+      "type": "category",
+      "label": "Recording APIs",
+      "collapsed": true,
+      "items": [
+        "realtime-communication/start-recording",
+        "realtime-communication/stop-recording",
+        "realtime-communication/fetch-recordings",
+        "realtime-communication/fetch-recording-using-recordingId",
+        "realtime-communication/delete-recording"
+      ]
+    },
+    {
+      "type": "category",
+      "label": "Live Streaming APIs",
+      "collapsed": true,
+      "items": [
+        "realtime-communication/start-livestream",
+        "realtime-communication/stop-livestream"
+      ]
+    },
+    {
+      "type": "category",
+      "label": "HLS Streaming APIs",
+      "collapsed": true,
+      "items": [
+        "realtime-communication/start-hlsStream",
+        "realtime-communication/stop-hlsStream",
+        "realtime-communication/fetch-all-hls",
+        "realtime-communication/fetch-an-hls"
+      ]
     }
   ]
 }

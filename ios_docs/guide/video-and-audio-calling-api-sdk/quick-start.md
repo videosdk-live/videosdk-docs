@@ -25,9 +25,9 @@ This guide will get you running with the VideoSDK video & audio calling in minut
 
 Before proceeding, ensure that your development environment meets the following requirements:
 
-* iOS development environment
-* A valid VideoSDK account.
-* An active VideoSDK project with temporary token. For details, see [Get your API key and Secret key](/ios/guide/video-and-audio-calling-api-sdk/signup-and-create-api).
+- iOS development environment
+- A valid VideoSDK account.
+- An active VideoSDK project with temporary token. For details, see [Get your API key and Secret key](/ios/guide/video-and-audio-calling-api-sdk/signup-and-create-api).
 
 ## Project Setup
 
@@ -46,7 +46,9 @@ $ pod init
 ```bash
 $ pod 'VideoSDKRTC'
 ```
-OR 
+
+OR
+
 ```bash
 $ pod 'VideoSDKRTC', :git => 'https://github.com/videosdk-live/videosdk-rtc-ios-sdk.git'
 ```
@@ -68,11 +70,12 @@ $ pod 'VideoSDKRTC', :git => 'https://github.com/videosdk-live/videosdk-rtc-ios-
 ### Creating Joining Screen
 
 The Joining screen will consist of:
+
 1. Create Button - This button will create a new meeting for you.
 2. TextField for Meeting ID - This textfield will contain the meeting ID you want to join.
 3. Join Button - This buttom will join the meeting with which the you will be joined.
 
-1. Create a new `APIService.swift` file which will include the API call for creating the meeting. Update your token in the `AUTH_TOKEN`.
+4. Create a new `APIService.swift` file which will include the API call for creating the meeting. Update your token in the `AUTH_TOKEN`.
 
 ```js title="APIService.swift"
 class APIService {

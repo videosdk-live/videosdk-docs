@@ -1,0 +1,77 @@
+{
+  "fetchRecordings": {
+    "title": "Fetch Recordings",
+    "description": "This API let you fetch details of your recording  by passing roomId and sessionId as query parameters.",
+    "headers": [],
+    "methodType": "GET",
+    "postParameters": [],
+    "queryParameters": [
+      {
+        "key": "roomId",
+        "value": "xyz",
+        "description": "#### The ID of the Room.",
+        "required": true
+      },
+      {
+        "key": "sessionId",
+        "value": "xyz",
+        "description": "#### The ID of the Session.",
+        "required": false
+      },
+      {
+        "key": "page",
+        "defaultValue": "`1`",
+        "description": "#### Page number for the recording",
+        "required": false
+      },
+      {
+        "key": "perPage",
+        "defaultValue": "`20`",
+        "description": "#### Number of recordings you want per page.",
+        "required": false
+      }
+    ],
+    "parameters": [],
+    "apiEndpoint": "https://api.videosdk.live/v2/recordings",
+    "response": {
+      "pageInfo": {
+        "currentPage": 1,
+        "perPage": 20,
+        "lastPage": 1,
+        "total": 1
+      },
+      "data": [
+        {
+          "userId": "5f7edbb14c938bcd42944527",
+          "roomId": "abc-xyzw-lmno",
+          "sessionId": "61d6e823783d6b03a026ac05",
+          "createdAt": "2022-01-06T13:01:40.814Z",
+          "updatedAt": "2022-01-06T13:02:42.935Z",
+          "fileId": "61d6e871d1617e097b41699b",
+          "file": {
+            "meta": {
+              "resolution": {
+                "width": 1920,
+                "height": 1080
+              },
+              "format": "mov,mp4,m4a,3gp,3g2,mj2",
+              "duration": 55.055
+            },
+            "filePath": "uploads/videos/61d6e871d1617e097b41699b.mp4",
+            "size": 17023255,
+            "type": "video",
+            "userStorage": null,
+            "createdAt": "2022-01-06T13:02:42.816Z",
+            "updatedAt": "2022-01-28T10:48:57.573Z",
+            "ratio": {
+              "1080": 309204.5227499773
+            },
+            "fileUrl": "https://cdn.videosdk.live/uploads/videos/61d6e871d1617e097b41699b.mp4",
+            "id": "61d6e871d1617e097b41699b"
+          },
+          "id": "61d6e834e1326304a9e73dac"
+        }
+      ]
+    }
+  }
+}

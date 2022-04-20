@@ -62,7 +62,7 @@
   /* See theme-specific "--custom" vars below  */
 
   /* 
-    Customisation here for both Light and Dark themes
+    customization here for both Light and Dark themes
   */
   --custom-font-base: "lato", BlinkMacSystemFont, -apple-system, "Segoe UI",
     "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
@@ -296,7 +296,7 @@ li:first-child > .dropdown__link {
 
 .menu__list-item-collapsible:hover .menu__link--active,
 .menu__list-item-collapsible .menu__link--active {
-  background: #6a65f1 !important;
+  background: var(--ifm-color-primary) !important;
   color: #ffffff;
 }
 
@@ -329,7 +329,7 @@ html[data-theme="dark"] ul.menu__list .menu__link {
 }
 
 html[data-theme="dark"] ul.menu__list .menu__link--active {
-  background-color: #6a65f1;
+  background-color: var(--ifm-color-primary);
   color: #fff;
 }
 
@@ -341,7 +341,7 @@ html[data-theme="light"] ul.menu__list .menu__link {
 
 html[data-theme="light"] ul.menu__list .menu__link--active {
   color: #fff;
-  background-color: #6a65f1;
+  background-color: var(--ifm-color-primary);
 }
 
 ul.menu__list ul.menu__list .menu__link {
@@ -1501,7 +1501,7 @@ html[data-theme="dark"] code {
 html[data-theme="dark"]
   .table-of-contents__link.toc-highlight.table-of-contents__link:hover
   > code {
-  color: #6a65f1;
+  color: var(--ifm-color-primary);
 }
 
 html[data-theme="dark"]
@@ -1555,7 +1555,7 @@ html[data-theme="dark"]
 .image-box {
   background: linear-gradient(
     98.98deg,
-    #6a65f1 -0.57%,
+    var(--ifm-color-primary) -0.57%,
     rgba(133, 29, 216, 0.6) 99.12%
   );
 }
@@ -1694,13 +1694,40 @@ html[data-theme="dark"]
   font-size: medium;
 }
 
-.sdk-api-ref-only-h4 > h3 {
+.sdk-api-ref-only-h4 > h2 {
   font-size: xx-large;
+}
+
+.sdk-api-ref-only-h4 > h3 {
+  font-size: x-large;
 }
 .sdk-api-ref-only-h4 > h4 {
   font-size: large;
 }
 
-.links-grid {
+/* .links-grid {
   @apply grid grid-cols-3;
+} */
+
+[class*="type-dark"] {
+  display: none !important;
+  visibility: hidden;
+}
+
+[class*="backToTopButton"]:hover::after {
+  background-color: #000 !important;
+}
+[class*="backToTopButton"]:hover {
+  background-color: #fff !important;
+}
+
+[class*="backToTopButton"]::after {
+  background-color: #fff !important;
+}
+[class*="backToTopButton"] {
+  background-color: var(--ifm-code-background-dark) !important;
+}
+
+[class*="announcementBarClose"] {
+  color: #fff !important;
 }

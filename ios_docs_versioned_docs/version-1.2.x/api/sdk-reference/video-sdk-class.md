@@ -38,8 +38,9 @@ import MethodListHeading from '@theme/MethodListHeading';
         <MethodListItemLabel name="token"  type={"String"} />
       </MethodListGroup>
       <MethodListGroup name="initMeeting()"  >
-        <MethodListHeading heading="initMeeting(meetingId, participantName, micEnabled, webcamEnabled): Meeting" />
+        <MethodListHeading heading="initMeeting(meetingId, participantId, participantName, micEnabled, webcamEnabled): Meeting" />
         <MethodListItemLabel name="meetingId"  type={"String"} />
+        <MethodListItemLabel name="participantId"  type={"String"} /> // Optional
         <MethodListItemLabel name="participantName"  type={"String"} defaultValue={"Guest"} />
         <MethodListItemLabel name="micEnabled"  type={"Bool"} defaultValue={"true"} />
         <MethodListItemLabel name="webcamEnabled"  type={"Bool"} defaultValue={"true"} />

@@ -15,7 +15,6 @@ pagination_label: Send Message
 
 ### **Method and Event Code**
 
-
 ```js
 import { useConnection } from "@videosdk.live/react-sdk";
 

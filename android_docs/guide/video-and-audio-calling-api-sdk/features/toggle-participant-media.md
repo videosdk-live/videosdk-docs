@@ -83,7 +83,6 @@ participant.disableMic();
    - `accept()` - Callback function to accept the request.
    - `reject()` - Callback function to reject the request.
 
-
 ```js
 new MeetingEventListener() {
   @Override

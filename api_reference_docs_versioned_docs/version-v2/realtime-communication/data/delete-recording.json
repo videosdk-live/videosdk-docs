@@ -1,0 +1,19 @@
+{
+  "deleteRecording": {
+    "title": "Delete a Recording",
+    "description": "This API let you delete a particular recording by passing recording Id as parameter.",
+    "headers": [],
+    "methodType": "DELETE",
+    "postParameters": [],
+    "queryParameters": [],
+    "parameters": [
+      {
+        "key": "recordingId",
+        "description": "#### The ID of the Recording.",
+        "required": true
+      }
+    ],
+    "apiEndpoint": "https://api.videosdk.live/v2/recordings/${recordingId}",
+    "response": "Room recording deleted successfully"
+  }
+}

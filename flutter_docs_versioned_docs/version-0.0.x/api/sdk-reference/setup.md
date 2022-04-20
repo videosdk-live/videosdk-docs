@@ -49,4 +49,9 @@ Now in your Dart code, you can use:
 
 ```js
 import "package:videosdk/rtc.dart";
+import "package:videosdk/meeting.dart";
+import "package:videosdk/meeting_builder.dart";
+import "package:videosdk/participant.dart";
+import "package:videosdk/rtc.dart";
+import "package:videosdk/stream.dart";
 ```

@@ -15,7 +15,6 @@ sidebar_position: 1
 slug: dynamic-meeting-link
 ---
 
-
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
@@ -23,8 +22,8 @@ import TabItem from '@theme/TabItem';
 
 If you don't want to have the same meeting id every time, you can generate a random id each time and use it. Let's see how it's done.
 
-
 ### Step 2. Create `createMeeting.html` and add `createMeeting()` function
+
 Add a `<script>` which will contain `createMeeting()` which will create and redirect to a new meeting. And add this method to `onClick` of `<button>`
 
 Your `<body>` should look something like this.
@@ -41,7 +40,7 @@ Your `<body>` should look something like this.
           console.log("http://"+ window.location.host + "?meetingId="+ meetingId)
           document.getElementById("copyInput").value = "https://"+ window.location.host + "/meeting.html?meetingId="+ meetingId;
     }
-        
+
     // Function to copy the link
     function copyFunction() {
       /* Get the text field */
@@ -65,6 +64,7 @@ Your `<body>` should look something like this.
 ```
 
 ### Step 2. Update your `meeting.html` to take the `meetingId` from the URL.
+
 In this way, you will be able to access meetingId from the URL and each unique URL will work as different room
 
 ```js title="meeting.html"
@@ -74,7 +74,7 @@ In this way, you will be able to access meetingId from the URL and each unique U
    script.addEventListener("load", function (event) {
       //Get URL query parameters
       const url = new URLSearchParams(window.location.search);
-      
+
       //...
 
       const config = {
@@ -82,7 +82,7 @@ In this way, you will be able to access meetingId from the URL and each unique U
         meetingId: url.get("meetingId"), // Get meeting id from params.
         // ...
       };
-      
+
       const meeting = new VideoSDKMeeting();
       meeting.init(config);
     });
@@ -93,6 +93,7 @@ In this way, you will be able to access meetingId from the URL and each unique U
 ```
 
 ## Step 3. Run and test
+
 <Tabs
 defaultValue="node"
 groupId={"server-group-id"}
@@ -150,4 +151,3 @@ and open [http://localhost:8000/createMeeting.html](http://localhost:8000/create
 
 </TabItem>
 </Tabs>
-

@@ -35,13 +35,13 @@ This guide will provide an overview of how participant can start and stop broadc
 
 ### Live streaming attributes
 
-- `toggleLiveStream` : When set to true it will enable you to add your streaming platform details when you click on `Add Live Streams` button.
+- `toggleLivestream` : When set to true it will enable you to add your streaming platform details when you click on `Add Live Streams` button.
 - `liveStream.enabled` : When set to true , one can go live otherwise one has no permission to go live even if live streaming platforms has been added.
 - `liveStream.autoStart`: If it is true then live streaming will start automatically when the meeting starts, default value is false (You can't start live streaming during the meeting).
 
 :::note
 
-keep **liveStream.enabled** and **toggleLiveStream** **true** in order to see `Add Live Stream` button
+keep **liveStream.enabled** and **toggleLivestream** **true** in order to see `Add Live Stream` button
 
 :::
 
@@ -51,7 +51,7 @@ const config = {
 
   permissions: {
     //other permissions
-    toggleLiveStream: true,
+    toggleLivestream: true,
   },
   livestream: {
     autoStart: true,

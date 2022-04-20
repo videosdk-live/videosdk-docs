@@ -16,10 +16,6 @@
     "label": "selectedWebcamId"
   },
   {
-    "href": "./properties#selectedMicId",
-    "label": "selectedMicId"
-  },
-  {
     "href": "./properties#localParticipant",
     "label": "localParticipant"
   },

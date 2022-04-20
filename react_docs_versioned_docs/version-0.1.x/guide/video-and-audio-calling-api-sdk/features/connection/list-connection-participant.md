@@ -15,7 +15,6 @@ After getting a single meeting connection, all joined participants of that meeti
 
 ### **Method and Event Code**
 
-
 ```js
 import { useConnection } from "@videosdk.live/react-sdk";
 

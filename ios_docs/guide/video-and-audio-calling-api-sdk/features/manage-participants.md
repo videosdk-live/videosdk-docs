@@ -72,7 +72,6 @@ let otherParticipants = self.meeting?.participants;
 
 5. **stream-disabled** - Whenever any participant disabled mic/webcam in meeting, `stream-disabled` event will trigger and return [Stream Map](/ios/guide/video-and-audio-calling-api-sdk/features/manage-participants#streams-map-properties).
 
-
 ```js
 /// keep track of video participants including self to show in UI
 // ex. we can show participants as grid in collectionView.

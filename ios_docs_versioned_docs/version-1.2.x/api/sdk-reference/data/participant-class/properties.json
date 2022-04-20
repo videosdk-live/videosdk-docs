@@ -1,0 +1,7 @@
+[
+  { "href": "./properties#id", "label": "id" },
+  { "href": "./properties#displayName", "label": "displayName" },
+  { "href": "./properties#videoQuality", "label": "videoQuality" },
+  { "href": "./properties#isLocal", "label": "isLocal" },
+  { "href": "./properties#streams", "label": "streams" }
+]

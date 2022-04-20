@@ -1,7 +1,7 @@
 ---
 title: Introduction to Real time communication API
-hide_title: false
-hide_table_of_contents: false
+hide_title: true
+hide_table_of_contents: true
 description: RTC SDK provides wide range of features to build your own custom video chat application without worrying about performance issues and scaling.
 sidebar_label: Introduction
 pagination_label: Introduction
@@ -15,30 +15,74 @@ sidebar_position: 1
 slug: intro
 ---
 
-# Introduction
+import CodeBlock from "@theme/CodeBlock";
 
-Real-time comunication SDK is built with blend of webRTC and optimised UDP protocol. Our SDK helps developers to add real-time video & audio calls to any mobile app or web application.
+<div id="tailwind">
+<div class="row">
+<div class="col col--6">
+<br />
+<h2> API Reference </h2>
+<div >
+VideoSDK provides REST APIs for RealTime Communication, which includes APIs for Rooms, Sessions, and Recordings.
+</div>
+</div>
+<div class="col col--6">
+<br /> <br /> <br />
+<div>
+ <div className="bg-[#333A47] rounded-t-lg pt-4 pb-4 pl-3 flex lg:flex-row flex-col align-middle">
+  <div className="flex-1 text-sm font-bold text-white-1">BASE URL</div>
+  </div>
+  <div className="method_code_block">
+   <div className="pt-4 pl-4 pr-4 pb-2 bg-[#252a34] rounded-b-lg flex flex-col align-middle">
+    <p className="mb-2">
+              <span className="text-[#7D8EAD] text-sm font-bold max-w-min hover:text-white-100">
+                https://api.videosdk.live
+              </span>
+    </p>
+    </div>
+</div>
+</div>
 
-With our `embeded-sdk`, you can embeded a video call widget in your web application. It supports 98% of the devices across all platforms and adaptive video calling for better quality calls with low latency. Developers can also customise `embeded-sdk` to make it more convenient for your application.
+</div>
+</div>
 
-Our research team has worked hard to handled all the edge cases so you just have to focus on what matters.
+<hr />
+<br />
+<div class="row">
+<div class="col col--6">
+<h2> Authentication </h2>
+<div >
+The VideoSDK API uses access token to authenticate api requests.
+In REST APIs, token will be passed in a header field called `Authorization`.
 
-![Embeded SDK Example to add video call widget in your web application](/img/Zujonow-whitelabel-min.jpg)
+In order to generate authentication token, you will need `API_KEY` and `SECRET`, which you can get them from [here](https://app.videosdk.live/api-keys).
 
-## Ways to start developing
+In payload, you will add your `apikey` and `permissions`.
 
-### 1. Dashboard
+- `apikey`: You can get it from [here](https://app.videosdk.live/api-keys).
+- `permissions`(optional): List of permissions that you want to allow.
 
-Create or schedule meetings instantly using dashboard and try it out.
+  - `allow_join`: The participant will be permitted entry without request.
+  - `ask_join`: The participant will not be permitted entry without request.
 
-### 2. Embeded SDK
+Then, you will sign this payload with your `SECRET`and jwt options.
 
-Best way to start is embeded a working video call widget in your app.
+</div>
+</div>
+<div class="col col--6">
 
-### 3. Programmable API
+import GenerateToken from '../../../src/theme/GenerateTokenContainer'
 
-Programmable API enables opportunity to create and manage rooms directly from your backend server.
+<br /><br />
+<GenerateToken/>
 
-### 4. Custom Meetings Interface SDK
+</div>
+</div>
+</div>
 
-Our front-end sdk provides fine control to design custom user interface and experience specifically for your needs.
+---
+
+import RestApiEndpointContainer from "../../../src/theme/RestApiEndpointContainer.js"
+import endpointList from "./endpointList.json"
+
+<RestApiEndpointContainer endpointSections={endpointList}/>

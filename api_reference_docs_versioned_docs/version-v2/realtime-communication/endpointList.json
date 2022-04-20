@@ -1,0 +1,127 @@
+[
+  {
+    "title": "Room",
+    "description": "To communicate or interact with others in audio or video call, you need `Room` for that. You can `create`, `validate` and `fetch` Rooms using Room APIs.",
+    "endpoints": [
+      {
+        "methodType": "POST",
+        "api": "/v2/rooms",
+        "link": "/api-reference/realtime-communication/create-room"
+      },
+      {
+        "methodType": "POST",
+        "api": "/v2/rooms/validate/${roomId}",
+        "link": "/api-reference/realtime-communication/validate-room"
+      },
+      {
+        "methodType": "GET",
+        "api": "/v2/rooms/",
+        "link": "/api-reference/realtime-communication/fetch-all-room"
+      },
+      {
+        "methodType": "GET",
+        "api": "/v2/rooms/${roomId}",
+        "link": "/api-reference/realtime-communication/fetch-room-details"
+      }
+    ]
+  },
+  {
+    "title": "Session",
+    "description": "Session refers to a single instance of a meeting. If you take multiple meetings with same `roomId`, then multiple session is created for that partcular roomId. With this API endpoints you can access details of sessions and its participants.",
+    "endpoints": [
+      {
+        "methodType": "GET",
+        "api": "/v2/sessions/",
+        "link": "/api-reference/realtime-communication/fetch-session"
+      },
+      {
+        "methodType": "GET",
+        "api": "/v2/sessions/${sessionId}",
+        "link": "/api-reference/realtime-communication/fetch-session-using-sessionid"
+      },
+      {
+        "methodType": "GET",
+        "api": "/v2/sessions/${sessionId}/participants",
+        "link": "/api-reference/realtime-communication/fetch-participants"
+      },
+      {
+        "methodType": "GET",
+        "api": "/v2/sessions/${sessionId}/participants/active",
+        "link": "/api-reference/realtime-communication/fetch-active-participants"
+      }
+    ]
+  },
+  {
+    "title": "Recordings",
+    "description": "This Recording APIs will allow you to start / stop / fetch / delete meeting recordings.",
+    "endpoints": [
+      {
+        "methodType": "POST",
+        "api": "/v2/recordings/start",
+        "link": "/api-reference/realtime-communication/start-recording"
+      },
+      {
+        "methodType": "POST",
+        "api": "/v2/recordings/stop",
+        "link": "/api-reference/realtime-communication/stop-recording"
+      },
+      {
+        "methodType": "GET",
+        "api": "/v2/recordings",
+        "link": "/api-reference/realtime-communication/fetch-recordings"
+      },
+      {
+        "methodType": "GET",
+        "api": "/v2/recordings/${recordingId}",
+        "link": "/api-reference/realtime-communication/fetch-recording-using-recordingId"
+      },
+      {
+        "methodType": "DELETE",
+        "api": "/v2/recordings/${recordingId}",
+        "link": "/api-reference/realtime-communication/delete-recording"
+      }
+    ]
+  },
+  {
+    "title": "Live Stream",
+    "description": "This Live Stream APIs will allow you to start / stop RTMP stream of meeting.",
+    "endpoints": [
+      {
+        "methodType": "POST",
+        "api": "/v2/livestreams/start",
+        "link": "/api-reference/realtime-communication/start-livestream"
+      },
+      {
+        "methodType": "POST",
+        "api": "/v2/livestreams/stop",
+        "link": "/api-reference/realtime-communication/stop-livestream"
+      }
+    ]
+  },
+  {
+    "title": "HLS Live Stream",
+    "description": "This HLS Live Stream APIs will allow you to start / stop HLS stream of meeting.",
+    "endpoints": [
+      {
+        "methodType": "POST",
+        "api": "/v2/hls/start",
+        "link": "/api-reference/realtime-communication/start-hlsStream"
+      },
+      {
+        "methodType": "POST",
+        "api": "/v2/hls/stop",
+        "link": "/api-reference/realtime-communication/stop-hlsStream"
+      },
+      {
+        "methodType": "GET",
+        "api": "/v2/hls/",
+        "link": "/api-reference/realtime-communication/fetch-all-hls"
+      },
+      {
+        "methodType": "GET",
+        "api": "/v2/hls/${HlsId}",
+        "link": "/api-reference/realtime-communication/fetch-an-hls"
+      }
+    ]
+  }
+]

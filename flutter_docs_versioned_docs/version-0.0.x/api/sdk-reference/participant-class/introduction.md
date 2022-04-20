@@ -13,23 +13,23 @@ pagination_label: Video SDK Participant Class
 
 ## Participant Properties
 
-<div class="links-grid">
-<div>
+<div class="row">
+<div class="col col--4 margin-bottom--sm" >
 
 - [id](properties#id)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--sm" >
 
-- [displayName](properties#displayName)
-
-</div>
-<div>
-
-- [isLocal](properties#isLocal)
+- [displayName](properties#displayname)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--sm" >
+
+- [isLocal](properties#islocal)
+
+</div>
+<div class="col col--4 margin-bottom--sm" >
 
 - [streams](properties#streams)
 
@@ -38,38 +38,38 @@ pagination_label: Video SDK Participant Class
 
 ## Participant Methods
 
-<div class="links-grid">
-<div>
+<div class="row">
+<div class="col col--4 margin-bottom--sm" >
 
-- [enableWebcam](methods#enableWebcam)
-
-</div>
-<div>
-
-- [disableWebcam](methods#disableWebcam)
+- [enableWebcam](methods#enablewebcam)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--sm" >
 
-- [enableMic](methods#enableMic)
-
-</div>
-<div>
-
-- [disableMic](methods#disableMic)
+- [disableWebcam](methods#disablewebcam)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--sm" >
 
-- [setQuality](methods#setQuality)
+- [enableMic](methods#enablemic)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--sm" >
+
+- [disableMic](methods#disablemic)
+
+</div>
+<div class="col col--4 margin-bottom--sm" >
+
+- [setQuality](methods#setquality)
+
+</div>
+<div class="col col--4 margin-bottom--sm" >
 
 - [remove](methods#remove)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--sm" >
 
 - [on](methods#on)
 
@@ -78,25 +78,25 @@ pagination_label: Video SDK Participant Class
 
 ## Participant Events
 
-<div class="links-grid">
-<div>
+<div class="row">
+<div class="col col--4 margin-bottom--sm" >
 
-- [streamEnabled](events#streamEnabled)
-
-</div>
-<div>
-
-- [streamDisabled](events#streamDisabled)
+- [streamEnabled](events#streamenabled)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--sm" >
 
-- [streamPaused](events#streamPaused)
+- [streamDisabled](events#streamdisabled)
 
 </div>
-<div>
+<div class="col col--4 margin-bottom--sm" >
 
-- [streamResumed](events#streamResumed)
+- [streamPaused](events#streampaused)
+
+</div>
+<div class="col col--4 margin-bottom--sm" >
+
+- [streamResumed](events#streamresumed)
 
 </div>
 </div>

@@ -13,7 +13,6 @@ pagination_label: Close Connection
 
 - **connection-close** - Whenever connection is close between two rooms successfully, this event will trigger in both meeting participants and return `connectionId`.
 
-
 ```js
 import { useConnection, useMeeting } from "@videosdk.live/react-sdk";
 

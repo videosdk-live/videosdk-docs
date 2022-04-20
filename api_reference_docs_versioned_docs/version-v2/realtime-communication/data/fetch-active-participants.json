@@ -1,0 +1,73 @@
+{
+  "fetchActiveParticipants": {
+    "title": "Fetch Active Participants",
+    "description": "This API let you fetch a number of currently active participants in a room session by passing sessionId as a parameter.",
+    "headers": [
+      {
+        "key": "Authorization",
+        "value": "$YOUR_TOKEN"
+      },
+      {
+        "key": "Content-Type",
+        "value": "application/json"
+      }
+    ],
+    "methodType": "GET",
+    "postParameters": [],
+    "queryParameters": [
+      {
+        "key": "page",
+        "defaultValue": "`1`",
+        "description": "#### Page number for the participants. ",
+        "required": false
+      },
+      {
+        "key": "perPage",
+        "defaultValue": "`20`",
+        "description": "#### Number of participants you want per page.",
+        "required": false
+      }
+    ],
+    "parameters": [
+      {
+        "key": "sessionId",
+        "description": "#### The ID of the Session.",
+        "required": true
+      }
+    ],
+    "apiEndpoint": "https://api.videosdk.live/v2/sessions/${sessionId}/participants/active",
+    "response": {
+      "data": {
+        "id": "61763c2597b0c743cf454204",
+        "roomId": "abc-xyzw-lmno",
+        "participants": [
+          {
+            "participantId": "ylgjhgeh",
+            "name": "Demo-3",
+            "timelog": [
+              {
+                "start": "2021-10-25T05:10:30.129Z",
+                "end": null
+              }
+            ]
+          },
+
+          {
+            "participantId": "x9mwdb2l",
+            "name": "Demo-5",
+            "timelog": [
+              {
+                "start": "2021-10-25T05:10:41.865Z",
+                "end": null
+              }
+            ]
+          }
+        ],
+        "links": {
+          "get_all_participants": "https://api.videosdk.live/v2/sessions/61763c2597b0c743cf454204/participants",
+          "get_session": "https://api.videosdk.live/v2/sessions/"
+        }
+      }
+    }
+  }
+}

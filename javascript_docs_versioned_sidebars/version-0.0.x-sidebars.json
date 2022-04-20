@@ -78,7 +78,8 @@
         "api/sdk-reference/meeting-class/introduction",
         "api/sdk-reference/meeting-class/properties",
         "api/sdk-reference/meeting-class/methods",
-        "api/sdk-reference/meeting-class/events"
+        "api/sdk-reference/meeting-class/events",
+        "api/sdk-reference/meeting-class/pubsub"
       ]
     },
     {
@@ -104,6 +105,7 @@
       "type": "category",
       "label": "Connection",
       "items": [
+        "api/sdk-reference/connection/introduction",
         "api/sdk-reference/connection/connection-class",
         "api/sdk-reference/connection/connection-meeting-class",
         "api/sdk-reference/connection/connection-participant-class"

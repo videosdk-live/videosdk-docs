@@ -233,7 +233,7 @@ func onRecordingStarted() {
 }
 
 /// Caled after recording stops
-func onRecordingStoppped() {
+func onRecordingStopped() {
     recordingStarted = false
 
     // hide meeting recording indication.

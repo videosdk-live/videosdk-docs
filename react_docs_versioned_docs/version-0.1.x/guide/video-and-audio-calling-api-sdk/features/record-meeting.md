@@ -28,7 +28,6 @@ This guide will provide an overview of how to implement start and stop Meeting R
 
 ### Start And Stop Recording
 
-
 ```js
 const onPress = () => {
   // Start Recording
@@ -44,7 +43,6 @@ const onPress = () => {
 1. **recording-started** - Whenever any participant start meeting recording, then `recording-started` event will trigger.
 
 2. **recording-stopped** - Whenever any participant stop meeting recording, then `recording-stopped` event will trigger.
-
 
 ```js
 import { useMeeting } from "@videosdk.live/react-sdk";

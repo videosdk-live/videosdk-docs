@@ -21,10 +21,10 @@ A collection of resources for you to explore and learn.
 
 ### 1. Prebuilt Video & Audio Calling SDK
 
-- [JS Prebuilt Code Sample](https://github.com/videosdk-live/videosdk-rtc-js-prebuilt-embedded-example)
-- [Angular Prebuilt Code Sample](https://github.com/videosdk-live/videosdk-rtc-angular-prebuilt-example)
-- [React Prebuilt Code Sample](https://github.com/videosdk-live/videosdk-rtc-react-prebuilt-example)
-- [Vue Prebuilt Code Sample](https://github.com/videosdk-live/videosdk-rtc-vue-prebuilt-example)
+- [JS Prebuilt Code Sample](https://github.com/videosdk-live/videosdk-rtc-prebuilt-examples/tree/main/javascript)
+- [Angular Prebuilt Code Sample](https://github.com/videosdk-live/videosdk-rtc-prebuilt-examples/tree/main/angular)
+- [React Prebuilt Code Sample](https://github.com/videosdk-live/videosdk-rtc-prebuilt-examples/tree/main/react)
+- [Vue Prebuilt Code Sample](https://github.com/videosdk-live/videosdk-rtc-prebuilt-examples/tree/main/vue)
 - [Android Prebuilt Webview Code Sample](https://github.com/videosdk-live/videosdk-rtc-android-prebuilt-webview-example)
 - [iOS Prebuilt Webview Code Sample](https://github.com/videosdk-live/videosdk-rtc-ios-prebuilt-webview-example)
 

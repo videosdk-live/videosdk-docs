@@ -53,10 +53,10 @@ Currently the below regions are supported:
 - `sg001` Region Code for Singapore, SG.
 - `uk001` Region Code for London, UK.
 - `us001` Region Code for Fremont, CA.
+- `eu001` Region Code for Frankfurt, DE.
 
 In case you are not providing any region code, the default region will be `sg001`.
 :::
-
 
 ```js
 const getToken = async () => {
@@ -197,7 +197,6 @@ After joining, you will be able to Manage Participant in a meeting.
 </div>
 
 </div>
-
 
 ```js
 const onPress = () => {

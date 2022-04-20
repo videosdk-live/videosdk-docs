@@ -5,13 +5,13 @@ sidebar_label: Properties
 pagination_label: Participant Class Properties
 ---
 
-<div class="sdk-api-ref">
+<div class="sdk-api-ref-only-h4">
 
 ### id
 
 - type: `String`
 
-- Represnts the id for that stream .
+- Represents the id for that stream .
 
 ---
 
@@ -35,6 +35,6 @@ pagination_label: Participant Class Properties
 
 - type: `MediaStreamTrack`
 
-- It is used to track stream.
+- It represents a single media track within a stream.
 
 </div>

@@ -33,10 +33,10 @@ import MethodListHeading from '@theme/MethodListHeading';
   <MethodListItemLabel name="__namedParameters" option={"required"} type={"object"} >
     <MethodListGroup>
       <MethodListHeading heading="Properties" />
-      <MethodListItemLabel name="meetingId" option={"required"} type={"string"} />
-      <MethodListItemLabel name="name" option={"optional"} type={"string"} />
-      <MethodListItemLabel name="micEnabled" option={"optional"} type={"bool"} defaultValue={"true"} />
-      <MethodListItemLabel name="webcamEnabled" option={"optional"} type={"bool"} defaultValue={"true"} />
+      <MethodListItemLabel description={"set meeting id"} name="meetingId" option={"required"} type={"string"} />
+      <MethodListItemLabel description={"set local participant's name"} name="name" option={"required"} type={"string"} />
+      <MethodListItemLabel description={"set local participant's mic state"} name="micEnabled" option={"required"} type={"bool"} />
+      <MethodListItemLabel description={"set local participant's webcam state"} name="webcamEnabled" option={"required"} type={"bool"}/>
     </MethodListGroup>
   </MethodListItemLabel>
 </MethodListGroup>
@@ -47,10 +47,16 @@ import MethodListHeading from '@theme/MethodListHeading';
   <MethodListItemLabel name="__methods" >
     <MethodListGroup>
       <MethodListHeading heading="Methods" />
-      <MethodListItemLabel name="initialize(Context context)"  type={"void"} />
-      <MethodListItemLabel name="config(String token)"  type={"void"} />
-      <MethodListItemLabel name="initMeeting(Context context, String meetingId, String name, boolean micEnabled,
-            boolean webcamEnabled)"  type={"Meeting"} />
+      <MethodListItemLabel description={"initialize the MediasoupClient"} name="initialize(Context context)"  type={"void"} />
+      <MethodListItemLabel description={"configure the token"} name="config(String token)"  type={"void"} />
+      <MethodListItemLabel description={"initialize the meeting"} 
+      name="initMeeting(
+        Context context, 
+        String meetingId, 
+        String name, 
+        boolean micEnabled,
+        boolean webcamEnabled
+      )"  type={"Meeting"} />
     </MethodListGroup>
   </MethodListItemLabel>
 </MethodListGroup>

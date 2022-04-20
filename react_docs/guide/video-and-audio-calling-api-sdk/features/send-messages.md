@@ -32,7 +32,6 @@ This guide will provide an overview of how to implement chat and raise hand in a
 
 ### Send Message And Raised Hand
 
-
 ```js
 const onPress = () => {
   // Sending Message

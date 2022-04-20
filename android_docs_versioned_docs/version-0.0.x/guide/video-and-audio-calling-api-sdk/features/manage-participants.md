@@ -197,7 +197,6 @@ public class ParticipantAdapter extends RecyclerView.Adapter<ParticipantAdapter.
 
 Please refer the [example code](https://github.com/videosdk-live/videosdk-rtc-android-java-sdk-example/blob/master/app/src/main/java/live/videosdk/rtc/android/java) on Github for more details.
 
-
 ## 3. Participant Related Events
 
 1. **participant-joined** - Whenever any new participant join the meeting, `participant-joined` event will trigger. For example, the meeting is running with **Alice** and **Bob**, then **Eve** join that meeting, after that `participant-joined` event trigger and return the [participant object](/android/guide/video-and-audio-calling-api-sdk/features/manage-participants#participant-object-properties).
@@ -209,7 +208,6 @@ Please refer the [example code](https://github.com/videosdk-live/videosdk-rtc-an
 4. **stream-enabled** - Whenever any participant enabled mic/webcam in meeting, `stream-enabled` event will trigger and return [Stream Map](/android/guide/video-and-audio-calling-api-sdk/features/manage-participants#streams-map-properties).
 
 5. **stream-disabled** - Whenever any participant disabled mic/webcam in meeting, `stream-disabled` event will trigger and return [Stream Map](/android/guide/video-and-audio-calling-api-sdk/features/manage-participants#streams-map-properties).
-
 
 ```js
  meeting.addEventListener(new MeetingEventListener() {

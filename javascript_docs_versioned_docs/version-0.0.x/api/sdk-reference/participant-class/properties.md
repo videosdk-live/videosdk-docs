@@ -5,7 +5,7 @@ sidebar_label: Properties
 pagination_label: Participant Class Properties
 ---
 
-<div class="sdk-api-ref">
+<div class="sdk-api-ref-only-h4">
 
 ### id
 
@@ -19,7 +19,15 @@ pagination_label: Participant Class Properties
 
 - type: `String`
 
-- It will be the `displayName` of the participant who has the meeting.
+- It will be the `displayName` of the participant.
+
+---
+
+### isLocal
+
+- type: `boolean`
+
+- It will represents whether the participant is [`LocalParticipant`](../meeting-class/properties#localparticipant)(You) or not. If it is true, then participant is [`LocalParticipant`](../meeting-class/properties#localparticipant) otherwise RemoteParticipant.
 
 ---
 
@@ -27,8 +35,6 @@ pagination_label: Participant Class Properties
 
 - type: `Map<String,name>`
 
-- It will represents the stream for that particular participant who has joined the meeting. Steams could be `audio` , `video` or `share`.
-
----
+- It will represents the stream for that particular participant who has joined the meeting. Streams could be `audio` , `video` or `share`.
 
 </div>

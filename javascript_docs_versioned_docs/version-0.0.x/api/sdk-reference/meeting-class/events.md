@@ -11,7 +11,7 @@ pagination_label: Meeting Class Events
 
 ### meeting-joined
 
-- This event will be emitted when a [localParticipant](./) successfully joined the meeting.
+- This event will be emitted when a [localParticipant](../participant-class/introduction.md) successfully joined the meeting.
 
 #### Example
 
@@ -25,7 +25,7 @@ meeting.on("meeting-joined", () => {
 
 ### meeting-left
 
-- This event will be emitted when a [localParticipant](./) left the meeting.
+- This event will be emitted when a [localParticipant](../participant-class/introduction.md) left the meeting.
 
 #### Example
 
@@ -39,11 +39,11 @@ meeting.on("meeting-left", () => {
 
 ### participant-joined
 
-- This event will be emitted when a new [participant](./) joined the meeting.
+- This event will be emitted when a new [participant](../participant-class/introduction.md) joined the meeting.
 
 #### Event callback parameters
 
-- **participant**: [Participant](./)
+- **participant**: [Participant](../participant-class/introduction.md)
 
 #### Example
 
@@ -57,11 +57,11 @@ meeting.on("participant-joined", (participant) => {
 
 ### participant-left
 
-- This event will be emitted when a joined [participant](./) left the meeting.
+- This event will be emitted when a joined [participant](../participant-class/introduction.md) left the meeting.
 
 #### Event callback parameters
 
-- **participant**: [Participant](./)
+- **participant**: [Participant](../participant-class/introduction.md)
 
 #### Example
 
@@ -95,7 +95,7 @@ meeting.on("speaker-changed", (activeSpeakerId) => {
 
 ### presenter-changed
 
-- This event will be emitted when any [participant](./) starts or stops screen sharing.
+- This event will be emitted when any [participant](../participant-class/introduction.md) starts or stops screen sharing.
 - It will pass `participantId` as an event callback parameter.
 - If a participant stops screensharing, then this event will pass `null` as en event callback parameter.
 
@@ -137,8 +137,8 @@ meeting.on("error", (data) => {
 
 ### entry-requested
 
-- This event will be emitted when a new [participant](./) who is trying to join the meeting, is having permission **`ask_join`** in token.
-- This event will only be emitted to the [participants](./) in the meeting, who is having the permission **`allow_join`** in token.
+- This event will be emitted when a new [participant](../participant-class/introduction.md) who is trying to join the meeting, is having permission **`ask_join`** in token.
+- This event will only be emitted to the [participants](../participant-class/introduction.md) in the meeting, who is having the permission **`allow_join`** in token.
 - This event will pass following parameters as an event parameters, `participantId` and `name` of the new participant who is trying to join the meeting, `allow()` and `deny()` to take required actions.
 
 #### Event callback parameters
@@ -170,8 +170,8 @@ meeting.on("entry-requested", (data) => {
 ### entry-responded
 
 - This event will be emitted when the `join()` request is responded.
-- This event will be emitted to the [participants](./) in the meeting, who is having the permission **`allow_join`** in token.
-- This event will be also emitted to the [participant](./) who requested to join the meeting.
+- This event will be emitted to the [participants](../participant-class/introduction.md) in the meeting, who is having the permission **`allow_join`** in token.
+- This event will be also emitted to the [participant](../participant-class/introduction.md) who requested to join the meeting.
 
 #### Event callback parameters
 
@@ -312,10 +312,15 @@ meeting.on("livestream-stopped", () => {
 
 - This event will be emitted when `HLS` of the meeting is started.
 
+#### Event callback parameters
+
+- **data**: { **downstreamUrl**: String; }
+  - **downstreamUrl**: String
+
 #### Example
 
 ```javascript
-meeting.on("hls-started", () => {
+meeting.on("hls-started", ({ downstreamUrl }) => {
   //
 });
 ```
@@ -324,7 +329,7 @@ meeting.on("hls-started", () => {
 
 ### hls-stopped
 
-- This event will be emitted when `HLS` of the meeting is started.
+- This event will be emitted when `HLS` of the meeting is stopped.
 
 #### Example
 
@@ -338,11 +343,11 @@ meeting.on("hls-stopped", () => {
 
 ### connection-open
 
-- This event will be emitted when a new connection is open with another meeting.
+- This event will be emitted when a new connection is open with other meeting.
 
 #### Event callback parameters
 
-- **connection**: [Connection](./)
+- **connection**: [Connection](../connection/connection-class.md)
 
 #### Example
 
@@ -356,7 +361,7 @@ meeting.on("connection-open", (connection) => {
 
 ### connection-close
 
-- This event will be emitted when a connection is closed with another meeting.
+- This event will be emitted when a connection is closed with other meeting.
 
 #### Event callback parameters
 
@@ -374,7 +379,7 @@ meeting.on("connection-close", (connectionId) => {
 
 ### switch-meeting
 
-- This event will be emitted when participant is requested to switch to another meeting.
+- This event will emit at participant side who is going to be switch with arguments `meetingId`, `payload` and `token`.
 
 #### Event callback parameters
 

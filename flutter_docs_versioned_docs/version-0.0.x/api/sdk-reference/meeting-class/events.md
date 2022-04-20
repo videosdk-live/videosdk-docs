@@ -57,11 +57,11 @@ meeting.on(Events.participantJoined, (participant) {
 
 ### participantLeft
 
-- This event will be emitted when a joined [participant](../participant-class/introduction.) left the meeting.
+- This event will be emitted when a joined [participant](../participant-class/introduction) left the meeting.
 
 #### Event handler parameters
 
-- **participant**: [Participant](./)
+- **participant**: [Participant](../participant-class/introduction)
 
 #### Example
 

@@ -40,7 +40,7 @@ yarn add @videosdk.live/react-sdk
 
 ### Import the library in your app
 
-`react-sdk` provides two most important hook `useMeeting` and `useParticipant`. it also provides `MeetingProvider` and `MeetingConsumer` to listen changes in meeting state and events.
+`@videosdk.live/react-sdk` provides two most important hook `useMeeting` and `useParticipant`. it also provides `MeetingProvider` and `MeetingConsumer` to listen changes in meeting state and events.
 
 ```javascript title="Import the library"
 import {
