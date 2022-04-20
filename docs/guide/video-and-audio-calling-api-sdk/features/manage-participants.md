@@ -431,10 +431,7 @@ let otherParticipants = self.meeting?.participants;
 
 ```js title="LocalParticipant.dart"
 import 'package:flutter/material.dart';
-import 'package:videosdk/meeting.dart';
-import 'package:videosdk/participant.dart';
-import 'package:flutter_webrtc/flutter_webrtc.dart';
-import 'package:videosdk/stream.dart';
+import 'package:videosdk/rtc.dart';
 
 class LocalParticipant extends StatefulWidget {
   final Participant localParticipant;
@@ -566,9 +563,7 @@ class LocalParticipantState extends State<LocalParticipant> {
 
 ```js title="ListParticipants.dart"
 import 'package:flutter/material.dart';
-import 'package:flutter_webrtc/flutter_webrtc.dart';
-import 'package:videosdk/participant.dart';
-import 'package:videosdk/stream.dart';
+import 'package:videosdk/rtc.dart';
 
 class ListParticipants extends StatelessWidget {
   final Map<String, Participant> participants;
@@ -600,9 +595,7 @@ class ListParticipants extends StatelessWidget {
 
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:flutter_webrtc/flutter_webrtc.dart';
-import 'package:videosdk/participant.dart';
-import 'package:videosdk/stream.dart';
+import 'package:videosdk/rtc.dart';
 
 class RemoteParticipant extends StatefulWidget {
   final Participant participant;

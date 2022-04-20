@@ -30,7 +30,7 @@ import Card from '@theme/Card';
       <Card heading="1. Get your API key and Secret" link="/flutter/guide/video-and-audio-calling-api-sdk/signup-and-create-api" description="Generate your API key and Secret from Video SDK." />
     </div>
      <div class="col col--6">
-      <Card heading="2. Client Setup for Flutter" link="/flutter/guide/video-and-audio-calling-api-sdk/supported-platforms" description="Easy to integrate SDK with cross-channel support." />
+      <Card heading="2. Client Setup for Flutter" link="/flutter/guide/video-and-audio-calling-api-sdk/flutter-sdk" description="Easy to integrate SDK with cross-channel support." />
     </div>
   </div>
   <div class="row ">

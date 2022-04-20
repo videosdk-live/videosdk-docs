@@ -43,7 +43,7 @@ This will add a line like this to your package's pubspec.yaml (and run an implic
 
 ```
 dependencies:
-  videosdk: ^0.0.8
+  videosdk: ^0.0.12
 ```
 
 ### Step 2: Update AndroidManifest.xml file for the permissions
@@ -81,18 +81,14 @@ android {
 }
 ```
 
-If necessary, in the same `build.gradle` you will need to increase `minSdkVersion` of `defaultConfig` up to `21` (currently default Flutter generator set it to `16`).
+If necessary, in the same `build.gradle` you will need to increase `minSdkVersion` of `defaultConfig` up to `23` (currently default Flutter generator set it to `16`).
 
 ### Step 3: Import it
 
 Now in your Dart code, you can use:
 
 ```js
-import "package:videosdk/meeting.dart";
-import "package:videosdk/meeting_builder.dart";
-import "package:videosdk/participant.dart";
 import "package:videosdk/rtc.dart";
-import "package:videosdk/stream.dart";
 ```
 
 ---
