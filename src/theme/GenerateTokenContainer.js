@@ -11,9 +11,8 @@ const generateCode = ({ language }) => {
         "const options = { \n expiresIn: '10m', \n algorithm: 'HS256' \n};\n";
       code += "const payload = {\n";
       code += " apikey: API_KEY,\n";
-      code += " permissions: ['allow_join'],\n";
       code += " version: 2,\n";
-      code += " role: ['CRAWLER'],\n";
+      code += " roles: ['CRAWLER'],\n";
       code += "};\n";
       code += "const token = jwt.sign(payload, SECRET, options);\n";
       code += "console.log(token);";
