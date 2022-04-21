@@ -1,11 +1,11 @@
 ---
 title: Start Livestream | Video SDK
 sidebar_position: 1
-sidebar_label: Start Livestream
+sidebar_label: Start RTMP
 hide_table_of_contents: true
 ---
 
-# 
+#
 
 import Method from '../../../src/theme/RestApiMethodContainer'
 import {startLivestream} from './data/start-livestream.js'

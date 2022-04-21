@@ -42,7 +42,7 @@
     },
     {
       "type": "category",
-      "label": "Live Streaming APIs",
+      "label": "RTMP OUT APIs",
       "collapsed": true,
       "items": [
         "realtime-communication/start-livestream",

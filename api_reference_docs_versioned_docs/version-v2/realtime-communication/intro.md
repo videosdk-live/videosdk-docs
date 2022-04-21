@@ -23,7 +23,7 @@ import CodeBlock from "@theme/CodeBlock";
 <br />
 <h2> API Reference </h2>
 <div >
-VideoSDK provides REST APIs for RealTime Communication, which includes APIs for Rooms, Sessions, and Recordings.
+VideoSDK provides REST APIs for RealTime Communication, which includes APIs for Rooms, Sessions, Recordings, RTMP and HLS.
 </div>
 </div>
 <div class="col col--6">
