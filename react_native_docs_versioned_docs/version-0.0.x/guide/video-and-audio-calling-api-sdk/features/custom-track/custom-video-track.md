@@ -19,7 +19,7 @@ sidebar_position: 1
 
 # Custom Video Track
 
-We have introduced the ability to pass a custom video track for the video of the participants. This feature can be used to add custom video encoder config, optimization mode (whether you want to focus on **motion**, **text** or **detail** of the video) and background removal & video filter from external SDK(e.g., [Banuba](https://www.banuba.com/)) and send it to other participants.
+We have introduced the ability to pass a custom video track for the video of the participants. This feature can be used to add custom video encoder config, optimization mode (whether you want to focus on **motion**, **text** or **detail** of the video) and send it to other participants.
 
 ## Creating a Custom Video Track
 
@@ -118,7 +118,10 @@ Make sure to call `disableWebcam()` befor you create a new track as it may lead 
 :::
 
 ```javascript
-import { createCameraVideoTrack, useMeeting } from "@videosdk.live/react-native-sdk";
+import {
+  createCameraVideoTrack,
+  useMeeting,
+} from "@videosdk.live/react-native-sdk";
 
 let customTrack = await createCameraVideoTrack({
   optimizationMode: "motion",

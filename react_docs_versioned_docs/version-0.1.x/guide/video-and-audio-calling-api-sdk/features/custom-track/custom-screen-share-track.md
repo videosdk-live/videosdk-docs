@@ -19,7 +19,7 @@ sidebar_position: 1
 
 # Custom Screen Share Track
 
-We have introduced the ability to pass custom Screen Share track while sharing the screen of participants. These feature can be used to add custom layers like filters or background removal on video and send it to other participants.
+We have introduced the ability to pass a custom Screen Share track while sharing the screen of participants. This feature can be used to add custom video encoder config, optimization mode (whether you want to focus on **motion**, **text** or **detail** of the video) and background removal & video filter from external SDK(e.g., [Banuba](https://www.banuba.com/)) and send it to other participants.
 
 ## Creating a Custom Screen Share Track
 
@@ -57,12 +57,6 @@ let customTrack = await createScreenShareVideoTrack({
 });
 ```
 
-:::note
-
-Make sure to call `disableScreenShare()` befor you create a new track as it may lead to unexpected behaviour.
-
-:::
-
 ## Using Custom Screen Share Track
 
 ### Custom Track with `enableScreenShare()`
@@ -70,6 +64,12 @@ Make sure to call `disableScreenShare()` befor you create a new track as it may 
 In order to switch tracks during the meeting, you have to pass the `MediaStreamTrack` in the `enableScreenShare()` method of `useMeeting`.
 
 You can also pass custom track in `toggleScreenShare()` method of `useMeeting`.
+
+:::note
+
+Make sure to call `disableScreenShare()` befor you create a new track as it may lead to unexpected behaviour.
+
+:::
 
 ```javascript
 import {

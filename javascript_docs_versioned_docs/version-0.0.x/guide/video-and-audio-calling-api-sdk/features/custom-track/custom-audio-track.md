@@ -19,7 +19,7 @@ sidebar_position: 1
 
 # Custom Audio Track
 
-We have introduced the ability to pass custom Audio track for the Audio of the participants. These feature can be used to add custom layers like background noise removal, echo cancellation etc. on audio and send it to other participants.
+We have introduced the ability to pass a custom Audio track for the Audio of the participants. This feature can be used to add custom layers like background noise removal, echo cancellation, etc. on audio and send it to other participants.
 
 ## Creating a Custom Audio Track
 
@@ -40,7 +40,7 @@ We have introduced the ability to pass custom Audio track for the Audio of the p
   - required: `false`
   - default: `speech_standard`
   - Allowed values : [Check all the allowed values here.](./encoding-profiles#encoding-profiles-for-audio-track)
-  - It will be the encoder configuration you want to use for this Audio Track.
+  - It will be the encoder configuration you want to use for  Audio Track.
 
 - **noiseConfig**
 
