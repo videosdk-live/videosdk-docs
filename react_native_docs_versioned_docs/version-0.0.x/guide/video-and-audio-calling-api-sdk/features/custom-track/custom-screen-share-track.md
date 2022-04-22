@@ -23,7 +23,7 @@ We have introduced the ability to pass custom Screen Share track while sharing t
 
 ## Creating a Custom Screen Share Track
 
-- You can create a Video Track using `createScreenShareVideoTrack()` method of `@videosdk.live/react-sdk`.
+- You can create a Video Track using `createScreenShareVideoTrack()` method of `@videosdk.live/react-native-sdk`.
 - This method can be used to create video track using different encoding parameters and optimization mode.
 
 ### Parameters

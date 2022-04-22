@@ -23,7 +23,7 @@ We have introduced the ability to pass a custom video track for the video of the
 
 ## Creating a Custom Video Track
 
-- You can create a Video Track using `createCameraVideoTrack()` method of `@videosdk.live/react-sdk`.
+- You can create a Video Track using `createCameraVideoTrack()` method of `@videosdk.live/react-native-sdk`.
 - This method can be used to create video track using different encoding parameters, camera facing mode, and optimization mode.
 
 ### Parameters
