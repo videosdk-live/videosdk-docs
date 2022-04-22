@@ -3,7 +3,7 @@ title: Custom Screen Share Track
 hide_title: false
 hide_table_of_contents: false
 description: Custom Screen Share Track features quick integrate in Javascript, React JS, Android, IOS, React Native, Flutter with Video SDK to add live video & audio conferencing to your applications.
-sidebar_label: Custom Screen Share Track (BETA)
+sidebar_label: Custom Screen Share Track
 pagination_label: Custom Screen Share Track
 keywords:
   - Camera on
@@ -19,7 +19,7 @@ sidebar_position: 1
 
 # Custom Screen Share Track
 
-We have introduced the ability to pass custom Screen Share track while sharing the screen of participants. These feature can be used to add custom layers like filters or background removal on video and then send to other particiapnts.
+We have introduced the ability to pass custom Screen Share track while sharing the screen of participants. These feature can be used to add custom layers like filters or background removal on video and send it to other participants.
 
 ## Creating a Custom Screen Share Track
 
@@ -29,11 +29,12 @@ We have introduced the ability to pass custom Screen Share track while sharing t
 ### Parameters
 
 - **encoderConfig**:
+
   - type: `String`
   - required: `false`
   - default: `h360p_w640p`
   - Allowed values : [Check all the allowed values here.](./encoding-profiles#encoding-profiles-for-screen-share-track)
-  - It will be the encoderConfigs you can want to use for this Video Track. 
+  - It will be the encoderConfigs you can want to use for the Video Track.
 
 - **optimizationMode**
   - type: `String`
@@ -54,17 +55,17 @@ let customTrack = await VideoSDK.createScreenShareVideoTrack({
 });
 ```
 
+## Using Custom Screen Share Track
+
+### Custom Track with `enableScreenShare()`
+
+In order to switch tracks during the meeting, you have to pass the `MediaStreamTrack` in the `meeting.enableScreenShare()` method.
+
 :::note
 
 Make sure to call `disableScreenShare()` befor you create a new track as it may lead to unexpected behaviour.
 
 :::
-
-## Using Custom Screen Share Track
-
-### Customm Track with enableScreenShare()
-
-In order to use the custom tracks you create, you have to pass the `MediaStreamTrack` in the `meeting.enableScreenShare()` method.
 
 ```javascript
 let customTrack = await VideoSDK.createScreenShareVideoTrack({

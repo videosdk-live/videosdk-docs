@@ -3,7 +3,7 @@ title: Custom Audio Track
 hide_title: false
 hide_table_of_contents: false
 description: Custom Audio Track features quick integrate in Javascript, React JS, Android, IOS, React Native, Flutter with Video SDK to add live video & audio conferencing to your applications.
-sidebar_label: Custom Audio Track (BETA)
+sidebar_label: Custom Audio Track
 pagination_label: Custom Audio Track
 keywords:
   - Camera on
@@ -19,7 +19,7 @@ sidebar_position: 1
 
 # Custom Audio Track
 
-We have introduced the ability to pass custom Audio track for the Audio of the participants. These feature can be used to add custom layers like background noise removal, echo cancellation etc. on audio and then send to other particiapnts.
+We have introduced the ability to pass custom Audio track for the Audio of the participants. These feature can be used to add custom layers like background noise removal, echo cancellation etc. on audio and send it to other participants.
 
 ## Creating a Custom Audio Track
 
@@ -83,9 +83,9 @@ Make sure to call `muteMic()` befor you create a new track as it may lead to une
 
 ## Using Custom Audio Track
 
-### Custom Track with unmuteMic()
+### Custom Track with `unmuteMic()`
 
-In order to use the custom tracks you create, you have to pass the `MediaStreamTrack` in the `unmuteMic()` method of `useMeeting`. You can also pass custom track in `toggleMic()` method of `useMeeting`, so if the this operation turns the mic on it will use the provided custom track.
+In order to switch tracks during the meeting, you have to pass the  `MediaStreamTrack` in the `unmuteMic()` method of `useMeeting`. You can also pass custom track in `toggleMic()` method of `useMeeting`, so if the this operation turns the mic on it will use the provided custom track.
 
 ```javascript
 import { createMicrophoneAudioTrack, useMeeting } from "@videosdk.live/react-sdk"
@@ -110,7 +110,7 @@ toggleMic(customTrack);
 
 ### Custom Track while initializing the meeting
 
-If you are by default turning the mic on, by passing the `micEnabled: true` in the `config` of `MeetingProvider` and want to use custom tracks from start of the meeting, you can pass custom track in the `config` as shown below.
+If you are passing `micEnabled: true` in the `config` of `MeetingProvider` and want to use custom tracks from start of the meeting, you can pass custom track in the `config` as shown below.
 
 ```javascript
 import { createMicrophoneAudioTrack, MeetingProvider } from "@videosdk.live/react-sdk"
