@@ -29,14 +29,15 @@ We have introduced the ability to pass custom Screen Share track while sharing t
 ### Parameters
 
 - **encoderConfig**:
-  - `type`: `String`
-  - `required`: `false`
-  - `default`: `h360p_w640p`
+  - type: `String`
+  - required: `false`
+  - default: `h360p_w640p`
+  - Allowed values : [Check all the allowed values here.](./encoding-profiles#encoding-profiles-for-screen-share-track)
   - It will be the encoderConfigs you can want to use for this Video Track. 
 
 - **optimizationMode**
-  - `type`: `String`
-  - `required`: `false`
+  - type: `String`
+  - required: `false`
   - Allowed values: `motion` | `text` | `detail`
   - It will specifiy the optimization mode for the video track being generated.
 
@@ -55,7 +56,15 @@ let customTrack = await createScreenShareVideoTrack({
 });
 ```
 
-## Using Custom Video Track
+:::note
+
+Make sure to call `disableScreenShare()` befor you create a new track as it may lead to unexpected behaviour.
+
+:::
+
+## Using Custom Screen Share Track
+
+### Custom Track with enableScreenShare()
 
 In order to use the custom tracks you create, you have to pass the `MediaStreamTrack` in the `enableScreenShare()` method of `useMeeting`. You can also pass custom track in `toggleScreenShare()` method of `useMeeting` , so if the this operation turns the screen share on it will use the provided custom track.
 
