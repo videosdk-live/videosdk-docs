@@ -83,8 +83,8 @@
     ]
   },
   {
-    "title": "Live Stream",
-    "description": "This Live Stream APIs will allow you to start / stop RTMP stream of meeting.",
+    "title": "RTMP OUT",
+    "description": "This RTMP OUT APIs will allow you to start / stop RTMP stream of meeting.",
     "endpoints": [
       {
         "methodType": "POST",
@@ -100,7 +100,7 @@
   },
   {
     "title": "HLS Live Stream",
-    "description": "This HLS Live Stream APIs will allow you to start / stop HLS stream of meeting.",
+    "description": "This HLS Live Stream APIs will allow you to start / stop / fetch HLS stream of meeting.",
     "endpoints": [
       {
         "methodType": "POST",

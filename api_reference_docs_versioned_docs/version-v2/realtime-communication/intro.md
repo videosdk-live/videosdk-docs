@@ -23,7 +23,7 @@ import CodeBlock from "@theme/CodeBlock";
 <br />
 <h2> API Reference </h2>
 <div >
-VideoSDK provides REST APIs for RealTime Communication, which includes APIs for Rooms, Sessions, and Recordings.
+VideoSDK provides REST APIs for RealTime Communication, which includes APIs for Rooms, Sessions, Recordings, RTMP and HLS.
 </div>
 </div>
 <div class="col col--6">
@@ -57,13 +57,17 @@ In REST APIs, token will be passed in a header field called `Authorization`.
 
 In order to generate authentication token, you will need `API_KEY` and `SECRET`, which you can get them from [here](https://app.videosdk.live/api-keys).
 
-In payload, you will add your `apikey` and `permissions`.
+In payload, you have to add your `apikey`, `permissions`, `versions` and `role`.
+
+If you are concerned with security and want to generate token only for v2 API access, then you need to provide `versions` and `role`.
 
 - `apikey`: You can get it from [here](https://app.videosdk.live/api-keys).
-- `permissions`(optional): List of permissions that you want to allow.
 
-  - `allow_join`: The participant will be permitted entry without request.
-  - `ask_join`: The participant will not be permitted entry without request.
+- `version`(optional): For accessing the v2 API, you need to provide `2` as the version value.
+
+- `roles`(optional):
+
+  - **CRAWLER**: This role is only for accessing v2 API, you can not use this token for running the `Meeting`/`Room`.
 
 Then, you will sign this payload with your `SECRET`and jwt options.
 
