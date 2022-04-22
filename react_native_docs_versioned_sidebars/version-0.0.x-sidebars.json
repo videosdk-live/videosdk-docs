@@ -57,6 +57,15 @@
         "guide/video-and-audio-calling-api-sdk/features/switch-participant",
         {
           "type": "category",
+          "label": "Custom Tracks (BETA)",
+          "items": [
+            "guide/video-and-audio-calling-api-sdk/features/custom-track/custom-video-track",
+            "guide/video-and-audio-calling-api-sdk/features/custom-track/custom-audio-track",
+            "guide/video-and-audio-calling-api-sdk/features/custom-track/custom-screen-share-track"
+          ]
+        },
+        {
+          "type": "category",
           "label": "Connect Meetings (BETA)",
           "items": [
             "guide/video-and-audio-calling-api-sdk/features/connection/overview",
