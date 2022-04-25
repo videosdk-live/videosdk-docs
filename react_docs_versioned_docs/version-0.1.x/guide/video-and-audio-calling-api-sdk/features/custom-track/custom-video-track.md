@@ -87,13 +87,23 @@ If you are passing `webcamEnabled: true` in the `config` of `MeetingProvider` an
 import { createCameraVideoTrack, MeetingProvider } from "@videosdk.live/react-sdk"
 
 function App(){
-  let customTrack = await createCameraVideoTrack({
-    optimizationMode: "motion",
-    encoderConfig: "h720p_w1280p",
-    facingMode: "environment",
-  });
 
-  return (
+  const getTrack = async () => {
+    const track = await createCameraVideoTrack({ 
+      optimizationMode: "motion", 
+      encoderConfig: "h720p_w1280p",
+      facingMode: "environment",
+    });
+    setCustomTrack(track);
+  }
+
+  let [customTrack, setCustomTrack] = useState();
+  
+  useEffect(() => {
+    getTrack();
+  }, []);
+
+  return customTrack && (
     <MeetingProvider
         config={{
           meetingId,

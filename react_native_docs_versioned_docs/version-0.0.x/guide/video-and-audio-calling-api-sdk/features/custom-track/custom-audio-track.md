@@ -87,19 +87,28 @@ let customTrack = await createMicrophoneAudioTrack({
 If you are passing `micEnabled: true` in the `config` of `MeetingProvider` and want to use custom tracks from start of the meeting, you can pass custom track in the `config` as shown below.
 
 ```javascript
-import { createMicrophoneAudioTrack, MeetingProvider } from "@videosdk.live/react-native-sdk"
+import { createMicrophoneAudioTrack, MeetingProvider } from "@videosdk.live/react-sdk"
 
 function App(){
-  let customTrack = await createMicrophoneAudioTrack({
-    encoderConfig: "high_quality",
-    noiseConfig:{
-      noiseSuppresion: true,
-      echoCancellation: true,
-      autoGainControl: true,
-    }
-  });
+  const getTrack = async () => {
+    const track = await await createMicrophoneAudioTrack({
+      encoderConfig: "high_quality",
+      noiseConfig:{
+        noiseSuppresion: true,
+        echoCancellation: true,
+        autoGainControl: true,
+      }
+    });
+    setCustomTrack(track);
+  }
 
-  return (
+  let [customTrack, setCustomTrack] = useState();
+  
+  useEffect(() => {
+    getTrack();
+  }, []);
+
+  return customTrack && (
     <MeetingProvider
         config={{
           meetingId,

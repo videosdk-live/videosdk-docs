@@ -90,16 +90,25 @@ If you are passing `micEnabled: true` in the `config` of `MeetingProvider` and w
 import { createMicrophoneAudioTrack, MeetingProvider } from "@videosdk.live/react-sdk"
 
 function App(){
-  let customTrack = await createMicrophoneAudioTrack({
-    encoderConfig: "high_quality",
-    noiseConfig:{
-      noiseSuppresion: true,
-      echoCancellation: true,
-      autoGainControl: true,
-    }
-  });
+  const getTrack = async () => {
+    const track = await await createMicrophoneAudioTrack({
+      encoderConfig: "high_quality",
+      noiseConfig:{
+        noiseSuppresion: true,
+        echoCancellation: true,
+        autoGainControl: true,
+      }
+    });
+    setCustomTrack(track);
+  }
 
-  return (
+  let [customTrack, setCustomTrack] = useState();
+  
+  useEffect(() => {
+    getTrack();
+  }, []);
+
+  return customTrack && (
     <MeetingProvider
         config={{
           meetingId,
