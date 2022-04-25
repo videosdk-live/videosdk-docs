@@ -33,7 +33,7 @@ We have introduced the ability to pass a custom Screen Share track while sharing
   - type: `String`
   - required: `false`
   - default: `h360p_w640p`
-  - Allowed values : [Check all the allowed values here.](./encoding-profiles#encoding-profiles-for-screen-share-track)
+  - Allowed values : `h360p_30fps` | `h720p_5fps` | `h720p_15fps` | `h1080p_15fps` | `h1080p_30fps`
   - It will be the encoderConfigs you can want to use for the Video Track.
 
 - **optimizationMode**

@@ -39,7 +39,7 @@ We have introduced the ability to pass a custom Audio track for the Audio of the
   - type: `String`
   - required: `false`
   - default: `speech_standard`
-  - Allowed values : [Check all the allowed values here.](./encoding-profiles#encoding-profiles-for-audio-track)
+  - Allowed values : `speech_low_quality` | `speech_standard` | `music_standard` | `standard_stereo` | `high_quality` | `high_quality_stereo`  
   - It will be the encoder configuration you want to use for Audio Track.
 
 - **noiseConfig**
