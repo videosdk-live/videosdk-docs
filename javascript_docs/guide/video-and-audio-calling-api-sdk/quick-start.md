@@ -105,8 +105,8 @@ yarn add @videosdk.live/js-sdk
 
 ### Step 1 : Create UI
 
-For this tutorial, we have made use of bootstrap and `assests/index.css` file for making UI a bit responsive.
-Refer assets/index.css file from [here](/) for basic css effects
+For this tutorial, we have made use of bootstrap and [`index.css`](https://github.com/videosdk-live/videosdk-rtc-javascript-sdk-example/blob/main/index.css) file for making UI a bit responsive.
+Refer index.css file from [here](/https://github.com/videosdk-live/videosdk-rtc-javascript-sdk-example/blob/main/index.css) for basic css effects
 
 ```html title="index.html"
 <html>
