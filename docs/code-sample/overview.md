@@ -104,42 +104,6 @@ import CardLinks from '/src/components/cards/cardlinks';
     </div>
     <div class="col">  
       <CardLinks
-        title="Standard Live Stream API"
-        links={[
-          {
-            linkName: "RTC to RTMP Server",
-            link: "https://github.com/videosdk-live/videosdk-rtc-to-rtmp",
-          },
-          {
-            linkName: "React",
-            link: "https://github.com/videosdk-live/videosdk-live-streaming-react-api-example",
-          },
-          {
-            linkName: "React Native",
-            link: "https://github.com/videosdk-live/videosdk-live-streaming-react-native-api-example",
-          }
-        ]}
-      />
-    </div>
-  </div>
-  <div class="row ">
-    <div class="col">  
-      <CardLinks
-        title="Video On Demand API"
-        links={[
-          {
-            linkName: "React",
-            link: "https://github.com/videosdk-live/videosdk-vod-react-api-example",
-          },
-          {
-            linkName: "React Native",
-            link: "https://github.com/videosdk-live/videosdk-vod-react-native-api-example",
-          }
-        ]}
-      />
-    </div>
-    <div class="col">  
-      <CardLinks
         title="Auth API Server"
         links={[
           {
