@@ -1731,3 +1731,7 @@ html[data-theme="dark"]
 [class*="announcementBarClose"] {
   color: #fff !important;
 }
+
+.architecture-description{
+  color: #b2b2b2;
+}
