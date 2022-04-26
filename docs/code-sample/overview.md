@@ -29,19 +29,19 @@ import CardLinks from '/src/components/cards/cardlinks';
         links={[
           {
             linkName: "Javascript",
-            link: "https://github.com/videosdk-live/videosdk-rtc-js-prebuilt-embedded-example",
+            link: "https://github.com/videosdk-live/videosdk-rtc-prebuilt-examples/tree/main/javascript",
           },
           {
             linkName: "Angular",
-            link: "https://github.com/videosdk-live/videosdk-rtc-angular-prebuilt-example",
+            link: "https://github.com/videosdk-live/videosdk-rtc-prebuilt-examples/tree/main/angular",
           },
           {
             linkName: "React",
-            link: "https://github.com/videosdk-live/videosdk-rtc-react-prebuilt-example",
+            link: "https://github.com/videosdk-live/videosdk-rtc-prebuilt-examples/tree/main/react",
           },
           {
             linkName: "Vue",
-            link: "https://github.com/videosdk-live/videosdk-rtc-vue-prebuilt-example",
+            link: "https://github.com/videosdk-live/videosdk-rtc-prebuilt-examples/tree/main/vue",
           },
           {
             linkName: "Android Prebuilt Webview",
