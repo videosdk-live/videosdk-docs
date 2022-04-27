@@ -61,6 +61,10 @@
         "realtime-communication/fetch-all-hls",
         "realtime-communication/fetch-an-hls"
       ]
+    },
+    {
+      "type": "doc",
+      "id": "realtime-communication/error-event"
     }
   ]
 }
