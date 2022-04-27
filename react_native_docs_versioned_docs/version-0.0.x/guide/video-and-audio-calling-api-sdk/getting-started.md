@@ -37,8 +37,11 @@ import Card from '@theme/Card';
    <div class="col col--6" >
       <Card heading="3. Authentication and Tokens" link="/react-native/guide/video-and-audio-calling-api-sdk/server-setup" description="Setup secured server authentication and authorization."  />
     </div>
+    <div class="col col--6" >
+      <Card heading="4. Release Notes" link="/react-native/guide/video-and-audio-calling-api-sdk/release-notes" description="React Native release notes."  />
+    </div>
     <div class="col col--6">
-      <Card heading="4. Start a Voice / Video Call" link="/react-native/guide/video-and-audio-calling-api-sdk/quick-start" description="Get started with step by step guide of integrating Video SDK." />
+      <Card heading="5. Start a Voice / Video Call" link="/react-native/guide/video-and-audio-calling-api-sdk/quick-start" description="Get started with step by step guide of integrating Video SDK." />
     </div>
   </div>
   <div class="row ">
@@ -51,7 +54,7 @@ import Card from '@theme/Card';
   </div>
   <div class="row ">
     <div class="col col--6">
-      <Card heading="6. Extras" link="/react-native/guide/video-and-audio-calling-api-sdk/extras/react-native-ios-screen-share" description="Share screen in native iOS" />
+      <Card heading="8. Extras" link="/react-native/guide/video-and-audio-calling-api-sdk/extras/react-native-ios-screen-share" description="Share screen in native iOS" />
     </div>
   </div>
 </div>
