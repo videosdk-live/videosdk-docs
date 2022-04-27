@@ -46,6 +46,9 @@ import Card from '@theme/Card';
    <div class="col col--6" >
       <Card heading="3. Authentication and Tokens" link="/javascript/guide/video-and-audio-calling-api-sdk/server-setup" description="Setup secured server authentication and authorization."  />
     </div>
+    <div class="col col--6" >
+      <Card heading="4. JavaScript release notes" link="/javascript/guide/video-and-audio-calling-api-sdk/release-notes" description="Release notes for JavaScript."  />
+    </div>
     <div class="col col--6">
       <Card heading="4. Start a Voice / Video Call" link="/javascript/guide/video-and-audio-calling-api-sdk/quick-start" description="Get started with step by step guide of integrating Video SDK." />
     </div>
