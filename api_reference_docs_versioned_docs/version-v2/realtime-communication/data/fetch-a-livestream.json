@@ -1,0 +1,39 @@
+{
+  "fetchLivestream": {
+    "title": "Fetch a Livestream",
+    "description": "This API let you fetch a Livestreams by passing liveStreamId as parameter.",
+    "headers": [],
+    "methodType": "GET",
+    "postParameters": [],
+    "queryParameters": [],
+    "parameters": [],
+    "apiEndpoint": "https://api.videosdk.live/v2/livestreams/${liveStreamId}",
+    "response": {
+      "record": true,
+      "_id": "1234abcdef87654321xyzw00",
+      "userId": "lmnopqrsabcdefgh12345678",
+      "name": "Demo Livestream",
+      "streamKey": "abcdefgh-ijklm-1234-5678-abcdefghi",
+      "upstreamUrl": "rtmp://live.zujonow.com/live/abcdefgh-ijklm-1234-5678-abcdefghi",
+      "downstreamUrl": "https://live.zujonow.com/live/abcdefgh-ijklm-1234-5678-abcdefghi/index.m3u8",
+      "recordingUrl": "https://live.zujonow.com/live/abcdefgh-ijklm-1234-5678-abcdefghi/storage/index.m3u8",
+      "restream": [
+        {
+          "_id": "6114d482dc09980424a45a01",
+          "url": "rtmp://a.rtmp.youtube.com/live2",
+          "streamKey": "6a1f-vhus-sj0j-vds6-8sv1"
+        }
+      ],
+      "createdAt": "2021-08-12T07:57:54.108Z",
+      "updatedAt": "2021-08-12T07:57:54.108Z",
+      "user": {
+        "email": "hello@zujo.io",
+        "name": "Zujonow",
+        "discontinuedReason": null,
+        "id": "lmnopqrsabcdefgh12345678"
+      },
+      "streamUrl": "rtmp://live.videosdk.live/live/",
+      "id": "1234abcdef87654321xyzw00"
+    }
+  }
+}
