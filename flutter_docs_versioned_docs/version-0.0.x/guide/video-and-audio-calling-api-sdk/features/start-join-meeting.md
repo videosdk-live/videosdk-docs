@@ -62,7 +62,6 @@ In case you are not providing any region code, the default region will be `sg001
 import 'dart:convert';
 import 'package:http/http.dart' as http; // For API Calling, you need to add third party package "http"
 import 'package:videosdk/rtc.dart';
-import 'package:videosdk/meeting.dart';
 
 // States Defined in Stateful Component.
 String? meetingId;

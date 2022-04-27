@@ -39,7 +39,7 @@ import Card from '@theme/Card';
       <Card heading="1. Get your API key and Secret" link="/javascript/guide/video-and-audio-calling-api-sdk/signup-and-create-api" description="Generate your API key and Secret from Video SDK." />
     </div>
      <div class="col col--6">
-      <Card heading="2. Client Setup for React JS" link="/javascript/guide/video-and-audio-calling-api-sdk/supported-platforms" description="Easy to integrate SDK with cross-channel support." />
+      <Card heading="2. Client Setup for JavaScript" link="/javascript/guide/video-and-audio-calling-api-sdk/javascript-sdk" description="Easy to integrate SDK with cross-channel support." />
     </div>
   </div>
   <div class="row ">
