@@ -44,16 +44,19 @@ import Card from '@theme/Card';
    <div class="col col--6" >
       <Card heading="3. Authentication and Tokens" link="/android/guide/video-and-audio-calling-api-sdk/server-setup" description="Setup secured server authentication and authorization."  />
     </div>
+    <div class="col col--6" >
+      <Card heading="4. Release Notes" link="/android/guide/video-and-audio-calling-api-sdk/release-notes" description="Android release notes."  />
+    </div>
     <div class="col col--6">
-      <Card heading="4. Start a Voice / Video Call" link="/android/guide/video-and-audio-calling-api-sdk/quick-start" description="Get started with step by step guide of integrating Video SDK." />
+      <Card heading="5. Start a Voice / Video Call" link="/android/guide/video-and-audio-calling-api-sdk/quick-start" description="Get started with step by step guide of integrating Video SDK." />
     </div>
   </div>
   <div class="row ">
    <div class="col col--6" >
-      <Card heading="5. Basic Features" link="/android/guide/video-and-audio-calling-api-sdk/features/start-join-meeting" description="Explore basic features such as join, leave and customise sessions."  />
+      <Card heading="6. Basic Features" link="/android/guide/video-and-audio-calling-api-sdk/features/start-join-meeting" description="Explore basic features such as join, leave and customise sessions."  />
     </div>
     <div class="col col--6">
-      <Card heading="6. Advanced Features" link="/android/guide/video-and-audio-calling-api-sdk/features/recording-meeting" description="Explore advanced features such as screen sharing, recording and live streaming." />
+      <Card heading="7. Advanced Features" link="/android/guide/video-and-audio-calling-api-sdk/features/recording-meeting" description="Explore advanced features such as screen sharing, recording and live streaming." />
     </div>
   </div>
 </div>
