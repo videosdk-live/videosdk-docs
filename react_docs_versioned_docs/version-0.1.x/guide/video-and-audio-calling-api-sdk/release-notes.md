@@ -1,6 +1,6 @@
 ---
 title: ReactJS release notes
-hide_title: true
+hide_title: false
 hide_table_of_contents: false
 description: Video SDK.
 sidebar_label: Release Notes
