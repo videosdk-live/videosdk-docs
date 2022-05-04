@@ -16,16 +16,9 @@ slug: getting-started
 ---
 
 import Mermaid from '@theme/Mermaid';
+import GettingStarted from '/mdx/introduction/\_getting-started.mdx';
 
-# Video / Audio Getting started
-
-This guide will get you running with the VideoSDK video & audio calling in minutes.
-
-## Overview
-
-At it's core, VideoSDK RTC is a distributed SFU(Selective Forwarding Unit). It eanbles highly scalable video & audio meetings unlike vanilla webRTC.
-
-VideoSDK enables opportunity to integrate video & audio calling to Web, Android, IOS applications. it provides Programmable SDKs and REST APIs to build up scalable video conferencing applications.
+<GettingStarted title="Get Started with Java Script" />
 
 ## Steps
 
@@ -60,6 +53,6 @@ import Card from '@theme/Card';
 
 ## Architecture
 
-This diagram demonstrates end-to-end flow to implement video & audio calling, record calls and go-live on social media.
+import VideoSDKArchitecture from '/mdx/architecture/\_video-sdk-architecture.mdx'
 
-![Video-Sdk-Architecture!](/img/video-sdk-architecture.svg)
+<VideoSDKArchitecture />

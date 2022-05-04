@@ -53,6 +53,6 @@ import Card from '@theme/Card';
 
 ## Architecture
 
-This diagram demonstrates end-to-end flow to implement video & audio calling, record calls and go-live on social media.
+import VideoSDKArchitecture from '/mdx/architecture/\_video-sdk-architecture.mdx'
 
-![Video-Sdk-Architecture!](/img/video-sdk-architecture.svg)
+<VideoSDKArchitecture />
