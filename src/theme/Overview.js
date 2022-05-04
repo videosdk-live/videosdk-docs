@@ -48,7 +48,7 @@ function MainCard({
         } ${borderRadius ? borderRadius : "rounded"} bg-gray-750 ${onlyTitle
           ? "md:w-full"
           : `h-full ${fullWidth ? "md:max-w-sm lg:max-w-full max-w-full" : "xl:max-w-sm"
-          }  md:h-auto `
+          }  `
         }  ${showBorder? "border-class" : ""}`}
     // cursor-pointer
     >
