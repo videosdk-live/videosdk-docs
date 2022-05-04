@@ -39,20 +39,18 @@ function MainCard({
   fullWidth,
   quickstart,
   imgLink,
+  showBorder
 }) {
   return (
     <div
       style={{ backgroundImage: `${backgroundColor}` }}
-      className={`${
-        fullWidth ? "p-3 md:p-5" : onlyTitle ? "p-3 md:p-2" : "p-3 md:p-5"
-      } ${borderRadius ? borderRadius : "rounded"} bg-gray-750   ${
-        onlyTitle
+      className={`${fullWidth ? "p-3 md:p-5" : onlyTitle ? "p-3 md:p-2" : "p-3 md:p-5"
+        } ${borderRadius ? borderRadius : "rounded"} bg-gray-750 ${onlyTitle
           ? "md:w-full"
-          : `h-full ${
-              fullWidth ? "md:max-w-sm lg:max-w-full max-w-full" : "xl:max-w-sm"
-            }  md:h-auto`
-      } `}
-      // cursor-pointer
+          : `h-full ${fullWidth ? "md:max-w-sm lg:max-w-full max-w-full" : "xl:max-w-sm"
+          }  md:h-auto `
+        }  ${showBorder? "border-class" : ""}`}
+    // cursor-pointer
     >
       <div>
         <div className="flex flex-row">
@@ -65,16 +63,14 @@ function MainCard({
             </div>
           )}
           <div
-            className={`flex items-center justify-center ${
-              Icon ? "ml-2 md:ml-3 " : "ml-0"
-            }overflow-hidden `}
+            className={`flex items-center justify-center ${Icon ? "ml-2 md:ml-3 " : "ml-0"
+              }overflow-hidden `}
           >
             <p
-              className={`${
-                titleStyle
+              className={`${titleStyle
                   ? `${titleStyle}`
                   : `text-xs font-medium text-white-100 md:text-lg mb-0`
-              }`}
+                }`}
             >
               {Title}
             </p>
@@ -83,11 +79,10 @@ function MainCard({
         {Description && (
           <div className={`mt-0 ${quickstart ? "sm:pr-28 pr-5" : ""}`}>
             <p
-              className={`${
-                descriptionStyle
+              className={`${descriptionStyle
                   ? descriptionStyle
                   : `text-xs text-gray-500 break-words md:text-sm w-12 pr-4`
-              }`}
+                }`}
             >
               {Description}
             </p>
@@ -193,6 +188,7 @@ function PlatformPart() {
                   Icon={item.Icon}
                   onlyTitle={true}
                   imgLink={item.imgLink}
+                  showBorder
                 />
               </Link>
             );
@@ -207,6 +203,7 @@ function PlatformPart() {
                   Title={item.title}
                   Icon={item.Icon}
                   onlyTitle={true}
+                  showBorder
                   imgLink={item.imgLink}
                 />
               </Link>
@@ -224,6 +221,7 @@ function PlatformPart() {
                 Icon={item.Icon}
                 onlyTitle={true}
                 imgLink={item.imgLink}
+                showBorder
               />
             );
           })}
@@ -335,9 +333,8 @@ function QuickstartPart() {
                             data-tip
                             data-for={item.tooltip}
                             href={item.link}
-                            className={`bg-white-250 text-black p-2 rounded-md flex items-center justify-center ${
-                              index == 0 ? "" : "md:ml-3 ml-1"
-                            }`}
+                            className={`bg-white-250 text-black p-2 rounded-md flex items-center justify-center ${index == 0 ? "" : "md:ml-3 ml-1"
+                              }`}
                           >
                             <item.Icon />
                             <ReactTooltip
@@ -410,44 +407,24 @@ function ResourcePart() {
       {ResourceArray.map((item, index) => {
         return (
           <div
-            className={`${
-              index == 0 ? "ml-0" : "lg:ml-2 xl:ml-4 ml-0 "
-            } w-full`}
+            className={`${index == 0 ? "ml-0" : "lg:ml-2 xl:ml-4 ml-0 "
+              } w-full `}
           >
-            <MainCard
-              key={index}
-              Title={item.title}
-              titleStyle={
-                "md:text-xl text-lg text-white-100 font-extrabold mb-3 "
-              }
-              Description={item.description}
-              descriptionStyle={
-                "text-gray-250 md:text-lg text-base mt-0 lg:w-44 lg:pr-7 xl:pr-2 xl:w-56 2xl:pr-10 2xl:w-72 "
-              }
-              borderRadius={"rounded-lg"}
-              EndPart={() => {
-                return (
-                  <div className="mt-4">
-                    <div className="h-9  flex items-end justify-end">
-                      <a
-                        href={item.link}
-                        className={`text-black hover:bg-white-150 p-2 rounded-md flex items-center justify-center ${
-                          index == 0 ? "" : "ml-3"
-                        }`}
-                      >
-                        {/* <button
-                          className={`text-black p-2 rounded-md flex items-center justify-center ${
-                            index == 0 ? "" : "ml-3"
-                          }`}
-                        > */}
-                        <ExternalLinkIcon />
-                        {/* </button> */}
-                      </a>
-                    </div>
-                  </div>
-                );
-              }}
-            />
+            <Link to={item.link} className="">
+              <MainCard
+                key={index}
+                Title={item.title}
+                titleStyle={
+                  "md:text-xl text-lg text-white-100 font-bold mb-3 "
+                }
+                Description={item.description}
+                descriptionStyle={
+                  "text-gray-250 md:text-base text-base mt-0 lg:w-44 lg:pr-7 xl:pr-2 xl:w-56 2xl:pr-10 2xl:w-72 mb-0 "
+                }
+                borderRadius={"rounded-lg"}
+                showBorder
+              />
+            </Link>
           </div>
         );
       })}
@@ -521,7 +498,7 @@ function Overview() {
 
           {/* QuickStart */}
           <div className="md:mt-4 mt-10">
-            <p className="lg:text-4xl md:text-4xl text-2xl  font-extrabold text-black-100 dark:text-white-100">
+            <p className="lg:text-3xl md:text-3xl text-2xl  font-extrabold text-black-100 dark:text-white-100">
               Quickstart
             </p>
             <div className="mt-9">
@@ -531,7 +508,7 @@ function Overview() {
 
           {/* Resource */}
           <div className="md:mt-20 mt-10">
-            <p className="lg:text-4xl md:text-4xl text-2xl font-extrabold text-black-100 dark:text-white-100">
+            <p className="lg:text-3xl md:text-3xl text-2xl font-extrabold text-black-100 dark:text-white-100">
               Resources
             </p>
             <div className="mt-9">
@@ -684,7 +661,7 @@ function Overview() {
 
         {/* supported Platforms */}
         <div className="md:mt-16 mt-10 w-full">
-          <p className="lg:text-4xl md:text-4xl text-2xl font-extrabold text-black-100 dark:text-white-100">
+          <p className="lg:text-3xl md:text-3xl text-2xl font-extrabold text-black-100 dark:text-white-100">
             Supported platform or framework
           </p>
           <div className="mt-9">
@@ -703,10 +680,10 @@ function Overview() {
           >
             <div className="flex flex-col flex-1">
               <div className="flex flex-col flex-1">
-                <p className="lg:text-4xl md:text-lg text-base text-white-100 font-extrabold  text-center md:text-left">
+                <p className="lg:text-4xl md:text-lg text-base mb-4 text-white-100 font-extrabold  text-center md:text-left">
                   Get 10,000 minutes free every month
                 </p>
-                <p className="text-white-150 text-base mt-0 text-center font-semibold md:text-left">
+                <p className="text-white-150 text-base mt-0 text-center font-medium md:text-left">
                   No credit card required
                 </p>
               </div>
