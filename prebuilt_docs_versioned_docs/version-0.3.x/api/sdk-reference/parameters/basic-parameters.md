@@ -31,6 +31,14 @@ title: Basic Features
 
 ---
 
+# region
+
+- type: `String`
+
+- Region for a new meeting
+
+---
+
 ## containerId
 
 - type: `String`
