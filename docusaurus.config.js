@@ -27,7 +27,7 @@ module.exports = {
     announcementBar: {
       id: "event_announcement",
       content:
-        'UPCOMING EVENT : "Build a Restream Clone in React in 10 minutes" Tuesday, 17 May  06:00 PM IST <a target="_blank" rel="noopener noreferrer" href="https://lu.ma/17-may-06-pm">Register↗</a> ',
+        'UPCOMING EVENT : "Build a Restream Clone in React in 10 minutes"&nbsp;&nbsp;Tuesday, 17 May  06:00 PM IST &nbsp;&nbsp;<a target="_blank" rel="noopener noreferrer" href="https://lu.ma/17-may-06-pm">Register↗</a> ',
       backgroundColor: "#6246FB",
       textColor: "#FFF",
       isCloseable: true,
