@@ -16,16 +16,8 @@ module.exports = {
   },
   themeConfig: {
     defaultMode: "dark",
-    // announcementBar: {
-    //   id: "legacy_docs",
-    //   content:
-    //     'We are excited to announce that we have updated our documentation portal 🎉 <a target="_blank" rel="noopener noreferrer" href="https://legacy-docs.videosdk.live">Switch to old documentation ↗</a>',
-    //   backgroundColor: "#6246FB",
-    //   textColor: "#fff",
-    //   isCloseable: true,
-    // },
     announcementBar: {
-      id: "event_announcement",
+      id: "event_announcement_restream_clone",
       content:
         'UPCOMING EVENT : "Build a Restream Clone in React in 10 minutes"&nbsp;&nbsp;Tuesday, 17 May  06:00 PM IST &nbsp;&nbsp;<a target="_blank" rel="noopener noreferrer" href="https://lu.ma/17-may-06-pm">Register↗</a> ',
       backgroundColor: "#6246FB",
