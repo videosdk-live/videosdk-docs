@@ -110,4 +110,4 @@ meeting = window.VideoSDK.initMeeting({
 
 :::
 
-- To have an understanding of Video SDK using react follow [react-code-sample]("https://github.com/videosdk-live/videosdk-custom-recording-template-react-example")
+- You can also follow this code sample for React JS.[videosdk-custom-recording-template-react-example](https://github.com/videosdk-live/videosdk-custom-recording-template-react-example)
