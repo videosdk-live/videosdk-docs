@@ -102,7 +102,7 @@ module.exports = {
         {
           position: "left",
           label: "Code Samples",
-          to: "/docs/code-sample/overview",
+          to: "https://github.com/videosdk-live",
         },
         {
           position: "left",
