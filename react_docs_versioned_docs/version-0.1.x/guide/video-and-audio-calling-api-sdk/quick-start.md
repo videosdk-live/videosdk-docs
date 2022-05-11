@@ -298,7 +298,7 @@ function Controls() {
 
 ![VideoSDK React JS Quick Start  Container Component](/img/quick-start/react-container-controls.jpeg)
 
-### Step 5: Implement Video Componenty
+### Step 5: Implement Video Component
 
 Before implementing video component, We need to understand couple of concepts.
 

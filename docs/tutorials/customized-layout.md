@@ -109,3 +109,5 @@ meeting = window.VideoSDK.initMeeting({
 - Do make sure these changes should be in the live environment, otherwise, Video SDK Composer will not able to record / HLS / Livestream of the meeting.
 
 :::
+
+- To have an understanding of Video SDK using react follow [react-code-sample]("https://github.com/videosdk-live/videosdk-custom-recording-template-react-example")
