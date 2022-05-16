@@ -98,7 +98,7 @@ dependencyResolutionManagement{
 
 ```js title="app/build.gradle"
 dependencies {
-  implementation 'live.videosdk:android-sdk:0.0.14'
+  implementation 'live.videosdk:android-sdk:0.0.16'
 
   // library to perform Network call to generate a meeting id
   implementation 'com.amitshekhar.android:android-networking:1.0.2'
@@ -152,7 +152,28 @@ You have to set JoinActivity as Launcher activity.
 
 ### Step 1: Initialize VideoSDK
 
-1. Create `MainApplication.java` class which will extend the `android.app.Application`.
+1. Create `MainApplication` class which will extend the `android.app.Application`.
+
+<Tabs
+defaultValue="Kotlin"
+groupId={"AndroidLanguage"}
+values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
+
+<TabItem value="Kotlin">
+
+```js title="MainApplication.kt"
+import live.videosdk.rtc.android.VideoSDK
+
+class MainApplication : Application() {
+    override fun onCreate() {
+        super.onCreate()
+        VideoSDK.initialize(applicationContext)
+    }
+}
+```
+</TabItem>
+
+<TabItem value="Java">
 
 ```java title="MainApplication.java"
 import android.app.Application;
@@ -166,6 +187,9 @@ public class MainApplication extends Application {
     }
 }
 ```
+</TabItem>
+
+</Tabs>
 
 2. Add `MainApplication` to `AndroidManifest.xml`
 
@@ -234,12 +258,72 @@ In `/app/res/layout/activity_join.xml` file, replace the content with the follow
 
 **Note** : This generated token is only valid for ten minutes, if you want to regenerate you can do it as well by clicking the same link.
 
+<Tabs
+defaultValue="Kotlin"
+groupId={"AndroidLanguage"}
+values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
+
+<TabItem value="Kotlin">
+
+```js title="JoinActivity.kt"
+//Replace with the token you generated from the VideoSDK Dashboard
+var sampleToken =""
+```
+
+</TabItem>
+
+<TabItem value="Java">
+
 ```java title="JoinActivity.java"
 //Replace with the token you generated from the VideoSDK Dashboard
 String sampleToken = "";
 ```
 
+</TabItem>
+
+</Tabs>
+
+
+
 2. On **Join Button** `onClick` events, we will naviagte to `MeetingActivity` with token and meetingId.
+
+
+<Tabs
+defaultValue="Kotlin"
+groupId={"AndroidLanguage"}
+values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
+
+<TabItem value="Kotlin">
+
+```js title="JoinActivity.kt"
+class JoinActivity : AppCompatActivity() {
+   override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_join)
+
+        val btnCreate = findViewById<Button>(R.id.btnCreateMeeting)
+        val btnJoin = findViewById<Button>(R.id.btnJoinMeeting)
+        val etMeetingId = findViewById<EditText>(R.id.etMeetingId)
+
+        btnCreate.setOnClickListener { v: View? ->
+            // we will explore this method in the next step
+            createMeeting(sampleToken)
+        }
+        btnJoin.setOnClickListener { v: View? ->
+            val intent = Intent(this@JoinActivity, MeetingActivity::class.java)
+            intent.putExtra("token", sampleToken)
+            intent.putExtra("meetingId", etMeetingId.text.toString())
+            startActivity(intent)
+        }
+    }
+
+    private fun createMeeting(token: String) {
+    }
+}
+```
+</TabItem>
+
+<TabItem value="Java">
 
 ```java title="JoinActivity.java"
 public class JoinActivity extends AppCompatActivity {
@@ -269,8 +353,54 @@ public class JoinActivity extends AppCompatActivity {
   }
 }
 ```
+</TabItem>
+
+</Tabs>
 
 3. For **Create Button**, under `createMeeting` method we will gnerate meetingId by calling API and navigate to `MeetingActivity` with token and generated meetingId.
+
+
+<Tabs
+defaultValue="Kotlin"
+groupId={"AndroidLanguage"}
+values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
+
+<TabItem value="Kotlin">
+
+```js title="JoinActivity.kt"
+class JoinActivity : AppCompatActivity() {
+  //...onCreate
+ private fun createMeeting(token: String) {
+        AndroidNetworking.post("https://api.videosdk.live/v1/meetings")
+            .addHeaders("Authorization", token)
+            .build()
+            .getAsJSONObject(object : JSONObjectRequestListener {
+                override fun onResponse(response: JSONObject) {
+                    try {
+                        val meetingId = response.getString("meetingId")
+                        val intent = Intent(this@JoinActivity, MeetingActivity::class.java)
+                        intent.putExtra("token", sampleToken)
+                        intent.putExtra("meetingId", meetingId)
+                        startActivity(intent)
+                    } catch (e: JSONException) {
+                        e.printStackTrace()
+                    }
+                }
+
+                override fun onError(anError: ANError) {
+                    anError.printStackTrace()
+                    Toast.makeText(
+                        this@JoinActivity, anError.message,
+                        Toast.LENGTH_SHORT
+                    ).show()
+                }
+            })
+    }
+}
+```
+</TabItem>
+
+<TabItem value="Java">
 
 ```java title="JoinActivity.java"
 public class JoinActivity extends AppCompatActivity {
@@ -307,8 +437,51 @@ public class JoinActivity extends AppCompatActivity {
   }
 }
 ```
+</TabItem>
+
+</Tabs>
 
 4. Our App is completely based on audio and video commutation, that's why we need to ask for runtime permissions `RECORD_AUDIO` and `CAMERA`. So, we will implement permission logic on `JoinActivity`.
+
+
+<Tabs
+defaultValue="Kotlin"
+groupId={"AndroidLanguage"}
+values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
+
+<TabItem value="Kotlin">
+
+```js title="JoinActivity.kt"
+class JoinActivity : AppCompatActivity() {
+    companion object {
+        private const val PERMISSION_REQ_ID = 22
+        private val REQUESTED_PERMISSIONS = arrayOf(
+            Manifest.permission.RECORD_AUDIO,
+            Manifest.permission.CAMERA
+        )
+    }
+
+  private fun checkSelfPermission(permission: String, requestCode: Int): Boolean {
+        if (ContextCompat.checkSelfPermission(this, permission) !=
+            PackageManager.PERMISSION_GRANTED)
+        {
+            ActivityCompat.requestPermissions(this, REQUESTED_PERMISSIONS, requestCode)
+            return false
+        }
+        return true
+    }
+
+  override fun onCreate(savedInstanceState: Bundle?) {
+    //... button listeneres
+    checkSelfPermission(REQUESTED_PERMISSIONS[0], PERMISSION_REQ_ID)
+    checkSelfPermission(REQUESTED_PERMISSIONS[1], PERMISSION_REQ_ID)
+  }
+}
+```
+
+</TabItem>
+
+<TabItem value="Java">
 
 ```java title="JoinActivity.java"
 public class JoinActivity extends AppCompatActivity {
@@ -336,6 +509,10 @@ public class JoinActivity extends AppCompatActivity {
 }
 ```
 
+</TabItem>
+
+</Tabs>
+
 #### Output
 
 <div style={{textAlign: 'center'}}>
@@ -346,7 +523,7 @@ public class JoinActivity extends AppCompatActivity {
 
 ### Step 3: Creating Meeting Screen
 
-Create a new Activity named `MeetingActivity.java`.
+Create a new Activity named `MeetingActivity`.
 
 #### Creating the UI for Meeting Screen
 
@@ -417,11 +594,80 @@ After getting token and meetigId from `JoinActivity`,
 3. Add `MeetingEventListener` for listening events such as **Meeting Join/Left** and **Participant Join/Left**.
 4. Join the room with `meeting.join()` method.
 
+<Tabs
+defaultValue="Kotlin"
+groupId={"AndroidLanguage"}
+values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
+
+<TabItem value="Kotlin">
+
+```js title="MeetingActivity.kt"
+class MeetingActivity : AppCompatActivity() {
+  // declare the variables we will be using to handle the meeting
+  private var meeting: Meeting? = null
+  private var micEnabled = true
+  private var webcamEnabled = true
+
+  override fun onCreate(savedInstanceState: Bundle?) {
+    super.onCreate(savedInstanceState)
+    setContentView(R.layout.activity_meeting)
+
+    val token = intent.getStringExtra("token")
+    val meetingId = intent.getStringExtra("meetingId")
+    val participantName = "John Doe"
+
+    // 1. Configuration VideoSDK with Token
+    VideoSDK.config(token)
+    // 2. Initialize VideoSDK Meeting
+    meeting = VideoSDK.initMeeting(
+      this@MeetingActivity, meetingId, participantName,
+      micEnabled, webcamEnabled,null)
+
+    // 3. Add event listener for listening upcoming events
+    meeting!!.addEventListener(meetingEventListener)
+
+    //4. Join VideoSDK Meeting
+    meeting!!.join()
+
+    (findViewById<View>(R.id.tvMeetingId) as TextView).text = meetingId
+  }
+
+  // creating the MeetingEventListener
+  private val meetingEventListener: MeetingEventListener = object : MeetingEventListener() {
+    override fun onMeetingJoined() {
+      Log.d("#meeting", "onMeetingJoined()")
+    }
+
+    override fun onMeetingLeft() {
+      Log.d("#meeting", "onMeetingLeft()")
+      meeting = null
+      if (!isDestroyed) finish()
+    }
+
+    override fun onParticipantJoined(participant: Participant) {
+      Toast.makeText(
+        this@MeetingActivity, participant.displayName + " joined",
+        Toast.LENGTH_SHORT
+      ).show()
+    }
+
+    override fun onParticipantLeft(participant: Participant) {
+      Toast.makeText(
+         this@MeetingActivity, participant.displayName + " left",
+         Toast.LENGTH_SHORT
+      ).show()
+    }
+  }
+}
+```
+</TabItem>
+
+<TabItem value="Java">
+
 ```java title="MeetingActivity.java"
 public class MeetingActivity extends AppCompatActivity {
   // declare the variables we will be using to handle the meeting
   private Meeting meeting;
-
   private boolean micEnabled = true;
   private boolean webcamEnabled = true;
 
@@ -439,8 +685,7 @@ public class MeetingActivity extends AppCompatActivity {
     // 2. Initialize VideoSDK Meeting
     meeting = VideoSDK.initMeeting(
             MeetingActivity.this, meetingId, participantName,
-            micEnabled, webcamEnabled
-    );
+            micEnabled, webcamEnabled,null);
 
     // 3. Add event listener for listening upcoming events
     meeting.addEventListener(meetingEventListener);
@@ -477,10 +722,74 @@ public class MeetingActivity extends AppCompatActivity {
   };
 }
 ```
+</TabItem>
+
+</Tabs>
 
 ### Step 4: Handle Local Participant Media
 
 After successfully enter into the meeting, it's time to **enable/disable** local participant(You) webcam and mic, for that we will use `Meeting` class method `enableWebcam` / `disableWebcam` for camera and `muteMic` / `unmuteMic` for mic.
+
+<Tabs
+defaultValue="Kotlin"
+groupId={"AndroidLanguage"}
+values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
+
+<TabItem value="Kotlin">
+
+```js title="MeetingActivity.kt"
+class MeetingActivity : AppCompatActivity() {
+  override fun onCreate(savedInstanceState: Bundle?) {
+    super.onCreate(savedInstanceState)
+    setContentView(R.layout.activity_meeting)
+    //...Meeting Setup is Here
+
+    // actions
+    setActionListeners()
+  }
+
+  private fun setActionListeners() {
+    // toggle mic
+    findViewById<View>(R.id.btnMic).setOnClickListener { view: View? ->
+      if (micEnabled) {
+        // this will mute the local participant's mic
+        meeting!!.muteMic()
+        Toast.makeText(this@MeetingActivity, "Mic Muted", Toast.LENGTH_SHORT).show()
+      } else {
+        // this will unmute the local participant's mic
+        meeting!!.unmuteMic()
+        Toast.makeText(this@MeetingActivity, "Mic Enabled", Toast.LENGTH_SHORT).show()
+      }
+        micEnabled=!micEnabled
+    }
+
+    // toggle webcam
+    findViewById<View>(R.id.btnWebcam).setOnClickListener { view: View? ->
+      // TODO : How we are managing webcamEnabled and micEnabled variable
+      if (webcamEnabled) {
+        // this will disable the local participant webcam
+        meeting!!.disableWebcam()
+        Toast.makeText(this@MeetingActivity, "Webcam Disabled", Toast.LENGTH_SHORT).show()
+      } else {
+        // this will enable the local participant webcam
+        meeting!!.enableWebcam()
+        Toast.makeText(this@MeetingActivity, "Webcam Enabled", Toast.LENGTH_SHORT).show()
+      }
+       webcamEnabled=!webcamEnabled
+    }
+
+    // leave meeting
+    findViewById<View>(R.id.btnLeave).setOnClickListener { view: View? ->
+      // this will make the local participant leave the meeting
+      meeting!!.leave()
+    }
+  }
+}
+```
+
+</TabItem>
+
+<TabItem value="Java">
 
 ```java title="MeetingActivity.java"
 public class MeetingActivity extends AppCompatActivity {
@@ -506,6 +815,7 @@ public class MeetingActivity extends AppCompatActivity {
         meeting.unmuteMic();
         Toast.makeText(MeetingActivity.this, "Mic Enabled", Toast.LENGTH_SHORT).show();
       }
+      micEnabled=!micEnabled;
     });
 
     // toggle webcam
@@ -520,6 +830,7 @@ public class MeetingActivity extends AppCompatActivity {
         meeting.enableWebcam();
         Toast.makeText(MeetingActivity.this, "Webcam Enabled", Toast.LENGTH_SHORT).show();
       }
+      webcamEnabled=!webcamEnabled;
     });
 
     // leave meeting
@@ -530,6 +841,10 @@ public class MeetingActivity extends AppCompatActivity {
   }
 }
 ```
+
+</TabItem>
+
+</Tabs>
 
 #### Output
 
@@ -580,6 +895,48 @@ We will be showing the list of participant in a recycler view.
 
 2. Create a recycler view adapter named `ParticipantAdapter` which will show the participant list. Create `PeerViewHolder` in the adapter which will extend `RecyclerView.ViewHolder`.
 
+<Tabs
+defaultValue="Kotlin"
+groupId={"AndroidLanguage"}
+values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
+
+<TabItem value="Kotlin">
+
+```js title="ParticipantAdapter.kt"
+class ParticipantAdapter(meeting: Meeting) : RecyclerView.Adapter<ParticipantAdapter.PeerViewHolder>() {
+ 
+  private var containerHeight = 0
+
+  override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PeerViewHolder {
+  containerHeight = parent.height
+    return PeerViewHolder(
+      LayoutInflater.from(parent.context)
+        .inflate(R.layout.item_remote_peer, parent, false)
+      )
+  }
+
+  override fun onBindViewHolder(holder: PeerViewHolder, position: Int) {
+  }
+
+  override fun getItemCount(): Int {
+    return 0
+  }
+
+  class PeerViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+    var svrParticipant: SurfaceViewRenderer = view.findViewById(R.id.svrParticipant)
+    var tvName: TextView = view.findViewById(R.id.tvName)
+
+    init{
+      svrParticipant.init(PeerConnectionUtils.getEglContext(), null)
+    }
+  }
+}
+```
+
+</TabItem>
+
+<TabItem value="Java">
+
 ```java title="ParticipantAdapter.java"
 public class ParticipantAdapter extends RecyclerView.Adapter<ParticipantAdapter.PeerViewHolder> {
 
@@ -619,8 +976,66 @@ public class ParticipantAdapter extends RecyclerView.Adapter<ParticipantAdapter.
 }
 ```
 
+</TabItem>
+
+</Tabs>
+
 3. Now, we will render a list of `Participant` for the meeting.
    We will initialize this list in the constructor of the `ParticipantAdapter`
+
+<Tabs
+defaultValue="Kotlin"
+groupId={"AndroidLanguage"}
+values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
+
+<TabItem value="Kotlin">
+
+```js title="ParticipantAdapter.kt"
+class ParticipantAdapter(meeting: Meeting) :
+    RecyclerView.Adapter<ParticipantAdapter.PeerViewHolder>() {
+    
+  // creating a empty list which will store all participants
+  private val participants: MutableList<Participant> = ArrayList()
+
+  init {
+    // adding the local participant(You) to the list
+    participants.add(meeting.localParticipant)
+
+    // adding Meeting Event listener to get the participant join/leave event in the meeting.
+    meeting.addEventListener(object : MeetingEventListener() {
+      override fun onParticipantJoined(participant: Participant) {
+        // add participant to the list
+        participants.add(participant)
+        notifyItemInserted(participants.size - 1)
+      }
+
+      override fun onParticipantLeft(participant: Participant) {
+        var pos = -1
+        for (i in participants.indices) {
+          if (participants[i].id == participant.id) {
+            pos = i
+            break
+          }
+        }
+        // remove participant from the list
+        participants.remove(participant)
+        if (pos >= 0) {
+          notifyItemRemoved(pos)
+        }
+      }
+    })
+  }
+
+  // this method returns the size of total number of participants
+  override fun getItemCount(): Int {
+        return participants.size
+  }
+  //...
+}
+```
+</TabItem>
+
+<TabItem value="Java">
 
 ```java title="ParticipantAdapter.java"
 public class ParticipantAdapter extends RecyclerView.Adapter<ParticipantAdapter.PeerViewHolder> {
@@ -668,8 +1083,67 @@ public class ParticipantAdapter extends RecyclerView.Adapter<ParticipantAdapter.
   //...
 }
 ```
+</TabItem>
+
+</Tabs>
 
 4. We have listed our participants. Let's set up the view holder to display a participant video.
+
+<Tabs
+defaultValue="Kotlin"
+groupId={"AndroidLanguage"}
+values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
+
+<TabItem value="Kotlin">
+
+```js title="PartipantAdapter.kt"
+class ParticipantAdapter(meeting: Meeting) :
+    RecyclerView.Adapter<ParticipantAdapter.PeerViewHolder>() {
+
+  override fun onBindViewHolder(holder: PeerViewHolder, position: Int) {
+    val participant = participants[position]
+
+    val layoutParams = holder.itemView.layoutParams
+    layoutParams.height = containerHeight / 3
+    holder.itemView.layoutParams = layoutParams
+
+    holder.tvName.text = participant.displayName
+
+    // adding the initial video stream for the participant into the 'SurfaceViewRenderer'
+    for ((_, stream) in participant.streams) {
+      if (stream.kind.equals("video", ignoreCase = true)) {
+        holder.svrParticipant.visibility = View.VISIBLE
+        val videoTrack = stream.track as VideoTrack
+        videoTrack.addSink(holder.svrParticipant)
+        break
+      }
+    }
+
+    // add Listener to the participant which will update start or stop the video stream of that participant
+    participant.addEventListener(object : ParticipantEventListener() {
+      override fun onStreamEnabled(stream: Stream) {
+        if (stream.kind.equals("video", ignoreCase = true)) {
+          holder.svrParticipant.visibility = View.VISIBLE
+          val videoTrack = stream.track as VideoTrack
+          videoTrack.addSink(holder.svrParticipant)
+       }
+      }
+
+      override fun onStreamDisabled(stream: Stream) {
+        if (stream.kind.equals("video", ignoreCase = true)) {
+          val track = stream.track as VideoTrack
+          track?.removeSink(holder.svrParticipant)
+          holder.svrParticipant.clearImage()
+          holder.svrParticipant.visibility = View.GONE
+        }
+      }
+    })
+  }
+}
+```
+</TabItem>
+
+<TabItem value="Java">
 
 ```java title="PartipantAdapter.java"
 public class ParticipantAdapter extends RecyclerView.Adapter<ParticipantAdapter.PeerViewHolder> {
@@ -719,8 +1193,32 @@ public class ParticipantAdapter extends RecyclerView.Adapter<ParticipantAdapter.
   }
 }
 ```
+</TabItem>
 
-5. Add this adapter to the `MeetingActivity.java`
+</Tabs>
+
+5. Add this adapter to the `MeetingActivity`
+
+<Tabs
+defaultValue="Kotlin"
+groupId={"AndroidLanguage"}
+values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
+
+<TabItem value="Kotlin">
+
+```js title="MeetingActivity.kt"
+override fun onCreate(savedInstanceState: Bundle?) {
+  //Meeting Setup...
+  //...
+  val rvParticipants = findViewById<RecyclerView>(R.id.rvParticipants)
+  rvParticipants.layoutManager = GridLayoutManager(this, 2)
+  rvParticipants.adapter = ParticipantAdapter(meeting!!)
+}
+```
+
+</TabItem>
+
+<TabItem value="Java">
 
 ```java title="MeetingActivity.java"
 @Override
@@ -732,6 +1230,10 @@ protected void onCreate(Bundle savedInstanceState) {
   rvParticipants.setAdapter(new ParticipantAdapter(meeting));
 }
 ```
+
+</TabItem>
+
+</Tabs>
 
 :::note
 

@@ -35,6 +35,32 @@ pagination_label: ParticipantEventListener Class
 
 ### Example
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs
+defaultValue="Kotlin"
+groupId={"AndroidLanguage"}
+values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
+
+<TabItem value="Kotlin">
+
+```js
+  meeting!!.localParticipant.addEventListener(object : ParticipantEventListener() {
+    override fun onStreamEnabled(stream: Stream) {
+        //
+    }
+
+    override fun onStreamDisabled(stream: Stream) {
+        //
+    }
+  });
+```
+
+</TabItem>
+
+<TabItem value="Java">
+
 ```js
   participant.addEventListener(new ParticipantEventListener() {
     @Override
@@ -47,7 +73,10 @@ pagination_label: ParticipantEventListener Class
         //
     }
   });
-
 ```
+
+</TabItem>
+
+</Tabs>
 
 </div>

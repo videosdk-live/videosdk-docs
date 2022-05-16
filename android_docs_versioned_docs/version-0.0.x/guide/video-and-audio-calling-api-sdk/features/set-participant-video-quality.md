@@ -23,19 +23,53 @@ This feature allows participants to set other participant's video quality during
 
 - `setQuality` method will accept `low`, `med` or `high` as string parameter.
 
-```js
-  btnQuality.setOnClickListener(new View.OnClickListener() {
-     @Override
-     public void onClick(View v) {
-         for (int i = 0; i < meeting.getParticipants().size(); i++) {
-             Participant participant = participants.next();
 
-             participant.setQuality("low");
-             //or
-             participant.setQuality("med");
-             //or
-             participant.setQuality("high");
-         }
-     }
- });
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs
+defaultValue="Kotlin"
+groupId={"AndroidLanguage"}
+values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
+
+<TabItem value="Kotlin">
+
+```js
+private fun setQuality()
+{  
+  val participants: Iterator<Participant> = meeting!!.participants.values.iterator()
+  for (i in 0 until meeting!!.participants.size) {
+    val participant = participants.next()
+
+    participant.quality = "low"
+    //or
+    participant.quality = "med"
+    //or 
+    participant.quality = "high"
+  }
+}
 ```
+
+</TabItem>
+
+<TabItem value="Java">
+
+```js
+private void setQuality() {
+  final Iterator<Participant> participants = meeting.getParticipants().values().iterator();
+
+  for (int i = 0; i < meeting.getParticipants().size(); i++) {
+    Participant participant = participants.next();
+    
+    participant.setQuality("low");
+    //or
+    participant.setQuality("med");
+    //or
+    participant.setQuality("high");
+  }
+}
+```
+
+</TabItem>
+
+</Tabs>

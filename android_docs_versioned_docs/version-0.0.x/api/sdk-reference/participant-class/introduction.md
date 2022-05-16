@@ -18,10 +18,33 @@ Participant class includes all the properties, methods and events related to all
 
 You can get the local streams and participant meta from `meeting.getLocalParticipant()`. And a Map of joined participants is always available via `meeting.getParticipants()`
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs
+defaultValue="Kotlin"
+groupId={"AndroidLanguage"}
+values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
+
+<TabItem value="Kotlin">
+
+```js title="Javascript"
+val localParticipant = meeting!!.getLocalParticipant()
+val participants = meeting!!.getParticipants()
+```
+
+</TabItem>
+
+<TabItem value="Java">
+
 ```js title="Javascript"
 Participant localParticipant = meeting.getLocalParticipant();
 Map<String, Participant> participants = meeting.getParticipants();
 ```
+
+</TabItem>
+
+</Tabs>
 
 ## Participant Properties
 

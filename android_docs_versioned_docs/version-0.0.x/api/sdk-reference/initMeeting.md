@@ -58,7 +58,8 @@ Please refer this [documentation](/api-reference/realtime-communication/intro/) 
         String meetingId,
         String name,
         boolean micEnabled,
-        boolean webcamEnabled
+        boolean webcamEnabled,
+        String participantId
       )
 ```
 
@@ -101,6 +102,12 @@ Please refer this [documentation](/api-reference/realtime-communication/create-r
   - type: `Boolean`
   - `REQUIRED`
 
+### participantId
+
+- Unique Id of the participant. If you passed `null` then SDK will create an Id by itself and will use that id.
+
+  - type : `String`
+  - `REQUIRED`
 ## Returns
 
 ### meeting
@@ -108,8 +115,41 @@ Please refer this [documentation](/api-reference/realtime-communication/create-r
 - After initializing the meeting, `initMeeting()` will return a new [`Meeting`](./meeting-class/introduction.md) instance.
 
 ---
-
 ## Example
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs
+defaultValue="Kotlin"
+groupId={"AndroidLanguage"}
+values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
+
+<TabItem value="Kotlin">
+
+```js title="initMeeting"
+
+VideoSDK.initialize(applicationContext)
+
+// Configure the token
+VideoSDK.config(token) // pass the token generated from VideoSDK Dashboard
+
+// Initialize the meeting
+var meeting = VideoSDK.initMeeting(
+  arrayOf(
+    this@MainActivity,
+    "abc-1234-xyz",
+    "John Doe",
+    true,
+    true,
+    null
+  )
+)
+```
+
+</TabItem>
+
+<TabItem value="Java">
 
 ```js title="initMeeting"
 
@@ -125,7 +165,12 @@ Meeting meeting = VideoSDK.initMeeting({
   "John Doe",
   true,
   true,
+  null
 });
 ```
+
+</TabItem>
+
+</Tabs>
 
 </div>

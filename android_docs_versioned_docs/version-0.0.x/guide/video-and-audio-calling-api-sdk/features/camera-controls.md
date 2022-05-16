@@ -30,6 +30,35 @@ This guide will provide an overview of how to implement enable, disable and swit
 
 ### Enable, Disable And Switch Webcam
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs
+defaultValue="Kotlin"
+groupId={"AndroidLanguage"}
+values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
+
+<TabItem value="Kotlin">
+
+```js
+  btnWebcam!!.setOnClickListener {
+
+    // Toggle participant webcam in meeting
+    if (webcamEnabled) {
+      meeting!!.disableWebcam()
+    } else {
+      meeting!!.enableWebcam()
+    }
+
+    // Change Webcam in Meeting
+    meeting!!.changeWebcam()
+  }
+```
+
+</TabItem>
+
+<TabItem value="Java">
+
 ```js
   btnWebcam.setOnClickListener(new View.OnClickListener() {
       @Override
@@ -42,6 +71,12 @@ This guide will provide an overview of how to implement enable, disable and swit
           meeting.enableWebcam();
         }
 
+         // Change Webcam in Meeting
+        meeting.changeWebcam();
       }
   });
 ```
+
+</TabItem>
+
+</Tabs>

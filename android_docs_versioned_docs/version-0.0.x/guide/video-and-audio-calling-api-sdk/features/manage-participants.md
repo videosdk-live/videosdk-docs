@@ -65,6 +65,47 @@ Other participants Map contains same properties as [LocalParticipant](/android/g
       android:layout_height="match_parent" />
 ```
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs
+defaultValue="Kotlin"
+groupId={"AndroidLanguage"}
+values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
+
+<TabItem value="Kotlin">
+
+```js title="MainActivity.kt"
+  import org.webrtc.SurfaceViewRenderer;
+  import org.webrtc.VideoTrack;
+
+  private fun displayLocalParticipant() {
+    var svrLocal: SurfaceViewRenderer = findViewById(R.id.btnScreenShare)
+
+    // display local video when stream available
+    meeting!!.localParticipant.addEventListener(
+       object : ParticipantEventListener() {
+         override fun onStreamEnabled(stream: Stream) {
+           if (stream.kind.equals("video", ignoreCase = true)) {
+             val videoTrack = stream.track as VideoTrack
+             videoTrack.addSink(svrLocal)
+            }
+         }
+      }
+    )
+  }
+
+  private fun displayRemoteParticipants() {
+    val rvParticipants = findViewById<RecyclerView>(R.id.rvParticipants)
+    rvParticipants.layoutManager = GridLayoutManager(this, 2)
+    rvParticipants.adapter = ParticipantAdapter(meeting!!)
+  }
+
+```
+</TabItem>
+
+<TabItem value="Java">
+
 ```js title="MainActivity.java"
   import org.webrtc.SurfaceViewRenderer;
   import org.webrtc.VideoTrack;
@@ -73,9 +114,7 @@ Other participants Map contains same properties as [LocalParticipant](/android/g
     final SurfaceViewRenderer svrLocal = findViewById(R.id.svrLocal);
 
     // display local video when stream available
-    meeting
-      .getLocalParticipant()
-      .addEventListener(
+    meeting.getLocalParticipant().addEventListener(
         new ParticipantEventListener() {
           @Override
           public void onStreamEnabled(Stream stream) {
@@ -95,6 +134,9 @@ Other participants Map contains same properties as [LocalParticipant](/android/g
   }
 
 ```
+</TabItem>
+
+</Tabs>
 
 ```xml title="item_remote_peer.xml"
 <?xml version="1.0" encoding="utf-8"?>
@@ -109,6 +151,83 @@ Other participants Map contains same properties as [LocalParticipant](/android/g
 
 </FrameLayout>
 ```
+
+<Tabs
+defaultValue="Kotlin"
+groupId={"AndroidLanguage"}
+values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
+
+<TabItem value="Kotlin">
+
+```js title="ParticipantAdapter.kt"
+
+class ParticipantAdapter(meeting: Meeting) : RecyclerView.Adapter<ParticipantAdapter.PeerViewHolder>() {
+    private val participants: MutableList<Participant> = ArrayList()
+    private var containerHeight = 0
+
+    init {
+        participants.add(meeting.localParticipant)
+        meeting.addEventListener(object : MeetingEventListener() {
+            override fun onParticipantJoined(participant: Participant) {
+                participants.add(participant)
+                notifyItemInserted(participants.size - 1)
+            }
+
+            override fun onParticipantLeft(participant: Participant) {
+                // remove participant from grid
+            }
+        })
+    }
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PeerViewHolder {
+        containerHeight = parent.height
+        return PeerViewHolder(
+            LayoutInflater.from(parent.context)
+                .inflate(R.layout.item_remote_peer, parent, false)
+        )
+    }
+
+    override fun onBindViewHolder(holder: PeerViewHolder, position: Int) {
+        val participant = participants[position]
+
+        val layoutParams = holder.itemView.layoutParams
+        layoutParams.height = containerHeight / 3
+        holder.itemView.layoutParams = layoutParams
+
+        for ((_, stream) in participant.streams) {
+            if (stream.kind.equals("video", ignoreCase = true)) {
+                val videoTrack = stream.track as VideoTrack
+                videoTrack.addSink(holder.svrParticipant)
+                break
+            }
+        }
+
+        participant.addEventListener(object : ParticipantEventListener() {
+            override fun onStreamEnabled(stream: Stream) {
+                if (stream.kind.equals("video", ignoreCase = true)) {
+                    val videoTrack = stream.track as VideoTrack
+                    videoTrack.addSink(holder.svrParticipant)
+                }
+            }
+        })
+    }
+
+    override fun getItemCount(): Int {
+        return participants.size
+    }
+
+    class PeerViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+        var svrParticipant: SurfaceViewRenderer = view.findViewById(R.id.svrParticipant)
+        init{
+            svrParticipant.init(PeerConnectionUtils.getEglContext(), null)
+        }
+    }
+}
+
+```
+</TabItem>
+
+<TabItem value="Java">
 
 ```js title="ParticipantAdapter.java"
 
@@ -177,7 +296,6 @@ public class ParticipantAdapter extends RecyclerView.Adapter<ParticipantAdapter.
         return participants.size();
     }
 
-
     static class PeerViewHolder extends RecyclerView.ViewHolder {
         public SurfaceViewRenderer svrParticipant;
         public View itemView;
@@ -192,8 +310,10 @@ public class ParticipantAdapter extends RecyclerView.Adapter<ParticipantAdapter.
         }
     }
 }
-
 ```
+</TabItem>
+
+</Tabs>
 
 Please refer the [example code](https://github.com/videosdk-live/videosdk-rtc-android-java-sdk-example/blob/master/app/src/main/java/live/videosdk/rtc/android/java) on Github for more details.
 
@@ -208,6 +328,45 @@ Please refer the [example code](https://github.com/videosdk-live/videosdk-rtc-an
 4. **stream-enabled** - Whenever any participant enabled mic/webcam in meeting, `stream-enabled` event will trigger and return [Stream Map](/android/guide/video-and-audio-calling-api-sdk/features/manage-participants#streams-map-properties).
 
 5. **stream-disabled** - Whenever any participant disabled mic/webcam in meeting, `stream-disabled` event will trigger and return [Stream Map](/android/guide/video-and-audio-calling-api-sdk/features/manage-participants#streams-map-properties).
+
+
+<Tabs
+defaultValue="Kotlin"
+groupId={"AndroidLanguage"}
+values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
+
+<TabItem value="Kotlin">
+
+```js
+ meeting.addEventListener(object : MeetingEventListener() {
+    override fun onParticipantJoined(participant: Participant) {
+        participant.addEventListener(object : ParticipantEventListener() {
+                override fun onStreamEnabled(stream: Stream) {
+                    if (stream.kind.equals("video", ignoreCase = true)) {
+                         // participant video enabled
+                    } else if (stream.kind.equals("audio", ignoreCase = true)) {
+                         // participant mic enabled
+                    }
+                }
+                override fun onStreamDisabled(stream: Stream) {
+                    if (stream.kind.equals("video", ignoreCase = true)) {
+                         // participant video disabled
+                    } else if (stream.kind.equals("audio", ignoreCase = true)) {
+                        // participant mic disabled
+                    }
+                }
+        })
+    }
+    
+    override fun onParticipantLeft(participant: Participant) {
+        Toast.makeText(this@MainActivity, participant.displayName + " left", Toast.LENGTH_SHORT).show()
+    }
+ })
+```
+
+</TabItem>
+
+<TabItem value="Java">
 
 ```js
  meeting.addEventListener(new MeetingEventListener() {
@@ -246,3 +405,7 @@ Please refer the [example code](https://github.com/videosdk-live/videosdk-rtc-an
     }
  });
 ```
+
+</TabItem>
+
+</Tabs>
