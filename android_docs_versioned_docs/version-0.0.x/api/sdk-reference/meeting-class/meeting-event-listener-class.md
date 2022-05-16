@@ -15,14 +15,40 @@ title: MeetingEventListener Class
 
 #### Example
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs
+defaultValue="Kotlin"
+groupId={"AndroidLanguage"}
+values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
+
+<TabItem value="Kotlin">
+
 ```javascript
- private final MeetingEventListener meetingEventListener = new MeetingEventListener() {
-    @Override
-    public void onMeetingJoined() {
-        Log.d("#meeting", "onMeetingJoined()");
-    }
+private final MeetingEventListener meetingEventListener = new MeetingEventListener() {
+  override fun onMeetingJoined() {
+    Log.d("#meeting", "onMeetingJoined()")
   }
+}
 ```
+
+</TabItem>
+
+<TabItem value="Java">
+
+```javascript
+private final MeetingEventListener meetingEventListener = new MeetingEventListener() {
+  @Override
+  public void onMeetingJoined() {
+    Log.d("#meeting", "onMeetingJoined()");
+  }
+}
+```
+
+</TabItem>
+
+</Tabs>
 
 ---
 
@@ -32,12 +58,33 @@ title: MeetingEventListener Class
 
 #### Example
 
+<Tabs
+defaultValue="Kotlin"
+groupId={"AndroidLanguage"}
+values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
+
+<TabItem value="Kotlin">
+
+```javascript
+ override fun onMeetingJoined() {
+    Log.d("#meeting", "onMeetingJoined()")
+ }
+```
+
+</TabItem>
+
+<TabItem value="Java">
+
 ```javascript
  @Override
  public void onMeetingJoined() {
      Log.d("#meeting", "onMeetingJoined()");
  }
 ```
+
+</TabItem>
+
+</Tabs>
 
 ---
 
@@ -47,12 +94,33 @@ title: MeetingEventListener Class
 
 #### Example
 
+<Tabs
+defaultValue="Kotlin"
+groupId={"AndroidLanguage"}
+values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
+
+<TabItem value="Kotlin">
+
+```javascript
+ override fun onMeetingLeft() {
+    Log.d("#meeting", "onMeetingLeft()")
+ }
+```
+
+</TabItem>
+
+<TabItem value="Java">
+
 ```javascript
  @Override
  public void onMeetingLeft() {
     Log.d("#meeting", "onMeetingLeft()");
  }
 ```
+
+</TabItem>
+
+</Tabs>
 
 ---
 
@@ -66,12 +134,33 @@ title: MeetingEventListener Class
 
 #### Example
 
+<Tabs
+defaultValue="Kotlin"
+groupId={"AndroidLanguage"}
+values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
+
+<TabItem value="Kotlin">
+
+```javascript
+ override fun onParticipantJoined(participant: Participant) {
+    Log.d("#meeting", participant.displayName + " joined");
+ }
+```
+
+</TabItem>
+
+<TabItem value="Java">
+
 ```javascript
  @Override
  public void onParticipantJoined(Participant participant) {
     Log.d("#meeting", participant.getDisplayName() + " joined");
  }
 ```
+
+</TabItem>
+
+</Tabs>
 
 ---
 
@@ -85,12 +174,33 @@ title: MeetingEventListener Class
 
 #### Example
 
+<Tabs
+defaultValue="Kotlin"
+groupId={"AndroidLanguage"}
+values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
+
+<TabItem value="Kotlin">
+
+```javascript
+ override fun onParticipantLeft(participant: Participant) {
+    Log.d("#meeting", participant.displayName + " left");
+ }
+```
+
+</TabItem>
+
+<TabItem value="Java">
+
 ```javascript
  @Override
  public void onParticipantLeft(Participant participant) {
     Log.d("#meeting", participant.getDisplayName() + " left");
  }
 ```
+
+</TabItem>
+
+</Tabs>
 
 ---
 
@@ -106,12 +216,33 @@ title: MeetingEventListener Class
 
 #### Example
 
+<Tabs
+defaultValue="Kotlin"
+groupId={"AndroidLanguage"}
+values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
+
+<TabItem value="Kotlin">
+
+```javascript
+ override fun onSpeakerChanged(participantId: String?) {
+  //
+ }
+```
+
+</TabItem>
+
+<TabItem value="Java">
+
 ```javascript
  @Override
  public void onSpeakerChanged(String participantId) {
   //
  }
 ```
+
+</TabItem>
+
+</Tabs>
 
 ---
 
@@ -127,12 +258,33 @@ title: MeetingEventListener Class
 
 #### Example
 
+<Tabs
+defaultValue="Kotlin"
+groupId={"AndroidLanguage"}
+values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
+
+<TabItem value="Kotlin">
+
+```javascript
+ override fun onPresenterChanged(participantId: String) {
+  //
+ }
+```
+
+</TabItem>
+
+<TabItem value="Java">
+
 ```javascript
  @Override
  public void onPresenterChanged(String participantId) {
   //
  }
 ```
+
+</TabItem>
+
+</Tabs>
 
 ---
 
@@ -149,12 +301,33 @@ title: MeetingEventListener Class
 
 #### Example
 
+<Tabs
+defaultValue="Kotlin"
+groupId={"AndroidLanguage"}
+values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
+
+<TabItem value="Kotlin">
+
+```javascript
+ override fun onEntryRequested(id: String?, name: String?) {
+    //
+}
+```
+
+</TabItem>
+
+<TabItem value="Java">
+
 ```javascript
  @Override
  public void onEntryRequested(String id, String name) {
     //
 }
 ```
+
+</TabItem>
+
+</Tabs>
 
 ---
 
@@ -171,12 +344,33 @@ title: MeetingEventListener Class
 
 #### Example
 
+<Tabs
+defaultValue="Kotlin"
+groupId={"AndroidLanguage"}
+values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
+
+<TabItem value="Kotlin">
+
+```javascript
+ override fun onEntryResponded(id: String?, decision: String?) {
+    //
+  }
+```
+
+</TabItem>
+
+<TabItem value="Java">
+
 ```javascript
  @Override
  public void onEntryResponded(String id, String decision) {
     //
   }
 ```
+
+</TabItem>
+
+</Tabs>
 
 ---
 
@@ -192,6 +386,27 @@ title: MeetingEventListener Class
 
 #### Example
 
+<Tabs
+defaultValue="Kotlin"
+groupId={"AndroidLanguage"}
+values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
+
+<TabItem value="Kotlin">
+
+```javascript
+  override fun onWebcamRequested(participantId: String, listener: WebcamRequestListener) {
+     // if accept request
+     listener.accept()
+
+     // if reject request
+     listener.reject()
+ }
+```
+
+</TabItem>
+
+<TabItem value="Java">
+
 ```javascript
   @Override
  public void onWebcamRequested(String participantId, WebcamRequestListener listener) {
@@ -202,6 +417,10 @@ title: MeetingEventListener Class
      listener.reject();
  }
 ```
+
+</TabItem>
+
+</Tabs>
 
 ### onMicRequested()
 
@@ -215,6 +434,27 @@ title: MeetingEventListener Class
 
 #### Example
 
+<Tabs
+defaultValue="Kotlin"
+groupId={"AndroidLanguage"}
+values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
+
+<TabItem value="Kotlin">
+
+```javascript
+ override fun onMicRequested(participantId: String, listener: MicRequestListener) {
+     // if accept request
+     listener.accept()
+
+     // if reject request
+     listener.reject()
+ }
+```
+
+</TabItem>
+
+<TabItem value="Java">
+
 ```javascript
  @Override
  public void onMicRequested(String participantId, MicRequestListener listener) {
@@ -226,6 +466,10 @@ title: MeetingEventListener Class
  }
 ```
 
+</TabItem>
+
+</Tabs>
+
 ---
 
 ### onRecordingStarted()
@@ -234,12 +478,33 @@ title: MeetingEventListener Class
 
 #### Example
 
+<Tabs
+defaultValue="Kotlin"
+groupId={"AndroidLanguage"}
+values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
+
+<TabItem value="Kotlin">
+
+```javascript
+ override fun onRecordingStarted() {
+   //
+ }
+```
+
+</TabItem>
+
+<TabItem value="Java">
+
 ```javascript
  @Override
  public void onRecordingStarted() {
    //
-}
+ }
 ```
+
+</TabItem>
+
+</Tabs>
 
 ---
 
@@ -249,12 +514,33 @@ title: MeetingEventListener Class
 
 #### Example
 
+<Tabs
+defaultValue="Kotlin"
+groupId={"AndroidLanguage"}
+values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
+
+<TabItem value="Kotlin">
+
+```javascript
+ override fun onRecordingStopped() {
+   //
+ }
+```
+
+</TabItem>
+
+<TabItem value="Java">
+
 ```javascript
  @Override
  public void onRecordingStopped() {
    //
  }
 ```
+
+</TabItem>
+
+</Tabs>
 
 ---
 
@@ -264,12 +550,33 @@ title: MeetingEventListener Class
 
 #### Example
 
+<Tabs
+defaultValue="Kotlin"
+groupId={"AndroidLanguage"}
+values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
+
+<TabItem value="Kotlin">
+
+```javascript
+ override fun onLivestreamStarted() {
+   //
+ }
+```
+
+</TabItem>
+
+<TabItem value="Java">
+
 ```javascript
  @Override
  public void onLivestreamStarted() {
    //
  }
 ```
+
+</TabItem>
+
+</Tabs>
 
 ---
 
@@ -279,12 +586,33 @@ title: MeetingEventListener Class
 
 #### Example
 
+<Tabs
+defaultValue="Kotlin"
+groupId={"AndroidLanguage"}
+values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
+
+<TabItem value="Kotlin">
+
+```javascript
+ override fun onLivestreamStopped() {
+   //
+ }
+```
+
+</TabItem>
+
+<TabItem value="Java">
+
 ```javascript
  @Override
  public void onLivestreamStopped() {
    //
  }
 ```
+
+</TabItem>
+
+</Tabs>
 
 ---
 
@@ -294,12 +622,33 @@ title: MeetingEventListener Class
 
 #### Example
 
+<Tabs
+defaultValue="Kotlin"
+groupId={"AndroidLanguage"}
+values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
+
+<TabItem value="Kotlin">
+
+```javascript
+ override fun onExternalCallStarted() {
+   //
+ }
+```
+
+</TabItem>
+
+<TabItem value="Java">
+
 ```javascript
  @Override
  public void onExternalCallStarted() {
    //
  }
 ```
+
+</TabItem>
+
+</Tabs>
 
 ---
 

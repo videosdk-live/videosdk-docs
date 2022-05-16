@@ -27,6 +27,30 @@ We can access `speaker-changed` event through [meeting object](/android/guide/vi
 
 ### speaker-changed Event
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs
+defaultValue="Kotlin"
+groupId={"AndroidLanguage"}
+values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
+
+<TabItem value="Kotlin">
+
+```js
+private val meetingEventListener: MeetingEventListener = object : MeetingEventListener() {
+     // ...
+    override fun onSpeakerChanged(participantId: String?) {
+        Toast.makeText(this@MainActivity, "active Speaker Id" + participantId, Toast.LENGTH_SHORT).show();
+        super.onSpeakerChanged(participantId)
+    }
+};
+```
+
+</TabItem>
+
+<TabItem value="Java">
+
 ```js
 private final MeetingEventListener meetingEventListener = new MeetingEventListener() {
      // ...
@@ -37,3 +61,7 @@ private final MeetingEventListener meetingEventListener = new MeetingEventListen
     }
 };
 ```
+
+</TabItem>
+
+</Tabs>

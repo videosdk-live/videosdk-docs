@@ -23,6 +23,28 @@ Whenver you wish to stop/resume downlaod stream(webcam, screenShare and mic) of 
 
 - `pause()` method is used for pause stream(webcam, screenShare and mic) of a particular participant.
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs
+defaultValue="Kotlin"
+groupId={"AndroidLanguage"}
+values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
+
+<TabItem value="Kotlin">
+
+```js
+  btnPause!!.setOnClickListener { _: View? ->
+    for ((_, stream) in participant.streams) {
+      stream.pause()
+    }
+  }
+```
+
+</TabItem>
+
+<TabItem value="Java">
+
 ```js
   btnPause.setOnClickListener(new View.OnClickListener() {
       @Override
@@ -35,9 +57,33 @@ Whenver you wish to stop/resume downlaod stream(webcam, screenShare and mic) of 
   });
 ```
 
+</TabItem>
+
+</Tabs>
+
 ## Resume video stream
 
 - `resume()` method is used to resume stream(webcam, screenShare and mic) of a particular participant.
+
+
+<Tabs
+defaultValue="Kotlin"
+groupId={"AndroidLanguage"}
+values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
+
+<TabItem value="Kotlin">
+
+```js
+  btnResume!!.setOnClickListener { _: View? ->
+    for ((_, stream) in participant.streams) {
+      stream.resume()
+    }
+  }
+```
+
+</TabItem>
+
+<TabItem value="Java">
 
 ```js
   btnResume.setOnClickListener(new View.OnClickListener() {
@@ -50,3 +96,7 @@ Whenver you wish to stop/resume downlaod stream(webcam, screenShare and mic) of 
       }
   });
 ```
+
+</TabItem>
+
+</Tabs>

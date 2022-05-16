@@ -37,6 +37,7 @@ import MethodListHeading from '@theme/MethodListHeading';
       <MethodListItemLabel description={"set local participant's name"} name="name" option={"required"} type={"string"} />
       <MethodListItemLabel description={"set local participant's mic state"} name="micEnabled" option={"required"} type={"bool"} />
       <MethodListItemLabel description={"set local participant's webcam state"} name="webcamEnabled" option={"required"} type={"bool"}/>
+      <MethodListItemLabel description={"set local participant's Id"} name="paricipantId" option={"required"} type={"string"}/>
     </MethodListGroup>
   </MethodListItemLabel>
 </MethodListGroup>
@@ -55,13 +56,41 @@ import MethodListHeading from '@theme/MethodListHeading';
         String meetingId, 
         String name, 
         boolean micEnabled,
-        boolean webcamEnabled
+        boolean webcamEnabled,
+        String participantId
       )"  type={"Meeting"} />
     </MethodListGroup>
   </MethodListItemLabel>
 </MethodListGroup>
 
 ## Example
+
+<Tabs
+defaultValue="Kotlin"
+groupId={"AndroidLanguage"}
+values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
+
+<TabItem value="Kotlin">
+
+```js title="initMeeting"
+// Configure the token
+VideoSDK.config(token)
+
+// Initialize the meeting
+Meeting meeting = VideoSDK.initMeeting(
+      context,
+      meetingId, // required
+      name, // required
+      micEnabled, // required
+      webcamEnabled, // required
+      null // required
+      )
+});
+```
+
+</TabItem>
+
+<TabItem value="Java">
 
 ```js title="initMeeting"
 // Configure the token
@@ -74,5 +103,10 @@ Meeting meeting = VideoSDK.initMeeting({
   name, // required
   micEnabled, // required
   webcamEnabled, // required
+  null, // required
 });
 ```
+
+</TabItem>
+
+</Tabs>

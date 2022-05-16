@@ -28,6 +28,36 @@ This guide will provide an overview of how to implement start and stop Meeting R
 
 ### Start And Stop Recording
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs
+defaultValue="Kotlin"
+groupId={"AndroidLanguage"}
+values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
+
+<TabItem value="Kotlin">
+
+```js
+// TODO: change webhookUrl
+val webhookUrl = "<webhook-url-here>"
+
+// keep track of recording
+val recording = false
+
+findViewById<View>(R.id.btnRecording).setOnClickListener { view: View? ->
+    if (!recording) {
+        meeting!!.startRecording(webhookUrl)
+    } else {
+        meeting!!.stopRecording()
+    }
+}
+```
+
+</TabItem>
+
+<TabItem value="Java">
+
 ```js
 // TODO: change webhookUrl
 String webhookUrl = "<webhook-url-here>";
@@ -44,11 +74,43 @@ findViewById(R.id.btnRecording).setOnClickListener(view -> {
 });
 ```
 
+</TabItem>
+
+</Tabs>
+
 ### Events
 
 1. **recording-started** - Whenever any participant start meeting recording, then `recording-started` event will trigger.
 
 2. **recording-stopped** - Whenever any participant stop meeting recording, then `recording-stopped` event will trigger.
+
+<Tabs
+defaultValue="Kotlin"
+groupId={"AndroidLanguage"}
+values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
+
+<TabItem value="Kotlin">
+
+```js
+object : MeetingEventListener() {
+  override fun onRecordingStarted() {
+    recording = true
+
+    // TODO: show indication that meeting recording is started.
+  }
+
+  override fun onRecordingStopped() {
+    recording = false
+
+    // TODO: show indication that meeting recording is stopped.
+  }
+
+}
+```
+
+</TabItem>
+
+<TabItem value="Java">
 
 ```js
 new MeetingEventListener() {
@@ -67,3 +129,7 @@ new MeetingEventListener() {
   }
 }
 ```
+
+</TabItem>
+
+</Tabs>

@@ -15,6 +15,26 @@ title: PubSubMessageListener Class
 
 #### Example
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs
+defaultValue="Kotlin"
+groupId={"AndroidLanguage"}
+values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
+
+<TabItem value="Kotlin">
+
+```javascript
+var pubSubMessageListener = PubSubMessageListener { message ->
+    Log.d("#message", "onMessageReceived: " + message.message)
+}
+```
+
+</TabItem>
+
+<TabItem value="Java">
+
 ```javascript
 PubSubMessageListener pubSubMessageListener = new PubSubMessageListener() {
     @Override
@@ -23,5 +43,9 @@ PubSubMessageListener pubSubMessageListener = new PubSubMessageListener() {
     }
 };
 ```
+
+</TabItem>
+
+</Tabs>
 
 </div>
