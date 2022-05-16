@@ -106,8 +106,9 @@ Please refer this [documentation](/api-reference/realtime-communication/create-r
 
 - Unique Id of the participant. If you passed `null` then SDK will create an Id by itself and will use that id.
 
-  - type : `String`
+  - type : `String` or `null`
   - `REQUIRED`
+
 ## Returns
 
 ### meeting
@@ -115,6 +116,7 @@ Please refer this [documentation](/api-reference/realtime-communication/create-r
 - After initializing the meeting, `initMeeting()` will return a new [`Meeting`](./meeting-class/introduction.md) instance.
 
 ---
+
 ## Example
 
 import Tabs from '@theme/Tabs';

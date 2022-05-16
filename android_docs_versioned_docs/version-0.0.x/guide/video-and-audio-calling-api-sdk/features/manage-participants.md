@@ -102,6 +102,7 @@ values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
   }
 
 ```
+
 </TabItem>
 
 <TabItem value="Java">
@@ -134,6 +135,7 @@ values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
   }
 
 ```
+
 </TabItem>
 
 </Tabs>
@@ -225,6 +227,9 @@ class ParticipantAdapter(meeting: Meeting) : RecyclerView.Adapter<ParticipantAda
 }
 
 ```
+
+Please refer the [example code](https://github.com/videosdk-live/videosdk-rtc-android-kotlin-sdk-example) on Github for more details.
+
 </TabItem>
 
 <TabItem value="Java">
@@ -311,11 +316,12 @@ public class ParticipantAdapter extends RecyclerView.Adapter<ParticipantAdapter.
     }
 }
 ```
+
+Please refer the [example code](https://github.com/videosdk-live/videosdk-rtc-android-java-sdk-example/blob/master/app/src/main/java/live/videosdk/rtc/android/java) on Github for more details.
+
 </TabItem>
 
 </Tabs>
-
-Please refer the [example code](https://github.com/videosdk-live/videosdk-rtc-android-java-sdk-example/blob/master/app/src/main/java/live/videosdk/rtc/android/java) on Github for more details.
 
 ## 3. Participant Related Events
 
@@ -328,7 +334,6 @@ Please refer the [example code](https://github.com/videosdk-live/videosdk-rtc-an
 4. **stream-enabled** - Whenever any participant enabled mic/webcam in meeting, `stream-enabled` event will trigger and return [Stream Map](/android/guide/video-and-audio-calling-api-sdk/features/manage-participants#streams-map-properties).
 
 5. **stream-disabled** - Whenever any participant disabled mic/webcam in meeting, `stream-disabled` event will trigger and return [Stream Map](/android/guide/video-and-audio-calling-api-sdk/features/manage-participants#streams-map-properties).
-
 
 <Tabs
 defaultValue="Kotlin"
@@ -357,7 +362,7 @@ values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
                 }
         })
     }
-    
+
     override fun onParticipantLeft(participant: Participant) {
         Toast.makeText(this@MainActivity, participant.displayName + " left", Toast.LENGTH_SHORT).show()
     }

@@ -53,7 +53,7 @@ Above mentioned encoder configurations are valid for both, landscape as well as 
   - type: `String`
   - required: `false`
   - Allowed values : `front` | `environment`
-  - It will specifiy wheater to use fron or back camera for the video track.
+  - It will specifiy whether to use fron or back camera for the video track.
 
 - **optimizationMode**
   - type: `String`
