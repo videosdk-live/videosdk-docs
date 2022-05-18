@@ -1,0 +1,34 @@
+{
+  "fetchActiveHLS": {
+    "title": "Fetch active HLS",
+    "description": "This API let you fetch an active HLS stream.",
+    "headers": [],
+    "methodType": "GET",
+    "postParameters": [],
+    "queryParameters": [],
+    "parameters": [
+      {
+        "key": "MeetingId",
+        "description": "#### The ID of the Meeting.",
+        "required": true
+      }
+    ],
+    "apiEndpoint": "https://api.videosdk.live/v2/hls/${MeetingId}/active",
+    "response": {
+      "code": 200,
+      "data": {
+        "sessionId": "abcde94c96e17e03fb0abcde4",
+        "start": "2022-04-19T09:18:13.432Z",
+        "end": null,
+        "roomId": "abcd-efgh-ijkl",
+        "duration": 75.173,
+        "links": {
+          "get_room": "https://api.videosdk.live/v2/rooms/abcd-efgh-ijkl",
+          "get_session": "https://api.videosdk.live/v2/sessions/abcde94c96e17e03fb0abcde4"
+        },
+        "downstreamUrl": "https://cdn.videosdk.live/meetings-hls/abcdefgh-ijkl-mnop-1234-abcdefghijkl/index.m3u8",
+        "id": "abcdef9879288c1f48339f64"
+      }
+    }
+  }
+}
