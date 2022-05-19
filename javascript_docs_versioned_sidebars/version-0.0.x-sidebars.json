@@ -15,7 +15,9 @@
       "type": "category",
       "label": "Quick Start Guide",
       "items": [
-        "guide/video-and-audio-calling-api-sdk/quick-start",
+        "guide/video-and-audio-calling-api-sdk/quick-start-voice-call",
+        "guide/video-and-audio-calling-api-sdk/quick-start-video-call",
+        "guide/video-and-audio-calling-api-sdk/quick-start-interactive-live-streaming",
         "guide/video-and-audio-calling-api-sdk/run-a-sample-project"
       ],
       "collapsed": false
