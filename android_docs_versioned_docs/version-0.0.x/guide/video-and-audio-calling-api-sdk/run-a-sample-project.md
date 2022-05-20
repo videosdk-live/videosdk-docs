@@ -38,9 +38,31 @@ import APISecret from '../../../../mdx/introduction/\_api-key.mdx';
 
 Clone the repository to your local environment.
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs
+defaultValue="Kotlin"
+groupId={"AndroidLanguage"}
+values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
+
+<TabItem value="Kotlin">
+
+```js
+git clone https://github.com/videosdk-live/videosdk-rtc-android-kotlin-sdk-example.git
+```
+
+</TabItem>
+
+<TabItem value="Java">
+
 ```js
 git clone https://github.com/videosdk-live/videosdk-rtc-android-java-sdk-example.git
 ```
+
+</TabItem>
+
+</Tabs>
 
 ### Step 2: Modify local.properties
 

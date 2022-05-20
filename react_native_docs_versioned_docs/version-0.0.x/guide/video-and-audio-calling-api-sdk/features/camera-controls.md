@@ -31,14 +31,19 @@ This guide will provide an overview of how to implement enable, disable and swit
 ### Enable, Disable And Switch Webcam
 
 ```js
-const onPress = () => {
+const { enableWebcam, disableWebcam, changeWebcam, getWebcams } = useMeeting();
+const onPress = async () => {
   // Enable Webcam in Meeting
-  meeting?.enableWebcam();
+  enableWebcam();
 
   // Disable Webcam in Meeting
-  meeting?.disableWebcam();
+  disableWebcam();
 
   // Change Webcam in Meeting
-  meeting?.changeWebcam();
+  const webcams = await getWebcams(); // returns all webcams
+
+  const { deviceId, label } = webcams[0]; // 0th : Rear Cam, 1st : Front Cam
+
+  changeWebcam(deviceId);
 };
 ```

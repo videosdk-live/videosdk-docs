@@ -26,6 +26,40 @@ This guide will provide an overview of how participant can start and stop broadc
 
 ### Start And Stop Live Stream
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs
+defaultValue="Kotlin"
+groupId={"AndroidLanguage"}
+values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
+
+<TabItem value="Kotlin">
+
+```js
+private val YOUTUBE_RTMP_URL: String? = null
+private val YOUTUBE_RTMP_STREAM_KEY: String? = null
+
+//
+findViewById<View>(R.id.btnLivestream).setOnClickListener {
+    if (!livestreaming) {
+        if (YOUTUBE_RTMP_URL == null || YOUTUBE_RTMP_STREAM_KEY == null) {
+            throw Error("RTMP url or stream key missing.")
+        }
+        val outputs: MutableList<LivestreamOutput> = ArrayList()
+        outputs.add(LivestreamOutput(YOUTUBE_RTMP_URL, YOUTUBE_RTMP_STREAM_KEY))
+
+        meeting!!.startLivestream(outputs)
+    } else {
+        meeting!!.stopLivestream()
+    }
+}
+```
+
+</TabItem>
+
+<TabItem value="Java">
+
 ```js
 private static final String YOUTUBE_RTMP_URL = null;
 private static final String YOUTUBE_RTMP_STREAM_KEY = null;
@@ -47,11 +81,44 @@ findViewById(R.id.btnLivestream).setOnClickListener(view -> {
 });
 ```
 
+</TabItem>
+
+</Tabs>
+
 ### Events
 
 1. **livestream-started** - Whenever broadcasting of meeting started, `livestream-started` event will trigger.
 
 2. **livestream-stopped** - Whenever broadcasting of meeting stopped, `livestream-stopped` event will trigger.
+
+
+<Tabs
+defaultValue="Kotlin"
+groupId={"AndroidLanguage"}
+values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
+
+<TabItem value="Kotlin">
+
+```js
+object : MeetingEventListener() {
+  override fun onLivestreamStarted() {
+    livestreaming = true
+
+    // TODO: show indication that meeting livestream is started.
+  }
+
+  override fun onLivestreamStopped() {
+    livestreaming = false
+
+    // TODO: show indication that meeting livestream is stopped.
+  }
+
+}
+```
+
+</TabItem>
+
+<TabItem value="Java">
 
 ```js
 new MeetingEventListener() {
@@ -70,3 +137,7 @@ new MeetingEventListener() {
   }
 }
 ```
+
+</TabItem>
+
+</Tabs>

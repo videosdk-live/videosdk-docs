@@ -75,7 +75,7 @@ dependencyResolutionManagement{
 
 ```js title="app/build.gradle"
 dependencies {
-  implementation 'live.videosdk:android-sdk:0.0.14'
+  implementation 'live.videosdk:android-sdk:0.0.16'
 
   // library to perform Network call to generate a meeting id
   implementation 'com.amitshekhar.android:android-networking:1.0.2'
@@ -94,7 +94,31 @@ dependencies {
 <uses-permission android:name="android.permission.INTERNET" />
 ```
 
-### Step 2: Create `MainApplication.java` class which will extend the `android.app.Application`.
+### Step 2: Create `MainApplication` class which will extend the `android.app.Application`.
+
+<Tabs
+defaultValue="Kotlin"
+groupId={"AndroidLanguage"}
+values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
+
+<TabItem value="Kotlin">
+
+```js title="MainApplication.kt"
+package live.videosdk.demo;
+
+import live.videosdk.android.VideoSDK
+
+class MainApplication : Application() {
+    override fun onCreate() {
+        super.onCreate()
+        VideoSDK.initialize(applicationContext)
+    }
+}
+```
+
+</TabItem>
+
+<TabItem value="Java">
 
 ```js title="MainApplication.java"
 package live.videosdk.demo;
@@ -107,11 +131,14 @@ public class MainApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-
         VideoSDK.initialize(getApplicationContext());
     }
 }
 ```
+
+</TabItem>
+
+</Tabs>
 
 ### Step 3: Add `MainApplication` to `AndroidManifest.xml`.
 
@@ -124,7 +151,41 @@ public class MainApplication extends Application {
 </application>
 ```
 
-### Step 4: In your `JoinActivity.java` add the following code in `onCreate()` method.
+### Step 4: In your `JoinActivity` add the following code in `onCreate()` method.
+
+<Tabs
+defaultValue="Kotlin"
+groupId={"AndroidLanguage"}
+values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
+
+<TabItem value="Kotlin">
+
+```js title="JoinActivity.kt"
+override fun onCreate(savedInstanceState: Bundle?) {
+  super.onCreate(savedInstanceState)
+  setContentView(R.layout.activity_join)
+
+  val meetingId = "<meeting-id>"
+  val participantName = "John Doe"
+
+  var micEnabled = true
+  var webcamEnabled = true
+
+  // generate the jwt token from your api server and add it here
+  VideoSDK.config("JWT TOKEN GENERATED FROM SERVER")
+
+  // create a new meeting instance
+  meeting = VideoSDK.initMeeting(
+      this@MeetingActivity, meetingId, participantName,
+      micEnabled, webcamEnabled,null)
+      
+  // get permissions and join the meeting with meeting.join();
+  // checkPermissionAndJoinMeeting();
+}
+```
+</TabItem>
+
+<TabItem value="Java">
 
 ```js title="JoinActivity.java"
 @Override
@@ -144,12 +205,15 @@ protected void onCreate(Bundle savedInstanceState) {
   // create a new meeting instance
   Meeting meeting = VideoSDK.initMeeting(
           MainActivity.this, meetingId, participantName,
-          micEnabled, webcamEnabled
+          micEnabled, webcamEnabled,null
   );
 
   // get permissions and join the meeting with meeting.join();
   // checkPermissionAndJoinMeeting();
 }
 ```
+</TabItem>
+
+</Tabs>
 
  All set! Here is the link to the complete sample code on [Github](https://github.com/videosdk-live/videosdk-rtc-android-java-sdk-example). Please refer to the [documentation](initMeeting) for a full list of available methods, events and features of the SDK.

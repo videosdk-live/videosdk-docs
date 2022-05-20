@@ -30,6 +30,27 @@ This guide will provide an overview of how to implement leave or end feature in 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
+<Tabs
+defaultValue="Kotlin"
+groupId={"AndroidLanguage"}
+values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
+
+<TabItem value="Kotlin">
+
+```js
+  btnLeave!!.setOnClickListener { _: View? ->
+    meeting!!.leave()
+  }
+
+  btnEnd!!.setOnClickListener { _: View? ->
+    meeting!!.end()
+  }
+```
+
+</TabItem>
+
+<TabItem value="Java">
+
 ```js
   btnLeave.setOnClickListener(new View.OnClickListener() {
       @Override
@@ -45,3 +66,7 @@ import TabItem from '@theme/TabItem';
       }
   });
 ```
+
+</TabItem>
+
+</Tabs>

@@ -156,11 +156,35 @@ title: Meeting Class Methods
 
 #### Example
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs
+defaultValue="Kotlin"
+groupId={"AndroidLanguage"}
+values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
+
+<TabItem value="Kotlin">
+
+```js
+val webhookUrl = "https://webhook.your-api-server.com"
+
+meeting!!.startRecording(webhookUrl)
+```
+
+</TabItem>
+
+<TabItem value="Java">
+
 ```js
 String webhookUrl = "https://webhook.your-api-server.com";
 
 meeting.startRecording(webhookUrl);
 ```
+
+</TabItem>
+
+</Tabs>
 
 ---
 
@@ -175,9 +199,28 @@ meeting.startRecording(webhookUrl);
 
 #### Example
 
+<Tabs
+defaultValue="Kotlin"
+groupId={"AndroidLanguage"}
+values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
+
+<TabItem value="Kotlin">
+
+```javascript
+meeting!!.stopRecording()
+```
+
+</TabItem>
+
+<TabItem value="Java">
+
 ```javascript
 meeting.stopRecording();
 ```
+
+</TabItem>
+
+</Tabs>
 
 ---
 
@@ -199,6 +242,27 @@ meeting.stopRecording();
 
 #### Example
 
+<Tabs
+defaultValue="Kotlin"
+groupId={"AndroidLanguage"}
+values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
+
+<TabItem value="Kotlin">
+
+```javascript
+val YOUTUBE_RTMP_URL = "rtmp://a.rtmp.youtube.com/live2"
+val YOUTUBE_RTMP_STREAM_KEY = "<STREAM_KEY>"
+
+val outputs: MutableList<LivestreamOutput> = ArrayList()
+outputs.add(LivestreamOutput(YOUTUBE_RTMP_URL, YOUTUBE_RTMP_STREAM_KEY))
+
+meeting!!.startLivestream(outputs)
+```
+
+</TabItem>
+
+<TabItem value="Java">
+
 ```javascript
 final String YOUTUBE_RTMP_URL = "rtmp://a.rtmp.youtube.com/live2";
 final String YOUTUBE_RTMP_STREAM_KEY = "<STREAM_KEY>";
@@ -208,6 +272,10 @@ outputs.add(new LivestreamOutput(YOUTUBE_RTMP_URL, YOUTUBE_RTMP_STREAM_KEY));
 
 meeting.startLivestream(outputs);
 ```
+
+</TabItem>
+
+</Tabs>
 
 ### stopLivestream()
 
@@ -220,9 +288,28 @@ meeting.startLivestream(outputs);
 
 #### Example
 
+<Tabs
+defaultValue="Kotlin"
+groupId={"AndroidLanguage"}
+values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
+
+<TabItem value="Kotlin">
+
+```javascript
+meeting!!.stopLivestream()
+```
+
+</TabItem>
+
+<TabItem value="Java">
+
 ```javascript
 meeting.stopLivestream();
 ```
+
+</TabItem>
+
+</Tabs>
 
 ---
 
@@ -236,6 +323,26 @@ meeting.stopLivestream();
 
 #### Example
 
+<Tabs
+defaultValue="Kotlin"
+groupId={"AndroidLanguage"}
+values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
+
+<TabItem value="Kotlin">
+
+```javascript
+val mics = meeting!!.mics
+var mic: String
+for (i in mics.indices) {
+  mic = mics.toTypedArray()[i].toString()
+  Toast.makeText(this, "Mic : $mic", Toast.LENGTH_SHORT).show()
+}
+```
+
+</TabItem>
+
+<TabItem value="Java">
+
 ```javascript
 Set<AppRTCAudioManager.AudioDevice> mics = meeting.getMics();
 String mic;
@@ -244,6 +351,10 @@ for (int i = 0; i < mics.size(); i++) {
     Toast.makeText(this, "Mic : " + mic, Toast.LENGTH_SHORT).show();
 }
 ```
+
+</TabItem>
+
+</Tabs>
 
 ---
 
@@ -262,9 +373,29 @@ for (int i = 0; i < mics.size(); i++) {
 
 #### Example
 
+<Tabs
+defaultValue="Kotlin"
+groupId={"AndroidLanguage"}
+values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
+
+<TabItem value="Kotlin">
+
+```javascript
+meeting!!.changeMic(AppRTCAudioManager.AudioDevice.BLUETOOTH)
+```
+
+</TabItem>
+
+<TabItem value="Java">
+
 ```javascript
 meeting.changeMic(AppRTCAudioManager.AudioDevice.BLUETOOTH);
 ```
+
+</TabItem>
+
+
+</Tabs>
 
 ---
 
@@ -278,9 +409,28 @@ meeting.changeMic(AppRTCAudioManager.AudioDevice.BLUETOOTH);
 
 #### Example
 
+<Tabs
+defaultValue="Kotlin"
+groupId={"AndroidLanguage"}
+values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
+
+<TabItem value="Kotlin">
+
+```javascript
+meeting!!.changeWebcam()
+```
+
+</TabItem>
+
+<TabItem value="Java">
+
 ```javascript
 meeting.changeWebcam();
 ```
+
+</TabItem>
+
+</Tabs>
 
 ---
 
@@ -297,6 +447,40 @@ meeting.changeWebcam();
 - _`void`_
 
 #### Example
+
+<Tabs
+defaultValue="Kotlin"
+groupId={"AndroidLanguage"}
+values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
+
+<TabItem value="Kotlin">
+
+```javascript
+    meeting!!.setAudioDeviceChangeListener(object : AudioManagerEvents {
+      override fun onAudioDeviceChanged(
+        selectedAudioDevice: AppRTCAudioManager.AudioDevice,
+        availableAudioDevices: Set<AppRTCAudioManager.AudioDevice>
+      ) {
+          when (selectedAudioDevice) {
+            AppRTCAudioManager.AudioDevice.BLUETOOTH ->
+              Toast.makeText(this@MainActivity, "Selected AudioDevice: BLUETOOTH", Toast.LENGTH_SHORT).show()
+
+            AppRTCAudioManager.AudioDevice.WIRED_HEADSET ->
+              Toast.makeText(this@MainActivity, "Selected AudioDevice: WIRED_HEADSET", Toast.LENGTH_SHORT).show()
+
+            AppRTCAudioManager.AudioDevice.SPEAKER_PHONE ->
+              Toast.makeText(this@MainActivity, "Selected AudioDevice: SPEAKER_PHONE", Toast.LENGTH_SHORT).show()
+
+            AppRTCAudioManager.AudioDevice.EARPIECE ->
+              Toast.makeText(this@MainActivity, "Selected AudioDevice: EARPIECE", Toast.LENGTH_SHORT).show()
+          }
+        }
+    })
+```
+
+</TabItem>
+
+<TabItem value="Java">
 
 ```javascript
     meeting.setAudioDeviceChangeListener(new AppRTCAudioManager.AudioManagerEvents() {
@@ -319,6 +503,11 @@ meeting.changeWebcam();
         }
     });
 ```
+
+</TabItem>
+
+
+</Tabs>
 
 ---
 

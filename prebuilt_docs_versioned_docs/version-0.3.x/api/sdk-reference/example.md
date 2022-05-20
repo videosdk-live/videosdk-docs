@@ -13,6 +13,8 @@ meeting.init({
   apiKey: "YOUR API KEY", // generated from app.videosdk.live
   meetingId: "milkyway", // enter your meeting id
 
+  region: "sg001", // region for new meeting
+
   containerId: null,
   redirectOnLeave: "https://www.videosdk.live/",
 

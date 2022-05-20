@@ -17,11 +17,11 @@ module.exports = {
   themeConfig: {
     defaultMode: "dark",
     announcementBar: {
-      id: "legacy_docs",
+      id: "event_announcement_restream_clone",
       content:
-        'We are excited to announce that we have updated our documentation portal 🎉 <a target="_blank" rel="noopener noreferrer" href="https://legacy-docs.videosdk.live">Switch to old documentation ↗</a>',
+        'UPCOMING EVENT : "Build a Restream Clone in React in 10 minutes"&nbsp;&nbsp;Tuesday, 17 May  06:00 PM IST &nbsp;&nbsp;<a target="_blank" rel="noopener noreferrer" href="https://lu.ma/17-may-06-pm">Register↗</a> ',
       backgroundColor: "#6246FB",
-      textColor: "#fff",
+      textColor: "#FFF",
       isCloseable: true,
     },
 
@@ -102,7 +102,7 @@ module.exports = {
         {
           position: "left",
           label: "Code Samples",
-          to: "/docs/code-sample/overview",
+          to: "https://github.com/videosdk-live",
         },
         {
           position: "left",

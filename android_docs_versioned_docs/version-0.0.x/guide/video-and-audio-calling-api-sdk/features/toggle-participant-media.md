@@ -53,6 +53,36 @@ To achieve this feature, you need to pass `allow_join` persmission while geneart
 
 ### Request Media Methods
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs
+defaultValue="Kotlin"
+groupId={"AndroidLanguage"}
+values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
+
+<TabItem value="Kotlin">
+
+```js
+val participant = meeting!!.participants.get("<participant-id>")
+
+// This will emit an event called "onWebcamRequested" to that particular participant
+participant.enableWebcam()
+
+// This will directly disable webcam of particular participant
+participant.disableWebcam()
+
+// This will emit an event called "onMicRequested" to that particular participant
+participant.enableMic()
+
+// This will directly disable mic of particular participant
+participant.disableMic()
+```
+
+</TabItem>
+
+<TabItem value="Java">
+
 ```js
 Participant participant = meeting.getParticipants().get("<participant-id>");
 
@@ -69,6 +99,10 @@ participant.enableMic();
 participant.disableMic();
 ```
 
+</TabItem>
+
+</Tabs>
+
 ### Manage Requested Media Events
 
 1. **webcam-requested** - This event will be emitted to the participant `B` when any other participant `A` requests to enable webcam of that participant `B`. This event handler will receieve following three arguments:
@@ -82,6 +116,31 @@ participant.disableMic();
 
    - `accept()` - Callback function to accept the request.
    - `reject()` - Callback function to reject the request.
+
+<Tabs
+defaultValue="Kotlin"
+groupId={"AndroidLanguage"}
+values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
+
+<TabItem value="Kotlin">
+
+```js
+object : MeetingEventListener() {
+  override fun onMicRequested(participantId: String, listener: MicRequestListener) {
+      // TODO: show dialog before accepting request
+      listener.accept()
+  }
+
+  override fun onWebcamRequested(participantId: String, listener: WebcamRequestListener) {
+      // TODO: show dialog before accepting request
+      listener.accept()
+  }
+}
+```
+
+</TabItem>
+
+<TabItem value="Java">
 
 ```js
 new MeetingEventListener() {
@@ -98,3 +157,7 @@ new MeetingEventListener() {
   }
 }
 ```
+
+</TabItem>
+
+</Tabs>

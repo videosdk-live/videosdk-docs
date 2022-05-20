@@ -30,6 +30,39 @@ slug: screenshare
 
 - After permission is received from the user, call `meeting.enableScreenShare()` method.
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs
+defaultValue="Kotlin"
+groupId={"AndroidLanguage"}
+values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
+
+<TabItem value="Kotlin">
+
+```js
+private fun enableScreenShare() {
+    val mediaProjectionManager = application.getSystemService(
+        MEDIA_PROJECTION_SERVICE
+    ) as MediaProjectionManager
+    startActivityForResult(
+        mediaProjectionManager.createScreenCaptureIntent(), CAPTURE_PERMISSION_REQUEST_CODE
+    )
+}
+
+public override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+    super.onActivityResult(requestCode, resultCode, data)
+    if (requestCode != CAPTURE_PERMISSION_REQUEST_CODE) return
+    if (resultCode == RESULT_OK) {
+        meeting!!.enableScreenShare(data)
+    }
+}
+```
+
+</TabItem>
+
+<TabItem value="Java">
+
 ```js
 private void enableScreenShare() {
     MediaProjectionManager mediaProjectionManager =
@@ -49,6 +82,10 @@ public void onActivityResult(int requestCode, int resultCode, Intent data) {
     }
 }
 ```
+
+</TabItem>
+
+</Tabs>
 
 ### Customise notification
 
@@ -77,17 +114,75 @@ public void onActivityResult(int requestCode, int resultCode, Intent data) {
 
 By using `meeting.disableScreenShare()` function, a participant can stop publishing screen stream to other participants.
 
+<Tabs
+defaultValue="Kotlin"
+groupId={"AndroidLanguage"}
+values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
+
+<TabItem value="Kotlin">
+
 ```js
-private void disableScreenShare(){
-     meeting.disableScreenShare();
+private fun disableScreenShare() {
+    meeting!!.disableScreenShare()
 }
 ```
+
+</TabItem>
+
+<TabItem value="Java">
+
+```js
+private void disableScreenShare(){
+    meeting.disableScreenShare();
+}
+```
+
+</TabItem>
+
+</Tabs>
 
 ## Display Screen Share Stream
 
 #### Local Participant
 
 When a Local participant share the screen, `onStreamEnabled()` of `ParticipantEventListener` is triggered with the `Stream` which can be added to a `SurfaceViewRenderer`.
+
+<Tabs
+defaultValue="Kotlin"
+groupId={"AndroidLanguage"}
+values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
+
+<TabItem value="Kotlin">
+
+```js
+override fun onCreate(savedInstanceState: Bundle?) {
+    //...
+    svrShare!!.init(PeerConnectionUtils.getEglContext(), null)
+}
+
+private fun setLocalListeners() {
+    meeting!!.localParticipant.addEventListener(object : ParticipantEventListener() {
+        override fun onStreamEnabled(stream: Stream) {
+           if (stream.kind.equals("share", ignoreCase = true)) {
+                // display share video
+                val videoTrack = stream.track as VideoTrack
+                videoTrack.addSink(svrShare)
+            }
+        }
+        override fun onStreamDisabled(stream: Stream) {
+            if (stream.kind.equals("share", ignoreCase = true)) {
+               val track: VideoTrack? = stream.track as VideoTrack
+               track?.removeSink(svrShare)
+               svrShare!!.clearImage()
+            }
+        }
+    });
+}
+```
+
+</TabItem>
+
+<TabItem value="Java">
 
 ```js
 @Override
@@ -118,9 +213,69 @@ private void setLocalListeners() {
 }
 ```
 
+</TabItem>
+
+</Tabs>
+
 #### Other Participants
 
 When other participant(Except you) share their screen, `onPresenterChanged()` in the `MeetingEventListener` is triggered with the `participantId` of the screen share.
+
+<Tabs
+defaultValue="Kotlin"
+groupId={"AndroidLanguage"}
+values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
+
+<TabItem value="Kotlin">
+
+```js
+override fun onCreate(savedInstanceState: Bundle?) {
+    //...
+    svrShare!!.init(PeerConnectionUtils.getEglContext(), null)
+}
+
+private val meetingEventListener: MeetingEventListener = object : MeetingEventListener() {
+    override fun onPresenterChanged(participantId: String) {
+        updatePresenter(participantId)
+    }
+}
+
+//Getting the stream from the participantId
+private fun updatePresenter(participantId: String?) {
+    // find participant
+    val participant = meeting!!.participants.get(participantId) ?: return
+
+    // find share stream in participant
+    var shareStream: Stream? = null
+    for (stream: Stream in participant.streams.values) {
+        if ((stream.kind == "share")) {
+            shareStream = stream
+            break
+        }
+    }
+    if (shareStream == null) return
+
+    // display share video
+    val videoTrack = shareStream.track as VideoTrack
+    videoTrack.addSink(svrShare)
+
+    // listen for share stop event
+    participant.addEventListener(object : ParticipantEventListener() {
+        override fun onStreamDisabled(stream: Stream) {
+            if ((stream.kind == "share")) {
+                val track: VideoTrack? = stream.track as VideoTrack
+                track?.removeSink(svrShare)
+                
+                svrShare!!.clearImage()
+            }
+        }
+    })
+}
+```
+
+</TabItem>
+
+<TabItem value="Java">
 
 ```js
 @Override
@@ -171,3 +326,7 @@ private void updatePresenter(String participantId) {
     });
 }
 ```
+
+</TabItem>
+
+</Tabs>

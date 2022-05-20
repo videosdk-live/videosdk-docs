@@ -32,7 +32,7 @@ This guide will get you running with the VideoSDK video & audio calling in minut
 
 ### Create a new react-native app
 
-Create new n=react-native app by command shown below.For more guidance follow [react-native docs](https://reactnative.dev/docs/environment-setup)
+Create new-native app by command shown below.For more guidance follow [react-native docs](https://reactnative.dev/docs/environment-setup)
 
 ```js
 npx create-react-native-app appName
@@ -260,7 +260,7 @@ AppRegistry.registerComponent(appName, () => App);
 
 ### Step 1 : Get started with api.js
 
-Replace token in `api.js` with the token generated from [Video SDK](https://app.videosdk.live/api-keys).
+Before jumping to anything else, we have write API to generate unique meetingId. You will require auth token, you can generate it using either by using [videosdk-rtc-api-server-examples](https://github.com/videosdk-live/videosdk-rtc-api-server-examples) or generate it from the [Video SDK Dashboard](https://app.videosdk.live/api-keys) for developer.
 
 ```js title=api.js
 const token = "<YOUR TOKEN HERE>";

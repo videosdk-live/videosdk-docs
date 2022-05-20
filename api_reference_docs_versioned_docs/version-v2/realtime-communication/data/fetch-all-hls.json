@@ -43,7 +43,6 @@
       "data": [
         {
           "sessionId": "abcde94c96e17e03fb0abcde4",
-          "streamKey": "abcdefgh-ijkl-mnop-1234-abcdefghijkl",
           "start": "2022-04-19T09:18:13.432Z",
           "end": "2022-04-19T09:19:34.552Z",
           "roomId": "abcd-efgh-ijkl",

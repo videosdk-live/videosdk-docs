@@ -149,8 +149,8 @@ First we will explore Context Provider and Consumer. Context is primarily used w
 
 - **MeetingProvider**: It is Context Provider. It accepts value `config` and `token` as props. The Provider component accepts a value prop to be passed to consuming components that are descendants of this Provider. One Provider can be connected to many consumers. Providers can be nested to override values deeper within the tree.
 - **MeetingConsumer**: It is Context Consumer. All consumers that are descendants of a Provider will re-render whenever the Provider’s value prop changes.
-- **useMeeting**: It is meeting react hook API for meeting. It includes all the information related to meeting such as participants, streams etc.
-- **useParticipant**: It is participant hook API. useParticipant hook is responsible to handle all the events and props related to one particular participant such as join, leave, mute etc.
+- **useMeeting**: It is meeting react hook API for meeting. It includes all the information related to meeting such as join, leave, enable/disable mic or webcam etc.
+- **useParticipant**: It is participant hook API. useParticipant hook is responsible to handle all the events and props related to one particular participant such as name, webcamStream, micStream etc.
 
 Meeting Context helps to listen on all the changes when participant joines meeting or changes mic or camera etc.
 
@@ -298,7 +298,7 @@ function Controls() {
 
 ![VideoSDK React JS Quick Start  Container Component](/img/quick-start/react-container-controls.jpeg)
 
-### Step 5: Implement Video Componenty
+### Step 5: Implement Video Component
 
 Before implementing video component, We need to understand couple of concepts.
 
@@ -314,7 +314,7 @@ const micRef = useRef(null);
 
 #### 2. useParticipant Hook
 
-useParticipant hook is responsible to handle all the properties and events of one participar participant joined in the meeting. It will take participantId as argument.
+useParticipant hook is responsible to handle all the properties and events of one particular participant joined in the meeting. It will take participantId as argument.
 
 ```js title="useParticipant Hook"
 const { webcamStream, micStream, webcamOn, micOn } = useParticipant(
