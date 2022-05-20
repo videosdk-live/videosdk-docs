@@ -1486,7 +1486,7 @@ html[data-theme="dark"] .discord {
 
 .react-native-screen-img {
   height: 500px;
-  max-width: 300px;
+  max-width: 600px;
 }
 
 html[data-theme="dark"] code {

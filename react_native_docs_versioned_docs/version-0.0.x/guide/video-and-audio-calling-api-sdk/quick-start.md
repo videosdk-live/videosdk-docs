@@ -18,38 +18,31 @@ slug: quick-start
 
 import Mermaid from '@theme/Mermaid';
 
-VideoSDK enables opportunity to integrate video & audio calling to Web, Android, IOS applications. it provides Programmable SDKs and REST APIs to build up scalable video conferencing applications.
+VideoSDK enables the opportunity to integrate video & audio calling to Web, Android, IOS applications. It provides Programmable SDKs and REST APIs to build scalable video conferencing applications.
+
 This guide will get you running with the VideoSDK video & audio calling in minutes.
 
-## Prerequisite
+## Prerequisites
 
 - Node.js v12+
 - NPM v6+ (comes installed with newer Node versions)
 - Android Studio or Xcode installed
 
-## Project Structure
+## Getting Started With the Code
 
-- You can create your react-native app using command shown below
+### Create App
 
-```js title="Create React-native app"
-npx react-native init appName
+Create new react-native app by applying below commands.
+
+```js
+npx react-native init AppName
 ```
 
-```jsx title="Directory Structure"
-  root-Folder Name
-   ├──
-   ...
-   src
-   ├── components
-   │    ├── ParticipantView.js
-   ├── style
-   │    ├── CustomStyle.js
-   ├── api.js
-   ├── MeetingContainer.js
-   ...
-```
+For react-native setup, you can follow [Official Docs](https://reactnative.dev/docs/environment-setup).
 
-- Install necessary packages
+### VideoSDK Installation
+
+Install the VideoSDK by following the below command. Do make sure you should be in your project directory before you run this command.
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -77,22 +70,23 @@ yarn add "@videosdk.live/react-native-sdk"
 </TabItem>
 </Tabs>
 
-## SDK Integration
+### Project Structure
 
-### Android Setup
-
-1. Update colors.xml file
-
-```xml title="android/app/src/main/res/values/colors.xml"
-<resources>
-    <item name="red" type="color">#FC0303</item>
-    <integer-array name="androidcolors">
-    <item>@color/red</item>
-    </integer-array>
-</resources>
+```jsx title="Directory Structure"
+  root
+   ├── node_modules
+   ├── android
+   ├── ios
+   ├── App.js
+   ├── api.js
+   ├── index.js
 ```
 
-2. Update AndroidManifest.xml file
+### Project Configuration
+
+#### Android Setup
+
+1. Add required permission in AndroidManifest.xml file.
 
 ```xml title="AndroidManifest.xml"
 <manifest
@@ -107,10 +101,10 @@ yarn add "@videosdk.live/react-native-sdk"
     <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
-    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
     <uses-permission android:name="android.permission.WAKE_LOCK" />
-​
-  <application>
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+
+    <application>
    <meta-data
       android:name="live.videosdk.rnfgservice.notification_channel_name"
       android:value="Meeting Notification"
@@ -129,11 +123,26 @@ yarn add "@videosdk.live/react-native-sdk"
 </manifest>
 ```
 
-3. Link couple of library dependencies manually
+2. Update colors.xml for internal dependencies
+
+```js title="android/app/src/main/res/values/colors.xml"
+<resources>
+  <item name="red" type="color">
+    #FC0303
+  </item>
+  <integer-array name="androidcolors">
+    <item>@color/red</item>
+  </integer-array>
+</resources>
+```
+
+3. Linking VideoSDK Dependencies.
 
 ```java title="android/app/build.gradle"
   dependencies {
-    compile project(':rnfgservice') compile project(':rnwebrtc') compile project(':rnincallmanager')
+   compile project(':rnwebrtc')
+   compile project(':rnincallmanager')
+   compile project(':rnfgservice')
   }
 ```
 
@@ -146,12 +155,13 @@ project(':rnincallmanager').projectDir = new File(rootProject.projectDir, '../no
 
 include ':rnfgservice'
 project(':rnfgservice').projectDir = new File(rootProject.projectDir, '../node_modules/@videosdk.live/react-native-foreground-service/android')
+
 ```
 
 ```java title="MainApplication.java"
-import live.videosdk.rnfgservice.ForegroundServicePackage;
 import live.videosdk.rnincallmanager.InCallManagerPackage;
 import live.videosdk.rnwebrtc.WebRTCModulePackage;
+import live.videosdk.rnfgservice.ForegroundServicePackage;
 
 public class MainApplication extends Application implements ReactApplication {
   private static List<ReactPackage> getPackages() {
@@ -159,7 +169,7 @@ public class MainApplication extends Application implements ReactApplication {
           /* Initialise foreground service, incall manager and webrtc module */
           new ForegroundServicePackage(),
           new InCallManagerPackage(),
-          new WebRTCModulePackage(),
+          new WebRTCModulePackage()
       );
   }
 }
@@ -170,11 +180,13 @@ public class MainApplication extends Application implements ReactApplication {
 android.enableDexingArtifactTransform.desugaring=false
 ```
 
+4. Add below line in the proguard-rules.pro (optional: if you are using Proguard)
+
 ```java title="android/app/proguard-rules.pro"
 -keep class org.webrtc.** { *; }
 ```
 
-### iOS Setup
+#### iOS Setup
 
 1. Install `react-native-incallmanager`
 
@@ -182,12 +194,12 @@ android.enableDexingArtifactTransform.desugaring=false
 $ yarn add @videosdk.live/react-native-incallmanager
 ```
 
-2. IMPORTANT: Make sure you are using CocoaPods 1.10 or higher.
+2. **IMPORTANT**: Make sure you are using CocoaPods 1.10 or higher.
 
 To update CocoaPods you simply install the gem again
 
 ```gem
-$[sudo] gem install cocoapods
+$ sudo gem install cocoapods
 ```
 
 3. Manual linking (if react-native-incall-manager is not linked automatically)
@@ -235,393 +247,401 @@ Add following lines to info.plist (project folder/IOS/projectname/info.plist):
 <string>Microphone permission description</string>
 ```
 
-### Register Service
+#### Register Service
 
-Register services at start of meeting by calling register event from the `index.js` file to initialize services such as incall manager and foreground services.
+Register VideoSDK services in root `index.js` file for initialization service.
 
 ```js title="index.js"
-// Import the library
-import { register } from '@videosdk.live/react-native-sdk';
-import { AppRegistry } from 'react-native';
-import { name as appName } from './app.json';
-import App from './src/App.js';
-​
-// Register the service
+import { AppRegistry } from "react-native";
+import App from "./App";
+import { name as appName } from "./app.json";
+import { register } from "@videosdk.live/react-native-sdk";
+
 register();
+
 AppRegistry.registerComponent(appName, () => App);
 ```
 
-## Start Writing Your Code
+### Step 1 : Get started with api.js
 
-### Step 1: Meeting Configuration
+Before jumping to anything else, we have write API to generate unique meetingId. You will require auth token, you can generate it using either by using [videosdk-rtc-api-server-examples](https://github.com/videosdk-live/videosdk-rtc-api-server-examples) or generate it from the [Video SDK Dashboard](https://app.videosdk.live/api-keys) for developer.
 
-- Create `api.js` and Update the `TOKEN` with the token you genereated from VideoSDK [Dashboard](https://app.videosdk.live/api-keys).
-
-```js title="api.js"
-//Replace your token here which was generated from VideoSDK Dashboard
-const TOKEN = "";
-
-export const getToken = async () => {
-  if (TOKEN == "") {
-    console.error("Error: Provide Token First");
-  } else if (TOKEN) {
-    return TOKEN;
-  }
-};
-```
-
-- Now we will add `createMeeting()` method to `api.js` which will generate a new `meetingId` for you.
-
-```js title="api.js"
-const API_BASE_URL = "https://api.videosdk.live";
-
+```js title=api.js
+export const token = "<Generated-from-dashbaord>";
+// API call to create meeting
 export const createMeeting = async ({ token }) => {
-  const url = `${API_BASE_URL}/api/meetings`;
-  const options = {
+  const res = await fetch(`https://api.videosdk.live/v1/meetings`, {
     method: "POST",
-    headers: { Authorization: token, "Content-Type": "application/json" },
-  };
+    headers: {
+      authorization: `${token}`,
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ region: "sg001" }),
+  });
 
-  const { meetingId } = await fetch(url, options)
-    .then((response) => response.json())
-    .catch((error) => console.error("error", error));
-
+  const { meetingId } = await res.json();
   return meetingId;
 };
 ```
 
-- Let's create a meeting now . You will require 2 things **1)token : to start a meeting** and **2)meetingId : to store a meetingId created**.
+### Step 2: Wireframe App.js with all the components
 
-```js title="App.js"
-import React, {useState, useEffect} from 'react';
-import {getToken, createMeeting} from './src/api';
+To build up wireframe of App.js, we are going to use Video SDK Hooks and Context Providers. Video SDK provideos MeetingProvider, MeetingConsumer, useMeeting and useParticipant hooks. Let's understand each of them.
 
-export default function App() {
-  const [token, setToken] = useState('');
-  const [meetingId, setMeetingId] = useState('');
+First we will explore Context Provider and Consumer. Context is primarily used when some data needs to be accessible by many components at different nesting levels.
 
-  async function api() {
-    const token = await getToken();
-    const meetingCode = await createMeeting({token});
-    setToken(token);
-    setMeetingId(meetingCode);
-  }
+- **MeetingProvider**: It is Context Provider. It accepts value `config` and `token` as props. The Provider component accepts a value prop to be passed to consuming components that are descendants of this Provider. One Provider can be connected to many consumers. Providers can be nested to override values deeper within the tree.
+- **MeetingConsumer**: It is Context Consumer. All consumers that are descendants of a Provider will re-render whenever the Provider’s value prop changes.
+- **useMeeting**: It is meeting react hook API for meeting. It includes all the information related to meeting such as join, leave, enable/disable mic or webcam etc.
+- **useParticipant**: It is participant hook API. useParticipant hook is responsible to handle all the events and props related to one particular participant such as name, webcamStream, micStream etc.
 
-  useEffect(() => {
-    api();
-  }, []);
+Meeting Context helps to listen on all the changes when participant joines meeting or changes mic or camera etc.
 
-  return(...);
+Let's get started with change couple of lines of code in App.js
+
+```js
+import React, { useState } from "react";
+import {
+  SafeAreaView,
+  TouchableOpacity,
+  Text,
+  TextInput,
+  View,
+  FlatList,
+} from "react-native";
+import {
+  MeetingProvider,
+  useMeeting,
+  useParticipant,
+  MediaStream,
+  RTCView,
+} from "@videosdk.live/react-native-sdk";
+import { createMeeting, token } from "./api";
+
+function JoinScreen(props) {
+  return null;
 }
-```
 
-- Pass that meetingId to MeetingProvider component of react-native-sdk.
+function ControlsContainer() {
+  return null;
+}
 
-```js title="App.js"
-import { SafeAreaView } from "react-native";
-import { MeetingProvider } from "@videosdk.live/react-native-sdk";
-import MeetingContainer from "./src/MeetingContainer";
+function MeetingView() {
+  return null;
+}
 
 export default function App() {
-  //...
+  const [meetingId, setMeetingId] = useState(null);
 
-  return token && meetingId ? (
+  const getMeetingId = async (id) => {
+    const meetingId = id == null ? await createMeeting({ token }) : id;
+    setMeetingId(meetingId);
+  };
+
+  return meetingId ? (
     <SafeAreaView style={{ flex: 1, backgroundColor: "#F6F6FF" }}>
       <MeetingProvider
         config={{
           meetingId,
           micEnabled: false,
-          webcamEnabled: false,
+          webcamEnabled: true,
           name: "Test User",
-          notification: {
-            title: "Code Sample",
-            message: "Meeting is running.",
-          },
         }}
         token={token}
       >
-        <MeetingContainer />
+        <MeetingView />
       </MeetingProvider>
     </SafeAreaView>
-  ) : null;
+  ) : (
+    <JoinScreen getMeetingId={getMeetingId} />
+  );
 }
 ```
 
-### Step 2 : Create MeetingContainer
+### Step 3 : Implement Join Screen
 
-:::tip
-Refer our custom styling from **[here](/)**
-:::
+Join screen will work as medium to either schedule new meeting or to join existing meeting.
 
-- MeetingContainer is one component whose role is to contain participants of a meeting and UI elements.
-
-```js title="MeetingContainer.js"
-import React, { useEffect, useRef,useState} from 'react';
-import {
-  Button
-} from 'react-native';
-import {
-  useMeeting,
-} from '@videosdk.live/react-native-sdk';
-//refer CustomStyle.js file from the path shown in the tip above
-import {styles} from './src/style/CustomStyle';
-
-const MeetingContainer = () => {
-
-  //To get the height and width of the window
-  const layout = useWindowDimensions();
-
-  //To toggle visibility of controls
-  const [visibleControls, setvisibleControls] = useState(true);
-
-  //Add the basic button design
-  const Button = ({onPress, buttonText, backgroundColor}) => {
-    return (
-      <TouchableOpacity
-        onPress={onPress}
-        style={styles.TouchableOpacityContainer}>
-        <Text style={{color: 'white', fontSize: 12}}>{buttonText}</Text>
-      </TouchableOpacity>
-    );
-  };
-
-  return (...);
-};
-```
-
-- Make use of `useMeeting` hook of `@videosdk.live/react-native-sdk` for performing operations of a meeting. We will get `join`, `leave`, `toggleMic`, `toogleWebcam` and `participants` from the meeting and pass the `onMeetingJoined()`, `onMeetingLeft()`, `onParticipantJoined()` and `onParticipantLeft()` callback functions.
-
-```js title="MeetingContainer.js"
-//..imports are here
-
-const MeetingContainer = () => {
-
-  function onMeetingJoined() {
-    console.log("onMeetingJoined");
-  }
-
-  function onMeetingLeft() {
-    console.log("on-Meeting-Left");
-  }
-
-  function onParticipantJoined(participant) {
-    console.log(" onParticipantJoined", participant);
-  }
-
-  function onParticipantLeft(participant) {
-    console.log(" onParticipantLeft", participant);
-  }
-
-  const { join, leave, toggleMic, toggleWebcam, participants} =
-    useMeeting({
-      onMeetingLeft,
-      onMeetingJoined,
-      onParticipantJoined
-    });
-
-  //a reference to meeting object
-  const mMeetingRef = useRef();
-
-  //initialising mMeeting object to empty first
-  const mMeeting = useMeeting({});
-
-  //setting meeting object created to mMeetingRef
-  useEffect(() => {
-    mMeetingRef.current = mMeeting;
-  }, [mMeeting]);
-
-  return (...);
-};
-```
-
-- Now we will update the `MeetingContainer.js` `return` method to show participants list and the controls to join and leave the meeting along with buttons to toogle mic and webcam.
-
-```js title="MeetingContainer.js"
-import {
-  View,
-  TouchableOpacity,
-  Text,
-  FlatList,
-  StatusBar,
-  useWindowDimensions,
-  Platform,
-  Button,
-  SafeAreaView,
-  SectionList,
-  StyleSheet,
-} from "react-native";
-import ParticipantView from "./src/components/ParticipantView";
-
-const MeetingContainer = () => {
-  //array Of Id of all participants of the meeting
-  const participantsArrId = [...participants.keys()];
-
+```js title="JoinScreen Component"
+function JoinScreen(props) {
+  const [meetingVal, setMeetingVal] = useState("");
   return (
-    <SafeAreaView style={{ flex: 1, backgroundColor: "#161616" }}>
-      <View style={{ flex: 1, paddingHorizontal: 8 }}>
-        {participantsArrId.length > 0 ? (
-          <FlatList
-            data={participantsArrId}
-            showsVerticalScrollIndicator={false}
-            renderItem={({ item }) => {
-              return (
-                <TouchableOpacity
-                  activeOpacity={1}
-                  onPress={() => {
-                    setvisibleControls(!visibleControls);
-                  }}
-                  style={{
-                    height: layout.height / 2,
-                    marginVertical: 3,
-                  }}
-                >
-                  <ParticipantView participantId={item} />
-                </TouchableOpacity>
-              );
-            }}
-          />
-        ) : (
-          <View
-            style={{
-              flex: 1,
-              backgroundColor: "#F6F6FF",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-          >
-            <Text style={{ fontSize: 20 }}>
-              Press Join button to enter meeting.
-            </Text>
-          </View>
-        )}
-      </View>
-      {visibleControls ? (
-        <View style={styles.ViewContainer}>
-          <Button
-            onPress={() => {
-              join();
-            }}
-            buttonText={"JOIN"}
-            backgroundColor={"#6a65f1"}
-          />
-          <Button
-            onPress={() => {
-              leave();
-            }}
-            buttonText={"LEAVE"}
-            backgroundColor={"red"}
-          />
-          <Button
-            onPress={toggleMic}
-            buttonText={"TOGGLE MIC"}
-            backgroundColor={"#6a65f1"}
-          />
-          <Button
-            onPress={toggleWebcam}
-            buttonText={"TOGGLE WEBCAM"}
-            backgroundColor={"#6a65f1"}
-          />
-        </View>
-      ) : null}
-    </SafeAreaView>
-  );
-};
-```
-
-### Step 3 : Create ParticipantView.
-
-- Now we will create the `ParticipantView` which will show individual participant's audio and video stream. For this we will use `useParticipant` hook.
-
-```js title="src/components/ParticipantView.js"
-import React from "react";
-import { View, Text, StyleSheet } from "react-native";
-import {
-  useParticipant,
-  RTCView,
-  MediaStream,
-} from "@videosdk.live/react-native-sdk";
-import { styles } from "./src/style/CustomStyle";
-
-export default function ParticipantView({ participantId }) {
-  //get the participant details based on participantId
-  const { displayName, isLocal, webcamStream, micStream, webcamOn, micOn } =
-    useParticipant(participantId, {});
-
-  const TextContainer = ({ fText, sText }) => {
-    return (
-      <View style={styles.TextContainer}>
-        <Text
-          style={{
-            color: "white",
-            fontWeight: "bold",
-            fontSize: 16,
-          }}
-        >
-          {fText}
-        </Text>
-        <Text
-          style={{
-            color: "white",
-            marginLeft: 4,
-            fontSize: 16,
-          }}
-        >
-          {sText}
-        </Text>
-      </View>
-    );
-  };
-
-  const InfoOverLay = () => {
-    return (
-      <View style={styles.InfoOverLayContainer}>
-        <TextContainer fText={"Name :"} sText={displayName} />
-        <TextContainer fText={"Mute :"} sText={micOn ? "No" : "Yes"} />
-        <TextContainer fText={"WebCam :"} sText={webcamOn ? "Yes" : "No"} />
-      </View>
-    );
-  };
-
-  return (
-    <View
-      key={participantId}
+    <SafeAreaView
       style={{
-        borderRadius: 8,
-        overflow: "hidden",
         flex: 1,
+        backgroundColor: "#F6F6FF",
+        justifyContent: "center",
+        paddingHorizontal: 6 * 10,
       }}
     >
-      {webcamOn ? (
-        <>
-          <RTCView
-            streamURL={new MediaStream([webcamStream.track]).toURL()}
-            objectFit={"cover"}
-            mirror={isLocal ? true : false}
-            style={{
-              flex: 1,
-            }}
-          />
-          <InfoOverLay />
-        </>
-      ) : (
-        <>
-          <View
-            style={{
-              backgroundColor: "grey",
-              flex: 1,
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-          >
-            <Text style={{ fontSize: 16 }}>NO MEDIA</Text>
-          </View>
-          <InfoOverLay />
-        </>
-      )}
+      <TouchableOpacity
+        onPress={() => {
+          props.getMeetingId();
+        }}
+        style={{ backgroundColor: "#1178F8", padding: 12, borderRadius: 6 }}
+      >
+        <Text style={{ color: "white", alignSelf: "center", fontSize: 18 }}>
+          Create Meeting
+        </Text>
+      </TouchableOpacity>
+
+      <Text
+        style={{
+          alignSelf: "center",
+          fontSize: 22,
+          marginVertical: 16,
+          fontStyle: "italic",
+          color: "grey",
+        }}
+      >
+        ---------- OR ----------
+      </Text>
+      <TextInput
+        value={meetingVal}
+        onChangeText={setMeetingVal}
+        placeholder={"XXXX-XXXX-XXXX"}
+        style={{
+          padding: 12,
+          borderWidth: 1,
+          borderRadius: 6,
+          fontStyle: "italic",
+        }}
+      />
+      <TouchableOpacity
+        style={{
+          backgroundColor: "#1178F8",
+          padding: 12,
+          marginTop: 14,
+          borderRadius: 6,
+        }}
+        onPress={() => {
+          props.getMeetingId(meetingVal);
+        }}
+      >
+        <Text style={{ color: "white", alignSelf: "center", fontSize: 18 }}>
+          Join Meeting
+        </Text>
+      </TouchableOpacity>
+    </SafeAreaView>
+  );
+}
+```
+
+#### Output
+
+<img class="react-native-screen-img" alt="React-Native--Meeting-Screen" src={require('/static/img/quick-start/rn-joinscreen.jpg').default} />
+
+### Step 4 : Implement Contorls
+
+Next step is to create a `ControlsContainer` component that manage features such as Join or Leave Meeting and Enable or Disable Webcam/Mic.
+
+In this steps we will use `useMeeting` hook to get all required method such as `join()`, `leave()`, `toggleWebcam` and `toggleMic`.
+
+```js title="ControlsContainer Component"
+const Button = ({ onPress, buttonText, backgroundColor }) => {
+  return (
+    <TouchableOpacity
+      onPress={onPress}
+      style={{
+        backgroundColor: backgroundColor,
+        justifyContent: "center",
+        alignItems: "center",
+        padding: 12,
+        borderRadius: 4,
+      }}
+    >
+      <Text style={{ color: "white", fontSize: 12 }}>{buttonText}</Text>
+    </TouchableOpacity>
+  );
+};
+
+function ControlsContainer({ join, leave, toggleWebcam, toggleMic }) {
+  return (
+    <View
+      style={{
+        padding: 24,
+        flexDirection: "row",
+        justifyContent: "space-between",
+      }}
+    >
+      <Button
+        onPress={() => {
+          join();
+        }}
+        buttonText={"Join"}
+        backgroundColor={"#1178F8"}
+      />
+      <Button
+        onPress={() => {
+          toggleWebcam();
+        }}
+        buttonText={"Toggle Webcam"}
+        backgroundColor={"#1178F8"}
+      />
+      <Button
+        onPress={() => {
+          toggleMic();
+        }}
+        buttonText={"Toggle Mic"}
+        backgroundColor={"#1178F8"}
+      />
+      <Button
+        onPress={() => {
+          leave();
+        }}
+        buttonText={"Leave"}
+        backgroundColor={"#FF0000"}
+      />
     </View>
   );
 }
 ```
+
+```js title="MeetingView Component"
+function ParticipantList() {
+  return null;
+}
+function MeetingView() {
+  const { join, leave, toggleWebcam, toggleMic, meetingId } = useMeeting({});
+
+  return (
+    <View style={{ flex: 1 }}>
+      {meetingId ? (
+        <Text style={{ fontSize: 18, padding: 12 }}>
+          Meeting Id :{meetingId}
+        </Text>
+      ) : null}
+      <ParticipantList /> // Will implement in next steps
+      <ControlsContainer
+        join={join}
+        leave={leave}
+        toggleWebcam={toggleWebcam}
+        toggleMic={toggleMic}
+      />
+    </View>
+  );
+}
+```
+
+#### Output
+
+<img class="react-native-screen-img" alt="React-Native--Meeting-Screen" src={require('/static/img/quick-start/rn-controls.jpg').default} />
+
+### Step 5 : Render Participant List
+
+After implementing controls, now it's time to render joined participants.
+
+We will get joined `participants` from `useMeeting` Hook.
+
+```js title="ParticipantList Component"
+function ParticipantView() {
+  return null;
+}
+
+function ParticipantList({ participants }) {
+  return participants.length > 0 ? (
+    <FlatList
+      data={participants}
+      renderItem={({ item }) => {
+        return <ParticipantView participantId={item} />;
+      }}
+    />
+  ) : (
+    <View
+      style={{
+        flex: 1,
+        backgroundColor: "#F6F6FF",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
+      <Text style={{ fontSize: 20 }}>Press Join button to enter meeting.</Text>
+    </View>
+  );
+}
+```
+
+```js title="MeetingView Component"
+function MeetingView() {
+  // Get `participants` from useMeeting Hook
+  const { join, leave, toggleWebcam, toggleMic, participants } = useMeeting({});
+  const participantsArrId = [...participants.keys()]; // Add this line
+
+  return (
+    <View style={{ flex: 1 }}>
+      <ParticipantList participants={participantsArrId} /> // Pass participants
+      <ControlsContainer
+        join={join}
+        leave={leave}
+        toggleWebcam={toggleWebcam}
+        toggleMic={toggleMic}
+      />
+    </View>
+  );
+}
+```
+
+### Step 6 : Handling Participant Media
+
+Before Handling Participant Media, We need to understand couple of concepts.
+
+#### 1. useParticipant Hook
+
+useParticipant hook is responsible to handle all the properties and events of one particular participant joined in the meeting. It will take participantId as argument.
+
+```js title="useParticipant Hook Example"
+const { webcamStream, webcamOn, displayName } = useParticipant(participantId);
+```
+
+#### 2. MediaStream API
+
+MediaStream is useful to add MediaTrack to the `RTCView` component to play the audio and video.
+
+```js title="useParticipant Hook Example"
+<RTCView
+  streamURL={new MediaStream([webcamStream.track]).toURL()}
+  objectFit={"cover"}
+  style={{
+    height: 300,
+    marginVertical: 8,
+    marginHorizontal: 8,
+  }}
+/>
+```
+
+#### Rendering Participant Media
+
+```js title="ParticipantView Component"
+function ParticipantView({ participantId }) {
+  const { webcamStream, webcamOn } = useParticipant(participantId);
+  return webcamOn ? (
+    <RTCView
+      streamURL={new MediaStream([webcamStream.track]).toURL()}
+      objectFit={"cover"}
+      style={{
+        height: 300,
+        marginVertical: 8,
+        marginHorizontal: 8,
+      }}
+    />
+  ) : (
+    <View
+      style={{
+        backgroundColor: "grey",
+        height: 300,
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
+      <Text style={{ fontSize: 16 }}>NO MEDIA</Text>
+    </View>
+  );
+}
+```
+
+#### Output
+
+<img class="react-native-screen-img" alt="React-Native--Participant-View" src={require('/static/img/quick-start/rn-participant.jpg').default} />
 
 :::note
 
@@ -631,22 +651,15 @@ Stuck anywhere? Check out this [example code](https://github.com/videosdk-live/v
 
 ## Run your application
 
-### Android
-
 ```js
-npx react-native run-android
+npm run android // Android
+npm run ios //  iOS
 ```
 
-### IOS
+import ReactPlayer from 'react-player'
 
-```js
-npx react-native run-ios
-```
+<div style={{textAlign: 'center'}}>
 
-Your app should look like this after the implementation.
+<ReactPlayer controls url='/img/quick-start/rn-quickstart.mp4' height="560px" width={"100%"}/>
 
-<img class="react-native-screen-img" alt="React-Native-Screen" src={require('/static/img/quick-start/react-native-screen.png').default} />
-
-:::caution
-For this tutorial purpose we used a static token intialize and join the meeting. But for the production version of the app, we recommend you use an Authentication Server which will generate and pass on the token to the Client App. For more details checkout [how to do server setup](/react-native/guide/video-and-audio-calling-api-sdk/server-setup).
-:::
+</div>

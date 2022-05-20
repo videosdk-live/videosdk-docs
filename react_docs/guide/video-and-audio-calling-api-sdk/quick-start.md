@@ -78,7 +78,7 @@ $ yarn add "react-player"
 </TabItem>
 </Tabs>
 
-3. If you want to use the custom styling from this tutorial, update the `index.css` with the [css provided here](/)
+3. If you want to use the custom styling from this tutorial, update the `index.css` with the [css provided here](https://github.com/videosdk-live/videosdk-rtc-javascript-sdk-example/blob/main/index.css)
 
 4. Your project structure should look like.
 
