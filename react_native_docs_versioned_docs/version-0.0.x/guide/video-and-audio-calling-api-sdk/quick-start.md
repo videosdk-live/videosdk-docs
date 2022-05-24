@@ -140,9 +140,9 @@ yarn add "@videosdk.live/react-native-sdk"
 
 ```java title="android/app/build.gradle"
   dependencies {
-   compile project(':rnwebrtc')
-   compile project(':rnincallmanager')
-   compile project(':rnfgservice')
+   implementation project(':rnwebrtc')
+   implementation project(':rnincallmanager')
+   implementation project(':rnfgservice')
   }
 ```
 
@@ -165,12 +165,13 @@ import live.videosdk.rnfgservice.ForegroundServicePackage;
 
 public class MainApplication extends Application implements ReactApplication {
   private static List<ReactPackage> getPackages() {
-      return Arrays.<ReactPackage>asList(
-          /* Initialise foreground service, incall manager and webrtc module */
-          new ForegroundServicePackage(),
-          new InCallManagerPackage(),
-          new WebRTCModulePackage()
-      );
+      @SuppressWarnings("UnnecessaryLocalVariable")
+      List<ReactPackage> packages = new PackageList(this).getPackages();
+      // Packages that cannot be autolinked yet can be added manually here, for example:
+      packages.add(new ForegroundServicePackage());
+      packages.add(new InCallManagerPackage());
+      packages.add(new WebRTCModulePackage());
+      return packages;
   }
 }
 ```
