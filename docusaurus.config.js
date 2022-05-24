@@ -17,7 +17,7 @@ module.exports = {
   themeConfig: {
     defaultMode: "dark",
     announcementBar: {
-      id: "event_announcement_restream_clone",
+      id: "event_announcement_interactive_live_streaming_app",
       content:
         'UPCOMING EVENT : "Build an Interactive Live Streaming App in Flutter"&nbsp;&nbsp;Tuesday, 31 May  06:00 PM IST &nbsp;&nbsp;<a target="_blank" rel="noopener noreferrer" href="https://kommunity.com/video-sdk/events/31-may-06-pm-56a8932e">Register↗</a> ',
       backgroundColor: "#6246FB",
