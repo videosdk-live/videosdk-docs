@@ -19,7 +19,7 @@ module.exports = {
     announcementBar: {
       id: "event_announcement_restream_clone",
       content:
-        'UPCOMING EVENT : "Build a Restream Clone in React in 10 minutes"&nbsp;&nbsp;Tuesday, 17 May  06:00 PM IST &nbsp;&nbsp;<a target="_blank" rel="noopener noreferrer" href="https://lu.ma/17-may-06-pm">Register↗</a> ',
+        'UPCOMING EVENT : "Build an Interactive Live Streaming App in Flutter"&nbsp;&nbsp;Tuesday, 31 May  06:00 PM IST &nbsp;&nbsp;<a target="_blank" rel="noopener noreferrer" href="https://kommunity.com/video-sdk/events/31-may-06-pm-56a8932e">Register↗</a> ',
       backgroundColor: "#6246FB",
       textColor: "#FFF",
       isCloseable: true,
