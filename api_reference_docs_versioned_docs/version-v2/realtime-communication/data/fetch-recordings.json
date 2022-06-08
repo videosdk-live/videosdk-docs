@@ -1,7 +1,7 @@
 {
   "fetchRecordings": {
     "title": "Fetch Recordings",
-    "description": "This API let you fetch details of your recording  by passing roomId and sessionId as query parameters.",
+    "description": "This API lets you fetch details of your recording  by passing roomId and sessionId as query parameters.",
     "headers": [],
     "methodType": "GET",
     "postParameters": [],

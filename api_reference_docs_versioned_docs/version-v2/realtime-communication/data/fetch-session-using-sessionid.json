@@ -1,7 +1,7 @@
 {
   "fetchSessionUsingSessionId": {
     "title": "Fetch a Session",
-    "description": "This API let you fetch a particular session info by passing session Id as parameter.",
+    "description": "This API lets you fetch a particular session info by passing session Id as parameter.",
     "headers": [
       {
         "key": "Authorization",

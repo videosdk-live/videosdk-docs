@@ -39,18 +39,21 @@ function MainCard({
   fullWidth,
   quickstart,
   imgLink,
-  showBorder
+  showBorder,
 }) {
   return (
     <div
       style={{ backgroundImage: `${backgroundColor}` }}
-      className={`${fullWidth ? "p-3 md:p-5" : onlyTitle ? "p-3 md:p-2" : "p-3 md:p-5"
-        } ${borderRadius ? borderRadius : "rounded"} bg-gray-750 ${onlyTitle
+      className={`${
+        fullWidth ? "p-3 md:p-5" : onlyTitle ? "p-3 md:p-2" : "p-3 md:p-5"
+      } ${borderRadius ? borderRadius : "rounded"} bg-gray-750 ${
+        onlyTitle
           ? "md:w-full"
-          : `h-full ${fullWidth ? "md:max-w-sm lg:max-w-full max-w-full" : "xl:max-w-sm"
-          }  `
-        }  ${showBorder? "border-class" : ""}`}
-    // cursor-pointer
+          : `h-full ${
+              fullWidth ? "md:max-w-sm lg:max-w-full max-w-full" : "xl:max-w-sm"
+            }  `
+      }  ${showBorder ? "border-class" : ""}`}
+      // cursor-pointer
     >
       <div>
         <div className="flex flex-row">
@@ -63,14 +66,16 @@ function MainCard({
             </div>
           )}
           <div
-            className={`flex items-center justify-center ${Icon ? "ml-2 md:ml-3 " : "ml-0"
-              }overflow-hidden `}
+            className={`flex items-center justify-center ${
+              Icon ? "ml-2 md:ml-3 " : "ml-0"
+            }overflow-hidden `}
           >
             <p
-              className={`${titleStyle
+              className={`${
+                titleStyle
                   ? `${titleStyle}`
                   : `text-xs font-medium text-white-100 md:text-lg mb-0`
-                }`}
+              }`}
             >
               {Title}
             </p>
@@ -79,10 +84,11 @@ function MainCard({
         {Description && (
           <div className={`mt-0 ${quickstart ? "sm:pr-28 pr-5" : ""}`}>
             <p
-              className={`${descriptionStyle
+              className={`${
+                descriptionStyle
                   ? descriptionStyle
                   : `text-xs text-gray-500 break-words md:text-sm w-12 pr-4`
-                }`}
+              }`}
             >
               {Description}
             </p>
@@ -236,7 +242,7 @@ function QuickstartPart() {
     {
       title: "Prebulit SDK",
       description:
-        "A pre-built solution with code showing you how to \n integrate video calling to your platform in 10 minutes.",
+        "Integrate the pre-built video calling solution to your app in 10 minutes.",
     },
     {
       title: "Custom SDK",
@@ -333,8 +339,9 @@ function QuickstartPart() {
                             data-tip
                             data-for={item.tooltip}
                             href={item.link}
-                            className={`bg-white-250 text-black p-2 rounded-md flex items-center justify-center ${index == 0 ? "" : "md:ml-3 ml-1"
-                              }`}
+                            className={`bg-white-250 text-black p-2 rounded-md flex items-center justify-center ${
+                              index == 0 ? "" : "md:ml-3 ml-1"
+                            }`}
                           >
                             <item.Icon />
                             <ReactTooltip
@@ -398,7 +405,7 @@ function ResourcePart() {
     {
       title: "Code Sample",
       description:
-        "A pre-built code showing you how to integrate video calling to your platform.",
+        "Pre-built code samples to integrate video calling into your platform.",
       link: "/docs/code-sample/overview",
     },
   ];
@@ -407,16 +414,15 @@ function ResourcePart() {
       {ResourceArray.map((item, index) => {
         return (
           <div
-            className={`${index == 0 ? "ml-0" : "lg:ml-2 xl:ml-4 ml-0 "
-              } w-full `}
+            className={`${
+              index == 0 ? "ml-0" : "lg:ml-2 xl:ml-4 ml-0 "
+            } w-full `}
           >
             <Link to={item.link} className="">
               <MainCard
                 key={index}
                 Title={item.title}
-                titleStyle={
-                  "md:text-xl text-lg text-white-100 font-bold mb-3 "
-                }
+                titleStyle={"md:text-xl text-lg text-white-100 font-bold mb-3 "}
                 Description={item.description}
                 descriptionStyle={
                   "text-gray-250 md:text-base text-base mt-0 lg:w-44 lg:pr-7 xl:pr-2 xl:w-56 2xl:pr-10 2xl:w-72 mb-0 "
@@ -662,7 +668,7 @@ function Overview() {
         {/* supported Platforms */}
         <div className="md:mt-16 mt-10 w-full">
           <p className="lg:text-3xl md:text-3xl text-2xl font-extrabold text-black-100 dark:text-white-100">
-            Supported platform or framework
+            Supported platforms and frameworks
           </p>
           <div className="mt-9">
             <PlatformPart />

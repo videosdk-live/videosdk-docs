@@ -1,7 +1,7 @@
 const startHLSstream = {
   title: "Start HLS Stream",
   description:
-    "This API let you start an HLS stream by passing roomId and config object as body parameters.",
+    "This API lets you start an HLS stream by passing roomId and config object as body parameters.",
   headers: [
     {
       key: "Authorization",
