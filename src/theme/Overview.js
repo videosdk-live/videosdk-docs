@@ -242,7 +242,7 @@ function QuickstartPart() {
     {
       title: "Prebulit SDK",
       description:
-        "Integrate the pre-built video calling solution to your app in 10 minutes.",
+        "Integrate the pre-build video calling solution into your app in 10 minutes.",
     },
     {
       title: "Custom SDK",
@@ -292,7 +292,9 @@ function QuickstartPart() {
       {QuickStartArray.map((item, index) => {
         return (
           <div
-            className={`${index == 1 ? "md:ml-4 ml-0 md:mt-0 mt-3" : "ml-0"} `}
+            className={`${
+              index == 1 ? "md:ml-4 ml-0 md:mt-0 mt-3" : "ml-0"
+            } flex-1`}
           >
             <MainCard
               key={index}
@@ -315,7 +317,7 @@ function QuickstartPart() {
               EndPart={() => {
                 return index == 0 ? (
                   <div className="mt-6">
-                    <div className="h-9 flex">
+                    <div className="h-9  md:mt-12 2xl:mt-16 flex">
                       <a
                         href={
                           "/prebuilt/guide/prebuilt-video-and-audio-calling/getting-started"
@@ -331,8 +333,8 @@ function QuickstartPart() {
                     </div>
                   </div>
                 ) : (
-                  <div className="mt-6">
-                    <div className="custom-icons h-9 w-9 flex ">
+                  <div className="mt-6 xl:mt-12">
+                    <div className="custom-icons h-9 w-9 flex  ">
                       {CustomSDKArray.map((item, index) => {
                         return (
                           <a
@@ -405,7 +407,7 @@ function ResourcePart() {
     {
       title: "Code Sample",
       description:
-        "Pre-built code samples to integrate video calling into your platform.",
+        "A pre-built code showing you how to integrate video calling to your platform.",
       link: "/docs/code-sample/overview",
     },
   ];
@@ -557,7 +559,6 @@ function Overview() {
                   JUMP TO QUICKSTART
                 </p>
               </div>
-
               <div className="xl:text-lg text-base text-green-700 mt-0">
                 Keep reading to know more about VideosSDK, or{" "}
                 <a
@@ -668,7 +669,7 @@ function Overview() {
         {/* supported Platforms */}
         <div className="md:mt-16 mt-10 w-full">
           <p className="lg:text-3xl md:text-3xl text-2xl font-extrabold text-black-100 dark:text-white-100">
-            Supported platforms and frameworks
+            Supported platform or framework
           </p>
           <div className="mt-9">
             <PlatformPart />
