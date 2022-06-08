@@ -14,6 +14,7 @@ module.exports = {
     defaultLocale: "en",
     locales: ["en"],
   },
+  // clientModules: [require.resolve("/js/sales-iq.js")],
   themeConfig: {
     defaultMode: "dark",
     // announcementBar: {
@@ -432,10 +433,15 @@ module.exports = {
       src: "https://cdn-in.pagesense.io/js/zujotechpvtltd/8c69e67587b74006a3927185dd663808.js",
       async: true,
     },
+    // {
+    //   // Zoho Sales IQ
+    //   src: "https://salesiq.zoho.in/widget",
+    //   async: true,
+    // },
     {
       // Zoho Sales IQ
-      src: "https://salesiq.zoho.in/widget",
-      async: true,
+      src: "js/sales-iq.js",
+      async: false,
     },
   ],
 };
