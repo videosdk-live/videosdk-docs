@@ -39,18 +39,21 @@ function MainCard({
   fullWidth,
   quickstart,
   imgLink,
-  showBorder
+  showBorder,
 }) {
   return (
     <div
       style={{ backgroundImage: `${backgroundColor}` }}
-      className={`${fullWidth ? "p-3 md:p-5" : onlyTitle ? "p-3 md:p-2" : "p-3 md:p-5"
-        } ${borderRadius ? borderRadius : "rounded"} bg-gray-750 ${onlyTitle
+      className={`${
+        fullWidth ? "p-3 md:p-5" : onlyTitle ? "p-3 md:p-2" : "p-3 md:p-5"
+      } ${borderRadius ? borderRadius : "rounded"} bg-gray-750 ${
+        onlyTitle
           ? "md:w-full"
-          : `h-full ${fullWidth ? "md:max-w-sm lg:max-w-full max-w-full" : "xl:max-w-sm"
-          }  `
-        }  ${showBorder? "border-class" : ""}`}
-    // cursor-pointer
+          : `h-full ${
+              fullWidth ? "md:max-w-sm lg:max-w-full max-w-full" : "xl:max-w-sm"
+            }  `
+      }  ${showBorder ? "border-class" : ""}`}
+      // cursor-pointer
     >
       <div>
         <div className="flex flex-row">
@@ -63,14 +66,16 @@ function MainCard({
             </div>
           )}
           <div
-            className={`flex items-center justify-center ${Icon ? "ml-2 md:ml-3 " : "ml-0"
-              }overflow-hidden `}
+            className={`flex items-center justify-center ${
+              Icon ? "ml-2 md:ml-3 " : "ml-0"
+            }overflow-hidden `}
           >
             <p
-              className={`${titleStyle
+              className={`${
+                titleStyle
                   ? `${titleStyle}`
                   : `text-xs font-medium text-white-100 md:text-lg mb-0`
-                }`}
+              }`}
             >
               {Title}
             </p>
@@ -79,10 +84,11 @@ function MainCard({
         {Description && (
           <div className={`mt-0 ${quickstart ? "sm:pr-28 pr-5" : ""}`}>
             <p
-              className={`${descriptionStyle
+              className={`${
+                descriptionStyle
                   ? descriptionStyle
                   : `text-xs text-gray-500 break-words md:text-sm w-12 pr-4`
-                }`}
+              }`}
             >
               {Description}
             </p>
@@ -236,7 +242,7 @@ function QuickstartPart() {
     {
       title: "Prebulit SDK",
       description:
-        "A pre-built solution with code showing you how to \n integrate video calling to your platform in 10 minutes.",
+        "Integrate the pre-build video calling solution into your app in 10 minutes.",
     },
     {
       title: "Custom SDK",
@@ -286,7 +292,9 @@ function QuickstartPart() {
       {QuickStartArray.map((item, index) => {
         return (
           <div
-            className={`${index == 1 ? "md:ml-4 ml-0 md:mt-0 mt-3" : "ml-0"} `}
+            className={`${
+              index == 1 ? "md:ml-4 ml-0 md:mt-0 mt-3" : "ml-0"
+            } flex-1`}
           >
             <MainCard
               key={index}
@@ -309,7 +317,7 @@ function QuickstartPart() {
               EndPart={() => {
                 return index == 0 ? (
                   <div className="mt-6">
-                    <div className="h-9 flex">
+                    <div className="h-9  md:mt-12 2xl:mt-16 flex">
                       <a
                         href={
                           "/prebuilt/guide/prebuilt-video-and-audio-calling/getting-started"
@@ -325,16 +333,17 @@ function QuickstartPart() {
                     </div>
                   </div>
                 ) : (
-                  <div className="mt-6">
-                    <div className="custom-icons h-9 w-9 flex ">
+                  <div className="mt-6 xl:mt-12">
+                    <div className="custom-icons h-9 w-9 flex  ">
                       {CustomSDKArray.map((item, index) => {
                         return (
                           <a
                             data-tip
                             data-for={item.tooltip}
                             href={item.link}
-                            className={`bg-white-250 text-black p-2 rounded-md flex items-center justify-center ${index == 0 ? "" : "md:ml-3 ml-1"
-                              }`}
+                            className={`bg-white-250 text-black p-2 rounded-md flex items-center justify-center ${
+                              index == 0 ? "" : "md:ml-3 ml-1"
+                            }`}
                           >
                             <item.Icon />
                             <ReactTooltip
@@ -407,16 +416,15 @@ function ResourcePart() {
       {ResourceArray.map((item, index) => {
         return (
           <div
-            className={`${index == 0 ? "ml-0" : "lg:ml-2 xl:ml-4 ml-0 "
-              } w-full `}
+            className={`${
+              index == 0 ? "ml-0" : "lg:ml-2 xl:ml-4 ml-0 "
+            } w-full `}
           >
             <Link to={item.link} className="">
               <MainCard
                 key={index}
                 Title={item.title}
-                titleStyle={
-                  "md:text-xl text-lg text-white-100 font-bold mb-3 "
-                }
+                titleStyle={"md:text-xl text-lg text-white-100 font-bold mb-3 "}
                 Description={item.description}
                 descriptionStyle={
                   "text-gray-250 md:text-base text-base mt-0 lg:w-44 lg:pr-7 xl:pr-2 xl:w-56 2xl:pr-10 2xl:w-72 mb-0 "
@@ -551,7 +559,6 @@ function Overview() {
                   JUMP TO QUICKSTART
                 </p>
               </div>
-
               <div className="xl:text-lg text-base text-green-700 mt-0">
                 Keep reading to know more about VideosSDK, or{" "}
                 <a

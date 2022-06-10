@@ -1,7 +1,7 @@
 {
   "deleteRecording": {
     "title": "Delete a Recording",
-    "description": "This API let you delete a particular recording by passing recording Id as parameter.",
+    "description": "This API lets you delete a particular recording by passing recording Id as parameter.",
     "headers": [],
     "methodType": "DELETE",
     "postParameters": [],

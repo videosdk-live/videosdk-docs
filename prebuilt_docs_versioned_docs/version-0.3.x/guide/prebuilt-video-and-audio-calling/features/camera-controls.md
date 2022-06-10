@@ -23,7 +23,7 @@ slug: camera-controls
 
 # Camera Controls
 
-Different webcam control permissions allows participant to enable/disable their own webcam and other participant's webcam too & also can set default participant's webcam settings, when meeting start.
+Webcam control permissions allow the host to enable/disable their webcam along with other participants webcams as well as set default settings when the meeting starts.
 
 ### How it works ?
 

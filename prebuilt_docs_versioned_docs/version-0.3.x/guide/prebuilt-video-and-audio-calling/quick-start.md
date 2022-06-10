@@ -33,7 +33,7 @@ Visit videoSDK **[dashboard](https://app.videosdk.live/api-keys)** to generate t
 
 :::
 
-## Implementing Meeting with Prebuilt VideoSDK
+## Implement meetings with the Prebuilt VideoSDK
 
 1. Create an `index.html` file and add the following `<script>` tag at the end of your code's `<body>` tag. Initialize `VideoSDKMeeting` after the script gets loaded.
 

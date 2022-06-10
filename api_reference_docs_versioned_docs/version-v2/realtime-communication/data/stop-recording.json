@@ -1,7 +1,7 @@
 {
   "stopRecording": {
     "title": "Stop Recording",
-    "description": "This API let you stop recording of your room by passing roomId as a body parameter.",
+    "description": "This API lets you stop recording of your room by passing roomId as a body parameter.",
     "headers": [],
     "methodType": "POST",
     "postParameters": [

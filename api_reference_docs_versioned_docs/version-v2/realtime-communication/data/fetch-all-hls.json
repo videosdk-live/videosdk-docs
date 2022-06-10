@@ -1,7 +1,7 @@
 {
   "fetchAllHLS": {
     "title": "Fetch all HLS",
-    "description": "This API let you fetch all HLS streams.",
+    "description": "This API lets you fetch all HLS streams.",
     "headers": [],
     "methodType": "GET",
     "postParameters": [],

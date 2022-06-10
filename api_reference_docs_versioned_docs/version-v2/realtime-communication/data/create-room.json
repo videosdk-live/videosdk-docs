@@ -1,7 +1,7 @@
 {
   "createRoom": {
     "title": "Create a Room",
-    "description": "This API let you create unique meetingId.",
+    "description": "This API lets you create unique meetingId.",
     "headers": [
       {
         "key": "Authorization",
