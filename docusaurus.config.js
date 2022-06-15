@@ -17,14 +17,15 @@ module.exports = {
   // clientModules: [require.resolve("/js/sales-iq.js")],
   themeConfig: {
     defaultMode: "dark",
-    // announcementBar: {
-    //   id: "event_announcement_interactive_live_streaming_app",
-    //   content:
-    //     'UPCOMING EVENT : "Build an Interactive Live Streaming App in Flutter"&nbsp;&nbsp;Tuesday, 31 May  06:00 PM IST &nbsp;&nbsp;<a target="_blank" rel="noopener noreferrer" href="https://kommunity.com/video-sdk/events/31-may-06-pm-56a8932e">Register↗</a> ',
-    //   backgroundColor: "#6246FB",
-    //   textColor: "#FFF",
-    //   isCloseable: true,
-    // },
+    announcementBar: {
+      // id: "event_announcement_interactive_live_streaming_app",
+      id: "announcement_no_code_sdk_guide",
+      content:
+        'ZERO CODING!!! Create and join audio-video rooms in 5 mins with our newly launched "No Code SDK".&nbsp;&nbsp;<a target="_blank" rel="noopener noreferrer" href="https://docs.videosdk.live/docs/no-code">Learn more</a> ',
+      backgroundColor: "#6246FB",
+      textColor: "#FFF",
+      isCloseable: true,
+    },
 
     image: "img/videosdklive-thumbnail.jpg",
     algolia: {
