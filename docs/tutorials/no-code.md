@@ -19,6 +19,14 @@ slug: no-code-sdk
 
 You can create audio-video rooms and invite participants without even writing a line of code. You can also set role-wise permissions and change the names of these roles. This guide explains it’s steps.
 
+import ReactPlayer from 'react-player'
+
+<div style={{textAlign: 'center'}}>
+
+<ReactPlayer controls url='/img/tutorial/no-code-sdk-tutorial.mp4' height="560px" width={"100%"}/>
+
+</div>
+
 ## Prerequisites
 
 - If you are new to video sdk then create account by referring [https://app.videosdk.live/signup](https://app.videosdk.live/signup) link
