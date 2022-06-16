@@ -1,5 +1,5 @@
 ---
-title: Start a Video & Audio Call with No Code SDK
+title: Start a Video & Audio Call with No Code SDK (BETA)
 hide_title: false
 hide_table_of_contents: false
 description: Build customizable real-time video & audio calling applications using Video SDK within 5 minutes
@@ -11,12 +11,21 @@ keywords:
   - Prebuilt sdk
 image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
+sidebar_label: No Code SDK
 slug: no-code-sdk
 ---
 
 ## Introduction
 
 You can create audio-video rooms and invite participants without even writing a line of code. You can also set role-wise permissions and change the names of these roles. This guide explains it’s steps.
+
+import ReactPlayer from 'react-player'
+
+<div style={{textAlign: 'center'}}>
+
+<ReactPlayer controls url='/img/tutorial/no-code-sdk-tutorial.mp4' height="560px" width={"100%"}/>
+
+</div>
 
 ## Prerequisites
 
