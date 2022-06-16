@@ -1,5 +1,5 @@
 ---
-title: Start a Video & Audio Call with No Code SDK
+title: Start a Video & Audio Call with No Code SDK (BETA)
 hide_title: false
 hide_table_of_contents: false
 description: Build customizable real-time video & audio calling applications using Video SDK within 5 minutes
@@ -11,6 +11,7 @@ keywords:
   - Prebuilt sdk
 image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
+sidebar_label: No Code SDK
 slug: no-code-sdk
 ---
 

@@ -24,6 +24,7 @@ export function MainCard({
   quickstart,
   imgLink,
   showBorder,
+  showBadge,
 }) {
   return (
     <div
@@ -61,6 +62,11 @@ export function MainCard({
             >
               {Title}
             </p>
+            {showBadge && (
+              <div className="bg-white-250 px-2 py-0.5 ml-4 rounded-sm">
+                <p className="text-white text-sm font-semibold mb-0">BETA</p>
+              </div>
+            )}
           </div>
         </div>
         {Description && (

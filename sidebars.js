@@ -610,6 +610,7 @@ module.exports = {
       collapsed: true,
     },
     "tutorials/customized-layout",
+    "tutorials/no-code",
   ],
 
   // resources: [

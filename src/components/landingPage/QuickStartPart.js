@@ -16,6 +16,7 @@ export default function QuickstartPart() {
         "ZERO CODING!! Create audio-video rooms in 5 minutes and invite other users to join it.",
       backgroundColor:
         "linear-gradient(99.37deg, #6246FB 0.88%, #4AA5FD 102.26%)",
+      showBadge: true,
     },
     {
       title: "Prebulit SDK",
@@ -119,10 +120,11 @@ export default function QuickstartPart() {
                   borderRadius={"rounded-lg"}
                   fullWidth={true}
                   quickstart={true}
+                  showBadge={item.showBadge}
                   EndPart={() => {
                     return index == 0 ? (
                       <div className="mt-6">
-                        <div className="h-9 md:h-12 lg:h-9 md:mt-12 2xl:mt-16 flex">
+                        <div className="h-9 md:h-12 lg:h-9 md:mt-12 2xl:mt-12 flex">
                           <a
                             href={"/docs/tutorials/no-code-sdk"}
                             className="rounded bg-white-100  text-black font-semibold  hover:cursor-pointer hover:bg-white-150 flex flex-row items-center justify-center p-3"
@@ -133,7 +135,7 @@ export default function QuickstartPart() {
                       </div>
                     ) : index === 1 ? (
                       <div className="mt-6">
-                        <div className="h-9 flex">
+                        <div className="h-9 flex 2xl:mt-12">
                           <a
                             href={
                               "/prebuilt/guide/prebuilt-video-and-audio-calling/getting-started"
@@ -146,7 +148,7 @@ export default function QuickstartPart() {
                       </div>
                     ) : (
                       <div className="mt-6">
-                        <div className="custom-icons h-9 w-9 flex  ">
+                        <div className="custom-icons h-9 w-9 flex 2xl:mt-12 ">
                           {CustomSDKArray.map((item, index) => {
                             return (
                               <a
