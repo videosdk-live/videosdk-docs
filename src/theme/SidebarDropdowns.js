@@ -132,7 +132,7 @@ export default function SidebarDropdowns() {
 
   return (
     <div className="row dropdown_menu">
-      {sdk != "docs" && sdk != "prebuilt" && sdk != "api-reference" ? (
+      {sdk != "docs" && sdk!="no-code-sdk" && sdk != "prebuilt" && sdk != "api-reference" ? (
         <div className="col dropdown dropdown--hoverable dropdown--left">
           <div className="row navbar__link--active">
             {<img className="dropdown-logo" src={getSDKName(sdk)[0]?.icon} />}
@@ -163,7 +163,7 @@ export default function SidebarDropdowns() {
           </ul>
         </div>
       ) : null}
-      {sdk != "docs" ? (
+      {sdk != "docs" && sdk !="no-code-sdk" ? (
         <div
           className={
             (viewType == "guide" && sdk == "prebuilt") ||
