@@ -8,7 +8,7 @@ export default function ResourcePart() {
       title: "No Code SDK Guide",
       description:
         "End to End Tutorials to integrate No Code SDK on your platform.",
-      link: "/docs/no-code",
+      link: "/docs/tutorials/no-code-sdk",
     },
     {
       title: "Prebuilt SDK Guide",
@@ -41,7 +41,7 @@ export default function ResourcePart() {
       title: "No Code SDK Guide",
       description:
         "End to End Tutorials to integrate No Code SDK on your platform.",
-      link: "/docs/no-code",
+      link: "/docs/tutorials/no-code-sdk",
     },
     {
       title: "Prebuilt SDK Guide",
@@ -111,7 +111,7 @@ export default function ResourcePart() {
                 <div
                   className={`${
                     index == 0 ? "ml-0" : "lg:ml-2 xl:ml-4 ml-0 "
-                  } xl:max-w-[365px] lg:max-w-[295px]`}
+                  } xl:max-w-[363px] lg:max-w-[293px]`}
                 >
                   <Link to={item.link} className="">
                     <MainCard

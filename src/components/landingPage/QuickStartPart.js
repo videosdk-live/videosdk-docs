@@ -124,7 +124,7 @@ export default function QuickstartPart() {
                       <div className="mt-6">
                         <div className="h-9 md:h-12 lg:h-9 md:mt-12 2xl:mt-16 flex">
                           <a
-                            href={"/docs/no-code-sdk"}
+                            href={"/docs/tutorials/no-code-sdk"}
                             className="rounded bg-white-100  text-black font-semibold  hover:cursor-pointer hover:bg-white-150 flex flex-row items-center justify-center p-3"
                           >
                             Launch project in 5 mins
@@ -211,7 +211,7 @@ export default function QuickstartPart() {
                         <div className="mt-6">
                           <div className="h-9 flex">
                             <a
-                              href={"/docs/no-code-sdk"}
+                              href={"/docs/tutorials/no-code-sdk"}
                               className="rounded bg-white-100  text-black font-semibold  hover:cursor-pointer hover:bg-white-150 flex flex-row items-center justify-center p-3"
                             >
                               Launch project in 5 mins
