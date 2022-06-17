@@ -64,7 +64,7 @@ module.exports = {
           items: [
             {
               label: "No Code Video & Audio Calling SDK",
-              to: "docs/tutorials/no-code-sdk",
+              to: "no-code-sdk/guide/no-code-video-and-audio-calling/getting-started",
               activeBaseRegex: "/*/no-code-sdk/*",
             },
             {
@@ -350,6 +350,16 @@ module.exports = {
         path: "react_docs",
         routeBasePath: "react",
         sidebarPath: require.resolve("./sidebarReact.js"),
+        // ... other options
+      },
+    ],
+    [
+      "@docusaurus/plugin-content-docs",
+      {
+        id: "no_code_sdk_docs",
+        path: "no_code_sdk_docs",
+        routeBasePath: "no-code-sdk",  
+        sidebarPath: require.resolve("./sidebarNoCodeSdk.js"),
         // ... other options
       },
     ],
