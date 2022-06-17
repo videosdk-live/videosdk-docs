@@ -107,11 +107,11 @@ You can make changes in the role-wise permissions and also add new roles from th
 Each time you click on “Get meeting link”, will generate new meeting room and give it’s links. Hence, you need to save/send meeting links of each role, before closing this pop-up.
 :::
 
-![img13.png](../../../static/img/no-code-img13.png)
+![img13.png](../../../static/img/no-code-img12.png)
 
 **Step 2** : Copy the link, open a new tab and paste it there.
 
-![img12.png](../../../static/img/no-code-img12.png)
+![img12.png](../../../static/img/no-code-img13.png)
 
 **Voila!** You have started a meeting in 5 minutes. You can copy the guest meeting link and send it to others.
 

@@ -8,7 +8,7 @@ export default function ResourcePart() {
       title: "No Code SDK Guide",
       description:
         "End to End Tutorials to integrate No Code SDK on your platform.",
-      link: "/docs/tutorials/no-code-sdk",
+      link: "no-code-sdk/guide/no-code-video-and-audio-calling/getting-started",
     },
     {
       title: "Prebuilt SDK Guide",
