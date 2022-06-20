@@ -21,7 +21,7 @@ module.exports = {
       // id: "event_announcement_interactive_live_streaming_app",
       id: "announcement_no_code_sdk_guide",
       content:
-        'ZERO CODING!!! Create and join audio-video rooms in 5 mins with our newly launched "No Code SDK".&nbsp;&nbsp;<a target="_blank" rel="noopener noreferrer" href="https://docs.videosdk.live/docs/tutorials/no-code-sdk">Learn more</a> ',
+        'ZERO CODING!!! Create and join audio-video rooms in 5 mins with our newly launched "No Code SDK".&nbsp;&nbsp;<a target="_blank" rel="noopener noreferrer" href="https://docs.videosdk.live/no-code-sdk/guide/no-code-video-and-audio-calling/getting-started">Learn more</a> ',
       backgroundColor: "#6246FB",
       textColor: "#FFF",
       isCloseable: true,
@@ -358,7 +358,7 @@ module.exports = {
       {
         id: "no_code_sdk_docs",
         path: "no_code_sdk_docs",
-        routeBasePath: "no-code-sdk",  
+        routeBasePath: "no-code-sdk",
         sidebarPath: require.resolve("./sidebarNoCodeSdk.js"),
         // ... other options
       },
