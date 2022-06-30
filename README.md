@@ -47,3 +47,22 @@ npm install
 npm run dev
 ```
 
+## Usage
+
+<!-- In usage, mention how to edit the docs, how to update versions, etc. -->
+
+### Writing Documentation
+
+To just edit older documentation, go to the specified versioned folder for a section, for example, you want to edit documentation for React SDK v0.25.x, open up [react_versioned_docs/version-0.25.x](./react_versioned_docs/version-0.25.x) and edit the required files there.
+
+For updating documentation, go to specific SDK folder, for example, you want to change documentation for JS SDK so you have to open [react_versioned_docs/version-0.25.x](./javascript_docs_versioned_docs/version-0.0.x)
+After opening this, you may seen below folder structure
+```jsx title="Project Structure"
+   javascript_docs_versioned_docs/version-0.0.x
+   ├── api
+   │     ├── sdk-reference
+   ├── guide
+   │     ├── video-and-audio-calling-api-sdk
+   .    .
+```
+
