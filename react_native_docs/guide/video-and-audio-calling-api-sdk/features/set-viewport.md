@@ -53,7 +53,6 @@ const {
   }}
   streamURL={new MediaStream([webcamStream.track]).toURL()}
   objectFit={"cover"}
-  mirror={isLocal ? true : false}
   style={{
     flex: 1,
   }}
