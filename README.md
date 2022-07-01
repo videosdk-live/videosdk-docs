@@ -63,6 +63,6 @@ After opening this, you may seen below folder structure
    │     ├── sdk-reference
    ├── guide
    │     ├── video-and-audio-calling-api-sdk
-   .    .
+   .     .
 ```
 If you want to modify the [sdk-reference](https://docs.videosdk.live/javascript/api/sdk-reference/setup) of JS SDK, you have to open up `api/sdk-reference` and make changes accordingly or want to modify the [Guide](https://docs.videosdk.live/javascript/guide/video-and-audio-calling-api-sdk/getting-started) of JS SDK, you have to open up `guide/video-and-audio-calling-api-sdk` and make changes accordingly.
