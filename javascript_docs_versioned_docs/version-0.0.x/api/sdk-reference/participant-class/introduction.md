@@ -76,6 +76,11 @@ const participants = meeting.participants;
 </div>
 <div class="col col--4 margin-bottom--sm" >
 
+- [setViewPort](./methods.md#setviewport)
+
+</div>
+<div class="col col--4 margin-bottom--sm" >
+
 - [pin](./methods.md#pin)
 
 </div>

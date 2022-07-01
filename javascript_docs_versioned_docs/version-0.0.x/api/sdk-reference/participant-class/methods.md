@@ -81,4 +81,19 @@ pagination_label: Participant Class Methods
 
 ---
 
+### setViewPort()
+
+- `setViewPort()` is used to set the quality of the participant's video stream based on the viewport height and width.
+
+#### Parameters
+
+- **width**: int
+- **height**: int
+
+#### Returns
+
+- `void`
+
+---
+
 </div>

@@ -31,7 +31,8 @@
         "guide/video-and-audio-calling-api-sdk/features/mic-controls",
         "guide/video-and-audio-calling-api-sdk/features/toggle-participant-media",
         "guide/video-and-audio-calling-api-sdk/features/speaker-indication",
-        "guide/video-and-audio-calling-api-sdk/features/screenshare"
+        "guide/video-and-audio-calling-api-sdk/features/screenshare",
+        "guide/video-and-audio-calling-api-sdk/features/set-viewport"
       ],
       "collapsed": true
     },

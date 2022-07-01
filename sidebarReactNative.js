@@ -35,6 +35,7 @@ module.exports = {
         "guide/video-and-audio-calling-api-sdk/features/camera-controls",
         "guide/video-and-audio-calling-api-sdk/features/mic-controls",
         "guide/video-and-audio-calling-api-sdk/features/screenshare",
+        "guide/video-and-audio-calling-api-sdk/features/set-viewport",
         "guide/video-and-audio-calling-api-sdk/features/toggle-participant-media",
         "guide/video-and-audio-calling-api-sdk/features/send-messages",
         "guide/video-and-audio-calling-api-sdk/features/speaker-indication",

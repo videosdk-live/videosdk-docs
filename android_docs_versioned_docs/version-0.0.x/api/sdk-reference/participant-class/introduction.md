@@ -116,6 +116,11 @@ Map<String, Participant> participants = meeting.getParticipants();
 </div>
 <div class="col col--4 margin-bottom--sm" >
 
+- [setViewPort()](./methods#setviewport)
+
+</div>
+<div class="col col--4 margin-bottom--sm" >
+
 </div>
 
 </div>

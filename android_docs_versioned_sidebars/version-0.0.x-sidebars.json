@@ -31,6 +31,7 @@
         "guide/video-and-audio-calling-api-sdk/features/mic-controls",
         "guide/video-and-audio-calling-api-sdk/features/toggle-participant-media",
         "guide/video-and-audio-calling-api-sdk/features/screenshare",
+        "guide/video-and-audio-calling-api-sdk/features/set-viewport",
         "guide/video-and-audio-calling-api-sdk/features/speaker-indiction",
         "guide/video-and-audio-calling-api-sdk/features/error-event"
       ],
