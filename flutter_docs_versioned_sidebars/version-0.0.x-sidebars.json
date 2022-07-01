@@ -45,6 +45,7 @@
         "guide/video-and-audio-calling-api-sdk/features/custom-participant-id",
         "guide/video-and-audio-calling-api-sdk/features/remove-participant",
         "guide/video-and-audio-calling-api-sdk/features/set-quality",
+        "guide/video-and-audio-calling-api-sdk/features/set-viewport",
         "guide/video-and-audio-calling-api-sdk/features/entry-request-response",
         "guide/video-and-audio-calling-api-sdk/features/pause-resume-video-stream"
       ],

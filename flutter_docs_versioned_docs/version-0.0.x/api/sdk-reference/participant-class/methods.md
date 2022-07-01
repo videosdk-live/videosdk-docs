@@ -109,6 +109,27 @@ participant.setQuality("high");
 
 ---
 
+### setViewPort()
+
+- `setViewPort()` is used to set the quality of the participant's video stream based on the viewport height and width.
+
+#### Parameters
+
+- **width**: int
+- **height**: int
+
+#### Returns
+
+- `void`
+
+#### Example
+
+```js
+participant.setViewPort(480,360);
+```
+---
+
+
 ### remove()
 
 - It is used to remove participant from the meeting.

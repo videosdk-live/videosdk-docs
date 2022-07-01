@@ -66,6 +66,11 @@ pagination_label: Video SDK Participant Class
 </div>
 <div class="col col--4 margin-bottom--sm" >
 
+- [setViewPort](methods#setviewport)
+
+</div>
+<div class="col col--4 margin-bottom--sm" >
+
 - [remove](methods#remove)
 
 </div>
