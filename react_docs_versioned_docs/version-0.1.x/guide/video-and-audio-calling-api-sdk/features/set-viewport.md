@@ -47,16 +47,17 @@ function ParticipantView(){
 
   const {
     isLocal,
+    webcamStream
     setViewPort
   } = useParticipant(participantId, {});
 
   //check if whenever height of width for the participant video gets changed
   //call setViewPort for that participant
   useEffect(() => {
-    if (videoDivWrapperRef?.offsetWidth && videoDivWrapperRef?.offsetHeight && !isLocal){
+    if (videoDivWrapperRef?.offsetWidth && videoDivWrapperRef?.offsetHeight && !isLocal && webcamStream){
       setViewPort(videoDivWrapperRef?.offsetWidth, videoDivWrapperRef?.offsetHeight);
     }
-  }, [videoDivWrapperRef?.offsetHeight, videoDivWrapperRef?.offsetWidth])
+  }, [videoDivWrapperRef?.offsetHeight, videoDivWrapperRef?.offsetWidth, webcamStream])
 
   return (
     <div ref={setVideoDivWrapperRef} >
