@@ -18,6 +18,15 @@
 </a>
 </p>
 
+## Website
+This website is built using [Docusaurus 2](https://v2.docusaurus.io/), a modern static website generator.
+
+### Built With
+
+- [Docusaurus](https://docusaurus.io/)
+- [React](https://reactjs.org/)
+- [Tailwind](https://tailwindcss.com/)
+
 ## Getting Started
 
 This section describes how you can setup our documentation on your machine.
