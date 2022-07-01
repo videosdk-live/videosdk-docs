@@ -71,7 +71,7 @@ dependencyResolutionManagement{
 
 ```js title="app/build.gradle"
 dependencies {
-		implementation 'live.videosdk:android-sdk:0.0.16'
+		implementation 'live.videosdk:android-sdk:0.0.21'
 
 		// other app dependencies
 }

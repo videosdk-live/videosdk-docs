@@ -22,7 +22,7 @@ import TabItem from '@theme/TabItem';
 
 If you don't want to have the same meeting id every time, you can generate a random id each time and use it. Let's see how it's done.
 
-### Step 2. Create `createMeeting.html` and add `createMeeting()` function
+### Step 1. Create `createMeeting.html` and add `createMeeting()` function
 
 Add a `<script>` which will contain `createMeeting()` which will create and redirect to a new meeting. And add this method to `onClick` of `<button>`
 
