@@ -79,6 +79,7 @@ meeting.init({
     askToJoin: false, // Ask joined participants for entry in meeting
     toggleParticipantWebcam: true, // Can toggle other participant's web cam
     toggleParticipantMic: true, // Can toggle other participant's mic
+    toggleParticipantScreenshare: true, // Can toggle other partcipant's screen share
     removeParticipant: true, // Can remove participant
     endMeeting: true, // Can end meeting
     drawOnWhiteboard: true, // Can draw on whiteboard
@@ -174,6 +175,7 @@ import MethodListHeading from '@theme/MethodListHeading';
           <MethodListItemLabel name="askToJoin" option={"optional"} type={"boolean"} />
           <MethodListItemLabel name="toggleParticipantMic" option={"optional"} type={"boolean"} />
           <MethodListItemLabel name="toggleParticipantWebcam" option={"optional"} type={"boolean"} />
+          <MethodListItemLabel name="toggleParticipantScreenshare" option={"optional"} type={"boolean"} />
           <MethodListItemLabel name="drawOnWhiteboard" option={"optional"} type={"boolean"} />
           <MethodListItemLabel name="toggleWhiteboard" option={"optional"} type={"boolean"} />
           <MethodListItemLabel name="toggleRecording" option={"optional"} type={"boolean"} />

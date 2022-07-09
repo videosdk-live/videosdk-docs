@@ -32,11 +32,13 @@ This feature allows you to control meeting join, webcam and mic permissions for 
 
 - `toggleParticipantWebcam`: If it is true, then participant can disable webcam of other participants, but it will ask for permission when enabling webcam. If it is false, then participant can not toggle webcam of other participants.
 
+- `toggleParticipantScreenshare`: If it is true, then participant can disable screen share of other participants, but it will ask for permission when enabling screen share. If it is false, then participant can not toggle screen share of other participants.
+
 :::note
 
 - While using `askToJoin` attribute, configuration for meeting initiator (You) and other participants will be different.
   If you are meeting initiator then you must set `askToJoin` false, otherwise you won't be able to join the meeting.
-- If `askToJoin` set to true, any given permissions for `toggleParticipantMic` and `toggleParticipantWebcam` will be ignored.
+- If `askToJoin` set to true, any given permissions for `toggleParticipantMic` , `toggleParticipantWebcam` and `toggleParticipantScreenshare` will be ignored.
 
 :::
 
@@ -47,6 +49,7 @@ const config = {
     askToJoin: false,
     toggleParticipantWebcam: false,
     toggleParticipantMic: false,
+    toggleParticipantScreenshare: false,
   },
   // ...
 };

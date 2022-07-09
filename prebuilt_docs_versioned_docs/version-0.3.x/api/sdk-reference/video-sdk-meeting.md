@@ -70,6 +70,7 @@ import MethodListHeading from '@theme/MethodListHeading';
           <MethodListItemLabel name="askToJoin" option={"optional"} type={"boolean"} />
           <MethodListItemLabel name="toggleParticipantMic" option={"optional"} type={"boolean"} />
           <MethodListItemLabel name="toggleParticipantWebcam" option={"optional"} type={"boolean"} />
+          <MethodListItemLabel name="toggleParticipantScreenshare" option={"optional"} type={"boolean"} />
           <MethodListItemLabel name="drawOnWhiteboard" option={"optional"} type={"boolean"} />
           <MethodListItemLabel name="toggleWhiteboard" option={"optional"} type={"boolean"} />
           <MethodListItemLabel name="toggleRecording" option={"optional"} type={"boolean"} />
