@@ -22,11 +22,35 @@ slug: screenshare
 
 - This guide will provide an overview of how to enable or disable Screen Share in a meeting.
 
+## How Screen share works?
+
+- The following diagram shows flow of the screen sharing in android using VideoSDK:
+
+<div style={{textAlign: 'center'}}>
+
+![VideoSDK Android Screenshare Flow Diagram](/img/android/screenshare/flow_diagram.png)
+
+</div>
+
 ## Enable Screen Share
 
 - A participant’s Screen share stream is provided via the `MediaProjection` API. This API is only compatible with `Build.VERSION_CODES.LOLLIPOP` or higher.
 
 - Get an instance of the `MediaProjectionManager` and Call the `createScreenCaptureIntent()` method in an activity. This initiates a prompt dialog for the user to confirm screen projection.
+
+- One will get a prompt dialog like this:
+
+<div style={{textAlign: 'center'}}>
+
+<img
+  src={require('/img/android/screenshare/user_permission.jpg').default}
+  alt="user permission"
+  width="450"
+/>
+
+</div>
+
+<br/>
 
 - After permission is received from the user, call `meeting.enableScreenShare()` method.
 
@@ -89,7 +113,19 @@ public void onActivityResult(int requestCode, int resultCode, Intent data) {
 
 ### Customise notification
 
-- When a presenter starts screen share, presenter will receive a notification with a pre-defined title and messages.
+- When a presenter starts screen share, presenter will receive a notification with a pre-defined title and message.
+
+- Notification with pre-defined title and message will look like this:
+
+<div style={{textAlign: 'center'}}>
+
+<img
+  src={require('/img/android/screenshare/notification.jpg').default}
+  alt="notification"
+  width="450"
+/>
+
+</div>
 
 - You can Customise those title, message and icon as per your requirements using `<meta-data>` specified in `app/src/main/AndroidManifest.xml`.
 
