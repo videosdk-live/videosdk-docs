@@ -36,6 +36,12 @@ title: Permissions Parameters
 
 - `toggleParticipantMic` represents whether participant can toggle other participant's mic or not.
 
+### toggleParticipantScreenshare
+
+- type: `Boolean`
+
+- `toggleParticipantScreenshare` represents whether participant can toggle other participant's screen share or not.
+
 ### removeParticipant
 
 - type: `Boolean`
@@ -87,6 +93,7 @@ meeting.init({
     askToJoin: false,
     toggleParticipantWebcam: true,
     toggleParticipantMic: true,
+    toggleParticipantScreenshare: true,
     removeParticipant: true,
     endMeeting: true,
     drawOnWhiteboard: true,

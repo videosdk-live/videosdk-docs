@@ -92,6 +92,7 @@ Create an `index.html` file and add the following `<script>` tag at the end of y
         askToJoin: false, // Ask joined participants for entry in meeting
         toggleParticipantMic: true, // Can toggle other participant's mic
         toggleParticipantWebcam: true, // Can toggle other participant's webcam
+        toggleParticipantScreenshare: true, // Can toggle other partcipant's screen share
         drawOnWhiteboard: true, // Can draw on whiteboard
         toggleWhiteboard: true, // Can toggle whiteboard
         toggleRecording: true, // Can toggle meeting recording
