@@ -27,7 +27,10 @@
         "required": false
       },
       {
-        "key": "webhook"
+        "key": "webhook",
+        "values": "\n```\n{\n  'webhook': {\n    'endPoint': 'your webhook endpoint',\n    'events': {\n      'type': ['webhook event type']\n    }\n  }\n}\n```",
+        "description": "#### you can subscribe from various events to get webhook. \n - `participant-joined` \n - `participant-left` \n - `session-started` \n - `session-ended` \n - `recording-started` \n - `recording-stopped` \n - `livestream-started` \n - `livestream-stopped` \n - `hls-started` \n - `hls-stopped`",
+        "required": false
       }
     ],
     "queryParameters": [],
