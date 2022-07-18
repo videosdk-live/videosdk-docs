@@ -13,6 +13,7 @@ hide_table_of_contents: true
 
 - Your development `localhost` URL is not considered as a `templateUrl`.
 - SSL must be enabled on your website.
+- VideoSDK recorder only supports 4 participants on the screen due to resources limitations. your template url will be assigned 2.5 to 3 cpu and 2-3 GB of memory. your recording will be ternminated if those limits are reached.
 
 :::
 
