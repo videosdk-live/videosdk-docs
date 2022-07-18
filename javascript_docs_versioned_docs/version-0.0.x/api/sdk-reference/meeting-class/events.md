@@ -264,16 +264,32 @@ meeting.on("mic-requested", (data) => {
 
 `status` has following values
 
-- `recordingStaring` - Recording is in starting phase and hasn't started yet.
-- `recordingStarted` - Recording has started successfully.
-- `recordingStopping` - Recording is in stopping phase and hasn't stopped yet.
-- `recordingStopped` - Recording has stopped successfully.
+- `RECORDING_STARTING` - Recording is in starting phase and hasn't started yet.
+- `RECORDING_STARTED` - Recording has started successfully.
+- `RECORDING_STOPPING` - Recording is in stopping phase and hasn't stopped yet.
+- `RECORDING_STOPPED` - Recording has stopped successfully.
 
 #### Example
 
 ```javascript
+import { VideoSDK } from "@videosdk.live/js-sdk";
+
+const Constants = VideoSDK.Constants;
+
 meeting.on("recording-state-changed", (data) => {
   const { status } = data;
+
+  if (status === Constants.recordingEvents.RECORDING_STARTING) {
+    console.log("Meeting recording is starting");
+  } else if (status === Constants.recordingEvents.RECORDING_STARTED) {
+    console.log("Meeting recording is started");
+  } else if (status === Constants.recordingEvents.RECORDING_STOPPING) {
+    console.log("Meeting recording is stopping");
+  } else if (status === Constants.recordingEvents.RECORDING_STOPPED) {
+    console.log("Meeting recording is stopped");
+  } else {
+    //
+  }
 });
 ```
 
@@ -323,16 +339,32 @@ meeting.on("recording-stopped", () => {
 
 `status` has following values
 
-- `livestreamStaring` - Livestream is in starting phase and hasn't started yet.
-- `livestreamStarted` - Livestream has started successfully.
-- `livestreamStopping` - Livestream is in stopping phase and hasn't stopped yet.
-- `livestreamStopped` - Livestream has stopped successfully.
+- `LIVESTREAM_STARTING` - Livestream is in starting phase and hasn't started yet.
+- `LIVESTREAM_STARTED` - Livestream has started successfully.
+- `LIVESTREAM_STOPPING` - Livestream is in stopping phase and hasn't stopped yet.
+- `LIVESTREAM_STOPPED` - Livestream has stopped successfully.
 
 #### Example
 
 ```javascript
+import { VideoSDK } from "@videosdk.live/js-sdk";
+
+const Constants = VideoSDK.Constants;
+
 meeting.on("livestream-state-changed", (data) => {
   const { status } = data;
+
+  if (status === Constants.livestreamEvents.LIVESTREAM_STARTING) {
+    console.log("Meeting livestream is starting");
+  } else if (status === Constants.livestreamEvents.LIVESTREAM_STARTED) {
+    console.log("Meeting livestream is started");
+  } else if (status === Constants.livestreamEvents.LIVESTREAM_STOPPING) {
+    console.log("Meeting livestream is stopping");
+  } else if (status === Constants.livestreamEvents.LIVESTREAM_STOPPED) {
+    console.log("Meeting livestream is stopped");
+  } else {
+    //
+  }
 });
 ```
 
