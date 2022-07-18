@@ -11,7 +11,7 @@ title: User Webhooks
 
 ### participant-joined
 
-- this webhook is called when new participant join the meeting with following payload.
+- This webhook is called when new participant join the meeting with following payload.
 
 #### Example
 
@@ -31,7 +31,7 @@ title: User Webhooks
 
 ### participant-left
 
-- this webhook is called when participant left the meeting with following payload
+- This webhook is called when participant left the meeting with following payload
 
 #### Example
 
@@ -51,7 +51,7 @@ title: User Webhooks
 
 ### session-started
 
-- this webhook is called when new meeting session is successfully started
+- This webhook is called when new meeting session is successfully started
 
 #### Example
 
@@ -70,7 +70,7 @@ title: User Webhooks
 
 ### session-ended
 
-- this webhook is called when all participants lefts and meeting session is closed
+- This webhook is called when all participants lefts and meeting session is closed
 
 #### Example
 
@@ -90,7 +90,7 @@ title: User Webhooks
 
 ### recording-started
 
-- recording started webhook will be received when successfully recording is started in meeting
+- Recording started webhook will be received when successfully recording is started in meeting
 
 #### Example
 
@@ -108,7 +108,7 @@ title: User Webhooks
 
 ### recording-stopped
 
-- recording stopped webhook will be received when recording is successfully stopped in meeting.
+- Recording stopped webhook will be received when recording is successfully stopped in meeting.
 
 #### Example
 
@@ -118,7 +118,9 @@ title: User Webhooks
     "data": {
         "meetingId": "jvsg-8rjn-j304",
         "sessionId": "613731342f27f56e4fc4b6d0",
-        "fileId": "61dff29d9e5b1a4e4a34d17e"
+        "filePath" : "/encoded/videos/62d148951a1eb20029fc9b05.mp4",
+        "fileUrl" : "https://cdn.videosdk.live/encoded/videos/62d148951a1eb20029fc9b05.mp4",
+
     },
 }
 ```
@@ -127,7 +129,7 @@ title: User Webhooks
 
 ### livestream-started
 
-- when you use live-streaming in our meeting service you will receive this webhook when livestream is successfully started.
+- When you use live-streaming in our meeting service you will receive this webhook when livestream is successfully started.
 
 #### Example
 
@@ -145,7 +147,7 @@ title: User Webhooks
 
 ### livestream-stopped
 
-- when live-stream is stopped in meeting this webhook is fired with following payload
+- When live-stream is stopped in meeting this webhook is fired with following payload
 
 #### Example
 
@@ -163,7 +165,7 @@ title: User Webhooks
 
 ### hls-started
 
-- when you use Http live streaming(HLS) in meeting this event will be fired
+- When you use Http live streaming(HLS) in meeting this event will be fired
   with `downstreamUrl` url which you can embed in hls player
 
 #### Example
@@ -183,7 +185,7 @@ title: User Webhooks
 
 ### hls-stopped
 
-- this event is fired when you stop a http live streaming in meeting it has following payload
+- This event is fired when you stop a http live streaming in meeting it has following payload
 
 #### Example
 

@@ -25,6 +25,9 @@
         "key": "customRoomId",
         "description": "#### Customize Room id for better understanding.",
         "required": false
+      },
+      {
+        "key": "webhook"
       }
     ],
     "queryParameters": [],

@@ -264,16 +264,16 @@ meeting.on("mic-requested", (data) => {
 
 `status` has following values
 
-- `recordingStaring` - recording is in starting phase and hasn't started yet.
-- `recordingStarted` - recording has started successfully.
-- `recordingStopping` - recording is in stopping phase and hasn't stopped yet.
-- `recordingStopped` - recording has stopped successfully.
+- `recordingStaring` - Recording is in starting phase and hasn't started yet.
+- `recordingStarted` - Recording has started successfully.
+- `recordingStopping` - Recording is in stopping phase and hasn't stopped yet.
+- `recordingStopped` - Recording has stopped successfully.
 
 #### Example
 
 ```javascript
 meeting.on("recording-state-changed", (data) => {
-  //
+  const { status } = data;
 });
 ```
 
@@ -281,7 +281,7 @@ meeting.on("recording-state-changed", (data) => {
 
 ### recording-started
 
-`this event will be deprecated soon`
+_`This event will be deprecated soon`_
 
 - This event will be emitted when recording of the meeting is started.
 
@@ -297,7 +297,7 @@ meeting.on("recording-started", () => {
 
 ### recording-stopped
 
-`this event will be deprecated soon`
+_`This event will be deprecated soon`_
 
 - This event will be emitted when recording of the meeting is stopped.
 
@@ -323,16 +323,16 @@ meeting.on("recording-stopped", () => {
 
 `status` has following values
 
-- `livestreamStaring` - livestream is in starting phase and hasn't started yet.
-- `livestreamStarted` - livestream has started successfully.
-- `livestreamStopping` - livestream is in stopping phase and hasn't stopped yet.
-- `livestreamStopped` - livestream has stopped successfully.
+- `livestreamStaring` - Livestream is in starting phase and hasn't started yet.
+- `livestreamStarted` - Livestream has started successfully.
+- `livestreamStopping` - Livestream is in stopping phase and hasn't stopped yet.
+- `livestreamStopped` - Livestream has stopped successfully.
 
 #### Example
 
 ```javascript
 meeting.on("livestream-state-changed", (data) => {
-  //
+  const { status } = data;
 });
 ```
 
@@ -340,7 +340,7 @@ meeting.on("livestream-state-changed", (data) => {
 
 ### livestream-started
 
-`this event will be deprecated soon`
+_`This event will be deprecated soon`_
 
 - This event will be emitted when `RTMP` live stream of the meeting is started.
 
@@ -356,7 +356,7 @@ meeting.on("livestream-started", () => {
 
 ### livestream-stopped
 
-`this event will be deprecated soon`
+_`This event will be deprecated soon`_
 
 - This event will be emitted when `RTMP` live stream of the meeting is stopped.
 
