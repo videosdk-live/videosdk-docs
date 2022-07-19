@@ -30,7 +30,7 @@ import Card from '@theme/Card';
       <Card heading="1. Get your API key and Secret" link="/react-native/guide/video-and-audio-calling-api-sdk/signup-and-create-api" description="Generate your API key and Secret from Video SDK." />
     </div>
      <div class="col col--6">
-      <Card heading="2. Client Setup for React JS" link="/react-native/guide/video-and-audio-calling-api-sdk/react-native-android-sdk" description="Easy to integrate SDK with cross-channel support." />
+      <Card heading="2. Client Setup for React Native" link="/react-native/guide/video-and-audio-calling-api-sdk/react-native-android-sdk" description="Easy to integrate SDK with cross-channel support." />
     </div>
   </div>
   <div class="row ">
@@ -43,15 +43,15 @@ import Card from '@theme/Card';
   </div>
   <div class="row ">
     <div class="col col--6">
-      <Card heading="6. Basic Features" link="/react-native/guide/video-and-audio-calling-api-sdk/features/start-join-meeting" description="Explore basic features such as join, leave and customise." />
+      <Card heading="5. Basic Features" link="/react-native/guide/video-and-audio-calling-api-sdk/features/start-join-meeting" description="Explore basic features such as join, leave and customise." />
     </div>
    <div class="col col--6" >
-      <Card heading="7. Advanced Features" link="/react-native/guide/video-and-audio-calling-api-sdk/features/recording-meeting" description="Explore advanced features such as screen sharing, recording and live streaming."  />
+      <Card heading="6. Advanced Features" link="/react-native/guide/video-and-audio-calling-api-sdk/features/recording-meeting" description="Explore advanced features such as screen sharing, recording and live streaming."  />
     </div>
   </div>
   <div class="row ">
     <div class="col col--6">
-      <Card heading="6. Extras" link="/react-native/guide/video-and-audio-calling-api-sdk/extras/react-native-ios-screen-share" description="Share screen in native iOS" />
+      <Card heading="7. Extras" link="/react-native/guide/video-and-audio-calling-api-sdk/extras/react-native-ios-screen-share" description="Share screen in native iOS" />
     </div>
   </div>
 </div>

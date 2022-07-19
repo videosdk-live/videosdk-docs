@@ -1,8 +1,8 @@
 ---
-title: Run a sample Java Script Project - Video SDK Docs
+title: Run a sample JavaScript Project - Video SDK Docs
 hide_title: true
 hide_table_of_contents: false
-description: Create customizable real-time video & audio calling applications with Java Script SDK with Video SDK add live Video & Audio conferencing to your applications.
+description: Create customizable real-time video & audio calling applications with JavaScript SDK with Video SDK add live Video & Audio conferencing to your applications.
 sidebar_label: "Run the Sample Project"
 pagination_label: "Run the Sample Project"
 keywords:

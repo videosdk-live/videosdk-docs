@@ -10,7 +10,7 @@ keywords:
   - video calling
   - real-time communication
   - collabration
-  - Javascript SDK implemntation
+  - Javascript SDK implementation
 image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
 slug: quick-start
