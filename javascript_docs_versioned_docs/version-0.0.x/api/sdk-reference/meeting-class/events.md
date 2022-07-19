@@ -252,7 +252,52 @@ meeting.on("mic-requested", (data) => {
 
 ---
 
+### recording-state-changed
+
+- This event will be emitted when the state of recording the meeting is changed.
+
+#### Event callback parameters
+
+- **data**: { **status**: String }
+
+  - **status**: String
+
+`status` has following values
+
+- `RECORDING_STARTING` - Recording is in starting phase and hasn't started yet.
+- `RECORDING_STARTED` - Recording has started successfully.
+- `RECORDING_STOPPING` - Recording is in stopping phase and hasn't stopped yet.
+- `RECORDING_STOPPED` - Recording has stopped successfully.
+
+#### Example
+
+```javascript
+import { VideoSDK } from "@videosdk.live/js-sdk";
+
+const Constants = VideoSDK.Constants;
+
+meeting.on("recording-state-changed", (data) => {
+  const { status } = data;
+
+  if (status === Constants.recordingEvents.RECORDING_STARTING) {
+    console.log("Meeting recording is starting");
+  } else if (status === Constants.recordingEvents.RECORDING_STARTED) {
+    console.log("Meeting recording is started");
+  } else if (status === Constants.recordingEvents.RECORDING_STOPPING) {
+    console.log("Meeting recording is stopping");
+  } else if (status === Constants.recordingEvents.RECORDING_STOPPED) {
+    console.log("Meeting recording is stopped");
+  } else {
+    //
+  }
+});
+```
+
+---
+
 ### recording-started
+
+_`This event will be deprecated soon`_
 
 - This event will be emitted when recording of the meeting is started.
 
@@ -268,6 +313,8 @@ meeting.on("recording-started", () => {
 
 ### recording-stopped
 
+_`This event will be deprecated soon`_
+
 - This event will be emitted when recording of the meeting is stopped.
 
 #### Example
@@ -280,7 +327,52 @@ meeting.on("recording-stopped", () => {
 
 ---
 
+### livestream-state-changed
+
+- This event will be emitted when the state of livestream the meeting is changed.
+
+#### Event callback parameters
+
+- **data**: { **status**: String }
+
+  - **status**: String
+
+`status` has following values
+
+- `LIVESTREAM_STARTING` - Livestream is in starting phase and hasn't started yet.
+- `LIVESTREAM_STARTED` - Livestream has started successfully.
+- `LIVESTREAM_STOPPING` - Livestream is in stopping phase and hasn't stopped yet.
+- `LIVESTREAM_STOPPED` - Livestream has stopped successfully.
+
+#### Example
+
+```javascript
+import { VideoSDK } from "@videosdk.live/js-sdk";
+
+const Constants = VideoSDK.Constants;
+
+meeting.on("livestream-state-changed", (data) => {
+  const { status } = data;
+
+  if (status === Constants.livestreamEvents.LIVESTREAM_STARTING) {
+    console.log("Meeting livestream is starting");
+  } else if (status === Constants.livestreamEvents.LIVESTREAM_STARTED) {
+    console.log("Meeting livestream is started");
+  } else if (status === Constants.livestreamEvents.LIVESTREAM_STOPPING) {
+    console.log("Meeting livestream is stopping");
+  } else if (status === Constants.livestreamEvents.LIVESTREAM_STOPPED) {
+    console.log("Meeting livestream is stopped");
+  } else {
+    //
+  }
+});
+```
+
+---
+
 ### livestream-started
+
+_`This event will be deprecated soon`_
 
 - This event will be emitted when `RTMP` live stream of the meeting is started.
 
@@ -295,6 +387,8 @@ meeting.on("livestream-started", () => {
 ---
 
 ### livestream-stopped
+
+_`This event will be deprecated soon`_
 
 - This event will be emitted when `RTMP` live stream of the meeting is stopped.
 

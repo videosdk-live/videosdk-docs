@@ -36,6 +36,9 @@ const onPress = () => {
   // Start Recording
   meeting?.startRecording(webhookUrl, awsDirPath);
 
+  //
+  //
+  //
   // Stop Recording
   meeting?.stopRecording();
 };
@@ -43,16 +46,26 @@ const onPress = () => {
 
 ### Events
 
-1. **recording-started** - Whenever any participant start meeting recording, then `recording-started` event will trigger.
-
-2. **recording-stopped** - Whenever any participant stop meeting recording, then `recording-stopped` event will trigger.
+1. **recording-state-changed** - Whenever any participant starts / stops meeting recording, then `recording-state-changed` event will trigger.
 
 ```js
-meeting.on("recording-started", () => {
-  console.log("Recording Started");
-});
+import { VideoSDK } from "@videosdk.live/js-sdk";
 
-meeting.on("recording-stopped", () => {
-  console.log("Recording Stopped");
+const Constants = VideoSDK.Constants;
+
+meeting.on("recording-state-changed", (data) => {
+  const { status } = data;
+
+  if (status === Constants.recordingEvents.RECORDING_STARTING) {
+    console.log("Meeting recording is starting");
+  } else if (status === Constants.recordingEvents.RECORDING_STARTED) {
+    console.log("Meeting recording is started");
+  } else if (status === Constants.recordingEvents.RECORDING_STOPPING) {
+    console.log("Meeting recording is stopping");
+  } else if (status === Constants.recordingEvents.RECORDING_STOPPED) {
+    console.log("Meeting recording is stopped");
+  } else {
+    //
+  }
 });
 ```

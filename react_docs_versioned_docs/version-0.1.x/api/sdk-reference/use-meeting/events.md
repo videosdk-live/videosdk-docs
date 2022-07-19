@@ -220,6 +220,46 @@ const {
 
 ---
 
+### onRecordingStateChanged()
+
+- This event will be emitted when the state of recording the meeting is changed.
+
+#### Example
+
+```javascript
+
+import { Constants, useMeeting } from "@videosdk.live/react-sdk";
+
+const Constants = VideoSDK.Constants;
+
+function onRecordingStateChanged(data) {
+   const { status } = data;
+
+  if (status === Constants.recordingEvents.RECORDING_STARTING) {
+    console.log("Meeting recording is starting");
+  } else if (status === Constants.recordingEvents.RECORDING_STARTED) {
+    console.log("Meeting recording is started");
+  } else if (status === Constants.recordingEvents.RECORDING_STOPPING) {
+    console.log("Meeting recording is stopping");
+  } else if (status === Constants.recordingEvents.RECORDING_STOPPED) {
+    console.log("Meeting recording is stopped");
+  } else {
+    //
+  }
+ }
+
+const {
+  meetingId
+  ...
+} = useMeeting({
+  onRecordingStateChanged,
+  ...
+});
+
+```
+
+---
+
 ### onRecordingStarted()
 
 - This event callback is trigger when meeting recording is started.
@@ -260,6 +300,46 @@ const {
   onRecordingStopped,
   ...
 });
+```
+
+---
+
+### onLivestreamStateChanged()
+
+- This event will be emitted when the state of livestream the meeting is changed.
+
+#### Example
+
+```javascript
+
+import { Constants, useMeeting } from "@videosdk.live/react-sdk";
+
+const Constants = VideoSDK.Constants;
+
+function onLivestreamStateChanged(data) {
+  const { status } = data;
+
+  if (status === Constants.livestreamEvents.LIVESTREAM_STARTING) {
+    console.log("Meeting livestream is starting");
+  } else if (status === Constants.livestreamEvents.LIVESTREAM_STARTED) {
+    console.log("Meeting livestream is started");
+  } else if (status === Constants.livestreamEvents.LIVESTREAM_STOPPING) {
+    console.log("Meeting livestream is stopping");
+  } else if (status === Constants.livestreamEvents.LIVESTREAM_STOPPED) {
+    console.log("Meeting livestream is stopped");
+  } else {
+    //
+  }
+ }
+
+const {
+  meetingId
+  ...
+} = useMeeting({
+  onLivestreamStateChanged,
+
+});
+
 ```
 
 ---

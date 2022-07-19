@@ -46,16 +46,26 @@ const onPress = () => {
 
 ### Events
 
-1. **livestream-started** - Whenever broadcasting of meeting started, `livestream-started` event will trigger.
-
-2. **livestream-stopped** - Whenever broadcasting of meeting stopped, `livestream-stopped` event will trigger.
+1. **recording-state-changed** - Whenever broadcasting of meeting started / stopped, `recording-state-changed` event will trigger.
 
 ```js
-meeting.on("livestream-started", () => {
-  console.log("LiveStream Started");
-});
+import { VideoSDK } from "@videosdk.live/js-sdk";
 
-meeting.on("livestream-stopped", () => {
-  console.log("LiveStream Stopped");
+const Constants = VideoSDK.Constants;
+
+meeting.on("livestream-state-changed", (data) => {
+  const { status } = data;
+
+  if (status === Constants.livestreamEvents.LIVESTREAM_STARTING) {
+    console.log("Meeting livestream is starting");
+  } else if (status === Constants.livestreamEvents.LIVESTREAM_STARTED) {
+    console.log("Meeting livestream is started");
+  } else if (status === Constants.livestreamEvents.LIVESTREAM_STOPPING) {
+    console.log("Meeting livestream is stopping");
+  } else if (status === Constants.livestreamEvents.LIVESTREAM_STOPPED) {
+    console.log("Meeting livestream is stopped");
+  } else {
+    //
+  }
 });
 ```

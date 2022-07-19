@@ -60,6 +60,10 @@
         "realtime-communication/fetch-an-hls",
         "realtime-communication/fetch-active-hls"
       ]
+    },
+    {
+      "type": "doc",
+      "id": "realtime-communication/user-webhooks"
     }
   ]
 }
