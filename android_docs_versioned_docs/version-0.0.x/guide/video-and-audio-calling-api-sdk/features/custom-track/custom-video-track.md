@@ -85,7 +85,7 @@ values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
 <TabItem value="Kotlin">
 
 ```javascript
-val videoCustomTrack: CustomStreamTrack = VideoSDK.createCameraVideoTrack("h240p_w320p", "front", this,null)                
+val videoCustomTrack: CustomStreamTrack = VideoSDK.createCameraVideoTrack("h240p_w320p", "front", this)                
 ```
 
 </TabItem>
@@ -93,7 +93,7 @@ val videoCustomTrack: CustomStreamTrack = VideoSDK.createCameraVideoTrack("h240p
 <TabItem value="Java">
 
 ```javascript
-CustomStreamTrack customStreamTrack = VideoSDK.createCameraVideoTrack("h240p_w320p", "front",this,null);                
+CustomStreamTrack customStreamTrack = VideoSDK.createCameraVideoTrack("h240p_w320p", "front",this);                
 ```
 
 </TabItem>
@@ -120,7 +120,7 @@ override fun onCreate(savedInstanceState: Bundle?) {
 
     val customTracks: MutableMap<String, CustomStreamTrack> = HashMap()
     val videoCustomTrack: CustomStreamTrack =
-    VideoSDK.createCameraVideoTrack("h240p_w320p", "back", this,null)
+    VideoSDK.createCameraVideoTrack("h240p_w320p", "back", this)
     customTracks["video"] = videoCustomTrack  //Key must be "video"
 
      // create a new meeting instance
@@ -149,7 +149,7 @@ protected void onCreate(Bundle savedInstanceState) {
 
     Map<String, CustomStreamTrack> customTracks = new HashMap<>();
 
-    CustomStreamTrack videoCustomTrack = VideoSDK.createCameraVideoTrack("h240p_w320p", "back",this,null);
+    CustomStreamTrack videoCustomTrack = VideoSDK.createCameraVideoTrack("h240p_w320p", "back",this);
     customTracks.put("video", videoCustomTrack);  //Key must be "video"
 
     // create a new meeting instance
@@ -189,7 +189,7 @@ values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
 <TabItem value="Kotlin">
 
 ```javascript
-val customStreamTrack: CustomStreamTrack = VideoSDK.createCameraVideoTrack("h240p_w320p", "back", this,null)
+val customStreamTrack: CustomStreamTrack = VideoSDK.createCameraVideoTrack("h240p_w320p", "back", this)
 meeting!!.enableWebcam(customStreamTrack)
 ```
 
@@ -198,7 +198,7 @@ meeting!!.enableWebcam(customStreamTrack)
 <TabItem value="Java">
 
 ```javascript
-CustomStreamTrack customStreamTrack=VideoSDK.createCameraVideoTrack("h240p_w320p", "back",this,null);
+CustomStreamTrack customStreamTrack=VideoSDK.createCameraVideoTrack("h240p_w320p", "back",this);
 meeting.enableWebcam(customStreamTrack);
 ```
 
