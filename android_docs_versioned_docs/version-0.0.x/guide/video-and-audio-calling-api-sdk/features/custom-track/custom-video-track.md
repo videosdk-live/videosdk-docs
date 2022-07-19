@@ -49,11 +49,24 @@ Above mentioned encoder configurations are valid for both, landscape as well as 
   - Allowed values : `front` | `back`
   - It will specifiy wheater to use front or back camera for the video track.
 
-- **context**
+- **context**:
 
   - type: `Context`
   - required: `true`
   - Pass the Android Context for this parameter.
+
+- **observer**:
+
+  - type: `CapturerObserver`
+  - required: `false`
+  - If you want to use video filter from external SDK(e.g., [Banuba](https://www.banuba.com/)) then pass instance of  `CapturerObserver`  in this parameter.
+
+
+:::note
+
+For banuba integraion with videosdk.live android sdk,please visit [Banuba Intergation with Android-SDK](https://github.com/videosdk-live/videosdk-rtc-android-sdk-banuba-example) on Github for detailed step wise explanation and sample code.
+
+:::
 
 #### Returns
 
@@ -72,7 +85,7 @@ values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
 <TabItem value="Kotlin">
 
 ```javascript
-val videoCustomTrack: CustomStreamTrack = VideoSDK.createCameraVideoTrack("h240p_w320p", "front", this)                
+val videoCustomTrack: CustomStreamTrack = VideoSDK.createCameraVideoTrack("h240p_w320p", "front", this,null)                
 ```
 
 </TabItem>
@@ -80,7 +93,7 @@ val videoCustomTrack: CustomStreamTrack = VideoSDK.createCameraVideoTrack("h240p
 <TabItem value="Java">
 
 ```javascript
-CustomStreamTrack customStreamTrack = VideoSDK.createCameraVideoTrack("h240p_w320p", "front",this);                
+CustomStreamTrack customStreamTrack = VideoSDK.createCameraVideoTrack("h240p_w320p", "front",this,null);                
 ```
 
 </TabItem>
@@ -107,7 +120,7 @@ override fun onCreate(savedInstanceState: Bundle?) {
 
     val customTracks: MutableMap<String, CustomStreamTrack> = HashMap()
     val videoCustomTrack: CustomStreamTrack =
-    VideoSDK.createCameraVideoTrack("h240p_w320p", "back", this)
+    VideoSDK.createCameraVideoTrack("h240p_w320p", "back", this,null)
     customTracks["video"] = videoCustomTrack  //Key must be "video"
 
      // create a new meeting instance
@@ -136,7 +149,7 @@ protected void onCreate(Bundle savedInstanceState) {
 
     Map<String, CustomStreamTrack> customTracks = new HashMap<>();
 
-    CustomStreamTrack videoCustomTrack = VideoSDK.createCameraVideoTrack("h240p_w320p", "back",this);
+    CustomStreamTrack videoCustomTrack = VideoSDK.createCameraVideoTrack("h240p_w320p", "back",this,null);
     customTracks.put("video", videoCustomTrack);  //Key must be "video"
 
     // create a new meeting instance
@@ -176,7 +189,7 @@ values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
 <TabItem value="Kotlin">
 
 ```javascript
-val customStreamTrack: CustomStreamTrack = VideoSDK.createCameraVideoTrack("h240p_w320p", "back", this)
+val customStreamTrack: CustomStreamTrack = VideoSDK.createCameraVideoTrack("h240p_w320p", "back", this,null)
 meeting!!.enableWebcam(customStreamTrack)
 ```
 
@@ -185,7 +198,7 @@ meeting!!.enableWebcam(customStreamTrack)
 <TabItem value="Java">
 
 ```javascript
-CustomStreamTrack customStreamTrack=VideoSDK.createCameraVideoTrack("h240p_w320p", "back",this);
+CustomStreamTrack customStreamTrack=VideoSDK.createCameraVideoTrack("h240p_w320p", "back",this,null);
 meeting.enableWebcam(customStreamTrack);
 ```
 
