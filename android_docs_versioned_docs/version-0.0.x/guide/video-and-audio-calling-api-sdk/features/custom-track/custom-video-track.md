@@ -55,19 +55,6 @@ Above mentioned encoder configurations are valid for both, landscape as well as 
   - required: `true`
   - Pass the Android Context for this parameter.
 
-- **observer**:
-
-  - type: `CapturerObserver`
-  - required: `false`
-  - If you want to use video filter from external SDK(e.g., [Banuba](https://www.banuba.com/)) then pass instance of  `CapturerObserver`  in this parameter.
-
-
-:::note
-
-For banuba integraion with videosdk.live android sdk,please visit [Banuba Intergation with Android-SDK](https://github.com/videosdk-live/videosdk-rtc-android-sdk-banuba-example) on Github for detailed step wise explanation and sample code.
-
-:::
-
 #### Returns
 
 - `CustomStreamTrack`
