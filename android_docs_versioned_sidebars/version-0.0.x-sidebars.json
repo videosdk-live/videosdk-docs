@@ -46,7 +46,18 @@
         "guide/video-and-audio-calling-api-sdk/features/pubsub",
         "guide/video-and-audio-calling-api-sdk/features/set-participant-video-quality",
         "guide/video-and-audio-calling-api-sdk/features/pause-resume-video-stream",
-        "guide/video-and-audio-calling-api-sdk/features/external-call-detection"
+        "guide/video-and-audio-calling-api-sdk/features/external-call-detection",
+        {
+          "type": "category",
+          "label": "Custom Tracks (BETA)",
+          "items": [
+            "guide/video-and-audio-calling-api-sdk/features/custom-track/custom-video-track",
+            "guide/video-and-audio-calling-api-sdk/features/custom-track/custom-audio-track",
+            "guide/video-and-audio-calling-api-sdk/features/custom-track/custom-screen-share-track"
+      
+          ]
+        }
+
       ]
     }
   ],
