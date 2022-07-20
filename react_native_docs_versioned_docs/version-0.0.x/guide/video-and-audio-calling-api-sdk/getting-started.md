@@ -43,15 +43,15 @@ import Card from '@theme/Card';
   </div>
   <div class="row ">
     <div class="col col--6">
-      <Card heading="6. Basic Features" link="/react-native/guide/video-and-audio-calling-api-sdk/features/start-join-meeting" description="Explore basic features such as join, leave and customise." />
+      <Card heading="5. Basic Features" link="/react-native/guide/video-and-audio-calling-api-sdk/features/start-join-meeting" description="Explore basic features such as join, leave and customise." />
     </div>
    <div class="col col--6" >
-      <Card heading="7. Advanced Features" link="/react-native/guide/video-and-audio-calling-api-sdk/features/recording-meeting" description="Explore advanced features such as Play external video, recording and live streaming."  />
+      <Card heading="6. Advanced Features" link="/react-native/guide/video-and-audio-calling-api-sdk/features/recording-meeting" description="Explore advanced features such as screen sharing, recording and live streaming."  />
     </div>
   </div>
   <div class="row ">
     <div class="col col--6">
-      <Card heading="8. Extras" link="/react-native/guide/video-and-audio-calling-api-sdk/extras/react-native-ios-screen-share" description="Share screen in native iOS" />
+      <Card heading="7. Extras" link="/react-native/guide/video-and-audio-calling-api-sdk/extras/react-native-ios-screen-share" description="Share screen in native iOS" />
     </div>
   </div>
 </div>
