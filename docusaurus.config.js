@@ -1,5 +1,11 @@
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 
+const pageOptions = {
+  editUrl: "https://github.com/videosdk-live/videosdk-docs/tree/develop",
+  showLastUpdateAuthor: true,
+  showLastUpdateTime: true,
+};
+
 module.exports = {
   title: "Video SDK",
   tagline: "Interactive Video API Experiences For Developers",
@@ -350,7 +356,7 @@ module.exports = {
         path: "react_docs",
         routeBasePath: "react",
         sidebarPath: require.resolve("./sidebarReact.js"),
-        // ... other options
+        ...pageOptions,
       },
     ],
     [
@@ -360,7 +366,7 @@ module.exports = {
         path: "no_code_sdk_docs",
         routeBasePath: "no-code-sdk",
         sidebarPath: require.resolve("./sidebarNoCodeSdk.js"),
-        // ... other options
+        ...pageOptions,
       },
     ],
     [
@@ -370,7 +376,7 @@ module.exports = {
         path: "android_docs",
         routeBasePath: "android",
         sidebarPath: require.resolve("./sidebarAndroid.js"),
-        // ... other options
+        ...pageOptions,
       },
     ],
 
@@ -381,7 +387,7 @@ module.exports = {
         path: "ios_docs",
         routeBasePath: "ios",
         sidebarPath: require.resolve("./sidebarIos.js"),
-        // ... other options
+        ...pageOptions,
       },
     ],
     [
@@ -391,7 +397,7 @@ module.exports = {
         path: "flutter_docs",
         routeBasePath: "flutter",
         sidebarPath: require.resolve("./sidebarFlutter.js"),
-        // ... other options
+        ...pageOptions,
       },
     ],
     [
@@ -401,7 +407,7 @@ module.exports = {
         path: "react_native_docs",
         routeBasePath: "react-native",
         sidebarPath: require.resolve("./sidebarReactNative.js"),
-        // ... other options
+        ...pageOptions,
       },
     ],
     [
@@ -411,7 +417,7 @@ module.exports = {
         path: "javascript_docs",
         routeBasePath: "javascript",
         sidebarPath: require.resolve("./sidebarJavaScript.js"),
-        // ... other options
+        ...pageOptions,
       },
     ],
     [
@@ -421,7 +427,7 @@ module.exports = {
         path: "prebuilt_docs",
         routeBasePath: "prebuilt",
         sidebarPath: require.resolve("./sidebarPrebuilt.js"),
-        // ... other options
+        ...pageOptions,
       },
     ],
     [
@@ -439,7 +445,7 @@ module.exports = {
             label: "/v1",
           },
         },
-        // ... other options
+        ...pageOptions,
       },
     ],
   ],

@@ -102,4 +102,3 @@ This page will keep you update all the releases of Prebuilt SDK.
 
 1. Topbar icons container component code refactoring.
 
----
