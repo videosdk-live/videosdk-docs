@@ -77,4 +77,3 @@ This page will keep you update all the releases of Prebuilt SDK.
 
 - **Join screen** : Make join screen visible, set title for join screen, set meeting link for copying
 
----
