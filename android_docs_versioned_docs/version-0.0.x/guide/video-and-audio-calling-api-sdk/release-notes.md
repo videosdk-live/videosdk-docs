@@ -7,6 +7,34 @@ pagination_label: Release Notes
 
 This page will keep you update all the releases of Android SDK.
 
+## v0.0.23
+
+**Release Date** : 21st July 2022
+
+**Change log** :
+
+1.  CustomTrack for audio,video and screenshare.
+
+    **Docs** : [Custom Video Track](https://docs.videosdk.live/android/guide/video-and-audio-calling-api-sdk/features/custom-track/custom-video-track)
+
+    **Docs** : [Custom Audio Track](https://docs.videosdk.live/android/guide/video-and-audio-calling-api-sdk/features/custom-track/custom-audio-track)
+
+    **Docs** : [Custom Screen Share Track](https://docs.videosdk.live/android/guide/video-and-audio-calling-api-sdk/features/custom-track/custom-screen-share-track)
+
+2.  Provide support for banuba integration.
+
+    **Code Sample** : [videosdk-rtc-android-sdk-banuba-example](https://github.com/videosdk-live/videosdk-rtc-android-sdk-banuba-example)
+
+**Bug Fix** :
+
+1.  Fix `PendingIntent.FLAG_IMMUTABLE` for android 12 or later.
+
+2.  Camera flicker on screen share fix.
+
+3.  Camera will automatically off when you open another activity.
+
+---
+
 ## v0.0.21
 
 **Release Date** : 1st July 2022
