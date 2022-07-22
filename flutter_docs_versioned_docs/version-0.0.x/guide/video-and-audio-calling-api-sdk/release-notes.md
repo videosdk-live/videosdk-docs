@@ -5,7 +5,7 @@ pagination_label: Release Notes
 
 # Release Notes
 
-This page will keep you update all the releases of iOS SDK.
+This page will keep you update all the releases of Flutter SDK.
 
 ## v0.0.14
 
