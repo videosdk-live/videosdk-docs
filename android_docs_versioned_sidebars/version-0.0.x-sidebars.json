@@ -58,6 +58,13 @@
             "guide/video-and-audio-calling-api-sdk/features/custom-track/custom-screen-share-track"
       
           ]
+        },
+        {
+          "type": "category",
+          "label": "Extras",
+          "items": [
+          "guide/video-and-audio-calling-api-sdk/extras/banuba-integration"
+          ]
         }
 
       ]

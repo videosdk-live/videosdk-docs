@@ -48,6 +48,16 @@
         "methodType": "GET",
         "api": "/v2/sessions/${sessionId}/participants/active",
         "link": "/api-reference/realtime-communication/fetch-active-participants"
+      },
+      {
+        "methodType": "GET",
+        "api": "/v2/sessions/${sessionId}/stats",
+        "link": "/api-reference/realtime-communication/fetch-session-quality-stats"
+      },
+      {
+        "methodType": "GET",
+        "api": "/v2/sessions/${sessionId}/participant/${participantId}/stats",
+        "link": "/api-reference/realtime-communication/fetch-session-peer-quality-stats"
       }
     ]
   },
