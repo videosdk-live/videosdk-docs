@@ -29,6 +29,7 @@ meeting.init({
   pollEnabled: true,
   whiteboardEnabled: true,
   raiseHandEnabled: true,
+  mode: "CONFERENCE", // VIEWER || CONFERENCE
 
   recording: {
     autoStart: true, // auto start recording on participant joined
@@ -40,6 +41,11 @@ meeting.init({
   livestream: {
     autoStart: true,
     enabled: true,
+  },
+
+  hls: {
+    enabled: true,
+    autoStart: false,
   },
 
   layout: {
@@ -62,6 +68,8 @@ meeting.init({
     toggleParticipantMic: true, // Can toggle other participant's mic
     toggleParticipantWebcam: true, // Can toggle other participant's webcam
     toggleParticipantScreenshare: true, // Can toggle other partcipant's screen share
+    toggleParticipantMode: true, // Can toggle other participant's mode
+    toggleHls: true, // Can toggle Start HLS button
     drawOnWhiteboard: true, // Can draw on whiteboard
     toggleWhiteboard: true, // Can toggle whiteboard
     toggleRecording: true, // Can toggle meeting recording
