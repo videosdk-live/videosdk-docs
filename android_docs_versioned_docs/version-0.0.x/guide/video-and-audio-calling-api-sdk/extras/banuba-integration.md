@@ -6,18 +6,18 @@ description: Describes how to integrate Banuba SDK with videosdk.live using Andr
 sidebar_label: "Banuba Integration"
 pagination_label: "Banuba Integration"
 keywords:
-- android sdk
-- java sdk
-- kotlin sdk
-- banuba
+  - android sdk
+  - java sdk
+  - kotlin sdk
+  - banuba
 image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
 slug: banuba-integration
 ---
 
-# How to intergrate Banuba SDK into your videoSDK project?
+# How to intergrate Banuba SDK with Android Video SDK?
 
- Use Banuba SDK with Android SDK to enhance video calls with real-time face filters and virtual backgrounds.
+Use Banuba SDK with Android SDK to enhance video calls with real-time face filters and virtual backgrounds.
 
 ### Step 1: Banuba Token
 
@@ -25,10 +25,9 @@ slug: banuba-integration
 
 ### Step 2: Add Banuba SDK dependencies
 
-- With the client token, you will also receive the Banuba SDK archive for Android which contains Banuba Effect Player (compiled Android library project with .aar extension), Banuba SDK (compiled Android library project with .aar extension) and example filters located under effects folder. 
+- With the client token, you will also receive the Banuba SDK archive for Android which contains Banuba Effect Player (compiled Android library project with .aar extension), Banuba SDK (compiled Android library project with .aar extension) and example filters located under effects folder.
 
 - Create `libs` directory in your project and add `banuba_effect_player.aar`, `banuba_sdk.aar` files.
-
 
 <div style={{textAlign: 'center'}}>
 
@@ -42,7 +41,7 @@ slug: banuba-integration
 dependencies {
   // Banuba SDK dependencies
    implementation fileTree(dir: 'libs', include: ['*.aar'])
-  
+
   // other app dependencies
   }
 ```
@@ -57,11 +56,11 @@ dependencies {
 
 </div>
 
-### Step 5: Integrate Banuba 
+### Step 4: Integrate Banuba
 
 1. Create one interface named `IVideoFrameProcessor` and a class named `BanubaProcessor` in your project and copy paste code from the [example](https://github.com/videosdk-live/videosdk-rtc-android-sdk-banuba-example).
 
-2. Update your Banuba client token into `BanubaProcessor.java` file. 
+2. Update your Banuba client token into `BanubaProcessor.java` file.
 
 ```js title="BanubaProcessor.java"
 public class BanubaProcessor implements IVideoFrameProcessor {
