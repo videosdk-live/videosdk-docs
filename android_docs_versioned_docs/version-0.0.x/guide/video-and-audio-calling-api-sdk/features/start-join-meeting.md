@@ -51,7 +51,8 @@ To achieve region based meetings, just pass `region : REGION_CODE` parameter in 
 Currently the below regions are supported:
 
 - `sg001` Region Code for Singapore, SG.
-- `uk001` Region Code for London, UK.
+- `sg002` Region Code for Singapore, SG. (Another region in Sindapore)
+- `in002` Region Code for Bangalore, IN.
 - `us001` Region Code for Fremont, CA.
 - `eu001` Region Code for Frankfurt, DE.
 
@@ -89,7 +90,7 @@ class JoinActivity : AppCompatActivity() {
       .getAsJSONObject(
         object : JSONObjectRequestListener {
           override fun onResponse(response: JSONObject) {
-            try 
+            try
             {
               token = response.getString("token")
               if (meetingId == null) {
@@ -156,7 +157,7 @@ class JoinActivity : AppCompatActivity() {
 
           override fun onError(anError: ANError) {
             anError.printStackTrace()
-          } 
+          }
         }
       )
   }
@@ -299,7 +300,6 @@ NOTE : For React & React native developer, you have
 
 </div>
 
-
 <Tabs
 defaultValue="Kotlin"
 groupId={"AndroidLanguage"}
@@ -401,7 +401,6 @@ After joining, you will be able to Manage Participant in a meeting.
 </div>
 
 </div>
-
 
 <Tabs
 defaultValue="Kotlin"
