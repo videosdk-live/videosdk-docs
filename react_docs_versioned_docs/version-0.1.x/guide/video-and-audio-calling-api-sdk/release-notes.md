@@ -7,6 +7,22 @@ pagination_label: Release Notes
 
 This page will keep you update all the releases of React JS SDK.
 
+## v0.1.43
+
+**Release Date** : 29th July 2022
+
+**Change log:**
+
+1.  Added `getVideoStats` and `getAudioStats` methods for getting particular participant streams statistics.
+
+    **SDK Reference** : [getVideoStats](https://docs.videosdk.live/react/api/sdk-reference/participant-class/methods#getvideostats)
+
+    **SDK Reference** : [getAudioStats](https://docs.videosdk.live/react/api/sdk-reference/participant-class/methods#getaudiostats)
+
+2.  Added `onMeetingStateChanged` event for getting state of meeting changes.
+
+    **SDK Reference** : [onMeetingStateChanged](https://docs.videosdk.live/react/api/sdk-reference/use-meeting/events#onmeetingstatechanged)
+
 ## v0.1.42
 
 **Release Date** : 23rd July 2022

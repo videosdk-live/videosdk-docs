@@ -53,7 +53,7 @@ const {
 
 ### onMediaStatusChanged()
 
-- `onMediaStatusChanged()` is a callback which gets triggered whenever a participant's video, audio is disabled or enabled.
+- `onMediaStatusChanged()` is a callback which gets triggered whenever a participant's video or audio is disabled or enabled.
 
 #### Example
 

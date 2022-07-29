@@ -105,9 +105,9 @@ pagination_label: Participant Class Methods
 - `object`
   - `jitter` : It represents the distortion in the stream.
   - `bitrate` : It represents the bitrate of the stream which is being transmitted.
-  - `totalPacketCount` : It represents the total packet count which were transmitted for that particiular stream
+  - `totalPacketCount` : It represents the total packet count which were transmitted for that particiular stream.
   - `totalPacketsLost` : It represents the total packets lost during the transimission of the stream.
-  - `roundTripTime` : It represents the time between the stream being reached to client from the server in milliseconds(ms)
+  - `roundTripTime` : It represents the time between the stream being reached to client from the server in milliseconds(ms).
   - `score` : It represents the overall quality of the stream of the participant scored from 0 to 10. Score between 0-5 is considered **Average**, between 5-8 it is considered **Good**, and above 8 it is considered **Excellent**.
 
 :::note
@@ -137,9 +137,9 @@ If you are getting high packet loss, try using the `setViewport()` for better ex
 - `object`
   - `jitter` : It represents the distortion in the stream.
   - `bitrate` : It represents the bitrate of the stream which is being transmitted.
-  - `totalPacketCount` : It represents the total packet count which were transmitted for that particiular stream
+  - `totalPacketCount` : It represents the total packet count which were transmitted for that particiular stream.
   - `totalPacketsLost` : It represents the total packets lost during the transimission of the stream.
-  - `roundTripTime` : It represents the time between the stream being reached to client from the server in milliseconds(ms)
+  - `roundTripTime` : It represents the time between the stream being reached to client from the server in milliseconds(ms).
   - `score` : It represents the overall quality of the stream of the participant scored from 0 to 10. Score between 0-5 is considered **Average**, between 5-8 it is considered **Good**, and above 8 it is considered **Excellent**.
 
 :::note
