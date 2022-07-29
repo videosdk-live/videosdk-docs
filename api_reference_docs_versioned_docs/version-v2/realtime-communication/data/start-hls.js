@@ -32,11 +32,13 @@ const startHLSstream = {
       key: "config",
       value: "{layout: {type: `SPOTLIGHT`, priority:`PIN`, gridSize: 5}}",
       description: `
+- orentation - hls stream orientation will be set to "landscape" by default, if you pass portrait orientation then it will stream hls in portrait mode.
 - **config**:
   - **layout**:
     - **type**: _"GRID"_ | _"SPOTLIGHT"_ | _"SIDEBAR"_
     - **priority**: _"SPEAKER"_ | _"PIN"_
     - **gridSize**: Number _\`max 25\`_
+  - **orentation**: _"landscape"_ | _"portrait"_
 `,
       required: false,
     },
