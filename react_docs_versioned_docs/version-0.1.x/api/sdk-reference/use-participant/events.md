@@ -51,4 +51,27 @@ const {
 
 ---
 
+### onMediaStatusChanged()
+
+- `onMediaStatusChanged()` is a callback which gets triggered whenever a participant's video, audio is disabled or enabled.
+
+#### Example
+
+```js
+function onMediaStatusChanged(data) {
+  const { kind, newStatus} = data;
+
+}
+
+const {
+  displayName
+  ...
+} = useParticipant(participantId,{
+  onMediaStatusChanged,
+  ...
+});
+```
+
+---
+
 </div>

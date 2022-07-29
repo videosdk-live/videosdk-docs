@@ -116,6 +116,11 @@ const participants = meeting.participants;
 - [stream-disabled](./events.md#stream-disabled)
 
 </div>
+<div class="col col--4 margin-bottom--sm" >
+
+- [media-state-changed](./events.md#media-state-changed)
+
+</div>
 
 </div>
 
