@@ -361,6 +361,11 @@ title: Video SDK useMeeting Hook
 - [onError](./events#onerror)
 
 </div>
+<div class="col col--4 margin-bottom--sm" >
+
+- [onMeetingStateChanged](./events#onmeetingstatechanged)
+
+</div>
 </div>
 
 </div>

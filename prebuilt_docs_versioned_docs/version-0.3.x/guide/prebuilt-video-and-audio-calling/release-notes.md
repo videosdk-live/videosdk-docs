@@ -9,7 +9,7 @@ This page will keep you update all the releases of Prebuilt SDK.
 
 ## v0.3.8
 
-**Release Date** : 8h July 2022
+**Release Date** : 8th July 2022
 
 **Change log** :
 
@@ -23,7 +23,7 @@ This page will keep you update all the releases of Prebuilt SDK.
 
 ## v0.3.7
 
-**Release Date** : 5h July 2022
+**Release Date** : 5th July 2022
 
 **Change log** :
 

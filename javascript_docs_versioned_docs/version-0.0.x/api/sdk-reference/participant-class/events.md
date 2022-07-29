@@ -33,4 +33,19 @@ participant.on("stream-disabled", () => {
 });
 ```
 
+### media-state-changed()
+
+- `media-state-changed` is a callback which gets triggered whenever a participant's video or audio is disabled or enabled.
+
+#### Example
+
+```js
+participant.on("stream-disabled", () => {
+  const { kind, newStatus } = data;
+  //
+});
+```
+
+---
+
 </div>

@@ -7,6 +7,22 @@ pagination_label: Release Notes
 
 This page will keep you update all the releases of JavaScript SDK.
 
+## v0.0.42
+
+**Release Date** : 29th July 2022
+
+**Change log:**
+
+1.  Added `getVideoStats` and `getAudioStats` methods for getting particular participant streams statistics.
+
+    **SDK Reference** : [getVideoStats](https://docs.videosdk.live/javascript/api/sdk-reference/participant-class/methods#getvideostats)
+
+    **SDK Reference** : [getAudioStats](https://docs.videosdk.live/javascript/api/sdk-reference/participant-class/methods#getaudiostats)
+
+2.  Added `meeting-state-changed` event for getting state of meeting changes.
+
+    **SDK Reference** : [meeting-state-changed](https://docs.videosdk.live/javascript/api/sdk-reference/meeting-class/events#meeting-state-changed)
+
 ## v0.0.41
 
 **Release Date** : 23rd July 2022

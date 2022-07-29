@@ -105,6 +105,16 @@ title: Video SDK useParticipant Hook
 - [switchTo](./methods#switchto)
 
 </div>
+<div class="col col--4 margin-bottom--sm" >
+
+- [getAudioStats](./methods.md#getaudiostats)
+
+</div>
+<div class="col col--4 margin-bottom--sm" >
+
+- [getVideoStats](./methods.md#getvideostats)
+
+</div>
 </div>
 
 ## Event Callbacks
@@ -118,6 +128,11 @@ title: Video SDK useParticipant Hook
 <div class="col col--4 margin-bottom--sm" >
 
 - [onStreamDisabled](./events#onstreamdisabled)
+
+</div>
+<div class="col col--4 margin-bottom--sm" >
+
+- [onMediaStateChanged](./events#onmediastatechanged)
 
 </div>
 </div>
