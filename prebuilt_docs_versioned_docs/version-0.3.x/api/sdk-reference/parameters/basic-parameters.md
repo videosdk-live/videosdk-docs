@@ -213,4 +213,14 @@ meeting.init({
 
 ---
 
+## maintainVideoAspectRatio
+
+- type: `Boolean`
+
+- Participant videos will maintain the aspect ration if `true`, so if the video stream is portrait it will be shown as portrait.
+
+- Default: `true`
+
+---
+
 </div>
