@@ -130,6 +130,11 @@ title: Video SDK useParticipant Hook
 - [onStreamDisabled](./events#onstreamdisabled)
 
 </div>
+<div class="col col--4 margin-bottom--sm" >
+
+- [onMediaStateChanged](./events#onmediastatechanged)
+
+</div>
 </div>
 
 </div>
