@@ -108,11 +108,19 @@ pagination_label: Participant Class Methods
   - `totalPacketCount` : It represents the total packet count which were transmitted for that particiular stream
   - `totalPacketsLost` : It represents the total packets lost during the transimission of the stream.
   - `roundTripTime` : It represents the time between the stream being reached to client from the server in milliseconds(ms)
-  - `score` : It represents the overall quality of the stream of the participant scored from 0 to 10.
+  - `score` : It represents the overall quality of the stream of the participant scored from 0 to 10. Score between 0-5 is considered **Average**, between 5-8 it is considered **Good**, and above 8 it is considered **Excellent**.
+
+:::note
+
+getVideoStats() will return the metrics for the participant at that given point of time and not average data of the complete meeting.
+
+To view the metrics for the complete meeting using the stats API documented [here](/api-reference/realtime-communication/fetch-session-quality-stats).
+
+:::
 
 :::info
 
-If you are getting `roundTripTime` greater than 300ms, try using a different region which is nearest to you. To know more about changing region [visit here](/api-reference/realtime-communication/create-room).
+If you are getting `roundTripTime` greater than 300ms, try using a different region which is nearest to your user. To know more about changing region [visit here](/api-reference/realtime-communication/create-room).
 
 If you are getting high packet loss, try using the `setViewport()` for better experience. To know more about setViewport() [visit here](/javascript/guide/video-and-audio-calling-api-sdk/features/set-viewport)
 
@@ -132,11 +140,19 @@ If you are getting high packet loss, try using the `setViewport()` for better ex
   - `totalPacketCount` : It represents the total packet count which were transmitted for that particiular stream
   - `totalPacketsLost` : It represents the total packets lost during the transimission of the stream.
   - `roundTripTime` : It represents the time between the stream being reached to client from the server in milliseconds(ms)
-  - `score` : It represents the overall quality of the stream of the participant scored from 0 to 10.
+  - `score` : It represents the overall quality of the stream of the participant scored from 0 to 10. Score between 0-5 is considered **Average**, between 5-8 it is considered **Good**, and above 8 it is considered **Excellent**.
+
+:::note
+
+getAudioStats() will return the metrics for the participant at that given point of time and not average data of the complete meeting.
+
+To view the metrics for the complete meeting using the stats API documented [here](/api-reference/realtime-communication/fetch-session-quality-stats).
+
+:::
 
 :::info
 
-If you are getting `roundTripTime` greater than 300ms, try using a different region which is nearest to you. To know more about changing region [visit here](/api-reference/realtime-communication/create-room).
+If you are getting `roundTripTime` greater than 300ms, try using a different region which is nearest to your user. To know more about changing region [visit here](/api-reference/realtime-communication/create-room).
 
 :::
 
