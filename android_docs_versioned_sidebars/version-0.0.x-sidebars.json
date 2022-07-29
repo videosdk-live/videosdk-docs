@@ -9,7 +9,6 @@
         "guide/video-and-audio-calling-api-sdk/android-sdk",
         "guide/video-and-audio-calling-api-sdk/server-setup",
         "guide/video-and-audio-calling-api-sdk/release-notes"
-
       ],
       "collapsed": false
     },
@@ -56,10 +55,15 @@
             "guide/video-and-audio-calling-api-sdk/features/custom-track/custom-video-track",
             "guide/video-and-audio-calling-api-sdk/features/custom-track/custom-audio-track",
             "guide/video-and-audio-calling-api-sdk/features/custom-track/custom-screen-share-track"
-      
           ]
         }
-
+      ]
+    },
+    {
+      "type": "category",
+      "label": "Extras",
+      "items": [
+        "guide/video-and-audio-calling-api-sdk/extras/banuba-integration"
       ]
     }
   ],

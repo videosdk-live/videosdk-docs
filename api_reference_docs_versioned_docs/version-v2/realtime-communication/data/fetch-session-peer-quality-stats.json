@@ -1,0 +1,87 @@
+{
+  "fetchSessionPeerQualityStats": {
+    "title": "Fetch Participant Quality Stats",
+    "description": "This API lets you fetch the quality statistics of the session using the sessionId.",
+    "headers": [
+      {
+        "key": "Authorization",
+        "value": "$YOUR_TOKEN"
+      },
+      {
+        "key": "Content-Type",
+        "value": "application/json"
+      }
+    ],
+    "methodType": "GET",
+    "postParameters": [],
+    "queryParameters": [],
+    "parameters": [
+      {
+        "key": "sessionId",
+        "description": "This is ID of the session you want to fetch quality statistics for.",
+        "required": true
+      },
+      {
+        "key": "participantId",
+        "description": "This is ID of the participant for which you want to fetch quality statistics.",
+        "required": true
+      }
+    ],
+    "apiEndpoint": "https://api.videosdk.live/v2/sessions/${sessionId}/participant/${participantId}/stats",
+    "response": {
+      "sessionId": "62d13ccea0f6ac85649d7931",
+      "meetingId": "61bw-723k-p4mp",
+      "participantId": "fj9jxhtw",
+      "participantName": "rajan",
+      "deviceInfo": {
+        "deviceName": "Chrome",
+        "deviceVersion": "102.0.0.0"
+      },
+      "sdkInfo": {
+        "sdkName": "prebuilt",
+        "sdkVersion": "0.3.10"
+      },
+      "location": {
+        "country": "unknown",
+        "city": "unknown",
+        "region": "unknown"
+      },
+      "network": {
+        "asn": "unknown",
+        "org": "unknown"
+      },
+      "stats": [
+        {
+          "time": "2022-07-15T10:10:18.601Z",
+          "recvAudioPacketLost": 0,
+          "recvVideoPacketLost": 0,
+          "sendAudioPacketLost": 0,
+          "sendVideoPacketLost": 0,
+          "averageAudioRtt": 0.8544921875,
+          "averageVideoRtt": 0.244140625,
+          "averageAudioJitter": 0,
+          "averageVideoJitter": 2,
+          "averageSendAudioBitrate": 60218,
+          "averageSendVideoBitrate": 103900,
+          "averageRecvAudioBitrate": 60054,
+          "averageRecvVideoBitrate": 307229,
+          "qualityScore": {
+            "audio": 4.42,
+            "video": 3.46
+          }
+        }
+      ],
+      "resolutionUsage": [
+        {
+          "180": 0,
+          "360": 1,
+          "720": 0,
+          "1080": 0,
+          "1440": 0,
+          "2160": 0,
+          "time": "2022-07-15T10:10:18.848Z"
+        }
+      ]
+    }
+  }
+}

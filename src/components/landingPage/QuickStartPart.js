@@ -19,7 +19,7 @@ export default function QuickstartPart() {
       showBadge: true,
     },
     {
-      title: "Prebulit SDK",
+      title: "Prebuilt SDK",
       description:
         "A pre-built solution with code showing you how to integrate video calling to your platform in 10 minutes.",
       backgroundColor:
@@ -42,7 +42,7 @@ export default function QuickstartPart() {
         "linear-gradient(99.37deg, #6246FB 0.88%, #4AA5FD 102.26%)",
     },
     {
-      title: "Prebulit SDK",
+      title: "Prebuilt SDK",
       description:
         "Integrate the pre-build video calling solution into your app in 10 minutes.",
       backgroundColor:

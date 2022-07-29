@@ -44,6 +44,7 @@
       "items": [
         "guide/prebuilt-video-and-audio-calling/features/record-meeting",
         "guide/prebuilt-video-and-audio-calling/features/go-live-social-media",
+        "guide/prebuilt-video-and-audio-calling/features/go-live-hls",
         "guide/prebuilt-video-and-audio-calling/features/change-layout",
         "guide/prebuilt-video-and-audio-calling/features/customize-branding",
         "guide/prebuilt-video-and-audio-calling/features/customize-permissions",
@@ -74,6 +75,7 @@
         "api/sdk-reference/parameters/advance-parameters/permissions",
         "api/sdk-reference/parameters/advance-parameters/branding",
         "api/sdk-reference/parameters/advance-parameters/layout",
+        "api/sdk-reference/parameters/advance-parameters/hls",
         "api/sdk-reference/parameters/advance-parameters/live-stream",
         "api/sdk-reference/parameters/advance-parameters/recording",
         "api/sdk-reference/parameters/advance-parameters/left-screen"

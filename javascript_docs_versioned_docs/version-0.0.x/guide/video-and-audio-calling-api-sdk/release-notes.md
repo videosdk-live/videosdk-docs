@@ -7,6 +7,30 @@ pagination_label: Release Notes
 
 This page will keep you update all the releases of JavaScript SDK.
 
+## v0.0.41
+
+**Release Date** : 23rd July 2022
+
+**Change log** :
+
+1. Set Audio packet priority high.
+
+2. Internal dependency update.
+
+---
+
+## v0.0.40
+
+**Release Date** : 19th July 2022
+
+**Change log** :
+
+1. Recording and Livestream status event added.
+
+   **Docs** : [Recording Events](https://docs.videosdk.live/javascript/guide/video-and-audio-calling-api-sdk/features/recording-meeting)
+
+---
+
 ## v0.0.36
 
 **Release Date** : 1st July 2022

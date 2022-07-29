@@ -64,7 +64,7 @@ Above mentioned encoder configurations are valid for both, landscape as well as 
 
 :::note
 
-For banuba integraion with videosdk.live android sdk,please visit [Banuba Intergation with Android-SDK](https://github.com/videosdk-live/videosdk-rtc-android-sdk-banuba-example) on Github for detailed step wise explanation and sample code.
+For banuba integraion with videosdk.live android sdk,please visit [Banuba Intergation with Android-SDK](../../extras/banuba-integration.md)
 
 :::
 

@@ -7,6 +7,30 @@ pagination_label: Release Notes
 
 This page will keep you update all the releases of React JS SDK.
 
+## v0.1.42
+
+**Release Date** : 23rd July 2022
+
+**Change log** :
+
+1. Set Audio packet priority high.
+
+2. Internal dependency update.
+
+---
+
+## v0.1.41
+
+**Release Date** : 19th July 2022
+
+**Change log** :
+
+1. Recording and Livestream status event added.
+
+   **Docs** : [Recording Events](https://docs.videosdk.live/react/api/sdk-reference/use-meeting/events#onrecordingstatechanged)
+
+---
+
 ## v0.1.37
 
 **Release Date** : 1st July 2022

@@ -30,7 +30,7 @@ const startLivestream = {
     },
     {
       key: "outputs",
-      value: "[ {'streamKey': 'Platform_StreamKey', 'url': 'RTMP-URL'} ]",
+      value: [{ streamKey: "Platform_StreamKey", url: "RTMP-URL" }],
       description:
         "**Array of object** which contains multiple platfroms `streamKey` and `url`.",
       required: true,

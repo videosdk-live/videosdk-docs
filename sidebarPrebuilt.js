@@ -43,6 +43,7 @@ module.exports = {
       items: [
         "guide/prebuilt-video-and-audio-calling/features/record-meeting",
         "guide/prebuilt-video-and-audio-calling/features/go-live-social-media",
+        "guide/prebuilt-video-and-audio-calling/features/go-live-hls",
         "guide/prebuilt-video-and-audio-calling/features/customize-branding",
         "guide/prebuilt-video-and-audio-calling/features/customize-permissions",
         "guide/prebuilt-video-and-audio-calling/features/whitelist-domain",
