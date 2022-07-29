@@ -89,6 +89,16 @@ const participants = meeting.participants;
 - [unpin](./methods.md#unpin)
 
 </div>
+<div class="col col--4 margin-bottom--sm" >
+
+- [getAudioStats](./methods.md#getaudiostats)
+
+</div>
+<div class="col col--4 margin-bottom--sm" >
+
+- [getVideoStats](./methods.md#getvideostats)
+
+</div>
 
 </div>
 

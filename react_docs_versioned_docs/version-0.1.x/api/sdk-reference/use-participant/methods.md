@@ -126,4 +126,50 @@ useMeeting({
 });
 ```
 
+---
+
+### getVideoStats()
+
+- `getVideoStats()` will return an object which will contain details regarding the participant's critical video metrics such as **Jitter**, **Packet Loss**, **Quality Score** etc.
+
+#### Returns
+
+- `object`
+  - `jitter` : It represents the distortion in the stream.
+  - `bitrate` : It represents the bitrate of the stream which is being transmitted.
+  - `totalPacketCount` : It represents the total packet count which were transmitted for that particiular stream
+  - `totalPacketsLost` : It represents the total packets lost during the transimission of the stream.
+  - `roundTripTime` : It represents the time between the stream being reached to client from the server in milliseconds(ms)
+  - `score` : It represents the overall quality of the stream of the participant scored from 0 to 10.
+
+:::info
+
+If you are getting `roundTripTime` greater than 300ms, try using a different region which is nearest to you. To know more about changing region [visit here](/api-reference/realtime-communication/create-room).
+
+If you are getting high packet loss, try using the `setViewport()` for better experience. To know more about setViewport() [visit here](/react/guide/video-and-audio-calling-api-sdk/features/set-viewport)
+
+:::
+
+---
+
+### getAudioStats()
+
+- `getAudioStats()` will return an object which will contain details regarding the participant's critical audio metrics such as **Jitter**, **Packet Loss**, **Quality Score** etc.
+
+#### Returns
+
+- `object`
+  - `jitter` : It represents the distortion in the stream.
+  - `bitrate` : It represents the bitrate of the stream which is being transmitted.
+  - `totalPacketCount` : It represents the total packet count which were transmitted for that particiular stream
+  - `totalPacketsLost` : It represents the total packets lost during the transimission of the stream.
+  - `roundTripTime` : It represents the time between the stream being reached to client from the server in milliseconds(ms)
+  - `score` : It represents the overall quality of the stream of the participant scored from 0 to 10.
+
+:::info
+
+If you are getting `roundTripTime` greater than 300ms, try using a different region which is nearest to you. To know more about changing region [visit here](/api-reference/realtime-communication/create-room).
+
+:::
+
 </div>

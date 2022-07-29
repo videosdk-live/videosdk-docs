@@ -678,4 +678,54 @@ const {
 });
 ```
 
+---
+
+### onMeetingStateChanged()
+
+- This event will be triggered when state of meeting changes.
+- It will pass **`state`** as an event callback parameter which will indicate current state of the meeting.
+- All available states are `CONNECTING`, `CONNECTED`, `FAILED`, `DISCONNECTED`, `CLOSING`, `CLOSED`.
+
+#### Event callback parameters
+
+- **data**: { **state**: String }
+  - **state**: String
+
+#### Example
+
+```javascript
+function onMeetingStateChanged(data) {
+  const { state } = data;
+
+  swtich(state){
+    case 'CONNECTING':
+      console.log("Meeting is Connecting" );
+      break;
+    case 'CONNECTED':
+      console.log("Meeting is Connected" );
+      break;
+    case 'FAILED':
+      console.log("Meeting connection failed" );
+      break;
+    case 'DISCONNECTED':
+      console.log("Meeting connection disconnected abruptly" );
+      break;
+    case 'CLOSING':
+      console.log("Meeting is closing" );
+      break;
+    case 'CLOSED':
+      console.log("Meeting connection closed" );
+      break;
+  }
+}
+
+const {
+  meetingId
+  ...
+} = useMeeting({
+  onMeetingStateChanged,
+  ...
+});
+```
+
 </div>

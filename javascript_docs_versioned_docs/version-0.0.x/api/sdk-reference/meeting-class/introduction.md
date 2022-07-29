@@ -285,6 +285,12 @@ import events from "./../data/meeting-class/events.json";
 
 </div>
 
+<div class="col col--4 margin-bottom--sm" >
+
+- [meeting-state-changed](./events.md#meeting-state-changed)
+
+</div>
+
 </div>
 
 </div>
