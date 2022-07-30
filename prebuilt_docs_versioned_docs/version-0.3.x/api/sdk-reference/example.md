@@ -69,6 +69,7 @@ meeting.init({
     toggleParticipantWebcam: true, // Can toggle other participant's webcam
     toggleParticipantScreenshare: true, // Can toggle other partcipant's screen share
     toggleParticipantMode: true, // Can toggle other participant's mode
+    canCreatePoll: true, // Can create a poll
     toggleHls: true, // Can toggle Start HLS button
     drawOnWhiteboard: true, // Can draw on whiteboard
     toggleWhiteboard: true, // Can toggle whiteboard
