@@ -54,6 +54,12 @@ title: Permissions Parameters
 
 - `removeParticipant` represents whether participant can remove other participant or not.
 
+### canCreatePoll
+
+- type: `Boolean`
+
+- `canCreatePoll` represents whether participant can create a poll or not.
+
 ### endMeeting
 
 - type: `Boolean`
@@ -100,6 +106,7 @@ meeting.init({
     toggleParticipantWebcam: true,
     toggleParticipantMic: true,
     toggleParticipantMode: true,
+    canCreatePoll: true,
     toggleParticipantScreenshare: true,
     removeParticipant: true,
     endMeeting: true,
