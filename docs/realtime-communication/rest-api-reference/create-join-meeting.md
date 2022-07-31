@@ -61,7 +61,7 @@ var options = {
     authorization: `${YOUR_JWT_TOKEN}`,
     "Content-Type": "application/json",
   },
-  body: JSON.stringify({ region: "sg001", userMeetingId: "unicorn" }), // region: sg001 || uk001 || us001
+  body: JSON.stringify({ region: "sg001", userMeetingId: "unicorn" }), // region: sg001 || sg002 || in002 || eu001 || us001
 };
 
 request(options, function (error, response, body) {
