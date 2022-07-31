@@ -7,14 +7,16 @@ pagination_label: Release Notes
 
 This page will keep you update all the releases of Prebuilt SDK.
 
-## v0.3.12
+## v0.3.13
 
 **Release Date** : 31th July 2022
 
 **Change log** :
 
 1. Create a poll(BETA) release.
-2. any participant can create a poll by passing `canCreatePoll` true.
+2. Any participant can create a poll by passing `canCreatePoll` true.
+3. Maintain webcam streams aspect ratio config added `maintainVideoAspectRatio` true.
+4. Participant network ststus bar provided in Participant grid view.
 
 **Bug Fix** : -
 
