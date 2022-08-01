@@ -569,6 +569,12 @@ module.exports = {
     },
     {
       type: "category",
+      label: "User Dashboard",
+      items: ["tutorials/user-dashboard/recording-storage-config"],
+      collapsed: true,
+    },
+    {
+      type: "category",
       label: "Audio/Video Conferencing SDK",
       items: [
         {
