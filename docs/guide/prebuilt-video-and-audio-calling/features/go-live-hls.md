@@ -25,10 +25,17 @@ This guide will provide an overview of how participant can start and stop broadc
 ### HLS attributes
 
 - `mode`: It should be any of `VIEWER` or `CONFERENCE`, by default is set to `CONFERENCE`
-- `toggleHLS` : When set to true it will enable you to click on `Start HLS` button.
-- `hls.enabled` : When set to true , you can see `Start HLS` button.
-- `hls.autoStart`: If it is true then HLS will start automatically when the meeting starts, default value is false (You can't start HLS during the meeting).
-- `toggleParticipantMode`: When set to true, you can toggle other partcipant mode from an ongoing meeting by clicking on `Add as a Cohost` Icon button.
+- `toggleHLS` : When set to `true` it will enable you to click on `Start HLS` button.
+- `hls.enabled` : When set to `true`, you can see `Start HLS` button.
+- `hls.autoStart`: If it is `true` then HLS will start automatically when the meeting starts, default value is false (You can't start HLS during the meeting).
+- `hls.playerControlsVisible` : If it is `true` then participant can view controls for the interactive meeting player.
+- `toggleParticipantMode`: When set to `true`, you can toggle other partcipant mode from an ongoing meeting by clicking on `Add as a Cohost` Icon button.
+
+:::note
+
+`hls.playerControlsVisible` parameter will only work if the mode is set to `viewer`, for `conference` mode there will not be any interactive meeting player hence `hls.playerControlsVisible` will be ignored if mode is set to `conference`.
+
+:::
 
 ## Better Understanding of Modes
 
@@ -80,6 +87,9 @@ when host start HLS you can get hls stream in your player and you can see that s
 ```js title="viewer.html"
 const config = {
   // ...
+  hls: {
+    playerControlsVisible: true,
+  },
   mode: "VIEWER", // VIEWER || CONFERENCE
   // ...
 };
