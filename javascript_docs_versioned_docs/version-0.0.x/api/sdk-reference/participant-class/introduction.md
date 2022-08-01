@@ -118,7 +118,7 @@ const participants = meeting.participants;
 </div>
 <div class="col col--4 margin-bottom--sm" >
 
-- [media-state-changed](./events.md#media-state-changed)
+- [media-status-changed](./events.md#media-status-changed)
 
 </div>
 
