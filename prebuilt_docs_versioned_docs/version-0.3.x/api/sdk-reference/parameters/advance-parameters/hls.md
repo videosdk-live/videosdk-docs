@@ -23,6 +23,12 @@ title: HLS Feature Parameter
 
 - `hls.autostart` autostart hls if set to `true` when meeting gets started.
 
+### playerControlsVisible
+
+- type: `Boolean`
+
+- `hls.playerControlsVisible` : If it is `true` then participant can view controls for the interactive meeting player.
+
 ### toggleParticipantMode
 
 - type: `Boolean`
@@ -41,12 +47,19 @@ title: HLS Feature Parameter
 
 - `mode` represents the mode of participant which can be `VIEWER` | `CONFERENCE`
 
+:::note
+
+`hls.playerControlsVisible` parameter will only work if the mode is set to `viewer`, for `conference` mode there will not be any interactive meeting player hence `hls.playerControlsVisible` will be ignored if mode is set to `conference`.
+
+:::
+
 ```js
 meeting.init({
   //other params
   hls: {
     enabled: true,
     autoStart: false,
+    playerControlsVisible: true,
   },
   permissions: {
     //  ...other permissions
