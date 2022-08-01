@@ -19,11 +19,11 @@ slug: live-poll
 
 # Live Poll
 
-Using this feature a host to create polls and guest participant can submit their opnions on that poll. This guide will provide an overview of how participant can create poll.
+Using this feature a host can create polls and guest participant can submit their opnions on that poll. This guide will provide an overview of how participant can create poll.
 
 ### Poll attributes
 
-- `canCreatePoll` : When set to `true`, you can create poll in meeting.
+- `canCreatePoll` : When set to `true`, you can create a poll in the meeting.
 
 ### How it works ?
 
@@ -35,7 +35,7 @@ Using this feature a host to create polls and guest participant can submit their
 
 ![Go live with VideoSDK](/img/prebuilt/create-poll.png)
 
-- Guest Partcipant who submit their opnions on that poll as shown in image.
+- Guest Partcipant can submit their opnions on the poll and can also see the result of their previous submitted polls as shown in image.
 
 ![Go live with VideoSDK](/img/prebuilt/poll-list.png)
 
