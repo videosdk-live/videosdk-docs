@@ -9,16 +9,14 @@ This page will keep you update all the releases of Prebuilt SDK.
 
 ## v0.3.13
 
-**Release Date** : 31th July 2022
+**Release Date** : 31st July 2022
 
 **Change log** :
 
 1. Create a poll(BETA) release.
 2. Any participant can create a poll by passing `canCreatePoll` true.
 3. Maintain webcam streams aspect ratio config added `maintainVideoAspectRatio` true.
-4. Participant network ststus bar provided in Participant grid view.
-
-**Bug Fix** : -
+4. Participant network status bar provided in Participant grid view.
 
 ## v0.3.11
 
@@ -26,9 +24,7 @@ This page will keep you update all the releases of Prebuilt SDK.
 
 **Change log** :
 
-1. In Hls for visible controls you can pass `playerControlsVisible` true. so that participant can view control of player.
-
-**Bug Fix** : -
+In Hls for visible controls you can pass `playerControlsVisible` true. so that participant can view control of player.
 
 ## v0.3.10
 
@@ -38,10 +34,8 @@ This page will keep you update all the releases of Prebuilt SDK.
 
 1. HLS can be enabled by any participant with permission `hls.enabled`.
 2. Participate can toggle other participant's mode by passing `toggleParticipantMode` true.
-3. Hls can be toggle by any participant with passing `toggleHls`.
-4. Hls mode added with this parameter `mode`. it can be `VIWER` or `CONFERENCE`.
-
-**Bug Fix** : -
+3. HLS can be toggle by any participant with passing `toggleHls`.
+4. HLS mode added with this parameter `mode`. It can be `VIEWER` or `CONFERENCE`.
 
 ## v0.3.9
 
@@ -49,9 +43,7 @@ This page will keep you update all the releases of Prebuilt SDK.
 
 **Change log** :
 
-1. Participant can now toggle other participant screenShare if they are having permission `partcipantCanToogleOtherScreenShare`.
-
-**Bug Fix** : -
+Participant can now toggle other participant screenShare if they are having permission `partcipantCanToogleOtherScreenShare`.
 
 ---
 

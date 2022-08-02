@@ -36,7 +36,7 @@ const startRecording = {
   - **layout**:
     - **type**: _"GRID"_ | _"SPOTLIGHT"_ | _"SIDEBAR"_
     - **priority**: _"SPEAKER"_ | _"PIN"_
-    - **gridSize**: Number _\`max 25\`_
+    - **gridSize**: Number _\`max 4\`_
 `,
       required: false,
     },
