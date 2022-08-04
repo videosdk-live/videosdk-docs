@@ -19,7 +19,6 @@ slug: screenshare
 # Share Your Screen
 
 Whenever any participant wants to share either the complete screen, a specific window or, a browser tab, they can simply do it with videoSDK Meeting.
-For Mobile Devices a complete screen will be share.
 
 This guide will provide an overview of how to use enable and disable Screen Share in a meeting.
 
@@ -37,3 +36,56 @@ const onPress = () => {
   meeting?.disableScreenShare();
 };
 ```
+
+### Screen Share with Audio
+
+To do screen share with audio, select the **Share tab audio** option when sharing the chrome tab as shown below.
+
+<center>
+
+![Screen Share with Audio](/img/screenshare-with-audio.png)
+
+</center>
+
+<!-- When screen share with audio is done, you will receive a audio stream in the `stream-enabled` callback with kind as `shareAudio`. -->
+
+After clicking `Share` button, you will receive a selected tab audio stream in the participant's screenShareAudioStream.
+
+```js
+const { isLocal, screenShareStream, screenShareAudioStream, screenShareOn } =
+  useParticipant(presenterId);
+
+const audioPlayer = useRef();
+
+useEffect(() => {
+  if (
+    !isLocal &&
+    audioPlayer.current &&
+    screenShareOn &&
+    screenShareAudioStream
+  ) {
+    const mediaStream = new MediaStream();
+    mediaStream.addTrack(screenShareAudioStream.track);
+
+    audioPlayer.current.srcObject = mediaStream;
+    audioPlayer.current.play().catch((err) => {
+      if (
+        err.message ===
+        "play() failed because the user didn't interact with the document first. https://goo.gl/xX8pDD"
+      ) {
+        console.error("audio" + err.message);
+      }
+    });
+  } else {
+    audioPlayer.current.srcObject = null;
+  }
+}, [screenShareAudioStream, screenShareOn, isLocal]);
+
+return <audio autoPlay playsInline controls={false} ref={audioPlayer} />;
+```
+
+:::note
+
+Screen Share with Audio feature is only supported while **sharing chrome tab on Google Chrome** browser only.
+
+:::
