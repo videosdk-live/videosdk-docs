@@ -19,7 +19,6 @@ slug: screenshare
 # Share Your Screen
 
 Whenever any participant wants to share either the complete screen, a specific window or, a browser tab, they can simply do it with videoSDK Meeting.
-For Mobile Devices a complete screen will be share.
 
 This guide will provide an overview of how to use enable and disable Screen Share in a meeting.
 
@@ -41,27 +40,53 @@ const onPress = () => {
 };
 ```
 
-<!-- ## How to Create App Group in Apple Store
-### Step 1 : Go to App store
+### Screen Share with Audio
 
-Navigate to [App Group](https://developer.apple.com/account/resources/identifiers/list/applicationGroup) and click on identifier.
+To do screen share with audio, select the **Share tab audio** option when sharing the chrome tab as shown below.
 
-![IOS Screen Share](/img/ios-screenshare/step14-xcode.png)
+<center>
 
-### Step 2 : Choose App Groups
+![Screen Share with Audio](/img/screenshare-with-audio.png)
 
-Select **App Groups** from identifier and click on continue.
-![IOS Screen Share](/img/ios-screenshare/step15-xcode.png)
+</center>
 
-### Step 3 : Add identifier
+<!-- When screen share with audio is done, you will receive a audio stream in the `stream-enabled` callback with kind as `shareAudio`. -->
 
-Add description and identifier, then click continue.
+After clicking `Share` button, you will receive a selected tab audio stream in the participant `stream-enabled` callback with kind as `shareAudio`.
 
-**Note** : Make sure the identifier prefix should be **group**, for example **group.com.ScreenBroadcast**.
+```js
+participant.on("stream-enabled", (stream) => {
+  if (stream.kind == "shareAudio") {
+    const audioElem = createShareAudioElement(participant.id, stream);
 
-![IOS Screen Share](/img/ios-screenshare/step16-xcode.png)
+    //add audioElem to your container
+    container.appendChild(audioElem);
+  }
+});
 
-### Step 4 : Register identifier
+// creating audio element
+function createShareAudioElement(pId, stream) {
+  if (pId == meeting.localParticipant.id) return;
 
-Now, click on Register button to register this group.
-![IOS Screen Share](/img/ios-screenshare/step17-xcode.png) -->
+  let audioElement = document.createElement("audio");
+  audioElement.setAttribute("autoPlay", false);
+  audioElement.setAttribute("playsInline", "false");
+  audioElement.setAttribute("controls", "false");
+  audioElement.setAttribute("id", `a-share-${pId}`);
+  audioElement.style.display = "none";
+
+  const mediaStream = new MediaStream();
+  mediaStream.addTrack(stream.track);
+  audioElement.srcObject = mediaStream;
+  audioElement
+    .play()
+    .catch((error) => console.error("audioElem.play() failed", error));
+  return audioElement;
+}
+```
+
+:::note
+
+Screen Share with Audio feature is only supported while **sharing chrome tab on Google Chrome** browser only.
+
+:::
