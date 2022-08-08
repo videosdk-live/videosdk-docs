@@ -30,6 +30,7 @@ Video SDK enables easy to use one-to-one and group call support with voice only 
 | RTMP Streaming       | Enables going live to RTMP compatible streaming services such as YouTube or Twitch. |
 | Cloud Recording      | Record and store composed cloud recordings to your favorate storage provider.       |
 | Dynamic Layout       | Chage layout of meeting, recording and live streaming on-fly.                       |
+| HLS Streaming        | HLS Streaming allows for scaling to millions of viewers in near real time.          |
 
 ## Known issues
 
