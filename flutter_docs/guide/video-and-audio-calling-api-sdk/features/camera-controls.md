@@ -45,6 +45,4 @@ ElevatedButton(
   },
   child: Text("changeWebcam"),
 ),
-
-// changeWebcam() method is coming soon in flutter.
 ```

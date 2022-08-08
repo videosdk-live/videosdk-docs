@@ -144,20 +144,8 @@ class MyApp extends StatelessWidget {
             webcamEnabled: "<Flag-to-enable-webcam>",
             token: "<Authentication-token>",
             builder: (Meeting: meeting) {
-
-                return Container(
-                    child: Column(
-                        children: [
-                            ListParticipants(
-                                participants: meeting.participants,
-                            ),
-                            LocalParticipant(
-                                localParticipant: meeting.localParticipant,
-                                meeting: meeting as Meeting,
-                            )
-                        ],
-                    ),
-                );
+                // Do Something
+                return Container(); // Returning widget
             }
         );
     }
