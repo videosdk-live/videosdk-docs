@@ -7,6 +7,22 @@ pagination_label: Release Notes
 
 This page will keep you update all the releases of Prebuilt SDK.
 
+## v0.3.15
+
+**Release Date** : 6th August 2022
+
+**Change log** :
+
+While Screen sharing, participant can share audio of their screen.
+
+## v0.3.14
+
+**Release Date** : 6th August 2022
+
+**Change log** :
+
+Few edge cases have been covered in the poll.
+
 ## v0.3.13
 
 **Release Date** : 31st July 2022
