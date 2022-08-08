@@ -43,3 +43,19 @@ const config = {
   // ...
 };
 ```
+
+### Screen Share with Audio
+
+To do screen share with audio, select the **Share tab audio** option when sharing the chrome tab as shown below.
+
+<center>
+
+![Screen Share with Audio](/img/screenshare-with-audio.png)
+
+</center>
+
+:::note
+
+Screen Share with Audio feature is only supported while **sharing chrome tab on Google Chrome** browser only.
+
+:::
