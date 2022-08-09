@@ -45,7 +45,7 @@ This page will keep you update all the releases of iOS SDK.
 
 ## v1.2.7
 
-**Release Date** : 18th Apr 2022
+**Release Date** : 18th April 2022
 
 **Change log** : None
 
@@ -57,7 +57,7 @@ This page will keep you update all the releases of iOS SDK.
 
 ## v1.2.6 & v1.2.5
 
-**Release Date** : 25th Mar 2022
+**Release Date** : 25th March 2022
 
 **Change log** :
 
@@ -71,7 +71,7 @@ This page will keep you update all the releases of iOS SDK.
 
 ## v1.2.4
 
-**Release Date** : 28th Jan 2022
+**Release Date** : 28th January 2022
 
 **Change log** :
 
@@ -83,7 +83,7 @@ This page will keep you update all the releases of iOS SDK.
 
 ## v1.2.3
 
-**Release Date** : 3rd Jan 2022
+**Release Date** : 3rd January 2022
 
 **Change log** :
 
@@ -93,7 +93,7 @@ This page will keep you update all the releases of iOS SDK.
 
 ## v1.2.2
 
-**Release Date** : 23rd Dec 2021
+**Release Date** : 23rd December 2021
 
 **Change log** :
 
@@ -103,7 +103,7 @@ This page will keep you update all the releases of iOS SDK.
 
 ## v1.2.1
 
-**Release Date** : 23rd Dec 2021
+**Release Date** : 23rd December 2021
 
 **Change log** :
 
@@ -119,7 +119,7 @@ This page will keep you update all the releases of iOS SDK.
 
 ## v1.2.0
 
-**Release Date** : 18th Nov 2021
+**Release Date** : 18th November 2021
 
 **Change log** :
 
@@ -129,7 +129,7 @@ This page will keep you update all the releases of iOS SDK.
 
 ## v1.1.0
 
-**Release Date** : 8th Nov 2021
+**Release Date** : 8th November 2021
 
 **Change log** :
 
@@ -151,7 +151,7 @@ This page will keep you update all the releases of iOS SDK.
 
 ## v1.0.0
 
-**Release Date** : 8th Nov 2021
+**Release Date** : 8th November 2021
 
 **Change log** :
 

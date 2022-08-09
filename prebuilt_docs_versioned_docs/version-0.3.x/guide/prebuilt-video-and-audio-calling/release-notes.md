@@ -7,15 +7,36 @@ pagination_label: Release Notes
 
 This page will keep you update all the releases of Prebuilt SDK.
 
+## v0.3.15
+
+**Release Date** : 6th August 2022
+
+**Change log** :
+
+1. While Screen sharing, participant can share audio of their chrome tab.
+
+   **Docs** : [Screen Share with Audio](https://docs.videosdk.live/prebuilt/guide/prebuilt-video-and-audio-calling/features/screenshare#screen-share-with-audio)
+
+## v0.3.14
+
+**Release Date** : 6th August 2022
+
+**Change log** :
+
+1. Few edge cases have been covered in the poll.
+
 ## v0.3.13
 
 **Release Date** : 31st July 2022
 
 **Change log** :
 
-1. Create a poll(BETA) release.
+1. [Live Poll (BETA)](https://docs.videosdk.live/prebuilt/guide/prebuilt-video-and-audio-calling/features/live-poll) Release.
+
 2. Any participant can create a poll by passing `canCreatePoll` true.
+
 3. Maintain webcam streams aspect ratio config added `maintainVideoAspectRatio` true.
+
 4. Participant network status bar provided in Participant grid view.
 
 ## v0.3.11
@@ -24,7 +45,7 @@ This page will keep you update all the releases of Prebuilt SDK.
 
 **Change log** :
 
-In Hls for visible controls you can pass `playerControlsVisible` true. so that participant can view control of player.
+1. In HLS, for visible player controls you can pass `playerControlsVisible` true. so that participant can view control of player.
 
 ## v0.3.10
 
@@ -33,19 +54,12 @@ In Hls for visible controls you can pass `playerControlsVisible` true. so that p
 **Change log** :
 
 1. HLS can be enabled by any participant with permission `hls.enabled`.
+
 2. Participate can toggle other participant's mode by passing `toggleParticipantMode` true.
+
 3. HLS can be toggle by any participant with passing `toggleHls`.
+
 4. HLS mode added with this parameter `mode`. It can be `VIEWER` or `CONFERENCE`.
-
-## v0.3.9
-
-**Release Date** : 8th July 2022
-
-**Change log** :
-
-Participant can now toggle other participant screenShare if they are having permission `partcipantCanToogleOtherScreenShare`.
-
----
 
 ## v0.3.8
 
@@ -57,7 +71,7 @@ Participant can now toggle other participant screenShare if they are having perm
 
 **Bug Fix** :
 
-1. Join screen is now responsive if `title` or `meetingUrl` is not provided.
+2. Join screen is now responsive if `title` or `meetingUrl` is not provided.
 
 ---
 
@@ -79,7 +93,7 @@ Participant can now toggle other participant screenShare if they are having perm
 
 ## v0.3.6
 
-**Release Date** : 7th Jun 2022
+**Release Date** : 7th June 2022
 
 **Change log** : None
 
@@ -101,7 +115,7 @@ Participant can now toggle other participant screenShare if they are having perm
 
 1. Throw error when device or browser does not support audio or video communication.
 
-2. Resolved error `No peers found for the Data consumer` while start recording/ livestream/hls.
+2. Resolved error `No peers found for the Data consumer` while start recording/ livestream/HLS.
 
 ---
 
@@ -111,7 +125,7 @@ Participant can now toggle other participant screenShare if they are having perm
 
 **Change log** :
 
-1. Region support added for new meetings
+1. Region support added for new meetings.
 
 **Bug Fix** :
 
@@ -119,20 +133,23 @@ Participant can now toggle other participant screenShare if they are having perm
 
 ---
 
-## v0.3.0
+## v0.3.1
 
 **Release Date** : 19th March 2022
 
 **Change log** :
 
-1. Change layout dynamically to all participants
-2. Changing layout will reflect to recorders
-3. Livestream configurations options added
-4. `Go Live` button added, so that participant can start live stream while running meeting
+1. Change layout dynamically to all participants.
+
+2. Changing layout will reflect to recorders.
+
+3. Livestream configurations options added.
+
+4. `Go Live` button added, so that participant can start live stream while running meeting.
 
 ---
 
-## v0.3.1
+## v0.3.0
 
 **Release Date** : 22nd March 2022
 

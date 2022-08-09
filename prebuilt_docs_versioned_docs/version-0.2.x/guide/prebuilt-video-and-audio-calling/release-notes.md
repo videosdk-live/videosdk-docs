@@ -9,7 +9,7 @@ This page will keep you update all the releases of Prebuilt SDK.
 
 ## v0.2.4
 
-**Release** : Jan 2022
+**Release** : January 2022
 
 **Change log** :
 

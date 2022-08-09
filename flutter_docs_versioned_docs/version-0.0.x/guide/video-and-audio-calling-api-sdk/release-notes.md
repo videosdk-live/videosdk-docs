@@ -23,7 +23,7 @@ This page will keep you update all the releases of Flutter SDK.
 
 ## v0.0.8
 
-**Release Date** : 25th Nov 2021
+**Release Date** : 25th November 2021
 
 **Change log** : None
 

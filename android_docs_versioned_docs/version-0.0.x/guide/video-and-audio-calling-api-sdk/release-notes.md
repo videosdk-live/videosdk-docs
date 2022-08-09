@@ -49,7 +49,7 @@ This page will keep you update all the releases of Android SDK.
 
 ## v0.0.17 & v0.0.20
 
-**Release Date** : 27th Jun 2022
+**Release Date** : 27th June 2022
 
 **Change log** : None
 
@@ -83,7 +83,7 @@ This page will keep you update all the releases of Android SDK.
 
 ## v0.0.15
 
-**Release Date** : 27th Apr 2022
+**Release Date** : 27th April 2022
 
 **Change log** : None
 
@@ -97,7 +97,7 @@ This page will keep you update all the releases of Android SDK.
 
 ## v0.0.14
 
-**Release Date** : 30th Mar 2022
+**Release Date** : 30th March 2022
 
 **Change log** : None
 
@@ -109,7 +109,7 @@ This page will keep you update all the releases of Android SDK.
 
 ## v0.0.13
 
-**Release Date** : 21st Mar 2022
+**Release Date** : 21st March 2022
 
 **Change log** : None
 
@@ -121,7 +121,7 @@ This page will keep you update all the releases of Android SDK.
 
 ## v0.0.11 & v0.0.12
 
-**Release Date** : 17th Mar 2022
+**Release Date** : 17th March 2022
 
 **Change log** :
 
@@ -143,7 +143,7 @@ This page will keep you update all the releases of Android SDK.
 
 ## v0.0.10
 
-**Release Date** : 8th Mar 2022
+**Release Date** : 8th March 2022
 
 **Change log** : None
 
@@ -155,7 +155,7 @@ This page will keep you update all the releases of Android SDK.
 
 ## v0.0.9
 
-**Release Date** : 1st Mar 2022
+**Release Date** : 1st March 2022
 
 **Change log** :
 
@@ -167,7 +167,7 @@ This page will keep you update all the releases of Android SDK.
 
 ## v0.0.8
 
-**Release Date** : 13th Feb 2022
+**Release Date** : 13th February 2022
 
 **Change log** :
 
@@ -179,7 +179,7 @@ This page will keep you update all the releases of Android SDK.
 
 ## v0.0.7
 
-**Release Date** : 8th Jan 2022
+**Release Date** : 8th January 2022
 
 **Change log** :
 
@@ -191,7 +191,7 @@ This page will keep you update all the releases of Android SDK.
 
 ## v0.0.6
 
-**Release Date** : 9th Dec 2021
+**Release Date** : 9th December 2021
 
 **Change log** : None
 
@@ -203,7 +203,7 @@ This page will keep you update all the releases of Android SDK.
 
 ## v0.0.5
 
-**Release Date** : 9th Dec 2021
+**Release Date** : 9th December 2021
 
 **Change log** : None
 
@@ -215,7 +215,7 @@ This page will keep you update all the releases of Android SDK.
 
 ## v0.0.4
 
-**Release Date** : 29th Nov 2021
+**Release Date** : 29th November 2021
 
 **Change log** :
 
@@ -241,7 +241,7 @@ This page will keep you update all the releases of Android SDK.
 
 ## v0.0.2 & v0.0.3
 
-**Release Date** : 21st Nov 2021
+**Release Date** : 21st November 2021
 
 **Change log** :
 
@@ -251,7 +251,7 @@ This page will keep you update all the releases of Android SDK.
 
 ## v0.0.1
 
-**Release Date** : 15th Oct 2021
+**Release Date** : 15th October 2021
 
 **Change log** :
 

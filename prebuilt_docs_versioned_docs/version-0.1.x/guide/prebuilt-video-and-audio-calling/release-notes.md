@@ -9,7 +9,7 @@ This page will keep you update all the releases of Prebuilt SDK.
 
 ## v0.1.30
 
-**Release** : Jan 2022
+**Release** : January 2022
 
 **Change log** :
 
@@ -20,7 +20,7 @@ This page will keep you update all the releases of Prebuilt SDK.
 
 ## v0.1.26
 
-**Release** : Dec 2021
+**Release** : December 2021
 
 **Change log** :
 
@@ -31,7 +31,7 @@ This page will keep you update all the releases of Prebuilt SDK.
 
 ## v0.1.17
 
-**Release** : Nov 2021
+**Release** : November 2021
 
 **Change log** :
 
@@ -41,7 +41,7 @@ This page will keep you update all the releases of Prebuilt SDK.
 
 ## v0.1.15
 
-**Release** : Oct 2021
+**Release** : October 2021
 
 **Change log** :
 
@@ -53,7 +53,7 @@ This page will keep you update all the releases of Prebuilt SDK.
 
 ## v0.1.12
 
-**Release** : Sept 2021
+**Release** : September 2021
 
 **Change log** :
 
@@ -63,7 +63,7 @@ This page will keep you update all the releases of Prebuilt SDK.
 
 ## v0.1.5
 
-**Release** : Aug 2021
+**Release** : August 2021
 
 **Change log** :
 

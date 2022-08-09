@@ -109,7 +109,7 @@ This page will keep you update all the releases of React JS SDK.
 
 ## v0.1.31
 
-**Release Date** : 29th Apr 2022
+**Release Date** : 29th April 2022
 
 **Change log** :
 
@@ -125,7 +125,7 @@ This page will keep you update all the releases of React JS SDK.
 
 ## v0.1.30
 
-**Release Date** : 23rd Apr 2022
+**Release Date** : 23rd April 2022
 
 **Change log** :
 
@@ -145,7 +145,7 @@ This page will keep you update all the releases of React JS SDK.
 
 ## v0.1.23
 
-**Release Date** : 9th Mar 2022
+**Release Date** : 9th March 2022
 
 **Change log** :
 
@@ -165,7 +165,7 @@ This page will keep you update all the releases of React JS SDK.
 
 ## v0.1.14
 
-**Release Date** : 15th Jan 2022
+**Release Date** : 15th January 2022
 
 **Change log** :
 
@@ -177,7 +177,7 @@ This page will keep you update all the releases of React JS SDK.
 
 ## v0.1.13
 
-**Release Date** : 10th Jan 2022
+**Release Date** : 10th January 2022
 
 **Change log** :
 

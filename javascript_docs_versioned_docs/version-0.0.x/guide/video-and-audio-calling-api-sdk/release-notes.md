@@ -109,7 +109,7 @@ This page will keep you update all the releases of JavaScript SDK.
 
 ## v0.0.30
 
-**Release Date** : 29th Apr 2022
+**Release Date** : 29th April 2022
 
 **Change log** :
 
@@ -125,7 +125,7 @@ This page will keep you update all the releases of JavaScript SDK.
 
 ## v0.0.29
 
-**Release Date** : 23rd Apr 2022
+**Release Date** : 23rd April 2022
 
 **Change log** :
 
@@ -145,7 +145,7 @@ This page will keep you update all the releases of JavaScript SDK.
 
 ## v0.0.24
 
-**Release Date** : 12th Feb 2022
+**Release Date** : 12th February 2022
 
 **Change log** :
 
@@ -165,7 +165,7 @@ This page will keep you update all the releases of JavaScript SDK.
 
 ## v0.0.23
 
-**Release Date** : 10th Jan 2022
+**Release Date** : 10th January 2022
 
 **Change log** :
 
