@@ -35,7 +35,9 @@ This page will keep you update all the releases of Prebuilt SDK.
 
 2. Any participant can create a poll by passing `canCreatePoll` true.
 
-3. Maintain webcam streams aspect ratio config added `maintainVideoAspectRatio` true. 4. Participant network status bar provided in Participant grid view.
+3. Maintain webcam streams aspect ratio config added `maintainVideoAspectRatio` true.
+
+4. Participant network status bar provided in Participant grid view.
 
 ## v0.3.11
 
