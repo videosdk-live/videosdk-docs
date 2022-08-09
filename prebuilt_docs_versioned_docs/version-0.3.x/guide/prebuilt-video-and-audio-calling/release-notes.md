@@ -59,16 +59,6 @@ This page will keep you update all the releases of Prebuilt SDK.
 
 4. HLS mode added with this parameter `mode`. It can be `VIEWER` or `CONFERENCE`.
 
-## v0.3.9
-
-**Release Date** : 8th July 2022
-
-**Change log** :
-
-1. Participant can now toggle other participant screenShare if they are having permission `partcipantCanToogleOtherScreenShare`.
-
----
-
 ## v0.3.8
 
 **Release Date** : 8th July 2022
