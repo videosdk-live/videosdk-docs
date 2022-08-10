@@ -35,7 +35,7 @@ pagination_label: Participant Class Properties
 
 - type: [`Map<String, Stream>`](https://api.flutter.dev/flutter/dart-core/Map-class.html)
 
-- It will represents the stream for that particular participant who has joined the room. Steam could be `audio` , `video` or `share`.
+- It will represents the stream for that particular participant who has joined the room. Stream could be `audio` , `video` or `share`.
 
 ---
 

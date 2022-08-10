@@ -351,9 +351,9 @@ class _ParticipantGridViewState extends State<ParticipantGridView> {
 
 4. **presenterChanged** - Whenever any participant present/screenshare their screen/window in room, `presenterChanged` event will trigger and return the presenter `participantId`.
 
-5. **streamEnabled** - Whenever any participant enabled mic/camera in room, `streamEnabled` event will trigger and return [Stream Map](/flutter/guide/video-and-audio-calling-api-sdk/features/manage-participants#streams-map-properties).
+5. **streamEnabled** - Whenever any participant enabled mic/camera in room, `streamEnabled` event will trigger and return `Stream Map`.
 
-6. **streamDisabled** - Whenever any participant disabled mic/camera in room, `streamDisabled` event will trigger and return [Stream Map](/flutter/guide/video-and-audio-calling-api-sdk/features/manage-participants#streams-map-properties).
+6. **streamDisabled** - Whenever any participant disabled mic/camera in room, `streamDisabled` event will trigger and return `Stream Map`.
 
 ```js
 // Adding event listner

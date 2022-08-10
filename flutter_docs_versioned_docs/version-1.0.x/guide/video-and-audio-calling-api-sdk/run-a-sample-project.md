@@ -17,7 +17,7 @@ slug: run-a-sample-flutter-project
 
 # Run a Sample Project
 
-Video SDK provides open-source sample project [videosdk-rtc-javascript-sdk-example](https://github.com/videosdk-live/videosdk-rtc-javascript-sdk-example) on Github. This document introduces how to run this project.
+Video SDK provides open-source sample project [videosdk-rtc-flutter-sdk-example](https://github.com/videosdk-live/videosdk-rtc-flutter-sdk-example) on Github. This document introduces how to run this project.
 
 ## Prerequisites
 

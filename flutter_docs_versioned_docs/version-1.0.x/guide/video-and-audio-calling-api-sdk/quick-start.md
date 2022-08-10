@@ -389,7 +389,7 @@ class _MeetingScreenState extends State<MeetingScreen> {
   void initState() {
     super.initState();
     // Create instance of Room (Meeting)
-    room = RTC.createRoom(
+    room = Videosdk.createRoom(
       roomId: widget.meetingId,
       token: widget.token,
       displayName: "Yash Chudasama",

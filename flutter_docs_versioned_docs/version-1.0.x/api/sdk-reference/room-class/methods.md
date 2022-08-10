@@ -9,7 +9,7 @@ title: Room Class Methods
 
 ### join()
 
-- After creating the instance of RTC Room, you can join RTC Room by calling `join()` method.
+- After creating the instance of Videosdk Room, you can join Videosdk Room by calling `join()` method.
 
 #### Events associated with `join()`:
 
@@ -34,7 +34,7 @@ title: Room Class Methods
 
 ### leave()
 
-- It is used to leave the current room.
+- It is used to leave the current running room session.
 
 #### Events associated with `leave()`:
 
@@ -47,20 +47,20 @@ title: Room Class Methods
 
 ---
 
-<!-- ### end()
+### end()
 
-- It is used to end the current running session.
+- It is used to end the current running room session.
 - By calling `end()`, all joined [participants](properties#participants) including [localParticipant](properties#localparticipant) of that session will leave the room.
 
 #### Events associated with `end()`:
 
-- All [participants](properties#participants) and [localParticipant](properties#localparticipant), will be emitted [`roomLeft`](events#roomLeft) event.
+- All [participants](properties#participants) and [localParticipant](properties#localparticipant), will receive [`roomLeft`](events#roomLeft) event.
 
 #### Returns
 
 - _`void`_
 
---- -->
+---
 
 ### enableCam()
 
@@ -186,8 +186,6 @@ room.stopRecording();
 
 - _`void`_
 
----
-
 #### Example
 
 ```javascript
@@ -204,6 +202,8 @@ var outputs = [
 
 room.startLivestream(outputs);
 ```
+
+---
 
 ### stopLivestream()
 
@@ -224,7 +224,7 @@ room.stopLivestream();
 
 ### getCameras()
 
-- It will return all camera devices connected.
+- It will return all connected camera devices.
 
 #### Returns
 
@@ -243,6 +243,7 @@ print(cams);
 
 - It is used to change the camera device.
 - If multiple camera devices are connected, by using `changeCam()`, one can change the camera device with camera device id.
+- You can get list of connected video devices using [`Videosdk.mediaDevices`](../videosdk-class/properties#mediadevices)
 
 #### Parameters
 

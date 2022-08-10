@@ -37,4 +37,6 @@ pagination_label: Stream Class Properties
 
 - It represents a single media track within a stream.
 
+- You can call `pause()` method to pause MediaStreamTrack. And you can also call `resume()` method to resume MediaStreamTrack. [`Learn more`](../../../guide/video-and-audio-calling-api-sdk/features/pause-resume-video-stream)
+
 </div>

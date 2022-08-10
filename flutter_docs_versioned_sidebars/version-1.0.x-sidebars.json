@@ -7,7 +7,8 @@
         "guide/video-and-audio-calling-api-sdk/signup-and-create-api",
         "guide/video-and-audio-calling-api-sdk/flutter-sdk",
         "guide/video-and-audio-calling-api-sdk/server-setup",
-        "guide/video-and-audio-calling-api-sdk/release-notes"
+        "guide/video-and-audio-calling-api-sdk/release-notes",
+        "guide/video-and-audio-calling-api-sdk/migration-notes"
       ],
       "collapsed": false
     },
@@ -60,9 +61,9 @@
       "type": "category",
       "label": "RTC Class",
       "items": [
-        "api/sdk-reference/rtc-class/introduction",
-        "api/sdk-reference/rtc-class/properties",
-        "api/sdk-reference/rtc-class/methods"
+        "api/sdk-reference/videosdk-class/introduction",
+        "api/sdk-reference/videosdk-class/properties",
+        "api/sdk-reference/videosdk-class/methods"
       ]
     },
     {

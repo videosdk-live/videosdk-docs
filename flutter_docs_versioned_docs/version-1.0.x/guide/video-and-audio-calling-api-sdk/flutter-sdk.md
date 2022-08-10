@@ -41,7 +41,7 @@ This will add a line like this to your package's pubspec.yaml (and run an implic
 
 ```
 dependencies:
-  videosdk: ^0.0.12
+  videosdk: ^1.0.0
 ```
 
 ### Step 2: Update AndroidManifest.xml file for the permissions

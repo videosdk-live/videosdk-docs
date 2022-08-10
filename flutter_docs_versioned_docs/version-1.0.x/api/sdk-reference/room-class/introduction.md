@@ -9,7 +9,7 @@ title: Video SDK Room Class
 
 ## Introduction
 
-The `Room` class includes properties, methods and events for managing a RTC Room, participants, video, audio and share streams, messaging and UI customization.
+The `Room` class includes properties, methods and events for managing a Videosdk Room, participants, video, audio and share streams, messaging and UI customization.
 
 import LinksGrid from '../../../../../src/theme/LinksGrid'
 import properties from '../data/properties.json'
@@ -35,11 +35,25 @@ import events from '../data/events.json'
 - [activePresenterId](./properties#activepresenterid)
 
 </div>
+
+<div class="col col--4 margin-bottom--sm" >
+
+- [camEnabled](./properties#camenabled)
+
+</div>
+
 <div class="col col--4 margin-bottom--sm" >
 
 - [selectedCamId](./properties#selectedCamid)
 
 </div>
+
+<div class="col col--4 margin-bottom--sm" >
+
+- [micEnabled](./properties#micenabled)
+
+</div>
+
 <div class="col col--4 margin-bottom--sm" >
 
 - [selectedMicId](./properties#selectedmicid)

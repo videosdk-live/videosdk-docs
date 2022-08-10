@@ -135,7 +135,7 @@ import 'package:flutter/material.dart';
 import 'package:videosdk/videosdk.dart';
 
 class MyApp extends StatelessWidget {
-  final Room = RTC.createRoom(
+  final Room = Videosdk.createRoom(
     roomId: "<Id-of-Room>",
     displayName: "<Name-of-participant>",
     micEnabled: "<Flag-to-enable-mic>",

@@ -31,10 +31,24 @@ title: Room Class Properties
 
 ---
 
+### camEnabled
+
+- type: [`bool`](https://api.dart.dev/stable/2.15.1/dart-core/bool-class.html)
+- It indicates if camera device is enabled or not.
+
+---
+
 ### selectedCamId
 
 - type: [`String?`](https://api.dart.dev/stable/2.15.1/dart-core/String-class.html)
-- It will be the `id` of camera device, which is currently selected. If no camera device is selected, at that time, value of `selectedCamId` will be `null`.
+- It will be the `id` of camera device, which is currently selected. If camera device is disabled, at that time, value of `selectedCamId` will be `null`.
+
+---
+
+### micEnabled
+
+- type: [`bool`](https://api.dart.dev/stable/2.15.1/dart-core/bool-class.html)
+- It indicates if microphone device is enabled or not.
 
 ---
 
