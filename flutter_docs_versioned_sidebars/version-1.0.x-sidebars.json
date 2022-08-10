@@ -59,7 +59,7 @@
     },
     {
       "type": "category",
-      "label": "RTC Class",
+      "label": "Videosdk Class",
       "items": [
         "api/sdk-reference/videosdk-class/introduction",
         "api/sdk-reference/videosdk-class/properties",
