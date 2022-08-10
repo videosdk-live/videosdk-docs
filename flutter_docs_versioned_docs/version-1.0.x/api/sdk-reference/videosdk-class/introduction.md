@@ -1,19 +1,19 @@
 ---
 sidebar_position: 2
 sidebar_label: Introduction
-pagination_label: Videosdk Class
-title: Videosdk Class
+pagination_label: VideoSDK Class
+title: VideoSDK Class
 ---
 
 <div div id="tailwind" class="sdk-api-ref">
 
 ## Introduction
 
-Videosdk Class is a core class of SDK that provides methods to create and configure [`Videosdk Room`](../room-class/introduction).
+VideoSDK Class is a core class of SDK that provides methods to create and configure [`VideoSDK Room`](../room-class/introduction).
 
 import LinksGrid from '../../../../../src/theme/LinksGrid'
 
-## Videosdk Class Properties
+## VideoSDK Class Properties
 
 <div class="row">
 
@@ -25,19 +25,19 @@ import LinksGrid from '../../../../../src/theme/LinksGrid'
 
 </div>
 
-## Videosdk Class Methods
+## VideoSDK Class Methods
 
 <div class="row">
 
 <div class="col col--4 margin-bottom--sm" >
 
-- [loadMediaDevices](./methods#loadmediadevices)
+- [createRoom](./methods#createroom)
 
 </div>
 
 <div class="col col--4 margin-bottom--sm" >
 
-- [createRoom](./methods#createroom)
+- [loadMediaDevices](./methods#loadmediadevices)
 
 </div>
 

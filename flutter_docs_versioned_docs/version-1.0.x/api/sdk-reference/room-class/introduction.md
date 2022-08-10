@@ -9,7 +9,7 @@ title: Video SDK Room Class
 
 ## Introduction
 
-The `Room` class includes properties, methods and events for managing a Videosdk Room, participants, video, audio and share streams, messaging and UI customization.
+The `Room` class includes properties, methods and events for managing a VideoSDK Room, participants, video, audio and share streams, messaging and UI customization.
 
 import LinksGrid from '../../../../../src/theme/LinksGrid'
 import properties from '../data/properties.json'
@@ -92,12 +92,12 @@ import events from '../data/events.json'
 </div>
 <div class="col col--4 margin-bottom--sm" >
 
-- [enableCam](./methods#enableCam)
+- [enableCam](./methods#enablecam)
 
 </div>
 <div class="col col--4 margin-bottom--sm" >
 
-- [disableCam](./methods#disableCam)
+- [disableCam](./methods#disablecam)
 
 </div>
 <div class="col col--4 margin-bottom--sm" >
@@ -142,12 +142,12 @@ import events from '../data/events.json'
 </div>
 <div class="col col--4 margin-bottom--sm" >
 
-- [getCameras](./methods#getCameras)
+- [getCameras](./methods#getcameras)
 
 </div>
 <div class="col col--4 margin-bottom--sm" >
 
-- [changeCam](./methods#changeCam)
+- [changeCam](./methods#changecam)
 
 </div>
 <div class="col col--4 margin-bottom--sm" >

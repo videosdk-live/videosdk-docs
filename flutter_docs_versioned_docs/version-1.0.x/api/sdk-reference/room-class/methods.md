@@ -9,7 +9,7 @@ title: Room Class Methods
 
 ### join()
 
-- After creating the instance of Videosdk Room, you can join Videosdk Room by calling `join()` method.
+- After creating the instance of VideoSDK Room, you can join VideoSDK Room by calling `join()` method.
 
 #### Events associated with `join()`:
 
@@ -54,7 +54,7 @@ title: Room Class Methods
 
 #### Events associated with `end()`:
 
-- All [participants](properties#participants) and [localParticipant](properties#localparticipant), will receive [`roomLeft`](events#roomLeft) event.
+- All [participants](properties#participants) and [localParticipant](properties#localparticipant), will receive [`roomLeft`](events#roomleft) event.
 
 #### Returns
 
@@ -243,7 +243,7 @@ print(cams);
 
 - It is used to change the camera device.
 - If multiple camera devices are connected, by using `changeCam()`, one can change the camera device with camera device id.
-- You can get list of connected video devices using [`Videosdk.mediaDevices`](../videosdk-class/properties#mediadevices)
+- You can get list of connected video devices using [`VideoSDK.mediaDevices`](../videosdk-class/properties#mediadevices)
 
 #### Parameters
 

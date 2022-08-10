@@ -44,7 +44,7 @@ ElevatedButton(
 - You can Customise those title, message and icon as per your requirements using `NotificationInfo` class and passed to `createRoom()` method.
 
 ```js
-Videosdk.createRoom(
+VideoSDK.createRoom(
     .
     .
     notification: const NotificationInfo(

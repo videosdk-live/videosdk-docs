@@ -2,7 +2,7 @@
 title: Room class for Flutter SDK.
 hide_title: true
 hide_table_of_contents: false
-description: Videosdk Room Class provides features to implement custom room layout in your application.
+description: VideoSDK Room Class provides features to implement custom room layout in your application.
 sidebar_label: Example
 pagination_label: Room Class Example
 keywords:

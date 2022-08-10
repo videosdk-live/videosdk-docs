@@ -31,5 +31,6 @@ This guide will provide an overview of how to implement leave or end feature in 
 // Leave the room
 room.leave();
 
-// end() method is coming soon in flutter.
+// End Room Session
+room.end();
 ```

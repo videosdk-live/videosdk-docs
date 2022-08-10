@@ -1,15 +1,15 @@
 ---
 sidebar_position: 1
 sidebar_label: Methods
-pagination_label: Videosdk Class Methods
-title: Videosdk Class Methods
+pagination_label: VideoSDK Class Methods
+title: VideoSDK Class Methods
 ---
 
 <div class="sdk-api-ref-only-h4">
 
 ### createRoom()
 
-- This method is provided by SDK to build instance of [`Videosdk Room`](../room-class/introduction) based on given configuration.
+- This method is provided by SDK to build instance of [`VideoSDK Room`](../room-class/introduction) based on given configuration.
 
 #### Parameters
 
@@ -67,7 +67,7 @@ title: Videosdk Class Methods
 
   - type: [`int`](https://api.dart.dev/stable/2.15.1/dart-core/int-class.html)
   - `OPTIONAL`
-  - Sets camera, which will be used by default, while joining the Videosdk Room. Index of [`MediaDevices`](properties#mediadevices) will be used to set default camera. You can also change camera later.
+  - Sets camera, which will be used by default, while joining the VideoSDK Room. Index of [`MediaDevices`](properties#mediadevices) will be used to set default camera. You can also change camera later.
   - Default value of `defaultCameraIndex` is `0`.
 
 #### Returns
@@ -77,8 +77,8 @@ title: Videosdk Class Methods
 #### Example
 
 ```js
-// Create Videosdk Room
-Room room = Videosdk.createRoom(
+// Create VideoSDK Room
+Room room = VideoSDK.createRoom(
   roomId: "<ROOM-ID>",
   token: "<TOKEN>",
   displayName: "<DISPLAY-NAME>",
@@ -107,7 +107,7 @@ Room room = Videosdk.createRoom(
 #### Example
 
 ```js
-Map<MediaDeviceType, List<MediaDeviceInfo>> mediaDevices = await Videosdk.loadMediaDevices();
+Map<MediaDeviceType, List<MediaDeviceInfo>> mediaDevices = await VideoSDK.loadMediaDevices();
 ```
 
 </div>

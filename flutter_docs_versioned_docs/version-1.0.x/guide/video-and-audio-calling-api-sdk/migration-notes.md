@@ -7,7 +7,7 @@ pagination_label: Migration Notes
 
 This page will guide you to migrate from previous version of Flutter SDK.
 
-## Migration from v0.0.14 to v1.0.0
+## Migration to v1.0.0 from v0.0.14
 
 1. We have renamed `Meeting` class to `Room` class.
 
@@ -23,7 +23,7 @@ This page will guide you to migrate from previous version of Flutter SDK.
    import "package:videosdk/videosdk.dart";
    ```
 
-3. Replace MeetingBuilder with [`Videosdk.createRoom()`](../../api/sdk-reference/videosdk-class/methods#createroom) and [`join()`](../../api/sdk-reference/room-class/methods#join).
+3. Replace MeetingBuilder with [`VideoSDK.createRoom()`](../../api/sdk-reference/videosdk-class/methods#createroom) and [`join()`](../../api/sdk-reference/room-class/methods#join).
 
    For Example:
 
@@ -49,8 +49,8 @@ This page will guide you to migrate from previous version of Flutter SDK.
    ```
 
    ```js title=v1.0.0
-   // Creating Videosdk Room
-   Room room = Videosdk.createRoom(
+   // Creating VideoSDK Room
+   Room room = VideoSDK.createRoom(
       roomId: '<ROOM_ID>',
       token: '<TOKEN>',
       displayName: '<DISPLAY_NAME>',
@@ -64,7 +64,7 @@ This page will guide you to migrate from previous version of Flutter SDK.
       ),
    );
 
-   // Joining Videosdk Room
+   // Joining VideoSDK Room
    room.join();
 
    ```

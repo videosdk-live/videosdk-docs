@@ -30,7 +30,7 @@ This page will keep you update all the releases of Flutter SDK.
    - `disableMic()` to [`muteMic()`](../../api/sdk-reference/participant-class/methods#mutemic)
    - `enableWebcam()` to [`enableCam()`](../../api/sdk-reference/participant-class/methods#enablecam)
    - `disableWebcam()` to [`disableCam()`](../../api/sdk-reference/participant-class/methods#disablecam)
-6. Added [`Videosdk.createRoom()`](../../api/sdk-reference/videosdk-class/methods#createroom) to create Videosdk Rooms. Use [`join()`](../../api/sdk-reference/room-class/methods#join) to join Videosdk Room.
+6. Added [`VideoSDK.createRoom()`](../../api/sdk-reference/videosdk-class/methods#createroom) to create VideoSDK Rooms. Use [`join()`](../../api/sdk-reference/room-class/methods#join) to join VideoSDK Room.
 7. Added [`defaultCameraIndex`](../../api/sdk-reference/videosdk-class/methods#createroom) option to select default camera for [`Room`](../../api/sdk-reference/room-class/introduction) Class.
 8. Added [`micEnabled`](../../api/sdk-reference/room-class/properties#micenabled) property for [`Room`](../../api/sdk-reference/room-class/introduction) Class.
 9. Added [`camEnabled`](../../api/sdk-reference/room-class/properties#camenabled) property for [`Room`](../../api/sdk-reference/room-class/introduction) Class.
@@ -41,31 +41,3 @@ This page will keep you update all the releases of Flutter SDK.
 
 1. Fixed the issue of joining room (meeting) multiple time.
 2. Fixed issues related to resource consumption.
-
-## v0.0.14
-
-**Release Date** : 11th July 2022
-
-**Change log** : None
-
-**Bug Fix** :
-
-1. Add the ViewPort method for better video quality based on view container.
-
-   **Docs** : [How to Set Viewport?](https://docs.videosdk.live/flutter/guide/video-and-audio-calling-api-sdk/features/set-viewport)
-
----
-
-## v0.0.8
-
-**Release Date** : 25th Nov 2021
-
-**Change log** : None
-
-**Bug Fix** :
-
-1. Participant can pause or resume all video, audio and shareshare streams.
-
-2. Participant can set quality of video stream of other participant.
-
----

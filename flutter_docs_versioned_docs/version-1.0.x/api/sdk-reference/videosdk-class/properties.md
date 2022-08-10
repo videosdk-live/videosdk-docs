@@ -1,8 +1,8 @@
 ---
 sidebar_position: 1
 sidebar_label: Properties
-pagination_label: Videosdk Class Properties
-title: Videosdk Class Properties
+pagination_label: VideoSDK Class Properties
+title: VideoSDK Class Properties
 ---
 
 <div class="sdk-api-ref-only-h4">
@@ -17,10 +17,10 @@ title: Videosdk Class Properties
 
 ```javascript
 // Audio Devices
-List<MediaDeviceInfo> audioDevices = Videosdk.mediaDevices[MediaDeviceType.audioInput];
+List<MediaDeviceInfo> audioDevices = VideoSDK.mediaDevices[MediaDeviceType.audioInput];
 
 // Video Devices
-List<MediaDeviceInfo> videoDevices = Videosdk.mediaDevices[MediaDeviceType.videoInput];
+List<MediaDeviceInfo> videoDevices = VideoSDK.mediaDevices[MediaDeviceType.videoInput];
 ```
 
 ---
