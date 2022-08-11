@@ -15,7 +15,7 @@
     {
       "key": "region",
       "value": "sg001",
-      "description": "You can take advantage of regional API to decrease latency in video calling. `sg001` for Singapore, SG. `sg002` another for Singapore, SG. `in001` for Bangalore, IN. `eu001` for Frankfurt, DE. `us001` for Fremont, CA. Default region: `sg001`.",
+      "description": "You can take advantage of regional API to decrease latency in video calling. `sg001` for Singapore, SG. `in001` for Bangalore, IN. `eu001` for Frankfurt, DE. `us001` for Fremont, CA. Default region: `sg001`.",
       "required": false
     },
     {

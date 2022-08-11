@@ -81,7 +81,7 @@ url = "https://api.videosdk.live/v1/meetings"
 
 headers = {'authorization': f'Bearer {YOUR_JWT_TOKEN}'}
 
-response = requests.request("GET", url, headers=headers,json={"region": "sg001", "userMeetingId": "unicorn"}) # region: sg001 || sg002 || in002 || eu001 || us001
+response = requests.request("GET", url, headers=headers,json={"region": "sg001", "userMeetingId": "unicorn"}) # region: sg001 || in002 || eu001 || us001
 
 print(response.text)
 ```

@@ -51,7 +51,7 @@ To achieve region based rooms, just pass `region : REGION_CODE` parameter in `cr
 Currently the below regions are supported:
 
 - `sg001` Region Code for Singapore, SG.
-- `sg002` Region Code for Singapore, SG. (Another region in Singapore)
+<!-- - `sg002` Region Code for Singapore, SG. (Another region in Singapore) -->
 - `in002` Region Code for Bangalore, IN.
 - `us001` Region Code for Fremont, CA.
 - `eu001` Region Code for Frankfurt, DE.
