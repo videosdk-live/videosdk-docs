@@ -7,7 +7,7 @@ pagination_label: Release Notes
 
 This page will keep you update all the releases of React JS SDK.
 
-## v0.1.47
+## v0.1.48
 
 **Release Data** : 11th August 2022
 
