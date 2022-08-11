@@ -30,4 +30,6 @@ This guide will provide an overview of how to implement leave or end feature in 
 ```js
 // Leave the meeting
 meeting.leave();
+
+// end() method is coming soon in flutter.
 ```

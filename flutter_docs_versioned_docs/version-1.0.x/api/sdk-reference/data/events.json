@@ -1,0 +1,57 @@
+[{
+    "href": "./events#roomJoined",
+    "label": "roomJoined"
+  },
+  {
+    "href": "./events#roomLeft",
+    "label": "roomLeft"
+  },
+  {
+    "href": "./events#participantJoined",
+    "label": "participantJoined"
+  },
+  {
+    "href": "./events#participantLeft",
+    "label": "participantLeft"
+  },
+  {
+    "href": "./events#speakerChanged",
+    "label": "speakerChanged"
+  },
+  {
+    "href": "./events#presenterChanged",
+    "label": "presenterChanged"
+  },
+  {
+    "href": "./events#entryRequested",
+    "label": "entryRequested"
+  },
+  {
+    "href": "./events#entryResponded",
+    "label": "entryResponded"
+  },
+  {
+    "href": "./events#cameraRequested",
+    "label": "cameraRequested"
+  },
+  {
+    "href": "../events#micRequested",
+    "label": "micRequested"
+  },
+  {
+    "href": "./events#recordingStarted",
+    "label": "recordingStarted"
+  },
+  {
+    "href": "./events#recordingStopped",
+    "label": "recordingStopped"
+  },
+  {
+    "href": "./events#livestreamStarted",
+    "label": "livestreamStarted"
+  },
+  {
+    "href": "./events#livestreamStopped",
+    "label": "livestreamStopped"
+  }
+]

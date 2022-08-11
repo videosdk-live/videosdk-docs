@@ -1,0 +1,69 @@
+[{
+    "href": "./methods#join",
+    "label": "join"
+  },
+  {
+    "href": "./methods#leave",
+    "label": "leave"
+  },
+  {
+    "href": "./methods#enableCam",
+    "label": "enableCam"
+  },
+  {
+    "href": "./methods#disableCam",
+    "label": "disableCam"
+  },
+  {
+    "href": "./methods#unmuteMic",
+    "label": "unmuteMic"
+  },
+  {
+    "href": "./methods#muteMic",
+    "label": "muteMic"
+  },
+  {
+    "href": "./methods#enableScreenShare",
+    "label": "enableScreenShare"
+  },
+  {
+    "href": "./methods#disableScreenShare",
+    "label": "disableScreenShare"
+  },
+  {
+    "href": "./methods#startRecording",
+    "label": "startRecording"
+  },
+  {
+    "href": "./methods#stopRecording",
+    "label": "stopRecording"
+  },
+  {
+    "href": "./methods#startLivestream",
+    "label": "startLivestream"
+  },
+  {
+    "href": "./methods#stopLivestream",
+    "label": "stopLivestream"
+  },
+  {
+    "href": "./methods#getCameras",
+    "label": "getCameras"
+  },
+  {
+    "href": "./methods#changeCam",
+    "label": "changeCam"
+  },
+  {
+    "href": "./methods#setConsumerQuality",
+    "label": "setConsumerQuality"
+  },
+  {
+    "href": "./methods#getMics",
+    "label": "getMics"
+  },
+  {
+    "href": "./methods#on",
+    "label": "on"
+  }
+]

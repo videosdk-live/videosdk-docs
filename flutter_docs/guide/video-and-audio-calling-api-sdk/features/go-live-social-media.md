@@ -41,16 +41,16 @@ meeting?.stopLivestream();
 
 ### Events
 
-1. **livestream-started** - Whenever broadcasting of meeting started, `livestream-started` event will trigger.
+1. **livestreamStarted** - Whenever broadcasting of meeting started, `livestreamStarted` event will trigger.
 
-2. **livestream-stopped** - Whenever broadcasting of meeting stopped, `livestream-stopped` event will trigger.
+2. **livestreamStopped** - Whenever broadcasting of meeting stopped, `livestreamStopped` event will trigger.
 
 ```js
-meeting.on("livestream-started", () {
+meeting.on(Events.livestreamStarted, () {
   print("meeting livestream started");
 });
 //
-meeting.on("livestream-stopped", () {
+meeting.on(Events.livestreamStopped, () {
   print("meeting livestream stopped");
 });
 
