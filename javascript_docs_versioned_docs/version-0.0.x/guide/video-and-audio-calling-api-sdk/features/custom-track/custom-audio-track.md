@@ -39,8 +39,8 @@ We have introduced the ability to pass a custom Audio track for the Audio of the
   - type: `String`
   - required: `false`
   - default: `speech_standard`
-  - Allowed values : `speech_low_quality` | `speech_standard` | `music_standard` | `standard_stereo` | `high_quality` | `high_quality_stereo`  
-  - It will be the encoder configuration you want to use for  Audio Track.
+  - Allowed values : `speech_low_quality` | `speech_standard` | `music_standard` | `standard_stereo` | `high_quality` | `high_quality_stereo`
+  - It will be the encoder configuration you want to use for Audio Track.
 
 - **noiseConfig**
 
@@ -63,7 +63,7 @@ We have introduced the ability to pass a custom Audio track for the Audio of the
 
 #### Returns
 
-- `MediaStreamTrack`
+- `MediaStream`
 
 ### Example
 
@@ -107,7 +107,7 @@ meeting = VideoSDK.initMeeting({
 
 ### Custom Track with `unmuteMic()`
 
-In order to switch tracks during the meeting, you have to pass the `MediaStreamTrack` in the `meeting.unmuteMic()` method.
+In order to switch tracks during the meeting, you have to pass the `MediaStream` in the `meeting.unmuteMic()` method.
 
 :::note
 

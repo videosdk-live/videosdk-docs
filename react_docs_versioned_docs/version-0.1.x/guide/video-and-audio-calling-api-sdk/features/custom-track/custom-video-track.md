@@ -63,7 +63,7 @@ Above mentioned encoder configurations are valid for both, landscape as well as 
 
 #### Returns
 
-- `MediaStreamTrack`
+- `MediaStream`
 
 ### Example
 
@@ -84,48 +84,52 @@ let customTrack = await createCameraVideoTrack({
 If you are passing `webcamEnabled: true` in the `config` of `MeetingProvider` and want to use custom tracks from start of the meeting, you can pass custom track in the `config` as shown below.
 
 ```javascript
-import { createCameraVideoTrack, MeetingProvider } from "@videosdk.live/react-sdk"
+import {
+  createCameraVideoTrack,
+  MeetingProvider,
+} from "@videosdk.live/react-sdk";
 
-function App(){
-
+function App() {
   const getTrack = async () => {
-    const track = await createCameraVideoTrack({ 
-      optimizationMode: "motion", 
+    const track = await createCameraVideoTrack({
+      optimizationMode: "motion",
       encoderConfig: "h720p_w1280p",
       facingMode: "environment",
     });
     setCustomTrack(track);
-  }
+  };
 
   let [customTrack, setCustomTrack] = useState();
-  
+
   useEffect(() => {
     getTrack();
   }, []);
 
-  return customTrack && (
-    <MeetingProvider
+  return (
+    customTrack && (
+      <MeetingProvider
         config={{
           meetingId,
           micEnabled: true,
           webcamEnabled: true, //If true, it will use the passed custom track to turn webcam on
 
           //Pass the custom video track here
-          customCameraVideoTrack: customTrack
+          customCameraVideoTrack: customTrack,
         }}
         token={token}
         reinitialiseMeetingOnConfigChange={true}
         joinWithoutUserInteraction={true}
       >
-        <MeetingView/>
+        <MeetingView />
       </MeetingProvider>
+    )
   );
 }
 ```
 
 ### Custom Track with `enableWebcam()`
 
-In order to switch tracks during the meeting, you have to pass the `MediaStreamTrack` in the `enableWebcam()` method of `useMeeting`.
+In order to switch tracks during the meeting, you have to pass the `MediaStream` in the `enableWebcam()` method of `useMeeting`.
 
 :::note
 

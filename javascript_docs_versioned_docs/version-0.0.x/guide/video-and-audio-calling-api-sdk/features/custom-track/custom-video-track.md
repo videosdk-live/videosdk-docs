@@ -63,7 +63,7 @@ Above mentioned encoder configurations are valid for both, landscape as well as 
 
 #### Returns
 
-- `MediaStreamTrack`
+- `MediaStream`
 
 ### Example
 
@@ -101,7 +101,7 @@ meeting = VideoSDK.initMeeting({
 
 ### Custom Track with `enableWebcam()`
 
-In order to switch tracks during the meeting, you have to pass the `MediaStreamTrack` in the `meeting.enableWebcam()` method.
+In order to switch tracks during the meeting, you have to pass the `MediaStream` in the `meeting.enableWebcam()` method.
 
 :::note
 
