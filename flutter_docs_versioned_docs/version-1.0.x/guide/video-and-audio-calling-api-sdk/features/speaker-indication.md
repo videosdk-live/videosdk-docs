@@ -23,7 +23,7 @@ Whenever any participant speaks in room, `speakerChanged` event will trigger.
 
 For example, the room is running with **Alice** and **Bob**. Whenever any of them speaks, `speakerChanged` event will trigger and return the speaker `participantId`.
 
-We can access `speakerChanged` event through [room object](/flutter/guide/video-and-audio-calling-api-sdk/features/start-join-room#2-initialization).
+We can access `speakerChanged` event through [room object](./start-join-room#2-initialization).
 
 ### speakerChanged Event
 

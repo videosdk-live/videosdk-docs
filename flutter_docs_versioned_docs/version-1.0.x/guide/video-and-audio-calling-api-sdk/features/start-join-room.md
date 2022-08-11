@@ -34,7 +34,7 @@ After the successful installation of videoSDK, the next step is to integrate vid
 
 ## 1. Configuration
 
-To configure a room, you will need [generated token](/flutter/guide/video-and-audio-calling-api-sdk/server-setup#generate-accees-token-and-integrate-other-apis) and [roomId](/api-reference/v1/realtime-communication/create-join-room#create-room), we had discussed in [Server Setup](/flutter/guide/video-and-audio-calling-api-sdk/server-setup).
+To configure a room, you will need [generated token](/flutter/guide/video-and-audio-calling-api-sdk/server-setup#generate-accees-token-and-integrate-other-apis) and [roomId](/api-reference/realtime-communication/create-room#create-room), we had discussed in [Server Setup](/flutter/guide/video-and-audio-calling-api-sdk/server-setup).
 This code snippet calls API from local server
 
 **Scenario 1** - Suppose you **don't have** any roomId, you can simply generate roomId by invoking `create-room` API.
