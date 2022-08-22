@@ -7,6 +7,28 @@ pagination_label: Release Notes
 
 This page will keep you update all the releases of React JS SDK.
 
+## v0.1.48
+
+**Release Data** : 11th August 2022
+
+**Change Log:**
+
+1. Fixed issues with Custom audio and video tracks.
+
+2. Updated types indicating optional value or not.
+
+## v0.1.46
+
+**Release Data** : 05th August 2022
+
+**Change Log:**
+
+1. Added support for [screenshare with Audio](https://docs.videosdk.live/react/guide/video-and-audio-calling-api-sdk/features/screenshare#screen-share-with-audio).
+
+2. Custom audio, video and share track now accepts `MediaStream` instead of `MediaStreamTrack`.
+
+3. Added types for better IDE support.
+
 ## v0.1.43
 
 **Release Date** : 29th July 2022

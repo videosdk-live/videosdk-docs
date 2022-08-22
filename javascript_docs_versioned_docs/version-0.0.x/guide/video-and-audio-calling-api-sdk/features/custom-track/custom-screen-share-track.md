@@ -33,7 +33,7 @@ We have introduced the ability to pass a custom Screen Share track while sharing
   - type: `String`
   - required: `false`
   - default: `h720p_15fps`
-  - Allowed values : `h360p_30fps` | `h720p_5fps` | `h720p_15fps` | `h1080p_15fps` | `h1080p_30fps`  
+  - Allowed values : `h360p_30fps` | `h720p_5fps` | `h720p_15fps` | `h1080p_15fps` | `h1080p_30fps`
   - It will be the encoderConfigs you can want to use for the Video Track.
 
 :::note
@@ -50,7 +50,7 @@ Above mentioned encoder configurations are valid for both, landscape as well as 
 
 #### Returns
 
-- `MediaStreamTrack`
+- `MediaStream`
 
 ### Example
 
@@ -65,7 +65,7 @@ let customTrack = await VideoSDK.createScreenShareVideoTrack({
 
 ### Custom Track with `enableScreenShare()`
 
-In order to switch tracks during the meeting, you have to pass the `MediaStreamTrack` in the `meeting.enableScreenShare()` method.
+In order to switch tracks during the meeting, you have to pass the `MediaStream` in the `meeting.enableScreenShare()` method.
 
 :::note
 

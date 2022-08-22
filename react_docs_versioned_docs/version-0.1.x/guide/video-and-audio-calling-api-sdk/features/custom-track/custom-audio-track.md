@@ -39,7 +39,7 @@ We have introduced the ability to pass a custom Audio track for the Audio of the
   - type: `String`
   - required: `false`
   - default: `speech_standard`
-  - Allowed values : `speech_low_quality` | `speech_standard` | `music_standard` | `standard_stereo` | `high_quality` | `high_quality_stereo`  
+  - Allowed values : `speech_low_quality` | `speech_standard` | `music_standard` | `standard_stereo` | `high_quality` | `high_quality_stereo`
   - It will be the encoder configuration you want to use for Audio Track.
 
 - **noiseConfig**
@@ -63,7 +63,7 @@ We have introduced the ability to pass a custom Audio track for the Audio of the
 
 #### Returns
 
-- `MediaStreamTrack`
+- `MediaStream`
 
 ### Example
 
@@ -87,50 +87,55 @@ let customTrack = await createMicrophoneAudioTrack({
 If you are passing `micEnabled: true` in the `config` of `MeetingProvider` and want to use custom tracks from start of the meeting, you can pass custom track in the `config` as shown below.
 
 ```javascript
-import { createMicrophoneAudioTrack, MeetingProvider } from "@videosdk.live/react-sdk"
+import {
+  createMicrophoneAudioTrack,
+  MeetingProvider,
+} from "@videosdk.live/react-sdk";
 
-function App(){
+function App() {
   const getTrack = async () => {
     const track = await await createMicrophoneAudioTrack({
       encoderConfig: "high_quality",
-      noiseConfig:{
+      noiseConfig: {
         noiseSuppresion: true,
         echoCancellation: true,
         autoGainControl: true,
-      }
+      },
     });
     setCustomTrack(track);
-  }
+  };
 
   let [customTrack, setCustomTrack] = useState();
-  
+
   useEffect(() => {
     getTrack();
   }, []);
 
-  return customTrack && (
-    <MeetingProvider
+  return (
+    customTrack && (
+      <MeetingProvider
         config={{
           meetingId,
           micEnabled: true, //If true, it will use the passed custom track to turn mic on
           webcamEnabled: true,
 
           //Pass the custom audio track here
-          customMicrophoneAudioTrack: customTrack
+          customMicrophoneAudioTrack: customTrack,
         }}
         token={token}
         reinitialiseMeetingOnConfigChange={true}
         joinWithoutUserInteraction={true}
       >
-        <MeetingView/>
+        <MeetingView />
       </MeetingProvider>
+    )
   );
 }
 ```
 
 ### Custom Track with `unmuteMic()`
 
-In order to switch tracks during the meeting, you have to pass the `MediaStreamTrack` in the `unmuteMic()` method of `useMeeting`.
+In order to switch tracks during the meeting, you have to pass the `MediaStream` in the `unmuteMic()` method of `useMeeting`.
 
 You can also pass custom track in `toggleMic()` method of `useMeeting`.
 

@@ -50,7 +50,7 @@ Above mentioned encoder configurations are valid for both, landscape as well as 
 
 #### Returns
 
-- `MediaStreamTrack`
+- `MediaStream`
 
 ### Example
 
@@ -67,7 +67,7 @@ let customTrack = await createScreenShareVideoTrack({
 
 ### Custom Track with `enableScreenShare()`
 
-In order to switch tracks during the meeting, you have to pass the `MediaStreamTrack` in the `enableScreenShare()` method of `useMeeting`.
+In order to switch tracks during the meeting, you have to pass the `MediaStream` in the `enableScreenShare()` method of `useMeeting`.
 
 You can also pass custom track in `toggleScreenShare()` method of `useMeeting`.
 

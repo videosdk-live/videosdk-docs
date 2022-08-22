@@ -63,7 +63,7 @@ Above mentioned encoder configurations are valid for both, landscape as well as 
 
 #### Returns
 
-- `MediaStreamTrack`
+- `MediaStream`
 
 ### Example
 
@@ -129,7 +129,7 @@ function App() {
 
 ### Custom Track with `enableWebcam()`
 
-In order to switch tracks during the meeting, you have to pass the `MediaStreamTrack` in the `enableWebcam()` method of `useMeeting`.
+In order to switch tracks during the meeting, you have to pass the `MediaStream` in the `enableWebcam()` method of `useMeeting`.
 
 :::note
 
