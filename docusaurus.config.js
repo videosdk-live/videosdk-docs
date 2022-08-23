@@ -25,9 +25,10 @@ module.exports = {
     defaultMode: "dark",
     announcementBar: {
       // id: "event_announcement_interactive_live_streaming_app",
-      id: "announcement_no_code_sdk_guide",
+      id: "announcement_product_hunt",
       content:
-        'ZERO CODING!!! Create and join audio-video rooms in 5 mins with our newly launched "No Code SDK".&nbsp;&nbsp;<a target="_blank" rel="noopener noreferrer" href="https://docs.videosdk.live/no-code-sdk/guide/no-code-video-and-audio-calling/getting-started">Learn more</a> ',
+        'We are launching our Video SDK on Product Hunt on Tuesday, August 30th &#128640; &nbsp;<a target="_blank" rel="noopener noreferrer" href="https://www.producthunt.com/upcoming/video-sdk">Set Reminder for Launch</a>',
+      // 'ZERO CODING!!! Create and join audio-video rooms in 5 mins with our newly launched "No Code SDK".&nbsp;&nbsp;<a target="_blank" rel="noopener noreferrer" href="https://docs.videosdk.live/no-code-sdk/guide/no-code-video-and-audio-calling/getting-started">Learn more</a> ',
       backgroundColor: "#6246FB",
       textColor: "#FFF",
       isCloseable: true,
