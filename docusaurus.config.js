@@ -29,7 +29,7 @@ module.exports = {
       content:
         'We are launching our Video SDK on Product Hunt on Tuesday, August 30th &#128640; &nbsp;<a target="_blank" rel="noopener noreferrer" href="https://www.producthunt.com/upcoming/video-sdk">Set Reminder for Launch</a>',
       // 'ZERO CODING!!! Create and join audio-video rooms in 5 mins with our newly launched "No Code SDK".&nbsp;&nbsp;<a target="_blank" rel="noopener noreferrer" href="https://docs.videosdk.live/no-code-sdk/guide/no-code-video-and-audio-calling/getting-started">Learn more</a> ',
-      backgroundColor: "#6246FB",
+      backgroundColor: "#FF5810",
       textColor: "#FFF",
       isCloseable: true,
     },
@@ -454,6 +454,10 @@ module.exports = {
     {
       // Page sense
       src: "https://cdn-in.pagesense.io/js/zujotechpvtltd/8c69e67587b74006a3927185dd663808.js",
+      async: true,
+    },
+    {
+      src: "https://cdn.videosdk.live/static-sites-scripts/product-hunt.js",
       async: true,
     },
     // {
