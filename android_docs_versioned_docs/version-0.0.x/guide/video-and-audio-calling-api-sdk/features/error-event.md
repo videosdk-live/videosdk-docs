@@ -27,7 +27,8 @@ We have depicted a specific constant with code and message in the below table.
 | **STOP_RECORDING_FAILED**     | 4012 | Recording stop request failed due to an unknown error.                                                                |
 | **START_LIVESTREAM_FAILED**   | 4013 | Livestream start request failed due to an unknown error.                                                              |
 | **STOP_LIVESTREAM_FAILED**    | 4014 | Livestream stop request failed due to an unknown error.                                                               |
-| **INVALID_LIVESTREAM_CONFIG** | 4015 | Livestream 'outputs' configuration provided was invalid.                                                              |
+| **INVALID_LIVESTREAM_CONFIG** | 4015 | Livestream 'outputs' configuration provided was invalid. 
+| **PREV_RECORDING_PROCESSING** | 4018 | Previous recording session is being processed, please try again after few seconds.                                                                 |
 | **RECORDING_FAILED**          | 5001 | Recording stopped due to an unknown error.                                                                            |
 | **LIVESTREAM_FAILED**         | 5002 | Livestream stopped due to an unknown error.                                                                           |
 

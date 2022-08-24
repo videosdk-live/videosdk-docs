@@ -652,4 +652,74 @@ values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
 
 ---
 
+### onMeetingStateChanged()
+
+- This event will be emitted when state of meeting changes.
+- It will pass **`state`** as an event callback parameter which will indicate current state of the meeting.
+- All available states are `CONNECTING`, `CONNECTED`, `FAILED`, `DISCONNECTED`, `CLOSING`, `CLOSED`.
+
+#### Event callback parameters
+
+- **state**: String
+
+#### Example
+
+<Tabs
+defaultValue="Kotlin"
+groupId={"AndroidLanguage"}
+values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
+
+<TabItem value="Kotlin">
+
+```javascript
+ override fun onMeetingStateChanged(state: String?) {
+    when (state) {
+      "CONNECTING" -> Log.d("onMeetingStateChanged: ", "Meeting is Connecting")
+      "CONNECTED" -> Log.d("onMeetingStateChanged: ", "Meeting is Connected")
+      "FAILED" -> Log.d("onMeetingStateChanged: ", "Meeting connection failed")
+      "DISCONNECTED" -> Log.d("onMeetingStateChanged: ","Meeting connection disconnected abruptly")
+      "CLOSING" -> Log.d("onMeetingStateChanged: ", "Meeting is closing")
+      "CLOSED" -> Log.d("onMeetingStateChanged: ", "Meeting connection closed")
+    }
+  }
+```
+
+</TabItem>
+
+<TabItem value="Java">
+
+```javascript
+@Override
+  public void onMeetingStateChanged(String state) {
+    switch (state) {
+        case "CONNECTING":
+          Log.d("onMeetingStateChanged: ", "Meeting is Connecting");
+          break;
+        case "CONNECTED":
+          Log.d("onMeetingStateChanged: ", "Meeting is Connected");
+          break;
+        case "FAILED":
+          Log.d("onMeetingStateChanged: ", "Meeting connection failed");
+          break;
+        case "DISCONNECTED":
+          Log.d("onMeetingStateChanged: ", "Meeting connection disconnected abruptly");
+          break;
+        case "CLOSING":
+          Log.d("onMeetingStateChanged: ", "Meeting is closing");
+          break;
+        case "CLOSED":
+          Log.d("onMeetingStateChanged: ", "Meeting connection closed");
+          break;
+    }
+  }
+    
+```
+
+</TabItem>
+
+</Tabs>
+
+---
+
+
 </div>
