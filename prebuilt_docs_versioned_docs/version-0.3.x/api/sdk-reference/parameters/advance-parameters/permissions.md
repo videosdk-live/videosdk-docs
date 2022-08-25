@@ -48,6 +48,12 @@ title: Permissions Parameters
 
 - `toggleParticipantScreenshare` represents whether participant can toggle other participant's screen share or not.
 
+### canToggleParticipantTab
+
+- type: `Boolean`
+
+- `canToggleParticipantTab` represents whether participant can toggle `participant tab` panel or not.
+
 ### removeParticipant
 
 - type: `Boolean`
@@ -107,6 +113,7 @@ meeting.init({
     toggleParticipantMic: true,
     toggleParticipantMode: true,
     canCreatePoll: true,
+    canToggleParticipantTab: true,
     toggleParticipantScreenshare: true,
     removeParticipant: true,
     endMeeting: true,

@@ -181,6 +181,14 @@ meeting.init({
 
 ---
 
+## participantTabPanelEnabled
+
+- type: `Boolean`
+
+- Setting `participantTabPanelEnabled` to `true` will show an participant tab panel in the meeting.
+
+---
+
 ## maxResolution
 
 - type: `String`

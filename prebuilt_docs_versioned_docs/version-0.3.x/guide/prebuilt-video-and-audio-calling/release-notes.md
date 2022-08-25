@@ -7,6 +7,28 @@ pagination_label: Release Notes
 
 This page will keep you update all the releases of Prebuilt SDK.
 
+## v0.3.17
+
+**Release Date** : 24th August 2022
+
+**Change log** :
+
+1. Waiting screen customization added
+
+   **Docs** : [Waiting screen](https://docs.videosdk.live/prebuilt/guide/prebuilt-video-and-audio-calling/features/waiting-screen)
+
+2. Provided permission for participant icon button visibility.
+
+   **Docs** : [Enabled Participant Tab Panel](https://docs.videosdk.live/prebuilt/api/sdk-reference/parameters/basic-parameters#participanttabpanelenabled)
+
+3. Provided permission to toggle participant tab panel.
+
+   **Docs** : [Toggle Participant Tab Panel](https://docs.videosdk.live/prebuilt/api/sdk-reference/parameters/advance-parameters/permissions#cantoggleparticipanttab)
+
+**Bug Fix** :
+
+In Chat timestamp issue resolved.
+
 ## v0.3.15
 
 **Release Date** : 6th August 2022

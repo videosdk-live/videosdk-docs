@@ -51,7 +51,8 @@
         "guide/prebuilt-video-and-audio-calling/features/customize-permissions",
         "guide/prebuilt-video-and-audio-calling/features/whitelist-domain",
         "guide/prebuilt-video-and-audio-calling/features/whiteboard",
-        "guide/prebuilt-video-and-audio-calling/features/debug-mode"
+        "guide/prebuilt-video-and-audio-calling/features/debug-mode",
+        "guide/prebuilt-video-and-audio-calling/features/waiting-screen"
       ],
       "collapsed": true
     }
@@ -79,7 +80,8 @@
         "api/sdk-reference/parameters/advance-parameters/hls",
         "api/sdk-reference/parameters/advance-parameters/live-stream",
         "api/sdk-reference/parameters/advance-parameters/recording",
-        "api/sdk-reference/parameters/advance-parameters/left-screen"
+        "api/sdk-reference/parameters/advance-parameters/left-screen",
+        "api/sdk-reference/parameters/advance-parameters/waiting-screen"
       ]
     },
     {
