@@ -156,6 +156,7 @@ module.exports = {
         "guide/prebuilt-video-and-audio-calling/features/end-meeting",
         "guide/prebuilt-video-and-audio-calling/features/whiteboard",
         "guide/prebuilt-video-and-audio-calling/features/left-screen",
+        "guide/prebuilt-video-and-audio-calling/features/waiting-screen",
         "guide/prebuilt-video-and-audio-calling/features/debug-mode",
       ],
       collapsed: true,

@@ -50,6 +50,7 @@ module.exports = {
         "guide/prebuilt-video-and-audio-calling/features/whitelist-domain",
         "guide/prebuilt-video-and-audio-calling/features/whiteboard",
         "guide/prebuilt-video-and-audio-calling/features/debug-mode",
+        "guide/prebuilt-video-and-audio-calling/features/waiting-screen",
       ],
       collapsed: true,
     },
