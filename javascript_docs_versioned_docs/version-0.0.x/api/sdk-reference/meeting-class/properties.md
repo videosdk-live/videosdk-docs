@@ -52,7 +52,7 @@ title: Meeting Class Properties
 ```javascript
 const remoteParticipantId = "ajf897";
 
-const remoteParticipant = patricipants.get(remoteParticipantId);
+const remoteParticipant = participants.get(remoteParticipantId);
 ```
 
 ---
