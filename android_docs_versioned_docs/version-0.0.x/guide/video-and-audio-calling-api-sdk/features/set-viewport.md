@@ -39,7 +39,47 @@ import ReactPlayer from 'react-player'
 
 ### Example
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs
+defaultValue="Kotlin"
+groupId={"AndroidLanguage"}
+values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
+
+<TabItem value="Kotlin">
+
 ```js
+class ParticipantAdapter(meeting: Meeting) : RecyclerView.Adapter<ParticipantAdapter.PeerViewHolder() {
+
+  //Your variables here
+
+  override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PeerViewHolder {
+    containerHeight = parent.height
+    return PeerViewHolder(
+      LayoutInflater.from(parent.context)
+        .inflate(R.layout.item_remote_peer, parent, false)
+    )
+  }
+
+  override fun onBindViewHolder(holder: PeerViewHolder, position: Int) {
+    val participant = participants[position]
+    
+    //View updates here
+
+    //Update Consuming quality using setViewPort
+    participant.setViewPort(holder.itemView.getWidth(), holder.itemView.getHeight());
+  }
+}
+
+```
+
+</TabItem>
+
+<TabItem value="Java">
+
+```js
+
 public class ParticipantAdapter extends RecyclerView.Adapter<ParticipantAdapter.PeerViewHolder> {
 
   //Your variables here
@@ -63,6 +103,11 @@ public class ParticipantAdapter extends RecyclerView.Adapter<ParticipantAdapter.
     participant.setViewPort(holder.itemView.getWidth(), holder.itemView.getHeight());
   }
 }
+
 ```
+
+</TabItem>
+
+</Tabs>
 
 The complete usage of this method can be seen here in the [code sample](https://github.com/videosdk-live/videosdk-rtc-android-java-sdk-example/blob/master/app/src/main/java/live/videosdk/rtc/android/java/ParticipantAdapter.java#L134)
