@@ -10,14 +10,14 @@ import ReactTooltip from "react-tooltip";
 
 export default function QuickstartPart() {
   const QuickStartArray = [
-    {
-      title: "No Code SDK",
-      description:
-        "ZERO CODING!! Create audio-video rooms in 5 minutes and invite other users to join it.",
-      backgroundColor:
-        "linear-gradient(99.37deg, #6246FB 0.88%, #4AA5FD 102.26%)",
-      showBadge: true,
-    },
+    // {
+    //   title: "No Code SDK",
+    //   description:
+    //     "ZERO CODING!! Create audio-video rooms in 5 minutes and invite other users to join it.",
+    //   backgroundColor:
+    //     "linear-gradient(99.37deg, #6246FB 0.88%, #4AA5FD 102.26%)",
+    //   showBadge: true,
+    // },
     {
       title: "Prebuilt SDK",
       description:
@@ -34,19 +34,25 @@ export default function QuickstartPart() {
   ];
 
   const TabletQuickStartArray1 = [
-    {
-      title: "No Code SDK",
-      description:
-        "ZERO CODING!! Create audio-video rooms in 5 minutes and invite other users to join it.",
-      backgroundColor:
-        "linear-gradient(99.37deg, #6246FB 0.88%, #4AA5FD 102.26%)",
-    },
+    // {
+    //   title: "No Code SDK",
+    //   description:
+    //     "ZERO CODING!! Create audio-video rooms in 5 minutes and invite other users to join it.",
+    //   backgroundColor:
+    //     "linear-gradient(99.37deg, #6246FB 0.88%, #4AA5FD 102.26%)",
+    // },
     {
       title: "Prebuilt SDK",
       description:
         "Integrate the pre-build video calling solution into your app in 10 minutes.",
       backgroundColor:
         "linear-gradient(99.37deg, #6A64F0 0.88%, #5A1C8E 102.26%)",
+    },
+    {
+      title: "Custom SDK",
+      description:
+        "Fully featured SDK that allows you to integrate and customize your own video calling solution from scratch.",
+      backgroundColor: "linear-gradient(90deg, #EE6E91 0%, #7964E7 100%)",
     },
   ];
 
@@ -122,57 +128,62 @@ export default function QuickstartPart() {
                   quickstart={true}
                   showBadge={item.showBadge}
                   EndPart={() => {
-                    return index == 0 ? (
-                      <div className="mt-6">
-                        <div className="h-9 md:h-12 lg:h-9 md:mt-12 2xl:mt-12 flex">
-                          <a
-                            href={"/no-code-sdk/guide/no-code-video-and-audio-calling/getting-started"}
-                            className="rounded bg-white-100  text-black font-semibold  hover:cursor-pointer hover:bg-white-150 flex flex-row items-center justify-center p-3"
-                          >
-                            Launch project in 5 mins
-                          </a>
+                    return (
+                      // index == 0 ? (
+                      //   <div className="mt-6">
+                      //     <div className="h-9 md:h-12 lg:h-9 md:mt-12 2xl:mt-12 flex">
+                      //       <a
+                      //         href={
+                      //           "/no-code-sdk/guide/no-code-video-and-audio-calling/getting-started"
+                      //         }
+                      //         className="rounded bg-white-100  text-black font-semibold  hover:cursor-pointer hover:bg-white-150 flex flex-row items-center justify-center p-3"
+                      //       >
+                      //         Launch project in 5 mins
+                      //       </a>
+                      //     </div>
+                      //   </div>
+                      // ) :
+                      index === 0 ? (
+                        <div className="mt-6">
+                          <div className="h-9 flex 2xl:mt-12">
+                            <a
+                              href={
+                                "/prebuilt/guide/prebuilt-video-and-audio-calling/getting-started"
+                              }
+                              className="rounded bg-white-100 text-black font-semibold  hover:cursor-pointer hover:bg-white-150 flex flex-row items-center justify-center p-3"
+                            >
+                              Try it - it’s free
+                            </a>
+                          </div>
                         </div>
-                      </div>
-                    ) : index === 1 ? (
-                      <div className="mt-6">
-                        <div className="h-9 flex 2xl:mt-12">
-                          <a
-                            href={
-                              "/prebuilt/guide/prebuilt-video-and-audio-calling/getting-started"
-                            }
-                            className="rounded bg-white-100 text-black font-semibold  hover:cursor-pointer hover:bg-white-150 flex flex-row items-center justify-center p-3"
-                          >
-                            Try it - it’s free
-                          </a>
-                        </div>
-                      </div>
-                    ) : (
-                      <div className="mt-6">
-                        <div className="custom-icons h-9 w-9 flex 2xl:mt-12 ">
-                          {CustomSDKArray.map((item, index) => {
-                            return (
-                              <a
-                                data-tip
-                                data-for={item.tooltip}
-                                href={item.link}
-                                className={`bg-white-250 text-black p-2 rounded-md flex items-center justify-center ${
-                                  index == 0 ? "" : "md:ml-3 ml-1"
-                                }`}
-                              >
-                                <item.Icon />
-                                <ReactTooltip
-                                  type="light"
-                                  id={item.tooltip}
-                                  place="bottom"
-                                  effect="solid"
+                      ) : (
+                        <div className="mt-6">
+                          <div className="custom-icons h-9 w-9 flex 2xl:mt-12 ">
+                            {CustomSDKArray.map((item, index) => {
+                              return (
+                                <a
+                                  data-tip
+                                  data-for={item.tooltip}
+                                  href={item.link}
+                                  className={`bg-white-250 text-black p-2 rounded-md flex items-center justify-center ${
+                                    index == 0 ? "" : "md:ml-3 ml-1"
+                                  }`}
                                 >
-                                  {item.tooltip}
-                                </ReactTooltip>
-                              </a>
-                            );
-                          })}
+                                  <item.Icon />
+                                  <ReactTooltip
+                                    type="light"
+                                    id={item.tooltip}
+                                    place="bottom"
+                                    effect="solid"
+                                  >
+                                    {item.tooltip}
+                                  </ReactTooltip>
+                                </a>
+                              );
+                            })}
+                          </div>
                         </div>
-                      </div>
+                      )
                     );
                   }}
                 />
@@ -209,57 +220,62 @@ export default function QuickstartPart() {
                     fullWidth={true}
                     quickstart={true}
                     EndPart={() => {
-                      return index == 0 ? (
-                        <div className="mt-6">
-                          <div className="h-9 flex">
-                            <a
-                              href={"/no-code-sdk/guide/no-code-video-and-audio-calling/getting-started"}
-                              className="rounded bg-white-100  text-black font-semibold  hover:cursor-pointer hover:bg-white-150 flex flex-row items-center justify-center p-3"
-                            >
-                              Launch project in 5 mins
-                            </a>
+                      return (
+                        // index == 0 ? (
+                        // <div className="mt-6">
+                        //   <div className="h-9 flex">
+                        //     <a
+                        //       href={
+                        //         "/no-code-sdk/guide/no-code-video-and-audio-calling/getting-started"
+                        //       }
+                        //       className="rounded bg-white-100  text-black font-semibold  hover:cursor-pointer hover:bg-white-150 flex flex-row items-center justify-center p-3"
+                        //     >
+                        //       Launch project in 5 mins
+                        //     </a>
+                        //   </div>
+                        // </div>
+                        // ) :
+                        index === 0 ? (
+                          <div className="mt-6 md:mt-12 lg:mt-6">
+                            <div className="h-9 flex">
+                              <a
+                                href={
+                                  "/prebuilt/guide/prebuilt-video-and-audio-calling/getting-started"
+                                }
+                                className="rounded bg-white-100 text-black font-semibold  hover:cursor-pointer hover:bg-white-150 flex flex-row items-center justify-center p-3"
+                              >
+                                Try it - it’s free
+                              </a>
+                            </div>
                           </div>
-                        </div>
-                      ) : index === 1 ? (
-                        <div className="mt-6 md:mt-12 lg:mt-6">
-                          <div className="h-9 flex">
-                            <a
-                              href={
-                                "/prebuilt/guide/prebuilt-video-and-audio-calling/getting-started"
-                              }
-                              className="rounded bg-white-100 text-black font-semibold  hover:cursor-pointer hover:bg-white-150 flex flex-row items-center justify-center p-3"
-                            >
-                              Try it - it’s free
-                            </a>
-                          </div>
-                        </div>
-                      ) : (
-                        <div className="mt-6">
-                          <div className="custom-icons h-9 w-9 flex  ">
-                            {CustomSDKArray.map((item, index) => {
-                              return (
-                                <a
-                                  data-tip
-                                  data-for={item.tooltip}
-                                  href={item.link}
-                                  className={`bg-white-250 text-black p-2 rounded-md flex items-center justify-center ${
-                                    index == 0 ? "" : "md:ml-3 ml-1"
-                                  }`}
-                                >
-                                  <item.Icon />
-                                  <ReactTooltip
-                                    type="light"
-                                    id={item.tooltip}
-                                    place="bottom"
-                                    effect="solid"
+                        ) : (
+                          <div className="mt-6">
+                            <div className="custom-icons h-9 w-9 flex  ">
+                              {CustomSDKArray.map((item, index) => {
+                                return (
+                                  <a
+                                    data-tip
+                                    data-for={item.tooltip}
+                                    href={item.link}
+                                    className={`bg-white-250 text-black p-2 rounded-md flex items-center justify-center ${
+                                      index == 0 ? "" : "md:ml-3 ml-1"
+                                    }`}
                                   >
-                                    {item.tooltip}
-                                  </ReactTooltip>
-                                </a>
-                              );
-                            })}
+                                    <item.Icon />
+                                    <ReactTooltip
+                                      type="light"
+                                      id={item.tooltip}
+                                      place="bottom"
+                                      effect="solid"
+                                    >
+                                      {item.tooltip}
+                                    </ReactTooltip>
+                                  </a>
+                                );
+                              })}
+                            </div>
                           </div>
-                        </div>
+                        )
                       );
                     }}
                   />
@@ -267,7 +283,7 @@ export default function QuickstartPart() {
               );
             })}
           </div>
-          <div className="flex">
+          {/* <div className="flex">
             {TabletQuickStartArray2.map((item, index) => {
               return (
                 <div className={`mt-4 md:max-w-[352px] lg:max-w-[440px]`}>
@@ -319,7 +335,7 @@ export default function QuickstartPart() {
                 </div>
               );
             })}
-          </div>
+          </div> */}
         </div>
       </div>
     </>
