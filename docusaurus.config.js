@@ -118,32 +118,32 @@ module.exports = {
           label: "Code Samples",
           to: "https://github.com/videosdk-live",
         },
-        {
-          position: "left",
-          label: "Experiment Lab",
-          items: [
-            {
-              label: "Guide / Standard Live Streaming API",
-              to: "docs/guide/standard-live-streaming-api-sdk/getting-started",
-              activeBaseRegex: "docs/guide/standard-live-streaming-api-sdk/*",
-            },
-            {
-              label: "Guide / Video On Demand API",
-              to: "docs/guide/video-on-demand/getting-started",
-              activeBaseRegex: "docs/guide/video-on-demand/*",
-            },
-            {
-              label: "Api-Reference / Live Streaming",
-              to: "docs/api-reference/live-streaming/intro",
-              activeBaseRegex: "docs/api-reference/live-streaming/*",
-            },
-            {
-              label: "Api-reference / Video On Demand",
-              to: "docs/api-reference/video-on-demand/intro",
-              activeBaseRegex: "docs/api-reference/video-on-demand/*",
-            },
-          ],
-        },
+        // {
+        //   position: "left",
+        //   label: "Experiment Lab",
+        //   items: [
+        //     {
+        //       label: "Guide / Standard Live Streaming API",
+        //       to: "docs/guide/standard-live-streaming-api-sdk/getting-started",
+        //       activeBaseRegex: "docs/guide/standard-live-streaming-api-sdk/*",
+        //     },
+        //     {
+        //       label: "Guide / Video On Demand API",
+        //       to: "docs/guide/video-on-demand/getting-started",
+        //       activeBaseRegex: "docs/guide/video-on-demand/*",
+        //     },
+        //     {
+        //       label: "Api-Reference / Live Streaming",
+        //       to: "docs/api-reference/live-streaming/intro",
+        //       activeBaseRegex: "docs/api-reference/live-streaming/*",
+        //     },
+        //     {
+        //       label: "Api-reference / Video On Demand",
+        //       to: "docs/api-reference/video-on-demand/intro",
+        //       activeBaseRegex: "docs/api-reference/video-on-demand/*",
+        //     },
+        //   ],
+        // },
 
         {
           label: "Start Project",
