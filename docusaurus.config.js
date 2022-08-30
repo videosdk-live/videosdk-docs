@@ -27,9 +27,9 @@ module.exports = {
       // id: "event_announcement_interactive_live_streaming_app",
       id: "announcement_product_hunt",
       content:
-        'We are launching our Video SDK on Product Hunt on Tuesday, August 30th &#128640; &nbsp;<a target="_blank" rel="noopener noreferrer" href="https://www.producthunt.com/upcoming/video-sdk">Set Reminder for Launch</a>',
+        'We are live on Product Hunt &nbsp;<a target="_blank" rel="noopener noreferrer" href="https://www.producthunt.com/posts/video-sdk-2-0?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-video&#0045;sdk&#0045;2&#0045;0">Support us on Product Hunt 🚀</a>',
       // 'ZERO CODING!!! Create and join audio-video rooms in 5 mins with our newly launched "No Code SDK".&nbsp;&nbsp;<a target="_blank" rel="noopener noreferrer" href="https://docs.videosdk.live/no-code-sdk/guide/no-code-video-and-audio-calling/getting-started">Learn more</a> ',
-      backgroundColor: "#FF5810",
+      backgroundColor: "#6246FB",
       textColor: "#FFF",
       isCloseable: true,
     },
@@ -456,10 +456,10 @@ module.exports = {
       src: "https://cdn-in.pagesense.io/js/zujotechpvtltd/8c69e67587b74006a3927185dd663808.js",
       async: true,
     },
-    {
-      src: "https://cdn.videosdk.live/static-sites-scripts/product-hunt.js",
-      async: true,
-    },
+    // {
+    //   src: "https://cdn.videosdk.live/static-sites-scripts/product-hunt.js",
+    //   async: true,
+    // },
     // {
     //   // Zoho Sales IQ
     //   src: "https://salesiq.zoho.in/widget",
