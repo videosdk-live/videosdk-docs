@@ -15,7 +15,7 @@ This page will keep you update all the releases of React Native SDK.
 
 1. Recording and Livestream status event added.
 
-   **Docs** : [Recording Events](https://docs.videosdk.live/react/api/sdk-reference/use-meeting/events#onrecordingstatechanged)
+   **Docs** : [Recording Events](https://docs.videosdk.live/react-native/api/sdk-reference/use-meeting/events#onrecordingstatechanged)
 
 2. Set Audio packet priority high.
 
@@ -23,13 +23,13 @@ This page will keep you update all the releases of React Native SDK.
 
 4. Added `getVideoStats` and `getAudioStats` methods for getting particular participant streams statistics.
 
-   **SDK Reference** : [getVideoStats](https://docs.videosdk.live/react/api/sdk-reference/use-participant/methods#getvideostats)
+   **SDK Reference** : [getVideoStats](https://docs.videosdk.live/react-native/api/sdk-reference/use-participant/methods#getvideostats)
 
-   **SDK Reference** : [getAudioStats](https://docs.videosdk.live/react/api/sdk-reference/use-participant/methods#getaudiostats)
+   **SDK Reference** : [getAudioStats](https://docs.videosdk.live/react-native/api/sdk-reference/use-participant/methods#getaudiostats)
 
 5. Added `onMeetingStateChanged` event for getting state of meeting changes.
 
-   **SDK Reference** : [onMeetingStateChanged](https://docs.videosdk.live/react/api/sdk-reference/use-meeting/events#onmeetingstatechanged)
+   **SDK Reference** : [onMeetingStateChanged](https://docs.videosdk.live/react-native/api/sdk-reference/use-meeting/events#onmeetingstatechanged)
 
 6. Custom audio, video and share track now accepts `MediaStream` instead of `MediaStreamTrack`.
 
