@@ -7,7 +7,7 @@ pagination_label: Release Notes
 
 This page will keep you update all the releases of Android SDK.
 
-## v0.0.24
+## v0.0.25
 
 **Release Date** : 24th August 2022
 
@@ -16,6 +16,17 @@ This page will keep you update all the releases of Android SDK.
 1. Add [onMeetingStateChanged](https://docs.videosdk.live/android/api/sdk-reference/meeting-class/meeting-event-listener-class#onmeetingstatechanged) Event Listener for Websocket connection status.
 
 2. Throw `PREV_RECORDING_PROCESSING` error.
+
+---
+## v0.0.24
+
+**Release Date** : 12th August 2022
+
+**Change log** : None
+
+**Bug Fix** :
+
+1. Fix Echo issue on Xiomi Device after Unmute and Mute Audio.
 
 ---
 
