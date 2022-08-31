@@ -7,15 +7,30 @@ pagination_label: Release Notes
 
 This page will keep you update all the releases of JavaScript SDK.
 
+## v0.0.49
+
+**Release Data** : 21st August 2022
+
+**Change log** : None
+
+**Bug Fix** :
+
+1. Fix `reading s.data on undefined` error. 
+
+---
 ## v0.0.47
 
 **Release Data** : 11th August 2022
 
-**Change Log:**
+**Change log** : None
+
+**Bug Fix** :
 
 1. Fixed issues with Custom audio and video tracks.
 
 2. Updated types indicating optional value or not.
+
+---
 
 ## v0.0.44
 
@@ -28,6 +43,8 @@ This page will keep you update all the releases of JavaScript SDK.
 2. Custom audio, video and share track now accepts `MediaStream` instead of `MediaStreamTrack`.
 
 3. Added types for better IDE support.
+
+---
 
 ## v0.0.42
 
@@ -44,6 +61,8 @@ This page will keep you update all the releases of JavaScript SDK.
 2.  Added `meeting-state-changed` event for getting state of meeting changes.
 
     **SDK Reference** : [meeting-state-changed](https://docs.videosdk.live/javascript/api/sdk-reference/meeting-class/events#meeting-state-changed)
+
+---
 
 ## v0.0.41
 

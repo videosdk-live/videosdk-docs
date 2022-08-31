@@ -7,15 +7,33 @@ pagination_label: Release Notes
 
 This page will keep you update all the releases of React JS SDK.
 
+## v0.1.49
+
+**Release Data** : 21st August 2022
+
+**Change log** : None
+
+**Bug Fix** :
+
+1. Fix `reading s.data on undefined` error.
+
+2. Participant initial audio & video improper state issue fix.
+
+---
+
 ## v0.1.48
 
 **Release Data** : 11th August 2022
 
-**Change Log:**
+**Change log** : None
+
+**Bug Fix** :
 
 1. Fixed issues with Custom audio and video tracks.
 
 2. Updated types indicating optional value or not.
+
+---
 
 ## v0.1.46
 
@@ -29,21 +47,25 @@ This page will keep you update all the releases of React JS SDK.
 
 3. Added types for better IDE support.
 
+---
+
 ## v0.1.43
 
 **Release Date** : 29th July 2022
 
 **Change log:**
 
-1.  Added `getVideoStats` and `getAudioStats` methods for getting particular participant streams statistics.
+1. Added `getVideoStats` and `getAudioStats` methods for getting particular participant streams statistics.
 
-    **SDK Reference** : [getVideoStats](https://docs.videosdk.live/react/api/sdk-reference/participant-class/methods#getvideostats)
+   **SDK Reference** : [getVideoStats](https://docs.videosdk.live/react/api/sdk-reference/use-participant/methods#getvideostats)
 
-    **SDK Reference** : [getAudioStats](https://docs.videosdk.live/react/api/sdk-reference/participant-class/methods#getaudiostats)
+   **SDK Reference** : [getAudioStats](https://docs.videosdk.live/react/api/sdk-reference/use-participant/methods#getaudiostats)
 
-2.  Added `onMeetingStateChanged` event for getting state of meeting changes.
+2. Added `onMeetingStateChanged` event for getting state of meeting changes.
 
-    **SDK Reference** : [onMeetingStateChanged](https://docs.videosdk.live/react/api/sdk-reference/use-meeting/events#onmeetingstatechanged)
+   **SDK Reference** : [onMeetingStateChanged](https://docs.videosdk.live/react/api/sdk-reference/use-meeting/events#onmeetingstatechanged)
+
+---
 
 ## v0.1.42
 
