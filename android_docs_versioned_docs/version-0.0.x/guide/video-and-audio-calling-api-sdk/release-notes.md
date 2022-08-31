@@ -18,6 +18,7 @@ This page will keep you update all the releases of Android SDK.
 2. Throw `PREV_RECORDING_PROCESSING` error.
 
 ---
+
 ## v0.0.24
 
 **Release Date** : 12th August 2022
@@ -26,7 +27,7 @@ This page will keep you update all the releases of Android SDK.
 
 **Bug Fix** :
 
-1. Fix Echo issue on Xiomi Device after Unmute and Mute Audio.
+1. Fix Echo issue on Xiomi Device after Mute Unmute Mic.
 
 ---
 
