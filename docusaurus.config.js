@@ -27,7 +27,7 @@ module.exports = {
       // id: "event_announcement_interactive_live_streaming_app",
       id: "announcement_product_hunt",
       content:
-        'We are live on Product Hunt &nbsp;<a target="_blank" rel="noopener noreferrer" href="https://www.producthunt.com/posts/video-sdk-2-0?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-video&#0045;sdk&#0045;2&#0045;0">Support us on Product Hunt 🚀</a>',
+        'Please &nbsp;<a target="_blank" rel="noopener noreferrer" href="https://www.producthunt.com/posts/video-sdk-2-0?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-video&#0045;sdk&#0045;2&#0045;0"><strong>support us</strong></a>&nbsp; on Product Hunt and &nbsp;<a target="_blank" rel="noopener noreferrer" href="https://ctt.ac/Dvysi"><strong>spread the word</strong></a>',
       // 'ZERO CODING!!! Create and join audio-video rooms in 5 mins with our newly launched "No Code SDK".&nbsp;&nbsp;<a target="_blank" rel="noopener noreferrer" href="https://docs.videosdk.live/no-code-sdk/guide/no-code-video-and-audio-calling/getting-started">Learn more</a> ',
       backgroundColor: "#6246FB",
       textColor: "#FFF",
