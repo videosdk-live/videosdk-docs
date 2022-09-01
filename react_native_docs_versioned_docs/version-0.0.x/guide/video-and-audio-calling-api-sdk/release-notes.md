@@ -7,6 +7,44 @@ pagination_label: Release Notes
 
 This page will keep you update all the releases of React Native SDK.
 
+## v0.0.33
+
+**Release Date** : 21st August 2022
+
+**Change log** :
+
+1. Recording and Livestream status event added.
+
+   **Docs** : [Recording Events](https://docs.videosdk.live/react-native/api/sdk-reference/use-meeting/events#onrecordingstatechanged)
+
+2. Set Audio packet priority high.
+
+3. Internal dependency update.
+
+4. Added `getVideoStats` and `getAudioStats` methods for getting particular participant streams statistics.
+
+   **SDK Reference** : [getVideoStats](https://docs.videosdk.live/react-native/api/sdk-reference/use-participant/methods#getvideostats)
+
+   **SDK Reference** : [getAudioStats](https://docs.videosdk.live/react-native/api/sdk-reference/use-participant/methods#getaudiostats)
+
+5. Added `onMeetingStateChanged` event for getting state of meeting changes.
+
+   **SDK Reference** : [onMeetingStateChanged](https://docs.videosdk.live/react-native/api/sdk-reference/use-meeting/events#onmeetingstatechanged)
+
+6. Custom audio, video and share track now accepts `MediaStream` instead of `MediaStreamTrack`.
+
+7. Added types for better IDE support.
+
+**Bug Fix** :
+
+1. Fixed issues with Custom audio and video tracks.
+
+2. Updated types indicating optional value or not.
+
+3. Fix `reading s.data on undefined` error.
+
+---
+
 ## v0.0.32
 
 **Release Date** : 1st July 2022

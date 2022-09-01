@@ -176,6 +176,46 @@ const {
 
 ---
 
+### onRecordingStateChanged()
+
+- This event will be emitted when the state of recording the meeting is changed.
+
+#### Example
+
+```javascript
+
+import { Constants, useMeeting } from "@videosdk.live/react-native-sdk";
+
+const Constants = VideoSDK.Constants;
+
+function onRecordingStateChanged(data) {
+   const { status } = data;
+
+  if (status === Constants.recordingEvents.RECORDING_STARTING) {
+    console.log("Meeting recording is starting");
+  } else if (status === Constants.recordingEvents.RECORDING_STARTED) {
+    console.log("Meeting recording is started");
+  } else if (status === Constants.recordingEvents.RECORDING_STOPPING) {
+    console.log("Meeting recording is stopping");
+  } else if (status === Constants.recordingEvents.RECORDING_STOPPED) {
+    console.log("Meeting recording is stopped");
+  } else {
+    //
+  }
+ }
+
+const {
+  meetingId
+  ...
+} = useMeeting({
+  onRecordingStateChanged,
+  ...
+});
+
+```
+
+---
+
 ### onRecordingStarted()
 
 - This event callback is trigger when meeting recording is started.
@@ -586,6 +626,56 @@ const {
   ...
 } = useMeeting({
   onError,
+  ...
+});
+```
+
+---
+
+### onMeetingStateChanged()
+
+- This event will be triggered when state of meeting changes.
+- It will pass **`state`** as an event callback parameter which will indicate current state of the meeting.
+- All available states are `CONNECTING`, `CONNECTED`, `FAILED`, `DISCONNECTED`, `CLOSING`, `CLOSED`.
+
+#### Event callback parameters
+
+- **data**: { **state**: String }
+  - **state**: String
+
+#### Example
+
+```javascript
+function onMeetingStateChanged(data) {
+  const { state } = data;
+
+  swtich(state){
+    case 'CONNECTING':
+      console.log("Meeting is Connecting" );
+      break;
+    case 'CONNECTED':
+      console.log("Meeting is Connected" );
+      break;
+    case 'FAILED':
+      console.log("Meeting connection failed" );
+      break;
+    case 'DISCONNECTED':
+      console.log("Meeting connection disconnected abruptly" );
+      break;
+    case 'CLOSING':
+      console.log("Meeting is closing" );
+      break;
+    case 'CLOSED':
+      console.log("Meeting connection closed" );
+      break;
+  }
+}
+
+const {
+  meetingId
+  ...
+} = useMeeting({
+  onMeetingStateChanged,
   ...
 });
 ```
