@@ -18,7 +18,7 @@ slug: camera-controls
 
 # Camera Controls
 
-Whenever any participant wants to start/stop broadcasting their video to other participant in a room, they can simply do it with videoSDK Room.
+Whenever any participant wants to start/stop broadcasting their video to other participant in a room, they can simply do it with VideoSDK Room.
 
 This guide will provide an overview of how to implement enable, disable and switch camera features in a room.
 

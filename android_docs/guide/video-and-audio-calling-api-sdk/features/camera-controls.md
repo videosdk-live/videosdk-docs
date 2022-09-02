@@ -20,7 +20,7 @@ slug: camera-controls
 
 # Camera Controls
 
-Whenever any participant wants to start/stop broadcasting their video to other participant in a meeting, they can simply do it with videoSDK Meeting.
+Whenever any participant wants to start/stop broadcasting their video to other participant in a meeting, they can simply do it with VideoSDK Meeting.
 
 This guide will provide an overview of how to implement enable, disable and switch webcam features in a meeting.
 

@@ -17,7 +17,7 @@ slug: join-screen
 
 # Join Screen
 
-After the successful installation of videoSDK prebuilt, the next step is to integrate videoSDK prebuilt features with your webApp.
+After the successful installation of VideoSDK prebuilt, the next step is to integrate VideoSDK prebuilt features with your webApp.
 
 To Communicate with other participant's audio or video call, you will need to join the meeting.
 

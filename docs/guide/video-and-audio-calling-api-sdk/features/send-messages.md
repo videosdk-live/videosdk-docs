@@ -18,7 +18,7 @@ slug: send-messages
 
 # Send Messages
 
-Whenever any participant wants to notify other participants via chat messages or Raise hand, they can simply do it with videoSDK Meeting.
+Whenever any participant wants to notify other participants via chat messages or Raise hand, they can simply do it with VideoSDK Meeting.
 
 This guide will provide an overview of how to implement chat and raise hand in a meeting.
 

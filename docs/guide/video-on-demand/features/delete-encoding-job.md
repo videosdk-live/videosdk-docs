@@ -14,7 +14,7 @@ slug: delete-encoding-job
 
 # Delete Encoding Job
 
-This guide will provide an overview of how we can delete encoded job using videoSDK API.
+This guide will provide an overview of how we can delete encoded job using VideoSDK API.
 
 **NOTE**: You can delete only those encoding job whose current status is **queued**.
 

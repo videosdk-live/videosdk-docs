@@ -12,7 +12,7 @@ title: Initializing a Meeting
 Before initializing the meeting, you will need to first provide `token`. Please refer this [documentation](/api-reference/realtime-communication/intro/) to generate a token.
 
 ```js
-//meeting configuration using videoSDK
+//meeting configuration using VideoSDK
 
 VideoSDK.config("<your token>");
 ```

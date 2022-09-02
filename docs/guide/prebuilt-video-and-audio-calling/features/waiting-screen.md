@@ -17,7 +17,7 @@ slug: waiting-screen
 
 # Waiting Screen
 
-After the successfull integrating videoSDK prebuilt features with your webApp, after joining the meeting you can see waiting screen.
+After the successfull integrating VideoSDK prebuilt features with your webApp, after joining the meeting you can see waiting screen.
 
 This guide will provide an overview of how to do customize waiting screen feature in VideoSDK prebuilt.
 
