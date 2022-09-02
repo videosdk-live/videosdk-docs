@@ -17,7 +17,7 @@ slug: speaker-indication
 
 # Speaker Indication
 
-Speaker indication feature in videoSDK let you know, which participant is active speaker in a meeting.
+Speaker indication feature in VideoSDK let you know, which participant is active speaker in a meeting.
 
 Whenever any participant speaks in meeting, `speaker-changed` event will trigger.
 

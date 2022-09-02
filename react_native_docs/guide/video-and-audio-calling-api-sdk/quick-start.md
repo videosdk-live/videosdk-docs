@@ -285,7 +285,7 @@ export const validateMeeting = async ({ meetingId, token }) => {
 };
 ```
 
-Once you get token , it will be used as an authorization purpose for generating videoSDK meetings and validating them in `api.js file`. Have a look to the code block below.
+Once you get token , it will be used as an authorization purpose for generating VideoSDK meetings and validating them in `api.js file`. Have a look to the code block below.
 
 - createMeeting : will generate meetingId using provided token and return it
 - validateMeeting : will validate meetingId if meetingId already exists and someone tries to join the meeting using that meetingId

@@ -18,7 +18,7 @@ slug: screenshare
 
 # Share Your Screen
 
-Whenever any participant wants to share mobile screen, they can simply do it with videoSDK Meeting.
+Whenever any participant wants to share mobile screen, they can simply do it with VideoSDK Meeting.
 
 For Mobile Devices a complete screen will be share.
 

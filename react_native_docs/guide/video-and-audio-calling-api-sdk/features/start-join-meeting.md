@@ -19,7 +19,7 @@ slug: start-join-meeting
 <div style={{display:'flex',flexDirection:'row',alignItems:'stretch',}}>
 <div style={{}}>
 <p>
-After the successful installation of videoSDK, the next step is to integrate videoSDK features with your webApp/MobileApp.</p>
+After the successful installation of VideoSDK, the next step is to integrate VideoSDK features with your webApp/MobileApp.</p>
 
 <p>To Communicate with other participant's audio or video call, you will need to join the meeting.</p>
 

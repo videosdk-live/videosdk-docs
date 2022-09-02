@@ -40,8 +40,8 @@ This quick start will help you integrate some of the basic functionalities that 
 
 :::important
 
-One should have a videoSDK account to generate token.
-Visit videoSDK **[dashboard](https://app.videosdk.live/api-keys)** to generate token
+One should have a VideoSDK account to generate token.
+Visit VideoSDK **[dashboard](https://app.videosdk.live/api-keys)** to generate token
 
 :::
 

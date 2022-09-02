@@ -18,7 +18,7 @@ slug: screenshare
 
 # Share Your Screen
 
-Whenever any participant wants to share either the complete screen, a specific window or, a browser tab, they can simply do it with videoSDK Meeting.
+Whenever any participant wants to share either the complete screen, a specific window or, a browser tab, they can simply do it with VideoSDK Meeting.
 
 This guide will provide an overview of how to use enable and disable Screen Share in a meeting.
 

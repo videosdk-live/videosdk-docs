@@ -28,8 +28,8 @@ It supports all the modern frameworks such as plain JavaScript, React JS, Vue, a
 
 :::important
 
-One should have a videoSDK account to generate token.
-Visit videoSDK **[dashboard](https://app.videosdk.live/api-keys)** to generate token
+One should have a VideoSDK account to generate token.
+Visit VideoSDK **[dashboard](https://app.videosdk.live/api-keys)** to generate token
 
 :::
 

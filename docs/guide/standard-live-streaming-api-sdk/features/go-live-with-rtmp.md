@@ -17,7 +17,7 @@ slug: go-live-with-rtmp
 
 # Live Stream - Go Live With- RTMP
 
-In previous step, we have created live stream using videoSDK API and in response we got `upstreamUrl` and `streamKey`.
+In previous step, we have created live stream using VideoSDK API and in response we got `upstreamUrl` and `streamKey`.
 
 Using `upstreamUrl` and `streamKey` we can start broadcasting live stream with any open source software such as **OBS Studio**, **VideoLan**, **Ant Media**, **Streamlabs OBS**, etc.
 

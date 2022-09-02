@@ -32,8 +32,8 @@ Before proceeding, ensure that your development environment meets the following 
 
 :::important
 
-One should have a videoSDK account to generate token.
-Visit videoSDK **[dashboard](https://app.videosdk.live/api-keys)** to generate token
+One should have a VideoSDK account to generate token.
+Visit VideoSDK **[dashboard](https://app.videosdk.live/api-keys)** to generate token
 
 :::
 

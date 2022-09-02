@@ -18,7 +18,7 @@ slug: mic-controls
 
 # Mic Controls
 
-Whenever any participant wants to start / stop broadcasting their audio to other participant in room, they can simply do it with videoSDK room.
+Whenever any participant wants to start / stop broadcasting their audio to other participant in room, they can simply do it with VideoSDK room.
 
 This guide will provide an overview of how to use enable and disable Mic in a room.
 
