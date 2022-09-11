@@ -7,6 +7,20 @@ pagination_label: Release Notes
 
 This page will keep you update all the releases of Prebuilt SDK.
 
+## v0.3.19
+
+**Release Date** : 12th September 2022
+
+**Change log** :
+
+1. Added option to configure themes for Recordings, Livestreams and HLS
+
+   **Docs** : [Change Recording Theme](https://docs.videosdk.live/prebuilt/api/sdk-reference/parameters/advance-parameters/recording)
+
+   **Docs** : [Change LiveStreaming Theme](https://docs.videosdk.live/prebuilt/api/sdk-reference/parameters/advance-parameters/live-stream)
+
+   **Docs** : [Change HLS Theme](https://docs.videosdk.live/prebuilt/api/sdk-reference/parameters/advance-parameters/hls)
+
 ## v0.3.18
 
 **Release Date** : 9th September 2022

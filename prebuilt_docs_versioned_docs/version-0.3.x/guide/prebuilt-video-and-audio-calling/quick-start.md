@@ -70,7 +70,7 @@ Visit videoSDK **[dashboard](https://app.videosdk.live/api-keys)** to generate t
   });
 
   script.src =
-    "https://sdk.videosdk.live/rtc-js-prebuilt/0.3.18/rtc-js-prebuilt.js";
+    "https://sdk.videosdk.live/rtc-js-prebuilt/0.3.19/rtc-js-prebuilt.js";
   document.getElementsByTagName("head")[0].appendChild(script);
 </script>
 ```

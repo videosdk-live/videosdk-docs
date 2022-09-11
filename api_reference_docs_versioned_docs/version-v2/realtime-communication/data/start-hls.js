@@ -38,8 +38,8 @@ const startHLSstream = {
     - **type**: _"GRID"_ | _"SPOTLIGHT"_ | _"SIDEBAR"_
     - **priority**: _"SPEAKER"_ | _"PIN"_
     - **gridSize**: Number _\`max 25\`_
-    - **theme**: _"DARK"_ | _"LIGHT"_ | _"DEFAULT"_
   - **orientation**: _"landscape"_ | _"portrait"_
+  - **theme**: _"DARK"_ | _"LIGHT"_ | _"DEFAULT"_
 `,
       required: false,
     },
