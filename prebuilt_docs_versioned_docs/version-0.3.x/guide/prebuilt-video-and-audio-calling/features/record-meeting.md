@@ -38,6 +38,7 @@ Any participant can start/stop recording any time during the meeting.
 - `recording.enabled`: If it is true, then recording button will be visible on top bar of the meeting. If it is false, then recording button won't be available on top bar of the meeting.
 - `toggleRecording`: If it is true, then other participant can start/stop recording during the meeting. If it is false, then participant can not start/stop recording during the meeting.
 - `recording.webhookUrl`: It's your [webhook url](https://en.wikipedia.org/wiki/Webhook), where we notify once meeting recording is complete.
+- `recording.theme`: It will record the meeting based on theme indicated. it can be a either DARK , LIGHT or DEFAULT.
 - `recording.autoStart`: It will auto start recording when participant joined
 - `recording.awsDirPath`: It indicates where the recording will get stored.
 - `recording.layout.type` : It will record the meeting based on layout type indicated.
@@ -52,6 +53,7 @@ const config = {
     webhookUrl: "https://www.videosdk.live/callback",
     awsDirPath: `/meeting-recordings/${meetingId}/`,
     autoStart: false,
+    theme: "DARK" // DARK || LIGHT || DEFAULT
 
     layout: {
       type: "SIDEBAR", // "SPOTLIGHT" | "SIDEBAR" | "GRID"

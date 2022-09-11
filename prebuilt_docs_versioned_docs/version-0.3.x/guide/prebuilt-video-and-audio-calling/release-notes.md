@@ -7,6 +7,18 @@ pagination_label: Release Notes
 
 This page will keep you update all the releases of Prebuilt SDK.
 
+## v0.3.18
+
+**Release Date** : 9th September 2022
+
+**Change log** :
+
+1. `DARK` and `LIGHT` theme added.
+
+   **Docs** : [Change Theme](https://docs.videosdk.live/prebuilt/guide/prebuilt-video-and-audio-calling/features/theme)
+
+2. Activity icon can be hidden by setting `pollEnabled : false` .
+
 ## v0.3.17
 
 **Release Date** : 24th August 2022

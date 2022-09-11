@@ -38,6 +38,7 @@ This guide will provide an overview of how participant can start and stop broadc
 - `toggleLivestream` : When set to true it will enable you to add your streaming platform details when you click on `Add Live Streams` button.
 - `liveStream.enabled` : When set to true , one can go live otherwise one has no permission to go live even if live streaming platforms has been added.
 - `liveStream.autoStart`: If it is true then live streaming will start automatically when the meeting starts, default value is false (You can't start live streaming during the meeting).
+- `liveStream.theme`: You can provide theme when you live streaming the meeting . it can be a either DARK , LIGHT or DEFAULT.
 
 :::note
 
@@ -56,6 +57,7 @@ const config = {
   livestream: {
     autoStart: true,
     enabled: true,
+    theme: "DARK", // DARK || LIGHT || DEFAULT
   },
   // ...
 };

@@ -167,6 +167,7 @@ title: Methods returned by useMeeting Hook
     - **type**: _"GRID"_ | _"SPOTLIGHT"_ | _"SIDEBAR"_
     - **priority**: _"SPEAKER"_ | _"PIN"_
     - **gridSize**: Number _`max 25`_
+    - **theme**: _"DARK"_ | _"LIGHT"_ | _"DEFAULT"_
 
 #### Events associated with `startRecording()`:
 
@@ -184,6 +185,7 @@ const config = {
     type: "SPOTLIGHT",
     priority: "PIN",
     gridSize: 9,
+    theme: "DEFAULT",
   },
 };
 
@@ -218,6 +220,7 @@ startRecording(webhookUrl, awsDirPath, config);
     - **type**: _"GRID"_ | _"SPOTLIGHT"_ | _"SIDEBAR"_
     - **priority**: _"SPEAKER"_ | _"PIN"_
     - **gridSize**: Number _`max 25`_
+    - **theme**: _"DARK"_ | _"LIGHT"_ | _"DEFAULT"_
 
 #### Events associated with `startLiveStream()`:
 
@@ -242,6 +245,7 @@ const config = {
     type: "SPOTLIGHT",
     priority: "PIN",
     gridSize: 9,
+    theme: "DEFAULT",
   },
 };
 
@@ -275,6 +279,7 @@ startLivestream(outputs, config);
     - **type**: _"GRID"_ | _"SPOTLIGHT"_ | _"SIDEBAR"_
     - **priority**: _"SPEAKER"_ | _"PIN"_
     - **gridSize**: Number _`max 25`_
+    - **theme**: _"DARK"_ | _"LIGHT"_ | _"DEFAULT"_
 
 #### Events associated with `startHls()`:
 
@@ -288,6 +293,7 @@ const config = {
     type: "SPOTLIGHT",
     priority: "PIN",
     gridSize: 9,
+    theme: "DEFAULT",
   },
 };
 
