@@ -15,11 +15,11 @@ This page will keep you update all the releases of Prebuilt SDK.
 
 1. Added option to configure themes for Recordings, Livestreams and HLS
 
-   **Docs** : [Change Recording Theme](https://docs.videosdk.live/prebuilt/api/sdk-reference/parameters/advance-parameters/recording)
+   **Docs** : [Change Recording Theme](/prebuilt/api/sdk-reference/parameters/advance-parameters/recording)
 
-   **Docs** : [Change LiveStreaming Theme](https://docs.videosdk.live/prebuilt/api/sdk-reference/parameters/advance-parameters/live-stream)
+   **Docs** : [Change LiveStreaming Theme](/prebuilt/api/sdk-reference/parameters/advance-parameters/live-stream)
 
-   **Docs** : [Change HLS Theme](https://docs.videosdk.live/prebuilt/api/sdk-reference/parameters/advance-parameters/hls)
+   **Docs** : [Change HLS Theme](/prebuilt/api/sdk-reference/parameters/advance-parameters/hls)
 
 ## v0.3.18
 
@@ -29,7 +29,7 @@ This page will keep you update all the releases of Prebuilt SDK.
 
 1. `DARK` and `LIGHT` theme added.
 
-   **Docs** : [Change Theme](https://docs.videosdk.live/prebuilt/guide/prebuilt-video-and-audio-calling/features/theme)
+   **Docs** : [Change Theme](/prebuilt/guide/prebuilt-video-and-audio-calling/features/theme)
 
 2. Activity icon can be hidden by setting `pollEnabled : false` .
 
@@ -41,15 +41,15 @@ This page will keep you update all the releases of Prebuilt SDK.
 
 1. Waiting screen customization added
 
-   **Docs** : [Waiting screen](https://docs.videosdk.live/prebuilt/guide/prebuilt-video-and-audio-calling/features/waiting-screen)
+   **Docs** : [Waiting screen](/prebuilt/guide/prebuilt-video-and-audio-calling/features/waiting-screen)
 
 2. Provided permission for participant icon button visibility.
 
-   **Docs** : [Enabled Participant Tab Panel](https://docs.videosdk.live/prebuilt/api/sdk-reference/parameters/basic-parameters#participanttabpanelenabled)
+   **Docs** : [Enabled Participant Tab Panel](/prebuilt/api/sdk-reference/parameters/basic-parameters#participanttabpanelenabled)
 
 3. Provided permission to toggle participant tab panel.
 
-   **Docs** : [Toggle Participant Tab Panel](https://docs.videosdk.live/prebuilt/api/sdk-reference/parameters/advance-parameters/permissions#cantoggleparticipanttab)
+   **Docs** : [Toggle Participant Tab Panel](/prebuilt/api/sdk-reference/parameters/advance-parameters/permissions#cantoggleparticipanttab)
 
 **Bug Fix** :
 
@@ -63,7 +63,7 @@ In Chat timestamp issue resolved.
 
 1. While Screen sharing, participant can share audio of their chrome tab.
 
-   **Docs** : [Screen Share with Audio](https://docs.videosdk.live/prebuilt/guide/prebuilt-video-and-audio-calling/features/screenshare#screen-share-with-audio)
+   **Docs** : [Screen Share with Audio](/prebuilt/guide/prebuilt-video-and-audio-calling/features/screenshare#screen-share-with-audio)
 
 ## v0.3.14
 
@@ -79,7 +79,7 @@ In Chat timestamp issue resolved.
 
 **Change log** :
 
-1. [Live Poll (BETA)](https://docs.videosdk.live/prebuilt/guide/prebuilt-video-and-audio-calling/features/live-poll) Release.
+1. [Live Poll (BETA)](/prebuilt/guide/prebuilt-video-and-audio-calling/features/live-poll) Release.
 
 2. Any participant can create a poll by passing `canCreatePoll` true.
 
