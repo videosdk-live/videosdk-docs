@@ -13,7 +13,7 @@ This page will keep you update all the releases of Prebuilt SDK.
 
 **Change log** :
 
-1. Added option to configure themes for Recordings, Livestreams and HLS
+1. Added option to configure themes for Recordings, Livestreaming and HLS
 
    **Docs** : [Change Recording Theme](/prebuilt/api/sdk-reference/parameters/advance-parameters/recording)
 
