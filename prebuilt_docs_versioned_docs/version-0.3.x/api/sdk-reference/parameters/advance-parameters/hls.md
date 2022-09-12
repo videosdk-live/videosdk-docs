@@ -29,6 +29,12 @@ title: HLS Feature Parameter
 
 - `hls.playerControlsVisible` : If it is `true` then participant can view controls for the interactive meeting player.
 
+### theme
+
+- type: `String`
+
+- `hls.theme` represents the hls theme which can be `DARK` , `LIGHT` or `DEFAULT`.
+
 ### toggleParticipantMode
 
 - type: `Boolean`
@@ -59,6 +65,7 @@ meeting.init({
   hls: {
     enabled: true,
     autoStart: false,
+    theme: "DARK" // DARK | LIGHT | DEFAULT
     playerControlsVisible: true,
   },
   permissions: {

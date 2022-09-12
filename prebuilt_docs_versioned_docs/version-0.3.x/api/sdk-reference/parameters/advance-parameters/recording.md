@@ -35,6 +35,12 @@ title: Recording Parameters
 
 - `recording.autostart` autostarts recording if set to `true` when meeting gets started.
 
+### theme
+
+- type: `String`
+
+- `recording.theme` represents the theme of recording which can be `DARK` , `LIGHT` or `DEFAULT`.
+
 ```js
 meeting.init({
   recording: {
@@ -42,7 +48,7 @@ meeting.init({
     webhookUrl: "https://www.videosdk.live/callback",
     awsDirPath: `/meeting-recordings/${meetingId}/`,
     autoStart: false,
-  },
+    theme: "DARK" // DARK | LIGHT | DEFAULT
 });
 ```
 

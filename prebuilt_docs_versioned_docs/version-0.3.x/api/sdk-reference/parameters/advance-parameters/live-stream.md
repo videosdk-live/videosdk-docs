@@ -23,6 +23,12 @@ title: LiveStream Parameters
 
 - `livestream.autostart` autostart live streaming if set to `true` when meeting gets started.
 
+### theme
+
+- type: `String`
+
+- `livestream.theme` represents the theme of live streaming which can be `DARK` , `LIGHT` or `DEFAULT`.
+
 ### outputs
 
 - type: `json object array`
@@ -39,6 +45,7 @@ meeting.init({
   livestream: {
     enabled: true,
     autoStart: true,
+    theme: "DARK" // DARK | LIGHT | DEFAULT
     outputs: [
       {
         url: "rtmp://x.rtmp.youtube.com/live2",

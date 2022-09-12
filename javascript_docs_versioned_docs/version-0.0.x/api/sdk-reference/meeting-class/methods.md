@@ -151,6 +151,7 @@ title: Meeting Class Methods
     - **type**: _"GRID"_ | _"SPOTLIGHT"_ | _"SIDEBAR"_
     - **priority**: _"SPEAKER"_ | _"PIN"_
     - **gridSize**: Number _`max 25`_
+  - **theme**: _"DARK"_ | _"LIGHT"_ | _"DEFAULT"_
 
 #### Returns
 
@@ -169,6 +170,7 @@ const config = {
     priority: "PIN",
     gridSize: 9,
   },
+  theme: "DEFAULT",
 };
 
 startRecording(webhookUrl, awsDirPath, config);
@@ -201,6 +203,7 @@ startRecording(webhookUrl, awsDirPath, config);
     - **type**: _"GRID"_ | _"SPOTLIGHT"_ | _"SIDEBAR"_
     - **priority**: _"SPEAKER"_ | _"PIN"_
     - **gridSize**: Number _`max 25`_
+  - **theme**: _"DARK"_ | _"LIGHT"_ | _"DEFAULT"_
 
 #### Returns
 
@@ -228,6 +231,7 @@ const config = {
     priority: "PIN",
     gridSize: 9,
   },
+  theme: "DEFAULT",
 };
 
 startLivestream(outputs, config);
@@ -257,6 +261,7 @@ startLivestream(outputs, config);
     - **type**: _"GRID"_ | _"SPOTLIGHT"_ | _"SIDEBAR"_
     - **priority**: _"SPEAKER"_ | _"PIN"_
     - **gridSize**: Number _`max 25`_
+  - **theme**: _"DARK"_ | _"LIGHT"_ | _"DEFAULT"_
 
 #### Returns
 
@@ -271,6 +276,7 @@ const config = {
     priority: "PIN",
     gridSize: 9,
   },
+  theme: "DEFAULT",
 };
 
 startHls(config);

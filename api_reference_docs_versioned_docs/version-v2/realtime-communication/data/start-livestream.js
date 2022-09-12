@@ -44,6 +44,7 @@ const startLivestream = {
     - **type**: _"GRID"_ | _"SPOTLIGHT"_ | _"SIDEBAR"_
     - **priority**: _"SPEAKER"_ | _"PIN"_
     - **gridSize**: Number _\`max 4\`_
+  - **theme**: _"DARK"_ | _"LIGHT"_ | _"DEFAULT"_
 `,
       required: false,
     },

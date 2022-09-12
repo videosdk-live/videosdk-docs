@@ -28,6 +28,7 @@ This guide will provide an overview of how participant can start and stop broadc
 - `toggleHLS` : When set to `true` it will enable you to click on `Start HLS` button.
 - `hls.enabled` : When set to `true` , you can see `Start HLS` button.
 - `hls.autoStart`: If it is `true` then HLS will start automatically when the meeting starts, default value is false (You can't start HLS during the meeting).
+- `hls.theme`: It will HLS the meeting based on theme you are passing. it can be a either DARK , LIGHT or DEFAULT.
 - `hls.playerControlsVisible` : If it is `true` then participant can view controls for the interactive meeting player.
 - `toggleParticipantMode`: When set to `true`, you can toggle other partcipant mode from an ongoing meeting by clicking on `Add as a Cohost` Icon button.
 
@@ -63,6 +64,7 @@ const config = {
   hls: {
     enabled: true,
     autoStart: false,
+    theme: "DARK", // DARK || LIGHT || DEFAULT
   },
   permissions: {
     //  ...other permissions
