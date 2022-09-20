@@ -1,5 +1,6 @@
 {
-  "guideAudioAndVideoCalling": [{
+  "guideAudioAndVideoCalling": [
+    {
       "type": "category",
       "label": "Introduction",
       "items": [
@@ -48,12 +49,14 @@
         "guide/video-and-audio-calling-api-sdk/features/remove-participant",
         "guide/video-and-audio-calling-api-sdk/features/set-quality",
         "guide/video-and-audio-calling-api-sdk/features/entry-request-response",
-        "guide/video-and-audio-calling-api-sdk/features/pause-resume-video-stream"
+        "guide/video-and-audio-calling-api-sdk/features/pause-resume-video-stream",
+        "guide/video-and-audio-calling-api-sdk/features/switch-audio-output"
       ],
       "collapsed": true
     }
   ],
-  "apiSidebar": [{
+  "apiSidebar": [
+    {
       "type": "doc",
       "id": "api/sdk-reference/setup"
     },
