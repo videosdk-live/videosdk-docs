@@ -404,7 +404,7 @@ meeting.on("livestream-stopped", () => {
 
 ### hls-state-changed
 
-- This event will be emitted when the state of hls the meeting is changed.
+- This event will be emitted when the state of the Hls(http livestreaming) changes in the meeting.
 
 #### Event callback parameters
 

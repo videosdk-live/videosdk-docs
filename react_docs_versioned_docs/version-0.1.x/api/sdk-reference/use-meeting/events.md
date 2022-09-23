@@ -390,7 +390,7 @@ const {
 
 ### onHlsStateChanged()
 
-- This event will be emitted when the state of Hls the meeting is changed.
+- This event will be emitted when the state of the Hls(http livestreaming) changes in the meeting.
 
 #### Example
 

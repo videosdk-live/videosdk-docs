@@ -88,7 +88,7 @@ title: useMeeting Hook Properties
 ### isHls
 
 - type : `boolean`
-- `isHls` will be `true` if live stream is on else `false`.
+- `isHls` will be `true` if the HLS streaming is being running else `false`.
 
 ---
 

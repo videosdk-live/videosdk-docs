@@ -88,7 +88,7 @@ title: useMeeting Hook Properties
 ### isHls
 
 - type : `boolean`
-- `isHls` will be `true` if the meeting is being recorded else `false`.
+- `isHls` will be `true` if the HLS streaming is being running else `false`.
 
 ---
 
