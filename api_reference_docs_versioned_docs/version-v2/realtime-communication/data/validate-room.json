@@ -27,6 +27,7 @@
       "roomId": "abc-xyzw-lmno",
       "customRoomId": "demo-room",
       "userId": "5f7edbb14c938bcd42944527",
+      "disabled": false,
       "createdAt": "2022-03-24T11:12:12.619Z",
       "updatedAt": "2022-03-24T11:12:12.619Z",
       "id": "623c520c6b0631c41cc98e81",
