@@ -85,6 +85,13 @@ title: useMeeting Hook Properties
 
 ---
 
+### isHls
+
+- type : `boolean`
+- `isHls` will be `true` if live stream is on else `false`.
+
+---
+
 ### localScreenShareOn
 
 - type : `boolean`

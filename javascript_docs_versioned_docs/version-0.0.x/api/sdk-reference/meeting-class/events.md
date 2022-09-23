@@ -402,7 +402,57 @@ meeting.on("livestream-stopped", () => {
 
 ---
 
+### hls-state-changed
+
+- This event will be emitted when the state of hls the meeting is changed.
+
+#### Event callback parameters
+
+- **data**: { **status**: String , **downstreamUrl**: String }
+  - **status**: String
+  - **downstreamUrl**: String _`will receive this property only in HLS_STARTED status`_
+
+`status` has following values
+
+- `HLS_STARTING` - Hls is in starting phase and hasn't started yet.
+- `HLS_STARTED` - Hls has started successfully will return `downstreamUrl`.
+- `HLS_STOPPING` - Hls is in stopping phase and hasn't stopped yet.
+- `HLS_STOPPED` - Hls has stopped successfully.
+
+#### Example
+
+```javascript
+import { VideoSDK } from "@videosdk.live/js-sdk";
+
+const Constants = VideoSDK.Constants;
+
+meeting.on("hls-state-changed", (data) => {
+  const { status } = data;
+
+  if (status === Constants.hlsEvents.HLS_STARTING) {
+    console.log("Meeting Hls is starting");
+  } else if (status === Constants.hlsEvents.HLS_STARTED) {
+    // when hls is started you will receive downstreamUrl
+    const { downstreamUrl } = data;
+
+    console.log("Meeting Hls is started");
+  } else if (status === Constants.hlsEvents.HLS_STOPPING) {
+    console.log("Meeting Hls is stopping");
+  } else if (status === Constants.hlsEvents.HLS_STOPPED) {
+    console.log("Meeting Hls is stopped");
+  } else {
+    //
+  }
+});
+```
+
+---
+
+---
+
 ### hls-started
+
+_`This event will be deprecated soon`_
 
 - This event will be emitted when `HLS` of the meeting is started.
 
@@ -422,6 +472,8 @@ meeting.on("hls-started", ({ downstreamUrl }) => {
 ---
 
 ### hls-stopped
+
+_`This event will be deprecated soon`_
 
 - This event will be emitted when `HLS` of the meeting is stopped.
 
