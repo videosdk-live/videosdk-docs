@@ -388,6 +388,48 @@ const {
 
 ---
 
+### onHlsStateChanged()
+
+- This event will be emitted when the state of the Hls(http livestreaming) changes in the meeting.
+
+#### Example
+
+```javascript
+
+import { Constants, useMeeting } from "@videosdk.live/react-sdk";
+
+const Constants = VideoSDK.Constants;
+
+function onHlsStateChanged(data) {
+   const { status } = data;
+
+  if (status === Constants.hlsEvents.HLS_STARTING) {
+    console.log("Meeting Hls is starting");
+  } else if (status === Constants.hlsEvents.HLS_STARTED) {
+    // on hlsStateChanged started you will receive downstreamUrl
+    const {downstreamUrl}=data;
+    console.log("Meeting Hls is started");
+  } else if (status === Constants.hlsEvents.HLS_STOPPING) {
+    console.log("Meeting Hls is stopping");
+  } else if (status === Constants.hlsEvents.HLS_STOPPED) {
+    console.log("Meeting Hls is stopped");
+  } else {
+    //
+  }
+ }
+
+const {
+  meetingId
+  ...
+} = useMeeting({
+  onHlsStateChanged,
+  ...
+});
+
+```
+
+---
+
 ### onHlsStarted()
 
 - This event callback is trigger when meeting `HLS` is started.

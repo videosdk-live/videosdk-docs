@@ -78,6 +78,21 @@
     "code": 4017,
     "message": "HLS stop request failed due to an unknown error."
   },
+  {
+    "type": "PREV_RECORDING_PROCESSING",
+    "code": 4018,
+    "message": "Previous recording session is being processed, please try again after few seconds!"
+  },
+  {
+    "type": "PREV_RTMP_RECORDING_PROCESSING",
+    "code": 4019,
+    "message": "Previous RTMP recording session is being processed, please try again after few seconds!"
+  },
+  {
+    "type": "PREV_HLS_STREAMING_PROCESSING",
+    "code": 4020,
+    "message": "Previous HLS streaming session is being processed, please try again after few seconds!"
+  },
 
   {
     "type": "RECORDING_FAILED",

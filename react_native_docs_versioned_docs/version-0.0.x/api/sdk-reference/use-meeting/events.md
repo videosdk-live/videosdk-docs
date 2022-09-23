@@ -304,6 +304,47 @@ const {
 
 ---
 
+### onLivestreamStateChanged()
+
+- This event will be emitted when the state of Livestream in the meeting is changed.
+
+#### Example
+
+```javascript
+
+import { Constants, useMeeting } from "@videosdk.live/react-native-sdk";
+
+const Constants = VideoSDK.Constants;
+
+function onLivestreamStateChanged(data) {
+   const { status } = data;
+
+  if (status === Constants.livestreamEvents.LIVESTREAM_STARTING) {
+    console.log("Meeting Livestream is starting");
+  } else if (status === Constants.livestreamEvents.LIVESTREAM_STARTED) {
+    const { downstreamUrl } = data;
+    console.log("Meeting Livestream is started");
+  } else if (status === Constants.livestreamEvents.LIVESTREAM_STOPPING) {
+    console.log("Meeting Livestream is stopping");
+  } else if (status === Constants.livestreamEvents.LIVESTREAM_STOPPED) {
+    console.log("Meeting Livestream is stopped");
+  } else {
+    //
+  }
+ }
+
+const {
+  meetingId
+  ...
+} = useMeeting({
+  onLivestreamStateChanged,
+  ...
+});
+
+```
+
+---
+
 ### onLiveStreamStarted()
 
 - This event callback is trigger when meeting live stream is started.
@@ -344,6 +385,48 @@ const {
   onLiveStreamStopped,
   ...
 });
+```
+
+---
+
+### onHlsStateChanged()
+
+- This event will be emitted when the state of Hls in the meeting is changed.
+- you will receive downstreamUrl with status HLS_STARTED
+
+#### Example
+
+```javascript
+
+import { Constants, useMeeting } from "@videosdk.live/react-native-sdk";
+
+const Constants = VideoSDK.Constants;
+
+function onHlsStateChanged(data) {
+   const { status } = data;
+
+  if (status === Constants.hlsEvents.HLS_STARTING) {
+    console.log("Meeting Hls is starting");
+  } else if (status === Constants.hlsEvents.HLS_STARTED) {
+    const { downstreamUrl } = data;
+    console.log("Meeting Hls is started");
+  } else if (status === Constants.hlsEvents.HLS_STOPPING) {
+    console.log("Meeting Hls is stopping");
+  } else if (status === Constants.hlsEvents.HLS_STOPPED) {
+    console.log("Meeting Hls is stopped");
+  } else {
+    //
+  }
+ }
+
+const {
+  meetingId
+  ...
+} = useMeeting({
+  onHlsStateChanged,
+  ...
+});
+
 ```
 
 ---
