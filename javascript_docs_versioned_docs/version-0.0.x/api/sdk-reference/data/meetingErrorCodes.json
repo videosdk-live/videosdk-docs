@@ -9,31 +9,26 @@
     "code": 4002,
     "message": "'token' is empty or invalid or might have expired."
   },
-
   {
     "type": "INVALID_MEETING_ID",
     "code": 4003,
     "message": "'meetingId' is empty or invalid, please verify it or generate new meetingId using the API."
   },
-
   {
     "type": "INVALID_PARTICIPANT_ID",
     "code": 4004,
     "message": "'participantId' is empty or invalid, it shouldn't contain any whitespaces."
   },
-
   {
     "type": "DUPLICATE_PARTICIPANT",
     "code": 4005,
     "message": "Leaving meeting, since this 'participantId' joined from another device."
   },
-
   {
     "type": "ACCOUNT_DEACTIVATED",
     "code": 4006,
     "message": "It seems your account is deactivated by VideoSDK for some reason, you can reach out to us at support@videosdk.live."
   },
-
   {
     "type": "ACCOUNT_DISCONTINUED",
     "code": 4007
@@ -78,7 +73,6 @@
     "code": 4017,
     "message": "HLS stop request failed due to an unknown error."
   },
-
   {
     "type": "PREV_RECORDING_PROCESSING",
     "code": 4018,
@@ -109,5 +103,35 @@
     "type": "HLS_FAILED",
     "code": 5003,
     "message": "HLS stopped due to an unknown error."
+  },
+  {
+    "type": "ERROR_GET_VIDEO_MEDIA",
+    "code": 3011,
+    "message": "Your browser/Device does not support Video."
+  },
+  {
+    "type": "ERROR_GET_AUDIO_MEDIA",
+    "code": 3012,
+    "message": "Your browser/Device does not support Audio."
+  },
+  {
+    "type": "ERROR_GET_DISPLAY_MEDIA",
+    "code": 3013,
+    "message": "Your browser/Device does not support  Screen Sharing."
+  },
+  {
+    "type": "ERROR_GET_VIDEO_MEDIA_PERMISSION_DENIED",
+    "code": 3014,
+    "message": "Video capture permission denied."
+  },
+  {
+    "type": "ERROR_GET_AUDIO_MEDIA_PERMISSION_DENIED",
+    "code": 3015,
+    "message": "Audio capture permission denied."
+  },
+  {
+    "type": "ERROR_GET_DISPLAY_MEDIA_PERMISSION_DENIED",
+    "code": 3016,
+    "message": "Screen sharing permission denied."
   }
 ]

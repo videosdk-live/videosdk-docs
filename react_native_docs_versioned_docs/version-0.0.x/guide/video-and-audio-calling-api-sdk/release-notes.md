@@ -7,6 +7,34 @@ pagination_label: Release Notes
 
 This page will keep you update all the releases of React Native SDK.
 
+## v0.0.35
+
+**Release Data** : 23rd September 2022
+
+**Change log** :
+
+1. Added [Error Event](https://docs.videosdk.live/react-native/guide/video-and-audio-calling-api-sdk/features/error-event) for,
+
+   1. If someone is denying media controls permissions such as `Video`, `Mic` and `Screen Share`
+   2. Previous Recording, RTMP or HLS is being processed.
+
+**Error Code Table :**
+
+| Code                                          | Type | Message                                                                                 |
+| --------------------------------------------- | ---- | --------------------------------------------------------------------------------------- |
+| **ERROR_GET_VIDEO_MEDIA_PERMISSION_DENIED**   | 3014 | Video capture permission denied.                                                        |
+| **ERROR_GET_AUDIO_MEDIA_PERMISSION_DENIED**   | 3015 | Audio capture permission denied.                                                        |
+| **ERROR_GET_DISPLAY_MEDIA_PERMISSION_DENIED** | 3016 | Screen sharing permission denied.                                                       |
+| **PREV_RECORDING_PROCESSING**                 | 4018 | Previous recording session is being processed, please try again after few seconds!      |
+| **PREV_RTMP_RECORDING_PROCESSING**            | 4019 | Previous RTMP recording session is being processed, please try again after few seconds! |
+| **PREV_HLS_STREAMING_PROCESSING**             | 4020 | Previous HLS streaming session is being processed, please try again after few seconds!  |
+
+2. Event added for HLS state (starting, started, stopping and stopped)
+
+   **SDK Reference** : [onHlsStateChanged](https://docs.videosdk.live/react-native/api/sdk-reference/use-meeting/events#onhlsstatechanged)
+
+_This version will store timeline of the session, session stats and participant stats. This will be available in your [VideoSDK Session Dashboard](https://app.videosdk.live/meetings/sessions?page=1&perPage=20)_
+
 ## v0.0.34
 
 **Release Date** : 2nd September 2022

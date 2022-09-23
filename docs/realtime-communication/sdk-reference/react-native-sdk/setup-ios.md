@@ -18,9 +18,9 @@ $[sudo] gem install cocoapods
 
 ### Step 3: Manual linking (if react-native-incall-manager is not linked automatically)
 
-2.1 Drag node_modules/@videosdk.live/react-native-incall-manager/ios/RNInCallManager.xcodeproj under <your_xcode_project>/Libraries
+- Drag node_modules/@videosdk.live/react-native-incall-manager/ios/RNInCallManager.xcodeproj under <your_xcode_project>/Libraries
 
-2.2 Select <your_xcode_project> --> Build Phases --> Link Binary With Libraries
+- Select <your_xcode_project> --> Build Phases --> Link Binary With Libraries
 
 - Drag Libraries/RNInCallManager.xcodeproj/Products/libRNInCallManager.a to Link Binary With Libraries
 
