@@ -9,7 +9,7 @@ keywords:
   - audio calling
   - video calling
   - real-time communication
-  - collabration
+  - collaboration
 image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
 slug: using-script
@@ -18,11 +18,11 @@ slug: using-script
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Prebuilt SDK enables opportunity to integrate real-time communication SDK without writing explicit code. It just requires 10 minutes to integrate.
+Prebuilt SDK enables an opportunity to integrate real-time communication SDK without writing explicit code. It just requires 10 minutes to integrate.
 
-### Step 1: Add script and setup the meeting
+### Step 1: Add script and set up the meeting
 
-Create an `index.html` file and add the following `<script>` tag at the end of your code's `<body>` tag. Initialize `VideoSDKMeeting` after the script gets loaded. Replace the `apiKey` with the one generated in Previous Step [Signup & Create API Key](/docs/guide/prebuilt-video-and-audio-calling/signup-and-create-api).
+Create an `index.html` file and add the following `<script>` tag at the end of your code's `<body>` tag. Initialize `VideoSDKMeeting` after the script gets loaded. Replace the `apiKey` with the one generated in the Previous Step [Signup & Create API Key](/docs/guide/prebuilt-video-and-audio-calling/signup-and-create-api).
 
 ```html title="index.html"
 <script>
@@ -64,7 +64,7 @@ Create an `index.html` file and add the following `<script>` tag at the end of y
 
 ### Step 2: Run the application
 
-Install any http server if you don't already have one and run the server to join meeting from browser.
+Install any http server if you don't already have one and run the server to join the meeting from the browser.
 
 <Tabs
 defaultValue="node"
@@ -107,7 +107,7 @@ and open [http://localhost:8000](http://localhost:8000) in your web browser
 <TabItem value="wamp">
 
 ```
-Move the html file to C:\wamp\www and start the WAMP server
+Move the HTML file to C:\wamp\www and start the WAMP server
 ```
 
 and open [http://localhost/index.html](http://localhost/index.html) in your web browser
@@ -116,7 +116,7 @@ and open [http://localhost/index.html](http://localhost/index.html) in your web 
 <TabItem value="xampp">
 
 ```
-Move the html file to C:\xampp\htdocs and start the XAMPP server
+Move the HTML file to C:\xampp\htdocs and start the XAMPP server
 ```
 
 and open [http://localhost/index.html](http://localhost/index.html) in your web browser
@@ -128,6 +128,6 @@ and open [http://localhost/index.html](http://localhost/index.html) in your web 
 
 :::note
 
-Stuck anywhere? Check out this [example code](https://github.com/videosdk-live/videosdk-rtc-js-prebuilt-embedded-example) on github or [download](https://github.com/videosdk-live/videosdk-rtc-js-prebuilt-embedded-example/archive/refs/tags/v0.1.1.zip) the full source code and unzip on your computer.
+Stuck anywhere? Check out this [example code](https://github.com/videosdk-live/videosdk-rtc-js-prebuilt-embedded-example) on GitHub or [download](https://github.com/videosdk-live/videosdk-rtc-js-prebuilt-embedded-example/archive/refs/tags/v0.1.1.zip) the full source code and unzip it on your computer.
 
 :::
