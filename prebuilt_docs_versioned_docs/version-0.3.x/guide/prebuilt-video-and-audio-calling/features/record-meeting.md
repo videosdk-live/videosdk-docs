@@ -53,7 +53,7 @@ const config = {
     webhookUrl: "https://www.videosdk.live/callback",
     awsDirPath: `/meeting-recordings/${meetingId}/`,
     autoStart: false,
-    theme: "DARK" // DARK || LIGHT || DEFAULT
+    theme: "DARK", // DARK || LIGHT || DEFAULT
 
     layout: {
       type: "SIDEBAR", // "SPOTLIGHT" | "SIDEBAR" | "GRID"
