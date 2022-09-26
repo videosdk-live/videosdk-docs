@@ -57,9 +57,9 @@ In REST APIs, token will be passed in a header field called `Authorization`.
 
 In order to generate authentication token, you will need `API_KEY` and `SECRET`, which you can get them from [here](https://app.videosdk.live/api-keys).
 
-In payload, you have to add your `apikey`, `permissions`, `versions` and `role`.
+In payload, you have to add your `apikey`, `permissions`, `version` and `role`.
 
-If you are concerned with security and want to generate token only for v2 API access, then you need to provide `versions` and `role`.
+If you are concerned with security and want to generate token only for v2 API access, then you need to provide `version` and `role`.
 
 - `apikey`(**Mandatory**): You can get it from [here](https://app.videosdk.live/api-keys).
 
