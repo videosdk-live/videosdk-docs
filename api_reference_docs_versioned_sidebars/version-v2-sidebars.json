@@ -12,7 +12,8 @@
         "realtime-communication/create-room",
         "realtime-communication/validate-room",
         "realtime-communication/fetch-all-room",
-        "realtime-communication/fetch-room-details"
+        "realtime-communication/fetch-room-details",
+        "realtime-communication/deactivate-room"
       ]
     },
     {

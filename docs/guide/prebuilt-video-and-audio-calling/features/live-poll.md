@@ -27,9 +27,9 @@ Using this feature a host can create polls and guest participant can submit thei
 
 ### How it works ?
 
-- On Click of `Activites` Button you can find `Polls` selection option.
+- On Click of `More Options` Button you can find `Polls` selection option.
 
-![Go live with VideoSDK](/img/prebuilt/Poll.png)
+![Go live with VideoSDK](/img/prebuilt/Polls.png)
 
 - When you pass `canCreatePoll` parameter `true` you can create poll.
 

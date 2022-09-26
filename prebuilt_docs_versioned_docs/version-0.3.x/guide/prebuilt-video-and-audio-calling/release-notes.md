@@ -7,6 +7,16 @@ pagination_label: Release Notes
 
 This page will keep you update all the releases of Prebuilt SDK.
 
+## v0.3.20
+
+**Release Date** : 23rd September 2022
+
+**Change log** :
+
+1. `Activities` Tab has been renamed to `More Options`.
+2. Whiteboard and Add Live Stream has been moved into `More Options`.
+3. In Participant Tab, Media permission icon list has been redesigned.
+
 ## v0.3.19
 
 **Release Date** : 12th September 2022
