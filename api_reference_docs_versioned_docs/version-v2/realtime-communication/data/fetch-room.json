@@ -27,6 +27,7 @@
       "roomId": "abcd-efgh-lmno",
       "customRoomId": "final-testing",
       "region": "us001",
+      "disabled": false,
       "createdAt": "2022-03-25T04:19:32.380Z",
       "updatedAt": "2022-03-25T04:19:32.380Z",
       "user": {

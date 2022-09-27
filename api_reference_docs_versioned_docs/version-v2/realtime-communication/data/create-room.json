@@ -41,6 +41,7 @@
       "customRoomId": "final-testing",
       "userId": "5f7edbb14c938bcd42944527",
       "region": "sg001",
+      "disabled": false,
       "createdAt": "2022-03-25T04:49:11.024Z",
       "updatedAt": "2022-03-25T04:49:11.024Z",
       "id": "623d49c760a18e699abcc8a4",

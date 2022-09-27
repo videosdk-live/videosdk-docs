@@ -20,7 +20,7 @@ This page will keep you update all the releases of React Native SDK.
 
 **Error Code Table :**
 
-| Code                                          | Type | Message                                                                                 |
+| Type                                          | Code | Message                                                                                 |
 | --------------------------------------------- | ---- | --------------------------------------------------------------------------------------- |
 | **ERROR_GET_VIDEO_MEDIA_PERMISSION_DENIED**   | 3014 | Video capture permission denied.                                                        |
 | **ERROR_GET_AUDIO_MEDIA_PERMISSION_DENIED**   | 3015 | Audio capture permission denied.                                                        |
