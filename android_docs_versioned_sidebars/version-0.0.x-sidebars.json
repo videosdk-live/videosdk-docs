@@ -50,7 +50,7 @@
         "guide/video-and-audio-calling-api-sdk/features/external-call-detection",
         {
           "type": "category",
-          "label": "Custom Tracks (BETA)",
+          "label": "Custom Tracks",
           "items": [
             "guide/video-and-audio-calling-api-sdk/features/custom-track/custom-video-track",
             "guide/video-and-audio-calling-api-sdk/features/custom-track/custom-audio-track",

@@ -48,30 +48,14 @@
         "guide/video-and-audio-calling-api-sdk/features/play-external-video",
         "guide/video-and-audio-calling-api-sdk/features/go-live-social-media",
         "guide/video-and-audio-calling-api-sdk/features/pubsub",
-        "guide/video-and-audio-calling-api-sdk/features/switch-participant",
         {
           "type": "category",
-          "label": "Custom Tracks (BETA)",
+          "label": "Custom Tracks",
           "items": [
             "guide/video-and-audio-calling-api-sdk/features/custom-track/custom-video-track",
             "guide/video-and-audio-calling-api-sdk/features/custom-track/custom-audio-track",
             "guide/video-and-audio-calling-api-sdk/features/custom-track/custom-screen-share-track"
           ]
-        },
-        {
-          "type": "category",
-          "label": "Connect Meetings (BETA)",
-          "items": [
-            "guide/video-and-audio-calling-api-sdk/features/connection/overview",
-            "guide/video-and-audio-calling-api-sdk/features/connection/establish-connection",
-            "guide/video-and-audio-calling-api-sdk/features/connection/get-connection",
-            "guide/video-and-audio-calling-api-sdk/features/connection/list-connection-participant",
-            "guide/video-and-audio-calling-api-sdk/features/connection/send-message-to-connection",
-            "guide/video-and-audio-calling-api-sdk/features/connection/switch-connection-participant",
-            "guide/video-and-audio-calling-api-sdk/features/connection/end-connection-meeting",
-            "guide/video-and-audio-calling-api-sdk/features/connection/close-connection"
-          ],
-          "collapsed": true
         }
       ]
     }
@@ -81,7 +65,10 @@
       "type": "doc",
       "id": "api/sdk-reference/setup"
     },
-    { "type": "doc", "id": "api/sdk-reference/initMeeting" },
+    {
+      "type": "doc",
+      "id": "api/sdk-reference/initMeeting"
+    },
     {
       "type": "category",
       "label": "Meeting Class",
