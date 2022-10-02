@@ -7,6 +7,20 @@ pagination_label: Release Notes
 
 This page will keep you update all the releases of Prebuilt SDK.
 
+## v0.3.21
+
+**Release Date** : 1 October 2022
+
+**Change log** :
+
+1. `Virtual Background (BETA)` and `AI Noise Removal (BETA)` added.
+
+   **Docs** : [Virtual Background](/prebuilt/guide/prebuilt-video-and-audio-calling/features/virtual-background)
+
+   **Docs** : [AI Noise Removal](/prebuilt/guide/prebuilt-video-and-audio-calling/features/noise-removal)
+
+2. Option to select the output device in `microphone option list` modal is added.
+
 ## v0.3.20
 
 **Release Date** : 23rd September 2022
