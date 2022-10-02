@@ -56,7 +56,9 @@
             "guide/video-and-audio-calling-api-sdk/features/custom-track/custom-audio-track",
             "guide/video-and-audio-calling-api-sdk/features/custom-track/custom-screen-share-track"
           ]
-        }
+        },
+        "guide/video-and-audio-calling-api-sdk/features/virtual-background",
+        "guide/video-and-audio-calling-api-sdk/features/noise-suppresion"
       ]
     }
   ],
