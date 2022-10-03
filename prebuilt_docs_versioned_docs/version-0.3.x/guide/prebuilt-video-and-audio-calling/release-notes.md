@@ -9,7 +9,7 @@ This page will keep you update all the releases of Prebuilt SDK.
 
 ## v0.3.21
 
-**Release Date** : 1 October 2022
+**Release Date** : 3rd October 2022
 
 **Change log** :
 
