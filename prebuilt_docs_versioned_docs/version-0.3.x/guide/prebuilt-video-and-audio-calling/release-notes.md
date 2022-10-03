@@ -19,8 +19,6 @@ This page will keep you update all the releases of Prebuilt SDK.
 
    **Docs** : [AI Noise Removal](/prebuilt/guide/prebuilt-video-and-audio-calling/features/noise-removal)
 
-2. Option to select the output device in `microphone option list` modal is added.
-
 ## v0.3.20
 
 **Release Date** : 23rd September 2022
