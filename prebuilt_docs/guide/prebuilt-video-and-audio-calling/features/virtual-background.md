@@ -1,5 +1,5 @@
 ---
-title: Prebuilt Virtual Background Video & Audio Call | Video SDK Embed Docs
+title: Virtual Background (BETA)
 hide_title: false
 hide_table_of_contents: false
 description: Virtual Background features prebuilt Video SDK embedded is an easy-to-use video calling API. Video SDK Prebuilt makes it easy for developers to add video calls 10 in minutes to any website or app.
@@ -17,10 +17,9 @@ sidebar_position: 1
 slug: virtual-background
 ---
 
-:::note
+:::important
 
-- Currently, This feature is only available on Google Chrome, Safari, Firefox and Brave browser.
-- This feature is in Beta release, so feel free to reach out to us on Discord. We'd love to hear feedback from you.
+Virtual background feature is supported from `0.3.21` version.
 
 :::
 
@@ -32,19 +31,14 @@ You can find `Virtual Background` option inside `More Options` Tab panel.
 
 ![Virtual Background on Videosdk](/img/prebuilt/virtual-background-option.jpg)
 
-:::important
-
-Virtual background feature is supported from `0.3.21` version.
-
-:::
-
 :::note
 
-It will take 4-5 seconds to reflects the changes. Virtual background experience will be better untill 3-4 participants are using it.
+- Currently, This feature is only available on Google Chrome, Safari, Firefox and Brave browser.
+- This feature is in Beta release, so feel free to reach out to us on Discord. We'd love to hear feedback from you.
 
 :::
 
-## Better Understanding of Virtual Backgroud
+## Apply Virtual Background
 
 ### 1. Blur Effect
 
@@ -63,3 +57,9 @@ You can set static image as your video background by choosing any of the images 
 By clicking on &#128683; , you can remove the blur effect or any custom image if applied.
 
 ![Virtual Background on Videosdk](/img/prebuilt/no-filter.jpg)
+
+:::note
+
+It will take 4-5 seconds to reflects the changes. Virtual background experience will be better untill 3-4 participants are using it.
+
+:::
