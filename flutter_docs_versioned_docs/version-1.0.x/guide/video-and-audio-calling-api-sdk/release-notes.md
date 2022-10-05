@@ -25,9 +25,24 @@ This page will keep you update all the releases of Flutter SDK.
 
 **Bug Fix** :
 
-1. Fixed issue related to VideoRenderer.onFirstFrameRendered implementation
-2. Fixed changeCam()
-3. Reconnecting issue fixed.
+1. Fixed issue related to VideoRenderer.onFirstFrameRendered implementation.
+
+## v1.0.2
+
+**Release Date** : 1st Sept 2022
+
+**Bug Fix** :
+
+1. Fixed issue on room ends.
+2. Provide better error message on room left
+
+## v1.0.1
+
+**Release Date** : 12th Aug 2022
+
+**Bug Fix** :
+
+1. Fixed issue on switching camera.
 
 ## v1.0.0
 
