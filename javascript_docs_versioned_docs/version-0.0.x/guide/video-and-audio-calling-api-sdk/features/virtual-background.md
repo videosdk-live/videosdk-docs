@@ -71,7 +71,7 @@ const startVirtualBackground = async () => {
 
   // Configuration for starting processor
   const config = {
-    type: "image" || "blur",
+    type: "image", // "blur"
     imageUrl: "https://cdn.videosdk.live/virtual-background/cloud.jpeg",
     // Here is a list of background images you can use for your project.
     // imageUrl: "https://cdn.videosdk.live/virtual-background/beach.jpeg",
@@ -94,7 +94,7 @@ This method is used for updating filter as well as virtual background image duri
 
 ```js
 const config = {
-  type: "image" || "blur",
+  type: "image", // "blur"
   imageUrl: "https://cdn.videosdk.live/virtual-background/cloud.jpeg",
 };
 

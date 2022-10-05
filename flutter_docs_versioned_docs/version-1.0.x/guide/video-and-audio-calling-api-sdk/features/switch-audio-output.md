@@ -30,7 +30,13 @@ ElevatedButton(
 This method will help you to switch specific audio output device.
 
 ```js
-meeting.switchAudioOutput(mediaDeviceInfo); // pass the MediaDeviceInfo object to which the audio is to be switched.
+// Pass the MediaDeviceInfo object to which the audio is to be switched.
+meeting.switchAudioOutput(mediaDeviceInfo);
 ```
+
+:::note
+
+`EARPIECE` is not supported whenever `WIRED_HEADSET` or `BLUETOOTH` device is connected
+:::
 
 To check the implementation of switch audio device in detail, check out the [Flutter Code Sample](https://github.com/videosdk-live/videosdk-rtc-flutter-sdk-example)
