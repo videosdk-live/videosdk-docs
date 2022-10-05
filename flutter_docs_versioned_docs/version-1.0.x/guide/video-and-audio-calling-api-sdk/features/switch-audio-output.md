@@ -3,7 +3,7 @@ sidebar_label: Switch Audio Output (BETA)
 pagination_label: Switch Audio Output (BETA)
 ---
 
-# Switch Audio Output (BETA) (Android)
+# Switch Audio Output (BETA)
 
 This feature will help yout to switch audio output device during the session.
 
