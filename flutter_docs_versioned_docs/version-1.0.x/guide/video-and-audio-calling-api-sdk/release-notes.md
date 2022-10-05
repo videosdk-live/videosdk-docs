@@ -19,6 +19,8 @@ This page will keep you update all the releases of Flutter SDK.
 
 1. No named parameter with name `printDevLog`.
 
+---
+
 ## v1.0.3
 
 **Release Date** : 13th Sept 2022
@@ -26,6 +28,8 @@ This page will keep you update all the releases of Flutter SDK.
 **Bug Fix** :
 
 1. Fixed issue related to VideoRenderer.onFirstFrameRendered implementation.
+
+---
 
 ## v1.0.2
 
@@ -36,6 +40,8 @@ This page will keep you update all the releases of Flutter SDK.
 1. Fixed issue on room ends.
 2. Provide better error message on room left
 
+---
+
 ## v1.0.1
 
 **Release Date** : 12th Aug 2022
@@ -43,6 +49,8 @@ This page will keep you update all the releases of Flutter SDK.
 **Bug Fix** :
 
 1. Fixed issue on switching camera.
+
+---
 
 ## v1.0.0
 
