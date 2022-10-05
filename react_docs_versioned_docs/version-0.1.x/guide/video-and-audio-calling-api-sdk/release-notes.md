@@ -7,6 +7,16 @@ pagination_label: Release Notes
 
 This page will keep you update all the releases of React JS SDK.
 
+**Release Data** : 5th October 2022
+
+**Change log** :
+
+- Support of React v18.
+
+**Bug Fix** :
+
+- Fix `npm ERR! ERESOLVE unable to resolve dependency tree` after installing SDK.
+
 ## v0.1.50
 
 **Release Data** : 23rd September 2022

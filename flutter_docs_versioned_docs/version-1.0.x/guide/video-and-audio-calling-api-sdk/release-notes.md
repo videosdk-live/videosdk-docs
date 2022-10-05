@@ -7,6 +7,51 @@ pagination_label: Release Notes
 
 This page will keep you update all the releases of Flutter SDK.
 
+## v1.0.4
+
+**Release Date** : 04th Oct 2022
+
+**Change log** :
+
+1. Added method to switch [audio output device](./features/switch-audio-output).
+
+**Bug Fix** :
+
+1. No named parameter with name `printDevLog`.
+
+---
+
+## v1.0.3
+
+**Release Date** : 13th Sept 2022
+
+**Bug Fix** :
+
+1. Fixed issue related to VideoRenderer.onFirstFrameRendered implementation.
+
+---
+
+## v1.0.2
+
+**Release Date** : 1st Sept 2022
+
+**Bug Fix** :
+
+1. Fixed issue on room ends.
+2. Provide better error message on room left
+
+---
+
+## v1.0.1
+
+**Release Date** : 12th Aug 2022
+
+**Bug Fix** :
+
+1. Fixed issue on switching camera.
+
+---
+
 ## v1.0.0
 
 **Release Date** : 10th Aug 2022
