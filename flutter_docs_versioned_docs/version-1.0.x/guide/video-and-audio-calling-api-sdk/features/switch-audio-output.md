@@ -11,25 +11,17 @@ This feature will help yout to switch audio output device during the session.
 
 This method will help you to list down all possible connected audio devices.
 
-#### Supported Audio Output Devices :
+To get the list of all available audio output devices, use the `getAudioOutputDevices()`, which will return a list of `MediaDeviceInfo`.
 
-- **AudioOutputDevice.SPEAKER** - Switch audio to device speaker
-
-- **AudioOutputDevice.EARPIECE** - Switch audio to device earpiece
-
-- **AudioOutputDevice.WIRED_HEADSET** - Switch audio to connected wired device
-
-- **AudioOutputDevice.BLUETOOTH** - Switch audio to connected bluetooth device
+`MediaDeviceInfo` will contain the `deviceId` and `label` of the particular audio output device.
 
 ```js
 
 ElevatedButton(
   child: Text("Get Output Device"),
   onPressed: () => {
-    meeting.getAudioOutputDevices().then((value)=>{
-      //value is of type List<AudioOutputDevice>
-      log(value);
-    })
+    List<MediaDeviceInfo> outputDevice = meeting.getAudioOutputDevices()
+    log(outputDevice);
   }),
 ```
 
@@ -38,8 +30,7 @@ ElevatedButton(
 This method will help you to switch specific audio output device.
 
 ```js
-meeting.setOutputDevice(AudioOutputDevice.SPEAKER); // for device speaker
-meeting.setOutputDevice(AudioOutputDevice.EARPIECE); // for device earpiece
-meeting.setOutputDevice(AudioOutputDevice.WIRED_HEADSET); // for wired headset
-meeting.setOutputDevice(AudioOutputDevice.BLUETOOTH); // for bluetooth device
+meeting.switchAudioOutput(mediaDeviceInfo); // pass the MediaDeviceInfo object to which the audio is to be switched.
 ```
+
+To check the implementation of switch audio device in detail, check out the [Flutter Code Sample](https://github.com/videosdk-live/videosdk-rtc-flutter-sdk-example)
