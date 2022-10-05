@@ -51,9 +51,9 @@ const config = {
   recording: {
     enabled: true,
     webhookUrl: "https://www.videosdk.live/callback",
-    awsDirPath: `/meeting-recordings/${meetingId}/`,
+    // awsDirPath: `/meeting-recordings/${meetingId}/`, // Pass it only after configuring your S3 Bucket credentials on Video SDK dashboard
     autoStart: false,
-    theme: "DARK" // DARK || LIGHT || DEFAULT
+    theme: "DARK", // DARK || LIGHT || DEFAULT
 
     layout: {
       type: "SIDEBAR", // "SPOTLIGHT" | "SIDEBAR" | "GRID"

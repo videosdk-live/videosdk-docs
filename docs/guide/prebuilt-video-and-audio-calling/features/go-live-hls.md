@@ -49,9 +49,9 @@ In `CONFERENCE` mode you can toggle other participant mode also. like you can ad
 
 You can click on more button to see add as co-host icon.
 
-![Go live on Videosdk](/img/prebuilt/prebuilt-more-icon-click.png)
+![Go live on Videosdk](/img/prebuilt/More.png)
 
-![Go live on Videosdk](/img/prebuilt/prebuilt-add-cohost.png)
+![Go live on Videosdk](/img/prebuilt/Add-as-a-cohost.png)
 
 When you click on `Add as a Co-host` button other participant recive popup. whethere participant can accept or deny. if you accept than only participant add as a cohost.
 
