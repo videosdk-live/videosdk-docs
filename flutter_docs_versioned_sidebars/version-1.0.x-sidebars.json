@@ -53,6 +53,14 @@
         "guide/video-and-audio-calling-api-sdk/features/switch-audio-output"
       ],
       "collapsed": true
+    },
+    {
+      "type": "category",
+      "label": "Extras",
+      "items": [
+        "guide/video-and-audio-calling-api-sdk/extras/flutter-ios-screen-share"
+      ],
+      "collapsed": true
     }
   ],
   "apiSidebar": [
