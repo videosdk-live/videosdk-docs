@@ -197,14 +197,14 @@ module.exports = {
               label: "Get Started with Custom SDK",
               href: "/react/guide/video-and-audio-calling-api-sdk/getting-started",
             },
-            {
-              label: "Get Started with Live Streaming",
-              href: "/docs/guide/standard-live-streaming-api-sdk/getting-started",
-            },
-            {
-              label: "Get Started with VOD",
-              href: "/docs/guide/video-on-demand/getting-started",
-            },
+            // {
+            //   label: "Get Started with Live Streaming",
+            //   href: "/docs/guide/standard-live-streaming-api-sdk/getting-started",
+            // },
+            // {
+            //   label: "Get Started with VOD",
+            //   href: "/docs/guide/video-on-demand/getting-started",
+            // },
           ],
         },
         {
