@@ -57,11 +57,11 @@ Now, broadcast folder will appear in xcode left side bar.
 
 ### Step 5 : Add External file in Created Extension
 
-Open [videosdk-rtc-flutter-sdk-example](https://github.com/videosdk-live/videosdk-rtc-flutter-sdk-example/tree/master/ios/FlutterBroadcast), Copy `SampleUploader.swift`, `SocketConnection.swift`, `DarwinNotificationCenter.swift`, and `Atomic.swift` files to your extension's folder and make sure they're added to the target.
+Open [videosdk-rtc-flutter-sdk-example](https://github.com/videosdk-live/videosdk-rtc-flutter-sdk-example/tree/main/ios/FlutterBroadcast), Copy `SampleUploader.swift`, `SocketConnection.swift`, `DarwinNotificationCenter.swift`, and `Atomic.swift` files to your extension's folder and make sure they're added to the target.
 
 ### Step 6 : Update `SampleHandler.swift` file
 
-Open [SampleHandler.swift](https://github.com/videosdk-live/videosdk-rtc-flutter-sdk-example/blob/master/ios/FlutterBroadcast/SampleHandler.swift) and Copy `SampleHandler.swift` file content and paste it to your extensions `SampleHandler.swift` file.
+Open [SampleHandler.swift](https://github.com/videosdk-live/videosdk-rtc-flutter-sdk-example/blob/main/ios/FlutterBroadcast/SampleHandler.swift) and Copy `SampleHandler.swift` file content and paste it to your extensions `SampleHandler.swift` file.
 
 ### Step 7 : Add Capability in App
 
@@ -100,7 +100,7 @@ Go to extensions `SampleHandler.swift` file and paste your group Id in `appGroup
 
 :::note
 
-You can also check out extension [example code](https://github.com/videosdk-live/videosdk-rtc-flutter-sdk-example/tree/master/ios/FlutterBroadcast) on github
+You can also check out extension [example code](https://github.com/videosdk-live/videosdk-rtc-flutter-sdk-example/tree/main/ios/FlutterBroadcast) on github
 :::
 
 ## Enable Screen Share
