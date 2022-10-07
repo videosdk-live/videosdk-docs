@@ -17,7 +17,7 @@ This page will keep you update all the releases of Flutter SDK.
 
 **Bug Fix** :
 
-1. No named parameter with name `printDevLog`.
+1. Fixed: **Error: No named parameter with name `printDevLog`** during the build.
 
 ---
 
