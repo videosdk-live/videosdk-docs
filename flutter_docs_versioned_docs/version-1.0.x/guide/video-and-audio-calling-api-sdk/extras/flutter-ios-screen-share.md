@@ -18,7 +18,7 @@ slug: flutter-ios-screen-share
 
 # Share screen - Flutter iOS
 
-iOS requires you to add an Broadcast Upload Extension to capture teh screen to the device.
+iOS requires you to add an Broadcast Upload Extension to capture the screen to the device.
 
 :::note
 
