@@ -3,8 +3,8 @@ title: Share your Screen Video & Audio Call - Video SDK Docs
 hide_title: false
 hide_table_of_contents: false
 description: Share your Screen features quick integrate in Javascript, React JS, Android, IOS, React Native, Flutter with Video SDK to add live video & audio conferencing to your applications.
-sidebar_label: Share Your Screen (Android)
-pagination_label: Share Your Screen (Android)
+sidebar_label: Share Your Screen
+pagination_label: Share Your Screen
 keywords:
   - Start Screen share
   - Stop Screen share
@@ -36,6 +36,11 @@ ElevatedButton(
     },
 ),
 ```
+
+:::caution
+
+For Flutter iOS Screen Share feature, you need to follow this guide [Flutter iOS Screen Share](../extras/flutter-ios-screen-share)
+:::
 
 ### Customise notification
 

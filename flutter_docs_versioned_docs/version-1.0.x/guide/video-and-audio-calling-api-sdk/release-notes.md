@@ -7,6 +7,16 @@ pagination_label: Release Notes
 
 This page will keep you update all the releases of Flutter SDK.
 
+## v1.0.5
+
+**Release Date** : 08th Oct 2022
+
+**Change log** :
+
+1. Added support for [Screen share in iOS](./features/screenshare.md).
+
+---
+
 ## v1.0.4
 
 **Release Date** : 04th Oct 2022
