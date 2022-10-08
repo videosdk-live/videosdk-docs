@@ -7,6 +7,18 @@ pagination_label: Release Notes
 
 This page will keep you update all the releases of React Native SDK.
 
+## v0.0.34
+
+**Release Date** : 8th October 2022
+
+**Change log** :
+
+1. iOS : Switch audio output device during the session.
+
+   **Docs** : [Switch Audio Output](https://docs.videosdk.live/react-native/guide/video-and-audio-calling-api-sdk/features/switch-audio-output)
+
+---
+
 ## v0.0.35
 
 **Release Data** : 23rd September 2022
