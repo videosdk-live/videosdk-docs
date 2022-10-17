@@ -9,7 +9,8 @@
         "guide/video-and-audio-calling-api-sdk/flutter-sdk",
         "guide/video-and-audio-calling-api-sdk/server-setup",
         "guide/video-and-audio-calling-api-sdk/release-notes",
-        "guide/video-and-audio-calling-api-sdk/migration-notes"
+        "guide/video-and-audio-calling-api-sdk/migration-notes",
+        "guide/video-and-audio-calling-api-sdk/known-issues"
       ],
       "collapsed": false
     },
