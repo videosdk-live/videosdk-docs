@@ -11,7 +11,8 @@
           "label": "Client Setup",
           "items": [
             "guide/video-and-audio-calling-api-sdk/react-native-android-sdk",
-            "guide/video-and-audio-calling-api-sdk/react-native-ios-sdk"
+            "guide/video-and-audio-calling-api-sdk/react-native-ios-sdk",
+            "guide/video-and-audio-calling-api-sdk/react-native-expo-setup"
           ],
           "collapsed": false
         },
