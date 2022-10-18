@@ -15,7 +15,7 @@ This page will let you updated with Flutter SDK known issues with better solutio
 
 ### Solution
 
-#### Step 1: Adding below script to end of pod file.
+**Add below script to end of pod file.**
 
 ```
 post_install do |installer|

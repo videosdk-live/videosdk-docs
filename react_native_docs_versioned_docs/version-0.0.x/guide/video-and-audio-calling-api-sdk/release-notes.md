@@ -7,7 +7,7 @@ pagination_label: Release Notes
 
 This page will keep you update all the releases of React Native SDK.
 
-## v0.0.34
+## v0.0.36
 
 **Release Date** : 8th October 2022
 
