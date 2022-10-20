@@ -158,6 +158,10 @@ title: Methods returned by useMeeting Hook
 
 - `awsDirPath` will be the path for the your S3 bucket where you want to store recordings to. To allow us to store recording in your S3 bucket, you will need to fill this form by providing the required values. [VideoSDK AWS S3 Integration](https://zfrmz.in/RVlFLFiturVJ7Q97fr23)
 
+- `config: mode` is used to either record video-and-audio both or only audio. And by default it will be video-and-audio.
+
+- `config: quality` is only applicable to video-and-audio.
+
 #### Parameters
 
 - **webhookUrl**: String
@@ -168,6 +172,8 @@ title: Methods returned by useMeeting Hook
     - **priority**: _"SPEAKER"_ | _"PIN"_
     - **gridSize**: Number _`max 25`_
   - **theme**: _"DARK"_ | _"LIGHT"_ | _"DEFAULT"_
+  - **mode**: _"video-and-audio"_ | _"audio"_
+  - **quality**: _"low"_ | _"med"_ | _"high"_
 
 #### Events associated with `startRecording()`:
 
@@ -272,6 +278,10 @@ startLivestream(outputs, config);
 
 - You will be able to start HLS and watch the live stream of meeting over HLS.
 
+- `mode` is used to either start hls streaming of video-and-audio both or only audio. And by default it will be video-and-audio.
+
+- `quality` is only applicable to video-and-audio.
+
 #### Parameters
 
 - **config**:
@@ -280,6 +290,8 @@ startLivestream(outputs, config);
     - **priority**: _"SPEAKER"_ | _"PIN"_
     - **gridSize**: Number _`max 25`_
   - **theme**: _"DARK"_ | _"LIGHT"_ | _"DEFAULT"_
+  - **mode**: _"video-and-audio"_ | _"audio"_
+  - **quality**: _"low"_ | _"med"_ | _"high"_
 
 #### Events associated with `startHls()`:
 
