@@ -21,23 +21,15 @@ const startLivestream = {
       required: true,
     },
     {
-      key: "templateUrl",
-      value:
-        "https://www.example.com/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.l0sImlhdCI6MTY0OTkyNjI1MCwiZXhwIjoxNjwNTMxMDUwf&meetingId=74v5-v21l-n1ey&participantId=RECORDER_ID",
-      description:
-        "[Customize Layout of Meeting Livestream](/docs/tutorials/customized-layout).",
-      required: false,
-    },
-    {
       key: "outputs",
-      value: [{ streamKey: "Platform_StreamKey", url: "RTMP-URL" }],
+      value: `[{ streamKey: 'Platform_StreamKey', url: 'RTMP-URL' }]`,
       description:
         "**Array of object** which contains multiple platfroms `streamKey` and `url`.",
       required: true,
     },
     {
       key: "config",
-      value: "{layout: {type: `SPOTLIGHT`, priority:`PIN`, gridSize: 5}}",
+      value: "configObj",
       description: `
 - **config**:
   - **layout**:
@@ -46,6 +38,14 @@ const startLivestream = {
     - **gridSize**: Number _\`max 4\`_
   - **theme**: _"DARK"_ | _"LIGHT"_ | _"DEFAULT"_
 `,
+      required: false,
+    },
+    {
+      key: "templateUrl",
+      value:
+        "https://www.example.com/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.l0sImlhdCI6MTY0OTkyNjI1MCwiZXhwIjoxNjwNTMxMDUwf&meetingId=74v5-v21l-n1ey&participantId=RECORDER_ID",
+      description:
+        "[Customize Layout of Meeting Livestream](/docs/tutorials/customized-layout).",
       required: false,
     },
   ],
