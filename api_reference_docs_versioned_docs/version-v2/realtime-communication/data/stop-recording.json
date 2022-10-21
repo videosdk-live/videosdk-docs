@@ -2,7 +2,16 @@
   "stopRecording": {
     "title": "Stop Recording",
     "description": "This API lets you stop recording of your room by passing roomId as a body parameter.",
-    "headers": [],
+    "headers": [
+      {
+        "key": "Authorization",
+        "value": "$YOUR_TOKEN"
+      },
+      {
+        "key": "Content-Type",
+        "value": "application/json"
+      }
+    ],
     "methodType": "POST",
     "postParameters": [
       {
