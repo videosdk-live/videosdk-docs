@@ -214,3 +214,9 @@ public class MainActivity extends AppCompatActivity {
 ```
 
 5. Run the app.
+
+:::note
+
+You can checkout the sample project for **[prebuilt implementation of android in webview here](https://github.com/videosdk-live/videosdk-rtc-prebuilt-examples/tree/main/android-webview)**.
+
+:::
