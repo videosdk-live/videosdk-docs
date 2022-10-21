@@ -1,76 +1,124 @@
 module.exports = {
-  guideAudioAndVideoCalling: [
+  "guideAudioAndVideoCalling": [
     {
-      type: "category",
-      label: "Introduction",
-      items: [
+      "type": "category",
+      "label": "Introduction",
+      "items": [
         "guide/video-and-audio-calling-api-sdk/getting-started",
         "guide/video-and-audio-calling-api-sdk/signup-and-create-api",
         "guide/video-and-audio-calling-api-sdk/android-sdk",
         "guide/video-and-audio-calling-api-sdk/server-setup",
-        "guide/video-and-audio-calling-api-sdk/quick-start",
+        "guide/video-and-audio-calling-api-sdk/release-notes"
       ],
-      collapsed: false,
+      "collapsed": false
     },
     {
-      type: "category",
-      label: "Quick Start Guide",
-      items: ["guide/video-and-audio-calling-api-sdk/quick-start"],
-      collapsed: false,
+      "type": "category",
+      "label": "Quick Start Guide",
+      "items": [
+        "guide/video-and-audio-calling-api-sdk/quick-start",
+        "guide/video-and-audio-calling-api-sdk/run-a-sample-project"
+      ],
+      "collapsed": false
     },
     {
-      type: "category",
-      label: "Basic Features",
-      items: [
-        // "video-and-audio-calling-api-sdk/features/initilize-meeting-factory",
+      "type": "category",
+      "label": "Basic Features",
+      "items": [
         "guide/video-and-audio-calling-api-sdk/features/start-join-meeting",
         "guide/video-and-audio-calling-api-sdk/features/manage-participants",
         "guide/video-and-audio-calling-api-sdk/features/leave-end-meeting",
         "guide/video-and-audio-calling-api-sdk/features/camera-controls",
         "guide/video-and-audio-calling-api-sdk/features/mic-controls",
         "guide/video-and-audio-calling-api-sdk/features/toggle-participant-media",
+        "guide/video-and-audio-calling-api-sdk/features/screenshare",
+        "guide/video-and-audio-calling-api-sdk/features/set-viewport",
+        "guide/video-and-audio-calling-api-sdk/features/speaker-indiction",
+        "guide/video-and-audio-calling-api-sdk/features/error-event"
       ],
-      collapsed: true,
+      "collapsed": true
     },
     {
-      type: "category",
-      label: "Advanced Features",
-      items: [
+      "type": "category",
+      "label": "Advanced Features",
+      "items": [
         "guide/video-and-audio-calling-api-sdk/features/record-meeting",
         "guide/video-and-audio-calling-api-sdk/features/go-live-social-media",
         "guide/video-and-audio-calling-api-sdk/features/pubsub",
-      ],
+        "guide/video-and-audio-calling-api-sdk/features/set-participant-video-quality",
+        "guide/video-and-audio-calling-api-sdk/features/pause-resume-video-stream",
+        "guide/video-and-audio-calling-api-sdk/features/external-call-detection",
+        {
+          "type": "category",
+          "label": "Custom Tracks",
+          "items": [
+            "guide/video-and-audio-calling-api-sdk/features/custom-track/custom-video-track",
+            "guide/video-and-audio-calling-api-sdk/features/custom-track/custom-audio-track",
+            "guide/video-and-audio-calling-api-sdk/features/custom-track/custom-screen-share-track"
+          ]
+        }
+      ]
     },
+    {
+      "type": "category",
+      "label": "Extras",
+      "items": [
+        "guide/video-and-audio-calling-api-sdk/extras/banuba-integration"
+      ]
+    }
   ],
-
-  apiSidebar: [
+  "apiSidebar": [
     {
-      type: "doc",
-      id: "api/sdk-reference/setup",
+      "type": "doc",
+      "id": "api/sdk-reference/setup"
     },
     {
-      type: "doc",
-      id: "api/sdk-reference/video-sdk-class",
+      "type": "doc",
+      "id": "api/sdk-reference/initMeeting"
     },
     {
-      type: "doc",
-      id: "api/sdk-reference/meeting-class",
+      "type": "category",
+      "label": "Meeting Class",
+      "items": [
+        "api/sdk-reference/meeting-class/introduction",
+        "api/sdk-reference/meeting-class/properties",
+        "api/sdk-reference/meeting-class/methods",
+        "api/sdk-reference/meeting-class/meeting-event-listener-class"
+      ]
     },
     {
-      type: "doc",
-      id: "api/sdk-reference/participant-class",
+      "type": "category",
+      "label": "Participant Class",
+      "items": [
+        "api/sdk-reference/participant-class/introduction",
+        "api/sdk-reference/participant-class/properties",
+        "api/sdk-reference/participant-class/methods",
+        "api/sdk-reference/participant-class/participant-event-listener-class"
+      ]
     },
     {
-      type: "doc",
-      id: "api/sdk-reference/stream-class",
+      "type": "category",
+      "label": "Stream Class",
+      "items": [
+        "api/sdk-reference/stream-class/introduction",
+        "api/sdk-reference/stream-class/properties",
+        "api/sdk-reference/stream-class/methods"
+      ]
     },
     {
-      type: "doc",
-      id: "api/sdk-reference/meeting-event-listener-class",
+      "type": "category",
+      "label": "PubSub Class",
+      "items": [
+        "api/sdk-reference/pubsub-class/introduction",
+        "api/sdk-reference/pubsub-class/methods",
+        "api/sdk-reference/pubsub-class/pubsub-message-class",
+        "api/sdk-reference/pubsub-class/pubsub-publish-options-class",
+        "api/sdk-reference/pubsub-class/pubsub-message-listener-class"
+      ]
     },
     {
-      type: "doc",
-      id: "api/sdk-reference/participant-event-listener-class",
-    },
-  ],
+      "type": "doc",
+      "id": "api/sdk-reference/error-codes"
+    }
+  ]
 };
