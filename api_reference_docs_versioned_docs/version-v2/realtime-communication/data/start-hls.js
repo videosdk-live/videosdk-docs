@@ -23,14 +23,14 @@ const startHLSstream = {
     {
       key: "templateUrl",
       value:
-        "https://www.example.com/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.l0sImlhdCI6MTY0OTkyNjI1MCwiZXhwIjoxNjwNTMxMDUwf&meetingId=74v5-v21l-n1ey&participantId=RECORDER_ID",
+        "https://www.example.com/?token=tooken&meetingId=74v5-v21l-n1ey&participantId=RECORDER_ID",
       description:
         "[Customize Layout of Meeting HLS](/docs/tutorials/customized-layout).",
       required: false,
     },
     {
       key: "config",
-      value: "{layout: {type: `SPOTLIGHT`, priority:`PIN`, gridSize: 5}}",
+      value: "configObj",
       description: `
 - orientation - hls stream orientation will be set to "landscape" by default, if you pass portrait orientation then it will stream hls in portrait mode.
 - **config**:

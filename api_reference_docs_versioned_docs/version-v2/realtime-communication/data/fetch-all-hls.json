@@ -2,7 +2,16 @@
   "fetchAllHLS": {
     "title": "Fetch all HLS",
     "description": "This API lets you fetch all HLS streams.",
-    "headers": [],
+    "headers": [
+      {
+        "key": "Authorization",
+        "value": "$YOUR_TOKEN"
+      },
+      {
+        "key": "Content-Type",
+        "value": "application/json"
+      }
+    ],
     "methodType": "GET",
     "postParameters": [],
     "queryParameters": [
@@ -21,12 +30,14 @@
       {
         "key": "page",
         "defaultValue": "`1`",
+        "value": "1",
         "description": "#### Page number for the recording",
         "required": false
       },
       {
         "key": "perPage",
         "defaultValue": "`20`",
+        "value": "20",
         "description": "#### Number of recordings you want per page.",
         "required": false
       }
