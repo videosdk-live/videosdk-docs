@@ -59,7 +59,8 @@ Please refer this [documentation](/api-reference/realtime-communication/intro/) 
         String name,
         boolean micEnabled,
         boolean webcamEnabled,
-        String participantId
+        String participantId,
+        Map<String, CustomStreamTrack> customTracks
       )
 ```
 
@@ -109,6 +110,15 @@ Please refer this [documentation](/api-reference/realtime-communication/create-r
   - type : `String` or `null`
   - `REQUIRED`
 
+### customTracks
+
+- If you want to use custom tracks from start of the meeting, you can pass map of custom tracks in this paramater.
+
+  - type : `Map<String, CustomStreamTrack>` or `null`
+  - `REQUIRED`
+
+Please refer this [documentation](../../guide/video-and-audio-calling-api-sdk/features/custom-track/custom-video-track) to know more about CustomTrack.
+
 ## Returns
 
 ### meeting
@@ -144,6 +154,7 @@ var meeting = VideoSDK.initMeeting(
     "John Doe",
     true,
     true,
+    null,
     null
   )
 )
@@ -167,6 +178,7 @@ Meeting meeting = VideoSDK.initMeeting({
   "John Doe",
   true,
   true,
+  null,
   null
 });
 ```

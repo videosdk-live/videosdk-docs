@@ -1,0 +1,38 @@
+[
+  {
+    "href": "./methods#enablewebcam",
+    "label": "enablewebcam()"
+  },
+  {
+    "href": "./methods#disablewebcam",
+    "label": "disablewebcam()"
+  },
+  {
+    "href": "./methods#enablemic",
+    "label": "enablemic()"
+  },
+  {
+    "href": "./methods#disablemic",
+    "label": "disablemic()"
+  },
+  {
+    "href": "./methods#remove",
+    "label": "remove()"
+  },
+  {
+    "href": "./methods#setquality",
+    "label": "setquality()"
+  },
+  {
+    "href": "./methods#addEventListener",
+    "label": "addEventListener"
+  },
+  {
+    "href": "./methods#removeEventListener",
+    "label": "removeEventListener"
+  },
+  {
+    "href": "./methods#removeAllListeners",
+    "label": "removeAllListeners"
+  }
+]

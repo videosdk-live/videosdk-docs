@@ -59,6 +59,116 @@ Currently the below regions are supported:
 In case you are not providing any region code, the default region will be `sg001`.
 :::
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs
+defaultValue="Kotlin"
+groupId={"AndroidLanguage"}
+values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
+
+<TabItem value="Kotlin">
+
+```js
+package live.videosdk.rtc.android.java;
+
+import com.androidnetworking.AndroidNetworking;
+import com.androidnetworking.error.ANError;
+import com.androidnetworking.interfaces.JSONObjectRequestListener;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+class JoinActivity : AppCompatActivity() {
+  private val apiServerUrl = "http://localhost:9000"
+
+  // ...
+  // onCreate() and other methods
+  private fun getToken(@Nullable meetingId: String?) {
+    AndroidNetworking
+      .get("$apiServerUrl/get-token")
+      .build()
+      .getAsJSONObject(
+        object : JSONObjectRequestListener {
+          override fun onResponse(response: JSONObject) {
+            try
+            {
+              token = response.getString("token")
+              if (meetingId == null) {
+                createMeeting(token)
+              } else {
+                joinMeeting(token, meetingId)
+              }
+            } catch (e: JSONException) {
+              e.printStackTrace()
+            }
+          }
+
+          override fun onError(anError: ANError) {
+            anError.printStackTrace()
+          }
+        }
+      )
+  }
+
+  private fun createMeeting(token: String) {
+    AndroidNetworking
+      .post("$apiServerUrl/create-meeting")
+      .addBodyParameter("token", token)
+      .addBodyParameter("region", "sg001")
+      .build()
+      .getAsJSONObject(
+        object : JSONObjectRequestListener {
+          override fun onResponse(response: JSONObject) {
+            try {
+              // final String meetingId = response.getString("meetingId");
+
+              // Intent intent = new Intent(JoinActivity.this, MainActivity.class);
+              // intent.putExtra("token", token);
+              // intent.putExtra("meetingId", meetingId);
+
+              // startActivity(intent);
+            } catch (e: JSONException) {
+                e.printStackTrace()
+            }
+          }
+
+          override fun onError(anError: ANError) {
+            anError.printStackTrace()
+          }
+        }
+      )
+  }
+
+  private fun joinMeeting(token: String, meetingId: String) {
+    AndroidNetworking
+      .post("$apiServerUrl/validate-meeting/{meetingId}")
+      .addPathParameter("meetingId", meetingId)
+      .addBodyParameter("token", token)
+      .build()
+      .getAsJSONObject(
+        object : JSONObjectRequestListener {
+          override fun onResponse(response: JSONObject) {
+            // Intent intent = new Intent(JoinActivity.this, MainActivity.class);
+            // intent.putExtra("token", token);
+            // intent.putExtra("meetingId", meetingId);
+
+            // startActivity(intent);
+          }
+
+          override fun onError(anError: ANError) {
+            anError.printStackTrace()
+          }
+        }
+      )
+  }
+}
+
+```
+
+</TabItem>
+
+<TabItem value="Java">
+
 ```js
 package live.videosdk.rtc.android.java;
 
@@ -162,6 +272,10 @@ public class JoinActivity extends AppCompatActivity {
 
 ```
 
+</TabItem>
+
+</Tabs>
+
 ## 2. Initialization
 
 <div style={{display:'flex',flexDirection:'row',alignItems:'stretch',}}>
@@ -186,6 +300,50 @@ NOTE : For React & React native developer, you have
 
 </div>
 
+<Tabs
+defaultValue="Kotlin"
+groupId={"AndroidLanguage"}
+values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
+
+<TabItem value="Kotlin">
+
+```js
+import live.videosdk.rtc.android.VideoSDK;
+import live.videosdk.rtc.android.Meeting;
+
+class MainActivity : AppCompatActivity() {
+  private var meeting: Meeting? = null
+
+  override fun onCreate(savedInstanceState: Bundle?) {
+    // Configure parameters
+    val token = intent.getStringExtra("token")
+    val meetingId = intent.getStringExtra("meetingId")
+    val participantName = "John Doe"
+    val micEnabled = true
+    val webcamEnabled = true
+    val paticipantId="demo@123"  // If you passed `null` then SDK will create an Id by itself and will use that id.
+
+    // Configure authentication token
+    VideoSDK.config(token)
+
+    // create a new meeting instance
+    meeting = VideoSDK.initMeeting(
+      this@MainActivity,
+      meetingId,
+      participantName,
+      micEnabled,
+      webcamEnabled,
+      paticipantId
+    )
+  }
+}
+
+```
+
+</TabItem>
+
+<TabItem value="Java">
+
 ```js
 import live.videosdk.rtc.android.VideoSDK;
 import live.videosdk.rtc.android.Meeting;
@@ -202,6 +360,7 @@ public class MainActivity extends AppCompatActivity {
         final String participantName = "John Doe";
         final boolean micEnabled = true;
         final boolean webcamEnabled = true;
+        final String participantId = "demo@123"; // If you passed `null` then SDK will create an Id by itself and will use that id.
 
         // Configure authentication token
         VideoSDK.config(token);
@@ -212,12 +371,17 @@ public class MainActivity extends AppCompatActivity {
                 meetingId,
                 participantName,
                 micEnabled,
-                webcamEnabled
+                webcamEnabled,
+                participantId
         );
     }
 }
 
 ```
+
+</TabItem>
+
+</Tabs>
 
 ## 3. Join
 
@@ -238,8 +402,29 @@ After joining, you will be able to Manage Participant in a meeting.
 
 </div>
 
+<Tabs
+defaultValue="Kotlin"
+groupId={"AndroidLanguage"}
+values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
+
+<TabItem value="Kotlin">
+
+```js
+// After receiving mic and webcam access permissions
+// join the meeting
+meeting!!.join()
+```
+
+</TabItem>
+
+<TabItem value="Java">
+
 ```js
 // After receiving mic and webcam access permissions
 // join the meeting
 meeting.join();
 ```
+
+</TabItem>
+
+</Tabs>

@@ -57,7 +57,8 @@ import MethodListHeading from '@theme/MethodListHeading';
         String name, 
         boolean micEnabled,
         boolean webcamEnabled,
-        String participantId
+        String participantId,
+        Map<String, CustomStreamTrack> customTracks
       )"  type={"Meeting"} />
     </MethodListGroup>
   </MethodListItemLabel>
@@ -83,6 +84,7 @@ Meeting meeting = VideoSDK.initMeeting(
       name, // required
       micEnabled, // required
       webcamEnabled, // required
+      null, // required
       null // required
       )
 });
@@ -104,6 +106,7 @@ Meeting meeting = VideoSDK.initMeeting({
   micEnabled, // required
   webcamEnabled, // required
   null, // required
+  null // required
 });
 ```
 
