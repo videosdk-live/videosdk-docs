@@ -732,7 +732,7 @@ const {
 function onMeetingStateChanged(data) {
   const { state } = data;
 
-  swtich(state){
+  switch(state){
     case 'CONNECTING':
       console.log("Meeting is Connecting" );
       break;
