@@ -19,7 +19,7 @@ sidebar_position: 1
 
 # Custom Video Track
 
-We have introduced the ability to pass a custom video track for the video of the participants. This feature can be used to add custom video encoder config, optimization mode (whether you want to focus on **motion**, **text** or **detail** of the video) and background removal & video filter from external SDK and send it to other participants.
+We have introduced the ability to pass a custom video track for the video of the participants. This feature can be used to add custom video encoder config, optimization mode (whether you want to focus on **motion**, **text** or **detail** of the video) and background removal & video filter from external SDK(e.g., [Banuba](https://www.banuba.com/))and send it to other participants.
 
 ## Creating a Custom Video Track
 
@@ -60,6 +60,19 @@ Above mentioned encoder configurations are valid for both, landscape as well as 
   - type: `Context`
   - required: `true`
   - Pass the Android Context for this parameter.
+
+- **observer**:
+
+  - type: `CapturerObserver`
+  - required: `false`
+  - If you want to use video filter from external SDK(e.g., [Banuba](https://www.banuba.com/)) then pass instance of  `CapturerObserver`  in this parameter.
+
+
+:::note
+
+For banuba integraion with videosdk.live android sdk,please visit [Banuba Intergation with Android-SDK](../../extras/banuba-integration.md)
+
+:::
 
 #### Returns
 

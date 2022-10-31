@@ -58,6 +58,13 @@
           ]
         }
       ]
+    },
+    {
+      "type": "category",
+      "label": "Extras",
+      "items": [
+        "guide/video-and-audio-calling-api-sdk/extras/banuba-integration"
+      ]
     }
   ],
   "apiSidebar": [
