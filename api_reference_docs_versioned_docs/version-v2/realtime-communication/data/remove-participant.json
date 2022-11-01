@@ -2,7 +2,16 @@
   "removeParticipant": {
     "title": "Remove Participant",
     "description": "This API lets you remove participant by passing roomId or sessionId and participantId as body parameters.",
-    "headers": [],
+    "headers": [
+      {
+        "key": "Authorization",
+        "value": "$YOUR_TOKEN"
+      },
+      {
+        "key": "Content-Type",
+        "value": "application/json"
+      }
+    ],
     "methodType": "POST",
     "postParameters": [
       {
