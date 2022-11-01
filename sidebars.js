@@ -595,32 +595,32 @@ module.exports = {
       ],
       collapsed: true,
     },
-    {
-      type: "category",
-      label: "Live Streaming API",
-      items: [
-        {
-          type: "category",
-          label: "Quickstart",
-          collapsed: true,
-          items: ["tutorials/live-streaming/api/quickstart-rest-api"],
-        },
-      ],
-      collapsed: true,
-    },
-    {
-      type: "category",
-      label: "Video On Demand API",
-      items: [
-        {
-          type: "category",
-          label: "Quickstart",
-          collapsed: true,
-          items: ["tutorials/video-on-demand/api/quickstart-rest-api"],
-        },
-      ],
-      collapsed: true,
-    },
+    // {
+    //   type: "category",
+    //   label: "Live Streaming API",
+    //   items: [
+    //     {
+    //       type: "category",
+    //       label: "Quickstart",
+    //       collapsed: true,
+    //       items: ["tutorials/live-streaming/api/quickstart-rest-api"],
+    //     },
+    //   ],
+    //   collapsed: true,
+    // },
+    // {
+    //   type: "category",
+    //   label: "Video On Demand API",
+    //   items: [
+    //     {
+    //       type: "category",
+    //       label: "Quickstart",
+    //       collapsed: true,
+    //       items: ["tutorials/video-on-demand/api/quickstart-rest-api"],
+    //     },
+    //   ],
+    //   collapsed: true,
+    // },
     "tutorials/customized-layout",
   ],
 

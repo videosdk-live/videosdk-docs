@@ -1,0 +1,10 @@
+[
+  {
+    "href": "./participant-event-listener-class#onStreamEnabled",
+    "label": "onStreamEnabled()"
+  },
+  {
+    "href": "./participant-event-listener-class#onStreamDisabled",
+    "label": "onStreamDisabled()"
+  }
+]

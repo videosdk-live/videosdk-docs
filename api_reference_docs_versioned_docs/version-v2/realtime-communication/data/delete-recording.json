@@ -2,7 +2,12 @@
   "deleteRecording": {
     "title": "Delete a Recording",
     "description": "This API lets you delete a particular recording by passing recording Id as parameter.",
-    "headers": [],
+    "headers": [
+      {
+        "key": "Authorization",
+        "value": "$YOUR_TOKEN"
+      }
+    ],
     "methodType": "DELETE",
     "postParameters": [],
     "queryParameters": [],
