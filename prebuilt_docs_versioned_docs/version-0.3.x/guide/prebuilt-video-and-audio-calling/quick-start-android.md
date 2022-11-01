@@ -15,7 +15,7 @@ sidebar_position: 1
 slug: quick-start-android
 ---
 
-VideoSDK Prebuilt enables the opportunity to integrate real-time communication SDK without writing explicit code. It just requires 10 minutes to integrate.
+Prebuilt SDK enables the opportunity to integrate real-time video & audio communication SDK without writing explicit code. It just requires 10 minutes to integrate.
 
 ### Prerequisites
 
@@ -74,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
 }
 ```
 
-2. Next we need to setup a `WebChromeClient` for the webview which will handle the permissions of audio and video of the user.
+2. We need to setup a `WebChromeClient` for the webview which will handle the permissions of audio and video of the user.
 
 ```js
 public class MainActivity extends AppCompatActivity {
@@ -101,7 +101,7 @@ public class MainActivity extends AppCompatActivity {
 }
 ```
 
-3. Next step is to load the URL for the prebuilt. **Make sure you replace the token and meetingId that you want to connect in the variables.**
+3. Next step is to load the URL of the prebuilt. Make sure you replace the `token` and `meetingId` with respective variables.
 
 ```js
 public class MainActivity extends AppCompatActivity {
@@ -140,7 +140,7 @@ public class MainActivity extends AppCompatActivity {
             .appendPath("rtc-js-prebuilt")
             .appendPath(prebuiltVersion)
             .appendQueryParameter("name", name) // Name Parameter
-            .appendQueryParameter("micEnabled", micEnabled) // intial Mic Status Parameter
+            .appendQueryParameter("micEnabled", micEnabled) // initial Mic Status Parameter
             .appendQueryParameter("webcamEnabled", webcamEnabled) // initial webcam status paramter
             .appendQueryParameter("meetingId", meetingId)
             .appendQueryParameter("redirectOnLeave", "https://videosdk.live")
@@ -152,7 +152,7 @@ public class MainActivity extends AppCompatActivity {
 }
 ```
 
-4. We also need to handle the runtime permissions.
+4. Handle the runtime permissions.
 
 ```js
 public class MainActivity extends AppCompatActivity {
@@ -217,6 +217,6 @@ public class MainActivity extends AppCompatActivity {
 
 :::note
 
-You can checkout the sample project for **[prebuilt implementation of android in webview here](https://github.com/videosdk-live/videosdk-rtc-prebuilt-examples/tree/main/android-webview)**.
+You can checkout the sample project for **[prebuilt implementation of android in webview ](https://github.com/videosdk-live/videosdk-rtc-prebuilt-examples/tree/main/android-webview)** here.
 
 :::

@@ -15,7 +15,7 @@ sidebar_position: 1
 slug: quick-start-ios
 ---
 
-VideoSDK Prebuilt enables the opportunity to integrate real-time communication SDK without writing explicit code. It just requires 10 minutes to integrate.
+Prebuilt SDK enables the opportunity to integrate real-time video & audio communication SDK without writing explicit code. It just requires 10 minutes to integrate.
 
 ### Prerequisites
 
@@ -59,7 +59,7 @@ class ViewController: UIViewController, SFSafariViewControllerDelegate {
 }
 ```
 
-2. Next step is to update the URL for the prebuilt. **Make sure you replace the token and meetingId that you want to connect in the variables.**
+2. Next step is to update the URL for the prebuilt. **Make sure you replace the token and meetingId with respective variables.**
 
 ```js
 import SafariServices
