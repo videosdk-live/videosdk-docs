@@ -16,7 +16,7 @@
     "postParameters": [
       {
         "key": "region",
-        "values": "`sg001` | `in002` | `us001` | `eu001`",
+        "values": "`sg001` | `in002` | `us001` | `eu001` | `us002`",
         "description": "#### You can take advantage of regional API to decrease latency in video calling.",
         "required": false,
         "defaultValue": "`sg001`"
