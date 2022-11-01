@@ -431,7 +431,13 @@ const MethodRequestResponse = ({
   useEffect(() => {}, [language]);
 
   return (
-    <div>
+    <div className="flex flex-col ">
+      <a
+        href="https://www.postman.com/videosdk-apis/workspace/my-workspace/collection/24161231-eb2511fb-998b-448f-b10d-00c2bf257cd7?action=share&creator=24161231"
+        className="flex self-end mb-2"
+      >
+        <img src="https://run.pstmn.io/button.svg" />
+      </a>
       <div className="bg-[#333A47] rounded-t-lg pt-4 pb-4 pl-3 flex flex-row flex-wrap align-middle">
         <div className="text-[#72C894] text-sm font-bold">{methodType}</div>
         <div className="text-[#7D8EAD] text-sm font-medium pl-[3px] pr-[3px]">

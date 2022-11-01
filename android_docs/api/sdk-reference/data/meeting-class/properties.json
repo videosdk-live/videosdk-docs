@@ -1,0 +1,9 @@
+[
+  { "href": "./properties#getmeetingId", "label": "getmeetingId()" },
+  {
+    "href": "./properties#getLocalParticipant",
+    "label": "getLocalParticipant()"
+  },
+  { "href": "./properties#getParticipants", "label": "getParticipants()" },
+  { "href": "./properties#pubSub", "label": "pubSub" }
+]

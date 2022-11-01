@@ -333,7 +333,8 @@ class MainActivity : AppCompatActivity() {
       participantName,
       micEnabled,
       webcamEnabled,
-      paticipantId
+      paticipantId,
+      null
     )
   }
 }
@@ -372,7 +373,8 @@ public class MainActivity extends AppCompatActivity {
                 participantName,
                 micEnabled,
                 webcamEnabled,
-                participantId
+                participantId,
+                null
         );
     }
 }

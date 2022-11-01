@@ -2,7 +2,16 @@
   "endSession": {
     "title": "End Session",
     "description": "This API lets you end session by passing  either roomId or sessionId as body parameters.",
-    "headers": [],
+    "headers": [
+      {
+        "key": "Authorization",
+        "value": "$YOUR_TOKEN"
+      },
+      {
+        "key": "Content-Type",
+        "value": "application/json"
+      }
+    ],
     "methodType": "POST",
     "postParameters": [
       {
