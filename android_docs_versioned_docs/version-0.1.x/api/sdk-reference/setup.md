@@ -48,7 +48,8 @@ allprojects {
   repositories {
     // ...
     maven { url 'https://jitpack.io' }
-    jcenter()
+    mavenCentral()
+    maven { url "https://maven.aliyun.com/repository/jcenter" }
   }
 }
 ```
@@ -62,7 +63,8 @@ dependencyResolutionManagement{
   repositories {
     // ...
     maven { url 'https://jitpack.io' }
-    jcenter()
+    mavenCentral()
+    maven { url "https://maven.aliyun.com/repository/jcenter" }
   }
 }
 ```
@@ -75,7 +77,7 @@ dependencyResolutionManagement{
 
 ```js title="app/build.gradle"
 dependencies {
-  implementation 'live.videosdk:rtc-android-sdk:0.1.5'
+  implementation 'live.videosdk:rtc-android-sdk:0.1.7'
 
   // library to perform Network call to generate a meeting id
   implementation 'com.amitshekhar.android:android-networking:1.0.2'
