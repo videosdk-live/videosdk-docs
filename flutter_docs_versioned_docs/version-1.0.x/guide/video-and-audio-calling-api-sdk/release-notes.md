@@ -7,6 +7,20 @@ pagination_label: Release Notes
 
 This page will keep you update all the releases of Flutter SDK.
 
+## v1.0.6
+
+**Release Date** : 1st Nov 2022
+
+**Change log** :
+
+1. Added [error events](./features/error-events.md) for room.
+
+**Bug Fix** :
+
+1. Fixed crash on `end()`, while the room is not joined yet.
+
+---
+
 ## v1.0.5
 
 **Release Date** : 08th Oct 2022
