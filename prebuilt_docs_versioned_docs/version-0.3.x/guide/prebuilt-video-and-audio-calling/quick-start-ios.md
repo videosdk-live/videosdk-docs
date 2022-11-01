@@ -17,7 +17,7 @@ slug: quick-start-ios
 
 VideoSDK Prebuilt enables the opportunity to integrate real-time communication SDK without writing explicit code. It just requires 10 minutes to integrate.
 
-## Prerequisites
+### Prerequisites
 
 :::important
 
@@ -28,10 +28,10 @@ Visit VideoSDK **[dashboard](https://app.videosdk.live/api-keys)** to generate t
 
 ### Permissions
 
-In order to embed a room in Android, add these permissions to the `Info.plist`:
+In order to embed VideoSDK in iOS, add these permissions to the `Info.plist`:
 
 ```js
-  <key>NSCameraUsageDescription</key>
+<key>NSCameraUsageDescription</key>
 <string>Allow camera access to start video.</string>
 
 <key>NSMicrophoneUsageDescription</key>
@@ -42,7 +42,7 @@ In order to embed a room in Android, add these permissions to the `Info.plist`:
 
 You will need to use the [SFSafariViewController](https://developer.apple.com/documentation/safariservices/sfsafariviewcontroller) class.
 
-1. We will setup the SFSafariVIewController to load the VideoSDK Prebuilt when the view appears.
+1. We will setup the `SFSafariViewController` to load the VideoSDK Prebuilt when the view appears.
 
 ```js
 import SafariServices
@@ -51,7 +51,7 @@ class ViewController: UIViewController, SFSafariViewControllerDelegate {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        var meetingUrl = URLComponents()
+        var meetingUrl = URLComponents() // We will update the URL in next step
         let safariVC = SFSafariViewController(url: meetingUrl.url!)
         safariVC.delegate = self
         present(safariVC, animated: true)
@@ -59,7 +59,7 @@ class ViewController: UIViewController, SFSafariViewControllerDelegate {
 }
 ```
 
-2. Next step is to update the url for the prebuilt. **Make sure you replace the token and meetingId that you want to connect in the variables.**
+2. Next step is to update the URL for the prebuilt. **Make sure you replace the token and meetingId that you want to connect in the variables.**
 
 ```js
 import SafariServices
@@ -77,6 +77,8 @@ class ViewController: UIViewController, SFSafariViewControllerDelegate {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         var meetingUrl = URLComponents()
+
+        //Setup the Prebuilt URL
         meetingUrl.scheme = "https"
         meetingUrl.host = "embed.videosdk.live"
         meetingUrl.path = "/rtc-js-prebuilt/"+prebuiltVersion
@@ -98,6 +100,6 @@ class ViewController: UIViewController, SFSafariViewControllerDelegate {
 
 :::note
 
-You can checkout the sample project for **[prebuilt implementation of android in webview here](https://github.com/videosdk-live/videosdk-rtc-prebuilt-examples/tree/main/android-webview)**.
+You can checkout the sample project for **[prebuilt implementation of iOS in webview here](https://github.com/videosdk-live/videosdk-rtc-prebuilt-examples/tree/main/Prebuilt%20Webview%20iOS)**.
 
 :::

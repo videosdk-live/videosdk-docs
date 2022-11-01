@@ -17,7 +17,7 @@ slug: quick-start-android
 
 VideoSDK Prebuilt enables the opportunity to integrate real-time communication SDK without writing explicit code. It just requires 10 minutes to integrate.
 
-## Prerequisites
+### Prerequisites
 
 :::important
 
@@ -28,7 +28,7 @@ Visit VideoSDK **[dashboard](https://app.videosdk.live/api-keys)** to generate t
 
 ### Permissions
 
-In order to embed a room in Android, add these permissions to the manifest:
+In order to embed VideoSDK in Android, add these permissions to the manifest:
 
 ```js
   <uses-permission android:name="android.permission.RECORD_AUDIO" />
@@ -101,7 +101,7 @@ public class MainActivity extends AppCompatActivity {
 }
 ```
 
-3. Next step is to load the url for the prebuilt. **Make sure you replace the token and meetingId that you want to connect in the variables.**
+3. Next step is to load the URL for the prebuilt. **Make sure you replace the token and meetingId that you want to connect in the variables.**
 
 ```js
 public class MainActivity extends AppCompatActivity {
