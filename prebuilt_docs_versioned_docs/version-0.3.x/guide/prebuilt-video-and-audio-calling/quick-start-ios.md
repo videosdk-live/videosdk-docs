@@ -59,7 +59,7 @@ class ViewController: UIViewController, SFSafariViewControllerDelegate {
 }
 ```
 
-2. Next step is to update the URL for the prebuilt. **Make sure you replace the token and meetingId with respective variables.**
+2. Next step is to update the URL for the prebuilt. Make sure you replace the token and meetingId with respective variables.
 
 ```js
 import SafariServices
