@@ -16,8 +16,8 @@
     "postParameters": [
       {
         "key": "region",
-        "values": "`sg001` | `in002` | `us001` | `eu001` | `us002`",
-        "description": "#### You can take advantage of regional API to decrease latency in video calling.",
+        "values": "`us001` | `us002` | `eu001` | `in002` | `sg001`",
+        "description": "#### For the best call quality, please use the nearest Video SDK server-region (to your user's geo-location). If you aren't passing the region, your room will be hosted on Singapore servers.",
         "required": false,
         "defaultValue": "`sg001`"
       },
