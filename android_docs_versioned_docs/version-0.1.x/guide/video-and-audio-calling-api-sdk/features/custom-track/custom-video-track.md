@@ -70,7 +70,7 @@ Above mentioned encoder configurations are valid for both, landscape as well as 
 
 :::note
 
-For banuba integraion with videosdk.live android sdk,please visit [Banuba Intergation with Android-SDK](../../extras/banuba-integration.md)
+For Banuba integraion with VideoSDK, please visit [Banuba Intergation with VideoSDK](../../extras/banuba-integration.md)
 
 :::
 

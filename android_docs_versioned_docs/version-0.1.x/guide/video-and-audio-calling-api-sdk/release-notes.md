@@ -17,6 +17,8 @@ This page will keep you update all the releases of Android SDK.
 
     **Code Sample** : [videosdk-rtc-android-sdk-banuba-example](https://github.com/videosdk-live/videosdk-rtc-android-sdk-banuba-example)
 
+    **Docs** : [Banuba Integration](https://docs.videosdk.live/android/guide/video-and-audio-calling-api-sdk/extras/banuba-integration)
+
 ---
 
 ## v0.1.4
