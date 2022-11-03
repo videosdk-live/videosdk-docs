@@ -43,7 +43,7 @@ const startLivestream = {
     {
       key: "templateUrl",
       value:
-        "https://www.example.com/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.l0sImlhdCI6MTY0OTkyNjI1MCwiZXhwIjoxNjwNTMxMDUwf&meetingId=74v5-v21l-n1ey&participantId=RECORDER_ID",
+        "https://www.example.com/?token=token&meetingId=74v5-v21l-n1ey&participantId=RECORDER_ID",
       description:
         "[Customize Layout of Meeting Livestream](/docs/tutorials/customized-layout).",
       required: false,

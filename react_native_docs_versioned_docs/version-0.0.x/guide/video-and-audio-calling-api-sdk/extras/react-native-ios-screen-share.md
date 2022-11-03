@@ -20,8 +20,8 @@ slug: react-native-ios-screen-share
 
 ## Contents
 
-1. [Create Broadcast Upload Extension in iOS](/docs/guide/video-and-audio-calling-api-sdk/extras/react-native-ios-screen-share#create-broadcast-upload-extension-in-ios)
-2. [Create iOS Native Module for RPSystemBroadcastPickerView](/docs/guide/video-and-audio-calling-api-sdk/extras/react-native-ios-screen-share#create-ios-native-module-for-rpsystembroadcastpickerview)
+1. [Create Broadcast Upload Extension in iOS](/react-native/guide/video-and-audio-calling-api-sdk/extras/react-native-ios-screen-share#create-broadcast-upload-extension-in-ios)
+2. [Create iOS Native Module for RPSystemBroadcastPickerView](/react-native/guide/video-and-audio-calling-api-sdk/extras/react-native-ios-screen-share#create-ios-native-module-for-rpsystembroadcastpickerview)
 
 ## Create Broadcast Upload Extension in iOS
 

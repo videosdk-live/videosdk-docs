@@ -135,7 +135,7 @@ public class MainApplication extends Application implements ReactApplication {
 
 ### Step 8: Register services at index page of project
 
-```js title="App.js"
+```js title="index.js"
 // Import the library
 import { register } from '@videosdk.live/react-native-sdk';
 import { AppRegistry } from 'react-native';

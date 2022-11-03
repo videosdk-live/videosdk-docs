@@ -1,10 +1,10 @@
 ---
-title: Whiteboard (BETA)
+title: Whiteboard
 hide_title: false
 hide_table_of_contents: false
 description: This guide will explain about whiteboard.
-sidebar_label: Whiteboard (BETA)
-pagination_label: Whiteboard (BETA)
+sidebar_label: Whiteboard
+pagination_label: Whiteboard
 keywords:
   - Whiteboard
 image: img/videosdklive-thumbnail.jpg
@@ -12,15 +12,15 @@ sidebar_position: 1
 slug: whiteboard
 ---
 
-# Whiteboard (BETA)
+# Whiteboard
 
 This feature allows participants to explain their thoughts to other participants by drawing on an interactive whiteboard.
 
 ### How it works ?
 
-- When `whiteboardEnabled` value is set to `true`, you will be able to see whiteboard icon as displayed in image below. Using this button you can start or stop whiteboard.
+- When `whiteboardEnabled` value is set to `true`, you will be able to see whiteboard option inside `More Options` Tab Panel as displayed in image below. By Clicking that you can start Whiteboard.
 
-![whiteboard button](/img/prebuilt/prebuilt-whiteboard.png)
+![whiteboard button](/img/prebuilt/Whiteboard.png)
 
 - When `drawOnWhiteboard`: value is set to `true`, you will be able to draw on whiteboard, by default it is set to `true`.
 

@@ -92,6 +92,7 @@ const ParticipantView = ({ participantId }) => {
     webcamOn,
     micOn,
     isActiveSpeaker,
+    isLocal,
   } = useParticipant(participantId);
 
   useEffect(() => {
@@ -132,7 +133,7 @@ const ParticipantView = ({ participantId }) => {
 
   return (
     <>
-      <audio ref={micRef} autoPlay />
+      <audio ref={micRef} autoPlay muted={isLocal} />
       <video height={"50%"} width={"50%"} ref={webcamRef} autoPlay />
     </>
   );

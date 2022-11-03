@@ -9,7 +9,7 @@ keywords:
   - audio calling
   - video calling
   - real-time communication
-  - collabration
+  - collaboration
 image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
 slug: quick-start
@@ -22,13 +22,13 @@ import TabItem from '@theme/TabItem';
 
 Prebuilt SDK enables the opportunity to integrate real-time communication SDK without writing explicit code. It just requires 10 minutes to integrate.
 
-It supports all the modern frameworks such as plain JavaScript, React JS, Vue, and Angular.
+It supports all modern frameworks such as plain JavaScript, React JS, Vue, and Angular.
 
 ## Prerequisites
 
 :::important
 
-One should have a VideoSDK account to generate token.
+One should have a VideoSDK account to generate a token.
 Visit VideoSDK **[dashboard](https://app.videosdk.live/api-keys)** to generate token
 
 :::
@@ -70,7 +70,7 @@ Visit VideoSDK **[dashboard](https://app.videosdk.live/api-keys)** to generate t
   });
 
   script.src =
-    "https://sdk.videosdk.live/rtc-js-prebuilt/0.3.19/rtc-js-prebuilt.js";
+    "https://sdk.videosdk.live/rtc-js-prebuilt/0.3.21/rtc-js-prebuilt.js";
   document.getElementsByTagName("head")[0].appendChild(script);
 </script>
 ```

@@ -1,9 +1,9 @@
 ---
-sidebar_label: PubSub (BETA)
-pagination_label: PubSub (BETA)
+sidebar_label: PubSub
+pagination_label: PubSub
 ---
 
-# PubSub (BETA)
+# PubSub
 
 PubSub feature allows the participant to send and receive messages of the topics which he has subscribed.
 
@@ -27,6 +27,28 @@ public void publish(String topic, String message, PubSubPublishOptions options)
 
 #### Example
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs
+defaultValue="Kotlin"
+groupId={"AndroidLanguage"}
+values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
+
+<TabItem value="Kotlin">
+
+```js
+private fun sendMessage() {
+  val options = PubSubPublishOptions()
+  options.isPersist = true
+  meeting!!.pubSub.publish("CHAT", "Hello from Android", options)
+}
+```
+
+</TabItem>
+
+<TabItem value="Java">
+
 ```js
 protected void sendMessage() {
   PubSubPublishOptions options = new PubSubPublishOptions();
@@ -34,6 +56,10 @@ protected void sendMessage() {
   meeting.pubSub.publish("CHAT", "Hello from Android", options);
 }
 ```
+
+</TabItem>
+
+</Tabs>
 
 ### subscribe()
 
@@ -51,6 +77,38 @@ public List<PubSubMessage> subscribe(String topic, PubSubMessageListener listene
 | listener       | PubSubMessageListener | This is an object of PubSubMessageListener, which listens for upcoming messages and calls onMessageReceived function, when new message received. |
 
 #### Example
+
+<Tabs
+defaultValue="Kotlin"
+groupId={"AndroidLanguage"}
+values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
+
+<TabItem value="Kotlin">
+
+```js
+var pubSubMessageListener =
+  PubSubMessageListener { message ->
+    // Logs new message
+    Log.v("New Message Received", "Message : " + message.message)
+  }
+
+@Override
+protected void onCreate(Bundle savedInstanceState) {
+  //...
+
+  // Subscribe for 'CHAT' topic
+  val pubSubMessageList = meeting!!.pubSub.subscribe("CHAT", pubSubMessageListener)
+
+  // Logs persisted message list
+  for (message in pubSubMessageList) {
+    Log.v("Message List: ", "Message : " + message.message)
+  }
+}
+```
+
+</TabItem>
+
+<TabItem value="Java">
 
 ```js
 PubSubMessageListener pubSubMessageListener = new PubSubMessageListener() {
@@ -75,6 +133,10 @@ protected void onCreate(Bundle savedInstanceState) {
 }
 ```
 
+</TabItem>
+
+</Tabs>
+
 ### unsubscribe()
 
 This method is used to unsubscribe the message topic.
@@ -92,6 +154,24 @@ public void unsubscribe(String topic, PubSubMessageListener listener)
 
 #### Example
 
+<Tabs
+defaultValue="Kotlin"
+groupId={"AndroidLanguage"}
+values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
+
+<TabItem value="Kotlin">
+
+```js
+fun unsubscribe() {
+  // Unsubscribe 'CHAT' topic
+  meeting!!.pubSub.unsubscribe("CHAT", pubSubMessageListener)
+}
+```
+
+</TabItem>
+
+<TabItem value="Java">
+
 ```js
 public void unsubscribe(){
   // Unsubscribe 'CHAT' topic
@@ -99,7 +179,92 @@ public void unsubscribe(){
 }
 ```
 
+</TabItem>
+
+</Tabs>
+
 ## Sample Code
+
+<Tabs
+defaultValue="Kotlin"
+groupId={"AndroidLanguage"}
+values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
+
+<TabItem value="Kotlin">
+
+```js
+package live.videosdk.rtc.android.kotlin
+
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import android.view.View
+import android.widget.EditText
+import android.widget.Toast
+import androidx.appcompat.widget.Toolbar
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import live.videosdk.rtc.android.Meeting
+import live.videosdk.rtc.android.listeners.PubSubMessageListener
+import live.videosdk.rtc.android.model.PubSubPublishOptions
+
+class ChatActivity : AppCompatActivity() {
+
+    // Meeting
+    var meeting: Meeting? = null
+
+    // PubSubMessageListener
+    var pubSubMessageListener =
+      PubSubMessageListener { message ->
+        // Logs new message
+        Log.v("New Message Received", "Message : " + message.message)
+    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_chat)
+
+        /**
+         * Here, we have created 'MainApplication' class, which extends android.app.Application class.
+         * It has Meeting property and getter and setter methods of Meeting property.
+         * In your android manifest, you must declare the class implementing android.app.Application (add the android:name=".MainApplication" attribute to the existing application tag):
+         * In MainActivity.kt, we have set Meeting property.
+         *
+         * For Example: (MainActivity.kt)
+         * var meeting = VideoSDK.initMeeting(context, meetingId, ParticipantName, micEnabled, webcamEnabled,paricipantId)
+         * (this.application as MainApplication).meeting = meeting
+        */
+
+        // Get Meeting
+        meeting = (this.application as MainApplication).meeting
+
+        // Subscribe for 'CHAT' topic
+        val pubSubMessageList = meeting!!.pubSub.subscribe("CHAT", pubSubMessageListener)
+
+        for (message in pubSubMessageList) {
+          // Logs persisted messages
+           Log.v("Message List: ", "Message : " + message.message)
+        }
+
+        sendMessage()
+    }
+
+    private fun sendMessage() {
+      val options = PubSubPublishOptions()
+      options.isPersist = true
+      meeting!!.pubSub.publish("CHAT", "Hello from Android", options)
+    }
+
+    override fun onDestroy() {
+      // Unsubscribe for 'CHAT' topic
+      meeting!!.pubSub.unsubscribe("CHAT", pubSubMessageListener)
+      super.onDestroy()
+    }
+}
+```
+
+</TabItem>
+
+<TabItem value="Java">
 
 ```js
 package live.videosdk.rtc.android.java;
@@ -139,7 +304,7 @@ public class ChatActivity extends AppCompatActivity {
          * In MainActivity.java, we have set Meeting property.
          *
          * For Example: (MainActivity.java)
-         * Meeting meeting = VideoSDK.initMeeting(context, meetingId, ParticipantName, micEnabled, webcamEnabled);
+         * Meeting meeting = VideoSDK.initMeeting(context, meetingId, ParticipantName, micEnabled, webcamEnabled,participantId);
          * ((MainApplication) this.getApplication()).setMeeting(meeting);
         */
 
@@ -170,3 +335,7 @@ public class ChatActivity extends AppCompatActivity {
     }
 }
 ```
+
+</TabItem>
+
+</Tabs>

@@ -110,6 +110,11 @@ It requires <a href="https://reactjs.org/docs/render-props.html#using-props-othe
 </div>
 <div class="col col--4 margin-bottom--sm" >
 
+- [isHls](./use-meeting/properties#ishls)
+
+</div>
+<div class="col col--4 margin-bottom--sm" >
+
 - [connections](./use-meeting/properties#connections)
 
 </div>
@@ -300,6 +305,11 @@ It requires <a href="https://reactjs.org/docs/render-props.html#using-props-othe
 </div>
 <div class="col col--4 margin-bottom--sm" >
 
+- [onRecordingStateChanged](./use-meeting/events#onrecordingstatechanged)
+
+</div>
+<div class="col col--4 margin-bottom--sm" >
+
 - [onRecordingStarted](./use-meeting/events#onrecordingstarted)
 
 </div>
@@ -320,12 +330,22 @@ It requires <a href="https://reactjs.org/docs/render-props.html#using-props-othe
 </div>
 <div class="col col--4 margin-bottom--sm" >
 
+- [onLivestreamStateChanged](./use-meeting/events#onlivestreamstatechanged)
+
+</div>
+<div class="col col--4 margin-bottom--sm" >
+
 - [onLiveStreamStarted](./use-meeting/events#onlivestreamstarted)
 
 </div>
 <div class="col col--4 margin-bottom--sm" >
 
 - [onLiveStreamStopped](./use-meeting/events#onlivestreamstopped)
+
+</div>
+<div class="col col--4 margin-bottom--sm" >
+
+- [onHlsStateChanged](./use-meeting/events#onhlsstatechanged)
 
 </div>
 <div class="col col--4 margin-bottom--sm" >
