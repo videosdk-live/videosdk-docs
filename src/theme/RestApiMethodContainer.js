@@ -5,9 +5,9 @@ import Markdown from "markdown-to-jsx";
 const hasRequiredParams = (parameters) => {
   var hasRequiredParameter = false;
   parameters.forEach((param) => {
-    if (param.required) {
-      hasRequiredParameter = true;
-    }
+    // if (param.required) {
+    hasRequiredParameter = true;
+    // }
   });
   return hasRequiredParameter;
 };
@@ -46,7 +46,8 @@ const generateCurlCode = ({
   if (queryParameters.length != 0) {
     code += "?";
     queryParameters.forEach((element) => {
-      if (element.required) code += element.key + "=" + element.value + "&";
+      // if (element.required)
+      code += element.key + "=" + element.value + "&";
     });
     code = code.slice(0, code.length - 1);
   }
@@ -102,7 +103,8 @@ const generateNodeCode = ({
   if (queryParameters.length != 0) {
     code += "const url= `" + apiEndpoint + "?";
     queryParameters.forEach((element) => {
-      if (element.required) code += element.key + "=" + element.value + "&";
+      // if (element.required)
+      code += element.key + "=" + element.value + "&";
     });
     code = code.slice(0, code.length - 1);
     code += "`;\n";
@@ -136,8 +138,8 @@ const generatePhpCode = ({
     // 	code += "\t\"" + key + "\" => \"" + value + "\",\n";
     // });
     postParameters.forEach((element) => {
-      if (element.required)
-        code += '\t"' + element.key + '" => "' + element.value + '",\n';
+      // if (element.required)
+      code += '\t"' + element.key + '" => "' + element.value + '",\n';
     });
     code += ");\n";
   }
@@ -178,7 +180,8 @@ const generatePhpCode = ({
     }
 
     queryParameters.forEach((element) => {
-      if (element.required) code += element.key + "=" + element.value + "&";
+      // if (element.required)
+      code += element.key + "=" + element.value + "&";
     });
     code = code.slice(0, code.length - 1);
     code += '",\n';
@@ -287,7 +290,8 @@ const generatePythonCode = ({
   if (queryParameters.length != 0 && hasRequiredParams(queryParameters)) {
     code += "?";
     queryParameters.forEach((element) => {
-      if (element.required) code += element.key + "=" + element.value + "&";
+      // if (element.required)
+      code += element.key + "=" + element.value + "&";
     });
     code = code.slice(0, code.length - 1);
     //close url string quotations
@@ -378,9 +382,9 @@ function generateCode({
 function parametersToJson(parameters) {
   var json = "{";
   parameters.forEach((element) => {
-    if (element.required) {
-      json += '"' + element.key + '" : "' + element.value + '",';
-    }
+    // if (element.required) {
+    json += '"' + element.key + '" : "' + element.value + '",';
+    // }
   });
   json = json.slice(0, json.length - 1);
   json += "}";
@@ -431,43 +435,41 @@ const MethodRequestResponse = ({
   useEffect(() => {}, [language]);
 
   return (
-    <div className="flex flex-col ">
+    <div className='flex flex-col '>
       <a
-        href="https://www.postman.com/videosdk-apis/workspace/my-workspace/collection/24161231-eb2511fb-998b-448f-b10d-00c2bf257cd7?action=share&creator=24161231"
-        className="flex self-end mb-2"
-      >
-        <img src="https://run.pstmn.io/button.svg" />
+        href='https://www.postman.com/videosdk-apis/workspace/my-workspace/collection/24161231-eb2511fb-998b-448f-b10d-00c2bf257cd7?action=share&creator=24161231'
+        className='flex self-end mb-2'>
+        <img src='https://run.pstmn.io/button.svg' />
       </a>
-      <div className="bg-[#333A47] rounded-t-lg pt-4 pb-4 pl-3 flex flex-row flex-wrap align-middle">
-        <div className="text-[#72C894] text-sm font-bold">{methodType}</div>
-        <div className="text-[#7D8EAD] text-sm font-medium pl-[3px] pr-[3px]">
+      <div className='bg-[#333A47] rounded-t-lg pt-4 pb-4 pl-3 flex flex-row flex-wrap align-middle'>
+        <div className='text-[#72C894] text-sm font-bold'>{methodType}</div>
+        <div className='text-[#7D8EAD] text-sm font-medium pl-[3px] pr-[3px]'>
           |
         </div>
-        <div className="flex-1 text-[#7D8EAD] text-sm font-medium">
+        <div className='flex-1 text-[#7D8EAD] text-sm font-medium'>
           {apiEndpoint}
         </div>
-        <div className="dropdown dropdown--hoverable dropdown--right">
-          <div className="flex flex-row pr-3 cursor-pointers">
-            <div className="text-sm text-white-1">{language.value}</div>
+        <div className='dropdown dropdown--hoverable dropdown--right'>
+          <div className='flex flex-row pr-3 cursor-pointers'>
+            <div className='text-sm text-white-1'>{language.value}</div>
             <img
-              src="/img/icons/ic_arrow_down.svg"
-              className="pl-2 colored_ic_arrow_down"
+              src='/img/icons/ic_arrow_down.svg'
+              className='pl-2 colored_ic_arrow_down'
             />
           </div>
-          <ul className="dropdown__menu mt-4 min-w-fit bg-[#252a34]">
+          <ul className='dropdown__menu mt-4 min-w-fit bg-[#252a34]'>
             {languageList.map((v) => {
               return (
                 <li key={v.id}>
                   <a
-                    className="dropdown__link text-sm cursor-pointer"
+                    className='dropdown__link text-sm cursor-pointer'
                     onClick={(e) => {
                       localStorage.setItem(
                         "rest-api-group-id",
                         JSON.stringify(v)
                       );
                       setLanguage(v);
-                    }}
-                  >
+                    }}>
                     {v.value}
                   </a>
                 </li>
@@ -476,8 +478,8 @@ const MethodRequestResponse = ({
           </ul>
         </div>
       </div>
-      <div className="method_code_block">
-        <CodeBlock language="js">
+      <div className='method_code_block'>
+        <CodeBlock language='js'>
           {generateCode({
             headers,
             methodType,
@@ -488,11 +490,11 @@ const MethodRequestResponse = ({
           })}
         </CodeBlock>
       </div>
-      <div className="bg-[#333A47] rounded-t-lg pt-4 pb-4 pl-3 flex lg:flex-row flex-col align-middle">
-        <div className="flex-1 text-sm font-bold text-white-1">RESPONSE</div>
+      <div className='bg-[#333A47] rounded-t-lg pt-4 pb-4 pl-3 flex lg:flex-row flex-col align-middle'>
+        <div className='flex-1 text-sm font-bold text-white-1'>RESPONSE</div>
       </div>
-      <div className="method_code_block">
-        <CodeBlock language="jsx">
+      <div className='method_code_block'>
+        <CodeBlock language='jsx'>
           {JSON.stringify(response, null, 2)}
         </CodeBlock>
       </div>
@@ -533,14 +535,14 @@ const MethodDescription = ({
   parameters,
 }) => {
   return (
-    <div className="flex flex-col">
-      <div className="text-gray-250">{description}</div>
+    <div className='flex flex-col'>
+      <div className='text-gray-250'>{description}</div>
       {postParameters?.length != 0 && (
         <div>
-          <div className="text-2xl mt-12 font-extrabold text-white-100">
+          <div className='text-2xl mt-12 font-extrabold text-white-100'>
             Body Parameters
           </div>
-          <div className="bg-[#252A34] mt-3 mb-1 h-[1px]"></div>
+          <div className='bg-[#252A34] mt-3 mb-1 h-[1px]'></div>
           {postParameters?.map((parameter, index) => {
             return (
               <MethodParameter
@@ -558,10 +560,10 @@ const MethodDescription = ({
 
       {queryParameters?.length != 0 && (
         <div>
-          <div className="text-2xl mt-12 font-extrabold text-white-100">
+          <div className='text-2xl mt-12 font-extrabold text-white-100'>
             Query Parameters
           </div>
-          <div className="bg-[#252A34] mt-3 mb-1 h-[1px]"></div>
+          <div className='bg-[#252A34] mt-3 mb-1 h-[1px]'></div>
           {queryParameters?.map((parameter, index) => {
             return (
               <MethodParameter
@@ -579,10 +581,10 @@ const MethodDescription = ({
 
       {parameters?.length != 0 && (
         <div>
-          <div className="text-2xl mt-12 font-extrabold text-white-100">
+          <div className='text-2xl mt-12 font-extrabold text-white-100'>
             Parameters
           </div>
-          <div className="bg-[#252A34] mt-3 mb-1 h-[1px]"></div>
+          <div className='bg-[#252A34] mt-3 mb-1 h-[1px]'></div>
           {parameters?.map((parameter, index) => {
             return (
               <MethodParameter
@@ -644,8 +646,8 @@ const MethodParameter = ({
 
   let mdParmName = `## ${parameterName}`;
   return (
-    <div className="w-full" id={parameterName}>
-      <div className="flex flex-row pt-4">
+    <div className='w-full' id={parameterName}>
+      <div className='flex flex-row pt-4'>
         <div>
           <a href={"#" + parameterName}>
             <Markdown
@@ -659,17 +661,16 @@ const MethodParameter = ({
                   },
                 },
               }}
-              children={mdParmName}
-            ></Markdown>
+              children={mdParmName}></Markdown>
           </a>
         </div>
 
         {required ? (
-          <div className="text-primary font-semibold text-[10px] leading-7 mt-1">
+          <div className='text-primary font-semibold text-[10px] leading-7 mt-1'>
             REQUIRED
           </div>
         ) : (
-          <div className=" text-slate-400 text-[10px] font-medium leading-7 mt-1">
+          <div className=' text-slate-400 text-[10px] font-medium leading-7 mt-1'>
             OPTIONAL
           </div>
         )}
@@ -685,11 +686,10 @@ const MethodParameter = ({
               },
             },
           }}
-          children={md}
-        ></Markdown>
+          children={md}></Markdown>
       </div>
 
-      {showDivider && <div className="bg-[#252A34] mt-5 h-[1px]"></div>}
+      {showDivider && <div className='bg-[#252A34] mt-5 h-[1px]'></div>}
     </div>
   );
 };
@@ -706,10 +706,10 @@ function RestApiMethodContainer({
   title,
 }) {
   return (
-    <div id="tailwind">
-      <div className="flex lg:flex-row flex-col w-full">
-        <div className="lg:w-1/2 w-full lg:sticky self-start lg:pr-[18px] flex-grow top-10">
-          <p class="font-bold text-4xl text-white-100	">{title}</p>
+    <div id='tailwind'>
+      <div className='flex lg:flex-row flex-col w-full'>
+        <div className='lg:w-1/2 w-full lg:sticky self-start lg:pr-[18px] flex-grow top-10'>
+          <p class='font-bold text-4xl text-white-100	'>{title}</p>
           <MethodDescription
             description={description}
             queryParameters={queryParameters}
@@ -717,7 +717,7 @@ function RestApiMethodContainer({
             parameters={parameters}
           />
         </div>
-        <div className="lg:w-1/2 w-full lg:pt-0 pt-4 lg:pl-[18px] lg:sticky self-start flex-grow top-10">
+        <div className='lg:w-1/2 w-full lg:pt-0 pt-4 lg:pl-[18px] lg:sticky self-start flex-grow top-10'>
           <MethodRequestResponse
             headers={headers}
             methodType={methodType}

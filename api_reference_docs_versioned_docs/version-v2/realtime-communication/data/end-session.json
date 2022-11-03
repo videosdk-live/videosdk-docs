@@ -23,7 +23,7 @@
       {
         "key": "sessionId",
         "description": "Your sessionId",
-        "value": "roomId",
+        "value": "sessionId",
         "required": false
       }
     ],
