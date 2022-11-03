@@ -1,10 +1,10 @@
 ---
-title: Set Particpant Video Quality - Video SDK Docs
+title: Set Participant Video Quality - Video SDK Docs
 hide_title: false
 hide_table_of_contents: false
 description: Set Video Quality features quick integrate in Javascript, React JS, Android, IOS, React Native, Flutter with Video SDK to add live video & audio conferencing to your applications.
-sidebar_label: Set Particpant Video Quality
-pagination_label: Set Particpant Video Quality
+sidebar_label: Set Participant Video Quality
+pagination_label: Set Participant Video Quality
 keywords:
   - set video quality
   - audio calling
@@ -15,7 +15,7 @@ sidebar_position: 1
 slug: set-participant-video-quality
 ---
 
-# Set Particpant Video Quality
+# Set Participant Video Quality
 
 This feature allows participants to set other participant's video quality during the meeting.
 
