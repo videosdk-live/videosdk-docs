@@ -20,7 +20,7 @@ import TabItem from '@theme/TabItem';
 
 # Quick Start
 
-Prebuilt SDK enables the opportunity to integrate real-time communication SDK without writing explicit code. It just requires 10 minutes to integrate.
+Prebuilt SDK enables the opportunity to integrate real-time video & audio communication SDK without writing explicit code. It just requires 10 minutes to integrate.
 
 It supports all the modern frameworks such as plain JavaScript, React JS, Vue, and Angular.
 
