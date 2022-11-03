@@ -43,7 +43,8 @@ allprojects {
   repositories {
     // ...
     maven { url 'https://jitpack.io' }
-    jcenter()
+    mavenCentral()
+    maven { url "https://maven.aliyun.com/repository/jcenter" }
   }
 }
 ```
@@ -57,7 +58,8 @@ dependencyResolutionManagement{
   repositories {
     // ...
     maven { url 'https://jitpack.io' }
-    jcenter()
+    mavenCentral()
+    maven { url "https://maven.aliyun.com/repository/jcenter" }
   }
 }
 ```
@@ -71,7 +73,7 @@ dependencyResolutionManagement{
 
 ```js title="app/build.gradle"
 dependencies {
-		implementation 'live.videosdk:rtc-android-sdk:0.1.4'
+		implementation 'live.videosdk:rtc-android-sdk:0.1.7'
 
 		// other app dependencies
 }
