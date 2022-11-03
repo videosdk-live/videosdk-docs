@@ -81,8 +81,21 @@ dependencies {
 
 ```js title="AndroidManifest.xml"
 <uses-permission android:name="android.permission.RECORD_AUDIO" />
-<uses-permission android:name="android.permission.CAMERA" />
 <uses-permission android:name="android.permission.INTERNET" />
+<uses-permission android:name="android.permission.READ_PHONE_STATE" />
+<uses-permission android:name="android.permission.CAMERA" />
+
+<!-- Needed to communicate with already-paired Bluetooth devices. (Legacy up to Android 11) -->
+<uses-permission
+    android:name="android.permission.BLUETOOTH"
+    android:maxSdkVersion="30" />
+<uses-permission
+    android:name="android.permission.BLUETOOTH_ADMIN"
+    android:maxSdkVersion="30" />
+
+<!-- Needed to communicate with already-paired Bluetooth devices. (Android 12 upwards)-->
+<uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
+
 ```
 
 ### Step 4: Create MainApplication class with the following code

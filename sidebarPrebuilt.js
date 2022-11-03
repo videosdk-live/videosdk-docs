@@ -44,6 +44,8 @@ module.exports = {
         "guide/prebuilt-video-and-audio-calling/features/record-meeting",
         "guide/prebuilt-video-and-audio-calling/features/go-live-social-media",
         "guide/prebuilt-video-and-audio-calling/features/go-live-hls",
+        "guide/prebuilt-video-and-audio-calling/features/virtual-background",
+        "guide/prebuilt-video-and-audio-calling/features/noise-removal",
         "guide/prebuilt-video-and-audio-calling/features/live-poll",
         "guide/prebuilt-video-and-audio-calling/features/theme",
         "guide/prebuilt-video-and-audio-calling/features/customize-branding",

@@ -1,5 +1,6 @@
 {
-  "guideAudioAndVideoCalling": [{
+  "guideAudioAndVideoCalling": [
+    {
       "type": "category",
       "label": "Introduction",
       "items": [
@@ -8,7 +9,8 @@
         "guide/video-and-audio-calling-api-sdk/flutter-sdk",
         "guide/video-and-audio-calling-api-sdk/server-setup",
         "guide/video-and-audio-calling-api-sdk/release-notes",
-        "guide/video-and-audio-calling-api-sdk/migration-notes"
+        "guide/video-and-audio-calling-api-sdk/migration-notes",
+        "guide/video-and-audio-calling-api-sdk/known-issues"
       ],
       "collapsed": false
     },
@@ -33,7 +35,8 @@
         "guide/video-and-audio-calling-api-sdk/features/toggle-participant-media",
         "guide/video-and-audio-calling-api-sdk/features/speaker-indication",
         "guide/video-and-audio-calling-api-sdk/features/screenshare",
-        "guide/video-and-audio-calling-api-sdk/features/set-viewport"
+        "guide/video-and-audio-calling-api-sdk/features/set-viewport",
+        "guide/video-and-audio-calling-api-sdk/features/error-event"
       ],
       "collapsed": true
     },
@@ -48,12 +51,22 @@
         "guide/video-and-audio-calling-api-sdk/features/remove-participant",
         "guide/video-and-audio-calling-api-sdk/features/set-quality",
         "guide/video-and-audio-calling-api-sdk/features/entry-request-response",
-        "guide/video-and-audio-calling-api-sdk/features/pause-resume-video-stream"
+        "guide/video-and-audio-calling-api-sdk/features/pause-resume-video-stream",
+        "guide/video-and-audio-calling-api-sdk/features/switch-audio-output"
+      ],
+      "collapsed": true
+    },
+    {
+      "type": "category",
+      "label": "Extras",
+      "items": [
+        "guide/video-and-audio-calling-api-sdk/extras/flutter-ios-screen-share"
       ],
       "collapsed": true
     }
   ],
-  "apiSidebar": [{
+  "apiSidebar": [
+    {
       "type": "doc",
       "id": "api/sdk-reference/setup"
     },

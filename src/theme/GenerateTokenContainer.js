@@ -11,6 +11,7 @@ const generateCode = ({ language }) => {
         "const options = { \n expiresIn: '10m', \n algorithm: 'HS256' \n};\n";
       code += "const payload = {\n";
       code += " apikey: API_KEY,\n";
+      code += " permissions: [`allow_join`], // `ask_join` || `allow_mod` \n";
       code += " version: 2,\n";
       code += " roles: ['CRAWLER'],\n";
       code += "};\n";

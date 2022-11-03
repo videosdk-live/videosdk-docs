@@ -29,9 +29,12 @@ This guide will provide an overview of how participant can start and stop broadc
 
 ### Live streaming flow
 
-1. Click on `Add Live Streams`.
-2. Add your streaming platforms there
-3. Now one can live their streams on different platforms by hitting `Go Live` button
+1. Click on `More Options` Button you can find `Add Live Streams` selection option.
+
+![Go-Live](/img/prebuilt/more-options.png)
+
+2. Add your streaming platforms there.
+3. Now one can live their streams on different platforms by hitting `Go Live` button.
 
 ### Live streaming attributes
 

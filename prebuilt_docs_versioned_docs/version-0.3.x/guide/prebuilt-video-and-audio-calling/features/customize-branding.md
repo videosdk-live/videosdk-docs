@@ -32,7 +32,7 @@ This feature allows you to embed your branding to top of the meeting .
 ### Branding Attributes
 
 - `branding.enabled`: If it is true, then branding will be visible on top bar of the meeting. If it is false, then branding won't be available on top bar of the meeting.
-- `branding.logoURL`: Provide public URL of your logo.
+- `branding.logoURL`: Provide public URL of your logo. Keep the resolution of logo `400px * 400px`.
 - `branding.name`: Provide your brand title.
 - `branding.poweredBy`: If it is true, then `Powered by videosdk.live` text will appear in bottom of the branding. If it is false, then text will not appear in bottom of the branding
 

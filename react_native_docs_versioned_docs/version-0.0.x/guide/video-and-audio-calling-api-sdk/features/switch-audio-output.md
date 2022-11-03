@@ -3,7 +3,7 @@ sidebar_label: Switch Audio Output (BETA)
 pagination_label: Switch Audio Output (BETA)
 ---
 
-# Switch Audio Output (BETA) (Android)
+# Switch Audio Output (BETA)
 
 This feature will help yout to switch audio output device during the session.
 
@@ -48,5 +48,5 @@ switchAudioDevice("BLUETOOTH"); // for bluetooth device
 
 :::note
 
-`EARPIECE` is not supported whenver `WIRED_HEADSET` or `BLUETOOTH` device is connected
+`EARPIECE` is not supported whenever `WIRED_HEADSET` or `BLUETOOTH` device is connected
 :::

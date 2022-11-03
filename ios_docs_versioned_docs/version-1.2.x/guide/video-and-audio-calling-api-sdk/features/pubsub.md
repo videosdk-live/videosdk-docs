@@ -1,9 +1,9 @@
 ---
-sidebar_label: PubSub (BETA)
-pagination_label: PubSub (BETA)
+sidebar_label: PubSub
+pagination_label: PubSub
 ---
 
-# PubSub (BETA)
+# PubSub
 
 PubSub feature allows the participant to send and receive messages of the topics which he has subscribed.
 

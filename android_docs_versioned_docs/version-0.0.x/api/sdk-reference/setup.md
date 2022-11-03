@@ -90,8 +90,21 @@ dependencies {
 
 ```xml title="AndroidManifest.xml"
 <uses-permission android:name="android.permission.RECORD_AUDIO" />
-<uses-permission android:name="android.permission.CAMERA" />
 <uses-permission android:name="android.permission.INTERNET" />
+<uses-permission android:name="android.permission.READ_PHONE_STATE" />
+<uses-permission android:name="android.permission.CAMERA" />
+
+<!-- Needed to communicate with already-paired Bluetooth devices. (Legacy up to Android 11) -->
+<uses-permission
+    android:name="android.permission.BLUETOOTH"
+    android:maxSdkVersion="30" />
+<uses-permission
+    android:name="android.permission.BLUETOOTH_ADMIN"
+    android:maxSdkVersion="30" />
+
+<!-- Needed to communicate with already-paired Bluetooth devices. (Android 12 upwards)-->
+<uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
+
 ```
 
 ### Step 2: Create `MainApplication` class which will extend the `android.app.Application`.
@@ -177,7 +190,7 @@ override fun onCreate(savedInstanceState: Bundle?) {
   // create a new meeting instance
   meeting = VideoSDK.initMeeting(
       this@MeetingActivity, meetingId, participantName,
-      micEnabled, webcamEnabled,null)
+      micEnabled, webcamEnabled,null,null)
       
   // get permissions and join the meeting with meeting.join();
   // checkPermissionAndJoinMeeting();
@@ -205,7 +218,7 @@ protected void onCreate(Bundle savedInstanceState) {
   // create a new meeting instance
   Meeting meeting = VideoSDK.initMeeting(
           MainActivity.this, meetingId, participantName,
-          micEnabled, webcamEnabled,null
+          micEnabled, webcamEnabled,null,null
   );
 
   // get permissions and join the meeting with meeting.join();

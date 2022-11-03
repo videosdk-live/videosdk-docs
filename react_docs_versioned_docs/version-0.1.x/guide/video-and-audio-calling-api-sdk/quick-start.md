@@ -344,7 +344,7 @@ Now let's use all this API to create Video Component
 ```js title="Video Component"
 function VideoComponent(props) {
   const micRef = useRef(null);
-  const { webcamStream, micStream, webcamOn, micOn } = useParticipant(
+  const { webcamStream, micStream, webcamOn, micOn, isLocal } = useParticipant(
     props.participantId
   );
 
@@ -376,7 +376,7 @@ function VideoComponent(props) {
 
   return (
     <div key={props.participantId}>
-      {micOn && micRef && <audio ref={micRef} autoPlay />}
+      {micOn && micRef && <audio ref={micRef} autoPlay muted={isLocal} />}
       {webcamOn && (
         <ReactPlayer
           //
