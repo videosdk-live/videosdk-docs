@@ -19,7 +19,7 @@
       {
         "key": "roomId",
         "description": "#### Your roomId or customRoomId.",
-        "required": false
+        "required": true
       }
     ],
     "apiEndpoint": "https://api.videosdk.live/v2/rooms/${roomId}",

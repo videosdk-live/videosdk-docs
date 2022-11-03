@@ -17,10 +17,10 @@ To achieve region based meetings, just pass `region : REGION_CODE` parameter in 
 Currently the below regions are supported:
 
 - `sg001` Region Code for Singapore, SG.
-<!-- - `sg002` Region Code for Singapore, SG. (Another region in Sindapore) -->
-- `in002` Region Code for Bangalore, IN.
-- `us001` Region Code for Fremont, CA.
+- `in002` Region Code for Mumbai, IN.
+- `us001` Region Code for N. Carolina, US.
 - `eu001` Region Code for Frankfurt, DE.
+- `us002` Region Code for Ohio, US.
 
 In case you are not providing any region code, the default region will be `sg001`.
 :::
@@ -61,7 +61,7 @@ var options = {
     authorization: `${YOUR_JWT_TOKEN}`,
     "Content-Type": "application/json",
   },
-  body: JSON.stringify({ region: "sg001", userMeetingId: "unicorn" }), // region: sg001 || in002 || eu001 || us001
+  body: JSON.stringify({ region: "sg001", userMeetingId: "unicorn" }), // region: sg001 || in002 || eu001 || us001 || us002
 };
 
 request(options, function (error, response, body) {
@@ -101,7 +101,7 @@ http.verify_mode = OpenSSL::SSL::VERIFY_NONE
 
 request = Net::HTTP::Post.new(url, 'Content-Type' => 'application/json')
 request.authorization = "Bearer #{YOUR_JWT_TOKEN}"
-request.body = {region: 'sg001', userMeetingId: 'unicorn'}.to_json # region: sg001 || in002 || eu001 || us001
+request.body = {region: 'sg001', userMeetingId: 'unicorn'}.to_json # region: sg001 || in002 || eu001 || us001 || us002
 response = http.request(request)
 puts response.read_body
 ```

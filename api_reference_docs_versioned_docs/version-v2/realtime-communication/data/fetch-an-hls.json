@@ -2,7 +2,16 @@
   "fetchAnHLS": {
     "title": "Fetch an HLS",
     "description": "This API lets you fetch an HLS stream.",
-    "headers": [],
+    "headers": [
+      {
+        "key": "Authorization",
+        "value": "$YOUR_TOKEN"
+      },
+      {
+        "key": "Content-Type",
+        "value": "application/json"
+      }
+    ],
     "methodType": "GET",
     "postParameters": [],
     "queryParameters": [],

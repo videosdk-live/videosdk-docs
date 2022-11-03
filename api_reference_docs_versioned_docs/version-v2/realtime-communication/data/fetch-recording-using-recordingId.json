@@ -2,7 +2,16 @@
   "fetchRecordingUsingRecordingId": {
     "title": "Fetch a Recording",
     "description": "This API lets you fetch a particular recording info by passing recording Id as parameter.",
-    "headers": [],
+    "headers": [
+      {
+        "key": "Authorization",
+        "value": "$YOUR_TOKEN"
+      },
+      {
+        "key": "Content-Type",
+        "value": "application/json"
+      }
+    ],
     "methodType": "GET",
     "postParameters": [],
     "queryParameters": [],
