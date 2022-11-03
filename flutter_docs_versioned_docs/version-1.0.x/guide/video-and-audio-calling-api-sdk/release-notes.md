@@ -13,7 +13,7 @@ This page will keep you update all the releases of Flutter SDK.
 
 **Change log** :
 
-1. Added [error events](./features/error-events.md) for room.
+1. Added [error events](./features/error-event.md) for room.
 
 **Bug Fix** :
 
