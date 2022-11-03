@@ -9,7 +9,8 @@ function HippaRedirection() {
     var currentPath = location.pathname;
     if (
       currentPath ===
-      "/api-reference/realtime-communication/see-also/hippa-healthcare"
+        "/api-reference/realtime-communication/see-also/hippa-healthcare" ||
+      "/docs/realtime-communication/see-also/hippa-healthcare"
     ) {
       history.replace("/");
     }
