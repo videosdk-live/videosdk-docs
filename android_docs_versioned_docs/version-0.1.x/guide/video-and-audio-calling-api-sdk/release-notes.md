@@ -7,6 +7,20 @@ pagination_label: Release Notes
 
 This page will keep you update all the releases of Android SDK.
 
+## v0.1.7
+
+**Release Date** : 1st November 2022
+
+**Change log** : 
+
+1. Provide support for banuba integration.
+
+    **Code Sample** : [videosdk-rtc-android-sdk-banuba-example](https://github.com/videosdk-live/videosdk-rtc-android-sdk-banuba-example)
+
+    **Docs** : [Banuba Intergation with VideoSDK](https://docs.videosdk.live/android/guide/video-and-audio-calling-api-sdk/extras/banuba-integration)
+
+---
+
 ## v0.1.4
 
 **Release Date** : 21st October 2022

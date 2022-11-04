@@ -23,18 +23,21 @@
       },
       {
         "key": "customRoomId",
+        "value": "xyz",
         "description": "#### Customize Room id which you had specified in Create Room API.",
         "required": false
       },
       {
         "key": "page",
         "defaultValue": "`1`",
+        "value": "1",
         "description": "#### Page number for the sessions.",
         "required": false
       },
       {
         "key": "perPage",
         "defaultValue": "`20`",
+        "value": "20",
         "description": "#### Number of sessions you want per page.",
         "required": false
       }

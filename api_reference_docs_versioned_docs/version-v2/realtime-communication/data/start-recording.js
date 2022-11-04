@@ -23,14 +23,14 @@ const startRecording = {
     {
       key: "templateUrl",
       value:
-        "https://www.example.com/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.l0sImlhdCI6MTY0OTkyNjI1MCwiZXhwIjoxNjwNTMxMDUwf&meetingId=74v5-v21l-n1ey&participantId=RECORDER_ID",
+        "https://www.example.com/?token=token&meetingId=74v5-v21l-n1ey&participantId=RECORDER_ID",
       description:
         "[Customize Layout of Meeting Recording](/docs/tutorials/customized-layout).",
       required: false,
     },
     {
       key: "config",
-      value: "{layout: {type: `SPOTLIGHT`, priority:`PIN`, gridSize: 5}}",
+      value: "configObj",
       description: `
 - **config**:
   - **layout**:
@@ -46,11 +46,13 @@ const startRecording = {
     {
       key: "webhookUrl",
       description: "Webhook URL",
+      value: "https://www.example.com/",
       required: false,
     },
     {
       key: "awsDirPath",
       description: "Your AWS S3 Bucket Path.",
+      value: "s3path",
       required: false,
     },
   ],

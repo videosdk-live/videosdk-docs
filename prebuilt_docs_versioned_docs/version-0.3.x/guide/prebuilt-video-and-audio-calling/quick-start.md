@@ -20,7 +20,7 @@ import TabItem from '@theme/TabItem';
 
 # Quick Start
 
-Prebuilt SDK enables the opportunity to integrate real-time communication SDK without writing explicit code. It just requires 10 minutes to integrate.
+Prebuilt SDK enables the opportunity to integrate real-time video & audio communication SDK without writing explicit code. It just requires 10 minutes to integrate.
 
 It supports all modern frameworks such as plain JavaScript, React JS, Vue, and Angular.
 
@@ -33,7 +33,7 @@ Visit VideoSDK **[dashboard](https://app.videosdk.live/api-keys)** to generate t
 
 :::
 
-## Implement meetings with the Prebuilt VideoSDK
+## Embeding Prebuilt in JS
 
 1. Create an `index.html` file and add the following `<script>` tag at the end of your code's `<body>` tag. Initialize `VideoSDKMeeting` after the script gets loaded.
 
