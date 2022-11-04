@@ -7,6 +7,16 @@ pagination_label: Release Notes
 
 This page will keep you update all the releases of React JS SDK.
 
+## v0.1.52
+
+**Release Data** : 4th November 2022
+
+**Change log** :
+
+- Provide Types support.
+
+---
+
 ## v0.1.51
 
 **Release Data** : 5th October 2022
@@ -18,6 +28,8 @@ This page will keep you update all the releases of React JS SDK.
 **Bug Fix** :
 
 - Fix `npm ERR! ERESOLVE unable to resolve dependency tree` after installing SDK.
+
+---
 
 ## v0.1.50
 
@@ -46,6 +58,8 @@ This page will keep you update all the releases of React JS SDK.
    **SDK Reference** : [onHlsStateChanged](https://docs.videosdk.live/react/api/sdk-reference/use-meeting/events#onhlsstatechanged)
 
 _This version will store timeline of the session, session stats and participant stats. This will be available in your [VideoSDK Session Dashboard](https://app.videosdk.live/meetings/sessions?page=1&perPage=20)_
+
+---
 
 ## v0.1.49
 

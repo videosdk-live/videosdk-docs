@@ -7,6 +7,16 @@ pagination_label: Release Notes
 
 This page will keep you update all the releases of JavaScript SDK.
 
+## v0.0.52
+
+**Release Data** : 4th November 2022
+
+**Change log** :
+
+- Provide Types support.
+
+---
+
 ## v0.0.50
 
 **Release Data** : 23rd September 2022

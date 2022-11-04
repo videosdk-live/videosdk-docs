@@ -7,6 +7,20 @@ pagination_label: Release Notes
 
 This page will keep you update all the releases of React Native SDK.
 
+## v0.0.37
+
+**Release Data** : 4th November 2022
+
+**Change log** :
+
+- Provide Types support.
+
+**Bug Fix** :
+
+- Fix error `collector-producer | got error UnsupportedError: not implemented` during development environment.
+
+---
+
 ## v0.0.36
 
 **Release Date** : 8th October 2022
