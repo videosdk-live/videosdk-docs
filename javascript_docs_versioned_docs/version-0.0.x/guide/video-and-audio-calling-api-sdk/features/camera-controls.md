@@ -49,3 +49,29 @@ const onPress = async () => {
   meeting?.changeWebcam(deviceId);
 };
 ```
+
+### Events related to camera controls
+
+**Events associated with `enableWebcam()`:**
+
+- [`stream-enabled`](../../../api/sdk-reference/participant-class/events.md#stream-enabled) event will be emitted with [`stream`](../../../api/sdk-reference/stream-class/introduction.md) object from the event callback, inside that [participant](../../../api/sdk-reference/participant-class/introduction.md) object.
+
+**Events associated with `disableWebcam()`:**
+
+- [`stream-disabled`](../../../api/sdk-reference/participant-class/events.md#stream-disabled) event will be emitted with [`stream`](../../../api/sdk-reference/stream-class/introduction.md) object from the event callback, inside that [participant](../../../api/sdk-reference/participant-class/introduction.md) object.
+
+```js
+participant.on("stream-enabled", (stream) => {
+  if (stream.kind === "video") {
+    //particiapnt turned on video
+    //Render Participant video logic here
+  }
+});
+
+participant.on("stream-disabled", (stream) => {
+  if (stream.kind === "video") {
+    //particiapnt turned off video
+    //remove Participant video logic here
+  }
+});
+```

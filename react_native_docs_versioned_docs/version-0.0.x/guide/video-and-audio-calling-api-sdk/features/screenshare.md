@@ -44,27 +44,51 @@ const onPress = () => {
 For React Native iOS Screen Share feature, you need to follow this guide [React Native iOS Screen Share](/react-native/guide/video-and-audio-calling-api-sdk/extras/react-native-ios-screen-share)
 :::
 
-<!-- ## How to Create App Group in Apple Store
-### Step 1 : Go to App store
+### Events related to screenshare
 
-Navigate to [App Group](https://developer.apple.com/account/resources/identifiers/list/applicationGroup) and click on identifier.
+**Events associated with `enableScreenShare()`:**
 
-![IOS Screen Share](/img/ios-screenshare/step14-xcode.png)
+- Every Participant will receive a callback on [`onStreamEnabled()`](../../../api/sdk-reference/use-participant/events#onstreamenabled) of the `useParticipant()` hook with `Stream` object.
 
-### Step 2 : Choose App Groups
+- [`onPresenterChanged()`](../../../api/sdk-reference/use-meeting/events#onpresenterchanged) will also receive a callback with the `presenterId`.
 
-Select **App Groups** from identifier and click on continue.
-![IOS Screen Share](/img/ios-screenshare/step15-xcode.png)
+**Events associated with `disableScreenShare()`:**
 
-### Step 3 : Add identifier
+- Every Participant will receive a callback on [`onStreamDisabled()`](../../../api/sdk-reference/use-participant/events#onstreamdisabled) of the `useParticipant()` hook with `Stream` object.
 
-Add description and identifier, then click continue.
+- [`onPresenterChanged()`](../../../api/sdk-reference/use-meeting/events#onpresenterchanged) will also receive a callback with the `presenterId`.
 
-**Note** : Make sure the identifier prefix should be **group**, for example **group.com.ScreenBroadcast**.
+```js
+function onStreamEnabled(stream) {
+  if(stream.kind === 'share'){
+    console.log("Screen Share Stream On: onStreamEnabled", stream);
+  }
+}
 
-![IOS Screen Share](/img/ios-screenshare/step16-xcode.png)
+function onStreamDisabled(stream) {
+  if(stream.kind === 'share'){
+    console.log("Screen Share Stream Off: onStreamDisabled", stream);
+  }
+}
 
-### Step 4 : Register identifier
+const {
+  displayName
+  ...
+} = useParticipant(participantId,{
+  onStreamEnabled,
+  onStreamDisabled,
+  ...
+});
 
-Now, click on Register button to register this group.
-![IOS Screen Share](/img/ios-screenshare/step17-xcode.png) -->
+function onPresenterChanged(presenterId) {
+  console.log(" onPresenterChanged", presenterId);
+}
+
+const {
+  meetingId
+  ...
+} = useMeeting({
+  onPresenterChanged,
+  ...
+});
+```

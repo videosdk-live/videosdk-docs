@@ -195,3 +195,20 @@ const onPress = () => {
   meeting?.join();
 };
 ```
+
+## 4. Meeting Join Events
+
+Following events are emitted on the `meeting` when it is successfully joined.
+
+- Local Participant will receive a [`meeting-joined`](../../../api/sdk-reference/meeting-class/events.md#meeting-joined) event when successfully joined.
+- Remote Participant will receive a [`participant-joined`](../../../api/sdk-reference/meeting-class/events.md#participant-joined) event with the newly joined [`Participant`](../../../api/sdk-reference/participant-class/introduction.md) object from the event callback.
+
+```js
+meeting.on("meeting-joined", () => {
+  console.log("Meeting Joined Successfully");
+});
+
+meeting.on("participant-joined", (participant) => {
+  console.log("New Participant Joined: ", participant.id);
+});
+```

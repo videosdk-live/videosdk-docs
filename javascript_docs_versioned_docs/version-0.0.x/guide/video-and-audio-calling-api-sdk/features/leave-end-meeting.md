@@ -39,3 +39,24 @@ const onPress = () => {
   meeting?.end();
 };
 ```
+
+### Meeting Left Event
+
+**Events associated with `leave()`:**
+
+- Local participant will receive a [`meeting-left`](../../../api/sdk-reference/meeting-class/events.md#meeting-left) event.
+- All remote participants will receive a [`participant-left`](../../../api/sdk-reference/meeting-class/events.md#participant-left) event with `participantId`.
+
+**Events associated with `end()`:**
+
+- All [participants](../../../api/sdk-reference/participant-class/introduction.md) and [localParticipant](../../../api/sdk-reference/participant-class/introduction.md), will be emitted [`meeting-left`](../../../api/sdk-reference/meeting-class/events.md#meeting-left) event.
+
+```js
+meeting.on("meeting-left", () => {
+  //Meeting Left
+});
+
+meeting.on("participant-left", (participant) => {
+  //Participant Left the meeting
+});
+```

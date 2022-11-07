@@ -37,3 +37,37 @@ const onPress = () => {
   meeting?.muteMic();
 };
 ```
+
+### Events related to mic controls
+
+**Events associated with `unmuteMic()`:**
+
+- Every Participant will receive a callback on [`onStreamEnabled()`](../../../api/sdk-reference/use-participant/events#onstreamenabled) of the [`useParticipant()`](../../../api/sdk-reference/use-participant/introduction.md) hook with `Stream` object.
+
+**Events associated with `muteMic()`:**
+
+- Every Participant will receive a callback on [`onStreamDisabled()`](../../../api/sdk-reference/use-participant/events#onstreamdisabled) of the [`useParticipant()`](../../../api/sdk-reference/use-participant/introduction.md) hook with `Stream` object.
+
+```js
+
+function onStreamEnabled(stream) {
+  if(stream.kind === 'audio'){
+    console.log("Audio Stream On: onStreamEnabled", stream);
+  }
+}
+
+function onStreamDisabled(stream) {
+  if(stream.kind === 'audio'){
+    console.log("Audio Stream Off: onStreamDisabled", stream);
+  }
+}
+
+const {
+  displayName
+  ...
+} = useParticipant(participantId,{
+  onStreamEnabled,
+  onStreamDisabled,
+  ...
+});
+```

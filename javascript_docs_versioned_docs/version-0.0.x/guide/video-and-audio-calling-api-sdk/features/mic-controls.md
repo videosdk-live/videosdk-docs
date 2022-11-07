@@ -54,3 +54,29 @@ const onPress = () => {
   meeting?.changeMic(deviceId);
 };
 ```
+
+### Events related to mic controls
+
+**Events associated with `unmuteMic()`:**
+
+- [`stream-enabled`](../../../api/sdk-reference/participant-class/events.md#stream-enabled) event will be emitted with [`stream`](../../../api/sdk-reference/stream-class/introduction.md) object from the event callback, inside that [participant](../../../api/sdk-reference/participant-class/introduction.md) object.
+
+**Events associated with `muteMic()`:**
+
+- [`stream-disabled`](../../../api/sdk-reference/participant-class/events.md#stream-disabled) event will be emitted with [`stream`](../../../api/sdk-reference/stream-class/introduction.md) object from the event callback, inside that [participant](../../../api/sdk-reference/participant-class/introduction.md) object.
+
+```js
+participant.on("stream-enabled", (stream) => {
+  if (stream.kind === "audio") {
+    //particiapnt turned on audio
+    //Render Participant audio logic here
+  }
+});
+
+participant.on("stream-disabled", (stream) => {
+  if (stream.kind === "audio") {
+    //particiapnt turned off audio
+    //remove Participant audio logic here
+  }
+});
+```

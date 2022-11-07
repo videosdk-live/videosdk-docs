@@ -37,6 +37,55 @@ const onPress = () => {
 };
 ```
 
+### Events related to screenshare
+
+**Events associated with `enableScreenShare()`:**
+
+- Every Participant will receive a callback on [`onStreamEnabled()`](../../../api/sdk-reference/use-participant/events#onstreamenabled) of the `useParticipant()` hook with `Stream` object.
+
+- [`onPresenterChanged()`](../../../api/sdk-reference/use-meeting/events#onpresenterchanged) will also receive a callback with the `presenterId`.
+
+**Events associated with `disableScreenShare()`:**
+
+- Every Participant will receive a callback on [`onStreamDisabled()`](../../../api/sdk-reference/use-participant/events#onstreamdisabled) of the `useParticipant()` hook with `Stream` object.
+
+- [`onPresenterChanged()`](../../../api/sdk-reference/use-meeting/events#onpresenterchanged) will also receive a callback with the `presenterId`.
+
+```js
+function onStreamEnabled(stream) {
+  if(stream.kind === 'share'){
+    console.log("Screen Share Stream On: onStreamEnabled", stream);
+  }
+}
+
+function onStreamDisabled(stream) {
+  if(stream.kind === 'share'){
+    console.log("Screen Share Stream Off: onStreamDisabled", stream);
+  }
+}
+
+const {
+  displayName
+  ...
+} = useParticipant(participantId,{
+  onStreamEnabled,
+  onStreamDisabled,
+  ...
+});
+
+function onPresenterChanged(presenterId) {
+  console.log(" onPresenterChanged", presenterId);
+}
+
+const {
+  meetingId
+  ...
+} = useMeeting({
+  onPresenterChanged,
+  ...
+});
+```
+
 ### Screen Share with Audio
 
 To do screen share with audio, select the **Share tab audio** option when sharing the chrome tab as shown below.
@@ -46,8 +95,6 @@ To do screen share with audio, select the **Share tab audio** option when sharin
 ![Screen Share with Audio](/img/screenshare-with-audio.png)
 
 </center>
-
-<!-- When screen share with audio is done, you will receive a audio stream in the `stream-enabled` callback with kind as `shareAudio`. -->
 
 After clicking `Share` button, you will receive a selected tab audio stream in the participant's screenShareAudioStream.
 
