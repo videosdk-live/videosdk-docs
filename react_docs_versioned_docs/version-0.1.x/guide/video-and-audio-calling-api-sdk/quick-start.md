@@ -164,6 +164,7 @@ import {
   MeetingConsumer,
   useMeeting,
   useParticipant,
+  Constants,
 } from "@videosdk.live/react-sdk";
 import { authToken, createMeeting } from "./API";
 
@@ -199,9 +200,9 @@ function App() {
         micEnabled: true,
         webcamEnabled: false,
         name: "C.V. Raman",
+        mode: Constants.modes.CONFERENCE,
       }}
-      token={authToken}
-    >
+      token={authToken}>
       <MeetingConsumer>
         {() => <Container meetingId={meetingId} />}
       </MeetingConsumer>
@@ -227,8 +228,8 @@ function JoinScreen({ getMeetingAndToken }) {
   return (
     <div>
       <input
-        type="text"
-        placeholder="Enter Meeting Id"
+        type='text'
+        placeholder='Enter Meeting Id'
         onChange={(e) => {
           setMeetingId(e.target.value);
         }}
@@ -260,7 +261,7 @@ function Container(props) {
   };
 
   return (
-    <div className="container">
+    <div className='container'>
       <h3>Meeting Id: {props.meetingId}</h3>
       {joined ? (
         <div>

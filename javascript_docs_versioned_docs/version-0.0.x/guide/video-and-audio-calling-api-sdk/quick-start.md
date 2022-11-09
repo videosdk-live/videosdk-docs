@@ -285,6 +285,7 @@ function startMeeting(token, meetingId, name) {
     micEnabled: true, // optional, default: true
     webcamEnabled: true, // optional, default: true
     maxResolution: "hd", // optional, default: "hd"
+    mode: VideoSDK.Constants.modes.CONFERENCE,// optional, default: VideoSDK.Constants.modes.CONFERENCE, other Option: VideoSDK.Constants.modes.VIEWER
   });
 
   //join meeting

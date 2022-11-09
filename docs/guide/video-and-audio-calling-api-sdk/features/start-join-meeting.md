@@ -500,15 +500,15 @@ dynamic validateMeeting(token, meetingId) async {
 <p>
 After configuration, you will have to Initialize 
 <p>
-meeting by providing name, meetingId, micEnabled, webcamEnabled & maxResolution.
+meeting by providing name, meetingId, micEnabled, webcamEnabled, mode & maxResolution.
 </p>
-</p>
-
 <p>
-NOTE : For React & React native developer, you have
-
-<p>to be familiar with hooks concept. You can understand hooks concept on <a href={'https://reactjs.org/docs/hooks-intro.html'}>React Hooks</a>.</p>
-
+There are 2 types of modes:
+<ul>
+<li>CONFERENCE: This mode will produce and consume audio and video streams.</li>
+<li>VIEWER: This mode will not produce and consume audio and video streams.</li>
+</ul>
+</p>
 </p>
 </div>
 <div>
@@ -551,7 +551,7 @@ const meeting = VideoSDK.initMeeting({
 <TabItem value="react">
 
 ```js
-import { MeetingProvider, useMeeting } from "@videosdk.live/react-sdk";
+import { MeetingProvider, useMeeting, Constants} from "@videosdk.live/react-sdk";
 
 const App = () => {
   // Init Meeting Provider
@@ -564,6 +564,7 @@ const App = () => {
         micEnabled: "<Flag-to-enable-mic>",
         webcamEnabled: "<Flag-to-enable-webcam>",
         maxResolution: "<Maximum-resolution>",
+        mode: Constants.modes.CONFERENCE,
       }}
       token={"<Authentication-token>"}
     >
@@ -601,8 +602,7 @@ const App = () => {
           message: "<Notification-Message>",
         },
       }}
-      token={"<Authentication-token>"}
-    >
+      token={"<Authentication-token>"}>
       <MeetingView>...</MeetingView>
     </MeetingProvider>
   );

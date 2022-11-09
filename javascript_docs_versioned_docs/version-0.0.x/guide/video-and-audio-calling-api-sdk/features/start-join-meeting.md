@@ -136,7 +136,14 @@ const meetingId = await getMeetingId(access_token);
 <p>
 After configuration, you will have to Initialize 
 <p>
-meeting by providing name, meetingId, micEnabled, webcamEnabled & maxResolution.
+meeting by providing name, meetingId, micEnabled, webcamEnabled, mode & maxResolution.
+</p>
+<p>
+There are 2 types of modes:
+<ul>
+<li>CONFERENCE: This mode will produce and consume audio and video streams.</li>
+<li>VIEWER: This mode will note produce and consume audio and video streams.</li>
+</ul>
 </p>
 </p>
 
@@ -167,6 +174,7 @@ const meeting = VideoSDK.initMeeting({
   micEnabled: "<Flag-to-enable-mic>", // optional, default: true
   webcamEnabled: "<Flag-to-enable-webcam>", // optional, default: true
   maxResolution: "<Maximum-resolution>", // optional, default: "hd"
+  mode: VideoSDK.Constants.modes.CONFERENCE,// optional, default: VideoSDK.Constants.modes.CONFERENCE, other Option: VideoSDK.Constants.modes.VIEWER
 });
 ```
 
