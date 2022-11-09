@@ -254,7 +254,7 @@ meeting.on("mic-requested", (data) => {
 
 ### recording-state-changed
 
-- This event will be emitted when the state of recording the meeting is changed.
+- This event will be emitted when the meeting's recording status changed.
 
 #### Event callback parameters
 
@@ -329,7 +329,7 @@ meeting.on("recording-stopped", () => {
 
 ### livestream-state-changed
 
-- This event will be emitted when the state of livestream the meeting is changed.
+- This event will be emitted when the meeting's livestream status changed.
 
 #### Event callback parameters
 
@@ -404,7 +404,7 @@ meeting.on("livestream-stopped", () => {
 
 ### hls-state-changed
 
-- This event will be emitted when the state of the Hls(http livestreaming) changes in the meeting.
+- This event will be emitted when the meeting's HLS(Http Livestreaming) status changed.
 
 #### Event callback parameters
 
