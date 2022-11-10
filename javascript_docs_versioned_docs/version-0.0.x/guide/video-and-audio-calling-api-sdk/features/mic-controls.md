@@ -55,13 +55,13 @@ const onPress = () => {
 };
 ```
 
-### Events related to mic controls
+### Events
 
-**Events associated with `unmuteMic()`:**
+**Event associated with `unmuteMic()`:**
 
 - [`stream-enabled`](../../../api/sdk-reference/participant-class/events.md#stream-enabled) event will be emitted with [`stream`](../../../api/sdk-reference/stream-class/introduction.md) object from the event callback, inside that [participant](../../../api/sdk-reference/participant-class/introduction.md) object.
 
-**Events associated with `muteMic()`:**
+**Event associated with `muteMic()`:**
 
 - [`stream-disabled`](../../../api/sdk-reference/participant-class/events.md#stream-disabled) event will be emitted with [`stream`](../../../api/sdk-reference/stream-class/introduction.md) object from the event callback, inside that [participant](../../../api/sdk-reference/participant-class/introduction.md) object.
 

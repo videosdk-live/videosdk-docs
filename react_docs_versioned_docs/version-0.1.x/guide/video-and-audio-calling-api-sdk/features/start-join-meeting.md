@@ -206,7 +206,7 @@ const onPress = () => {
 };
 ```
 
-## 4. Meeting Join Events
+## Events
 
 Following callbacks are receieved when a participant it is successfully joined.
 

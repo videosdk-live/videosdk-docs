@@ -38,13 +38,9 @@ const onPress = () => {
 };
 ```
 
-### Events
+### Event
 
-1. **recording-started** - Whenever any participant start meeting recording, then `recording-started` event will trigger.
-
-2. **recording-stopped** - Whenever any participant stop meeting recording, then `recording-stopped` event will trigger.
-
-3. **recording-state-changed** - Whenever meeting recording state changes, then `recording-state-changed` event will trigger.
+- **onRecordingStateChanged** - Whenever meeting recording state changes, then `onRecordingStateChanged` event will trigger.
 
 ```js
 import { Constants, useMeeting } from "@videosdk.live/react-sdk";
@@ -71,12 +67,6 @@ function onRecordingStateChanged(data) {
 const {
   /** Methods */
 } = useMeeting({
-  onRecordingStarted: () => {
-    console.log("Recording Started");
-  },
-  onRecordingStopped: () => {
-    console.log("Recording Stopped");
-  },
   onRecordingStateChanged,
 });
 ```

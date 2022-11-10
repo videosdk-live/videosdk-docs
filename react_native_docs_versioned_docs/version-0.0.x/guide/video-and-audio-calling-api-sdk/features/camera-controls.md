@@ -48,13 +48,13 @@ const onPress = async () => {
 };
 ```
 
-### Events related to camera controls
+### Events
 
-**Events associated with `enableWebcam()`:**
+**Event associated with `enableWebcam()`:**
 
 - Every Participant will receive a callback on [`onStreamEnabled()`](../../../api/sdk-reference/use-participant/events#onstreamenabled) of the `useParticipant()` hook with `Stream` object.
 
-**Events associated with `disableWebcam()`:**
+**Event associated with `disableWebcam()`:**
 
 - Every Participant will receive a callback on [`onStreamDisabled()`](../../../api/sdk-reference/use-participant/events#onstreamdisabled) of the `useParticipant()` hook with `Stream` object.
 

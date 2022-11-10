@@ -196,7 +196,7 @@ const onPress = () => {
 };
 ```
 
-## 4. Meeting Join Events
+## Events
 
 Following events are emitted on the `meeting` when it is successfully joined.
 

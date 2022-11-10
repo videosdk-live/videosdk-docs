@@ -45,13 +45,13 @@ const onPress = () => {
 };
 ```
 
-### Events related to mic controls
+### Events
 
-**Events associated with `unmuteMic()`:**
+**Event associated with `unmuteMic()`:**
 
 - Every Participant will receive a callback on [`onStreamEnabled()`](../../../api/sdk-reference/use-participant/events#onstreamenabled) of the [`useParticipant()`](../../../api/sdk-reference/use-participant/introduction.md) hook with `Stream` object.
 
-**Events associated with `muteMic()`:**
+**Event associated with `muteMic()`:**
 
 - Every Participant will receive a callback on [`onStreamDisabled()`](../../../api/sdk-reference/use-participant/events#onstreamdisabled) of the [`useParticipant()`](../../../api/sdk-reference/use-participant/introduction.md) hook with `Stream` object.
 

@@ -36,9 +36,6 @@ const onPress = () => {
   // Start Recording
   meeting?.startRecording(webhookUrl, awsDirPath);
 
-  //
-  //
-  //
   // Stop Recording
   meeting?.stopRecording();
 };

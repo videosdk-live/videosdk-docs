@@ -37,19 +37,19 @@ const onPress = () => {
 };
 ```
 
-### Events related to screenshare
+### Events
 
 **Events associated with `enableScreenShare()`:**
 
-- Every Participant will receive a callback on [`onStreamEnabled()`](../../../api/sdk-reference/use-participant/events#onstreamenabled) of the `useParticipant()` hook with `Stream` object.
+- Every Participant will receive a callback on [`onStreamEnabled()`](../../../api/sdk-reference/use-participant/events#onstreamenabled) of the [`useParticipant()`](../../../api/sdk-reference/use-participant/introduction.md) hook with `Stream` object.
 
 - [`onPresenterChanged()`](../../../api/sdk-reference/use-meeting/events#onpresenterchanged) will also receive a callback with the `presenterId`.
 
 **Events associated with `disableScreenShare()`:**
 
-- Every Participant will receive a callback on [`onStreamDisabled()`](../../../api/sdk-reference/use-participant/events#onstreamdisabled) of the `useParticipant()` hook with `Stream` object.
+- Every Participant will receive a callback on [`onStreamDisabled()`](../../../api/sdk-reference/use-participant/events#onstreamdisabled) of the [`useParticipant()`](../../../api/sdk-reference/use-participant/introduction.md) hook with `Stream` object.
 
-- [`onPresenterChanged()`](../../../api/sdk-reference/use-meeting/events#onpresenterchanged) will also receive a callback with the `presenterId`.
+- [`onPresenterChanged()`](../../../api/sdk-reference/use-meeting/events#onpresenterchanged) will also receive a callback with `null` value.
 
 ```js
 function onStreamEnabled(stream) {

@@ -50,7 +50,7 @@ const onPress = async () => {
 };
 ```
 
-### Events related to camera controls
+### Events
 
 **Events associated with `enableWebcam()`:**
 

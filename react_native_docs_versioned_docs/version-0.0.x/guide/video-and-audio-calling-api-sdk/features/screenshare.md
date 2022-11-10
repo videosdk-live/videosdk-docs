@@ -44,7 +44,7 @@ const onPress = () => {
 For React Native iOS Screen Share feature, you need to follow this guide [React Native iOS Screen Share](/react-native/guide/video-and-audio-calling-api-sdk/extras/react-native-ios-screen-share)
 :::
 
-### Events related to screenshare
+### Events
 
 **Events associated with `enableScreenShare()`:**
 
@@ -56,7 +56,7 @@ For React Native iOS Screen Share feature, you need to follow this guide [React 
 
 - Every Participant will receive a callback on [`onStreamDisabled()`](../../../api/sdk-reference/use-participant/events#onstreamdisabled) of the `useParticipant()` hook with `Stream` object.
 
-- [`onPresenterChanged()`](../../../api/sdk-reference/use-meeting/events#onpresenterchanged) will also receive a callback with the `presenterId`.
+- [`onPresenterChanged()`](../../../api/sdk-reference/use-meeting/events#onpresenterchanged) will also receive a callback with `null` value.
 
 ```js
 function onStreamEnabled(stream) {
