@@ -40,3 +40,26 @@ ElevatedButton(
 
 // changeMic() method is coming soon in flutter.
 ```
+
+### Events
+
+**Events associated with `unmuteMic()`:**
+
+- [`streamEnabled`](../../../api/sdk-reference/participant-class/events.md#streamEnabled) event will be emitted with [`stream`](../../../api/sdk-reference/stream-class/introduction.md) object from the event callback, inside that [participant](../../../api/sdk-reference/participant-class/introduction.md) object.
+
+**Events associated with `muteMic()`:**
+
+- [`streamDisabled`](../../../api/sdk-reference/participant-class/events.md#streamDisabled) event will be emitted with [`stream`](../../../api/sdk-reference/stream-class/introduction.md) object from the event callback, inside that [participant](../../../api/sdk-reference/participant-class/introduction.md) object.
+
+```js
+participant.on(Events.streamEnabled, (Stream stream){
+  if (stream.kind === "audio") {
+    //particiapnt turned on audio
+  }
+});
+participant.on(Events.streamDisabled, (Stream stream){
+  if (stream.kind === "audio") {
+    //particiapnt turned off audio
+  }
+});
+```

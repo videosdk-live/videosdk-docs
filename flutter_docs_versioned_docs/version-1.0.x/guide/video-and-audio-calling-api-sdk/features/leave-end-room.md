@@ -34,3 +34,24 @@ room.leave();
 // End Room Session
 room.end();
 ```
+
+### Events
+
+**Events associated with `leave()`:**
+
+- Local participant will receive a [`roomLeft`](../../../api/sdk-reference/room-class/events.md#roomLeft) event.
+- All remote participants will receive a [`participantLeft`](../../../api/sdk-reference/room-class/events.md#participantLeft) event with `participantId`.
+
+**Event associated with `end()`:**
+
+- All [participants](../../../api/sdk-reference/participant-class/introduction.md) and [localParticipant](../../../api/sdk-reference/participant-class/introduction.md), will be emitted with [`roomLeft`](../../../api/sdk-reference/room-class/events.md#roomLeft) event.
+
+```js
+room.on(Events.roomLeft, () => {
+  //room Left
+});
+
+room.on(Events.participantLeft, (participant) => {
+  //Participant Left the room
+});
+```

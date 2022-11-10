@@ -87,10 +87,7 @@ findViewById(R.id.btnLivestream).setOnClickListener(view -> {
 
 ### Events
 
-1. **livestream-started** - Whenever broadcasting of meeting started, `livestream-started` event will trigger.
-
-2. **livestream-stopped** - Whenever broadcasting of meeting stopped, `livestream-stopped` event will trigger.
-
+- **onLiveStreamStateChanged** - Whenever broadcasting of meeting started / stopped, `onLivestreamStateChanged()` event will trigger.
 
 <Tabs
 defaultValue="Kotlin"
@@ -101,18 +98,9 @@ values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
 
 ```js
 object : MeetingEventListener() {
-  override fun onLivestreamStarted() {
-    livestreaming = true
-
-    // TODO: show indication that meeting livestream is started.
+  override fun onLiveStreamStateChanged(livestreamState: String) {
+    Log.d("TAG", "onLivestreamStateChanged: " + livestreamState);
   }
-
-  override fun onLivestreamStopped() {
-    livestreaming = false
-
-    // TODO: show indication that meeting livestream is stopped.
-  }
-
 }
 ```
 
@@ -123,17 +111,9 @@ object : MeetingEventListener() {
 ```js
 new MeetingEventListener() {
   @Override
-  public void onLivestreamStarted() {
-      livestreaming = true;
-
-      // TODO: show indication that meeting livestream is started.
-  }
-
-  @Override
-  public void onLivestreamStopped() {
-      livestreaming = false;
-
-      // TODO: show indication that meeting livestream is stopped.
+  public void onLivestreamStateChanged(String livestreamState) {
+    Log.d("TAG", "onLivestreamStateChanged: " + livestreamState);
+    super.onLivestreamStateChanged(livestreamState);
   }
 }
 ```

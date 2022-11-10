@@ -27,17 +27,17 @@ For better idea, let's understand this with a real case scenario
 
 This guide will provide an overview of how to control other participant webcam and mic in a meeting.
 
-1. **Enable Webcam of Participant** - By using `enableWebcam()` function, a `webcam-requested` event will trigger on requested participant side.
+1. **Enable Webcam of Participant** - By using `enableWebcam()` function, a `onWebcamRequested` event will trigger on requested participant side.
 
-   **Example** : Meeting is running with **User A** and **User B**. Now **User A** wants to Enable Webcam of **User B**, so **User A** will use `enableWebcam()` function to request **User B**, after that **User B** recieve the `webcam-requested` event, from there user can either accept or reject the incoming request.
+   **Example** : Meeting is running with **User A** and **User B**. Now **User A** wants to Enable Webcam of **User B**, so **User A** will use `enableWebcam()` function to request **User B**, after that **User B** recieve the `onWebcamRequested` event, from there user can either accept or reject the incoming request.
 
 2. **Disable Webcam of Participant** - By using `disableWebcam()` function, webcam of that participant will be turned off.
 
    **Example** : **User A** wants to Disable Webcam of **User B**, so **User A** will use `disableWebcam()` function to Disable it without any request.
 
-3. **Enable Mic of Participant** - By using `enableMic()` function, a `mic-requested` event will trigger on requested participant side.
+3. **Enable Mic of Participant** - By using `enableMic()` function, a `onMicRequested` event will trigger on requested participant side.
 
-   **Example** : Meeting is running with **User A** and **User B**. Now **User A** wants to Enable Mic of **User B**, so **User A** will use `enableMic()` function to request **User B**, after that **User B** will receive the `Mic-requested` event, from there user can either accept or reject the incoming request.
+   **Example** : Meeting is running with **User A** and **User B**. Now **User A** wants to Enable Mic of **User B**, so **User A** will use `enableMic()` function to request **User B**, after that **User B** will receive the `onMicRequested` event, from there user can either accept or reject the incoming request.
 
 4. **Disable Mic of Participant** - By using `disableMic()` function, Mic of that participant will disable.
 
@@ -105,14 +105,14 @@ participant.disableMic();
 
 ### Manage Requested Media Events
 
-1. **webcam-requested** - This event will be emitted to the participant `B` when any other participant `A` requests to enable webcam of that participant `B`. This event handler will receieve following three arguments:
+1. **onWebcamRequested** - This event will be emitted to the participant `B` when any other participant `A` requests to enable webcam of that participant `B`. This event handler will receieve following three arguments:
 
    - `accept()` - Callback function to accept the request.
    - `reject()` - Callback function to reject the request.
 
 <div style={{height: "10px"}}></div>
 
-2. **mic-requested** - This event will be emitted to the participant `B` when any other participant `A` requests to enable mic of that participant `B`. This event handler will receieve following three arguments:
+2. **onMicRequested** - This event will be emitted to the participant `B` when any other participant `A` requests to enable mic of that participant `B`. This event handler will receieve following three arguments:
 
    - `accept()` - Callback function to accept the request.
    - `reject()` - Callback function to reject the request.

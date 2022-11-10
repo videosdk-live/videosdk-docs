@@ -70,3 +70,55 @@ values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
 </TabItem>
 
 </Tabs>
+
+### Events
+
+**Events associated with `leave()`:**
+
+- Local participant will receive a callback on[`onMeetingLeft`](../../../api/sdk-reference/meeting-class/meeting-event-listener-class.md#onmeetingleft) of `Meeting`.
+- All remote participants will receive a callback [`onParticipantLeft`](../../../api/sdk-reference/meeting-class/meeting-event-listener-class.md#onparticipantleft) with Participant object.
+
+**Event associated with `end()`:**
+
+- All remote participants and local participant will receive a callback on [`onParticipantLeft`](../../../api/sdk-reference/meeting-class/meeting-event-listener-class.md#onparticipantleft) with Participant object.
+
+<Tabs
+defaultValue="Kotlin"
+groupId={"AndroidLanguage"}
+values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
+
+<TabItem value="Kotlin">
+
+```javascript
+private final MeetingEventListener meetingEventListener = new MeetingEventListener() {
+  override fun onMeetingLeft() {
+    Log.d("#meeting", "onMeetingleft()")
+  }
+
+  override fun onParticipantLeft(participant: Participant) {
+    Log.d("#meeting", participant.displayName + " left");
+  }
+}
+```
+
+</TabItem>
+
+<TabItem value="Java">
+
+```javascript
+private final MeetingEventListener meetingEventListener = new MeetingEventListener() {
+  @Override
+  public void onMeetingLeft() {
+    Log.d("#meeting", "onMeetingleft()")
+  }
+
+  @Override
+  public void onParticipantLeft(Participant participant) {
+    Log.d("#meeting", participant.getDisplayName() + " left");
+  }
+}
+```
+
+</TabItem>
+
+</Tabs>
