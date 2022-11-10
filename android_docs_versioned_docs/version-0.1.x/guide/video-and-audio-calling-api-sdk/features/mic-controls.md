@@ -80,11 +80,11 @@ values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
 
 ### Events
 
-**Event associated with `enableWebcam()`:**
+**Event associated with `unmuteMic()`:**
 
 - Every Participant will receive a callback on [`onStreamEnabled()`](../../../api/sdk-reference/participant-class/participant-event-listener-class.md#onstreamenabled) of the [`Participant`](../../../api/sdk-reference/participant-class//introduction.md) with `Stream` object.
 
-**Event associated with `disableWebcam()`:**
+**Event associated with `muteMic()`:**
 
 - Every Participant will receive a callback on [`onStreamDisabled()`](../../../api/sdk-reference/participant-class/participant-event-listener-class.md#onstreamenabled) of the [`Participant`](../../../api/sdk-reference/participant-class//introduction.md) with `Stream` object.
 
