@@ -206,12 +206,22 @@ import events from "./../data/meeting-class/events.json";
 </div>
 <div class="col col--4 margin-bottom--sm" >
 
+- [onRecordingStateChanged](./meeting-event-listener-class#onrecordingstatechanged)
+
+</div>
+<div class="col col--4 margin-bottom--sm" >
+
 - [onRecordingStarted](./meeting-event-listener-class#onrecordingstarted)
 
 </div>
 <div class="col col--4 margin-bottom--sm" >
 
 - [onRecordingStopped](./meeting-event-listener-class#onrecordingstopped)
+
+</div>
+<div class="col col--4 margin-bottom--sm" >
+
+- [onLivestreamStateChanged](./meeting-event-listener-class#onlivestreamstatechanged)
 
 </div>
 <div class="col col--4 margin-bottom--sm" >

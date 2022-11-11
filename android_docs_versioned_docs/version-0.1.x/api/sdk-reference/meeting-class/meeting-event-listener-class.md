@@ -472,7 +472,82 @@ values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
 
 ---
 
+### onRecordingStateChanged()
+
+- This event will be emitted when the meeting's recording status changed.
+#### Event callback parameters
+
+-  **recordingState**: String 
+
+`recordingState` has following values
+
+- `RECORDING_STARTING` - Recording is in starting phase and hasn't started yet.
+- `RECORDING_STARTED` - Recording has started successfully.
+- `RECORDING_STOPPING` - Recording is in stopping phase and hasn't stopped yet.
+- `RECORDING_STOPPED` - Recording has stopped successfully.
+
+#### Example
+
+<Tabs
+defaultValue="Kotlin"
+groupId={"AndroidLanguage"}
+values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
+
+<TabItem value="Kotlin">
+
+```javascript
+  override fun onRecordingStateChanged(recordingState: String) {
+    when (recordingState) {
+        "RECORDING_STARTING" -> {
+            Log.d("onRecordingStateChanged", "Meeting recording is starting")
+        }
+        "RECORDING_STARTED" -> {
+            Log.d("onRecordingStateChanged", "Meeting recording is started")
+        }
+        "RECORDING_STOPPING" -> {
+            Log.d("onRecordingStateChanged", "Meeting recording is stopping")
+        }
+        "RECORDING_STOPPED" -> {
+            Log.d("onRecordingStateChanged", "Meeting recording is stopped")
+        }
+    }
+  }
+```
+
+</TabItem>
+
+<TabItem value="Java">
+
+```javascript
+  @Override
+  public void onRecordingStateChanged(String recordingState) {
+      switch (recordingState) {
+          case "RECORDING_STARTING":
+              Log.d("onRecordingStateChanged", "Meeting recording is starting");
+              break;
+          case "RECORDING_STARTED":
+              Log.d("onRecordingStateChanged", "Meeting recording is started");
+              break;
+          case "RECORDING_STOPPING":
+              Log.d("onRecordingStateChanged", "Meeting recording is stopping");
+              break;
+          case "RECORDING_STOPPED":
+              Log.d("onRecordingStateChanged", "Meeting recording is stopped");
+              break;
+      }
+  }
+```
+
+</TabItem>
+
+</Tabs>
+
+---
+
+
 ### onRecordingStarted()
+
+_`This event will be deprecated soon`_
 
 - This event will be emitted when recording of the meeting is started.
 
@@ -510,6 +585,8 @@ values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
 
 ### onRecordingStopped()
 
+_`This event will be deprecated soon`_
+
 - This event will be emitted when recording of the meeting is stopped.
 
 #### Example
@@ -544,7 +621,80 @@ values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
 
 ---
 
+### onLivestreamStateChanged()
+
+- This event will be emitted when the meeting's livestream status changed.
+#### Event callback parameters
+
+- **livestreamState**: String
+
+`livestreamState` has following values
+
+- `LIVESTREAM_STARTING` - Livestream is in starting phase and hasn't started yet.
+- `LIVESTREAM_STARTED` - Livestream has started successfully.
+- `LIVESTREAM_STOPPING` - Livestream is in stopping phase and hasn't stopped yet.
+- `LIVESTREAM_STOPPED` - Livestream has stopped successfully.
+
+#### Example
+
+<Tabs
+defaultValue="Kotlin"
+groupId={"AndroidLanguage"}
+values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
+
+<TabItem value="Kotlin">
+
+```javascript
+  override fun onLivestreamStateChanged(livestreamState: String?) {
+    when (livestreamState) {
+        "LIVESTREAM_STARTING" -> Log.d( "LivestreamStateChanged",
+            "Meeting livestream is starting"
+        )
+        "LIVESTREAM_STARTED" -> Log.d( "LivestreamStateChanged",
+            "Meeting livestream is started"
+        )
+        "LIVESTREAM_STOPPING" -> Log.d("LivestreamStateChanged",
+            "Meeting livestream is stopping"
+        )
+        "LIVESTREAM_STOPPED" -> Log.d("LivestreamStateChanged",
+            "Meeting livestream is stopped"
+        )
+    }
+  }
+```
+
+</TabItem>
+
+<TabItem value="Java">
+
+```javascript
+  @Override
+  public void onLivestreamStateChanged(String livestreamState) {
+      switch (livestreamState) {
+          case "LIVESTREAM_STARTING":
+              Log.d("LivestreamStateChanged", "Meeting livestream is starting");
+              break;
+          case "LIVESTREAM_STARTED":
+              Log.d("LivestreamStateChanged", "Meeting livestream is started");
+              break;
+          case "LIVESTREAM_STOPPING":
+              Log.d("LivestreamStateChanged", "Meeting livestream is stopping");
+              break;
+          case "LIVESTREAM_STOPPED":
+              Log.d("LivestreamStateChanged", "Meeting livestream is stopped");
+              break;
+      }
+  }
+```
+
+</TabItem>
+
+</Tabs>
+
+---
 ### onLivestreamStarted()
+
+_`This event will be deprecated soon`_
 
 - This event will be emitted when `RTMP` live stream of the meeting is started.
 
@@ -581,6 +731,8 @@ values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
 ---
 
 ### onLivestreamStopped()
+
+_`This event will be deprecated soon`_
 
 - This event will be emitted when `RTMP` live stream of the meeting is stopped.
 
