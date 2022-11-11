@@ -546,7 +546,7 @@ values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
 
 ### onRecordingStateChanged()
 
-- This event will be emitted when recording of the meeting is started / stopped.
+- `onRecordingStateChanged` event will be triggered any time the recording state of a meeting changes.
 
 - It will have following states: `RECORDING_STARTED`, `RECORDING_STARTED`, `RECORDING_STOPPING`, and `RECORDING_STOPPED`
 
@@ -656,7 +656,7 @@ values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
 
 ### onLivestreamStateChanged()
 
-- This event will be emitted when recording of the meeting is started / stopped.
+- `onLiveStreamStateChanged` event will be triggered any time the broadcasting state of a meeting changes.
 
 - It will have following states: `LIVESTREAM_STARTED`, `LIVESTREAM_STARTED`, `LIVESTREAM_STOPPING`, and `LIVESTREAM_STOPPED`
 
