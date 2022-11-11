@@ -503,6 +503,13 @@ After configuration, you will have to Initialize
 meeting by providing name, meetingId, micEnabled, webcamEnabled & maxResolution.
 </p>
 </p>
+
+<p>
+NOTE : For React & React native developer, you have
+
+<p>to be familiar with hooks concept. You can understand hooks concept on <a href={'https://reactjs.org/docs/hooks-intro.html'}>React Hooks</a>.</p>
+
+</p>
 </div>
 <div>
 <img src="/img/gif/add-participant.gif"/>
