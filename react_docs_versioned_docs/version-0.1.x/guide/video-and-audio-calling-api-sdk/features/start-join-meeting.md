@@ -138,8 +138,8 @@ meeting by providing name, meetingId, micEnabled, webcamEnabled, mode & maxResol
 <p>
 There are 2 types of modes:
 <ul>
-<li>CONFERENCE: This mode will produce and consume audio and video streams.</li>
-<li>VIEWER: This mode will not produce and consume audio and video streams.</li>
+<li>CONFERENCE: Both audio and video streams will be produced and consumed in this mode.</li>
+<li>VIEWER: Audio and video streams will not be produced or consumed in this mode.</li>
 </ul>
 </p>
 </p>

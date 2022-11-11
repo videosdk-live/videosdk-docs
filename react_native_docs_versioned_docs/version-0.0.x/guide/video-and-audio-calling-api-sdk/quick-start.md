@@ -137,10 +137,10 @@ yarn add "@videosdk.live/react-native-sdk"
 
 ```js title="android/app/src/main/res/values/colors.xml"
 <resources>
-  <item name="red" type="color">
+  <item name='red' type='color'>
     #FC0303
   </item>
-  <integer-array name="androidcolors">
+  <integer-array name='androidcolors'>
     <item>@color/red</item>
   </integer-array>
 </resources>
@@ -326,6 +326,7 @@ import {
   useParticipant,
   MediaStream,
   RTCView,
+  Constants,
 } from "@videosdk.live/react-native-sdk";
 import { createMeeting, token } from "./api";
 
@@ -357,9 +358,9 @@ export default function App() {
           micEnabled: false,
           webcamEnabled: true,
           name: "Test User",
+          mode: Constants.modes.CONFERENCE,
         }}
-        token={token}
-      >
+        token={token}>
         <MeetingView />
       </MeetingProvider>
     </SafeAreaView>
@@ -383,14 +384,12 @@ function JoinScreen(props) {
         backgroundColor: "#F6F6FF",
         justifyContent: "center",
         paddingHorizontal: 6 * 10,
-      }}
-    >
+      }}>
       <TouchableOpacity
         onPress={() => {
           props.getMeetingId();
         }}
-        style={{ backgroundColor: "#1178F8", padding: 12, borderRadius: 6 }}
-      >
+        style={{ backgroundColor: "#1178F8", padding: 12, borderRadius: 6 }}>
         <Text style={{ color: "white", alignSelf: "center", fontSize: 18 }}>
           Create Meeting
         </Text>
@@ -403,8 +402,7 @@ function JoinScreen(props) {
           marginVertical: 16,
           fontStyle: "italic",
           color: "grey",
-        }}
-      >
+        }}>
         ---------- OR ----------
       </Text>
       <TextInput
@@ -427,8 +425,7 @@ function JoinScreen(props) {
         }}
         onPress={() => {
           props.getMeetingId(meetingVal);
-        }}
-      >
+        }}>
         <Text style={{ color: "white", alignSelf: "center", fontSize: 18 }}>
           Join Meeting
         </Text>
@@ -459,8 +456,7 @@ const Button = ({ onPress, buttonText, backgroundColor }) => {
         alignItems: "center",
         padding: 12,
         borderRadius: 4,
-      }}
-    >
+      }}>
       <Text style={{ color: "white", fontSize: 12 }}>{buttonText}</Text>
     </TouchableOpacity>
   );
@@ -473,8 +469,7 @@ function ControlsContainer({ join, leave, toggleWebcam, toggleMic }) {
         padding: 24,
         flexDirection: "row",
         justifyContent: "space-between",
-      }}
-    >
+      }}>
       <Button
         onPress={() => {
           join();
@@ -564,8 +559,7 @@ function ParticipantList({ participants }) {
         backgroundColor: "#F6F6FF",
         justifyContent: "center",
         alignItems: "center",
-      }}
-    >
+      }}>
       <Text style={{ fontSize: 20 }}>Press Join button to enter meeting.</Text>
     </View>
   );
@@ -642,8 +636,7 @@ function ParticipantView({ participantId }) {
         height: 300,
         justifyContent: "center",
         alignItems: "center",
-      }}
-    >
+      }}>
       <Text style={{ fontSize: 16 }}>NO MEDIA</Text>
     </View>
   );

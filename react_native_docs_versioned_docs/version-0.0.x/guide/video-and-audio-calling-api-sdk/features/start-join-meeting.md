@@ -134,7 +134,14 @@ const validatedMeetingId = await validateMeeting(token, "provided-meeting-id");
 <p>
 After configuration, you will have to Initialize 
 <p>
-meeting by providing name, meetingId, micEnabled, webcamEnabled & maxResolution.
+meeting by providing name, meetingId, micEnabled, webcamEnabled, mode & maxResolution.
+</p>
+<p>
+There are 2 types of modes:
+<ul>
+<li>CONFERENCE: Both audio and video streams will be produced and consumed in this mode.</li>
+<li>VIEWER: Audio and video streams will not be produced or consumed in this mode.</li>
+</ul>
 </p>
 </p>
 
@@ -152,7 +159,7 @@ NOTE : For React & React native developer, you have
 </div>
 
 ```js
-import { MeetingProvider, useMeeting } from "@videosdk.live/react-native-sdk";
+import { MeetingProvider, useMeeting, Constants } from "@videosdk.live/react-native-sdk";
 
 const App = () => {
   // Init Meeting Provider
@@ -165,6 +172,7 @@ const App = () => {
         micEnabled: "<Flag-to-enable-mic>",
         webcamEnabled: "<Flag-to-enable-webcam>",
         maxResolution: "<Maximum-resolution>",
+        mode: Constants.modes.CONFERENCE,
         notification: {
           title: "<Notification-Title>",
           message: "<Notification-Message>",
