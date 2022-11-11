@@ -22,7 +22,7 @@ Every Context object in `react-js` comes with a Provider React component that al
       message: "Meeting is running.",
     },
     participantId: "xyz",
-    mode: Constants.modes.CONFERENCE,
+    mode: "CONFERENCE", // "CONFERENCE" || "VIEWER"
   }}
   token={"token"}
   joinWithoutUserInteraction // Boolean
@@ -121,10 +121,11 @@ Please refer this [documentation](/api-reference/realtime-communication/intro) t
 
 ### mode
 
+- `OPTIONAL`
+
 - There are 2 types of modes:
 
-  - `Constants.modes.CONFERENCE`: Both audio and video streams will be produced and consumed in this mode.
-  - `Constants.modes.VIEWER`: Audio and video streams will not be produced or consumed in this mode.
+  - `CONFERENCE`: Both audio and video streams will be produced and consumed in this mode.
+  - `VIEWER`: Audio and video streams will not be produced or consumed in this mode.
 
-  - defaultValue : `Constants.modes.CONFERENCE`
-  - `OPTIONAL`
+  - defaultValue : `CONFERENCE`
