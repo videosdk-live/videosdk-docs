@@ -46,3 +46,36 @@ const onPress = async () => {
   meeting?.changeWebcam(deviceId);
 };
 ```
+
+### Events
+
+**Event associated with `enableWebcam()`:**
+
+- Every Participant will receive a callback on [`onStreamEnabled()`](../../../api/sdk-reference/use-participant/events#onstreamenabled) of the [`useParticipant()`](../../../api/sdk-reference/use-participant/introduction.md) hook with `Stream` object.
+
+**Event associated with `disableWebcam()`:**
+
+- Every Participant will receive a callback on [`onStreamDisabled()`](../../../api/sdk-reference/use-participant/events#onstreamdisabled) of the [`useParticipant()`](../../../api/sdk-reference/use-participant/introduction.md) hook with `Stream` object.
+
+```js
+function onStreamEnabled(stream) {
+  if(stream.kind === 'video'){
+    console.log("Video Stream On: onStreamEnabled", stream);
+  }
+}
+
+function onStreamDisabled(stream) {
+  if(stream.kind === 'video'){
+    console.log("Video Stream Off: onStreamDisabled", stream);
+  }
+}
+
+const {
+  displayName
+  ...
+} = useParticipant(participantId,{
+  onStreamEnabled,
+  onStreamDisabled,
+  ...
+});
+```

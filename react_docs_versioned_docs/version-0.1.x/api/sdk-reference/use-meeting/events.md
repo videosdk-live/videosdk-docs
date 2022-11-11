@@ -222,7 +222,7 @@ const {
 
 ### onRecordingStateChanged()
 
-- This event will be emitted when the state of recording the meeting is changed.
+- This event will be emitted when the meeting's recording status changed.
 
 #### Example
 
@@ -306,7 +306,7 @@ const {
 
 ### onLivestreamStateChanged()
 
-- This event will be emitted when the state of livestream the meeting is changed.
+- This event will be emitted when the meeting's livestream status changed.
 
 #### Example
 
@@ -390,7 +390,7 @@ const {
 
 ### onHlsStateChanged()
 
-- This event will be emitted when the state of the Hls(http livestreaming) changes in the meeting.
+- This event will be emitted when the meeting's HLS(Http Livestreaming) status changed.
 
 #### Example
 

@@ -41,9 +41,9 @@ const onPress = () => {
 };
 ```
 
-### Events
+### Event
 
-1. **onLivestreamStateChanged** - Whenever broadcasting of meeting started / stopped, `onLivestreamStateChanged()` event will trigger.
+- **onLivestreamStateChanged** - Whenever broadcasting of meeting started / stopped, `onLivestreamStateChanged()` event will trigger.
 
 ```js
 import { Constants, useMeeting } from "@videosdk.live/react-sdk";

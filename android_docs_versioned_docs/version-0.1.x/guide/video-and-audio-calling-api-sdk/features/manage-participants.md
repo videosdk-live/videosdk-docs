@@ -325,15 +325,15 @@ Please refer the [example code](https://github.com/videosdk-live/videosdk-rtc-an
 
 ## 3. Participant Related Events
 
-1. **participant-joined** - Whenever any new participant join the meeting, `participant-joined` event will trigger. For example, the meeting is running with **Alice** and **Bob**, then **Eve** join that meeting, after that `participant-joined` event trigger and return the [participant object](/android/guide/video-and-audio-calling-api-sdk/features/manage-participants#participant-object-properties).
+1. **onParticipantJoined** - Whenever any new participant join the meeting, `onParticipantJoined` event will trigger. For example, the meeting is running with **Alice** and **Bob**, then **Eve** join that meeting, after that `onParticipantJoined` event trigger and return the [participant object](/android/guide/video-and-audio-calling-api-sdk/features/manage-participants#participant-object-properties).
 
-2. **participant-left** - Whenever any participant leave/exit the meeting, `participant-left` event will trigger.For example, the meeting is running with **Alice** and **Bob**, then **Bob** leave that meeting, after that `participant-left` event trigger and return the [participant object](/android/guide/video-and-audio-calling-api-sdk/features/manage-participants#participant-object-properties)
+2. **onParticipantLeft** - Whenever any participant leave/exit the meeting, `onParticipantLeft` event will trigger.For example, the meeting is running with **Alice** and **Bob**, then **Bob** leave that meeting, after that `onParticipantLeft` event trigger and return the [participant object](/android/guide/video-and-audio-calling-api-sdk/features/manage-participants#participant-object-properties)
 
-3. **presenter-changed** - Whenever any participant present/screenshare their screen/window in meeting, `presenter-changed` event will trigger and return the presenter `participantId`.
+3. **onPresenterChanged** - Whenever any participant present/screenshare their screen/window in meeting, `onPresenterChanged` event will trigger and return the presenter `participantId`.
 
-4. **stream-enabled** - Whenever any participant enabled mic/webcam in meeting, `stream-enabled` event will trigger and return [Stream Map](/android/guide/video-and-audio-calling-api-sdk/features/manage-participants#streams-map-properties).
+4. **onStreamEnabled** - Whenever any participant enabled mic/webcam in meeting, `onStreamEnabled` event will trigger and return [Stream](/android/guide/video-and-audio-calling-api-sdk/features/manage-participants#stream-object-properties).
 
-5. **stream-disabled** - Whenever any participant disabled mic/webcam in meeting, `stream-disabled` event will trigger and return [Stream Map](/android/guide/video-and-audio-calling-api-sdk/features/manage-participants#streams-map-properties).
+5. **onStreamDisabled** - Whenever any participant disabled mic/webcam in meeting, `onStreamDisabled` event will trigger and return [Stream](/android/guide/video-and-audio-calling-api-sdk/features/manage-participants#stream-object-properties).
 
 <Tabs
 defaultValue="Kotlin"
@@ -365,6 +365,10 @@ values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
 
     override fun onParticipantLeft(participant: Participant) {
         Toast.makeText(this@MainActivity, participant.displayName + " left", Toast.LENGTH_SHORT).show()
+    }
+
+    override fun onPresenterChanged(presenterId: String) {
+        Toast.makeText(this@MainActivity, presenterId + " started presenting", Toast.LENGTH_SHORT).show()
     }
  })
 ```
@@ -404,6 +408,16 @@ values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
         .makeText(
           MainActivity.this,
           participant.getDisplayName() + " left",
+          Toast.LENGTH_SHORT
+        )
+        .show();
+    }
+    @Override
+    public void onPresenterChanged(String presenterId) {
+      Toast
+        .makeText(
+          MainActivity.this,
+          presenterId + " started presenting",
           Toast.LENGTH_SHORT
         )
         .show();

@@ -78,12 +78,74 @@ values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
 
 </Tabs>
 
+### Events
+
+**Event associated with `unmuteMic()`:**
+
+- Every Participant will receive a callback on [`onStreamEnabled()`](../../../api/sdk-reference/participant-class/participant-event-listener-class.md#onstreamenabled) of the [`Participant`](../../../api/sdk-reference/participant-class//introduction.md) with `Stream` object.
+
+**Event associated with `muteMic()`:**
+
+- Every Participant will receive a callback on [`onStreamDisabled()`](../../../api/sdk-reference/participant-class/participant-event-listener-class.md#onstreamenabled) of the [`Participant`](../../../api/sdk-reference/participant-class//introduction.md) with `Stream` object.
+
+<Tabs
+defaultValue="Kotlin"
+groupId={"AndroidLanguage"}
+values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
+
+<TabItem value="Kotlin">
+
+```js
+  meeting!!.localParticipant.addEventListener(object : ParticipantEventListener() {
+    override fun onStreamEnabled(stream: Stream) {
+        //
+        if(stream.getKind().equals("audio")){
+          //participant turned on audio
+        }
+    }
+
+    override fun onStreamDisabled(stream: Stream) {
+        //
+        if(stream.getKind().equals("audio")){
+          //participant turned off audio
+        }
+    }
+  });
+```
+
+</TabItem>
+
+<TabItem value="Java">
+
+```js
+  participant.addEventListener(new ParticipantEventListener() {
+    @Override
+    public void onStreamEnabled(Stream stream) {
+        //
+        if(stream.getKind().equals("audio")){
+          //participant turned on audio
+        }
+    }
+
+    @Override
+    public void onStreamDisabled(Stream stream) {
+        //
+        if(stream.getKind().equals("audio")){
+          //participant turned off audio
+        }
+    }
+  });
+```
+
+</TabItem>
+
+</Tabs>
+
 ### 2. Change Audio Device
 
 #### Get all audio Devices
 
 - By using `meeting.getMics()` function, a participant can get all the connected mics.
-
 
 <Tabs
 defaultValue="Kotlin"
@@ -114,7 +176,6 @@ values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
 
 </Tabs>
 
-
 #### Select audio Device
 
 - Local participant can change the audio device using `changeMic(AppRTCAudioManager.AudioDevice device)` method of meeting class.
@@ -129,7 +190,6 @@ values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
   | AppRTCAudioManager.AudioDevice.EARPIECE      | For Earpiece Device          |
 
 - When a Local participant changes the Mic, `AppRTCAudioManager.AudioManagerEvents()` is triggered which can be set to `Meeting` class by using `meeting.setAudioDeviceChangeListener()`
-
 
 <Tabs
 defaultValue="Kotlin"

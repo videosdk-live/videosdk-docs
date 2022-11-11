@@ -25,17 +25,17 @@ For better idea, let's understand this with a real case scenario
 
 This guide will provide an overview of how to control other participant camera and mic in a room.
 
-1. **Enable camera of Participant** - By using `enableCam()` function, a `camera-requested` event will trigger on requested participant side.
+1. **Enable camera of Participant** - By using `enableCam()` function, a `cameraRequested` event will trigger on requested participant side.
 
-   **Example** : Room is running with **User A** and **User B**. Now **User A** wants to Enable camera of **User B**, so **User A** will use `enableCam()` function to request **User B**, after that **User B** receive the `camera-requested` event, from there user can either accept or reject the incoming request.
+   **Example** : Room is running with **User A** and **User B**. Now **User A** wants to Enable camera of **User B**, so **User A** will use `enableCam()` function to request **User B**, after that **User B** receive the `cameraRequested` event, from there user can either accept or reject the incoming request.
 
 2. **Disable camera of Participant** - By using `disableCam()` function, camera of that participant will be turned off.
 
    **Example** : **User A** wants to Disable camera of **User B**, so **User A** will use `disableCam()` function to Disable it without any request.
 
-3. **Unmute Mic of Participant** - By using `unmuteMic()` function, a `mic-requested` event will trigger on requested participant side.
+3. **Unmute Mic of Participant** - By using `unmuteMic()` function, a `micRequested` event will trigger on requested participant side.
 
-   **Example** : Room is running with **User A** and **User B**. Now **User A** wants to Enable Mic of **User B**, so **User A** will use `unmuteMic()` function to request **User B**, after that **User B** will receive the `Mic-requested` event, from there user can either accept or reject the incoming request.
+   **Example** : Room is running with **User A** and **User B**. Now **User A** wants to Enable Mic of **User B**, so **User A** will use `unmuteMic()` function to request **User B**, after that **User B** will receive the `micRequested` event, from there user can either accept or reject the incoming request.
 
 4. **Mute Mic of Participant** - By using `muteMic()` function, Mic of that participant will disable.
 
@@ -55,13 +55,13 @@ To achieve this feature, you need to pass `allow_join` persmission while geneart
 const participants = room.participants;
 const participant = participants.get("<participant-id>");
 
-// This will emit an event called "camera-requested" to that particular participant
+// This will emit an event called "cameraRequested" to that particular participant
 participant.enableCam();
 
 // This will directly disable camera of particular participant
 participant.disableCam();
 
-// This will emit an event called "mic-requested" to that particular participant
+// This will emit an event called "micRequested" to that particular participant
 participant.unmuteMic();
 
 // This will directly disable mic of particular participant
@@ -70,14 +70,14 @@ participant.muteMic();
 
 ### Manage Requested Media Events
 
-1. **camera-requested** - This event will be emitted to the participant `B` when any other participant `A` requests to enable camera of that participant `B`. This event handler will receive following three arguments:
+1. **cameraRequested** - This event will be emitted to the participant `B` when any other participant `A` requests to enable camera of that participant `B`. This event handler will receive following three arguments:
 
    - `accept()` - Callback function to accept the request.
    - `reject()` - Callback function to reject the request.
 
 <div style={{height: "10px"}}></div>
 
-2. **mic-requested** - This event will be emitted to the participant `B` when any other participant `A` requests to enable mic of that participant `B`. This event handler will receieve following three arguments:
+2. **micRequested** - This event will be emitted to the participant `B` when any other participant `A` requests to enable mic of that participant `B`. This event handler will receieve following three arguments:
 
    - `accept()` - Callback function to accept the request.
    - `reject()` - Callback function to reject the request.

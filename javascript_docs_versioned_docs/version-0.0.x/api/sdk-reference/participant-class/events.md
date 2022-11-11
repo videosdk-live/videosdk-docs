@@ -14,7 +14,7 @@ pagination_label: Participant Class Events
 #### Example
 
 ```js
-participant.on("stream-enabled", () => {
+participant.on("stream-enabled", (stream) => {
   //
 });
 ```
@@ -28,7 +28,7 @@ participant.on("stream-enabled", () => {
 #### Example
 
 ```js
-participant.on("stream-disabled", () => {
+participant.on("stream-disabled", (stream) => {
   //
 });
 ```
@@ -40,7 +40,7 @@ participant.on("stream-disabled", () => {
 #### Example
 
 ```js
-participant.on("media-status-changed", () => {
+participant.on("media-status-changed", (data) => {
   const { kind, newStatus } = data;
   //
 });

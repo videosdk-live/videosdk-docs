@@ -351,9 +351,9 @@ class _ParticipantGridViewState extends State<ParticipantGridView> {
 
 4. **presenterChanged** - Whenever any participant present/screenshare their screen/window in room, `presenterChanged` event will trigger and return the presenter `participantId`.
 
-5. **streamEnabled** - Whenever any participant enabled mic/camera in room, `streamEnabled` event will trigger and return `Stream Map`.
+5. **streamEnabled** - Whenever any participant enabled mic/camera in room, `streamEnabled` event will trigger and return `Stream`.
 
-6. **streamDisabled** - Whenever any participant disabled mic/camera in room, `streamDisabled` event will trigger and return `Stream Map`.
+6. **streamDisabled** - Whenever any participant disabled mic/camera in room, `streamDisabled` event will trigger and return `Stream`.
 
 ```js
 // Adding event listner
@@ -364,6 +364,11 @@ room.on(Events.participantJoined, (Participant participant) {
 
 room.on(Events.participantLeft, (Participant participant) {
   print("new participant => $participant");
+  },
+);
+
+room.on(Events.presenterChanged, (activePresenterId) {
+  print("presenter changed => $activePresenterId");
   },
 );
 ```

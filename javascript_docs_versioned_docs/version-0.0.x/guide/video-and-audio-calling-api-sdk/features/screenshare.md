@@ -40,6 +40,44 @@ const onPress = () => {
 };
 ```
 
+### Events
+
+**Events associated with `enableScreenShare()`:**
+
+- [`stream-enabled`](../../../api/sdk-reference/participant-class/events.md#stream-enabled) event will be emitted with [`stream`](../../../api/sdk-reference/stream-class/introduction.md) object from the event callback, inside that [participant](../../../api/sdk-reference/participant-class/introduction.md) object.
+
+- [`presenter-changed`](./../../../api/sdk-reference/meeting-class/events#presenter-changed) will also receive a callback with the `presenterId`.
+
+**Events associated with `disableScreenShare()`:**
+
+- [`stream-disabled`](../../../api/sdk-reference/participant-class/events.md#stream-disabled) event will be emitted with [`stream`](../../../api/sdk-reference/stream-class/introduction.md) object from the event callback, inside that [participant](../../../api/sdk-reference/participant-class/introduction.md) object.
+
+- [`presenter-changed`](./../../../api/sdk-reference/meeting-class/events#presenter-changed) will also receive a callback with `null` value.
+
+```js
+participant.on("stream-enabled", (stream) => {
+  if (stream.kind === "share") {
+    //particiapnt turned on screen share
+    //Render screenshare logic here
+  }
+});
+
+participant.on("stream-disabled", (stream) => {
+  if (stream.kind === "share") {
+    //particiapnt turned off screenshare
+    //remove screenshare logic here
+  }
+});
+
+meeting.on("presenter-changed", (presenterId) => {
+  if (presenterId) {
+    //someone start presenting
+  } else {
+    //someone stopped presenting
+  }
+});
+```
+
 ### Screen Share with Audio
 
 To do screen share with audio, select the **Share tab audio** option when sharing the chrome tab as shown below.

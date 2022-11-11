@@ -768,6 +768,44 @@ values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
 
 ---
 
+### onLivestreamStateChanged()
+
+- `onLiveStreamStateChanged` event will be triggered any time the broadcasting state of a meeting changes.
+
+- It will have following states: `LIVESTREAM_STARTED`, `LIVESTREAM_STARTED`, `LIVESTREAM_STOPPING`, and `LIVESTREAM_STOPPED`
+
+#### Example
+
+<Tabs
+defaultValue="Kotlin"
+groupId={"AndroidLanguage"}
+values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
+
+<TabItem value="Kotlin">
+
+```javascript
+ override fun onLivestreamStateChanged(livestreamState: String) {
+   //
+ }
+```
+
+</TabItem>
+
+<TabItem value="Java">
+
+```javascript
+ @Override
+ public void onLivestreamStateChanged(String livestreamState) {
+   //
+ }
+```
+
+</TabItem>
+
+</Tabs>
+
+---
+
 ### onExternalCallStarted()
 
 - This event will be emitted when local particpant receive incoming call.
@@ -864,7 +902,7 @@ values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
           break;
     }
   }
-    
+
 ```
 
 </TabItem>
@@ -872,6 +910,5 @@ values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
 </Tabs>
 
 ---
-
 
 </div>

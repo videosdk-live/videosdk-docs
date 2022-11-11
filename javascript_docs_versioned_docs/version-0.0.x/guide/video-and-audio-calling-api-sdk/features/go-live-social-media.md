@@ -46,7 +46,7 @@ const onPress = () => {
 
 ### Events
 
-1. **recording-state-changed** - Whenever broadcasting of meeting started / stopped, `recording-state-changed` event will trigger.
+1. **livestream-state-changed** - Whenever broadcasting of meeting started / stopped, `livestream-state-changed` event will trigger.
 
 ```js
 import { VideoSDK } from "@videosdk.live/js-sdk";
