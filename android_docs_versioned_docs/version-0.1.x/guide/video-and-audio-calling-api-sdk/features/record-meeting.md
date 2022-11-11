@@ -80,7 +80,7 @@ findViewById(R.id.btnRecording).setOnClickListener(view -> {
 
 ### Events
 
-1. **onRecordingStateChanged** - A `onRecordingStateChanged` event will be triggered any time the recording state of a meeting changes.
+- **onRecordingStateChanged** - A `onRecordingStateChanged` event will be triggered any time the recording state of a meeting changes.
 
 <Tabs
 defaultValue="Kotlin"
@@ -92,7 +92,20 @@ values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
 ```js
 object : MeetingEventListener() {
   override fun onRecordingStateChanged(recordingState: String) {
-    Log.d("TAG", "onRecordingStateChanged: " + recordingState);
+    when (recordingState) {
+        "RECORDING_STARTING" -> {
+            Log.d("onRecordingStateChanged", "Meeting recording is starting")
+        }
+        "RECORDING_STARTED" -> {
+            Log.d("onRecordingStateChanged", "Meeting recording is started")
+        }
+        "RECORDING_STOPPING" -> {
+            Log.d("onRecordingStateChanged", "Meeting recording is stopping")
+        }
+        "RECORDING_STOPPED" -> {
+            Log.d("onRecordingStateChanged", "Meeting recording is stopped")
+        }
+    }
   }
 }
 ```
@@ -105,8 +118,20 @@ object : MeetingEventListener() {
 new MeetingEventListener() {
   @Override
   public void onRecordingStateChanged(String recordingState) {
-    Log.d("TAG", "onRecordingStateChanged: " + recordingState);
-    super.onRecordingStateChanged(recordingState);
+      switch (recordingState) {
+          case "RECORDING_STARTING":
+              Log.d("onRecordingStateChanged", "Meeting recording is starting");
+              break;
+          case "RECORDING_STARTED":
+              Log.d("onRecordingStateChanged", "Meeting recording is started");
+              break;
+          case "RECORDING_STOPPING":
+              Log.d("onRecordingStateChanged", "Meeting recording is stopping");
+              break;
+          case "RECORDING_STOPPED":
+              Log.d("onRecordingStateChanged", "Meeting recording is stopped");
+              break;
+      }
   }
 }
 ```

@@ -41,8 +41,10 @@ import MethodListHeading from '@theme/MethodListHeading';
       name="onEntryResponded(String id, String decision)"  type={"void"} />
       <MethodListItemLabel description={"emitted when any participant shared the screen"} name="onPresenterChanged(String participantId)"  type={"void"} />
       <MethodListItemLabel description={"emitted when active speaker is changed"} name="onSpeakerChanged(String participantId)"  type={"void"} />
+      <MethodListItemLabel description={"emitted when the meeting's recording status changed"} name="onRecordingStateChanged(String recordingState)"  type={"void"} />
       <MethodListItemLabel description={"emitted when recording of the meeting is started successfully"} name="onRecordingStarted()"  type={"void"} />
       <MethodListItemLabel description={"emitted when recording of the meeting is stopped"} name="onRecordingStopped()"  type={"void"} />
+      <MethodListItemLabel description={"emitted when the meeting's livestream status changed"} name="onLivestreamStateChanged(String livestreamState)"  type={"void"} />
       <MethodListItemLabel description={"emitted when live streaming of the meeting in social media is started successfully"} name="onLivestreamStarted()"  type={"void"} />
       <MethodListItemLabel description={"emitted when live streaming of the meeting is stopped"} name="onLivestreamStopped()"  type={"void"} />
       <MethodListItemLabel description={"emitted when remote participant asked you to toggle the Mic"} name="onMicRequested(String participantId, MicRequestListener listener)"  type={"void"} />

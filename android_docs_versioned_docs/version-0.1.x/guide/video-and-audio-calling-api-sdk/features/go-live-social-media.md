@@ -98,9 +98,23 @@ values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
 
 ```js
 object : MeetingEventListener() {
-  override fun onLiveStreamStateChanged(livestreamState: String) {
-    Log.d("TAG", "onLivestreamStateChanged: " + livestreamState);
+  override fun onLivestreamStateChanged(livestreamState: String?) {
+    when (livestreamState) {
+        "LIVESTREAM_STARTING" -> Log.d( "LivestreamStateChanged",
+            "Meeting livestream is starting"
+        )
+        "LIVESTREAM_STARTED" -> Log.d( "LivestreamStateChanged",
+            "Meeting livestream is started"
+        )
+        "LIVESTREAM_STOPPING" -> Log.d("LivestreamStateChanged",
+            "Meeting livestream is stopping"
+        )
+        "LIVESTREAM_STOPPED" -> Log.d("LivestreamStateChanged",
+            "Meeting livestream is stopped"
+        )
+    }
   }
+
 }
 ```
 
@@ -112,8 +126,20 @@ object : MeetingEventListener() {
 new MeetingEventListener() {
   @Override
   public void onLivestreamStateChanged(String livestreamState) {
-    Log.d("TAG", "onLivestreamStateChanged: " + livestreamState);
-    super.onLivestreamStateChanged(livestreamState);
+      switch (livestreamState) {
+          case "LIVESTREAM_STARTING":
+              Log.d("LivestreamStateChanged", "Meeting livestream is starting");
+              break;
+          case "LIVESTREAM_STARTED":
+              Log.d("LivestreamStateChanged", "Meeting livestream is started");
+              break;
+          case "LIVESTREAM_STOPPING":
+              Log.d("LivestreamStateChanged", "Meeting livestream is stopping");
+              break;
+          case "LIVESTREAM_STOPPED":
+              Log.d("LivestreamStateChanged", "Meeting livestream is stopped");
+              break;
+      }
   }
 }
 ```
