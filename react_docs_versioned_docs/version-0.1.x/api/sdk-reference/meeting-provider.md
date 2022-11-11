@@ -18,6 +18,7 @@ Every Context object in `react-js` comes with a Provider React component that al
     webcamEnabled: true,
     name: "Participant Name",
     participantId: "xyz",
+    mode: "CONFERENCE", // "CONFERENCE" || "VIEWER"
   }}
   token={"token"}
   joinWithoutUserInteraction // Boolean
@@ -97,3 +98,16 @@ Please refer this [documentation](/api-reference/realtime-communication/intro) t
   - `OPTIONAL`
 
 ---
+
+---
+
+### mode
+
+- `OPTIONAL`
+
+- There are 2 types of modes:
+
+  - `CONFERENCE`: Both audio and video streams will be produced and consumed in this mode.
+  - `VIEWER`: Audio and video streams will not be produced or consumed in this mode.
+
+  - defaultValue : `CONFERENCE`
