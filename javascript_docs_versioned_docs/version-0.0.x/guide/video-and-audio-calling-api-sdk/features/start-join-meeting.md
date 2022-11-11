@@ -167,6 +167,9 @@ const meeting = VideoSDK.initMeeting({
   micEnabled: "<Flag-to-enable-mic>", // optional, default: true
   webcamEnabled: "<Flag-to-enable-webcam>", // optional, default: true
   maxResolution: "<Maximum-resolution>", // optional, default: "hd"
+  customVideoTrack: "<Video-track>", // optional
+  customMicrophoneTrack: "<Microphone-track>", // optional
+  multiStream: true // optional, default: true
 });
 ```
 
