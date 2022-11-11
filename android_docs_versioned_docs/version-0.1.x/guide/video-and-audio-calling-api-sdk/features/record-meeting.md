@@ -80,7 +80,7 @@ findViewById(R.id.btnRecording).setOnClickListener(view -> {
 
 ### Events
 
-1. **recording-state-changed** - This event will be emitted when the meeting's recording status changed.
+- **onRecordingStateChanged** - A `onRecordingStateChanged` event will be triggered any time the recording state of a meeting changes.
 
 <Tabs
 defaultValue="Kotlin"

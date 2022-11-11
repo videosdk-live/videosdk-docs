@@ -87,7 +87,7 @@ findViewById(R.id.btnLivestream).setOnClickListener(view -> {
 
 ### Events
 
-1. **livestream-state-changed** - A `livestream-state-changed` event will be triggered any time the broadcasting state of a meeting changes.
+- **onLiveStreamStateChanged** - A `onLiveStreamStateChanged` event will be triggered any time the broadcasting state of a meeting changes.
 
 <Tabs
 defaultValue="Kotlin"
