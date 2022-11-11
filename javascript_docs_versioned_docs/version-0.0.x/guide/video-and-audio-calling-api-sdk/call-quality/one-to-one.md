@@ -59,12 +59,13 @@ You can choose the resolution of video you can to send and pass it to VideoSDK d
 
 You can create a Video Track using `createCameraVideoTrack()` method of `VideoSDK` class where you can pass different parameters which can be found [here](../features/custom-track/custom-video-track.md#parameters).
 
-### Example
+#### Example
 
 ```javascript
 let customTrack = await VideoSDK.createCameraVideoTrack({
   optimizationMode: "motion",
   encoderConfig: "h720p_w1280p",
   facingMode: "environment",
+  multiStream: false, //default: true
 });
 ```

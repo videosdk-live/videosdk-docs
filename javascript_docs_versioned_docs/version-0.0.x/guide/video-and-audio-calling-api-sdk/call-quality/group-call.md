@@ -35,7 +35,7 @@ The best practice is to use `setQuality("high")` for the participant who is in t
 
 By defualt, VideoSDK sends multi resolution video streams to the servers so that if a user in the meeting is having trouble fetching a high resolution video stream due to network limitations he can downgrade to a lower resolution video for a better viewing experience.
 
-When you are doing a conference call where there are only 3-4 participants, there is no major network issues, we recommend you to send single stream of `540p`, saving on network bandwith and at the same time maintain the call quality to the maximum.
+When you are doing a conference call with 3-4 participants, there is no major network issues,and to get the best experience, we recommend you to send single stream of `540p` by setting `multiStream` as `false`, saving on network bandwith and at the same time maintain the call quality to the maximum.
 
 You can pass `multiStream` as `false` inside the `initMeeting` to stop sending multi resolution video stream or you can also use custom tracks to define wheather to use `multiStream` for that particular participant.
 
@@ -67,19 +67,20 @@ const meeting = VideoSDK.initMeeting({
 
 ## Custom Video Track
 
-By default, VideoSDK will use a `720p` or `540p` video during the video call basis the device capabilites but you can customizes these setting according to your needs.
+By default, VideoSDK will use a `720p` or `540p` video during the video call basis the device capabilites but you can customize these setting according to your need or use case.
 
 You can choose the resolution of video you want to send based on your use case and pass it to VideoSDK during intialization of the meeting and also while enabling the webcam.
 
 You can create a Video Track using `createCameraVideoTrack()` method of `VideoSDK` class where you can pass different parameters which can be found [here](../features/custom-track/custom-video-track.md#parameters).
 
-### Example
+#### Example
 
 ```javascript
 let customTrack = await VideoSDK.createCameraVideoTrack({
   optimizationMode: "motion",
   encoderConfig: "h720p_w1280p",
   facingMode: "environment",
+  multiStream: false, //default: true
 });
 ```
 

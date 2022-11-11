@@ -48,6 +48,8 @@
         "guide/video-and-audio-calling-api-sdk/features/play-external-video",
         "guide/video-and-audio-calling-api-sdk/features/go-live-social-media",
         "guide/video-and-audio-calling-api-sdk/features/pubsub",
+        "guide/video-and-audio-calling-api-sdk/features/set-video-quality",
+        "guide/video-and-audio-calling-api-sdk/features/pause-resume-video-stream",
         {
           "type": "category",
           "label": "Custom Tracks",
