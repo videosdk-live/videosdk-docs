@@ -544,6 +544,44 @@ values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
 
 ---
 
+### onRecordingStateChanged()
+
+- `onRecordingStateChanged` event will be triggered any time the recording state of a meeting changes.
+
+- It will have following states: `RECORDING_STARTED`, `RECORDING_STARTED`, `RECORDING_STOPPING`, and `RECORDING_STOPPED`
+
+#### Example
+
+<Tabs
+defaultValue="Kotlin"
+groupId={"AndroidLanguage"}
+values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
+
+<TabItem value="Kotlin">
+
+```javascript
+ override fun onRecordingStateChanged(recordingState: String) {
+   //
+ }
+```
+
+</TabItem>
+
+<TabItem value="Java">
+
+```javascript
+ @Override
+ public void onRecordingStateChanged(String recordingState) {
+   //
+ }
+```
+
+</TabItem>
+
+</Tabs>
+
+---
+
 ### onLivestreamStarted()
 
 - This event will be emitted when `RTMP` live stream of the meeting is started.
@@ -606,6 +644,44 @@ values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
 ```javascript
  @Override
  public void onLivestreamStopped() {
+   //
+ }
+```
+
+</TabItem>
+
+</Tabs>
+
+---
+
+### onLivestreamStateChanged()
+
+- `onLiveStreamStateChanged` event will be triggered any time the broadcasting state of a meeting changes.
+
+- It will have following states: `LIVESTREAM_STARTED`, `LIVESTREAM_STARTED`, `LIVESTREAM_STOPPING`, and `LIVESTREAM_STOPPED`
+
+#### Example
+
+<Tabs
+defaultValue="Kotlin"
+groupId={"AndroidLanguage"}
+values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
+
+<TabItem value="Kotlin">
+
+```javascript
+ override fun onLivestreamStateChanged(livestreamState: String) {
+   //
+ }
+```
+
+</TabItem>
+
+<TabItem value="Java">
+
+```javascript
+ @Override
+ public void onLivestreamStateChanged(String livestreamState) {
    //
  }
 ```
@@ -712,7 +788,7 @@ values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
           break;
     }
   }
-    
+
 ```
 
 </TabItem>
@@ -720,6 +796,5 @@ values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
 </Tabs>
 
 ---
-
 
 </div>

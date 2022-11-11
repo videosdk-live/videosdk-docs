@@ -200,7 +200,7 @@
   --custom-background-color-diff: #2a2a2a;
   --custom-background-color-diff-1: #484848;
   --custom-background-color-diff-2: #666;
-  --custom-content-color: #ddd;
+  --custom-content-color: #b2b2b2;
   --custom-content-color-light: #aaa;
   --custom-content-color-lightest: #fefefe;
   --custom-content-color-emphasis: #fff;
@@ -592,6 +592,25 @@ html[data-theme="dark"] .theme-doc-markdown>p {
   font-size: 16px;
   line-height: 24px;
   color: #b2b2b2;
+}
+
+html[data-theme="dark"] .theme-doc-markdown>h2 {
+  color: #fff;
+}
+html[data-theme="dark"] .theme-doc-markdown>h1 {
+  color: #fff;
+}
+html[data-theme="dark"] .theme-doc-markdown>h3 {
+  color: #fff;
+}
+html[data-theme="dark"] .theme-doc-markdown>h4 {
+  color: #fff;
+}
+html[data-theme="dark"] .theme-doc-markdown>h5 {
+  color: #fff;
+}
+html[data-theme="dark"] .theme-doc-markdown>h6 {
+  color: #fff;
 }
 
 .markdown h1:first-child {

@@ -80,9 +80,7 @@ findViewById(R.id.btnRecording).setOnClickListener(view -> {
 
 ### Events
 
-1. **recording-started** - Whenever any participant start meeting recording, then `recording-started` event will trigger.
-
-2. **recording-stopped** - Whenever any participant stop meeting recording, then `recording-stopped` event will trigger.
+1. **onRecordingStateChanged** - A `onRecordingStateChanged` event will be triggered any time the recording state of a meeting changes.
 
 <Tabs
 defaultValue="Kotlin"
@@ -93,18 +91,9 @@ values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
 
 ```js
 object : MeetingEventListener() {
-  override fun onRecordingStarted() {
-    recording = true
-
-    // TODO: show indication that meeting recording is started.
+  override fun onRecordingStateChanged(recordingState: String) {
+    Log.d("TAG", "onRecordingStateChanged: " + recordingState);
   }
-
-  override fun onRecordingStopped() {
-    recording = false
-
-    // TODO: show indication that meeting recording is stopped.
-  }
-
 }
 ```
 
@@ -115,17 +104,9 @@ object : MeetingEventListener() {
 ```js
 new MeetingEventListener() {
   @Override
-  public void onRecordingStarted() {
-      recording = true;
-
-      // TODO: show indication that meeting recording is started.
-  }
-
-  @Override
-  public void onRecordingStopped() {
-      recording = false;
-
-      // TODO: show indication that meeting recording is stopped.
+  public void onRecordingStateChanged(String recordingState) {
+    Log.d("TAG", "onRecordingStateChanged: " + recordingState);
+    super.onRecordingStateChanged(recordingState);
   }
 }
 ```

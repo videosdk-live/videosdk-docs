@@ -31,5 +31,4 @@ We can access `speakerChanged` event through [room object](./start-join-room#2-i
 room.on(Events.speakerChanged, (activeSpeakerId) {
   print("participantId => $activeSpeakerId");
 });
-
 ```

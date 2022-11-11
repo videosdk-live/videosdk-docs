@@ -80,3 +80,72 @@ values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
 </TabItem>
 
 </Tabs>
+
+### Events
+
+**Event associated with `enableWebcam()`:**
+
+- Every Participant will receive a callback on [`onStreamEnabled()`](../../../api/sdk-reference/participant-class/participant-event-listener-class.md#onstreamenabled) of the [`Participant`](../../../api/sdk-reference/participant-class//introduction.md) with `Stream` object.
+
+**Event associated with `disableWebcam()`:**
+
+- Every Participant will receive a callback on [`onStreamDisabled()`](../../../api/sdk-reference/participant-class/participant-event-listener-class.md#onstreamenabled) of the [`Participant`](../../../api/sdk-reference/participant-class//introduction.md) with `Stream` object.
+
+<Tabs
+defaultValue="Kotlin"
+groupId={"AndroidLanguage"}
+values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
+
+<TabItem value="Kotlin">
+
+```js
+  meeting!!.localParticipant.addEventListener(object : ParticipantEventListener() {
+    override fun onStreamEnabled(stream: Stream) {
+        //
+
+        if(stream.getKind().equals("video")){
+          //participant turned on video
+          //Render participant video
+        }
+    }
+
+    override fun onStreamDisabled(stream: Stream) {
+        //
+
+        if(stream.getKind().equals("video")){
+          //participant turned off video
+          //remove participant video
+        }
+    }
+  });
+```
+
+</TabItem>
+
+<TabItem value="Java">
+
+```js
+  participant.addEventListener(new ParticipantEventListener() {
+    @Override
+    public void onStreamEnabled(Stream stream) {
+        //
+        if(stream.getKind().equals("video")){
+          //participant turned on video
+          //Render participant video
+        }
+    }
+
+    @Override
+    public void onStreamDisabled(Stream stream) {
+        //
+        if(stream.getKind().equals("video")){
+          //participant turned off video
+          //remove participant video
+        }
+    }
+  });
+```
+
+</TabItem>
+
+</Tabs>

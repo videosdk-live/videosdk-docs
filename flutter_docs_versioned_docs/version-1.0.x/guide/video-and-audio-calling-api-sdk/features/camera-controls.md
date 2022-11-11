@@ -44,3 +44,28 @@ ElevatedButton(
   child: Text("changeCam"),
 ),
 ```
+
+### Events
+
+**Events associated with `enableWebcam()`:**
+
+- [`streamEnabled`](../../../api/sdk-reference/participant-class/events.md#streamEnabled) event will be emitted with [`stream`](../../../api/sdk-reference/stream-class/introduction.md) object from the event callback, inside that [participant](../../../api/sdk-reference/participant-class/introduction.md) object.
+
+**Events associated with `disableWebcam()`:**
+
+- [`streamDisabled`](../../../api/sdk-reference/participant-class/events.md#streamDisabled) event will be emitted with [`stream`](../../../api/sdk-reference/stream-class/introduction.md) object from the event callback, inside that [participant](../../../api/sdk-reference/participant-class/introduction.md) object.
+
+```js
+participant.on(Events.streamEnabled, (Stream stream){
+  if (stream.kind === "video") {
+    //particiapnt turned on video
+    //Render Participant video logic here
+  }
+});
+participant.on(Events.streamDisabled, (Stream stream){
+  if (stream.kind === "video") {
+    //particiapnt turned off video
+    //remove Participant video logic here
+  }
+});
+```

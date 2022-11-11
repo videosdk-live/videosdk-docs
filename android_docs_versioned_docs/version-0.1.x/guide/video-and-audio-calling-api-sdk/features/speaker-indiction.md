@@ -19,13 +19,13 @@ slug: speaker-indication
 
 Speaker indication feature in VideoSDK let you know, which participant is active speaker in a meeting.
 
-Whenever any participant speaks in meeting, `speaker-changed` event will trigger.
+Whenever any participant speaks in meeting, `onSpeakerChanged` event will trigger.
 
-For example, the meeting is running with **Alice** and **Bob**. Whenever any of them speaks, `speaker-changed` event will trigger and return the speaker `participantId`.
+For example, the meeting is running with **Alice** and **Bob**. Whenever any of them speaks, `onSpeakerChanged` event will trigger and return the speaker `participantId`.
 
-We can access `speaker-changed` event through [meeting object](/android/guide/video-and-audio-calling-api-sdk/features/start-join-meeting).
+We can access `onSpeakerChanged` event through [meeting object](../../../api/sdk-reference/meeting-class/introduction.md).
 
-### speaker-changed Event
+### onSpeakerChanged Event
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
