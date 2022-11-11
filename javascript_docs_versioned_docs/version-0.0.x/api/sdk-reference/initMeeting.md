@@ -28,6 +28,7 @@ const meeting = VideoSDK.initMeeting({
   micEnabled: true,
   webcamEnabled: true,
   maxResolution: "hd",
+  multiStream: true,
 });
 ```
 
@@ -91,6 +92,28 @@ Please refer this [documentation](/api-reference/realtime-communication/create-r
   - type: `String`
   - value: `sd` | `hd`
   - defaultValue: `sd`
+  - `OPTIONAL`
+
+### multiStream
+
+- Sets wheather to send multi resoultion streams while publishing video.
+
+  - type: `boolean`
+  - defaultValue: `true`
+  - `OPTIONAL`
+
+### customCameraVideoTrack
+
+- Set the initial custom video track using different encoding parameters, camera facing mode, and optimization mode.
+
+  - type: `MediaStream`
+  - `OPTIONAL`
+
+### customMicrophoneAudioTrack
+
+- Set the initial custom audio track using different encoding parameters and optimization mode.
+
+  - type: `MediaStream`
   - `OPTIONAL`
 
 ## Returns

@@ -51,4 +51,53 @@ const {
 
 ---
 
+### onMediaStatusChanged()
+
+- `onMediaStatusChanged()` is a callback which gets triggered whenever a participant's video or audio is disabled or enabled.
+
+#### Example
+
+```js
+function onMediaStatusChanged(data) {
+  const { kind, newStatus} = data;
+
+}
+
+const {
+  displayName
+  ...
+} = useParticipant(participantId,{
+  onMediaStatusChanged,
+  ...
+});
+```
+
+---
+
+### onVideoQualityChanged()
+
+- `onVideoQualityChanged()` is a callback which gets triggered whenever a participant's video quality changes.
+
+- `currentQuality` and `prevQuality` can have values `HIGH` | `MEDIUM` | `LOW`.
+
+#### Example
+
+```js
+function onVideoQualityChanged(data) {
+  const { currentQuality, prevQuality } = data;
+
+
+}
+
+const {
+  displayName
+  ...
+} = useParticipant(participantId,{
+  onVideoQualityChanged,
+  ...
+});
+```
+
+---
+
 </div>

@@ -40,8 +40,25 @@ participant.on("stream-disabled", () => {
 #### Example
 
 ```js
-participant.on("media-status-changed", () => {
+participant.on("media-status-changed", (data) => {
   const { kind, newStatus } = data;
+  //
+});
+```
+
+---
+
+### video-quality-changed
+
+- `video-quality-changed` is a callback which gets triggered whenever a participant's video quality changes.
+
+- `currentQuality` and `prevQuality` can have values `HIGH` | `MEDIUM` | `LOW`.
+
+#### Example
+
+```js
+participant.on("video-quality-changed", (data) => {
+  const { currentQuality, prevQuality } = data;
   //
 });
 ```

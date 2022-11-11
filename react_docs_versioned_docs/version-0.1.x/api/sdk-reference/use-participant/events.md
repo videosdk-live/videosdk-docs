@@ -74,4 +74,30 @@ const {
 
 ---
 
+### onVideoQualityChanged()
+
+- `onVideoQualityChanged()` is a callback which gets triggered whenever a participant's video quality changes.
+
+- `currentQuality` and `prevQuality` can have values `HIGH` | `MEDIUM` | `LOW`.
+
+#### Example
+
+```js
+function onVideoQualityChanged(data) {
+  const { currentQuality, prevQuality } = data;
+
+
+}
+
+const {
+  displayName
+  ...
+} = useParticipant(participantId,{
+  onVideoQualityChanged,
+  ...
+});
+```
+
+---
+
 </div>
