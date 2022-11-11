@@ -28,6 +28,7 @@ const meeting = VideoSDK.initMeeting({
   micEnabled: true,
   webcamEnabled: true,
   maxResolution: "hd",
+  mode: VideoSDK.Constants.modes.CONFERENCE,
 });
 ```
 
@@ -91,6 +92,18 @@ Please refer this [documentation](/api-reference/realtime-communication/create-r
   - type: `String`
   - value: `sd` | `hd`
   - defaultValue: `sd`
+  - `OPTIONAL`
+
+---
+
+### mode
+
+- There are 2 types of modes:
+
+  - `VideoSDK.Constants.modes.CONFERENCE`: Both audio and video streams will be produced and consumed in this mode.
+  - `VideoSDK.Constants.modes.VIEWER`: Audio and video streams will not be produced or consumed in this mode.
+
+  - defaultValue : `VideoSDK.Constants.modes.CONFERENCE`
   - `OPTIONAL`
 
 ## Returns
