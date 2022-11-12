@@ -46,7 +46,7 @@ const onPress = () => {
 
 **Event associated with `end()`:**
 
-- All remote participants and local participant will receive a callback on [`onParticipantLeft`](./events#onparticipantleft) with Participant object.
+- All remote participants and local participant will receive a callback on [`onParticipantLeft`](../../../api/sdk-reference/use-meeting/events#onparticipantleft) with Participant object.
 
 ```js
 function onParticipantLeft(participant) {
