@@ -57,6 +57,7 @@
         "guide/video-and-audio-calling-api-sdk/features/pubsub",
         "guide/video-and-audio-calling-api-sdk/features/switch-audio-output",
         "guide/video-and-audio-calling-api-sdk/features/pause-resume-stream",
+        "guide/video-and-audio-calling-api-sdk/features/set-viewport",
         {
           "type": "category",
           "label": "Custom Tracks",

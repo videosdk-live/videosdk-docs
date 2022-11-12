@@ -7,6 +7,26 @@ pagination_label: Release Notes
 
 This page will keep you update all the releases of JavaScript SDK.
 
+## v0.0.53
+
+**Release Data** : 11th November 2022
+
+**Change log** :
+
+1. Provide `multistream` parameter for sending multiple resolution layers or single resolution layer.
+
+   **Docs** : [Multi Stream](https://docs.videosdk.live/javascript/guide/video-and-audio-calling-api-sdk/features/custom-track/custom-video-track)
+
+2. Provide `video-quality-changed` in Participant class to listen video quality changes.
+
+   **SDK Reference** : [video-quality-changed](https://docs.videosdk.live/javascript/guide/video-and-audio-calling-api-sdk/features/set-participant-video-quality#event)
+
+3. Provide meeting `CONFERENCE` and `VIEWER` mode on initMeeting.
+
+   <!-- **SDK Reference** : [Meeting Mode]() -->
+
+---
+
 ## v0.0.52
 
 **Release Data** : 4th November 2022

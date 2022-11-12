@@ -7,6 +7,26 @@ pagination_label: Release Notes
 
 This page will keep you update all the releases of React JS SDK.
 
+## v0.1.53
+
+**Release Data** : 11th November 2022
+
+**Change log** :
+
+1. Provide `multistream` parameter for sending multiple resolution layers or single resolution layer.
+
+   **Docs** : [Multi Stream](https://docs.videosdk.live/react/guide/video-and-audio-calling-api-sdk/features/custom-track/custom-video-track)
+
+2. Provide `onVideoQualityChange` in `useParticipant` hook to listen video quality changes.
+
+   **SDK Reference** : [onVideoQualityChange](https://docs.videosdk.live/react/guide/video-and-audio-calling-api-sdk/features/set-participant-video-quality#event)
+
+3. Provide meeting `CONFERENCE` and `VIEWER` mode on `MeetingProvider` config.
+
+   <!-- **SDK Reference** : [Meeting Mode](https://docs.videosdk.live/javascript/guide/video-and-audio-calling-api-sdk/features/recording-meeting) -->
+
+---
+
 ## v0.1.52
 
 **Release Data** : 4th November 2022

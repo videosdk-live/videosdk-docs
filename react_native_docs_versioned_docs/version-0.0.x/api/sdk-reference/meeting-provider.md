@@ -22,6 +22,7 @@ Every Context object in `react-js` comes with a Provider React component that al
       message: "Meeting is running.",
     },
     participantId: "xyz",
+    multiStream: true,
   }}
   token={"token"}
   joinWithoutUserInteraction // Boolean
@@ -117,3 +118,25 @@ Please refer this [documentation](/api-reference/realtime-communication/intro) t
   - `OPTIONAL`
 
 ---
+
+### multiStream
+
+- Sets wheather to send multi resoultion streams while publishing video.
+
+  - type: `boolean`
+  - defaultValue: true
+  - `OPTIONAL`
+
+### customCameraVideoTrack
+
+- Set the initial custom video track using different encoding parameters, camera facing mode, and optimization mode.
+
+  - type: `MediaStream`
+  - `OPTIONAL`
+
+### customMicrophoneAudioTrack
+
+- Set the initial custom audio track using different encoding parameters and optimization mode.
+
+  - type: `MediaStream`
+  - `OPTIONAL`
