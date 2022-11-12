@@ -7,6 +7,26 @@ pagination_label: Release Notes
 
 This page will keep you update all the releases of React Native SDK.
 
+## v0.0.38
+
+**Release Data** : 12th November 2022
+
+**Change log** :
+
+1. Provide `multistream` parameter for sending multiple resolution layers or single resolution layer.
+
+   **Docs** : [Multi Stream](https://docs.videosdk.live/react-native/guide/video-and-audio-calling-api-sdk/features/custom-track/custom-video-track)
+
+2. Provide `onVideoQualityChanged` in `useParticipant` hook to listen video quality changes.
+
+   **SDK Reference** : [onVideoQualityChange](https://docs.videosdk.live/react-native/guide/video-and-audio-calling-api-sdk/features/set-participant-video-quality#event)
+
+3. Provide meeting `CONFERENCE` and `VIEWER` mode on `MeetingProvider` config.
+
+   **SDK Reference** : [Meeting Mode](https://docs.videosdk.live/react-native/api/sdk-reference/meeting-provider#mode)
+
+---
+
 ## v0.0.37
 
 **Release Data** : 4th November 2022
