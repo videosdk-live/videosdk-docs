@@ -40,7 +40,7 @@
         "guide/video-and-audio-calling-api-sdk/features/camera-controls",
         "guide/video-and-audio-calling-api-sdk/features/mic-controls",
         "guide/video-and-audio-calling-api-sdk/features/screenshare",
-        "guide/video-and-audio-calling-api-sdk/features/set-viewport",
+        "guide/video-and-audio-calling-api-sdk/features/set-participant-video-quality",
         "guide/video-and-audio-calling-api-sdk/features/toggle-participant-media",
         "guide/video-and-audio-calling-api-sdk/features/speaker-indication",
         "guide/video-and-audio-calling-api-sdk/features/error-event"
@@ -56,7 +56,6 @@
         "guide/video-and-audio-calling-api-sdk/features/play-external-video",
         "guide/video-and-audio-calling-api-sdk/features/pubsub",
         "guide/video-and-audio-calling-api-sdk/features/switch-audio-output",
-        "guide/video-and-audio-calling-api-sdk/features/set-participant-video-quality",
         "guide/video-and-audio-calling-api-sdk/features/pause-resume-stream",
         {
           "type": "category",

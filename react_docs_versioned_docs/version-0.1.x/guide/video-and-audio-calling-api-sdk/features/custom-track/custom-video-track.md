@@ -63,10 +63,17 @@ Above mentioned encoder configurations are valid for both, landscape as well as 
   - It will specifiy the optimization mode for the video track being generated.
 
 - **multiStream**
+
   - type: `boolean`
   - required: `false`
-  - default: `true`
+  - default: true
   - It will specifiy if the stream should send multiple resolution layers or single resolution layer.
+
+    :::info
+
+    - For meetings with fewer than or equal to four participants, setting `multiStream:false` is regarded as best practice.
+    - This parameter is only available from `v0.1.53`.
+      :::
 
 #### Returns
 

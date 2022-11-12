@@ -60,15 +60,6 @@
         "guide/video-and-audio-calling-api-sdk/features/virtual-background",
         "guide/video-and-audio-calling-api-sdk/features/noise-suppresion"
       ]
-    },
-    {
-      "type": "category",
-      "label": "Manage Call Quality",
-      "items": [
-        "guide/video-and-audio-calling-api-sdk/call-quality/one-to-one",
-        "guide/video-and-audio-calling-api-sdk/call-quality/group-call"
-      ],
-      "collapsed": true
     }
   ],
   "apiSidebar": [

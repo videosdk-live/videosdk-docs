@@ -169,7 +169,7 @@ const meeting = VideoSDK.initMeeting({
   maxResolution: "<Maximum-resolution>", // optional, default: "hd"
   customVideoTrack: "<Video-track>", // optional
   customMicrophoneTrack: "<Microphone-track>", // optional
-  multiStream: true // optional, default: true
+   multiStream: true // optional, default: true
 });
 ```
 
