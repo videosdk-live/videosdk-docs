@@ -23,7 +23,7 @@ This page will keep you update all the releases of React JS SDK.
 
 3. Provide meeting `CONFERENCE` and `VIEWER` mode on `MeetingProvider` config.
 
-   <!-- **SDK Reference** : [Meeting Mode](https://docs.videosdk.live/javascript/guide/video-and-audio-calling-api-sdk/features/recording-meeting) -->
+   **SDK Reference** : [Meeting Mode](https://docs.videosdk.live/react/api/sdk-reference/meeting-provider#mode)
 
 ---
 

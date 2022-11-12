@@ -23,7 +23,7 @@ This page will keep you update all the releases of JavaScript SDK.
 
 3. Provide meeting `CONFERENCE` and `VIEWER` mode on initMeeting.
 
-   <!-- **SDK Reference** : [Meeting Mode]() -->
+   **SDK Reference** : [Meeting Mode]("https://docs.videosdk.live/javascript/api/sdk-reference/initMeeting#mode")
 
 ---
 

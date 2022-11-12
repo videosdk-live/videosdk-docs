@@ -40,25 +40,3 @@ const onPress = () => {
   meeting?.stopLivestream();
 };
 ```
-
-### Events
-
-1. **livestream-started** - Whenever broadcasting of meeting started, `livestream-started` event will trigger.
-
-2. **livestream-stopped** - Whenever broadcasting of meeting stopped, `livestream-stopped` event will trigger.
-
-```js
-import { useMeeting } from "@videosdk.live/react-native-sdk";
-
-/** useMeeting hooks events */
-const {
-  /** Methods */
-} = useMeeting({
-  onLiveStreamstarted: () => {
-    console.log("LiveStream Started");
-  },
-  onLiveStreamStopped: () => {
-    console.log("LiveStream Stopped");
-  },
-});
-```

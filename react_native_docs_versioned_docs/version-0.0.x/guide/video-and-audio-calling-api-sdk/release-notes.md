@@ -23,7 +23,7 @@ This page will keep you update all the releases of React Native SDK.
 
 3. Provide meeting `CONFERENCE` and `VIEWER` mode on `MeetingProvider` config.
 
-   <!-- **SDK Reference** : [Meeting Mode](https://docs.videosdk.live/javascript/guide/video-and-audio-calling-api-sdk/features/recording-meeting) -->
+   **SDK Reference** : [Meeting Mode](https://docs.videosdk.live/react-native/api/sdk-reference/meeting-provider#mode)
 
 ---
 

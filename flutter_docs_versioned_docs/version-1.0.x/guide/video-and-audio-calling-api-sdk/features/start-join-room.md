@@ -177,3 +177,20 @@ After joining, you will be able to Manage Participant in a room.
 // Join the room
 room?.join();
 ```
+
+## Events
+
+Following events are emitted on the `room` when it is successfully joined.
+
+- Local Participant will receive a [`roomJoined`](../../../api/sdk-reference/room-class/events.md#roomJoined) event when successfully joined.
+- Remote Participant will receive a [`participantJoined`](../../../api/sdk-reference/room-class/events.md#participantJoined) event with the newly joined [`Participant`](../../../api/sdk-reference/participant-class/introduction.md) object from the event callback.
+
+```js
+room.on(Events.roomJoined, () => {
+  print("Room Joined Successfully");
+});
+
+room.on(Events.participantJoined, (participant) => {
+  print("New Participant Joined");
+});
+```

@@ -40,12 +40,20 @@
     "label": "onMicRequested()"
   },
   {
+    "href": "./meeting-event-listener-class#onRecordingStateChanged",
+    "label": "onRecordingStateChanged()"
+  },
+  {
     "href": "./meeting-event-listener-class#onRecordingStarted",
     "label": "onRecordingStarted()"
   },
   {
     "href": "./meeting-event-listener-class#onRecordingStopped",
     "label": "onRecordingStopped()"
+  },
+  {
+    "href": "./meeting-event-listener-class#onLivestreamStateChanged",
+    "label": "onLivestreamStateChanged()"
   },
   {
     "href": "./meeting-event-listener-class#onLivestreamStarted",
