@@ -9,7 +9,7 @@ This page will keep you update all the releases of React JS SDK.
 
 ## v0.1.53
 
-**Release Data** : 11th November 2022
+**Release Date** : 11th November 2022
 
 **Change log** :
 
@@ -29,7 +29,7 @@ This page will keep you update all the releases of React JS SDK.
 
 ## v0.1.52
 
-**Release Data** : 4th November 2022
+**Release Date** : 4th November 2022
 
 **Change log** :
 
@@ -39,7 +39,7 @@ This page will keep you update all the releases of React JS SDK.
 
 ## v0.1.51
 
-**Release Data** : 5th October 2022
+**Release Date** : 5th October 2022
 
 **Change log** :
 
@@ -53,7 +53,7 @@ This page will keep you update all the releases of React JS SDK.
 
 ## v0.1.50
 
-**Release Data** : 23rd September 2022
+**Release Date** : 23rd September 2022
 
 **Change log** :
 
@@ -83,7 +83,7 @@ _This version will store timeline of the session, session stats and participant 
 
 ## v0.1.49
 
-**Release Data** : 21st August 2022
+**Release Date** : 21st August 2022
 
 **Change log** : None
 
@@ -97,7 +97,7 @@ _This version will store timeline of the session, session stats and participant 
 
 ## v0.1.48
 
-**Release Data** : 11th August 2022
+**Release Date** : 11th August 2022
 
 **Change log** : None
 
@@ -111,7 +111,7 @@ _This version will store timeline of the session, session stats and participant 
 
 ## v0.1.46
 
-**Release Data** : 05th August 2022
+**Release Date** : 05th August 2022
 
 **Change Log:**
 

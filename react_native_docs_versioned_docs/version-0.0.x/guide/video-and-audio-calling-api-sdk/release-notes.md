@@ -9,7 +9,7 @@ This page will keep you update all the releases of React Native SDK.
 
 ## v0.0.38
 
-**Release Data** : 12th November 2022
+**Release Date** : 12th November 2022
 
 **Change log** :
 
@@ -29,7 +29,7 @@ This page will keep you update all the releases of React Native SDK.
 
 ## v0.0.37
 
-**Release Data** : 4th November 2022
+**Release Date** : 4th November 2022
 
 **Change log** :
 
@@ -55,7 +55,7 @@ This page will keep you update all the releases of React Native SDK.
 
 ## v0.0.35
 
-**Release Data** : 23rd September 2022
+**Release Date** : 23rd September 2022
 
 **Change log** :
 

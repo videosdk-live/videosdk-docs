@@ -9,7 +9,7 @@ This page will keep you update all the releases of JavaScript SDK.
 
 ## v0.0.53
 
-**Release Data** : 11th November 2022
+**Release Date** : 11th November 2022
 
 **Change log** :
 
@@ -29,7 +29,7 @@ This page will keep you update all the releases of JavaScript SDK.
 
 ## v0.0.52
 
-**Release Data** : 4th November 2022
+**Release Date** : 4th November 2022
 
 **Change log** :
 
@@ -39,7 +39,7 @@ This page will keep you update all the releases of JavaScript SDK.
 
 ## v0.0.50
 
-**Release Data** : 23rd September 2022
+**Release Date** : 23rd September 2022
 
 **Change log** :
 
@@ -69,7 +69,7 @@ _This version will store timeline of the session, session stats and participant 
 
 ## v0.0.49
 
-**Release Data** : 21st August 2022
+**Release Date** : 21st August 2022
 
 **Change log** : None
 
@@ -81,7 +81,7 @@ _This version will store timeline of the session, session stats and participant 
 
 ## v0.0.47
 
-**Release Data** : 11th August 2022
+**Release Date** : 11th August 2022
 
 **Change log** : None
 
@@ -95,7 +95,7 @@ _This version will store timeline of the session, session stats and participant 
 
 ## v0.0.44
 
-**Release Data** : 05th August 2022
+**Release Date** : 05th August 2022
 
 **Change Log:**
 
