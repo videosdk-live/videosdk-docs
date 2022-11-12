@@ -42,7 +42,7 @@ const onPress = () => {
 **Events associated with `leave()`:**
 
 - Local participant will receive a callback on[`onMeetingLeft`](../../../api/sdk-reference/use-meeting/events#onmeetingleft) of `useMeeting()` hook.
-- All remote participants will receive a callback [`onParticipantLeft`](../../../api/sdk-reference/use-meetingevents#onparticipantleft) with Participant object.
+- All remote participants will receive a callback [`onParticipantLeft`](../../../api/sdk-reference/use-meeting/events#onparticipantleft) with Participant object.
 
 **Event associated with `end()`:**
 
