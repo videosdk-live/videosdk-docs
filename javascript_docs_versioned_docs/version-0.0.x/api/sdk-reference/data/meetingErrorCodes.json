@@ -39,6 +39,16 @@
     "message": "'permissions' provided in the token are invalid, please don't use 'allow_join' or 'allow_mod' with 'ask_join'."
   },
   {
+    "type": "MAX_PARTCIPANT_REACHED",
+    "code": 4009,
+    "message": "You have reached max partcipant limit in a meeting."
+  },
+  {
+    "type": "MAX_SPEAKER_REACHED",
+    "code": 4010,
+    "message": "You have reached max speaker limit in a meeting."
+  },
+  {
     "type": "START_RECORDING_FAILED",
     "code": 4011,
     "message": "Recording start request failed due to an unknown error."
@@ -88,7 +98,6 @@
     "code": 4020,
     "message": "Previous HLS streaming session is being processed, please try again after few seconds!"
   },
-
   {
     "type": "RECORDING_FAILED",
     "code": 5001,
