@@ -20,6 +20,14 @@ slug: getting-started
 
 Video SDK enables easy to use one-to-one and group call support with voice only and voice + video call modes.
 
+:::important
+
+Maximum 50 participants can join in one meeting at a same time.
+
+By default maximum 15 participants can become active speakers at a same time.
+
+:::
+
 ## Features
 
 | Functions            | Description                                                                         |
