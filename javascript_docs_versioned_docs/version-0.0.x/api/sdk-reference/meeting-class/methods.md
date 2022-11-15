@@ -76,7 +76,7 @@ title: Meeting Class Methods
 
 ### disableWebcam()
 
-- It is used to enable self camera.
+- It is used to disable self camera.
 - [`stream-disabled`](../participant-class/events.md#stream-disabled) event will be emitted with [`stream`](../stream-class/introduction.md) object from the event callback, inside that [participant](../participant-class/introduction.md) object.
 
 #### Returns

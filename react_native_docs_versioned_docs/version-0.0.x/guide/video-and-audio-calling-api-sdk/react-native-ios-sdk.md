@@ -73,7 +73,7 @@ $[sudo] gem install cocoapods
 ### Step 5: Include in the Podfile in your react-native ios directory
 
 ```js title="Podfile"
-pod 'react-native-webrtc', :path => '../node_modules/@videosdk.live/react-native-sdk/node_modules/@videosdk.live/react-native-webrtc'
+  pod 'react-native-webrtc', :path => '../node_modules/@videosdk.live/react-native-webrtc'
 ```
 
 ### Step 6: Change platform field of podfile to 11.0 or above it

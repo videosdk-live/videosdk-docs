@@ -55,3 +55,26 @@ ElevatedButton(
 ),
 
 ```
+
+## Events
+
+**Event associated with `pause()`:**
+
+- [`streamPaused`](../../../api/sdk-reference/participant-class/events.md#streamPaused) event will be emitted with [`stream`](../../../api/sdk-reference/stream-class/introduction.md) object from the event callback, inside that [participant](../../../api/sdk-reference/participant-class/introduction.md) object.
+
+**Event associated with `resume()`:**
+
+- [`streamResumed`](../../../api/sdk-reference/participant-class/events.md#streamResumed) event will be emitted with [`stream`](../../../api/sdk-reference/stream-class/introduction.md) object from the event callback, inside that [participant](../../../api/sdk-reference/participant-class/introduction.md) object.
+
+```js
+participant.on(Events.streamPaused, (Stream stream){
+  if (stream.kind === "video") {
+    //particiapnt video stream paused
+  }
+});
+participant.on(Events.streamResumed, (Stream stream){
+  if (stream.kind === "video") {
+    //particiapnt video stream resumed
+  }
+});
+```

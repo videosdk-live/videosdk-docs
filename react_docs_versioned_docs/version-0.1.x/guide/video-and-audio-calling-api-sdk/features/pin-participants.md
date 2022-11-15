@@ -63,9 +63,9 @@ const onPress = () => {
 };
 ```
 
-### pin-state-changed Event
+### onPinStateChanged Event
 
-Whenever any participant got pinned or unpinned by any participant, `pin-state-changed` event will be triggered.
+Whenever any participant got pinned or unpinned by any participant, `onPinStateChanged` event will be triggered.
 
 ```js
 import { useMeeting } from "@videosdk.live/react-sdk";

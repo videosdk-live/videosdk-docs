@@ -7,9 +7,39 @@ pagination_label: Release Notes
 
 This page will keep you update all the releases of JavaScript SDK.
 
+## v0.0.53
+
+**Release Date** : 11th November 2022
+
+**Change log** :
+
+1. Provide `multistream` parameter for sending multiple resolution layers or single resolution layer.
+
+   **Docs** : [Multi Stream](https://docs.videosdk.live/javascript/guide/video-and-audio-calling-api-sdk/features/custom-track/custom-video-track)
+
+2. Provide `video-quality-changed` in Participant class to listen video quality changes.
+
+   **SDK Reference** : [video-quality-changed](https://docs.videosdk.live/javascript/guide/video-and-audio-calling-api-sdk/features/set-participant-video-quality#event)
+
+3. Provide meeting `CONFERENCE` and `VIEWER` mode on initMeeting.
+
+   **SDK Reference** : [Meeting Mode](https://docs.videosdk.live/javascript/api/sdk-reference/initMeeting#mode)
+
+---
+
+## v0.0.52
+
+**Release Date** : 4th November 2022
+
+**Change log** :
+
+- Provide Types support.
+
+---
+
 ## v0.0.50
 
-**Release Data** : 23rd September 2022
+**Release Date** : 23rd September 2022
 
 **Change log** :
 
@@ -39,7 +69,7 @@ _This version will store timeline of the session, session stats and participant 
 
 ## v0.0.49
 
-**Release Data** : 21st August 2022
+**Release Date** : 21st August 2022
 
 **Change log** : None
 
@@ -51,7 +81,7 @@ _This version will store timeline of the session, session stats and participant 
 
 ## v0.0.47
 
-**Release Data** : 11th August 2022
+**Release Date** : 11th August 2022
 
 **Change log** : None
 
@@ -65,7 +95,7 @@ _This version will store timeline of the session, session stats and participant 
 
 ## v0.0.44
 
-**Release Data** : 05th August 2022
+**Release Date** : 05th August 2022
 
 **Change Log:**
 

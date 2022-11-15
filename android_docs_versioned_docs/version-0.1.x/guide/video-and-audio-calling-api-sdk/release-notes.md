@@ -7,6 +7,27 @@ pagination_label: Release Notes
 
 This page will keep you update all the releases of Android SDK.
 
+## v0.1.8
+
+**Release Date** : 10th November 2022
+
+**Change log** :
+
+1. Added recordingState and liveStreamState event.
+
+   **Docs** : [onRecordingStateChanged()](https://docs.videosdk.live/android/api/sdk-reference/meeting-class/meeting-event-listener-class#onrecordingstatechanged)
+
+   **Docs** : [onLivestreamStateChanged()](https://docs.videosdk.live/android/api/sdk-reference/meeting-class/meeting-event-listener-class#onlivestreamstatechanged)
+
+
+**Bug Fix** :
+
+1. Fix camera automatically enable when enable screenshare.
+
+2. Handle crash on not providing empty screenshare notification title, content or icon.
+
+---
+
 ## v0.1.7
 
 **Release Date** : 1st November 2022

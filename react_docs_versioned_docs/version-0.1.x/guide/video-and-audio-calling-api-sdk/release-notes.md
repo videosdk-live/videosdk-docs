@@ -7,9 +7,39 @@ pagination_label: Release Notes
 
 This page will keep you update all the releases of React JS SDK.
 
+## v0.1.53
+
+**Release Date** : 11th November 2022
+
+**Change log** :
+
+1. Provide `multistream` parameter for sending multiple resolution layers or single resolution layer.
+
+   **Docs** : [Multi Stream](https://docs.videosdk.live/react/guide/video-and-audio-calling-api-sdk/features/custom-track/custom-video-track)
+
+2. Provide `onVideoQualityChange` in `useParticipant` hook to listen video quality changes.
+
+   **SDK Reference** : [onVideoQualityChange](https://docs.videosdk.live/react/guide/video-and-audio-calling-api-sdk/features/set-participant-video-quality#event)
+
+3. Provide meeting `CONFERENCE` and `VIEWER` mode on `MeetingProvider` config.
+
+   **SDK Reference** : [Meeting Mode](https://docs.videosdk.live/react/api/sdk-reference/meeting-provider#mode)
+
+---
+
+## v0.1.52
+
+**Release Date** : 4th November 2022
+
+**Change log** :
+
+- Provide Types support.
+
+---
+
 ## v0.1.51
 
-**Release Data** : 5th October 2022
+**Release Date** : 5th October 2022
 
 **Change log** :
 
@@ -19,9 +49,11 @@ This page will keep you update all the releases of React JS SDK.
 
 - Fix `npm ERR! ERESOLVE unable to resolve dependency tree` after installing SDK.
 
+---
+
 ## v0.1.50
 
-**Release Data** : 23rd September 2022
+**Release Date** : 23rd September 2022
 
 **Change log** :
 
@@ -47,9 +79,11 @@ This page will keep you update all the releases of React JS SDK.
 
 _This version will store timeline of the session, session stats and participant stats. This will be available in your [VideoSDK Session Dashboard](https://app.videosdk.live/meetings/sessions?page=1&perPage=20)_
 
+---
+
 ## v0.1.49
 
-**Release Data** : 21st August 2022
+**Release Date** : 21st August 2022
 
 **Change log** : None
 
@@ -63,7 +97,7 @@ _This version will store timeline of the session, session stats and participant 
 
 ## v0.1.48
 
-**Release Data** : 11th August 2022
+**Release Date** : 11th August 2022
 
 **Change log** : None
 
@@ -77,7 +111,7 @@ _This version will store timeline of the session, session stats and participant 
 
 ## v0.1.46
 
-**Release Data** : 05th August 2022
+**Release Date** : 05th August 2022
 
 **Change Log:**
 

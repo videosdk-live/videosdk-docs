@@ -7,7 +7,7 @@ pagination_label: ParticipantEventListener Class
 
 <div class="sdk-api-ref-only-h4">
 
-### implementation
+### Implementation
 
 - You can implement all the methods of `ParticipantEventListener` abstract Class and add the listener to `Participant` class using the `addEventListener()` method of `Participant` Class.
 

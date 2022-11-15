@@ -15,26 +15,22 @@ sidebar_position: 1
 slug: set-participant-video-quality
 ---
 
-# Set Participant Video Quality
+# Set Video Quality
 
-This feature allows participants to set other participant's video quality during the meeting.
+- Set Video Quality feature allows participants to set other participant's video quality during the meeting.
 
-## Set Quality
-
-- `setQuality` method will accept `low`, `med` or `high` as string parameter.
+- `Participant` class provides the `setQuality()` method to set participant's video quality.
 
 ```js
-const { setQuality } = useParticipant(participantId);
+const participant = meeting.participants.get("PARTICIPANT_ID");
 
 const onPressed = () => {
-  // Low Quality
-  setQuality("low");
-
-  // Medium Quality
-  setQuality("med");
-
-  // High Quality
-  setQuality("high");
+  // Set low quality
+  participant.setQuality("low");
+  // Set medium quality
+  participant.setQuality("med");
+  // Set high quality
+  participant.setQuality("high");
 };
 ```
 
@@ -46,23 +42,17 @@ If the quality is set to high, but there is not enough netowrk bandwidth availab
 
 ## Event
 
-### onVideoQualityChanged()
+### video-quality-changed
 
-- `onVideoQualityChanged()` is a callback which gets triggered whenever a participant's video quality changes.
+- `video-quality-changed` is a callback which gets triggered whenever a participant's video quality changes.
 
 - `currentQuality` and `prevQuality` can have values `HIGH` | `MEDIUM` | `LOW`.
 
 #### Example
 
 ```js
-function onVideoQualityChanged(data) {
+participant.on("video-quality-changed", (data) => {
   const { currentQuality, prevQuality } = data;
-}
-const {
-  displayName
-  ...
-} = useParticipant(participantId,{
-  onVideoQualityChanged,
-  ...
+  //
 });
 ```

@@ -167,6 +167,9 @@ const meeting = VideoSDK.initMeeting({
   micEnabled: "<Flag-to-enable-mic>", // optional, default: true
   webcamEnabled: "<Flag-to-enable-webcam>", // optional, default: true
   maxResolution: "<Maximum-resolution>", // optional, default: "hd"
+  customVideoTrack: "<Video-track>", // optional
+  customMicrophoneTrack: "<Microphone-track>", // optional
+   multiStream: true // optional, default: true
 });
 ```
 
@@ -194,4 +197,21 @@ const onPress = () => {
   // Joining Meeting
   meeting?.join();
 };
+```
+
+## Events
+
+Following events are emitted on the `meeting` when it is successfully joined.
+
+- Local Participant will receive a [`meeting-joined`](../../../api/sdk-reference/meeting-class/events.md#meeting-joined) event when successfully joined.
+- Remote Participant will receive a [`participant-joined`](../../../api/sdk-reference/meeting-class/events.md#participant-joined) event with the newly joined [`Participant`](../../../api/sdk-reference/participant-class/introduction.md) object from the event callback.
+
+```js
+meeting.on("meeting-joined", () => {
+  console.log("Meeting Joined Successfully");
+});
+
+meeting.on("participant-joined", (participant) => {
+  console.log("New Participant Joined: ", participant.id);
+});
 ```
