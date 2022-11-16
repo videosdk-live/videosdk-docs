@@ -7,6 +7,14 @@ pagination_label: Release Notes
 
 This page will keep you update all the releases of Prebuilt SDK.
 
+## v0.3.22
+
+**Release Date** : 16th November 2022
+
+**Change log** :
+
+1. Limit increased for the participants who joins as a mode `VIEWER`.
+
 ## v0.3.21
 
 **Release Date** : 3rd October 2022
