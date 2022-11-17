@@ -20,11 +20,11 @@ slug: getting-started
 
 Video SDK enables easy to use one-to-one and group call support with voice only and voice + video call modes.
 
-:::important
+:::Default Quota
 
-Maximum 50 participants can join in one meeting at a same time.
-
-By default maximum 15 participants can become active speakers at a same time.
+A maximum of 50 participants can be added in one room.
+And a maximum of 15 videos can be shown in a single meeting.
+If your application necessitates a higher quota, please contact us [https://www.videosdk.live/contact]
 
 :::
 
