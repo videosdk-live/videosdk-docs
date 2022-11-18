@@ -7,6 +7,20 @@ pagination_label: Release Notes
 
 This page will keep you update all the releases of React Native SDK.
 
+## v0.0.39
+
+**Release Date** : 18th November 2022
+
+**Change log** : None
+
+**Bug Fix** :
+
+- Resolve `_reactNative.DeviceEventEmitter.removeListener is not a function` error after leave meeting.
+
+- Resolve Foreground Notification issue in Android 12.
+
+---
+
 ## v0.0.38
 
 **Release Date** : 12th November 2022
