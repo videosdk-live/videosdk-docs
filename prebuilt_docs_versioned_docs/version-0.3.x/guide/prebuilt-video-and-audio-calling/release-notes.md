@@ -7,6 +7,14 @@ pagination_label: Release Notes
 
 This page will keep you update all the releases of Prebuilt SDK.
 
+## v0.3.23
+
+**Release Date** : 17th November 2022
+
+**Change log** :
+
+1. If `maintainLandscapeVideoAspectRatio` is set to true , then it will maintain aspect ratio of webcam streams for all participants inside all meeting layouts.
+
 ## v0.3.22
 
 **Release Date** : 16th November 2022
