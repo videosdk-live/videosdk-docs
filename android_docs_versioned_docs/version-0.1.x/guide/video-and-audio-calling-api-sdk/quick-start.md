@@ -113,7 +113,7 @@ dependencies {
 
 :::note
 
-If your project has set `android.useAndroidX=true`, but configuration `:app:debugRuntimeClasspath` still contains legacy support libraries, then set `android.enableJetifier=true` in the `gradle.properties` file to migrate your project to AndroidX.
+If your project has set `android.useAndroidX=true`, then set `android.enableJetifier=true` in the `gradle.properties` file to migrate your project to AndroidX and avoid duplicate class conflict.
 
 :::
 
