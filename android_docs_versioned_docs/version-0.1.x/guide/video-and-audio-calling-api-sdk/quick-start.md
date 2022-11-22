@@ -60,9 +60,9 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 <Tabs
-defaultValue="2021.1.1"
+defaultValue=">=2021.1.1"
 groupId={"android-studio-version"}
-values={[{label: 'Android Studio Version < 2021.1.1', value: '<2021.1.1'},{label: 'Android Studio Version 2021.1.1', value: '2021.1.1'},]}>
+values={[{label: 'Android Studio Version < 2021.1.1', value: '<2021.1.1'},{label: 'Android Studio Version >= 2021.1.1', value: '>=2021.1.1'},]}>
 
 <TabItem value="<2021.1.1">
 
@@ -70,8 +70,9 @@ values={[{label: 'Android Studio Version < 2021.1.1', value: '<2021.1.1'},{label
 allprojects {
   repositories {
     // ...
-    maven { url 'https://jitpack.io' }
+    google()
     mavenCentral()
+    maven { url 'https://jitpack.io' }
     maven { url "https://maven.aliyun.com/repository/jcenter" }
   }
 }
@@ -79,14 +80,15 @@ allprojects {
 
 </TabItem>
 
-<TabItem value="2021.1.1">
+<TabItem value=">=2021.1.1">
 
 ```js title="settings.gradle"
 dependencyResolutionManagement{
   repositories {
     // ...
-    maven { url 'https://jitpack.io' }
+    google()
     mavenCentral()
+    maven { url 'https://jitpack.io' }
     maven { url "https://maven.aliyun.com/repository/jcenter" }
   }
 }
@@ -108,6 +110,13 @@ dependencies {
   // other app dependencies
   }
 ```
+
+:::note
+
+If your project has set `android.useAndroidX=true`, then set `android.enableJetifier=true` in the `gradle.properties` file to migrate your project to AndroidX and avoid duplicate class conflict.
+
+:::
+
 
 ### Add permissions into your project
 
@@ -140,10 +149,10 @@ Your project structure should look like this.
    app
    ├── java
    │    ├── packagename
-   │         ├── JoinActivity.java
-   │         ├── MainApplication.java
-   │         ├── MeetingActivity.java
-   │         ├── ParticipantAdapter.java
+   │         ├── JoinActivity
+   │         ├── MainApplication
+   │         ├── MeetingActivity
+   │         ├── ParticipantAdapter
    ├── res
    │    ├── layout
    │    │    ├── activity_join.xml
@@ -217,6 +226,7 @@ public class MainApplication extends Application {
 
 ### Step 2: Creating Joining Screen
 
+Create a new Activity named `JoinActivity`.
 #### Creating UI
 
 The Joining screen will include :
@@ -256,8 +266,7 @@ In `/app/res/layout/activity_join.xml` file, replace the content with the follow
     <EditText
       android:id="@+id/etMeetingId"
       android:layout_width="250dp"
-      android:layout_height="wrap_content"
-      android:textColor="@color/white" />
+      android:layout_height="wrap_content" />
   </com.google.android.material.textfield.TextInputLayout>
   <Button
     android:id="@+id/btnJoinMeeting"
@@ -269,9 +278,9 @@ In `/app/res/layout/activity_join.xml` file, replace the content with the follow
 
 #### Integration of Create Meeting API
 
-1. Declare the variables `sampleToken` which will hold the generated token from the [VideoSDK dashboard](https://app.videosdk.live/api-keys). This token will use in VideoSDK config as well as generating meetingId.
+1. Create field `sampleToken` in `JoinActivity` which will hold the generated token from the [VideoSDK dashboard](https://app.videosdk.live/api-keys). This token will use in VideoSDK config as well as generating meetingId.
 
-**Note** : This generated token is only valid for ten minutes, if you want to regenerate you can do it as well by clicking the same link.
+**Note** : This generated token is only valid for seven days, if you want to regenerate you can do it as well by clicking the same link.
 
 <Tabs
 defaultValue="Kotlin"
@@ -281,8 +290,15 @@ values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
 <TabItem value="Kotlin">
 
 ```js title="JoinActivity.kt"
-//Replace with the token you generated from the VideoSDK Dashboard
-var sampleToken =""
+class JoinActivity : AppCompatActivity() {
+
+  //Replace with the token you generated from the VideoSDK Dashboard
+  private var sampleToken = ""
+
+  override fun onCreate(savedInstanceState: Bundle?) {
+    //...
+  }
+}
 ```
 
 </TabItem>
@@ -290,8 +306,16 @@ var sampleToken =""
 <TabItem value="Java">
 
 ```java title="JoinActivity.java"
-//Replace with the token you generated from the VideoSDK Dashboard
-String sampleToken = "";
+public class JoinActivity extends AppCompatActivity {
+
+  //Replace with the token you generated from the VideoSDK Dashboard
+  private String sampleToken =""; 
+
+  @Override
+  protected void onCreate(Bundle savedInstanceState) {
+    //...
+  }
+}
 ```
 
 </TabItem>
@@ -312,6 +336,10 @@ values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
 
 ```js title="JoinActivity.kt"
 class JoinActivity : AppCompatActivity() {
+
+   //Replace with the token you generated from the VideoSDK Dashboard
+   private var sampleToken = "" 
+
    override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_join)
@@ -342,6 +370,10 @@ class JoinActivity : AppCompatActivity() {
 
 ```java title="JoinActivity.java"
 public class JoinActivity extends AppCompatActivity {
+
+  //Replace with the token you generated from the VideoSDK Dashboard
+  private String sampleToken =""; 
+
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
@@ -386,31 +418,35 @@ values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
 class JoinActivity : AppCompatActivity() {
   //...onCreate
  private fun createMeeting(token: String) {
-        AndroidNetworking.post("https://api.videosdk.live/v1/meetings")
-            .addHeaders("Authorization", token)
-            .build()
-            .getAsJSONObject(object : JSONObjectRequestListener {
-                override fun onResponse(response: JSONObject) {
-                    try {
-                        val meetingId = response.getString("meetingId")
-                        val intent = Intent(this@JoinActivity, MeetingActivity::class.java)
-                        intent.putExtra("token", sampleToken)
-                        intent.putExtra("meetingId", meetingId)
-                        startActivity(intent)
-                    } catch (e: JSONException) {
-                        e.printStackTrace()
-                    }
-                }
+    // we will make an API call to VideoSDK Server to get a roomId
+    AndroidNetworking.post("https://api.videosdk.live/v2/rooms")
+      .addHeaders("Authorization", token) //we will pass the token in the Headers
+      .build()
+      .getAsJSONObject(object : JSONObjectRequestListener {
+          override fun onResponse(response: JSONObject) {
+              try {
+                  // response will contain `roomId`
+                  val meetingId = response.getString("roomId")
 
-                override fun onError(anError: ANError) {
-                    anError.printStackTrace()
+                  // starting the MeetingActivity with received roomId and our sampleToken
+                  val intent = Intent(this@JoinActivity, MeetingActivity::class.java)
+                  intent.putExtra("token", sampleToken)
+                  intent.putExtra("meetingId", meetingId)
+                  startActivity(intent)
+              } catch (e: JSONException) {
+                  e.printStackTrace()
+              }
+          }
+
+          override fun onError(anError: ANError) {
+              anError.printStackTrace()
                     Toast.makeText(
                         this@JoinActivity, anError.message,
                         Toast.LENGTH_SHORT
                     ).show()
-                }
-            })
-    }
+          }
+      })
+  }
 }
 ```
 </TabItem>
@@ -422,39 +458,45 @@ public class JoinActivity extends AppCompatActivity {
   //...onCreate
 
   private void createMeeting(String token) {
-    // we will make an API call to VideoSDK Server to get a meetingId
-    AndroidNetworking.post("https://api.videosdk.live/v1/meetings")
-      .addHeaders("Authorization", token) //we will pass the token in the Headers
-      .build()
-      .getAsJSONObject(new JSONObjectRequestListener() {
-        @Override
-        public void onResponse(JSONObject response) {
-          try {
-            // resposne will contain `meetingId`
-            final String meetingId = response.getString("meetingId");
+      // we will make an API call to VideoSDK Server to get a roomId
+      AndroidNetworking.post("https://api.videosdk.live/v2/rooms")
+        .addHeaders("Authorization", token) //we will pass the token in the Headers
+        .build()
+        .getAsJSONObject(new JSONObjectRequestListener() {
+            @Override
+            public void onResponse(JSONObject response) {
+                try {
+                    // response will contain `roomId`
+                    final String meetingId = response.getString("roomId");
 
-            // starting the MeetingActivity with recieved meetingId and our sampleToken
-            Intent intent = new Intent(JoinActivity.this, MeetingActivity.class);
-            intent.putExtra("token", sampleToken);
-            intent.putExtra("meetingId", meetingId);
-            startActivity(intent);
-          } catch (JSONException e) {
-            e.printStackTrace();
-          }
-        }
+                    // starting the MeetingActivity with received roomId and our sampleToken
+                    Intent intent = new Intent(JoinActivity.this, MeetingActivity.class);
+                    intent.putExtra("token", sampleToken);
+                    intent.putExtra("meetingId", meetingId);
+                    startActivity(intent);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
 
-        @Override
-        public void onError(ANError anError) {
-          anError.printStackTrace();
-          Toast.makeText(JoinActivity.this, anError.getMessage(), Toast.LENGTH_SHORT).show();
-        }
-    });
+            @Override
+            public void onError(ANError anError) {
+                anError.printStackTrace();
+                Toast.makeText(JoinActivity.this, anError.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
   }
 }
 ```
 </TabItem>
 
 </Tabs>
+
+:::note
+
+Don't confuse with Room and Meeting keyword, both are same thing 😃
+
+::: 
 
 4. Our App is completely based on audio and video commutation, that's why we need to ask for runtime permissions `RECORD_AUDIO` and `CAMERA`. So, we will implement permission logic on `JoinActivity`.
 
@@ -605,7 +647,7 @@ In `/app/res/layout/activity_meeting.xml` file, replace the content with the fol
 After getting token and meetigId from `JoinActivity`,
 
 1. Configure **VideoSDK** with token.
-2. Initialize the meeting with required params such as `meetingId`, `participantName`, `micEnabled`, `webcamEnabled`
+2. Initialize the meeting with required params such as `meetingId`, `participantName`, `micEnabled`, `webcamEnabled`,`participantId` and map of `CustomStreamTrack`.
 3. Add `MeetingEventListener` for listening events such as **Meeting Join/Left** and **Participant Join/Left**.
 4. Join the room with `meeting.join()` method.
 
@@ -780,7 +822,6 @@ class MeetingActivity : AppCompatActivity() {
 
     // toggle webcam
     findViewById<View>(R.id.btnWebcam).setOnClickListener { view: View? ->
-      // TODO : How we are managing webcamEnabled and micEnabled variable
       if (webcamEnabled) {
         // this will disable the local participant webcam
         meeting!!.disableWebcam()
@@ -824,7 +865,7 @@ public class MeetingActivity extends AppCompatActivity {
       if (micEnabled) {
         // this will mute the local participant's mic
         meeting.muteMic();
-        Toast.makeText(MeetingActivity.this, "Mic Muted", Toast.LENGTH_SHORT).show();
+        Toast.makeText(MeetingActivity.this, "Mic Disabled", Toast.LENGTH_SHORT).show();
       } else {
         // this will unmute the local participant's mic
         meeting.unmuteMic();
@@ -835,7 +876,6 @@ public class MeetingActivity extends AppCompatActivity {
 
     // toggle webcam
     findViewById(R.id.btnWebcam).setOnClickListener(view -> {
-      // TODO : How we are managing webcamEnabled and micEnabled variable
       if (webcamEnabled) {
         // this will disable the local participant webcam
         meeting.disableWebcam();
@@ -878,33 +918,29 @@ We will be showing the list of participant in a recycler view.
 ```xml title="item_remote_peer.xml"
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-  xmlns:app="http://schemas.android.com/apk/res-auto"
-  xmlns:tools="http://schemas.android.com/tools"
-  android:layout_width="match_parent"
-  android:layout_height="wrap_content"
-  tools:layout_height="200dp">
-  <ImageView
-    android:layout_width="100dp"
-    android:layout_height="100dp"
-    android:layout_gravity="center"
-    app:tint="@color/white" />
-  <org.webrtc.SurfaceViewRenderer
-    android:id="@+id/svrParticipant"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:visibility="gone" />
-  <FrameLayout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_gravity="bottom"
-    android:background="@color/black">
-    <TextView
-      android:id="@+id/tvName"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_gravity="center"
-      android:textColor="@color/white" />
-  </FrameLayout>
+    tools:layout_height="200dp"
+    android:background="@color/cardview_dark_background">
+    <org.webrtc.SurfaceViewRenderer
+        android:id="@+id/svrParticipant"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="@color/black">
+        <TextView
+            android:id="@+id/tvName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textColor="@color/white" />
+    </FrameLayout>
 </FrameLayout>
 ```
 
@@ -1041,6 +1077,7 @@ class ParticipantAdapter(meeting: Meeting) :
     })
   }
 
+  // replace getItemCount() method with following.
   // this method returns the size of total number of participants
   override fun getItemCount(): Int {
         return participants.size
@@ -1090,6 +1127,7 @@ public class ParticipantAdapter extends RecyclerView.Adapter<ParticipantAdapter.
     });
   }
 
+  // replace getItemCount() method with following.
   // this method returns the size of total number of participants
   @Override
   public int getItemCount() {
@@ -1115,6 +1153,7 @@ values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
 class ParticipantAdapter(meeting: Meeting) :
     RecyclerView.Adapter<ParticipantAdapter.PeerViewHolder>() {
 
+  // replace onBindViewHolder() method with following.
   override fun onBindViewHolder(holder: PeerViewHolder, position: Int) {
     val participant = participants[position]
 
@@ -1163,6 +1202,7 @@ class ParticipantAdapter(meeting: Meeting) :
 ```java title="PartipantAdapter.java"
 public class ParticipantAdapter extends RecyclerView.Adapter<ParticipantAdapter.PeerViewHolder> {
 
+  // replace onBindViewHolder() method with following.
   @Override
   public void onBindViewHolder(@NonNull PeerViewHolder holder, int position) {
     Participant participant = participants.get(position);
