@@ -770,4 +770,32 @@ const {
 });
 ```
 
+---
+
+### onParticipantModeChanged()
+
+- This event will be triggered when mode gets chanded.
+- It will pass **`mode`**, as an event callback parameter.
+
+#### Event callback parameters
+
+- **data**: { **mode**: String }
+  - **mode**: String
+
+#### Example
+
+```javascript
+function onParticipantModeChanged(data) {
+  const { mode } = data;
+}
+
+const {
+  meetingId
+  ...
+} = useMeeting({
+  onParticipantModeChanged,
+  ...
+});
+```
+
 </div>
