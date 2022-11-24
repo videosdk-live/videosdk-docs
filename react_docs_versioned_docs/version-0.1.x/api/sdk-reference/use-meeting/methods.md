@@ -471,4 +471,19 @@ handleGetWebcams();
 
 - [`onConnectionOpen()`](./events#onconnectionopen) event will trigger to all the participant.
 
+---
+
+### changeMode()
+
+- It is used to change the mode.
+- You can toggle between the `CONFERENCE` and `VIEWER`mode .
+
+#### Parameters
+
+- **mode**: String
+
+#### Returns
+
+- _`void`_
+
 </div>

@@ -472,4 +472,19 @@ meeting.on("meeting-any-event", listener);
 meeting.off("meeting-any-event", listener);
 ```
 
+---
+
+### changeMode()
+
+- It is used to change the mode.
+- You can toggle between the `CONFERENCE` and `VIEWER`mode .
+
+#### Parameters
+
+- **mode**: String
+
+#### Returns
+
+- _`void`_
+
 </div>
