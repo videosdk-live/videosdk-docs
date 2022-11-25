@@ -7,6 +7,26 @@ pagination_label: Release Notes
 
 This page will keep you update all the releases of Flutter SDK.
 
+## v1.0.8
+
+**Release Date** : 25th Nov 2022
+
+**Change log** :
+
+1. Add new flag [`multiStream`](../../api/sdk-reference/videosdk-class/methods.md#parameters) for `createRoom()`.
+
+---
+
+## v1.0.7
+
+**Release Date** : 18th Nov 2022
+
+**Change log** :
+
+1. Updated Gradle Version for Android.
+
+---
+
 ## v1.0.6
 
 **Release Date** : 1st Nov 2022

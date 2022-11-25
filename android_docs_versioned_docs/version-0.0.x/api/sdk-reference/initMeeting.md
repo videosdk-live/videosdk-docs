@@ -110,6 +110,14 @@ Please refer this [documentation](/api-reference/realtime-communication/create-r
   - type : `String` or `null`
   - `REQUIRED`
 
+### multiStream
+
+- It will specifiy if the stream should send multiple resolution layers or single resolution layer.
+
+  - type: `boolean`
+  - `REQUIRED`
+  - default: true
+
 ### customTracks
 
 - If you want to use custom tracks from start of the meeting, you can pass map of custom tracks in this paramater.
