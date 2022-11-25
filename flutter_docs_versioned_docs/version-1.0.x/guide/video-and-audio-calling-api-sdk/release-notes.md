@@ -13,7 +13,9 @@ This page will keep you update all the releases of Flutter SDK.
 
 **Change log** :
 
-1. Add new flag [`multiStream`](../../api/sdk-reference/videosdk-class/methods.md#parameters) for `createRoom()`.
+1. Provide `multistream` parameter for sending multiple resolution layers or single resolution layer.
+
+   **Docs** : [Multi Stream](../../api/sdk-reference/videosdk-class/methods.md#parameters)
 
 ---
 
