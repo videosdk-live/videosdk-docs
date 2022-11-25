@@ -7,6 +7,14 @@ pagination_label: Release Notes
 
 This page will keep you update all the releases of JavaScript SDK.
 
+## v0.0.54
+
+**Release Date** : 25th November 2022
+
+**Change log** :
+
+1. To obtain screen sharing statistics, the `Participant` class now has a [`getShareStats`](../../api/sdk-reference/participant-class/methods.md#getsharestats) function.
+
 ## v0.0.53
 
 **Release Date** : 11th November 2022

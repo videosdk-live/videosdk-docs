@@ -55,12 +55,25 @@ Above mentioned encoder configurations are valid for both, landscape as well as 
   - required: `true`
   - Pass the Android Context for this parameter.
 
+- **multiStream**
+
+  - type: `boolean`
+  - required: `true`
+  - default: true
+  - It will specifiy if the stream should send multiple resolution layers or single resolution layer.
+
+    :::info
+
+    - For meetings with fewer than or equal to four participants, setting `multiStream:false` is regarded as best practice.
+    - This parameter is only available from `v0.0.26`.
+
+    :::
+
 - **observer**:
 
   - type: `CapturerObserver`
   - required: `false`
-  - If you want to use video filter from external SDK(e.g., [Banuba](https://www.banuba.com/)) then pass instance of  `CapturerObserver`  in this parameter.
-
+  - If you want to use video filter from external SDK(e.g., [Banuba](https://www.banuba.com/)) then pass instance of `CapturerObserver` in this parameter.
 
 :::note
 
@@ -85,7 +98,7 @@ values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
 <TabItem value="Kotlin">
 
 ```javascript
-val videoCustomTrack: CustomStreamTrack = VideoSDK.createCameraVideoTrack("h240p_w320p", "front", this)                
+val videoCustomTrack: CustomStreamTrack = VideoSDK.createCameraVideoTrack("h240p_w320p", "front", false, this)
 ```
 
 </TabItem>
@@ -93,7 +106,7 @@ val videoCustomTrack: CustomStreamTrack = VideoSDK.createCameraVideoTrack("h240p
 <TabItem value="Java">
 
 ```javascript
-CustomStreamTrack customStreamTrack = VideoSDK.createCameraVideoTrack("h240p_w320p", "front",this);                
+CustomStreamTrack customStreamTrack = VideoSDK.createCameraVideoTrack("h240p_w320p", "front", false,this);
 ```
 
 </TabItem>
@@ -105,7 +118,6 @@ CustomStreamTrack customStreamTrack = VideoSDK.createCameraVideoTrack("h240p_w32
 ### Custom Track while initializing the meeting
 
 If you are passing `webcamEnabled: true` in the `initMeeting` of `VideoSDK` and want to use custom tracks from start of the meeting, you can pass custom track in the `initMeeting` as shown below.
-
 
 <Tabs
 defaultValue="Kotlin"
@@ -125,11 +137,13 @@ override fun onCreate(savedInstanceState: Bundle?) {
 
      // create a new meeting instance
     val meeting = VideoSDK.initMeeting(
-      this@MainActivity, meetingId, participantName, 
-      //MicEnabled 
-      true,  
+      this@MainActivity, meetingId, participantName,
+      //MicEnabled
+      true,
       //WebcamEnabled , If true, it will use the passed custom track to turn webcam on
-      true,  
+      true,
+      //multiStream
+      false,
       // ParticipantId
       null,
       //Pass the custom tracks here
@@ -159,6 +173,8 @@ protected void onCreate(Bundle savedInstanceState) {
         true,
         //WebcamEnabled , If true, it will use the passed custom track to turn webcam on
         true,
+        //multiStream
+        false,
         // ParticipantId
         null,
         //Pass the custom tracks here
