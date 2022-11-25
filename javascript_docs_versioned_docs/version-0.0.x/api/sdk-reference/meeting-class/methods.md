@@ -478,6 +478,8 @@ meeting.off("meeting-any-event", listener);
 
 - It is used to change the mode.
 - You can toggle between the `CONFERENCE` and `VIEWER`mode .
+  - `CONFERENCE`: Both audio and video streams will be produced and consumed in this mode.
+  - `VIEWER`: Audio and video streams will not be produced or consumed in this mode.
 
 #### Parameters
 
