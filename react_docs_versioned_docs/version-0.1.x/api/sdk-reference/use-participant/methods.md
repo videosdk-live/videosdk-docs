@@ -217,7 +217,7 @@ To view the metrics for the complete meeting using the stats API documented [her
 
 :::info
 
-If you are getting `rtt` greater than 300ms, try using a different region which is nearest to your user. To know more about changing region [visit here](../../../../../api_reference_docs_versioned_docs/version-v2/realtime-communication/create-room.md).
+If you are getting `rtt` greater than 300ms, try using a different region which is nearest to your user. To know more about changing region [visit here](/api-reference/realtime-communication/create-room).
 
 :::
 

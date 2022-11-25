@@ -122,7 +122,7 @@ To view the metrics for the complete meeting using the stats API documented [her
 
 :::info
 
-If you are getting `roundTripTime` greater than 300ms, try using a different region which is nearest to your user. To know more about changing region [visit here](../../../../../api_reference_docs_versioned_docs/version-v2/realtime-communication/create-room.md).
+If you are getting `roundTripTime` greater than 300ms, try using a different region which is nearest to your user. To know more about changing region [visit here](/api-reference/realtime-communication/create-room).
 
 If you are getting high packet loss, try using the `setViewport()` for better experience. To know more about setViewport() [visit here](/javascript/guide/video-and-audio-calling-api-sdk/features/set-viewport)
 
@@ -185,7 +185,7 @@ To view the metrics for the complete meeting using the stats API documented [her
 
 :::info
 
-If you are getting `roundTripTime` greater than 300ms, try using a different region which is nearest to your user. To know more about changing region [visit here](../../../../../api_reference_docs_versioned_docs/version-v2/realtime-communication/create-room.md).
+If you are getting `roundTripTime` greater than 300ms, try using a different region which is nearest to your user. To know more about changing region [visit here](/api-reference/realtime-communication/create-room).
 
 :::
 
