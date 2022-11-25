@@ -68,7 +68,7 @@ Signup on the VideoSDK website to get a key pair for SDK authentication. Your **
 Include this in your HTML file
 
 ```html title="index.html"
-<script src="https://sdk.videosdk.live/js-sdk/0.0.50/videosdk.js"></script>
+<script src="https://sdk.videosdk.live/js-sdk/0.0.54/videosdk.js"></script>
 ```
 
 ---
