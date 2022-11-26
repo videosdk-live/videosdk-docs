@@ -51,6 +51,13 @@ title: VideoSDK Class Methods
   - Whether `camera` of the participant will be `on`, while joining the room. If it is set to `false`, then camera of that participant will be `disabled` by default, but can be `enabled` or `disabled`
   - Default value of `camEnabled` is true.
 
+- multiStream
+
+  - type: [`bool`](https://api.dart.dev/stable/2.15.1/dart-core/bool-class.html)
+  - `OPTIONAL`
+  - Default value is `true`.
+  - It will specifiy if the stream should send multiple resolution layers or single resolution.
+
 - participantId
 
   - type: [`String`](https://api.dart.dev/stable/2.15.1/dart-core/String-class.html)

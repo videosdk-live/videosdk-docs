@@ -24,6 +24,8 @@ We have depicted a specific error name with code and message in the below table.
 | **ACCOUNT_DISCONTINUED**           | 4007 | _Server will respond you with specific message._                                                                      |
 | **INVALID_PERMISSIONS**            | 4008 | `permissions` provided in the token are invalid, please don't use `allow_join` or `allow_mod` with `ask_join`.        |
 | **MAX_PARTICIPANT_REACHED**        | 4009 | You have reached max partcipant limit in a meeting to increase contact at support@videosdk.live :)                    |
+| **MAX_PARTCIPANT_REACHED**         | 4009 | You have reached max partcipant limit in a meeting.                                                                   |
+| **MAX_SPEAKER_REACHED**            | 4010 | You have reached max speaker limit in a meeting.                                                                      |
 | **START_RECORDING_FAILED**         | 4011 | Recording start request failed due to an unknown error.                                                               |
 | **STOP_RECORDING_FAILED**          | 4012 | Recording stop request failed due to an unknown error.                                                                |
 | **START_LIVESTREAM_FAILED**        | 4013 | Livestream start request failed due to an unknown error.                                                              |
