@@ -77,4 +77,11 @@ title: userPatricipant Hook Properties
 
 ---
 
+### mode
+
+- type : `string`
+- `mode` represents the mode of the Participant
+
+---
+
 </div>
