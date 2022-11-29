@@ -7,6 +7,16 @@ pagination_label: Release Notes
 
 This page will keep you update all the releases of React Native SDK.
 
+## v0.0.40
+
+**Release Date** : 29th November 2022
+
+**Change log** : 
+
+- Update `WebRTC` dependency to `v1.106.1`
+
+---
+
 ## v0.0.39
 
 **Release Date** : 18th November 2022
