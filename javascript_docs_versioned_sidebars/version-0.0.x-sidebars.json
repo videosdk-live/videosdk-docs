@@ -37,7 +37,6 @@
         "guide/video-and-audio-calling-api-sdk/features/record-meeting",
         "guide/video-and-audio-calling-api-sdk/features/speaker-indication",
         "guide/video-and-audio-calling-api-sdk/features/pin-participants",
-        "guide/video-and-audio-calling-api-sdk/features/remove-participant",
         "guide/video-and-audio-calling-api-sdk/features/error-event"
       ],
       "collapsed": true
