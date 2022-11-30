@@ -1,6 +1,6 @@
-# IOS Setup
+# iOS Setup
 
-## Follow below steps if you are setting up for IOS
+## Follow below steps if you are setting up for iOS
 
 ### Step 1: Install incall manager
 
@@ -35,8 +35,8 @@ pod ‘react-native-webrtc’, :path => ‘../node_modules/@videosdk.live/react-
 
 ### Step 5: Change your platform version
 
-You have change platform field of podfile to 11.0 or above it, as react-native-webrtc doesn’t support IOS < 11
-platform :ios, ‘11.0’
+You have change platform field of podfile to 12.0 or above it, as react-native-webrtc doesn’t support iOS < 12
+platform :ios, ‘12.0’
 
 ### Step 6: Install pods
 
@@ -52,7 +52,7 @@ Add “libreact-native-webrtc.a” in Link Binary with libraries. In target of m
 
 ### Step 8: Declare permissions in Info.plist :
 
-Add following lines to info.plist (project folder/IOS/projectname/info.plist):
+Add following lines to info.plist (project folder/ios/projectname/info.plist):
 
 ```sh title="Update permissions"
 	<key>NSCameraUsageDescription</key>

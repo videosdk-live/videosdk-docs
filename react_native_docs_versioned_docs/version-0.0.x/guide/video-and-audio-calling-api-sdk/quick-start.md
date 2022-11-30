@@ -2,7 +2,7 @@
 title: Quick Start
 hide_title: false
 hide_table_of_contents: false
-description: Video SDK enables the opportunity to integrate native IOS, Android & Web SDKs to add live video & audio conferencing to your applications.
+description: Video SDK enables the opportunity to integrate native iOS, Android & Web SDKs to add live video & audio conferencing to your applications.
 sidebar_label: Start a Voice / Video Call
 pagination_label: Quick Start
 keywords:
@@ -18,7 +18,7 @@ slug: quick-start
 
 import Mermaid from '@theme/Mermaid';
 
-VideoSDK enables the opportunity to integrate video & audio calling to Web, Android, IOS applications. It provides Programmable SDKs and REST APIs to build scalable video conferencing applications.
+VideoSDK enables the opportunity to integrate video & audio calling to Web, Android, iOS applications. It provides Programmable SDKs and REST APIs to build scalable video conferencing applications.
 
 This guide will get you running with the VideoSDK video & audio calling in minutes.
 
@@ -232,8 +232,8 @@ pod ‘react-native-webrtc’, :path => ‘../node_modules/@videosdk.live/react-
 
 5. Change your platform version
 
-You have change platform field of podfile to 11.0 or above it, as react-native-webrtc doesn’t support IOS < 11
-platform :ios, ‘11.0’
+You have change platform field of podfile to 12.0 or above it, as react-native-webrtc doesn’t support iOS < 12
+platform :ios, ‘12.0’
 
 6. Install pods
 
@@ -249,9 +249,9 @@ Add “libreact-native-webrtc.a” in Link Binary with libraries. In target of m
 
 8. Declare permissions in Info.plist :
 
-Add following lines to info.plist (project folder/IOS/projectname/info.plist):
+Add following lines to info.plist (project folder/ios/projectname/info.plist):
 
-```html title="IOS/projectname/info.plist"
+```html title="ios/projectname/info.plist"
 <key>NSCameraUsageDescription</key>
 <string>Camera permission description</string>
 <key>NSMicrophoneUsageDescription</key>
