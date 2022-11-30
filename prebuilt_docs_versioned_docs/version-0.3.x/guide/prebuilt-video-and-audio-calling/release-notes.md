@@ -17,6 +17,8 @@ This page will keep you update all the releases of Prebuilt SDK.
 
 2. By passing the `networkBarEnabled` true, you can see a network icon on the top right corner of the video feed where you can inspect data like latency, jitter, packet loss, bitrate etc.
 
+---
+
 ## v0.3.22
 
 **Release Date** : 16th November 2022
@@ -24,6 +26,8 @@ This page will keep you update all the releases of Prebuilt SDK.
 **Change log** :
 
 1. In `VIEWER` mode, the participant joining limit has been increased to 100.
+
+---
 
 ## v0.3.21
 
@@ -37,6 +41,8 @@ This page will keep you update all the releases of Prebuilt SDK.
 
    **Docs** : [AI Noise Removal](/prebuilt/guide/prebuilt-video-and-audio-calling/features/noise-removal)
 
+---
+
 ## v0.3.20
 
 **Release Date** : 23rd September 2022
@@ -46,6 +52,8 @@ This page will keep you update all the releases of Prebuilt SDK.
 1. `Activities` Tab has been renamed to `More Options`.
 2. Whiteboard and Add Live Stream has been moved into `More Options`.
 3. In Participant Tab, Media permission icon list has been redesigned.
+
+---
 
 ## v0.3.19
 
@@ -61,6 +69,8 @@ This page will keep you update all the releases of Prebuilt SDK.
 
    **Docs** : [Change HLS Theme](/prebuilt/api/sdk-reference/parameters/advance-parameters/hls)
 
+---
+
 ## v0.3.18
 
 **Release Date** : 9th September 2022
@@ -72,6 +82,8 @@ This page will keep you update all the releases of Prebuilt SDK.
    **Docs** : [Change Theme](/prebuilt/guide/prebuilt-video-and-audio-calling/features/theme)
 
 2. Activity icon can be hidden by setting `pollEnabled : false` .
+
+---
 
 ## v0.3.17
 
@@ -95,6 +107,8 @@ This page will keep you update all the releases of Prebuilt SDK.
 
 In Chat timestamp issue resolved.
 
+---
+
 ## v0.3.15
 
 **Release Date** : 6th August 2022
@@ -105,6 +119,8 @@ In Chat timestamp issue resolved.
 
    **Docs** : [Screen Share with Audio](/prebuilt/guide/prebuilt-video-and-audio-calling/features/screenshare#screen-share-with-audio)
 
+---
+
 ## v0.3.14
 
 **Release Date** : 6th August 2022
@@ -112,6 +128,8 @@ In Chat timestamp issue resolved.
 **Change log** :
 
 1. Few edge cases have been covered in the poll.
+
+---
 
 ## v0.3.13
 
@@ -135,6 +153,8 @@ In Chat timestamp issue resolved.
 
 1. In HLS, for visible player controls you can pass `playerControlsVisible` true. so that participant can view control of player.
 
+---
+
 ## v0.3.10
 
 **Release Date** : 15th July 2022
@@ -148,6 +168,8 @@ In Chat timestamp issue resolved.
 3. HLS can be toggle by any participant with passing `toggleHls`.
 
 4. HLS mode added with this parameter `mode`. It can be `VIEWER` or `CONFERENCE`.
+
+---
 
 ## v0.3.8
 
