@@ -15,6 +15,8 @@ This page will keep you update all the releases of Prebuilt SDK.
 
 1. If `maintainLandscapeVideoAspectRatio` is set to true , then it will maintain aspect ratio of webcam streams for all participants inside all meeting layouts.
 
+2. By passing the `networkBarEnabled` true, you can see a network icon on the top right corner of the video feed where you can inspect data like latency, jitter, packet loss, bitrate etc.
+
 ## v0.3.22
 
 **Release Date** : 16th November 2022
