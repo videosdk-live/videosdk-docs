@@ -81,13 +81,20 @@ public class MainApplication extends Application implements ReactApplication {
 }
 ```
 
-### Step 5: Add below line in the android/app/proguard-rules.pro (optional: if you are using Proguard):
+### Step 5: Add this line to `android/gradle.properties`:
+
+```java title="android/gradle.properties"
+/* This one fixes a weird WebRTC runtime problem on some devices. */
+android.enableDexingArtifactTransform.desugaring=false
+```
+
+### Step 6 (OPTIONAL): Add below line in the android/app/proguard-rules.pro (optional: if you are using Proguard):
 
 ```js title="android/app/proguard-rules.pro"
 -keep class org.webrtc.** { *; }
 ```
 
-### Step 6: Update colors.xml for internal dependencies
+### Step 7: Update colors.xml for internal dependencies
 
 ```js title="android/app/src/main/res/values/colors.xml"
 <resources>
@@ -100,7 +107,7 @@ public class MainApplication extends Application implements ReactApplication {
 </resources>
 ```
 
-### Step 7: update AndroidManifest.xml file for the permissions
+### Step 8: update AndroidManifest.xml file for the permissions
 
 ```js title="AndroidManifest.xml"
 <manifest
@@ -148,7 +155,7 @@ public class MainApplication extends Application implements ReactApplication {
 </manifest>
 ```
 
-### Step 8: Register services at index page of project
+### Step 9: Register services at index page of project
 
 ```js title="index.js"
 // Import the library
