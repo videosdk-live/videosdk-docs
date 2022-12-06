@@ -190,7 +190,7 @@ override fun onCreate(savedInstanceState: Bundle?) {
   // create a new meeting instance
   meeting = VideoSDK.initMeeting(
       this@MeetingActivity, meetingId, participantName,
-      micEnabled, webcamEnabled,null,null)
+      micEnabled, webcamEnabled,false,null,null)
       
   // get permissions and join the meeting with meeting.join();
   // checkPermissionAndJoinMeeting();
@@ -218,7 +218,7 @@ protected void onCreate(Bundle savedInstanceState) {
   // create a new meeting instance
   Meeting meeting = VideoSDK.initMeeting(
           MainActivity.this, meetingId, participantName,
-          micEnabled, webcamEnabled,null,null
+          micEnabled, webcamEnabled,false,null,null
   );
 
   // get permissions and join the meeting with meeting.join();

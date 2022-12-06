@@ -634,7 +634,7 @@ class MeetingActivity : AppCompatActivity() {
     // 2. Initialize VideoSDK Meeting
     meeting = VideoSDK.initMeeting(
       this@MeetingActivity, meetingId, participantName,
-      micEnabled, webcamEnabled,null,null)
+      micEnabled, webcamEnabled,false,null,null)
 
     // 3. Add event listener for listening upcoming events
     meeting!!.addEventListener(meetingEventListener)
@@ -698,7 +698,7 @@ public class MeetingActivity extends AppCompatActivity {
     // 2. Initialize VideoSDK Meeting
     meeting = VideoSDK.initMeeting(
             MeetingActivity.this, meetingId, participantName,
-            micEnabled, webcamEnabled,null,null);
+            micEnabled, webcamEnabled,false,null,null);
 
     // 3. Add event listener for listening upcoming events
     meeting.addEventListener(meetingEventListener);

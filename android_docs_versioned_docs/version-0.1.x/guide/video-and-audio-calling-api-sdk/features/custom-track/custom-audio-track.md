@@ -36,28 +36,6 @@ We have introduced the ability to pass a custom Audio track for the Audio of the
   - Allowed values : `speech_low_quality` | `speech_standard` | `music_standard` | `standard_stereo` | `high_quality` | `high_quality_stereo`  
   - It will be the encoder configuration you want to use for Audio Track.
 
-- **noiseConfig**
-
-  - type: `JSONObject`
-  - required: `true`
-
-  - **acousticEchoCancellation**
-
-    - type: `boolean`
-    - required: `true`
-    - If `true` echo cancellation will turned on else it would be turned off.
-
-  - **autoGainControl**
-
-    - type: `boolean`
-    - required: `true`
-    - If `true` auto gain will turned on else it would be turned off.
-
-  - **noiseSuppression**
-    - type: `boolean`
-    - required: `true`
-    - If `true` noise suppression will turned on else it would be turned off.
-
 - **context**
 
   - type: `Context`
@@ -81,13 +59,8 @@ values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
 <TabItem value="Kotlin">
 
 ```js
-val noiseConfig = JSONObject()
 try {
-  noiseConfig.put("acousticEchoCancellation", true)
-  noiseConfig.put("autoGainControl", true)
-  noiseConfig.put("noiseSuppression", true)
-
-  val audioCustomTrack: CustomStreamTrack = VideoSDK.createAudioTrack("high_quality", noiseConfig, this)
+  val audioCustomTrack: CustomStreamTrack = VideoSDK.createAudioTrack("high_quality",this)
 } catch (e: JSONException) {
    e.printStackTrace()
 }        
@@ -98,13 +71,8 @@ try {
 <TabItem value="Java">
 
 ```js
-JSONObject noiseConfig=new JSONObject();
 try {
-  noiseConfig.put("acousticEchoCancellation",true);
-  noiseConfig.put("autoGainControl",true);
-  noiseConfig.put("noiseSuppression",true);
-
-  CustomStreamTrack audioCustomTrack=VideoSDK.createAudioTrack("high_quality", noiseConfig, this);
+  CustomStreamTrack audioCustomTrack=VideoSDK.createAudioTrack("high_quality", this);
 }catch (JSONException e) {
   e.printStackTrace();
 }          
@@ -132,16 +100,8 @@ override fun onCreate(savedInstanceState: Bundle?) {
     //..
 
     val customTracks: MutableMap<String, CustomStreamTrack> = HashMap()
-    val noiseConfig = JSONObject()
-    try {
-      noiseConfig.put("acousticEchoCancellation", true)
-      noiseConfig.put("autoGainControl", true)
-      noiseConfig.put("noiseSuppression", true)
-    } catch (e: JSONException) {
-       e.printStackTrace()
-    }
 
-    val audioCustomTrack: CustomStreamTrack = VideoSDK.createAudioTrack("high_quality", noiseConfig, this)
+    val audioCustomTrack: CustomStreamTrack = VideoSDK.createAudioTrack("high_quality", this)
     customTracks["mic"] = audioCustomTrack  //Key must be "mic"
 
     // create a new meeting instance
@@ -168,18 +128,9 @@ override fun onCreate(savedInstanceState: Bundle?) {
 protected void onCreate(Bundle savedInstanceState) {
     //..
 
-    Map<String, CustomStreamTrack> customTracks = new HashMap<>();
+    Map<String, CustomStreamTrack> customTracks = new HashMap<>(); 
 
-    JSONObject noiseConfig=new JSONObject();
-    try {
-      noiseConfig.put("acousticEchoCancellation",true);
-      noiseConfig.put("autoGainControl",true);
-      noiseConfig.put("noiseSuppression",true);
-    }catch (JSONException e) {
-      e.printStackTrace();
-    }    
-
-    CustomStreamTrack audioCustomTrack = VideoSDK.createAudioTrack("high_quality", noiseConfig, this);
+    CustomStreamTrack audioCustomTrack = VideoSDK.createAudioTrack("high_quality", this);
     customTracks.put("mic", audioCustomTrack);  //Key must be "mic"
 
     // create a new meeting instance
@@ -222,13 +173,8 @@ values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
 <TabItem value="Kotlin">
 
 ```js
-val noiseConfig = JSONObject()
 try {
-  noiseConfig.put("acousticEchoCancellation", true)
-  noiseConfig.put("autoGainControl", true)
-  noiseConfig.put("noiseSuppression", true)
-
-  val audioCustomTrack: CustomStreamTrack = VideoSDK.createAudioTrack("high_quality", noiseConfig, this)
+  val audioCustomTrack: CustomStreamTrack = VideoSDK.createAudioTrack("high_quality", this)
   meeting!!.unmuteMic(audioCustomTrack)
 
   //or
@@ -244,13 +190,8 @@ try {
 <TabItem value="Java">
 
 ```js
-JSONObject noiseConfig=new JSONObject();
 try {
-  noiseConfig.put("acousticEchoCancellation",true);
-  noiseConfig.put("autoGainControl",true);
-  noiseConfig.put("noiseSuppression",true);
-
-  CustomStreamTrack audioCustomTrack = VideoSDK.createAudioTrack("high_quality", noiseConfig, this);
+  CustomStreamTrack audioCustomTrack = VideoSDK.createAudioTrack("high_quality", this);
   meeting.unmuteMic(audioCustomTrack);
 
   //or

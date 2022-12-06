@@ -7,6 +7,16 @@ pagination_label: Release Notes
 
 This page will keep you update all the releases of Android SDK.
 
+## v0.1.9
+
+**Release Date** : 5th December 2022
+
+**Bug Fix** :
+
+1. Fix echo issue.
+
+---
+
 ## v0.1.8
 
 **Release Date** : 10th November 2022
