@@ -9,7 +9,7 @@ This page will keep you update all the releases of Android SDK.
 
 ## v0.1.9
 
-**Release Date** : 8th December 2022
+**Release Date** : 9th December 2022
 
 **Change log** :
 
