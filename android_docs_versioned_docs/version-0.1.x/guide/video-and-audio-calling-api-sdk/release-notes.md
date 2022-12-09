@@ -9,7 +9,14 @@ This page will keep you update all the releases of Android SDK.
 
 ## v0.1.9
 
-**Release Date** : 5th December 2022
+**Release Date** : 8th December 2022
+
+**Change log** :
+
+1. Provide `multistream` parameter for sending multiple resolution layers or single resolution layer.
+
+   **Docs** : [Multi Stream](https://docs.videosdk.live/android/guide/video-and-audio-calling-api-sdk/features/custom-track/custom-video-track)
+
 
 **Bug Fix** :
 

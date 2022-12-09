@@ -24,8 +24,7 @@ We have introduced the ability to pass a custom Audio track for the Audio of the
 ## Creating a Custom Audio Track
 
 - You can create a Audio Track using `createAudioTrack()` method of `VideoSDK`.
-- This method can be used to create audio track using different encoding parameters and noise cancellation configration.
-
+- This method can be used to create audio track using different encoding parameters.
 ### Parameters
 
 - **encoderConfig**:
@@ -110,7 +109,9 @@ override fun onCreate(savedInstanceState: Bundle?) {
       //MicEnabled , If true, it will use the passed custom track to turn mic on
       true,  
       //WebcamEnabled
-      true,  
+      true,
+      //multiStream
+      false,  
       //ParticipantId
       null,
       //Pass the custom tracks here
@@ -140,6 +141,8 @@ protected void onCreate(Bundle savedInstanceState) {
         true,
         //WebcamEnabled
         true,
+        //multiStream
+        false,
         //ParticipantId
         null,
         //Pass the custom tracks here

@@ -59,6 +59,7 @@ Please refer this [documentation](/api-reference/realtime-communication/intro/) 
         String name,
         boolean micEnabled,
         boolean webcamEnabled,
+        boolean multiStream,
         String participantId,
         Map<String, CustomStreamTrack> customTracks
       )
@@ -101,6 +102,13 @@ Please refer this [documentation](/api-reference/realtime-communication/create-r
 - Whether `webcam` of the participant will be on while joining the meeting. If it is set to `false`, then webcam of that participant will be `disabled` by default, but can be `enabled` or `disabled` later.
 
   - type: `Boolean`
+  - `REQUIRED`
+
+### multiStream
+
+- It will specifiy if the stream should send multiple resolution layers or single resolution layer.
+
+  - type: `boolean`
   - `REQUIRED`
 
 ### participantId
@@ -155,6 +163,7 @@ var meeting = VideoSDK.initMeeting(
     "John Doe",
     true,
     true,
+    false,
     null,
     null
   )
@@ -179,6 +188,7 @@ Meeting meeting = VideoSDK.initMeeting({
   "John Doe",
   true,
   true,
+  false,
   null,
   null
 });
