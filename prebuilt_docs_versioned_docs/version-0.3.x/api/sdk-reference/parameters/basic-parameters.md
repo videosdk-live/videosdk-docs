@@ -31,11 +31,11 @@ title: Basic Features
 
 ---
 
-# region
+## region
 
-- type: `String`
+- @discontinued
 
-- Region for a new meeting
+- The region parameter has been discontinued; instead, the Video SDK's smart service will pick the best optimal servers for a conference, closest to your end-users' location. If you still need to hold your conferences in a specific region, i.e. Geo Fencing. [Contact Us](https://videosdk.live/contact)
 
 ---
 

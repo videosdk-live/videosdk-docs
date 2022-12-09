@@ -43,22 +43,6 @@ This code snippet calls API from local server
 
 **Token generation API is necessary for both scenario.**
 
-:::note
-You can take advantage of regional API to decrease latency in video calling.
-
-To achieve region based meetings, just pass `region : REGION_CODE` parameter in `create-meeting` request Body.
-
-Currently the below regions are supported:
-
-- `sg001` Region Code for Singapore, SG.
-- `in002` Region Code for Mumbai, IN.
-- `us001` Region Code for N. Carolina, US.
-- `eu001` Region Code for Frankfurt, DE.
-- `us002` Region Code for Ohio, US.
-
-In case you are not providing any region code, the default region will be `sg001`.
-:::
-
 ```js
 const getToken = async () => {
   try {
@@ -84,7 +68,7 @@ const getMeetingId = async (token) => {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ token, region: "sg001" }),
+      body: JSON.stringify({ token }),
     };
     const response = await fetch(VIDEOSDK_API_ENDPOINT, options)
       .then(async (result) => {

@@ -9,22 +9,6 @@ sidebar_label: Create Meeting using API
 
 Use the following Rest API to create new meeting.
 
-:::note
-You can take advantage of regional API to decrease latency in video calling.
-
-To achieve region based meetings, just pass `region : REGION_CODE` parameter in `create-meeting` request Body.
-
-Currently the below regions are supported:
-
-- `sg001` Region Code for Singapore, SG.
-- `in002` Region Code for Mumbai, IN.
-- `us001` Region Code for N. Carolina, US.
-- `eu001` Region Code for Frankfurt, DE.
-- `us002` Region Code for Ohio, US.
-
-In case you are not providing any region code, the default region will be `sg001`.
-:::
-
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
@@ -43,7 +27,7 @@ values={[
 ```js
 cURL -H "Content-Type: application/json" \
      -H "Authorization: $YOUR_JWT_TOKEN" \
-     -d '{ "region": "us001", "userMeetingId": "unicorn" }' \
+     -d '{ "userMeetingId": "unicorn" }' \
      -XPOST \
      https://api.videosdk.live/v1/meetings
 ```
@@ -61,7 +45,7 @@ var options = {
     authorization: `${YOUR_JWT_TOKEN}`,
     "Content-Type": "application/json",
   },
-  body: JSON.stringify({ region: "sg001", userMeetingId: "unicorn" }), // region: sg001 || in002 || eu001 || us001 || us002
+  body: JSON.stringify({ userMeetingId: "unicorn" }),
 };
 
 request(options, function (error, response, body) {
@@ -81,7 +65,7 @@ url = "https://api.videosdk.live/v1/meetings"
 
 headers = {'authorization': f'Bearer {YOUR_JWT_TOKEN}'}
 
-response = requests.request("GET", url, headers=headers,json={"region": "sg001", "userMeetingId": "unicorn"}) # region: sg001 || in002 || eu001 || us001 || us002
+response = requests.request("GET", url, headers=headers,json={"userMeetingId": "unicorn"})
 
 print(response.text)
 ```
@@ -101,7 +85,7 @@ http.verify_mode = OpenSSL::SSL::VERIFY_NONE
 
 request = Net::HTTP::Post.new(url, 'Content-Type' => 'application/json')
 request.authorization = "Bearer #{YOUR_JWT_TOKEN}"
-request.body = {region: 'sg001', userMeetingId: 'unicorn'}.to_json # region: sg001 || in002 || eu001 || us001 || us002
+request.body = {userMeetingId: 'unicorn'}.to_json
 response = http.request(request)
 puts response.read_body
 ```
@@ -114,7 +98,6 @@ puts response.read_body
   "meetingId": "87i6-bvw8-dtn1",
   "userMeetingId": "unicorn",
   "userId": "5fa671e77b80d58c11cbca95",
-  "region": "us001",
   "createdAt": "2022-01-05T06:41:16.018Z",
   "updatedAt": "2022-01-05T06:41:16.018Z",
   "id": "61d53d8c964704379e7d927a"
@@ -208,7 +191,6 @@ puts response.read_body
   "meetingId": "87i6-bvw8-dtn1",
   "userMeetingId": "unicorn",
   "userId": "5fa671e77b80d58c11cbca95",
-  "region": "us001",
   "createdAt": "2022-01-05T06:41:16.018Z",
   "updatedAt": "2022-01-05T06:41:16.018Z",
   "id": "61d53d8c964704379e7d927a"

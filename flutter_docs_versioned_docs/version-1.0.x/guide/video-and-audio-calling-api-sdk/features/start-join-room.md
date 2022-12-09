@@ -43,22 +43,6 @@ This code snippet calls API from local server
 
 **Token generation API is necessary for both scenario.**
 
-:::note
-You can take advantage of regional API to decrease latency in video calling.
-
-To achieve region based rooms, just pass `region : REGION_CODE` parameter in `create-room` request Body.
-
-Currently the below regions are supported:
-
-- `sg001` Region Code for Singapore, SG.
-- `in002` Region Code for Mumbai, IN.
-- `us001` Region Code for N. Carolina, US.
-- `eu001` Region Code for Frankfurt, DE.
-- `us002` Region Code for Ohio, US.
-
-In case you are not providing any region code, the default region will be `sg001`.
-:::
-
 ```js
 import 'dart:convert';
 import 'package:http/http.dart' as http; // For API Calling, you need to add third party package "http"
@@ -82,7 +66,7 @@ void _getRoomIdAndToken() async {
         Uri.parse('$LOCAL_SERVER_URL/create-room/');
 
     final http.Response roomIdResponse =
-        await http.post(roomIdUrl, body: {"token": _token,"region": "sg001"});
+        await http.post(roomIdUrl, body: {"token": _token});
 
     final _roomId = json.decode(roomIdResponse.body)['roomId'];
 

@@ -14,12 +14,6 @@
     "methodType": "POST",
     "postParameters": [
       {
-        "key": "region",
-        "value": "sg001",
-        "description": "Region for the room",
-        "required": true
-      },
-      {
         "key": "customId",
         "value": "xyz",
         "description": "Custom Id",

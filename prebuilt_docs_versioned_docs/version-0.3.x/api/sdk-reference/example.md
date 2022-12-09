@@ -13,7 +13,9 @@ meeting.init({
   apiKey: "YOUR API KEY", // generated from app.videosdk.live
   meetingId: "milkyway", // enter your meeting id
 
-  region: "sg001", // region for new meeting
+  // @discontinued
+  // region: "sg001",
+  // The region parameter has been discontinued; instead, the Video SDK's smart service will pick the best optimal servers for a conference, closest to your end-users' location. If you still need to hold your conferences in a specific region, i.e. Geo Fencing. https://videosdk.live/contacts
 
   containerId: null,
   redirectOnLeave: "https://www.videosdk.live/",

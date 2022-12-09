@@ -133,7 +133,7 @@ export const createMeeting = async ({ token }) => {
       authorization: `${authToken}`,
       "Content-Type": "application/json",
     },
-    body: JSON.stringify({ region: "sg001" }),
+    body: JSON.stringify({}),
   });
 
   const { meetingId } = await res.json();
@@ -200,8 +200,7 @@ function App() {
         webcamEnabled: false,
         name: "C.V. Raman",
       }}
-      token={authToken}
-    >
+      token={authToken}>
       <MeetingConsumer>
         {() => <Container meetingId={meetingId} />}
       </MeetingConsumer>
