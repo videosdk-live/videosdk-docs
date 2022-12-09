@@ -244,6 +244,8 @@ room.on(Events.micRequested, (data) {
 
 ### recordingStarted
 
+_`This event will be deprecated soon`_
+
 - This event will be emitted when recording of the room is started.
 
 #### Example
@@ -258,6 +260,8 @@ room.on(Events.recordingStarted, () {
 
 ### recordingStopped
 
+_`This event will be deprecated soon`_
+
 - This event will be emitted when recording of the room is stopped.
 
 #### Example
@@ -270,7 +274,34 @@ room.on(Events.recordingStopped, () {
 
 ---
 
+### recordingStateChanged
+
+- This event will be emitted when the meeting's recording status changed.
+
+#### Event callback parameters
+
+- **status**: String
+
+`status` has following values
+
+- `RECORDING_STARTING` - Recording is in starting phase and hasn't started yet.
+- `RECORDING_STARTED` - Recording has started successfully.
+- `RECORDING_STOPPING` - Recording is in stopping phase and hasn't stopped yet.
+- `RECORDING_STOPPED` - Recording has stopped successfully.
+
+#### Example
+
+```javascript
+room.on(Events.recordingStateChanged, (String status) {
+  log("Meeting recording status : $status");
+});
+```
+
+---
+
 ### liveStreamStarted
+
+_`This event will be deprecated soon`_
 
 - This event will be emitted when `RTMP` live stream of the room is started.
 
@@ -286,6 +317,8 @@ room.on(Events.liveStreamStarted, () {
 
 ### liveStreamStopped
 
+_`This event will be deprecated soon`_
+
 - This event will be emitted when `RTMP` live stream of the room is stopped.
 
 #### Example
@@ -295,5 +328,99 @@ room.on(Events.liveStreamStopped, () {
   // do something
 });
 ```
+
+---
+
+### livestreamStateChanged
+
+- This event will be emitted when the meeting's livestream status changed.
+
+#### Event callback parameters
+
+- **status**: String
+
+`status` has following values
+
+- `LIVESTREAM_STARTING` - Livestream is in starting phase and hasn't started yet.
+- `LIVESTREAM_STARTED` - Livestream has started successfully.
+- `LIVESTREAM_STOPPING` - Livestream is in stopping phase and hasn't stopped yet.
+- `LIVESTREAM_STOPPED` - Livestream has stopped successfully.
+
+#### Example
+
+```javascript
+room.on(Events.liveStreamStateChanged, (String status) {
+  log("Meeting live streaming status : $status");
+});
+```
+
+---
+
+### hlsStateChanged
+
+- This event will be emitted when the meeting's HLS(Http Livestreaming) status changed.
+
+#### Event callback parameters
+
+- **data**: { **status**: String , **downstreamUrl**: String }
+  - **status**: String
+  - **downstreamUrl**: String _`will receive this property only in HLS_STARTED status`_
+
+`status` has following values
+
+- `HLS_STARTING` - Hls is in starting phase and hasn't started yet.
+- `HLS_STARTED` - Hls has started successfully will return `downstreamUrl`.
+- `HLS_STOPPING` - Hls is in stopping phase and hasn't stopped yet.
+- `HLS_STOPPED` - Hls has stopped successfully.
+
+#### Example
+
+```javascript
+room.on(Events.hlsStateChanged, (Map<String, dynamic> data) {
+  toastMsg("Meeting HLS status : ${data['status']}");
+  if (data['status'] == "HLS_STARTED")
+    log("DOWNSTREAM URL -- " + data['downstreamUrl']);
+});
+```
+
+---
+
+---
+
+### hlsStarted
+
+_`This event will be deprecated soon`_
+
+- This event will be emitted when `HLS` of the meeting is started.
+
+#### Event callback parameters
+
+- **downstreamUrl**: String
+
+#### Example
+
+```javascript
+room.on(Events.hlsStarted, (String downstreamUrl) => {
+  //
+});
+```
+
+---
+
+### hlsStopped
+
+_`This event will be deprecated soon`_
+
+- This event will be emitted when `HLS` of the meeting is stopped.
+
+#### Example
+
+```javascript
+room.on(Events.hlsStopped, () => {
+  //
+});
+```
+
+---
 
 </div>
