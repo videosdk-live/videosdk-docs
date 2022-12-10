@@ -102,7 +102,7 @@ dependencyResolutionManagement{
 
 ```js title="app/build.gradle"
 dependencies {
-  implementation 'live.videosdk:rtc-android-sdk:0.1.8'
+  implementation 'live.videosdk:rtc-android-sdk:0.1.9'
 
   // library to perform Network call to generate a meeting id
   implementation 'com.amitshekhar.android:android-networking:1.0.2'
@@ -111,12 +111,11 @@ dependencies {
   }
 ```
 
-:::note
+:::important
 
-If your project has set `android.useAndroidX=true`, then set `android.enableJetifier=true` in the `gradle.properties` file to migrate your project to AndroidX and avoid duplicate class conflict.
+Android SDK compatible with armeabi-v7a, arm64-v8a, x86_64 architectures. If you want to run the application in an emulator, choose ABI x86_64 when creating a device.
 
 :::
-
 
 ### Add permissions into your project
 
@@ -124,22 +123,17 @@ If your project has set `android.useAndroidX=true`, then set `android.enableJeti
 
 ```xml title="AndroidManifest.xml"
 <uses-permission android:name="android.permission.RECORD_AUDIO" />
+<uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
 <uses-permission android:name="android.permission.INTERNET" />
-<uses-permission android:name="android.permission.READ_PHONE_STATE" />
 <uses-permission android:name="android.permission.CAMERA" />
 
-<!-- Needed to communicate with already-paired Bluetooth devices. (Legacy up to Android 11) -->
-<uses-permission
-    android:name="android.permission.BLUETOOTH"
-    android:maxSdkVersion="30" />
-<uses-permission
-    android:name="android.permission.BLUETOOTH_ADMIN"
-    android:maxSdkVersion="30" />
-
-<!-- Needed to communicate with already-paired Bluetooth devices. (Android 12 upwards)-->
-<uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
-
 ```
+
+:::note
+
+If your project has set `android.useAndroidX=true`, then set `android.enableJetifier=true` in the `gradle.properties` file to migrate your project to AndroidX and avoid duplicate class conflict.
+
+:::
 
 ### Structure of the project
 
@@ -664,6 +658,7 @@ class MeetingActivity : AppCompatActivity() {
   private var meeting: Meeting? = null
   private var micEnabled = true
   private var webcamEnabled = true
+  private var multiStream = false
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
@@ -678,7 +673,7 @@ class MeetingActivity : AppCompatActivity() {
     // 2. Initialize VideoSDK Meeting
     meeting = VideoSDK.initMeeting(
       this@MeetingActivity, meetingId, participantName,
-      micEnabled, webcamEnabled,null,null)
+      micEnabled, webcamEnabled, multiStream, null, null)
 
     // 3. Add event listener for listening upcoming events
     meeting!!.addEventListener(meetingEventListener)
@@ -727,6 +722,7 @@ public class MeetingActivity extends AppCompatActivity {
   private Meeting meeting;
   private boolean micEnabled = true;
   private boolean webcamEnabled = true;
+  private boolean multiStream = false;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -742,7 +738,7 @@ public class MeetingActivity extends AppCompatActivity {
     // 2. Initialize VideoSDK Meeting
     meeting = VideoSDK.initMeeting(
             MeetingActivity.this, meetingId, participantName,
-            micEnabled, webcamEnabled,null,null);
+            micEnabled, webcamEnabled, multiStream, null, null);
 
     // 3. Add event listener for listening upcoming events
     meeting.addEventListener(meetingEventListener);

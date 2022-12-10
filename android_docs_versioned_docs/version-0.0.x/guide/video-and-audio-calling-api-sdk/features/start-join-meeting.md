@@ -321,8 +321,9 @@ class MainActivity : AppCompatActivity() {
     val participantName = "John Doe"
     val micEnabled = true
     val webcamEnabled = true
+    val multiStream = false 
     val paticipantId="demo@123"  // If you passed `null` then SDK will create an Id by itself and will use that id.
-
+   
     // Configure authentication token
     VideoSDK.config(token)
 
@@ -333,6 +334,7 @@ class MainActivity : AppCompatActivity() {
       participantName,
       micEnabled,
       webcamEnabled,
+      multiStream,
       paticipantId,
       null
     )
@@ -361,6 +363,7 @@ public class MainActivity extends AppCompatActivity {
         final String participantName = "John Doe";
         final boolean micEnabled = true;
         final boolean webcamEnabled = true;
+        final boolean multiStream = false;
         final String participantId = "demo@123"; // If you passed `null` then SDK will create an Id by itself and will use that id.
 
         // Configure authentication token
@@ -373,6 +376,7 @@ public class MainActivity extends AppCompatActivity {
                 participantName,
                 micEnabled,
                 webcamEnabled,
+                multiStream,
                 participantId,
                 null
         );

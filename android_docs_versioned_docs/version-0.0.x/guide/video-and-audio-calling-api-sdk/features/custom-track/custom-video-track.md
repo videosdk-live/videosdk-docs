@@ -106,7 +106,7 @@ val videoCustomTrack: CustomStreamTrack = VideoSDK.createCameraVideoTrack("h240p
 <TabItem value="Java">
 
 ```javascript
-CustomStreamTrack customStreamTrack = VideoSDK.createCameraVideoTrack("h240p_w320p", "front", false,this);
+CustomStreamTrack customStreamTrack = VideoSDK.createCameraVideoTrack("h240p_w320p", "front", false, this);
 ```
 
 </TabItem>
@@ -132,7 +132,7 @@ override fun onCreate(savedInstanceState: Bundle?) {
 
     val customTracks: MutableMap<String, CustomStreamTrack> = HashMap()
     val videoCustomTrack: CustomStreamTrack =
-    VideoSDK.createCameraVideoTrack("h240p_w320p", "back", this)
+    VideoSDK.createCameraVideoTrack("h240p_w320p", "back", false, this)
     customTracks["video"] = videoCustomTrack  //Key must be "video"
 
      // create a new meeting instance
@@ -163,7 +163,7 @@ protected void onCreate(Bundle savedInstanceState) {
 
     Map<String, CustomStreamTrack> customTracks = new HashMap<>();
 
-    CustomStreamTrack videoCustomTrack = VideoSDK.createCameraVideoTrack("h240p_w320p", "back",this);
+    CustomStreamTrack videoCustomTrack = VideoSDK.createCameraVideoTrack("h240p_w320p", "back", false, this);
     customTracks.put("video", videoCustomTrack);  //Key must be "video"
 
     // create a new meeting instance
@@ -205,7 +205,7 @@ values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
 <TabItem value="Kotlin">
 
 ```javascript
-val customStreamTrack: CustomStreamTrack = VideoSDK.createCameraVideoTrack("h240p_w320p", "back", this)
+val customStreamTrack: CustomStreamTrack = VideoSDK.createCameraVideoTrack("h240p_w320p", "back", false, this)
 meeting!!.enableWebcam(customStreamTrack)
 ```
 
@@ -214,7 +214,7 @@ meeting!!.enableWebcam(customStreamTrack)
 <TabItem value="Java">
 
 ```javascript
-CustomStreamTrack customStreamTrack=VideoSDK.createCameraVideoTrack("h240p_w320p", "back",this);
+CustomStreamTrack customStreamTrack=VideoSDK.createCameraVideoTrack("h240p_w320p", "back", false, this);
 meeting.enableWebcam(customStreamTrack);
 ```
 

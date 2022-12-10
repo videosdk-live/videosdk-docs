@@ -287,16 +287,9 @@ values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
 <manifest ... >
 
 <!-- Needed to communicate with already-paired Bluetooth devices. (Legacy up to Android 11) -->
-<uses-permission
-    android:name="android.permission.BLUETOOTH"
-    android:maxSdkVersion="30" />
-<uses-permission
-    android:name="android.permission.BLUETOOTH_ADMIN"
-    android:maxSdkVersion="30" />
-
-<!-- Needed to communicate with already-paired Bluetooth devices. (Android 12 upwards)-->
+<uses-permission android:name="android.permission.BLUETOOTH" />
+<uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
 <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
-
 //...
 </manifest>
 ```
