@@ -34,7 +34,7 @@ import TabItem from '@theme/TabItem';
 ```js
 const onPress = () => {
   // Start Recording
-  meeting?.startRecording(webhookUrl, awsDirPath);
+  meeting?.startRecording(webhookUrl, awsDirPath, config);
 
   // Stop Recording
   meeting?.stopRecording();
