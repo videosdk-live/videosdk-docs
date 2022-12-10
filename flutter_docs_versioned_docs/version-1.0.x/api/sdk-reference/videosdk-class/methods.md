@@ -190,7 +190,7 @@ Above mentioned encoder configurations are valid for both, landscape as well as 
   :::info
 
   - For meetings with fewer than or equal to four participants, setting `multiStream:false` is regarded as best practice.
-  - This parameter is only available from `v0.0.53`.
+  - This parameter is only available from `v1.0.9`.
 
   :::
 
