@@ -432,7 +432,7 @@ const MethodRequestResponse = ({
     },
   ];
 
-  useEffect(() => {}, [language]);
+  useEffect(() => { }, [language]);
 
   return (
     <div className='flex flex-col '>
@@ -534,6 +534,8 @@ const MethodDescription = ({
   queryParameters,
   parameters,
 }) => {
+
+
   return (
     <div className='flex flex-col'>
       <div className='text-gray-250'>{description}</div>
@@ -552,6 +554,10 @@ const MethodDescription = ({
                 defaultValue={parameter.defaultValue}
                 required={parameter.required}
                 showDivider={index != postParameters?.length - 1}
+                isDeprecated={parameter.isDeprecated}
+                isDiscontinued={parameter.isDiscontinued}
+                deprecatedMessage={parameter.deprecatedMessage}
+
               />
             );
           })}
@@ -573,6 +579,9 @@ const MethodDescription = ({
                 defaultValue={parameter.defaultValue}
                 required={parameter.required}
                 showDivider={index != queryParameters?.length - 1}
+                isDeprecated={parameter.isDeprecated}
+                isDiscontinued={parameter.isDiscontinued}
+                deprecatedMessage={parameter.deprecatedMessage}
               />
             );
           })}
@@ -594,6 +603,10 @@ const MethodDescription = ({
                 description={parameter.description}
                 required={parameter.required}
                 showDivider={index != queryParameters?.length - 1}
+                isDeprecated={parameter.isDeprecated}
+                isDiscontinued={parameter.isDiscontinued}
+                deprecatedMessage={parameter.deprecatedMessage}
+
               />
             );
           })}
@@ -630,19 +643,23 @@ const MethodParameter = ({
   defaultValue,
   description,
   showDivider,
+  isDeprecated,
+  deprecatedMessage,
+  isDiscontinued
 }) => {
+
+  console.log({ isDeprecated, deprecatedMessage }, "isDeprecated, deprecatedMessage")
+
   let md =
     values && defaultValue
-      ? `${"#### values  :    " + values} \n${
-          defaultValue && "#### defaultValue  :    " + defaultValue
-        }\n ${description} `
+      ? `${"#### values  :    " + values} \n${defaultValue && "#### defaultValue  :    " + defaultValue
+      }\n ${description} `
       : values
-      ? `${"#### values  :    " + values} \n ${description} `
-      : defaultValue
-      ? `${
-          defaultValue && "#### defaultValue  :    " + defaultValue
-        }\n ${description} `
-      : `${description} `;
+        ? `${"#### values  :    " + values} \n ${description} `
+        : defaultValue
+          ? `${defaultValue && "#### defaultValue  :    " + defaultValue
+          }\n ${description} `
+          : `${description} `;
 
   let mdParmName = `## ${parameterName}`;
   return (
@@ -656,7 +673,7 @@ const MethodParameter = ({
                   h2: {
                     props: {
                       className:
-                        "font-semibold text-xl pr-1.5 text-white-100 mb-1.5",
+                        `font-semibold text-xl pr-1.5 text-white-100 mb-1.5 ${isDeprecated || isDiscontinued ? "text-red-200" : ""}`,
                     },
                   },
                 },
@@ -665,7 +682,9 @@ const MethodParameter = ({
           </a>
         </div>
 
-        {required ? (
+        {(isDeprecated || isDiscontinued) ? <div className='text-red-200 italic font-semibold text-[12px] leading-7 mt-1'>
+          {isDiscontinued ? "@discontinued" : isDeprecated ? "@deprecated" : ""}
+        </div> : required ? (
           <div className='text-primary font-semibold text-[10px] leading-7 mt-1'>
             REQUIRED
           </div>
@@ -674,7 +693,31 @@ const MethodParameter = ({
             OPTIONAL
           </div>
         )}
+
+
       </div>
+
+      {(isDeprecated || isDiscontinued) && deprecatedMessage ? (
+        <div>
+          <p className="italic text-red-200">
+            <Markdown
+              options={{
+                overrides: {
+                  a: {
+                    props: {
+                      className: "text-red-300 underline",
+                      target: "_blank"
+                    },
+                  }
+                }
+              }}
+            >
+              {deprecatedMessage}
+            </Markdown>
+          </p>
+        </div>
+      ) : null}
+
       <div>
         <Markdown
           options={{
