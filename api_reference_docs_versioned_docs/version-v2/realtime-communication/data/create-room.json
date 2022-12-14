@@ -16,11 +16,12 @@
     "postParameters": [
       {
         "key": "region",
-        "values": "`us001` | `us002` | `eu001` | `in002` | `sg001`",
-        "description": "#### For the best call quality, please use the nearest Video SDK server-region (to your user's geo-location). If you aren't passing the region, your room will be hosted on Singapore servers.",
+        "description": "",
         "required": false,
         "value": "sg001",
-        "defaultValue": "`sg001`"
+        "isDeprecated": true,
+        "isDiscontinued": true,
+        "deprecatedMessage": "The region parameter has been discontinued; instead, the Video SDK's smart service will pick the best optimal servers for a conference, closest to your end-users' location. If you still need to hold your conferences in a specific region, i.e. Geo Fencing. \n  \n [Contact Us](https://videosdk.live/contact)"
       },
       {
         "key": "customRoomId",
@@ -43,7 +44,6 @@
       "roomId": "abc-xyzw-lmno",
       "customRoomId": "final-testing",
       "userId": "5f7edbb14c938bcd42944527",
-      "region": "sg001",
       "disabled": false,
       "createdAt": "2022-03-25T04:49:11.024Z",
       "updatedAt": "2022-03-25T04:49:11.024Z",

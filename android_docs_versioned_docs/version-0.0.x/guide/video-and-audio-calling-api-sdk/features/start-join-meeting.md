@@ -43,22 +43,6 @@ This code snippet calls API from local server
 
 **Token generation API is necessary for both scenario.**
 
-:::note
-You can take advantage of regional API to decrease latency in video calling.
-
-To achieve region based meetings, just pass `region : REGION_CODE` parameter in `create-meeting` request Body.
-
-Currently the below regions are supported:
-
-- `sg001` Region Code for Singapore, SG.
-- `in002` Region Code for Mumbai, IN.
-- `us001` Region Code for N. Carolina, US.
-- `eu001` Region Code for Frankfurt, DE.
-- `us002` Region Code for Ohio, US.
-
-In case you are not providing any region code, the default region will be `sg001`.
-:::
-
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
@@ -114,7 +98,6 @@ class JoinActivity : AppCompatActivity() {
     AndroidNetworking
       .post("$apiServerUrl/create-meeting")
       .addBodyParameter("token", token)
-      .addBodyParameter("region", "sg001")
       .build()
       .getAsJSONObject(
         object : JSONObjectRequestListener {
@@ -217,7 +200,6 @@ public class JoinActivity extends AppCompatActivity {
     AndroidNetworking
       .post(apiServerUrl + "/create-meeting")
       .addBodyParameter("token", token)
-      .addBodyParameter("region", "sg001")
       .build()
       .getAsJSONObject(
         new JSONObjectRequestListener() {
