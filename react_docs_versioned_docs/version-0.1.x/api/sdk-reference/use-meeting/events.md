@@ -770,4 +770,35 @@ const {
 });
 ```
 
+---
+
+### onParticipantModeChanged()
+
+- This event will be triggered when mode gets chanded.
+- It will pass **`mode`**, as an event callback parameter.
+  - `CONFERENCE`: Both audio and video streams will be produced and consumed in this mode.
+  - `VIEWER`: Audio and video streams will not be produced or consumed in this mode.
+
+#### Event callback parameters
+
+- **data**: { **mode**: String, **participantId**: String }
+  - **mode**: String
+  - **participantId**: String
+
+#### Example
+
+```javascript
+function onParticipantModeChanged(data) {
+  const { mode, participantId } = data;
+}
+
+const {
+  meetingId
+  ...
+} = useMeeting({
+  onParticipantModeChanged,
+  ...
+});
+```
+
 </div>

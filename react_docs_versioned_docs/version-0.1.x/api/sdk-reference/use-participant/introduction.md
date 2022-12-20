@@ -64,6 +64,11 @@ title: Video SDK useParticipant Hook
 - [isActiveSpeaker](./properties#isactivespeaker)
 
 </div>
+<div class="col col--4 margin-bottom--sm" >
+
+- [mode](./properties#mode)
+
+</div>
 
 </div>
 
