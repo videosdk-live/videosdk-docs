@@ -49,20 +49,6 @@ Above mentioned encoder configurations are valid for both, landscape as well as 
   - Allowed values : `front` | `back`
   - It will specifiy wheater to use front or back camera for the video track.
 
-- **multiStream**
-
-  - type: `boolean`
-  - required: `true`
-  - default: true
-  - It will specifiy if the stream should send multiple resolution layers or single resolution layer.
-
-    :::info
-
-    - For meetings with fewer than or equal to four participants, setting `multiStream:false` is regarded as best practice.
-    - This parameter is only available from `0.1.9` SDK version.
-
-    :::
-
 - **optimizationMode**
   - type: `CustomStreamTrack.VideoMode`
   - required: `true`
@@ -105,7 +91,7 @@ values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
 <TabItem value="Kotlin">
 
 ```javascript
-val videoCustomTrack: CustomStreamTrack = VideoSDK.createCameraVideoTrack("h240p_w320p", "front", false, CustomStreamTrack.VideoMode.MOTION, this)                
+val videoCustomTrack: CustomStreamTrack = VideoSDK.createCameraVideoTrack("h240p_w320p", "front", CustomStreamTrack.VideoMode.MOTION, this)                
 ```
 
 </TabItem>
@@ -113,7 +99,7 @@ val videoCustomTrack: CustomStreamTrack = VideoSDK.createCameraVideoTrack("h240p
 <TabItem value="Java">
 
 ```javascript
-CustomStreamTrack customStreamTrack = VideoSDK.createCameraVideoTrack("h240p_w320p", "front", false, CustomStreamTrack.VideoMode.MOTION, this);                
+CustomStreamTrack customStreamTrack = VideoSDK.createCameraVideoTrack("h240p_w320p", "front", CustomStreamTrack.VideoMode.MOTION, this);                
 ```
 
 </TabItem>
@@ -149,9 +135,7 @@ override fun onCreate(savedInstanceState: Bundle?) {
       //MicEnabled 
       true,  
       //WebcamEnabled , If true, it will use the passed custom track to turn webcam on
-      true, 
-      // multiStream
-      false, 
+      true,
       // ParticipantId
       null,
       //Pass the custom tracks here
@@ -171,7 +155,7 @@ protected void onCreate(Bundle savedInstanceState) {
 
     Map<String, CustomStreamTrack> customTracks = new HashMap<>();
 
-    CustomStreamTrack videoCustomTrack = VideoSDK.createCameraVideoTrack("h240p_w320p", "back", false, CustomStreamTrack.VideoMode.MOTION, this);
+    CustomStreamTrack videoCustomTrack = VideoSDK.createCameraVideoTrack("h240p_w320p", "back", CustomStreamTrack.VideoMode.MOTION, this);
     customTracks.put("video", videoCustomTrack);  //Key must be "video"
 
     // create a new meeting instance
@@ -181,8 +165,6 @@ protected void onCreate(Bundle savedInstanceState) {
         true,
         //WebcamEnabled , If true, it will use the passed custom track to turn webcam on
         true,
-        // multiStream
-        false
         // ParticipantId
         null,
         //Pass the custom tracks here
@@ -213,7 +195,7 @@ values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
 <TabItem value="Kotlin">
 
 ```javascript
-val customStreamTrack: CustomStreamTrack = VideoSDK.createCameraVideoTrack("h240p_w320p", "back", false, CustomStreamTrack.VideoMode.MOTION, this)
+val customStreamTrack: CustomStreamTrack = VideoSDK.createCameraVideoTrack("h240p_w320p", "back", CustomStreamTrack.VideoMode.MOTION, this)
 meeting!!.enableWebcam(customStreamTrack)
 ```
 
@@ -222,7 +204,7 @@ meeting!!.enableWebcam(customStreamTrack)
 <TabItem value="Java">
 
 ```javascript
-CustomStreamTrack customStreamTrack=VideoSDK.createCameraVideoTrack("h240p_w320p", "back", false, CustomStreamTrack.VideoMode.MOTION, this);
+CustomStreamTrack customStreamTrack=VideoSDK.createCameraVideoTrack("h240p_w320p", "back", CustomStreamTrack.VideoMode.MOTION, this);
 meeting.enableWebcam(customStreamTrack);
 ```
 
