@@ -23,6 +23,16 @@ import ReactPlayer from 'react-player'
 
 </div>
 
+<br/>
+
+:::info
+
+MultiStream is not supported by the Android SDK. Use `customTrack` instead of `setViewPort()` if you want to change participant's quality who joined using our Android SDK.
+
+To know more about customTrack visit [here](/android/guide/video-and-audio-calling-api-sdk/features/custom-track/custom-video-track)
+
+:::
+
 ### setViewPort()
 
 `setViewPort()` can be used to achieve the best optimization of the video. This method is called with the `width` and `height` of the participant view on the `Participant` object and VideoSDK will handle the rest.

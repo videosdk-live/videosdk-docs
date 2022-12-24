@@ -59,7 +59,6 @@ Please refer this [documentation](/api-reference/realtime-communication/intro/) 
         String name,
         boolean micEnabled,
         boolean webcamEnabled,
-        boolean multiStream,
         String participantId,
         Map<String, CustomStreamTrack> customTracks
       )
@@ -103,14 +102,6 @@ Please refer this [documentation](/api-reference/realtime-communication/create-r
 
   - type: `Boolean`
   - `REQUIRED`
-
-### multiStream
-
-- It will specifiy if the stream should send multiple resolution layers or single resolution layer.
-
-  - type: `boolean`
-  - `REQUIRED`
-
 ### participantId
 
 - Unique Id of the participant. If you passed `null` then SDK will create an Id by itself and will use that id.
@@ -163,7 +154,6 @@ var meeting = VideoSDK.initMeeting(
     "John Doe",
     true,
     true,
-    false,
     null,
     null
   )
@@ -188,7 +178,6 @@ Meeting meeting = VideoSDK.initMeeting({
   "John Doe",
   true,
   true,
-  false,
   null,
   null
 });

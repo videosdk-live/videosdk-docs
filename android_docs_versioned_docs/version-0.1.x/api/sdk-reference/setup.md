@@ -77,7 +77,7 @@ dependencyResolutionManagement{
 
 ```js title="app/build.gradle"
 dependencies {
-  implementation 'live.videosdk:rtc-android-sdk:0.1.9'
+  implementation 'live.videosdk:rtc-android-sdk:0.1.10'
 
   // library to perform Network call to generate a meeting id
   implementation 'com.amitshekhar.android:android-networking:1.0.2'
@@ -185,7 +185,6 @@ override fun onCreate(savedInstanceState: Bundle?) {
 
   var micEnabled = true
   var webcamEnabled = true
-  var multiStream = false
 
   // generate the jwt token from your api server and add it here
   VideoSDK.config("JWT TOKEN GENERATED FROM SERVER")
@@ -193,7 +192,7 @@ override fun onCreate(savedInstanceState: Bundle?) {
   // create a new meeting instance
   meeting = VideoSDK.initMeeting(
       this@MeetingActivity, meetingId, participantName,
-      micEnabled, webcamEnabled,multiStream,null,null)
+      micEnabled, webcamEnabled,null,null)
       
   // get permissions and join the meeting with meeting.join();
   // checkPermissionAndJoinMeeting();
@@ -214,7 +213,6 @@ protected void onCreate(Bundle savedInstanceState) {
 
   final boolean micEnabled = true;
   final boolean webcamEnabled = true;
-  final boolean multiStream = false;
 
   // generate the jwt token from your api server and add it here
   VideoSDK.config("JWT TOKEN GENERATED FROM SERVER");
@@ -222,7 +220,7 @@ protected void onCreate(Bundle savedInstanceState) {
   // create a new meeting instance
   Meeting meeting = VideoSDK.initMeeting(
           MainActivity.this, meetingId, participantName,
-          micEnabled, webcamEnabled,multiStream,null,null
+          micEnabled, webcamEnabled,null,null
   );
 
   // get permissions and join the meeting with meeting.join();

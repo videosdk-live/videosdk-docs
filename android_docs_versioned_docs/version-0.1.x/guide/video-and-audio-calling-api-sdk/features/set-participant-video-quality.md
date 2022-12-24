@@ -19,6 +19,14 @@ slug: set-participant-video-quality
 
 This feature allows participants to set other participant's video quality during the meeting.
 
+:::info
+
+MultiStream is not supported by the Android SDK. Use `customTrack` instead of `setQuality()` if you want to change participant's quality who joined using our Android SDK.
+
+To know more about customTrack visit [here](/android/guide/video-and-audio-calling-api-sdk/features/custom-track/custom-video-track)
+
+:::
+
 ## Set Quality
 
 - `setQuality` method will accept `low`, `med` or `high` as string parameter.
