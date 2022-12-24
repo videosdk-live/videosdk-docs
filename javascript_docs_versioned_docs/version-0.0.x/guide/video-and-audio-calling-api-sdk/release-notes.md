@@ -7,6 +7,30 @@ pagination_label: Release Notes
 
 This page will keep you update all the releases of JavaScript SDK.
 
+## v0.0.56
+
+**Release Date** : 20th December 2022
+
+**Change log** :
+
+1. Participant can toggle between the `CONFERENCE` and `VIEWER` mode by using `changeMode()` method.
+
+   **Docs** : [Change Mode](https://docs.videosdk.live/javascript/api/sdk-reference/meeting-class/methods#changemode)
+
+---
+
+## v0.0.55
+
+**Release Date** : 14th December 2022
+
+**Change log** : None
+
+**Bug Fix** :
+
+1. Fix `failed: DOMException: Answer tried to enable an m-section that was disabled in the offer` error on Enable Webcam in Firefox browser.
+
+---
+
 ## v0.0.54
 
 **Release Date** : 25th November 2022
@@ -14,6 +38,8 @@ This page will keep you update all the releases of JavaScript SDK.
 **Change log** :
 
 1. To obtain screen sharing statistics, the `Participant` class now has a [`getShareStats`](../../api/sdk-reference/participant-class/methods.md#getsharestats) function.
+
+---
 
 ## v0.0.53
 

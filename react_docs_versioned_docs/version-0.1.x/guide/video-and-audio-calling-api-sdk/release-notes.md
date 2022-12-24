@@ -7,6 +7,31 @@ pagination_label: Release Notes
 
 This page will keep you update all the releases of React JS SDK.
 
+## v0.1.58
+
+**Release Date** : 20th December 2022
+
+**Change log** :
+
+1. Participant can toggle between the `CONFERENCE` and `VIEWER` mode by using `changeMode()` method.
+
+   **Docs** : [Change Mode](https://docs.videosdk.live/react/api/sdk-reference/use-meeting/methods#changemode)
+
+
+---
+
+## v0.1.56
+
+**Release Date** : 14th December 2022
+
+**Change log** : None
+
+**Bug Fix** :
+
+1. Fix `failed: DOMException: Answer tried to enable an m-section that was disabled in the offer` error on Enable Webcam in Firefox browser.
+
+---
+
 ## v0.1.55
 
 **Release Date** : 25th November 2022
