@@ -42,4 +42,4 @@ From your project directory, run `expo eject`. This will download the required d
 expo eject
 ```
 
-Once these is finished, you should see the `android` and `ios` directories in your project. You can then complete the [iOS](./react-native-ios-sdk.md) and [Android setup](./react-native-android-sdk.md) requried for the VideoSDK.
+Once these are finished, you should see the `android` and `ios` directories in your project. You can then complete the [iOS](./react-native-ios-sdk.md) and [Android setup](./react-native-android-sdk.md) requried for the VideoSDK.
