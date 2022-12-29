@@ -452,6 +452,7 @@ module.exports = {
       },
     ],
   ],
+  staticDirectories: ["static"],
   scripts: [
     {
       // Page sense
@@ -472,5 +473,7 @@ module.exports = {
     //   src: "js/sales-iq.js",
     //   async: false,
     // },
+    // Amplitude
+    { src: "http://localhost:3000/js/amplitude.js", async: false },
   ],
 };
