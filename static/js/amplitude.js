@@ -145,25 +145,24 @@ for (let i = 0; i < ca.length; i++) {
     break;
   }
 }
-window.amplitude.init(
-  "56315692e04ea10f7c60e0574631d820",
-  user?.id != null ? user.id : undefined,
-  {
-    pageViewTracking: {
-      trackHistoryChanges: "all",
-    },
-    trackingOptions: {
-      deviceManufacturer: true,
-      deviceModel: true,
-      ipAddress: true,
-      language: true,
-      osName: true,
-      osVersion: true,
-      platform: true,
-    },
-    attribution: {
-      trackPageViews: true,
-    },
-    logLevel: 4,
-  }
-);
+
+let API_KEY = "4f7f8d14ba8bb4fcf81bc6002031c732";
+
+window.amplitude.init(API_KEY, user?.id != null ? user.id : undefined, {
+  pageViewTracking: {
+    trackHistoryChanges: "all",
+  },
+  trackingOptions: {
+    deviceManufacturer: true,
+    deviceModel: true,
+    ipAddress: true,
+    language: true,
+    osName: true,
+    osVersion: true,
+    platform: true,
+  },
+  attribution: {
+    trackPageViews: true,
+  },
+  logLevel: 4,
+});

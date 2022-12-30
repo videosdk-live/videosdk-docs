@@ -474,6 +474,6 @@ module.exports = {
     //   async: false,
     // },
     // Amplitude
-    { src: "https://dev-docs.videosdk.live/js/amplitude.js", async: false },
+    { src: "https://docs.videosdk.live/js/amplitude.js", async: false },
   ],
 };
