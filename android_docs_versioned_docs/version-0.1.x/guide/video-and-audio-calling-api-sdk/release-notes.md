@@ -9,12 +9,11 @@ This page will keep you update all the releases of Android SDK.
 
 ## v0.1.12
 
-**Release Date** : 3th Janurary 2023
+**Release Date** : 3rd Janurary 2023
 
 **Change log** :
 
-1. Add support of `mavenCentral()`
-
+- Provide support of [`mavenCentral()`](https://search.maven.org/artifact/live.videosdk/rtc-android-sdk)
 ---
 
 ## v0.1.11
@@ -23,7 +22,7 @@ This page will keep you update all the releases of Android SDK.
 
 **Bug Fix** :
 
-1. Fix jitpack issue.
+- Fix jitpack issue.
 
 ---
 
