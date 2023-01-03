@@ -7,6 +7,20 @@ pagination_label: Release Notes
 
 This page will keep you update all the releases of Flutter SDK.
 
+## v1.0.10
+
+**Release Date** : 03rd Jan 2023
+
+**Change log** :
+
+1. Added `getVideoStats()`, `getAudioStats()` and `getShareStats()` to get the statistics for the video, audio and share stream of a participant.
+
+   **Docs** :
+
+   - [getVideoStats](../../api/sdk-reference/participant-class/methods.md#getvideostats)
+   - [getAudioStats](../../api/sdk-reference/participant-class/methods.md#getaudiostats)
+   - [getShareStats](../../api/sdk-reference/participant-class/methods.md#getsharestats)
+
 ## v1.0.9
 
 **Release Date** : 09th Dec 2022
