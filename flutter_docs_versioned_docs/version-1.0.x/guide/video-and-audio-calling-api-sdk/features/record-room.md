@@ -50,6 +50,7 @@ This guide will provide an overview of how to implement start and stop Room Reco
       - **theme**: _"DARK"_ | _"LIGHT"_ | _"DEFAULT"_
       - **mode**: _"video-and-audio"_ | _"audio"_
       - **quality**: _"low"_ | _"med"_ | _"high"_
+      - **orientation**: _"landscape"_ | _"portrait"_
   - required: `false`
   - It will be config for the layout of the recording you can to use.
 

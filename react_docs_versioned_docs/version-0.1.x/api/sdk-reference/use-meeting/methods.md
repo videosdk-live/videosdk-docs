@@ -170,10 +170,11 @@ title: Methods returned by useMeeting Hook
   - **layout**:
     - **type**: _"GRID"_ | _"SPOTLIGHT"_ | _"SIDEBAR"_
     - **priority**: _"SPEAKER"_ | _"PIN"_
-    - **gridSize**: Number _`max 25`_
+    - **gridSize**: Number _`max 4`_
   - **theme**: _"DARK"_ | _"LIGHT"_ | _"DEFAULT"_
   - **mode**: _"video-and-audio"_ | _"audio"_
   - **quality**: _"low"_ | _"med"_ | _"high"_
+  - **orientation**: _"landscape"_ | _"portrait"_
 
 #### Events associated with `startRecording()`:
 

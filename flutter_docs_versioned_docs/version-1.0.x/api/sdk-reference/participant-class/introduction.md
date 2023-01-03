@@ -79,6 +79,21 @@ pagination_label: Video SDK Participant Class
 - [on](methods#on)
 
 </div>
+<div class="col col--4 margin-bottom--sm" >
+
+- [getVideoStats](methods#getvideostats)
+
+</div>
+<div class="col col--4 margin-bottom--sm" >
+
+- [getAudioStats](methods#getaudiostats)
+
+</div>
+<div class="col col--4 margin-bottom--sm" >
+
+- [getShareStats](methods#getsharestats)
+
+</div>
 </div>
 
 ## Participant Events
