@@ -33,20 +33,56 @@ It supports the following OS/SDK versions.
 1. If your Android Studio Version is older than Android Studio Bumblebees, add the repository to project's `build.gradle` file. <br/>
    If your are using Android Studio Bumblebees or newer Version, add the repository to `settings.gradle` file.
 
+:::note
+
+You can use imports with Maven Central after rtc-android-sdk version `0.1.12`.
+
+Whether on Maven or Jitpack, the same version numbers always refer to the same SDK.
+
+:::
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 <Tabs
-defaultValue="<2021.1.1"
-groupId={"android-studio-version"}
-values={[{label: 'Android Studio Version < 2021.1.1', value: '<2021.1.1'},{label: 'Android Studio Version 2021.1.1', value: '2021.1.1'},]}>
+defaultValue="Maven Central"
+groupId={"android-repositories"}
+values={[{label: 'Maven Central', value: 'Maven Central'},{label: 'Jitpack', value: 'Jitpack'},]}>
 
-<TabItem value="<2021.1.1">
+<TabItem value="Maven Central">
 
 ```js title="build.gradle"
 allprojects {
   repositories {
     // ...
+    google()
+    mavenCentral()
+    maven { url "https://maven.aliyun.com/repository/jcenter" }
+  }
+}
+```
+
+```js title="settings.gradle"
+dependencyResolutionManagement{
+  repositories {
+    // ...
+    google()
+    mavenCentral()
+    maven { url "https://maven.aliyun.com/repository/jcenter" }
+  }
+}
+
+```
+
+</TabItem>
+
+<TabItem value="Jitpack">
+
+```js title="build.gradle"
+allprojects {
+  repositories {
+    // ...
+    google()
     maven { url 'https://jitpack.io' }
     mavenCentral()
     maven { url "https://maven.aliyun.com/repository/jcenter" }
@@ -54,30 +90,29 @@ allprojects {
 }
 ```
 
-</TabItem>
-
-<TabItem value="2021.1.1">
-
 ```js title="settings.gradle"
 dependencyResolutionManagement{
   repositories {
     // ...
+    google()
     maven { url 'https://jitpack.io' }
     mavenCentral()
     maven { url "https://maven.aliyun.com/repository/jcenter" }
   }
 }
+
 ```
 
 </TabItem>
 
 </Tabs>
 
+
 ### Step 2: Add the following dependency in your app's `app/build.gradle`.
 
 ```js title="app/build.gradle"
 dependencies {
-  implementation 'live.videosdk:rtc-android-sdk:0.1.10'
+  implementation 'live.videosdk:rtc-android-sdk:0.1.12'
 
   // library to perform Network call to generate a meeting id
   implementation 'com.amitshekhar.android:android-networking:1.0.2'

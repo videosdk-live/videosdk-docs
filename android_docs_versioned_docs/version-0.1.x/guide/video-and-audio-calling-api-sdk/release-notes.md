@@ -7,6 +7,25 @@ pagination_label: Release Notes
 
 This page will keep you update all the releases of Android SDK.
 
+## v0.1.12
+
+**Release Date** : 3rd Janurary 2023
+
+**Change log** :
+
+- Provide support of [`mavenCentral()`](https://search.maven.org/artifact/live.videosdk/rtc-android-sdk)
+---
+
+## v0.1.11
+
+**Release Date** : 28th December 2022
+
+**Bug Fix** :
+
+- Fix jitpack issue.
+
+---
+
 ## v0.1.10
 
 **Release Date** : 24th December 2022
