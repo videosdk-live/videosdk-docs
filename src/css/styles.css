@@ -624,6 +624,10 @@ html[data-theme="dark"] .theme-doc-markdown>h6 {
   margin-bottom: calc(var(--ifm-h1-vertical-rhythm-bottom) * var(--ifm-leading));
 }
 
+.markdown h6 {
+  font-size: 16px;
+}
+
 .theme-doc-markdown>p {
   font-family: Lato;
   font-style: normal;

@@ -119,6 +119,11 @@ module.exports = {
           label: "Code Samples",
           to: "https://github.com/videosdk-live",
         },
+        {
+          position: "left",
+          label: "Help",
+          to: "/help_docs/pricing",
+        },
         // {
         //   position: "left",
         //   label: "Experiment Lab",
@@ -368,6 +373,16 @@ module.exports = {
         path: "no_code_sdk_docs",
         routeBasePath: "no-code-sdk",
         sidebarPath: require.resolve("./sidebarNoCodeSdk.js"),
+        ...pageOptions,
+      },
+    ],
+    [
+      "@docusaurus/plugin-content-docs",
+      {
+        id: "help_docs",
+        path: "help_docs",
+        routeBasePath: "help_docs",
+        sidebarPath: require.resolve("./sidebarHelp.js"),
         ...pageOptions,
       },
     ],
