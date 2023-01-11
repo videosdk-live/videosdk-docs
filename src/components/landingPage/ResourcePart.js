@@ -4,12 +4,12 @@ import React from "react";
 
 export default function ResourcePart() {
   const ResourceArray = [
-    {
-      title: "No Code SDK Guide",
-      description:
-        "End to End Tutorials to integrate No Code SDK on your platform.",
-      link: "no-code-sdk/guide/no-code-video-and-audio-calling/getting-started",
-    },
+    // {
+    //   title: "No Code SDK Guide",
+    //   description:
+    //     "End to End Tutorials to integrate No Code SDK on your platform.",
+    //   link: "no-code-sdk/guide/no-code-video-and-audio-calling/getting-started",
+    // },
     {
       title: "Prebuilt SDK Guide",
       description:

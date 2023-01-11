@@ -71,11 +71,11 @@ module.exports = {
           position: "left",
           label: "Guide",
           items: [
-            {
-              label: "No Code Video & Audio Calling SDK",
-              to: "no-code-sdk/guide/no-code-video-and-audio-calling/getting-started",
-              activeBaseRegex: "/*/no-code-sdk/*",
-            },
+            // {
+            //   label: "No Code Video & Audio Calling SDK",
+            //   to: "no-code-sdk/guide/no-code-video-and-audio-calling/getting-started",
+            //   activeBaseRegex: "/*/no-code-sdk/*",
+            // },
             {
               label: "Prebuilt Video & Audio Calling SDK",
               to: "prebuilt/guide/prebuilt-video-and-audio-calling/getting-started",
