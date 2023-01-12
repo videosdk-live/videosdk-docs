@@ -60,8 +60,7 @@
           ]
         },
         "guide/video-and-audio-calling-api-sdk/features/virtual-background",
-        "guide/video-and-audio-calling-api-sdk/features/noise-suppresion",
-        "guide/video-and-audio-calling-api-sdk/features/set-viewport"
+        "guide/video-and-audio-calling-api-sdk/features/noise-suppresion"
       ]
     }
   ],

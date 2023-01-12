@@ -33,7 +33,7 @@
         "guide/video-and-audio-calling-api-sdk/features/toggle-participant-media",
         "guide/video-and-audio-calling-api-sdk/features/speaker-indication",
         "guide/video-and-audio-calling-api-sdk/features/screenshare",
-        "guide/video-and-audio-calling-api-sdk/features/set-viewport"
+        "guide/video-and-audio-calling-api-sdk/features/set-quality"
       ],
       "collapsed": true
     },
@@ -46,7 +46,6 @@
         "guide/video-and-audio-calling-api-sdk/features/pubsub",
         "guide/video-and-audio-calling-api-sdk/features/custom-participant-id",
         "guide/video-and-audio-calling-api-sdk/features/remove-participant",
-        "guide/video-and-audio-calling-api-sdk/features/set-quality",
         "guide/video-and-audio-calling-api-sdk/features/entry-request-response",
         "guide/video-and-audio-calling-api-sdk/features/pause-resume-video-stream"
       ],
