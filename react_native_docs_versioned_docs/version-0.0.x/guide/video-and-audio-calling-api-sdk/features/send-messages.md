@@ -22,46 +22,50 @@ Whenever any participant wants to notify other participants via chat messages or
 
 This guide will provide an overview of how to implement chat and raise hand in a meeting.
 
-1. **Chat Message** - If a participant wants to inform or notify something in current meeting, they can use `sendChatMessage()` function by providing `{message:"Anything they wish to send"}` object argument.
+1. **Chat Message** - If a participant wants to inform or notify something in current meeting, they can use `publish()` function of the `usePubSub` hook and using the topic `CHAT`.
 
-2. **Raised Hand** - If a participant has some doubts during the meeting and wants to raise hand, they can use `sendChatMessage()` function by providing `{type:"RAISE_HAND"}` object argument.
+2. **Raised Hand** - If a participant has some doubts during the meeting and wants to raise hand, they can use `publish()` function of the `usePubSub` hook and using the topic `RAISED_HAND`.
 
 :::note
-`sendChatMessage()` function only takes string as an argument.
+`publish()` function only takes string as an argument.
 :::
 
-### Send Message And Raised Hand
+### Send Message
 
 ```js
+// importing usePubSub hook from react-sdk
+import { usePubSub } from "@videosdk.live/react-native-sdk";
+
+// destructure publish method from usePubSub hook
+const { publish, messages } = usePubSub("CHAT");
+
 const onPress = () => {
   // Sending Message
-  let data = {
-    message: "Hello World",
-  };
-  meeting?.sendChatMessage(JSON.stringify(data));
+  const message = "Hello Everyone!";
+  publish(message, { persist: true });
+};
+```
 
-  // Raising Hand
-  meeting?.sendChatMessage(JSON.stringify({ type: "RAISE_HAND", data: {} }));
+### Raise Hand
+
+```js
+// importing usePubSub hook from react-sdk
+import { usePubSub } from "@videosdk.live/react-native-sdk";
+
+// destructure publish method from usePubSub hook
+const { publish, messages } = usePubSub("RAISE_HAND");
+
+const onPress = () => {
+  // RAISE HAND
+  const message = "";
+  publish(message, { persist: true });
 };
 ```
 
 ### Events
 
-1. **chat-message** - Whenever any participant sending message/raise hand in the meeting, then `chat-message` event will trigger and return senderId, senderName, timeStamp, text and type `(RAISE_HAND/CHAT)`.
+1. **onMessageReceived** - `onMessageReceived` event will be triggered when a new message is published for the subscribed topic with the message object.
 
-```js
-import { useMeeting } from "@videosdk.live/react-native-sdk";
-
-/** useMeeting hooks events */
-const {
-  /** Methods */
-} = useMeeting({
-  onChatMessage: (messageData) => {
-    const { senderId, senderName, text } = messageData;
-
-    const { type, data } = JSON.parse(text);
-
-    // type can be "CHAT" or "RAISE_HAND"
-  },
-});
-```
+:::note
+Check a detailed description of PubSub [here](./pubsub.md).
+:::
