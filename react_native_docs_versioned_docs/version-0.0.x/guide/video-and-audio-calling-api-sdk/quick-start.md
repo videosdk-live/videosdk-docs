@@ -225,14 +225,7 @@ $ sudo gem install cocoapods
 
 3. Manual linking (if react-native-incall-manager is not linked automatically)
 
-   3.1 Drag `node_modules/@videosdk.live/react-native-incall-manager/ios/RNInCallManager.xcodeproj` under `<your_xcode_project>/Libraries`
-
-   3.2 Select <your_xcode_project> --> Build Phases --> Link Binary With Libraries
-
-   3.3 Drag `Libraries/RNInCallManager.xcodeproj/Products/libRNInCallManager.a` to Link Binary With Libraries
-
-   3.4 Select <your_xcode_project> --> Build Settings
-   In Header Search Paths, add `$(SRCROOT)/../node_modules/@videosdk.live/react-native-incall-manager/ios/RNInCallManager`
+- Select `Your_Xcode_Project/TARGETS/BuildSettings`, in Header Search Paths, add `"$(SRCROOT)/../node_modules/@videosdk.live/react-native-incall-manager/ios/RNInCallManager"`
 
 4. Change path of `react-native-webrtc`
 
