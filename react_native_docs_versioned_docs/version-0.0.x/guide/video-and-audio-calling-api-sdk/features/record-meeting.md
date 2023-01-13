@@ -24,18 +24,25 @@ Any participant can start / stop recording any time during the meeting.
 This guide will provide an overview of how to implement start and stop Meeting Recording.
 
 1. **Start Recording** - By using `startRecording()` function, a participant can start meeting recording.
+
 2. **Stop Recording** - By using `stopRecording()` function, a participant can stop meeting recording.
 
 ### Start And Stop Recording
 
 ```js
-const { startRecording, stopRecording } = useMeeting();
-const onPress = () => {
-  // Start Recording
-  startRecording();
+import { useMeeting } from "@videosdk.live/react-native-sdk";
 
-  // Stop Recording
-  stopRecording();
+const MeetingView = () => {
+  const { startRecording, stopRecording } = useMeeting();
+
+  const onPress = () => {
+    // Start Recording
+    startRecording(webhookUrl, awsDirPath);
+
+    // Stop Recording
+    stopRecording();
+  };
+  return <>...</>;
 };
 ```
 

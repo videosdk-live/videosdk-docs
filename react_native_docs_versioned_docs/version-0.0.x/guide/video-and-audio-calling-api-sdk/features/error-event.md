@@ -53,27 +53,31 @@ We have depicted a specific constant with code and message in the below table.
 ```js
 import { Constants, useMeeting } from "@videosdk.live/react-native-sdk";
 
-const {
-  /** Properties and Methods */
-} = useMeeting({
-  onError: (data) => {
-    const { code, message } = data;
+const MeetingView = () => {
+  const {
+    /** Properties and Methods */
+  } = useMeeting({
+    onError: (data) => {
+      const { code, message } = data;
 
-    // Get Constant from SDK which contain value of error Code
-    const { INVALID_TOKEN, INVALID_MEETING_ID } = Constants.errors;
+      // Get Constant from SDK which contain value of error Code
+      const { INVALID_TOKEN, INVALID_MEETING_ID } = Constants.errors;
 
-    switch (code) {
-      case INVALID_TOKEN:
-        console.log(`Error is ${message}`);
-        break;
+      switch (code) {
+        case INVALID_TOKEN:
+          console.log(`Error is ${message}`);
+          break;
 
-      case INVALID_MEETING_ID:
-        console.log(`Error is ${message}`);
-        break;
+        case INVALID_MEETING_ID:
+          console.log(`Error is ${message}`);
+          break;
 
-      default:
-        break;
-    }
-  },
-});
+        default:
+          break;
+      }
+    },
+  });
+
+  return <>...</>;
+};
 ```

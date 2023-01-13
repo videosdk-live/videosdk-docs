@@ -22,6 +22,7 @@ This feature allows participant to broadcast meeting on various social media pla
 This guide will provide an overview of how participant can start and stop broadcasting meeting.
 
 1. **Start LiveStream** - By using `startLivestream()` function, a participant can start broadcasting meeting on various platforms by provding url and stream keys as an argument.
+
 2. **Stop LiveStream** - By using `stopLivestream()` function, a participant can stop broadcasting on all platforms.
 
 ### Start And Stop Live Stream

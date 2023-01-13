@@ -169,6 +169,17 @@ const MeetingView = () => {
 };
 ```
 
+## Use hooks API
+
+Our React JS SDK provides two important hooks API:
+
+- **useMeeting** : Responsible to handle meeting environment.
+- **useParticipant** : Responsible to handle Participant
+
+Also, React Provider and Consumer to listen changes in meeting environment.
+
+- **MeetingProvider** : Meeting Provider is [Context.Provider](https://reactjs.org/docs/context.html#contextprovider) that allows consuming components to subscribe to meeting changes
+
 ## 3. Join
 
 <div style={{display:'flex',flexDirection:'row',alignItems:'stretch',}}>
@@ -189,8 +200,9 @@ After joining, you will be able to Manage Participant in a meeting.
 </div>
 
 ```js
+import { useMeeting } from "@videosdk.live/react-native-sdk";
+
 const MeetingView = () => {
-  // Get Meeting object using useMeeting hook
   const { join } = useMeeting();
 
   const onPress = () => {

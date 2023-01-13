@@ -27,9 +27,13 @@ Like screen share feature, one participant is broadcasting and other participant
 This guide will provide an overview of how participant can start, stop, resume and seek external video during the meeting.
 
 1. **Start** : By using `startVideo()` function, the broadcaster can start external video by providing video link in argument.
+
 2. **Stop** : By using `stopVideo()` function, a broadcaster can stop external video.
+
 3. **Pause** : By using `pauseVideo()` function, a broadcaster can pause external video by providing `{ currentTime: 5 }` object as an argument.
+
 4. **Resume** : By using `resumeVideo()` function, a broadcaster can resume external video from last pause video duration.
+
 5. **Seek** : By using `seekVideo()` function, a broadcaster can seek external video to any given duration by providing `{ currentTime: 5 }` object as an argument.
 
 ### Start, Stop, Pause, Resume, and Seek External Video

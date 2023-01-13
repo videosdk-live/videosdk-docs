@@ -23,7 +23,7 @@ slug: manage-participants
 Local participant is used to consume your video & audio streams.
 it contains information about local participant such as displayName, id, quality and streams Map.
 
-You can acces localParticipant from the [meeting object](/react-native/guide/video-and-audio-calling-api-sdk/features/start-join-meeting#2-initialization).
+You can acces localParticipant from the [useMeeting](/react/api/sdk-reference/use-meeting/introduction) Hook.
 
 ### Participant object properties
 

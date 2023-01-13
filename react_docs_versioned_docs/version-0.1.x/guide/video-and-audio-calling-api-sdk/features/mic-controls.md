@@ -27,7 +27,9 @@ This guide will provide an overview of how to use enable and disable Mic in a me
    - You can pass customise audio track in `unmuteMic()` by using [Custom Audio Track](/react/guide/video-and-audio-calling-api-sdk/features/custom-track/custom-audio-track#custom-track-with-unmutemic).
 
 2. **Disable Mic** - By using `muteMic()` function, a participant can stop publishing audio to other participants.
+
 3. **Change Mic** - By using `changeMic()` function, a participant can change mic.
+
 4. **Toggle Mic** - By using `toggleMic()` function, a participant start or stop publishing the audio during the meeting.
 
 ### Enable, Disable, Change Mic

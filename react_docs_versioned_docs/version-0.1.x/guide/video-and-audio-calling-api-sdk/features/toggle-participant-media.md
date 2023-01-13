@@ -54,7 +54,7 @@ To achieve this feature, you need to pass `allow_join` persmission while geneart
 ### Request Media Methods
 
 ```js
-import { useMeeting } from "@videosdk.live/react-sdk";
+import { useParticipant } from "@videosdk.live/react-sdk";
 
 const ParticipantView = () => {
   const { enableWebcam, disableWebcam, enableMic, disableMic } =

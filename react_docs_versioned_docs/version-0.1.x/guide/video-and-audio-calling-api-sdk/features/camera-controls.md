@@ -29,7 +29,9 @@ This guide will provide an overview of how to implement enable, disable and swit
    - You can pass customise video track in `enableWebcam()` by using [Custom Video Track](/react/guide/video-and-audio-calling-api-sdk/features/custom-track/custom-video-track#custom-track-with-enablewebcam).
 
 2. **Disable Camera** - By using `disableWebcam()` function, a participant can stop publishing camera stream to other participants.
+
 3. **Switch Camera** - By using `changeWebcam()` function, a participant can stream from front / rear camera during the meeting.This function is only applicable for Mobile devices.
+
 4. **Toggle Camera** - By using `toggleWebcam()` function, a participant start or stop publishing the video during the meeting.
 
 ### Enable, Disable And Switch Webcam

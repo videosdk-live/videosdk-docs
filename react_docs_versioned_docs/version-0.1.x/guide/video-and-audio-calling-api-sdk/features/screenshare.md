@@ -27,6 +27,7 @@ This guide will provide an overview of how to use enable and disable Screen Shar
    - You can pass customise screen share track in `enableScreenShare()` by using [Custom Screen Share Track](/react/guide/video-and-audio-calling-api-sdk/features/custom-track/custom-screen-share-track#using-custom-screen-share-track).
 
 2. **Disable Screen Share** - By using `disableScreenShare()` function, a participant can stop publishing screen stream to other participants.
+
 3. **Toggle Screen Share** - By using `toggleScreenShare()` function, a participant can start or stop publishing screen stream to other participants.
 
 ### Enable, Disable Screen Share

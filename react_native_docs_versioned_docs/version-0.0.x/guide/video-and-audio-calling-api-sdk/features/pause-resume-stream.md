@@ -26,19 +26,23 @@ Whenver you wish to stop/resume downlaod stream(webcam, screenShare and mic) of 
 ```js
 import { useParticipant } from "@videosdk.live/react-native-sdk";
 
-// get stream of particular participant
-const { webcamStream, micStream, screenShareStream } =
-  useParticipant("<ParticipantId>");
+const ParticipantView = () => {
+  // get stream of particular participant
+  const { webcamStream, micStream, screenShareStream } =
+    useParticipant("<ParticipantId>");
 
-const onPress = () => {
-  // pause video stream
-  webcamStream.pause();
+  const onPress = () => {
+    // pause video stream
+    webcamStream.pause();
 
-  // pause mic stream
-  micStream.pause();
+    // pause mic stream
+    micStream.pause();
 
-  // pause screen share stream
-  screenShareStream.pause();
+    // pause screen share stream
+    screenShareStream.pause();
+  };
+
+  return <>...</>;
 };
 ```
 
@@ -49,18 +53,22 @@ const onPress = () => {
 ```js
 import { useParticipant } from "@videosdk.live/react-native-sdk";
 
-// get stream of particular participant
-const { webcamStream, micStream, screenShareStream } =
-  useParticipant("<ParticipantId>");
+const ParticipantView = () => {
+  // get stream of particular participant
+  const { webcamStream, micStream, screenShareStream } =
+    useParticipant("<ParticipantId>");
 
-const onPress = () => {
-  // resume video stream
-  webcamStream.resume();
+  const onPress = () => {
+    // resume video stream
+    webcamStream.resume();
 
-  // resume mic stream
-  micStream.resume();
+    // resume mic stream
+    micStream.resume();
 
-  // resume screen share stream
-  screenShareStream.resume();
+    // resume screen share stream
+    screenShareStream.resume();
+  };
+
+  return <>...</>;
 };
 ```
