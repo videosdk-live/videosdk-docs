@@ -134,7 +134,7 @@ dependencyResolutionManagement{
 
 ```js title="app/build.gradle"
 dependencies {
-  implementation 'live.videosdk:rtc-android-sdk:0.1.12'
+  implementation 'live.videosdk:rtc-android-sdk:0.1.13'
 
   // library to perform Network call to generate a meeting id
   implementation 'com.amitshekhar.android:android-networking:1.0.2'
@@ -939,6 +939,14 @@ public class MeetingActivity extends AppCompatActivity {
 
 We will be showing the list of participant in a recycler view.
 
+:::info
+
+- Here the participant's video is displayed using `VideoView`, but you may also use `SurfaceViewRender` for the same.
+- For `VideoView`, SDK version should be `0.1.13` or higher.
+- To know more about `VideoView`, please visit [here](/android/guide/video-and-audio-calling-api-sdk/components/videoView) 
+
+:::
+
 1. Create a new layout for the participant view named `item_remote_peer.xml` in the `res/layout` folder.
 
 ```xml title="item_remote_peer.xml"
@@ -950,8 +958,8 @@ We will be showing the list of participant in a recycler view.
     android:layout_height="wrap_content"
     tools:layout_height="200dp"
     android:background="@color/cardview_dark_background">
-    <org.webrtc.SurfaceViewRenderer
-        android:id="@+id/svrParticipant"
+    <live.videosdk.rtc.android.VideoView
+        android:id="@+id/participantView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:visibility="gone" />
@@ -1000,12 +1008,8 @@ class ParticipantAdapter(meeting: Meeting) : RecyclerView.Adapter<ParticipantAda
   }
 
   class PeerViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-    var svrParticipant: SurfaceViewRenderer = view.findViewById(R.id.svrParticipant)
+    var participantView: VideoView = view.findViewById(R.id.participantView)
     var tvName: TextView = view.findViewById(R.id.tvName)
-
-    init{
-      svrParticipant.init(PeerConnectionUtils.getEglContext(), null)
-    }
   }
 }
 ```
@@ -1037,8 +1041,8 @@ public class ParticipantAdapter extends RecyclerView.Adapter<ParticipantAdapter.
   }
 
   static class PeerViewHolder extends RecyclerView.ViewHolder {
-    // 'SurfaceViewRenderer' to show Video Stream
-    public SurfaceViewRenderer svrParticipant;
+    // 'VideoView' to show Video Stream
+    public VideoView participantView;
     public TextView tvName;
     public View itemView;
 
@@ -1046,8 +1050,7 @@ public class ParticipantAdapter extends RecyclerView.Adapter<ParticipantAdapter.
       super(view);
       itemView = view;
       tvName = view.findViewById(R.id.tvName);
-      svrParticipant = view.findViewById(R.id.svrParticipant);
-      svrParticipant.init(PeerConnectionUtils.getEglContext(), null);
+      participantView = view.findViewById(R.id.participantView);
     }
   }
 }
@@ -1189,12 +1192,12 @@ class ParticipantAdapter(meeting: Meeting) :
 
     holder.tvName.text = participant.displayName
 
-    // adding the initial video stream for the participant into the 'SurfaceViewRenderer'
+    // adding the initial video stream for the participant into the 'VideoView'
     for ((_, stream) in participant.streams) {
       if (stream.kind.equals("video", ignoreCase = true)) {
-        holder.svrParticipant.visibility = View.VISIBLE
+        holder.participantView.visibility = View.VISIBLE
         val videoTrack = stream.track as VideoTrack
-        videoTrack.addSink(holder.svrParticipant)
+        holder.participantView.addTrack(videoTrack)
         break
       }
     }
@@ -1203,18 +1206,16 @@ class ParticipantAdapter(meeting: Meeting) :
     participant.addEventListener(object : ParticipantEventListener() {
       override fun onStreamEnabled(stream: Stream) {
         if (stream.kind.equals("video", ignoreCase = true)) {
-          holder.svrParticipant.visibility = View.VISIBLE
+          holder.participantView.visibility = View.VISIBLE
           val videoTrack = stream.track as VideoTrack
-          videoTrack.addSink(holder.svrParticipant)
+          holder.participantView.addTrack(videoTrack)
        }
       }
 
       override fun onStreamDisabled(stream: Stream) {
         if (stream.kind.equals("video", ignoreCase = true)) {
-          val track = stream.track as VideoTrack
-          track?.removeSink(holder.svrParticipant)
-          holder.svrParticipant.clearImage()
-          holder.svrParticipant.visibility = View.GONE
+          holder.participantView.removeTrack()
+          holder.participantView.visibility = View.GONE
         }
       }
     })
@@ -1239,13 +1240,13 @@ public class ParticipantAdapter extends RecyclerView.Adapter<ParticipantAdapter.
 
     holder.tvName.setText(participant.getDisplayName());
 
-    // adding the initial video stream for the participant into the 'SurfaceViewRenderer'
+    // adding the initial video stream for the participant into the 'VideoView'
     for (Map.Entry<String, Stream> entry : participant.getStreams().entrySet()) {
       Stream stream = entry.getValue();
       if (stream.getKind().equalsIgnoreCase("video")) {
-        holder.svrParticipant.setVisibility(View.VISIBLE);
+        holder.participantView.setVisibility(View.VISIBLE);
         VideoTrack videoTrack = (VideoTrack) stream.getTrack();
-        videoTrack.addSink(holder.svrParticipant);
+        holder.participantView.addTrack(videoTrack)
         break;
       }
     }
@@ -1254,20 +1255,17 @@ public class ParticipantAdapter extends RecyclerView.Adapter<ParticipantAdapter.
       @Override
       public void onStreamEnabled(Stream stream) {
         if (stream.getKind().equalsIgnoreCase("video")) {
-          holder.svrParticipant.setVisibility(View.VISIBLE);
+          holder.participantView.setVisibility(View.VISIBLE);
           VideoTrack videoTrack = (VideoTrack) stream.getTrack();
-          videoTrack.addSink(holder.svrParticipant);
+          holder.participantView.addTrack(videoTrack)
         }
       }
 
       @Override
       public void onStreamDisabled(Stream stream) {
         if (stream.getKind().equalsIgnoreCase("video")) {
-          VideoTrack track = (VideoTrack) stream.getTrack();
-          if (track != null)
-            track.removeSink(holder.svrParticipant);
-          holder.svrParticipant.clearImage();
-          holder.svrParticipant.setVisibility(View.GONE);
+          holder.participantView.removeTrack();
+          holder.participantView.setVisibility(View.GONE);
         }
       }
     });

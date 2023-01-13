@@ -106,7 +106,7 @@ dependencyResolutionManagement{
 
 ```js title="app/build.gradle"
 dependencies {
-		implementation 'live.videosdk:rtc-android-sdk:0.1.12'
+		implementation 'live.videosdk:rtc-android-sdk:0.1.13'
 
 		// other app dependencies
 }
