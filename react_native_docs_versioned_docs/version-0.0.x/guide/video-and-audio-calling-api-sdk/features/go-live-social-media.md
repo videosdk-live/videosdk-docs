@@ -22,22 +22,30 @@ This feature allows participant to broadcast meeting on various social media pla
 This guide will provide an overview of how participant can start and stop broadcasting meeting.
 
 1. **Start LiveStream** - By using `startLivestream()` function, a participant can start broadcasting meeting on various platforms by provding url and stream keys as an argument.
+
 2. **Stop LiveStream** - By using `stopLivestream()` function, a participant can stop broadcasting on all platforms.
 
 ### Start And Stop Live Stream
 
 ```js
-const onPress = () => {
-  // Start Live Stream
-  meeting?.startLivestream([
-    {
-      url: "rtmp://a.rtmp.youtube.com/live2",
-      streamKey: "key",
-    },
-  ]);
+import { useMeeting } from "@videosdk.live/react-native-sdk";
 
-  // Stop Live Stream
-  meeting?.stopLivestream();
+const MeetingView = () => {
+  const { startLivestream, stopLivestream } = useMeeting();
+  const onPress = () => {
+    // Start Live Stream
+    startLivestream([
+      {
+        url: "rtmp://a.rtmp.youtube.com/live2",
+        streamKey: "key",
+      },
+    ]);
+
+    // Stop Live Stream
+    stopLivestream();
+  };
+
+  return <>...</>;
 };
 ```
 

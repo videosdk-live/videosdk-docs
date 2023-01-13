@@ -1,6 +1,6 @@
 ---
 sidebar_position: 1
-sidebar_label: PubSub
+sidebar_label: Send Message using PubSub
 pagination_label: PubSub
 title: PubSub
 ---

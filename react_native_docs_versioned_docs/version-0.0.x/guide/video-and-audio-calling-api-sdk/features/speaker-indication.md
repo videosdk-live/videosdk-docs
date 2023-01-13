@@ -28,12 +28,14 @@ For example, the meeting is running with **Alice** and **Bob**. Whenever any of 
 ```js
 import { useMeeting } from "@videosdk.live/react-native-sdk";
 
-/** useMeeting hooks events */
-const {
-  /** Methods */
-} = useMeeting({
-  onSpeakerChanged: (activeSpeakerId) => {
-    console.log("participantId", activeSpeakerId);
-  },
-});
+const MeetingView = () => {
+  /** useMeeting hooks events */
+  const {
+    /** Methods */
+  } = useMeeting({
+    onSpeakerChanged: (activeSpeakerId) => {
+      console.log("participantId", activeSpeakerId);
+    },
+  });
+};
 ```

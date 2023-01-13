@@ -23,7 +23,7 @@ slug: manage-participants
 Local participant is used to consume your video & audio streams.
 it contains information about local participant such as displayName, id, quality and streams Map.
 
-You can acces localParticipant from the [meeting object](/react-native/guide/video-and-audio-calling-api-sdk/features/start-join-meeting#2-initialization).
+You can acces localParticipant from the [useMeeting](/react/api/sdk-reference/use-meeting/introduction) Hook.
 
 ### Participant object properties
 
@@ -62,9 +62,7 @@ import {
 
 /** localParticipant contains Participant object
   as displayed above local participant section */
-const localParticipant = meeting.localParticipant;
-
-const participants = meeting.participants;
+const { localParticipant, participants } = useMeeting();
 
 /** Render All Participant including local participant */
 {
@@ -96,15 +94,15 @@ const ParticipantView = ({ participantId }) => {
 
 ## 3. Participant Related Events
 
-1. **participant-joined** - Whenever any new participant join the meeting, `participant-joined` event will trigger. For example, the meeting is running with **Alice** and **Bob**, then **Eve** join that meeting, after that `participant-joined` event trigger and return the [participant object](/react-native/guide/video-and-audio-calling-api-sdk/features/manage-participants#participant-object-properties).
+1. **onParticipantJoined** - Whenever any new participant join the meeting, `onParticipantJoined` event will trigger. For example, the meeting is running with **Alice** and **Bob**, then **Eve** join that meeting, after that `onParticipantJoined` event trigger and return the [participant object](/react-native/guide/video-and-audio-calling-api-sdk/features/manage-participants#participant-object-properties).
 
-2. **participant-left** - Whenever any participant leave/exit the meeting, `participant-left` event will trigger.For example, the meeting is running with **Alice** and **Bob**, then **Bob** leave that meeting, after that `participant-left` event trigger and return the [participant object](/react-native/guide/video-and-audio-calling-api-sdk/features/manage-participants#participant-object-properties)
+2. **onParticipantLeft** - Whenever any participant leave/exit the meeting, `onParticipantLeft` event will trigger.For example, the meeting is running with **Alice** and **Bob**, then **Bob** leave that meeting, after that `onParticipantLeft` event trigger and return the [participant object](/react-native/guide/video-and-audio-calling-api-sdk/features/manage-participants#participant-object-properties)
 
-3. **presenter-changed** - Whenever any participant present/screenshare their screen/window in meeting, `presenter-changed` event will trigger and return the presenter `participantId`.
+3. **onPresenterChanged** - Whenever any participant present/screenshare their screen/window in meeting, `onPresenterChanged` event will trigger and return the presenter `participantId`.
 
-4. **stream-enabled** - Whenever any participant enabled mic/webcam in meeting, `stream-enabled` event will trigger and return [Stream Map](/react-native/guide/video-and-audio-calling-api-sdk/features/manage-participants#streams-map-properties).
+4. **onStreamEnabled** - Whenever any participant enabled mic/webcam in meeting, `onStreamEnabled` event will trigger and return [Stream](/react-native/guide/video-and-audio-calling-api-sdk/features/manage-participants#stream-object-properties).
 
-5. **stream-disabled** - Whenever any participant disabled mic/webcam in meeting, `stream-disabled` event will trigger and return [Stream Map](/react-native/guide/video-and-audio-calling-api-sdk/features/manage-participants#streams-map-properties).
+5. **onStreamDisabled** - Whenever any participant disabled mic/webcam in meeting, `onStreamDisabled` event will trigger and return [Stream](/react-native/guide/video-and-audio-calling-api-sdk/features/manage-participants#stream-object-properties).
 
 ```js
 import { useMeeting, useParticipant } from "@videosdk.live/react-native-sdk";

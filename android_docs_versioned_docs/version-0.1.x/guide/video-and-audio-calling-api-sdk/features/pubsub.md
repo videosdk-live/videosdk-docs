@@ -1,5 +1,5 @@
 ---
-sidebar_label: PubSub
+sidebar_label: Send Message using PubSub
 pagination_label: PubSub
 ---
 

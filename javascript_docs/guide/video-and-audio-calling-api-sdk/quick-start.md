@@ -246,13 +246,13 @@ async function meetingHandler(newMeeting) {
       headers: { Authorization: token, "Content-Type": "application/json" },
     };
 
-    const { meetingId } = await fetch(url, options)
+    const { roomId } = await fetch(url, options)
       .then((response) => response.json())
       .catch((error) => alert("error", error));
-    document.getElementById("lblMeetingId").value = meetingId;
+    document.getElementById("lblMeetingId").value = roomId;
     document.getElementById("home-screen").style.display = "none";
     document.getElementById("grid-screen").style.display = "inline-block";
-    startMeeting(token, meetingId, joinMeetingName);
+    startMeeting(token, roomId, joinMeetingName);
   } else {
     meetingId = document.getElementById("txtMeetingCode").value;
     document.getElementById("lblMeetingId").value = meetingId;

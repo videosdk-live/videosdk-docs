@@ -25,17 +25,30 @@ For Mobile Devices a complete screen will be share.
 This guide will provide an overview of how to use enable and disable Screen Share in a meeting.
 
 1. **Enable Screen Share** - By using `enableScreenShare()` function, a participant can publish screen stream to other participants.
+
+   - You can pass customise screen share track in `enableScreenShare()` by using [Custom Screen Share Track](/react-native/guide/video-and-audio-calling-api-sdk/features/custom-track/custom-screen-share-track#using-custom-screen-share-track).
+
 2. **Disable Screen Share** - By using `disableScreenShare()` function, a participant can stop publishing screen stream to other participants.
 
 ### Enable, Disable Screen Share
 
 ```js
-const onPress = () => {
-  // Enabling ScreenShare
-  meeting?.enableScreenShare();
+import { useMeeting } from "@videosdk.live/react-native-sdk";
 
-  // Disabling ScreenShare
-  meeting?.disableScreenShare();
+const MeetingView = () => {
+  const { enableScreenShare, disableScreenShare, toggleScreenShare } =
+    useMeeting();
+  const onPress = () => {
+    // Enabling ScreenShare
+    enableScreenShare();
+
+    // Disabling ScreenShare
+    disableScreenShare();
+
+    // Toggle ScreenShare
+    toggleScreenShare();
+  };
+  return <>...</>;
 };
 ```
 
@@ -59,6 +72,8 @@ For React Native iOS Screen Share feature, you need to follow this guide [React 
 - [`onPresenterChanged()`](../../../api/sdk-reference/use-meeting/events#onpresenterchanged) will also receive a callback with `null` value.
 
 ```js
+import { useParticipant } from "@videosdk.live/react-native-sdk";
+
 function onStreamEnabled(stream) {
   if(stream.kind === 'share'){
     console.log("Screen Share Stream On: onStreamEnabled", stream);
@@ -79,6 +94,10 @@ const {
   onStreamDisabled,
   ...
 });
+```
+
+```js
+import { useMeeting } from "@videosdk.live/react-native-sdk";
 
 function onPresenterChanged(presenterId) {
   console.log(" onPresenterChanged", presenterId);

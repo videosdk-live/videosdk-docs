@@ -34,7 +34,7 @@ After the successful installation of VideoSDK, the next step is to integrate Vid
 
 ## 1. Configuration
 
-To configure a meeting, you will need [generated token](/react/guide/video-and-audio-calling-api-sdk/server-setup#generate-accees-token-and-integrate-other-apis) and [meetingId](/api-reference/v1/realtime-communication/create-join-meeting#create-meeting), we had discussed in [Server Setup](/react/guide/video-and-audio-calling-api-sdk/server-setup).
+To configure a meeting, you will need [generated token](/react/guide/video-and-audio-calling-api-sdk/server-setup#generate-accees-token-and-integrate-other-apis) and [meetingId](/api-reference/realtime-communication/create-room), we had discussed in [Server Setup](/react/guide/video-and-audio-calling-api-sdk/server-setup).
 This code snippet calls API from local server
 
 **Scenario 1** - Suppose you **don't have** any meetingId, you can simply generate meetingId by invoking `create-meeting` API.
@@ -164,6 +164,17 @@ const MeetingView = () => {
 };
 ```
 
+## Use hooks API
+
+Our React JS SDK provides two important hooks API:
+
+- **useMeeting** : Responsible to handle meeting environment.
+- **useParticipant** : Responsible to handle Participant
+
+Also, React Provider and Consumer to listen changes in meeting environment.
+
+- **MeetingProvider** : Meeting Provider is [Context.Provider](https://reactjs.org/docs/context.html#contextprovider) that allows consuming components to subscribe to meeting changes
+
 ## 3. Join
 
 <div style={{display:'flex',flexDirection:'row',alignItems:'stretch',}}>
@@ -184,15 +195,23 @@ After joining, you will be able to Manage Participant in a meeting.
 </div>
 
 ```js
-const onPress = () => {
-  // Joining Meeting
-  meeting?.join();
+import { useMeeting } from "@videosdk.live/react-sdk";
+
+const MeetingView = () => {
+  const { join } = useMeeting();
+
+  const onPress = () => {
+    // Joining Meeting
+    join();
+  };
+
+  return <>...</>;
 };
 ```
 
 ## Events
 
-Following callbacks are receieved when a participant it is successfully joined.
+Following callbacks are receieved when a participant is successfully joined.
 
 - Local Participant will receive a [`onMeetingJoined`](../../../api/sdk-reference/use-meeting/events#onmeetingjoined) event, when successfully joined.
 - Remote Participant will receive a [`onParticipantJoined`](../../../api/sdk-reference/use-meeting/events#onparticipantjoined) event with the newly joined `Participant` object from the event callback.

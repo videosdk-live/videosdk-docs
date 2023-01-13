@@ -130,9 +130,9 @@ function setTrack(stream, videoElem, audioElement, id) {
 
 3. **presenter-changed** - Whenever any participant present/screenshare their screen/window in meeting, `presenter-changed` event will trigger and return the presenter `participantId`.
 
-4. **stream-enabled** - Whenever any participant enabled mic/webcam in meeting, `stream-enabled` event will trigger and return [Stream Map](/javascript/guide/video-and-audio-calling-api-sdk/features/manage-participants#streams-map-properties).
+4. **stream-enabled** - Whenever any participant enabled mic/webcam in meeting, `stream-enabled` event will trigger and return [Stream](/javascript/guide/video-and-audio-calling-api-sdk/features/manage-participants#stream-object-properties).
 
-5. **stream-disabled** - Whenever any participant disabled mic/webcam in meeting, `stream-disabled` event will trigger and return [Stream Map](/javascript/guide/video-and-audio-calling-api-sdk/features/manage-participants#streams-map-properties).
+5. **stream-disabled** - Whenever any participant disabled mic/webcam in meeting, `stream-disabled` event will trigger and return [Stream](/javascript/guide/video-and-audio-calling-api-sdk/features/manage-participants#stream-object-properties).
 
 ```js
 meeting.on("participant-joined", (participant) => {

@@ -105,6 +105,16 @@ android.enableDexingArtifactTransform.desugaring=false
 -keep class org.webrtc.** { *; }
 ```
 
+### 6. In the `build.gradle` file, update the minimum OS/SDK version to `23`.
+
+```java title=build.gradle
+buildscript {
+  ext {
+      minSdkVersion = 23
+  }
+}
+```
+
 ## Final Steps
 
 ### Import Example

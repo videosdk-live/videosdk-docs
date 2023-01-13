@@ -25,7 +25,8 @@ This guide will provide an overview of how to pin or unpin any participants in a
 ## Participant Pin State
 
 ```js
-const { cam, share } = participant?.pinState;
+const { pinState } = useParticipant(participantId);
+const { cam, share } = pinState;
 ```
 
 :::note
@@ -41,25 +42,32 @@ If any participant's webcam is pinned but not screenshare, then calling `pin("SH
 ### Pin And Unpin a Participant
 
 ```js
-const onPress = () => {
-  // Pin both webcam and screenshare of that participant
-  participant.pin();
+import { useParticipant } from "@videosdk.live/react-sdk";
 
-  // Pin webcam of that participant
-  participant.pin("CAM");
+const ParticipantView = () => {
+  const { pin, unpin } = useParticipant(participantId);
 
-  // Pin screenshare of that participant
-  participant.pin("SHARE");
+  const onPress = () => {
+    // Pin both webcam and screenshare of that participant
+    pin();
 
-  //
-  // Unpin both webcam and screenshare of that participant
-  participant.unpin();
+    // Pin webcam of that participant
+    pin("CAM");
 
-  // Unpin webcam of that participant
-  participant.unpin("CAM");
+    // Pin screenshare of that participant
+    pin("SHARE");
 
-  // Unpin screenshare of that participant
-  participant.unpin("SHARE");
+    //
+    // Unpin both webcam and screenshare of that participant
+    unpin();
+
+    // Unpin webcam of that participant
+    unpin("CAM");
+
+    // Unpin screenshare of that participant
+    unpin("SHARE");
+  };
+  return <>...</>;
 };
 ```
 

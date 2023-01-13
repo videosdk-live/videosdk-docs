@@ -127,7 +127,7 @@ Before jumping to anything else, we have write API to generate unique meetingId.
 export const authToken = "<Generated-from-dashbaord>";
 // API call to create meeting
 export const createMeeting = async ({ token }) => {
-  const res = await fetch(`https://api.videosdk.live/v1/meetings`, {
+  const res = await fetch(`https://api.videosdk.live/v2/rooms`, {
     method: "POST",
     headers: {
       authorization: `${authToken}`,
@@ -136,8 +136,8 @@ export const createMeeting = async ({ token }) => {
     body: JSON.stringify({}),
   });
 
-  const { meetingId } = await res.json();
-  return meetingId;
+  const { roomId } = await res.json();
+  return roomId;
 };
 ```
 
@@ -200,7 +200,8 @@ function App() {
         webcamEnabled: false,
         name: "C.V. Raman",
       }}
-      token={authToken}>
+      token={authToken}
+    >
       <MeetingConsumer>
         {() => <Container meetingId={meetingId} />}
       </MeetingConsumer>

@@ -197,6 +197,16 @@ android.enableDexingArtifactTransform.desugaring=false
 -keep class org.webrtc.** { *; }
 ```
 
+5. In the `build.gradle` file, update the minimum OS/SDK version to `23`.
+
+```java title=build.gradle
+buildscript {
+  ext {
+      minSdkVersion = 23
+  }
+}
+```
+
 #### iOS Setup
 
 1. Install `react-native-incallmanager`
@@ -215,14 +225,7 @@ $ sudo gem install cocoapods
 
 3. Manual linking (if react-native-incall-manager is not linked automatically)
 
-   3.1 Drag `node_modules/@videosdk.live/react-native-incall-manager/ios/RNInCallManager.xcodeproj` under `<your_xcode_project>/Libraries`
-
-   3.2 Select <your_xcode_project> --> Build Phases --> Link Binary With Libraries
-
-   3.3 Drag `Libraries/RNInCallManager.xcodeproj/Products/libRNInCallManager.a` to Link Binary With Libraries
-
-   3.4 Select <your_xcode_project> --> Build Settings
-   In Header Search Paths, add `$(SRCROOT)/../node_modules/@videosdk.live/react-native-incall-manager/ios/RNInCallManager`
+- Select `Your_Xcode_Project/TARGETS/BuildSettings`, in Header Search Paths, add `"$(SRCROOT)/../node_modules/@videosdk.live/react-native-incall-manager/ios/RNInCallManager"`
 
 4. Change path of `react-native-webrtc`
 
@@ -281,7 +284,7 @@ Before jumping to anything else, we have write API to generate unique meetingId.
 export const token = "<Generated-from-dashbaord>";
 // API call to create meeting
 export const createMeeting = async ({ token }) => {
-  const res = await fetch(`https://api.videosdk.live/v1/meetings`, {
+  const res = await fetch(`https://api.videosdk.live/v2/rooms`, {
     method: "POST",
     headers: {
       authorization: `${token}`,
@@ -290,8 +293,8 @@ export const createMeeting = async ({ token }) => {
     body: JSON.stringify({}),
   });
 
-  const { meetingId } = await res.json();
-  return meetingId;
+  const { roomId } = await res.json();
+  return roomId;
 };
 ```
 
@@ -358,7 +361,8 @@ export default function App() {
           webcamEnabled: true,
           name: "Test User",
         }}
-        token={token}>
+        token={token}
+      >
         <MeetingView />
       </MeetingProvider>
     </SafeAreaView>
@@ -382,12 +386,14 @@ function JoinScreen(props) {
         backgroundColor: "#F6F6FF",
         justifyContent: "center",
         paddingHorizontal: 6 * 10,
-      }}>
+      }}
+    >
       <TouchableOpacity
         onPress={() => {
           props.getMeetingId();
         }}
-        style={{ backgroundColor: "#1178F8", padding: 12, borderRadius: 6 }}>
+        style={{ backgroundColor: "#1178F8", padding: 12, borderRadius: 6 }}
+      >
         <Text style={{ color: "white", alignSelf: "center", fontSize: 18 }}>
           Create Meeting
         </Text>
@@ -400,7 +406,8 @@ function JoinScreen(props) {
           marginVertical: 16,
           fontStyle: "italic",
           color: "grey",
-        }}>
+        }}
+      >
         ---------- OR ----------
       </Text>
       <TextInput
@@ -423,7 +430,8 @@ function JoinScreen(props) {
         }}
         onPress={() => {
           props.getMeetingId(meetingVal);
-        }}>
+        }}
+      >
         <Text style={{ color: "white", alignSelf: "center", fontSize: 18 }}>
           Join Meeting
         </Text>
@@ -454,7 +462,8 @@ const Button = ({ onPress, buttonText, backgroundColor }) => {
         alignItems: "center",
         padding: 12,
         borderRadius: 4,
-      }}>
+      }}
+    >
       <Text style={{ color: "white", fontSize: 12 }}>{buttonText}</Text>
     </TouchableOpacity>
   );
@@ -467,7 +476,8 @@ function ControlsContainer({ join, leave, toggleWebcam, toggleMic }) {
         padding: 24,
         flexDirection: "row",
         justifyContent: "space-between",
-      }}>
+      }}
+    >
       <Button
         onPress={() => {
           join();
@@ -557,7 +567,8 @@ function ParticipantList({ participants }) {
         backgroundColor: "#F6F6FF",
         justifyContent: "center",
         alignItems: "center",
-      }}>
+      }}
+    >
       <Text style={{ fontSize: 20 }}>Press Join button to enter meeting.</Text>
     </View>
   );
@@ -634,7 +645,8 @@ function ParticipantView({ participantId }) {
         height: 300,
         justifyContent: "center",
         alignItems: "center",
-      }}>
+      }}
+    >
       <Text style={{ fontSize: 16 }}>NO MEDIA</Text>
     </View>
   );
