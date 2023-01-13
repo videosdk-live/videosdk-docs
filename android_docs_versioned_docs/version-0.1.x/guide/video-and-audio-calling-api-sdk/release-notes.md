@@ -7,6 +7,16 @@ pagination_label: Release Notes
 
 This page will keep you update all the releases of Android SDK.
 
+## v0.1.13
+
+**Release Date** : 13th january 2023
+
+**Change log** :
+
+- Provide  `VideoView`  component which can render video stream.
+
+    **Docs** : [VideoView](https://docs.videosdk.live/android/guide/video-and-audio-calling-api-sdk/components/videoView)
+    
 ## v0.1.12
 
 **Release Date** : 3rd Janurary 2023
