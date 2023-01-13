@@ -178,7 +178,7 @@ export const getToken = () => {
 
 const getMeetingId = async ({ token }) => {
   try {
-    const VIDEOSDK_API_ENDPOINT = "https://api.videosdk.live/v1/meetings";
+    const VIDEOSDK_API_ENDPOINT = "https://api.videosdk.live/v2/rooms";
     const options = {
       method: "POST",
       headers: {
@@ -187,8 +187,8 @@ const getMeetingId = async ({ token }) => {
     };
     const response = await fetch(VIDEOSDK_API_ENDPOINT, options)
       .then(async (result) => {
-        const { meetingId } = await result.json();
-        setMeetingId(meetingId);
+        const { roomId } = await result.json();
+        setMeetingId(roomId);
       })
       .catch((error) => console.log("error", error));
     return response;

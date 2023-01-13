@@ -84,8 +84,7 @@ class APIService {
     let AUTH_TOKEN = "YOUR TOKEN HERE";
 
     class func createMeeting(token: String, completion: @escaping (Result<String, Error>) -> Void) {
-        var url = URL(string: "https://api.videosdk.live/v1/api")!
-        url = url.appendingPathComponent("create-meeting")
+        var url = URL(string: "https://api.videosdk.live/v2/rooms")!
 
         let params = ["token": AUTH_TOKEN]
 
@@ -95,7 +94,7 @@ class APIService {
         request.addValue(AUTH_TOKEN, "Autorization")
 
         URLSession.shared.dataTask(with: request) { data, response, error in
-            if let data = data, let meetingId = data.toJSON()["meetingId"] as? String {
+            if let data = data, let meetingId = data.toJSON()["roomId"] as? String {
                 completion(.success(meetingId))
             } else if let err = error {
                 completion(.failure(err))
