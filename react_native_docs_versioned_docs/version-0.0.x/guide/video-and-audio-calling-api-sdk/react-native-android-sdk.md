@@ -169,6 +169,17 @@ register();
 AppRegistry.registerComponent(appName, () => App);
 ```
 
+### Minimum OS/SDK versions
+
+In the `build.gradle` file, update the minimum OS/SDK version to `23`.
+
+```java title=build.gradle
+buildscript {
+  ext {
+      minSdkVersion = 23
+  }
+}
+
 ## Use hooks API
 
 Our React JS SDK provides two important hooks API:
@@ -186,3 +197,4 @@ Also, React Provider and Consumer to listen changes in meeting environment.
 Check out official example of React Native SDK implementation: [videosdk-rtc-react-native-sdk-example](https://github.com/videosdk-live/videosdk-rtc-react-native-sdk-example)
 
 :::
+```
