@@ -432,7 +432,7 @@ const MethodRequestResponse = ({
     },
   ];
 
-  useEffect(() => { }, [language]);
+  useEffect(() => {}, [language]);
 
   return (
     <div className='flex flex-col '>
@@ -531,11 +531,10 @@ const MethodRequestResponse = ({
 const MethodDescription = ({
   description,
   postParameters,
+  responseParameters,
   queryParameters,
   parameters,
 }) => {
-
-
   return (
     <div className='flex flex-col'>
       <div className='text-gray-250'>{description}</div>
@@ -557,13 +556,36 @@ const MethodDescription = ({
                 isDeprecated={parameter.isDeprecated}
                 isDiscontinued={parameter.isDiscontinued}
                 deprecatedMessage={parameter.deprecatedMessage}
-
               />
             );
           })}
         </div>
       )}
 
+      {responseParameters?.length != 0 && (
+        <div>
+          <div className='text-2xl mt-12 font-extrabold text-white-100'>
+            Response Parameters
+          </div>
+          <div className='bg-[#252A34] mt-3 mb-1 h-[1px]'></div>
+          {responseParameters?.map((parameter, index) => {
+            return (
+              <MethodParameter
+                parameterName={parameter.key}
+                description={parameter.description}
+                values={parameter.values}
+                defaultValue={parameter.defaultValue}
+                required={parameter.required}
+                isResponseParam={true}
+                showDivider={index != responseParameters?.length - 1}
+                isDeprecated={parameter.isDeprecated}
+                isDiscontinued={parameter.isDiscontinued}
+                deprecatedMessage={parameter.deprecatedMessage}
+              />
+            );
+          })}
+        </div>
+      )}
       {queryParameters?.length != 0 && (
         <div>
           <div className='text-2xl mt-12 font-extrabold text-white-100'>
@@ -606,7 +628,6 @@ const MethodDescription = ({
                 isDeprecated={parameter.isDeprecated}
                 isDiscontinued={parameter.isDiscontinued}
                 deprecatedMessage={parameter.deprecatedMessage}
-
               />
             );
           })}
@@ -640,26 +661,31 @@ const MethodParameter = ({
   parameterName,
   required,
   values,
+  isResponseParam,
   defaultValue,
   description,
   showDivider,
   isDeprecated,
   deprecatedMessage,
-  isDiscontinued
+  isDiscontinued,
 }) => {
-
-  console.log({ isDeprecated, deprecatedMessage }, "isDeprecated, deprecatedMessage")
+  console.log(
+    { isDeprecated, deprecatedMessage },
+    "isDeprecated, deprecatedMessage"
+  );
 
   let md =
     values && defaultValue
-      ? `${"#### values  :    " + values} \n${defaultValue && "#### defaultValue  :    " + defaultValue
-      }\n ${description} `
+      ? `${"#### values  :    " + values} \n${
+          defaultValue && "#### defaultValue  :    " + defaultValue
+        }\n ${description} `
       : values
-        ? `${"#### values  :    " + values} \n ${description} `
-        : defaultValue
-          ? `${defaultValue && "#### defaultValue  :    " + defaultValue
-          }\n ${description} `
-          : `${description} `;
+      ? `${"#### values  :    " + values} \n ${description} `
+      : defaultValue
+      ? `${
+          defaultValue && "#### defaultValue  :    " + defaultValue
+        }\n ${description} `
+      : `${description} `;
 
   let mdParmName = `## ${parameterName}`;
   return (
@@ -672,8 +698,9 @@ const MethodParameter = ({
                 overrides: {
                   h2: {
                     props: {
-                      className:
-                        `font-semibold text-xl pr-1.5 text-white-100 mb-1.5 ${isDeprecated || isDiscontinued ? "text-red-200" : ""}`,
+                      className: `font-semibold text-xl pr-1.5 text-white-100 mb-1.5 ${
+                        isDeprecated || isDiscontinued ? "text-red-200" : ""
+                      }`,
                     },
                   },
                 },
@@ -682,36 +709,41 @@ const MethodParameter = ({
           </a>
         </div>
 
-        {(isDeprecated || isDiscontinued) ? <div className='text-red-200 italic font-semibold text-[12px] leading-7 mt-1'>
-          {isDiscontinued ? "@discontinued" : isDeprecated ? "@deprecated" : ""}
-        </div> : required ? (
-          <div className='text-primary font-semibold text-[10px] leading-7 mt-1'>
-            REQUIRED
+        {isDeprecated || isDiscontinued ? (
+          <div className='text-red-200 italic font-semibold text-[12px] leading-7 mt-1'>
+            {isDiscontinued
+              ? "@discontinued"
+              : isDeprecated
+              ? "@deprecated"
+              : ""}
           </div>
-        ) : (
-          <div className=' text-slate-400 text-[10px] font-medium leading-7 mt-1'>
-            OPTIONAL
-          </div>
-        )}
-
-
+        ) : !isResponseParam ? (
+          required ? (
+            <div className='text-primary font-semibold text-[10px] leading-7 mt-1'>
+              REQUIRED
+            </div>
+          ) : (
+            <div className=' text-slate-400 text-[10px] font-medium leading-7 mt-1'>
+              OPTIONAL
+            </div>
+          )
+        ) : null}
       </div>
 
       {(isDeprecated || isDiscontinued) && deprecatedMessage ? (
         <div>
-          <p className="italic text-red-200">
+          <p className='italic text-red-200'>
             <Markdown
               options={{
                 overrides: {
                   a: {
                     props: {
                       className: "text-red-300 underline",
-                      target: "_blank"
+                      target: "_blank",
                     },
-                  }
-                }
-              }}
-            >
+                  },
+                },
+              }}>
               {deprecatedMessage}
             </Markdown>
           </p>
@@ -741,6 +773,7 @@ function RestApiMethodContainer({
   headers,
   methodType,
   postParameters,
+  responseParameters,
   queryParameters,
   description,
   apiEndpoint,
@@ -758,6 +791,7 @@ function RestApiMethodContainer({
             queryParameters={queryParameters}
             postParameters={postParameters}
             parameters={parameters}
+            responseParameters={responseParameters}
           />
         </div>
         <div className='lg:w-1/2 w-full lg:pt-0 pt-4 lg:pl-[18px] lg:sticky self-start flex-grow top-10'>

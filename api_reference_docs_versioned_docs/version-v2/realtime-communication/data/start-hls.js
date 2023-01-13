@@ -46,12 +46,40 @@ const startHLSstream = {
       required: false,
     },
   ],
+  responseParameters: [
+    {
+      key: "playbackHlsUrl",
+      description: "Live HLS with playback support",
+    },
+    {
+      key: "livestreamUrl",
+      description: "Live HLS without playback sipport",
+    },
+    {
+      key: "downstreamUrl",
+      description: "Live HLS with playback support",
+      isDeprecated: true,
+    },
+  ],
   queryParameters: [],
   parameters: [],
   apiEndpoint: "https://api.videosdk.live/v2/hls/start",
   response: {
+    sessionId: "abcde94c96e17e03fb0abcde4",
+    start: "2022-04-19T09:18:13.432Z",
+    roomId: "abcd-efgh-ijkl",
+    links: {
+      get_room: "https://api.videosdk.live/v2/rooms/abcd-efgh-ijkl",
+      get_session:
+        "https://api.videosdk.live/v2/sessions/abcde94c96e17e03fb0abcde4",
+    },
     downstreamUrl:
-      "https://cdn.videosdk.live/meetings-hls/2e200932-e00f-4e5f-b35d-73d3079e6bf5/index.m3u8",
+      "https://cdn.videosdk.live/meetings-hls/abcdefgh-ijkl-mnop/index.m3u8",
+    playbackHlsUrl:
+      "https://cdn.videosdk.live/meetings-hls/abcdefgh-ijkl-mnop/index.m3u8",
+    livestreamUrl:
+      "https://cdn.videosdk.live/meetings-hls/abcdefgh-ijkl-mnop/live.m3u8",
+    id: "abcdef9879288c1f48339f64",
   },
 };
 
