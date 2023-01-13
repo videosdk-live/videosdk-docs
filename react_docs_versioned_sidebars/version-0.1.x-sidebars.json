@@ -71,6 +71,10 @@
     },
     {
       "type": "doc",
+      "id": "api/sdk-reference/terminology"
+    },
+    {
+      "type": "doc",
       "id": "api/sdk-reference/meeting-provider"
     },
     {

@@ -78,6 +78,10 @@
       "id": "api/sdk-reference/setup"
     },
     {
+      "type": "doc",
+      "id": "api/sdk-reference/terminology"
+    },
+    {
       "type": "category",
       "label": "Videosdk Class",
       "items": [
