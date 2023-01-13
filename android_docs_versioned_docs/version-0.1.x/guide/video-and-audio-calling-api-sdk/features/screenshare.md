@@ -181,7 +181,7 @@ private void disableScreenShare(){
 
 #### Local Participant
 
-When a Local participant share the screen, `onStreamEnabled()` of `ParticipantEventListener` is triggered with the `Stream` which can be added to a `SurfaceViewRenderer`.
+When a Local participant share the screen, `onStreamEnabled()` of `ParticipantEventListener` is triggered with the `Stream` which can be added to a `VideoView`.
 
 <Tabs
 defaultValue="Kotlin"
@@ -191,25 +191,18 @@ values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
 <TabItem value="Kotlin">
 
 ```js
-override fun onCreate(savedInstanceState: Bundle?) {
-    //...
-    svrShare!!.init(PeerConnectionUtils.getEglContext(), null)
-}
-
 private fun setLocalListeners() {
     meeting!!.localParticipant.addEventListener(object : ParticipantEventListener() {
         override fun onStreamEnabled(stream: Stream) {
            if (stream.kind.equals("share", ignoreCase = true)) {
                 // display share video
                 val videoTrack = stream.track as VideoTrack
-                videoTrack.addSink(svrShare)
+                shareView!!.addTrack(videoTrack)
             }
         }
         override fun onStreamDisabled(stream: Stream) {
             if (stream.kind.equals("share", ignoreCase = true)) {
-               val track: VideoTrack? = stream.track as VideoTrack
-               track?.removeSink(svrShare)
-               svrShare!!.clearImage()
+               shareView!!.removeTrack()
             }
         }
     });
@@ -221,12 +214,6 @@ private fun setLocalListeners() {
 <TabItem value="Java">
 
 ```js
-@Override
-protected void onCreate(Bundle savedInstanceState) {
-    //...
-    svrShare.init(PeerConnectionUtils.getEglContext(), null);
-}
-
 private void setLocalListeners() {
     meeting.getLocalParticipant().addEventListener(new ParticipantEventListener() {
         @Override
@@ -234,15 +221,13 @@ private void setLocalListeners() {
             if (stream.getKind().equalsIgnoreCase("share")) {
                 // display share video
                 VideoTrack videoTrack = (VideoTrack) stream.getTrack();
-                videoTrack.addSink(svrShare);
+                shareView.addTrack(videoTrack);
             }
         }
         @Override
         public void onStreamDisabled(Stream stream) {
             if (stream.getKind().equalsIgnoreCase("share")) {
-                VideoTrack track = (VideoTrack) stream.getTrack();
-                if (track != null) track.removeSink(svrShare);
-                svrShare.clearImage();
+                shareView.removeTrack();
             }
         }
     });
@@ -265,11 +250,6 @@ values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
 <TabItem value="Kotlin">
 
 ```js
-override fun onCreate(savedInstanceState: Bundle?) {
-    //...
-    svrShare!!.init(PeerConnectionUtils.getEglContext(), null)
-}
-
 private val meetingEventListener: MeetingEventListener = object : MeetingEventListener() {
     override fun onPresenterChanged(participantId: String) {
         updatePresenter(participantId)
@@ -293,16 +273,13 @@ private fun updatePresenter(participantId: String?) {
 
     // display share video
     val videoTrack = shareStream.track as VideoTrack
-    videoTrack.addSink(svrShare)
+    shareView!!.addTrack(videoTrack)
 
     // listen for share stop event
     participant.addEventListener(object : ParticipantEventListener() {
         override fun onStreamDisabled(stream: Stream) {
             if ((stream.kind == "share")) {
-                val track: VideoTrack? = stream.track as VideoTrack
-                track?.removeSink(svrShare)
-                
-                svrShare!!.clearImage()
+                shareView!!.removeTrack()
             }
         }
     })
@@ -314,12 +291,6 @@ private fun updatePresenter(participantId: String?) {
 <TabItem value="Java">
 
 ```js
-@Override
-protected void onCreate(Bundle savedInstanceState) {
-    //...
-    svrShare.init(PeerConnectionUtils.getEglContext(), null);
-}
-
 private final MeetingEventListener meetingEventListener = new MeetingEventListener() {
     //Triggered when Presenter changes
     @Override
@@ -346,17 +317,14 @@ private void updatePresenter(String participantId) {
 
     // display share video
     VideoTrack videoTrack = (VideoTrack) shareStream.getTrack();
-    videoTrack.addSink(svrShare);
+    shareView.addTrack(videoTrack)
 
     // listen for share stop event
     participant.addEventListener(new ParticipantEventListener() {
         @Override
         public void onStreamDisabled(Stream stream) {
             if (stream.getKind().equals("share")) {
-                VideoTrack track = (VideoTrack) stream.getTrack();
-                if (track != null) track.removeSink(svrShare);
-
-                svrShare.clearImage();
+                shareView.removeTrack();
             }
         }
     });
@@ -366,3 +334,11 @@ private void updatePresenter(String participantId) {
 </TabItem>
 
 </Tabs>
+
+:::info
+
+- Here screenShare stream is displayed using `VideoView`, but you may also use `SurfaceViewRender` for the same.
+- For `VideoView`, SDK version should be `0.1.13` or higher.
+- To know more about `VideoView`, please visit [here](/android/guide/video-and-audio-calling-api-sdk/components/videoView) 
+
+:::

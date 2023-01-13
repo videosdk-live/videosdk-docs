@@ -62,6 +62,13 @@
     },
     {
       "type": "category",
+      "label": "Components",
+      "items": [
+        "guide/video-and-audio-calling-api-sdk/components/video-view"
+      ]
+    },
+    {
+      "type": "category",
       "label": "Extras",
       "items": [
         "guide/video-and-audio-calling-api-sdk/extras/banuba-integration"

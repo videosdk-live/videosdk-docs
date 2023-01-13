@@ -53,8 +53,8 @@ Other participants Map contains same properties as [LocalParticipant](/android/g
 ### Local And Other Participants
 
 ```xml title="activity_main.xml"
-  <org.webrtc.SurfaceViewRenderer
-      android:id="@+id/svrLocal"
+  <live.videosdk.rtc.android.VideoView
+      android:id="@+id/localView"
       android:layout_width="80dp"
       android:layout_height="100dp"
       android:layout_gravity="end" />
@@ -64,6 +64,14 @@ Other participants Map contains same properties as [LocalParticipant](/android/g
       android:layout_width="match_parent"
       android:layout_height="match_parent" />
 ```
+
+:::info
+
+- Here the participant's video is displayed using `VideoView`, but you may also use `SurfaceViewRender` for the same.
+- For `VideoView`, SDK version should be `0.1.13` or higher.
+- To know more about `VideoView`, please visit [here](/android/guide/video-and-audio-calling-api-sdk/components/videoView) 
+
+:::
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -76,11 +84,11 @@ values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
 <TabItem value="Kotlin">
 
 ```js title="MainActivity.kt"
-  import org.webrtc.SurfaceViewRenderer;
-  import org.webrtc.VideoTrack;
+  import live.videosdk.rtc.android.VideoView
+  import org.webrtc.VideoTrack 
 
   private fun displayLocalParticipant() {
-    var svrLocal: SurfaceViewRenderer = findViewById(R.id.btnScreenShare)
+    var localView: VideoView = findViewById(R.id.localView)
 
     // display local video when stream available
     meeting!!.localParticipant.addEventListener(
@@ -88,7 +96,7 @@ values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
          override fun onStreamEnabled(stream: Stream) {
            if (stream.kind.equals("video", ignoreCase = true)) {
              val videoTrack = stream.track as VideoTrack
-             videoTrack.addSink(svrLocal)
+             localView.addTrack(videoTrack)
             }
          }
       }
@@ -108,11 +116,11 @@ values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
 <TabItem value="Java">
 
 ```js title="MainActivity.java"
-  import org.webrtc.SurfaceViewRenderer;
+  import live.videosdk.rtc.android.VideoView;
   import org.webrtc.VideoTrack;
 
   private void displayLocalParticipant() {
-    final SurfaceViewRenderer svrLocal = findViewById(R.id.svrLocal);
+    final VideoView localView = findViewById(R.id.localView);
 
     // display local video when stream available
     meeting.getLocalParticipant().addEventListener(
@@ -121,7 +129,7 @@ values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
           public void onStreamEnabled(Stream stream) {
             if (stream.getKind().equalsIgnoreCase("video")) {
               VideoTrack track = (VideoTrack) stream.getTrack();
-              track.addSink(svrLocal);
+              localView.addTrack(track);
             }
           }
         }
@@ -146,8 +154,8 @@ values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <org.webrtc.SurfaceViewRenderer
-        android:id="@+id/svrParticipant"
+    <live.videosdk.rtc.android.VideoView
+        android:id="@+id/participantView"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
@@ -199,7 +207,7 @@ class ParticipantAdapter(meeting: Meeting) : RecyclerView.Adapter<ParticipantAda
         for ((_, stream) in participant.streams) {
             if (stream.kind.equals("video", ignoreCase = true)) {
                 val videoTrack = stream.track as VideoTrack
-                videoTrack.addSink(holder.svrParticipant)
+                holder.participantView.addTrack(videoTrack)
                 break
             }
         }
@@ -208,7 +216,7 @@ class ParticipantAdapter(meeting: Meeting) : RecyclerView.Adapter<ParticipantAda
             override fun onStreamEnabled(stream: Stream) {
                 if (stream.kind.equals("video", ignoreCase = true)) {
                     val videoTrack = stream.track as VideoTrack
-                    videoTrack.addSink(holder.svrParticipant)
+                    holder.participantView.addTrack(videoTrack)
                 }
             }
         })
@@ -219,10 +227,7 @@ class ParticipantAdapter(meeting: Meeting) : RecyclerView.Adapter<ParticipantAda
     }
 
     class PeerViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        var svrParticipant: SurfaceViewRenderer = view.findViewById(R.id.svrParticipant)
-        init{
-            svrParticipant.init(PeerConnectionUtils.getEglContext(), null)
-        }
+        var participantView: VideoView = view.findViewById(R.id.participantView)
     }
 }
 
@@ -279,7 +284,7 @@ public class ParticipantAdapter extends RecyclerView.Adapter<ParticipantAdapter.
             Stream stream = entry.getValue();
             if (stream.getKind().equalsIgnoreCase("video")) {
                 VideoTrack videoTrack = (VideoTrack) stream.getTrack();
-                videoTrack.addSink(holder.svrParticipant);
+                holder.participantView.addTrack(videoTrack);
                 break;
             }
         }
@@ -289,7 +294,7 @@ public class ParticipantAdapter extends RecyclerView.Adapter<ParticipantAdapter.
             public void onStreamEnabled(Stream stream) {
                 if (stream.getKind().equalsIgnoreCase("video")) {
                     VideoTrack videoTrack = (VideoTrack) stream.getTrack();
-                    videoTrack.addSink(holder.svrParticipant);
+                    holder.participantView.addTrack(videoTrack);
                 }
             }
         });
@@ -302,7 +307,7 @@ public class ParticipantAdapter extends RecyclerView.Adapter<ParticipantAdapter.
     }
 
     static class PeerViewHolder extends RecyclerView.ViewHolder {
-        public SurfaceViewRenderer svrParticipant;
+        public VideoView participantView;
         public View itemView;
 
         PeerViewHolder(@NonNull View view) {
@@ -310,8 +315,7 @@ public class ParticipantAdapter extends RecyclerView.Adapter<ParticipantAdapter.
 
             itemView = view;
 
-            svrParticipant = view.findViewById(R.id.svrParticipant);
-            svrParticipant.init(PeerConnectionUtils.getEglContext(), null);
+            participantView = view.findViewById(R.id.participantView);
         }
     }
 }
