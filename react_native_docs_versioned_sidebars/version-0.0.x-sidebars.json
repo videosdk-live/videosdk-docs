@@ -40,24 +40,15 @@
         "guide/video-and-audio-calling-api-sdk/features/camera-controls",
         "guide/video-and-audio-calling-api-sdk/features/mic-controls",
         "guide/video-and-audio-calling-api-sdk/features/screenshare",
+        "guide/video-and-audio-calling-api-sdk/features/pubsub",
         "guide/video-and-audio-calling-api-sdk/features/set-participant-video-quality",
         "guide/video-and-audio-calling-api-sdk/features/toggle-participant-media",
-        "guide/video-and-audio-calling-api-sdk/features/speaker-indication",
-        "guide/video-and-audio-calling-api-sdk/features/record-meeting",
-        "guide/video-and-audio-calling-api-sdk/features/remove-participant",
-        "guide/video-and-audio-calling-api-sdk/features/error-event"
-      ],
-      "collapsed": true
-    },
-    {
-      "type": "category",
-      "label": "Advanced Features",
-      "items": [
-        "guide/video-and-audio-calling-api-sdk/features/go-live-social-media",
-        "guide/video-and-audio-calling-api-sdk/features/play-external-video",
-        "guide/video-and-audio-calling-api-sdk/features/pubsub",
-        "guide/video-and-audio-calling-api-sdk/features/switch-audio-output",
         "guide/video-and-audio-calling-api-sdk/features/pause-resume-stream",
+        "guide/video-and-audio-calling-api-sdk/features/speaker-indication",
+        "guide/video-and-audio-calling-api-sdk/features/remove-participant",
+        "guide/video-and-audio-calling-api-sdk/features/switch-audio-output",
+        "guide/video-and-audio-calling-api-sdk/features/record-meeting",
+        "guide/video-and-audio-calling-api-sdk/features/go-live-social-media",
         {
           "type": "category",
           "label": "Custom Tracks",
@@ -67,6 +58,15 @@
             "guide/video-and-audio-calling-api-sdk/features/custom-track/custom-screen-share-track"
           ]
         }
+      ],
+      "collapsed": true
+    },
+    {
+      "type": "category",
+      "label": "Advanced Features",
+      "items": [
+        "guide/video-and-audio-calling-api-sdk/features/error-event",
+        "guide/video-and-audio-calling-api-sdk/features/play-external-video"
       ],
       "collapsed": true
     },
