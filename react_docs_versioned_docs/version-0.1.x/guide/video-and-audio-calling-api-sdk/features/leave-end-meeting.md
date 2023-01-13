@@ -28,13 +28,20 @@ This guide will provide an overview of how to implement leave or end feature in 
 ### Leave And End Meeting
 
 ```js
-const { leave, end } = useMeeting();
-const onPress = () => {
-  // Leave Meeting
-  leave();
+import { useMeeting } from "@videosdk.live/react-sdk";
 
-  // Exit Meeting
-  end();
+const MeetingView = () => {
+  const { leave, end } = useMeeting();
+
+  const onPress = () => {
+    // Leave Meeting
+    leave();
+
+    // Exit Meeting
+    end();
+  };
+
+  return <>...</>;
 };
 ```
 

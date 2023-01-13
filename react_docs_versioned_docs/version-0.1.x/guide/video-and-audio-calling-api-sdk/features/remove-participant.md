@@ -22,14 +22,18 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 ```js
-const { participants } = useMeeting();
-const onPress = () => {
-  // Get specific participant instance from the list
-  const participant = participants.get("<participant-id>");
+import { useParticipant } from "@videosdk.live/react-sdk";
 
-  // Remove participant from active session
-  // This will emit an event called "onParticipantLeft" to that particular participant
-  participant.remove();
+const ParticipantView = () => {
+  // Get specific participant instance
+  const { participants } = useParticipant("<participant-id>");
+
+  const onPress = () => {
+    // Remove participant from active session
+    // This will emit an event called "onParticipantLeft" to that particular participant
+    participant.remove();
+  };
+  return <>...</>;
 };
 ```
 

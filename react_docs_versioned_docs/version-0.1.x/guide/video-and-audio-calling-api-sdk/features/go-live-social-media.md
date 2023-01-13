@@ -27,18 +27,24 @@ This guide will provide an overview of how participant can start and stop broadc
 ### Start And Stop Live Stream
 
 ```js
-const { startLivestream, stopLivestream } = useMeeting();
-const onPress = () => {
-  // Start Live Stream
-  startLivestream([
-    {
-      url: "rtmp://a.rtmp.youtube.com/live2",
-      streamKey: "key",
-    },
-  ]);
+import { useMeeting } from "@videosdk.live/react-sdk";
 
-  // Stop Live Stream
-  stopLivestream();
+const MeetingView = () => {
+  const { startLivestream, stopLivestream } = useMeeting();
+  const onPress = () => {
+    // Start Live Stream
+    startLivestream([
+      {
+        url: "rtmp://a.rtmp.youtube.com/live2",
+        streamKey: "key",
+      },
+    ]);
+
+    // Stop Live Stream
+    stopLivestream();
+  };
+
+  return <>...</>;
 };
 ```
 

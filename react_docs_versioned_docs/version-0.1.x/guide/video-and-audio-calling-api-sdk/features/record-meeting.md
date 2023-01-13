@@ -29,14 +29,19 @@ This guide will provide an overview of how to implement start and stop Meeting R
 ### Start And Stop Recording
 
 ```js
-const { startRecording, stopRecording } = useMeeting();
+import { useMeeting } from "@videosdk.live/react-sdk";
 
-const onPress = () => {
-  // Start Recording
-  startRecording(webhookUrl, awsDirPath);
+const MeetingView = () => {
+  const { startRecording, stopRecording } = useMeeting();
 
-  // Stop Recording
-  stopRecording();
+  const onPress = () => {
+    // Start Recording
+    startRecording(webhookUrl, awsDirPath);
+
+    // Stop Recording
+    stopRecording();
+  };
+  return <>...</>;
 };
 ```
 

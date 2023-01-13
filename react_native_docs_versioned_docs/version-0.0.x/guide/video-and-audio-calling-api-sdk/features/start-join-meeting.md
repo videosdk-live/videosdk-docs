@@ -204,7 +204,7 @@ const MeetingView = () => {
 
 ## Events
 
-Following callbacks are receieved when a participant it is successfully joined.
+Following callbacks are receieved when a participant is successfully joined.
 
 - Local Participant will receive a [`onMeetingJoined`](../../../api/sdk-reference/use-meeting/events#onmeetingjoined) event, when successfully joined.
 - Remote Participant will receive a [`onParticipantJoined`](../../../api/sdk-reference/use-meeting/events#onparticipantjoined) event with the newly joined `Participant` object from the event callback.

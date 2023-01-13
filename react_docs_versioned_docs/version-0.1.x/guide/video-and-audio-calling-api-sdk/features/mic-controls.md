@@ -23,6 +23,9 @@ Whenever any participant wants to start / stop broadcasting their audio to other
 This guide will provide an overview of how to use enable and disable Mic in a meeting.
 
 1. **Enable Mic** - By using `unmuteMic()` function, a participant can publish audio to other participants.
+
+   - You can pass customise audio track in `unmuteMic()` by using [Custom Audio Track](/react/guide/video-and-audio-calling-api-sdk/features/custom-track/custom-audio-track#custom-track-with-unmutemic).
+
 2. **Disable Mic** - By using `muteMic()` function, a participant can stop publishing audio to other participants.
 3. **Change Mic** - By using `changeMic()` function, a participant can change mic.
 4. **Toggle Mic** - By using `toggleMic()` function, a participant start or stop publishing the audio during the meeting.
@@ -30,25 +33,30 @@ This guide will provide an overview of how to use enable and disable Mic in a me
 ### Enable, Disable, Change Mic
 
 ```js
+import { useMeeting } from "@videosdk.live/react-sdk";
 
-const {unmuteMic, muteMic, getMics, changeMic, toggleMic} =useMeeting();
+const MeetingView = () => {
+  const { unmuteMic, muteMic, getMics, changeMic, toggleMic } = useMeeting();
 
-const onPress = () => {
-  // Enable Mic in Meeting
-  unmuteMic();
+  const onPress = async () => {
+    // Enable Mic in Meeting
+    unmuteMic();
 
-  // Disable Mic in Meeting
-  muteMic();
+    // Disable Mic in Meeting
+    muteMic();
 
-  // Toggle Mic in Meeting
-  toggleMic();
+    // Toggle Mic in Meeting
+    toggleMic();
 
-  // Change Mic in Meeting
-  const mics = await getMics(); // returns all mics
+    // Change Mic in Meeting
+    const mics = await getMics(); // returns all mics
 
-  const { deviceId, label } = mics[0];
+    const { deviceId, label } = mics[0];
 
-  changeMic(deviceId);
+    changeMic(deviceId);
+  };
+
+  return <>...</>;
 };
 ```
 
@@ -67,6 +75,8 @@ To get a better control over the audio Quality, we recommend you to use the cust
 - Every Participant will receive a callback on [`onStreamDisabled()`](../../../api/sdk-reference/use-participant/events#onstreamdisabled) of the [`useParticipant()`](../../../api/sdk-reference/use-participant/introduction.md) hook with `Stream` object.
 
 ```js
+
+import { useParticipant } from "@videosdk.live/react-sdk";
 
 function onStreamEnabled(stream) {
   if(stream.kind === 'audio'){

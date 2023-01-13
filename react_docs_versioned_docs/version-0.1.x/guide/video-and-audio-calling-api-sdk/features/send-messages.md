@@ -36,13 +36,17 @@ This guide will provide an overview of how to implement chat and raise hand in a
 // importing usePubSub hook from react-sdk
 import { usePubSub } from "@videosdk.live/react-sdk";
 
-// destructure publish method from usePubSub hook
-const { publish, messages } = usePubSub("CHAT");
+const MeetingView = () => {
+  // destructure publish method from usePubSub hook
+  const { publish, messages } = usePubSub("CHAT");
 
-const onPress = () => {
-  // Sending Message
-  const message = "Hello Everyone!";
-  publish(message, { persist: true });
+  const onPress = () => {
+    // Sending Message
+    const message = "Hello Everyone!";
+    publish(message, { persist: true });
+  };
+
+  return <>...</>;
 };
 ```
 
@@ -52,13 +56,16 @@ const onPress = () => {
 // importing usePubSub hook from react-sdk
 import { usePubSub } from "@videosdk.live/react-sdk";
 
-// destructure publish method from usePubSub hook
-const { publish, messages } = usePubSub("RAISE_HAND");
+const MeetingView = () => {
+  // destructure publish method from usePubSub hook
+  const { publish, messages } = usePubSub("RAISE_HAND");
 
-const onPress = () => {
-  // RAISE HAND
-  const message = "";
-  publish(message, { persist: true });
+  const onPress = () => {
+    // RAISE HAND
+    const message = "";
+    publish(message, { persist: true });
+  };
+  return <>...</>;
 };
 ```
 
