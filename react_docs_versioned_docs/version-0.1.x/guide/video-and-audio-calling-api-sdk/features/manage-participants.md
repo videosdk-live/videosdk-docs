@@ -146,9 +146,9 @@ const ParticipantView = ({ participantId }) => {
 
 3. **onPresenterChanged** - Whenever any participant present/screenshare their screen/window in meeting, `onPresenterChanged` event will trigger and return the presenter `participantId`.
 
-4. **onStreamEnabled** - Whenever any participant enabled mic/webcam in meeting, `onStreamEnabled` event will trigger and return [Stream](/react/guide/video-and-audio-calling-api-sdk/features/manage-participants#streams-map-properties).
+4. **onStreamEnabled** - Whenever any participant enabled mic/webcam in meeting, `onStreamEnabled` event will trigger and return [Stream](/react/guide/video-and-audio-calling-api-sdk/features/manage-participants#stream-object-properties).
 
-5. **onStreamDisabled** - Whenever any participant disabled mic/webcam in meeting, `onStreamDisabled` event will trigger and return [Stream](/react/guide/video-and-audio-calling-api-sdk/features/manage-participants#streams-map-properties).
+5. **onStreamDisabled** - Whenever any participant disabled mic/webcam in meeting, `onStreamDisabled` event will trigger and return [Stream](/react/guide/video-and-audio-calling-api-sdk/features/manage-participants#stream-object-properties).
 
 ```js
 import { useMeeting, useParticipant } from "@videosdk.live/react-sdk";

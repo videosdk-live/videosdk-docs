@@ -30,12 +30,17 @@ This guide will provide an overview of how to use enable and disable Screen Shar
 ### Enable, Disable Screen Share
 
 ```js
+const { enableScreenShare, disableScreenShare, toggleScreenShare } =
+  useMeeting();
 const onPress = () => {
   // Enabling ScreenShare
-  meeting?.enableScreenShare();
+  enableScreenShare();
 
   // Disabling ScreenShare
-  meeting?.disableScreenShare();
+  disableScreenShare();
+
+  // Toggle ScreenShare
+  disableScreenShare();
 };
 ```
 

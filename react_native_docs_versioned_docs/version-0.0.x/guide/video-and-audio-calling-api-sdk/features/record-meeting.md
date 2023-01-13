@@ -29,12 +29,13 @@ This guide will provide an overview of how to implement start and stop Meeting R
 ### Start And Stop Recording
 
 ```js
+const { startRecording, stopRecording } = useMeeting();
 const onPress = () => {
   // Start Recording
-  meeting?.startRecording();
+  startRecording();
 
   // Stop Recording
-  meeting?.stopRecording();
+  stopRecording();
 };
 ```
 

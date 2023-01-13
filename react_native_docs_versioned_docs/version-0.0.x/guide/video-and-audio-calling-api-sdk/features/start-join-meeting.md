@@ -189,9 +189,16 @@ After joining, you will be able to Manage Participant in a meeting.
 </div>
 
 ```js
-const onPress = () => {
-  // Joining Meeting
-  meeting?.join();
+const MeetingView = () => {
+  // Get Meeting object using useMeeting hook
+  const { join } = useMeeting();
+
+  const onPress = () => {
+    // Joining Meeting
+    join();
+  };
+
+  return <>...</>;
 };
 ```
 

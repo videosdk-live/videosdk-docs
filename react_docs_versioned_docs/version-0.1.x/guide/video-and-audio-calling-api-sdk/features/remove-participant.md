@@ -22,9 +22,8 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 ```js
+const { participants } = useMeeting();
 const onPress = () => {
-  const { participants } = useMeeting();
-
   // Get specific participant instance from the list
   const participant = participants.get("<participant-id>");
 
