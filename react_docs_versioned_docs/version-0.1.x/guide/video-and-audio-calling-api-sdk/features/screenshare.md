@@ -24,16 +24,22 @@ This guide will provide an overview of how to use enable and disable Screen Shar
 
 1. **Enable Screen Share** - By using `enableScreenShare()` function, a participant can publish screen stream to other participants.
 2. **Disable Screen Share** - By using `disableScreenShare()` function, a participant can stop publishing screen stream to other participants.
+3. **Toggle Screen Share** - By using `toggleScreenShare()` function, a participant can start or stop publishing screen stream to other participants.
 
 ### Enable, Disable Screen Share
 
 ```js
+const { enableScreenShare, disableScreenShare, toggleScreenShare } =
+  useMeeting();
 const onPress = () => {
   // Enabling ScreenShare
-  meeting?.enableScreenShare();
+  enableScreenShare();
 
   // Disabling ScreenShare
-  meeting?.disableScreenShare();
+  disableScreenShare();
+
+  // Toggle ScreenShare
+  disableScreenShare();
 };
 ```
 

@@ -35,22 +35,24 @@ This guide will provide an overview of how participant can start, stop, resume a
 ### Start, Stop, Pause, Resume, and Seek External Video
 
 ```js
+const { startVideo, stopVideo, pauseVideo, resumeVideo, seekVideo } =
+  useMeeting();
 const onPress = () => {
   // Start Video
-  meeting?.startVideo({
+  startVideo({
     link: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
   });
 
   // Stop Video
-  meeting?.stopVideo();
+  stopVideo();
 
   // Pause Video
-  meeting?.pauseVideo({ currentTime: 5 });
+  pauseVideo({ currentTime: 5 });
 
   // Resume Video
-  meeting?.resumeVideo();
+  resumeVideo();
 
   // Seek Video
-  meeting?.seekVideo({ currentTime: 10 });
+  seekVideo({ currentTime: 10 });
 };
 ```

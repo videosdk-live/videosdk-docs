@@ -16,15 +16,14 @@ slug: remove-participant
 
 # Remove Participant
 
-Remove participant allows removing participant while session is on-going. This can be helpful when moderation in particular meeting is required. 
-
+Remove participant allows removing participant while session is on-going. This can be helpful when moderation in particular meeting is required.
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 ```js
 const onPress = () => {
-  const participants = meeting.participants;
+  const { participants } = useMeeting();
 
   // Get specific participant instance from the list
   const participant = participants.get("<participant-id>");
@@ -48,6 +47,6 @@ const {
 } = useMeeting({
   onParticipantLeft: (participant) => {
     // Triggers when a participant is removed or leaves the meeting.
-  }
+  },
 });
 ```

@@ -25,25 +25,36 @@ This guide will provide an overview of how to use enable and disable Mic in a me
 1. **Enable Mic** - By using `unmuteMic()` function, a participant can publish audio to other participants.
 2. **Disable Mic** - By using `muteMic()` function, a participant can stop publishing audio to other participants.
 3. **Change Mic** - By using `changeMic()` function, a participant can change mic.
+4. **Toggle Mic** - By using `toggleMic()` function, a participant start or stop publishing the audio during the meeting.
 
 ### Enable, Disable, Change Mic
 
 ```js
+
+const {unmuteMic, muteMic, getMics, changeMic, toggleMic} =useMeeting();
+
 const onPress = () => {
   // Enable Mic in Meeting
-  meeting?.unmuteMic();
+  unmuteMic();
 
   // Disable Mic in Meeting
-  meeting?.muteMic();
+  muteMic();
+
+  // Toggle Mic in Meeting
+  toggleMic();
 
   // Change Mic in Meeting
-  const mics = await meeting?.getMics(); // returns all mics
+  const mics = await getMics(); // returns all mics
 
   const { deviceId, label } = mics[0];
 
-  meeting?.changeMic(deviceId);
+  changeMic(deviceId);
 };
 ```
+
+:::note
+To get a better control over the audio Quality, we recommend you to use the custom audio tracks. You can check out how to use custom audio tracks [here](./custom-track/custom-audio-track.md).
+:::
 
 ### Events
 

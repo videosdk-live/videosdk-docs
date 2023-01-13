@@ -125,7 +125,7 @@ Before jumping to anything else, we have write API to generate unique meetingId.
 export const authToken = "<Generated-from-dashbaord>";
 // API call to create meeting
 export const createMeeting = async ({ token }) => {
-  const res = await fetch(`https://api.videosdk.live/v1/meetings`, {
+  const res = await fetch(`https://api.videosdk.live/v2/rooms`, {
     method: "POST",
     headers: {
       authorization: `${authToken}`,
@@ -134,8 +134,8 @@ export const createMeeting = async ({ token }) => {
     body: JSON.stringify({}),
   });
 
-  const { meetingId } = await res.json();
-  return meetingId;
+  const { roomId } = await res.json();
+  return roomId;
 };
 ```
 
@@ -193,7 +193,8 @@ function App() {
         mode: "CONFERENCE", // "CONFERENCE" || "VIWER"
         multiStream: false,
       }}
-      token={authToken}>
+      token={authToken}
+    >
       <MeetingConsumer>
         {() => <Container meetingId={meetingId} meetingMode={meetingMode} />}
       </MeetingConsumer>
@@ -229,21 +230,24 @@ function JoinScreen({ updateMeetingId, getMeetingAndToken, setMeetingMode }) {
         onClick={() => {
           getMeetingAndToken();
           setMeetingMode(Constants.modes.CONFERENCE);
-        }}>
+        }}
+      >
         Join as a host
       </button>
       <button
         onClick={() => {
           getMeetingAndToken();
           setMeetingMode(Constants.modes.CONFERENCE);
-        }}>
+        }}
+      >
         Create Meeting
       </button>
       <button
         onClick={() => {
           getMeetingAndToken();
           setMeetingMode(Constants.modes.VIEWER);
-        }}>
+        }}
+      >
         Join as viewer
       </button>
     </div>
@@ -329,7 +333,8 @@ function MeetingContainer({ meetingId, meetingMode }) {
         overflowY: "auto",
         width: "100vw",
         overflowX: "hidden",
-      }}>
+      }}
+    >
       <div style={{ height: "40px" }}>
         <header>Meeting Id: {meetingId}</header>
       </div>
@@ -352,7 +357,8 @@ function MeetingContainer({ meetingId, meetingMode }) {
                   };
                   startHls({ layout, theme: "LIGHT" });
                 }
-              }}>
+              }}
+            >
               {afterMeetingJoinedHLSState === "STARTING"
                 ? "Starting HLS"
                 : afterMeetingJoinedHLSState === "STARTED"
@@ -670,7 +676,8 @@ function PlayerView({ downStreamUrl }) {
         width: "100%",
         overflow: "hidden",
         position: "relative",
-      }}>
+      }}
+    >
       {downStreamUrl && canPlay ? (
         <video
           ref={playerRef}
@@ -683,7 +690,8 @@ function PlayerView({ downStreamUrl }) {
           playing
           onError={(err) => {
             console.log(err, "hls video error");
-          }}></video>
+          }}
+        ></video>
       ) : (
         <div>
           <h1>Wait for the host to start live strem</h1>
