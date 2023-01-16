@@ -157,7 +157,7 @@ This page will keep you update all the releases of Android SDK.
 
 3. setQuality for participant stream.
 
-   **Docs** : [Set Particpant Video Quality](https://docs.videosdk.live/android/guide/video-and-audio-calling-api-sdk/features/set-participant-video-quality)
+   **Docs** : [Set Participant Video Quality](https://docs.videosdk.live/android/guide/video-and-audio-calling-api-sdk/features/set-participant-video-quality)
 
 4. Incoming call detection event.
 
