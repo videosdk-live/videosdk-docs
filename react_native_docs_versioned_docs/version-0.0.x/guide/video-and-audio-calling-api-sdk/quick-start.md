@@ -628,7 +628,8 @@ MediaStream is useful to add MediaTrack to the `RTCView` component to play the a
 ```js title="ParticipantView Component"
 function ParticipantView({ participantId }) {
   const { webcamStream, webcamOn } = useParticipant(participantId);
-  return webcamOn ? (
+
+  return webcamOn && webcamStream ? (
     <RTCView
       streamURL={new MediaStream([webcamStream.track]).toURL()}
       objectFit={"cover"}
