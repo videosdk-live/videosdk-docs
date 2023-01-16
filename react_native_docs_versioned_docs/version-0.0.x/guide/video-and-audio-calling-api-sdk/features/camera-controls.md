@@ -58,7 +58,7 @@ const MeetingView = () => {
     toggleWebcam();
 
     // Change Camera in Meeting
-    changeWebcam(deviceId);
+    changeWebcam();
   };
 
   return <>...</>;
