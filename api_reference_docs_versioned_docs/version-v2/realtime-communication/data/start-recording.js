@@ -40,6 +40,7 @@ const startRecording = {
   - **theme**: _"DARK"_ | _"LIGHT"_ | _"DEFAULT"_
   - **mode**: _"video-and-audio"_ | _"audio"_
   - **quality**: _"low"_ | _"med"_ | _"high"_
+  - **orientation**: _"landscape"_ | _"portrait"_
 `,
       required: false,
     },
