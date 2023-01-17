@@ -39,7 +39,7 @@ const startRecording = {
     - **gridSize**: Number _\`max 4\`_
   - **theme**: _"DARK"_ | _"LIGHT"_ | _"DEFAULT"_
   - **mode**: _"video-and-audio"_ | _"audio"_
-  - **quality**: _"low"_ | _"med"_ | _"high"_
+  - **quality**: _"low"_ | _"med"_ | _"high"_ _// {low = SD, med = HD, high = Full HD}_
 `,
       required: false,
     },
