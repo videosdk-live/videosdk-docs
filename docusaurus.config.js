@@ -474,11 +474,11 @@ module.exports = {
       src: "https://cdn-in.pagesense.io/js/zujotechpvtltd/8c69e67587b74006a3927185dd663808.js",
       async: true,
     },
-    // {
-    //   async: true,
-    //   src: "https://tag.clearbitscripts.com/v1/pk_5a551fd702b6e3a8c82e829304fd0d60/tags.js",
-    //   referrerPolicy: "strict-origin-when-cross-origin",
-    // },
+    {
+      async: true,
+      src: "https://tag.clearbitscripts.com/v1/pk_5a551fd702b6e3a8c82e829304fd0d60/tags.js",
+      referrerPolicy: "strict-origin-when-cross-origin",
+    },
     // {
     //   src: "https://cdn.videosdk.live/static-sites-scripts/product-hunt.js",
     //   async: true,
