@@ -259,7 +259,7 @@ module.exports = {
               to: "/react/api/sdk-reference/setup",
             },
             {
-              label: "Resouces",
+              label: "Resources",
               to: "/docs/tutorials/introduction",
             },
             {
