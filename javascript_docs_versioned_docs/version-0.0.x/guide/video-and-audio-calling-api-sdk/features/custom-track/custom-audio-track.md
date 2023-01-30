@@ -119,7 +119,7 @@ Make sure to call `muteMic()` befor you create a new track as it may lead to une
 let customTrack = await VideoSDK.createMicrophoneAudioTrack({
   encoderConfig: "high_quality",
   noiseConfig: {
-    noiseSuppresion: true,
+    noiseSuppression: true,
     echoCancellation: true,
     autoGainControl: true,
   },
