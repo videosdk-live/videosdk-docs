@@ -73,7 +73,7 @@ import { createMicrophoneAudioTrack } from "@videosdk.live/react-native-sdk";
 let customTrack = await createMicrophoneAudioTrack({
   encoderConfig: "high_quality",
   noiseConfig: {
-    noiseSuppresion: true,
+    noiseSuppression: true,
     echoCancellation: true,
     autoGainControl: true,
   },
@@ -97,7 +97,7 @@ function App() {
     const track = await await createMicrophoneAudioTrack({
       encoderConfig: "high_quality",
       noiseConfig: {
-        noiseSuppresion: true,
+        noiseSuppression: true,
         echoCancellation: true,
         autoGainControl: true,
       },
@@ -154,7 +154,7 @@ import {
 let customTrack = await createMicrophoneAudioTrack({
   encoderConfig: "high_quality",
   noiseConfig: {
-    noiseSuppresion: true,
+    noiseSuppression: true,
     echoCancellation: true,
     autoGainControl: true,
   },
