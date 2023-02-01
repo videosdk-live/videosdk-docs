@@ -37,14 +37,13 @@ module.exports = {
     // },
 
     image: "img/videosdklive-thumbnail.jpg",
-    algolia: {
-      apiKey: "6b125a23a26dc2bf6a8a0cb51a66a3f7",
-      indexName: "videosdk",
-      searchParameters: {
-        facetFilters: ["content"],
-      },
-    },
-    autoCollapseSidebarCategories: true,
+    // algolia: {
+    //   apiKey: "6b125a23a26dc2bf6a8a0cb51a66a3f7",
+    //   indexName: "videosdk",
+    //   searchParameters: {
+    //     facetFilters: ["content"],
+    //   },
+    // },
     colorMode: {
       defaultMode: "dark",
       disableSwitch: true,
@@ -55,7 +54,12 @@ module.exports = {
       theme: require("prism-react-renderer/themes/vsDark"),
       // darkTheme: require("prism-react-renderer/themes/vsDark"),
     },
-    hideableSidebar: true,
+    docs: {
+      sidebar: {
+        hideable: true,
+        autoCollapseCategories: true,
+      },
+    },
     navbar: {
       title: "",
       hideOnScroll: true,
@@ -464,6 +468,24 @@ module.exports = {
           },
         },
         ...pageOptions,
+      },
+    ],
+    [
+      "@docusaurus/plugin-client-redirects",
+      {
+        // fromExtensions: ["html", "htm"], // /myPage.html -> /myPage
+        // toExtensions: ["exe", "zip"], // /myAsset -> /myAsset.zip (if latter exists)
+        redirects: [
+          {
+            to: "/react/guide/video-and-audio-calling-api-sdk/react-js-sdk",
+            from: "/docs/guide/video-and-audio-calling-api-sdk/react-js-sdk",
+          },
+          // Redirect from multiple old paths to the new path
+          // {
+          //   to: "/docs/newDoc2",
+          //   from: ["/docs/oldDocFrom2019", "/docs/legacyDocFrom2016"],
+          // },
+        ],
       },
     ],
   ],
