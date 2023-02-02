@@ -55,7 +55,12 @@ module.exports = {
       theme: require("prism-react-renderer/themes/vsDark"),
       // darkTheme: require("prism-react-renderer/themes/vsDark"),
     },
-    hideableSidebar: true,
+    docs: {
+      sidebar: {
+        hideable: true,
+        autoCollapseCategories: true,
+      },
+    },
     navbar: {
       title: "",
       hideOnScroll: true,
