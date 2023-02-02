@@ -44,7 +44,6 @@ module.exports = {
       contextualSearch: true,
       searchParameters: {},
     },
-    autoCollapseSidebarCategories: true,
     colorMode: {
       defaultMode: "dark",
       disableSwitch: true,
