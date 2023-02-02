@@ -16,19 +16,14 @@
 
   "selectors": {
     "javascript": {
-      "lvl0": {
-        "selector": "",
-        "global": true,
-        "default_value": "Java Script"
-      },
       "lvl0": ".main h1",
-      "lvl1": "article h1",
-      "lvl2": "article h2",
-      "lvl3": "article h3",
-      "lvl4": "article h4",
-      "lvl5": "article h5, article td:first-child",
-      "lvl6": "article h6",
-      "text": "article p, article li, article td:last-child"
+      "lvl1": ".main h1",
+      "lvl2": ".main h2",
+      "lvl3": ".main h3",
+      "lvl4": ".main h4",
+      "lvl5": ".main h5, .main td:first-child",
+      "lvl6": ".main h6",
+      "text": ".main p, .main li, .main td:last-child"
     },
     "reactnative": {
       "lvl0": {

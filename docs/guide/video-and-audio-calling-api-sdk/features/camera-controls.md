@@ -1,6 +1,6 @@
 ---
 title: Camera Controls Video & Audio Call - Video SDK Docs
-hide_title: false
+hide_title: true
 hide_table_of_contents: false
 description: Camera Controls features quick integrate in Javascript, React JS, Android, IOS, React Native, Flutter with Video SDK to add live video & audio conferencing to your applications.
 sidebar_label: Camera Controls
@@ -17,6 +17,23 @@ image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
 slug: camera-controls
 ---
+
+:::caution
+
+**This page has been deprecated.**
+
+We've released a new version of pages with some improvements and smoother experience.
+
+Here is the link of each SDK for this page.
+
+- [JS](/javascript/guide/video-and-audio-calling-api-sdk/features/camera-controls)
+- [React](/react/guide/video-and-audio-calling-api-sdk/features/camera-controls)
+- [React Native](/react-native/guide/video-and-audio-calling-api-sdk/features/camera-controls)
+- [Android](/android/guide/video-and-audio-calling-api-sdk/features/camera-controls)
+- [iOS](/ios/guide/video-and-audio-calling-api-sdk/features/camera-controls)
+- [Flutter](/flutter/guide/video-and-audio-calling-api-sdk/features/camera-controls)
+
+:::
 
 # Camera Controls
 

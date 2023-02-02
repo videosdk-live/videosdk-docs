@@ -1,6 +1,6 @@
 ---
 title: Toggle Participant Media
-hide_title: false
+hide_title: true
 hide_table_of_contents: false
 description: Camera Controls features quick integrate in Javascript, React JS, Android, IOS, React Native, Flutter with Video SDK to add live video & audio conferencing to your applications.
 sidebar_label: Toggle Participant Media
@@ -17,6 +17,25 @@ image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
 slug: toggle-participant-media
 ---
+
+:::caution
+
+**This page has been deprecated.**
+
+We've released a new version of pages with some improvements and smoother experience.
+
+Here is the link of each SDK for this page.
+
+- [JS](/javascript/guide/video-and-audio-calling-api-sdk/features/toggle-participant-media)
+- [React](/react/guide/video-and-audio-calling-api-sdk/features/toggle-participant-media)
+- [React Native](/react-native/guide/video-and-audio-calling-api-sdk/features/toggle-participant-media)
+- [Android](/android/guide/video-and-audio-calling-api-sdk/features/toggle-participant-media)
+- [iOS](/ios/guide/video-and-audio-calling-api-sdk/features/toggle-participant-media)
+- [Flutter](/flutter/guide/video-and-audio-calling-api-sdk/features/toggle-participant-media)
+
+:::
+
+# Toggle Participant Media
 
 Control other participant's webcam and mic.
 For better idea, let's understand this with a real case scenario

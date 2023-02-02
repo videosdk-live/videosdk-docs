@@ -15,6 +15,23 @@ sidebar_position: 1
 slug: supported-platforms
 ---
 
+:::caution
+
+**This page has been deprecated.**
+
+We've released a new version of pages with some improvements and smoother experience.
+
+Here is the link of each SDK for this page.
+
+- [JS](/javascript/guide/video-and-audio-calling-api-sdk/getting-started)
+- [React](/react/guide/video-and-audio-calling-api-sdk/getting-started)
+- [React Native](/react-native/guide/video-and-audio-calling-api-sdk/getting-started)
+- [Android](/android/guide/video-and-audio-calling-api-sdk/getting-started)
+- [iOS](/ios/guide/video-and-audio-calling-api-sdk/getting-started)
+- [Flutter](/flutter/guide/video-and-audio-calling-api-sdk/getting-started)
+
+:::
+
 # Supported platforms
 
 ## For video & audio calling SDK

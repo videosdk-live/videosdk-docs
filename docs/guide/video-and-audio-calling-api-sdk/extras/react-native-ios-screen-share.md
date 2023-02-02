@@ -16,6 +16,11 @@ sidebar_position: 1
 slug: react-native-ios-screen-share
 ---
 
+:::caution
+
+**This page has been shifted to this [link](/react-native/guide/video-and-audio-calling-api-sdk/extras/react-native-ios-screen-share).**
+:::
+
 # Share screen - React Native iOS
 
 ## Contents

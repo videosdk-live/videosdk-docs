@@ -15,6 +15,23 @@ sidebar_position: 1
 slug: signup-and-create-api
 ---
 
+:::caution
+
+**This page has been deprecated.**
+
+We've released a new version of pages with some improvements and smoother experience.
+
+Here is the link of each SDK for this page.
+
+- [JS](/javascript/guide/video-and-audio-calling-api-sdk/signup-and-create-api)
+- [React](/react/guide/video-and-audio-calling-api-sdk/signup-and-create-api)
+- [React Native](/react-native/guide/video-and-audio-calling-api-sdk/signup-and-create-api)
+- [Android](/android/guide/video-and-audio-calling-api-sdk/signup-and-create-api)
+- [iOS](/ios/guide/video-and-audio-calling-api-sdk/signup-and-create-api)
+- [Flutter](/flutter/guide/video-and-audio-calling-api-sdk/signup-and-create-api)
+
+:::
+
 This guide will help you to generate API key and secret from dashboard.
 
 ## 1. Generate API Key

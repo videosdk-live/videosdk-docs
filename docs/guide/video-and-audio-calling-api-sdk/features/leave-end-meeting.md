@@ -1,6 +1,6 @@
 ---
 title: Leave End Meeting Video & Audio Call - Video SDK Docs
-hide_title: false
+hide_title: true
 hide_table_of_contents: false
 description: Leave or End Meeting features quick integrate in Javascript, React JS, Android, IOS, React Native, Flutter with Video SDK to add live video & audio conferencing to your applications.
 sidebar_label: Leave or End Meeting
@@ -15,6 +15,23 @@ image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
 slug: leave-end-meeting
 ---
+
+:::caution
+
+**This page has been deprecated.**
+
+We've released a new version of pages with some improvements and smoother experience.
+
+Here is the link of each SDK for this page.
+
+- [JS](/javascript/guide/video-and-audio-calling-api-sdk/features/leave-end-meeting)
+- [React](/react/guide/video-and-audio-calling-api-sdk/features/leave-end-meeting)
+- [React Native](/react-native/guide/video-and-audio-calling-api-sdk/features/leave-end-meeting)
+- [Android](/android/guide/video-and-audio-calling-api-sdk/features/leave-end-meeting)
+- [iOS](/ios/guide/video-and-audio-calling-api-sdk/features/leave-end-meeting)
+- [Flutter](/flutter/guide/video-and-audio-calling-api-sdk/features/leave-end-room)
+
+:::
 
 # Leave or End Meeting
 

@@ -1,6 +1,6 @@
 ---
 title: RTMP Live Social Media Video & Audio Call - Video SDK Docs
-hide_title: false
+hide_title: true
 hide_table_of_contents: false
 description: RTMP Live Social Media features quick integrate in Javascript, React JS, Android, IOS, React Native, Flutter with Video SDK to add live video & audio conferencing to your applications.
 sidebar_label: Go Live On Social Media
@@ -15,6 +15,23 @@ image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
 slug: go-live-social-media
 ---
+
+:::caution
+
+**This page has been deprecated.**
+
+We've released a new version of pages with some improvements and smoother experience.
+
+Here is the link of each SDK for this page.
+
+- [JS](/javascript/guide/video-and-audio-calling-api-sdk/features/go-live-social-media)
+- [React](/react/guide/video-and-audio-calling-api-sdk/features/go-live-social-media)
+- [React Native](/react-native/guide/video-and-audio-calling-api-sdk/features/go-live-social-media)
+- [Android](/android/guide/video-and-audio-calling-api-sdk/features/go-live-social-media)
+- [iOS](/ios/guide/video-and-audio-calling-api-sdk/features/go-live-social-media)
+- [Flutter](/flutter/guide/video-and-audio-calling-api-sdk/features/go-live-social-media)
+
+:::
 
 # Go Live On Social Media
 
