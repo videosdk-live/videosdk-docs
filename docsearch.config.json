@@ -3,12 +3,10 @@
   "start_urls": [
     {
       "url": "https://dev-docs.videosdk.live/javascript/guide/video-and-audio-calling-api-sdk/getting-started",
-      "tags": "helloworld",
       "selectors_key": "javascript"
     },
     {
       "url": "https://dev-docs.videosdk.live/react-native/guide/video-and-audio-calling-api-sdk/getting-started",
-      "tags": "chatgpt",
       "selectors_key": "reactnative"
     },
 
@@ -23,6 +21,7 @@
         "global": true,
         "default_value": "Java Script"
       },
+      "lvl0": ".main h1",
       "lvl1": "article h1",
       "lvl2": "article h2",
       "lvl3": "article h3",

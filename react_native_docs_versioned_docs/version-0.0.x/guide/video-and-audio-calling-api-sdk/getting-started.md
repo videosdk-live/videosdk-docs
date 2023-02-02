@@ -11,7 +11,6 @@ keywords:
   - real-time communication
   - collabration
 image: img/videosdklive-thumbnail.jpg
-tags: [chatgpt, hybrid, AI]
 sidebar_position: 1
 slug: getting-started
 ---
