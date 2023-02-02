@@ -1,21 +1,12 @@
 ---
 sidebar_position: 1
+hide_title: true
 ---
 
-# Introduction
+:::caution
 
-Live streming lets you stream your live videos with just few lines of code. Reach to your audience across the globe.
+# Sorry 🙏
 
-## Adaptive Live Streaming
+**This product is no longer available, you can review our other product on this [link](https://docs.videosdk.live/) or connect with us on [Discord](https://discord.gg/videosdk-live-876774498798551130).**
 
-Live Stream SDK uses adaptive live streaming to provide best user experience and concurrent live events up to 4K.
-
-## 98% Device Support
-
-It helps you to stream your video from your Browser,Online Meeting, OBS, StreamYard, Your Phone etc. Apart from that streaming video supports 98% devices.
-
-## Low Latency Live Streaming
-
-Live streming SDK enables low latency streaming to edge locations based on internet availability and bandwidth.
-
-![Low latency live streaming](/img/live-streaming.jpg)
+:::

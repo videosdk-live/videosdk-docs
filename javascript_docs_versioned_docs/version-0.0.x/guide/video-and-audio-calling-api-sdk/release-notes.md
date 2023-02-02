@@ -1,6 +1,7 @@
 ---
 sidebar_label: Release Notes
 pagination_label: Release Notes
+tags: [releasenotes]
 ---
 
 # Release Notes

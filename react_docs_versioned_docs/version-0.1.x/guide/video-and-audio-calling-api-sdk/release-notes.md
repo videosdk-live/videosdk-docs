@@ -1,6 +1,7 @@
 ---
 sidebar_label: Release Notes
 pagination_label: Release Notes
+tags: [releasenotes]
 ---
 
 # Release Notes
@@ -16,7 +17,6 @@ This page will keep you update all the releases of React JS SDK.
 1. Participant can toggle between the `CONFERENCE` and `VIEWER` mode by using `changeMode()` method.
 
    **Docs** : [Change Mode](https://docs.videosdk.live/react/api/sdk-reference/use-meeting/methods#changemode)
-
 
 ---
 

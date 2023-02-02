@@ -17,7 +17,7 @@ slug: start-tour-and-quick-start
 
 :::caution
 
-**This page has been deprecated. Please follow this [link](https://docs.videosdk.live/) or ping us on [Discord](https://discord.gg/videosdk-live-876774498798551130)**
+**This page has been deprecated. Please follow this [link](https://docs.videosdk.live/) or connect with us on [Discord](https://discord.gg/videosdk-live-876774498798551130)**
 
 :::
 

@@ -1,22 +1,12 @@
 ---
-title: Intoduction to Guide
-hide_title: false
-hide_table_of_contents: true
-description: videosdk.live is a video API for real-time communication, live streaming and video-on-demand services. We provide SDK support in all the platforms.
-sidebar_label: Getting Started
-pagination_label: Getting Started
-keywords:
-  - guide to video sdk
-  - guide of interactive live streaming
-  - guide of standard live streaming
-  - guide of video on demand
-image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
-slug: getting-started
+hide_title: true
 ---
 
 :::caution
 
-**This page has been deprecated. Please follow this [link](https://docs.videosdk.live/) or ping us on [Discord](https://discord.gg/videosdk-live-876774498798551130)**
+# Sorry 🙏
+
+**This product is no longer available, you can review our other product on this [link](https://docs.videosdk.live/) or connect with us on [Discord](https://discord.gg/videosdk-live-876774498798551130).**
 
 :::

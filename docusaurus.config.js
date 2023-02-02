@@ -40,7 +40,7 @@ module.exports = {
     algolia: {
       appId: "ZL6ZC5OP4B",
       apiKey: "a785ae96cf86b9663dd8f2c56f2d6424",
-      indexName: "dev_videosdk",
+      indexName: "videosdk",
       contextualSearch: true,
       searchParameters: {},
     },

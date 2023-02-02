@@ -26,7 +26,6 @@ Here is the link of each SDK for this page.
 
 - [JS](/javascript/guide/video-and-audio-calling-api-sdk/features/pin-participants)
 - [React](/react/guide/video-and-audio-calling-api-sdk/features/pin-participants)
-- [React Native](/react-native/guide/video-and-audio-calling-api-sdk/features/pin-participants)
 
 :::
 
