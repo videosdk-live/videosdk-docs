@@ -11,6 +11,7 @@ keywords:
   - real-time communication
   - collabration
 image: img/videosdklive-thumbnail.jpg
+tags: [helloworld, demo1, testing1]
 sidebar_position: 1
 slug: getting-started
 ---

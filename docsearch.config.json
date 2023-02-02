@@ -1,0 +1,64 @@
+{
+  "index_name": "docs",
+  "start_urls": [
+    {
+      "url": "https://dev-docs.videosdk.live/javascript/guide/video-and-audio-calling-api-sdk/getting-started",
+      "tags": "helloworld",
+      "selectors_key": "javascript"
+    },
+    {
+      "url": "https://dev-docs.videosdk.live/react-native/guide/video-and-audio-calling-api-sdk/getting-started",
+      "tags": "johndoe",
+      "selectors_key": "reactnative"
+    },
+
+    "https://dev-docs.videosdk.live/"
+  ],
+  "stop_urls": [],
+
+  "selectors": {
+    "javascript": {
+      "lvl0": {
+        "selector": "",
+        "global": true,
+        "default_value": "Java Script"
+      },
+      "lvl1": "article h1",
+      "lvl2": "article h2",
+      "lvl3": "article h3",
+      "lvl4": "article h4",
+      "lvl5": "article h5, article td:first-child",
+      "lvl6": "article h6",
+      "text": "article p, article li, article td:last-child"
+    },
+    "reactnative": {
+      "lvl0": {
+        "selector": "",
+        "global": true,
+        "default_value": "React Native Guide"
+      },
+      "lvl1": "article h1",
+      "lvl2": "article h2",
+      "lvl3": "article h3",
+      "lvl4": "article h4",
+      "lvl5": "article h5, article td:first-child",
+      "lvl6": "article h6",
+      "text": "article p, article li, article td:last-child"
+    }
+  },
+
+  "strip_chars": " .,;:#",
+  "custom_settings": {
+    "separatorsToIndex": "_",
+    "attributesForFaceting": ["language", "version", "type", "docusaurus_tag"],
+    "attributesToRetrieve": [
+      "hierarchy",
+      "content",
+      "anchor",
+      "url",
+      "url_without_anchor",
+      "type"
+    ]
+  },
+  "nb_hits": 2227
+}

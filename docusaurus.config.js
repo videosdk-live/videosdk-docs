@@ -38,7 +38,7 @@ module.exports = {
 
     image: "img/videosdklive-thumbnail.jpg",
     algolia: {
-      apiKey: "6b125a23a26dc2bf6a8a0cb51a66a3f7",
+      apiKey: "4b09194fb8960dd2992e4fb47feddbd7",
       indexName: "videosdk",
       searchParameters: {
         facetFilters: ["content"],
