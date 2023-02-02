@@ -12,6 +12,12 @@ sidebar_position: 1
 slug: create-encoding-job
 ---
 
+:::caution
+
+**This page has been deprecated. Please follow this [link](https://docs.videosdk.live/) or ping us on [Discord](https://discord.gg/videosdk-live-876774498798551130)**
+
+:::
+
 # Create Encoding Job
 
 Encoding API converts source video into compressed version in multiple formats and resolutions up to 1080ps.

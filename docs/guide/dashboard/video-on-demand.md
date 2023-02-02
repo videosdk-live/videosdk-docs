@@ -15,6 +15,12 @@ sidebar_position: 1
 slug: video-on-demand
 ---
 
+:::caution
+
+**This page has been deprecated. Please follow this [link](https://docs.videosdk.live/) or ping us on [Discord](https://discord.gg/videosdk-live-876774498798551130)**
+
+:::
+
 Dashboard Video on Demand (VOD) page is all about your consumed minutes and listing of uploaded videos.
 
 This page Contains two major section [Overview](/docs/guide/dashboard/video-on-demand#1-overview) and [Videos](/docs/guide/dashboard/video-on-demand#2-videos).

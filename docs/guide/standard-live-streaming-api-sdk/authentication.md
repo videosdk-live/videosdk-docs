@@ -15,6 +15,12 @@ sidebar_position: 1
 slug: authentication
 ---
 
+:::caution
+
+**This page has been deprecated. Please follow this [link](https://docs.videosdk.live/) or ping us on [Discord](https://discord.gg/videosdk-live-876774498798551130)**
+
+:::
+
 import Mermaid from '@theme/Mermaid';
 
 VideoSDK uses access tokens for authentication. Using our dashboard ([app.videosdk.live](https://app.videosdk.live/)), anyone can generate access tokens tokens with an API key and secret pair.

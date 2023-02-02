@@ -12,6 +12,12 @@ sidebar_position: 1
 slug: play-video
 ---
 
+:::caution
+
+**This page has been deprecated. Please follow this [link](https://docs.videosdk.live/) or ping us on [Discord](https://discord.gg/videosdk-live-876774498798551130)**
+
+:::
+
 # Play Video
 
 To play back a video, use **fileUrl** attribute from the response of video.

@@ -12,6 +12,12 @@ sidebar_position: 1
 slug: delete-encoding-job
 ---
 
+:::caution
+
+**This page has been deprecated. Please follow this [link](https://docs.videosdk.live/) or ping us on [Discord](https://discord.gg/videosdk-live-876774498798551130)**
+
+:::
+
 # Delete Encoding Job
 
 This guide will provide an overview of how we can delete encoded job using VideoSDK API.

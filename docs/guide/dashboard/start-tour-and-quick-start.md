@@ -15,6 +15,12 @@ sidebar_position: 1
 slug: start-tour-and-quick-start
 ---
 
+:::caution
+
+**This page has been deprecated. Please follow this [link](https://docs.videosdk.live/) or ping us on [Discord](https://discord.gg/videosdk-live-876774498798551130)**
+
+:::
+
 ## Start Tour
 
 This feature is useful for complete walkthrogh of [Dashboard](https://app.videosdk.live/) website.

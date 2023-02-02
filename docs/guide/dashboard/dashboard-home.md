@@ -15,6 +15,13 @@ sidebar_position: 1
 slug: dashboard-home
 ---
 
+
+:::caution
+
+**This page has been deprecated. Please follow this [link](https://docs.videosdk.live/) or ping us on [Discord](https://discord.gg/videosdk-live-876774498798551130)**
+
+:::
+
 Dashboard home page provides the user a global overview, with access to the most important data such as overall usage of service with date modification, list of working APIs and total credit balance.
 
 This page Contains five major section such as [Usage](/docs/guide/dashboard/dashboard-home#1-usage), [API key](/docs/guide/dashboard/dashboard-home#2-api-keys), [Credit Balance](/docs/guide/dashboard/dashboard-home#3-credit-balance), [Resources](/docs/guide/dashboard/dashboard-home#4-resources) and [Support](/docs/guide/dashboard/dashboard-home#5-support)

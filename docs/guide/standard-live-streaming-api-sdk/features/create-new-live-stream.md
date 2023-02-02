@@ -15,6 +15,12 @@ sidebar_position: 1
 slug: create-new-live-stream
 ---
 
+:::caution
+
+**This page has been deprecated. Please follow this [link](https://docs.videosdk.live/) or ping us on [Discord](https://discord.gg/videosdk-live-876774498798551130)**
+
+:::
+
 # Live Stream - Create New Live Stream
 
 This guide will provide an overview of how to create live stream using generated token in previous step [Authentication](/docs/guide/standard-live-streaming-api-sdk/authentication).

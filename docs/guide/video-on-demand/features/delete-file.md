@@ -12,6 +12,12 @@ sidebar_position: 1
 slug: delete-file
 ---
 
+:::caution
+
+**This page has been deprecated. Please follow this [link](https://docs.videosdk.live/) or ping us on [Discord](https://discord.gg/videosdk-live-876774498798551130)**
+
+:::
+
 # Delete File
 
 This guide will provide an overview of delete particular file by passing file id in path params.

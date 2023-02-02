@@ -15,6 +15,12 @@ sidebar_position: 1
 slug: get-live-stream-details
 ---
 
+:::caution
+
+**This page has been deprecated. Please follow this [link](https://docs.videosdk.live/) or ping us on [Discord](https://discord.gg/videosdk-live-876774498798551130)**
+
+:::
+
 # Live Stream - Get Live Stream Details
 
 This guide will provide an overview of retrieving particular live stream details using live stream id, which we have created in [Create New Live Stream](/docs/guide/standard-live-streaming-api-sdk/features/create-new-live-stream).

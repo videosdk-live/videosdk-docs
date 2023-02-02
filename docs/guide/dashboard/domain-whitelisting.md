@@ -14,6 +14,12 @@ sidebar_position: 1
 slug: domain-whitelisting
 ---
 
+:::caution
+
+**This page has been deprecated. Please follow this [link](https://docs.videosdk.live/) or ping us on [Discord](https://discord.gg/videosdk-live-876774498798551130)**
+
+:::
+
 You can secure your prebuilt by using **Domain Whitelisting** feature in dashboard.
 
 **Domain Whitelisting** is a method of ensuring that no one but your organization is using your prebuilt. It’s one way of securing prebuilt, so others don’t attempt to piggy back on your account.

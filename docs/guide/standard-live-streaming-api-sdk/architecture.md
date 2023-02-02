@@ -15,6 +15,12 @@ sidebar_position: 1
 slug: architecture
 ---
 
+:::caution
+
+**This page has been deprecated. Please follow this [link](https://docs.videosdk.live/) or ping us on [Discord](https://discord.gg/videosdk-live-876774498798551130)**
+
+:::
+
 # Architecture
 
 import Mermaid from '@theme/Mermaid';

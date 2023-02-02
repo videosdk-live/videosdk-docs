@@ -12,6 +12,12 @@ sidebar_position: 1
 slug: upload-file
 ---
 
+:::caution
+
+**This page has been deprecated. Please follow this [link](https://docs.videosdk.live/) or ping us on [Discord](https://discord.gg/videosdk-live-876774498798551130)**
+
+:::
+
 # Upload File
 
 This guide will provide an overview of how to upload video/image using generated token , for token generation you can follow [Authentication](/docs/guide/video-on-demand/authentication).

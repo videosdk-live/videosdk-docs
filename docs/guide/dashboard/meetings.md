@@ -15,6 +15,11 @@ sidebar_position: 1
 slug: meetings
 ---
 
+:::caution
+
+**This page has been deprecated. Please follow this [link](https://docs.videosdk.live/) or ping us on [Discord](https://discord.gg/videosdk-live-876774498798551130)**
+
+:::
 Dashboard meeting page is all about your consumed meeting minutes, conducted number of sessions and list of session recordings.
 
 This page Contains three major section such as [Overview](/docs/guide/dashboard/meetings#1-overview), [Sessions](/docs/guide/dashboard/meetings#2-sessions) and [Recordings](/docs/guide/dashboard/meetings#3-recordings).

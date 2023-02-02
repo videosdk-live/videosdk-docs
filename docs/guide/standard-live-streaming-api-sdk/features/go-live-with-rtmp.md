@@ -15,6 +15,12 @@ sidebar_position: 1
 slug: go-live-with-rtmp
 ---
 
+:::caution
+
+**This page has been deprecated. Please follow this [link](https://docs.videosdk.live/) or ping us on [Discord](https://discord.gg/videosdk-live-876774498798551130)**
+
+:::
+
 # Live Stream - Go Live With- RTMP
 
 In previous step, we have created live stream using VideoSDK API and in response we got `upstreamUrl` and `streamKey`.

@@ -15,6 +15,12 @@ sidebar_position: 1
 slug: play-live-stream
 ---
 
+:::caution
+
+**This page has been deprecated. Please follow this [link](https://docs.videosdk.live/) or ping us on [Discord](https://discord.gg/videosdk-live-876774498798551130)**
+
+:::
+
 # Live Stream - Play Live Stream
 
 To play back a live stream, use the `downstreamUrl`, which we have created in [Create New Live Stream](/docs/guide/standard-live-streaming-api-sdk/features/create-new-live-stream).

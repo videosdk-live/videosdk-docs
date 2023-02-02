@@ -12,6 +12,13 @@ sidebar_position: 1
 slug: get-file-details
 ---
 
+:::caution
+
+**This page has been deprecated. Please follow this [link](https://docs.videosdk.live/) or ping us on [Discord](https://discord.gg/videosdk-live-876774498798551130)**
+
+:::
+
+
 # Get File Details
 
 This guide will provide an overview of retrieving particular file details using file id, which we have created in [Upload File](/docs/guide/video-on-demand/features/upload-file).

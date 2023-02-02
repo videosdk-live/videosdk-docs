@@ -12,6 +12,12 @@ sidebar_position: 1
 slug: list-all-files
 ---
 
+:::caution
+
+**This page has been deprecated. Please follow this [link](https://docs.videosdk.live/) or ping us on [Discord](https://discord.gg/videosdk-live-876774498798551130)**
+
+:::
+
 # List All Files
 
 This guide will provide an overview of how to list all files that you created by passing JWT Token in header.

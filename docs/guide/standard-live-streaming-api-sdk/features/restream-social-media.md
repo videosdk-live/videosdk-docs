@@ -15,6 +15,12 @@ sidebar_position: 1
 slug: restream-social-media
 ---
 
+:::caution
+
+**This page has been deprecated. Please follow this [link](https://docs.videosdk.live/) or ping us on [Discord](https://discord.gg/videosdk-live-876774498798551130)**
+
+:::
+
 # Live Stream - Restream on Social Media
 
 Everyone has their preferred social media platforms (Youtube, Facebook and Linkedin) and it can be difficult to get people across different platforms. With Restream your viewers can see live stream no matter what platform they use.

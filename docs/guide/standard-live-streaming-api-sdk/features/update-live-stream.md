@@ -15,6 +15,12 @@ sidebar_position: 1
 slug: update-live-stream
 ---
 
+:::caution
+
+**This page has been deprecated. Please follow this [link](https://docs.videosdk.live/) or ping us on [Discord](https://discord.gg/videosdk-live-876774498798551130)**
+
+:::
+
 # Live Stream - Update Live Stream
 
 This guide will provide an overview of how we can update name of the live stream,change the recording status to on/off and also change the restream platforms with LiveStream id.

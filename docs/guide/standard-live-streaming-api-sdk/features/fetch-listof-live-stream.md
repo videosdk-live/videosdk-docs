@@ -15,6 +15,12 @@ sidebar_position: 1
 slug: fetch-listof-live-stream
 ---
 
+:::caution
+
+**This page has been deprecated. Please follow this [link](https://docs.videosdk.live/) or ping us on [Discord](https://discord.gg/videosdk-live-876774498798551130)**
+
+:::
+
 # Live Stream - Fetch List of Live Stream
 
 This guide will provide an overview of how to list all live streams that you created by passing `userId` as query parameter.

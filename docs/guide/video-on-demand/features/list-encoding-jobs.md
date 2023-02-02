@@ -12,6 +12,12 @@ sidebar_position: 1
 slug: list-encoding-jobs
 ---
 
+:::caution
+
+**This page has been deprecated. Please follow this [link](https://docs.videosdk.live/) or ping us on [Discord](https://discord.gg/videosdk-live-876774498798551130)**
+
+:::
+
 # List Encoding Jobs
 
 This guide will provide an overview of how to list all encoding jobs that you created by passing userId as query parameter.
