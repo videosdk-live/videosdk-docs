@@ -1,5 +1,5 @@
 {
-  "index_name": "docs",
+  "index_name": "dev_videosdk",
   "start_urls": [
     {
       "url": "https://dev-docs.videosdk.live/javascript/guide/video-and-audio-calling-api-sdk/getting-started",
@@ -8,7 +8,7 @@
     },
     {
       "url": "https://dev-docs.videosdk.live/react-native/guide/video-and-audio-calling-api-sdk/getting-started",
-      "tags": "johndoe",
+      "tags": "chatgpt",
       "selectors_key": "reactnative"
     },
 
