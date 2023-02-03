@@ -1,56 +1,14 @@
 {
   "index_name": "videosdk",
-  "start_urls": [
-    {
-      "url": "https://docs.videosdk.live/javascript/guide/video-and-audio-calling-api-sdk/getting-started",
-      "selectors_key": "javascript"
-    },
-    {
-      "url": "https://docs.videosdk.live/react/guide/video-and-audio-calling-api-sdk/getting-started",
-      "selectors_key": "react"
-    },
-    {
-      "url": "https://docs.videosdk.live/react-native/guide/video-and-audio-calling-api-sdk/getting-started",
-      "selectors_key": "reactnative"
-    },
-    {
-      "url": "https://docs.videosdk.live/react-native/guide/video-and-audio-calling-api-sdk/getting-started",
-      "selectors_key": "reactnative"
-    },
-    {
-      "url": "https://docs.videosdk.live/javascript/guide/video-and-audio-calling-api-sdk/features/screenshare",
-      "selectors_key": "screenshare"
-    },
-    {
-      "url": "https://docs.videosdk.live/react/guide/video-and-audio-calling-api-sdk/features/screenshare",
-      "selectors_key": "screenshare"
-    },
-    {
-      "url": "https://docs.videosdk.live/react-native/guide/video-and-audio-calling-api-sdk/features/screenshare",
-      "selectors_key": "screenshare"
-    },
-
-    "https://docs.videosdk.live/"
-  ],
+  "sitemap_urls": ["https://dev-docs.videosdk.live/sitemap.xml"],
+  "start_urls": ["https://dev-docs.videosdk.live/"],
   "stop_urls": [],
 
   "selectors": {
-    "screenshare": {
+    "default": {
       "lvl0": "article h1",
       "lvl1": "article h2",
       "lvl2": "article h3"
-    },
-    "javascript": {
-      "lvl0": "article h1",
-      "lvl1": "article h2"
-    },
-    "react": {
-      "lvl0": "article h1",
-      "lvl1": "article h2"
-    },
-    "reactnative": {
-      "lvl0": "article h1",
-      "lvl1": "article h2"
     }
   },
 

@@ -56,7 +56,6 @@
       "label": "Advanced Features",
       "items": [
         "guide/video-and-audio-calling-api-sdk/features/play-external-video",
-        "guide/video-and-audio-calling-api-sdk/features/pubsub",
         "guide/video-and-audio-calling-api-sdk/features/error-event",
         "guide/video-and-audio-calling-api-sdk/features/virtual-background",
         "guide/video-and-audio-calling-api-sdk/features/noise-suppresion"

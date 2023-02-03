@@ -15,7 +15,7 @@ sidebar_position: 1
 slug: quick-start
 ---
 
-# Build a Video Calling App Using VideoSDK in a React Project
+# Quick Start
 
 VideoSDK enables you to embed the video calling feature into your React application in minutes.
 
