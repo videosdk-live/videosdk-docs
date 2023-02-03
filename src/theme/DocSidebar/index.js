@@ -8,9 +8,9 @@ import React, { useEffect, useState } from "react";
 import clsx from "clsx";
 import {
   useThemeConfig,
-  MobileSecondaryMenuFiller,
   ThemeClassNames,
   useWindowSize,
+  NavbarSecondaryMenuFiller,
 } from "@docusaurus/theme-common";
 import {
   useAnnouncementBar,
@@ -118,7 +118,7 @@ const DocSidebarMobileSecondaryMenu = ({ toggleSidebar, sidebar, path }) => (
 
 function DocSidebarMobile(props) {
   return (
-    <MobileSecondaryMenuFiller
+    <NavbarSecondaryMenuFiller
       component={DocSidebarMobileSecondaryMenu}
       props={props}
     />
@@ -126,7 +126,7 @@ function DocSidebarMobile(props) {
 }
 
 const DocSidebarDesktopMemo = React.memo(DocSidebarDesktop);
-const DocSidebarMobileMemo = React.memo(DocSidebarMobile);
+// const DocSidebarMobileMemo = React.memo(DocSidebarMobile);
 export default function DocSidebar(props) {
   const windowSize = useWindowSize(); // Desktop sidebar visible on hydration: need SSR rendering
 
@@ -137,7 +137,7 @@ export default function DocSidebar(props) {
   return (
     <>
       {shouldRenderSidebarDesktop && <DocSidebarDesktopMemo {...props} />}
-      {shouldRenderSidebarMobile && <DocSidebarMobileMemo {...props} />}
+      {shouldRenderSidebarMobile && <DocSidebarMobile {...props} />}
     </>
   );
 }
