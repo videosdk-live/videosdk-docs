@@ -15,7 +15,7 @@ sidebar_position: 1
 slug: quick-start
 ---
 
-# Build a Video Calling App with VideoSDK in a Flutter Project
+# Quick Start
 
 VideoSDK enables the opportunity to integrate video & audio calling to Web, Android, IOS applications. It provides Programmable SDKs and REST APIs to build scalable video conferencing applications.
 
