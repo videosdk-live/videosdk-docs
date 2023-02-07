@@ -1,41 +1,44 @@
 {
-  "index_name": "videosdk",
-  "sitemap_urls": ["https://dev-docs.videosdk.live/sitemap.xml"],
+  "index_name": "VIDEO_SDK",
   "start_urls": [
     {
-      "url": "https://dev-docs.videosdk.live/javascript/guide/video-and-audio-calling-api-sdk/getting-started",
+      "url": "https://docs.videosdk.live/javascript/guide/video-and-audio-calling-api-sdk/getting-started",
       "selectors_key": "javascript"
     },
 
     {
-      "url": "https://dev-docs.videosdk.live/react/guide/video-and-audio-calling-api-sdk/getting-started",
+      "url": "https://docs.videosdk.live/react/guide/video-and-audio-calling-api-sdk/getting-started",
       "selectors_key": "react"
     },
 
     {
-      "url": "https://dev-docs.videosdk.live/react-native/guide/video-and-audio-calling-api-sdk/getting-started",
+      "url": "https://docs.videosdk.live/react-native/guide/video-and-audio-calling-api-sdk/getting-started",
       "selectors_key": "reactnative"
     },
 
     {
-      "url": "https://dev-docs.videosdk.live/android/guide/video-and-audio-calling-api-sdk/getting-started",
+      "url": "https://docs.videosdk.live/android/guide/video-and-audio-calling-api-sdk/getting-started",
       "selectors_key": "android"
     },
 
     {
-      "url": "https://dev-docs.videosdk.live/ios/guide/video-and-audio-calling-api-sdk/getting-started",
+      "url": "https://docs.videosdk.live/ios/guide/video-and-audio-calling-api-sdk/getting-started",
       "selectors_key": "ios"
     },
 
     {
-      "url": "https://dev-docs.videosdk.live/flutter/guide/video-and-audio-calling-api-sdk/getting-started",
+      "url": "https://docs.videosdk.live/flutter/guide/video-and-audio-calling-api-sdk/getting-started",
       "selectors_key": "flutter"
     },
 
-    "https://dev-docs.videosdk.live/"
+    "https://docs.videosdk.live/"
   ],
-  "stop_urls": [],
-
+  "stop_urls": [
+    "https://docs.videosdk.live/docs",
+    "https://docs.videosdk.live/prebuilt/0.2.x/",
+    "https://docs.videosdk.live/prebuilt/0.1.x/",
+    "https://docs.videosdk.live/android/0.0.x/"
+  ],
   "selectors": {
     "default": {
       "lvl0": {
@@ -145,6 +148,20 @@
         "selector": "",
         "global": true,
         "default_value": "Release Note"
+      },
+      "lvl1": "article h1",
+      "lvl2": "article h2",
+      "lvl3": "article h3",
+      "lvl4": "article h4",
+      "lvl5": "article h5, article td:first-child",
+      "lvl6": "article h6",
+      "text": "article p, article li, article td:last-child"
+    },
+    "prebuilt": {
+      "lvl0": {
+        "selector": "",
+        "global": true,
+        "default_value": "Prebuilt"
       },
       "lvl1": "article h1",
       "lvl2": "article h2",
