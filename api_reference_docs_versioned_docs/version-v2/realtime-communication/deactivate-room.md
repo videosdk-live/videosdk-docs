@@ -1,5 +1,5 @@
 ---
-title: Deactivate a Room | Video SDK
+title: Deactivate a Room 
 sidebar_position: 5
 sidebar_label: Deactivate a Room
 hide_table_of_contents: true

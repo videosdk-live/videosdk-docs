@@ -1,5 +1,5 @@
 ---
-title: Fetch all HLS | Video SDK
+title: Fetch all HLS 
 sidebar_position: 1
 sidebar_label: Fetch all HLS
 hide_table_of_contents: true

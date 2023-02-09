@@ -43,10 +43,10 @@ import Card from '@theme/Card';
   </div>
   <div class="row ">
    <div class="col col--6" >
-      <Card heading="5. Basic Features" link="/javascript/guide/video-and-audio-calling-api-sdk/server-setup" description="Explore basic features such as join, leave and customise."  />
+      <Card heading="5. Basic Features" link="/javascript/guide/video-and-audio-calling-api-sdk/features/start-join-meeting" description="Explore basic features such as join, leave and customise."  />
     </div>
     <div class="col col--6">
-      <Card heading="6. Advanced Features" link="/javascript/guide/video-and-audio-calling-api-sdk/features/start-join-meeting" description="Explore advanced features such as screen sharing, recording and live streaming." />
+      <Card heading="6. Advanced Features" link="/javascript/guide/video-and-audio-calling-api-sdk/features/play-external-video" description="Explore advanced features such as screen sharing, recording and live streaming." />
     </div>
   </div>
 </div>

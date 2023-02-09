@@ -1,5 +1,5 @@
 ---
-title: Fetch Session Quality Stats | Video SDK
+title: Fetch Session Quality Stats 
 sidebar_position: 1
 sidebar_label: Fetch Session Quality Stats
 hide_table_of_contents: true

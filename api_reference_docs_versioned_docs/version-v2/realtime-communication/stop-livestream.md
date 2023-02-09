@@ -1,5 +1,5 @@
 ---
-title: Stop Livestream | Video SDK
+title: Stop Livestream 
 sidebar_position: 1
 sidebar_label: Stop RTMP
 hide_table_of_contents: true

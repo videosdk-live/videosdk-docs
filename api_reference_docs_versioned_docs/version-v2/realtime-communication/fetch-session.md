@@ -1,5 +1,5 @@
 ---
-title: Fetch Sessions | Video SDK
+title: Fetch Sessions 
 sidebar_position: 1
 sidebar_label: Fetch Sessions
 hide_table_of_contents: true

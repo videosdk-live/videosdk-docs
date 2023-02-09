@@ -1,5 +1,5 @@
 ---
-title: Fetch an HLS | Video SDK
+title: Fetch an HLS 
 sidebar_position: 1
 sidebar_label: Fetch an HLS
 hide_table_of_contents: true

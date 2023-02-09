@@ -1,5 +1,5 @@
 ---
-title: Create a Room | Video SDK
+title: Create a Room 
 sidebar_position: 1
 sidebar_label: Create a Room
 hide_table_of_contents: true

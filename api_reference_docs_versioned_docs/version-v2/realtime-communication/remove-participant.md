@@ -1,5 +1,5 @@
 ---
-title: Remove Participant | Video SDK
+title: Remove Participant 
 sidebar_position: 1
 sidebar_label: Remove Participant
 hide_table_of_contents: true

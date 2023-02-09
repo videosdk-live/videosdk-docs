@@ -1,5 +1,5 @@
 ---
-title: Start Livestream | Video SDK
+title: Start Livestream 
 sidebar_position: 1
 sidebar_label: Start RTMP
 hide_table_of_contents: true

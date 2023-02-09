@@ -221,14 +221,14 @@ const MethodRequestResponse = () => {
         </div>
         <div className="flex-1 text-[#7D8EAD] text-sm font-medium"></div>
         <div className="dropdown dropdown--hoverable dropdown--right">
-          <div className="flex flex-row pr-3 cursor-pointers">
+          <div className="flex flex-row pr-3 cursor-pointer">
             <div className="text-sm text-white-1">{language.value}</div>
             <img
               src="/img/icons/ic_arrow_down.svg"
               className="pl-2 colored_ic_arrow_down"
             />
           </div>
-          <ul className="dropdown__menu mt-4 min-w-fit bg-[#252a34]">
+          <ul className="dropdown__menu min-w-fit bg-[#252a34]">
             {languageList.map((v) => {
               return (
                 <li key={v.id}>
