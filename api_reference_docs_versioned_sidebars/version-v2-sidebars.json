@@ -49,7 +49,9 @@
       "collapsed": true,
       "items": [
         "realtime-communication/start-livestream",
-        "realtime-communication/stop-livestream"
+        "realtime-communication/stop-livestream",
+        "realtime-communication/fetch-all-rtmp",
+        "realtime-communication/fetch-an-rtmp"
       ]
     },
     {

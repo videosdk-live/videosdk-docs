@@ -1,0 +1,40 @@
+{
+  "fetchAnRTMP": {
+    "title": "Fetch an RTMP",
+    "description": "This API lets you fetch an RTMP stream.",
+    "headers": [
+      {
+        "key": "Authorization",
+        "value": "$YOUR_TOKEN"
+      },
+      {
+        "key": "Content-Type",
+        "value": "application/json"
+      }
+    ],
+    "methodType": "GET",
+    "postParameters": [],
+    "queryParameters": [],
+    "parameters": [
+      {
+        "key": "RtmpId",
+        "description": "#### The ID of the RTMP.",
+        "required": true
+      }
+    ],
+    "apiEndpoint": "https://api.videosdk.live/v2/livestreams/${rtmpId}",
+    "response": {
+      "id": "63e5fb96b9fa80ed9be22db6",
+      "sessionId": "63e5fa3db9fa80ed9be22d96",
+      "outputs": [
+        {
+          "streamKey": "fcz-4da-dver-qxzp-0rm",
+          "url": "rtmp://a.rtmp.youtube.com/live2"
+        }
+      ],
+      "start": "2023-02-10T08:08:54.551Z",
+      "end": "2023-02-10T08:12:05.793Z",
+      "roomId": "abcd-efgh-ijkl"
+    }
+  }
+}
