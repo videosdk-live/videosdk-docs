@@ -8,6 +8,50 @@ tags: [releasenotes]
 
 This page will keep you update all the releases of JavaScript SDK.
 
+## v0.0.61
+
+**Release Date** : 10th February 2023
+
+**Change log** :
+
+- Improve bitrate logic in the `multiStream` feature so that user's CPU and the network are optimise.
+
+---
+
+## v0.0.60
+
+**Release Date** : 6th February 2023
+
+**Change log** :
+
+- Replace custom track in `changeWebcam` method.
+
+---
+
+## v0.0.59
+
+**Release Date** : 3rd February 2023
+
+**Change log** : none
+
+**Bug Fix** :
+
+- Network switch & reconnection issue fixes (covered all possible edge cases that were causing interruptions during the meeting)
+
+---
+
+## v0.0.57
+
+**Release Date** : 28th December 2022
+
+**Change log** : none
+
+**Bug Fix** :
+
+- Network switch & re connection issue fixes in [meeting-state-changed](https://docs.videosdk.live/javascript/api/sdk-reference/meeting-class/events#meeting-state-changed) event.
+
+---
+
 ## v0.0.56
 
 **Release Date** : 20th December 2022

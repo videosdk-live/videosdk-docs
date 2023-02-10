@@ -8,6 +8,22 @@ tags: [releasenotes]
 
 This page will keep you update all the releases of React Native SDK.
 
+## v0.0.42
+
+**Release Date** : 10th February 2023
+
+**Change log** :
+
+- Improve bitrate logic in the `multiStream` feature so that user's CPU and the network are optimise.
+
+- Replace custom track in `changeWebcam` method.
+
+**Bug Fix** :
+
+- Network switch & reconnection issue fixes (covered all possible edge cases that were causing interruptions during the meeting) in [onMeetingStateChanged](https://docs.videosdk.live/react-native/api/sdk-reference/use-meeting/events#onmeetingstatechanged) event.
+
+---
+
 ## v0.0.41
 
 **Release Date** : 7th January 2023
