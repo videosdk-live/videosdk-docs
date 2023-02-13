@@ -4,7 +4,7 @@
       "type": "category",
       "label": "Introduction",
       "items": [
-        "guide/video-and-audio-calling-api-sdk/getting-started",
+        "guide/video-and-audio-calling-api-sdk/concept-and-architecture",
         "guide/video-and-audio-calling-api-sdk/signup-and-create-api",
         "guide/video-and-audio-calling-api-sdk/react-js-sdk",
         "guide/video-and-audio-calling-api-sdk/server-setup",
