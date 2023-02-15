@@ -578,12 +578,15 @@ function ParticipantList({ participants }) {
 ```js title="MeetingView Component"
 function MeetingView() {
   // Get `participants` from useMeeting Hook
+  // highlight-next-line
   const { join, leave, toggleWebcam, toggleMic, participants } = useMeeting({});
-  const participantsArrId = [...participants.keys()]; // Add this line
+  // highlight-next-line
+  const participantsArrId = [...participants.keys()];
 
   return (
     <View style={{ flex: 1 }}>
-      <ParticipantList participants={participantsArrId} /> // Pass participants
+      // highlight-next-line
+      <ParticipantList participants={participantsArrId} />
       <ControlsContainer
         join={join}
         leave={leave}
