@@ -15,11 +15,11 @@ sidebar_position: 1
 slug: react-js-sdk
 ---
 
-Our React JS SDK provides a wrapper over JavaScript SDK converting it into usable React hooks API. It simplifies the code for React JS and makes integrating the Video and Audio calls in you app every simple.
+Our React JS SDK provides a wrapper over JavaScript SDK converting it into usable React hooks API. It simplifies the code for React JS and makes integrating the Video and Audio calls in your app very simple.
 
 ### Installing React SDK
 
-You can install our React SDK by using Yarn and [NPM](https://www.npmjs.com/package/@videosdk.live/react-sdk) package managers.
+You can install our React SDK by using Yarn or [NPM](https://www.npmjs.com/package/@videosdk.live/react-sdk) package managers.
 
 Before installing the React SDK make sure you have Node environment already setup on your machine.
 
