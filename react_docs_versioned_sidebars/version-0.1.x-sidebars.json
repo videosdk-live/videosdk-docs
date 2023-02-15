@@ -38,7 +38,8 @@
           "label": "Setup Call",
           "items": [
             "guide/video-and-audio-calling-api-sdk/setup-call/initialise-meeting",
-            "guide/video-and-audio-calling-api-sdk/setup-call/join-meeting"
+            "guide/video-and-audio-calling-api-sdk/setup-call/join-meeting",
+            "guide/video-and-audio-calling-api-sdk/setup-call/leave-end-meeting"
           ],
           "collapsed": true
         }

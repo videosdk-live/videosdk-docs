@@ -91,14 +91,14 @@ const MeetingView = () => {
 
 Following callbacks are receieved when a participant is successfully joined.
 
-- Local Participant will receive a [`onMeetingJoined`](/react/api/sdk-reference/use-meeting/events#onmeetingjoined) event, when successfully joined.
-- Remote Participant will receive a [`onParticipantJoined`](/react/api/sdk-reference/use-meeting/events#onparticipantjoined) event with the newly joined `Participant` object from the event callback.
+- [Local Participant](../concept-and-architecture#2-participant) will receive a [`onMeetingJoined`](/react/api/sdk-reference/use-meeting/events#onmeetingjoined) event, when successfully joined.
+- [Remote Participant](../concept-and-architecture#2-participant) will receive a [`onParticipantJoined`](/react/api/sdk-reference/use-meeting/events#onparticipantjoined) event with the newly joined `Participant` object from the event callback.
 
 ##### API Reference
 
 The API references for all the methods and events utilised in these guide are provided below.
 
-- [MeetingProvider](/react/api/sdk-refernce/meeting-provider)
-- [join()](/react/api/sdk-refernce/use-meeting/methods#join)
+- [MeetingProvider](/react/api/sdk-reference/meeting-provider)
+- [join()](/react/api/sdk-reference/use-meeting/methods#join)
 - [onMeetingJoined()](/react/api/sdk-reference/use-meeting/events#onmeetingjoined)
 - [onParticipantJoined()](/react/api/sdk-reference/use-meeting/events#onparticipantjoined)
