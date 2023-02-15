@@ -1,0 +1,104 @@
+---
+title: Join Meeting | Video SDK
+hide_title: true
+hide_table_of_contents: false
+description: Video SDK and Audio SDK, developers need to implement a token server. This requires efforts on both the front-end and backend.
+sidebar_label: Join Meeting
+pagination_label: Join Meeting
+keywords:
+  - audio calling
+  - video calling
+  - real-time communication
+  - collabration
+image: img/videosdklive-thumbnail.jpg
+sidebar_position: 1
+slug: join-meeting
+---
+
+# Join Meeting
+
+### Overview
+
+With our React SDK, you can choose to manually call the `join()` or leave it up to the VideoSDK to automatically call the `join()` when the `MeetingProvider` is rendered.
+
+Before joining the meeting, it has to be initialized. If you have not initialized a meeting yet, you can [follow the guide here.](./initialise-meeting)
+
+### Joining the Meeting
+
+- To join the meeting you can call the `join()` which is the part of the `useMeeting` hook of React SDK.
+- These method can be called after the meeting is initialized from the `MeetingProvider`.
+
+:::caution
+`useMeeting` hook mentioned above is accesible within the `MeetingProvider` only.
+:::
+
+```js
+import { MeetingProvider, useMeeting } from "@videosdk.live/react-sdk";
+
+const getToken = async () => {
+  //highlight-next-line
+  ...
+};
+const getMeetingId = async () => {
+  //highlight-next-line
+  ...
+};
+
+const App = () => {
+  //highlight-next-line
+  ... Meeting Provider here
+};
+
+const MeetingView = () => {
+  //Event to know meeting is joined
+  //highlight-start
+  function onMeetingJoined() {
+    console.log("onMeetingJoined");
+  }
+  //highlight-end
+
+  //Event to know some other particioant joined
+  //highlight-start
+  function onParticipantJoined(participant) {
+    console.log(" onParticipantJoined", participant);
+  }
+  //highlight-end
+
+  //Getting the join method from hook and assigning event callbacks
+  //highlight-start
+  const { join } = useMeeting({
+    onMeetingJoined,
+    onParticipantJoined,
+  });
+  //highlight-end
+
+  const handleJoinMeeting = () => {
+    // Joining Meeting
+    //highlight-next-line
+    join();
+  };
+
+  return (
+    <>
+      <button onClick={handleJoinMeeting}>Join Meeting</button>
+    </>
+  );
+};
+
+```
+
+#### Events associated with Join
+
+Following callbacks are receieved when a participant is successfully joined.
+
+- Local Participant will receive a [`onMeetingJoined`](/react/api/sdk-reference/use-meeting/events#onmeetingjoined) event, when successfully joined.
+- Remote Participant will receive a [`onParticipantJoined`](/react/api/sdk-reference/use-meeting/events#onparticipantjoined) event with the newly joined `Participant` object from the event callback.
+
+##### API Reference
+
+The API references for all the methods and events utilised in these guide are provided below.
+
+- [MeetingProvider](/react/api/sdk-refernce/meeting-provider)
+- [join()](/react/api/sdk-refernce/use-meeting/methods#join)
+- [onMeetingJoined()](/react/api/sdk-reference/use-meeting/events#onmeetingjoined)
+- [onParticipantJoined()](/react/api/sdk-reference/use-meeting/events#onparticipantjoined)

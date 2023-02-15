@@ -15,6 +15,8 @@ sidebar_position: 1
 slug: initialise-meeting
 ---
 
+# Initialise Meeting
+
 To configure a VideoSDK meeting you require two things, first the `token` which will be used for authentication purpose and a `meetingId` which will be used define where a participant will join. Let us see each of the steps closely.
 
 ### Generating Token
@@ -218,6 +220,10 @@ const MeetingView = () => {
 ### React Hooks Support
 
 VideoSDK's React SDK provides Hooks which can be used to access the state of the meeting and listen to the events happening in the meeting.
+
+:::caution
+All the hooks mentioned below are accesible within the `MeetingProvider` only.
+:::
 
 #### useMeeting
 
