@@ -37,11 +37,11 @@ Before dive in to the concept, let's understand the VideSDK, VideoSDK is a softw
 
 - A mediastream can contain multiple tracks. One video track for the video feed from the camera and one audio track for the audio feed from the microphone. These tracks can be transmitted between participants in VideoSDK Meeting / Room.
 
-![img.png](../../../../static/img/concept_meeting.png)
-
 ### `4. Events / Notifications`
 
 - Events / Notifications can be used to inform users about various activities happening in a Meeting / Room, including participant join/leave and new messages. They can also be used to alert users about any SDK-level errors that occur during a call.
+
+![img.png](../../../../static/img/room-concept.png)
 
 ### `5. Cloud Recording`
 
