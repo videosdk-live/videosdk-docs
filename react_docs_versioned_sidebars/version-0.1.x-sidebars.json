@@ -42,6 +42,14 @@
             "guide/video-and-audio-calling-api-sdk/setup-call/leave-end-meeting"
           ],
           "collapsed": true
+        },
+        {
+          "type": "category",
+          "label": "Handling Media",
+          "items": [
+            "guide/video-and-audio-calling-api-sdk/handling-media/mute-unmute-mic"
+          ],
+          "collapsed": true
         }
       ],
       "collapsed": false
