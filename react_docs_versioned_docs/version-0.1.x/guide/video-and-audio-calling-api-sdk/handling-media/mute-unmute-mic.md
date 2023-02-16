@@ -172,9 +172,9 @@ const ParticipantView = (participantId) => {
 
 ### Audio Permissions
 
-- By defualt, VideSDK ask for audio permissions when the participants requests to tunr on the mic and once the permission is granted the mic gets turned on. If the permission is denied, VideoSDK will send the error message in teh `onError` event callback of `useMeeting` hook.
+- By defualt, VideSDK ask for audio permissions when the participants requests to turn on the mic and once the permission is granted the mic gets turned on. If the permission is denied, VideoSDK will send the error message in teh `onError` event callback of `useMeeting` hook.
 
-- If a participant denies the microphone permission, he cant manually grant it by following below shown steps.
+- If a participant denies the microphone permission, he can **manually grant** it by following below shown steps.
 
 :::caution
 To use the audio and video communications in the web browser, your site must be **`SSL enabled`** i.e. it must be secured and **`running on https`**.
