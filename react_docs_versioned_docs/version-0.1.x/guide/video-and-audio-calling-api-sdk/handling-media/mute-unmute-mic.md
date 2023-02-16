@@ -27,6 +27,8 @@ Any participant can mute or unmute himself in the meeting broadcast audio to oth
 
 - You can pass customised audio track in `unmuteMic()` by using [Custom Audio Track](/react/guide/video-and-audio-calling-api-sdk/features/custom-track/custom-audio-track#custom-track-with-unmutemic).
 
+- Audio stream of the participant can be accessed from the `micStream` property of `useParticipant` hook.
+
 ### `muteMic()`
 
 - By using `muteMic()` function of `useMeeting` hook, local participant can stop publish audio to other participants.
@@ -38,6 +40,8 @@ Any participant can mute or unmute himself in the meeting broadcast audio to oth
 - By using `toggleMic()` function of `useMeeting` hook, local participant can start or stop publish audio to other participants based on the current state of the mic.
 
 - You can pass customised audio track in `toggleMic()` by using [Custom Audio Track](/react/guide/video-and-audio-calling-api-sdk/features/custom-track/custom-audio-track#custom-track-with-unmutemic).
+
+- Audio stream of the participant can be accessed from the `micStream` property of `useParticipant` hook.
 
 ```jsx
 import { useMeeting } from "@videosdk.live/react-sdk";
@@ -75,6 +79,10 @@ const MeetingView = () => {
   );
 };
 ```
+
+:::note
+To learn, how to render a audio in the meeting, follow these detailed guide.
+:::
 
 ### Events
 

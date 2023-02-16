@@ -48,7 +48,8 @@
           "label": "Handling Media",
           "items": [
             "guide/video-and-audio-calling-api-sdk/handling-media/mute-unmute-mic",
-            "guide/video-and-audio-calling-api-sdk/handling-media/on-off-camera"
+            "guide/video-and-audio-calling-api-sdk/handling-media/on-off-camera",
+            "guide/video-and-audio-calling-api-sdk/handling-media/screen-share"
           ],
           "collapsed": true
         }

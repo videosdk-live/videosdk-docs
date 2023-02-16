@@ -27,6 +27,8 @@ Any participant can turn on or off his camera in the meeting using below methods
 
 - You can pass customised video track in `enableWebcam()` by using [Custom Video Track](/react/guide/video-and-audio-calling-api-sdk/features/custom-track/custom-video-track#custom-track-with-enablewebcam).
 
+- Video stream of the participant can be accessed from the `webcamStream` property of `useParticipant` hook.
+
 ### `disableWebcam()`
 
 - By using `disableWebcam()` function of `useMeeting` hook, local participant can stop publish video to other participants.
@@ -38,6 +40,8 @@ Any participant can turn on or off his camera in the meeting using below methods
 - By using `toggleWebcam()` function of `useMeeting` hook, local participant can start or stop publish video to other participants based on the current state of the camera.
 
 - You can pass customised video track in `toggleWebcam()` by using [Custom Video Track](/react/guide/video-and-audio-calling-api-sdk/features/custom-track/custom-video-track#custom-track-with-enablewebcam).
+
+- Video stream of the participant can be accessed from the `webcamStream` property of `useParticipant` hook.
 
 ```jsx
 import { useMeeting } from "@videosdk.live/react-sdk";
@@ -75,6 +79,10 @@ const MeetingView = () => {
   );
 };
 ```
+
+:::note
+To learn, how to render video in the meeting, follow these detailed guide.
+:::
 
 ### Events
 
