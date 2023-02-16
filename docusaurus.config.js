@@ -1,7 +1,7 @@
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 
 const pageOptions = {
-  editUrl: "https://github.com/videosdk-live/videosdk-docs/tree/develop",
+  editUrl: "https://github.com/videosdk-live/videosdk-docs/tree/main",
   showLastUpdateAuthor: true,
   showLastUpdateTime: true,
 };
