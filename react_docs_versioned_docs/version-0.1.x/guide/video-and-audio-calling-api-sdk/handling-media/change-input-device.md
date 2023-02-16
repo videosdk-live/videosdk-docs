@@ -29,7 +29,7 @@ If during the meeting at any point a participant wishes to change his input audi
 
 #### `changeMic()`
 
-- Once you know which device you want to change audio input to, you can pass the `deviceId` to these method to change the audio input device.
+- Once you know which device you want to switch audio input to, you can pass the `deviceId` to these method to change the audio input device.
 
 ```js
 const MeetingView = () => {
@@ -79,7 +79,7 @@ const MeetingView = () => {
 
 #### `changeWebcam()`
 
-- Once you know which device you want to change camera input to, you can pass the `deviceId` to these method to change the camera input device.
+- Once you know which device you want to switch camera input to, you can pass the `deviceId` to these method to change the camera input device.
 
 ```js
 const MeetingView = () => {

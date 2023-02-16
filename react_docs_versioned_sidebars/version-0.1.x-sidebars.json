@@ -51,7 +51,8 @@
             "guide/video-and-audio-calling-api-sdk/handling-media/on-off-camera",
             "guide/video-and-audio-calling-api-sdk/handling-media/screen-share",
             "guide/video-and-audio-calling-api-sdk/handling-media/active-speaker-indication",
-            "guide/video-and-audio-calling-api-sdk/handling-media/change-input-device"
+            "guide/video-and-audio-calling-api-sdk/handling-media/change-input-device",
+            "guide/video-and-audio-calling-api-sdk/handling-media/change-audio-output-device"
           ],
           "collapsed": true
         }
