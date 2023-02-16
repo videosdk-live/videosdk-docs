@@ -151,9 +151,9 @@ import { useMeeting } from "@videosdk.live/react-sdk";
 const MeetingView = () => {
   // Get the localWebcamOn property
   //highlight-next-line
-  const { locanWebcamOn } = useMeeting();
+  const { localWebcamOn } = useMeeting();
 
-  return <> Local Camera is {locanWebcamOn} </>;
+  return <> Local Camera is {localWebcamOn} </>;
 };
 ```
 
@@ -174,7 +174,23 @@ const ParticipantView = (participantId) => {
 
 - By defualt, VideSDK ask for video permissions when the participants requests to turn on the camera and once the permission is granted the camera gets turned on. If the permission is denied, VideoSDK will send the error message in teh `onError` event callback of `useMeeting` hook.
 
+import ReactPlayer from 'react-player'
+
+<div style={{textAlign: 'center'}}>
+
+<ReactPlayer autoplay muted loop playing url='/video/capturing-video-permission.mp4' width={"100%"}/>
+
+</div>
+
+### Troubleshoot Video Permissions
+
 - If a participant denies the camera permission, he can **manually grant** it by following below shown steps.
+
+<div style={{textAlign: 'center'}}>
+
+<ReactPlayer autoplay muted loop playing url='/video/troubleshoot-video-permission.mp4' width={"100%"}/>
+
+</div>
 
 :::caution
 To use the audio and video communications in the web browser, your site must be **`SSL enabled`** i.e. it must be secured and **`running on https`**.
