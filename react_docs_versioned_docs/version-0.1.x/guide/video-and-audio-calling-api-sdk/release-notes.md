@@ -8,7 +8,7 @@ tags: [releasenotes]
 
 This page will keep you update all the releases of React JS SDK.
 
-## v0.0.66
+## v0.1.66
 
 **Release Date** : 10th February 2023
 

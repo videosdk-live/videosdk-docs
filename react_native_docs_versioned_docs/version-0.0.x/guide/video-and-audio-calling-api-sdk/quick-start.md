@@ -525,7 +525,8 @@ function MeetingView() {
           Meeting Id :{meetingId}
         </Text>
       ) : null}
-      <ParticipantList /> // Will implement in next steps
+      // highlight-next-line
+      <ParticipantList />
       <ControlsContainer
         join={join}
         leave={leave}
