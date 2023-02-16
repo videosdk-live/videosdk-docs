@@ -12,7 +12,7 @@ keywords:
   - audio call hooks
 image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
-slug: react-js-sdk
+slug: integrate-sdk
 ---
 
 Our React JS SDK provides a wrapper over JavaScript SDK converting it into usable React hooks API. It simplifies the code for React JS and makes integrating the Video and Audio calls in your app very simple.

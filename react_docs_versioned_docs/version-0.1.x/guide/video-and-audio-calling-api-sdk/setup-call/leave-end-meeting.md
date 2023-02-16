@@ -19,9 +19,13 @@ slug: leave-end-meeting
 
 Participant can choose to use leave meeting without removing all the participant or leave the room by removing all the other participant resulting in the end of session.
 
-- **Leave** - To leave the meeting without removing all the participant you need to call `leave()` which is the part of the `useMeeting` hook of React SDK.
+### `leave()`
 
-- **End** - To leave the meeting by removing all the participant you need to call `end()` which is the part of the `useMeeting` hook of React SDK.
+To leave the meeting without removing all the participant you need to call `leave()` which is the part of the `useMeeting` hook of React SDK.
+
+### `end()`
+
+To leave the meeting by removing all the participant you need to call `end()` which is the part of the `useMeeting` hook of React SDK.
 
 :::note
 These methods can be called after the meeting is joined successfully.
@@ -31,20 +35,6 @@ These methods can be called after the meeting is joined successfully.
 import { useMeeting } from "@videosdk.live/react-sdk";
 
 const MeetingView = () => {
-  //Event to know meeting is left
-  //highlight-start
-  function onMeetingLeft() {
-    console.log("onMeetingLeft");
-  }
-  //highlight-end
-
-  //Event to know some other particioant left
-  //highlight-start
-  function onParticipantLeft(participant) {
-    console.log(" onParticipantLeft", participant);
-  }
-  //highlight-end
-
   //Getting the leave and end method from hook and assigning event callbacks
   //highlight-start
   const { leave, end } = useMeeting({
@@ -78,20 +68,50 @@ const MeetingView = () => {
 You should call the `leave()` method on the unmount of your main meeting component so that meeting is left once the view is unrendered.
 :::
 
-#### Events associated with Leave
+### Events associated with Leave
 
 Following callbacks are receieved when a participant leaves the meeting.
 
 - [Local Participant](../concept-and-architecture#2-participant) will receive a callback on[`onMeetingLeft`](/react/api/sdk-reference/use-meeting/events#onmeetingleft) of `useMeeting()` hook.
 - All [remote participants](../concept-and-architecture#2-participant) will receive a callback [`onParticipantLeft`](/react/api/sdk-reference/use-meeting/events#onparticipantleft) with Participant object.
 
-#### Events associated with End
+### Events associated with End
 
 Following callbacks are receieved when a participant ends the meeting.
 
 - All [remote participants](../concept-and-architecture#2-participant) and local participant will receive a callback on [`onMeetingLeft`](/react/api/sdk-reference/use-meeting/events#onmeetingleft) of `useMeeting()` hook.
 
-##### API Reference
+```jsx
+import { useMeeting } from "@videosdk.live/react-sdk";
+
+const MeetingView = () => {
+  //Event to know meeting is left
+  //highlight-start
+  function onMeetingLeft() {
+    console.log("onMeetingLeft");
+  }
+  //highlight-end
+
+  //Event to know some other particioant left
+  //highlight-start
+  function onParticipantLeft(participant) {
+    console.log(" onParticipantLeft", participant);
+  }
+  //highlight-end
+
+  //Getting the leave and end method from hook and assigning event callbacks
+  //highlight-start
+  const { leave, end } = useMeeting({
+    onMeetingLeft,
+    onParticipantLeft,
+  });
+  //highlight-end
+
+  return <>...</>;
+};
+```
+
+### API Reference
 
 The API references for all the methods and events utilised in these guide are provided below.
 

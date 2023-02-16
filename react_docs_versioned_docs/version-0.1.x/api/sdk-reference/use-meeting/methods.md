@@ -50,21 +50,21 @@ title: Methods returned by useMeeting Hook
 
 ---
 
-### enableMic()
+### unmuteMic()
 
-- `enableMic()` is used to enable mic of the local participant.
+- `unmuteMic()` is used to enable mic of the local participant.
 
-#### Events associated with `enableMic()`:
+#### Events associated with `unmuteMic()`:
 
 - Every Participant will receive a callback on [`onStreamEnabled()`](../use-participant/events#onstreamenabled) of the [`useParticipant()`](../use-participant/introduction.md) hook with `Stream` object.
 
 ---
 
-### disableMic()
+### muteMic()
 
-- `disableMic()` is used to disable mic of the local participant.
+- `muteMic()` is used to disable mic of the local participant.
 
-#### Events associated with `disableMic()`:
+#### Events associated with `muteMic()`:
 
 - Every Participant will receive a callback on [`onStreamDisabled()`](../use-participant/events#onstreamdisabled) of the [`useParticipant()`](../use-participant/introduction.md) hook with `Stream` object.
 

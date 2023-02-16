@@ -17,7 +17,7 @@ slug: mute-unmute-mic
 
 # Mute / Unmute Mic
 
-Any participant can mute or unmute himself in the meeting using below methods.
+Any participant can mute or unmute himself in the meeting broadcast audio to others using below methods.
 
 ### `unmuteMic()`
 
@@ -75,3 +75,118 @@ const MeetingView = () => {
   );
 };
 ```
+
+### Events
+
+**Event associated with `unmuteMic()`:**
+
+- Every Participant will receive a callback on [`onStreamEnabled()`](/react/api/sdk-reference/use-participant/events#onstreamenabled) of the [`useParticipant()`](/react/api/sdk-reference/use-participant/introduction) hook with `Stream` object.
+
+- Every Participant will receive a callback on [`onMediaStatusChanged()`](/react/api/sdk-reference/use-participant/events#onmediastatuschanged) of the [`useParticipant()`](/react/api/sdk-reference/use-participant/introduction) hook with the kind of media and its status.
+
+**Event associated with `muteMic()`:**
+
+- Every Participant will receive a callback on [`onStreamDisabled()`](/react/api/sdk-reference/use-participant/events#onstreamdisabled) of the [`useParticipant()`](/react/api/sdk-reference/use-participant/introduction) hook with `Stream` object.
+
+- Every Participant will receive a callback on [`onMediaStatusChanged()`](/react/api/sdk-reference/use-participant/events#onmediastatuschanged) of the [`useParticipant()`](/react/api/sdk-reference/use-participant/introduction) hook with the kind of media and its status.
+
+**Event associated with `toggleMic()`:**
+
+- Every Participant will receive a callback on [`onStreamEnabled()`](/react/api/sdk-reference/use-participant/events#onstreamdisabled) of the [`useParticipant()`](/react/api/sdk-reference/use-participant/introduction) hook with `Stream` object if the **audio broadcasting was started**.
+
+- Every Participant will receive a callback on [`onStreamDisabled()`](/react/api/sdk-reference/use-participant/events#onstreamdisabled) of the [`useParticipant()`](/react/api/sdk-reference/use-participant/introduction) hook with `Stream` object if the **audio broadcasting was stopped**.
+
+- Every Participant will receive a callback on [`onMediaStatusChanged()`](/react/api/sdk-reference/use-participant/events#onmediastatuschanged) of the [`useParticipant()`](/react/api/sdk-reference/use-participant/introduction) hook with the kind of media and its status.
+
+```js
+import { useParticipant } from "@videosdk.live/react-sdk";
+
+const ParticipantView = (participantId) => {
+  //Callback for when the participant starts a stream
+  //highlight-start
+  function onStreamEnabled(stream) {
+    if(stream.kind === 'audio'){
+      console.log("Audio Stream On: onStreamEnabled", stream);
+    }
+  }
+  //highlight-end
+
+  //Callback for when the participant stops a stream
+  //highlight-start
+  function onStreamDisabled(stream) {
+    if(stream.kind === 'audio'){
+      console.log("Audio Stream Off: onStreamDisabled", stream);
+    }
+  }
+  //highlight-end
+
+
+  //Callback for when participants media gets changed
+  //highlight-start
+  function onMediaStatusChanged(data) {
+    const { kind, newStatus} = data;
+    console.log("Participant Media Kind: ", kind, " newStatus: ", newStatus);
+  }
+  //highlight-end
+
+  const {
+    displayName
+    ...
+  } = useParticipant(participantId,{
+    onStreamEnabled,
+    onStreamDisabled,
+    onMediaStatusChanged
+    ...
+  });
+  return <> Participant View </>;
+}
+```
+
+### Getting Participant Mic Status
+
+- You can get the **local participant's** media status from the `useMeeting` hook from the property named `localMicOn`. These parameter will be `true` if **local participant's** `mic is on` else it will be `false`.
+
+```js
+import { useMeeting } from "@videosdk.live/react-sdk";
+const MeetingView = () => {
+  // Get the localMicOn property
+  //highlight-next-line
+  const { localMicOn } = useMeeting();
+
+  return <> Local Mic is {localMicOn} </>;
+};
+```
+
+- To get the status of **any participant** you can use the `micOn` property of the `useParticipant` hook. These parameter will be `true` if **participant's** `mic is on` else it will be `false`.
+
+```js
+import { useParticipant } from "@videosdk.live/react-sdk";
+const ParticipantView = (participantId) => {
+  // Get the micOn property
+  //highlight-next-line
+  const { micOn } = useParticipant(participantId);
+
+  return <> Participant Mic is {micOn} </>;
+};
+```
+
+### Audio Permissions
+
+- By defualt, VideSDK ask for audio permissions when the participants requests to tunr on the mic and once the permission is granted the mic gets turned on. If the permission is denied, VideoSDK will send the error message in teh `onError` event callback of `useMeeting` hook.
+
+- If a participant denies the microphone permission, he cant manually grant it by following below shown steps.
+
+:::caution
+To use the audio and video communications in the web browser, your site must be **`SSL enabled`** i.e. it must be secured and **`running on https`**.
+:::
+
+### API Reference
+
+The API references for all the methods and events utilised in these guide are provided below.
+
+- [unmuteMic()](/react/api/sdk-reference/use-meeting/methods#unmutemic)
+- [muteMic()](/react/api/sdk-reference/use-meeting/methods#mutemic)
+- [toggleMic()](/react/api/sdk-reference/use-meeting/methods#togglemic)
+- [onStreamEnabled()](/react/api/sdk-reference/use-participant/events#onstreamenabled)
+- [onStreamDisabled()](/react/api/sdk-reference/use-participant/events#onstreamdisabled)
+- [onMediaStatusChanged()](/react/api/sdk-reference/use-participant/events#onmediastatuschanged)
