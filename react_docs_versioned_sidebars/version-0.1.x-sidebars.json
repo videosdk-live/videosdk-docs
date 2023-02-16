@@ -55,6 +55,14 @@
             "guide/video-and-audio-calling-api-sdk/handling-media/change-audio-output-device"
           ],
           "collapsed": true
+        },
+        {
+          "type": "category",
+          "label": "Get Notified on Events",
+          "items": [
+            "guide/video-and-audio-calling-api-sdk/get-notified/meeting-events"
+          ],
+          "collapsed": true
         }
       ],
       "collapsed": false
