@@ -70,6 +70,15 @@
             "guide/video-and-audio-calling-api-sdk/get-notified/error-events"
           ],
           "collapsed": true
+        },
+
+        {
+          "type": "category",
+          "label": "Control Remote Participant",
+          "items": [
+            "guide/video-and-audio-calling-api-sdk/control-remote-participant/remote-participant-media"
+          ],
+          "collapsed": true
         }
       ],
       "collapsed": false
