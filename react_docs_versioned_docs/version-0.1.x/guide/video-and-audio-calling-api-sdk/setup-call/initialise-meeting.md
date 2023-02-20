@@ -17,25 +17,38 @@ slug: initialise-meeting
 
 # Initialise Meeting
 
-To configure a VideoSDK meeting you require two things, first the `token` which will be used for authentication purpose and a `meetingId` which will be used define where a participant will join. Let us see each of the steps closely.
+To configure a VideoSDK meeting you require two things, first the `token` which will be used for **Authentication** purpose and a `meetingId` which will be used to specify where a participant will join. Let's see each of the steps closely.
 
 ### Generating Token
 
 You can generate a `token` in two ways:
 
-1. Using the VideoSDK [Dashboard's API Key section](https://app.videosdk.live/api-keys).
-2. If you have an backend server already setup to fetch the token, you can simply make an API call and fetch the token from your backend server.
+1. **`Serverless`** : You can visit [Dashboard's API Key section](https://app.videosdk.live/api-keys) and generate the token from there.
 
-In order to understand authenticationa and token generation in detail, [please visit here](../authentication-and-token).
+2. **`Server`** : You can setup **JWT** in backend and make an API call to get the token from your server.
+
+You can [visit here](../authentication-and-token) to learn more about **Authentication** and token in detail.
 
 ```js
+// Serverless
 const getToken = async () => {
   // Update the token here from the VideoSDK dashboard
   // highlight-next-line
-  let token = "YOUR TOKEN";
+  let token = "YOUR_TOKEN";
+};
 
-  // or you can put a fetch request to get the token from your backend
-
+// Server
+const getToken = async () => {
+  // highlight-start
+  const response = await fetch(`http://localhost:3000/get-token`, {
+    method: "GET",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+    },
+  });
+  const { token } = await response.json();
+  // highlight-end
   return token;
 };
 ```
@@ -77,11 +90,11 @@ const getMeetingId = async (token) => {
 
 ### Initialization of Meeting
 
-With the generated meetingId and token, we can initialize the meeting. We will use the `MeetingProvider` from the React SDK which will initialize the meeting for us and it will allow us to subscribe to the meeting changes
+We can initialize the meeting using the `MeetingProvider` from the React SDK. The `MeetingProvider` is responsible for initializing the meeting with the provided configuration, which includes the `token`, `meetingId`, `participantId` and many more.
 
 #### Meeting Provider
 
-`MeetingProvider` is Reac's [Context.Provider](https://reactjs.org/docs/context.html#contextprovider) that allows consuming components to subscribe to meeting changes.
+`MeetingProvider` is React [Context.Provider](https://reactjs.org/docs/context.html#contextprovider) that allows consuming components to subscribe to meeting changes.
 
 We will be passing the intialization configuration for the meeting and the token in the `MeetingProvider`.
 
@@ -90,70 +103,61 @@ Let's take a deeper look at the available configuration options first.
 ```js
 <MeetingProvider
   config={{
-    meetingId: "<Id-on-meeting>",
+    meetingId: "<Id-of-meeting>",
     name: "<Name-of-participant>",
     micEnabled: "<Flag-to-enable-mic>",
     webcamEnabled: "<Flag-to-enable-webcam>",
-    maxResolution: "<Maximum-resolution>", //optional,
-    participantId:'Id-of-participant' // optional, default: SDK will generate
-    multiStream: "<Flag-to-use-multiStream>", // optional, default: true
-    customCameraVideoTrack: "<Camerea-MediaStream>", // optional
-    customMicrophoneAudioTrack: "<Microphone-MediaStream>", // optional
-    mode: "<Mode-of-participant>", // optional
+    participantId: "Id-of-participant", // optional, default: SDK will generate
   }}
   token={"token"}
   joinWithoutUserInteraction // Boolean
 ></MeetingProvider>
 ```
 
-- `meetingId`: These will be the meetingId a participant is trying to join which will be in the format `xxxx-yyyy-zzzz` and will be generated using the [VideoSDK's Room API](/api-reference/realtime-communication/create-room).
+- **`meetingId`** :
 
-- `name`: These will represent the name of participant in the meeting.
+  - meetingId is unique identifiers that allow participants to join a specific meeting or room.
+  - It will be in the format of `xxx-yyy-zzz` and will be generated using the [VideoSDK's Room API](/api-reference/realtime-communication/create-room).
 
-- `micEnabled`: These is a `boolean` flag, indicating wheather the particpant mic will be enabled automatically after joining the meeting.
+- **`name`**:
 
-- `webcamEnabled`: These is a `boolean` flag, indicating wheather the particpant webcam will be enabled automatically after joining the meeting.
+  - This will represent the name of the participant in the meeting.
+  - It will accept `String`type value.
 
-- `maxResolution`: These will be the value determining the maximum resolution a participant should send.
+- **`micEnabled`**:
 
-  - It can have `sd` | `hd` as itss values.
-  - These is a an `OPTIONAL` parameter.
+  - This is a `boolean` flag, indicating whether a participant's microphone will be automatically enabled when they join a meeting.
 
-- `participantId`: These will be the unique identifer for the participant inside the meeting.
+- **`webcamEnabled`**:
 
-  - It can be used to specify the **unique identifer** which can be linked with **your own database** service.
-  - It has to be of `String` type.
-  - These is an `OPTIONAL` parameter. By defualt VideoSDK will generate unique id for each participant.
+  - This is a `boolean` flag, indicating whether a participant's webcam will be automatically enabled when they join a meeting.
 
-- `multiStream`: These is a `boolean` flag which indicates wheather VideoSDK should send multiple resolution stream for a single participant or just a single resolution stream. To understand `multiStream` in detail checkout our Video Call Optiomization Guide.
+- **`participantId`**:
 
-  - These is an `OPTIONAL` parameter. By default, VideoSDK uses `multiStream: true` to provide a smooth experince to all participants under all network conditions.
+  - This will be the unique identifer for the participant inside the meeting.
 
-- `customCameraVideoTrack`: These parameter accepts a `MediaStream` object which can be used to pass custom resolution camera stream based on your use case.
+    - It can be used to specify the **unique identifer** which can be linked with **your own database** service.
+    - It has to be of `String` type.
+    - This is an `OPTIONAL` parameter. By defualt VideoSDK will generate unique id for each participant.
 
-  - These is an `OPTIONAL` parameter. By default, VideoSDK uses a `540p` or `720p` video resolution stream based on the user's device capabilities.
-
-- `customMicrophoneAudioTrack`: These parameter accepts a `MediaStream` object which can be used to pass custom audio track based on your use case.
-
-  - These is an `OPTIONAL` parameter. By default, VideoSDK uses a `speech_standard` audio tracks which suites most use cases.
-
-- `mode`: These parameter accepts either `CONFERENCE` or `VIEWER` as its value.
-
-  - When `CONFERENCE` mode is used it will allow participant to send and receive audio and video streams in real-time.
-
-  - When `VIEWER` mode is used, the participant will not be able to receive or send nay audio and video streams. These participant will be able to perform operations like chat and raise hand which are happeing using PubSub. These mode is preferrable when using Interactive Live Streaming along side Realtime Video Conferencing.
-
-  - These is an `OPTIONAL` parameter. By default, VideoSDK uses `CONFERENCE` mode.
+:::caution
+You can ensure that the `participantId` is not repeated in the same meeting or room, which will prevent VideoSDK from removing any one of the participants.
+:::
 
 ###### Other Options for Meeting Provider
 
-- `joinWithoutInteraction`: Thse is a `boolean` flag which if set to `true`, participant will directly join the meeting with requring to explicitly calling `join()`.
+- **`joinWithoutInteraction`**:
 
-  - These is an `OPTIONAL` parameter. By default, it is set to `false` meaning, user has to manually call the `join()`
+  - This is a `boolean` flag, when set to `true`, allows a participant to join a meeting directly without explicitly calling the `join()` function.
+
+  - This is an `OPTIONAL` parameter. By default, it is set to `false` meaning, user has to manually call the `join()`
+
+To know more about other properties, you can follow [our API Reference](/react/api/sdk-reference/meeting-provider).
 
 With all the configuration options explained, here is how you will be using the `MeetingProvider`.
 
 ```js
+// importing
 import { MeetingProvider, useMeeting } from "@videosdk.live/react-sdk";
 
 const getToken = async () => {
@@ -211,6 +215,7 @@ const App = () => {
 const MeetingView = () => {
   // Get Meeting object using useMeeting hook
   const meeting = useMeeting();
+  console.log("Meeting Obj",meeting);
 
   return <>...</>;
 };

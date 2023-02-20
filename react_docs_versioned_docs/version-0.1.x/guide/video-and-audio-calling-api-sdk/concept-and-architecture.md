@@ -9,6 +9,8 @@ Before dive in to the concept, let's understand the VideSDK, VideoSDK is a softw
 
 ## Concepts
 
+![img.png](../../../../static/img/room-concept.png)
+
 ### `1. Meeting / Room`
 
 - Meeting or Room objects in the VideoSDK provide a virtual place for participants to interact and engage in real-time voice, video, and screen-sharing sessions. The object is in charge of handling media streams and participant communication.
@@ -41,7 +43,7 @@ Before dive in to the concept, let's understand the VideSDK, VideoSDK is a softw
 
 - Events / Notifications can be used to inform users about various activities happening in a Meeting / Room, including participant join/leave and new messages. They can also be used to alert users about any SDK-level errors that occur during a call.
 
-![img.png](../../../../static/img/room-concept.png)
+![img.png](../../../../static/img/recording-hls-rtmp.png)
 
 ### `5. Cloud Recording`
 
