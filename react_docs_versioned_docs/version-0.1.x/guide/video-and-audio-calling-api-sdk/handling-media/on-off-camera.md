@@ -80,25 +80,25 @@ const MeetingView = () => {
 };
 ```
 
+- [ ] TODO 
+
 :::note
 To learn, how to render video in the meeting, follow these detailed guide.
 :::
 
-### Events
-
-**Event associated with `enableWebcam()`:**
+### Events associated with enableWebcam
 
 - Every Participant will receive a callback on [`onStreamEnabled()`](/react/api/sdk-reference/use-participant/events#onstreamenabled) of the [`useParticipant()`](/react/api/sdk-reference/use-participant/introduction) hook with `Stream` object.
 
 - Every Participant will receive a callback on [`onMediaStatusChanged()`](/react/api/sdk-reference/use-participant/events#onmediastatuschanged) of the [`useParticipant()`](/react/api/sdk-reference/use-participant/introduction) hook with the kind of media and its status.
 
-**Event associated with `disableWebcam()`:**
+### Events associated with disableWebcam
 
 - Every Participant will receive a callback on [`onStreamDisabled()`](/react/api/sdk-reference/use-participant/events#onstreamdisabled) of the [`useParticipant()`](/react/api/sdk-reference/use-participant/introduction) hook with `Stream` object.
 
 - Every Participant will receive a callback on [`onMediaStatusChanged()`](/react/api/sdk-reference/use-participant/events#onmediastatuschanged) of the [`useParticipant()`](/react/api/sdk-reference/use-participant/introduction) hook with the kind of media and its status.
 
-**Event associated with `toggleWebcam()`:**
+### Events associated with toggleWebcam
 
 - Every Participant will receive a callback on [`onStreamEnabled()`](/react/api/sdk-reference/use-participant/events#onstreamdisabled) of the [`useParticipant()`](/react/api/sdk-reference/use-participant/introduction) hook with `Stream` object if the **video broadcasting was started**.
 
@@ -152,7 +152,8 @@ const ParticipantView = (participantId) => {
 
 ### Getting Participant Camera Status
 
-- You can get the **local participant's** media status from the `useMeeting` hook from the property named `localWebcamOn`. These parameter will be `true` if **local participant's** `camera is on` else it will be `false`.
+- You can get the **local participant's** media status from the `useMeeting` hook property named `localWebcamOn`.
+- If `localWebcamOn` is `true`, it means that the local participant's camera is currently active. If it is `false`, it means that the local participant's camera is currently disable or inactive.
 
 ```js
 import { useMeeting } from "@videosdk.live/react-sdk";

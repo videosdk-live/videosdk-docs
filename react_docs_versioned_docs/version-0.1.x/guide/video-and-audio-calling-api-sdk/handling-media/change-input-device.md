@@ -17,7 +17,7 @@ slug: change-input-device
 
 # Change Input Device
 
-If during the meeting at any point a participant wishes to change his input audio or video device, it can be done using the below mentioned methods.
+During the meeting at any point a participant wishes to switch his/her input audio or video device, it can be done using the below mentioned methods.
 
 ### Changing Audio Input Device
 

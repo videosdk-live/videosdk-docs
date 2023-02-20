@@ -17,21 +17,17 @@ slug: screen-share
 
 # Screen Share
 
-Any participant can share his/her desktop screen in the meeting using below methods.
+Screen sharing in a meeting is the process of sharing your computer screen with other participants in the meeting. It allows everyone in the meeting to see exactly what you are seeing on your screen, which can be helpful for presentations, demonstrations, or collaborations.
 
 ### `enableScreenShare()`
 
-- By using `enableScreenShare()` function of `useMeeting` hook, local participant can share his desktop screen to other participants.
-
-- You can call these method when the local participant is not broadcasting any video to others.
+- By using `enableScreenShare()` function of `useMeeting` hook, local participant can share his/her desktop screen to other participants.
 
 - Screen Share stream of the participant can be accessed from the `screenShareStream` property of `useParticipant` hook.
 
 ### `disableScreenShare()`
 
-- By using `disableScreenShare()` function of `useMeeting` hook, local participant can stop sharing his desktop screen to other participants.
-
-- You can call these method when the local participant is broadcasting any video to others.
+- By using `disableScreenShare()` function of `useMeeting` hook, local participant can stop sharing his/her desktop screen to other participants.
 
 ### `toggleScreenShare()`
 
@@ -81,21 +77,19 @@ const MeetingView = () => {
 };
 ```
 
-### Events
-
-**Event associated with `enableScreenShare()`:**
+### Events associated with enableScreenShare
 
 - Every Participant will receive a callback on [`onStreamEnabled()`](/react/api/sdk-reference/use-participant/events#onstreamenabled) of the [`useParticipant()`](/react/api/sdk-reference/use-participant/introduction) hook with `Stream` object.
 
 - Every Participant will receive [`onPresenterChanged()`](/react/api/sdk-reference/use-meeting/events#onpresenterchanged) callback of the [`useMeeting`](/react/api/sdk-reference/use-meeting/introduction) hook with the participantId as `presenterId` who started the screen share.
 
-**Event associated with `disableScreenShare()`:**
+### Events associated with disableScreenShare
 
 - Every Participant will receive a callback on [`onStreamDisabled()`](/react/api/sdk-reference/use-participant/events#onstreamdisabled) of the [`useParticipant()`](/react/api/sdk-reference/use-participant/introduction) hook with `Stream` object.
 
 - Every Participant will receive [`onPresenterChanged()`](/react/api/sdk-reference/use-meeting/events#onpresenterchanged) callback of the [`useMeeting`](/react/api/sdk-reference/use-meeting/introduction) hook with the `presenterId` as `null` indicating there is no presenter.
 
-**Event associated with `toggleScreenShare()`:**
+### Events associated with toggleScreenShare
 
 - Every Participant will receive a callback on [`onStreamEnabled()`](/react/api/sdk-reference/use-participant/events#onstreamdisabled) of the [`useParticipant()`](/react/api/sdk-reference/use-participant/introduction) hook with `Stream` object if the **screen share broadcasting was started**.
 
@@ -150,8 +144,7 @@ const ParticipantView = (participantId) => {
     ...
   } = useParticipant(participantId,{
     onStreamEnabled,
-    onStreamDisabled,
-    onMediaStatusChanged
+    onStreamDisabled
     ...
   });
   return <> Participant View </>;

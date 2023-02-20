@@ -19,7 +19,7 @@ slug: media-events
 
 VideoSDK provides multiple types of events which can be listened to know the about the participant's media status in the meeting.
 
-Here are the events which specifically relate to the meeting.
+Here are the events which specifically relate to the stream.
 
 ### onStreamEnabled
 

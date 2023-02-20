@@ -17,9 +17,7 @@ slug: change-audio-ouptut-device
 
 # Change Audio Output Device
 
-If during the meeting at any point a participant wishes to change his output audio like from headphones to speaker, it can be done using the below mentioned methods.
-
-### Changing Audio Output Device
+During the meeting at any point a participant wishes to switch his/her output audio like from headphones to speaker, it can be done using the below mentioned methods.
 
 #### Getting Output device
 
@@ -48,6 +46,8 @@ const setAudioOutputDevice = (deviceId) => {
   });
 };
 ```
+
+- [ ] TODO : Add WebRTC Audio output device link
 
 :::note
 To learn more about changing the audio output device [check these documentation](https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/setSinkId).

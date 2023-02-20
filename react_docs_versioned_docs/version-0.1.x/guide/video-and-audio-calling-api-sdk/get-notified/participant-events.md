@@ -19,11 +19,11 @@ slug: participant-events
 
 VideoSDK provides multiple types of events which can be listened to know the about the participants in the meeting.
 
-Here are the events which specifically relate to the meeting.
+Here are the events which specifically relate to the participants.
 
 ### onParticipantJoined
 
-- These event is triggered when the someone joines meeting with the `Participant` object as parameter.
+- These event is triggered when someone joins the meeting and return the `Participant` object as parameter.
 - These event can be subscribed from the `useMeeting` hook.
 
 ### onParticipantLeft

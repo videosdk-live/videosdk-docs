@@ -17,13 +17,15 @@ slug: mute-unmute-mic
 
 # Mute / Unmute Mic
 
-Any participant can mute or unmute himself in the meeting broadcast audio to others using below methods.
+Muting and Unmuting your microphone refers to turning your microphone off and on, respectively.
+
+When you mute your microphone, you prevent any sound from your microphone from being transmitted to other meeting participants, while unmuting it allows others to hear you.
 
 ### `unmuteMic()`
 
 - By using `unmuteMic()` function of `useMeeting` hook, local participant can publish audio to other participants.
 
-- You can call these method when the local participant is not broadcasting any audio to others.
+  - You can call this method when the local participant is not broadcasting any audio to others.
 
 - You can pass customised audio track in `unmuteMic()` by using [Custom Audio Track](/react/guide/video-and-audio-calling-api-sdk/features/custom-track/custom-audio-track#custom-track-with-unmutemic).
 
@@ -33,7 +35,7 @@ Any participant can mute or unmute himself in the meeting broadcast audio to oth
 
 - By using `muteMic()` function of `useMeeting` hook, local participant can stop publish audio to other participants.
 
-- You can call these method when the local participant is broadcasting any audio to others.
+- You can call this method when the local participant is broadcasting any audio to others.
 
 ### `toggleMic()`
 
@@ -80,25 +82,25 @@ const MeetingView = () => {
 };
 ```
 
+- [ ] TODO
+
 :::note
 To learn, how to render a audio in the meeting, follow these detailed guide.
 :::
 
-### Events
-
-**Event associated with `unmuteMic()`:**
+### Events associated with unmuteMic
 
 - Every Participant will receive a callback on [`onStreamEnabled()`](/react/api/sdk-reference/use-participant/events#onstreamenabled) of the [`useParticipant()`](/react/api/sdk-reference/use-participant/introduction) hook with `Stream` object.
 
 - Every Participant will receive a callback on [`onMediaStatusChanged()`](/react/api/sdk-reference/use-participant/events#onmediastatuschanged) of the [`useParticipant()`](/react/api/sdk-reference/use-participant/introduction) hook with the kind of media and its status.
 
-**Event associated with `muteMic()`:**
+### Events associated with muteMic
 
 - Every Participant will receive a callback on [`onStreamDisabled()`](/react/api/sdk-reference/use-participant/events#onstreamdisabled) of the [`useParticipant()`](/react/api/sdk-reference/use-participant/introduction) hook with `Stream` object.
 
 - Every Participant will receive a callback on [`onMediaStatusChanged()`](/react/api/sdk-reference/use-participant/events#onmediastatuschanged) of the [`useParticipant()`](/react/api/sdk-reference/use-participant/introduction) hook with the kind of media and its status.
 
-**Event associated with `toggleMic()`:**
+### Events associated with toggleMic
 
 - Every Participant will receive a callback on [`onStreamEnabled()`](/react/api/sdk-reference/use-participant/events#onstreamdisabled) of the [`useParticipant()`](/react/api/sdk-reference/use-participant/introduction) hook with `Stream` object if the **audio broadcasting was started**.
 
@@ -152,7 +154,8 @@ const ParticipantView = (participantId) => {
 
 ### Getting Participant Mic Status
 
-- You can get the **local participant's** media status from the `useMeeting` hook from the property named `localMicOn`. These parameter will be `true` if **local participant's** `mic is on` else it will be `false`.
+- You can get the **local participant's** media status from the `useMeeting` hook property named `localMicOn`.
+- If `localMicOn` is `true`, it means that the local participant's microphone is currently active. If it is `false`, it means that the local participant's microphone is currently muted or inactive.
 
 ```js
 import { useMeeting } from "@videosdk.live/react-sdk";
@@ -192,7 +195,7 @@ import ReactPlayer from 'react-player'
 
 ### Troubleshoot Audio Permissions
 
-- If a participant denies the microphone permission, he can **manually grant** it by following below shown steps.
+- If a participant denies the microphone permission, they can **manually grant** it by following below shown steps.
 
 <div style={{textAlign: 'center'}}>
 
