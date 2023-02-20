@@ -35,22 +35,11 @@ Before joining the meeting, it has to be initialized. If you have not initialize
 ```js
 import { MeetingProvider, useMeeting } from "@videosdk.live/react-sdk";
 
-const getToken = async () => {
-  //highlight-next-line
-  ...
-};
-const getMeetingId = async () => {
-  //highlight-next-line
-  ...
-};
-
 const App = () => {
-  //highlight-next-line
-  ... Meeting Provider here
+  //... Meeting Provider code
 };
 
 const MeetingView = () => {
-
   //Getting the join method from hook and assigning event callbacks
   //highlight-start
   const { join } = useMeeting();
@@ -68,7 +57,6 @@ const MeetingView = () => {
     </>
   );
 };
-
 ```
 
 ### Events associated with Join

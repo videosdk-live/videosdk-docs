@@ -17,7 +17,9 @@ slug: leave-end-meeting
 
 # Leave or End Meeting
 
-Participant can choose to use leave meeting without removing all the participant or leave the room by removing all the other participant resulting in the end of session.
+Participant can choose to leave the meeting without removing all the other participants. This is typically done by `Leave Meeting`.
+
+Alternatively, if the participant is the host or the last person remaining in the session, they can choose `End Meeting` by removing all other participants, which will end the session for everyone.
 
 ### `leave()`
 
@@ -65,7 +67,7 @@ const MeetingView = () => {
 ```
 
 :::tip
-You should call the `leave()` method on the unmount of your main meeting component so that meeting is left once the view is unrendered.
+You should call the `leave()` method on the unmount of your main meeting component so that meeting is left once the view is unmount.
 :::
 
 ### Events associated with Leave
