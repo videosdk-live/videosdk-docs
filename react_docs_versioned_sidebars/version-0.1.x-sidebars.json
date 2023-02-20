@@ -76,7 +76,8 @@
           "type": "category",
           "label": "Control Remote Participant",
           "items": [
-            "guide/video-and-audio-calling-api-sdk/control-remote-participant/remote-participant-media"
+            "guide/video-and-audio-calling-api-sdk/control-remote-participant/remote-participant-media",
+            "guide/video-and-audio-calling-api-sdk/control-remote-participant/mute-all-participants"
           ],
           "collapsed": true
         }
