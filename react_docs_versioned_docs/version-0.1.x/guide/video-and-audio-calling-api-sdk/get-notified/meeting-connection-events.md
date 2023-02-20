@@ -15,48 +15,59 @@ sidebar_position: 1
 slug: meeting-connection-events
 ---
 
-# Meeting Events
+# Meeting Connection Events
 
-VideoSDK provides multiple types of events which can be listened to know teh current state of the meeting.
+VideoSDK provides `onMeetingStateChanged` event which will notify you of the current connection state of the meeting.
 
-Here are teh events which specifically relate to the meeting.
+### onMeetingStateChanged
 
-### onMeetingJoined
-
-- These event is triggered when the meeting is successfully joined.
-- These event can be subscribed from the `useMeeting` hook.
-
-### onMeetingLeft
-
-- These event is triggered when the meeting is left.
-- These event can be subscribed from the `useMeeting` hook.
+- This event will be triggered when state of meeting changes.
+- It will pass **`state`** as an event callback parameter which will indicate current state of the meeting.
+- All available states are `CONNECTING`, `CONNECTED`, `FAILED`, `DISCONNECTED`, `CLOSING`, `CLOSED`.- These event can be subscribed from the `useMeeting` hook.
 
 ### Usage
 
-Here is the usage of all the events mentioned in these page.
+Here is the usage of the event mentioned in these page.
 
-```js
-function onMeetingJoined() {
-  console.log("onMeetingJoined");
-}
+```javascript
+function onMeetingStateChanged(data) {
+  const { state } = data;
 
-function onMeetingLeft() {
-  console.log("onMeetingLeft");
+  swtich(state){
+    case 'CONNECTING':
+      console.log("Meeting is Connecting" );
+      break;
+    case 'CONNECTED':
+      console.log("Meeting is Connected" );
+      break;
+    case 'FAILED':
+      console.log("Meeting connection failed" );
+      break;
+    case 'DISCONNECTED':
+      console.log("Meeting connection disconnected abruptly" );
+      break;
+    case 'CLOSING':
+      console.log("Meeting is closing" );
+      break;
+    case 'CLOSED':
+      console.log("Meeting connection closed" );
+      break;
+  }
 }
 
 const {
   meetingId
   ...
 } = useMeeting({
-  onMeetingJoined,
-  onMeetingLeft,
+  onMeetingStateChanged,
   ...
 });
 ```
+
+---
 
 ### API Reference
 
 The API references for all the methods and events utilised in these guide are provided below.
 
-- [onMeetingJoined()](/react/api/sdk-reference/use-meeting/methods#onmeetingjoined)
-- [onMeetingLeft()](/react/api/sdk-reference/use-meeting/events#onmeetingleft)
+- [onMeetingStateChanged()](/react/api/sdk-reference/use-meeting/events#onmeetingstatechanged)

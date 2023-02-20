@@ -60,7 +60,14 @@
           "type": "category",
           "label": "Get Notified on Events",
           "items": [
-            "guide/video-and-audio-calling-api-sdk/get-notified/meeting-events"
+            "guide/video-and-audio-calling-api-sdk/get-notified/meeting-events",
+            "guide/video-and-audio-calling-api-sdk/get-notified/meeting-connection-events",
+            "guide/video-and-audio-calling-api-sdk/get-notified/participant-events",
+            "guide/video-and-audio-calling-api-sdk/get-notified/media-events",
+            "guide/video-and-audio-calling-api-sdk/get-notified/recording-events",
+            "guide/video-and-audio-calling-api-sdk/get-notified/rtmp-events",
+            "guide/video-and-audio-calling-api-sdk/get-notified/hls-events",
+            "guide/video-and-audio-calling-api-sdk/get-notified/error-events"
           ],
           "collapsed": true
         }

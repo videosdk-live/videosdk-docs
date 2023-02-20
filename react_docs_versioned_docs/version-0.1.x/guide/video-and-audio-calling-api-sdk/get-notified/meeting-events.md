@@ -17,9 +17,9 @@ slug: meeting-events
 
 # Meeting Events
 
-VideoSDK provides multiple types of events which can be listened to know teh current state of the meeting.
+VideoSDK provides multiple types of events which can be listened to know the current state of the meeting.
 
-Here are teh events which specifically relate to the meeting.
+Here are the events which specifically relate to the meeting.
 
 ### onMeetingJoined
 
@@ -29,6 +29,16 @@ Here are teh events which specifically relate to the meeting.
 ### onMeetingLeft
 
 - These event is triggered when the meeting is left.
+- These event can be subscribed from the `useMeeting` hook.
+
+### onSpeakerChanged
+
+- These event is triggered when the active speaker in the meeting gets changed.
+- These event can be subscribed from the `useMeeting` hook.
+
+### onPresenterChanged
+
+- These event is triggered when the presenter in the meeting gets changed.
 - These event can be subscribed from the `useMeeting` hook.
 
 ### Usage
@@ -44,12 +54,22 @@ function onMeetingLeft() {
   console.log("onMeetingLeft");
 }
 
+function onSpeakerChanged(activeSpeakerId) {
+  console.log("onSpeakerChanged", activeSpeakerId);
+}
+
+function onPresenterChanged(presenterId) {
+  console.log("onPresenterChanged", presenterId);
+}
+
 const {
   meetingId
   ...
 } = useMeeting({
   onMeetingJoined,
   onMeetingLeft,
+  onSpeakerChanged,
+  onPresenterChanged,
   ...
 });
 ```
@@ -60,3 +80,5 @@ The API references for all the methods and events utilised in these guide are pr
 
 - [onMeetingJoined()](/react/api/sdk-reference/use-meeting/methods#onmeetingjoined)
 - [onMeetingLeft()](/react/api/sdk-reference/use-meeting/events#onmeetingleft)
+- [onSpeakerChanged()](/react/api/sdk-reference/use-meeting/events#onspeakerchanged)
+- [onPresenterChanged()](/react/api/sdk-reference/use-meeting/events#onpresenterchanged)
