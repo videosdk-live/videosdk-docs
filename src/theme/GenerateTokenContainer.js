@@ -10,7 +10,7 @@ const generateCode = ({ language }) => {
       code += "const SECRET = <YOUR SECRET>;\n";
       code += "\n";
       code +=
-        "const options = { \n expiresIn: '10m', \n algorithm: 'HS256' \n};\n";
+        "const options = { \n expiresIn: '120m', \n algorithm: 'HS256' \n};\n";
       code += "const payload = {\n";
       code += " apikey: API_KEY,\n";
       code += " permissions: [`allow_join`], // `ask_join` || `allow_mod` \n";
@@ -28,7 +28,7 @@ const generateCode = ({ language }) => {
       code += '$VIDEOSDK_SECRET_KEY = "YOUR_SECRET_KEY";\n';
       code += "\n";
       code += "$issuedAt = new DateTimeImmutable();\n";
-      code += "$expire = $issuedAt->modify('+24 hours')->getTimestamp();\n";
+      code += "$expire = $issuedAt->modify('+2 hours')->getTimestamp();\n";
       code += "\n";
       code += "$payload = (object)[];\n";
       code += "$payload->apikey = $VIDEOSDK_API_KEY;\n";
@@ -47,7 +47,7 @@ const generateCode = ({ language }) => {
       code += 'VIDEOSDK_API_KEY = "YOUR_API_KEY"\n';
       code += 'VIDEOSDK_SECRET_KEY = "YOUR_SECRET_KEY"\n';
       code += "\n";
-      code += "expiration_in_seconds = 600\n";
+      code += "expiration_in_seconds = 7200\n";
       code +=
         "expiration = datetime.datetime.now() + datetime.timedelta(seconds=expiration_in_seconds)\n";
       code += "\n";
@@ -69,7 +69,7 @@ const generateCode = ({ language }) => {
       code += "\t.WithAlgorithm(new HMACSHA256Algorithm()) // symmetric\n";
       code += "\t.WithSecret(VIDEOSDK_SECRET_KEY)\n";
       code +=
-        '\t.AddClaim("exp", DateTimeOffset.UtcNow.AddHours(1).ToUnixTimeSeconds())\n';
+        '\t.AddClaim("exp", DateTimeOffset.UtcNow.AddHours(2).ToUnixTimeSeconds())\n';
       code += '\t.AddClaim("iat", DateTimeOffset.UtcNow.ToUnixTimeSeconds())\n';
       code += '\t.AddClaim("apikey", VIDEOSDK_API_KEY)\n';
       code +=
@@ -93,7 +93,7 @@ const generateCode = ({ language }) => {
       code += 'atClaims["apikey"] = VIDEOSDK_API_KEY\n';
       code += 'atClaims["permissions"] = permissions\n';
       code += 'atClaims["iat"] = time.Now().Unix()\n';
-      code += 'atClaims["exp"] = time.Now().Add(time.Minute * 15).Unix()\n';
+      code += 'atClaims["exp"] = time.Now().Add(time.Minute * 120).Unix()\n';
       code += "at := jwt.NewWithClaims(jwt.SigningMethodHS256, atClaims)\n";
       code += "\n";
       code += "token, err := at.SignedString([]byte(VIDEOSDK_SECRET_KEY))\n";
@@ -117,7 +117,7 @@ const generateCode = ({ language }) => {
       code += "\n";
       code += "String token = Jwts.builder().setClaims(payload)\n";
       code +=
-        "	.setExpiration(new Date(System.currentTimeMillis() + 86400 * 1000))\n";
+        "	.setExpiration(new Date(System.currentTimeMillis() + 7200 * 1000))\n";
       code +=
         "	.signWith(SignatureAlgorithm.HS256,VIDEOSDK_SECRET_KEY.getBytes()).compact();\n";
       return code;
@@ -128,7 +128,7 @@ const generateCode = ({ language }) => {
       code += '$VIDEOSDK_SECRET_KEY = ""\n';
       code += "\n";
       code += "now = Time.now\n";
-      code += "exp = now + 86400\n";
+      code += "exp = now + 7200\n";
       code += "payload = {\n";
       code += "    apikey: $VIDEOSDK_API_KEY,\n";
       code += '    permissions: ["allow_join", "allow_mod"],\n';
@@ -251,7 +251,28 @@ const MethodRequestResponse = () => {
         </div>
       </div>
       <div className="method_code_block">
-        <CodeBlock language={language.code}>
+        <CodeBlock
+          metastring={
+            language.id == "node"
+              ? "{3-4,7,11-12,14}"
+              : language.id == "php"
+              ? "{3-4,7,11-14,16}"
+              : language.id == "python"
+              ? "{3-4,6,10-13}"
+              : language.id == "dotnet"
+              ? "{4-5,8-13}"
+              : language.id == "go"
+              ? "{6-7,10-11,14-17}"
+              : language.id == "java"
+              ? "{5-6,9-10,13}"
+              : language.id == "ruby"
+              ? "{3-4,9-12}"
+              : language.id == "rust"
+              ? "{9-10,13-14,17}"
+              : ""
+          }
+          language={language.code}
+        >
           {generateCode({
             language: language.id,
           })}

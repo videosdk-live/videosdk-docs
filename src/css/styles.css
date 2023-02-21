@@ -1763,3 +1763,7 @@ html[data-theme="dark"] .table-of-contents__link.toc-highlight.table-of-contents
 .theme-code-block-highlighted-line {
   background: #3a3a3a !important; 
 }
+
+.method_code_block>div>div>pre>code>.theme-code-block-highlighted-line {
+  background: #333a47 !important;
+}

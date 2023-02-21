@@ -81,6 +81,14 @@
             "guide/video-and-audio-calling-api-sdk/control-remote-participant/remove-participant"
           ],
           "collapsed": true
+        },
+        {
+          "type": "category",
+          "label": "Recording and Live Streaming",
+          "items": [
+            "guide/video-and-audio-calling-api-sdk/recording-and-live-streaming/record-meeting"
+          ],
+          "collapsed": true
         }
       ],
       "collapsed": false
