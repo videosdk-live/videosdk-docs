@@ -12,24 +12,24 @@ keywords:
   - collabration
 image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
-slug: recording-events
+slug: remote-participant-media
 ---
 
 # Toggle Remote Participant Media
 
-When hosting a meeting, its important that the host of the meeting should be able to request someones Mic or Camera to be turned on or should be able to turn them off.
+When hosting a meeting, it's important that the host of the meeting should be able to request someone's Mic or Camera to be turned on or should be able to turn them off.
 
 :::note
 Participant who will be controlling other participant's mic and camera should have permission **`allow_mod`** passed in the token. To know more about permissions [**visit here**](/react/guide/video-and-audio-calling-api-sdk/authentication-and-token).
 :::
 
-Before we discuss the methods and events associated with these functionality, here is how the flow would look like.
+Before we discuss the methods and events associated with this functionality, here is how the flow would look like.
 
 ![img1](../../../../../static/img/toggle-remote-media.png)
 
 ## Methods
 
-### enableMic()
+### `enableMic()`
 
 - If you wish to turn **on** the microphone of a participant, you will be calling the `enableMic()` from the `useParticipant` hook.
 
@@ -37,7 +37,7 @@ Before we discuss the methods and events associated with these functionality, he
 
 - **Example:** Meeting is running with **Participant A** and **Participant B**. Now **Participant A** wants to Enable Mic of **Participant B**, so **Participant A** will use `enableMic()` function to request **Participant B**, after that **Participant B** recieve the `onMicRequested` event, from there user can either accept or reject the incoming request.
 
-### enableWebcam()
+### `enableWebcam()`
 
 - If you wish to turn **on** the camera of a participant, you will be calling the `enableWebcam()` from the `useParticipant` hook.
 
@@ -45,12 +45,12 @@ Before we discuss the methods and events associated with these functionality, he
 
 - **Example:** Meeting is running with **Participant A** and **Participant B**. Now **Participant A** wants to Enable Webcam of **Participant B**, so **Participant A** will use `enableWebcam()` function to request **Participant B**, after that **Participant B** recieve the `onWebcamRequested` event, from there user can either accept or reject the incoming request.
 
-### disableMic()
+### `disableMic()`
 
 - If you wish to turn **off** the microphone of a participant, you will be calling the `disableMic()` from the `useParticipant` hook.
 - These will disable the microphone of the participant.
 
-### disableWebcam()
+### `disableWebcam()`
 
 - If you wish to turn **off** the camera of a participant, you will be calling the `disableWebcam()` from the `useParticipant` hook.
 - These will disable the camera of the participant.
@@ -97,17 +97,17 @@ const ParticipantView = () => {
 
 ## Events
 
-### onWebcamRequested
+### `onWebcamRequested`
 
-This event will be emitted to the `Participant B` when any other `Participant A` requests to enable webcam of that participant B. This event handler will receieve following three arguments:
+This event will be emitted to the `Participant B` when any other `Participant A` requests to enable webcam of that participant (`Participant B`). This event handler will receieve following three arguments:
 
 - `accept()` - Callback function to accept the request.
 - `reject()` - Callback function to reject the request.
 - `participantId` - ParticipantId of the requesting participant
 
-### onMicRequested
+### `onMicRequested`
 
-This event will be emitted to the `Participant B` when any other `Participant A` requests to enable mic of that Participant B. This event handler will receieve following three arguments:
+This event will be emitted to the `Participant B` when any other `Participant A` requests to enable mic of that participant (`Participant B`). This event handler will receieve following three arguments:
 
 - `accept()` - Callback function to accept the request.
 - `reject()` - Callback function to reject the request.
@@ -137,6 +137,14 @@ const {
   },
 });
 ```
+
+import ReactPlayer from 'react-player'
+
+<div style={{textAlign: 'center'}}>
+
+<ReactPlayer autoplay muted loop playing url='/video/toggle-media.mov' width={"100%"}/>
+
+</div>
 
 ## API Reference
 
