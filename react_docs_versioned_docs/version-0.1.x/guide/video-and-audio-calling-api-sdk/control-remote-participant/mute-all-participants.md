@@ -17,14 +17,14 @@ slug: mute-all-participants
 
 # Mute All Participants
 
-If the host wishes to mute all the participants at once, you can use the `disableMic()` of `useParticipant`.
+If you are the host or moderator of a video conference, you may want to mute all the participants at once. This can be useful in various scenarios, such as when you want to deliver a presentation or when there is background noise that is causing distractions.
 
-- For these you will have to iterate over the list of participants fromt he `useMeeting` hook and call the method.
+- To achieve these, you have to iterate over the list of participants fromt he `useMeeting` hook and call `disableMic` method from `useParticipant` hook.
 
 ```javascript
 import { useMeeting } from "@videosdk.live/react-sdk";
 
-const { muteMic, participants } = useMeeting();
+const { participants } = useMeeting();
 
 function handleMuteAllParticipant() {
   participants.keys().forEach((participantId) => {
@@ -45,8 +45,6 @@ return (
 :::note
 Participant who will be muting other participants should have permission **`allow_mod`** passed in the token. To know more about permissions [**visit here**](/react/guide/video-and-audio-calling-api-sdk/authentication-and-token).
 :::
-
----
 
 ### API Reference
 

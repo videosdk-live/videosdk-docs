@@ -16,9 +16,17 @@ slug: remove-participant
 
 # Remove Participant
 
-## Using SDK
+This feature in a meeting allows the meeting host or organizer to remove a participant from the meeting. This can be helpful in situations where a participant is causing a disturbance, is behaving inappropriately, or is not following meeting guidelines.
 
-### remove()
+VideoSDK provide three ways to remove participant from meeting.
+
+1. Using SDK
+2. Using VideoSDK Dashboard
+3. Using Rest API
+
+## 1. Using SDK
+
+### `remove()`
 
 Remove participant allows removing participant while session is on-going. This can be helpful when moderation in particular meeting is required.
 
@@ -49,12 +57,12 @@ Following callbacks are receieved when a participant is removed from the meeting
 - Participant who was removed from the meeting will receive a callback on[`onMeetingLeft`](/react/api/sdk-reference/use-meeting/events#onmeetingleft) of `useMeeting()` hook.
 - All other [remote participants](../concept-and-architecture#2-participant) will receive a callback [`onParticipantLeft`](/react/api/sdk-reference/use-meeting/events#onparticipantleft) with Participant object.
 
-## Using Dashboard
+## 2. Using VideoSDK Dashboard
 
 - You can go the session page on [VideoSDK Dashboard](https://app.videosdk.live/meetings/sessions) and select the meeting you can to remove a participant from.
 - And then from the participants list you can remove any participant you want.
 
-## Using REST API
+## 3. Using Rest API
 
 - You can also remove the particular participant from the meeting [using the REST API](/api-reference/realtime-communication/remove-participant).
 - To use these method, you should have the `sessionId` of the meeting and `participantId` of the participant who is supposed to be removed.

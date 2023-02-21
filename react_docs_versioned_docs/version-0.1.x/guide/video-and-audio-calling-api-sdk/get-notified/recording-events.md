@@ -58,8 +58,6 @@ const {
 });
 ```
 
----
-
 ### API Reference
 
 The API references for all the methods and events utilised in these guide are provided below.
