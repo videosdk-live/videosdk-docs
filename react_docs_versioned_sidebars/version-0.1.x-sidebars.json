@@ -86,7 +86,9 @@
           "type": "category",
           "label": "Recording and Live Streaming",
           "items": [
-            "guide/video-and-audio-calling-api-sdk/recording-and-live-streaming/record-meeting"
+            "guide/video-and-audio-calling-api-sdk/recording-and-live-streaming/record-meeting",
+            "guide/video-and-audio-calling-api-sdk/recording-and-live-streaming/rtmp-livestream",
+            "guide/video-and-audio-calling-api-sdk/recording-and-live-streaming/interactive-livestream"
           ],
           "collapsed": true
         }
