@@ -142,7 +142,7 @@ import ReactPlayer from 'react-player'
 
 <div style={{textAlign: 'center'}}>
 
-<ReactPlayer autoplay muted loop playing url='/video/toggle-media.mov' width={"100%"}/>
+<ReactPlayer autoplay muted loop playing url='/video/toggle-media.mp4' width={"100%"}/>
 
 </div>
 
