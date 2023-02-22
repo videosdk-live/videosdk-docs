@@ -25,6 +25,30 @@ VideoSDK provides `onError` event which will notify you of any error happening d
 - This event is helpful for development level troubleshooting while integrating SDK.
 - These event can be subscribed from the `useMeeting` hook.
 
+### Example
+
+Here is the usage of the event mentioned in these page.
+
+```javascript
+import { Constants, useMeeting } from "@videosdk.live/react-sdk";
+
+const Constants = VideoSDK.Constants;
+
+function onError(data) {
+  const { code, message } = data;
+}
+
+const {
+  meetingId
+  ...
+} = useMeeting({
+  onerror,
+  ...
+});
+```
+
+### Error Codes
+
 We have depicted a specific constant with code and message in the below table.
 
 | Constant                                      | Code | Message                                                                                                                     |
@@ -61,28 +85,6 @@ We have depicted a specific constant with code and message in the below table.
 | **ERROR_GET_VIDEO_MEDIA_PERMISSION_DENIED**   | 3014 | Video capture permission denied.                                                                                            |
 | **ERROR_GET_AUDIO_MEDIA_PERMISSION_DENIED**   | 3015 | Audio capture permission denied.                                                                                            |
 | **ERROR_GET_DISPLAY_MEDIA_PERMISSION_DENIED** | 3016 | Screen sharing permission denied.                                                                                           |
-
-### Usage
-
-Here is the usage of the event mentioned in these page.
-
-```javascript
-import { Constants, useMeeting } from "@videosdk.live/react-sdk";
-
-const Constants = VideoSDK.Constants;
-
-function onError(data) {
-  const { code, message } = data;
-}
-
-const {
-  meetingId
-  ...
-} = useMeeting({
-  onerror,
-  ...
-});
-```
 
 ### API Reference
 

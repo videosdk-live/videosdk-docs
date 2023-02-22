@@ -24,7 +24,7 @@ VideoSDK provides `onHlsStateChanged` event which will notify you of the current
 - This event will be triggered when the meeting's HLS status changed.
 - These event can be subscribed from the `useMeeting` hook.
 
-### Usage
+### Example
 
 Here is the usage of the event mentioned in these page.
 

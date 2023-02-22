@@ -80,7 +80,7 @@ const MeetingView = () => {
 };
 ```
 
-- [ ] TODO 
+- [ ] TODO
 
 :::note
 To learn, how to render video in the meeting, follow these detailed guide.

@@ -36,7 +36,7 @@ Here are the events which specifically relate to the stream.
 - This event will be triggered whenever a participant's video or audio is disabled or enabled.
 - These event can be subscribed from the `useParticipant` hook.
 
-### Usage
+### Example
 
 Here is the usage of all the events mentioned in these page.
 

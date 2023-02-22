@@ -43,7 +43,7 @@ Here are the events which specifically relate to the participants.
 - On accepting the request, mic of participant `B` will be enabled.
 - These event can be subscribed from the `useMeeting` hook.
 
-### Usage
+### Example
 
 Here is the usage of all the events mentioned in these page.
 

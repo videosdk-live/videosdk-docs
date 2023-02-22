@@ -41,7 +41,7 @@ Here are the events which specifically relate to the meeting.
 - These event is triggered when the presenter in the meeting gets changed.
 - These event can be subscribed from the `useMeeting` hook.
 
-### Usage
+### Example
 
 Here is the usage of all the events mentioned in these page.
 

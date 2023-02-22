@@ -71,7 +71,15 @@
           ],
           "collapsed": true
         },
-
+        {
+          "type": "category",
+          "label": "Collaboration in Meeting",
+          "items": [
+            "guide/video-and-audio-calling-api-sdk/collaboration-in-meeting/pubsub",
+            "guide/video-and-audio-calling-api-sdk/collaboration-in-meeting/chat-using-pubsub"
+          ],
+          "collapsed": true
+        },
         {
           "type": "category",
           "label": "Control Remote Participant",

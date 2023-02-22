@@ -26,7 +26,7 @@ VideoSDK provides `onMeetingStateChanged` event which will notify you of the cur
 - All available states are `CONNECTING`, `CONNECTED`, `FAILED`, `DISCONNECTED`, `CLOSING`, `CLOSED`.
 - These event can be subscribed from the `useMeeting` hook.
 
-### Usage
+### Example
 
 Here is the usage of the event mentioned in these page.
 
