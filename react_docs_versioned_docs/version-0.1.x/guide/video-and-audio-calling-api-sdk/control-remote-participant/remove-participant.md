@@ -20,9 +20,9 @@ This feature in a meeting allows the meeting host or organizer to remove a parti
 
 VideoSDK provide three ways to remove participant from meeting.
 
-1. Using SDK
-2. Using VideoSDK Dashboard
-3. Using Rest API
+1. [Using SDK](#1-using-sdk)
+2. [Using VideoSDK Dashboard](#2-using-videosdk-dashboard)
+3. [Using Rest API](#3-using-rest-api)
 
 ## 1. Using SDK
 
@@ -61,6 +61,14 @@ Following callbacks are receieved when a participant is removed from the meeting
 
 - You can go the session page on [VideoSDK Dashboard](https://app.videosdk.live/meetings/sessions) and select the meeting you can to remove a participant from.
 - And then from the participants list you can remove any participant you want.
+
+import ReactPlayer from 'react-player'
+
+<div style={{textAlign: 'center'}}>
+
+<ReactPlayer autoplay muted loop playing url='/video/kickout-user.mp4' width={"100%"}/>
+
+</div>
 
 ## 3. Using Rest API
 

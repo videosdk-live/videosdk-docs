@@ -30,7 +30,7 @@ You can generate a `token` in two ways:
 To learn more about **Authentication** and token in detail you can follow [these guide](../authentication-and-token).
 
 ```js
-// Serverless
+// With Temporary Token
 const getToken = async () => {
   // Update the token here from the VideoSDK dashboard
   // highlight-next-line

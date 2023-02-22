@@ -40,7 +40,7 @@ Screen sharing in a meeting is the process of sharing your computer screen with 
 - Screen Share stream of the participant can be accessed from the `screenShareStream` property of `useParticipant` hook.
 
 :::note
-Screen Sharing is only supported in the desktop browsers and **not in mobile/tab browser**.
+Screen Sharing is only supported in the **Desktop browsers** and **not in mobile/tab browser**.
 :::
 
 ```jsx
