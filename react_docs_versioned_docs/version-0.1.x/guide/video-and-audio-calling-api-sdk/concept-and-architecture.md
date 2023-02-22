@@ -43,18 +43,29 @@ Before dive in to the concept, let's understand the VideSDK, VideoSDK is a softw
 
 - Events / Notifications can be used to inform users about various activities happening in a Meeting / Room, including participant join/leave and new messages. They can also be used to alert users about any SDK-level errors that occur during a call.
 
+---
+
+![img.png](../../../../static/img/meeting-session.jpg)
+
+### `5. Session`
+
+- A Session is the instance of an ongoing meeting/room which has one or more participants in it. A single room or meeting can have multiple sessions.
+- Each session can be uniquely identified by `sessionId`.
+
+---
+
 ![img.png](../../../../static/img/recording-hls-rtmp.png)
 
-### `5. Cloud Recording`
+### `6. Cloud Recording`
 
 - Cloud recording in VideoSDK refers to the process of recording audio or video content and storing it on a remote server or VideoSDK server.
 
-### `6. Simulcasting (RTMP)`
+### `7. Simulcasting (RTMP)`
 
 - RTMP is a popular protocol for live streaming video content from a VideoSDK to platforms such as YouTube, Twitch, Facebook, and others.
 - By providing the platform-specific `stream key` and `stream URL`, the VideoSDK can connect to the platform's RTMP server and transmit the live video stream.
 
-### `7. Interactive Live Streaming (HLS)`
+### `8. Interactive Live Streaming (HLS)`
 
 - Interactive live streaming (HLS) refers to a type of live streaming where viewers can actively engage with the content being streamed and with other viewers in real-time.
 
