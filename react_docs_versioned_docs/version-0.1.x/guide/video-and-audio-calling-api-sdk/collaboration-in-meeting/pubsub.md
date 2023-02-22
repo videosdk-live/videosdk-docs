@@ -161,3 +161,9 @@ PubSub is a very powerful mechanism which can be used to do alot of things which
 ## Downloading PubSub Messages
 
 All the messages from the PubSub which where published with `persists` flag set to `true` can be downloaded as an `.csv` file. These file will be available in the VideoSDK dashboard as well as throught the [Sessions API](/api-reference/realtime-communication/fetch-session-using-sessionid).
+
+### API Reference
+
+The API references for all the methods and events utilised in these guide are provided below.
+
+- [usePubSub()](/react/api/sdk-reference/use-pubsub)

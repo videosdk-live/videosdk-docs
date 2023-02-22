@@ -56,6 +56,15 @@
           ],
           "collapsed": true
         },
+
+        {
+          "type": "category",
+          "label": "Rendering Media",
+          "items": [
+            "guide/video-and-audio-calling-api-sdk/render-media/display-audio-video"
+          ],
+          "collapsed": true
+        },
         {
           "type": "category",
           "label": "Get Notified on Events",
