@@ -22,116 +22,74 @@ For the communication or any kind of messaging in between the participants, Vide
 
 Now we will see, how we can use PubSub to implement Chat functionality. If you are not familiary with the PubSub mechanism and `usePubSub`hook, you can [follow these guide](./pubsub).
 
-## usePubSub
+## Implementing Chat
 
-### `publish()`
+### Group Chat
 
-- This method is use for publishing message of specific topic.
-- This method can be accessed from the `usePubSub` hook by mentioning the `topic` for which the `publish()` will be used.
-- These method will accept two parameters as input:
-  - `message`: These will be the acutal message to be published.
-  - `options`: These is an object, which provides an option to specify `persist`, which persists message history for upcoming participants. When `persist` is set to `true`, the all the messages communicated will be available to download as `.csv` when the session ends.
-
-```jst
-// importing usePubSub hook from react-sdk
-import { usePubSub } from "@videosdk.live/react-sdk";
-
-function MeetingView() {
-  // destructure publish method from usePubSub hook
-  const { publish } = usePubSub("CHAT");
-
-  const handlePublishMessage = () => {
-    // publish message
-    const message = "Hello Everyone!";
-    publish(message, { persist: true });
-  };
-
-  return (
-    <>
-      <button onClick={handlePublishMessage}>Publish Message</button>
-    </>
-  );
-}
-```
-
-## Events associated with PubSub
-
-### onMessageReceived
-
-- These event callback is triggered when a new message is received on the subscribed topic.
-
-### onOldMessagesReceived
-
-- These event callback is triggered once when you subscribe to the topic and will will contain all the pass messages from that topic which where published with `persist` set to `true`.
-
-```js
-// importing usePubSub hook from react-sdk
-import { usePubSub } from "@videosdk.live/react-sdk";
-
-function MeetingView() {
-  // destructure publish method from usePubSub hook
-  const { publish } = usePubSub("CHAT", {
-    //highlight-start
-    onMessageReceived: (message) => {
-      console.log("New Message Recieved", message);
-    },
-    onOldMessagesReceived: (messages) => {
-      console.log("Old Message publsihed with persist:true Recieved", messages);
-    },
-    //highlight-end
-  });
-
-  const handlePublishMessage = () => {
-    // publish message
-    const message = "Hello Everyone!";
-    publish(message, { persist: true });
-  };
-
-  return (
-    <>
-      <button onClick={handlePublishMessage}>Publish Message</button>
-    </>
-  );
-}
-```
-
-## Getting the messages
-
-- `messages` property of the `usePubSub` hook will hold all the past and new upcoming messages for that particular topic.
-
-- `messages` is an array of Object containing all the messages.
-
-These object contains following properties:
-
-- `senderId`: These represents the `participantId` of the participant who send the message.
-- `senderName`: These represents the `displayName` of the participant who send the message.
-- `message`: These will be the acatual message that was send.
-- `timestamp`: These wil the timestamp for when the message was published.
-- `topic`: These will be the name of the topic message was published to.
-
-## Example
+1. First step in creating a group chat is choosing the topic which all the participants will publish and subscribe to send and recevie the messages. We will be using `CHAT` as the topic for these one. So let us get the `publish()` and `messages` from the `usePubSub`hook.
 
 ```js
 // importing usePubSub hook from react-sdk
 import { usePubSub } from "@videosdk.live/react-sdk";
 
 function ChatView() {
-  // destructure publish method and messages from usePubSub hook
-  //highlight-next-line
+  // destructure publish method from usePubSub hook
   const { publish, messages } = usePubSub("CHAT");
 
-  const handlePublishMessage = () => {
-    // publish message
-    const message = "Hello Everyone!";
-    //highlight-next-line
+  return <>...</>;
+}
+```
+
+2. Now lets create an message input and send button to publish the messages.
+
+```js
+function ChatView() {
+  // destructure publish method from usePubSub hook
+  const { publish, messages } = usePubSub("CHAT");
+
+  // State to store the user typed message
+  const [message, setMessage] = useState("");
+
+  const handleSendMessage = () => {
+    // Sending the Message using the publish method
     publish(message, { persist: true });
+    //Clearing the message input
+    setMessage("");
   };
 
   return (
     <>
-      <button onClick={handlePublishMessage}>Publish Message</button>
-      <p>Messages: </p>
+      <input
+        value={message}
+        onChange={(e) => {
+          setMessage(e.target.value);
+        }}
+      />
+      <button onClick={handleSendMessage}>Send Message</button>
+    </>
+  );
+}
+```
+
+3. Final setp in the group chat would be to display the messages others send. For these will use the `messages` and display all the messages.
+
+```js
+function ChatView() {
+  // destructure publish method from usePubSub hook
+  const { publish, messages } = usePubSub("CHAT");
+
+  const [message, setMessage] = useState("");
+
+  const handleSendMessage = () => {
+    //highlight-next-line
+    ...
+  };
+
+  return (
+    <>
       //highlight-start
+      <div>
+      <p>Messages: </p>
       {messages.map((message) => {
         return (
           <p>
@@ -140,22 +98,50 @@ function ChatView() {
         );
       })}
       //highlight-end
+      </div>
+      <input
+        value={message}
+        onChange={(e) => {
+          setMessage(e.target.value);
+        }}
+      />
+      <button onClick={handleSendMessage}>Send Message</button>
     </>
   );
 }
 ```
 
-## Applications of usePubSub
+### Private Chat
 
-PubSub is a very powerful mechanism which can be used to do alot of things which can make your meeting experience much more interactive. Some of the most common usecase that we have come across for the PubSub during a meeting are listed below:
+In the above example, if you want to convert into the private chat between two participants, then all you have to do is change the topic which will be unique to those two participants only.
 
-1. `Chat`: You can utilise this to develop various Chat features, such as Private Chat and Group Chat.
-2. `Raise Hand`: You can allow attendees to raise their hands at any time during the meeting, informing everyone else that someone has done so.
-3. `Layout Switching`: You can change the meeting's layout for every participant at once during the meeting, such as from Grid layout to Spotlight or Grid Layout to Sidebar Layout, etc.
-4. `Whiteboard`: You can develop an interactive whiteboard functionality that is completely functional.
-5. `Poll`: You may make polls, let users respond to them, and display the results at the end of a poll.
-6. `Question Answer Session`: You can also design interactive functionality that is question-and-answer based.
+So if we look at creating a private chat between two participants only, we can have the topic something like `<participantId of A>_<participantId of B>` or `<participantId of B>_<participantId of A>`.
 
-## Downloading PubSub Messages
+So you can use either of these topics and the private chat is ready.
+
+### Showing Latest Message Notificaiton
+
+You may want to show the notification to the user when new message arrives. So lets continue our example and add alert for the new images.
+
+```js
+function ChatView() {
+  // destructure publish method from usePubSub hook
+  const { publish, messages } = usePubSub("CHAT", {
+    //highlight-start
+    onMessageReceived: (message)=>{
+      window.alert(message.senderName + "says" + message.message);
+    }
+    //highlight-end
+  });
+  const [message, setMessage] = useState("");
+  const handleSendMessage = () => {
+    //highlight-next-line
+    ...
+  };
+  return <>...</>;
+}
+```
+
+## Downloading Chat Messages
 
 All the messages from the PubSub which where published with `persists` flag set to `true` can be downloaded as an `.csv` file. These file will be available in the VideoSDK dashboard as well as throught the [Sessions API](/api-reference/realtime-communication/fetch-session-using-sessionid).
