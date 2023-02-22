@@ -23,11 +23,11 @@ To configure a VideoSDK meeting you require two things, first the `token` which 
 
 You can generate a `token` in two ways:
 
-1. **`Serverless`** : You can visit [Dashboard's API Key section](https://app.videosdk.live/api-keys) and generate the token from there.
+1. **`Temporary Token`** : You can visit [Dashboard's API Key section](https://app.videosdk.live/api-keys) and generate the temporary token from there.
 
 2. **`Server`** : You can setup **JWT** in backend and make an API call to get the token from your server.
 
-You can [visit here](../authentication-and-token) to learn more about **Authentication** and token in detail.
+To learn more about **Authentication** and token in detail you can follow [these guide](../authentication-and-token).
 
 ```js
 // Serverless
