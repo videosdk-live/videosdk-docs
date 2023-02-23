@@ -22,32 +22,54 @@ Interactive live streaming (HLS) refers to a type of live streaming where viewer
 
 In an interactive live stream (HLS), viewers can take part in a variety of activities like live polling, Q&A sessions, and even sending virtual gifts to the content creator or each other.
 
-// Explain VIdeosdk+HLS
+<center>
+
+![Screen Share with Audio](/img/VideoSDK-HLS.png)
+
+</center>
 
 VideoSDK also allows you to configure the interactive livestream layouts in numerous ways like by simply setting different prebuilt layouts in the configuration or by providing your own custom template to do the livestream according to your layout choice.
 
-This guide will provide an overview of how to implement start and stop RTMP LIvestreaming.
+This guide will provide an overview of how to implement start and stop Livestreaming.
 
 ### `startHls()`
 
-`startHls()` can be used to start a interactive livestream of the meeting which can be accessed from the `useMeeting` hook. These method accepts one parameters:
+`startHls()` can be used to start a interactive livestream of the meeting which can be accessed from the `useMeeting` hook. These method accepts one parameter:
 
-- `config`: This parameter will define how the livestream layout should look like.
+- `config (optional)`: This parameter will define how the livestream layout should look like.
 
-  - `config: mode` is used to either start hls streaming of video-and-audio both or only audio. And by default it will be video-and-audio.
+  ```js
+  const config = {
+    // highlight-next-line
+    // Layout Configuration
+    layout: {
+      type: "GRID", // "SPOTLIGHT" | "SIDEBAR",  Default : "GRID"
+      priority: "SPEAKER", // "PIN", Default : "SPEAKER"
+      gridSize: 4, // MAX : 4
+    },
 
-  - `config: quality` is only applicable to video-and-audio.
-  - Here is the complete available configuration options.
-    - **config**:
-      - **layout**:
-        - **type**: _"GRID"_ | _"SPOTLIGHT"_ | _"SIDEBAR"_
-        - **priority**: _"SPEAKER"_ | _"PIN"_
-        - **gridSize**: Number _`max 25`_
-      - **theme**: _"DARK"_ | _"LIGHT"_ | _"DEFAULT"_
-      - **mode**: _"video-and-audio"_ | _"audio"_
-      - **quality**: _"low"_ | _"med"_ | _"high"_
-      - **orientation**: _"landscape"_ | _"portrait"_
-  - These parameter can be `null`.
+    // highlight-next-line
+    // Theme of recording
+    theme: "DARK", //  "LIGHT" | "DEFAULT"
+
+    // highlight-next-line
+    // `mode` is used to either record video & audio both or only audio.
+    mode: "video-and-audio", // "audio", Default : "video-and-audio"
+
+    // highlight-next-line
+    // Quality of recording and is only applicable to `video-and-audio` type mode.
+    quality: "high", // "low" | "med",  Default : "med"
+
+    //highlight-start
+    // This mode refers to orientation of recording.
+    // landscape : Record the meeting in horizontally
+    // portrait : Record the meeting in vertically (Best for mobile view)
+    //highlight-end
+    orientation: "landscape", // "portrait",  Default : "landscape"
+  };
+
+  startHls(config);
+  ```
 
 ### `stopHls()`
 
@@ -109,8 +131,10 @@ function onHlsStateChanged(data) {
   if (status === Constants.hlsEvents.HLS_STARTING) {
     console.log("Meeting Hls is starting");
   } else if (status === Constants.hlsEvents.HLS_STARTED) {
+    //highlight-start
     // on hlsStateChanged started you will receive downstreamUrl
-    const {downstreamUrl}=data;
+    const { downstreamUrl } = data;
+    //highlight-end
     console.log("Meeting Hls is started");
   } else if (status === Constants.hlsEvents.HLS_STOPPING) {
     console.log("Meeting Hls is stopping");

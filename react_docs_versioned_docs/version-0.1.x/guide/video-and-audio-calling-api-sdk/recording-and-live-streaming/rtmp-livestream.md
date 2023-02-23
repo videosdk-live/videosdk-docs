@@ -26,23 +26,37 @@ VideoSDK allows you to livestream your meeting to platform which support RTMP in
 
 VideoSDK also allows you to configure the livestream layouts in numerous ways like by simply setting different prebuilt layouts in the configuration or by providing your own custom template to do the livestream according to your layout choice.
 
-This guide will provide an overview of how to implement start and stop RTMP LIvestreaming.
+This guide will provide an overview of how to implement start and stop RTMP Livestreaming.
 
 ### `startLivestream()`
 
 `startLivestream()` can be used to start a RTMP livestream of the meeting which can be accessed from the `useMeeting` hook. These method accepts two parameters:
 
-- `outputs`: These parameter accepts an array of objects which contains the RTMP `url` and `streamKey` of the platforms you want to start the livestream.
+- `1. outputs`: These parameter accepts an array of objects which contains the RTMP `url` and `streamKey` of the platforms you want to start the livestream.
 
-- `config`: This parameter will define how the livestream layout should look like.
-  - Here is the complete available configuration options.
-    - **config**:
-      - **layout**:
-        - **type**: _"GRID"_ | _"SPOTLIGHT"_ | _"SIDEBAR"_
-        - **priority**: _"SPEAKER"_ | _"PIN"_
-        - **gridSize**: Number _`max 25`_
-      - **theme**: _"DARK"_ | _"LIGHT"_ | _"DEFAULT"_
-  - These parameter can be `null`.
+- `2. config (optional)`: This parameter will define how the livestream layout should look like.
+
+  ```js
+  const config = {
+    // highlight-next-line
+    // Layout Configuration
+    layout: {
+      type: "GRID", // "SPOTLIGHT" | "SIDEBAR",  Default : "GRID"
+      priority: "SPEAKER", // "PIN", Default : "SPEAKER"
+      gridSize: 4, // MAX : 4
+    },
+
+    // highlight-next-line
+    // Theme of recording
+    theme: "DARK", //  "LIGHT" | "DEFAULT"
+
+    // highlight-next-line
+    // `mode` is used to either record video & audio both or only audio.
+    mode: "video-and-audio", // "audio", Default : "video-and-audio"
+  };
+
+  startLivestream(null, null, config);
+  ```
 
 ### `stopLivestream()`
 
