@@ -164,7 +164,7 @@ const ParticipantView = ({ participantId }) => {
 };
 ```
 
-##### Maintaining the aspect ratio
+#### Maintaining the aspect ratio
 
 If you wish to maintain the aspect ratio of the video, meaning showing vertical video and not making it fill the complete space of the view, you can set the `object-fit: contain`.
 
@@ -189,7 +189,7 @@ const ParticipantView = ({ participantId }) => {
 };
 ```
 
-##### Mirror Local Video View
+#### Mirror Local Video View
 
 If you wish to show the mirror view of the local participant, you can apply the transformation style to the participant's view.
 
@@ -333,6 +333,14 @@ const ParticipantView = ({ participantId }) => {
 ```
 
 :::
+
+## Autoplay Audio and Video
+
+`autoplay` refers to the parameter which is passed to `<audio>` and `<video>` whose media should be played automatically without user clicking on the video or hitting the play button.
+
+While building a audio-video calling app, it is necessary to mae sure that `autoplay` flag is set to `true` so that any media loaded is played although the `play()` was not called.
+
+You can learn more about the `autoplay flag` at the [**official documentation**](https://developer.mozilla.org/en-US/docs/Web/Media/Autoplay_guide).
 
 ## API Reference
 
