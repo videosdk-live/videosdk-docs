@@ -13,7 +13,7 @@ keywords:
   - real-time communication
 image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
-slug: recording-meeting
+slug: record-meeting
 ---
 
 # Record Meeting
@@ -28,28 +28,49 @@ This guide will provide an overview of how to implement start and stop Meeting R
 
 `startRecording()` can be used to start a recording of the meeting which can be accessed from the `useMeeting` hook. These method accepts three parameters:
 
-- `webhookUrl`: These would the webhook URL where you would like to listen to event happening for the recording like starting and stopping of recording. It will be triggered when the recording is completed and stored into server. Read more about webhooks [here](https://en.wikipedia.org/wiki/Webhook)
+- `1. webhookUrl (optional)`: These would the webhook URL where you would like to listen to event happening for the recording like starting and stopping of recording. It will be triggered when the recording is completed and stored into server. Read more about webhooks [here](https://en.wikipedia.org/wiki/Webhook)
 
-  - These parameter can be `null`.
+- `2. awsDirPath (optional)`: These parameter accepts the path for the your S3 bucket where you want to store recordings to. To allow us to store recording in your S3 bucket, you will need to fill this form by providing the required values. [VideoSDK AWS S3 Integration](/docs/tutorials/user-dashboard/recording-storage-config)
 
-- `awsDirPath`: These parameter accepts the path for the your S3 bucket where you want to store recordings to. To allow us to store recording in your S3 bucket, you will need to fill this form by providing the required values. [VideoSDK AWS S3 Integration](/docs/tutorials/user-dashboard/recording-storage-config)
+- `3. config (optional)`: This parameter will define how the recording should be recorded.
 
-  - These parameter can be `null`.
+  :::caution
 
-- `config`: This parameter will define how the recording should be recorded.
-  - `config: mode` is used to either record video-and-audio both or only audio. And by default it will be video-and-audio.
-  - `config: quality` is only applicable to video-and-audio.
-  - Here is the complete available configuration options.
-    - **config**:
-      - **layout**:
-        - **type**: _"GRID"_ | _"SPOTLIGHT"_ | _"SIDEBAR"_
-        - **priority**: _"SPEAKER"_ | _"PIN"_
-        - **gridSize**: Number _`max 4`_
-      - **theme**: _"DARK"_ | _"LIGHT"_ | _"DEFAULT"_
-      - **mode**: _"video-and-audio"_ | _"audio"_
-      - **quality**: _"low"_ | _"med"_ | _"high"_
-      - **orientation**: _"landscape"_ | _"portrait"_
-  - These parameter can be `null`.
+  If you don't have a value for `webhookUrl` or `awsDirPath` and want to use the `config` property, you should pass `null` in place of the missing value. otherwise, configurtion will not reflect in the recording.
+  :::
+
+  ```js
+  const config = {
+    // highlight-next-line
+    // Layout Configuration
+    layout: {
+      type: "GRID", // "SPOTLIGHT" | "SIDEBAR",  Default : "GRID"
+      priority: "SPEAKER", // "PIN", Default : "SPEAKER"
+      gridSize: 4, // MAX : 4
+    },
+
+    // highlight-next-line
+    // Theme of recording
+    theme: "DARK", //  "LIGHT" | "DEFAULT"
+
+    // highlight-next-line
+    // `mode` is used to either record video & audio both or only audio.
+    mode: "video-and-audio", // "audio", Default : "video-and-audio"
+
+    // highlight-next-line
+    // Quality of recording and is only applicable to `video-and-audio` type mode.
+    quality: "high", // "low" | "med",  Default : "med"
+
+    //highlight-start
+    // This mode refers to orientation of recording.
+    // landscape : Record the meeting in horizontally
+    // portrait : Record the meeting in vertically (Best for mobile view)
+    //highlight-end
+    orientation: "landscape", // "portrait",  Default : "landscape"
+  };
+
+  startRecording(null, null, config);
+  ```
 
 ### `stopRecording()`
 
@@ -63,6 +84,7 @@ const MeetingView = () => {
 
   const handleStartRecording = () => {
     // Start Recording
+    // If you don't have a `webhookUrl` or `awsDirPath`, you should pass null.
     startRecording("YOUR WEB HOOK URL", "AWS Directory Path", {
       layout: {
         type: "GRID",
