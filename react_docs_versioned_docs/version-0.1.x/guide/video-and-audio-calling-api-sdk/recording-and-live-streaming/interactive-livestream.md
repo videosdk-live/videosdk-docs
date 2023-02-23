@@ -16,7 +16,7 @@ sidebar_position: 1
 slug: interactive-livestream
 ---
 
-# Interactive Livestream
+# Interactive Livestream (HLS)
 
 Interactive live streaming (HLS) refers to a type of live streaming where viewers can actively engage with the content being streamed and with other viewers in real-time.
 
