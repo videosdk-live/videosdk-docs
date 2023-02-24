@@ -62,6 +62,8 @@ This guide will provide an overview of how to implement start and stop RTMP Live
 
 - `stopLivestream()` is used to stop the meeting livestream which can be accessed from the `useMeeting` hook.
 
+#### Example
+
 ```js
 import { useMeeting } from "@videosdk.live/react-sdk";
 

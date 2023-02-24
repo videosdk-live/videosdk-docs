@@ -76,6 +76,8 @@ This guide will provide an overview of how to implement start and stop Meeting R
 
 - `stopRecording()` is used to stop the meeting recording which can be accessed from the `useMeeting` hook.
 
+#### Example
+
 ```js
 import { useMeeting } from "@videosdk.live/react-sdk";
 

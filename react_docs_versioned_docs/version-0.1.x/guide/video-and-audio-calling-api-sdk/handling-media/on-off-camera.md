@@ -43,6 +43,8 @@ Any participant can turn on or off his camera in the meeting using below methods
 
 - Video stream of the participant can be accessed from the `webcamStream` property of `useParticipant` hook.
 
+#### Example
+
 ```jsx
 import { useMeeting } from "@videosdk.live/react-sdk";
 

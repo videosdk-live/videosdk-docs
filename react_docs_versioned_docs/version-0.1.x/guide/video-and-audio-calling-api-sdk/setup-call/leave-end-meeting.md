@@ -33,6 +33,8 @@ To leave the meeting by removing all the participant you need to call `end()` wh
 These methods can be called after the meeting is joined successfully.
 :::
 
+#### Example
+
 ```jsx
 import { useMeeting } from "@videosdk.live/react-sdk";
 

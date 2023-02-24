@@ -45,6 +45,8 @@ When you mute your microphone, you prevent any sound from your microphone from b
 
 - Audio stream of the participant can be accessed from the `micStream` property of `useParticipant` hook.
 
+#### Example
+
 ```jsx
 import { useMeeting } from "@videosdk.live/react-sdk";
 

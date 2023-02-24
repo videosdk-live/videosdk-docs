@@ -3,8 +3,8 @@ title: Interactive Livestream - Video SDK Docs
 hide_title: false
 hide_table_of_contents: false
 description: Interactive Livestream features quick integrate in Javascript, React JS, Android, IOS, React Native, Flutter with Video SDK to add live video & audio conferencing to your applications.
-sidebar_label: Interactive Livestream
-pagination_label: Interactive Livestream
+sidebar_label: Interactive Livestream (HLS)
+pagination_label: Interactive Livestream (HLS)  
 keywords:
   - Start HLS meeting
   - Stop HLS meeting
@@ -74,6 +74,8 @@ This guide will provide an overview of how to implement start and stop Livestrea
 ### `stopHls()`
 
 - `stopLivestream()` is used to stop the meeting livestream which can be accessed from the `useMeeting` hook.
+
+#### Example
 
 ```js
 import { useMeeting } from "@videosdk.live/react-sdk";

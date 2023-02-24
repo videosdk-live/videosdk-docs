@@ -55,7 +55,7 @@ Before we discuss the methods and events associated with this functionality, her
 - If you wish to turn **off** the camera of a participant, you will be calling the `disableWebcam()` from the `useParticipant` hook.
 - These will disable the camera of the participant.
 
-###### Usage
+#### Example
 
 ```js
 import { useParticipant } from "@videosdk.live/react-sdk";
