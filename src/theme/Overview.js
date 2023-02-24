@@ -94,7 +94,7 @@ function PlatformPart() {
       Icon: ReactIcon,
       title: "React",
       imgLink: "./svgs/react.svg",
-      link: "/react/guide/video-and-audio-calling-api-sdk/getting-started",
+      link: "/react/guide/video-and-audio-calling-api-sdk/concept-and-architecture",
     },
     {
       Icon: JSIcon,
@@ -135,7 +135,7 @@ function PlatformPart() {
       Icon: ReactIcon,
       title: "React",
       imgLink: "./svgs/react.svg",
-      link: "/react/guide/video-and-audio-calling-api-sdk/getting-started",
+      link: "/react/guide/video-and-audio-calling-api-sdk/concept-and-architecture",
     },
     {
       Icon: JSIcon,

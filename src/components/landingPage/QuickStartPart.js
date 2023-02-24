@@ -68,7 +68,7 @@ export default function QuickstartPart() {
   const CustomSDKArray = [
     {
       Icon: CustomReactIcon,
-      link: "/react/guide/video-and-audio-calling-api-sdk/getting-started",
+      link: "/react/guide/video-and-audio-calling-api-sdk/concept-and-architecture",
       tooltip: "React",
     },
     {

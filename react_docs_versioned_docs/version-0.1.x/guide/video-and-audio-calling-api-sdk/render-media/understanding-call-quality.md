@@ -89,15 +89,25 @@ VideoSDK provides methods to check the realtime statistics of the audio and vide
 
 ### `getVideoStats()`
 
-`getVideoStats()` returns an array of object containing the different quality parameters for video stream which can be accessed through the `useParicipant` hook.
+- `getVideoStats()` returns an array of object containing the different quality parameters for video stream which can be accessed through the `useParicipant` hook.
+
+- These objects will contain the resolution, frame rate, bitrate, jitter, round trip time and packet loss values or the particular video stream of the participant.
 
 ### `getAudioStats()`
 
-`getAudioStats()` returns an array of object containing the different quality parameters for audio stream which can be accessed through the `useParicipant` hook.
+- `getAudioStats()` returns an array of object containing the different quality parameters for audio stream which can be accessed through the `useParicipant` hook.
+
+- These objects will contain the bitrate, jitter, round trip time and packet loss values or the particular audio stream of the participant.
 
 ### `getShareStats()`
 
-`getShareStats()` returns an array of object containing the different quality parameters for screen share stream which can be accessed through the `useParicipant` hook.
+- `getShareStats()` returns an array of object containing the different quality parameters for screen share stream which can be accessed through the `useParicipant` hook.
+
+- These objects will contain the resolution, frame rate, bitrate, jitter, round trip time and packet loss values or the particular screen share stream of the participant.
+
+## Quality analysis Graphs
+
+For all the sessions taken using the VideoSDK, you can find the quality analysis graphs from the VideoSDK Dashboard which can help you visualize the data you are seeing in realtime and identify the spikes of a few parameters happing during call which can help figure out the reason for the quality issue.
 
 ## API Reference
 
