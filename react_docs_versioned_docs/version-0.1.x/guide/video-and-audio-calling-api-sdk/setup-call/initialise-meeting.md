@@ -141,7 +141,7 @@ Let's take a deeper look at the available configuration options first.
     - This is an `OPTIONAL` parameter. By defualt VideoSDK will generate unique id for each participant.
 
 :::caution
-You can ensure that the `participantId` is not repeated in the same meeting or room, It will enable VideoSDK to eliminate any participant respect to that `participantId`.
+You must ensure that the `participantId` is not repeated in the same meeting or room, It will enable VideoSDK to eliminate any participant respect to that `participantId`.
 :::
 
 ###### Other Options for Meeting Provider

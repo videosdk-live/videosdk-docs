@@ -62,7 +62,8 @@
           "label": "Rendering Media",
           "items": [
             "guide/video-and-audio-calling-api-sdk/render-media/display-audio-video",
-            "guide/video-and-audio-calling-api-sdk/render-media/understanding-call-quality"
+            "guide/video-and-audio-calling-api-sdk/render-media/understanding-call-quality",
+            "guide/video-and-audio-calling-api-sdk/render-media/optimize-audio-video-tracks"
           ],
           "collapsed": true
         },
