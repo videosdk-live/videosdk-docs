@@ -24,13 +24,18 @@ When in a meeting, it can be very handy to just draw and share your views with a
 
 To implement the Canvas Drawing feature, we will be using a thrid-party library which prodvides easy solution to draw and render canvas.
 
-1. Lets first install these dependency.
+1. Lets first install dependency.
 
 ```bash
 npm i "@shawngoh87/react-sketch-canvas"
 ```
 
-2. With our dependency installed, let us make a new `Canvas` component which will be placed in the `MeetingView`. And also add the basic canvas to it.
+2. With our dependency installed, let us make a new `Canvas` component which will be placed in the `MeetingView` and also add the basic canvas to it.
+
+:::note
+
+As we presume you are familiar with the basics of setting up a VideoSDK meeting, we have not provided Meeting Initialiser code in this guide.
+:::
 
 ```js
 import { ReactSketchCanvas } from "@shawngoh87/react-sketch-canvas";
@@ -70,20 +75,22 @@ const WhiteboardView = () => {
 };
 ```
 
-2. With these, you canvas should be ready to draw. If you draw something on your board, other participants wont be seeing those drawings, so lets use the `usePubSub` hook to accomplish these. We will be getting `publish()` from the `usePubSub` hook for the topic `WHITEBOARD` to send our drawings to all the participants in the meeting.
+2. With this, your canvas should be ready to draw. If you draw something on your board, other participants won't be see those drawings, so lets use the `usePubSub` hook to accomplish this. We will be getting `publish()` from the `usePubSub` hook for the topic `WHITEBOARD` to send our drawings to all the participants in the meeting.
 
 - The data we need to send to all the participants is the strokes which we are drawing, so we will `send a stringified json to all` the participants in the message.
 
 ```js
+import { usePubSub } from "@videosdk.live/react-sdk";
+
 const WhiteboardView = () => {
   //.. other declarations
 
   const { publish } = usePubSub("WHITEBOARD");
 
-  //These callback from the canvas component will give us the stroke json we need to share
+  // This callback from the canvas component will give us the stroke json we need to share
   const onStroke = (stroke, isEraser) => {
-    //We will be suing the persists true so that all the strokes
-    // are available for the participants how are joining after the drawing is done
+    // We will be setting the `persist:true` so that all the strokes
+    // are available for the participants who have recently joined
     publish(JSON.stringify(stroke), { persist: true });
   };
 
@@ -103,6 +110,9 @@ const WhiteboardView = () => {
 - Also we don't want to re-draw the strokes drown by us, so we will put an extra check to see if the stroke was drawn by localParticipant or not.
 
 ```js
+//highlight-next-line
+import { useMeeting,usePubSub } from "@videosdk.live/react-sdk";
+
 const WhiteboardView = () => {
   //.. other declarations
 
