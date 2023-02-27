@@ -17,15 +17,21 @@ slug: display-audio-video
 
 # Display Audio and Video
 
-In these guide we will take a look at how to render the participant's audio and video on the screen.
+In this guide we will take a look at how to render the participant's audio and video on the screen.
 
 ## Rendering Participant
 
-### Mic and Webcam Status
+The theree steps are involve to achieve this process.
 
-Before rendering the participant we must know if the participant has his audio or video turned on or off. So we will start by rendering the frames of the participant with there name in it if the webcam is turned off else we will render the video.
+1. Get Mic and Webcam Status
+2. Rendering Video
+3. Rendering Audio
 
-1. Lets get all the `participants` from the `useMeeting` and render the simple boxs with there name.
+### `1. Get Mic and Webcam Status`
+
+We must determine whether the participant's audio or video is on or off before rendering him or her. Hence, if the webcam is not turned on, we will begin by rendering the participant's frames with their name in them; otherwise, we will render the video.
+
+**`Step 1:`** Let's get every `participants` from `useMeeting` and create a straightforward box with each person's name.
 
 ```js
 const MeetingView = () => {
@@ -54,20 +60,15 @@ const ParticipantView = ({ participantId }) => {
     >
       //highlight-start
       <p>{displayName}</p>
-      <p>
-        Webcam:{webcamOn ? "On" : "Off"} Mic: {micOn ? "On" : "Off"}
-      </p>
       //highlight-end
     </div>
   );
 };
 ```
 
-2. Now that we have displayed the participants in the grid, with each tile showing the name of participant. Lets see how we can get the status of mic and webcam.
+**`Step 2:`** To display the status of each participant's microphone and webcam in the grid, you can use the `micOn` and `webcamOn` properties of the `useParticipant` hook.
 
-**Mic and Webcam status can be accessed from `micOn` and `webcamOn` property of the `useParticipant` hook respectively.**
-
-Lets show the status in the grid we built.
+Here's a code code snippet of rendering mic and webcam status:
 
 ```js
 const ParticipantView = ({ participantId }) => {
@@ -91,18 +92,21 @@ const ParticipantView = ({ participantId }) => {
 };
 ```
 
-### Rendering Video
+### `2. Rendering Video`
 
-Now we have displayed the webcam and mic status. If the webcam is turned on we will need the `webcamStream` of the participant which we will get from the `useParticipant` hook to display the video of the participant.
+The status of the `webcam` and `mic` is now displayed. If the webcam is turned `on`, we will require the participant's `webcamStream` which we will obtain from the `useParticipant` hook, in order to display the participant's video.
 
-1. Let's get the `webcamStream` and define a `<video>` which will render the video of the participant. We will use the `useRef` to create a reference to these video tag.
+**`Step 1:`** Let's get the `webcamStream` and define a `<video>` tag which will render the video of the participant. We will use the `useRef` to create a reference to this video tag.
 
 ```js
+import { useRef } from "react";
+
 const ParticipantView = ({ participantId }) => {
   //Getting the webcamStream property
   const { displayName, micOn, webcamOn, webcamStream } =
     useParticipant(participantId);
 
+  //highlight-next-line
   const webcamRef = useRef(null);
 
   return (
@@ -121,7 +125,13 @@ const ParticipantView = ({ participantId }) => {
 };
 ```
 
-2. With our `<video>` in place, now we will add an `useEffect` which will automatically add the `webcamStream` to the `<video>` element when the webcamStream is found.
+<center>
+
+![participant status](/img/participant-status.png)
+
+</center>
+
+**`Step 2:`** Now that we have our `<video>` element in place, we will add a `useEffect` so that, when the `webcamStream` is discovered, it will immediately add to the `<video>` element.
 
 ```js
 const ParticipantView = ({ participantId }) => {
@@ -164,7 +174,13 @@ const ParticipantView = ({ participantId }) => {
 };
 ```
 
-#### Maintaining the aspect ratio
+<center>
+
+![participant grid](/img/participant-grid.png)
+
+</center>
+
+#### `2.1 Maintaining the aspect ratio`
 
 If you wish to maintain the aspect ratio of the video, meaning showing vertical video and not making it fill the complete space of the view, you can set the `object-fit: contain`.
 
@@ -189,7 +205,13 @@ const ParticipantView = ({ participantId }) => {
 };
 ```
 
-#### Mirror Local Video View
+<center>
+
+![object fit image](/img/object-fit.png)
+
+</center>
+
+#### `2.2 Mirror Local Video View`
 
 If you wish to show the mirror view of the local participant, you can apply the transformation style to the participant's view.
 
@@ -227,13 +249,25 @@ const ParticipantView = ({ participantId }) => {
 };
 ```
 
-### Rendering Audio
+##### Sample video of mirror view video
 
-Now we have displayed the webcam and mic status along with the video of the particiapnt. If the mic is turned on we will need the `micStream` of the participant which we will get from the `useParticipant` hook to listen to the participant.
+import ReactPlayer from 'react-player'
 
-1. Let's get the `micStream` and define a `<audio>` which will render the audio of the participant. We will use the `useRef` to create a reference to these audio tag.
+<div style={{textAlign: 'center'}}>
+
+<ReactPlayer autoplay muted loop playing url='/video/mirror-sample.mp4' width={"100%"}/>
+
+</div>
+
+### `3. Rendering Audio`
+
+Now we have displayed the webcam and mic status along with the video of the particiapnt. If the mic is turned `on` we will need the `micStream` of the participant which we will obtain from the `useParticipant` hook, in order to play the participant's audio.
+
+**`Step 1:`** Let's get the `micStream` and define a `<audio>` tag which will render the audio of the participant. We will use the `useRef` to create a reference to this audio tag.
 
 ```js
+import { useRef } from "react";
+
 const ParticipantView = ({ participantId }) => {
   //Getting the micStream property
   const { displayName, micOn, webcamOn, webcamStream, micStream } =
@@ -257,7 +291,7 @@ const ParticipantView = ({ participantId }) => {
 };
 ```
 
-2. With our `<audio>` in place, now we will add an `useEffect` which will automatically add the `micStream` to the `<audio>` element when the micStream is found.
+**`Step 2:`** Now that we have our `<audio>` element in place, we will add a useEffect so that, when the `micStream` is discovered, it will immediately add to the `<audio>` element.
 
 ```js
 const ParticipantView = ({ participantId }) => {
