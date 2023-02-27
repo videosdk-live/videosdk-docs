@@ -17,7 +17,7 @@ slug: understanding-call-quality
 
 # Understanding Call Quality
 
-When developing an video call app, customer satisfaction heavily depends on your app's video and audio quality and its fluctuation.
+When developing a video call app, customer satisfaction heavily depends on your app's video and audio quality and its fluctuation.
 
 ## Call Quality
 
@@ -25,27 +25,27 @@ If we look at the video quality from the user's perspective, a good video qualit
 
 ## Factors affecting Quality
 
-When it comes to measuring the video and audio quality of a call, their are multiple variables to consider and the most common factors which affect the video and audio quality are:
+When it comes to measuring the video and audio quality of a call, there are multiple variables to consider and the most common factors which affect the video and audio quality are:
 
-### Network Bandwidth
+### `1. Network Bandwidth`
 
 - Network bandwidth is a measurement of a user's network capability to how large data can be receive and send.
 - If the bandwidth is low at participant side, he/she is likely to get pixeleted or frozen video along with robotic voice or minor breaking in the audio.
 - Frequent change in the network providers can also result in high fluctuation of the internet bandwidth which can also result in poor quality video.
 
-### Latency
+### `2. Latency`
 
 - Latency basically means the time it takes for data to transfer from one machine to another.
 - If the meeting is hosted in `Ohio` region, and users are joining from `Singapore` region, so this will create long delay for data to transfer from one machine to another, thus you should pick a server according to your user base.
 - In VideoSDK you can set the server during creation of Meeting/Room.
 
-### CPU Usage
+### `3. CPU Usage`
 
 - CPU Usage is a also quite determinig factor as all the audio and video streams which are going out and coming in will have to encoded or decoded which will require a significant amount of computation.
 - The high the resolution and framerate of the videos, the larger would be the computation required which can be a reason for the bottleneck of delivering a good quality video.
 - If the CPU is being consumed heavily it can also result in a choppy or robotic audio.
 
-### Camera and Mic Quality
+### `4. Camera and Mic Quality`
 
 - The camera and microphone should capture good quality of streams so that remote user doesn't get low quality stream even if he/she has good network bandwidth
 
@@ -53,31 +53,33 @@ When it comes to measuring the video and audio quality of a call, their are mult
 
 In order to identify quality issues, VideoSDK collects multiple audio and video related metrics which can help in pinpointing the quality issues. Let's have a look at those metrics and understand what the indicates.
 
-### Resolutions and Framerates
+### `1. Resolutions and Framerates`
 
-Resolution and framerates and collected for the video streams which can help us understand that what can be the desired quality for the customer we are serving.
+- Resolution and framerate are key metrics for video quality in a video call app. Resolution refers to the number of pixels in a video image, while framerate refers to the number of frames displayed per second.
 
-For example, if the userbase consists of only mobile devices, having a very high resolution is not a good choice as it will be just consuming extra bandwith when eventually the video will be rendered in a very small portion of the screen. Alternatively, if a mid resolution id used, it can give optimal performance and quality.
+- Higher resolutions and framerates can provide better video quality, but they also require more bandwidth and processing power. It's important to optimize these metrics for the devices and network conditions of your users.
 
-If the userbase consists of both mobile and desktop users, having higher resolution for desktop and mid resolutions for mobile devices can help in improving the performance and quality as we will be saving the bandwith on the mobile end..
+- For example, if most of your users are on mobile devices, a lower resolution and framerate may be more appropriate to ensure smooth playback and minimize bandwidth usage.
 
-### Bitrate
+- If most of your users are on mobile and desktop devices, having higher resolution for desktop and mid resolutions for mobile devices can help in improving the performance and quality as we will be saving the bandwith on the mobile end..
 
-Bitrate is the number of bits per second send or recieved during the transmission of audio or video streams. Bitrate can be a key parameter to determine the quality of the audio or video streams, as it should be fine tuned for each resolution to achieve the best match of performance and bandwidth utilization.
+### `2. Bitrate`
 
-If the users are having excellent network conditions, higher bitrate can result in much better video quality but on the other hand, having very high bitrates on the mobile devices can result in heating issues due to high computation required to encode and decode the videos.
+- Bitrate is the number of bits per second send or recieved during the transmission of audio or video streams. Bitrate can be a key parameter to determine the quality of the audio or video streams, as it should be fine tuned for each resolution to achieve the best match of performance and bandwidth utilization.
 
-### Packet Loss
+- If the users are having excellent network conditions, higher bitrate can result in much better video quality but on the other hand, having very high bitrates on the mobile devices can result in heating issues due to high computation required to encode and decode the videos.
 
-Packets is nothing but the data being transmitted from and to server for audio and video. If you are seeing high amount of packet loss, it indicates the audio could be choppy and the video could have been freezing once in a while. These could be due to poor network conditions or device might not be able to keep up with the computation of the audio and video packets and eventually dropping them.
+### `3. Packet Loss`
 
-### Jitter
+- Packet loss is a metric that indicates how many data packets are lost during transmission from the sender to the receiver. Packet loss can occur due to network congestion, hardware or software issues, or network latency. Higher packet loss can result in poor video and audio quality, as the missing packets can cause gaps or distortions in the media stream.
+
+### `4. Jitter`
 
 When the audio and video packets are being transmitted between server and client, they are being sent out at aregulat intervals over a set amount of time. But when there is a fluctuation in sending or recieveing these data packets due to inconsistent network connection it creates jitter.
 
 When data packets get stuck on their way to the receiver, usually because the network is congested. They'll arrive at irregular intervals, increasing the jitter and will sounding like choppy, distorted or robotic audio on a call or appear as pixelated video on a video call when they arrive.
 
-### Round Trip Time (Latency)
+### `5. Round Trip Time (Latency)`
 
 Round trip time is the amount of time required to transmit the data packets to send or recieve from the server. If the servers are located very far from the user's location they can observe a high latency.
 

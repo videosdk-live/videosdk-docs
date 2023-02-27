@@ -23,9 +23,9 @@ In this guide we will take a look at how to render the participant's audio and v
 
 The theree steps are involve to achieve this process.
 
-1. Get Mic and Webcam Status
-2. Rendering Video
-3. Rendering Audio
+1. [Get Mic and Webcam Status](#1-get-mic-and-webcam-status)
+2. [Rendering Video](#2-rendering-video)
+3. [Rendering Audio](#3-rendering-audio)
 
 ### `1. Get Mic and Webcam Status`
 
