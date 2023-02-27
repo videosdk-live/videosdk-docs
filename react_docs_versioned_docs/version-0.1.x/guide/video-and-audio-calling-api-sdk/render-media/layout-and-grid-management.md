@@ -59,6 +59,10 @@ To best utilize the resourses, you should pause the streams of the participants 
 
 ![grid-pagination](/img/grid-pagination.png)
 
+:::note
+You can get the sample code for each of the layouts discussed above here.
+:::
+
 ## API Reference
 
 The API references for all the methods and events utilised in these guide are provided below.
