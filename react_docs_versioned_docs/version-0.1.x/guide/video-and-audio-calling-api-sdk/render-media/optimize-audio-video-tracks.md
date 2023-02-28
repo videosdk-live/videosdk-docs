@@ -133,10 +133,11 @@ function App() {
         config={{
           meetingId,
           micEnabled: true,
+          //highlight-start
           webcamEnabled: true, //If true, it will use the passed custom track to turn webcam on
-
           //Pass the custom video track here
           customCameraVideoTrack: customTrack,
+          //highlight-end
         }}
         token={token}
         reinitialiseMeetingOnConfigChange={true}
@@ -162,19 +163,45 @@ Make sure to call `disableWebcam()` befor you create a new track as it may lead 
 ```javascript
 import { createCameraVideoTrack, useMeeting } from "@videosdk.live/react-sdk";
 
-let customTrack = await createCameraVideoTrack({
-  optimizationMode: "motion",
-  encoderConfig: "h720p_w1280p",
-  facingMode: "environment",
-});
+const MeetingControls = () => {
 
-const { enableWebcam, toggleWebcam } = useMeeting();
+  const { localWebcamOn, enableWebcam, disableWebcam, toggleWebcam } = useMeeting();
 
-enableWebcam(customTrack);
+  const handleToggleWebcam = () =>{
+    if(localWebcamOn){
+      toggleWebcam();
+    }else{
+      let customTrack = await createCameraVideoTrack({
+        optimizationMode: "motion",
+        encoderConfig: "h720p_w1280p",
+        facingMode: "environment",
+        multiStream: false,
+      });
 
-//or
+      toggleWebcam(customTrack);
+    }
+  }
 
-toggleWebcam(customTrack);
+  const handleEnableWebcam = () =>{
+    if(localWebcamOn){
+      disableWebcam();
+    }
+
+    let customTrack = await createCameraVideoTrack({
+      optimizationMode: "motion",
+      encoderConfig: "h720p_w1280p",
+      facingMode: "environment",
+      multiStream: false,
+    });
+
+    enableWebcam(customTrack);
+  }
+
+  return <>
+    <button onClick={handleToggleWebcam}>Toggle Webcam</button>
+    <button onClick={handleEnableWebcam}>Enable Webcam</button>
+  </>
+}
 ```
 
 :::note
@@ -294,11 +321,13 @@ function App() {
       <MeetingProvider
         config={{
           meetingId,
+          //highlight-next-line
           micEnabled: true, //If true, it will use the passed custom track to turn mic on
           webcamEnabled: true,
-
+          //highlight-start
           //Pass the custom audio track here
           customMicrophoneAudioTrack: customTrack,
+          //highlight-end
         }}
         token={token}
         reinitialiseMeetingOnConfigChange={true}
@@ -329,22 +358,49 @@ import {
   useMeeting,
 } from "@videosdk.live/react-sdk";
 
-let customTrack = await createMicrophoneAudioTrack({
-  encoderConfig: "high_quality",
-  noiseConfig: {
-    noiseSuppression: true,
-    echoCancellation: true,
-    autoGainControl: true,
-  },
-});
+const MeetingControls = () => {
 
-const { unmuteMic, toggleMic } = useMeeting();
+  const { localMicOn, unmuteMic, muteMic, toggleMic } = useMeeting();
 
-unmuteMic(customTrack);
+  const handleToggleMic = () =>{
+    if(localMicOn){
+      toggleMic();
+    }else{
+      let customTrack = await createMicrophoneAudioTrack({
+        encoderConfig: "speech_standard",
+        noiseConfig: {
+          noiseSuppression: true,
+          echoCancellation: true,
+          autoGainControl: true,
+        },
+      });
 
-//or
+      toggleMic(customTrack);
+    }
+  }
 
-toggleMic(customTrack);
+  const handleUnmuteMic = () =>{
+    if(localMicOn){
+      muteMic();
+    }
+
+    let customTrack = await createMicrophoneAudioTrack({
+      encoderConfig: "speech_standard",
+      noiseConfig: {
+        noiseSuppression: true,
+        echoCancellation: true,
+        autoGainControl: true,
+      },
+    });
+
+    unmuteMic(customTrack);
+  }
+
+  return <>
+    <button onClick={handleToggleMic}>Toggle Mic</button>
+    <button onClick={handleUnmuteMic}>Unmute Mic</button>
+  </>
+}
 ```
 
 ### Recommended Audio Settings
@@ -354,3 +410,114 @@ Let us discuss a few recommended audio settings you should use based on your use
 1. If you are having **normal video calls**, we would recommend you to use `speech_standard` encorder config with **no additional parameters** of `noiseConfig`.
 
 2. If you are having video calls where the participants might be playing and sharing the music, you should consider using `music_standard` as encoder config.
+
+## Custom Screen Share Track
+
+This feature can be used to custom resolution screenshare streams with enhanced optimization mode for specific use-case and send it to other participants.
+
+### Creating a Custom Screen Share Track
+
+- You can create a Video Track using `createScreenShareVideoTrack()` method of `@videosdk.live/react-sdk`.
+- This method can be used to create video track using different encoding parameters and optimization mode.
+
+#### Parameters
+
+- **encoderConfig**:
+
+  - type: `String`
+  - required: `false`
+  - default: `h720p_15fps`
+  - Allowed values : `h360p_30fps` | `h720p_5fps` | `h720p_15fps` | `h1080p_15fps` | `h1080p_30fps`
+  - It will be the encoderConfigs you can want to use for the Video Track.
+
+:::note
+
+Above mentioned encoder configurations are valid for both, landscape as well as portrait mode.
+
+:::
+
+- **optimizationMode**
+  - type: `String`
+  - required: `false`
+  - Allowed values: `motion` | `text` | `detail`
+  - It will specifiy the optimization mode for the video track being generated.
+
+##### Returns
+
+- `MediaStream`
+
+#### Example
+
+```javascript
+import { createScreenShareVideoTrack } from "@videosdk.live/react-sdk";
+
+let customTrack = await createScreenShareVideoTrack({
+  optimizationMode: "motion",
+  encoderConfig: "h720p_15fps",
+});
+```
+
+### Using Custom Screen Share Track
+
+#### Custom Track with `enableScreenShare()`
+
+In order to switch tracks during the meeting, you have to pass the `MediaStream` in the `enableScreenShare()` method of `useMeeting`.
+
+You can also pass custom track in `toggleScreenShare()` method of `useMeeting`.
+
+:::note
+
+Make sure to call `disableScreenShare()` befor you create a new track as it may lead to unexpected behaviour.
+
+:::
+
+```javascript
+import {
+  createScreenShareVideoTrack,
+  useMeeting,
+} from "@videosdk.live/react-sdk";
+
+const MeetingControls = () => {
+
+  const { localScreenShareOn, enableScreenShare,disableScreenShare, toggleScreenShare } = useMeeting();
+
+  const handleToggleScreenShare = () =>{
+    if(localScreenShareOn){
+      toggleScreenShare();
+    }else{
+      let customTrack = await createScreenShareVideoTrack({
+        optimizationMode: "motion",
+        encoderConfig: "h720p_15fps",
+      });
+
+      toggleScreenShare(customTrack);
+    }
+  }
+
+  const handleEnableScreenShare = () =>{
+    if(localScreenShareOn){
+      disableScreenShare();
+    }
+
+    let customTrack = await createScreenShareVideoTrack({
+      optimizationMode: "motion",
+      encoderConfig: "h720p_15fps",
+    });
+
+    enableScreenShare(customTrack);
+  }
+
+  return <>
+    <button onClick={handleToggleScreenShare}>Toggle ScreenShare</button>
+    <button onClick={handleEnableScreenShare}>Enable ScreenShare</button>
+  </>
+}
+```
+
+### Recommended Screen Share Settings
+
+Let us discuss a few recommended screen share settings you should use based on your use case.
+
+1. If you want to do screeen share where there is high motion involved like screen share of video, you should use `optimizationMode` as `motion`.
+
+2. If you want to do screeen share where there is high amount of text and low motion like screen share of presentation, you should use `optimizationMode` as `text`.
