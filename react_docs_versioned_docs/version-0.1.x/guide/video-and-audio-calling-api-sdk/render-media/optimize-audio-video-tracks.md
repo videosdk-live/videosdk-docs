@@ -150,9 +150,9 @@ function App() {
 }
 ```
 
-#### Custom Track with `enableWebcam()`
+#### Custom Track with methods
 
-In order to switch tracks during the meeting, you have to pass the `MediaStream` in the `enableWebcam()` method of `useMeeting`.
+In order to switch tracks during the meeting, you have to pass the `MediaStream` in the **`enableWebcam()` or `toggleWebcam()`** method of `useMeeting`.
 
 :::note
 
@@ -340,11 +340,9 @@ function App() {
 }
 ```
 
-#### Custom Track with `unmuteMic()`
+#### Custom Track with methods
 
-In order to switch tracks during the meeting, you have to pass the `MediaStream` in the `unmuteMic()` method of `useMeeting`.
-
-You can also pass custom track in `toggleMic()` method of `useMeeting`.
+In order to switch tracks during the meeting, you have to pass the `MediaStream` in the **`unmuteMic()` or `toggleMic()`** method of `useMeeting`.
 
 :::note
 
@@ -459,11 +457,7 @@ let customTrack = await createScreenShareVideoTrack({
 
 ### Using Custom Screen Share Track
 
-#### Custom Track with `enableScreenShare()`
-
-In order to switch tracks during the meeting, you have to pass the `MediaStream` in the `enableScreenShare()` method of `useMeeting`.
-
-You can also pass custom track in `toggleScreenShare()` method of `useMeeting`.
+In order to switch tracks during the meeting, you have to pass the `MediaStream` in the **`enableScreenShare()` or `toggleScreenShare()`** method of `useMeeting`.
 
 :::note
 
