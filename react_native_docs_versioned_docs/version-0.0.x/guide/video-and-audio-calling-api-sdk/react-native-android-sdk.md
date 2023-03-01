@@ -180,6 +180,8 @@ buildscript {
   }
 }
 
+```
+
 ## Use hooks API
 
 Our React JS SDK provides two important hooks API:
@@ -197,4 +199,3 @@ Also, React Provider and Consumer to listen changes in meeting environment.
 Check out official example of React Native SDK implementation: [videosdk-rtc-react-native-sdk-example](https://github.com/videosdk-live/videosdk-rtc-react-native-sdk-example)
 
 :::
-```

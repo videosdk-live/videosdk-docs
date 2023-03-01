@@ -21,7 +21,9 @@ In these guide we will take a look at how to efficiently manage the participants
 
 ## Grid Layout
 
-The most usual way to showing participants within a grid. There are multiple thigns you should keep in mind when showing participants in the grid.
+The most usual way to showing participants within a grid. There are multiple things you should keep in mind when showing participants in the grid.
+
+These includes the number of participants being shown on the screens, number of participants in the background(in the meeting but not on the grid), quality which is being consumed for each and every participant in the grid.
 
 ### Quality of Participant's Video
 

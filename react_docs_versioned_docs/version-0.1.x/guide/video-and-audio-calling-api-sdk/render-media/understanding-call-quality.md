@@ -21,17 +21,17 @@ When developing a video call app, customer satisfaction heavily depends on your 
 
 ## Call Quality
 
-If we look at the video quality from the user's perspective, a good video quality can be defined as smooth and clear video, along with a crystal clear audio. If the same is viewed from the developer's perspective, a good video quality can be determined as a high resolution, high framerate video with minimal latency along with a high bitrate audio with minimal audio loss.
+If we look at the video quality from the user's perspective, a good video quality can be defined as smooth and clear video, along with a crystal clear audio. If the same is viewed from the developer's perspective, a good video quality can be determined as a high resolution, high frame rate video with minimal latency along with a high bitrate audio with minimal audio loss.
 
 ## Factors affecting Quality
 
-When it comes to measuring the video and audio quality of a call, there are multiple variables to consider and the most common factors which affect the video and audio quality are:
+When it comes to measuring the video and audio quality of a call, there are multiple variables to consider, and the most common factors which affect the video and audio quality are:
 
 ### `1. Network Bandwidth`
 
-- Network bandwidth is a measurement of a user's network capability to how large data can be receive and send.
-- If the bandwidth is low at participant side, he/she is likely to get pixeleted or frozen video along with robotic voice or minor breaking in the audio.
-- Frequent change in the network providers can also result in high fluctuation of the internet bandwidth which can also result in poor quality video.
+- Network bandwidth is a measurement of a user's network capability to how large data can be received and send.
+- If the bandwidth is low at participant side, he/she is likely to get pixelated or frozen video along with robotic voice or minor breaking in the audio.
+- Frequent change in the network providers can also result in high fluctuation of the internet bandwidth, which can also result in poor quality video.
 
 ### `2. Latency`
 
@@ -41,9 +41,9 @@ When it comes to measuring the video and audio quality of a call, there are mult
 
 ### `3. CPU Usage`
 
-- CPU Usage is a also quite determinig factor as all the audio and video streams which are going out and coming in will have to encoded or decoded which will require a significant amount of computation.
-- The high the resolution and framerate of the videos, the larger would be the computation required which can be a reason for the bottleneck of delivering a good quality video.
-- If the CPU is being consumed heavily it can also result in a choppy or robotic audio.
+- CPU Usage is an also quite determining factor as all the audio and video streams which are going out and coming in will have to encoded or decoded which will require a significant amount of computation.
+- The high the resolution and frame rate of the videos, the larger would be the computation required, which can be a reason for the bottleneck of delivering a good quality video.
+- If the CPU is being consumed heavily, it can also result in a choppy or robotic audio.
 
 ### `4. Camera and Mic Quality`
 
@@ -55,17 +55,17 @@ In order to identify quality issues, VideoSDK collects multiple audio and video 
 
 ### `1. Resolutions and Framerates`
 
-- Resolution and framerate are key metrics for video quality in a video call app. Resolution refers to the number of pixels in a video image, while framerate refers to the number of frames displayed per second.
+- Resolution and frame rate are key metrics for video quality in a video call app. Resolution refers to the number of pixels in a video image, while frame rate refers to the number of frames displayed per second.
 
-- Higher resolutions and framerates can provide better video quality, but they also require more bandwidth and processing power. It's important to optimize these metrics for the devices and network conditions of your users.
+- Higher resolutions and frame rates can provide better video quality, but they also require more bandwidth and processing power. It's important to optimize these metrics for the devices and network conditions of your users.
 
-- For example, if most of your users are on mobile devices, a lower resolution and framerate may be more appropriate to ensure smooth playback and minimize bandwidth usage.
+- For example, if most of your users are on mobile devices, a lower resolution and frame rate may be more appropriate to ensure smooth playback and minimize bandwidth usage.
 
-- If most of your users are on mobile and desktop devices, having higher resolution for desktop and mid resolutions for mobile devices can help in improving the performance and quality as we will be saving the bandwith on the mobile end..
+- If most of your users are on mobile and desktop devices, having higher resolution for desktop and mid-resolutions for mobile devices can help in improving the performance and quality as we will be saving the bandwidth on the mobile end.
 
 ### `2. Bitrate`
 
-- Bitrate is the number of bits per second send or recieved during the transmission of audio or video streams. Bitrate can be a key parameter to determine the quality of the audio or video streams, as it should be fine tuned for each resolution to achieve the best match of performance and bandwidth utilization.
+- Bitrate is the number of bits per second send or received during the transmission of audio or video streams. Bitrate can be a key parameter to determine the quality of the audio or video streams, as it should be fine-tuned for each resolution to achieve the best match of performance and bandwidth utilization.
 
 - If the users are having excellent network conditions, higher bitrate can result in much better video quality but on the other hand, having very high bitrates on the mobile devices can result in heating issues due to high computation required to encode and decode the videos.
 
@@ -75,15 +75,15 @@ In order to identify quality issues, VideoSDK collects multiple audio and video 
 
 ### `4. Jitter`
 
-When the audio and video packets are being transmitted between server and client, they are being sent out at aregulat intervals over a set amount of time. But when there is a fluctuation in sending or recieveing these data packets due to inconsistent network connection it creates jitter.
+- The audio and video packets are sent out at random intervals over a specified time frame as they are being sent between the server and client. Nevertheless, jitter is produced when there is a variation in transmitting or receiving these data packets as a result of a faulty network connection.
 
-When data packets get stuck on their way to the receiver, usually because the network is congested. They'll arrive at irregular intervals, increasing the jitter and will sounding like choppy, distorted or robotic audio on a call or appear as pixelated video on a video call when they arrive.
+- When data packets delay while being transmitted to the participant, usually because the network is busy. They'll display as pixelated video on a video call or sound choppy, distorted, or robotic on a voice call as they arrive. They'll arrive at random intervals, creating jitter.
 
 ### `5. Round Trip Time (Latency)`
 
-Round trip time is the amount of time required to transmit the data packets to send or recieve from the server. If the servers are located very far from the user's location they can observe a high latency.
+- Round trip time is the amount of time required to transmit the data packets to send or receive from the server. If the servers are located very far from the user's location, they can observe a high latency (delay).
 
-With VideoSDK, these factor is taken care of as we automattically choose the nearest available server for participants. But if you are geo-fencing to a certain region you should make sure that you choose the server which will be neearest to your users.
+- With VideoSDK, these factor is taken care of as we automatically choose the nearest available server for participants. But if you are geofencing to a certain region, you should make sure that you choose the server which will be nearest to your users.
 
 ## Checking Realtime Statistics
 
@@ -93,19 +93,19 @@ VideoSDK provides methods to check the realtime statistics of the audio and vide
 
 - `getVideoStats()` returns an array of object containing the different quality parameters for video stream which can be accessed through the `useParicipant` hook.
 
-- These objects will contain the resolution, frame rate, bitrate, jitter, round trip time and packet loss values or the particular video stream of the participant.
+- These objects will have values for the specific participant's video stream resolution, frame rate, bitrate, jitter, round trip time, and packet loss.
 
 ### `getAudioStats()`
 
 - `getAudioStats()` returns an array of object containing the different quality parameters for audio stream which can be accessed through the `useParicipant` hook.
 
-- These objects will contain the bitrate, jitter, round trip time and packet loss values or the particular audio stream of the participant.
+- These objects will have values for the specific participant's audio stream bitrate, jitter, round trip time and packet loss.
 
 ### `getShareStats()`
 
 - `getShareStats()` returns an array of object containing the different quality parameters for screen share stream which can be accessed through the `useParicipant` hook.
 
-- These objects will contain the resolution, frame rate, bitrate, jitter, round trip time and packet loss values or the particular screen share stream of the participant.
+- These objects will have values for the specific participant's screen share stream resolution, frame rate, bitrate, jitter, round trip time, and packet loss.
 
 ## Quality analysis Graphs
 

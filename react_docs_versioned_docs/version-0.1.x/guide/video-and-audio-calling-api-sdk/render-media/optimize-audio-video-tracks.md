@@ -19,13 +19,13 @@ sidebar_position: 1
 
 # Optimize Audio and Video Tracks
 
-While optimizing for the quality it is necessary to fine-tune the audio and video tracks that are being used during the calls.
+While optimizing for the for the best vieweing experience it is necessary to fine-tune the audio and video tracks that are being used during the calls.
 
-For the best fine-tuning experience have introduced the ability to pass a custom video and audio track for the participant's media.
+For the best fine-tuning experience wehave introduced the ability to pass a custom video and audio track for the participant's media before and during the meeting.
 
 ## Custom Video Tracks
 
-This feature can be used to add custom video encoder configurations, optimization mode (whether you want to focus on **motion**, **text** or **detail** of the video) and background removal & video filter from external SDK(e.g., [videosdk-media-processor](https://www.npmjs.com/package/@videosdk.live/videosdk-media-processor-web)) and send it to other participants.
+This feature can be used to add custom video encoder configurations, optimization mode (whether you want to focus on **motion**, **text** or **detail** of the video) and background removal & video filter from external libraries(e.g., [videosdk-media-processor](https://www.npmjs.com/package/@videosdk.live/videosdk-media-processor-web)) and send it to other participants.
 
 ### Creating a Custom Video Track
 
@@ -46,8 +46,14 @@ This feature can be used to add custom video encoder configurations, optimizatio
   - required: `false`
   - default: `h360p_w640p`
   - Allowed values : `h90p_w160p` | `h180p_w320p` | `h216p_w384p` | `h360p_w640p` | `h540p_w960p` | `h720p_w1280p` | `h1080p_w1920p` | `h1440p_w2560p` | `h2160p_w3840p` | `h120p_w160p` | `h180p_w240p` | `h240p_w320p` | `h360p_w480p` | `h480p_w640p` | `h540p_w720p` | `h720p_w960p` | `h1080p_w1440p` | `h1440p_w1920p`
-  - It will be the encoderConfigs you can want to use for the Video Track.
-  - Each encoder configuration takes into consideration the best suited framerates and bitrate combination based upon the resolution specified.
+
+  - Allowed values : `h180p_w320p` | `h360p_w640p` | `h540p_w960p` | `h720p_w1280p` | `h1080p_w1920p` | `h1440p_w2560p` | `h2160p_w3840p` | `h180p_w240p` | `h360p_w480p` | `h540p_w720p` | `h720p_w960p` | `h1080p_w1440p` | `h1440p_w1920p`
+  - These parameter will allow you to change the resolution of the video tracks that are created along with the coresponding frame rate.
+  - Each encoder configuration can influences several factors including the desired output quality, resolution, frame rate, and bit rate. The appropriate combination of these parameters will depend on the specific use case and requirements of the application.
+
+  - In general, higher resolutions and frame rates will require higher bit rates in order to maintain a desirable level of video quality. Similarly, lower resolutions and frame rates may be adequately served by lower bit rates. However, this is not always the case and other factors such as the complexity of the video content, encoding algorithm, and the available network bandwidth should also be considered when choosing the appropriate combination of parameters.
+
+  - Take a [look at the recommended settings](#recommended-video-settings) to know better which configuration suites your use-case.
 
 :::note
 
@@ -60,7 +66,7 @@ Above mentioned encoder configurations are valid for both, landscape as well as 
   - type: `String`
   - required: `false`
   - Allowed values : `front` | `environment`
-  - It will specifiy whether to use fron or back camera for the video track.
+  - It will specifiy whether to use front or back camera for the video track.
 
 - **optimizationMode**
 
