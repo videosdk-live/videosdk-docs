@@ -128,6 +128,14 @@
             "guide/video-and-audio-calling-api-sdk/plugins/noise-suppresion"
           ],
           "collapsed": true
+        },
+        {
+          "type": "category",
+          "label": "Audio Level and Volume",
+          "items": [
+            "guide/video-and-audio-calling-api-sdk/audio-level-and-volume/set-audio-volume"
+          ],
+          "collapsed": true
         }
       ]
     }
