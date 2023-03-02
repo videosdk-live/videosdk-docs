@@ -1,0 +1,84 @@
+{
+  "fetchAllRTMP": {
+    "title": "Fetch all RTMP",
+    "description": "This API lets you fetch all RTMP streams.",
+    "headers": [
+      {
+        "key": "Authorization",
+        "value": "$YOUR_TOKEN"
+      },
+      {
+        "key": "Content-Type",
+        "value": "application/json"
+      }
+    ],
+    "methodType": "GET",
+    "postParameters": [],
+    "queryParameters": [
+      {
+        "key": "roomId",
+        "value": "xyz",
+        "description": "#### The ID of the Room.",
+        "required": true
+      },
+      {
+        "key": "sessionId",
+        "value": "xyz",
+        "description": "#### The ID of the Session.",
+        "required": false
+      },
+      {
+        "key": "page",
+        "defaultValue": "`1`",
+        "value": "1",
+        "description": "#### Page number for the recording",
+        "required": false
+      },
+      {
+        "key": "perPage",
+        "defaultValue": "`20`",
+        "value": "20",
+        "description": "#### Number of recordings you want per page.",
+        "required": false
+      }
+    ],
+    "parameters": [],
+    "apiEndpoint": "https://api.videosdk.live/v2/livestreams/",
+    "response": {
+      "pageInfo": {
+        "currentPage": 1,
+        "perPage": 20,
+        "lastPage": 1,
+        "total": 2
+      },
+      "data": [
+        {
+          "id": "6dfadfgdf3e5fa80sdfdfsaed9be",
+          "sessionId": "63e5fa3dbdxe4fa80eqwbe22d96",
+          "outputs": [
+            {
+              "streamKey": "fcz-4da-dver-qxzp-0rm",
+              "url": "rtmp://a.rtmp.youtube.com/live2"
+            }
+          ],
+          "start": "2023-02-10T08:08:54.551Z",
+          "end": "2023-02-10T08:12:05.793Z",
+          "roomId": "f8a-el1-ftt5"
+        },
+        {
+          "id": "46f5eefr450805273b7189f43",
+          "sessionId": "63ee5023ehy73bb4a718ee4",
+          "outputs": [
+            {
+              "streamKey": "fcz-4da-dver-qxzp-0rm",
+              "url": "rtmp://a.rtmp.youtube.com/live2"
+            }
+          ],
+          "start": "2023-02-10T07:11:04.987Z",
+          "end": "2023-02-10T07:12:17.965Z",
+          "roomId": "f8a-el1-ftt5"
+        }
+      ]
+    }
+  }
+}
