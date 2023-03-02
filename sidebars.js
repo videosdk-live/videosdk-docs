@@ -161,6 +161,7 @@ module.exports = {
         "guide/prebuilt-video-and-audio-calling/features/left-screen",
         "guide/prebuilt-video-and-audio-calling/features/waiting-screen",
         "guide/prebuilt-video-and-audio-calling/features/debug-mode",
+        "guide/prebuilt-video-and-audio-calling/features/audio-video-config",
       ],
       collapsed: true,
     },
