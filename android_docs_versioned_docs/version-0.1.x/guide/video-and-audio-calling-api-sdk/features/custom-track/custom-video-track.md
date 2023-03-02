@@ -126,7 +126,7 @@ override fun onCreate(savedInstanceState: Bundle?) {
 
     val customTracks: MutableMap<String, CustomStreamTrack> = HashMap()
     val videoCustomTrack: CustomStreamTrack =
-    VideoSDK.createCameraVideoTrack("h240p_w320p", "back", CustomStreamTrack.VideoMode.MOTION, this)
+    VideoSDK.createCameraVideoTrack("h240p_w320p", "back", false, CustomStreamTrack.VideoMode.MOTION, this)
     customTracks["video"] = videoCustomTrack  //Key must be "video"
 
      // create a new meeting instance
@@ -135,7 +135,7 @@ override fun onCreate(savedInstanceState: Bundle?) {
       //MicEnabled 
       true,  
       //WebcamEnabled , If true, it will use the passed custom track to turn webcam on
-      true,  
+      true,
       // ParticipantId
       null,
       //Pass the custom tracks here

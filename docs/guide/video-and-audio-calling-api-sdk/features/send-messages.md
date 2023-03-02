@@ -1,6 +1,6 @@
 ---
 title: Send Messages
-hide_title: false
+hide_title: true
 hide_table_of_contents: false
 description: Send Messages features quick integrate in Javascript, React JS, Android, IOS, React Native, Flutter with Video SDK to add live video & audio conferencing to your applications.
 sidebar_label: Send Messages
@@ -15,6 +15,23 @@ image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
 slug: send-messages
 ---
+
+:::caution
+
+**This page has been deprecated.**
+
+We've released a new version of pages with some improvements and smoother experience.
+
+Here is the link of each SDK for this page.
+
+- [JS](/javascript/guide/video-and-audio-calling-api-sdk/features/pubsub)
+- [React](/react/guide/video-and-audio-calling-api-sdk/features/pubsub)
+- [React Native](/react-native/guide/video-and-audio-calling-api-sdk/features/pubsub)
+- [Android](/android/guide/video-and-audio-calling-api-sdk/features/pubsub)
+- [iOS](/ios/guide/video-and-audio-calling-api-sdk/features/pubsub)
+- [Flutter](/flutter/guide/video-and-audio-calling-api-sdk/features/pubsub)
+
+:::
 
 # Send Messages
 

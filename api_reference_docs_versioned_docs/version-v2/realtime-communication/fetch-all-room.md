@@ -1,5 +1,5 @@
 ---
-title: Fetch Rooms | Video SDK
+title: Fetch Rooms 
 sidebar_position: 3
 sidebar_label: Fetch Rooms
 hide_table_of_contents: true

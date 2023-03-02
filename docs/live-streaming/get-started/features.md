@@ -1,29 +1,12 @@
 ---
 sidebar_position: 1
+hide_title: true
 ---
 
-# What we offer
+:::caution
 
-## Explore amazing features
+# Sorry :pray:
 
-Let's discover **Live Streaming SDK features in less than 5 minutes**.
+**This product is no longer available, you can review our other product on this [link](https://docs.videosdk.live/) or connect with us on [Discord](https://discord.gg/videosdk-live-876774498798551130).**
 
-### ✅ : Shipped
-
-### 🚧 : Working on it
-
-### ❌ : Not implemented
-
-## Features
-
-|                                           | SDK |
-| ----------------------------------------- | --- |
-| RTMP support                              | ✅  |
-| APIs for live streaming                   | ✅  |
-| stream through OBS Studio, StreamLabs etc | ✅  |
-| Adaptive live streaming                   | ✅  |
-| Record live stream                        | ✅  |
-| Playback support                          | ✅  |
-| Embeded Player                            | 🚧  |
-| Connect to Faceboook, YoutubeLive etc     | 🚧  |
-| Private live streaming                    | 🚧  |
+:::

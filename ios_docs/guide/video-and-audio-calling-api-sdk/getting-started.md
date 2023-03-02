@@ -46,9 +46,6 @@ import Card from '@theme/Card';
    <div class="col col--6" >
       <Card heading="5. Basic Features" link="/ios/guide/video-and-audio-calling-api-sdk/features/start-join-meeting" description="Explore basic features such as join, leave and customise sessions."  />
     </div>
-    <div class="col col--6">
-      <Card heading="6. Advanced Features" link="/ios/guide/video-and-audio-calling-api-sdk/features/go-live-social-media" description="Explore advanced features such as screen sharing, recording and live streaming" />
-    </div>
   </div>
 </div>
 

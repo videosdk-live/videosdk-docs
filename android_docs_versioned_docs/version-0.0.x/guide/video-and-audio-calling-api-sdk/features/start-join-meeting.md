@@ -34,7 +34,7 @@ After the successful installation of VideoSDK, the next step is to integrate Vid
 
 ## 1. Configuration
 
-To configure a meeting, you will need [generated token](/android/guide/video-and-audio-calling-api-sdk/server-setup#generate-accees-token-and-integrate-other-apis) and [meetingId](/api-reference/v1/realtime-communication/create-join-meeting#create-meeting), we had discussed in [Server Setup](/android/guide/video-and-audio-calling-api-sdk/server-setup).
+To configure a meeting, you will need [generated token](/android/guide/video-and-audio-calling-api-sdk/server-setup#generate-accees-token-and-integrate-other-apis) and [meetingId](/api-reference/realtime-communication/create-room), we had discussed in [Server Setup](/android/guide/video-and-audio-calling-api-sdk/server-setup).
 This code snippet calls API from local server
 
 **Scenario 1** - Suppose you **don't have** any meetingId, you can simply generate meetingId by invoking `create-meeting` API.
@@ -42,22 +42,6 @@ This code snippet calls API from local server
 **Scenario 2** - Suppose you **have** meetingId, now you don't have to call `create-meeting` API to generate meetingId, instead you can call `validate-meeting` API to validate meetingId.
 
 **Token generation API is necessary for both scenario.**
-
-:::note
-You can take advantage of regional API to decrease latency in video calling.
-
-To achieve region based meetings, just pass `region : REGION_CODE` parameter in `create-meeting` request Body.
-
-Currently the below regions are supported:
-
-- `sg001` Region Code for Singapore, SG.
-- `in002` Region Code for Mumbai, IN.
-- `us001` Region Code for N. Carolina, US.
-- `eu001` Region Code for Frankfurt, DE.
-- `us002` Region Code for Ohio, US.
-
-In case you are not providing any region code, the default region will be `sg001`.
-:::
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -114,7 +98,6 @@ class JoinActivity : AppCompatActivity() {
     AndroidNetworking
       .post("$apiServerUrl/create-meeting")
       .addBodyParameter("token", token)
-      .addBodyParameter("region", "sg001")
       .build()
       .getAsJSONObject(
         object : JSONObjectRequestListener {
@@ -217,7 +200,6 @@ public class JoinActivity extends AppCompatActivity {
     AndroidNetworking
       .post(apiServerUrl + "/create-meeting")
       .addBodyParameter("token", token)
-      .addBodyParameter("region", "sg001")
       .build()
       .getAsJSONObject(
         new JSONObjectRequestListener() {
@@ -321,6 +303,7 @@ class MainActivity : AppCompatActivity() {
     val participantName = "John Doe"
     val micEnabled = true
     val webcamEnabled = true
+    val multiStream = false
     val paticipantId="demo@123"  // If you passed `null` then SDK will create an Id by itself and will use that id.
 
     // Configure authentication token
@@ -333,6 +316,7 @@ class MainActivity : AppCompatActivity() {
       participantName,
       micEnabled,
       webcamEnabled,
+      multiStream,
       paticipantId,
       null
     )
@@ -361,6 +345,7 @@ public class MainActivity extends AppCompatActivity {
         final String participantName = "John Doe";
         final boolean micEnabled = true;
         final boolean webcamEnabled = true;
+        final boolean multiStream = false;
         final String participantId = "demo@123"; // If you passed `null` then SDK will create an Id by itself and will use that id.
 
         // Configure authentication token
@@ -373,6 +358,7 @@ public class MainActivity extends AppCompatActivity {
                 participantName,
                 micEnabled,
                 webcamEnabled,
+                multiStream,
                 participantId,
                 null
         );

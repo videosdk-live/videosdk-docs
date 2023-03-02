@@ -171,6 +171,7 @@ class MainApplication : Application() {
     }
 }
 ```
+
 </TabItem>
 
 <TabItem value="Java">
@@ -187,6 +188,7 @@ public class MainApplication extends Application {
     }
 }
 ```
+
 </TabItem>
 
 </Tabs>
@@ -267,7 +269,7 @@ values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
 
 ```js title="JoinActivity.kt"
 //Replace with the token you generated from the VideoSDK Dashboard
-var sampleToken =""
+var sampleToken = "";
 ```
 
 </TabItem>
@@ -283,10 +285,7 @@ String sampleToken = "";
 
 </Tabs>
 
-
-
 2. On **Join Button** `onClick` events, we will naviagte to `MeetingActivity` with token and meetingId.
-
 
 <Tabs
 defaultValue="Kotlin"
@@ -321,6 +320,7 @@ class JoinActivity : AppCompatActivity() {
     }
 }
 ```
+
 </TabItem>
 
 <TabItem value="Java">
@@ -353,12 +353,12 @@ public class JoinActivity extends AppCompatActivity {
   }
 }
 ```
+
 </TabItem>
 
 </Tabs>
 
 3. For **Create Button**, under `createMeeting` method we will gnerate meetingId by calling API and navigate to `MeetingActivity` with token and generated meetingId.
-
 
 <Tabs
 defaultValue="Kotlin"
@@ -371,13 +371,13 @@ values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
 class JoinActivity : AppCompatActivity() {
   //...onCreate
  private fun createMeeting(token: String) {
-        AndroidNetworking.post("https://api.videosdk.live/v1/meetings")
+        AndroidNetworking.post("https://api.videosdk.live/v2/rooms")
             .addHeaders("Authorization", token)
             .build()
             .getAsJSONObject(object : JSONObjectRequestListener {
                 override fun onResponse(response: JSONObject) {
                     try {
-                        val meetingId = response.getString("meetingId")
+                        val meetingId = response.getString("roomId")
                         val intent = Intent(this@JoinActivity, MeetingActivity::class.java)
                         intent.putExtra("token", sampleToken)
                         intent.putExtra("meetingId", meetingId)
@@ -398,6 +398,7 @@ class JoinActivity : AppCompatActivity() {
     }
 }
 ```
+
 </TabItem>
 
 <TabItem value="Java">
@@ -408,15 +409,15 @@ public class JoinActivity extends AppCompatActivity {
 
   private void createMeeting(String token) {
     // we will make an API call to VideoSDK Server to get a meetingId
-    AndroidNetworking.post("https://api.videosdk.live/v1/meetings")
+    AndroidNetworking.post("https://api.videosdk.live/v2/rooms")
       .addHeaders("Authorization", token) //we will pass the token in the Headers
       .build()
       .getAsJSONObject(new JSONObjectRequestListener() {
         @Override
         public void onResponse(JSONObject response) {
           try {
-            // resposne will contain `meetingId`
-            final String meetingId = response.getString("meetingId");
+            // resposne will contain `roomId`
+            final String meetingId = response.getString("roomId");
 
             // starting the MeetingActivity with recieved meetingId and our sampleToken
             Intent intent = new Intent(JoinActivity.this, MeetingActivity.class);
@@ -437,12 +438,12 @@ public class JoinActivity extends AppCompatActivity {
   }
 }
 ```
+
 </TabItem>
 
 </Tabs>
 
 4. Our App is completely based on audio and video commutation, that's why we need to ask for runtime permissions `RECORD_AUDIO` and `CAMERA`. So, we will implement permission logic on `JoinActivity`.
-
 
 <Tabs
 defaultValue="Kotlin"
@@ -660,6 +661,7 @@ class MeetingActivity : AppCompatActivity() {
   }
 }
 ```
+
 </TabItem>
 
 <TabItem value="Java">
@@ -722,6 +724,7 @@ public class MeetingActivity extends AppCompatActivity {
   };
 }
 ```
+
 </TabItem>
 
 </Tabs>
@@ -904,7 +907,7 @@ values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
 
 ```js title="ParticipantAdapter.kt"
 class ParticipantAdapter(meeting: Meeting) : RecyclerView.Adapter<ParticipantAdapter.PeerViewHolder>() {
- 
+
   private var containerHeight = 0
 
   override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PeerViewHolder {
@@ -993,7 +996,7 @@ values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
 ```js title="ParticipantAdapter.kt"
 class ParticipantAdapter(meeting: Meeting) :
     RecyclerView.Adapter<ParticipantAdapter.PeerViewHolder>() {
-    
+
   // creating a empty list which will store all participants
   private val participants: MutableList<Participant> = ArrayList()
 
@@ -1033,6 +1036,7 @@ class ParticipantAdapter(meeting: Meeting) :
   //...
 }
 ```
+
 </TabItem>
 
 <TabItem value="Java">
@@ -1083,6 +1087,7 @@ public class ParticipantAdapter extends RecyclerView.Adapter<ParticipantAdapter.
   //...
 }
 ```
+
 </TabItem>
 
 </Tabs>
@@ -1141,6 +1146,7 @@ class ParticipantAdapter(meeting: Meeting) :
   }
 }
 ```
+
 </TabItem>
 
 <TabItem value="Java">
@@ -1193,6 +1199,7 @@ public class ParticipantAdapter extends RecyclerView.Adapter<ParticipantAdapter.
   }
 }
 ```
+
 </TabItem>
 
 </Tabs>

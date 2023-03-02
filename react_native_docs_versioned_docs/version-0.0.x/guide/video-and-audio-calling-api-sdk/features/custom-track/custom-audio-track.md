@@ -73,7 +73,7 @@ import { createMicrophoneAudioTrack } from "@videosdk.live/react-native-sdk";
 let customTrack = await createMicrophoneAudioTrack({
   encoderConfig: "high_quality",
   noiseConfig: {
-    noiseSuppresion: true,
+    noiseSuppression: true,
     echoCancellation: true,
     autoGainControl: true,
   },
@@ -90,14 +90,14 @@ If you are passing `micEnabled: true` in the `config` of `MeetingProvider` and w
 import {
   createMicrophoneAudioTrack,
   MeetingProvider,
-} from "@videosdk.live/react-sdk";
+} from "@videosdk.live/react-native-sdk";
 
 function App() {
   const getTrack = async () => {
     const track = await await createMicrophoneAudioTrack({
       encoderConfig: "high_quality",
       noiseConfig: {
-        noiseSuppresion: true,
+        noiseSuppression: true,
         echoCancellation: true,
         autoGainControl: true,
       },
@@ -149,12 +149,12 @@ Make sure to call `muteMic()` befor you create a new track as it may lead to une
 import {
   createMicrophoneAudioTrack,
   useMeeting,
-} from "@videosdk.live/react-sdk";
+} from "@videosdk.live/react-native-sdk";
 
 let customTrack = await createMicrophoneAudioTrack({
   encoderConfig: "high_quality",
   noiseConfig: {
-    noiseSuppresion: true,
+    noiseSuppression: true,
     echoCancellation: true,
     autoGainControl: true,
   },

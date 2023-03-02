@@ -1,6 +1,6 @@
 ---
 title: Start a Video & Audio Call in Flutter SDK - Video SDK Docs
-hide_title: false
+hide_title: true
 hide_table_of_contents: false
 description: Build customizable real-time video & audio calling applications in Flutter SDK using Video SDK add live Video & Audio conferencing to your applications.
 sidebar_label: "Flutter"
@@ -14,6 +14,18 @@ image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
 slug: flutter-sdk
 ---
+
+:::caution
+
+**This page has been deprecated.**
+
+We've released a new version of pages with some improvements and smoother experience.
+
+Here is the link of SDK for this page.
+
+- [Flutter](/flutter/guide/video-and-audio-calling-api-sdk/flutter-sdk)
+
+:::
 
 # Getting Started - Flutter SDK
 

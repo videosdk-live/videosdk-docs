@@ -15,6 +15,18 @@ sidebar_position: 1
 slug: android-sdk
 ---
 
+:::caution
+
+**This page has been deprecated.**
+
+We've released a new version of pages with some improvements and smoother experience.
+
+Here is the link of SDK for this page.
+
+- [Android](/android/guide/video-and-audio-calling-api-sdk/android-sdk)
+
+:::
+
 # Getting Started - Android SDK
 
 Android SDK is natively written SDK using Java. It is compatible with both Java and Kotlin.

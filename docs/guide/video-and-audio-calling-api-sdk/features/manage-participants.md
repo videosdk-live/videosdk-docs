@@ -1,6 +1,6 @@
 ---
 title: Manage Participants Video & Audio Call - Video SDK Docs
-hide_title: false
+hide_title: true
 hide_table_of_contents: false
 description: Manage Participants features quick integrate in Javascript, React JS, Android, IOS, React Native, Flutter with Video SDK to add live video & audio conferencing to your applications.
 sidebar_label: Manage Participants
@@ -15,6 +15,23 @@ image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
 slug: manage-participants
 ---
+
+:::caution
+
+**This page has been deprecated.**
+
+We've released a new version of pages with some improvements and smoother experience.
+
+Here is the link of each SDK for this page.
+
+- [JS](/javascript/guide/video-and-audio-calling-api-sdk/features/manage-participants)
+- [React](/react/guide/video-and-audio-calling-api-sdk/features/manage-participants)
+- [React Native](/react-native/guide/video-and-audio-calling-api-sdk/features/manage-participants)
+- [Android](/android/guide/video-and-audio-calling-api-sdk/features/manage-participants)
+- [iOS](/ios/guide/video-and-audio-calling-api-sdk/features/manage-participants)
+- [Flutter](/flutter/guide/video-and-audio-calling-api-sdk/features/manage-participants)
+
+:::
 
 # Manage Participants
 

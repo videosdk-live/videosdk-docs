@@ -7,6 +7,64 @@ pagination_label: Release Notes
 
 This page will keep you update all the releases of Android SDK.
 
+## v0.1.13
+
+**Release Date** : 13th january 2023
+
+**Change log** :
+
+- Provide  `VideoView`  component which can render video stream.
+
+    **Docs** : [VideoView](https://docs.videosdk.live/android/guide/video-and-audio-calling-api-sdk/components/videoView)
+    
+## v0.1.12
+
+**Release Date** : 3rd Janurary 2023
+
+**Change log** :
+
+- Provide support of [`mavenCentral()`](https://search.maven.org/artifact/live.videosdk/rtc-android-sdk)
+---
+
+## v0.1.11
+
+**Release Date** : 28th December 2022
+
+**Bug Fix** :
+
+- Fix jitpack issue.
+
+---
+
+## v0.1.10
+
+**Release Date** : 24th December 2022
+
+**Change log** :
+
+1. To obtain video, audio and screen sharing statistics, the `Participant` class now has a [`getVideoStats()`](../../api/sdk-reference/participant-class/methods.md#getvideostats),[`getAudioStats()`](../../api/sdk-reference/participant-class/methods.md#getaudiostats),[`getShareStats()`](../../api/sdk-reference/participant-class/methods.md#getsharestats) methods.
+
+2. Remove `multiStream` Support.
+
+---
+
+## v0.1.9
+
+**Release Date** : 9th December 2022
+
+**Change log** :
+
+1. Provide `multistream` parameter for sending multiple resolution layers or single resolution layer.
+
+   **Docs** : [Multi Stream](https://docs.videosdk.live/android/guide/video-and-audio-calling-api-sdk/features/custom-track/custom-video-track)
+
+
+**Bug Fix** :
+
+1. Fix echo issue.
+
+---
+
 ## v0.1.8
 
 **Release Date** : 10th November 2022

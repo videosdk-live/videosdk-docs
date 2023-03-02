@@ -28,20 +28,56 @@ The easiest way to get started is by installing the sdk in your app.
 - If your Android Studio Version is older than Android Studio Bumblebees, add the repository to project's `build.gradle` file.
 - If your are using Android Studio Bumblebees or newer Version, add the repository to `settings.gradle` file.
 
+:::note
+
+You can use imports with Maven Central after rtc-android-sdk version `0.1.12`.
+
+Whether on Maven or Jitpack, the same version numbers always refer to the same SDK.
+
+:::
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 <Tabs
-defaultValue="2021.1.1"
-groupId={"android-studio-version"}
-values={[{label: 'Android Studio Version < 2021.1.1', value: '<2021.1.1'},{label: 'Android Studio Version 2021.1.1', value: '2021.1.1'},]}>
+defaultValue="Maven Central"
+groupId={"android-repositories"}
+values={[{label: 'Maven Central', value: 'Maven Central'},{label: 'Jitpack', value: 'Jitpack'},]}>
 
-<TabItem value="<2021.1.1">
+<TabItem value="Maven Central">
 
 ```js title="build.gradle"
 allprojects {
   repositories {
     // ...
+    google()
+    mavenCentral()
+    maven { url "https://maven.aliyun.com/repository/jcenter" }
+  }
+}
+```
+
+```js title="settings.gradle"
+dependencyResolutionManagement{
+  repositories {
+    // ...
+    google()
+    mavenCentral()
+    maven { url "https://maven.aliyun.com/repository/jcenter" }
+  }
+}
+
+```
+
+</TabItem>
+
+<TabItem value="Jitpack">
+
+```js title="build.gradle"
+allprojects {
+  repositories {
+    // ...
+    google()
     maven { url 'https://jitpack.io' }
     mavenCentral()
     maven { url "https://maven.aliyun.com/repository/jcenter" }
@@ -49,31 +85,28 @@ allprojects {
 }
 ```
 
-</TabItem>
-
-<TabItem value="2021.1.1">
-
 ```js title="settings.gradle"
 dependencyResolutionManagement{
   repositories {
     // ...
+    google()
     maven { url 'https://jitpack.io' }
     mavenCentral()
     maven { url "https://maven.aliyun.com/repository/jcenter" }
   }
 }
+
 ```
 
 </TabItem>
 
 </Tabs>
 
-
 ### Step 2: Add the dependency in `app/build.gradle`:
 
 ```js title="app/build.gradle"
 dependencies {
-		implementation 'live.videosdk:rtc-android-sdk:0.1.8'
+		implementation 'live.videosdk:rtc-android-sdk:0.1.13'
 
 		// other app dependencies
 }
@@ -81,7 +114,7 @@ dependencies {
 
 :::important
 
-Android SDK supports API Level 21 or higher.  (minSDKVersion >= 21)
+Android SDK compatible with armeabi-v7a, arm64-v8a, x86_64 architectures. If you want to run the application in an emulator, choose ABI x86_64 when creating a device.
 
 :::
 
@@ -89,19 +122,13 @@ Android SDK supports API Level 21 or higher.  (minSDKVersion >= 21)
 
 ```js title="AndroidManifest.xml"
 <uses-permission android:name="android.permission.RECORD_AUDIO" />
+<uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
 <uses-permission android:name="android.permission.INTERNET" />
 <uses-permission android:name="android.permission.READ_PHONE_STATE" />
 <uses-permission android:name="android.permission.CAMERA" />
 
-<!-- Needed to communicate with already-paired Bluetooth devices. (Legacy up to Android 11) -->
-<uses-permission
-    android:name="android.permission.BLUETOOTH"
-    android:maxSdkVersion="30" />
-<uses-permission
-    android:name="android.permission.BLUETOOTH_ADMIN"
-    android:maxSdkVersion="30" />
-
-<!-- Needed to communicate with already-paired Bluetooth devices. (Android 12 upwards)-->
+<uses-permission android:name="android.permission.BLUETOOTH" />
+<uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
 <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
 
 ```

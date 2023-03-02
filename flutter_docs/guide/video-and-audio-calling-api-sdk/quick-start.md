@@ -15,7 +15,7 @@ sidebar_position: 1
 slug: quick-start
 ---
 
-# Build a Video Calling App with VideoSDK in a Flutter Project
+# Quick Start
 
 VideoSDK enables the opportunity to integrate video & audio calling to Web, Android, IOS applications. It provides Programmable SDKs and REST APIs to build scalable video conferencing applications.
 
@@ -150,11 +150,11 @@ String token = "<Generated-from-dashboard>";
 
 Future<String> createMeeting() async {
   final http.Response httpResponse = await http.post(
-    Uri.parse("https://api.videosdk.live/v1/meetings"),
+    Uri.parse("https://api.videosdk.live/v2/rooms"),
     headers: {'Authorization': token},
   );
 
-  return json.decode(httpResponse.body)['meetingId'];
+  return json.decode(httpResponse.body)['roomId'];
 }
 ```
 

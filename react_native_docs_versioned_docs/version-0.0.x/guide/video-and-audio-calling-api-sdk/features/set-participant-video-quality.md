@@ -24,17 +24,22 @@ This feature allows participants to set other participant's video quality during
 - `setQuality` method will accept `low`, `med` or `high` as string parameter.
 
 ```js
-const { setQuality } = useParticipant(participantId);
+import { useParticipant } from "@videosdk.live/react-native-sdk";
 
-const onPressed = () => {
-  // Low Quality
-  setQuality("low");
+const MeetingView = () => {
+  const { setQuality } = useParticipant(participantId);
 
-  // Medium Quality
-  setQuality("med");
+  const onPress = () => {
+    // Low Quality
+    setQuality("low");
 
-  // High Quality
-  setQuality("high");
+    // Medium Quality
+    setQuality("med");
+
+    // High Quality
+    setQuality("high");
+  };
+  return <>...</>;
 };
 ```
 
@@ -55,6 +60,8 @@ If the quality is set to high, but there is not enough netowrk bandwidth availab
 #### Example
 
 ```js
+import { useParticipant } from "@videosdk.live/react-native-sdk";
+
 function onVideoQualityChanged(data) {
   const { currentQuality, prevQuality } = data;
 }

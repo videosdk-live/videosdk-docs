@@ -20,11 +20,11 @@ slug: getting-started
 
 Video SDK enables easy to use one-to-one and group call support with voice only and voice + video call modes.
 
-:::Default Quota
+:::important
 
 A maximum of 50 participants can be added in one room.
 And a maximum of 15 videos can be turned ON in a single room.
-If your application necessitates a higher quota, please contact us [https://www.videosdk.live/contact]
+If your application necessitates a higher quota, please [**Contact Us**](https://www.videosdk.live/contact)
 
 :::
 

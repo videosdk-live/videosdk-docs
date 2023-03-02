@@ -63,4 +63,23 @@ room.localParticipant.on(Events.streamResumed, (Stream stream){
 });
 ```
 
+---
+
+### videoQualityChanged
+
+- `videoQualityChanged` is a callback which gets triggered whenever a participant's video quality changes.
+
+- `currentQuality` and `prevQuality` can have values `HIGH` | `MEDIUM` | `LOW`.
+
+#### Example
+
+```js
+participant.on(Events.videoQualityChanged, (data) {
+  String currentQuality = data["currentQuality"];
+  String prevQuality = data["prevQuality"];
+});
+```
+
+---
+
 </div>

@@ -23,21 +23,21 @@ title: userPatricipant Hook Properties
 
 ### webcamStream
 
-- type : `MediaTrackStream`
+- type : [`Stream`](../stream-class/introduction)
 - `webcamStream` represents stream of participant's webcam
 
 ---
 
 ### micStream
 
-- type : `MediaTrackStream`
+- type : [`Stream`](../stream-class/introduction)
 - `micStream` represents stream for participant's mic.
 
 ---
 
 ### screenShareStream
 
-- type : `MediaTrackStream`
+- type : [`Stream`](../stream-class/introduction)
 - `screenShareStream` represents stream of participant's screen share
 
 ---
@@ -74,6 +74,13 @@ title: userPatricipant Hook Properties
 
 - type : `boolean`
 - `isActiveSpeaker` is true if the participant is active speaker else false.
+
+---
+
+### mode
+
+- type : `string`
+- `mode` represents the mode of the Participant
 
 ---
 

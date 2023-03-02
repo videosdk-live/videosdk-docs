@@ -102,7 +102,7 @@ If you are passing `webcamEnabled: true` in the `config` of `MeetingProvider` an
 import {
   createCameraVideoTrack,
   MeetingProvider,
-} from "@videosdk.live/react-sdk";
+} from "@videosdk.live/react-native-sdk";
 
 function App() {
   const getTrack = async () => {

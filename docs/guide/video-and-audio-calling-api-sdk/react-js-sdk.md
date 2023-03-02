@@ -1,6 +1,6 @@
 ---
 title: Start a Video & Audio Call in React JS SDK - Video SDK Docs
-hide_title: false
+hide_title: true
 hide_table_of_contents: false
 description: Create customizable real-time video & audio calling applications with React JS SDK with Video SDK add live Video & Audio conferencing to your applications.
 sidebar_label: "React JS"
@@ -14,6 +14,18 @@ image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
 slug: react-js-sdk
 ---
+
+:::caution
+
+**This page has been deprecated.**
+
+We've released a new version of pages with some improvements and smoother experience.
+
+Here is the link of SDK for this page.
+
+- [React](/react/guide/video-and-audio-calling-api-sdk/react-js-sdk)
+
+:::
 
 # Getting Started - React JS SDK
 

@@ -1,6 +1,6 @@
 ---
 title: Start join Meeting Video & Audio Call - Video SDK Docs
-hide_title: false
+hide_title: true
 hide_table_of_contents: false
 description: Start or join Meeting features quick integrate in Javascript, React JS, Android, IOS, React Native, Flutter with Video SDK to add live video & audio conferencing to your applications.
 sidebar_label: Start or Join Meeting
@@ -13,6 +13,23 @@ image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
 slug: start-join-meeting
 ---
+
+:::caution
+
+**This page has been deprecated.**
+
+We've released a new version of pages with some improvements and smoother experience.
+
+Here is the link of each SDK for this page.
+
+- [JS](/javascript/guide/video-and-audio-calling-api-sdk/features/start-join-meeting)
+- [React](/react/guide/video-and-audio-calling-api-sdk/features/start-join-meeting)
+- [React Native](/react-native/guide/video-and-audio-calling-api-sdk/features/start-join-meeting)
+- [Android](/android/guide/video-and-audio-calling-api-sdk/features/start-join-meeting)
+- [iOS](/ios/guide/video-and-audio-calling-api-sdk/features/start-join-meeting)
+- [Flutter](/flutter/guide/video-and-audio-calling-api-sdk/features/start-join-room)
+
+:::
 
 # Start or Join Meeting
 
@@ -42,22 +59,6 @@ This code snippet calls API from local server
 **Scenario 2** - Suppose you **have** meetingId, now you don't have to call `create-meeting` API to generate meetingId, instead you can call `validate-meeting` API to validate meetingId.
 
 **Token generation API is necessary for both scenario.**
-
-:::note
-You can take advantage of regional API to decrease latency in video calling.
-
-To achieve region based meetings, just pass `region : REGION_CODE` parameter in `create-meeting` request Body.
-
-Currently the below regions are supported:
-
-- `sg001` Region Code for Singapore, SG.
-- `in002` Region Code for Mumbai, IN.
-- `us001` Region Code for N. Carolina, US.
-- `eu001` Region Code for Frankfurt, DE.
-- `us002` Region Code for Ohio, US.
-
-In case you are not providing any region code, the default region will be `sg001`.
-:::
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -100,7 +101,7 @@ const getMeetingId = async (token) => {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ token, region: "sg001" }),
+      body: JSON.stringify({ token }),
     };
     const response = await fetch(VIDEOSDK_API_ENDPOINT, options)
       .then(async (result) => {
@@ -170,7 +171,7 @@ const getMeetingId = async (token) => {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ token, region: "sg001" }),
+      body: JSON.stringify({ token }),
     };
     const response = await fetch(VIDEOSDK_API_ENDPOINT, options)
       .then(async (result) => {
@@ -240,7 +241,7 @@ const getMeetingId = async (token) => {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ token, region: "sg001" }),
+      body: JSON.stringify({ token }),
     };
     const response = await fetch(VIDEOSDK_API_ENDPOINT, options)
       .then(async (result) => {
@@ -334,7 +335,6 @@ public class JoinActivity extends AppCompatActivity {
     AndroidNetworking
       .post(apiServerUrl + "/create-meeting")
       .addBodyParameter("token", token)
-      .addBodyParameter("region", "sg001")
       .build()
       .getAsJSONObject(
         new JSONObjectRequestListener() {
@@ -460,7 +460,7 @@ void _getMeetingIdAndToken() async {
         Uri.parse('$LOCAL_SERVER_URL/create-meeting/');
 
     final http.Response meetingIdResponse =
-        await http.post(meetingIdUrl, body: {"token": _token,"region": "sg001"});
+        await http.post(meetingIdUrl, body: {"token": _token});
 
     final _meetingId = json.decode(meetingIdResponse.body)['meetingId'];
 

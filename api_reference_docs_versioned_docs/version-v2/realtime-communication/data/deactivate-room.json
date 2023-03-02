@@ -1,59 +1,57 @@
 {
-    "deactivateRoom": {
-        "title": "Deactivate a Room",
-        "description": "This API lets you deactivate the provided roomId for ever.",
-        "headers": [
-            {
-                "key": "Authorization",
-                "value": "$YOUR_TOKEN"
-            },
-            {
-                "key": "Content-Type",
-                "value": "application/json"
-            }
+  "deactivateRoom": {
+    "description": "This API lets you deactivate the provided roomId for ever.",
+    "headers": [
+      {
+        "key": "Authorization",
+        "value": "$YOUR_TOKEN"
+      },
+      {
+        "key": "Content-Type",
+        "value": "application/json"
+      }
+    ],
+    "methodType": "POST",
+    "postParameters": [
+      {
+        "key": "roomId",
+        "description": "#### Room id that you want to deactivate",
+        "value": "your_roomId",
+        "required": true
+      }
+    ],
+    "queryParameters": [],
+    "parameters": [],
+    "apiEndpoint": "https://api.videosdk.live/v2/rooms/deactivate",
+    "response": {
+      "webhook": {
+        "events": [
+          "participant-joined",
+          "participant-left",
+          "session-started",
+          "session-ended",
+          "recording-started",
+          "recording-stopped",
+          "livestream-started",
+          "livestream-stopped",
+          "hls-started",
+          "hls-stopped"
         ],
-        "methodType": "POST",
-        "postParameters": [
-            {
-                "key": "roomId",
-                "description": "#### Room id that you want to deactivate",
-                "value": "your_roomId",
-                "required": true
-            }
-        ],
-        "queryParameters": [],
-        "parameters": [],
-        "apiEndpoint": "https://api.videosdk.live/v2/rooms/deactivate",
-        "response": {
-            "webhook": {
-                "events": [
-                    "participant-joined",
-                    "participant-left",
-                    "session-started",
-                    "session-ended",
-                    "recording-started",
-                    "recording-stopped",
-                    "livestream-started",
-                    "livestream-stopped",
-                    "hls-started",
-                    "hls-stopped"
-                ],
-                "endPoint": "https://yourwebhook.url"
-            },
-            "disabled": true,
-            "meetingId": "aaaa-aaaa-aaaa",
-            "userMeetingId": "testmeetingid",
-            "userId": "5fa671e99x80d58c11cb93Kx",
-            "region": "sg001",
-            "createdAt": "2022-09-19T08:35:12.585Z",
-            "updatedAt": "2022-09-23T09:02:16.581Z",
-            "user": {
-                "email": "test@email.com",
-                "name": "User",
-                "discontinuedReason": null,
-                "id": "5fa671e77b80d58c11cbca95"
-            },
-            "id": "632490c0ae9e352e3600d79a"
-        }
+        "endPoint": "https://yourwebhook.url"
+      },
+      "disabled": true,
+      "meetingId": "aaaa-aaaa-aaaa",
+      "userMeetingId": "testmeetingid",
+      "userId": "5fa671e99x80d58c11cb93Kx",
+      "createdAt": "2022-09-19T08:35:12.585Z",
+      "updatedAt": "2022-09-23T09:02:16.581Z",
+      "user": {
+        "email": "test@email.com",
+        "name": "User",
+        "discontinuedReason": null,
+        "id": "5fa671e77b80d58c11cbca95"
+      },
+      "id": "632490c0ae9e352e3600d79a"
     }
+  }
 }

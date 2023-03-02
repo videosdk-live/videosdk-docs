@@ -1,5 +1,5 @@
 ---
-title: Fetch Participant Quality Stats | Video SDK
+title: Fetch Participant Quality Stats 
 sidebar_position: 1
 sidebar_label: Fetch Participant Quality Stats
 hide_table_of_contents: true

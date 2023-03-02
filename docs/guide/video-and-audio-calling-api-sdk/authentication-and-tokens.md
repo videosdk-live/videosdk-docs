@@ -17,6 +17,23 @@ slug: authentication-and-tokens
 
 import Mermaid from '@theme/Mermaid';
 
+:::caution
+
+**This page has been deprecated.**
+
+We've released a new version of pages with some improvements and smoother experience.
+
+Here is the link of each SDK for this page.
+
+- [JS](/javascript/guide/video-and-audio-calling-api-sdk/server-setup)
+- [React](/react/guide/video-and-audio-calling-api-sdk/server-setup)
+- [React Native](/react-native/guide/video-and-audio-calling-api-sdk/server-setup)
+- [Android](/android/guide/video-and-audio-calling-api-sdk/server-setup)
+- [iOS](/ios/guide/video-and-audio-calling-api-sdk/server-setup)
+- [Flutter](/flutter/guide/video-and-audio-calling-api-sdk/server-setup)
+
+:::
+
 # Authentication and Token
 
 VideoSDK uses access tokens for authentication. Using our dashboard ([app.videosdk.live](https://app.videosdk.live/)), anyone can generate access tokens tokens with an API key and secret pair.

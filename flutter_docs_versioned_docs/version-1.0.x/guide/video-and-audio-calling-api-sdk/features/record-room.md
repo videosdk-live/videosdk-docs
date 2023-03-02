@@ -24,29 +24,70 @@ Any participant can start / stop recording any time during the room.
 This guide will provide an overview of how to implement start and stop Room Recording.
 
 1. **Start Recording** - By using `startRecording()` function, a participant can start room recording.
+
+### Parameters
+
+- **webhookUrl**:
+
+  - type: `String`
+  - required: `false`
+  - It will be webhook url where you want to get teh status of the recording.
+
+- **awsDirPath**:
+
+  - type: `String`
+  - required: `false`
+  - It will be path for your AWS storage specifing where to store the recording file.
+
+- **config**:
+
+  - type: `Object`
+    - **config**:
+      - **layout**:
+        - **type**: _"GRID"_ | _"SPOTLIGHT"_ | _"SIDEBAR"_
+        - **priority**: _"SPEAKER"_ | _"PIN"_
+        - **gridSize**: Number _\`max 4\`_
+      - **theme**: _"DARK"_ | _"LIGHT"_ | _"DEFAULT"_
+      - **mode**: _"video-and-audio"_ | _"audio"_
+      - **quality**: _"low"_ | _"med"_ | _"high"_
+      - **orientation**: _"landscape"_ | _"portrait"_
+  - required: `false`
+  - It will be config for the layout of the recording you can to use.
+
 2. **Stop Recording** - By using `stopRecording()` function, a participant can stop room recording.
 
 ### Start And Stop Recording
 
 ```js
 // Start Recording
-room.startRecording('<webhookUrl>');
+room.startRecording(config: {
+  'layout': {
+    'type': 'GRID',
+    'priority': 'SPEAKER',
+    'gridSize': 4,
+  },
+  'theme': "LIGHT",
+  "mode": "video-and-audio".
+  'quality':'high'
+});
+
 // Stop Recording
 room.stopRecording(),
 ```
 
 ### Events
 
-1. **recordingStarted** - Whenever any participant start room recording, then `recordingStarted` event will trigger.
-
-2. **recordingStopped** - Whenever any participant stop room recording, then `recordingStopped` event will trigger.
+- **recordingStateChanged** - Whenever meeting recording state changes, then `recordingStateChanged` event will trigger.
 
 ```js
-room.on(Events.recordingStarted, () {
-  print("Room recording started");
-});
-//
-room.on(Events.recordingStopped, () {
-  print("room recording stopped");
+room.on(Events.recordginStateChanged, (String status) {
+
+  // Status can have values -
+  // RECORDING_STARTING -- Recording is starting
+  // RECORDING_STARTED -- Recording is started
+  // RECORDING_STOPPING -- Recording is stopping
+  // RECORDING_STOPPED -- Recording is stopped
+
+  toastMsg("Meeting recording status : $status");
 });
 ```

@@ -435,41 +435,43 @@ const MethodRequestResponse = ({
   useEffect(() => {}, [language]);
 
   return (
-    <div className='flex flex-col '>
+    <div className="flex flex-col ">
       <a
-        href='https://www.postman.com/videosdk-apis/workspace/my-workspace/collection/24161231-eb2511fb-998b-448f-b10d-00c2bf257cd7?action=share&creator=24161231'
-        className='flex self-end mb-2'>
-        <img src='https://run.pstmn.io/button.svg' />
+        href="https://www.postman.com/videosdk-apis/workspace/my-workspace/collection/24161231-eb2511fb-998b-448f-b10d-00c2bf257cd7?action=share&creator=24161231"
+        className="flex self-end mb-2"
+      >
+        <img src="https://run.pstmn.io/button.svg" />
       </a>
-      <div className='bg-[#333A47] rounded-t-lg pt-4 pb-4 pl-3 flex flex-row flex-wrap align-middle'>
-        <div className='text-[#72C894] text-sm font-bold'>{methodType}</div>
-        <div className='text-[#7D8EAD] text-sm font-medium pl-[3px] pr-[3px]'>
+      <div className="bg-[#333A47] rounded-t-lg pt-4 pb-4 pl-3 flex flex-row flex-wrap align-middle">
+        <div className="text-[#72C894] text-sm font-bold">{methodType}</div>
+        <div className="text-[#7D8EAD] text-sm font-medium pl-[3px] pr-[3px]">
           |
         </div>
-        <div className='flex-1 text-[#7D8EAD] text-sm font-medium'>
+        <div className="flex-1 text-[#7D8EAD] text-sm font-medium">
           {apiEndpoint}
         </div>
-        <div className='dropdown dropdown--hoverable dropdown--right'>
-          <div className='flex flex-row pr-3 cursor-pointers'>
-            <div className='text-sm text-white-1'>{language.value}</div>
+        <div className="dropdown dropdown--hoverable dropdown--right">
+          <div className="flex flex-row pr-3 cursor-pointer">
+            <div className="text-sm text-white-1">{language.value}</div>
             <img
-              src='/img/icons/ic_arrow_down.svg'
-              className='pl-2 colored_ic_arrow_down'
+              src="/img/icons/ic_arrow_down.svg"
+              className="pl-2 colored_ic_arrow_down"
             />
           </div>
-          <ul className='dropdown__menu mt-4 min-w-fit bg-[#252a34]'>
+          <ul className="dropdown__menu min-w-fit bg-[#252a34]">
             {languageList.map((v) => {
               return (
                 <li key={v.id}>
                   <a
-                    className='dropdown__link text-sm cursor-pointer'
+                    className="dropdown__link text-sm cursor-pointer"
                     onClick={(e) => {
                       localStorage.setItem(
                         "rest-api-group-id",
                         JSON.stringify(v)
                       );
                       setLanguage(v);
-                    }}>
+                    }}
+                  >
                     {v.value}
                   </a>
                 </li>
@@ -478,8 +480,8 @@ const MethodRequestResponse = ({
           </ul>
         </div>
       </div>
-      <div className='method_code_block'>
-        <CodeBlock language='js'>
+      <div className="method_code_block">
+        <CodeBlock language="js">
           {generateCode({
             headers,
             methodType,
@@ -490,11 +492,11 @@ const MethodRequestResponse = ({
           })}
         </CodeBlock>
       </div>
-      <div className='bg-[#333A47] rounded-t-lg pt-4 pb-4 pl-3 flex lg:flex-row flex-col align-middle'>
-        <div className='flex-1 text-sm font-bold text-white-1'>RESPONSE</div>
+      <div className="bg-[#333A47] rounded-t-lg pt-4 pb-4 pl-3 flex lg:flex-row flex-col align-middle">
+        <div className="flex-1 text-sm font-bold text-white-1">RESPONSE</div>
       </div>
-      <div className='method_code_block'>
-        <CodeBlock language='jsx'>
+      <div className="method_code_block">
+        <CodeBlock language="jsx">
           {JSON.stringify(response, null, 2)}
         </CodeBlock>
       </div>
@@ -531,18 +533,19 @@ const MethodRequestResponse = ({
 const MethodDescription = ({
   description,
   postParameters,
+  responseParameters,
   queryParameters,
   parameters,
 }) => {
   return (
-    <div className='flex flex-col'>
-      <div className='text-gray-250'>{description}</div>
+    <div className="flex flex-col">
+      <div className="text-gray-250">{description}</div>
       {postParameters?.length != 0 && (
         <div>
-          <div className='text-2xl mt-12 font-extrabold text-white-100'>
+          <div className="text-2xl mt-12 font-extrabold text-white-100">
             Body Parameters
           </div>
-          <div className='bg-[#252A34] mt-3 mb-1 h-[1px]'></div>
+          <div className="bg-[#252A34] mt-3 mb-1 h-[1px]"></div>
           {postParameters?.map((parameter, index) => {
             return (
               <MethodParameter
@@ -552,18 +555,45 @@ const MethodDescription = ({
                 defaultValue={parameter.defaultValue}
                 required={parameter.required}
                 showDivider={index != postParameters?.length - 1}
+                isDeprecated={parameter.isDeprecated}
+                isDiscontinued={parameter.isDiscontinued}
+                deprecatedMessage={parameter.deprecatedMessage}
               />
             );
           })}
         </div>
       )}
 
+      {responseParameters?.length != 0 && responseParameters && (
+        <div>
+          <div className="text-2xl mt-12 font-extrabold text-white-100">
+            Response Parameters
+          </div>
+          <div className="bg-[#252A34] mt-3 mb-1 h-[1px]"></div>
+          {responseParameters?.map((parameter, index) => {
+            return (
+              <MethodParameter
+                parameterName={parameter.key}
+                description={parameter.description}
+                values={parameter.values}
+                defaultValue={parameter.defaultValue}
+                required={parameter.required}
+                isResponseParam={true}
+                showDivider={index != responseParameters?.length - 1}
+                isDeprecated={parameter.isDeprecated}
+                isDiscontinued={parameter.isDiscontinued}
+                deprecatedMessage={parameter.deprecatedMessage}
+              />
+            );
+          })}
+        </div>
+      )}
       {queryParameters?.length != 0 && (
         <div>
-          <div className='text-2xl mt-12 font-extrabold text-white-100'>
+          <div className="text-2xl mt-12 font-extrabold text-white-100">
             Query Parameters
           </div>
-          <div className='bg-[#252A34] mt-3 mb-1 h-[1px]'></div>
+          <div className="bg-[#252A34] mt-3 mb-1 h-[1px]"></div>
           {queryParameters?.map((parameter, index) => {
             return (
               <MethodParameter
@@ -573,6 +603,9 @@ const MethodDescription = ({
                 defaultValue={parameter.defaultValue}
                 required={parameter.required}
                 showDivider={index != queryParameters?.length - 1}
+                isDeprecated={parameter.isDeprecated}
+                isDiscontinued={parameter.isDiscontinued}
+                deprecatedMessage={parameter.deprecatedMessage}
               />
             );
           })}
@@ -581,10 +614,10 @@ const MethodDescription = ({
 
       {parameters?.length != 0 && (
         <div>
-          <div className='text-2xl mt-12 font-extrabold text-white-100'>
+          <div className="text-2xl mt-12 font-extrabold text-white-100">
             Parameters
           </div>
-          <div className='bg-[#252A34] mt-3 mb-1 h-[1px]'></div>
+          <div className="bg-[#252A34] mt-3 mb-1 h-[1px]"></div>
           {parameters?.map((parameter, index) => {
             return (
               <MethodParameter
@@ -594,6 +627,9 @@ const MethodDescription = ({
                 description={parameter.description}
                 required={parameter.required}
                 showDivider={index != queryParameters?.length - 1}
+                isDeprecated={parameter.isDeprecated}
+                isDiscontinued={parameter.isDiscontinued}
+                deprecatedMessage={parameter.deprecatedMessage}
               />
             );
           })}
@@ -627,10 +663,19 @@ const MethodParameter = ({
   parameterName,
   required,
   values,
+  isResponseParam,
   defaultValue,
   description,
   showDivider,
+  isDeprecated,
+  deprecatedMessage,
+  isDiscontinued,
 }) => {
+  console.log(
+    { isDeprecated, deprecatedMessage },
+    "isDeprecated, deprecatedMessage"
+  );
+
   let md =
     values && defaultValue
       ? `${"#### values  :    " + values} \n${
@@ -646,8 +691,8 @@ const MethodParameter = ({
 
   let mdParmName = `## ${parameterName}`;
   return (
-    <div className='w-full' id={parameterName}>
-      <div className='flex flex-row pt-4'>
+    <div className="w-full" id={parameterName}>
+      <div className="flex flex-row pt-4">
         <div>
           <a href={"#" + parameterName}>
             <Markdown
@@ -655,26 +700,60 @@ const MethodParameter = ({
                 overrides: {
                   h2: {
                     props: {
-                      className:
-                        "font-semibold text-xl pr-1.5 text-white-100 mb-1.5",
+                      className: `font-semibold text-xl pr-1.5 text-white-100 mb-1.5 ${
+                        isDeprecated || isDiscontinued ? "text-red-200" : ""
+                      }`,
                     },
                   },
                 },
               }}
-              children={mdParmName}></Markdown>
+              children={mdParmName}
+            ></Markdown>
           </a>
         </div>
 
-        {required ? (
-          <div className='text-primary font-semibold text-[10px] leading-7 mt-1'>
-            REQUIRED
+        {isDeprecated || isDiscontinued ? (
+          <div className="text-red-200 italic font-semibold text-[12px] leading-7 mt-1">
+            {isDiscontinued
+              ? "@discontinued"
+              : isDeprecated
+              ? "@deprecated"
+              : ""}
           </div>
-        ) : (
-          <div className=' text-slate-400 text-[10px] font-medium leading-7 mt-1'>
-            OPTIONAL
-          </div>
-        )}
+        ) : !isResponseParam ? (
+          required ? (
+            <div className="text-primary font-semibold text-[10px] leading-7 mt-1">
+              REQUIRED
+            </div>
+          ) : (
+            <div className=" text-slate-400 text-[10px] font-medium leading-7 mt-1">
+              OPTIONAL
+            </div>
+          )
+        ) : null}
       </div>
+
+      {(isDeprecated || isDiscontinued) && deprecatedMessage ? (
+        <div>
+          <p className="italic text-red-200">
+            <Markdown
+              options={{
+                overrides: {
+                  a: {
+                    props: {
+                      className: "text-red-300 underline",
+                      target: "_blank",
+                    },
+                  },
+                },
+              }}
+            >
+              {deprecatedMessage}
+            </Markdown>
+          </p>
+        </div>
+      ) : null}
+
       <div>
         <Markdown
           options={{
@@ -686,10 +765,11 @@ const MethodParameter = ({
               },
             },
           }}
-          children={md}></Markdown>
+          children={md}
+        ></Markdown>
       </div>
 
-      {showDivider && <div className='bg-[#252A34] mt-5 h-[1px]'></div>}
+      {showDivider && <div className="bg-[#252A34] mt-5 h-[1px]"></div>}
     </div>
   );
 };
@@ -698,6 +778,7 @@ function RestApiMethodContainer({
   headers,
   methodType,
   postParameters,
+  responseParameters,
   queryParameters,
   description,
   apiEndpoint,
@@ -706,18 +787,18 @@ function RestApiMethodContainer({
   title,
 }) {
   return (
-    <div id='tailwind'>
-      <div className='flex lg:flex-row flex-col w-full'>
-        <div className='lg:w-1/2 w-full lg:sticky self-start lg:pr-[18px] flex-grow top-10'>
-          <p class='font-bold text-4xl text-white-100	'>{title}</p>
+    <div id="tailwind">
+      <div className="flex lg:flex-row flex-col w-full">
+        <div className="lg:w-1/2 w-full lg:sticky self-start lg:pr-[18px] flex-grow top-10">
           <MethodDescription
             description={description}
             queryParameters={queryParameters}
             postParameters={postParameters}
             parameters={parameters}
+            responseParameters={responseParameters}
           />
         </div>
-        <div className='lg:w-1/2 w-full lg:pt-0 pt-4 lg:pl-[18px] lg:sticky self-start flex-grow top-10'>
+        <div className="lg:w-1/2 w-full lg:pt-0 pt-4 lg:pl-[18px] lg:sticky self-start flex-grow top-10">
           <MethodRequestResponse
             headers={headers}
             methodType={methodType}

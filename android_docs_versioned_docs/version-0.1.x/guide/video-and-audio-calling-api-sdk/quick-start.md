@@ -56,15 +56,23 @@ After creating the project, Android Studio automatically starts gradle sync. Ens
 - If your Android Studio Version is older than Android Studio Bumblebees, add the repository to project's `build.gradle` file.
 - If your are using Android Studio Bumblebees or newer Version, add the repository to `settings.gradle` file.
 
+:::note
+
+You can use imports with Maven Central after rtc-android-sdk version `0.1.12`.
+
+Whether on Maven or Jitpack, the same version numbers always refer to the same SDK.
+
+:::
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 <Tabs
-defaultValue=">=2021.1.1"
-groupId={"android-studio-version"}
-values={[{label: 'Android Studio Version < 2021.1.1', value: '<2021.1.1'},{label: 'Android Studio Version >= 2021.1.1', value: '>=2021.1.1'},]}>
+defaultValue="Maven Central"
+groupId={"android-repositories"}
+values={[{label: 'Maven Central', value: 'Maven Central'},{label: 'Jitpack', value: 'Jitpack'},]}>
 
-<TabItem value="<2021.1.1">
+<TabItem value="Maven Central">
 
 ```js title="build.gradle"
 allprojects {
@@ -72,15 +80,10 @@ allprojects {
     // ...
     google()
     mavenCentral()
-    maven { url 'https://jitpack.io' }
     maven { url "https://maven.aliyun.com/repository/jcenter" }
   }
 }
 ```
-
-</TabItem>
-
-<TabItem value=">=2021.1.1">
 
 ```js title="settings.gradle"
 dependencyResolutionManagement{
@@ -88,10 +91,39 @@ dependencyResolutionManagement{
     // ...
     google()
     mavenCentral()
-    maven { url 'https://jitpack.io' }
     maven { url "https://maven.aliyun.com/repository/jcenter" }
   }
 }
+
+```
+
+</TabItem>
+
+<TabItem value="Jitpack">
+
+```js title="build.gradle"
+allprojects {
+  repositories {
+    // ...
+    google()
+    maven { url 'https://jitpack.io' }
+    mavenCentral()
+    maven { url "https://maven.aliyun.com/repository/jcenter" }
+  }
+}
+```
+
+```js title="settings.gradle"
+dependencyResolutionManagement{
+  repositories {
+    // ...
+    google()
+    maven { url 'https://jitpack.io' }
+    mavenCentral()
+    maven { url "https://maven.aliyun.com/repository/jcenter" }
+  }
+}
+
 ```
 
 </TabItem>
@@ -102,7 +134,7 @@ dependencyResolutionManagement{
 
 ```js title="app/build.gradle"
 dependencies {
-  implementation 'live.videosdk:rtc-android-sdk:0.1.8'
+  implementation 'live.videosdk:rtc-android-sdk:0.1.13'
 
   // library to perform Network call to generate a meeting id
   implementation 'com.amitshekhar.android:android-networking:1.0.2'
@@ -111,12 +143,11 @@ dependencies {
   }
 ```
 
-:::note
+:::important
 
-If your project has set `android.useAndroidX=true`, then set `android.enableJetifier=true` in the `gradle.properties` file to migrate your project to AndroidX and avoid duplicate class conflict.
+Android SDK compatible with armeabi-v7a, arm64-v8a, x86_64 architectures. If you want to run the application in an emulator, choose ABI x86_64 when creating a device.
 
 :::
-
 
 ### Add permissions into your project
 
@@ -124,22 +155,17 @@ If your project has set `android.useAndroidX=true`, then set `android.enableJeti
 
 ```xml title="AndroidManifest.xml"
 <uses-permission android:name="android.permission.RECORD_AUDIO" />
+<uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
 <uses-permission android:name="android.permission.INTERNET" />
-<uses-permission android:name="android.permission.READ_PHONE_STATE" />
 <uses-permission android:name="android.permission.CAMERA" />
 
-<!-- Needed to communicate with already-paired Bluetooth devices. (Legacy up to Android 11) -->
-<uses-permission
-    android:name="android.permission.BLUETOOTH"
-    android:maxSdkVersion="30" />
-<uses-permission
-    android:name="android.permission.BLUETOOTH_ADMIN"
-    android:maxSdkVersion="30" />
-
-<!-- Needed to communicate with already-paired Bluetooth devices. (Android 12 upwards)-->
-<uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
-
 ```
+
+:::note
+
+If your project has set `android.useAndroidX=true`, then set `android.enableJetifier=true` in the `gradle.properties` file to migrate your project to AndroidX and avoid duplicate class conflict.
+
+:::
 
 ### Structure of the project
 
@@ -678,7 +704,7 @@ class MeetingActivity : AppCompatActivity() {
     // 2. Initialize VideoSDK Meeting
     meeting = VideoSDK.initMeeting(
       this@MeetingActivity, meetingId, participantName,
-      micEnabled, webcamEnabled,null,null)
+      micEnabled, webcamEnabled, null, null)
 
     // 3. Add event listener for listening upcoming events
     meeting!!.addEventListener(meetingEventListener)
@@ -742,7 +768,7 @@ public class MeetingActivity extends AppCompatActivity {
     // 2. Initialize VideoSDK Meeting
     meeting = VideoSDK.initMeeting(
             MeetingActivity.this, meetingId, participantName,
-            micEnabled, webcamEnabled,null,null);
+            micEnabled, webcamEnabled, null, null);
 
     // 3. Add event listener for listening upcoming events
     meeting.addEventListener(meetingEventListener);
@@ -913,6 +939,14 @@ public class MeetingActivity extends AppCompatActivity {
 
 We will be showing the list of participant in a recycler view.
 
+:::info
+
+- Here the participant's video is displayed using `VideoView`, but you may also use `SurfaceViewRender` for the same.
+- For `VideoView`, SDK version should be `0.1.13` or higher.
+- To know more about `VideoView`, please visit [here](/android/guide/video-and-audio-calling-api-sdk/components/videoView) 
+
+:::
+
 1. Create a new layout for the participant view named `item_remote_peer.xml` in the `res/layout` folder.
 
 ```xml title="item_remote_peer.xml"
@@ -924,8 +958,8 @@ We will be showing the list of participant in a recycler view.
     android:layout_height="wrap_content"
     tools:layout_height="200dp"
     android:background="@color/cardview_dark_background">
-    <org.webrtc.SurfaceViewRenderer
-        android:id="@+id/svrParticipant"
+    <live.videosdk.rtc.android.VideoView
+        android:id="@+id/participantView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:visibility="gone" />
@@ -974,12 +1008,8 @@ class ParticipantAdapter(meeting: Meeting) : RecyclerView.Adapter<ParticipantAda
   }
 
   class PeerViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-    var svrParticipant: SurfaceViewRenderer = view.findViewById(R.id.svrParticipant)
+    var participantView: VideoView = view.findViewById(R.id.participantView)
     var tvName: TextView = view.findViewById(R.id.tvName)
-
-    init{
-      svrParticipant.init(PeerConnectionUtils.getEglContext(), null)
-    }
   }
 }
 ```
@@ -1011,8 +1041,8 @@ public class ParticipantAdapter extends RecyclerView.Adapter<ParticipantAdapter.
   }
 
   static class PeerViewHolder extends RecyclerView.ViewHolder {
-    // 'SurfaceViewRenderer' to show Video Stream
-    public SurfaceViewRenderer svrParticipant;
+    // 'VideoView' to show Video Stream
+    public VideoView participantView;
     public TextView tvName;
     public View itemView;
 
@@ -1020,8 +1050,7 @@ public class ParticipantAdapter extends RecyclerView.Adapter<ParticipantAdapter.
       super(view);
       itemView = view;
       tvName = view.findViewById(R.id.tvName);
-      svrParticipant = view.findViewById(R.id.svrParticipant);
-      svrParticipant.init(PeerConnectionUtils.getEglContext(), null);
+      participantView = view.findViewById(R.id.participantView);
     }
   }
 }
@@ -1163,12 +1192,12 @@ class ParticipantAdapter(meeting: Meeting) :
 
     holder.tvName.text = participant.displayName
 
-    // adding the initial video stream for the participant into the 'SurfaceViewRenderer'
+    // adding the initial video stream for the participant into the 'VideoView'
     for ((_, stream) in participant.streams) {
       if (stream.kind.equals("video", ignoreCase = true)) {
-        holder.svrParticipant.visibility = View.VISIBLE
+        holder.participantView.visibility = View.VISIBLE
         val videoTrack = stream.track as VideoTrack
-        videoTrack.addSink(holder.svrParticipant)
+        holder.participantView.addTrack(videoTrack)
         break
       }
     }
@@ -1177,18 +1206,16 @@ class ParticipantAdapter(meeting: Meeting) :
     participant.addEventListener(object : ParticipantEventListener() {
       override fun onStreamEnabled(stream: Stream) {
         if (stream.kind.equals("video", ignoreCase = true)) {
-          holder.svrParticipant.visibility = View.VISIBLE
+          holder.participantView.visibility = View.VISIBLE
           val videoTrack = stream.track as VideoTrack
-          videoTrack.addSink(holder.svrParticipant)
+          holder.participantView.addTrack(videoTrack)
        }
       }
 
       override fun onStreamDisabled(stream: Stream) {
         if (stream.kind.equals("video", ignoreCase = true)) {
-          val track = stream.track as VideoTrack
-          track?.removeSink(holder.svrParticipant)
-          holder.svrParticipant.clearImage()
-          holder.svrParticipant.visibility = View.GONE
+          holder.participantView.removeTrack()
+          holder.participantView.visibility = View.GONE
         }
       }
     })
@@ -1213,13 +1240,13 @@ public class ParticipantAdapter extends RecyclerView.Adapter<ParticipantAdapter.
 
     holder.tvName.setText(participant.getDisplayName());
 
-    // adding the initial video stream for the participant into the 'SurfaceViewRenderer'
+    // adding the initial video stream for the participant into the 'VideoView'
     for (Map.Entry<String, Stream> entry : participant.getStreams().entrySet()) {
       Stream stream = entry.getValue();
       if (stream.getKind().equalsIgnoreCase("video")) {
-        holder.svrParticipant.setVisibility(View.VISIBLE);
+        holder.participantView.setVisibility(View.VISIBLE);
         VideoTrack videoTrack = (VideoTrack) stream.getTrack();
-        videoTrack.addSink(holder.svrParticipant);
+        holder.participantView.addTrack(videoTrack)
         break;
       }
     }
@@ -1228,20 +1255,17 @@ public class ParticipantAdapter extends RecyclerView.Adapter<ParticipantAdapter.
       @Override
       public void onStreamEnabled(Stream stream) {
         if (stream.getKind().equalsIgnoreCase("video")) {
-          holder.svrParticipant.setVisibility(View.VISIBLE);
+          holder.participantView.setVisibility(View.VISIBLE);
           VideoTrack videoTrack = (VideoTrack) stream.getTrack();
-          videoTrack.addSink(holder.svrParticipant);
+          holder.participantView.addTrack(videoTrack)
         }
       }
 
       @Override
       public void onStreamDisabled(Stream stream) {
         if (stream.getKind().equalsIgnoreCase("video")) {
-          VideoTrack track = (VideoTrack) stream.getTrack();
-          if (track != null)
-            track.removeSink(holder.svrParticipant);
-          holder.svrParticipant.clearImage();
-          holder.svrParticipant.setVisibility(View.GONE);
+          holder.participantView.removeTrack();
+          holder.participantView.setVisibility(View.GONE);
         }
       }
     });

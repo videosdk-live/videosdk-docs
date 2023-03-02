@@ -150,7 +150,9 @@ override fun onCreate(savedInstanceState: Bundle?) {
       //MicEnabled , If true, it will use the passed custom track to turn mic on
       true,  
       //WebcamEnabled
-      true,  
+      true, 
+      //multiStream
+      false, 
       //ParticipantId
       null,
       //Pass the custom tracks here
@@ -189,6 +191,8 @@ protected void onCreate(Bundle savedInstanceState) {
         true,
         //WebcamEnabled
         true,
+        //multiStream
+        false,
         //ParticipantId
         null,
         //Pass the custom tracks here

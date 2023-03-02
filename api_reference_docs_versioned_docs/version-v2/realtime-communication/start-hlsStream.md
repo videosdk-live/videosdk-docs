@@ -1,5 +1,5 @@
 ---
-title: Start HLS Stream | Video SDK
+title: Start HLS Stream 
 sidebar_position: 1
 sidebar_label: Start HLS
 hide_table_of_contents: true

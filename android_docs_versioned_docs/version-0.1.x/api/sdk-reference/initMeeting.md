@@ -102,7 +102,6 @@ Please refer this [documentation](/api-reference/realtime-communication/create-r
 
   - type: `Boolean`
   - `REQUIRED`
-
 ### participantId
 
 - Unique Id of the participant. If you passed `null` then SDK will create an Id by itself and will use that id.

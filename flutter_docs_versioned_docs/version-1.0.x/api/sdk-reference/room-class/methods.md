@@ -141,6 +141,18 @@ title: Room Class Methods
 
 - **webhookUrl**: String
 
+- **awsDirPath**: String
+
+- **config**:
+  - **layout**:
+    - **type**: _"GRID"_ | _"SPOTLIGHT"_ | _"SIDEBAR"_
+    - **priority**: _"SPEAKER"_ | _"PIN"_
+    - **gridSize**: Number _\`max 4\`_
+  - **theme**: _"DARK"_ | _"LIGHT"_ | _"DEFAULT"_
+  - **mode**: _"video-and-audio"_ | _"audio"_
+  - **quality**: _"low"_ | _"med"_ | _"high"_
+  - **orientation**: _"landscape"_ | _"portrait"_
+
 #### Returns
 
 - _`void`_
@@ -150,7 +162,16 @@ title: Room Class Methods
 ```javascript
 const webhookUrl = "https://webhook.your-api-server.com";
 
-room.startRecording(webhookUrl);
+room.startRecording(webhookUrl:webhookUrl,
+ config: {
+  'layout': {
+    'type': 'GRID',
+    'priority': 'SPEAKER',
+    'gridSize': 4,
+  },
+  'theme': "LIGHT",
+  "mode": "video-and-audio"
+});
 ```
 
 ---
@@ -182,6 +203,13 @@ room.stopRecording();
 
 - **outputs**: `List<Map<String, String>>` [{ **url**: String, **streamKey**: String }]
 
+- **config**:
+  - **layout**:
+    - **type**: _"GRID"_ | _"SPOTLIGHT"_ | _"SIDEBAR"_
+    - **priority**: _"SPEAKER"_ | _"PIN"_
+    - **gridSize**: Number _\`max 4\`_
+  - **theme**: _"DARK"_ | _"LIGHT"_ | _"DEFAULT"_
+
 #### Returns
 
 - _`void`_
@@ -199,8 +227,15 @@ var outputs = [
     streamKey: "<STREAM_KEY>",
   },
 ];
-
-room.startLivestream(outputs);
+var liveStreamConfig =  {
+  'layout': {
+    'type': 'GRID',
+    'priority': 'SPEAKER',
+    'gridSize': 4,
+  },
+  'theme': "LIGHT",
+};
+room.startLivestream(outputs, config: livestreamConfig);
 ```
 
 ---
@@ -218,6 +253,60 @@ room.startLivestream(outputs);
 
 ```javascript
 room.stopLivestream();
+```
+
+---
+
+### startHls()
+
+- It is used to start HLS.
+- All [participants](properties#participants) and [localParticipant](properties#localparticipant), will receive [`hlsStarted`](events#hlsstarted) event with the `downstreamUrl` of the HLS feed.
+
+#### Parameters
+
+- **config**:
+  - **layout**:
+    - **type**: _"GRID"_ | _"SPOTLIGHT"_ | _"SIDEBAR"_
+    - **priority**: _"SPEAKER"_ | _"PIN"_
+    - **gridSize**: Number _\`max 25\`_
+  - **theme**: _"DARK"_ | _"LIGHT"_ | _"DEFAULT"_
+  - **mode**: _"video-and-audio"_ | _"audio"_
+  - **quality**: _"low"_ | _"med"_ | _"high"_
+  - **oreintation**: _"landscape"_ | _"portrait"_
+
+#### Returns
+
+- _`void`_
+
+#### Example
+
+```javascript
+room.startHls(config: {
+  'layout': {
+    'type': 'GRID',
+    'priority': 'SPEAKER',
+    'gridSize': 4,
+  },
+  'theme': "LIGHT",
+  "mode": "video-and-audio"
+});
+```
+
+---
+
+### stopHls()
+
+- It is used to stop HLS.
+- All [participants](properties#participants) and [localParticipant](properties#localparticipant), will receive [`hlsStopped`](events#hlsstopped) event.
+
+#### Returns
+
+- _`void`_
+
+#### Example
+
+```javascript
+room.stopHls();
 ```
 
 ---

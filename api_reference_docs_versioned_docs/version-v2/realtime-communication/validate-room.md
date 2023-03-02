@@ -1,5 +1,5 @@
 ---
-title: Validate a Room | Video SDK
+title: Validate a Room 
 sidebar_position: 4
 sidebar_label: Validate a Room
 hide_table_of_contents: true

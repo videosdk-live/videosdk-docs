@@ -17,6 +17,12 @@ sidebar_position: 1
 slug: create-api-key
 ---
 
+:::caution
+
+**This page has been deprecated. Please follow this [link](https://docs.videosdk.live/) or connect with us on [Discord](https://discord.gg/videosdk-live-876774498798551130)**
+
+:::
+
 # Create API Key
 
 This guide will help you to generate API key and secret from dashboard.

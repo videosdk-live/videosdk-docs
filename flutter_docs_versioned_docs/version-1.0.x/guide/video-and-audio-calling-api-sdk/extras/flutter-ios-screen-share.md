@@ -22,7 +22,7 @@ iOS requires you to add an Broadcast Upload Extension to capture the screen to t
 
 :::note
 
-Flutter iOS screenshare is available from the SDK version 1.0.5 and above
+Flutter iOS screenshare is available from the SDK version 1.0.5 and above and the deployment target for iOS app should be **iOS 14 or newer**
 :::
 
 ## Create Broadcast Upload Extension in iOS

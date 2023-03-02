@@ -12,7 +12,7 @@ sidebar_position: 1
 
 `@videosdk.live/react-native-sdk` supports the following OS/SDK versions.
 
-### Android: minSdkVersion >= 21
+### Android: minSdkVersion >= 23
 
 ### IOS: > 11
 

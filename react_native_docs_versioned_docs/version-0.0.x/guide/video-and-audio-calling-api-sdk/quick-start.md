@@ -197,6 +197,16 @@ android.enableDexingArtifactTransform.desugaring=false
 -keep class org.webrtc.** { *; }
 ```
 
+5. In the `build.gradle` file, update the minimum OS/SDK version to `23`.
+
+```java title=build.gradle
+buildscript {
+  ext {
+      minSdkVersion = 23
+  }
+}
+```
+
 #### iOS Setup
 
 1. Install `react-native-incallmanager`
@@ -215,14 +225,7 @@ $ sudo gem install cocoapods
 
 3. Manual linking (if react-native-incall-manager is not linked automatically)
 
-   3.1 Drag `node_modules/@videosdk.live/react-native-incall-manager/ios/RNInCallManager.xcodeproj` under `<your_xcode_project>/Libraries`
-
-   3.2 Select <your_xcode_project> --> Build Phases --> Link Binary With Libraries
-
-   3.3 Drag `Libraries/RNInCallManager.xcodeproj/Products/libRNInCallManager.a` to Link Binary With Libraries
-
-   3.4 Select <your_xcode_project> --> Build Settings
-   In Header Search Paths, add `$(SRCROOT)/../node_modules/@videosdk.live/react-native-incall-manager/ios/RNInCallManager`
+- Select `Your_Xcode_Project/TARGETS/BuildSettings`, in Header Search Paths, add `"$(SRCROOT)/../node_modules/@videosdk.live/react-native-incall-manager/ios/RNInCallManager"`
 
 4. Change path of `react-native-webrtc`
 
@@ -281,17 +284,17 @@ Before jumping to anything else, we have write API to generate unique meetingId.
 export const token = "<Generated-from-dashbaord>";
 // API call to create meeting
 export const createMeeting = async ({ token }) => {
-  const res = await fetch(`https://api.videosdk.live/v1/meetings`, {
+  const res = await fetch(`https://api.videosdk.live/v2/rooms`, {
     method: "POST",
     headers: {
       authorization: `${token}`,
       "Content-Type": "application/json",
     },
-    body: JSON.stringify({ region: "sg001" }),
+    body: JSON.stringify({}),
   });
 
-  const { meetingId } = await res.json();
-  return meetingId;
+  const { roomId } = await res.json();
+  return roomId;
 };
 ```
 
@@ -522,7 +525,8 @@ function MeetingView() {
           Meeting Id :{meetingId}
         </Text>
       ) : null}
-      <ParticipantList /> // Will implement in next steps
+      // highlight-next-line
+      <ParticipantList />
       <ControlsContainer
         join={join}
         leave={leave}
@@ -575,12 +579,15 @@ function ParticipantList({ participants }) {
 ```js title="MeetingView Component"
 function MeetingView() {
   // Get `participants` from useMeeting Hook
+  // highlight-next-line
   const { join, leave, toggleWebcam, toggleMic, participants } = useMeeting({});
-  const participantsArrId = [...participants.keys()]; // Add this line
+  // highlight-next-line
+  const participantsArrId = [...participants.keys()];
 
   return (
     <View style={{ flex: 1 }}>
-      <ParticipantList participants={participantsArrId} /> // Pass participants
+      // highlight-next-line
+      <ParticipantList participants={participantsArrId} />
       <ControlsContainer
         join={join}
         leave={leave}
@@ -625,7 +632,8 @@ MediaStream is useful to add MediaTrack to the `RTCView` component to play the a
 ```js title="ParticipantView Component"
 function ParticipantView({ participantId }) {
   const { webcamStream, webcamOn } = useParticipant(participantId);
-  return webcamOn ? (
+
+  return webcamOn && webcamStream ? (
     <RTCView
       streamURL={new MediaStream([webcamStream.track]).toURL()}
       objectFit={"cover"}

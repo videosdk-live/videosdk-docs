@@ -71,7 +71,7 @@ We have introduced the ability to pass a custom Audio track for the Audio of the
 let customTrack = await VideoSDK.createMicrophoneAudioTrack({
   encoderConfig: "high_quality",
   noiseConfig: {
-    noiseSuppresion: true,
+    noiseSuppression: true,
     echoCancellation: true,
     autoGainControl: true,
   },
@@ -88,7 +88,7 @@ If you are passing `micEnabled: true` in the `initMeeting` and want to use custo
 let customTrack = await VideoSDK.createMicrophoneAudioTrack({
   encoderConfig: "high_quality",
   noiseConfig: {
-    noiseSuppresion: true,
+    noiseSuppression: true,
     echoCancellation: true,
     autoGainControl: true,
   },

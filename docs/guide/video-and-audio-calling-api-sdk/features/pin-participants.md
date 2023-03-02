@@ -1,6 +1,6 @@
 ---
 title: Pin Participants Video & Audio Call - Video SDK Docs
-hide_title: false
+hide_title: true
 hide_table_of_contents: false
 description: Mic Controls features quick integrate in Javascript, React JS, Android, IOS, React Native, Flutter with Video SDK to add live video & audio conferencing to your applications.
 sidebar_label: Pin Participants
@@ -15,6 +15,19 @@ image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
 slug: pin-participants
 ---
+
+:::caution
+
+**This page has been deprecated.**
+
+We've released a new version of pages with some improvements and smoother experience.
+
+Here is the link of each SDK for this page.
+
+- [JS](/javascript/guide/video-and-audio-calling-api-sdk/features/pin-participants)
+- [React](/react/guide/video-and-audio-calling-api-sdk/features/pin-participants)
+
+:::
 
 # Pin Participants
 

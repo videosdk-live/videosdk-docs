@@ -7,6 +7,32 @@ pagination_label: Release Notes
 
 This page will keep you update all the releases of iOS SDK.
 
+## v1.2.13
+
+**Release Date** : 23rd December 2022
+
+**Change log** : None
+
+**Bug Fix** :
+
+- Reduced memory leaks.
+
+- Fixed crashes while ending the meeting.
+
+---
+
+## v1.2.12
+
+**Release Date** : 28th November 2022
+
+**Change log** : None
+
+**Bug Fix** :
+
+- WebSocket connection issue resolved.
+
+---
+
 ## v1.2.10
 
 **Release Date** : 5th July 2022

@@ -24,9 +24,13 @@ This method will help you to list down all possible connected audio devices.
 ```js
 import { getAudioDeviceList } from "@videosdk.live/react-native-sdk";
 
-const onPress = async () => {
-  const device = await getAudioDeviceList();
-  console.log("Device :", device); // ["SPEAKER_PHONE","WIRED_HEADSET"]
+const MeetingView = () => {
+  const onPress = async () => {
+    const device = await getAudioDeviceList();
+    console.log("Device :", device); // ["SPEAKER_PHONE","WIRED_HEADSET"]
+  };
+
+  return <>...</>;
 };
 ```
 
@@ -37,13 +41,19 @@ This method will help you to switch specific audio output device.
 ```js
 import { switchAudioDevice } from "@videosdk.live/react-native-sdk";
 
-switchAudioDevice("SPEAKER_PHONE"); // for device speaker
+const MeetingView = () => {
+  const onPress = () => {
+    switchAudioDevice("SPEAKER_PHONE"); // for device speaker
 
-switchAudioDevice("EARPIECE"); // for device earpiece
+    switchAudioDevice("EARPIECE"); // for device earpiece
 
-switchAudioDevice("WIRED_HEADSET"); // for wired headset
+    switchAudioDevice("WIRED_HEADSET"); // for wired headset
 
-switchAudioDevice("BLUETOOTH"); // for bluetooth device
+    switchAudioDevice("BLUETOOTH"); // for bluetooth device
+  };
+
+  return <>...</>;
+};
 ```
 
 :::note

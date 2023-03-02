@@ -1,5 +1,5 @@
 ---
-title: Stop HLS Stream | Video SDK
+title: Stop HLS Stream 
 sidebar_position: 1
 sidebar_label: Stop HLS
 hide_table_of_contents: true

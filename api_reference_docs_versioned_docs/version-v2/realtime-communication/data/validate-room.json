@@ -1,6 +1,5 @@
 {
   "validateRoom": {
-    "title": "Validate a Room",
     "description": "This API lets you validate the provided roomId or customRoomId.",
     "headers": [
       {

@@ -20,14 +20,14 @@ slug: send-messages
 
 Whenever any participant wants to notify other participants via chat messages or Raise hand, they can simply do it with VideoSDK Meeting.
 
-This guide will provide an overview of how to implement chat and raise hand in a meeting.
+This guide will provide an overview of how to implement chat in a meeting using the PubSub mechanisum.
 
-1. **Chat Message** - If a participant wants to inform or notify something in current meeting, they can use `sendChatMessage()` function by providing `{message:"Anything they wish to send"}` object argument.
+1. **Chat Message** - If a participant wants to inform or notify something in current meeting, they can use `meeting.pubSub.publish()` function by providing `{topic: 'CHAT', message:"Anything they wish to send" , {persist:true}}` object argument.
 
-2. **Raised Hand** - If a participant has some doubts during the meeting and wants to raise hand, they can use `sendChatMessage()` function by providing `{type:"RAISE_HAND"}` object argument.
+2. **Raised Hand** - If a participant has some doubts during the meeting and wants to raise hand, they can use `sendChatMessage()` function by providing `{topic: 'RAISED_HAND', message:"" , {persist:true}}` object argument.
 
 :::note
-`sendChatMessage()` function only takes string as an argument.
+`message` property can only take string as an argument.
 :::
 
 ### Send Message And Raised Hand
@@ -38,27 +38,42 @@ import TabItem from '@theme/TabItem';
 ```js
 const onPress = () => {
   // Sending Message
-  let data = {
-    message: "Hello World",
-  };
-
-  meeting?.sendChatMessage(JSON.stringify(data));
+  meeting?.pubSub?.publish(topic: "CHAT", message: "Hello Everyone!", { persist: true })
 
   // Raising Hand
-  meeting?.sendChatMessage(JSON.stringify({ type: "RAISE_HAND", data: {} }));
+  meeting?.pubSub?.publish(topic: "RAISED_HAND", message: "", { persist: false })
 };
 ```
 
-### Events
+### Receiving the message
 
-1. **chat-message** - Whenever any participant sending message/raise hand in the meeting, then `chat-message` event will trigger and return senderId, senderName, timeStamp, text and type `(RAISE_HAND/CHAT)`.
+Whenever any participant sending message/raise hand in the meeting, then the message will be received to everyone how has subscribed to the `topic` which will contain senderId, senderName, timeStamp, message.
 
 ```js
-meeting.on("chat-message", (messageData) => {
-  const { senderId, senderName, text } = messageData;
+meeting.pubSub.subscribe("CHAT", (data) => {
+  let { message, senderId, senderName, timestamp } = data;
+  const chatBox = document.getElementById("chatArea");
+  const chatTemplate = `
+        <div style="margin-bottom: 10px; ${
+          meeting.localParticipant.id == senderId && "text-align : right"
+        }">
+          <span style="font-size:12px;">${senderName}</span>
+          <div style="margin-top:5px">
+            <span style="background:${
+              meeting.localParticipant.id == senderId ? "grey" : "crimson"
+            };color:white;padding:5px;border-radius:8px">${message}<span>
+          </div>
+        </div>
+        `;
+  chatBox.insertAdjacentHTML("beforeend", chatTemplate);
+});
 
-  const { type, data } = JSON.parse(text);
-
-  // type can be "CHAT" or "RAISE_HAND"
+meeting.pubSub.subscribe("RAISED_HAND", (data) => {
+  let { message, senderId, senderName, timestamp } = data;
+  console.log(senderName, " raised Hand");
 });
 ```
+
+:::note
+Check a detailed description of PubSub [here](./pubsub.md).
+:::

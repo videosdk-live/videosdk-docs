@@ -1,11 +1,80 @@
 ---
 sidebar_label: Release Notes
 pagination_label: Release Notes
+tags: [releasenotes]
 ---
 
 # Release Notes
 
 This page will keep you update all the releases of React JS SDK.
+
+## v0.1.66
+
+**Release Date** : 10th February 2023
+
+**Change log** :
+
+- Improve bitrate logic in the `multiStream` feature so that user's CPU and the network are optimise.
+
+---
+
+## v0.1.64
+
+**Release Date** : 6th February 2023
+
+**Change log** :
+
+- Replace custom track in `changeWebcam` method.
+
+---
+
+## v0.1.59
+
+**Release Date** : 3rd February 2023
+
+**Change log** : none
+
+**Bug Fix** :
+
+- Network switch & reconnection issue fixes (covered all possible edge cases that were causing interruptions during the meeting)
+
+---
+
+## v0.1.57
+
+**Release Date** : 28th December 2022
+
+**Change log** : none
+
+**Bug Fix** :
+
+- Network switch & re connection issue fixes in [onMeetingStateChanged](https://docs.videosdk.live/react/api/sdk-reference/use-meeting/events#onmeetingstatechanged) event.
+
+---
+
+## v0.1.58
+
+**Release Date** : 20th December 2022
+
+**Change log** :
+
+1. Participant can toggle between the `CONFERENCE` and `VIEWER` mode by using `changeMode()` method.
+
+   **Docs** : [Change Mode](https://docs.videosdk.live/react/api/sdk-reference/use-meeting/methods#changemode)
+
+---
+
+## v0.1.56
+
+**Release Date** : 14th December 2022
+
+**Change log** : None
+
+**Bug Fix** :
+
+1. Fix `failed: DOMException: Answer tried to enable an m-section that was disabled in the offer` error on Enable Webcam in Firefox browser.
+
+---
 
 ## v0.1.55
 

@@ -1,17 +1,54 @@
 ---
 sidebar_label: Release Notes
 pagination_label: Release Notes
+tags: [releasenotes]
 ---
 
 # Release Notes
 
 This page will keep you update all the releases of React Native SDK.
 
+## v0.0.42
+
+**Release Date** : 10th February 2023
+
+**Change log** :
+
+- Improve bitrate logic in the `multiStream` feature so that user's CPU and the network are optimise.
+
+- Replace custom track in `changeWebcam` method.
+
+**Bug Fix** :
+
+- Network switch & reconnection issue fixes (covered all possible edge cases that were causing interruptions during the meeting) in [onMeetingStateChanged](https://docs.videosdk.live/react-native/api/sdk-reference/use-meeting/events#onmeetingstatechanged) event.
+
+---
+
+## v0.0.41
+
+**Release Date** : 7th January 2023
+
+**Change log** :
+
+1. Added `getVideoStats`, `getAudioStats` and `getShareStats` methods for getting particular participant streams statistics.
+
+   **SDK Reference** : [getVideoStats](https://docs.videosdk.live/react-native/api/sdk-reference/use-participant/methods#getvideostats)
+
+   **SDK Reference** : [getAudioStats](https://docs.videosdk.live/react-native/api/sdk-reference/use-participant/methods#getaudiostats)
+
+   **SDK Reference** : [getShareStats](https://docs.videosdk.live/react-native/api/sdk-reference/use-participant/methods#getsharestats)
+
+2. Participant can toggle between the `CONFERENCE` and `VIEWER` mode by using `changeMode()` method.
+
+   **Docs** : [Change Mode](https://docs.videosdk.live/react-native/api/sdk-reference/use-meeting/methods#changemode)
+
+---
+
 ## v0.0.40
 
 **Release Date** : 29th November 2022
 
-**Change log** : 
+**Change log** :
 
 - Update `WebRTC` dependency to `v1.106.1`
 
@@ -131,19 +168,13 @@ _This version will store timeline of the session, session stats and participant 
 
 3. Internal dependency update.
 
-4. Added `getVideoStats` and `getAudioStats` methods for getting particular participant streams statistics.
-
-   **SDK Reference** : [getVideoStats](https://docs.videosdk.live/react-native/api/sdk-reference/use-participant/methods#getvideostats)
-
-   **SDK Reference** : [getAudioStats](https://docs.videosdk.live/react-native/api/sdk-reference/use-participant/methods#getaudiostats)
-
-5. Added `onMeetingStateChanged` event for getting state of meeting changes.
+4. Added `onMeetingStateChanged` event for getting state of meeting changes.
 
    **SDK Reference** : [onMeetingStateChanged](https://docs.videosdk.live/react-native/api/sdk-reference/use-meeting/events#onmeetingstatechanged)
 
-6. Custom audio, video and share track now accepts `MediaStream` instead of `MediaStreamTrack`.
+5. Custom audio, video and share track now accepts `MediaStream` instead of `MediaStreamTrack`.
 
-7. Added types for better IDE support.
+6. Added types for better IDE support.
 
 **Bug Fix** :
 

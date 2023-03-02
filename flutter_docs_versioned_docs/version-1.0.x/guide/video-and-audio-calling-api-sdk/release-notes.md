@@ -7,6 +7,67 @@ pagination_label: Release Notes
 
 This page will keep you update all the releases of Flutter SDK.
 
+## v1.0.10
+
+**Release Date** : 03rd Jan 2023
+
+**Change log** :
+
+1. Added `getVideoStats()`, `getAudioStats()` and `getShareStats()` to get the statistics for the video, audio and share stream of a participant.
+
+   **Docs** :
+
+   - [getVideoStats](../../api/sdk-reference/participant-class/methods.md#getvideostats)
+   - [getAudioStats](../../api/sdk-reference/participant-class/methods.md#getaudiostats)
+   - [getShareStats](../../api/sdk-reference/participant-class/methods.md#getsharestats)
+
+## v1.0.9
+
+**Release Date** : 09th Dec 2022
+
+**Change log** :
+
+1. Added support for custom audio and video tracks.
+
+   **Docs** :
+
+   - [Custom Video Track](../video-and-audio-calling-api-sdk/features/custom-track/custom-video-track.md)
+   - [Custom Audio Track](../video-and-audio-calling-api-sdk/features/custom-track/custom-video-track.md)
+
+2. Added recording, live streaming and HLS status events.
+
+   **Docs** :
+
+   - [recordingStateChanged](../../api/sdk-reference/room-class/events.md#recordingstatechanged)
+   - [livestreamStateChanged](../../api/sdk-reference/room-class/events.md#livestreamstatechanged)
+   - [hlsStateChanged](../../api/sdk-reference/room-class/events.md#hlsstatechanged)
+
+3. Added event for participant notifying the change in video quality.
+
+   **Docs** :
+
+   - [videoQualityChanged](../../api/sdk-reference/participant-class/events.md#videoqualitychanged)
+
+4. `startHls()` and `stopHls()` methods added.
+
+   **Docs** :
+
+   - [startHls](../../api/sdk-reference/room-class/methods.md#starthls)
+   - [stopHls](../../api/sdk-reference/room-class/methods.md#stophls)
+
+5. `startRecording()` and `startLiveStream()` updated to accept `config` values for the feed.
+
+   **Docs** :
+
+   - [startRecording](../../api/sdk-reference/room-class/methods.md#startrecording)
+   - [startLivestream](../../api/sdk-reference/room-class/methods.md#startlivestream)
+
+**Bug Fix** :
+
+1. Fixed unable to start video or mic after turning them off.
+
+---
+
 ## v1.0.8
 
 **Release Date** : 25th Nov 2022

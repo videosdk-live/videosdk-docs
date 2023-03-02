@@ -8,14 +8,16 @@ import React, { useEffect, useState } from "react";
 import clsx from "clsx";
 import {
   useThemeConfig,
-  useAnnouncementBar,
-  MobileSecondaryMenuFiller,
   ThemeClassNames,
-  useScrollPosition,
   useWindowSize,
+  NavbarSecondaryMenuFiller,
 } from "@docusaurus/theme-common";
+import {
+  useAnnouncementBar,
+  useScrollPosition,
+} from "@docusaurus/theme-common/internal";
 import Logo from "@theme/Logo";
-import IconArrow from "@theme/IconArrow";
+import IconArrow from "@theme/Icon/Arrow";
 import { translate } from "@docusaurus/Translate";
 import DocSidebarItems from "@theme/DocSidebarItems";
 import styles from "./styles.module.css";
@@ -116,7 +118,7 @@ const DocSidebarMobileSecondaryMenu = ({ toggleSidebar, sidebar, path }) => (
 
 function DocSidebarMobile(props) {
   return (
-    <MobileSecondaryMenuFiller
+    <NavbarSecondaryMenuFiller
       component={DocSidebarMobileSecondaryMenu}
       props={props}
     />
@@ -124,7 +126,7 @@ function DocSidebarMobile(props) {
 }
 
 const DocSidebarDesktopMemo = React.memo(DocSidebarDesktop);
-const DocSidebarMobileMemo = React.memo(DocSidebarMobile);
+// const DocSidebarMobileMemo = React.memo(DocSidebarMobile);
 export default function DocSidebar(props) {
   const windowSize = useWindowSize(); // Desktop sidebar visible on hydration: need SSR rendering
 
@@ -135,7 +137,7 @@ export default function DocSidebar(props) {
   return (
     <>
       {shouldRenderSidebarDesktop && <DocSidebarDesktopMemo {...props} />}
-      {shouldRenderSidebarMobile && <DocSidebarMobileMemo {...props} />}
+      {shouldRenderSidebarMobile && <DocSidebarMobile {...props} />}
     </>
   );
 }

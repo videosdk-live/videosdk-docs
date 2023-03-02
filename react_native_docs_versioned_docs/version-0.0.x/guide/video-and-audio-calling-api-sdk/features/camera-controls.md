@@ -25,28 +25,49 @@ Whenever any participant wants to start/stop broadcasting their video to other p
 This guide will provide an overview of how to implement enable, disable and switch webcam features in a meeting.
 
 1. **Enable Camera** - By using `enableWebcam()` function, a participant can publish camera stream to other participants.
+
+   - You can pass customise video track in `enableWebcam()` by using [Custom Video Track](/react-native/guide/video-and-audio-calling-api-sdk/features/custom-track/custom-video-track#using-custom-video-track).
+
 2. **Disable Camera** - By using `disableWebcam()` function, a participant can stop publishing camera stream to other participants.
+
 3. **Switch Camera** - By using `changeWebcam()` function, a participant can stream from front / rear camera during the meeting.This function is only applicable for Mobile devices.
+
+4. **Toggle Camera** - By using `toggleWebcam()` function, a participant start or stop publishing the video during the meeting.
 
 ### Enable, Disable And Switch Webcam
 
 ```js
-const { enableWebcam, disableWebcam, changeWebcam, getWebcams } = useMeeting();
-const onPress = async () => {
-  // Enable Webcam in Meeting
-  enableWebcam();
+import { useMeeting } from "@videosdk.live/react-native-sdk";
+const MeetingView = () => {
+  const {
+    enableWebcam,
+    disableWebcam,
+    getWebcams,
+    changeWebcam,
+    toggleWebcam,
+  } = useMeeting();
 
-  // Disable Webcam in Meeting
-  disableWebcam();
+  const onPress = async () => {
+    // Enable Camera in Meeting
+    enableWebcam();
 
-  // Change Webcam in Meeting
-  const webcams = await getWebcams(); // returns all webcams
+    // Disable Camera in Meeting
+    disableWebcam();
 
-  const { deviceId, label } = webcams[0]; // 0th : Rear Cam, 1st : Front Cam
+    // Toggle Camera in Meeting
+    toggleWebcam();
 
-  changeWebcam(deviceId);
+    // Change Camera in Meeting
+    changeWebcam();
+  };
+
+  return <>...</>;
 };
 ```
+
+:::note
+To get a better control over the Video Quality, we recommend you to use the custom video tracks. You can check out how to use custom video tracks [here](./custom-track/custom-video-track.md).
+:::
 
 ### Events
 
@@ -59,6 +80,8 @@ const onPress = async () => {
 - Every Participant will receive a callback on [`onStreamDisabled()`](../../../api/sdk-reference/use-participant/events#onstreamdisabled) of the `useParticipant()` hook with `Stream` object.
 
 ```js
+import { useParticipant } from "@videosdk.live/react-native-sdk";
+
 function onStreamEnabled(stream) {
   if(stream.kind === 'video'){
     console.log("Video Stream On: onStreamEnabled", stream);

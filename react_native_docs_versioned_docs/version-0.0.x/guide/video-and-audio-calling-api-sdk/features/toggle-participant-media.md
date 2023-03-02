@@ -56,21 +56,24 @@ To achieve this feature, you need to pass `allow_join` persmission while geneart
 ```js
 import { useParticipant } from "@videosdk.live/react-native-sdk";
 
-const { enableWebcam, disableWebcam, enableMic, disableMic } =
-  useParticipant("<participant-id>");
+const ParticipantView = () => {
+  const { enableWebcam, disableWebcam, enableMic, disableMic } =
+    useParticipant("<participant-id>");
 
-const onPress = () => {
-  // This will emit an event called "webcam-requested" to that particular participant
-  enableWebcam();
+  const onPress = () => {
+    // This will emit an event called "webcam-requested" to that particular participant
+    enableWebcam();
 
-  // This will directly disable webcam of particular participant
-  disableWebcam();
+    // This will directly disable webcam of particular participant
+    disableWebcam();
 
-  // This will emit an event called "mic-requested" to that particular participant
-  enableMic();
+    // This will emit an event called "mic-requested" to that particular participant
+    enableMic();
 
-  // This will directly disable mic of particular participant
-  disableMic();
+    // This will directly disable mic of particular participant
+    disableMic();
+  };
+  return <>...</>;
 };
 ```
 

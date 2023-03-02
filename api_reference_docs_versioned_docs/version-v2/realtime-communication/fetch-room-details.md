@@ -1,5 +1,5 @@
 ---
-title: Fetch a Room | Video SDK
+title: Fetch a Room 
 sidebar_position: 3
 sidebar_label: Fetch a Room
 hide_table_of_contents: true

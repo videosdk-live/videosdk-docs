@@ -1,5 +1,5 @@
 ---
-title: Fetch Recordings | Video SDK
+title: Fetch Recordings 
 sidebar_position: 1
 sidebar_label: Fetch Recordings
 hide_table_of_contents: true

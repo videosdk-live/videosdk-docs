@@ -24,10 +24,11 @@ module.exports = {
   themeConfig: {
     defaultMode: "dark",
     // announcementBar: {
-    //   // id: "event_announcement_interactive_live_streaming_app",
+    //   id: "event_announcement_interactive_live_streaming_app",
     //   id: "announcement_product_hunt",
     //   content:
-    //     "Beginning on Oct 21, recording files are being kept on Video SDK servers for 7 days",
+    //     // "Beginning on Oct 21, recording files are being kept on Video SDK servers for 7 days",
+    //     `The recording can last up to 2 hours; if you want longer recordings, please <a target="_blank" rel="noopener noreferrer" href="https://www.videosdk.live/contact"><strong>contact us</strong></a>`,
     //   // 'Please &nbsp;<a target="_blank" rel="noopener noreferrer" href="https://www.producthunt.com/posts/video-sdk-2-0?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-video&#0045;sdk&#0045;2&#0045;0"><strong>support us</strong></a>&nbsp; on Product Hunt and &nbsp;<a target="_blank" rel="noopener noreferrer" href="https://ctt.ac/Dvysi"><strong>spread the word</strong></a>',
     //   // 'ZERO CODING!!! Create and join audio-video rooms in 5 mins with our newly launched "No Code SDK".&nbsp;&nbsp;<a target="_blank" rel="noopener noreferrer" href="https://docs.videosdk.live/no-code-sdk/guide/no-code-video-and-audio-calling/getting-started">Learn more</a> ',
     //   backgroundColor: "#6246FB",
@@ -37,13 +38,12 @@ module.exports = {
 
     image: "img/videosdklive-thumbnail.jpg",
     algolia: {
-      apiKey: "6b125a23a26dc2bf6a8a0cb51a66a3f7",
-      indexName: "videosdk",
-      searchParameters: {
-        facetFilters: ["content"],
-      },
+      appId: "2J8GDX2RNG",
+      apiKey: "44f55d0f080cb710e9456cbf632452e4",
+      indexName: "VIDEO_SDK",
+      contextualSearch: true,
+      searchParameters: {},
     },
-    autoCollapseSidebarCategories: true,
     colorMode: {
       defaultMode: "dark",
       disableSwitch: true,
@@ -54,7 +54,12 @@ module.exports = {
       theme: require("prism-react-renderer/themes/vsDark"),
       // darkTheme: require("prism-react-renderer/themes/vsDark"),
     },
-    hideableSidebar: true,
+    docs: {
+      sidebar: {
+        hideable: true,
+        autoCollapseCategories: true,
+      },
+    },
     navbar: {
       title: "",
       hideOnScroll: true,
@@ -70,11 +75,11 @@ module.exports = {
           position: "left",
           label: "Guide",
           items: [
-            {
-              label: "No Code Video & Audio Calling SDK",
-              to: "no-code-sdk/guide/no-code-video-and-audio-calling/getting-started",
-              activeBaseRegex: "/*/no-code-sdk/*",
-            },
+            // {
+            //   label: "No Code Video & Audio Calling SDK",
+            //   to: "no-code-sdk/guide/no-code-video-and-audio-calling/getting-started",
+            //   activeBaseRegex: "/*/no-code-sdk/*",
+            // },
             {
               label: "Prebuilt Video & Audio Calling SDK",
               to: "prebuilt/guide/prebuilt-video-and-audio-calling/getting-started",
@@ -258,7 +263,7 @@ module.exports = {
               to: "/react/api/sdk-reference/setup",
             },
             {
-              label: "Resouces",
+              label: "Resources",
               to: "/docs/tutorials/introduction",
             },
             {
@@ -466,6 +471,7 @@ module.exports = {
       },
     ],
   ],
+  staticDirectories: ["static"],
   scripts: [
     {
       // Page sense
@@ -491,5 +497,7 @@ module.exports = {
     //   src: "js/sales-iq.js",
     //   async: false,
     // },
+    // Amplitude
+    { src: "https://docs.videosdk.live/js/amplitude.js", async: false },
   ],
 };
