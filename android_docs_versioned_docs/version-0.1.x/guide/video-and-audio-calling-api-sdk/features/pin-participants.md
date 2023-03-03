@@ -46,23 +46,23 @@ values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
 
 ```js
   // Pin both webcam and screenshare of that participant
-  meeting!!.localParticipant.pin(null)
+  meeting!!.participants[participantId].pin("SHARE_AND_CAM")
 
   // Pin webcam of that participant
-  meeting!!.localParticipant.pin("CAM")
+  meeting!!.participants[participantId].pin("CAM")
 
   // Pin screenshare of that participant
-  meeting!!.localParticipant.pin("SHARE")
+  meeting!!.participants[participantId].pin("SHARE")
 
   //
   // Unpin both webcam and screenshare of that participant
-  meeting!!.localParticipant.unpin();
+  meeting!!.participants[participantId].unpin("SHARE_AND_CAM");
 
   // Unpin webcam of that participant
-  meeting!!.localParticipant.unpin("CAM");
+  meeting!!.participants[participantId].unpin("CAM");
 
   // Unpin screenshare of that participant
-  meeting!!.localParticipant.unpin("SHARE");
+  meeting!!.participants[participantId].unpin("SHARE");
 ```
 
 </TabItem>
@@ -71,23 +71,23 @@ values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
 
 ```js
  // Pin both webcam and screenshare of that participant
-  meeting.getLocalParticipant().pin(null)
+  meeting.getParticipants().get(participantId).pin("SHARE_AND_CAM")
 
   // Pin webcam of that participant
-  meeting.getLocalParticipant().pin("CAM")
+  meeting.getParticipants().get(participantId).pin("CAM")
 
   // Pin screenshare of that participant
-  meeting.getLocalParticipant().pin("SHARE")
+  meeting.getParticipants().get(participantId).pin("SHARE")
 
   //
   // Unpin both webcam and screenshare of that participant
-  meeting.getLocalParticipant().unpin();
+  meeting.getParticipants().get(participantId).unpin(null);
 
   // Unpin webcam of that participant
-  meeting.getLocalParticipant().unpin("CAM");
+  meeting.getParticipants().get(participantId).unpin("CAM");
 
   // Unpin screenshare of that participant
-  meeting.getLocalParticipant().unpin("SHARE");
+  meeting.getParticipants().get(participantId).unpin("SHARE");
 ```
 
 </TabItem>
