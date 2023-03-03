@@ -21,18 +21,69 @@ sidebar_position: 1
 
 While optimizing for the for the best vieweing experience it is necessary to fine-tune the audio and video tracks that are being used during the calls.
 
-For the best fine-tuning experience wehave introduced the ability to pass a custom video and audio track for the participant's media before and during the meeting.
+For the best fine-tuning experience we have introduced the ability to pass a custom video and audio track for the participant's media before and during the meeting.
 
-## Custom Video Tracks
+1. [Custom Video Track](#custom-video-track)
+2. [Custom Audio Track](#custom-audio-track)
+3. [Custom Screen Share Track](#custom-screen-share-track)
+
+## Custom Video Track
 
 This feature can be used to add custom video encoder configurations, optimization mode (whether you want to focus on **motion**, **text** or **detail** of the video) and background removal & video filter from external libraries(e.g., [videosdk-media-processor](https://www.npmjs.com/package/@videosdk.live/videosdk-media-processor-web)) and send it to other participants.
 
-### Creating a Custom Video Track
+### `How to Create Custom Video Track ?`
 
 - You can create a Video Track using `createCameraVideoTrack()` method of `@videosdk.live/react-sdk`.
-- This method can be used to create video track using different encoding parameters, camera facing mode, and optimization mode.
+- This method can be used to create video track using different encoding parameters, camera facing mode, and optimization mode and return `MediaStream`.
 
-#### Parameters
+#### Example
+
+```javascript
+import { createCameraVideoTrack } from "@videosdk.live/react-sdk";
+
+let customTrack = await createCameraVideoTrack({
+  // highlight-next-line
+  // It will be the id of the camera from which the video should be captured.
+  cameraId:"camera-id" // OPTIONAL
+
+  // highlight-next-line
+  // It will specifiy the optimization mode for the video track being generated.
+  optimizationMode: "motion", // "text" | "detail",  Default : "motion"
+
+  // highlight-next-line
+  // This will accept the resolution (heigt x width) of video yo want to capture.
+  encoderConfig: "h480p_w640p", // "h540p_w960p" | "h720p_w1280p" ... // Default : "h360p_w640p"
+
+  // highlight-next-line
+  // For Mobile browser It will specifiy whether to use front or back camera for the video track.
+  facingMode: "environment", // "front",  Default : "environment"
+
+  // highlight-next-line
+  // We can discuss this parameter in next step.
+  multiStream:true // false,  Default : true
+
+});
+```
+
+##### What is `multiStream?`
+
+- It will specifiy if the stream should send multiple resolution layers or single resolution layer.
+
+- By default, VideoSDK sends multiple resolution video streams to the server (whether you are using custom video track or not), For instance, user device capabilty is 720p, so VideoSDK sends 720p along with 640p and 480p streams. This allows VideoSDK to deliver the appropriate stream to each participant based on their network bandwidth.
+
+<center>
+
+![Multi Stream False](/img/multistream_false.png)
+
+</center>
+
+- If you want to restric the VideoSDK to to send only one stream to maintain quality, you can set `multiStream` to `false`.
+
+:::caution
+The behavior of the Custom track would depend on the specific device and its capabilities. If the device's hardware and software can support a 1080p `encoderConfig`, then it may be able to use it, even if its maximum capabilities are 720p. However, if the device is not capable of supporting a 1080p `encoderConfig`, it may default to a lower resolution `encoderConfig`, such as 640p.
+:::
+
+<!-- #### Parameters
 
 - **cameraId**:
 
@@ -103,13 +154,24 @@ let customTrack = await createCameraVideoTrack({
   encoderConfig: "h720p_w1280p",
   facingMode: "environment",
 });
-```
+``` -->
 
-### Using Custom Video Track
+### `How to Setup Custom Video Track ?`
 
-#### Custom Track while initializing the meeting
+The custom track can be set up both before and after the initializatio of the meeting.
+
+1. [Setup Custom Track while initialization of the meeting](#1-setup-custom-track-while-initialization-of-the-meeting)
+2. [Setup Cutom Track with with methods](#2-setup-cutom-track-with-methods)
+
+##### 1. Setup Custom Track while initialization of the meeting
 
 If you are passing `webcamEnabled: true` in the `config` of `MeetingProvider` and want to use custom tracks from start of the meeting, you can pass custom track in the `config` as shown below.
+
+:::caution
+Custom Track will not apply on `webcamEnabled: false` configuration.
+:::
+
+##### Example
 
 ```javascript
 import {
@@ -121,7 +183,7 @@ function App() {
   const getTrack = async () => {
     const track = await createCameraVideoTrack({
       optimizationMode: "motion",
-      encoderConfig: "h720p_w1280p",
+      encoderConfig: "h720p_w960p",
       facingMode: "environment",
     });
     setCustomTrack(track);
@@ -140,7 +202,8 @@ function App() {
           meetingId,
           micEnabled: true,
           //highlight-start
-          webcamEnabled: true, //If true, it will use the passed custom track to turn webcam on
+          //If true, it will use the passed custom track to turn webcam on
+          webcamEnabled: true,
           //Pass the custom video track here
           customCameraVideoTrack: customTrack,
           //highlight-end
@@ -156,65 +219,82 @@ function App() {
 }
 ```
 
-#### Custom Track with methods
+#### 2. Setup Cutom Track with methods
 
 In order to switch tracks during the meeting, you have to pass the `MediaStream` in the **`enableWebcam()` or `toggleWebcam()`** method of `useMeeting`.
 
-:::note
-
+:::caution
 Make sure to call `disableWebcam()` befor you create a new track as it may lead to unexpected behaviour.
-
 :::
+
+##### Example
 
 ```javascript
 import { createCameraVideoTrack, useMeeting } from "@videosdk.live/react-sdk";
 
 const MeetingControls = () => {
+  const { localWebcamOn, enableWebcam, disableWebcam, toggleWebcam } =
+    useMeeting();
 
-  const { localWebcamOn, enableWebcam, disableWebcam, toggleWebcam } = useMeeting();
-
-  const handleToggleWebcam = () =>{
-    if(localWebcamOn){
+  const handleToggleWebcam = async () => {
+    if (localWebcamOn) {
       toggleWebcam();
-    }else{
+    } else {
+      //highlight-start
       let customTrack = await createCameraVideoTrack({
         optimizationMode: "motion",
-        encoderConfig: "h720p_w1280p",
+        encoderConfig: "h720p_w960p",
         facingMode: "environment",
         multiStream: false,
       });
 
       toggleWebcam(customTrack);
+      //highlight-end
     }
-  }
+  };
 
-  const handleEnableWebcam = () =>{
-    if(localWebcamOn){
+  const handleEnableWebcam = async () => {
+    if (localWebcamOn) {
       disableWebcam();
+    } else {
+      //highlight-start
+      let customTrack = await createCameraVideoTrack({
+        optimizationMode: "motion",
+        encoderConfig: "h720p_w960p",
+        facingMode: "environment",
+        multiStream: false,
+      });
+
+      enableWebcam(customTrack);
+      //highlight-end
     }
+  };
 
-    let customTrack = await createCameraVideoTrack({
-      optimizationMode: "motion",
-      encoderConfig: "h720p_w1280p",
-      facingMode: "environment",
-      multiStream: false,
-    });
-
-    enableWebcam(customTrack);
-  }
-
-  return <>
-    <button onClick={handleToggleWebcam}>Toggle Webcam</button>
-    <button onClick={handleEnableWebcam}>Enable Webcam</button>
-  </>
-}
+  return (
+    <>
+      <button onClick={handleToggleWebcam}>Toggle Webcam</button>
+      <button onClick={handleEnableWebcam}>Enable Webcam</button>
+    </>
+  );
+};
 ```
 
 :::note
 Using custom video tracks is not just limited to the video tracks created using the `createCameraVideoTrack` method. You can use any `MediaStream` object as a replacement which can include a custom canvas track created by you.
 :::
 
-### Recommended Video Settings
+### `Understand use-case wise custom video track`
+
+Before jumping to the use case lets first understand `multiStream` in Custom Video Track
+
+1. One to One call
+1. Conference Call (More than 2 Participant)
+
+#### One to One call
+
+First of all lets undertand the
+
+<!-- ### Recommended Video Settings
 
 Let us discuss a few recommended video settings you should use based on your use case.
 
@@ -226,9 +306,9 @@ Let us discuss a few recommended video settings you should use based on your use
 
 4. If your target audience **inclues majority of mobile users** only, you should consider using `h540p_w960p` as encoder config and `multiStream:true`.
 
-5. If your target audience **a mix of mobile and desktop users**, you should set `h540p_w960` as encoder config for the desktop users and `h720p_w1280p` as encoder config for mobile users with `multiStream:true` in both the cases.
+5. If your target audience **a mix of mobile and desktop users**, you should set `h540p_w960` as encoder config for the desktop users and `h720p_w1280p` as encoder config for mobile users with `multiStream:true` in both the cases. -->
 
-## Custom Audio Track
+<!-- ## Custom Audio Track
 
 This feature can be used to add custom layers like background noise removal, echo cancellation, etc. on audio and send it to other participants.
 
@@ -520,4 +600,4 @@ Let us discuss a few recommended screen share settings you should use based on y
 
 1. If you want to do screeen share where there is high motion involved like screen share of video, you should use `optimizationMode` as `motion`.
 
-2. If you want to do screeen share where there is high amount of text and low motion like screen share of presentation, you should use `optimizationMode` as `text`.
+2. If you want to do screeen share where there is high amount of text and low motion like screen share of presentation, you should use `optimizationMode` as `text`. -->
