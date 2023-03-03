@@ -8,6 +8,22 @@ tags: [releasenotes]
 
 This page will keep you update all the releases of React Native SDK.
 
+## v0.0.44
+
+**Release Date** : 3rd March 2023
+
+**Change log** :
+
+- Updated Types.
+
+**Bug Fix** :
+
+- Build issue fixes when `enableHermes:true`.
+
+- Fixed Cannot read property `MeetingProvider` of undefined.
+
+---
+
 ## v0.0.42
 
 **Release Date** : 10th February 2023

@@ -63,9 +63,11 @@ project(':rnfgservice').projectDir = new File(rootProject.projectDir, '../node_m
 ### Step 4: Add below lines in MainApplication.java
 
 ```js title="MainApplication.java"
+//highlight-start
 import live.videosdk.rnfgservice.ForegroundServicePackage;
 import live.videosdk.rnincallmanager.InCallManagerPackage;
 import live.videosdk.rnwebrtc.WebRTCModulePackage;
+ // highlight-end
 
 public class MainApplication extends Application implements ReactApplication {
   private static List<ReactPackage> getPackages() {
@@ -73,9 +75,13 @@ public class MainApplication extends Application implements ReactApplication {
     List<ReactPackage> packages = new PackageList(this).getPackages();
     // Packages that cannot be autolinked yet can be added manually here, for example:
     // packages.add(new MyReactNativePackage());
+//highlight-start
+
     packages.add(new ForegroundServicePackage());
     packages.add(new InCallManagerPackage());
     packages.add(new WebRTCModulePackage());
+ // highlight-end
+
     return packages;
   }
 }
@@ -137,6 +143,7 @@ android.enableDexingArtifactTransform.desugaring=false
 ​
 ​
   <application>
+ // highlight-start
    <meta-data
       android:name="live.videosdk.rnfgservice.notification_channel_name"
       android:value="Meeting Notification"
@@ -151,6 +158,7 @@ android.enableDexingArtifactTransform.desugaring=false
     />
     <service android:name="live.videosdk.rnfgservice.ForegroundService" android:foregroundServiceType="mediaProjection"></service>
     <service android:name="live.videosdk.rnfgservice.ForegroundServiceTask"></service>
+ // highlight-end
   </application>
 </manifest>
 ```
@@ -159,12 +167,14 @@ android.enableDexingArtifactTransform.desugaring=false
 
 ```js title="index.js"
 // Import the library
+  // highlight-next-line
 import { register } from '@videosdk.live/react-native-sdk';
 import { AppRegistry } from 'react-native';
 import { name as appName } from './app.json';
 import App from './src/App.js';
 ​
 // Register the service
+  // highlight-next-line
 register();
 AppRegistry.registerComponent(appName, () => App);
 ```
@@ -179,6 +189,7 @@ buildscript {
       minSdkVersion = 23
   }
 }
+```
 
 ## Use hooks API
 
@@ -197,4 +208,3 @@ Also, React Provider and Consumer to listen changes in meeting environment.
 Check out official example of React Native SDK implementation: [videosdk-rtc-react-native-sdk-example](https://github.com/videosdk-live/videosdk-rtc-react-native-sdk-example)
 
 :::
-```
