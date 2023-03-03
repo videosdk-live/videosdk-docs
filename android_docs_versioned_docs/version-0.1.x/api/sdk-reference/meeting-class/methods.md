@@ -141,19 +141,37 @@ title: Meeting Class Methods
 
 ### startRecording()
 
-- It is used to start meeting recording.
-- All [participants](./properties.md#getparticipants) and [localParticipant](./properties.md#getlocalparticipant), will receive `onRecordingStarted` event.
+- `startRecording` is used to start meeting recording.
 
 - `webhookUrl` will be triggered when the recording is completed and stored into server. Read more about webhooks [here](https://en.wikipedia.org/wiki/Webhook).
+
+- `awsDirPath` will be the path for the your S3 bucket where you want to store recordings to. To allow us to store recording in your S3 bucket, you will need to fill this form by providing the required values. [VideoSDK AWS S3 Integration](https://zfrmz.in/RVlFLFiturVJ7Q97fr23)
+
+- `config: mode` is used to either record video-and-audio both or only audio. And by default it will be video-and-audio.
+
+- `config: quality` is only applicable to video-and-audio.
 
 #### Parameters
 
 - **webhookUrl**: String
+- **awsDirPath**: String
+- **config**:
+  - **layout**:
+    - **type**: _"GRID"_ | _"SPOTLIGHT"_ | _"SIDEBAR"_
+    - **priority**: _"SPEAKER"_ | _"PIN"_
+    - **gridSize**: Number _`max 4`_
+  - **theme**: _"DARK"_ | _"LIGHT"_ | _"DEFAULT"_
+  - **mode**: _"video-and-audio"_ | _"audio"_
+  - **quality**: _"low"_ | _"med"_ | _"high"_
+  - **orientation**: _"landscape"_ | _"portrait"_
 
 #### Returns
 
 - _`void`_
 
+#### Events associated with `startRecording()`:
+
+- Every participant will receive a callback on [`onRecordingStateChanged()`](./events#onrecordingstatechanged)
 #### Example
 
 import Tabs from '@theme/Tabs';
@@ -168,8 +186,14 @@ values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
 
 ```js
 val webhookUrl = "https://webhook.your-api-server.com"
-
-meeting!!.startRecording(webhookUrl)
+var config = JSONObject()
+var layout = JSONObject()
+JsonUtils.jsonPut(layout, "type", "SPOTLIGHT")
+JsonUtils.jsonPut(layout, "priority", "PIN")
+JsonUtils.jsonPut(layout, "gridSize", 9)
+JsonUtils.jsonPut(config, "layout", layout)
+JsonUtils.jsonPut(config, "theme", "DARK")
+meeting!!.startRecording(webhookUrl,null,config)
 ```
 
 </TabItem>
@@ -178,8 +202,14 @@ meeting!!.startRecording(webhookUrl)
 
 ```js
 String webhookUrl = "https://webhook.your-api-server.com";
-
-meeting.startRecording(webhookUrl);
+JSONObject config = new JSONObject();
+JSONObject layout = new JSONObject();
+JsonUtils.jsonPut(layout, "type", "SPOTLIGHT");
+JsonUtils.jsonPut(layout, "priority", "PIN");
+JsonUtils.jsonPut(layout, "gridSize", 9);
+JsonUtils.jsonPut(config, "layout", layout);
+JsonUtils.jsonPut(config, "theme", "DARK");
+meeting.startRecording(webhookUrl,null,config);
 ```
 
 </TabItem>
@@ -191,11 +221,14 @@ meeting.startRecording(webhookUrl);
 ### stopRecording()
 
 - It is used to stop meeting recording.
-- All [participants](./properties.md#getparticipants) and [localParticipant](./properties.md#getlocalparticipant), will receive `onRecordingStopped` event.
 
 #### Returns
 
 - _`void`_
+
+#### Events associated with `stopRecording()`:
+
+- Every participant will receive a callback on [`onRecordingStateChanged()`](./events#onrecordingstatechanged)
 
 #### Example
 
@@ -226,19 +259,26 @@ meeting.stopRecording();
 
 ### startLivestream()
 
-- It is used to start meeting livestreaming.
+- `startLiveStream()` is used to start meeting livestreaming.
+
 - You will be able to start live stream meetings to other platforms such as Youtube, Facebook, etc. that support `RTMP` streaming.
-- All [participants](./properties.md#getparticipants) and [localParticipant](./properties.md#getlocalparticipant), will receive [`onLivestreamStarted`](./meeting-event-listener-class#onlivestreamstarted) event.
 
 #### Parameters
 
 - **outputs**: `List<LivestreamOutput>`
-
+- **config**:
+  - **layout**:
+    - **type**: _"GRID"_ | _"SPOTLIGHT"_ | _"SIDEBAR"_
+    - **priority**: _"SPEAKER"_ | _"PIN"_
+    - **gridSize**: Number _`max 25`_
+  - **theme**: _"DARK"_ | _"LIGHT"_ | _"DEFAULT"_
 #### Returns
 
 - _`void`_
 
----
+#### Events associated with `startLiveStream()`:
+
+- Every participant will receive a callback on [`onLivestreamStateChanged()`](./events#onlivestreamstatechanged)
 
 #### Example
 
@@ -256,7 +296,15 @@ val YOUTUBE_RTMP_STREAM_KEY = "<STREAM_KEY>"
 val outputs: MutableList<LivestreamOutput> = ArrayList()
 outputs.add(LivestreamOutput(YOUTUBE_RTMP_URL, YOUTUBE_RTMP_STREAM_KEY))
 
-meeting!!.startLivestream(outputs)
+var config = JSONObject()
+var layout = JSONObject()
+JsonUtils.jsonPut(layout, "type", "SPOTLIGHT")
+JsonUtils.jsonPut(layout, "priority", "PIN")
+JsonUtils.jsonPut(layout, "gridSize", 9)
+JsonUtils.jsonPut(config, "layout", layout)
+JsonUtils.jsonPut(config, "theme", "DARK")
+
+meeting!!.startLivestream(outputs,config)
 ```
 
 </TabItem>
@@ -270,22 +318,34 @@ final String YOUTUBE_RTMP_STREAM_KEY = "<STREAM_KEY>";
 List<LivestreamOutput> outputs = new ArrayList<>();
 outputs.add(new LivestreamOutput(YOUTUBE_RTMP_URL, YOUTUBE_RTMP_STREAM_KEY));
 
-meeting.startLivestream(outputs);
+JSONObject config = new JSONObject();
+JSONObject layout = new JSONObject();
+JsonUtils.jsonPut(layout, "type", "SPOTLIGHT");
+JsonUtils.jsonPut(layout, "priority", "PIN");
+JsonUtils.jsonPut(layout, "gridSize", 9);
+JsonUtils.jsonPut(config, "layout", layout);
+JsonUtils.jsonPut(config, "theme", "DARK");
+
+meeting.startLivestream(outputs,config);
 ```
 
 </TabItem>
 
 </Tabs>
 
+---
+
 ### stopLivestream()
 
 - It is used to stop meeting livestreaming.
-- All [participants](./properties.md#getparticipants) and [localParticipant](./properties.md#getlocalparticipant), will receive [`onLivestreamStopped`](./meeting-event-listener-class#onlivestreamstopped) event.
 
 #### Returns
 
 - _`void`_
 
+#### Events associated with `stopLivestream()`:
+
+- Every participant will receive a callback on [`onLivestreamStateChanged()`](./events#onlivestreamstatechanged)
 #### Example
 
 <Tabs
@@ -305,6 +365,163 @@ meeting!!.stopLivestream()
 
 ```javascript
 meeting.stopLivestream();
+```
+
+</TabItem>
+
+</Tabs>
+
+---
+
+### startHls()
+
+- `startHls()` will start HLS streaming of your meeting.
+
+- You will be able to start HLS and watch the live stream of meeting over HLS.
+
+- `mode` is used to either start hls streaming of video-and-audio both or only audio. And by default it will be video-and-audio.
+
+- `quality` is only applicable to video-and-audio.
+
+#### Parameters
+
+- **config**:
+  - **layout**:
+    - **type**: _"GRID"_ | _"SPOTLIGHT"_ | _"SIDEBAR"_
+    - **priority**: _"SPEAKER"_ | _"PIN"_
+    - **gridSize**: Number _`max 25`_
+  - **theme**: _"DARK"_ | _"LIGHT"_ | _"DEFAULT"_
+  - **mode**: _"video-and-audio"_ | _"audio"_
+  - **quality**: _"low"_ | _"med"_ | _"high"_
+
+#### Returns
+
+- _`void`_
+
+#### Events associated with `startHls()`:
+
+- Every participant will receive a callback on [`onHlsStateChanged()`](./events#onhlsstatechanged)
+
+#### Example
+
+<Tabs
+defaultValue="Kotlin"
+groupId={"AndroidLanguage"}
+values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
+
+<TabItem value="Kotlin">
+
+```javascript
+var config = JSONObject()
+var layout = JSONObject()
+JsonUtils.jsonPut(layout, "type", "SPOTLIGHT")
+JsonUtils.jsonPut(layout, "priority", "PIN")
+JsonUtils.jsonPut(layout, "gridSize", 9)
+JsonUtils.jsonPut(config, "layout", layout)
+JsonUtils.jsonPut(config, "orientation", "portrait")
+JsonUtils.jsonPut(config, "theme", "DARK")
+meeting!!.startHls(config)
+```
+
+</TabItem>
+
+<TabItem value="Java">
+
+```javascript
+JSONObject config = new JSONObject();
+JSONObject layout = new JSONObject();
+JsonUtils.jsonPut(layout, "type", "SPOTLIGHT");
+JsonUtils.jsonPut(layout, "priority", "PIN");
+JsonUtils.jsonPut(layout, "gridSize", 9);
+JsonUtils.jsonPut(config, "layout", layout);
+JsonUtils.jsonPut(config, "orientation", "portrait");
+JsonUtils.jsonPut(config, "theme", "DARK");
+meeting.startHls(config);
+```
+
+</TabItem>
+
+</Tabs>
+
+---
+
+### stopHls()
+
+- `stopHls()` is used to stop the HLS streaming.
+
+#### Returns
+
+- _`void`_
+#### Events associated with `stopHls()`:
+
+- Every participant will receive a callback on [`onHlsStateChanged()`](./events#onhlsstatechanged)
+
+#### Example
+
+<Tabs
+defaultValue="Kotlin"
+groupId={"AndroidLanguage"}
+values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
+
+<TabItem value="Kotlin">
+
+```javascript
+meeting!!.stopHls()
+```
+
+</TabItem>
+
+<TabItem value="Java">
+
+```javascript
+meeting.stopHls();
+```
+
+</TabItem>
+
+</Tabs>
+
+---
+
+### changeMode()
+
+- It is used to change the mode.
+- You can toggle between the `CONFERENCE` and `VIEWER`mode .
+  - `CONFERENCE`: Both audio and video streams will be produced and consumed in this mode.
+  - `VIEWER`: Audio and video streams will not be produced or consumed in this mode.
+
+#### Parameters
+
+- **mode**: String
+
+#### Returns
+
+- _`void`_
+
+#### Events associated with `changeMode()`:
+
+- Every participant will receive a callback on [`onParticipantModeChanged()`](./events#onparticipantmodechanged)
+
+
+#### Example
+
+<Tabs
+defaultValue="Kotlin"
+groupId={"AndroidLanguage"}
+values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
+
+<TabItem value="Kotlin">
+
+```javascript
+meeting!!.changeMode("VIEWER")
+```
+
+</TabItem>
+
+<TabItem value="Java">
+
+```javascript
+meeting.changeMode("VIEWER");
 ```
 
 </TabItem>

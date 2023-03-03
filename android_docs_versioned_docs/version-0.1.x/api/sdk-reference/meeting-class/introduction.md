@@ -114,6 +114,21 @@ import events from "./../data/meeting-class/events.json";
 </div>
 <div class="col col--4 margin-bottom--sm" >
 
+- [startHls()](./methods#starthls)
+
+</div>
+<div class="col col--4 margin-bottom--sm" >
+
+- [stopHls()](./methods#stophls)
+
+</div>
+<div class="col col--4 margin-bottom--sm" >
+
+- [changeMode()](./methods#changemode)
+
+</div>
+<div class="col col--4 margin-bottom--sm" >
+
 - [getMics()](./methods#getmics)
 
 </div>
@@ -236,7 +251,27 @@ import events from "./../data/meeting-class/events.json";
 </div>
 <div class="col col--4 margin-bottom--sm" >
 
+- [onHlsStateChanged](./meeting-event-listener-class#onhlsstatechanged)
+
+</div>
+<div class="col col--4 margin-bottom--sm" >
+
 - [onExternalCallStarted](./meeting-event-listener-class#onexternalcallstarted)
+
+</div>
+<div class="col col--4 margin-bottom--sm" >
+
+- [onMeetingStateChanged](./meeting-event-listener-class#onmeetingstatechanged)
+
+</div>
+<div class="col col--4 margin-bottom--sm" >
+
+- [onParticipantModeChanged](./meeting-event-listener-class#onparticipantmodechanged)
+
+</div>
+<div class="col col--4 margin-bottom--sm" >
+
+- [onPinStateChanged()](./meeting-event-listener-class#onpinstatechanged)
 
 </div>
 

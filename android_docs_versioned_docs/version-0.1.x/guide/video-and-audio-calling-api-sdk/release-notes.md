@@ -7,6 +7,33 @@ pagination_label: Release Notes
 
 This page will keep you update all the releases of Android SDK.
 
+## v0.1.14
+
+**Release Date** : 28th February 2023
+
+**Change log** :
+
+- Participant can toggle between the `CONFERENCE` and `VIEWER` mode using `changeMode()` method.
+
+    **Docs** : [changeMode()](https://docs.videosdk.live/android/api/sdk-reference/meeting-class/methods#changemode)
+
+- Provide `startHLS()` and `stopHLS()` method for live streaming.
+
+    **Docs** : [startHLS()](https://docs.videosdk.live/android/api/sdk-reference/meeting-class/methods#starthls)
+
+    **Docs** : [stopHLS()](https://docs.videosdk.live/android/api/sdk-reference/meeting-class/methods#stophls)
+
+- Provide `pin()`/`unpin()` method for Pining / Unpining the participant.
+
+    **Docs** : [pin()/unpin()](https://docs.videosdk.live/android/guide/video-and-audio-calling-api-sdk/features/pin-participants)
+
+- Update `startRecording()`,`startLiveStream()` method
+
+    **Docs** : [startRecording()](https://docs.videosdk.live/android/api/sdk-reference/meeting-class/methods#startrecording)
+
+    **Docs** : [startLiveStream()](https://docs.videosdk.live/android/api/sdk-reference/meeting-class/methods#startlivestream)
+
+---
 ## v0.1.13
 
 **Release Date** : 13th january 2023
@@ -17,6 +44,7 @@ This page will keep you update all the releases of Android SDK.
 
     **Docs** : [VideoView](https://docs.videosdk.live/android/guide/video-and-audio-calling-api-sdk/components/videoView)
     
+---
 ## v0.1.12
 
 **Release Date** : 3rd Janurary 2023
