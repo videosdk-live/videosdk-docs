@@ -60,6 +60,7 @@ Please refer this [documentation](/api-reference/realtime-communication/intro/) 
         boolean micEnabled,
         boolean webcamEnabled,
         String participantId,
+        String mode,
         Map<String, CustomStreamTrack> customTracks
       )
 ```
@@ -102,12 +103,25 @@ Please refer this [documentation](/api-reference/realtime-communication/create-r
 
   - type: `Boolean`
   - `REQUIRED`
+
 ### participantId
 
 - Unique Id of the participant. If you passed `null` then SDK will create an Id by itself and will use that id.
 
   - type : `String` or `null`
   - `REQUIRED`
+
+### mode
+
+- There are 2 types of modes:
+
+  1. `CONFERENCE` : Both audio and video streams will be produced and consumed in this mode.
+
+  2. `VIEWER` : Audio and video streams will not be produced or consumed in this mode.
+
+- type : `String` or `null`
+- defaultValue : `CONFERENCE`
+- `REQUIRED`
 
 ### customTracks
 
@@ -155,6 +169,7 @@ var meeting = VideoSDK.initMeeting(
     true,
     true,
     null,
+    null,
     null
   )
 )
@@ -178,6 +193,7 @@ Meeting meeting = VideoSDK.initMeeting({
   "John Doe",
   true,
   true,
+  null,
   null,
   null
 });

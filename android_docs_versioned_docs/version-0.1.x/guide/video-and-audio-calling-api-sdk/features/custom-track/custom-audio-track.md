@@ -112,6 +112,8 @@ override fun onCreate(savedInstanceState: Bundle?) {
       true, 
       //ParticipantId
       null,
+      //Mode
+      null,
       //Pass the custom tracks here
       customTracks
     )
@@ -140,6 +142,8 @@ protected void onCreate(Bundle savedInstanceState) {
         //WebcamEnabled
         true,
         //ParticipantId
+        null,
+        //Mode
         null,
         //Pass the custom tracks here
         customTracks

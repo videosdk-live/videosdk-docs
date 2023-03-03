@@ -304,6 +304,7 @@ class MainActivity : AppCompatActivity() {
     val micEnabled = true
     val webcamEnabled = true
     val paticipantId="demo@123"  // If you passed `null` then SDK will create an Id by itself and will use that id.
+    val mode="CONFERENCE"
 
     // Configure authentication token
     VideoSDK.config(token)
@@ -316,6 +317,7 @@ class MainActivity : AppCompatActivity() {
       micEnabled,
       webcamEnabled,
       paticipantId,
+      mode,
       null
     )
   }
@@ -344,6 +346,7 @@ public class MainActivity extends AppCompatActivity {
         final boolean micEnabled = true;
         final boolean webcamEnabled = true;
         final String participantId = "demo@123"; // If you passed `null` then SDK will create an Id by itself and will use that id.
+        final String mode="CONFERENCE";
 
         // Configure authentication token
         VideoSDK.config(token);
@@ -356,6 +359,7 @@ public class MainActivity extends AppCompatActivity {
                 micEnabled,
                 webcamEnabled,
                 participantId,
+                mode,
                 null
         );
     }

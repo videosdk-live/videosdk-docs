@@ -134,7 +134,7 @@ dependencyResolutionManagement{
 
 ```js title="app/build.gradle"
 dependencies {
-  implementation 'live.videosdk:rtc-android-sdk:0.1.13'
+  implementation 'live.videosdk:rtc-android-sdk:0.1.14'
 
   // library to perform Network call to generate a meeting id
   implementation 'com.amitshekhar.android:android-networking:1.0.2'
@@ -704,7 +704,7 @@ class MeetingActivity : AppCompatActivity() {
     // 2. Initialize VideoSDK Meeting
     meeting = VideoSDK.initMeeting(
       this@MeetingActivity, meetingId, participantName,
-      micEnabled, webcamEnabled, null, null)
+      micEnabled, webcamEnabled,null, null, null)
 
     // 3. Add event listener for listening upcoming events
     meeting!!.addEventListener(meetingEventListener)
@@ -768,7 +768,7 @@ public class MeetingActivity extends AppCompatActivity {
     // 2. Initialize VideoSDK Meeting
     meeting = VideoSDK.initMeeting(
             MeetingActivity.this, meetingId, participantName,
-            micEnabled, webcamEnabled, null, null);
+            micEnabled, webcamEnabled,null, null, null);
 
     // 3. Add event listener for listening upcoming events
     meeting.addEventListener(meetingEventListener);

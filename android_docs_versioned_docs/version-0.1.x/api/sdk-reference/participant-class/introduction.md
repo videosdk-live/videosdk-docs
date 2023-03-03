@@ -78,6 +78,12 @@ Map<String, Participant> participants = meeting.getParticipants();
 
 </div>
 
+<div class="col col--4 margin-bottom--sm" >
+
+- [getMode()](./properties#getmode)
+
+</div>
+
 </div>
 
 ## Participant Methods

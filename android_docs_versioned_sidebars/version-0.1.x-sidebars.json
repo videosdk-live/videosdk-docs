@@ -35,6 +35,7 @@
         "guide/video-and-audio-calling-api-sdk/features/pubsub",
         "guide/video-and-audio-calling-api-sdk/features/set-participant-video-quality",
         "guide/video-and-audio-calling-api-sdk/features/speaker-indiction",
+        "guide/video-and-audio-calling-api-sdk/features/pin-participants",
         "guide/video-and-audio-calling-api-sdk/features/remove-participant",
         "guide/video-and-audio-calling-api-sdk/features/pause-resume-video-stream",
         "guide/video-and-audio-calling-api-sdk/features/record-meeting",

@@ -45,4 +45,13 @@ pagination_label: Participant Class Properties
 
 - It will represents the stream for that particular participant who has joined the meeting. Streams could be `audio` , `video` or `share`.
 
+---
+
+### getMode()
+
+- type : `string`
+
+- ` getMode()` will return mode of the Participant.
+
+
 </div>
