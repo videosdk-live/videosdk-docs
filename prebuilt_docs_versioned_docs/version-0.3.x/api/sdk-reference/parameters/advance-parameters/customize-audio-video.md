@@ -23,7 +23,7 @@ title: Customize Audio/Video Parameters
 
 - type: `String`
 
-- `videoConfig.optimizationMode` represents the specific mode of your video which can be `motion` , `text` or `deatil`.
+- `videoConfig.optimizationMode` represents the specific mode of your video which can be `motion` , `text` or `detail`.
 
 ### multiStream
 
@@ -81,7 +81,7 @@ meeting.init({
 
 - type: `String`
 
-- `screenShareConfig.optimizationMode` represents the specific mode of your screen shared video which can be `motion` , `text` or `deatil`.
+- `screenShareConfig.optimizationMode` represents the specific mode of your screen shared video which can be `motion` , `text` or `detail`.
 
 ```js
 meeting.init({
