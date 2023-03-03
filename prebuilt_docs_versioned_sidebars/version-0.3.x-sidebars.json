@@ -58,7 +58,7 @@
         "guide/prebuilt-video-and-audio-calling/features/whiteboard",
         "guide/prebuilt-video-and-audio-calling/features/debug-mode",
         "guide/prebuilt-video-and-audio-calling/features/waiting-screen",
-        "guide/prebuilt-video-and-audio-calling/features/audio-video-config"
+        "guide/prebuilt-video-and-audio-calling/features/customize-audio-video"
       ],
       "collapsed": true
     }
@@ -88,7 +88,7 @@
         "api/sdk-reference/parameters/advance-parameters/recording",
         "api/sdk-reference/parameters/advance-parameters/left-screen",
         "api/sdk-reference/parameters/advance-parameters/waiting-screen",
-        "api/sdk-reference/parameters/advance-parameters/audio-video-config"
+        "api/sdk-reference/parameters/advance-parameters/customize-audio-video"
       ]
     },
     {

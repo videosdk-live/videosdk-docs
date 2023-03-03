@@ -1,8 +1,8 @@
 ---
 sidebar_position: 1
-sidebar_label: Audio/Video Config Parameters
-pagination_label: Audio/Video Config Parameters
-title: Audio/Video Config Parameters
+sidebar_label: Customize Audio/Video Parameters
+pagination_label: Customize Audio/Video Parameters
+title: Customize Audio/Video Parameters
 ---
 
 <div class="sdk-api-ref-only-h4">
@@ -37,7 +37,7 @@ meeting.init({
   videoConfig: {
     resolution: "h720p_w1280p",
     optimizationMode: "motion",
-    multiStream: false,
+    multiStream: true,
   },
   // other params
 });
@@ -75,7 +75,7 @@ meeting.init({
 
 - type: `String`
 
-- `screenShareConfig.resolution` represents the resolution of your screen shared video which can be `h90p_w160p` , `h180p_w320p` , `h216p_w384p` , `h360p_w640p` , `h540p_w960p` , `h720p_w1280p` , `h1080p_w1920p` , `h1440p_w2560p` , `h2160p_w3840p` , `h120p_w160p` , `h180p_w240p` , `h240p_w320p` , `h360p_w480p` , `h480p_w640p` , `h540p_w720p` , `h720p_w960p` , `h1080p_w1440p` or `h1440p_w1920p`.
+- `screenShareConfig.resolution` represents the resolution of your screen shared video which can be `h360p_30fps`, `h720p_5fps`, `h720p_15fps`, `h1080p_15fps`, `h1080p_30fps`.
 
 ### optimizationMode
 

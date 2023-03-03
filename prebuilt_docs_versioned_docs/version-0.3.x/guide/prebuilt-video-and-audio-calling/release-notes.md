@@ -15,7 +15,7 @@ This page will keep you update all the releases of Prebuilt SDK.
 
 1. `multistream` parameter added in `videoConfig` object.
 
-   **Docs** : [Audio/Video Config](/prebuilt/api/sdk-reference/parameters/advance-parameters/audio-video-config#multistream)
+   **Docs** : [Audio/Video Config](/prebuilt/api/sdk-reference/parameters/advance-parameters/customize-audio-video#multistream)
 
 ## v0.3.25
 
@@ -29,7 +29,7 @@ This page will keep you update all the releases of Prebuilt SDK.
 
 3. Support of custom configuartion in custom track of video, audio and screenShare.
 
-   **Docs** : [Audio/Video Config](/prebuilt/guide/prebuilt-video-and-audio-calling/features/audio-video-config)
+   **Docs** : [Audio/Video Config](/prebuilt/guide/prebuilt-video-and-audio-calling/features/customize-audio-video)
 
 4. Get the notification when you switch the networks or become disconnected from the meeting.
 
