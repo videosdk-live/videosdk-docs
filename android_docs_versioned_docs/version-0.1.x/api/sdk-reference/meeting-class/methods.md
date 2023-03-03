@@ -171,7 +171,7 @@ title: Meeting Class Methods
 
 #### Events associated with `startRecording()`:
 
-- Every participant will receive a callback on [`onRecordingStateChanged()`](./events#onrecordingstatechanged)
+- Every participant will receive a callback on [`onRecordingStateChanged()`](./meeting-event-listener-class#onrecordingstatechanged)
 #### Example
 
 import Tabs from '@theme/Tabs';
@@ -228,7 +228,7 @@ meeting.startRecording(webhookUrl,null,config);
 
 #### Events associated with `stopRecording()`:
 
-- Every participant will receive a callback on [`onRecordingStateChanged()`](./events#onrecordingstatechanged)
+- Every participant will receive a callback on [`onRecordingStateChanged()`](./meeting-event-listener-class#onrecordingstatechanged)
 
 #### Example
 
@@ -278,7 +278,8 @@ meeting.stopRecording();
 
 #### Events associated with `startLiveStream()`:
 
-- Every participant will receive a callback on [`onLivestreamStateChanged()`](./events#onlivestreamstatechanged)
+- Every participant will receive a callback on [`onLivestreamStateChanged()`](./meeting-event-listener-class#onlivestreamstatechanged)
+
 
 #### Example
 
@@ -345,7 +346,7 @@ meeting.startLivestream(outputs,config);
 
 #### Events associated with `stopLivestream()`:
 
-- Every participant will receive a callback on [`onLivestreamStateChanged()`](./events#onlivestreamstatechanged)
+- Every participant will receive a callback on [`onLivestreamStateChanged()`](./meeting-event-listener-class#onlivestreamstatechanged)
 #### Example
 
 <Tabs
@@ -400,7 +401,7 @@ meeting.stopLivestream();
 
 #### Events associated with `startHls()`:
 
-- Every participant will receive a callback on [`onHlsStateChanged()`](./events#onhlsstatechanged)
+- Every participant will receive a callback on [`onHlsStateChanged()`](./meeting-event-listener-class#onhlsstatechanged)
 
 #### Example
 
@@ -454,7 +455,7 @@ meeting.startHls(config);
 - _`void`_
 #### Events associated with `stopHls()`:
 
-- Every participant will receive a callback on [`onHlsStateChanged()`](./events#onhlsstatechanged)
+- Every participant will receive a callback on [`onHlsStateChanged()`](./meeting-event-listener-class#onhlsstatechanged)
 
 #### Example
 
@@ -500,7 +501,7 @@ meeting.stopHls();
 
 #### Events associated with `changeMode()`:
 
-- Every participant will receive a callback on [`onParticipantModeChanged()`](./events#onparticipantmodechanged)
+- Every participant will receive a callback on [`onParticipantModeChanged()`](./meeting-event-listener-class#onparticipantmodechanged)
 
 
 #### Example
