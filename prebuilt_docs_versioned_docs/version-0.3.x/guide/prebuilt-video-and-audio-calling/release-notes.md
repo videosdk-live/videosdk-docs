@@ -7,6 +7,32 @@ pagination_label: Release Notes
 
 This page will keep you update all the releases of Prebuilt SDK.
 
+## v0.3.29
+
+**Release Date** : 27th February 2023
+
+**Change log** :
+
+1. `multistream` parameter added in `videoConfig` object.
+
+   **Docs** : [Audio/Video Config](/prebuilt/api/sdk-reference/parameters/advance-parameters/customize-audio-video#multistream)
+
+## v0.3.25
+
+**Release Date** : 20th February 2023
+
+**Change log** :
+
+1. Mirror your camera view from `Change Webcam` menu in topbar.
+
+2. Change incoming video resolution to SD or HD. You can find this options in `Configuration` panel.
+
+3. Support of custom configuartion in custom track of video, audio and screenShare.
+
+   **Docs** : [Audio/Video Config](/prebuilt/guide/prebuilt-video-and-audio-calling/features/customize-audio-video)
+
+4. Get the notification when you switch the networks or become disconnected from the meeting.
+
 ## v0.3.23
 
 **Release Date** : 17th November 2022
