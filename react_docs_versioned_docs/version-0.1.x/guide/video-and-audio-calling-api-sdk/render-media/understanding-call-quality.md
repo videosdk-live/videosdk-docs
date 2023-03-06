@@ -63,6 +63,8 @@ In order to identify quality issues, VideoSDK collects multiple audio and video 
 
 - If most of your users are on mobile and desktop devices, having higher resolution for desktop and mid-resolutions for mobile devices can help in improving the performance and quality as we will be saving the bandwidth on the mobile end.
 
+![resolution-and-bitrate](/img/resolution-and-bitrate.png)
+
 ### `2. Bitrate`
 
 - Bitrate is the number of bits per second send or received during the transmission of audio or video streams. Bitrate can be a key parameter to determine the quality of the audio or video streams, as it should be fine-tuned for each resolution to achieve the best match of performance and bandwidth utilization.
