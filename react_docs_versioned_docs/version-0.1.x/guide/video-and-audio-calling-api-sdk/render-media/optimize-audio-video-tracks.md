@@ -65,19 +65,25 @@ let customTrack = await createCameraVideoTrack({
 });
 ```
 
-##### What is `multiStream?`
+##### What is `multiStream`?
 
 - It will specifiy if the stream should send multiple resolution layers or single resolution layer.
 
-- By default, VideoSDK sends multiple resolution video streams to the server (whether you are using custom video track or not), For instance, user device capabilty is 720p, so VideoSDK sends 720p along with 640p and 480p streams. This allows VideoSDK to deliver the appropriate stream to each participant based on their network bandwidth.
+**`multiStream : true`** By default, VideoSDK sends multiple resolution video streams to the server (whether you are using custom video track or not), For instance, user device capabilty is 720p, so VideoSDK sends 720p along with 640p and 480p streams. This allows VideoSDK to deliver the appropriate stream to each participant based on their network bandwidth.
+
+<center>
+
+![Multi Stream False](/img/multistream_true.png)
+
+</center>
+
+**`multiStream : false`** If you want to restric the VideoSDK to to send only one stream to maintain quality, you can set `multiStream` to `false`.
 
 <center>
 
 ![Multi Stream False](/img/multistream_false.png)
 
 </center>
-
-- If you want to restric the VideoSDK to to send only one stream to maintain quality, you can set `multiStream` to `false`.
 
 :::caution
 The behavior of the Custom track would depend on the specific device and its capabilities. If the device's hardware and software can support a 1080p `encoderConfig`, then it may be able to use it, even if its maximum capabilities are 720p. However, if the device is not capable of supporting a 1080p `encoderConfig`, it may default to a lower resolution `encoderConfig`, such as 640p.
