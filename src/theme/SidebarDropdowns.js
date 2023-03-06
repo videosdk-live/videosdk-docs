@@ -23,7 +23,9 @@ export default function SidebarDropdowns() {
       "/" +
       value +
       (currentPath.split("/")[version == versionList[0] ? 2 : 3] == "guide"
-        ? "/guide/video-and-audio-calling-api-sdk/concept-and-architecture"
+        ? value == "react"
+          ? "/guide/video-and-audio-calling-api-sdk/concept-and-architecture"
+          : "/guide/video-and-audio-calling-api-sdk/getting-started"
         : "/api/sdk-reference/setup")
     );
   }
