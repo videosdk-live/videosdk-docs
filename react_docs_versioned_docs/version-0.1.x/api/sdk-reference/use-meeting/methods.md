@@ -213,9 +213,9 @@ startRecording(webhookUrl, awsDirPath, config);
 
 ---
 
-### startLiveStream()
+### startLivestream()
 
-- `startLiveStream()` is used to start meeting livestreaming.
+- `startLivestream()` is used to start meeting livestreaming.
 
 - You will be able to start live stream meetings to other platforms such as Youtube, Facebook, etc. that support `RTMP` streaming.
 
@@ -256,20 +256,20 @@ const config = {
   theme: "DEFAULT",
 };
 
-const { startLiveStream } = useMeeting();
+const { startLivestream } = useMeeting();
 
 startLivestream(outputs, config);
 ```
 
 ---
 
-### stopLiveStream()
+### stopLivestream()
 
-- `stopLiveStream()` is used to stop the live streaming to social media.
+- `stopLivestream()` is used to stop the live streaming to social media.
 
-#### Events associated with `stopLiveStream()`:
+#### Events associated with `stopLivestream()`:
 
-- Every participant will receive a callback on [`onLiveStreamStopped()`](./events#onlivestreamstopped)
+- Every participant will receive a callback on [`onLivestreamStopped()`](./events#onlivestreamstopped)
 
 ---
 

@@ -143,3 +143,11 @@ const {
 ### Custom Template
 
 With VideoSDK, you can also use your own custom designed layout template to livestream the meetings. In order to use the custom template, you need to create a template for which you can [follow these guide](/docs/tutorials/customized-layout). Once you have setup the template, you can use the [REST API to start](/api-reference/realtime-communication/start-livestream) the livestream with the `templateURL` parameter.
+
+## API Reference
+
+The API references for all the methods utilised in these guide are provided below.
+
+- [startLivestream](/react/api/sdk-reference/use-meeting/methods#startlivestream)
+- [stopLivestream](/react/api/sdk-reference/use-meeting/methods#stoplivestream)
+- [onLivestreamStateChanged](/react/api/sdk-reference/use-meeting/events#onlivestreamstatechanged)

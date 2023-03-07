@@ -22,7 +22,7 @@ PubSub is a short acronym for Publish-Subscribe mechanism. These mechanism is us
 
 Here is a visual to better understand publish-subscribe mechanism.
 
-![pubsub](../../../../../static/img/pubsub.png)
+![pubsub](/img/pubsub.png)
 
 ## usePubSub
 
@@ -58,7 +58,7 @@ function MeetingView() {
 }
 ```
 
-## Getting the messages
+## Receiving the messages
 
 - `messages` property of the `usePubSub` hook will hold all the past and new upcoming messages for that particular topic.
 

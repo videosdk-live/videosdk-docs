@@ -21,7 +21,7 @@ In this guide we will take a look at how to render the participant's audio and v
 
 ## Rendering Participant
 
-The theree steps are involve to achieve this process.
+The three steps are involve to achieve this process.
 
 1. [Get Mic and Webcam Status](#1-get-mic-and-webcam-status)
 2. [Rendering Video](#2-rendering-video)
@@ -92,6 +92,12 @@ const ParticipantView = ({ participantId }) => {
 };
 ```
 
+<center>
+
+![participant status](/img/participant-status.png)
+
+</center>
+
 ### `2. Rendering Video`
 
 The status of the `webcam` and `mic` is now displayed. If the webcam is turned `on`, we will require the participant's `webcamStream` which we will obtain from the `useParticipant` hook, in order to display the participant's video.
@@ -124,12 +130,6 @@ const ParticipantView = ({ participantId }) => {
   );
 };
 ```
-
-<center>
-
-![participant status](/img/participant-status.png)
-
-</center>
 
 **`Step 2:`** Now that we have our `<video>` element in place, we will add a `useEffect` so that, when the `webcamStream` is discovered, it will immediately add to the `<video>` element.
 
