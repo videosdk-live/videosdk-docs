@@ -50,7 +50,7 @@ let customTrack = await createCameraVideoTrack({
   optimizationMode: "motion", // "text" | "detail",  Default : "motion"
 
   // highlight-next-line
-  // This will accept the resolution (height x width) of video yo want to capture.
+  // This will accept the resolution (height x width) of video you want to capture.
   encoderConfig: "h480p_w640p", // "h540p_w960p" | "h720p_w1280p" ... // Default : "h360p_w640p"
 
   // highlight-next-line
@@ -68,15 +68,15 @@ let customTrack = await createCameraVideoTrack({
 
 - It will specifiy the optimization mode for the video track being generated.
 
-- `motion` : This type of track should more fcous on motion video For example, webcam video, movies or video games.
+- `motion` : This type of track should more fcous on motion video. For example, webcam video, movies or video games.
 
   - This type of track will degrade `resolution` in order to maintain `frame rate`.
 
-- `text` : This type of track should more fcous on significant sharp edges and areas of consistent color that can change frequently For example, presentations or web pages with text content.
+- `text` : This type of track should more fcous on significant sharp edges and areas of consistent color that can change frequently. For example, presentations or web pages with text content.
 
   - This type of track will degrade `frame rate` in order to maintain `resolution`.
 
-- `detail` : This type of track should more fcous on details of the video For example, presentations, painting or line art.
+- `detail` : This type of track should more fcous on details of the video. For example, presentations, painting or line art.
 
   - This type of track will degrade `frame rate` in order to maintain `resolution`.
 
@@ -92,7 +92,7 @@ let customTrack = await createCameraVideoTrack({
 
 </center>
 
-**`multiStream : false`** If you want to restric the VideoSDK to to send only one stream to maintain quality, you can set `multiStream` to `false`.
+**`multiStream : false`** If you want to restrict the VideoSDK to send only one stream to maintain quality, you can set `multiStream` to `false`.
 
 <center>
 
