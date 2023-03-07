@@ -135,7 +135,9 @@ To show the popup dialog for the participant's realtime stats, you can [refer to
 
 ## Quality analysis Graphs
 
-For all the sessions taken using the VideoSDK, you can find the quality analysis graphs from the VideoSDK Dashboard which can help you visualize the data you are seeing in realtime and identify the spikes of a few parameters happing during call which can help figure out the reason for the quality issue.
+For all the sessions taken using the VideoSDK, you can find the quality analysis graphs from the [VideoSDK Dashboard](https://app.videosdk.live/meetings/sessions) which can help you visualize the data you are seeing in realtime and identify the spikes of a few parameters happing during call which can help figure out the reason for the quality issue.
+
+![quality analysis](/img/quality-analysis.png)
 
 ## API Reference
 
