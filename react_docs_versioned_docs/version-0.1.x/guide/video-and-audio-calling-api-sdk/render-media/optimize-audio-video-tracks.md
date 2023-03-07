@@ -47,7 +47,7 @@ let customTrack = await createCameraVideoTrack({
   cameraId:"camera-id" // OPTIONAL
 
   // highlight-next-line
-  // It will specifiy the optimization mode for the video track being generated.
+  // We will discuss this parameter in next step.
   optimizationMode: "motion", // "text" | "detail",  Default : "motion"
 
   // highlight-next-line
@@ -59,11 +59,27 @@ let customTrack = await createCameraVideoTrack({
   facingMode: "environment", // "front",  Default : "environment"
 
   // highlight-next-line
-  // We can discuss this parameter in next step.
+  // We will discuss this parameter in next step.
   multiStream:true // false,  Default : true
 
 });
 ```
+
+##### What is `optimizationMode`?
+
+- It will specifiy the optimization mode for the video track being generated.
+
+- `motion` : This type of track should more fcous on motion video For example, webcam video, movies or video games.
+
+  - This type of track will degrade `resolution` in order to maintain `frame rate`.
+
+- `text` : This type of track should more fcous on significant sharp edges and areas of consistent color that can change frequently For example, presentations or web pages with text content.
+
+  - This type of track will degrade `frame rate` in order to maintain `resolution`.
+
+- `detail` : This type of track should more fcous on details of the video For example, presentations, painting or line art.
+
+  - This type of track will degrade `frame rate` in order to maintain `resolution`.
 
 ##### What is `multiStream`?
 
