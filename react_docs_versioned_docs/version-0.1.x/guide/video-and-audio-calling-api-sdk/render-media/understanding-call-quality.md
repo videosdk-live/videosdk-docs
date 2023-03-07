@@ -105,6 +105,12 @@ VideoSDK provides methods to check the realtime statistics of the audio and vide
 
 - These objects will have values for the specific participant's video stream resolution, frame rate, bitrate, jitter, round trip time, and packet loss.
 
+<div style={{textAlign: 'center'}}>
+
+<ReactPlayer autoplay muted loop playing url='/video/realtime-stats.mp4' width={"100%"}/>
+
+</div>
+
 ### `getAudioStats()`
 
 - `getAudioStats()` returns an array of object containing the different quality parameters for audio stream which can be accessed through the `useParicipant` hook.
