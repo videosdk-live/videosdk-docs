@@ -95,6 +95,12 @@ import ReactPlayer from 'react-player'
 
 - With VideoSDK, these factor is taken care of as we automatically choose the nearest available server for participants. But if you are geofencing to a certain region, you should make sure that you choose the server which will be nearest to your users.
 
+<center>
+
+![resolution-and-bitrate](/img/rtt.png)
+
+</center>
+
 ## Checking Realtime Statistics
 
 VideoSDK provides methods to check the realtime statistics of the audio and video of all the participants.
