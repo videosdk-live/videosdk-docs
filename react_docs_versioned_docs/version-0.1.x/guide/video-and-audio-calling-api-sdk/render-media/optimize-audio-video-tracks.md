@@ -47,7 +47,7 @@ let customTrack = await createCameraVideoTrack({
   cameraId:"camera-id" // OPTIONAL
 
   // highlight-next-line
-  // It will specifiy the optimization mode for the video track being generated.
+  // We will discuss this parameter in next step.
   optimizationMode: "motion", // "text" | "detail",  Default : "motion"
 
   // highlight-next-line
@@ -59,25 +59,47 @@ let customTrack = await createCameraVideoTrack({
   facingMode: "environment", // "front",  Default : "environment"
 
   // highlight-next-line
-  // We can discuss this parameter in next step.
+  // We will discuss this parameter in next step.
   multiStream:true // false,  Default : true
 
 });
 ```
 
-##### What is `multiStream?`
+##### What is `optimizationMode`?
+
+- It will specifiy the optimization mode for the video track being generated.
+
+- `motion` : This type of track should more fcous on motion video For example, webcam video, movies or video games.
+
+  - This type of track will degrade `resolution` in order to maintain `frame rate`.
+
+- `text` : This type of track should more fcous on significant sharp edges and areas of consistent color that can change frequently For example, presentations or web pages with text content.
+
+  - This type of track will degrade `frame rate` in order to maintain `resolution`.
+
+- `detail` : This type of track should more fcous on details of the video For example, presentations, painting or line art.
+
+  - This type of track will degrade `frame rate` in order to maintain `resolution`.
+
+##### What is `multiStream`?
 
 - It will specifiy if the stream should send multiple resolution layers or single resolution layer.
 
-- By default, VideoSDK sends multiple resolution video streams to the server (whether you are using custom video track or not), For instance, user device capabilty is 720p, so VideoSDK sends 720p along with 640p and 480p streams. This allows VideoSDK to deliver the appropriate stream to each participant based on their network bandwidth.
+**`multiStream : true`** By default, VideoSDK sends multiple resolution video streams to the server (whether you are using custom video track or not), For instance, user device capabilty is 720p, so VideoSDK sends 720p along with 640p and 480p streams. This allows VideoSDK to deliver the appropriate stream to each participant based on their network bandwidth.
+
+<center>
+
+![Multi Stream False](/img/multistream_true.png)
+
+</center>
+
+**`multiStream : false`** If you want to restric the VideoSDK to to send only one stream to maintain quality, you can set `multiStream` to `false`.
 
 <center>
 
 ![Multi Stream False](/img/multistream_false.png)
 
 </center>
-
-- If you want to restric the VideoSDK to to send only one stream to maintain quality, you can set `multiStream` to `false`.
 
 :::caution
 The behavior of the Custom track would depend on the specific device and its capabilities. If the device's hardware and software can support a 1080p `encoderConfig`, then it may be able to use it, even if its maximum capabilities are 720p. However, if the device is not capable of supporting a 1080p `encoderConfig`, it may default to a lower resolution `encoderConfig`, such as 640p.
