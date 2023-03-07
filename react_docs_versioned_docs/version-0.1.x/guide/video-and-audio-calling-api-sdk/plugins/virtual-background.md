@@ -17,6 +17,8 @@ Virtual backgrounds allow participants in a video call or meeting to replace the
 
 :::
 
+![virtual-background](/img/virtual-background.png)
+
 ### Install VideoSDK Media Processor package
 
 <Tabs
@@ -106,7 +108,7 @@ const MeetingView = () =>{
 
 ### Starting the Processor
 
-TO start processsing a video stream you will need `MediaStram` which you want to process and `config` which should be used from processing. When the required parameters are passed to the processor, it will return `MediaStream`.
+To start processsing a video stream you will need `MediaStram` which you want to process and `config` which should be used from processing. When the required parameters are passed to the processor, it will return `MediaStream`.
 
 1. **MediaStream** : [MediaStream](https://developer.mozilla.org/en-US/docs/Web/API/MediaStream) is just a video stream which is being capture from the camera. You can use the `createCameraVideoTrack` to create a `MediaStream`.
 
