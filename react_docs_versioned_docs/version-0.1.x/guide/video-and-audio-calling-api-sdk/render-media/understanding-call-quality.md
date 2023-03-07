@@ -129,6 +129,10 @@ VideoSDK provides methods to check the realtime statistics of the audio and vide
 
 - These objects will have values for the specific participant's screen share stream resolution, frame rate, bitrate, jitter, round trip time, and packet loss.
 
+:::note
+To show the popup dialog for the participant's realtime stats, you can [refer to this component](https://github.com/videosdk-live/videosdk-rtc-react-sdk-example/blob/main/src/utils/common.js#L142).
+:::
+
 ## Quality analysis Graphs
 
 For all the sessions taken using the VideoSDK, you can find the quality analysis graphs from the VideoSDK Dashboard which can help you visualize the data you are seeing in realtime and identify the spikes of a few parameters happing during call which can help figure out the reason for the quality issue.
