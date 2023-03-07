@@ -264,7 +264,7 @@ import { createScreenShareVideoTrack } from "@videosdk.live/react-sdk";
 let customShareTrack = await createScreenShareVideoTrack({
   optimizationMode: "motion", // "text" | "detail",  Default : "motion"
 
-  // This will accept the  height & FPS of video yo want to capture.
+  // This will accept the  height & FPS of video you want to capture.
   encoderConfig: "h720p_15fps", //  `h360p_30fps` | `h1080p_30fps` // Default : `h720p_15fps`
 });
 ```
