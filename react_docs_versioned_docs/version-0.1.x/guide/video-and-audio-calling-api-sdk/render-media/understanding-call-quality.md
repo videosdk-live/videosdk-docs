@@ -75,6 +75,14 @@ In order to identify quality issues, VideoSDK collects multiple audio and video 
 
 - Packet loss is a metric that indicates how many data packets are lost during transmission from the sender to the receiver. Packet loss can occur due to network congestion, hardware or software issues, or network latency. Higher packet loss can result in poor video and audio quality, as the missing packets can cause gaps or distortions in the media stream.
 
+import ReactPlayer from 'react-player'
+
+<div style={{textAlign: 'center'}}>
+
+<ReactPlayer autoplay muted loop playing url='/video/packet-loss-burst.mp4' width={"100%"}/>
+
+</div>
+
 ### `4. Jitter`
 
 - The audio and video packets are sent out at random intervals over a specified time frame as they are being sent between the server and client. Nevertheless, jitter is produced when there is a variation in transmitting or receiving these data packets as a result of a faulty network connection.
