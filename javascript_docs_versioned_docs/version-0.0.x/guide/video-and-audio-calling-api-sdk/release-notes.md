@@ -8,6 +8,18 @@ tags: [releasenotes]
 
 This page will keep you update all the releases of JavaScript SDK.
 
+## v0.0.62
+
+**Release Date** : 3rd March 2023
+
+**Change log** :
+
+- Updated Types.
+
+- Updated Internal Dependencies.
+
+---
+
 ## v0.0.61
 
 **Release Date** : 10th February 2023

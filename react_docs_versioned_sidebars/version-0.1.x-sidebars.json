@@ -179,6 +179,15 @@
       ]
     },
     {
+      "type": "category",
+      "label": "Stream Class",
+      "items": [
+        "api/sdk-reference/stream-class/introduction",
+        "api/sdk-reference/stream-class/properties",
+        "api/sdk-reference/stream-class/methods"
+      ]
+    },
+    {
       "type": "doc",
       "id": "api/sdk-reference/use-connection"
     },

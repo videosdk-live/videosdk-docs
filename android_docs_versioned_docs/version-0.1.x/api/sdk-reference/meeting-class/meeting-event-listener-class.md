@@ -692,6 +692,7 @@ values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
 </Tabs>
 
 ---
+
 ### onLivestreamStarted()
 
 _`This event will be deprecated soon`_
@@ -768,11 +769,20 @@ values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
 
 ---
 
-### onLivestreamStateChanged()
+### onHlsStateChanged()
 
-- `onLiveStreamStateChanged` event will be triggered any time the broadcasting state of a meeting changes.
+- This event will be emitted when the meeting's HLS(Http Livestreaming) status changed.
 
-- It will have following states: `LIVESTREAM_STARTED`, `LIVESTREAM_STARTED`, `LIVESTREAM_STOPPING`, and `LIVESTREAM_STOPPED`
+#### Event callback parameters
+
+- **HlsState**: String
+
+`HlsState` has following values
+
+- `HLS_STARTING` - HLS is in starting phase and hasn't started yet.
+- `HLS_STARTED` - HLS has started successfully.
+- `HLS_STOPPING` - HLS is in stopping phase and hasn't stopped yet.
+- `HLS_STOPPED` - HLS has stopped successfully.
 
 #### Example
 
@@ -784,9 +794,22 @@ values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
 <TabItem value="Kotlin">
 
 ```javascript
- override fun onLivestreamStateChanged(livestreamState: String) {
-   //
- }
+  override fun onHlsStateChanged(HlsState: String?) {
+    when (HlsState) {
+        "HLS_STARTING" -> Log.d( "onHlsStateChanged",
+            "Meeting hls is starting"
+        )
+        "HLS_STARTED" -> Log.d( "onHlsStateChanged",
+            "Meeting hls is started"
+        )
+        "HLS_STOPPING" -> Log.d("onHlsStateChanged",
+            "Meeting hls is stopping"
+        )
+        "HLS_STOPPED" -> Log.d("onHlsStateChanged",
+            "Meeting hls is stopped"
+        )
+    }
+  }
 ```
 
 </TabItem>
@@ -794,10 +817,23 @@ values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
 <TabItem value="Java">
 
 ```javascript
- @Override
- public void onLivestreamStateChanged(String livestreamState) {
-   //
- }
+  @Override
+  public void onHlsStateChanged(String HlsState) {
+      switch (HlsState) {
+          case "HLS_STARTING":
+              Log.d("onHlsStateChanged", "Meeting hls is starting");
+              break;
+          case "HLS_STARTED":
+              Log.d("onHlsStateChanged", "Meeting hls is started");
+              break;
+          case "HLS_STOPPING":
+              Log.d("onHlsStateChanged", "Meeting hls is stopping");
+              break;
+          case "HLS_STOPPED":
+              Log.d("onHlsStateChanged", "Meeting hls is stopped");
+              break;
+      }
+  }
 ```
 
 </TabItem>
@@ -901,6 +937,99 @@ values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
           Log.d("onMeetingStateChanged: ", "Meeting connection closed");
           break;
     }
+  }
+
+```
+
+</TabItem>
+
+</Tabs>
+
+---
+
+### onParticipantModeChanged()
+
+- This event will be triggered when mode gets changed.
+- It will pass **`mode`**, as an event callback parameter.
+  - `CONFERENCE`: Both audio and video streams will be produced and consumed in this mode.
+  - `VIEWER`: Audio and video streams will not be produced or consumed in this mode.
+
+#### Event callback parameters
+
+- **data**: { **mode**: String, **participantId**: String }
+  - **mode**: String
+  - **participantId**: String
+
+#### Example
+
+<Tabs
+defaultValue="Kotlin"
+groupId={"AndroidLanguage"}
+values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
+
+<TabItem value="Kotlin">
+
+```javascript
+ override fun onParticipantModeChanged(data: JSONObject?) {
+   //
+  }
+```
+
+</TabItem>
+
+<TabItem value="Java">
+
+```javascript
+@Override
+  public void onParticipantModeChanged(JSONObject data) {
+    //
+  }
+
+```
+
+</TabItem>
+
+</Tabs>
+
+---
+
+### onPinStateChanged()
+
+- This event will be triggered when any participant got pinned or unpinned by any participant got pinned or unpinned by any participant.
+#### Event callback parameters
+
+- **pinStateData**: { **peerId**: String, **state**: JSONObject, **pinnedBy**: String }
+  - **peerId**: String
+  - **state**: JSONObject 
+  - **pinnedBy**: String
+
+#### Example
+
+<Tabs
+defaultValue="Kotlin"
+groupId={"AndroidLanguage"}
+values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
+
+<TabItem value="Kotlin">
+
+```javascript
+ override fun onPinStateChanged(pinStateData: JSONObject?) {
+   Log.d("onPinStateChanged: ", pinStateData.getString("peerId")) // id of participant who were pinned
+   Log.d("onPinStateChanged: ", pinStateData.getJSONObject("state")) // { cam: true, share: true } 
+   Log.d("onPinStateChanged: ", pinStateData.getString("pinnedBy")) // id of participant who pinned that participant
+  }
+```
+
+</TabItem>
+
+<TabItem value="Java">
+
+```javascript
+@Override
+  public void onPinStateChanged(JSONObject pinStateData) {
+    Log.d("onPinStateChanged: ", pinStateData.getString("peerId")); // id of participant who were pinned
+    Log.d("onPinStateChanged: ", pinStateData.getJSONObject("state")); // { cam: true, share: true } 
+    Log.d("onPinStateChanged: ", pinStateData.getString("pinnedBy")); // id of participant who pinned that participant
   }
 
 ```

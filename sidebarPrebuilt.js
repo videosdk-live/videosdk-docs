@@ -54,6 +54,7 @@ module.exports = {
         "guide/prebuilt-video-and-audio-calling/features/whiteboard",
         "guide/prebuilt-video-and-audio-calling/features/debug-mode",
         "guide/prebuilt-video-and-audio-calling/features/waiting-screen",
+        "guide/prebuilt-video-and-audio-calling/features/customize-audio-video",
       ],
       collapsed: true,
     },

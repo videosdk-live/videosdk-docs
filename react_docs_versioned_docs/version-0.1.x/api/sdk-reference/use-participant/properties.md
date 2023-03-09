@@ -23,21 +23,21 @@ title: userPatricipant Hook Properties
 
 ### webcamStream
 
-- type : `MediaTrackStream`
+- type : [`Stream`](../stream-class/introduction)
 - `webcamStream` represents stream of participant's webcam
 
 ---
 
 ### micStream
 
-- type : `MediaTrackStream`
+- type : [`Stream`](../stream-class/introduction)
 - `micStream` represents stream for participant's mic.
 
 ---
 
 ### screenShareStream
 
-- type : `MediaTrackStream`
+- type : [`Stream`](../stream-class/introduction)
 - `screenShareStream` represents stream of participant's screen share
 
 ---
