@@ -45,12 +45,12 @@ Before dive in to the concept, let's understand the VideSDK, VideoSDK is a softw
 
 ---
 
-![img.png](../../../../static/img/meeting-session.jpg)
-
 ### `5. Session`
 
 - A Session is the instance of an ongoing meeting/room which has one or more participants in it. A single room or meeting can have multiple sessions.
 - Each session can be uniquely identified by `sessionId`.
+
+![img.png](../../../../static/img/meeting-session.jpg)
 
 ---
 
