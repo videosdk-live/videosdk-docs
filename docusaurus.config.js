@@ -206,7 +206,7 @@ module.exports = {
             },
             {
               label: "Get Started with Custom SDK",
-              href: "/react/guide/video-and-audio-calling-api-sdk/getting-started",
+              href: "/react/guide/video-and-audio-calling-api-sdk/quick-start",
             },
             // {
             //   label: "Get Started with Live Streaming",
