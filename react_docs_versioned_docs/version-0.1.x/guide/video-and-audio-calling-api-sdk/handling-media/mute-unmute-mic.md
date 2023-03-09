@@ -168,7 +168,7 @@ const MeetingView = () => {
 };
 ```
 
-- To get the status of **any participant** you can use the `micOn` property of the `useParticipant` hook. These parameter will be `true` if **participant's** `mic is on` else it will be `false`.
+- To get the status of **any participant** you can use the `micOn` property of the `useParticipant` hook. This parameter will be `true` if **participant's** `mic is on` else it will be `false`.
 
 ```js
 import { useParticipant } from "@videosdk.live/react-sdk";

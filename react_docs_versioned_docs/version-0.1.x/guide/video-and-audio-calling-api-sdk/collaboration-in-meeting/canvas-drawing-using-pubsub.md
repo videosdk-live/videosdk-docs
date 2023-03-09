@@ -134,7 +134,7 @@ const WhiteboardView = () => {
   });
   //highlight-end
 
-  //These callback from the canvas component will give us the stroke json we need to share
+  //This callback from the canvas component will give us the stroke json we need to share
   const onStroke = (stroke, isEraser) => {
     //highlight-next-line
     ...

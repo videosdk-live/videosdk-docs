@@ -232,11 +232,11 @@ All the hooks mentioned below are accessible within the `MeetingProvider` only.
 
 #### useMeeting
 
-`useMeeting` hook abstracts meeting class and is responsible to provide the states and events update happening in the meeting like participant joining and leaving a meeting. To know more about the properties and events accessible by these hook, go through [our API Reference](/react/api/sdk-reference/use-meeting/introduction).
+`useMeeting` hook abstracts meeting class and is responsible to provide the states and events update happening in the meeting like participant joining and leaving a meeting. To know more about the properties and events accessible by this hook, go through [our API Reference](/react/api/sdk-reference/use-meeting/introduction).
 
 #### useParticipant
 
-`useParticipant` hook abstracts participant class and is responsible to provide the states and events update happening for a particular participant like webcam, mic streams status etc. To know more about the properties and events accessible by these hook, go through [our API Reference](/react/api/sdk-reference/use-participant/introduction).
+`useParticipant` hook abstracts participant class and is responsible to provide the states and events update happening for a particular participant like webcam, mic streams status etc. To know more about the properties and events accessible by this hook, go through [our API Reference](/react/api/sdk-reference/use-participant/introduction).
 
 #### usePubsub
 

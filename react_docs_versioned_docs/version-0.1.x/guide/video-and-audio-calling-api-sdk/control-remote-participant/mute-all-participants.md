@@ -19,7 +19,7 @@ slug: mute-all-participants
 
 If you are the host or moderator of a video conference, you may want to mute all the participants at once. This can be useful in various scenarios, such as when you want to deliver a presentation or when there is background noise that is causing distractions.
 
-- To achieve these, you have to iterate over the list of participants fromt he `useMeeting` hook and call `disableMic` method from `useParticipant` hook.
+- To achieve this, you have to iterate over the list of participants fromt he `useMeeting` hook and call `disableMic` method from `useParticipant` hook.
 
 ```javascript
 import { useMeeting } from "@videosdk.live/react-sdk";

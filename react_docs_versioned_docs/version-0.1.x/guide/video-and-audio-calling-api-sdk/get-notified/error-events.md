@@ -23,11 +23,11 @@ VideoSDK provides `onError` event which will notify you of any error happening d
 
 - This event will be triggered whenever any invalid configuration provided or server/network errors arise, this event will trigger with a specific error code and message.
 - This event is helpful for development level troubleshooting while integrating SDK.
-- These event can be subscribed from the `useMeeting` hook.
+- This event can be subscribed from the `useMeeting` hook.
 
 ### Example
 
-Here is the usage of the event mentioned in these page.
+Here is the usage of the event mentioned in this page.
 
 ```javascript
 import { Constants, useMeeting } from "@videosdk.live/react-sdk";

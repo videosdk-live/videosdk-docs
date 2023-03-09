@@ -32,7 +32,7 @@ If you haven't used Expo CLI with an Expo account before, the eject command will
 
 ### Configuration options in app.json
 
-Ejecting requires the same configuration options as building a standalone app. [Follow these instructions before continuing to the next step](https://docs.expo.dev/archive/classic-updates/building-standalone-apps/#2-configure-appjson).
+Ejecting requires the same configuration options as building a standalone app. [Follow this instructions before continuing to the next step](https://docs.expo.dev/archive/classic-updates/building-standalone-apps/#2-configure-appjson).
 
 ### Eject
 

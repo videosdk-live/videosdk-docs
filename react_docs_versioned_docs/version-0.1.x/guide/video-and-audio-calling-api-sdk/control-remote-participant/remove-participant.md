@@ -73,7 +73,7 @@ import ReactPlayer from 'react-player'
 ## 3. Using Rest API
 
 - You can also remove the particular participant from the meeting [using the REST API](/api-reference/realtime-communication/remove-participant).
-- To use these method, you should have the `sessionId` of the meeting and `participantId` of the participant who is supposed to be removed.
+- To use this method, you should have the `sessionId` of the meeting and `participantId` of the participant who is supposed to be removed.
 
 ## API Reference
 

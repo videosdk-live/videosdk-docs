@@ -23,22 +23,22 @@ Here are the events which specifically relate to the stream.
 
 ### onStreamEnabled
 
-- These event is triggered whenever a participant's video, audio or screen share stream is enabled.
-- These event can be subscribed from the `useParticipant` hook.
+- This event is triggered whenever a participant's video, audio or screen share stream is enabled.
+- This event can be subscribed from the `useParticipant` hook.
 
 ### onStreamDisabled
 
-- These event is triggered whenever a participant's video, audio or screen share stream is disabled.
-- These event can be subscribed from the `useParticipant` hook.
+- This event is triggered whenever a participant's video, audio or screen share stream is disabled.
+- This event can be subscribed from the `useParticipant` hook.
 
 ### onMediaStatusChanged
 
 - This event will be triggered whenever a participant's video or audio is disabled or enabled.
-- These event can be subscribed from the `useParticipant` hook.
+- This event can be subscribed from the `useParticipant` hook.
 
 ### Example
 
-Here is the usage of all the events mentioned in these page.
+Here is the usage of all the events mentioned in this page.
 
 ```js
 function onStreamEnabled(stream) {

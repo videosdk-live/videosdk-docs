@@ -28,9 +28,9 @@ This guide will provide an overview of how to implement start and stop Meeting R
 
 `startRecording()` can be used to start a recording of the meeting which can be accessed from the `useMeeting` hook. This method accepts three parameters:
 
-- `1. webhookUrl (optional)`: These would the webhook URL where you would like to listen to event happening for the recording like starting and stopping of recording. It will be triggered when the recording is completed and stored into server. Read more about webhooks [here](https://en.wikipedia.org/wiki/Webhook)
+- `1. webhookUrl (optional)`: This would the webhook URL where you would like to listen to event happening for the recording like starting and stopping of recording. It will be triggered when the recording is completed and stored into server. Read more about webhooks [here](https://en.wikipedia.org/wiki/Webhook)
 
-- `2. awsDirPath (optional)`: These parameter accepts the path for the your S3 bucket where you want to store recordings to. To allow us to store recording in your S3 bucket, you will need to fill this form by providing the required values. [VideoSDK AWS S3 Integration](/docs/tutorials/user-dashboard/recording-storage-config)
+- `2. awsDirPath (optional)`: This parameter accepts the path for the your S3 bucket where you want to store recordings to. To allow us to store recording in your S3 bucket, you will need to fill this form by providing the required values. [VideoSDK AWS S3 Integration](/docs/tutorials/user-dashboard/recording-storage-config)
 
 - `3. config (optional)`: This parameter will define how the recording should be recorded.
 
@@ -153,7 +153,7 @@ While recording your meetings, you can choose to store them on the VideoSDK's st
 
 You can configure your own **`AWS S3 Storage or Azure Blob`** from the [VideoSDK Dashboard's API section](https://app.videosdk.live/api-keys).
 
-You can also go through these [guide to setup](/docs/tutorials/user-dashboard/recording-storage-config) the storage or watch these [video to configure](https://www.loom.com/share/23a2617f824a4a5da004d14d1a541a9d) your storage.
+You can also go through this [guide to setup](/docs/tutorials/user-dashboard/recording-storage-config) the storage or watch this [video to configure](https://www.loom.com/share/23a2617f824a4a5da004d14d1a541a9d) your storage.
 
 ### Custom Template
 

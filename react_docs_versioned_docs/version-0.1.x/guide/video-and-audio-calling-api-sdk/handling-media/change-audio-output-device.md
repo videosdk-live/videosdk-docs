@@ -48,7 +48,7 @@ const setAudioOutputDevice = (deviceId) => {
 ```
 
 :::note
-To learn more about changing the audio output device [check these documentation](https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/setSinkId).
+To learn more about changing the audio output device [check this documentation](https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/setSinkId).
 :::
 
 ### Setting Audio Volume
@@ -67,5 +67,5 @@ const setAudioVolume = (volume) => {
 ```
 
 :::note
-To learn more about changing the audio volume [check these documentation](https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/volume).
+To learn more about changing the audio volume [check this documentation](https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/volume).
 :::

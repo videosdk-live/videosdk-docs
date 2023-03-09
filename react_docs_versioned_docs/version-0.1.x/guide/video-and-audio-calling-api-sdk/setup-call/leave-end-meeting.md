@@ -30,7 +30,7 @@ To leave the meeting without removing all the participant you need to call `leav
 To leave the meeting by removing all the participant you need to call `end()` which is the part of the `useMeeting` hook of React SDK.
 
 :::note
-These methods can be called after the meeting is joined successfully.
+This methods can be called after the meeting is joined successfully.
 :::
 
 #### Example

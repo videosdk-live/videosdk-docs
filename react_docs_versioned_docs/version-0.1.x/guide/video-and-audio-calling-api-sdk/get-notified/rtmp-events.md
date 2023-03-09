@@ -22,11 +22,11 @@ VideoSDK provides `onLivestreamStateChanged` event which will notify you of the 
 ### onLivestreamStateChanged
 
 - This event will be triggered when the meeting's livestream status changed.
-- These event can be subscribed from the `useMeeting` hook.
+- This event can be subscribed from the `useMeeting` hook.
 
 ### Example
 
-Here is the usage of the event mentioned in these page.
+Here is the usage of the event mentioned in this page.
 
 ```javascript
 import { Constants, useMeeting } from "@videosdk.live/react-sdk";

@@ -23,27 +23,27 @@ Here are the events which specifically relate to the meeting.
 
 ### onMeetingJoined
 
-- These event is triggered when the meeting is successfully joined.
-- These event can be subscribed from the `useMeeting` hook.
+- This event is triggered when the meeting is successfully joined.
+- This event can be subscribed from the `useMeeting` hook.
 
 ### onMeetingLeft
 
-- These event is triggered when the meeting is left.
-- These event can be subscribed from the `useMeeting` hook.
+- This event is triggered when the meeting is left.
+- This event can be subscribed from the `useMeeting` hook.
 
 ### onSpeakerChanged
 
-- These event is triggered when the active speaker in the meeting gets changed.
-- These event can be subscribed from the `useMeeting` hook.
+- This event is triggered when the active speaker in the meeting gets changed.
+- This event can be subscribed from the `useMeeting` hook.
 
 ### onPresenterChanged
 
-- These event is triggered when the presenter in the meeting gets changed.
-- These event can be subscribed from the `useMeeting` hook.
+- This event is triggered when the presenter in the meeting gets changed.
+- This event can be subscribed from the `useMeeting` hook.
 
 ### Example
 
-Here is the usage of all the events mentioned in these page.
+Here is the usage of all the events mentioned in this page.
 
 ```js
 function onMeetingJoined() {

@@ -26,7 +26,7 @@ Now we will see, how we can use PubSub to implement Chat functionality. If you a
 
 ### `Group Chat`
 
-1. First step in creating a group chat is choosing the topic which all the participants will publish and subscribe to send and recevie the messages. We will be using `CHAT` as the topic for these one. So let us get the `publish()` and `messages` from the `usePubSub`hook.
+1. First step in creating a group chat is choosing the topic which all the participants will publish and subscribe to send and recevie the messages. We will be using `CHAT` as the topic for this one. So let us get the `publish()` and `messages` from the `usePubSub`hook.
 
 ```js
 // importing usePubSub hook from react-sdk
@@ -117,7 +117,7 @@ In the above example, if you want to convert into the private chat between two p
 
 So if we look at creating a private chat between two participants only, we can have the topic something like `<participantId_of_A>_<participantId_of_B>` or `<participantId_of_B>_<participantId_of_A>`.
 
-So you can use either of these topics and the private chat is ready.
+So you can use either of this topics and the private chat is ready.
 
 ### Showing Latest Message Notificaiton
 

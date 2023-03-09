@@ -235,7 +235,7 @@ const PresenterView = ({ presenterId }) => {
 };
 ```
 
-3. Let's now add the screen share audio to these component. YOu can get the `screenShareAudioStream` from the `useParticipant` hook.
+3. Let's now add the screen share audio to this component. YOu can get the `screenShareAudioStream` from the `useParticipant` hook.
 
 ```js
 const PresenterView = ({ presenterId }) => {
@@ -276,7 +276,7 @@ const PresenterView = ({ presenterId }) => {
   return (
     <>
       {/*... React player is here */}
-      //Adding these audio tag to play the screen share audio
+      //Adding this audio tag to play the screen share audio
       <audio autoPlay playsInline controls={false} ref={audioPlayer} />
     </>
   );

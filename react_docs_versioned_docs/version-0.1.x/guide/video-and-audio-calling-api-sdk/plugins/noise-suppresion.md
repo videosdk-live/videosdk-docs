@@ -8,7 +8,7 @@ import TabItem from '@theme/TabItem';
 
 # Noise Suppresion (BETA)
 
-Noise Suppresion identifies and filter out background noise from an audio input, during a meeting or call. These features can be particularly useful in noisy environments or when participants are using low-quality microphones.
+Noise Suppresion identifies and filter out background noise from an audio input, during a meeting or call. This features can be particularly useful in noisy environments or when participants are using low-quality microphones.
 
 :::important
 

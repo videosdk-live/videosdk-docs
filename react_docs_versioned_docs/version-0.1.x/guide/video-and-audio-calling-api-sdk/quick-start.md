@@ -197,7 +197,7 @@ function App() {
   };
   //highlight-end
 
-  //These will set Meeting Id to null when meeting is left or ended
+  //This will set Meeting Id to null when meeting is left or ended
   //highlight-start
   const onMeetingLeave = () => {
     setMeetingId(null);

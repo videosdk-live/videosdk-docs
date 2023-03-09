@@ -57,7 +57,7 @@ In order to identify quality issues, VideoSDK collects multiple audio and video 
 
 - Resolution and frame rate are key metrics for video quality in a video call app. Resolution refers to the number of pixels in a video image, while frame rate refers to the number of frames displayed per second.
 
-- Higher resolutions and frame rates can provide better video quality, but they also require more bandwidth and processing power. It's important to optimize these metrics for the devices and network conditions of your users.
+- Higher resolutions and frame rates can provide better video quality, but they also require more bandwidth and processing power. It's important to optimize this metrics for the devices and network conditions of your users.
 
 - For example, if most of your users are on mobile devices, a lower resolution and frame rate may be more appropriate to ensure smooth playback and minimize bandwidth usage.
 
@@ -89,7 +89,7 @@ import ReactPlayer from 'react-player'
 
 ### `4. Jitter`
 
-- The audio and video packets are sent out at random intervals over a specified time frame as they are being sent between the server and client. Nevertheless, jitter is produced when there is a variation in transmitting or receiving these data packets as a result of a faulty network connection.
+- The audio and video packets are sent out at random intervals over a specified time frame as they are being sent between the server and client. Nevertheless, jitter is produced when there is a variation in transmitting or receiving this data packets as a result of a faulty network connection.
 
 - When data packets delay while being transmitted to the participant, usually because the network is busy. They'll display as pixelated video on a video call or sound choppy, distorted, or robotic on a voice call as they arrive. They'll arrive at random intervals, creating jitter.
 
@@ -97,7 +97,7 @@ import ReactPlayer from 'react-player'
 
 - Round trip time is the amount of time required to transmit the data packets to send or receive from the server. If the servers are located very far from the user's location, they can observe a high latency (delay).
 
-- With VideoSDK, these factor is taken care of as we automatically choose the nearest available server for participants. But if you are geofencing to a certain region, you should make sure that you choose the server which will be nearest to your users.
+- With VideoSDK, this factor is taken care of as we automatically choose the nearest available server for participants. But if you are geofencing to a certain region, you should make sure that you choose the server which will be nearest to your users.
 
 <center>
 
@@ -113,7 +113,7 @@ VideoSDK provides methods to check the realtime statistics of the audio and vide
 
 - `getVideoStats()` returns an array of object containing the different quality parameters for video stream which can be accessed through the `useParicipant` hook.
 
-- These objects will have values for the specific participant's video stream resolution, frame rate, bitrate, jitter, round trip time, and packet loss.
+- This objects will have values for the specific participant's video stream resolution, frame rate, bitrate, jitter, round trip time, and packet loss.
 
 <div style={{textAlign: 'center'}}>
 
@@ -125,13 +125,13 @@ VideoSDK provides methods to check the realtime statistics of the audio and vide
 
 - `getAudioStats()` returns an array of object containing the different quality parameters for audio stream which can be accessed through the `useParicipant` hook.
 
-- These objects will have values for the specific participant's audio stream bitrate, jitter, round trip time and packet loss.
+- This objects will have values for the specific participant's audio stream bitrate, jitter, round trip time and packet loss.
 
 ### `getShareStats()`
 
 - `getShareStats()` returns an array of object containing the different quality parameters for screen share stream which can be accessed through the `useParicipant` hook.
 
-- These objects will have values for the specific participant's screen share stream resolution, frame rate, bitrate, jitter, round trip time, and packet loss.
+- This objects will have values for the specific participant's screen share stream resolution, frame rate, bitrate, jitter, round trip time, and packet loss.
 
 :::note
 To show the popup dialog for the participant's realtime stats, you can [refer to this component](https://github.com/videosdk-live/videosdk-rtc-react-sdk-example/blob/main/src/utils/common.js#L142).

@@ -23,7 +23,7 @@ Any participant can turn on or off his camera in the meeting using below methods
 
 - By using `enableWebcam()` function of `useMeeting` hook, local participant can publish video to other participants.
 
-- You can call these method when the local participant is not broadcasting any video to others.
+- You can call this method when the local participant is not broadcasting any video to others.
 
 - You can pass customised video track in `enableWebcam()` by using [Custom Video Track](/react/guide/video-and-audio-calling-api-sdk/render-media/optimize-video-track).
 
@@ -33,7 +33,7 @@ Any participant can turn on or off his camera in the meeting using below methods
 
 - By using `disableWebcam()` function of `useMeeting` hook, local participant can stop publish video to other participants.
 
-- You can call these method when the local participant is broadcasting any video to others.
+- You can call this method when the local participant is broadcasting any video to others.
 
 ### `toggleWebcam()`
 
@@ -83,7 +83,7 @@ const MeetingView = () => {
 ```
 
 :::note
-To learn, how to render video in the meeting, follow these detailed [guide](/react/guide/video-and-audio-calling-api-sdk/render-media/display-audio-video#2-rendering-video).
+To learn, how to render video in the meeting, follow this detailed [guide](/react/guide/video-and-audio-calling-api-sdk/render-media/display-audio-video#2-rendering-video).
 :::
 
 ### Events associated with enableWebcam
@@ -166,7 +166,7 @@ const MeetingView = () => {
 };
 ```
 
-- To get the status of **any participant** you can use the `webcamOn` property of the `useParticipant` hook. These parameter will be `true` if **participant's** `camera is on` else it will be `false`.
+- To get the status of **any participant** you can use the `webcamOn` property of the `useParticipant` hook. This parameter will be `true` if **participant's** `camera is on` else it will be `false`.
 
 ```js
 import { useParticipant } from "@videosdk.live/react-sdk";

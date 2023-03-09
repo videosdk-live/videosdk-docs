@@ -32,7 +32,7 @@ This guide will provide an overview of how to implement start and stop RTMP Live
 
 `startLivestream()` can be used to start a RTMP livestream of the meeting which can be accessed from the `useMeeting` hook. This method accepts two parameters:
 
-- `1. outputs`: These parameter accepts an array of objects which contains the RTMP `url` and `streamKey` of the platforms you want to start the livestream.
+- `1. outputs`: This parameter accepts an array of objects which contains the RTMP `url` and `streamKey` of the platforms you want to start the livestream.
 
 - `2. config (optional)`: This parameter will define how the livestream layout should look like.
 

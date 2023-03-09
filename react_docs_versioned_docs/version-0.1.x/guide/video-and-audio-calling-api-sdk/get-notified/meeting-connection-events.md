@@ -24,11 +24,11 @@ VideoSDK provides `onMeetingStateChanged` event which will notify you of the cur
 - This event will be triggered when state of meeting changes.
 - It will pass **`state`** as an event callback parameter which will indicate current state of the meeting.
 - All available states are `CONNECTING`, `CONNECTED`, `FAILED`, `DISCONNECTED`, `CLOSING`, `CLOSED`.
-- These event can be subscribed from the `useMeeting` hook.
+- This event can be subscribed from the `useMeeting` hook.
 
 ### Example
 
-Here is the usage of the event mentioned in these page.
+Here is the usage of the event mentioned in this page.
 
 ```javascript
 function onMeetingStateChanged(data) {

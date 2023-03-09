@@ -33,7 +33,7 @@ Before we discuss the methods and events associated with this functionality, her
 
 - If you wish to turn **on** the microphone of a participant, you will be calling the `enableMic()` from the `useParticipant` hook.
 
-- When these method is called, the participant whose microphone is requested will receive the `onMicRequested` event with the `participantId` of the participant who requested it and two callback functions `accept` and `reject` which should be called based on decision made by the user.
+- When this method is called, the participant whose microphone is requested will receive the `onMicRequested` event with the `participantId` of the participant who requested it and two callback functions `accept` and `reject` which should be called based on decision made by the user.
 
 - **Example:** Meeting is running with **Participant A** and **Participant B**. Now **Participant A** wants to Enable Mic of **Participant B**, so **Participant A** will use `enableMic()` function to request **Participant B**, after that **Participant B** recieve the `onMicRequested` event, from there user can either accept or reject the incoming request.
 
@@ -41,19 +41,19 @@ Before we discuss the methods and events associated with this functionality, her
 
 - If you wish to turn **on** the camera of a participant, you will be calling the `enableWebcam()` from the `useParticipant` hook.
 
-- When these method is called, the participant whose camera is requested will receive the `onWebcamRequested` event with the `participantId` of the participant who requested it and two callback functions `accept` and `reject` which should be called based on decision made by the user.
+- When this method is called, the participant whose camera is requested will receive the `onWebcamRequested` event with the `participantId` of the participant who requested it and two callback functions `accept` and `reject` which should be called based on decision made by the user.
 
 - **Example:** Meeting is running with **Participant A** and **Participant B**. Now **Participant A** wants to Enable Webcam of **Participant B**, so **Participant A** will use `enableWebcam()` function to request **Participant B**, after that **Participant B** recieve the `onWebcamRequested` event, from there user can either accept or reject the incoming request.
 
 ### `disableMic()`
 
 - If you wish to turn **off** the microphone of a participant, you will be calling the `disableMic()` from the `useParticipant` hook.
-- These will disable the microphone of the participant.
+- This will disable the microphone of the participant.
 
 ### `disableWebcam()`
 
 - If you wish to turn **off** the camera of a participant, you will be calling the `disableWebcam()` from the `useParticipant` hook.
-- These will disable the camera of the participant.
+- This will disable the camera of the participant.
 
 #### Example
 

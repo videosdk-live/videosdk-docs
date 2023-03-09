@@ -23,29 +23,29 @@ Here are the events which specifically relate to the participants.
 
 ### onParticipantJoined
 
-- These event is triggered when someone joins the meeting and return the `Participant` object as parameter.
-- These event can be subscribed from the `useMeeting` hook.
+- This event is triggered when someone joins the meeting and return the `Participant` object as parameter.
+- This event can be subscribed from the `useMeeting` hook.
 
 ### onParticipantLeft
 
-- These event is triggered when the someone leaves the meeting.
-- These event can be subscribed from the `useMeeting` hook.
+- This event is triggered when the someone leaves the meeting.
+- This event can be subscribed from the `useMeeting` hook.
 
 ### onWebcamRequested
 
 - This event will be triggered to the participant `B` when any other participant `A` requests to enable webcam of participant `B`.
 - On accepting the request, webcam of participant `B` will be enabled.
-- These event can be subscribed from the `useMeeting` hook.
+- This event can be subscribed from the `useMeeting` hook.
 
 ### onMicRequested
 
 - This event will be triggered to the participant `B` when any other participant `A` requests to enable mic of participant `B`.
 - On accepting the request, mic of participant `B` will be enabled.
-- These event can be subscribed from the `useMeeting` hook.
+- This event can be subscribed from the `useMeeting` hook.
 
 ### Example
 
-Here is the usage of all the events mentioned in these page.
+Here is the usage of all the events mentioned in this page.
 
 ```js
 function onMicRequested(data) {

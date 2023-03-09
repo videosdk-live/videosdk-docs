@@ -23,11 +23,11 @@ In this guide we will take a look at how to efficiently manage the participants 
 
 The most usual way to showing participants within a grid. There are multiple things you should keep in mind when showing participants in the grid.
 
-These includes the number of participants being shown on the screens, number of participants in the background(in the meeting but not on the grid), quality which is being consumed for each and every participant in the grid.
+This includes the number of participants being shown on the screens, number of participants in the background(in the meeting but not on the grid), quality which is being consumed for each and every participant in the grid.
 
 ### Quality of Participant's Video
 
-When there are large number of participants present on the screen, it is best to consume them in lower resolutions. For these we recommend you to call the `setQuality` method on the participants present in the grid with dyanmic values based on the number of participants on the screen.
+When there are large number of participants present on the screen, it is best to consume them in lower resolutions. For this we recommend you to call the `setQuality` method on the participants present in the grid with dyanmic values based on the number of participants on the screen.
 
 Here is the recommended video quality:
 

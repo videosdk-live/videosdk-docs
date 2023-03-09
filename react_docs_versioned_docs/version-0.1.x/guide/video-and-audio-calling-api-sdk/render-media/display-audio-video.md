@@ -48,7 +48,7 @@ const MeetingView = () => {
   );
 };
 
-// These will render a single participant's view
+// This will render a single participant's view
 const ParticipantView = ({ participantId }) => {
   const { displayName } = useParticipant(participantId);
   return (

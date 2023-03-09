@@ -21,7 +21,7 @@ slug: set-audio-volume
 
 - When there are multiple participants in a meeting, it is common for there to be variations in the volume of each person's voice. Some people may speak more softly or have a quieter microphone, while others may speak louder or have a microphone that picks up more background noise.
 
-- By allowing hosts or participants to adjust the volume of individual participants, it becomes easier to balance out these differences and ensure that everyone can be heard clearly. This can lead to more productive and efficient meetings, as people will be able to communicate more effectively.
+- By allowing hosts or participants to adjust the volume of individual participants, it becomes easier to balance out this differences and ensure that everyone can be heard clearly. This can lead to more productive and efficient meetings, as people will be able to communicate more effectively.
 
 ## Meeting Volume
 
@@ -44,7 +44,7 @@ To learn more about changing the audio volume [check this documentation](https:/
 
 ## Participant Volume
 
-- You can perform these operation for individual participants as well by providing a unique ID for each participant's `<audio>` element and then setting the volume for the participant participant.
+- You can perform this operation for individual participants as well by providing a unique ID for each participant's `<audio>` element and then setting the volume for the participant participant.
 
 - Assuming, you provide `<audio>` element id like `a-<participantId>`, you can set the volume for that participant as shown below.
 
