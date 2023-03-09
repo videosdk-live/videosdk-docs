@@ -82,10 +82,8 @@ const MeetingView = () => {
 };
 ```
 
-- [ ] TODO
-
 :::note
-To learn, how to render video in the meeting, follow these detailed guide.
+To learn, how to render video in the meeting, follow these detailed [guide](/react/guide/video-and-audio-calling-api-sdk/render-media/display-audio-video#2-rendering-video).
 :::
 
 ### Events associated with enableWebcam

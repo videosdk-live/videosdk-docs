@@ -27,7 +27,7 @@ slug: set-audio-volume
 
 - To the set the audio volume for the meeting, you can set the volume property for each of the `<audio>` you are using to render the paricipant audio.
 
-- Value for the `volume` property for the `<audio>` can be betwenn `0` and `1`.
+- Value for the `volume` property for the `<audio>` can be betwenn `0` to `1`.
 
 ```js
 const setAudioVolume = (volume) => {
@@ -39,7 +39,7 @@ const setAudioVolume = (volume) => {
 ```
 
 :::note
-To learn more about changing the audio volume [check these documentation](https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/volume).
+To learn more about changing the audio volume [check this documentation](https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/volume).
 :::
 
 ## Participant Volume
