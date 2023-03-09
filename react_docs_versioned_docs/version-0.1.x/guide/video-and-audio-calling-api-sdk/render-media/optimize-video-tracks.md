@@ -532,3 +532,10 @@ Let us discuss a few recommended audio settings you should use based on your use
 1. If you are having **normal video calls**, we would recommend you to use `speech_standard` encorder config with **no additional parameters** of `noiseConfig`.
 
 2. If you are having video calls where the participants might be playing and sharing the music, you should consider using `music_standard` as encoder config. -->
+
+## API Reference
+
+The API references for all the methods and events utilised in these guide are provided below.
+
+- [Custom Video Track](/react/api/sdk-reference/custom-tracks#custom-video-track)
+- [Custom Screen Share Track](/react/api/sdk-reference/custom-tracks#custom-screen-share-track)

@@ -188,6 +188,10 @@
     },
     {
       "type": "doc",
+      "id": "api/sdk-reference/custom-tracks"
+    },
+    {
+      "type": "doc",
       "id": "api/sdk-reference/error-codes"
     }
   ]

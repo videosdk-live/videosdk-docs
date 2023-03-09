@@ -98,10 +98,8 @@ Your project structure should look like this.
    ├── node_modules
    ├── public
    ├── src
-   │    ├── api.js
+   │    ├── API.js
    │    ├── App.js
-   │    ├── App.css
-   │    ├── index.js
    │    ├── index.js
    .    .
 ```
@@ -158,7 +156,7 @@ Let's get started with change couple of lines of code in App.js
 
 ```js title="App.js"
 import "./App.css";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 import {
   MeetingProvider,
   MeetingConsumer,
@@ -166,6 +164,7 @@ import {
   useParticipant,
 } from "@videosdk.live/react-sdk";
 import { authToken, createMeeting } from "./API";
+import ReactPlayer from "react-player";
 
 function JoinScreen() {
   return null;
@@ -192,18 +191,24 @@ function App() {
     setMeetingId(meetingId);
   };
 
+  const onMeetingLeave = () => {
+    setMeetingId(null);
+  };
+
   return authToken && meetingId ? (
     <MeetingProvider
       config={{
         meetingId,
         micEnabled: true,
-        webcamEnabled: false,
+        webcamEnabled: true,
         name: "C.V. Raman",
       }}
       token={authToken}
     >
       <MeetingConsumer>
-        {() => <Container meetingId={meetingId} />}
+        {() => (
+          <Container meetingId={meetingId} onMeetingLeave={onMeetingLeave} />
+        )}
       </MeetingConsumer>
     </MeetingProvider>
   ) : (
@@ -251,24 +256,33 @@ Next step is to create a container and controls to manage features such as join,
 
 ```js title="Container Component"
 function Container(props) {
-  const [joined, setJoined] = useState(false);
+  const [joined, setJoined] = useState(null);
   const { join } = useMeeting();
-  const { participants } = useMeeting();
+  const { participants } = useMeeting({
+    onMeetingJoined: () => {
+      setJoined("JOINED");
+    },
+    onMeetingLeft: () => {
+      props.onMeetingLeave();
+    },
+  });
   const joinMeeting = () => {
-    setJoined(true);
+    setJoined("JOINING");
     join();
   };
 
   return (
     <div className="container">
       <h3>Meeting Id: {props.meetingId}</h3>
-      {joined ? (
+      {joined && joined == "JOINED" ? (
         <div>
           <Controls />
           {[...participants.keys()].map((participantId) => (
             <VideoComponent participantId={participantId} />
           ))}
         </div>
+      ) : joined && joined == "JOINING" ? (
+        <p>Joining the meeting...</p>
       ) : (
         <button onClick={joinMeeting}>Join</button>
       )}
@@ -282,9 +296,27 @@ function Controls() {
   const { leave, toggleMic, toggleWebcam } = useMeeting();
   return (
     <div>
-      <button onClick={leave}>Leave</button>
-      <button onClick={toggleMic}>toggleMic</button>
-      <button onClick={toggleWebcam}>toggleWebcam</button>
+      <button
+        onClick={() => {
+          leave();
+        }}
+      >
+        Leave
+      </button>
+      <button
+        onClick={() => {
+          toggleMic();
+        }}
+      >
+        toggleMic
+      </button>
+      <button
+        onClick={() => {
+          toggleWebcam();
+        }}
+      >
+        toggleWebcam
+      </button>
     </div>
   );
 }
@@ -349,7 +381,7 @@ function VideoComponent(props) {
   );
 
   const videoStream = useMemo(() => {
-    if (webcamOn) {
+    if (webcamOn && webcamStream) {
       const mediaStream = new MediaStream();
       mediaStream.addTrack(webcamStream.track);
       return mediaStream;
@@ -358,7 +390,7 @@ function VideoComponent(props) {
 
   useEffect(() => {
     if (micRef.current) {
-      if (micOn) {
+      if (micOn && micStream) {
         const mediaStream = new MediaStream();
         mediaStream.addTrack(micStream.track);
 
@@ -389,8 +421,8 @@ function VideoComponent(props) {
           //
           url={videoStream}
           //
-          height={"100px"}
-          width={"100px"}
+          height={"300px"}
+          width={"300px"}
           onError={(err) => {
             console.log(err, "participant video error");
           }}
