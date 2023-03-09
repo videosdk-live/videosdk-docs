@@ -87,7 +87,7 @@ Above mentioned encoder configurations are valid for both, landscape as well as 
 
 :::info
 
-- To learn more about optimizations and best practices for using custom video tracks, [follow these guide](/react/guide/video-and-audio-calling-api-sdk/render-media/optimize-video-tracks).
+- To learn more about optimizations and best practices for using custom video tracks, [follow this guide](/react/guide/video-and-audio-calling-api-sdk/render-media/optimize-video-tracks).
 - This parameter is only available from `v0.1.53`.
 
 :::

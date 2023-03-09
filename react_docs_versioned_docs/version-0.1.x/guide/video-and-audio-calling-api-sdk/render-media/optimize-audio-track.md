@@ -139,7 +139,7 @@ function App() {
 
 In order to switch tracks during the meeting, you have to pass the `MediaStream` in the **`unmuteMic()` or `toggleMic()`** method of `useMeeting`.
 
-:::caution
+:::tip
 Make sure to call `muteMic()` before you create a new track as it may lead to unexpected behavior.
 :::
 
@@ -203,6 +203,6 @@ const MeetingControls = () => {
 
 ## API Reference
 
-The API references for all the methods and events utilised in these guide are provided below.
+The API references for all the methods and events utilised in this guide are provided below.
 
 - [Custom Audio Track](/react/api/sdk-reference/custom-tracks#custom-audio-track)
