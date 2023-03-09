@@ -96,6 +96,8 @@ This page will keep you update all the releases of React JS SDK.
 
 1. To obtain screen sharing statistics, the `useParticipant` hook now has a [`getShareStats`](../../api/sdk-reference/use-participant/methods.md#getsharestats) function.
 
+---
+
 ## v0.1.53
 
 **Release Date** : 11th November 2022
