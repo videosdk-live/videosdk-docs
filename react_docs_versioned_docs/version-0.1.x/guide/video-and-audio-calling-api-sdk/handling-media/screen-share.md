@@ -35,7 +35,7 @@ Screen sharing in a meeting is the process of sharing your computer screen with 
 
 - By using `toggleScreenShare()` function of `useMeeting` hook, local participant can start or stop sharing his desktop screen to other participants based on the current state of the screen sharing.
 
-- You can pass customised screenshare track in `toggleScreenShare()` by using [Custom Screen Share Track](/react/guide/video-and-audio-calling-api-sdk/features/custom-track/custom-screen-share-track).
+- You can pass customised screenshare track in `toggleScreenShare()` by using [Custom Screen Share Track](/react/guide/video-and-audio-calling-api-sdk/render-media/optimize-video-track#custom-screen-share-track).
 
 - Screen Share stream of the participant can be accessed from the `screenShareStream` property of `useParticipant` hook.
 

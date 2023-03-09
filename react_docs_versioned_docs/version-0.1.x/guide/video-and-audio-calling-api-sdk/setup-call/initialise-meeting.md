@@ -240,7 +240,7 @@ All the hooks mentioned below are accessible within the `MeetingProvider` only.
 
 #### usePubsub
 
-`usePubsub` hook abstracts PubSub class and is responsible to provide a separate communication channel for all the participants in the meeting. It can be used to develop features like Chat, Raise Hand etc. To know more about the usePubsub hook, take a look at detailed explanation of publish-subscribe mechanism.
+`usePubsub` hook abstracts PubSub class and is responsible to provide a separate communication channel for all the participants in the meeting. It can be used to develop features like Chat, Raise Hand etc. To know more about the usePubsub hook, take a look at detailed explanation of [publish-subscribe mechanism](/react/guide/video-and-audio-calling-api-sdk/collaboration-in-meeting/pubsub).
 
 ## API Reference
 

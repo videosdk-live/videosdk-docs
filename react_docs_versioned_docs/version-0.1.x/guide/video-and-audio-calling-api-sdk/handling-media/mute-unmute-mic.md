@@ -27,7 +27,7 @@ When you mute your microphone, you prevent any sound from your microphone from b
 
   - You can call this method when the local participant is not broadcasting any audio to others.
 
-- You can pass customised audio track in `unmuteMic()` by using [Custom Audio Track](/react/guide/video-and-audio-calling-api-sdk/features/custom-track/custom-audio-track#custom-track-with-unmutemic).
+- You can pass customised audio track in `unmuteMic()` by using [Custom Audio Track](/react/guide/video-and-audio-calling-api-sdk/render-media/optimize-audio-track).
 
 - Audio stream of the participant can be accessed from the `micStream` property of `useParticipant` hook.
 
@@ -41,7 +41,7 @@ When you mute your microphone, you prevent any sound from your microphone from b
 
 - By using `toggleMic()` function of `useMeeting` hook, local participant can start or stop publish audio to other participants based on the current state of the mic.
 
-- You can pass customised audio track in `toggleMic()` by using [Custom Audio Track](/react/guide/video-and-audio-calling-api-sdk/features/custom-track/custom-audio-track#custom-track-with-unmutemic).
+- You can pass customised audio track in `toggleMic()` by using [Custom Audio Track](/react/guide/video-and-audio-calling-api-sdk/render-media/optimize-audio-track).
 
 - Audio stream of the participant can be accessed from the `micStream` property of `useParticipant` hook.
 

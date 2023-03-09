@@ -201,7 +201,7 @@ return (
 
 The API references for all the methods and events utilised in this guide are provided below.
 
-- [createMicrophoneAudioTrack](/react/guide/video-and-audio-calling-api-sdk/render-media/optimize-audio-video-tracks#custom-audio-track)
+- [createMicrophoneAudioTrack](/react/api/sdk-reference/custom-tracks#custom-audio-track)
 - [unmuteMic()](/react/api/sdk-reference/use-meeting/methods#unmutemic)
 - [muteMic()](/react/api/sdk-reference/use-meeting/methods#mutemic)
 - [toggleMic()](/react/api/sdk-reference/use-meeting/methods#togglemic)

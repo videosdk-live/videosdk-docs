@@ -292,7 +292,7 @@ return (
 
 The API references for all the methods utilised in this guide are provided below.
 
-- [createMicrophoneAudioTrack](/react/guide/video-and-audio-calling-api-sdk/render-media/optimize-audio-video-tracks#custom-video-track)
+- [createCameraVideoTrack](/react/api/sdk-reference/custom-tracks#custom-video-track)
 - [enableWebcam()](/react/api/sdk-reference/use-meeting/methods#enablewebcam)
 - [disableWebcam()](/react/api/sdk-reference/use-meeting/methods#disablewebcam)
 - [toggleWebcam()](/react/api/sdk-reference/use-meeting/methods#togglewebcam)
