@@ -17,7 +17,7 @@ slug: layout-and-grid-management
 
 # Layout and Grid Management
 
-In these guide we will take a look at how to efficiently manage the participants in different types of layout.
+In this guide we will take a look at how to efficiently manage the participants in different types of layout.
 
 ## Grid Layout
 
@@ -67,6 +67,6 @@ You can get the sample code for each of the layouts discussed above here.
 
 ## API Reference
 
-The API references for all the methods and events utilised in these guide are provided below.
+The API references for all the methods and events utilised in this guide are provided below.
 
 - [setQuality](/react/api/sdk-reference/use-participant/methods#setquality)

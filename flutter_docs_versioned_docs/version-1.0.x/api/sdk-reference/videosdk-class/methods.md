@@ -213,7 +213,7 @@ CustomTrack videoTrack = await VideoSDK.createCameraVideoTrack(
 ### createMicrophoneAudioTrack
 
 - You can create a Audio Track using `createMicrophoneAudioTrack()` method of `VideoSDK` class.
-- This method can be used to create audio track using different encoding parameters and noise cancellation configration.
+- This method can be used to create audio track using different encoding parameters and noise cancellation configuration.
 
 #### Parameters
 

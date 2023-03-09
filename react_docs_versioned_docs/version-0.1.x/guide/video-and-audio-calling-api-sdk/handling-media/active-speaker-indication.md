@@ -42,6 +42,6 @@ const MeetingView = () => {
 
 ### API Reference
 
-The API references for all the methods and events utilised in these guide are provided below.
+The API references for all the methods and events utilised in this guide are provided below.
 
 - [onSpeakerChanged()](/react/api/sdk-reference/use-meeting/events#onspeakerchanged)

@@ -148,7 +148,7 @@ import ReactPlayer from 'react-player'
 
 ## API Reference
 
-The API references for all the methods and events utilised in these guide are provided below.
+The API references for all the methods and events utilised in this guide are provided below.
 
 - [enableMic()](/react/api/sdk-reference/use-participant/methods#enablemic)
 - [enableWebcam()](/react/api/sdk-reference/use-participant/methods#enablewebcam)

@@ -24,7 +24,7 @@ We have introduced the ability to pass a custom Audio track for the Audio of the
 ## Creating a Custom Audio Track
 
 - You can create a Audio Track using `createMicrophoneAudioTrack()` method of `VideoSDK` class.
-- This method can be used to create audio track using different encoding parameters and noise cancellation configration.
+- This method can be used to create audio track using different encoding parameters and noise cancellation configuration.
 
 ### Parameters
 
@@ -111,7 +111,7 @@ In order to switch tracks during the meeting, you have to pass the `MediaStream`
 
 :::note
 
-Make sure to call `muteMic()` befor you create a new track as it may lead to unexpected behaviour.
+Make sure to call `muteMic()` before you create a new track as it may lead to unexpected behavior.
 
 :::
 

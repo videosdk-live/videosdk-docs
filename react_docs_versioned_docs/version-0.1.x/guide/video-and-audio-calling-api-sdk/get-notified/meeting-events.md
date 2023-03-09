@@ -76,7 +76,7 @@ const {
 
 ### API Reference
 
-The API references for all the methods and events utilised in these guide are provided below.
+The API references for all the methods and events utilised in this guide are provided below.
 
 - [onMeetingJoined()](/react/api/sdk-reference/use-meeting/methods#onmeetingjoined)
 - [onMeetingLeft()](/react/api/sdk-reference/use-meeting/events#onmeetingleft)
