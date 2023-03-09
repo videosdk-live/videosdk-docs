@@ -63,13 +63,17 @@ In order to identify quality issues, VideoSDK collects multiple audio and video 
 
 - If most of your users are on mobile and desktop devices, having higher resolution for desktop and mid-resolutions for mobile devices can help in improving the performance and quality as we will be saving the bandwidth on the mobile end.
 
-![resolution-and-bitrate](/img/resolution-and-bitrate.png)
-
 ### `2. Bitrate`
 
 - Bitrate is the number of bits per second send or received during the transmission of audio or video streams. Bitrate can be a key parameter to determine the quality of the audio or video streams, as it should be fine-tuned for each resolution to achieve the best match of performance and bandwidth utilization.
 
 - If the users are having excellent network conditions, higher bitrate can result in much better video quality but on the other hand, having very high bitrates on the mobile devices can result in heating issues due to high computation required to encode and decode the videos.
+
+##### Example
+
+We joined using the same phone **(iPhone 14)**, but the resolution and bitrate were different, first participant having resolution **`1280x720`** with bitrate **`1442 kbps`** and second participant having resolution **`960x540`** with bitrate **`642 kbps`**, so as we can see both participants' video appeared to be of equal quality even though resolution and bitrate are different.
+
+![resolution-and-bitrate](/img/resolution-and-bitrate.png)
 
 ### `3. Packet Loss`
 
