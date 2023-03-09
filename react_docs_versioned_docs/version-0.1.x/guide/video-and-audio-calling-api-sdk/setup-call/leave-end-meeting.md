@@ -9,7 +9,7 @@ keywords:
   - audio calling
   - video calling
   - real-time communication
-  - collabration
+  - collaboration
 image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
 slug: leave-end-meeting
@@ -69,19 +69,19 @@ const MeetingView = () => {
 ```
 
 :::tip
-You should call the `leave()` method on the unmount of your main meeting component so that meeting is left once the view is unmount.
+You should call the `leave()` method on the unmount of your main meeting component so that meeting is left once the view is unmounted.
 :::
 
 ### Events associated with Leave
 
-Following callbacks are receieved when a participant leaves the meeting.
+Following callbacks are received when a participant leaves the meeting.
 
 - [Local Participant](../concept-and-architecture#2-participant) will receive a callback on[`onMeetingLeft`](/react/api/sdk-reference/use-meeting/events#onmeetingleft) of `useMeeting()` hook.
 - All [remote participants](../concept-and-architecture#2-participant) will receive a callback [`onParticipantLeft`](/react/api/sdk-reference/use-meeting/events#onparticipantleft) with Participant object.
 
 ### Events associated with End
 
-Following callbacks are receieved when a participant ends the meeting.
+Following callbacks are received when a participant ends the meeting.
 
 - All [remote participants](../concept-and-architecture#2-participant) and local participant will receive a callback on [`onMeetingLeft`](/react/api/sdk-reference/use-meeting/events#onmeetingleft) of `useMeeting()` hook.
 

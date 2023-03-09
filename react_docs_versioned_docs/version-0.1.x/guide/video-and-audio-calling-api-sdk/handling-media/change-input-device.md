@@ -23,9 +23,9 @@ During the meeting at any point a participant wishes to switch his/her input aud
 
 ### `getMics()`
 
-- These method of the `useMeeting` hook will give you the list of all the available mics which can be shown in a dropdown list.
+- This method of the `useMeeting` hook will give you the list of all the available mics which can be shown in a dropdown list.
 
-- These method will return an array of objects which will contain the `deviceId` and `label` of the audio input device.
+- This method will return an array of objects which will contain the `deviceId` and `label` of the audio input device.
 
 ### `changeMic()`
 
@@ -75,9 +75,9 @@ const MeetingView = () => {
 
 ### `getWebcams()`
 
-- These method of the `useMeeting` hook will give you the list of all the available cameras which can be shown in a dropdown list.
+- This method of the `useMeeting` hook will give you the list of all the available cameras which can be shown in a dropdown list.
 
-- These method will return an array of objects which will contain the `deviceId` and `label` of the camera input device.
+- This method will return an array of objects which will contain the `deviceId` and `label` of the camera input device.
 
 ### `changeWebcam()`
 

@@ -34,7 +34,7 @@ This guide will provide an overview of how to implement start and stop Livestrea
 
 ### `startHls()`
 
-`startHls()` can be used to start a interactive livestream of the meeting which can be accessed from the `useMeeting` hook. These method accepts one parameter:
+`startHls()` can be used to start a interactive livestream of the meeting which can be accessed from the `useMeeting` hook. This method accepts one parameter:
 
 - `config (optional)`: This parameter will define how the livestream layout should look like.
 

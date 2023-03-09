@@ -26,7 +26,7 @@ This guide will provide an overview of how to implement start and stop Meeting R
 
 ### `startRecording()`
 
-`startRecording()` can be used to start a recording of the meeting which can be accessed from the `useMeeting` hook. These method accepts three parameters:
+`startRecording()` can be used to start a recording of the meeting which can be accessed from the `useMeeting` hook. This method accepts three parameters:
 
 - `1. webhookUrl (optional)`: These would the webhook URL where you would like to listen to event happening for the recording like starting and stopping of recording. It will be triggered when the recording is completed and stored into server. Read more about webhooks [here](https://en.wikipedia.org/wiki/Webhook)
 
