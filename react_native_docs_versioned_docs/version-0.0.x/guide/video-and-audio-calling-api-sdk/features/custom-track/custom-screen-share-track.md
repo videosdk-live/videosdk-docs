@@ -73,7 +73,7 @@ You can also pass custom track in `toggleScreenShare()` method of `useMeeting`.
 
 :::note
 
-Make sure to call `disableScreenShare()` befor you create a new track as it may lead to unexpected behaviour.
+Make sure to call `disableScreenShare()` before you create a new track as it may lead to unexpected behavior.
 
 :::
 

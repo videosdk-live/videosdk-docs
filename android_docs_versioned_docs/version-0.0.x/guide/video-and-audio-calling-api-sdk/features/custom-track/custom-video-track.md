@@ -193,7 +193,7 @@ In order to switch tracks during the meeting, you have to pass the `CustomStream
 
 :::note
 
-Make sure to call `disableWebcam()` before you create a new track as it may lead to unexpected behaviour.
+Make sure to call `disableWebcam()` before you create a new track as it may lead to unexpected behavior.
 
 :::
 

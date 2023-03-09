@@ -183,7 +183,7 @@ const ParticipantView = (participantId) => {
 
 ### Video Permissions
 
-- By defualt, VideSDK ask for video permissions when the participants requests to turn on the camera and once the permission is granted the camera gets turned on. If the permission is denied, VideoSDK will send the error message in teh `onError` event callback of `useMeeting` hook.
+- By default, VideSDK ask for video permissions when the participants requests to turn on the camera and once the permission is granted the camera gets turned on. If the permission is denied, VideoSDK will send the error message in teh `onError` event callback of `useMeeting` hook.
 
 import ReactPlayer from 'react-player'
 
@@ -209,7 +209,7 @@ To use the audio and video communications in the web browser, your site must be 
 
 ### API Reference
 
-The API references for all the methods and events utilised in these guide are provided below.
+The API references for all the methods and events utilised in this guide are provided below.
 
 - [enableWebcam()](/react/api/sdk-reference/use-meeting/methods#enablewebcam)
 - [disableWebcam()](/react/api/sdk-reference/use-meeting/methods#disablewebcam)

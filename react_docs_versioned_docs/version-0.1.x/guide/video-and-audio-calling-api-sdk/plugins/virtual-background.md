@@ -290,7 +290,7 @@ return (
 
 ## API Reference
 
-The API references for all the methods utilised in these guide are provided below.
+The API references for all the methods utilised in this guide are provided below.
 
 - [createMicrophoneAudioTrack](/react/guide/video-and-audio-calling-api-sdk/render-media/optimize-audio-video-tracks#custom-video-track)
 - [enableWebcam()](/react/api/sdk-reference/use-meeting/methods#enablewebcam)

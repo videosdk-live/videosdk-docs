@@ -141,7 +141,7 @@ For all the sessions taken using the VideoSDK, you can find the quality analysis
 
 ## API Reference
 
-The API references for all the methods and events utilised in these guide are provided below.
+The API references for all the methods and events utilised in this guide are provided below.
 
 - [getVideoStats()](/react/api/sdk-reference/use-participant/methods#getvideostats)
 - [getAudioStats()](/react/api/sdk-reference/use-participant/methods#getaudiostats)

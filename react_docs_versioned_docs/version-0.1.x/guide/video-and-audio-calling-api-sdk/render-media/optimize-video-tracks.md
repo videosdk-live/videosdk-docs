@@ -109,7 +109,7 @@ The capabilities of the device have a significant impact on how custom track con
 The custom track can be set up both before and after the initialization of the meeting.
 
 1. [Setup Custom Track while initialization of the meeting](#1-setup-custom-track-while-initialization-of-the-meeting)
-2. [Setup Cutom Track with with methods](#2-setup-cutom-track-with-methods)
+2. [Setup Custom Track with methods](#2-setup-custom-track-with-methods)
 
 ##### 1. Setup Custom Track while initialization of the meeting
 
@@ -157,8 +157,6 @@ function App() {
           //highlight-end
         }}
         token={token}
-        reinitialiseMeetingOnConfigChange={true}
-        joinWithoutUserInteraction={true}
       >
         <MeetingView />
       </MeetingProvider>
@@ -167,12 +165,12 @@ function App() {
 }
 ```
 
-#### 2. Setup Cutom Track with methods
+#### 2. Setup Custom Track with methods
 
 In order to switch tracks during the meeting, you have to pass the `MediaStream` in the **`enableWebcam()` or `toggleWebcam()`** method of `useMeeting`.
 
 :::caution
-Make sure to call `disableWebcam()` befor you create a new track as it may lead to unexpected behaviour.
+Make sure to call `disableWebcam()` before you create a new track as it may lead to unexpected behavior.
 :::
 
 ##### Example
@@ -277,7 +275,7 @@ In order to switch tracks during the meeting, you have to pass the `MediaStream`
 
 :::note
 
-Make sure to call `disableScreenShare()` befor you create a new track as it may lead to unexpected behaviour.
+Make sure to call `disableScreenShare()` before you create a new track as it may lead to unexpected behavior.
 
 :::
 
@@ -353,7 +351,7 @@ This feature can be used to add custom layers like background noise removal, ech
 ### Creating a Custom Audio Track
 
 - You can create a Audio Track using `createMicrophoneAudioTrack()` method of `@videosdk.live/react-sdk`.
-- This method can be used to create audio track using different encoding parameters and noise cancellation configration.
+- This method can be used to create audio track using different encoding parameters and noise cancellation configuration.
 
 #### Parameters
 
@@ -470,7 +468,7 @@ In order to switch tracks during the meeting, you have to pass the `MediaStream`
 
 :::note
 
-Make sure to call `muteMic()` befor you create a new track as it may lead to unexpected behaviour.
+Make sure to call `muteMic()` before you create a new track as it may lead to unexpected behavior.
 
 :::
 

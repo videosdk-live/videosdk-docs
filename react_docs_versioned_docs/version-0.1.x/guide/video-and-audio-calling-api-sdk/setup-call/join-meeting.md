@@ -29,7 +29,7 @@ Before joining the meeting, it has to be initialized. If you have not initialize
 - These method can be called after the meeting is initialized from the `MeetingProvider`.
 
 :::caution
-`useMeeting` hook mentioned above is accesible within the `MeetingProvider` only.
+`useMeeting` hook mentioned above is accessible within the `MeetingProvider` only.
 :::
 
 ```js
@@ -98,7 +98,7 @@ const MeetingView = () => {
 
 #### API Reference
 
-The API references for all the methods and events utilised in these guide are provided below.
+The API references for all the methods and events utilised in this guide are provided below.
 
 - [MeetingProvider](/react/api/sdk-reference/meeting-provider)
 - [join()](/react/api/sdk-reference/use-meeting/methods#join)

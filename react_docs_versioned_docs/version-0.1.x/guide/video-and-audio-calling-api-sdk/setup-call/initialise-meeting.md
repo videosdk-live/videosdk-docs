@@ -27,7 +27,7 @@ You can generate a `token` in two ways:
 
 2. **`Server`** : You can setup **JWT** in backend and make an API call to get the token from your server.
 
-To learn more about **Authentication** and token in detail you can follow [these guide](../authentication-and-token).
+To learn more about **Authentication** and token in detail you can follow [this guide](../authentication-and-token).
 
 ```js
 // With Temporary Token
@@ -96,7 +96,7 @@ We can initialize the meeting using the `MeetingProvider` from the React SDK. Th
 
 `MeetingProvider` is React [Context.Provider](https://reactjs.org/docs/context.html#contextprovider) that allows consuming components to subscribe to meeting changes.
 
-We will be passing the intialization configuration for the meeting and the token in the `MeetingProvider`.
+We will be passing the initialization configuration for the meeting and the token in the `MeetingProvider`.
 
 Let's take a deeper look at the available configuration options first.
 
@@ -134,11 +134,11 @@ Let's take a deeper look at the available configuration options first.
 
 - **`participantId`**:
 
-  - This will be the unique identifer for the participant inside the meeting.
+  - This will be the unique identifier for the participant inside the meeting.
 
-    - It can be used to specify the **unique identifer** which can be linked with **your own database** service.
+    - It can be used to specify the **unique identifier** which can be linked with **your own database** service.
     - It has to be of `String` type.
-    - This is an `OPTIONAL` parameter. By defualt VideoSDK will generate unique id for each participant.
+    - This is an `OPTIONAL` parameter. By default VideoSDK will generate unique id for each participant.
 
 :::caution
 You must ensure that the `participantId` is not repeated in the same meeting or room, It will enable VideoSDK to eliminate any participant respect to that `participantId`.
@@ -227,7 +227,7 @@ const MeetingView = () => {
 VideoSDK's React SDK provides Hooks which can be used to access the state of the meeting and listen to the events happening in the meeting.
 
 :::caution
-All the hooks mentioned below are accesible within the `MeetingProvider` only.
+All the hooks mentioned below are accessible within the `MeetingProvider` only.
 :::
 
 #### useMeeting
@@ -240,11 +240,11 @@ All the hooks mentioned below are accesible within the `MeetingProvider` only.
 
 #### usePubsub
 
-`usePubsub` hook abstracts PubSub class and is responsible to provide a seperate communication channel for all the participants in the meeting. It can be used to develop features like Chat, Raise Hand etc. To know more about the usePubsub hook, take a look at detailed explanation of publish-subscribe mechanism.
+`usePubsub` hook abstracts PubSub class and is responsible to provide a separate communication channel for all the participants in the meeting. It can be used to develop features like Chat, Raise Hand etc. To know more about the usePubsub hook, take a look at detailed explanation of publish-subscribe mechanism.
 
 ## API Reference
 
-The API references for all the methods utilised in these guide are provided below.
+The API references for all the methods utilised in this guide are provided below.
 
 - [useMeeting](/react/api/sdk-reference/use-meeting/introduction)
 - [useParticipant](/react/api/sdk-reference/use-participant/introduction)
