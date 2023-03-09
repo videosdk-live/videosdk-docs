@@ -249,15 +249,9 @@ const ParticipantView = ({ participantId }) => {
 };
 ```
 
-##### Sample video of mirror view video
+##### Sample of mirror view video
 
-import ReactPlayer from 'react-player'
-
-<div style={{textAlign: 'center'}}>
-
-<ReactPlayer autoplay muted loop playing url='/video/mirror-sample.mp4' width={"100%"}/>
-
-</div>
+![mirror view](/img/mirror-view.jpg)
 
 ### `3. Rendering Audio`
 
