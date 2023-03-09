@@ -84,10 +84,8 @@ const MeetingView = () => {
 };
 ```
 
-- [ ] TODO
-
 :::note
-To learn, how to render a audio in the meeting, follow these detailed guide.
+To learn, how to render a audio in the meeting, follow this detailed [guide](/react/guide/video-and-audio-calling-api-sdk/render-media/display-audio-video#3-rendering-audio).
 :::
 
 ### Events associated with unmuteMic

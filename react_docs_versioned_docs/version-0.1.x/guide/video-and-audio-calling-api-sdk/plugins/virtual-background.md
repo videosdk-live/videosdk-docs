@@ -12,7 +12,7 @@ Virtual backgrounds allow participants in a video call or meeting to replace the
 
 :::important
 
-- Currently, these feature is only available on Google Chrome, Firefox and Brave browser.
+- Currently, this feature is only available on Google Chrome, Firefox and Brave browser.
 - This feature is in Beta release, so feel free to reach out to us on Discord. We'd love to hear feedback from you.
 
 :::

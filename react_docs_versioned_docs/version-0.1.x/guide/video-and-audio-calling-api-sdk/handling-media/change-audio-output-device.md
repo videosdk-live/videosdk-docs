@@ -47,8 +47,6 @@ const setAudioOutputDevice = (deviceId) => {
 };
 ```
 
-- [ ] TODO : Add WebRTC Audio output device link
-
 :::note
 To learn more about changing the audio output device [check these documentation](https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/setSinkId).
 :::
