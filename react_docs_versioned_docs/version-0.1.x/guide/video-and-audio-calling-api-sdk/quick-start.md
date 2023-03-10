@@ -43,7 +43,7 @@ Visit VideoSDK **[dashboard](https://app.videosdk.live/api-keys)** to generate t
 
 ## Getting Started with the Code!
 
-Follow the steps to create the environment necessary to add video calls into your app.
+Follow the steps to create the environment necessary to add video calls into your app. Also you can find the code sample for [quickstart here](https://github.com/videosdk-live/quickstart/tree/main/react).
 
 ### Create new react app
 
@@ -431,10 +431,16 @@ function ParticipantView(props) {
 }
 ```
 
-#### Final Output
+## Final Output
 
 We are done with implementation of customised video calling app in reeact js using Video SDK. To explore more features go through Basic and Advanced features.
 
 import ReactPlayer from 'react-player'
 
 <ReactPlayer controls autoplay muted loop playing url='/video/react-quick-start.mp4' width={"100%"} />
+
+<br/>
+
+:::tip
+You can checkout the complete [quick start example here](https://github.com/videosdk-live/quickstart/tree/main/react).
+:::

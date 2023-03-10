@@ -5,7 +5,7 @@ pagination_label: Concept And Architecture
 
 # Concept and Architecture
 
-Before dive in to the concept, let's understand the VideSDK, VideoSDK is a software development kit that offers tools and APIs for creating apps that are based on video and audio. It typically includes features such as video and audio calls, chat, cloud recording, simulcasting (RTMP), interactive live streaming (HLS) and many more across a wide range of platforms and devices.
+Before diving into the concept, let's understand the VideSDK, VideoSDK is a software development kit that offers tools and APIs for creating apps that are based on video and audio. It typically includes features such as video and audio calls, chat, cloud recording, simulcasting (RTMP), interactive live streaming (HLS), and many more across a wide range of platforms and devices.
 
 ## Concepts
 
@@ -27,7 +27,7 @@ Before dive in to the concept, let's understand the VideSDK, VideoSDK is a softw
   - The local participant in a meeting/room can also connect with other participants by transmitting and receiving audio and video streams, exchanging chat messages, and more.
 
 - `2.2 Remote Participant` :
-  The remote participant receives audio and video streams from the local participant and other remote participants, and also has the ability to exchange audio, video and chat messages with the local participant.
+  The remote participant receives audio and video streams from the local participant and other remote participants and also has the ability to exchange audio, video, and chat messages with the local participant.
 
 - Each participant in VideoSDK can be uniquely identified by `participantId`.
 
@@ -73,6 +73,6 @@ Before dive in to the concept, let's understand the VideSDK, VideoSDK is a softw
 
 ## Architecture
 
-This diagram demonstrates end-to-end flow to implement video & audio calling, record calls and go-live on social media.
+This diagram demonstrates end-to-end flow to implement video & audio calls, record calls, and go live on social media.
 
 ![Video-sdk-architecture!](/img/video-sdk-archietecture.svg)

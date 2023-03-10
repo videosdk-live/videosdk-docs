@@ -447,7 +447,7 @@ const MethodRequestResponse = ({
         <div className="text-[#7D8EAD] text-sm font-medium pl-[3px] pr-[3px]">
           |
         </div>
-        <div className="flex-1 text-[#7D8EAD] text-sm font-medium">
+        <div className="flex-1 text-[#fff] text-sm font-medium">
           {apiEndpoint}
         </div>
         <div className="dropdown dropdown--hoverable dropdown--right">

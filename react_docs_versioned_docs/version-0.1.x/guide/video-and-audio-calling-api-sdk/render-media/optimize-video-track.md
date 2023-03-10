@@ -229,8 +229,8 @@ const MeetingControls = () => {
 };
 ```
 
-:::note
-Using custom video tracks is not just limited to the video tracks created using the `createCameraVideoTrack` method. You can use any `MediaStream` object as a replacement which can include a custom canvas track created by you.
+:::info
+Using custom video tracks is not just limited to the video tracks created using the `createCameraVideoTrack` method. You can use any `MediaStream` object as a replacement which can include a [custom canvas track created by you](https://developer.chrome.com/blog/capture-stream/).
 :::
 
 ### `Which Configuration is suitable for me ?`
