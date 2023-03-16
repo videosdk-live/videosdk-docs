@@ -35,6 +35,9 @@
   ],
   "stop_urls": [
     "https://docs.videosdk.live/docs",
+    "https://docs.videosdk.live/react/guide/video-and-audio-calling-api-sdk/getting-started",
+    "https://docs.videosdk.live/react/guide/video-and-audio-calling-api-sdk/react-js-sdk",
+    "https://docs.videosdk.live/react/api/sdk-reference/use-connection",
     "https://docs.videosdk.live/prebuilt/0.2.x/",
     "https://docs.videosdk.live/prebuilt/0.1.x/",
     "https://docs.videosdk.live/android/0.0.x/"

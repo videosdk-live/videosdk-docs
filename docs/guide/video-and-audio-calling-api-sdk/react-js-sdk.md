@@ -23,7 +23,7 @@ We've released a new version of pages with some improvements and smoother experi
 
 Here is the link of SDK for this page.
 
-- [React](/react/guide/video-and-audio-calling-api-sdk/react-js-sdk)
+- [React](/react/guide/video-and-audio-calling-api-sdk/integrate-sdk)
 
 :::
 
