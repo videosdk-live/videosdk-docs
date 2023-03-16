@@ -20,7 +20,7 @@ export default function ResourcePart() {
       title: "Custom SDK Guide",
       description:
         "End to End tutorials to integrate Custom SDK on various platforms.",
-      link: "react/guide/video-and-audio-calling-api-sdk/getting-started",
+      link: "react/guide/video-and-audio-calling-api-sdk/concept-and-architecture",
     },
     {
       title: "API Reference",
@@ -37,7 +37,7 @@ export default function ResourcePart() {
   ];
 
   return (
-    <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+    <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
       {ResourceArray.map((item, index) => {
         return (
           <div className={`w-full`}>
