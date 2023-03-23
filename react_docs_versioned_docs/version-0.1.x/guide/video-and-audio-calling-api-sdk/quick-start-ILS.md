@@ -107,19 +107,19 @@ We are going to use functional components to leverage react's reusable component
 
 ### App Architecture
 
-App will contain a container component which includes user component with videos. Each video component will have conrols button for mic, camera , leave meeting ,screen share and HLS button.
+App will contain a container component which includes user component with videos. Each video component will have controls button for mic, camera , leave meeting ,screen share and HLS button.
 
 We are goting to work on these files:
 
 - API.js: Responsible to handle API calls such as generating unique meetingId and token
 - App.js: Responsible to render meeting container and meeting join.
-- MeetingContainer.js - Responsible to render conrols button for mic, camera , leave meeting ,screen share and HLS button , participant view and player view.
+- MeetingContainer.js - Responsible to render controls button for mic, camera , leave meeting ,screen share and HLS button , participant view and player view.
 - ParticipantView.js - Responsible to render participant audio , video and screen share.
 - PlayerView.js - Responsible to render player view for play hls stream.
 
 ### Step 1: Get started with API.js
 
-Before jumping to anything else, we have write API to generate unique meetingId. You will require auth token, you can generate it using either by using [videosdk-rtc-api-server-examples](https://github.com/videosdk-live/videosdk-rtc-api-server-examples) or generate it from the [Video SDK Dashboard](https://app.videosdk.live/api-keys) for developer.
+Prior to moving on, we must create an API request to generate unique meetingId. You will require auth token, you can generate it using either by using [videosdk-rtc-api-server-examples](https://github.com/videosdk-live/videosdk-rtc-api-server-examples) or generate it from the [Video SDK Dashboard](https://app.videosdk.live/api-keys) for developer.
 
 ```js title="API.js"
 export const authToken = "<Generated-from-dashbaord>";
@@ -141,7 +141,7 @@ export const createMeeting = async ({ token }) => {
 
 ### Step 2: Wireframe App.js with all the components
 
-To build up wireframe of App.js, we are going to use Video SDK Hooks and Context Providers. Video SDK provideos MeetingProvider, MeetingConsumer, useMeeting and useParticipant hooks. Let's understand each of them.
+To build up wireframe of App.js, we are going to use Video SDK Hooks and Context Providers. Video SDK provides MeetingProvider, MeetingConsumer, useMeeting and useParticipant hooks. Let's understand each of them.
 
 First we will explore Context Provider and Consumer. Context is primarily used when some data needs to be accessible by many components at different nesting levels.
 
@@ -714,6 +714,6 @@ export default PlayerView;
 
 #### Final Output
 
-We are done with implementation of customised video calling app in reeact js using Video SDK. To explore more features go through Basic and Advanced features.
+We are done with implementation of customised video calling app in react js using Video SDK. To explore more features go through Basic and Advanced features.
 
 <img width="100%" src="/img/quick-start/ils-final-output.gif"/>
