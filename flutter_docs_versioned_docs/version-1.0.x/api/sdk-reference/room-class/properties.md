@@ -87,6 +87,20 @@ Participant? remoteParticipant = room.participants[remoteParticipantId];
 
 ---
 
+### pinnedParticipants
+
+- type: [`Map`](https://api.dart.dev/stable/2.15.1/dart-core/Map-class.html) of [`String`](https://api.dart.dev/stable/2.15.1/dart-core/String-class.html) and `ParticipantPinState`
+
+- `Map<String, ParticipantPinState>`
+
+  - Map<`participantId`, `ParticipantPinState`>
+
+- It will contain all participants who are pinned in the room.
+
+- This will be the [`Map`](https://api.dart.dev/stable/2.15.1/dart-core/Map-class.html) which will contain all participant who are currently pinned's pin state attached with the key as id of that
+
+---
+
 ### hlsState
 
 - type: String

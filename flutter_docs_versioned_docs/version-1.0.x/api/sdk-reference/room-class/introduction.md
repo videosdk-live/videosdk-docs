@@ -95,6 +95,11 @@ import events from '../data/events.json'
 </div>
 <div class="col col--4 margin-bottom--sm" >
 
+- [pinnedParticipants](./properties#pinnedParticipants)
+
+</div>
+<div class="col col--4 margin-bottom--sm" >
+
 - [pubSub](./properties#pubsub)
 
 </div>
