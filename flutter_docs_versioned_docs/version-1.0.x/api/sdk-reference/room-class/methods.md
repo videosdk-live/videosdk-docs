@@ -135,9 +135,19 @@ title: Room Class Methods
 - It is used to change the mode fo the participant from `CONFERENCE` to `VIEWER` and vice-versa.
 - [`participantModeCHange`](./events#participantmodechanged) event will be emitted with `participantId` and `mode` of the participant
 
+#### Parameters
+
+- **requestedMode**: `Mode.CONFERENCE` | `Mode.VIEWER`
+
 #### Returns
 
 - _`void`_
+
+#### Example
+
+```javascript
+room.changeMode(Mode.CONFERENCE);
+```
 
 ---
 
