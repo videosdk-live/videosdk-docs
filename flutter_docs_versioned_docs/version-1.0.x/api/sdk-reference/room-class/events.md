@@ -113,6 +113,42 @@ room.on(Events.presenterChanged, (activePresenterId) {
 
 ---
 
+### pinStateChanged
+
+- This event will be emitted when any [participant](../participant-class/introduction) pin state gets changed.
+- It will pass `participantId`, `state`, and `pinnedBy` as `Map<String, dynamic>` as an event handler parameter.
+
+#### Event handler parameters
+
+- **data**: `Map<String, dynamic>`{**participantId**:String, **state**:Map<String, dynamic>, **pinnedBy**:String}
+
+#### Example
+
+```javascript
+room.on(Events.pinStateChanged, (data) {
+  // do something
+});
+```
+
+### participantModeChanged
+
+- This event will be emitted when any [participant](../participant-class/introduction) mode gets changed.
+- It will pass `participantId`, and `pinnedBy` as `Map<String, dynamic>` as an event handler parameter.
+
+#### Event handler parameters
+
+- **data**: `Map<String, dynamic>`{**participantId**:String, **mode**:String}
+
+#### Example
+
+```javascript
+room.on(Events.participantModeChanged, (data) {
+  // do something
+});
+```
+
+---
+
 ### entryRequested
 
 - This event will be emitted when a new [participant](../participant-class/introduction), who is trying to join the room, is having permission **`ask_join`** in token.

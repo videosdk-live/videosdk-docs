@@ -87,6 +87,38 @@ Participant? remoteParticipant = room.participants[remoteParticipantId];
 
 ---
 
+### hlsState
+
+- type: String
+
+- It will return the state of HLS for the room.
+
+---
+
+### liveStreamState
+
+- type: String
+
+- It will return the state of Live stream for the room.
+
+---
+
+### recordingState
+
+- type: String
+
+- It will return the state of Recording for the room.
+
+---
+
+### hlsDownstreamUrl
+
+- type: String?
+
+- It will return the downstream URL for the ongoing HLS of the room if any.
+
+---
+
 ### pubSub
 
 - type: [`PubSub`](../pubsub-class/introduction)

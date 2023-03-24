@@ -31,6 +31,17 @@ pagination_label: Video SDK Participant Class
 </div>
 <div class="col col--4 margin-bottom--sm" >
 
+- [pinState](properties#pinstate)
+
+</div>
+
+<div class="col col--4 margin-bottom--sm" >
+
+- [mode](properties#mode)
+
+</div>
+<div class="col col--4 margin-bottom--sm" >
+
 - [streams](properties#streams)
 
 </div>
@@ -62,6 +73,16 @@ pagination_label: Video SDK Participant Class
 <div class="col col--4 margin-bottom--sm" >
 
 - [setQuality](methods#setquality)
+
+</div>
+<div class="col col--4 margin-bottom--sm" >
+
+- [pin](methods#pin)
+
+</div>
+<div class="col col--4 margin-bottom--sm" >
+
+- [unpin](methods#unpin)
 
 </div>
 <div class="col col--4 margin-bottom--sm" >

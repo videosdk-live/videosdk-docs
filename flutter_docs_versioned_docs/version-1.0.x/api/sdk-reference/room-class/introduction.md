@@ -56,6 +56,30 @@ import events from '../data/events.json'
 
 <div class="col col--4 margin-bottom--sm" >
 
+- [hlsState](./properties#hlsstate)
+
+</div>
+
+<div class="col col--4 margin-bottom--sm" >
+
+- [livestreamState](./properties#livestreamstate)
+
+</div>
+
+<div class="col col--4 margin-bottom--sm" >
+
+- [recordingState](./properties#recordingState)
+
+</div>
+
+<div class="col col--4 margin-bottom--sm" >
+
+- [hlsDownstreamUrl](./properties#hlsdownstreamurl)
+
+</div>
+
+<div class="col col--4 margin-bottom--sm" >
+
 - [selectedMicId](./properties#selectedmicid)
 
 </div>
@@ -118,6 +142,12 @@ import events from '../data/events.json'
 <div class="col col--4 margin-bottom--sm" >
 
 - [disableScreenShare](./methods#disablescreenshare)
+
+</div>
+
+<div class="col col--4 margin-bottom--sm" >
+
+- [changeMode](./methods#changemode)
 
 </div>
 <div class="col col--4 margin-bottom--sm" >
@@ -189,6 +219,16 @@ import events from '../data/events.json'
 <div class="col col--4 margin-bottom--sm" >
 
 - [presenterChanged](./events#presenterchanged)
+
+</div>
+<div class="col col--4 margin-bottom--sm" >
+
+- [participantModeChanged](./events#participantmodechanged)
+
+</div>
+<div class="col col--4 margin-bottom--sm" >
+
+- [pinStateChanged](./events#pinstatechanged)
 
 </div>
 <div class="col col--4 margin-bottom--sm" >

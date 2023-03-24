@@ -671,11 +671,6 @@ const MethodParameter = ({
   deprecatedMessage,
   isDiscontinued,
 }) => {
-  console.log(
-    { isDeprecated, deprecatedMessage },
-    "isDeprecated, deprecatedMessage"
-  );
-
   let md =
     values && defaultValue
       ? `${"#### values  :    " + values} \n${
