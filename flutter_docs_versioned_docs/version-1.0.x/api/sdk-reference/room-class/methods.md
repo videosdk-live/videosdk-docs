@@ -133,7 +133,7 @@ title: Room Class Methods
 ### changeMode()
 
 - It is used to change the mode fo the participant from `CONFERENCE` to `VIEWER` and vice-versa.
-- [`participantModeCHange`](./events#participantmodechanged) event will be emitted with `participantId` and `mode` of the participant
+- [`participantModeChange`](./events#participantmodechanged) event will be emitted with `participantId` and `mode` of the participant
 
 #### Parameters
 
