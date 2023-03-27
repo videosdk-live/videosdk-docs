@@ -35,3 +35,89 @@ If you are developing a web app, where host does not have to interact with the v
 ## Using roles
 
 The mode of the participants is set during the meeting intialization in the `config` in `MeetingProvider`.
+
+```js
+import { MeetingProvider, useMeeting } from "@videosdk.live/react-sdk";
+const getToken = async () => {
+  //highlight-next-line
+  ...
+};
+const getMeetingId = async () => {
+  //highlight-next-line
+  ...
+};
+const App = () => {
+    //highlight-start
+    ...
+    //highlight-end
+
+  // Init Meeting Provider
+  return token && meetingId ? (
+    <MeetingProvider
+      config={{
+        meetingId: meetingId,
+        name: "NAME HERE",
+        micEnabled: true,
+        webcamEnabled: true,
+        //highlight-next-line
+        mode: "CONFERENCE", // allowed: CONFERENCE | VIEWER
+      }}
+      token={token}
+      joinWithoutInteraction={true}
+    >
+      <MeetingView />
+    </MeetingProvider>
+  ) : (
+    <></>
+  );
+};
+
+const MeetingView = () => {
+  // Get Meeting object using useMeeting hook
+  const meeting = useMeeting();
+  console.log("Meeting Obj",meeting);
+
+  return <>...</>;
+};
+
+```
+
+## Getting Participant Mode
+
+You can identify the participants role by using `mode` property from `useParticipant` hook.
+
+```js
+function ParticipantView({ participantId }) {
+  const { displayName, mode } = useParticipant(participantId);
+
+  return (
+    <p>
+      Name: {displayName}, Mode: {mode}
+    </p>
+  );
+}
+```
+
+## Changing Participant's Mode
+
+Let's say you are hosting a livestream and you want one of youer viewer to join the livestream with you. In these case you can change the mode of the participant using the `changeMode()` of the `useMeeting` hook.
+
+```js
+function MeetingView() {
+  const { changeMode } = useMeeting();
+
+  const changeParticipantMode = () => {
+    changeMode(Constants.modes.CONFERENCE);
+  };
+
+  return <>...</>;
+}
+```
+
+## Tips while using roles
+
+- When using modes, you should make sure that participants with mode set to `CONFERENCE` are only shown on screen. To achieve these you can filter the participants based on there mode before showing them in the grid.
+
+- If the participant's mode is `VIEWER` just show the HLS player instead of the actual participant's grid. To learn more about HLS player [follow these guide](../integrate-hls/setup-hls-player).
+
+- To ensure only the hosts/speakers are shown in the grid, you should use the `SPOTLIGHT` layout and `pin` as the priority when starting the interactive livestream. Also dont forget to pin all the host/speaker.

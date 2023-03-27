@@ -56,8 +56,12 @@ When we talk about simple adaptive streaming, we imply that there is hardly any 
 
 These livestreams are helpful when there are a lot of viewers and they don't want to engage with the host. In this scenario, every presenter attends a VideoSDK meeting while every viewer only watches the livestream.
 
+// Video -- starting hls and playing video in online player
+
 #### 2. Adaptive Streaming with increased engagement
 
 When you want to communicate with your audience by enabling polls, conversations, and the ability for viewers to join and leave the livestream based on the host's decision, adaptive streaming with enhanced engagement will be the best fit for you.
 
 In this scenario, both the host and the viewer will have to join a VideoSDK meeting with different roles. To learn more about the roles [follow these guide.](../handling-participants/manage-roles)
+
+// Video -- REact example of livestream
