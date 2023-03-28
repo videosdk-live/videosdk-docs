@@ -178,7 +178,8 @@
           "items": [
             "guide/interactive-live-streaming/interaction-in-livestream/chat",
             "guide/interactive-live-streaming/interaction-in-livestream/raise-hand",
-            "guide/interactive-live-streaming/interaction-in-livestream/notify-attendees"
+            "guide/interactive-live-streaming/interaction-in-livestream/notify-attendees",
+            "guide/interactive-live-streaming/interaction-in-livestream/reactions"
           ]
         }
       ]
