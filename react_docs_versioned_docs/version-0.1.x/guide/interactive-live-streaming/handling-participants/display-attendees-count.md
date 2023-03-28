@@ -54,3 +54,9 @@ function AttendessCount() {
   );
 }
 ```
+
+## API Reference
+
+The API references for all the methods utilised in this guide are provided below.
+
+- [useMeeting](/react/api/sdk-reference/use-meeting/introduction)

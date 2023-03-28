@@ -81,6 +81,46 @@ pagination_label: Participant Class Methods
 
 ---
 
+### pin()
+
+- It is used to set pin state of the participant. You can use it to pin the screen share, camera or both of the participant. It accepts a optional paramter of type `String`. Default `SHARE_AND_CAM`
+
+#### Parameters
+
+- **pinType**: `SHARE_AND_CAM` | `CAM` | `SHARE`
+
+#### Returns
+
+- _`void`_
+
+#### Example
+
+```js
+participant.pin("CAM");
+```
+
+---
+
+### unpin()
+
+- It is used to unpin participant. You can use it to unpin the screen share, camera or both of the participant. It accepts a optional paramter of type `String`. Default is `SHARE_AND_CAM`
+
+#### Parameters
+
+- **pinType**: `SHARE_AND_CAM` | `CAM` | `SHARE`
+
+#### Returns
+
+- _`void`_
+
+#### Example
+
+```js
+participant.unpin("CAM");
+```
+
+---
+
 ### setViewPort()
 
 - `setViewPort()` is used to set the quality of the participant's video stream based on the viewport height and width.

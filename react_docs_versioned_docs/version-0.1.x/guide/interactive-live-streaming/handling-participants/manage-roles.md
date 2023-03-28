@@ -121,3 +121,12 @@ function MeetingView() {
 - If the participant's mode is `VIEWER` just show the HLS player instead of the actual participant's grid. To learn more about HLS player [follow these guide](../integrate-hls/setup-hls-player).
 
 - To ensure only the hosts/speakers are shown in the grid, you should use the `SPOTLIGHT` layout and `pin` as the priority when starting the interactive livestream. Also dont forget to pin all the host/speaker.
+
+## API Reference
+
+The API references for all the methods utilised in this guide are provided below.
+
+- [MeetingProvider](/react/api/sdk-reference/meeting-provider)
+- [useMeeting](/react/api/sdk-reference/use-meeting/introduction)
+- [useParticipant](/react/api/sdk-reference/use-participant/introduction)
+- [changeMode](/react/api/sdk-reference/use-meeting/methods#changemode)

@@ -141,8 +141,20 @@ We need to pin the participant so that he comes on the livestream. For these we 
 
 ```js
 function MeetingView() {
+  const mMeeting = useMeeting({});
+
+  //We are using a reference to the meeting object because
+  //While referencing it in the callbacks we want to use its latest state
+  const mMeetingRef = useRef();
+
+  useEffect(() => {
+    mMeetingRef.current = mMeeting;
+  }, [mMeeting]);
+
   const { localParticipant, changeMode } = useMeeting({
     onParticipantModeChanged: ({ participantId, mode }) => {
+      const localParticipant = mMeetingRef.current?.localParticipant;
+
       if (participantId == localParticipant.id) {
         if (mode == "CONFERENCE") {
           localParticipant.pin();
@@ -170,3 +182,11 @@ function MeetingView() {
 ```
 
 // Video -- React example change mode
+
+## API Reference
+
+The API references for all the methods utilised in this guide are provided below.
+
+- [useMeeting](/react/api/sdk-reference/use-meeting/introduction)
+- [usePubSub](/react/api/sdk-reference/use-pubsub)
+- [useParticipant](/react/api/sdk-reference/use-participant/introduction)
