@@ -78,7 +78,7 @@ const {
 
 The API references for all the methods and events utilised in this guide are provided below.
 
-- [onMeetingJoined()](/react/api/sdk-reference/use-meeting/events#onmeetingjoined)
-- [onMeetingLeft()](/react/api/sdk-reference/use-meeting/events#onmeetingleft)
-- [onSpeakerChanged()](/react/api/sdk-reference/use-meeting/events#onspeakerchanged)
-- [onPresenterChanged()](/react/api/sdk-reference/use-meeting/events#onpresenterchanged)
+- [onMeetingJoined()](/react-native/api/sdk-reference/use-meeting/events#onmeetingjoined)
+- [onMeetingLeft()](/react-native/api/sdk-reference/use-meeting/events#onmeetingleft)
+- [onSpeakerChanged()](/react-native/api/sdk-reference/use-meeting/events#onspeakerchanged)
+- [onPresenterChanged()](/react-native/api/sdk-reference/use-meeting/events#onpresenterchanged)

@@ -28,7 +28,7 @@ This guide will get you running with the VideoSDK video & audio calling in minut
 - NPM v6+ (comes installed with newer Node versions)
 - Android Studio or Xcode installed
 
-## Getting Started With the Code
+## Getting Started with the Code!
 
 ### Create App
 
@@ -443,7 +443,11 @@ function JoinScreen(props) {
 
 #### Output
 
-<img class="react-native-screen-img" alt="React-Native--Meeting-Screen" src={require('/static/img/quick-start/rn-joinscreen.jpg').default} />
+<div style={{textAlign: 'center'}}>
+
+<img style={{height:'500px'}} class="react-native-screen-img" alt="React-Native--Meeting-Screen" src={require('/static/img/quick-start/rn-joinscreen.jpg').default} />
+
+</div>
 
 ### Step 4 : Implement Contorls
 
@@ -540,7 +544,11 @@ function MeetingView() {
 
 #### Output
 
-<img class="react-native-screen-img" alt="React-Native--Meeting-Screen" src={require('/static/img/quick-start/rn-controls.jpg').default} />
+<div style={{textAlign: 'center'}}>
+
+<img style={{height:'500px'}} src={require('/static/img/quick-start/rn-controls.jpg').default} />
+
+</div>
 
 ### Step 5 : Render Participant List
 
@@ -660,7 +668,11 @@ function ParticipantView({ participantId }) {
 
 #### Output
 
-<img class="react-native-screen-img" alt="React-Native--Participant-View" src={require('/static/img/quick-start/rn-participant.jpg').default} />
+<div style={{textAlign: 'center'}}>
+
+<img style={{height:'500px'}} class="react-native-screen-img" alt="React-Native--Participant-View" src={require('/static/img/quick-start/rn-participant.jpg').default} />
+
+</div>
 
 :::note
 

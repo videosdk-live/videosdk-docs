@@ -23,9 +23,7 @@ Interactive live streaming (HLS) refers to a type of live streaming where viewer
 In an interactive live stream (HLS), viewers can take part in a variety of activities like live polling, Q&A sessions, and even sending virtual gifts to the content creator or each other.
 
 <center>
-
-![Screen Share with Audio](/img/VideoSDK-HLS.png)
-
+<img src='https://cdn.videosdk.live/website-resources/docs-resources/mobile_hls.png' />
 </center>
 
 VideoSDK also allows you to configure the interactive livestream layouts in numerous ways like by simply setting different prebuilt layouts in the configuration or by providing your own custom template to do the livestream according to your layout choice.
@@ -65,7 +63,7 @@ This guide will provide an overview of how to implement start and stop Livestrea
     // landscape : Record the meeting in horizontally
     // portrait : Record the meeting in vertically (Best for mobile view)
     //highlight-end
-    orientation: "landscape", // "portrait",  Default : "landscape"
+    orientation: "portrait", // "portrait",  Default : "landscape"
   };
 
   startHls(config);
@@ -78,7 +76,8 @@ This guide will provide an overview of how to implement start and stop Livestrea
 #### Example
 
 ```js
-import { useMeeting } from "@videosdk.live/react-sdk";
+import { useMeeting } from "@videosdk.live/react-native-sdk";
+import { TouchableOpacity, Text } from "react-native";
 
 const MeetingView = () => {
   const { startHls, stopHls } = useMeeting();
@@ -94,7 +93,7 @@ const MeetingView = () => {
       theme: "DARK",
       mode: "video-and-audio",
       quality: "high",
-      orientation: "landscape",
+      orientation: "portrait",
     });
   };
 
@@ -105,8 +104,21 @@ const MeetingView = () => {
 
   return (
     <>
-      <button onClick={handleStartHls}>Start Hls</button>
-      <button onClick={handleStopHls}>Stop Hls</button>
+      <TouchableOpacity
+        onPress={() => {
+          handleStartLivestream();
+        }}
+      >
+        <Text>Start Hls</Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity
+        onPress={() => {
+          handleStartLivestream();
+        }}
+      >
+        <Text>Stop Hls</Text>
+      </TouchableOpacity>
     </>
   );
 };
@@ -123,7 +135,7 @@ If you want to learn more about the Interactive Livestream and how you can imple
 - You can get the `downstreamUrl` of the HLS to play it on the Viewer side when the state changes to `Constants.hlsEvents.HLS_STARTED`
 
 ```js
-import { Constants, useMeeting } from "@videosdk.live/react-sdk";
+import { Constants, useMeeting } from "@videosdk.live/react-native-sdk";
 
 const Constants = VideoSDK.Constants;
 
@@ -165,6 +177,6 @@ With VideoSDK, you can also use your own custom designed layout template to live
 
 The API references for all the methods utilised in this guide are provided below.
 
-- [startHls](/react/api/sdk-reference/use-meeting/methods#starthls)
-- [stopHls](/react/api/sdk-reference/use-meeting/methods#stophls)
-- [onHlsStateChanged](/react/api/sdk-reference/use-meeting/events#onhlsstatechanged)
+- [startHls](/react-native/api/sdk-reference/use-meeting/methods#starthls)
+- [stopHls](/react-native/api/sdk-reference/use-meeting/methods#stophls)
+- [onHlsStateChanged](/react-native/api/sdk-reference/use-meeting/events#onhlsstatechanged)

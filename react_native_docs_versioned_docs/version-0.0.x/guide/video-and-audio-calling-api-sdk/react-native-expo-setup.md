@@ -3,8 +3,8 @@ title: Start a Video & Audio Call in React Native - Video SDK Docs
 hide_title: false
 hide_table_of_contents: false
 description: Build customizable real-time video & audio calling applications in React Native Android SDK using Video SDK add live Video & Audio conferencing to your applications.
-sidebar_label: "React Native Expo Setup"
-pagination_label: "React Native Expo Setup"
+sidebar_label: "Expo Setup"
+pagination_label: "Expo Setup"
 keywords:
   - react native android sdk
   - react native js sdk

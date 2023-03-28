@@ -19,7 +19,7 @@ sidebar_position: 1
 
 ## Custom Video Track
 
-- You can create a Video Track using `createCameraVideoTrack()` method of `@videosdk.live/react-sdk`.
+- You can create a Video Track using `createCameraVideoTrack()` method of `@videosdk.live/react-native-sdk`.
 - This method can be used to create video track using different encoding parameters, camera facing mode, and optimization mode.
 
 ### Parameters
@@ -68,7 +68,7 @@ Above mentioned encoder configurations are valid for both, landscape as well as 
 
   - type: `String`
   - required: `false`
-  - Allowed values : `front` | `environment`
+  - Allowed values : `user` | `environment`
   - It will specifiy whether to use front or back camera for the video track.
 
 - **optimizationMode**
@@ -87,8 +87,8 @@ Above mentioned encoder configurations are valid for both, landscape as well as 
 
 :::info
 
-- To learn more about optimizations and best practices for using custom video tracks, [follow this guide](/react/guide/video-and-audio-calling-api-sdk/render-media/optimize-video-track).
-- This parameter is only available from `v0.1.53`.
+- To learn more about optimizations and best practices for using custom video tracks, [follow this guide](/react-native/guide/video-and-audio-calling-api-sdk/render-media/optimize-video-track).
+- This parameter is only available from `v0.0.26`.
 
 :::
 
@@ -99,18 +99,18 @@ Above mentioned encoder configurations are valid for both, landscape as well as 
 ### Example
 
 ```javascript
-import { createCameraVideoTrack } from "@videosdk.live/react-sdk";
+import { createCameraVideoTrack } from "@videosdk.live/react-native-sdk";
 
 let customTrack = await createCameraVideoTrack({
   optimizationMode: "motion",
   encoderConfig: "h720p_w1280p",
-  facingMode: "environment",
+  facingMode: "user",
 });
 ```
 
 ## Custom Audio Track
 
-- You can create a Audio Track using `createMicrophoneAudioTrack()` method of `@videosdk.live/react-sdk`.
+- You can create a Audio Track using `createMicrophoneAudioTrack()` method of `@videosdk.live/react-native-sdk`.
 - This method can be used to create audio track using different encoding parameters and noise cancellation configration.
 
 ### Parameters
@@ -163,7 +163,7 @@ let customTrack = await createCameraVideoTrack({
 ### Example
 
 ```javascript
-import { createMicrophoneAudioTrack } from "@videosdk.live/react-sdk";
+import { createMicrophoneAudioTrack } from "@videosdk.live/react-native-sdk";
 
 let customTrack = await createMicrophoneAudioTrack({
   encoderConfig: "speech_standard",
@@ -177,7 +177,7 @@ let customTrack = await createMicrophoneAudioTrack({
 
 ## Custom Screen Share Track
 
-- You can create a Video Track using `createScreenShareVideoTrack()` method of `@videosdk.live/react-sdk`.
+- You can create a Video Track using `createScreenShareVideoTrack()` method of `@videosdk.live/react-native-sdk`.
 - This method can be used to create video track using different encoding parameters and optimization mode.
 
 ### Parameters
@@ -216,7 +216,7 @@ Above mentioned encoder configurations are valid for both, landscape as well as 
 ### Example
 
 ```javascript
-import { createScreenShareVideoTrack } from "@videosdk.live/react-sdk";
+import { createScreenShareVideoTrack } from "@videosdk.live/react-native-sdk";
 
 let customTrack = await createScreenShareVideoTrack({
   optimizationMode: "motion",

@@ -28,7 +28,7 @@ This guide will get you running with the VideoSDK video & audio calling in minut
 - NPM v6+ (comes installed with newer Node versions)
 - Android Studio or Xcode installed
 
-## Getting Started With the Code
+## Getting Started with the Code!
 
 ### Create a new react-native app
 

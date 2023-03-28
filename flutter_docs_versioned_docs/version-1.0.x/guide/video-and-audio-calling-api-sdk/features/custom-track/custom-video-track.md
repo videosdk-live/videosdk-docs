@@ -53,7 +53,7 @@ Above mentioned encoder configurations are valid for both, landscape as well as 
   - type: `String`
   - required: `false`
   - Allowed values : `user` | `environment`
-  - It will specifiy whether to use fron or back camera for the video track.
+  - It will specifiy whether to use front or back camera for the video track.
 
 - **multiStream**
 
