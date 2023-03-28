@@ -27,7 +27,7 @@ To play the HLS stream we will be using the [`hls.js`] library.
 **`Step 1:`** Let us first start by creating the new component named `HLSPlayer` which will be placed inside the `MeetingProvider` so we can access the VideoSDK hooks.
 
 ```js
-function MeetingContainer() {
+function Container() {
   return <HLSPlayer />;
 }
 
@@ -36,55 +36,15 @@ function HLSPlayer() {
 }
 ```
 
-**`Step 2:`** Now lets add the `onHlsStateChanged` callback which will give us the state of the HLS as well as the downstream URL to play.
+**`Step 2:`** Now lets add the placeholder that will be shown when there is no active HLS. For these we will use the `hlsState`, `isHlsPlayable` from the `useMeeting` hook to identify if there is an active HLS.
 
 ```js
 function HLSPlayer() {
-  // States to store downstream url and current HLS state
-  const [downstreamUrl, setDownstreamUrl] = useState(null);
-  const [hlsState, setHlsState] = useState("STOPPED");
-
-  const mMeeting = useMeeting({
-    onHlsStateChanged: (data) => {
-      if (
-        data.status === Constants.hlsEvents.HLS_STARTED ||
-        data.status === Constants.hlsEvents.HLS_STOPPED
-      ) {
-        //Update the Downstream URL on HLS start and stop events
-        setDownstreamUrl(
-          data.status === Constants.hlsEvents.HLS_STARTED
-            ? data.downstreamUrl
-            : null
-        );
-      }
-
-      //Update the current state of the HLS
-      if (data.status === Constants.hlsEvents.HLS_STARTED) {
-        setHlsState("STARTED");
-      }
-
-      if (data.status === Constants.hlsEvents.HLS_STOPPED) {
-        setHlsState("STOPPED");
-      }
-    },
-  });
-
-  return <div></div>;
-}
-```
-
-### `2. Playing HLS stream`
-
-**`Step 1:`** We will using the HLS state we declared before to show a placeholder which will be shown while the HLS is not started or has been stopped.
-
-```js
-function HLSPlayer(){
-  //highlight-next-line
-  ...
+  const { hlsUrls, isHlsPlayable, hlsState } = useMeeting();
 
   return (
     <div>
-      {hlsState == STOPPED ? (
+      {hlsState == "HLS_STOPPED" || !isHlsPlayable ? (
         <div>
           <p>HLS has not started yet or is stopped</p>
         </div>
@@ -96,25 +56,24 @@ function HLSPlayer(){
 }
 ```
 
-**`Step 2:`** We will be using the [`hls.js`](https://www.npmjs.com/package/hls.js) library to play the HLS stream. So let's start by installing the library.
+### `2. Playing HLS stream`
+
+**`Step 1:`** We will be using the [`hls.js`](https://www.npmjs.com/package/hls.js) library to play the HLS stream. So let's start by installing the library.
 
 ```bash
 npm install "hls.js"
 ```
 
-**`Step 3:`** Next we will be adding a `<video>` element which will play our livestream. We will also add a state which will be responsible to identifying if the HLS stream is playable at or not.
+**`Step 2:`** Next we will be adding a `<video>` element which will play our livestream.
 
 ```js
-function HLSPlayer(){
-  //highlight-next-line
-  ...
-
-  const [canPlay, setCanPlay] = useState(false);
+function HLSPlayer() {
+  const { hlsUrls, isHlsPlayable, hlsState } = useMeeting();
   const playerRef = useRef(null);
 
   return (
     <div>
-      {hlsState == STOPPED && !canPlay ? (
+      {hlsState == "HLS_STOPPED" || !isHlsPlayable ? (
         <div>
           <p>HLS has not started yet or is stopped</p>
         </div>
@@ -141,73 +100,7 @@ function HLSPlayer(){
 }
 ```
 
-**`Step 4:`** Now that video player is ready, lets add the logic to see if the HLS is playable or not.
-
-```js
-function HLSPlayer(){
-  //highlight-next-line
-  ...
-
-  //This will keep trying to check if the hls video is available for playback or not every 1 second.
-  async function waitForHLSPlayable(downstreamUrl, maxRetry) {
-    return new Promise(async (resolve, reject) => {
-      if (maxRetry < 1) {
-        return reject(false);
-      }
-
-      let status;
-
-      try {
-        const res = await fetch(downstreamUrl, {
-          method: "GET",
-        });
-        status = res.status;
-      } catch (err) {}
-
-      if (status === 200) {
-        return resolve(true);
-      }
-
-      await sleep(1000);
-
-      return resolve(
-        await waitForHLSPlayable(downstreamUrl, maxRetry - 1).catch((err) => {})
-      );
-    });
-  }
-
-  const checkHLSPlayable = async (downstreamUrl) => {
-    const canPlay = await waitForHLSPlayable(downstreamUrl, 20);
-
-    if (canPlay) {
-      setCanPlay(true);
-    } else {
-      setCanPlay(false);
-    }
-  };
-
-  //This will check if downstream url is present, then is it playable
-  //and it will update the state accordingly
-  //highlight-start
-  useEffect(async () => {
-    if (downstreamUrl) {
-      checkHLSPlayable(downstreamUrl);
-    } else {
-      setCanPlay(false);
-    }
-  }, [downstreamUrl]);
-  //highlight-end
-
-  return (
-    <div>
-    //highlight-next-line
-      ...
-    </div>
-  );
-}
-```
-
-**`Step 4:`** Now once the HLS is playable we will use the `hls.js` to play the stream.
+**`Step 3:`** Now that video player is ready, lets play the HLS once it becomes playable. For these we will get the `hlsUrls` from the `useMeeting` and also check if the `isHlsPlayable` before playing the stream.
 
 ```js
 function HLSPlayer() {
@@ -215,7 +108,7 @@ function HLSPlayer() {
   ...
 
   useEffect(() => {
-    if (downstreamUrl && canPlay) {
+    if (hlsUrls.downstreamUrl && isHlsPlayable) {
       if (Hls.isSupported()) {
         const hls = new Hls({
           capLevelToPlayerSize: true,
@@ -227,20 +120,16 @@ function HLSPlayer() {
 
         let player = document.querySelector("#hlsPlayer");
 
-        hls.loadSource(downstreamUrl);
+        hls.loadSource(hlsUrls.downstreamUrl);
         hls.attachMedia(player);
-        hls.on(Hls.Events.MANIFEST_PARSED, function () {});
-        hls.on(Hls.Events.ERROR, function (err) {
-          console.log(err);
-        });
       } else {
         if (typeof playerRef.current?.play === "function") {
-          playerRef.current.src = downstreamUrl;
+          playerRef.current.src = hlsUrls.downstreamUrl;
           playerRef.current.play();
         }
       }
     }
-  }, [downstreamUrl, canPlay]);
+  }, [hlsUrls, isHlsPlayable]);
 
   return <div>...</div>;
 }
