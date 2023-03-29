@@ -4,7 +4,6 @@
       "type": "category",
       "label": "Introduction",
       "items": [
-        "guide/video-and-audio-calling-api-sdk/getting-started",
         "guide/video-and-audio-calling-api-sdk/concept-and-architecture",
         "guide/video-and-audio-calling-api-sdk/authentication-and-tokens"
       ],

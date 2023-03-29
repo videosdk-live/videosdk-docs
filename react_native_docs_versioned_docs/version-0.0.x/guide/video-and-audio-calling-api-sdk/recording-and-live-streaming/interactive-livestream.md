@@ -26,16 +26,18 @@ In an interactive live stream (HLS), viewers can take part in a variety of activ
 <img src='https://cdn.videosdk.live/website-resources/docs-resources/mobile_hls.png' />
 </center>
 
+​
 VideoSDK also allows you to configure the interactive livestream layouts in numerous ways like by simply setting different prebuilt layouts in the configuration or by providing your own custom template to do the livestream according to your layout choice.
-
-This guide will provide an overview of how to implement start and stop Livestreaming.
+​
+This guide will provide an overview of how to implement start and stop Interactive live streaming (HLS).
+​
 
 ### `startHls()`
 
 `startHls()` can be used to start a interactive livestream of the meeting which can be accessed from the `useMeeting` hook. This method accepts one parameter:
 
-- `config (optional)`: This parameter will define how the livestream layout should look like.
-
+- `config (optional)`: This parameter will define how the interactive livestream layout should look like.
+  ​
   ```js
   const config = {
     // highlight-next-line
@@ -43,35 +45,38 @@ This guide will provide an overview of how to implement start and stop Livestrea
     layout: {
       type: "GRID", // "SPOTLIGHT" | "SIDEBAR",  Default : "GRID"
       priority: "SPEAKER", // "PIN", Default : "SPEAKER"
-      gridSize: 4, // MAX : 4
+      gridSize: 4, // MAX : 25
     },
-
+  ​
     // highlight-next-line
-    // Theme of recording
+    // Theme of interactive livestream layout
     theme: "DARK", //  "LIGHT" | "DEFAULT"
-
+  ​
     // highlight-next-line
-    // `mode` is used to either record video & audio both or only audio.
+    // `mode` is used to either interactive livestream video & audio both or only audio.
     mode: "video-and-audio", // "audio", Default : "video-and-audio"
-
+    ​
     // highlight-next-line
-    // Quality of recording and is only applicable to `video-and-audio` type mode.
+    // Quality of interactive livestream and is only applicable to `video-and-audio` type mode.
     quality: "high", // "low" | "med",  Default : "med"
-
+  ​
     //highlight-start
-    // This mode refers to orientation of recording.
-    // landscape : Record the meeting in horizontally
-    // portrait : Record the meeting in vertically (Best for mobile view)
+    // This mode refers to orientation of interactive livestream.
+    // landscape : Start interactive livestream of the meeting in horizontally
+    // portrait : Start interactive livestream of the meeting in vertically (Best for mobile view)
     //highlight-end
-    orientation: "portrait", // "portrait",  Default : "landscape"
+    orientation: "landscape", // "portrait",  Default : "landscape"
   };
-
+  ​
   startHls(config);
   ```
 
 ### `stopHls()`
 
-- `stopLivestream()` is used to stop the meeting livestream which can be accessed from the `useMeeting` hook.
+​
+
+- `stopHls()` is used to stop interactive livestream of the meeting which can be accessed from the `useMeeting` hook.
+  ​
 
 #### Example
 
@@ -114,7 +119,7 @@ const MeetingView = () => {
 
       <TouchableOpacity
         onPress={() => {
-          handleStartLivestream();
+          handleStopHls();
         }}
       >
         <Text>Stop Hls</Text>

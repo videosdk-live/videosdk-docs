@@ -2,7 +2,7 @@
 title: Change Audio Output Device | Video SDK Docs
 hide_title: false
 hide_table_of_contents: false
-description: Speaker Indication features quick integrate in Javascript, React JS, Android, IOS, React Native, Flutter with Video SDK to add live video & audio conferencing to your applications.
+description: Change Audio Output Device features quick integrate in Javascript, React JS, Android, IOS, React Native, Flutter with Video SDK to add live video & audio conferencing to your applications.
 sidebar_label: Change Audio Output Device
 pagination_label: Change Audio Output Device
 keywords:

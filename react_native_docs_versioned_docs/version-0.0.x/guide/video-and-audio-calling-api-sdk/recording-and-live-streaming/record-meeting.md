@@ -102,7 +102,7 @@ const MeetingView = () => {
   };
 
   const handleStopRecording = () => {
-    // Start Recording
+    // Stop Recording
     stopRecording();
   };
 

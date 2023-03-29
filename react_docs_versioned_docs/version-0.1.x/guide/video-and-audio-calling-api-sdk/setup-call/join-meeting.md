@@ -77,7 +77,7 @@ const MeetingView = () => {
   }
   //highlight-end
 
-  //Event to know some other particioant joined
+  //Event to know some other participant joined
   //highlight-start
   function onParticipantJoined(participant) {
     console.log(" onParticipantJoined", participant);

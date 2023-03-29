@@ -110,7 +110,7 @@ const MeetingView = () => {
   }
   //highlight-end
 
-  //Event to know some other particioant left
+  //Event to know some other participant left
   //highlight-start
   function onParticipantLeft(participant) {
     console.log(" onParticipantLeft", participant);
