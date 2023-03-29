@@ -161,7 +161,7 @@ With VideoSDK, you can also use your own custom designed layout template to reco
 
 ## API Reference
 
-The API references for all the methods utilised in this guide are provided below.
+The API references for all the methods utilized in this guide are provided below.
 
 - [startRecording](/react/api/sdk-reference/use-meeting/methods#startrecording)
 - [stopRecording](/react/api/sdk-reference/use-meeting/methods#stoprecording)

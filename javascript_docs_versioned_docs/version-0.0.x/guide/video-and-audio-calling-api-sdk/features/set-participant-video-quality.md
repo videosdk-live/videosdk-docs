@@ -36,7 +36,7 @@ const onPressed = () => {
 
 :::note
 
-If the quality is set to high, but there is not enough netowrk bandwidth available, quality will reduce untill the newtwork quality improves.
+If the quality is set to high, but there is not enough network bandwidth available, quality will reduce untill the newtwork quality improves.
 
 :::
 

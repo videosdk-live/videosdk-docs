@@ -88,6 +88,6 @@ We have depicted a specific constant with code and message in the below table.
 
 ### API Reference
 
-The API references for all the methods and events utilised in this guide are provided below.
+The API references for all the methods and events utilized in this guide are provided below.
 
 - [onError()](/react/api/sdk-reference/use-meeting/events#onerror)

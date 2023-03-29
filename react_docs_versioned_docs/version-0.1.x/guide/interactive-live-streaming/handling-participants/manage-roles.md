@@ -124,7 +124,7 @@ function MeetingView() {
 
 ## API Reference
 
-The API references for all the methods utilised in this guide are provided below.
+The API references for all the methods utilized in this guide are provided below.
 
 - [MeetingProvider](/react/api/sdk-reference/meeting-provider)
 - [useMeeting](/react/api/sdk-reference/use-meeting/introduction)

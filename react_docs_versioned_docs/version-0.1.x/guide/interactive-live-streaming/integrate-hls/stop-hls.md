@@ -2,7 +2,7 @@
 title: Stop HLS | Video SDK
 hide_title: true
 hide_table_of_contents: false
-description: Using VideoSDK to do the interatice livestreaming.
+description: Using VideoSDK to do the interactive livestreaming.
 sidebar_label: Stop HLS
 pagination_label: Stop HLS
 keywords:
@@ -17,6 +17,8 @@ slug: stop-hls
 
 # Stop HLS
 
+This could refer to stopping the transmission of an ongoing HLS stream, which would mean the stream is no longer available to viewers.
+
 ## Stopping HLS
 
 `stopHls()` can be used to stop a interactive livestream of the meeting which can be accessed from the `useMeeting` hook.
@@ -30,7 +32,7 @@ const MeetingView = () => {
   const { stopHls } = useMeeting();
 
   const handleStopHls = () => {
-    // Start Hls
+    // Stop Hls
     stopHls();
   };
 
@@ -85,7 +87,7 @@ const {
 
 ## API Reference
 
-The API references for all the methods utilised in this guide are provided below.
+The API references for all the methods utilized in this guide are provided below.
 
 - [stopHls](/react/api/sdk-reference/use-meeting/methods#stophls)
 - [onHlsStateChanged](/react/api/sdk-reference/use-meeting/events#onhlsstatechanged)

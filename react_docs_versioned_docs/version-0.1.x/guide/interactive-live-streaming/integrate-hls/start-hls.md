@@ -2,7 +2,7 @@
 title: Start HLS | Video SDK
 hide_title: true
 hide_table_of_contents: false
-description: Using VideoSDK to do the interatice livestreaming.
+description: Using VideoSDK to do the interactive livestreaming.
 sidebar_label: Start HLS
 pagination_label: Start HLS
 keywords:
@@ -25,42 +25,42 @@ Once the user has joined the meeting, `startHls()` can be used to start a intera
 
 - `config (optional)`: This parameter will define how the livestream layout should look like.
 
-  ```js
-  const config = {
-    // highlight-next-line
-    // Layout Configuration
-    layout: {
-      type: "GRID", // "SPOTLIGHT" | "SIDEBAR",  Default : "GRID"
-      priority: "SPEAKER", // "PIN", Default : "SPEAKER"
-      gridSize: 4, // MAX : 4
-    },
+```js
+ const config = {
+   // highlight-next-line
+   // Layout Configuration
+   layout: {
+     type: "GRID", // "SPOTLIGHT" | "SIDEBAR",  Default : "GRID"
+     priority: "SPEAKER", // "PIN", Default : "SPEAKER"
+     gridSize: 4, // MAX : 25
+   },
+​
+   // highlight-next-line
+   // Theme of interactive livestream layout
+   theme: "DARK", //  "LIGHT" | "DEFAULT"
+​
+   // highlight-next-line
+   // `mode` is used to either interactive livestream video & audio both or only audio.
+   mode: "video-and-audio", // "audio", Default : "video-and-audio"
+​
+   // highlight-next-line
+   // Quality of interactive livestream and is only applicable to `video-and-audio` type mode.
+   quality: "high", // "low" | "med",  Default : "med"
+​
+   //highlight-start
+   // This mode refers to orientation of interactive livestream.
+   // landscape : Start interactive livestream of the meeting in horizontally
+   // portrait : Start interactive livestream of the meeting in vertically (Best for mobile view)
+   //highlight-end
+   orientation: "landscape", // "portrait",  Default : "landscape"
+ };
+​
+ startHls(config);
+```
 
-    // highlight-next-line
-    // Theme of recording
-    theme: "DARK", //  "LIGHT" | "DEFAULT"
-
-    // highlight-next-line
-    // `mode` is used to either record video & audio both or only audio.
-    mode: "video-and-audio", // "audio", Default : "video-and-audio"
-
-    // highlight-next-line
-    // Quality of recording and is only applicable to `video-and-audio` type mode.
-    quality: "high", // "low" | "med",  Default : "med"
-
-    //highlight-start
-    // This mode refers to orientation of recording.
-    // landscape : Record the meeting in horizontally
-    // portrait : Record the meeting in vertically (Best for mobile view)
-    //highlight-end
-    orientation: "landscape", // "portrait",  Default : "landscape"
-  };
-
-  startHls(config);
-  ```
-
-  :::note
-  If you want only the conference participants to be seen in the livestream, you can `pin` all the participants in the conference mode and start the livestream with the `SPOTLIGHT` layout and `pin` as the `PRIORITY`.
-  :::
+:::note
+If you want only the conference participants to be seen in the livestream, you can `pin` all the participants in the conference mode and start the livestream with the `SPOTLIGHT` layout and `pin` as the `PRIORITY`.
+:::
 
 ### Example
 
@@ -140,7 +140,7 @@ With VideoSDK, you can also use your own custom designed layout template to live
 
 ## API Reference
 
-The API references for all the methods utilised in this guide are provided below.
+The API references for all the methods utilized in this guide are provided below.
 
 - [startHls](/react/api/sdk-reference/use-meeting/methods#starthls)
 - [onHlsStateChanged](/react/api/sdk-reference/use-meeting/events#onhlsstatechanged)

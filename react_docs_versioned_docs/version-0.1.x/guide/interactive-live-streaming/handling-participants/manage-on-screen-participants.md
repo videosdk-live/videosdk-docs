@@ -94,7 +94,7 @@ const speakers = useMemo(() => {
 
 ## API Reference
 
-The API references for all the methods utilised in this guide are provided below.
+The API references for all the methods utilized in this guide are provided below.
 
 - [pin](/react/api/sdk-reference/use-participant/methods#pin)
 - [unpin](/react/api/sdk-reference/use-participant/methods#unpin)

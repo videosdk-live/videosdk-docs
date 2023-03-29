@@ -36,7 +36,7 @@ Livestream experience is important while undertaking interactive live streaming 
 
 </center>
 
-When a host starts the interactive live stream, VideoSDK will use a deafult theme or user specified template to compose and encode a live stream which will be delivered to the viewers thorugh a `M3U8` video file which can be played directly on the viewer end which will adapt to the viewer's netowrk bandwidth.
+When a host starts the interactive live stream, VideoSDK will use a deafult theme or user specified template to compose and encode a live stream which will be delivered to the viewers through a `M3U8` video file which can be played directly on the viewer end which will adapt to the viewer's network bandwidth.
 
 When using VideoSDK for interactive live stream, you get multiple types of URLs which you can use based on your requirements.
 
@@ -54,7 +54,7 @@ You can use HLS with VideoSDK in two different ways.
 
 When we talk about simple adaptive streaming, we imply that there is hardly any interaction between the hosts and the viewers.
 
-These livestreams are helpful when there are a lot of viewers and they don't want to engage with the host. In this scenario, every presenter attends a VideoSDK meeting while every viewer only watches the livestream.
+These livestreams are helpful when there are a lot of viewers, and they don't want to engage with the host. In this scenario, every presenter attends a VideoSDK meeting, while every viewer only watches the livestream.
 
 // Video -- starting hls and playing video in online player
 

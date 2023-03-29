@@ -209,7 +209,7 @@ To use the audio and video communications in the web browser, your site must be 
 
 ### API Reference
 
-The API references for all the methods and events utilised in this guide are provided below.
+The API references for all the methods and events utilized in this guide are provided below.
 
 - [unmuteMic()](/react/api/sdk-reference/use-meeting/methods#unmutemic)
 - [muteMic()](/react/api/sdk-reference/use-meeting/methods#mutemic)

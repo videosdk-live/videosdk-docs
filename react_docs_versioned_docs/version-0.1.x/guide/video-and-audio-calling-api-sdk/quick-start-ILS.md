@@ -279,7 +279,7 @@ function JoinScreen({ getMeetingAndToken, setMode }) {
 
 #### Output
 
-![VideoSDK React Interactive Live Streaming Quick Start Join Screen](/quick_start_react_ils_join_screen.png)
+<!-- ![VideoSDK React Interactive Live Streaming Quick Start Join Screen](/quick_start_react_ils_join_screen.png) -->
 
 ### Step 4: Implement Container Component
 
@@ -504,7 +504,7 @@ function ParticipantView(props) {
 
 #### Output Of SpeakerView Component
 
-![VideoSDK React Interactive Live Streaming Quick Start ParticipantView Component Component](/quick_start_react_ils_speaker.png)
+<!-- ![VideoSDK React Interactive Live Streaming Quick Start ParticipantView Component Component](/quick_start_react_ils_speaker.png) -->
 
 ### Step 6: Implement ViewerView
 
@@ -607,7 +607,7 @@ function ViewerView() {
 
 #### Output of ViewerView
 
-![VideoSDK React Interactive Live Streaming Quick Start Meeting Container Component](/quick_start_react_ils_viewer.png)
+<!-- ![VideoSDK React Interactive Live Streaming Quick Start Meeting Container Component](/quick_start_react_ils_viewer.png) -->
 
 #### Final Output
 

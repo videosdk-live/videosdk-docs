@@ -166,6 +166,6 @@ All the messages from the PubSub which were published with `persist : true` and 
 
 ### API Reference
 
-The API references for all the methods and events utilised in this guide are provided below.
+The API references for all the methods and events utilized in this guide are provided below.
 
 - [usePubSub()](/react/api/sdk-reference/use-pubsub)

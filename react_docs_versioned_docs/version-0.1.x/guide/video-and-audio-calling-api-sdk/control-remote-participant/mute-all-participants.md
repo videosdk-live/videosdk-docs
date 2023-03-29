@@ -48,6 +48,6 @@ Participant who will be muting other participants should have permission **`allo
 
 ### API Reference
 
-The API references for all the methods and events utilised in this guide are provided below.
+The API references for all the methods and events utilized in this guide are provided below.
 
 - [disableMic()](/react/api/sdk-reference/use-participant/methods#disablemic)
