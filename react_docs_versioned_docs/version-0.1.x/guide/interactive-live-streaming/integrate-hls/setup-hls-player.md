@@ -20,7 +20,7 @@ slug: setup-hls-player
 In this guide we will create a new Component which will be responsible for playing the HLS stream.
 Before starting this guide make sure you have a VideoSDK meetings setup allowing you to join the room. To learn more about setting up a VideoSDK meeting, follow this quick start guide.
 
-To play the HLS stream we will be using the [`hls.js`] library.
+To play the HLS stream we will be using the [`hls.js`](https://www.npmjs.com/package/hls.js/v/canary) library.
 
 ### `1. Setup Component with HLS events`
 
