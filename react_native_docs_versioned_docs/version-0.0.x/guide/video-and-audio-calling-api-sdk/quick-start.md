@@ -449,7 +449,7 @@ function JoinScreen(props) {
 
 </div>
 
-### Step 4 : Implement Contorls
+### Step 4 : Implement Controls
 
 Next step is to create a `ControlsContainer` component that manage features such as Join or Leave Meeting and Enable or Disable Webcam/Mic.
 
