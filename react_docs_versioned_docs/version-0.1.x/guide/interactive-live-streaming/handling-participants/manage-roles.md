@@ -30,17 +30,17 @@ When doing interactive live streaming maintaining the role of users is quite imp
 
 ##### 1. Simple Adaptive Streaming
 
-When we talk about simple adaptive streaming, we imply that there is hardly any interaction between the hosts and the viewers.
+- Simple Adaptive Streaming (SAS) is a type of livestreaming that requires minimal interaction between the host and viewers.
 
-These livestreams are helpful when there are a lot of viewers and they don't want to engage with the host. In this scenario, every presenter attends a VideoSDK meeting while every viewer only watches the livestream.
+- It is particularly useful for events with a large number of viewers who prefer not to engage with the host.
 
-**In these scenario, there is no need to have the `VIEWER` join the meeting. Only the `CONFERENCE` participant will join the meeting.**
+- In SAS, each speaker attends a VideoSDK meeting in `CONFERENCE` mode, while viewers can simply watch the livestream using the `downstreamUrl`. Unlike the speakers, viewers do not need to join the meeting in `CONFERENCE` or `VIEWER` mode. This allows for a seamless streaming experience without any unnecessary interruptions or distractions.
 
 ##### 2. Adaptive Streaming with increased engagement
 
-When you want to communicate with your audience by enabling polls, conversations, and the ability for viewers to join and leave the livestream based on the host's decision, adaptive streaming with enhanced engagement will be the best fit for you.
+- If you're looking to increase engagement with your audience during a live streaming event, consider using Adaptive Streaming technology. With this approach, you can incorporate interactive features such as polls and conversations, and give viewers the ability to join and leave the livestream as the host decides.
 
-**In these scenario, there all the speakers will join as `CONFERENCE` participant and all the audience will join the meeting as `VIEWER` participant.**
+- To set this up, have all speakers join as `CONFERENCE` mode participants, while the audience joins as `VIEWER` mode participants. This way, everyone can participate in the interactive elements of the live stream and create a more dynamic and engaging experience for all.
 
 ## Using roles
 
@@ -115,39 +115,23 @@ function ParticipantView({ participantId }) {
 
 ## Changing Participant's Mode
 
-Let's say you are hosting a livestream and you want one of youer viewer to join the livestream with you. In these case you can change the mode of the participant using the `changeMode()` of the `useMeeting` hook.
+Let's say you are hosting a livestream and you want one of your viewer to join the livestream with you. In this case you can change the mode of the participant using the `changeMode()` of the `useMeeting` hook.
 
 ```js
 function Container() {
   const { changeMode } = useMeeting();
 
   const changeParticipantMode = () => {
+    // For CONFERENCE mode
     changeMode(Constants.modes.CONFERENCE);
+
+    // For VIEWER mode
+    changeMode(Constants.modes.VIEWER);
   };
 
   return <>...</>;
 }
 ```
-
-## Tips while using roles
-
-- When using modes, you should make sure that participants with mode set to `CONFERENCE` are only shown on screen. To achieve these you can filter the participants based on there mode before showing them in the grid.
-
-```js
-//Get the participants from useMeeting
-const { participants } = useMeeting();
-
-//Filtering the host/speakers from all the participants
-//highlight-start
-const speakers = [...participants.values()].filter((participant) => {
-  return participant.mode == Constants.modes.CONFERENCE;
-});
-//highlight-end
-```
-
-- If the participant's mode is `VIEWER` just show the HLS player instead of the actual participant's grid. To learn more about HLS player [follow these guide](../integrate-hls/setup-hls-player).
-
-- To ensure only the hosts/speakers are shown in the grid, you should use the `SPOTLIGHT` layout and `pin` as the priority when starting the interactive livestream. Also dont forget to pin all the host/speaker.
 
 ## API Reference
 
