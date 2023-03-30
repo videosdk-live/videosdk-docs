@@ -33,6 +33,8 @@ Let's first have a look at how we will be using the `PubSub` mechanism to acheiv
 We will be showing a list of participants who have joined as `VIEWER` to the host along with a button which when clicked will request that particular participant to join the livestream.
 
 ```js
+import { useMeeting, useParticipant } from "@videosdk.live/react-sdk";
+
 function MeetingView() {
   const { meetingId } = useMeeting();
   return (
@@ -77,6 +79,8 @@ We have a Viewer list ready. Now let us handle the click event for the Join LIve
 We will be using `CHANGE_MODE_$participantId` as the topic for PubSub.
 
 ```js
+import { usePubSub } from "@videosdk.live/react-sdk";
+
 function ViewerListItem({ participantId }) {
   const { displayName } = useParticipant(participantId);
   const { publish } = usePubSub(`CHANGE_MODE_${participantId}`);

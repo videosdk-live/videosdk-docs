@@ -29,6 +29,8 @@ Lets create a similar flying emoji by using the VideoSDK PubSub mechanism.
 We will create a button to send reaction to all the users. When this button is clicked we will send the emoji name to all the participants using the VideoSDK PubSub mechanism and also to the local participant using the browser `CustomEvents`.
 
 ```js title="ILSView.js"
+import { usePubSub } from "@videosdk.live/react-sdk";
+
 function ILSView() {
   const { publish } = usePubSub("REACTION");
   //highlight-start

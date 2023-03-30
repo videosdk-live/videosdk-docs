@@ -50,6 +50,8 @@ function MeetingView() {
 2. Now let us show an alert to all the speakers showing who raised the hand.
 
 ```js
+import { useMeeting } from "@videosdk.live/react-sdk";
+
 function MeetingView() {
   const { localParticipant } = useMeeting();
 

@@ -39,6 +39,8 @@ With these methods you can unpin any participant's Camera, Screen Share or both.
 1. If you want to pin all the hosts/speakers automatically, you can do it by listenting to the `onMeetingJoined` callback and `onParticipantModeChanged`, where you can `pin` and `unpin` based on the mode.
 
 ```js
+import { useMeeting } from "@videosdk.live/react-sdk";
+
 function MeetingView() {
   const mMeeting = useMeeting({});
 

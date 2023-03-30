@@ -39,6 +39,8 @@ function HLSPlayer() {
 **`Step 2:`** Now let's add the placeholder that will be shown when there is no active HLS. For these, we will use the `hlsState`, `isHlsPlayable` from the `useMeeting` hook to identify if there is an active HLS.
 
 ```js
+import { useMeeting } from "@videosdk.live/react-sdk";
+
 function HLSPlayer() {
   const { hlsUrls, isHlsPlayable, hlsState } = useMeeting();
 
@@ -67,6 +69,8 @@ npm install "hls.js"
 **`Step 2:`** Next we will be adding a `<video>` element which will play our livestream.
 
 ```js
+import Hls from "hls.js";
+
 function HLSPlayer() {
   const { hlsUrls, isHlsPlayable, hlsState } = useMeeting();
   const playerRef = useRef(null);

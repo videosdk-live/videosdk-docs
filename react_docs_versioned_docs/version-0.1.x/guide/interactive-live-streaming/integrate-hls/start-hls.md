@@ -101,7 +101,7 @@ This layout is default layout if no participants are pinned, it will look same a
 
 While screenshare as well the main view will contain only screenshare media but the side panel view of participant grid will maintain same order of pinned and unpinned participants.
 
-|                    Simple Grid                    |                     Grid with Screenshare                     |
+|                       Grid                        |                     Grid with Screenshare                     |
 | :-----------------------------------------------: | :-----------------------------------------------------------: |
 | ![prebuilt-grid](/img/prebuilt/prebuilt-grid.png) | ![prebuilt-grid-share](/img/prebuilt/prebuilt-grid-share.png) |
 
@@ -111,7 +111,7 @@ This layout will have one main screen view and other sidebar grid layout. Only p
 
 If any pinned participant started screenshare then the screenshare media will be visible in main screen layout and all other pinned participants webcam view will be visible in sidebar
 
-|                     Simple Sidebar                      |                      Sidebar with Screenshare                       |
+|                         Sidebar                         |                      Sidebar with Screenshare                       |
 | :-----------------------------------------------------: | :-----------------------------------------------------------------: |
 | ![prebuilt-sidebar](/img/prebuilt/prebuilt-sidebar.png) | ![prebuilt-sidebar-share](/img/prebuilt/prebuilt-sidebar-share.png) |
 
@@ -121,7 +121,7 @@ This layout will only contain main screen layout, multiple pinned participants w
 
 If any pinned participant started screenshare then only screenshare view will be visible in main screen, no webcam view will be visible when any pinned participant started screenshare.
 
-|                      Simple Spotlight                       |                       Spotlight with Screenshare                        |
+|                          Spotlight                          |                       Spotlight with Screenshare                        |
 | :---------------------------------------------------------: | :---------------------------------------------------------------------: |
 | ![prebuilt-spotlight](/img/prebuilt/prebuilt-spotlight.png) | ![prebuilt-spotlight-share](/img/prebuilt/prebuilt-spotlight-share.png) |
 
