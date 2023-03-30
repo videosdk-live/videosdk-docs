@@ -93,6 +93,38 @@ const MeetingView = () => {
 };
 ```
 
+## Understanding Layouts
+
+##### 1. GRID Layout
+
+This layout is default layout if no participants are pinned, it will look same as a normal meeting grid layout, when any participant is pinned that participant will be moved on top of the main screen grid above all non pinned participants
+
+While screenshare as well the main view will contain only screenshare media but the side panel view of participant grid will maintain same order of pinned and unpinned participants.
+
+|                    Simple Grid                    |                     Grid with Screenshare                     |
+| :-----------------------------------------------: | :-----------------------------------------------------------: |
+| ![prebuilt-grid](/img/prebuilt/prebuilt-grid.png) | ![prebuilt-grid-share](/img/prebuilt/prebuilt-grid-share.png) |
+
+##### 2. SIDEBAR Layout
+
+This layout will have one main screen view and other sidebar grid layout. Only pinned participant will be visible in this layout, all unpinned participants will not be visible in this layout. If more than one participant is pinned then the first participant who was pinned will appear in main screen layout and all other remaining pinned particiapants will be visible in sidebar.
+
+If any pinned participant started screenshare then the screenshare media will be visible in main screen layout and all other pinned participants webcam view will be visible in sidebar
+
+|                     Simple Sidebar                      |                      Sidebar with Screenshare                       |
+| :-----------------------------------------------------: | :-----------------------------------------------------------------: |
+| ![prebuilt-sidebar](/img/prebuilt/prebuilt-sidebar.png) | ![prebuilt-sidebar-share](/img/prebuilt/prebuilt-sidebar-share.png) |
+
+##### 3. SPOTLIGHT Layout
+
+This layout will only contain main screen layout, multiple pinned participants will be visible in main screen view. Same as `SIDEBAR` layout only pinned participants will be visible in main screen.
+
+If any pinned participant started screenshare then only screenshare view will be visible in main screen, no webcam view will be visible when any pinned participant started screenshare.
+
+|                      Simple Spotlight                       |                       Spotlight with Screenshare                        |
+| :---------------------------------------------------------: | :---------------------------------------------------------------------: |
+| ![prebuilt-spotlight](/img/prebuilt/prebuilt-spotlight.png) | ![prebuilt-spotlight-share](/img/prebuilt/prebuilt-spotlight-share.png) |
+
 ## Event associated with HLS
 
 - **onHlsStateChanged** - Whenever meeting HLS state changes, then `onHlsStateChanged` event will trigger.
