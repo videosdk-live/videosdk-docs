@@ -18,15 +18,17 @@ slug: display-attendees-count
 
 # Display Attendees Count
 
-In these guide we will see how you can display the number of Attendees in realtime.
+In this guide we will see how you can display the number of attendees in realtime.
 
 :::note
-Before going forward in these guide, do make sure all the attendees join the meeting with mode as `VIEWER`
+Before going forward in this guide, do make sure all the attendees join the meeting with mode as `VIEWER`
 :::
 
-**`Step 1: `** We will get the `participants` list from the `useMeeting` hook.
+**`Step 1:`** We will get the `participants` from the `useMeeting` hook.
 
 ```js
+import { useMeeting } from "@videosdk.live/react-sdk";
+
 function AttendessCount() {
   const { participants } = useMeeting();
 
@@ -34,9 +36,12 @@ function AttendessCount() {
 }
 ```
 
-**`Step 2: `** With all the participants list, we will filter the participants who have joined as a `VIEWER` and then display that count.
+**`Step 2:`** With all the participants, we will filter out participants who have joined as a `VIEWER` and then display that count.
 
 ```js
+import { useMeeting } from "@videosdk.live/react-sdk";
+import { useMemo } from "react";
+
 function AttendessCount() {
   const { participants } = useMeeting();
 
