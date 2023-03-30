@@ -26,7 +26,7 @@ Lets create a similar flying emoji by using the VideoSDK PubSub mechanism.
 
 ### Creating a button to send reaction
 
-We will create a button to send reaction to all the users. When these button is clicked we will send the emoji name to all the participants using the VideoSDK PubSub mechanism and also to the local participant using the browser `CustomEvents`.
+We will create a button to send reaction to all the users. When this button is clicked we will send the emoji name to all the participants using the VideoSDK PubSub mechanism and also to the local participant using the browser `CustomEvents`.
 
 ```js title="ILSView.js"
 function ILSView() {
@@ -52,8 +52,8 @@ function ILSView() {
 
       <button
         onClick={() => {
-          sendEmoji("confetti");
-          publish("confetti");
+          sendEmoji("clap");
+          publish("clap");
         }}
       >
         Send 👏 Reaction
@@ -167,7 +167,7 @@ function FlyingEmojiOverlay(){
 **`Step 3:`** Let us add listener to our PubSub topic so reaction from other participants is also shown.
 
 ```js title="FlyingEmojiOverlay.js"
-function FlyingEMojiOverlay(){
+function FlyingEmojiOverlay(){
   ...
 
   //Subscribing to the PubSub topic REACTION to recive other participants reactions.

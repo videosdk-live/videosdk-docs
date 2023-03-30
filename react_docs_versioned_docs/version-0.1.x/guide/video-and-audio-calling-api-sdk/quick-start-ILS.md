@@ -242,11 +242,11 @@ Join screen will work as medium to either schedule new meeting or to join existi
 
 These will have 3 buttons:
 
-`1. Join as Host:` When these button is clicked, the person will join the entered `meetingId` as `HOST`.
+`1. Join as Host:` When this button is clicked, the person will join the entered `meetingId` as `HOST`.
 
-`2. Join as Viewer:` When these button is clicked, the person will join the entered `meetingId` as `VIEWER`.
+`2. Join as Viewer:` When this button is clicked, the person will join the entered `meetingId` as `VIEWER`.
 
-`3. Create Meeting:` When these button is clicked, the person will join a new meeting as `HOST`.
+`3. Create Meeting:` When this button is clicked, the person will join a new meeting as `HOST`.
 
 ```js title="JoinScreen Component"
 function JoinScreen({ getMeetingAndToken, setMode }) {
