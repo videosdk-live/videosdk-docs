@@ -28,9 +28,19 @@ When doing interactive live streaming maintaining the role of users is quite imp
 
 ## When to use the Roles?
 
-Using these role is helpful, when the viewers and host have to interact with each other and also allow the viewers to join the livestream where they are allowed to publish and consume other participant's media.
+##### 1. Simple Adaptive Streaming
 
-If you are developing a web app, where host does not have to interact with the viewers, you can just have the simple livestream being played on the viewer side without the need to join a VideoSDK meeting and only use the `CONFERENCE` as role for the hosts.
+When we talk about simple adaptive streaming, we imply that there is hardly any interaction between the hosts and the viewers.
+
+These livestreams are helpful when there are a lot of viewers and they don't want to engage with the host. In this scenario, every presenter attends a VideoSDK meeting while every viewer only watches the livestream.
+
+**In these scenario, there is no need to have the `VIEWER` join the meeting. Only the `CONFERENCE` participant will join the meeting.**
+
+##### 2. Adaptive Streaming with increased engagement
+
+When you want to communicate with your audience by enabling polls, conversations, and the ability for viewers to join and leave the livestream based on the host's decision, adaptive streaming with enhanced engagement will be the best fit for you.
+
+**In these scenario, there all the speakers will join as `CONFERENCE` participant and all the audience will join the meeting as `VIEWER` participant.**
 
 ## Using roles
 
@@ -65,19 +75,24 @@ const App = () => {
       token={token}
       joinWithoutInteraction={true}
     >
-      <MeetingView />
+      <Container />
     </MeetingProvider>
   ) : (
     <></>
   );
 };
 
-const MeetingView = () => {
+const Container = () => {
+  //highlight-start
   // Get Meeting object using useMeeting hook
-  const meeting = useMeeting();
-  console.log("Meeting Obj",meeting);
+  const { localParticipant } = useMeeting();
 
-  return <>...</>;
+  return localParticipant.mode == "CONFERENCE" ? (
+    <SpeakerView />
+  ) : localParticipant.mode == "VIEWER" ? (
+    <HlsPlayer />
+  ) : null;
+  //highlight-end
 };
 
 ```
@@ -103,7 +118,7 @@ function ParticipantView({ participantId }) {
 Let's say you are hosting a livestream and you want one of youer viewer to join the livestream with you. In these case you can change the mode of the participant using the `changeMode()` of the `useMeeting` hook.
 
 ```js
-function MeetingView() {
+function Container() {
   const { changeMode } = useMeeting();
 
   const changeParticipantMode = () => {
@@ -117,6 +132,23 @@ function MeetingView() {
 ## Tips while using roles
 
 - When using modes, you should make sure that participants with mode set to `CONFERENCE` are only shown on screen. To achieve these you can filter the participants based on there mode before showing them in the grid.
+
+```js
+//Get the participants and hlsState from useMeeting
+const { participants, hlsState } = useMeeting();
+
+//Filtering the host/speakers from all the participants
+//highlight-start
+const speakers = useMemo(() => {
+  const speakerParticipants = [...participants.values()].filter(
+    (participant) => {
+      return participant.mode == Constants.modes.CONFERENCE;
+    }
+  );
+  return speakerParticipants;
+}, [participants]);
+//highlight-end
+```
 
 - If the participant's mode is `VIEWER` just show the HLS player instead of the actual participant's grid. To learn more about HLS player [follow these guide](../integrate-hls/setup-hls-player).
 

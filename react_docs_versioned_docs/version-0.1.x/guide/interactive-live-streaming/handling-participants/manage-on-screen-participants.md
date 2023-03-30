@@ -52,17 +52,20 @@ function MeetingView() {
 
   const { localParticipant } = useMeeting({
     onMeetingJoined: () => {
+      //highlight-start
       const localParticipant = mMeetingRef.current?.localParticipant;
-
+      //We will pin the participant if mode is conference
       if (localParticipant.mode == Constants.modes.CONFERENCE) {
         localParticipant.pin();
       } else {
         localParticipant.unpin();
       }
+      //highlight-end
     },
     onParticipantModeChanged: ({ participantId, mode }) => {
       const localParticipant = mMeetingRef.current?.localParticipant;
-
+      //highlight-start
+      //We will pin the participant if mode is conference else unpin him
       if (participantId == localParticipant.id) {
         if (localParticipant.mode == Constants.modes.CONFERENCE) {
           localParticipant.pin();
@@ -70,6 +73,7 @@ function MeetingView() {
           localParticipant.unpin();
         }
       }
+      //highlight-end
     },
   });
   return <>...</>;
