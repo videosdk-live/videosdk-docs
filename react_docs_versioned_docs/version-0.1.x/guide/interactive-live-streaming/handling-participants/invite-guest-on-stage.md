@@ -18,10 +18,10 @@ slug: invite-guest-on-stage
 
 # Invite Guest on Stage
 
-In these guide we will see how you can request a viewer to join your livestream by using the `changeMode()`.
+In this guide we will see how you can request a viewer to join your livestream by using the `changeMode()`.
 
 :::note
-Before going forward in these guide, do make sure all the attendees join the meeting with mode as `VIEWER` and the host joins with mode as `CONFERENCE`
+Before going forward in this guide, do make sure all the attendees join the meeting with mode as `VIEWER` and the host joins with mode as `CONFERENCE`
 :::
 
 Let's first have a look at how we will be using the `PubSub` mechanism to acheive the requesting and switching of the participant's mode.
@@ -30,7 +30,7 @@ Let's first have a look at how we will be using the `PubSub` mechanism to acheiv
 
 ### Step 1: Loading Viewer List
 
-We will be showing a list of participants who have joined as `VIEWER` to the host along with a button which when clicked will request that particular participant to join the livestream.
+The host will see a list of participants who have joined as `VIEWER` along with a button that, when selected, will invite that user to join the livestream.
 
 ```js
 import { useMeeting, useParticipant } from "@videosdk.live/react-sdk";
@@ -74,7 +74,7 @@ function ViewerListItem({ participantId }) {
 
 ### Step 2: Requesting a Viewer to Join Livestream
 
-We have a Viewer list ready. Now let us handle the click event for the Join LIvestream button.
+We have a Viewer list ready. Now, let us handle the click event for the Join Livestream button.
 
 We will be using `CHANGE_MODE_$participantId` as the topic for PubSub.
 
@@ -84,12 +84,14 @@ import { usePubSub } from "@videosdk.live/react-sdk";
 function ViewerListItem({ participantId }) {
   const { displayName } = useParticipant(participantId);
   const { publish } = usePubSub(`CHANGE_MODE_${participantId}`);
+
   //highlight-start
   //Publishing the pubsub message with new mode
   const onClickRequestJoinLiveStream = () => {
     publish("CONFERENCE");
   };
   //higlight-end
+
   return (
     <div>
       {displayName}{" "}
@@ -107,7 +109,7 @@ function ViewerListItem({ participantId }) {
 
 ### Step 3: Showing Viewer Request Dialog
 
-Now that we have implemented the Host requesting the viewer to join the livestream, let's show the request dialog on the viewer side and check his mode to `CONFERENCE`.
+After implementing the Host requesting viewer to join the livestream, let's display the viewer's request dialogue and switch the `VIEWER` mode to `CONFERENCE`.
 
 ```js
 function MeetingView() {
@@ -151,13 +153,9 @@ function MeetingView() {
 }
 ```
 
-:::note
-Once the viewer has joined the livestream, you can switch the users view similar to that of `CONFERENCE` participant.
-:::
-
 ### Step 4: Pin the participant
 
-We need to pin the participant so that he comes on the livestream. For these we will listen to the callback on the `onParticipantModeChanged` of `useMeeting` hook.
+We need to pin the participant so that he/she can appears on the livestream. To achieve this, we will listen to the callback on the `onParticipantModeChanged` of `useMeeting` hook.
 
 ```js
 function MeetingView() {
