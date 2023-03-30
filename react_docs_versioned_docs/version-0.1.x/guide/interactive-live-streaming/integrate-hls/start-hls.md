@@ -17,7 +17,7 @@ slug: start-hls
 
 # Start HLS
 
-Before starting the HLS, the prequisite steps require you to have a VideoSDK Meeting running which you want to use for interactive livestream. To learn more about setting up a meeting, you can follow the steps [here in the quick start guide.](/react/guide/video-and-audio-calling-api-sdk/quick-start)
+Before starting the HLS, the prequisite steps require you to have a VideoSDK Meeting running which you want to use for interactive livestream. To learn more about setting up a interactive live streaming, you can follow the steps [here in the quick start guide.](/react/guide/video-and-audio-calling-api-sdk/quick-start-ILS)
 
 ## Starting HLS
 
@@ -184,5 +184,8 @@ With VideoSDK, you can also use your own custom designed layout template to live
 The API references for all the methods utilized in this guide are provided below.
 
 - [startHls](/react/api/sdk-reference/use-meeting/methods#starthls)
+- [hlsState](/react/api/sdk-reference/use-meeting/properties#hlsstate)
+- [hlsUrls](/react/api/sdk-reference/use-meeting/properties#hlsurls)
+- [isHlsPlayable](/react/api/sdk-reference/use-meeting/properties#ishlsplayable)
 - [onHlsStateChanged](/react/api/sdk-reference/use-meeting/events#onhlsstatechanged)
 - [onHlsPlayableStateChanged](/react/api/sdk-reference/use-meeting/events#onhlsplayablestatechanged)
