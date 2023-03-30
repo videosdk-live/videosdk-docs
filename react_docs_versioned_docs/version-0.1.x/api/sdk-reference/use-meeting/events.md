@@ -430,6 +430,35 @@ const {
 
 ---
 
+### onHlsPlayableStateChanged()
+
+- This event will be emitted when the meeting's HLS becomes playable. You can use these event to start playing the HLS in player on the viewer side.
+
+#### Example
+
+```javascript
+
+import { Constants, useMeeting } from "@videosdk.live/react-sdk";
+
+function onHlsPlayableStateChanged(data) {
+  const { isPlayable } = data;
+  if(isPlayable){
+    console.log("You can start playing the hls stream");
+  }
+ }
+
+const {
+  meetingId
+  ...
+} = useMeeting({
+  onHlsPlayableStateChanged,
+  ...
+});
+
+```
+
+---
+
 ### onHlsStarted()
 
 - This event callback is trigger when meeting `HLS` is started.

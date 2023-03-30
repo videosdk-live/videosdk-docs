@@ -107,6 +107,11 @@ title: Video SDK useParticipant Hook
 </div>
 <div class="col col--4 margin-bottom--sm" >
 
+- [remove](./methods#remove)
+
+</div>
+<div class="col col--4 margin-bottom--sm" >
+
 - [setQuality](./methods#setquality)
 
 </div>

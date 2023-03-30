@@ -134,19 +134,14 @@ function Container() {
 - When using modes, you should make sure that participants with mode set to `CONFERENCE` are only shown on screen. To achieve these you can filter the participants based on there mode before showing them in the grid.
 
 ```js
-//Get the participants and hlsState from useMeeting
-const { participants, hlsState } = useMeeting();
+//Get the participants from useMeeting
+const { participants } = useMeeting();
 
 //Filtering the host/speakers from all the participants
 //highlight-start
-const speakers = useMemo(() => {
-  const speakerParticipants = [...participants.values()].filter(
-    (participant) => {
-      return participant.mode == Constants.modes.CONFERENCE;
-    }
-  );
-  return speakerParticipants;
-}, [participants]);
+const speakers = [...participants.values()].filter((participant) => {
+  return participant.mode == Constants.modes.CONFERENCE;
+});
 //highlight-end
 ```
 

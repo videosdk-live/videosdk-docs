@@ -71,6 +71,12 @@ title: Methods returned by useParticipant Hook
 
 ---
 
+### remove()
+
+- It is used to remove a participant from the meeting
+
+---
+
 ### setQuality()
 
 - `setQuality()` is used to set the quality of participants video.

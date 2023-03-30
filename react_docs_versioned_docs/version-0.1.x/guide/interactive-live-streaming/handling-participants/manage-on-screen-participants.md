@@ -86,14 +86,9 @@ function MeetingView() {
 
 ```js
 const { participants } = useMeeting();
-const speakers = useMemo(() => {
-  const speakerParticipants = [...participants.values()].filter(
-    (participant) => {
-      return participant.mode == Constants.modes.CONFERENCE;
-    }
-  );
-  return speakerParticipants;
-}, [participants]);
+const speakers = [...participants.values()].filter((participant) => {
+  return participant.mode == Constants.modes.CONFERENCE;
+});
 ```
 
 ## API Reference

@@ -47,26 +47,24 @@ function ViewerList() {
 
   //Filtering only viewer participant
   //highlight-start
-  const viewers = useMemo(() => {
-    const viewerParticipants = [...participants.values()].filter(
-      (participant) => {
-        return participant.mode == Constants.modes.VIEWER;
-      }
-    );
-    return viewerParticipants;
-  }, [participants]);
+  const viewers = [...participants.values()].filter((participant) => {
+    return participant.mode == Constants.modes.VIEWER;
+  });
   //highlight-end
 
   return (
     <div>
-      {viewerParticipants.map((participant) => {
-        return (
-          <div>
-            {participant.displayName}{" "}
-            <button>Request to join Livestream</button>
-          </div>
-        );
+      {viewers.map((participant) => {
+        return <ViewerListItem participantId={participant.id} />;
       })}
+    </div>
+  );
+}
+function ViewerListItem({ participantId }) {
+  const { displayName } = useParticipant(participantId);
+  return (
+    <div>
+      {displayName} <button>Request to join Livestream</button>
     </div>
   );
 }
@@ -79,29 +77,25 @@ We have a Viewer list ready. Now let us handle the click event for the Join LIve
 We will be using `CHANGE_MODE_$participantId` as the topic for PubSub.
 
 ```js
-function ViewerList() {
-  //highlight-next-line
-  ...
-  //Publishing the pubsub message with new mode
+function ViewerListItem({ participantId }) {
+  const { displayName } = useParticipant(participantId);
+  const { publish } = usePubSub(`CHANGE_MODE_${participantId}`);
   //highlight-start
-  const onClickRequestJoinLiveStream = (participantId)=>{
-    const {publish} = usePubSub(`CHANGE_MODE_${participantId}`);
+  //Publishing the pubsub message with new mode
+  const onClickRequestJoinLiveStream = () => {
     publish("CONFERENCE");
-  }
-  //highlight-end
-
+  };
+  //higlight-end
   return (
     <div>
-      {viewerParticipants.map((participant) => {
-        return (
-          <div>
-            {participant.displayName}{" "}
-            <button onClick={()=>{
-              onClickRequestJoinLiveStream(participant.id);
-            }}>Request to join Livestream</button>
-          </div>
-        );
-      })}
+      {displayName}{" "}
+      <button
+        onClick={() => {
+          onClickRequestJoinLiveStream();
+        }}
+      >
+        Request to join Livestream
+      </button>
     </div>
   );
 }
@@ -114,20 +108,42 @@ Now that we have implemented the Host requesting the viewer to join the livestre
 ```js
 function MeetingView() {
   const { localParticipant, changeMode } = useMeeting();
+  const [joinLivestreamRequest, setJoinLivestreamRequest] = useState();
+
   //Subscribe to new message on these topic and show confirmation dialog.
   //highlight-start
-  usePubSub(`CHANGE_MODE_${localParticipant.id}`, {
+  const pubsub = usePubSub(`CHANGE_MODE_${localParticipant?.id}`, {
     onMessageReceived: (pubSubMessage) => {
-      if (window.confirm("Host requested you to join the livestream")) {
-        changeMode(pubSubMessage.message);
-      } else {
-        console.log("Request Rejected");
-      }
+      setJoinLivestreamRequest(pubSubMessage);
     },
   });
   //highlight-end
 
-  return <>...</>;
+  return (
+    <>
+      ...
+      {joinLivestreamRequest && (
+        <div>
+          {joinLivestreamRequest.senderName} requested you to join Livestream
+          <button
+            onClick={() => {
+              changeMode(joinLivestreamRequest.message);
+              setJoinLivestreamRequest(null);
+            }}
+          >
+            Accept
+          </button>
+          <button
+            onClick={() => {
+              setJoinLivestreamRequest(null);
+            }}
+          >
+            Reject
+          </button>
+        </div>
+      )}
+    </>
+  );
 }
 ```
 
@@ -164,18 +180,6 @@ function MeetingView() {
       }
     },
   });
-  //Subscribe to new message on these topic and show confirmation dialog.
-  //highlight-start
-  usePubSub(`CHANGE_MODE_${localParticipant.id}`, {
-    onMessageReceived: (pubSubMessage) => {
-      if (window.confirm("Host requested you to join the livestream")) {
-        changeMode(pubSubMessage.message);
-      } else {
-        console.log("Request Rejected");
-      }
-    },
-  });
-  //highlight-end
 
   return <>...</>;
 }

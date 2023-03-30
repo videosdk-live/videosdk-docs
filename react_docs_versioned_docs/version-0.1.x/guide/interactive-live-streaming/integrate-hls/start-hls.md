@@ -96,6 +96,7 @@ const MeetingView = () => {
 ## Event associated with HLS
 
 - **onHlsStateChanged** - Whenever meeting HLS state changes, then `onHlsStateChanged` event will trigger.
+- **onHlsPlayableStateChanged** - Whenever meeting HLS becomes playable, then `onHlsPlayableStateChanged` event will trigger. You can use these event to start showing the HLS video to the viewers.
 
 - You can get the `downstreamUrl` of the HLS to play it on the Viewer side when the state changes to `Constants.hlsEvents.HLS_STARTED`
 
@@ -105,7 +106,7 @@ import { Constants, useMeeting } from "@videosdk.live/react-sdk";
 const Constants = VideoSDK.Constants;
 
 function onHlsStateChanged(data) {
-   const { status } = data;
+  const { status } = data;
 
   if (status === Constants.hlsEvents.HLS_STARTING) {
     console.log("Meeting Hls is starting");
@@ -122,13 +123,21 @@ function onHlsStateChanged(data) {
   } else {
     //
   }
- }
+}
+
+function onHlsPlayableStateChanged(data){
+  const {isPlayable} = data;
+  if(isPlayable){
+    console.log("Start playing HLS");
+  }
+}
 
 const {
   meetingId
   ...
 } = useMeeting({
   onHlsStateChanged,
+  onHlsPlayableStateChanged,
   ...
 });
 
@@ -144,3 +153,4 @@ The API references for all the methods utilized in this guide are provided below
 
 - [startHls](/react/api/sdk-reference/use-meeting/methods#starthls)
 - [onHlsStateChanged](/react/api/sdk-reference/use-meeting/events#onhlsstatechanged)
+- [onHlsPlayableStateChanged](/react/api/sdk-reference/use-meeting/events#onhlsplayablestatechanged)
