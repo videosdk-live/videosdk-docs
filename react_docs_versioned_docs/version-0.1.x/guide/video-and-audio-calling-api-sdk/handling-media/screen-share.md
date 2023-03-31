@@ -301,7 +301,7 @@ To use the audio and video communications in the web browser, your site must be 
 
 ### API Reference
 
-The API references for all the methods and events utilised in this guide are provided below.
+The API references for all the methods and events utilized in this guide are provided below.
 
 - [enableScreenShare()](/react/api/sdk-reference/use-meeting/methods#enablescreenshare)
 - [disableScreenShare()](/react/api/sdk-reference/use-meeting/methods#disablescreenshare)

@@ -163,7 +163,7 @@ With VideoSDK, you can also use your own custom designed layout template to live
 
 ## API Reference
 
-The API references for all the methods utilised in this guide are provided below.
+The API references for all the methods utilized in this guide are provided below.
 
 - [startHls](/react/api/sdk-reference/use-meeting/methods#starthls)
 - [stopHls](/react/api/sdk-reference/use-meeting/methods#stophls)

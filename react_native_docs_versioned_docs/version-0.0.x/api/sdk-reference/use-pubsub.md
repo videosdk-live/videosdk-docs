@@ -50,7 +50,7 @@ const { publish, messages } = usePubSub(topic, {
 
 - `onOldMessagesReceived()` will be triggered once when you subscribe to the topic and will receive all the old messages present for that topic as an array of message object.
 
-- `message` published with `persist` as `true` will only be available thorugh this callback.
+- `message` published with `persist` as `true` will only be available through this callback.
 
 ---
 

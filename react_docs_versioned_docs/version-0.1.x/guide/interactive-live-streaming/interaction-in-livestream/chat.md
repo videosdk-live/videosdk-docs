@@ -18,15 +18,13 @@ slug: chat-using-pubsub
 
 # Chat using PubSub
 
-For the communication or any kind of messaging in between the participants, VideoSDK provides `usePubSub` hook which use Publish-Subscirbe mechanism and can be used to develope wide varitey of functionalities. For example, participants could use it to send chat messages to each other, share files or other media, or even trigger actions like muting or unmuting audio or video.
+For the communication or any kind of messaging in between the participants, VideoSDK provides `usePubSub` hook which use Publish-Subscribe mechanism and can be used to develope wide varitey of functionalities. For example, participants could use it to send chat messages to each other, share files or other media, or even trigger actions like muting or unmuting audio or video.
 
-Now we will see, how we can use PubSub to implement Chat functionality. If you are not familiary with the PubSub mechanism and `usePubSub`hook, you can [follow this guide](./pubsub).
+Now we will see, how we can use PubSub to implement Chat functionality. If you are not familiary with the PubSub mechanism and `usePubSub`hook, you can [follow this guide](/react/guide/video-and-audio-calling-api-sdk/collaboration-in-meeting/pubsub).
 
 ## Implementing Chat
 
-### `Group Chat`
-
-1. First step in creating a group chat is choosing the topic which all the participants will publish and subscribe to send and recevie the messages. We will be using `CHAT` as the topic for this one. So let us get the `publish()` and `messages` from the `usePubSub`hook.
+1. First step in creating a group chat is choosing the topic which all the participants will publish and subscribe to send and receive the messages. We will be using `CHAT` as the topic for this one. So let us get the `publish()` and `messages` from the `usePubSub`hook.
 
 ```js
 // importing usePubSub hook from react-sdk
@@ -110,14 +108,6 @@ function ChatView() {
   );
 }
 ```
-
-### `Private Chat`
-
-In the above example, if you want to convert into the private chat between two participants, then all you have to do is change the topic which will be unique to those two participants only.
-
-So if we look at creating a private chat between two participants only, we can have the topic something like `<participantId_of_A>_<participantId_of_B>` or `<participantId_of_B>_<participantId_of_A>`.
-
-So you can use either of this topics and the private chat is ready.
 
 ### Showing Latest Message Notificaiton
 
