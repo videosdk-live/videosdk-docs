@@ -22,12 +22,25 @@ VideoSDK enables the opportunity to integrate video & audio calling to Web, Andr
 
 This guide will get you running with the VideoSDK video & audio calling in minutes.
 
-## Prerequisites
+### Prerequisites
 
 - Node.js v12+
 - NPM v6+ (comes installed with newer Node versions)
 - Android Studio or Xcode installed
 
+### App Architecture
+
+This App will contain two screen :
+
+1. `Join Screen` : This screen allows user to either create meeting or join predefined meeting.
+
+2. `Meeting Screen` : This screen basically contain participant list and some meeting controls such as Enable / Disable Mic & Camera and Leave meeting.
+
+<center>
+
+<img src='https://cdn.videosdk.live/website-resources/docs-resources/react_native_quickstart_architecture.png' />
+
+</center>
 ## Getting Started with the Code!
 
 ### Create App
@@ -668,11 +681,11 @@ function ParticipantView({ participantId }) {
 
 #### Output
 
-<div style={{textAlign: 'center'}}>
+<center>
 
-<img style={{height:'500px'}} class="react-native-screen-img" alt="React-Native--Participant-View" src={require('/static/img/quick-start/rn-participant.jpg').default} />
+<img src='https://cdn.videosdk.live/website-resources/docs-resources/react_native_quickstart_participant_list.png' style={{height: '600px'}}/>
 
-</div>
+</center>
 
 :::note
 

@@ -27,7 +27,7 @@ This guide will get you running with the VideoSDK video & audio calling in minut
 - Xcode 12.0+
 - Swift 5.0+
 
-## App Architecture
+### App Architecture
 
 This App will contain two screen :
 
@@ -37,7 +37,7 @@ This App will contain two screen :
 
 <center>
 
-<img src='https://cdn.videosdk.live/website-resources/docs-resources/ios_quickstart_architecture.png' style={{height: '600px'}}/>
+<img src='https://cdn.videosdk.live/website-resources/docs-resources/ios_quickstart_architecture.png' />
 
 </center>
 
