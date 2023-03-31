@@ -128,14 +128,11 @@ If any pinned participant started screenshare then only screenshare view will be
 ## Event associated with HLS
 
 - **onHlsStateChanged** - Whenever meeting HLS state changes, then `onHlsStateChanged` event will trigger.
-- **onHlsPlayableStateChanged** - Whenever meeting HLS becomes playable, then `onHlsPlayableStateChanged` event will trigger. You can use these event to start showing the HLS video to the viewers.
 
-- You can get the `downstreamUrl` of the HLS to play it on the Viewer side when the state changes to `Constants.hlsEvents.HLS_STARTED`
+- You can get the `downstreamUrl` of the HLS to play it on the Viewer side when the state changes to `Constants.hlsEvents.HLS_PLAYABLE` as well as from the `hlsUrls` from the `useMeeting` hook.
 
 ```js
 import { Constants, useMeeting } from "@videosdk.live/react-sdk";
-
-const Constants = VideoSDK.Constants;
 
 function onHlsStateChanged(data) {
   const { status } = data;
@@ -143,11 +140,13 @@ function onHlsStateChanged(data) {
   if (status === Constants.hlsEvents.HLS_STARTING) {
     console.log("Meeting Hls is starting");
   } else if (status === Constants.hlsEvents.HLS_STARTED) {
+    console.log("Meeting Hls is started");
+  }else if (status === Constants.hlsEvents.HLS_PLAYABLE) {
     //highlight-start
     // on hlsStateChanged started you will receive downstreamUrl
     const { downstreamUrl } = data;
     //highlight-end
-    console.log("Meeting Hls is started");
+    console.log("Meeting Hls is Playable");
   } else if (status === Constants.hlsEvents.HLS_STOPPING) {
     console.log("Meeting Hls is stopping");
   } else if (status === Constants.hlsEvents.HLS_STOPPED) {
@@ -157,19 +156,11 @@ function onHlsStateChanged(data) {
   }
 }
 
-function onHlsPlayableStateChanged(data){
-  const {isPlayable} = data;
-  if(isPlayable){
-    console.log("Start playing HLS");
-  }
-}
-
 const {
   meetingId
   ...
 } = useMeeting({
   onHlsStateChanged,
-  onHlsPlayableStateChanged,
   ...
 });
 
@@ -186,6 +177,4 @@ The API references for all the methods utilized in this guide are provided below
 - [startHls](/react/api/sdk-reference/use-meeting/methods#starthls)
 - [hlsState](/react/api/sdk-reference/use-meeting/properties#hlsstate)
 - [hlsUrls](/react/api/sdk-reference/use-meeting/properties#hlsurls)
-- [isHlsPlayable](/react/api/sdk-reference/use-meeting/properties#ishlsplayable)
 - [onHlsStateChanged](/react/api/sdk-reference/use-meeting/events#onhlsstatechanged)
-- [onHlsPlayableStateChanged](/react/api/sdk-reference/use-meeting/events#onhlsplayablestatechanged)

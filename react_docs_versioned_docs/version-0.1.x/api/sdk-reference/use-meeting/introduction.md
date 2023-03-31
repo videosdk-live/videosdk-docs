@@ -106,12 +106,6 @@ title: Video SDK useMeeting Hook
 - [hlsUrls](./properties#hlsurls)
 
 </div>
-
-<div class="col col--4 margin-bottom--sm">
-
-- [isHlsPlayable](./properties#ishlsplayable)
-
-</div>
 <div class="col col--4 margin-bottom--sm">
 
 - [connections](./properties#connections)

@@ -83,22 +83,17 @@ const participants = meeting.participants;
 </div>
 <div class="col col--4 margin-bottom--sm" >
 
+- [remove](./methods.md#remove)
+
+</div>
+<div class="col col--4 margin-bottom--sm" >
+
 - [setQuality](./methods.md#setquality)
 
 </div>
 <div class="col col--4 margin-bottom--sm" >
 
 - [setViewPort](./methods.md#setviewport)
-
-</div>
-<div class="col col--4 margin-bottom--sm" >
-
-- [pin](./methods.md#pin)
-
-</div>
-<div class="col col--4 margin-bottom--sm" >
-
-- [unpin](./methods.md#unpin)
 
 </div>
 <div class="col col--4 margin-bottom--sm" >

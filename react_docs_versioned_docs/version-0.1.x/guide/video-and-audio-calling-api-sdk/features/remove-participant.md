@@ -18,9 +18,6 @@ slug: remove-participant
 
 Remove participant allows removing participant while session is on-going. This can be helpful when moderation in particular meeting is required.
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
 ```js
 import { useParticipant } from "@videosdk.live/react-sdk";
 

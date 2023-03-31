@@ -121,6 +121,12 @@ participant.unpin("CAM");
 
 ---
 
+### remove()
+
+- It is used to remove a participant from the meeting
+
+---
+
 ### setViewPort()
 
 - `setViewPort()` is used to set the quality of the participant's video stream based on the viewport height and width.

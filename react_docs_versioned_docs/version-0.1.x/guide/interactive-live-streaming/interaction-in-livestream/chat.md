@@ -22,7 +22,7 @@ For the communication or any kind of messaging in between the participants, Vide
 
 Now we will see, how we can use PubSub to implement Chat functionality. If you are not familiary with the PubSub mechanism and `usePubSub`hook, you can [follow this guide](/react/guide/video-and-audio-calling-api-sdk/collaboration-in-meeting/pubsub).
 
-## Implementing Chat
+### Implementing Chat
 
 1. First step in creating a group chat is choosing the topic which all the participants will publish and subscribe to send and receive the messages. We will be using `CHAT` as the topic for this one. So let us get the `publish()` and `messages` from the `usePubSub`hook.
 
@@ -109,7 +109,7 @@ function ChatView() {
 }
 ```
 
-### Showing Latest Message Notificaiton
+### Display Latest Message Notificaiton
 
 You may want to show the notification to the user when new message arrives. So lets continue our example and add alert for the new images.
 
@@ -132,7 +132,7 @@ function ChatView() {
 }
 ```
 
-## Downloading Chat Messages
+### Downloading Chat Messages
 
 All the messages from the PubSub which where published with `persist : true` and can be downloaded as an `.csv` file. This file will be available in the VideoSDK dashboard as well as throught the [Sessions API](/api-reference/realtime-communication/fetch-session-using-sessionid).
 

@@ -56,7 +56,13 @@ When we talk about simple adaptive streaming, we imply that there is hardly any 
 
 These livestreams are helpful when there are a lot of viewers, and they don't want to engage with the host. In this scenario, every presenter attends a VideoSDK meeting, while every viewer only watches the livestream.
 
-// Video -- starting hls and playing video in online player
+import ReactPlayer from 'react-player'
+
+<div style={{textAlign: 'center'}}>
+
+<ReactPlayer autoplay muted loop playing controls url="https://cdn.videosdk.live/website-resources/docs-resources/react_simple_ils.mp4" height="500px" width={"100%"} />
+
+</div>
 
 #### 2. Adaptive Streaming with increased engagement
 
@@ -64,4 +70,8 @@ When you want to communicate with your audience by enabling polls, conversations
 
 In this scenario, both the host and the viewer will have to join a VideoSDK meeting with different roles. To learn more about the roles [follow these guide.](../handling-participants/manage-roles)
 
-// Video -- REact example of livestream
+<div style={{textAlign: 'center'}}>
+
+<ReactPlayer autoplay muted loop playing controls url="https://cdn.videosdk.live/website-resources/docs-resources/react_livestream_interaction_2.mp4" height="500px" width={"100%"} />
+
+</div>

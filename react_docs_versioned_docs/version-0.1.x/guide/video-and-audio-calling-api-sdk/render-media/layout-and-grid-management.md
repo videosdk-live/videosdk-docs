@@ -57,9 +57,38 @@ If you have a spotlight layout where the speaker is the only one being displayed
 
 If you are having large video calls where there are multiple speakers with video turned on, it is best to implement a pagination type setup where only a few (6-9) participants are shown on the grid and rest can be seen by changing the page.
 
-To best utilize the resourses, you should pause the streams of the participants who are not present in the grid and resume them when the come in to the grid, you can resume their streams.
+**To best utilize the resourses, you should pause the streams of the participants who are not present in the grid and resume them when the come in to the grid, you can resume their streams.**
 
 ![grid-pagination](/img/grid-pagination.png)
+
+###### Example to pause and resume a participant's stream
+
+```js
+function ParticipantView(participantId) {
+  const { webcamStream } = useParticipant(participantId);
+
+  //Handler to pause the stream
+  const handlePauseStream = () => {
+    if (webcamStream) {
+      webcamStream.pause();
+    }
+  };
+
+  //Handler to resume the stream
+  const handleResumeStream = () => {
+    if (webcamStream) {
+      webcamStream.resume();
+    }
+  };
+
+  return (
+    <>
+      <button onClick={handlePauseStream}>Pause Stream</button>
+      <button onClick={handleResumeStream}>Resume Stream</button>
+    </>
+  );
+}
+```
 
 :::note
 You can get the sample code for each of the layouts discussed above here.
@@ -70,3 +99,5 @@ You can get the sample code for each of the layouts discussed above here.
 The API references for all the methods and events utilized in this guide are provided below.
 
 - [setQuality](/react/api/sdk-reference/use-participant/methods#setquality)
+- [pause](/react/api/sdk-reference/stream-class/methods#pause)
+- [resume](/react/api/sdk-reference/stream-class/methods#resume)

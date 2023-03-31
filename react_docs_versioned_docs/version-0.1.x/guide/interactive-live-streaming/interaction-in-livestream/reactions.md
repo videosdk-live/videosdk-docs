@@ -20,11 +20,9 @@ slug: reactions
 
 When doing a livestream, one of the way to increase the interaction in between the viewer and speaker is by showing the viewers reaction to all. You might have seen emojis flying around during the livestream happening on instagram.
 
-//Visual gif Example
-
 Lets create a similar flying emoji by using the VideoSDK PubSub mechanism.
 
-### Creating a button to send reaction
+### Step 1: Creating a button to send reaction
 
 We will create a button to send reaction to all the users. When this button is clicked we will send the emoji name to all the participants using the VideoSDK PubSub mechanism and also to the local participant using the browser `CustomEvents`.
 
@@ -65,11 +63,11 @@ function ILSView() {
 }
 ```
 
-### Showing the Reactions to all the users
+### Step 2: Displaying the Reactions to all the users
 
 We will be using the `FlyingEmojiOverlay.js` to show the reactions. Here we will listen to the browser event that we send on the button click and show the flying emoji, as well as we will show all the reactions that are send by other participants.
 
-**`Step 1:`** Listening to local event and adding the `FlyingEmojiOverlay` to `ILSView`;
+- Listening to local event and adding the `FlyingEmojiOverlay` to `ILSView`;
 
 ```js title="ILSView.js"
 function ILSView(){
@@ -97,7 +95,7 @@ const FlyingEmojisOverlay = ({}) => {
       const { emoji } = e.detail;
 
       if (emoji) {
-        pubsubData.current.publish(emoji);
+        pubsubDataRef.current.publish(emoji);
       }
     }
 
@@ -113,7 +111,7 @@ const FlyingEmojisOverlay = ({}) => {
 export default FlyingEmojisOverlay;
 ```
 
-**`Step 2:`** Now let us display and remove the flying emojis by using some simple css animations.
+- Now let us display and remove the flying emojis by using some simple css animations.
 
 ```js title="FlyingEmojiOverlay.js"
 function FlyingEmojiOverlay(){
@@ -166,7 +164,60 @@ function FlyingEmojiOverlay(){
 }
 ```
 
-**`Step 3:`** Let us add listener to our PubSub topic so reaction from other participants is also shown.
+- Let us add the animations in the `index.css`
+
+```css
+.flying-emojis {
+  position: fixed;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  overflow: hidden;
+  pointer-events: none;
+  user-select: none;
+  z-index: 99;
+}
+.emoji {
+  position: absolute;
+  bottom: 0px;
+  left: 50%;
+  font-size: 48px;
+  line-height: 1;
+  width: 48px;
+  height: 48px;
+}
+.emoji.wiggle-1 {
+  animation: emerge 3s forwards, wiggle-1 1s ease-in-out infinite alternate;
+}
+.emoji.wiggle-2 {
+  animation: emerge 3s forwards, wiggle-2 1s ease-in-out infinite alternate;
+}
+@keyframes emerge {
+  to {
+    bottom: 85%;
+    opacity: 0;
+  }
+}
+@keyframes wiggle-1 {
+  from {
+    margin-left: -50px;
+  }
+  to {
+    margin-left: 50px;
+  }
+}
+@keyframes wiggle-2 {
+  from {
+    margin-left: 50px;
+  }
+  to {
+    margin-left: -50px;
+  }
+}
+```
+
+- Let us add listener to our PubSub topic so reaction from other participants is also shown.
 
 ```js title="FlyingEmojiOverlay.js"
 function FlyingEmojiOverlay(){
@@ -203,6 +254,14 @@ function FlyingEmojiOverlay(){
   return <> ... </>
 }
 ```
+
+import ReactPlayer from 'react-player'
+
+<div style={{textAlign: 'center'}}>
+
+<ReactPlayer autoplay muted loop playing controls url="https://cdn.videosdk.live/website-resources/docs-resources/react_ils_reactions.mp4" height="500px" width={"100%"} />
+
+</div>
 
 ### API Reference
 

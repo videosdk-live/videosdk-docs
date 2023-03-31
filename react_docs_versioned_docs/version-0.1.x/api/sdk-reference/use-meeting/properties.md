@@ -92,13 +92,6 @@ title: useMeeting Hook Properties
 
 ---
 
-### isHlsPlayable
-
-- type : `boolean`
-- `isHlsPlayable` will be `true` if the HLS stream is playable, else `false`.
-
----
-
 ### hlsUrls
 
 - type : `Object`
