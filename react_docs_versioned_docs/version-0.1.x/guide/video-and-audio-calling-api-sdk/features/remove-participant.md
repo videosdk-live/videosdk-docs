@@ -26,12 +26,12 @@ import { useParticipant } from "@videosdk.live/react-sdk";
 
 const ParticipantView = () => {
   // Get specific participant instance
-  const { participants } = useParticipant("<participant-id>");
+  const { remove } = useParticipant("<participant-id>");
 
   const onPress = () => {
     // Remove participant from active session
     // This will emit an event called "onParticipantLeft" to that particular participant
-    participant.remove();
+    remove();
   };
   return <>...</>;
 };
