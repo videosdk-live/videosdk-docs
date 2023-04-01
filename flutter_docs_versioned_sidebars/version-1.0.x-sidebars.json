@@ -4,24 +4,64 @@
       "type": "category",
       "label": "Introduction",
       "items": [
-        "guide/video-and-audio-calling-api-sdk/getting-started",
-        "guide/video-and-audio-calling-api-sdk/signup-and-create-api",
+        "guide/video-and-audio-calling-api-sdk/concept-and-architecture",
+        "guide/video-and-audio-calling-api-sdk/authentication-and-tokens"
+      ],
+      "collapsed": false
+    },
+    {
+      "type": "category",
+      "label": "Install the SDK",
+      "items": [
         "guide/video-and-audio-calling-api-sdk/flutter-sdk",
-        "guide/video-and-audio-calling-api-sdk/server-setup",
         "guide/video-and-audio-calling-api-sdk/release-notes",
         "guide/video-and-audio-calling-api-sdk/migration-notes",
         "guide/video-and-audio-calling-api-sdk/known-issues"
       ],
-      "collapsed": false
+      "collapsed": true
     },
     {
       "type": "category",
       "label": "Quick Start Guide",
       "items": [
         "guide/video-and-audio-calling-api-sdk/quick-start",
-        "guide/video-and-audio-calling-api-sdk/run-a-sample-project"
+        "guide/video-and-audio-calling-api-sdk/quick-start-ils",
+        {
+          "type": "category",
+          "label": "Run Sample Project",
+          "items": [
+            "guide/video-and-audio-calling-api-sdk/run-a-sample-project",
+            "guide/video-and-audio-calling-api-sdk/run-a-sample-ils-project"
+          ],
+          "collapsed": false
+        }
       ],
       "collapsed": false
+    },
+
+    {
+      "type": "category",
+      "label": "Audio and Video Calling",
+      "items": [
+        {
+          "type": "category",
+          "label": "Basic Features",
+          "items": [
+            {
+              "type": "category",
+              "label": "Setup Call",
+              "items": [
+                "guide/video-and-audio-calling-api-sdk/setup-call/initialise-meeting",
+                "guide/video-and-audio-calling-api-sdk/setup-call/join-meeting",
+                "guide/video-and-audio-calling-api-sdk/setup-call/leave-end-meeting"
+              ],
+              "collapsed": true
+            }
+          ],
+          "collapsed": true
+        }
+      ],
+      "collapsed": true
     },
     {
       "type": "category",

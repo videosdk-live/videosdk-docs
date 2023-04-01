@@ -1,10 +1,10 @@
 ---
-title: Run a sample Flutter Project - Video SDK Docs
+title: Run a sample ILS Flutter Project - Video SDK Docs
 hide_title: true
 hide_table_of_contents: false
 description: Create customizable real-time video & audio calling applications with Flutter SDK with Video SDK add live Video & Audio conferencing to your applications.
-sidebar_label: "Run the Sample Conference Project"
-pagination_label: "Run the Sample Conference Project"
+sidebar_label: "Run the Sample ILS Project"
+pagination_label: "Run the Sample ILS Project"
 keywords:
   - flutter sdk
   - dart sdk
@@ -12,12 +12,12 @@ keywords:
   - flutter app
 image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
-slug: run-a-sample-flutter-project
+slug: run-a-sample-ils-project
 ---
 
-# Run a Sample Conference Project
+# Run a Sample ILS Project
 
-Video SDK provides open-source sample project [videosdk-rtc-flutter-sdk-example](https://github.com/videosdk-live/videosdk-rtc-flutter-sdk-example) on Github. This document introduces how to run this project.
+Video SDK provides open-source sample project [videosdk-hls-flutter-sdk-example](https://github.com/videosdk-live/videosdk-hls-flutter-sdk-example) on Github. This document introduces how to run this project.
 
 ### Prerequisites
 
@@ -39,19 +39,21 @@ import APISecret from '../../../../mdx/introduction/\_api-key.mdx';
 
 <APISecret title="Get your API key and Secret key" />
 
+s
+
 ### Step 1: Clone the sample project
 
 Clone the repository to your local environment.
 
 ```js
-$ git clone https://github.com/videosdk-live/videosdk-rtc-flutter-sdk-example.git
+$ git clone https://github.com/videosdk-live/videosdk-hls-flutter-sdk-example.git
 ```
 
 ### Step 2: Copy the .env.example file to .env file.
 
 Open your favorite code editor and copy `.env.example` to `.env` file.
 
-```js
+```bash
 $ cp .env.example .env
 ```
 

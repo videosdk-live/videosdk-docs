@@ -115,7 +115,7 @@ function PlatformPart() {
       Icon: FlutterIcon,
       title: "Flutter",
       imgLink: "./svgs/flutter.svg",
-      link: "/flutter/guide/video-and-audio-calling-api-sdk/getting-started",
+      link: "/flutter/guide/video-and-audio-calling-api-sdk/concept-and-architecture",
     },
     {
       Icon: AndroidIcon,
@@ -153,7 +153,7 @@ function PlatformPart() {
       Icon: FlutterIcon,
       title: "Flutter",
       imgLink: "./svgs/flutter.svg",
-      link: "/flutter/guide/video-and-audio-calling-api-sdk/getting-started",
+      link: "/flutter/guide/video-and-audio-calling-api-sdk/concept-and-architecture",
     },
     {
       Icon: AndroidIcon,
