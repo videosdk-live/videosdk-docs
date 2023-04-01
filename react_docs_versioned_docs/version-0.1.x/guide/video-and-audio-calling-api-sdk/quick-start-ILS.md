@@ -120,7 +120,7 @@ We are goting to work on these files:
 
 ### Step 1: Get started with API.js
 
-Before jumping to anything else, we have write API to generate unique meetingId. You will require auth token, you can generate it using either by using [videosdk-rtc-api-server-examples](https://github.com/videosdk-live/videosdk-rtc-api-server-examples) or generate it from the [Video SDK Dashboard](https://app.videosdk.live/api-keys) for developer.
+Prior to moving on, we must create an API request to generate unique meetingId. You will require auth token, you can generate it using either by using [videosdk-rtc-api-server-examples](https://github.com/videosdk-live/videosdk-rtc-api-server-examples) or generate it from the [Video SDK Dashboard](https://app.videosdk.live/api-keys) for developer.
 
 ```js title="API.js"
 //Auth token we will use to generate a meeting and connect to it
@@ -145,7 +145,7 @@ export const createMeeting = async ({ token }) => {
 
 ### Step 2: Wireframe App.js with all the components
 
-To build up wireframe of App.js, we are going to use Video SDK Hooks and Context Providers. Video SDK provideos MeetingProvider, MeetingConsumer, useMeeting and useParticipant hooks. Let's understand each of them.
+To build up wireframe of App.js, we are going to use Video SDK Hooks and Context Providers. Video SDK provides MeetingProvider, MeetingConsumer, useMeeting and useParticipant hooks. Let's understand each of them.
 
 First we will explore Context Provider and Consumer. Context is primarily used when some data needs to be accessible by many components at different nesting levels.
 

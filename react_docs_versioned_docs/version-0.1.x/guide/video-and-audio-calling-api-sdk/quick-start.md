@@ -19,7 +19,7 @@ slug: quick-start
 
 VideoSDK enables you to embed the video calling feature into your React application in minutes.
 
-In this quickstart, we are going to explore group calling feature of Video SDK. We will go through step by step guide of integrating video calling with React Video SDK
+In this quickstart, we are going to explore group calling feature of Video SDK. We will go through step by step guide of integrating video calling with React Video SDK.
 
 This guide will get you running with the VideoSDK video & audio calling in minutes.
 
@@ -144,7 +144,7 @@ export const createMeeting = async ({ token }) => {
 
 ### Step 2: Wireframe App.js with all the components
 
-To build up wireframe of App.js, we are going to use Video SDK Hooks and Context Providers. Video SDK provideos MeetingProvider, MeetingConsumer, useMeeting and useParticipant hooks. Let's understand each of them.
+To build up wireframe of App.js, we are going to use Video SDK Hooks and Context Providers. Video SDK provides MeetingProvider, MeetingConsumer, useMeeting and useParticipant hooks. Let's understand each of them.
 
 First we will explore Context Provider and Consumer. Context is primarily used when some data needs to be accessible by many components at different nesting levels.
 
@@ -332,7 +332,7 @@ Before implementing participant view, We need to understand couple of concepts.
 
 ###### 1. Forwarding Ref for mic and camera
 
-We will be using the React `useRef` to reference our audio and video components which will be used to play and stop the audio and video of the participant
+We will be using the React `useRef` to reference our audio and video components which will be used to play and stop the audio and video of the participant.
 
 ```js title="Forwarding Ref for mic and camera"
 const webcamRef = useRef(null);
