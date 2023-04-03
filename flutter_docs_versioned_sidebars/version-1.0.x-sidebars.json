@@ -56,6 +56,30 @@
                 "guide/video-and-audio-calling-api-sdk/setup-call/leave-end-meeting"
               ],
               "collapsed": true
+            },
+            {
+              "type": "category",
+              "label": "Get Notified on Events",
+              "items": [
+                "guide/video-and-audio-calling-api-sdk/get-notified/room-events",
+                "guide/video-and-audio-calling-api-sdk/get-notified/participant-events",
+                "guide/video-and-audio-calling-api-sdk/get-notified/media-events",
+                "guide/video-and-audio-calling-api-sdk/get-notified/recording-events",
+                "guide/video-and-audio-calling-api-sdk/get-notified/rtmp-events",
+                "guide/video-and-audio-calling-api-sdk/get-notified/hls-events",
+                "guide/video-and-audio-calling-api-sdk/get-notified/error-events"
+              ],
+              "collapsed": true
+            },
+            {
+              "type": "category",
+              "label": "Recording and Live Streaming",
+              "items": [
+                "guide/video-and-audio-calling-api-sdk/recording-and-live-streaming/record-meeting",
+                "guide/video-and-audio-calling-api-sdk/recording-and-live-streaming/rtmp-livestream",
+                "guide/video-and-audio-calling-api-sdk/recording-and-live-streaming/interactive-livestream"
+              ],
+              "collapsed": true
             }
           ],
           "collapsed": true

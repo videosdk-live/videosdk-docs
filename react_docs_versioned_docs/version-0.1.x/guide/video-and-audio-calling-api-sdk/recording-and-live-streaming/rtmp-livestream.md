@@ -37,6 +37,12 @@ This guide will provide an overview of how to implement start and stop RTMP Live
 - `2. config (optional)`: This parameter will define how the livestream layout should look like.
 
   ```js
+  const outputs = [
+    {
+      url: "rtmp://a.rtmp.youtube.com/live2",
+      streamKey: "key",
+    },
+  ];
   const config = {
     // highlight-next-line
     // Layout Configuration
@@ -55,7 +61,7 @@ This guide will provide an overview of how to implement start and stop RTMP Live
     mode: "video-and-audio", // "audio", Default : "video-and-audio"
   };
 
-  startLivestream(null, null, config);
+  startLivestream(outputs, config);
   ```
 
 ### `stopLivestream()`

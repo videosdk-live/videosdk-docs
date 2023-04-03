@@ -15,7 +15,7 @@ sidebar_position: 1
 slug: quick-start-ils
 ---
 
-# Quick Start
+# Quick Start for Interactive Live Streaming
 
 VideoSDK enables you to embed the livestreaming experience into your Flutter application in minutes.
 
@@ -68,22 +68,22 @@ $ flutter pub add flutter_vlc_player
 Your project structure should look like this.
 
 ```js title="Project Structure"
-    root
-    ├── android
-    ├── ios
-    ├── lib
-         ├── api_call.dart
-         ├── ils_screen.dart
-         ├── ils_speaker_view.dart
-         ├── ils_viewer_view.dart
-         ├── join_screen.dart
-         ├── livestream_player.dart
-         ├── main.dart
-         ├── meeting_controls.dart
-         ├── participant_tile.dart
+root
+├── android
+├── ios
+├── lib
+     ├── api_call.dart
+     ├── ils_screen.dart
+     ├── ils_speaker_view.dart
+     ├── ils_viewer_view.dart
+     ├── join_screen.dart
+     ├── livestream_player.dart
+     ├── main.dart
+     ├── meeting_controls.dart
+     ├── participant_tile.dart
 ```
 
-We are going to create flutter widgets (JoinScreen, ILSScreen, ILSSpeakerView, MeetingControls, ParticipantTile, ILSViewerView, LivestreamPlayer).
+We are going to create following flutter widgets JoinScreen, ILSScreen, ILSSpeakerView, MeetingControls, ParticipantTile, ILSViewerView, LivestreamPlayer for the quickstart app which will cover both speaker and viewer part of the app.
 
 ### App Structure
 
@@ -91,7 +91,7 @@ App widget will contain `JoinScreen` and `ILSScreen` screens. `ILSScreen` will r
 
 <div style={{textAlign: 'center'}}>
 
-![VideoSDK Flutter ILS Quick Start Architecture](/flutter/flutter_ils_arch.png)
+![VideoSDK Flutter ILS Quick Start Architecture](https://cdn.videosdk.live/website-resources/docs-resources/flutter_ils_arch.png)
 
 </div>
 
@@ -240,6 +240,7 @@ class JoinScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.black,
       appBar: AppBar(
         title: const Text('VideoSDK ILS QuickStart'),
       ),
@@ -255,9 +256,11 @@ class JoinScreen extends StatelessWidget {
             ),
             const SizedBox(height: 40),
             TextField(
+              style: const TextStyle(color: Colors.white),
               decoration: const InputDecoration(
                 hintText: 'Enter Meeting Id',
                 border: OutlineInputBorder(),
+                hintStyle: TextStyle(color: Colors.white),
               ),
               controller: _meetingIdController,
             ),
@@ -310,7 +313,7 @@ class MyApp extends StatelessWidget {
 
 #### Output
 
-<img src="/flutter/flutter_ils_joining.png" width="250"/>
+<img src="https://cdn.videosdk.live/website-resources/docs-resources/flutter_ils_joining.png" width="250"/>
 
 ### Step 3 : Creating the ILSScreen
 
@@ -399,6 +402,7 @@ class _ILSScreenState extends State<ILSScreen> {
     return WillPopScope(
       onWillPop: () => _onWillPop(),
       child: Scaffold(
+        backgroundColor: Colors.black,
         appBar: AppBar(
           title: const Text('VideoSDK ILS QuickStart'),
         ),
@@ -410,7 +414,11 @@ class _ILSScreenState extends State<ILSScreen> {
                 : widget.mode == Mode.VIEWER
                     ? ILSViewerView(room: _room)
                     : null
-            : const Center(child: Text("Joining...")),
+            : const Center(
+                  child: Text("Joining...",
+                      style: TextStyle(color: Colors.white),
+                    ),
+                  ),
         //highlight-end
       ),
     );
@@ -504,7 +512,6 @@ class MeetingControls extends StatelessWidget {
   final String hlsState;
   final void Function() onToggleMicButtonPressed;
   final void Function() onToggleCameraButtonPressed;
-  final void Function() onLeaveButtonPressed;
   final void Function() onHLSButtonPressed;
 
   const MeetingControls(
@@ -512,23 +519,20 @@ class MeetingControls extends StatelessWidget {
       required this.hlsState,
       required this.onToggleMicButtonPressed,
       required this.onToggleCameraButtonPressed,
-      required this.onHLSButtonPressed,
-      required this.onLeaveButtonPressed});
+      required this.onHLSButtonPressed});
 
   @override
   Widget build(BuildContext context) {
     return Wrap(
       children: [
         ElevatedButton(
-            onPressed: onLeaveButtonPressed, child: const Text('Leave')),
-        const SizedBox(width: 10),
-        ElevatedButton(
-            onPressed: onToggleMicButtonPressed,
+          onPressed: onToggleMicButtonPressed,
             child: const Text('Toggle Mic')),
         const SizedBox(width: 10),
         ElevatedButton(
             onPressed: onToggleCameraButtonPressed,
             child: const Text('Toggle WebCam')),
+        const SizedBox(width: 10),
         ElevatedButton(
             onPressed: onHLSButtonPressed,
             child: Text(hlsState == "HLS_STOPPED"
@@ -588,24 +592,59 @@ class _ILSSpeakerViewState extends State<ILSSpeakerView> {
   }
 
   @override
+  void setState(VoidCallback fn) {
+    if (mounted) {
+      super.setState(fn);
+    }
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Column(
         children: [
-          Text(widget.room.id),
+          Row(
+            children: [
+              Expanded(
+                  child: Text(
+                widget.room.id,
+                style: const TextStyle(color: Colors.white),
+              )),
+              ElevatedButton(
+                onPressed: () => {
+                  Clipboard.setData(ClipboardData(text: widget.room.id)),
+                  ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+                    content: Text("Meeting Id Coppied"),
+                  ))
+                },
+                child: const Text("Copy Meeting Id"),
+              ),
+              const SizedBox(width: 10),
+              ElevatedButton(
+                onPressed: () => {widget.room.leave()},
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.red,
+                ),
+                child: const Text("Leave"),
+              )
+            ],
+          ),
           const SizedBox(
             height: 20,
           ),
           //highlight-start
           //Showing the current HLS state
-          Text("Current HLS State: $hlsState"),
+          Text(
+            "Current HLS State: ${hlsState == "HLS_STARTED" || hlsState == "HLS_PLAYABLE" ? "Livestream is Started" : hlsState == "HLS_STARTING" ? "Livestream is starting" : hlsState == "HLS_STOPPING" ? "Livestream is stopping" : "Livestream is stopped"}",
+            style: const TextStyle(color: Colors.white),
+          ),
           //highlight-end
           //render all participants in the room
           Expanded(
             child: GridView.builder(
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2,
+                crossAxisCount: 1,
               ),
               itemBuilder: (context, index) {
                 return ParticipantTile(
@@ -625,7 +664,6 @@ class _ILSSpeakerViewState extends State<ILSSpeakerView> {
               camEnabled ? widget.room.disableCam() : widget.room.enableCam();
               camEnabled = !camEnabled;
             },
-            onLeaveButtonPressed: () => widget.room.leave(),
             //highlight-start
             //HLS handler which will start and stop HLS
             onHLSButtonPressed: () => {
@@ -638,7 +676,7 @@ class _ILSSpeakerViewState extends State<ILSSpeakerView> {
                       "GRID": 20,
                     },
                     "mode": "video-and-audio",
-                    "theme": "LIGHT",
+                    "theme": "DARK",
                     "quality": "high",
                     "orientation": "portrait",
                   })
@@ -690,7 +728,7 @@ class _ILSSpeakerViewState extends State<ILSSpeakerView> {
 
 #### Output of Speaker View
 
-<img src="/flutter/flutter_ils_speaker_view.png" width="250"/>
+<img src="https://cdn.videosdk.live/website-resources/docs-resources/flutter_ils_speaker_view.png" width="250"/>
 
 ### Step 5 : Implementing the Viewer View
 
@@ -729,23 +767,43 @@ class _ILSViewerViewState extends State<ILSViewerView> {
 
   @override
   Widget build(BuildContext context) {
-    //highlight-start
-    //Show the livestream player if the downstreamUrl is present
-    return downstreamUrl != null
-        ? LivestreamPlayer(downstreamUrl: downstreamUrl!)
-        : Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
+    return SingleChildScrollView(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Row(
               children: [
-                const Text("Host has not started the HLS"),
+                Expanded(
+                    child: Text(widget.room.id,
+                        style: const TextStyle(color: Colors.white))),
+                ElevatedButton(
+                  onPressed: () =>
+                      {Clipboard.setData(ClipboardData(text: widget.room.id))},
+                  child: const Text("Copy Meeting Id"),
+                ),
+                const SizedBox(width: 10),
                 ElevatedButton(
                   onPressed: () => {widget.room.leave()},
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.red,
+                  ),
                   child: const Text("Leave"),
                 )
               ],
             ),
-          );
+          ),
+          //highlight-start
+          //Show the livestream player if the downstreamUrl is present
+          downstreamUrl != null
+              ? LivestreamPlayer(downstreamUrl: downstreamUrl!)
+              : const Text("Host has not started the HLS",
+                  style: TextStyle(color: Colors.white)),
           //highlight-end
+        ],
+      ),
+    );
   }
 
   void setMeetingEventListener() {
@@ -759,9 +817,7 @@ class _ILSViewerViewState extends State<ILSViewerView> {
           setState(() {
             hlsState = status;
             if (status == "HLS_PLAYABLE" || status == "HLS_STOPPED") {
-              setState(() {
-                downstreamUrl = data['downstreamUrl'];
-              });
+              downstreamUrl = data['downstreamUrl'];
             }
           });
         }
@@ -817,12 +873,10 @@ class LivestreamPlayerState extends State<LivestreamPlayer>
     super.build(context);
     //highlight-start
     //rendering the VlcPlayer
-    return Center(
-      child: VlcPlayer(
-        controller: _controller,
-        aspectRatio: 9 / 16,
-        placeholder: const Center(child: CircularProgressIndicator()),
-      ),
+    return VlcPlayer(
+      controller: _controller,
+      aspectRatio: 9 / 16,
+      placeholder: const Center(child: CircularProgressIndicator()),
     );
     //highlight-end
   }
@@ -831,7 +885,7 @@ class LivestreamPlayerState extends State<LivestreamPlayer>
 
 #### Output of Viewer View
 
-<img src="/flutter/flutter_ils_viewer_view.png" width="250"/>
+<img src="https://cdn.videosdk.live/website-resources/docs-resources/flutter_ils_viewer_view.png" width="250"/>
 
 ## Run and Test
 
@@ -845,7 +899,7 @@ import ReactPlayer from 'react-player'
 
 <div style={{textAlign: 'center'}}>
 
-<ReactPlayer controls autoplay loop playing muted url='/flutter/flutter_ils_speaker_video.mp4' height="560px" width={"100%"}/>
+<ReactPlayer controls autoplay loop playing muted url='https://cdn.videosdk.live/website-resources/docs-resources/flutter_ils_speaker_video.mp4' height="560px" width={"100%"}/>
 
 </div>
 
@@ -853,7 +907,7 @@ import ReactPlayer from 'react-player'
 
 <div style={{textAlign: 'center'}}>
 
-<ReactPlayer controls autoplay loop playing muted url='/flutter/flutter_ils_viewer_video.mp4' height="560px" width={"100%"}/>
+<ReactPlayer controls autoplay loop playing muted url='https://cdn.videosdk.live/website-resources/docs-resources/flutter_ils_viewer_video.mp4' height="560px" width={"100%"}/>
 
 </div>
 

@@ -49,7 +49,7 @@ This guide will provide an overview of how to implement start and stop Livestrea
     },
 
     // highlight-next-line
-    // Theme of recording
+    // Theme of livestream
     theme: "DARK", //  "LIGHT" | "DEFAULT"
 
     // highlight-next-line
@@ -57,13 +57,13 @@ This guide will provide an overview of how to implement start and stop Livestrea
     mode: "video-and-audio", // "audio", Default : "video-and-audio"
 
     // highlight-next-line
-    // Quality of recording and is only applicable to `video-and-audio` type mode.
+    // Quality of livestream and is only applicable to `video-and-audio` type mode.
     quality: "high", // "low" | "med",  Default : "med"
 
     //highlight-start
     // This mode refers to orientation of recording.
-    // landscape : Record the meeting in horizontally
-    // portrait : Record the meeting in vertically (Best for mobile view)
+    // landscape : Livestream the meeting in horizontally
+    // portrait : Livestream the meeting in vertically (Best for mobile view)
     //highlight-end
     orientation: "landscape", // "portrait",  Default : "landscape"
   };
@@ -73,7 +73,7 @@ This guide will provide an overview of how to implement start and stop Livestrea
 
 ### `stopHls()`
 
-- `stopLivestream()` is used to stop the meeting livestream which can be accessed from the `useMeeting` hook.
+- `stopHls()` is used to stop the meeting livestream which can be accessed from the `useMeeting` hook.
 
 #### Example
 

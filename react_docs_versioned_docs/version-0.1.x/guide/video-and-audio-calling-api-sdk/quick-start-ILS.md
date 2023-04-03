@@ -168,7 +168,6 @@ import {
   useParticipant,
   Constants,
 } from "@videosdk.live/react-sdk";
-import Hls from "hls.js";
 
 import { authToken, createMeeting } from "./API";
 import ReactPlayer from "react-player";
@@ -557,6 +556,11 @@ $ yarn add hls.js
 With `hls.js` installed, we will get the `hlsUrls` from the `useMeeting` hook which will be used to play the HLS in the player.
 
 ```js
+//highligh-start
+//importing hls.js
+import Hls from "hls.js";
+//highligh-end
+
 function ViewerView() {
   // States to store downstream url and current HLS state
   const playerRef = useRef(null);
