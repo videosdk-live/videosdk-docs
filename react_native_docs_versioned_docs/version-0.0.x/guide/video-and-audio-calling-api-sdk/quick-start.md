@@ -3,7 +3,7 @@ title: Quick Start
 hide_title: false
 hide_table_of_contents: false
 description: Video SDK enables the opportunity to integrate native iOS, Android & Web SDKs to add live video & audio conferencing to your applications.
-sidebar_label: Start a Voice / Video Call
+sidebar_label: Start a Audio / Video Call
 pagination_label: Quick Start
 keywords:
   - audio calling
@@ -106,6 +106,7 @@ yarn add "@videosdk.live/react-native-sdk"
   xmlns:android="http://schemas.android.com/apk/res/android"
   package="com.cool.app"
 >
+  //highlight-start
     <!-- Give all the required permissions to app -->
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -126,8 +127,10 @@ yarn add "@videosdk.live/react-native-sdk"
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
     <uses-permission android:name="android.permission.WAKE_LOCK" />
+  //highlight-end
 
     <application>
+  //highlight-start
    <meta-data
       android:name="live.videosdk.rnfgservice.notification_channel_name"
       android:value="Meeting Notification"
@@ -142,6 +145,7 @@ yarn add "@videosdk.live/react-native-sdk"
     />
     <service android:name="live.videosdk.rnfgservice.ForegroundService" android:foregroundServiceType="mediaProjection"></service>
     <service android:name="live.videosdk.rnfgservice.ForegroundServiceTask"></service>
+  //highlight-end
   </application>
 </manifest>
 ```
@@ -182,18 +186,24 @@ project(':rnfgservice').projectDir = new File(rootProject.projectDir, '../node_m
 ```
 
 ```java title="MainApplication.java"
+  //highlight-start
 import live.videosdk.rnincallmanager.InCallManagerPackage;
 import live.videosdk.rnwebrtc.WebRTCModulePackage;
 import live.videosdk.rnfgservice.ForegroundServicePackage;
+  //highlight-end
 
 public class MainApplication extends Application implements ReactApplication {
   private static List<ReactPackage> getPackages() {
       @SuppressWarnings("UnnecessaryLocalVariable")
       List<ReactPackage> packages = new PackageList(this).getPackages();
       // Packages that cannot be autolinked yet can be added manually here, for example:
+  //highlight-start
+
       packages.add(new ForegroundServicePackage());
       packages.add(new InCallManagerPackage());
       packages.add(new WebRTCModulePackage());
+  //highlight-end
+
       return packages;
   }
 }
