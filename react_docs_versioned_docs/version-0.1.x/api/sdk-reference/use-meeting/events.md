@@ -398,17 +398,17 @@ const {
 
 import { Constants, useMeeting } from "@videosdk.live/react-sdk";
 
-const Constants = VideoSDK.Constants;
-
 function onHlsStateChanged(data) {
    const { status } = data;
 
   if (status === Constants.hlsEvents.HLS_STARTING) {
     console.log("Meeting Hls is starting");
   } else if (status === Constants.hlsEvents.HLS_STARTED) {
+    console.log("Meeting Hls is started");
+  } else if (status === Constants.hlsEvents.HLS_PLAYABLE) {
     // on hlsStateChanged started you will receive downstreamUrl
     const {downstreamUrl}=data;
-    console.log("Meeting Hls is started");
+    console.log("Meeting Hls is playable");
   } else if (status === Constants.hlsEvents.HLS_STOPPING) {
     console.log("Meeting Hls is stopping");
   } else if (status === Constants.hlsEvents.HLS_STOPPED) {
@@ -423,35 +423,6 @@ const {
   ...
 } = useMeeting({
   onHlsStateChanged,
-  ...
-});
-
-```
-
----
-
-### onHlsPlayableStateChanged()
-
-- This event will be emitted when the meeting's HLS becomes playable. You can use these event to start playing the HLS in player on the viewer side.
-
-#### Example
-
-```javascript
-
-import { Constants, useMeeting } from "@videosdk.live/react-sdk";
-
-function onHlsPlayableStateChanged(data) {
-  const { isPlayable } = data;
-  if(isPlayable){
-    console.log("You can start playing the hls stream");
-  }
- }
-
-const {
-  meetingId
-  ...
-} = useMeeting({
-  onHlsPlayableStateChanged,
   ...
 });
 

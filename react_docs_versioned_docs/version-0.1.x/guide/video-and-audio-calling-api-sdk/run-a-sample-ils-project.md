@@ -1,10 +1,10 @@
 ---
-title: Run a sample React Project - Video SDK Docs
+title: Run sample ILS React Project - Video SDK Docs
 hide_title: true
 hide_table_of_contents: false
 description: Create customizable real-time video & audio calling applications with React JS SDK with Video SDK add live Video & Audio conferencing to your applications.
-sidebar_label: "Run the Sample Conference Project"
-pagination_label: "Run the Sample Conference Project"
+sidebar_label: Run the Sample ILS Project
+pagination_label: Run the Sample ILS Project
 keywords:
   - react sdk
   - react js sdk
@@ -12,12 +12,12 @@ keywords:
   - react app
 image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
-slug: run-a-sample-react-project
+slug: run-a-sample-react-ils-project
 ---
 
-# Run a Sample Project
+# Run a Sample ILS Project
 
-Video SDK provides open-source sample project [videosdk-rtc-react-sdk-example](https://github.com/videosdk-live/videosdk-rtc-react-sdk-example) on Github. This document introduces how to run this project.
+Video SDK provides open-source sample project [videosdk-hls-react-sdk-example](https://github.com/videosdk-live/videosdk-hls-react-sdk-example) on Github. This document introduces how to run this project.
 
 ## Prerequisites
 
@@ -36,7 +36,7 @@ import APISecret from '../../../../mdx/introduction/\_api-key.mdx';
 Clone the repository to your local environment.
 
 ```js
-git clone https://github.com/videosdk-live/videosdk-rtc-react-sdk-example.git
+git clone https://github.com/videosdk-live/videosdk-hls-react-sdk-example.git
 ```
 
 ### Step 2: Copy the .env.example file to .env file.

@@ -103,12 +103,20 @@ We are going to use functional components to leverage react's reusable component
 
 ### App Architecture
 
-App will contain a container component which includes user component with videos. Each video component will have conrols button for mic, camera , leave meeting ,screen share and HLS button.
+App will contain a container component which includes user component with videos. Each video component will have conrols button for mic, camera , leave meeting and HLS button.
 
 We are goting to work on these files:
 
 - API.js: Responsible to handle API calls such as generating unique meetingId and token
 - App.js: Responsible to render container and meeting join.
+
+##### Architecture for Speaker
+
+![quick-start-speaker-architechture](https://cdn.videosdk.live/website-resources/docs-resources/react_quick_start_ils_speaker_arch.png)
+
+##### Architecture for Viewer
+
+![quick-start-viewer-architechture](https://cdn.videosdk.live/website-resources/docs-resources/react_quick_start_ils_viewer_arch.png)
 
 ### Step 1: Get started with API.js
 
@@ -259,7 +267,13 @@ function JoinScreen({ getMeetingAndToken, setMode }) {
   };
   //highlight-end
   return (
-    <div>
+    <div className="container">
+      <button onClick={() => onClick("CONFERENCE")}>Create Meeting</button>
+      <br />
+      <br />
+      {" or "}
+      <br />
+      <br />
       <input
         type="text"
         placeholder="Enter Meeting Id"
@@ -267,11 +281,11 @@ function JoinScreen({ getMeetingAndToken, setMode }) {
           setMeetingId(e.target.value);
         }}
       />
+      <br />
+      <br />
       <button onClick={() => onClick("CONFERENCE")}>Join as Host</button>
-      {" or "}
+      {" | "}
       <button onClick={() => onClick("VIEWER")}>Join as Viewer</button>
-      {" or "}
-      <button onClick={() => onClick("CONFERENCE")}>Create Meeting</button>
     </div>
   );
 }
@@ -279,7 +293,7 @@ function JoinScreen({ getMeetingAndToken, setMode }) {
 
 #### Output
 
-<!-- ![VideoSDK React Interactive Live Streaming Quick Start Join Screen](/quick_start_react_ils_join_screen.png) -->
+![VideoSDK React Interactive Live Streaming Quick Start Join Screen](https://cdn.videosdk.live/website-resources/docs-resources/quick_start_react_ils_join_screen.png)
 
 ### Step 4: Implement Container Component
 
@@ -356,9 +370,10 @@ function SpeakerView() {
   return (
     <div>
       <p>Current HLS State: {hlsState}</p>
-      //Controls for the meeting
+      {/* Controls for the meeting */}
       <Controls />
-      //Rendring all the HOST participants
+
+      {/* Rendring all the HOST participants */}
       {speakers.map((participant) => (
         <ParticipantView participantId={participant.id} key={participant.id} />
       ))}
@@ -405,8 +420,10 @@ function Controls() {
   return (
     <div>
       <button onClick={() => leave()}>Leave</button>
+      &emsp;|&emsp;
       <button onClick={() => toggleMic()}>toggleMic</button>
       <button onClick={() => toggleWebcam()}>toggleWebcam</button>
+      &emsp;|&emsp;
       <button
         onClick={() => {
           //We will start the HLS in SPOTLIGHT mode and PIN as
@@ -504,7 +521,7 @@ function ParticipantView(props) {
 
 #### Output Of SpeakerView Component
 
-<!-- ![VideoSDK React Interactive Live Streaming Quick Start ParticipantView Component Component](/quick_start_react_ils_speaker.png) -->
+![VideoSDK React Interactive Live Streaming Quick Start ParticipantView Component Component](https://cdn.videosdk.live/website-resources/docs-resources/quick_start_react_ils_speaker.png)
 
 ### Step 6: Implement ViewerView
 
@@ -537,19 +554,19 @@ $ yarn add hls.js
 </TabItem>
 </Tabs>
 
-With `hls.js` installed, we will get the `hlsUrls` and `isHlsPlayable` from the `useMeeting` hook which will be used to play the HLS in the player.
+With `hls.js` installed, we will get the `hlsUrls` from the `useMeeting` hook which will be used to play the HLS in the player.
 
 ```js
 function ViewerView() {
   // States to store downstream url and current HLS state
   const playerRef = useRef(null);
-  //Getting the hlsUrls and isHlsPlayable
-  const { hlsUrls, isHlsPlayable, hlsState } = useMeeting();
+  //Getting the hlsUrls
+  const { hlsUrls, hlsState } = useMeeting();
 
   //Playing the HLS stream when the downstreamUrl is present and it is playable
   //highlight-start
   useEffect(() => {
-    if (hlsUrls.downstreamUrl && isHlsPlayable) {
+    if (hlsUrls.downstreamUrl && hlsState == "HLS_PLAYABLE") {
       if (Hls.isSupported()) {
         const hls = new Hls({
           capLevelToPlayerSize: true,
@@ -570,18 +587,18 @@ function ViewerView() {
         }
       }
     }
-  }, [hlsUrls, isHlsPlayable, playerRef.current]);
+  }, [hlsUrls, hlsState, playerRef.current]);
   //highlight-end
 
   return (
     <div>
-      //Showing message if HLS is not started or is stopped by HOST
-      {hlsState == "HLS_STOPPED" || !isHlsPlayable ? (
+      {/* Showing message if HLS is not started or is stopped by HOST */}
+      {hlsState != "HLS_PLAYABLE" ? (
         <div>
           <p>HLS has not started yet or is stopped</p>
         </div>
       ) : (
-        hlsState == "HLS_STARTED" && (
+        hlsState == "HLS_PLAYABLE" && (
           <div>
             <video
               ref={playerRef}
@@ -607,10 +624,16 @@ function ViewerView() {
 
 #### Output of ViewerView
 
-<!-- ![VideoSDK React Interactive Live Streaming Quick Start Meeting Container Component](/quick_start_react_ils_viewer.png) -->
+![VideoSDK React Interactive Live Streaming Quick Start Meeting Container Component](https://cdn.videosdk.live/website-resources/docs-resources/quick_start_react_ils_viewer.png)
 
 #### Final Output
 
 We are done with implementation of customised video calling app in ReactJS using Video SDK. To explore more features go through Basic and Advanced features.
 
-<img width="100%" src="/img/quick-start/ils-final-output.gif"/>
+import ReactPlayer from 'react-player'
+
+<div style={{textAlign: 'center'}}>
+
+<ReactPlayer autoplay muted loop playing controls url="https://cdn.videosdk.live/website-resources/docs-resources/quick_start_react_ils_video.mp4" height="500px" width={"100%"} />
+
+</div>

@@ -36,17 +36,17 @@ function HLSPlayer() {
 }
 ```
 
-**`Step 2:`** Now let's add the placeholder that will be shown when there is no active HLS. For these, we will use the `hlsState`, `isHlsPlayable` from the `useMeeting` hook to identify if there is an active HLS.
+**`Step 2:`** Now let's add the placeholder that will be shown when there is no active HLS. For these, we will use the `hlsState` from the `useMeeting` hook to identify if there is an active HLS.
 
 ```js
-import { useMeeting } from "@videosdk.live/react-sdk";
+import { useMeeting, Constants } from "@videosdk.live/react-sdk";
 
 function HLSPlayer() {
-  const { hlsUrls, isHlsPlayable, hlsState } = useMeeting();
+  const { hlsUrls, hlsState } = useMeeting();
 
   return (
     <div>
-      {hlsState == "HLS_STOPPED" || !isHlsPlayable ? (
+      {hlsState != "HLS_PLAYABLE" ? (
         <div>
           <p>HLS has not started yet or is stopped</p>
         </div>
@@ -72,12 +72,12 @@ npm install "hls.js"
 import Hls from "hls.js";
 
 function HLSPlayer() {
-  const { hlsUrls, isHlsPlayable, hlsState } = useMeeting();
+  const { hlsUrls, hlsState } = useMeeting();
   const playerRef = useRef(null);
 
   return (
     <div>
-      {hlsState == "HLS_STOPPED" || !isHlsPlayable ? (
+      {hlsState != "HLS_PLAYABLE" ? (
         <div>
           <p>HLS has not started yet or is stopped</p>
         </div>
@@ -103,7 +103,7 @@ function HLSPlayer() {
 }
 ```
 
-**`Step 3:`** Now that video player is ready, let's play the HLS once it becomes playable. For these, we will get the `hlsUrls` from the `useMeeting` and also check if the `isHlsPlayable` before playing the stream.
+**`Step 3:`** Now that video player is ready, let's play the HLS once it becomes playable. For these, we will get the `hlsUrls` from the `useMeeting` and also check if the `hlsState` is `HLS_PLAYABLE` before playing the stream.
 
 ```js
 function HLSPlayer() {
@@ -111,7 +111,7 @@ function HLSPlayer() {
   ...
 
   useEffect(() => {
-    if (hlsUrls.downstreamUrl && isHlsPlayable) {
+    if (hlsUrls.downstreamUrl && hlsState == Constants.hlsEvents.HLS_PLAYABLE) {
       if (Hls.isSupported()) {
         const hls = new Hls({
           capLevelToPlayerSize: true,
@@ -132,7 +132,7 @@ function HLSPlayer() {
         }
       }
     }
-  }, [hlsUrls, isHlsPlayable]);
+  }, [hlsUrls, hlsState]);
 
   return <div>...</div>;
 }
@@ -140,8 +140,12 @@ function HLSPlayer() {
 
 With this, the player is setup to play the HLS.
 
+![VideoSDK React Interactive Live Streaming Quick Start Meeting Container Component](https://cdn.videosdk.live/website-resources/docs-resources/quick_start_react_ils_viewer.png)
+
 ## API Reference
 
 The API references for all the methods utilized in this guide are provided below.
 
 - [onHlsStateChanged](/react/api/sdk-reference/use-meeting/events#onhlsstatechanged)
+- [hlsUrls](/react/api/sdk-reference/use-meeting/properties#hlsurls)
+- [hlsState](/react/api/sdk-reference/use-meeting/properties#hlsstate)

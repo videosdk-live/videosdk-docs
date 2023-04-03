@@ -133,11 +133,13 @@ function onHlsStateChanged(data) {
   if (status === Constants.hlsEvents.HLS_STARTING) {
     console.log("Meeting Hls is starting");
   } else if (status === Constants.hlsEvents.HLS_STARTED) {
+    console.log("Meeting Hls is started");
+  } else if (status === Constants.hlsEvents.HLS_PLAYABLE) {
     //highlight-start
     // on hlsStateChanged started you will receive downstreamUrl
     const { downstreamUrl } = data;
     //highlight-end
-    console.log("Meeting Hls is started");
+    console.log("Meeting Hls is now playable");
   } else if (status === Constants.hlsEvents.HLS_STOPPING) {
     console.log("Meeting Hls is stopping");
   } else if (status === Constants.hlsEvents.HLS_STOPPED) {

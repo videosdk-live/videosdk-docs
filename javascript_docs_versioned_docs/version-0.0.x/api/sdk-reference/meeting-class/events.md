@@ -416,6 +416,7 @@ meeting.on("livestream-stopped", () => {
 
 - `HLS_STARTING` - Hls is in starting phase and hasn't started yet.
 - `HLS_STARTED` - Hls has started successfully will return `downstreamUrl`.
+- `HLS_PLAYABLE` - Hls has started and the `downstreamUrl` is noy playable.
 - `HLS_STOPPING` - Hls is in stopping phase and hasn't stopped yet.
 - `HLS_STOPPED` - Hls has stopped successfully.
 
