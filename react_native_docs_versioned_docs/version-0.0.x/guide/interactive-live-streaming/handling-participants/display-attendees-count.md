@@ -27,7 +27,7 @@ Before going forward in this guide, do make sure all the attendees join the meet
 **`Step 1:`** We will get the `participants` from the `useMeeting` hook.
 
 ```js
-import { useMeeting } from "@videosdk.live/react-sdk";
+import { useMeeting } from "@videosdk.live/react-native-sdk";
 
 function AttendessCount() {
   const { participants } = useMeeting();
@@ -39,8 +39,9 @@ function AttendessCount() {
 **`Step 2:`** With all the participants, we will filter out participants who have joined as a `VIEWER` and then display that count.
 
 ```js
-import { useMeeting } from "@videosdk.live/react-sdk";
+import { useMeeting } from "@videosdk.live/react-native-sdk";
 import { useMemo } from "react";
+import { Text } from "react-native";
 
 function AttendessCount() {
   const { participants } = useMeeting();
@@ -54,7 +55,7 @@ function AttendessCount() {
 
   return (
     <>
-      <p>Number of Attendess: {attendeesCount}</p>
+      <Text>Number of Attendess: {attendeesCount}</Text>
     </>
   );
 }
@@ -64,4 +65,4 @@ function AttendessCount() {
 
 The API references for all the methods utilized in this guide are provided below.
 
-- [useMeeting](/react/api/sdk-reference/use-meeting/introduction)
+- [useMeeting](/react-native/api/sdk-reference/use-meeting/introduction)

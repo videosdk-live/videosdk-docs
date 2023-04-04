@@ -173,4 +173,4 @@ All the messages from the PubSub which where published with `persist : true` and
 
 The API references for all the methods and events utilised in this guide are provided below.
 
-- [usePubSub()](/react/api/sdk-reference/use-pubsub)
+- [usePubSub()](/react-native/api/sdk-reference/use-pubsub)

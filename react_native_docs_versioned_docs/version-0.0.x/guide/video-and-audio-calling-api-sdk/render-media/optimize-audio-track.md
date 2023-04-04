@@ -218,4 +218,4 @@ const MeetingControls = () => {
 
 The API references for all the methods and events utilised in this guide are provided below.
 
-- [Custom Audio Track](/react/api/sdk-reference/custom-tracks#custom-audio-track)
+- [Custom Audio Track](/react-native/api/sdk-reference/custom-tracks#custom-audio-track)

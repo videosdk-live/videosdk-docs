@@ -65,7 +65,7 @@ This guide will provide an overview of how to implement start and stop Interacti
     // landscape : Start interactive livestream of the meeting in horizontally
     // portrait : Start interactive livestream of the meeting in vertically (Best for mobile view)
     //highlight-end
-    orientation: "landscape", // "portrait",  Default : "landscape"
+    orientation: "portrait", // "portrait",  Default : "landscape"
   };
   ​
   startHls(config);

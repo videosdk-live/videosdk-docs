@@ -69,7 +69,7 @@ function ChatView() {
 }
 ```
 
-3. Final setp in the group chat would be to display the messages others send. For this will use the `messages` and display all the messages.
+3. Final step in the group chat would be to display the messages others send. For this will use the `messages` and display all the messages.
 
 ```js
 function ChatView() {

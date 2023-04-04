@@ -41,6 +41,7 @@ This App will contain two screen :
 <img src='https://cdn.videosdk.live/website-resources/docs-resources/react_native_quickstart_architecture.png' />
 
 </center>
+
 ## Getting Started with the Code!
 
 ### Create App

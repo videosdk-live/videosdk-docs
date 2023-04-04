@@ -38,6 +38,22 @@ Visit VideoSDK **[dashboard](https://app.videosdk.live/api-keys)** to generate t
 
 :::
 
+### App Architecture
+
+This App will contain two screen :
+
+1. `Join Screen` : This screen allows SPEAKER to create studio or join predefined studio and VIEWER to join predefined studio.
+
+2. `Speaker Screen` : This screen basically contain speaker list and some studio controls such as Enable / Disable Mic & Camera and Leave studio.
+
+3. `Viewer Screen` : This screen basically contain live stream player in which viewer will play stream.
+
+<center>
+
+<img src='https://cdn.videosdk.live/website-resources/docs-resources/ils-app-architecture.png' />
+
+</center>
+
 ## Getting Started with the Code!
 
 ### Create App
@@ -345,6 +361,7 @@ import {
   TextInput,
   View,
   FlatList,
+  Clipboard,
 } from "react-native";
 import {
   MeetingProvider,
@@ -519,11 +536,15 @@ function JoinScreen({ getMeetingAndToken, setMode }) {
 
 #### Output
 
-<!-- ![VideoSDK React Interactive Live Streaming Quick Start Join Screen](/quick_start_react_ils_join_screen.png) -->
+<center>
+
+<img src='https://cdn.videosdk.live/website-resources/docs-resources/ils-home-screen.png' style={{height: '600px'}} />
+
+</center>
 
 ### Step 4: Implement Container Component
 
-Next step is to create a container to manage features such as join, leave, mute and unmute, start and stop hls for the HOST and to show a HLS Player for the viewer.
+Next step is to create a container that will manage `Join screen`, `SpeakerView` and `ViewerView` component basec on `mode`.
 
 We will check the mode of the `localParticipant`, if its `CONFERENCE` we will show `SpeakerView` else we will show `ViewerView`.
 
@@ -559,7 +580,6 @@ function Container() {
             btnStyle={{
               marginTop: 8,
               paddingHorizontal: 22,
-              borderWidth: 1,
               padding: 12,
               borderWidth: 1,
               borderColor: "white",
@@ -597,6 +617,14 @@ const Button = ({ onPress, buttonText, backgroundColor, btnStyle }) => {
 };
 ```
 
+#### Output
+
+<center>
+
+<img src='https://cdn.videosdk.live/website-resources/docs-resources/ils-join-screen.png' style={{height: '600px'}} />
+
+</center>
+
 ### Step 5: Implement SpeakerView
 
 Next step is to create `SpeakerView` and `Controls` componenets to manage features such as join, leave, mute and unmute.
@@ -621,6 +649,9 @@ function SpeakerView() {
   return (
     <>
       <Text style={{ fontSize: 18, padding: 12 }}>Meeting Id: {meetingId}</Text>
+      {/* Render Header for copy meetingId and leave meeting*/}
+      <HeaderView />
+
       {/* Render Participant List */}
       {speakers.length > 0 ? (
         <FlatList
@@ -630,9 +661,45 @@ function SpeakerView() {
           }}
         />
       ) : null}
+
       {/* Render Controls */}
       <Controls />
     </>
+  );
+}
+
+function HeaderView() {
+  const { meetingId, leave } = useMeeting();
+  return (
+    <View
+      style={{
+        flexDirection: "row",
+        padding: 16,
+        justifyContent: "space-evenly",
+        alignItems: "center",
+      }}
+    >
+      <Text style={{ fontSize: 24, color: "white" }}>{meetingId}</Text>
+      <Button
+        btnStyle={{
+          borderWidth: 1,
+          borderColor: "white",
+        }}
+        onPress={() => {
+          Clipboard.setString(meetingId);
+          alert("MeetingId copied successfully");
+        }}
+        buttonText={"Copy MeetingId"}
+        backgroundColor={"transparent"}
+      />
+      <Button
+        onPress={() => {
+          leave();
+        }}
+        buttonText={"Leave"}
+        backgroundColor={"#FF0000"}
+      />
+    </View>
   );
 }
 
@@ -652,7 +719,6 @@ function Container(){
         mMeetingRef.current.localParticipant.pin();
       }
       //highlight-end
-      setJoined("JOINED");
     },
     //highlight-next-line
     ...
@@ -671,12 +737,13 @@ function Container(){
 }
 ```
 
-2. We will add the `Controls` componenet which will allow the participant to toggle media.
+2. We will add the `Controls` componenet which will allow the speaker to toggle media and start / stop HLS.
 
 ```js title="Controls Component"
 function Controls() {
-  const { leave, toggleWebcam, toggleMic, startHls, stopHls, hlsState } =
-    useMeeting({});
+  const { toggleWebcam, toggleMic, startHls, stopHls, hlsState } = useMeeting(
+    {}
+  );
 
   const _handleHLS = async () => {
     if (!hlsState || hlsState === "HLS_STOPPED") {
@@ -702,13 +769,6 @@ function Controls() {
         justifyContent: "space-between",
       }}
     >
-      <Button
-        onPress={() => {
-          leave();
-        }}
-        buttonText={"Leave"}
-        backgroundColor={"#FF0000"}
-      />
       <Button
         onPress={() => {
           toggleWebcam();
@@ -737,7 +797,7 @@ function Controls() {
               : hlsState === "HLS_STOPPING"
               ? `Live Stopping`
               : hlsState === "HLS_PLAYABLE"
-              ? `Live Started`
+              ? `Stop Live`
               : `Go Live`
           }
           backgroundColor={"#FF5D5D"}
@@ -756,7 +816,7 @@ function Controls() {
 }
 ```
 
-3. We will be creating the `ParticipantView` to show the participants name and media. For which, will be using the `webcamStream` and `micStream` from the `useParticipant` hook to play the media of the participant.
+3. We will be creating the `ParticipantView` to show the participants media. For which, will be using the `webcamStream` from the `useParticipant` hook to play the media of the participant.
 
 ```js title="ParticipantView"
 function ParticipantView({ participantId }) {
@@ -788,15 +848,19 @@ function ParticipantView({ participantId }) {
 }
 ```
 
-#### Output Of SpeakerView Component
+#### Output Of `SpeakerView` Component
 
-<!-- ![VideoSDK React Interactive Live Streaming Quick Start ParticipantView Component Component](/quick_start_react_ils_speaker.png) -->
+<center>
+
+<img src='https://cdn.videosdk.live/website-resources/docs-resources/ils-viewer-screen.png' style={{height: '600px'}} />
+
+</center>
 
 ### Step 6: Implement ViewerView
 
-When host start the live streaming, viewer will be able to see the live streaming.
+When **HOST** (`CONFERENCE` mode participant) start the live streaming, viewer will be able to see the live streaming.
 
-To implement player view, we are going to use `hls.js`. It will be helpful to play hls stream.
+To implement player view, we are going to use [react-native-video](https://www.npmjs.com/package/react-native-video). It will be helpful to play HLS stream.
 
 Let's first add this package.
 
@@ -810,14 +874,14 @@ values={[
 <TabItem value="npm">
 
 ```bash
-$ npm install react-native-video
+npm install react-native-video
 ```
 
 </TabItem>
 <TabItem value="yarn">
 
 ```bash
-$ yarn add react-native-video
+yarn add react-native-video
 ```
 
 </TabItem>
@@ -837,18 +901,24 @@ function ViewerView({}) {
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: "black" }}>
       {hlsState == "HLS_PLAYABLE" ? (
-        <Video
-          controls={true}
-          source={{
-            uri: hlsUrls.downstreamUrl,
-          }}
-          resizeMode={"stretch"}
-          style={{
-            flex: 1,
-            backgroundColor: "black",
-          }}
-          onError={(e) => console.log("error", e)}
-        />
+        <>
+          {/* Render Header for copy meetingId and leave meeting*/}
+          <HeaderView />
+
+          {/* Render VideoPlayer that will play `downstreamUrl`*/}
+          <Video
+            controls={true}
+            source={{
+              uri: hlsUrls.downstreamUrl,
+            }}
+            resizeMode={"stretch"}
+            style={{
+              flex: 1,
+              backgroundColor: "black",
+            }}
+            onError={(e) => console.log("error", e)}
+          />
+        </>
       ) : (
         <SafeAreaView
           style={{ flex: 1, justifyContent: "center", alignItems: "center" }}
@@ -863,12 +933,10 @@ function ViewerView({}) {
 }
 ```
 
-#### Output of ViewerView
+#### Output of `ViewerView` Component
 
-<!-- ![VideoSDK React Interactive Live Streaming Quick Start Meeting Container Component](/quick_start_react_ils_viewer.png) -->
+<center>
 
-#### Final Output
+<img src='https://cdn.videosdk.live/website-resources/docs-resources/ils-speaker-screen.png' style={{height: '600px'}} />
 
-We are done with implementation of customised video calling app in ReactJS using Video SDK. To explore more features go through Basic and Advanced features.
-
-<img width="100%" src="/img/quick-start/ils-final-output.gif"/>
+</center>

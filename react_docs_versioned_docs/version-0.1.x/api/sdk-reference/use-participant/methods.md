@@ -87,21 +87,6 @@ title: Methods returned by useParticipant Hook
 
 ---
 
-### setViewPort()
-
-- `setViewPort()` is used to set the quality of the participant's video stream based on the viewport height and width.
-
-#### Parameters
-
-- **width**: int
-- **height**: int
-
-#### Returns
-
-- `void`
-
----
-
 ### switchTo()
 
 - If you want a participant from a connected meeting to be switched from one meeting to another meeting, `switchTo()` method is used. This method accept `meetingId`, `token` and `payload` as an object.

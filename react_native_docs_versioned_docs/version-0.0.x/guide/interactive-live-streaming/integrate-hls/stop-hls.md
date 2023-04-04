@@ -26,7 +26,8 @@ This could refer to stopping the transmission of an ongoing HLS stream, which wo
 ### Example
 
 ```js
-import { useMeeting } from "@videosdk.live/react-sdk";
+import { useMeeting } from "@videosdk.live/react-native-sdk";
+import { TouchableOpacity, Text } from "react-native";
 
 const MeetingView = () => {
   const { stopHls } = useMeeting();
@@ -38,7 +39,13 @@ const MeetingView = () => {
 
   return (
     <>
-      <button onClick={handleStopHls}>Stop Hls</button>
+      <TouchableOpacity
+        onPress={() => {
+          handleStopHls();
+        }}
+      >
+        <Text>Stop Hls</Text>
+      </TouchableOpacity>
     </>
   );
 };
@@ -51,21 +58,23 @@ const MeetingView = () => {
 - You can get the `downstreamUrl` of the HLS to play it on the Viewer side when the state changes to `Constants.hlsEvents.HLS_STARTED`
 
 ```js
-import { Constants, useMeeting } from "@videosdk.live/react-sdk";
+import { Constants, useMeeting } from "@videosdk.live/react-native-sdk";
 
 const Constants = VideoSDK.Constants;
 
 function onHlsStateChanged(data) {
-   const { status } = data;
+  const { status } = data;
 
   if (status === Constants.hlsEvents.HLS_STARTING) {
     console.log("Meeting Hls is starting");
   } else if (status === Constants.hlsEvents.HLS_STARTED) {
+    console.log("Meeting Hls is started");
+  }else if (status === Constants.hlsEvents.HLS_PLAYABLE) {
     //highlight-start
     // on hlsStateChanged started you will receive downstreamUrl
     const { downstreamUrl } = data;
     //highlight-end
-    console.log("Meeting Hls is started");
+    console.log("Meeting Hls is Playable");
   } else if (status === Constants.hlsEvents.HLS_STOPPING) {
     console.log("Meeting Hls is stopping");
   } else if (status === Constants.hlsEvents.HLS_STOPPED) {
@@ -73,7 +82,7 @@ function onHlsStateChanged(data) {
   } else {
     //
   }
- }
+}
 
 const {
   meetingId
@@ -89,5 +98,5 @@ const {
 
 The API references for all the methods utilized in this guide are provided below.
 
-- [stopHls](/react/api/sdk-reference/use-meeting/methods#stophls)
-- [onHlsStateChanged](/react/api/sdk-reference/use-meeting/events#onhlsstatechanged)
+- [stopHls](/react-native/api/sdk-reference/use-meeting/methods#stophls)
+- [onHlsStateChanged](/react-native/api/sdk-reference/use-meeting/events#onhlsstatechanged)

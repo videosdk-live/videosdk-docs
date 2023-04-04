@@ -20,14 +20,14 @@ slug: chat-using-pubsub
 
 For the communication or any kind of messaging in between the participants, VideoSDK provides `usePubSub` hook which use Publish-Subscribe mechanism and can be used to develope wide varitey of functionalities. For example, participants could use it to send chat messages to each other, share files or other media, or even trigger actions like muting or unmuting audio or video.
 
-Now we will see, how we can use PubSub to implement Chat functionality. If you are not familiary with the PubSub mechanism and `usePubSub`hook, you can [follow this guide](/react/guide/video-and-audio-calling-api-sdk/collaboration-in-meeting/pubsub).
+Now we will see, how we can use PubSub to implement Chat functionality. If you are not familiary with the PubSub mechanism and `usePubSub`hook, you can [follow this guide](/react-native/guide/video-and-audio-calling-api-sdk/collaboration-in-meeting/pubsub).
 
 ## Implementing Chat
 
 1. First step in creating a group chat is choosing the topic which all the participants will publish and subscribe to send and receive the messages. We will be using `CHAT` as the topic for this one. So let us get the `publish()` and `messages` from the `usePubSub`hook.
 
 ```js
-// importing usePubSub hook from react-sdk
+// importing usePubSub hook from react-native-sdk
 import { usePubSub } from "@videosdk.live/react-sdk";
 
 function ChatView() {
@@ -41,6 +41,8 @@ function ChatView() {
 2. Now lets create a message input and send button to publish the messages.
 
 ```js
+import { SafeAreaView, TouchableOpacity, TextInput, Text } from "react-native";
+
 function ChatView() {
   // destructure publish method from usePubSub hook
   const { publish, messages } = usePubSub("CHAT");
@@ -56,22 +58,35 @@ function ChatView() {
   };
 
   return (
-    <>
-      <input
-        value={message}
-        onChange={(e) => {
-          setMessage(e.target.value);
+    <SafeAreaView>
+      <TextInput
+        style={{
+          height: 40,
+          margin: 12,
+          borderWidth: 1,
+          padding: 10,
         }}
+        onChangeText={setMessage}
+        value={message}
       />
-      <button onClick={handleSendMessage}>Send Message</button>
-    </>
+
+      <TouchableOpacity
+        onPress={() => {
+          handleSendMessage();
+        }}
+      >
+        <Text>Send Message</Text>
+      </TouchableOpacity>
+    </SafeAreaView>
   );
 }
 ```
 
-3. Final setp in the group chat would be to display the messages others send. For this will use the `messages` and display all the messages.
+3. Final step in the group chat would be to display the messages others send. For this will use the `messages` and display all the messages.
 
 ```js
+import { SafeAreaView, TouchableOpacity, TextInput, Text } from "react-native";
+
 function ChatView() {
   // destructure publish method from usePubSub hook
   const { publish, messages } = usePubSub("CHAT");
@@ -84,27 +99,34 @@ function ChatView() {
   };
 
   return (
-    <>
+    <SafeAreaView>
       //highlight-start
-      <div>
-      <p>Messages: </p>
       {messages.map((message) => {
         return (
-          <p>
+          <Text style={{ fontSize: 12 }}>
             {messsage.senderName} says {message.message}
-          </p>
+          </Text>
         );
       })}
       //highlight-end
-      </div>
-      <input
-        value={message}
-        onChange={(e) => {
-          setMessage(e.target.value);
+      <TextInput
+        style={{
+          height: 40,
+          margin: 12,
+          borderWidth: 1,
+          padding: 10,
         }}
+        onChangeText={setMessage}
+        value={message}
       />
-      <button onClick={handleSendMessage}>Send Message</button>
-    </>
+      <TouchableOpacity
+        onPress={() => {
+          handleSendMessage();
+        }}
+      >
+        <Text>Send Message</Text>
+      </TouchableOpacity>
+    </SafeAreaView>
   );
 }
 ```
@@ -140,4 +162,4 @@ All the messages from the PubSub which where published with `persist : true` and
 
 The API references for all the methods and events utilized in this guide are provided below.
 
-- [usePubSub()](/react/api/sdk-reference/use-pubsub)
+- [usePubSub()](/react-native/api/sdk-reference/use-pubsub)

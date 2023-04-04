@@ -20,7 +20,7 @@ slug: remote-participant-media
 When hosting a meeting, it's important that the host of the meeting should be able to request someone's Mic or Camera to be turned on or should be able to turn them off.
 
 :::note
-Participant who will be controlling other participant's mic and camera should have permission **`allow_mod`** passed in the token. To know more about permissions [**visit here**](/react/guide/video-and-audio-calling-api-sdk/authentication-and-token).
+Participant who will be controlling other participant's mic and camera should have permission **`allow_mod`** passed in the token. To know more about permissions [**visit here**](/react-native/guide/video-and-audio-calling-api-sdk/authentication-and-token).
 :::
 
 Before we discuss the methods and events associated with this functionality, here is how the flow would look like.

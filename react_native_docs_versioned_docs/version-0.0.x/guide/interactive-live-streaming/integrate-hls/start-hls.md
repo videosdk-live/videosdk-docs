@@ -17,7 +17,7 @@ slug: start-hls
 
 # Start HLS
 
-Before starting the HLS, the prequisite steps require you to have a VideoSDK Meeting running which you want to use for interactive livestream. To learn more about setting up a interactive live streaming, you can follow the steps [here in the quick start guide.](/react/guide/video-and-audio-calling-api-sdk/quick-start-ILS)
+Before starting the HLS, the prequisite steps require you to have a VideoSDK Meeting running which you want to use for interactive livestream. To learn more about setting up a interactive live streaming, you can follow the steps [here in the quick start guide.](/react-native/guide/video-and-audio-calling-api-sdk/quick-start-ILS)
 
 ## Starting HLS
 
@@ -25,38 +25,38 @@ Once the user has joined the meeting, `startHls()` can be used to start a intera
 
 - `config (optional)`: This parameter will define how the livestream layout should look like.
 
-```js
- const config = {
-   // highlight-next-line
-   // Layout Configuration
-   layout: {
-     type: "GRID", // "SPOTLIGHT" | "SIDEBAR",  Default : "GRID"
-     priority: "SPEAKER", // "PIN", Default : "SPEAKER"
-     gridSize: 4, // MAX : 25
-   },
-​
-   // highlight-next-line
-   // Theme of interactive livestream layout
-   theme: "DARK", //  "LIGHT" | "DEFAULT"
-​
-   // highlight-next-line
-   // `mode` is used to either interactive livestream video & audio both or only audio.
-   mode: "video-and-audio", // "audio", Default : "video-and-audio"
-​
-   // highlight-next-line
-   // Quality of interactive livestream and is only applicable to `video-and-audio` type mode.
-   quality: "high", // "low" | "med",  Default : "med"
-​
-   //highlight-start
-   // This mode refers to orientation of interactive livestream.
-   // landscape : Start interactive livestream of the meeting in horizontally
-   // portrait : Start interactive livestream of the meeting in vertically (Best for mobile view)
-   //highlight-end
-   orientation: "landscape", // "portrait",  Default : "landscape"
- };
-​
- startHls(config);
-```
+  ```js
+  const config = {
+    // highlight-next-line
+    // Layout Configuration
+    layout: {
+      type: "GRID", // "SPOTLIGHT" | "SIDEBAR",  Default : "GRID"
+      priority: "SPEAKER", // "PIN", Default : "SPEAKER"
+      gridSize: 4, // MAX : 25
+    },
+  ​
+    // highlight-next-line
+    // Theme of interactive livestream layout
+    theme: "DARK", //  "LIGHT" | "DEFAULT"
+  ​
+    // highlight-next-line
+    // `mode` is used to either interactive livestream video & audio both or only audio.
+    mode: "video-and-audio", // "audio", Default : "video-and-audio"
+    ​
+    // highlight-next-line
+    // Quality of interactive livestream and is only applicable to `video-and-audio` type mode.
+    quality: "high", // "low" | "med",  Default : "med"
+  ​
+    //highlight-start
+    // This mode refers to orientation of interactive livestream.
+    // landscape : Start interactive livestream of the meeting in horizontally
+    // portrait : Start interactive livestream of the meeting in vertically (Best for mobile view)
+    //highlight-end
+    orientation: "portrait", // "portrait",  Default : "landscape"
+  };
+  ​
+  startHls(config);
+  ```
 
 :::note
 If you want only the conference participants to be seen in the livestream, you can `pin` all the participants in the conference mode and start the livestream with the `SPOTLIGHT` layout and `pin` as the `PRIORITY`.
@@ -65,12 +65,13 @@ If you want only the conference participants to be seen in the livestream, you c
 ### Example
 
 ```js
-import { useMeeting } from "@videosdk.live/react-sdk";
+import { useMeeting } from "@videosdk.live/react-native-sdk";
+import { TouchableOpacity, Text } from "react-native";
 
 const MeetingView = () => {
-  const { startHls, stopHls } = useMeeting();
+  const { startHls } = useMeeting();
 
-  const handleStartHls = () => {
+  const handleStartLivestream = () => {
     // Start Hls
     startHls({
       layout: {
@@ -81,13 +82,19 @@ const MeetingView = () => {
       theme: "DARK",
       mode: "video-and-audio",
       quality: "high",
-      orientation: "landscape",
+      orientation: "portrait",
     });
   };
 
   return (
     <>
-      <button onClick={handleStartHls}>Start Hls</button>
+      <TouchableOpacity
+        onPress={() => {
+          handleStartLivestream();
+        }}
+      >
+        <Text>Start Hls</Text>
+      </TouchableOpacity>
     </>
   );
 };
@@ -128,14 +135,11 @@ If any pinned participant started screenshare then only screenshare view will be
 ## Event associated with HLS
 
 - **onHlsStateChanged** - Whenever meeting HLS state changes, then `onHlsStateChanged` event will trigger.
-- **onHlsPlayableStateChanged** - Whenever meeting HLS becomes playable, then `onHlsPlayableStateChanged` event will trigger. You can use these event to start showing the HLS video to the viewers.
 
-- You can get the `downstreamUrl` of the HLS to play it on the Viewer side when the state changes to `Constants.hlsEvents.HLS_STARTED`
+- You can get the `downstreamUrl` of the HLS to play it on the Viewer side when the state changes to `Constants.hlsEvents.HLS_PLAYABLE` as well as from the `hlsUrls` from the `useMeeting` hook.
 
 ```js
-import { Constants, useMeeting } from "@videosdk.live/react-sdk";
-
-const Constants = VideoSDK.Constants;
+import { Constants, useMeeting } from "@videosdk.live/react-native-sdk";
 
 function onHlsStateChanged(data) {
   const { status } = data;
@@ -143,11 +147,13 @@ function onHlsStateChanged(data) {
   if (status === Constants.hlsEvents.HLS_STARTING) {
     console.log("Meeting Hls is starting");
   } else if (status === Constants.hlsEvents.HLS_STARTED) {
+    console.log("Meeting Hls is started");
+  }else if (status === Constants.hlsEvents.HLS_PLAYABLE) {
     //highlight-start
     // on hlsStateChanged started you will receive downstreamUrl
     const { downstreamUrl } = data;
     //highlight-end
-    console.log("Meeting Hls is started");
+    console.log("Meeting Hls is Playable");
   } else if (status === Constants.hlsEvents.HLS_STOPPING) {
     console.log("Meeting Hls is stopping");
   } else if (status === Constants.hlsEvents.HLS_STOPPED) {
@@ -157,19 +163,11 @@ function onHlsStateChanged(data) {
   }
 }
 
-function onHlsPlayableStateChanged(data){
-  const {isPlayable} = data;
-  if(isPlayable){
-    console.log("Start playing HLS");
-  }
-}
-
 const {
   meetingId
   ...
 } = useMeeting({
   onHlsStateChanged,
-  onHlsPlayableStateChanged,
   ...
 });
 
@@ -183,9 +181,7 @@ With VideoSDK, you can also use your own custom designed layout template to live
 
 The API references for all the methods utilized in this guide are provided below.
 
-- [startHls](/react/api/sdk-reference/use-meeting/methods#starthls)
-- [hlsState](/react/api/sdk-reference/use-meeting/properties#hlsstate)
-- [hlsUrls](/react/api/sdk-reference/use-meeting/properties#hlsurls)
-- [isHlsPlayable](/react/api/sdk-reference/use-meeting/properties#ishlsplayable)
-- [onHlsStateChanged](/react/api/sdk-reference/use-meeting/events#onhlsstatechanged)
-- [onHlsPlayableStateChanged](/react/api/sdk-reference/use-meeting/events#onhlsplayablestatechanged)
+- [startHls](/react-native/api/sdk-reference/use-meeting/methods#starthls)
+- [hlsState](/react-native/api/sdk-reference/use-meeting/properties#hlsstate)
+- [hlsUrls](/react-native/api/sdk-reference/use-meeting/properties#hlsurls)
+- [onHlsStateChanged](/react-native/api/sdk-reference/use-meeting/events#onhlsstatechanged)

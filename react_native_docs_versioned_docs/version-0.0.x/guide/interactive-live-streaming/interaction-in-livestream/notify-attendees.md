@@ -20,15 +20,15 @@ slug: notify-attendees
 
 When doing livestream, you may want to broadcast message to all the viewers at once.
 
-Let us see, how we can use PubSub to implement this functionality. If you are not familiary with the PubSub mechanism and `usePubSub`hook, you can [follow this guide](/react/guide/video-and-audio-calling-api-sdk/collaboration-in-meeting/pubsub).
+Let us see, how we can use PubSub to implement this functionality. If you are not familiary with the PubSub mechanism and `usePubSub`hook, you can [follow this guide](/react-native/guide/video-and-audio-calling-api-sdk/collaboration-in-meeting/pubsub).
 
 ### Notifying Attendees
 
 1. We will be creating a button and text input to take the message input and we will publish a message it the topic `NOTIFY_ATTENDEES`
 
 ```js
-// importing usePubSub hook from react-sdk
-import { usePubSub } from "@videosdk.live/react-sdk";
+// importing usePubSub hook from react-native-sdk
+import { usePubSub } from "@videosdk.live/react-native-sdk";
 
 function MeetingView() {
   // destructure publish method from usePubSub hook
@@ -36,21 +36,26 @@ function MeetingView() {
   const [message, setMessage] = useState("");
 
   return (
-    <>
-      <input
-        value={message}
-        onChange={(e) => {
-          setMessage(e.target.value);
+    <SafeAreaView>
+      <TextInput
+        style={{
+          height: 40,
+          margin: 12,
+          borderWidth: 1,
+          padding: 10,
         }}
+        onChangeText={setMessage}
+        value={message}
       />
-      <button
-        onClick={() => {
+
+      <TouchableOpacity
+        onPress={() => {
           publish(message);
         }}
       >
-        Notfiy Attendees
-      </button>
-    </>
+        <Text>Notfiy Attendees</Text>
+      </TouchableOpacity>
+    </SafeAreaView>
   );
 }
 ```
@@ -64,7 +69,7 @@ function MeetingView() {
   // destructure publish method from usePubSub hook
   const { publish } = usePubSub("NOTIFY_ATTENDEES", {
     onMessageReceived: (message) => {
-      if (localParticipant.mode == "VIEWER") window.alert(`${message.message}`);
+      if (localParticipant.mode == "VIEWER") alert(`${message.message}`);
     },
   });
 
@@ -76,4 +81,4 @@ function MeetingView() {
 
 The API references for all the methods and events utilized in this guide are provided below.
 
-- [usePubSub()](/react/api/sdk-reference/use-pubsub)
+- [usePubSub()](/react-native/api/sdk-reference/use-pubsub)

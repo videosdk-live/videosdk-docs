@@ -26,7 +26,7 @@ Before going forward in this guide, do make sure all the attendees join the meet
 
 Let's first have a look at how we will be using the `PubSub` mechanism to acheive the requesting and switching of the participant's mode.
 
-// Visual - Whimsical Request Co host
+![invite-guest-pubsub](https://cdn.videosdk.live/website-resources/docs-resources/invite_guest_pubsub.png)
 
 ### Step 1: Loading Viewer List
 
@@ -72,6 +72,8 @@ function ViewerListItem({ participantId }) {
 }
 ```
 
+![invite-guest-pubsub](https://cdn.videosdk.live/website-resources/docs-resources/react_ils_viewer_list.png)
+
 ### Step 2: Requesting a Viewer to Join Livestream
 
 We have a Viewer list ready. Now, let us handle the click event for the Join Livestream button.
@@ -85,12 +87,12 @@ function ViewerListItem({ participantId }) {
   const { displayName } = useParticipant(participantId);
   const { publish } = usePubSub(`CHANGE_MODE_${participantId}`);
 
-  //highlight-start
   //Publishing the pubsub message with new mode
+  //highlight-start
   const onClickRequestJoinLiveStream = () => {
     publish("CONFERENCE");
   };
-  //higlight-end
+  //highlight-end
 
   return (
     <div>
@@ -153,6 +155,8 @@ function MeetingView() {
 }
 ```
 
+![react_ils_cohost_join_request](https://cdn.videosdk.live/website-resources/docs-resources/react_ils_cohost_join_request.png)
+
 ### Step 4: Pin the participant
 
 We need to pin the participant so that he/she can appears on the livestream. To achieve this, we will listen to the callback on the `onParticipantModeChanged` of `useMeeting` hook.
@@ -187,12 +191,18 @@ function MeetingView() {
 }
 ```
 
-// Video -- React example change mode
+import ReactPlayer from 'react-player'
+
+<div style={{textAlign: 'center'}}>
+
+<ReactPlayer autoplay muted loop playing controls url="https://cdn.videosdk.live/website-resources/docs-resources/react_ils_invite_guest.mp4" height="500px" width={"100%"} />
+
+</div>
 
 ## API Reference
 
 The API references for all the methods utilized in this guide are provided below.
 
-- [useMeeting](/react/api/sdk-reference/use-meeting/introduction)
-- [usePubSub](/react/api/sdk-reference/use-pubsub)
-- [useParticipant](/react/api/sdk-reference/use-participant/introduction)
+- [useMeeting](/react-native/api/sdk-reference/use-meeting/introduction)
+- [usePubSub](/react-native/api/sdk-reference/use-pubsub)
+- [useParticipant](/react-native/api/sdk-reference/use-participant/introduction)

@@ -18,15 +18,16 @@ slug: raise-hand
 
 # Raise Hand
 
-Let us see, how we can use PubSub to implement Raise Hand functionality. If you are not familiary with the PubSub mechanism and `usePubSub`hook, you can [follow this guide](/react/guide/video-and-audio-calling-api-sdk/collaboration-in-meeting/pubsub).
+Let us see, how we can use PubSub to implement Raise Hand functionality. If you are not familiary with the PubSub mechanism and `usePubSub`hook, you can [follow this guide](/react-native/guide/video-and-audio-calling-api-sdk/collaboration-in-meeting/pubsub).
 
 ### Implementing Raise Hand
 
 1. We will be creating a button when clicked, we will publish a message it the topic `RAISE_HAND`
 
 ```js
-// importing usePubSub hook from react-sdk
-import { usePubSub } from "@videosdk.live/react-sdk";
+// importing usePubSub hook from react-native-sdk
+import { usePubSub } from "@videosdk.live/react-native-sdk";
+import { TouchableOpacity, Text } from "react-native";
 
 function MeetingView() {
   // destructure publish method from usePubSub hook
@@ -34,14 +35,13 @@ function MeetingView() {
 
   return (
     <>
-      <button
-        onClick={() => {
+      <TouchableOpacity
+        onPress={() => {
           publish("Raise Hand");
         }}
       >
-        {" "}
-        Raise Hand
-      </button>
+        <Text> Raise Hand</Text>
+      </TouchableOpacity>
     </>
   );
 }
@@ -50,7 +50,8 @@ function MeetingView() {
 2. Now let us show an alert to all the speakers showing who raised the hand.
 
 ```js
-import { useMeeting } from "@videosdk.live/react-sdk";
+import { useMeeting, usePubSub } from "@videosdk.live/react-native-sdk";
+import { TouchableOpacity, Text } from "react-native";
 
 function MeetingView() {
   const { localParticipant } = useMeeting();
@@ -59,20 +60,19 @@ function MeetingView() {
   const { publish } = usePubSub("RAISE_HAND", {
     onMessageReceived: (message) => {
       if (localParticipant.mode == "CONFERENCE")
-        window.alert(`${message.senderName} raise hand`);
+        alert(`${message.senderName} raise hand`);
     },
   });
 
   return (
     <>
-      <button
-        onClick={() => {
+      <TouchableOpacity
+        onPress={() => {
           publish("Raise Hand");
         }}
       >
-        {" "}
-        Raise Hand
-      </button>
+        <Text> Raise Hand</Text>
+      </TouchableOpacity>
     </>
   );
 }
@@ -82,4 +82,4 @@ function MeetingView() {
 
 The API references for all the methods and events utilized in this guide are provided below.
 
-- [usePubSub()](/react/api/sdk-reference/use-pubsub)
+- [usePubSub()](/react-native/api/sdk-reference/use-pubsub)
