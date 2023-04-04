@@ -116,13 +116,13 @@ Room room = VideoSDK.createRoom(
     );
 ```
 
-### Custom Track with `enableWebcam()`
+### Custom Track with `enableCam()`
 
-In order to switch tracks during the meeting, you have to pass the `CustomTrack` in the `room.enableWebcam()` method.
+In order to switch tracks during the meeting, you have to pass the `CustomTrack` in the `room.enableCam()` method.
 
 :::note
 
-Make sure to call `disableWebcam()` before you create a new track as it may lead to unexpected behavior.
+Make sure to call `disableCam()` before you create a new track as it may lead to unexpected behavior.
 
 :::
 
