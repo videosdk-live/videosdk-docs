@@ -2,7 +2,7 @@
 title: Screen Share | Video SDK
 hide_title: true
 hide_table_of_contents: false
-description: Video SDK and Audio SDK, developers need to implement a token server. This requires efforts on both the front-end and backend.
+description: Share your Screen features quick integrate in Javascript, React JS, Android, IOS, React Native, Flutter with Video SDK to add live video & audio conferencing to your applications.
 sidebar_label: Screen Share
 pagination_label: Screen Share
 keywords:
@@ -23,7 +23,7 @@ Screen sharing in a meeting is the process of sharing your computer screen with 
 
 - By using `enableScreenShare()` function of `useMeeting` hook, local participant can share his/her desktop screen to other participants.
 
-- You can pass customised screenshare track in `enableScreenShare()` by using [Custom Screen Share Track](/react/guide/video-and-audio-calling-api-sdk/features/custom-track/custom-screen-share-track).
+- You can pass customised screenshare track in `enableScreenShare()` by using [Custom Screen Share Track](/react/guide/video-and-audio-calling-api-sdk/render-media/optimize-video-track#custom-screen-share-track).
 
 - Screen Share stream of the participant can be accessed from the `screenShareStream` property of `useParticipant` hook.
 
@@ -303,9 +303,9 @@ To use the audio and video communications in the web browser, your site must be 
 
 The API references for all the methods and events utilised in this guide are provided below.
 
-- [enableScreenShare()](/react/api/sdk-reference/use-meeting/methods#enablewebcam)
-- [disableScreenShare()](/react/api/sdk-reference/use-meeting/methods#disablewebcam)
-- [toggleScreenShare()](/react/api/sdk-reference/use-meeting/methods#togglewebcam)
+- [enableScreenShare()](/react/api/sdk-reference/use-meeting/methods#enablescreenshare)
+- [disableScreenShare()](/react/api/sdk-reference/use-meeting/methods#disablescreenshare)
+- [toggleScreenShare()](/react/api/sdk-reference/use-meeting/methods#togglescreenshare)
 - [onStreamEnabled()](/react/api/sdk-reference/use-participant/events#onstreamenabled)
 - [onStreamDisabled()](/react/api/sdk-reference/use-participant/events#onstreamdisabled)
 - [onPresenterChanged()](/react/api/sdk-reference/use-meeting/events#onpresenterchanged)

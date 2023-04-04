@@ -47,15 +47,18 @@ This guide will provide an overview of how to implement start and stop RTMP Live
     },
 
     // highlight-next-line
-    // Theme of recording
+    // Theme of livestream layout
     theme: "DARK", //  "LIGHT" | "DEFAULT"
-
-    // highlight-next-line
-    // `mode` is used to either record video & audio both or only audio.
-    mode: "video-and-audio", // "audio", Default : "video-and-audio"
   };
 
-  startLivestream(null, null, config);
+  const outputs = [
+    {
+      url: "<RTMP_URL>",
+      streamKey: "<RTMP_STREAM_KEY>",
+    }
+  ];
+  
+  startLivestream(outputs, config);
   ```
 
 ### `stopLivestream()`
@@ -86,9 +89,6 @@ const MeetingView = () => {
           gridSize: 4,
         },
         theme: "DARK",
-        mode: "video-and-audio",
-        quality: "high",
-        orientation: "landscape",
       }
     );
   };
@@ -144,7 +144,7 @@ const {
 
 With VideoSDK, you can also use your own custom designed layout template to livestream the meetings. In order to use the custom template, you need to create a template for which you can [follow this guide](/docs/tutorials/customized-layout). Once you have setup the template, you can use the [REST API to start](/api-reference/realtime-communication/start-livestream) the livestream with the `templateURL` parameter.
 
-## API Reference
+### API Reference
 
 The API references for all the methods utilised in this guide are provided below.
 

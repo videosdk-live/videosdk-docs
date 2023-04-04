@@ -88,7 +88,7 @@ export default function QuickstartPart() {
     },
     {
       Icon: CustomAndroidIcon,
-      link: "/android/guide/video-and-audio-calling-api-sdk/getting-started",
+      link: "/android/guide/video-and-audio-calling-api-sdk/concept-and-architecture",
       tooltip: "Andorid",
     },
     {

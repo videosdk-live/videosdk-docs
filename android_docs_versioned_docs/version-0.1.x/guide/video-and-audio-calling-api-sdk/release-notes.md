@@ -42,7 +42,7 @@ This page will keep you update all the releases of Android SDK.
 
 - Provide  `VideoView`  component which can render video stream.
 
-    **Docs** : [VideoView](https://docs.videosdk.live/android/guide/video-and-audio-calling-api-sdk/components/videoView)
+    **Docs** : [VideoView](/android/guide/video-and-audio-calling-api-sdk/render-media/display-video/understand-videoView-component)
     
 ---
 ## v0.1.12
@@ -124,7 +124,7 @@ This page will keep you update all the releases of Android SDK.
 
     **Code Sample** : [videosdk-rtc-android-sdk-banuba-example](https://github.com/videosdk-live/videosdk-rtc-android-sdk-banuba-example)
 
-    **Docs** : [Banuba Intergation with VideoSDK](https://docs.videosdk.live/android/guide/video-and-audio-calling-api-sdk/extras/banuba-integration)
+    **Docs** : [Banuba Intergation with VideoSDK](/android/guide/video-and-audio-calling-api-sdk/plugins/banuba-integration)
 
 ---
 
@@ -158,11 +158,11 @@ This page will keep you update all the releases of Android SDK.
 
 1.  CustomTrack for audio,video and screenshare.
 
-    **Docs** : [Custom Video Track](https://docs.videosdk.live/android/guide/video-and-audio-calling-api-sdk/features/custom-track/custom-video-track)
+    **Docs** : [Custom Video Track](/android/guide/video-and-audio-calling-api-sdk/render-media/optimize-video-track#custom-video-track)
 
-    **Docs** : [Custom Audio Track](https://docs.videosdk.live/android/guide/video-and-audio-calling-api-sdk/features/custom-track/custom-audio-track)
+    **Docs** : [Custom Audio Track](/android/guide/video-and-audio-calling-api-sdk/render-media/optimize-audio-track)
 
-    **Docs** : [Custom Screen Share Track](https://docs.videosdk.live/android/guide/video-and-audio-calling-api-sdk/features/custom-track/custom-screen-share-track)
+    **Docs** : [Custom Screen Share Track](/android/guide/video-and-audio-calling-api-sdk/render-media/optimize-video-track#custom-screen-share-track)
 
 ---
 

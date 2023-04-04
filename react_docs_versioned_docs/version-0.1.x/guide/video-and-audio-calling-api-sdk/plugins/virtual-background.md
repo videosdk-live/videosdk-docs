@@ -288,7 +288,7 @@ return (
 );
 ```
 
-## API Reference
+### API Reference
 
 The API references for all the methods utilised in this guide are provided below.
 

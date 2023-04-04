@@ -197,7 +197,7 @@ return (
 );
 ```
 
-## API Reference
+### API Reference
 
 The API references for all the methods and events utilised in this guide are provided below.
 

@@ -20,7 +20,7 @@ slug: canvas-drawing-using-pubsub
 
 When in a meeting, it can be very handy to just draw and share your views with all the collaborators. In order to do so, you will need a drawing board which is shared in realtime which you can develope using the publish-subscribe mechanism. If you are not familiary with the PubSub mechanism and `usePubSub`hook, you can [follow this guide](./pubsub).
 
-## Implementing Canvas Drawing
+### Implementing Canvas Drawing
 
 To implement the Canvas Drawing feature, we will be using a thrid-party library which prodvides easy solution to draw and render canvas.
 
@@ -158,7 +158,7 @@ import ReactPlayer from 'react-player'
 
 </div>
 
-## API Reference
+### API Reference
 
 The API references for all the methods and events utilised in this guide are provided below.
 

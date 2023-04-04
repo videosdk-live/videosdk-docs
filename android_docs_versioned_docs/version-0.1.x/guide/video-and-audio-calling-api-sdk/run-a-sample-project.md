@@ -18,7 +18,7 @@ slug: run-a-sample-android-project
 
 # Run a Sample Project
 
-Video SDK provides open-source sample project [videosdk-rtc-android-java-sdk-example](https://github.com/videosdk-live/videosdk-rtc-android-java-sdk-example) on Github. This document introduces how to run this project.
+Video SDK provides open-source sample project [videosdk-rtc-android-kotlin-sdk-example](https://github.com/videosdk-live/videosdk-hls-android-kotlin-example) on Github. This document introduces how to run this project.
 
 ## Prerequisites
 

@@ -30,6 +30,6 @@ This guide will follow installation guide for all the VideoSDK for Video & Audio
 
 1. [React Native Android](/react-native/guide/video-and-audio-calling-api-sdk/react-native-android-sdk)
 2. [React Native IOS](/react-native/guide/video-and-audio-calling-api-sdk/react-native-ios-sdk)
-3. [Android](/android/guide/video-and-audio-calling-api-sdk/getting-started)
+3. [Android](/android/guide/video-and-audio-calling-api-sdk/concept-and-architecture)
 4. [IOS](/ios/guide/video-and-audio-calling-api-sdk/getting-started)
 5. [Flutter](/flutter/guide/video-and-audio-calling-api-sdk/getting-started)

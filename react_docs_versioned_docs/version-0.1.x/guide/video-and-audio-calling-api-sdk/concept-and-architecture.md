@@ -13,7 +13,7 @@ Before diving into the concept, let's understand the VideSDK, VideoSDK is a soft
 
 ### `1. Meeting / Room`
 
-- Meeting or Room objects in the VideoSDK provide a virtual place for participants to interact and engage in real-time voice, video, and screen-sharing sessions. The object is in charge of handling media streams and participant communication.
+- Meeting or Room object in the VideoSDK provide a virtual place for participants to interact and engage in real-time voice, video, and screen-sharing sessions. The object is in charge of handling media streams and participant communication.
 
 - Meeting or Room can be uniquely identified by `meetingId` or `roomId`.
 
@@ -42,8 +42,6 @@ Before diving into the concept, let's understand the VideSDK, VideoSDK is a soft
 ### `4. Events / Notifications`
 
 - Events / Notifications can be used to inform users about various activities happening in a Meeting / Room, including participant join/leave and new messages. They can also be used to alert users about any SDK-level errors that occur during a call.
-
----
 
 ### `5. Session`
 

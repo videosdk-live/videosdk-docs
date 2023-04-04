@@ -4,10 +4,16 @@
       "type": "category",
       "label": "Introduction",
       "items": [
-        "guide/video-and-audio-calling-api-sdk/getting-started",
-        "guide/video-and-audio-calling-api-sdk/signup-and-create-api",
-        "guide/video-and-audio-calling-api-sdk/android-sdk",
-        "guide/video-and-audio-calling-api-sdk/server-setup",
+        "guide/video-and-audio-calling-api-sdk/concept-and-architecture",
+        "guide/video-and-audio-calling-api-sdk/authentication-and-token"
+      ],
+      "collapsed": false
+    },
+    {
+      "type": "category",
+      "label": "Install the SDK",
+      "items": [
+        "guide/video-and-audio-calling-api-sdk/integrate-sdk",
         "guide/video-and-audio-calling-api-sdk/release-notes"
       ],
       "collapsed": false
@@ -17,62 +23,141 @@
       "label": "Quick Start Guide",
       "items": [
         "guide/video-and-audio-calling-api-sdk/quick-start",
+        "guide/video-and-audio-calling-api-sdk/quick-start-ILS",
         "guide/video-and-audio-calling-api-sdk/run-a-sample-project"
-      ],
-      "collapsed": false
-    },
-    {
-      "type": "category",
-      "label": "Basic Features",
-      "items": [
-        "guide/video-and-audio-calling-api-sdk/features/start-join-meeting",
-        "guide/video-and-audio-calling-api-sdk/features/manage-participants",
-        "guide/video-and-audio-calling-api-sdk/features/leave-end-meeting",
-        "guide/video-and-audio-calling-api-sdk/features/camera-controls",
-        "guide/video-and-audio-calling-api-sdk/features/mic-controls",
-        "guide/video-and-audio-calling-api-sdk/features/toggle-participant-media",
-        "guide/video-and-audio-calling-api-sdk/features/screenshare",
-        "guide/video-and-audio-calling-api-sdk/features/pubsub",
-        "guide/video-and-audio-calling-api-sdk/features/set-participant-video-quality",
-        "guide/video-and-audio-calling-api-sdk/features/speaker-indiction",
-        "guide/video-and-audio-calling-api-sdk/features/pin-participants",
-        "guide/video-and-audio-calling-api-sdk/features/remove-participant",
-        "guide/video-and-audio-calling-api-sdk/features/pause-resume-video-stream",
-        "guide/video-and-audio-calling-api-sdk/features/record-meeting",
-        "guide/video-and-audio-calling-api-sdk/features/go-live-social-media",
-        {
-          "type": "category",
-          "label": "Custom Tracks",
-          "items": [
-            "guide/video-and-audio-calling-api-sdk/features/custom-track/custom-video-track",
-            "guide/video-and-audio-calling-api-sdk/features/custom-track/custom-audio-track",
-            "guide/video-and-audio-calling-api-sdk/features/custom-track/custom-screen-share-track"
-          ]
-        }
       ],
       "collapsed": true
     },
     {
       "type": "category",
-      "label": "Advanced Features",
+      "label": "Audio and Video Calling",
       "items": [
-        "guide/video-and-audio-calling-api-sdk/features/error-event",
-        "guide/video-and-audio-calling-api-sdk/features/external-call-detection"
-      ]
+        {
+          "type": "category",
+          "label": "Basic Features",
+          "items": [
+            {
+              "type": "category",
+              "label": "Setup Call",
+              "items": [
+                "guide/video-and-audio-calling-api-sdk/setup-call/initialize-meeting",
+                "guide/video-and-audio-calling-api-sdk/setup-call/join-meeting",
+                "guide/video-and-audio-calling-api-sdk/setup-call/leave-end-meeting"
+              ],
+              "collapsed": true
+            },
+            {
+              "type": "category",
+              "label": "Handling Media",
+              "items": [
+                "guide/video-and-audio-calling-api-sdk/handling-media/mute-unmute-mic",
+                "guide/video-and-audio-calling-api-sdk/handling-media/on-off-camera",
+                "guide/video-and-audio-calling-api-sdk/handling-media/screen-share",
+                "guide/video-and-audio-calling-api-sdk/handling-media/active-speaker-indication",
+                "guide/video-and-audio-calling-api-sdk/handling-media/change-input-output-device"
+              ],
+              "collapsed": true
+            },
+            {
+              "type": "category",
+              "label": "Rendering Media",
+              "items": [
+                {
+                  "type": "category",
+                  "label": "Display Video",
+                  "items": [
+                    "guide/video-and-audio-calling-api-sdk/render-media/display-video/understand-videoView-component",
+                    "guide/video-and-audio-calling-api-sdk/render-media/display-video/render-participant"
+                  ],
+                  "collapsed": true
+                },
+                "guide/video-and-audio-calling-api-sdk/render-media/layout-and-grid-management",
+                "guide/video-and-audio-calling-api-sdk/render-media/understanding-call-quality",
+                "guide/video-and-audio-calling-api-sdk/render-media/optimize-video-track",
+                "guide/video-and-audio-calling-api-sdk/render-media/optimize-audio-track"
+              ],
+              "collapsed": true
+            },
+            {
+              "type": "category",
+              "label": "Get Notified on Events",
+              "items": [
+                "guide/video-and-audio-calling-api-sdk/get-notified/meeting-events",
+                "guide/video-and-audio-calling-api-sdk/get-notified/meeting-connection-events",
+                "guide/video-and-audio-calling-api-sdk/get-notified/participant-events",
+                "guide/video-and-audio-calling-api-sdk/get-notified/media-events",
+                "guide/video-and-audio-calling-api-sdk/get-notified/recording-events",
+                "guide/video-and-audio-calling-api-sdk/get-notified/rtmp-events",
+                "guide/video-and-audio-calling-api-sdk/get-notified/hls-events",
+                "guide/video-and-audio-calling-api-sdk/get-notified/external-call-detection-event",
+                "guide/video-and-audio-calling-api-sdk/get-notified/error-events"
+              ],
+              "collapsed": true
+            },
+            {
+              "type": "category",
+              "label": "Collaboration in Meeting",
+              "items": [
+                "guide/video-and-audio-calling-api-sdk/collaboration-in-meeting/pubsub",
+                "guide/video-and-audio-calling-api-sdk/collaboration-in-meeting/chat-using-pubsub",
+                "guide/video-and-audio-calling-api-sdk/collaboration-in-meeting/raise-hand-using-pubsub"
+              ],
+              "collapsed": true
+            },
+            {
+              "type": "category",
+              "label": "Control Remote Participant",
+              "items": [
+                "guide/video-and-audio-calling-api-sdk/control-remote-participant/remote-participant-media",
+                "guide/video-and-audio-calling-api-sdk/control-remote-participant/mute-all-participants",
+                "guide/video-and-audio-calling-api-sdk/control-remote-participant/remove-participant"
+              ],
+              "collapsed": true
+            },
+            {
+              "type": "category",
+              "label": "Recording and Live Streaming",
+              "items": [
+                "guide/video-and-audio-calling-api-sdk/recording-and-live-streaming/record-meeting",
+                "guide/video-and-audio-calling-api-sdk/recording-and-live-streaming/rtmp-livestream",
+                "guide/video-and-audio-calling-api-sdk/recording-and-live-streaming/interactive-livestream"
+              ],
+              "collapsed": true
+            }
+          ],
+          "collapsed": false
+        },
+        {
+          "type": "category",
+          "label": "Advanced Features",
+          "items": [
+            {
+              "type": "category",
+              "label": "Plugins",
+              "items": [
+                "guide/video-and-audio-calling-api-sdk/plugins/banuba-integration"
+              ],
+              "collapsed": true
+            }
+          ]
+        }
+      ],
+        "collapsed": true
     },
     {
       "type": "category",
-      "label": "Components",
+      "label": "Interactive Live Streaming",
       "items": [
-        "guide/video-and-audio-calling-api-sdk/components/video-view"
-      ]
-    },
-    {
-      "type": "category",
-      "label": "Extras",
-      "items": [
-        "guide/video-and-audio-calling-api-sdk/extras/banuba-integration"
-      ]
+        {
+          "type": "category",
+          "label": "Integrate HLS",
+          "items": [
+            "guide/interactive-live-streaming/integrate-hls/overview",
+            "guide/interactive-live-streaming/integrate-hls/setup-hls-player"
+          ]
+        }
+      ],
+      "collapsed": true
     }
   ],
   "apiSidebar": [
@@ -131,6 +216,10 @@
     {
       "type": "doc",
       "id": "api/sdk-reference/error-codes"
+    },
+    {
+      "type": "doc",
+      "id": "api/sdk-reference/custom-tracks"
     }
   ]
 }
