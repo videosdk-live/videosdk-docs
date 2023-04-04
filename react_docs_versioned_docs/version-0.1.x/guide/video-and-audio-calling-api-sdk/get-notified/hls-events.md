@@ -40,6 +40,8 @@ function onHlsStateChanged(data) {
     console.log("Meeting HLS is starting");
   } else if (status === Constants.hlsEvents.HLS_STARTED) {
     console.log("Meeting HLS is started");
+  } else if (status === Constants.hlsEvents.HLS_PLAYABLE) {
+    console.log("Meeting HLS is started");
   } else if (status === Constants.hlsEvents.HLS_STOPPING) {
     console.log("Meeting HLS is stopping");
   } else if (status === Constants.hlsEvents.HLS_STOPPED) {
