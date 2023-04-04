@@ -700,7 +700,7 @@ function ParticipantView({ participantId }) {
 
 :::note
 
-Stuck anywhere? Check out this [example code](https://github.com/videosdk-live/videosdk-rtc-react-native-sdk-example) on GitHub
+Stuck anywhere? Check out this [example code](https://github.com/videosdk-live/quickstart/tree/main/react-native) on GitHub
 
 :::
 

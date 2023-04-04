@@ -550,19 +550,17 @@ We will check the mode of the `localParticipant`, if its `CONFERENCE` we will sh
 
 ```js title="Container Component"
 function Container() {
-  const { join, changeWebcam } = useMeeting({
+  const { join, changeWebcam, localParticipant } = useMeeting({
     onError: (error) => {
       console.log(error.message);
     },
   });
 
-  const mMeeting = useMeeting({});
-
   return (
     <View style={{ flex: 1 }}>
-      {mMeeting?.localParticipant?.mode == Constants.modes.CONFERENCE ? (
+      {localParticipant?.mode == Constants.modes.CONFERENCE ? (
         <SpeakerView />
-      ) : mMeeting?.localParticipant?.mode == Constants.modes.VIEWER ? (
+      ) : localParticipant?.mode == Constants.modes.VIEWER ? (
         <ViewerView />
       ) : (
         <View
@@ -647,8 +645,7 @@ function SpeakerView() {
   }, [participants]);
 
   return (
-    <>
-      <Text style={{ fontSize: 18, padding: 12 }}>Meeting Id: {meetingId}</Text>
+    <SafeAreaView style={{ backgroundColor: "black", flex: 1 }}>
       {/* Render Header for copy meetingId and leave meeting*/}
       <HeaderView />
 
@@ -664,7 +661,7 @@ function SpeakerView() {
 
       {/* Render Controls */}
       <Controls />
-    </>
+    </SafeAreaView>
   );
 }
 
@@ -703,10 +700,6 @@ function HeaderView() {
   );
 }
 
-function ParticipantView() {
-  return null;
-}
-
 function Container(){
   //highlight-next-line
   ...
@@ -737,7 +730,39 @@ function Container(){
 }
 ```
 
-2. We will add the `Controls` componenet which will allow the speaker to toggle media and start / stop HLS.
+2. We will be creating the `ParticipantView` to show the participants media. For which, will be using the `webcamStream` from the `useParticipant` hook to play the media of the participant.
+
+```js title="ParticipantView"
+function ParticipantView({ participantId }) {
+  const { webcamStream, webcamOn } = useParticipant(participantId);
+  return webcamOn && webcamStream ? (
+    <RTCView
+      streamURL={new MediaStream([webcamStream.track]).toURL()}
+      objectFit={"cover"}
+      style={{
+        height: 300,
+        marginVertical: 8,
+        marginHorizontal: 8,
+      }}
+    />
+  ) : (
+    <View
+      style={{
+        backgroundColor: "grey",
+        height: 300,
+        justifyContent: "center",
+        alignItems: "center",
+        marginVertical: 8,
+        marginHorizontal: 8,
+      }}
+    >
+      <Text style={{ fontSize: 16 }}>NO MEDIA</Text>
+    </View>
+  );
+}
+```
+
+3. We will add the `Controls` componenet which will allow the speaker to toggle media and start / stop HLS.
 
 ```js title="Controls Component"
 function Controls() {
@@ -798,7 +823,7 @@ function Controls() {
               ? `Live Stopping`
               : hlsState === "HLS_PLAYABLE"
               ? `Stop Live`
-              : `Go Live`
+              : `Loading...`
           }
           backgroundColor={"#FF5D5D"}
         />
@@ -811,38 +836,6 @@ function Controls() {
           backgroundColor={"#1178F8"}
         />
       )}
-    </View>
-  );
-}
-```
-
-3. We will be creating the `ParticipantView` to show the participants media. For which, will be using the `webcamStream` from the `useParticipant` hook to play the media of the participant.
-
-```js title="ParticipantView"
-function ParticipantView({ participantId }) {
-  const { webcamStream, webcamOn } = useParticipant(participantId);
-  return webcamOn && webcamStream ? (
-    <RTCView
-      streamURL={new MediaStream([webcamStream.track]).toURL()}
-      objectFit={"cover"}
-      style={{
-        height: 300,
-        marginVertical: 8,
-        marginHorizontal: 8,
-      }}
-    />
-  ) : (
-    <View
-      style={{
-        backgroundColor: "grey",
-        height: 300,
-        justifyContent: "center",
-        alignItems: "center",
-        marginVertical: 8,
-        marginHorizontal: 8,
-      }}
-    >
-      <Text style={{ fontSize: 16 }}>NO MEDIA</Text>
     </View>
   );
 }
@@ -940,3 +933,9 @@ function ViewerView({}) {
 <img src='https://cdn.videosdk.live/website-resources/docs-resources/ils-speaker-screen.png' style={{height: '600px'}} />
 
 </center>
+
+:::note
+
+Stuck anywhere? Check out this [example code](https://github.com/videosdk-live/quickstart/tree/main/react-native-hls) on GitHub
+
+:::
