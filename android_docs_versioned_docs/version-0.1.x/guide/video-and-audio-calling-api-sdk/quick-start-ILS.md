@@ -167,6 +167,7 @@ Your project structure should look like this.
 You have to set JoinActivity as Launcher activity.
 
 :::
+
 ### App Architecture
 
 <center>
@@ -178,6 +179,7 @@ You have to set JoinActivity as Launcher activity.
 ### Step 1: Creating Joining Screen
 
 Create a new Activity named `JoinActivity`.
+
 #### Creating UI
 
 The Joining screen will include :
@@ -276,7 +278,7 @@ public class JoinActivity extends AppCompatActivity {
 
   //highlight-next-line
   //Replace with the token you generated from the VideoSDK Dashboard
-  private String sampleToken =""; 
+  private String sampleToken ="";
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -293,7 +295,6 @@ public class JoinActivity extends AppCompatActivity {
 
 3. On **Join Button as Viewer** `onClick` events, we will naviagte to `MeetingActivity` with token, meetingId and mode as `Viewer`.
 
-
 <Tabs
 defaultValue="Kotlin"
 groupId={"AndroidLanguage"}
@@ -305,7 +306,7 @@ values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
 class JoinActivity : AppCompatActivity() {
 
    //Replace with the token you generated from the VideoSDK Dashboard
-   private var sampleToken = "" 
+   private var sampleToken = ""
 
    override fun onCreate(savedInstanceState: Bundle?) {
       super.onCreate(savedInstanceState)
@@ -352,6 +353,7 @@ class JoinActivity : AppCompatActivity() {
     }
 }
 ```
+
 </TabItem>
 
 <TabItem value="Java">
@@ -360,7 +362,7 @@ class JoinActivity : AppCompatActivity() {
 public class JoinActivity extends AppCompatActivity {
 
   //Replace with the token you generated from the VideoSDK Dashboard
-  private String sampleToken =""; 
+  private String sampleToken ="";
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -404,12 +406,12 @@ public class JoinActivity extends AppCompatActivity {
   }
 }
 ```
+
 </TabItem>
 
 </Tabs>
 
 4. For **Create Button**, under `createMeeting` method we will generate meetingId by calling API and navigate to `MeetingActivity` with token, generated meetingId and mode as `CONFERENCE`.
-
 
 <Tabs
 defaultValue="Kotlin"
@@ -453,6 +455,7 @@ class JoinActivity : AppCompatActivity() {
   }
 }
 ```
+
 </TabItem>
 
 <TabItem value="Java">
@@ -494,6 +497,7 @@ public class JoinActivity extends AppCompatActivity {
   }
 }
 ```
+
 </TabItem>
 
 </Tabs>
@@ -502,10 +506,9 @@ public class JoinActivity extends AppCompatActivity {
 
 Don't confuse with Room and Meeting keyword, both are same thing 😃
 
-::: 
+:::
 
 5. Our App is completely based on audio and video commutation, that's why we need to ask for runtime permissions `RECORD_AUDIO` and `CAMERA`. So, we will implement permission logic on `JoinActivity`.
-
 
 <Tabs
 defaultValue="Kotlin"
@@ -565,7 +568,7 @@ public class JoinActivity extends AppCompatActivity {
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     //... button listeneres
-   //highlight-start 
+   //highlight-start
    checkSelfPermission(REQUESTED_PERMISSIONS[0], PERMISSION_REQ_ID);
    checkSelfPermission(REQUESTED_PERMISSIONS[1], PERMISSION_REQ_ID);
    //highlight-end
@@ -623,7 +626,7 @@ After getting token, meetigId and mode from `JoinActivity`,
 2. Configure **VideoSDK** with token.
 3. Initialize the meeting with required params such as `meetingId`, `participantName`, `micEnabled`, `webcamEnabled` , `mode` and more.
 4. Join the room with `meeting.join()` method.
-5. Add `MeetingEventListener` for listening  **Meeting Join** event.
+5. Add `MeetingEventListener` for listening **Meeting Join** event.
 6. Check mode of `localParticipant`, If mode is **CONFERENCE** than we will replace mainLayout with `SpeakerFragment` otherwise replace with `ViewerFragment`.
 
 <Tabs
@@ -692,6 +695,7 @@ class MeetingActivity : AppCompatActivity() {
   }
 }
 ```
+
 </TabItem>
 
 <TabItem value="Java">
@@ -758,6 +762,7 @@ public class MeetingActivity extends AppCompatActivity {
   }
 }
 ```
+
 </TabItem>
 
 </Tabs>
@@ -979,6 +984,7 @@ class SpeakerFragment : Fragment() {
   }
 }
 ```
+
 </TabItem>
 
 <TabItem value="Java">
@@ -1084,6 +1090,7 @@ public class SpeakerFragment extends Fragment {
   }
 }
 ```
+
 </TabItem>
 
 </Tabs>
@@ -1163,6 +1170,7 @@ class SpeakerFragment : Fragment() {
   }
 }
 ```
+
 </TabItem>
 
 <TabItem value="Java">
@@ -1234,6 +1242,7 @@ public class SpeakerFragment extends Fragment {
 
 }
 ```
+
 </TabItem>
 
 </Tabs>
@@ -1244,7 +1253,7 @@ public class SpeakerFragment extends Fragment {
 
 - Here the participant's video is displayed using `VideoView`, but you may also use `SurfaceViewRender` for the same.
 - For `VideoView`, SDK version should be `0.1.13` or higher.
-- To know more about `VideoView`, please visit [here](/android/guide/video-and-audio-calling-api-sdk/render-media/display-video/understand-videoView-component) 
+- To know more about `VideoView`, please visit [here](/android/guide/video-and-audio-calling-api-sdk/components/videoView)
 
 :::
 
@@ -1607,7 +1616,7 @@ The Viewer Fragment will include :
 1. **TextView for Meeting Id** - The meeting Id that you joined will be displayed in this text view.
 2. **Leave Button** - This button will leave the meeting.
 3. **waitingLayout** - This is textView that will be shown when there is no active HLS.
-4. **StyledPlayerView** -  This is mediaplayer which will display livestreaming.
+4. **StyledPlayerView** - This is mediaplayer which will display livestreaming.
 
 In `/app/res/layout/fragment_viewer.xml` file, replace the content with the following.
 
@@ -1903,7 +1912,7 @@ public class ViewerFragment extends Fragment {
               downStreamUrl = HlsState.getString("downstreamUrl");
               waitingLayout.setVisibility(View.GONE);
               playerView.setVisibility(View.VISIBLE);
-              // initialize player 
+              // initialize player
               initializePlayer();
             }
             if (HlsState.getString("status").equals("HLS_STOPPED")) {
