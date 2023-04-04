@@ -8,6 +8,17 @@ tags: [releasenotes]
 
 This page will keep you update all the releases of JavaScript SDK.
 
+## v0.0.63
+
+**Release Date** : 31st March 2023
+
+**Change log** :
+
+- `HLS_PLAYABLE` state added in `hls-state-changed` event.
+- `livestreamState`, `recordingState`, `hlsState` and `hlsUrls` getters added in Meeting
+
+---
+
 ## v0.0.62
 
 **Release Date** : 3rd March 2023
