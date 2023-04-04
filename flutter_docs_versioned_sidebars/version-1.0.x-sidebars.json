@@ -59,6 +59,19 @@
             },
             {
               "type": "category",
+              "label": "Handling Media",
+              "items": [
+                "guide/video-and-audio-calling-api-sdk/handling-media/mute-unmute-mic",
+                "guide/video-and-audio-calling-api-sdk/handling-media/on-off-camera",
+                "guide/video-and-audio-calling-api-sdk/handling-media/screen-share",
+                "guide/video-and-audio-calling-api-sdk/handling-media/active-speaker-indication",
+                "guide/video-and-audio-calling-api-sdk/handling-media/change-audio-ouptut-device",
+                "guide/video-and-audio-calling-api-sdk/handling-media/change-video-input-device"
+              ],
+              "collapsed": true
+            },
+            {
+              "type": "category",
               "label": "Get Notified on Events",
               "items": [
                 "guide/video-and-audio-calling-api-sdk/get-notified/room-events",

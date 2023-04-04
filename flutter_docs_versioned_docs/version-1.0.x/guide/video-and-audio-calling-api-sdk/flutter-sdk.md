@@ -53,7 +53,8 @@ Ensure the following permission is present in your Android Manifest file, locate
 <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
 <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
 <uses-permission android:name="android.permission.INTERNET"/>
-
+<uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+<uses-permission android:name="android.permission.WAKE_LOCK" />
 ```
 
 If you need to use a Bluetooth device, please add:

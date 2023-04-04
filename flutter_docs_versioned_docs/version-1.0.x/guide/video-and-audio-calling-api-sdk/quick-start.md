@@ -106,6 +106,8 @@ App widget will contain `JoinScreen` and `MeetingScreen` widget. `MeetingScreen`
 <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
 <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
 <uses-permission android:name="android.permission.INTERNET"/>
+<uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+<uses-permission android:name="android.permission.WAKE_LOCK" />
 ```
 
 - Also you will need to set your build settings to Java 8 because the official WebRTC jar now uses static methods in `EglBase` interface. Just add this to your app-level `/android/app/build.gradle`.
@@ -327,7 +329,7 @@ The ParticipantTile will consist of:
 
 ParticipantTile will accept `Participant` in constructor
 
-- **participant** - participant of the meeting. 
+- **participant** - participant of the meeting.
 
 ```js title="participant_tile.dart"
 import 'package:flutter/material.dart';
@@ -442,7 +444,7 @@ class _MeetingScreenState extends State<MeetingScreen> {
 //highlight-end
 
     setMeetingEventListener();
-    
+
 //highlight-start
     // Join room
     _room.join();
@@ -450,7 +452,7 @@ class _MeetingScreenState extends State<MeetingScreen> {
 
     super.initState();
   }
-  
+
 //highlight-start
   // listening to meeting events
   void setMeetingEventListener() {
@@ -532,8 +534,8 @@ class _MeetingScreenState extends State<MeetingScreen> {
                   camEnabled ? _room.disableCam() : _room.enableCam();
                   camEnabled = !camEnabled;
                 },
-                onLeaveButtonPressed: () { 
-//highlight-next-line                 
+                onLeaveButtonPressed: () {
+//highlight-next-line
                   _room.leave()
                 },
               ),
