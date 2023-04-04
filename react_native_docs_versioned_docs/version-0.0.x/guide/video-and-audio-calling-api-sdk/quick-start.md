@@ -3,7 +3,7 @@ title: Quick Start
 hide_title: false
 hide_table_of_contents: false
 description: Video SDK enables the opportunity to integrate native iOS, Android & Web SDKs to add live video & audio conferencing to your applications.
-sidebar_label: Start a Voice / Video Call
+sidebar_label: Start a Audio / Video Call
 pagination_label: Quick Start
 keywords:
   - audio calling
@@ -22,13 +22,27 @@ VideoSDK enables the opportunity to integrate video & audio calling to Web, Andr
 
 This guide will get you running with the VideoSDK video & audio calling in minutes.
 
-## Prerequisites
+### Prerequisites
 
 - Node.js v12+
 - NPM v6+ (comes installed with newer Node versions)
 - Android Studio or Xcode installed
 
-## Getting Started With the Code
+### App Architecture
+
+This App will contain two screen :
+
+1. `Join Screen` : This screen allows user to either create meeting or join predefined meeting.
+
+2. `Meeting Screen` : This screen basically contain participant list and some meeting controls such as Enable / Disable Mic & Camera and Leave meeting.
+
+<center>
+
+<img src='https://cdn.videosdk.live/website-resources/docs-resources/react_native_quickstart_architecture.png' />
+
+</center>
+
+## Getting Started with the Code!
 
 ### Create App
 
@@ -93,6 +107,7 @@ yarn add "@videosdk.live/react-native-sdk"
   xmlns:android="http://schemas.android.com/apk/res/android"
   package="com.cool.app"
 >
+  //highlight-start
     <!-- Give all the required permissions to app -->
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -113,8 +128,10 @@ yarn add "@videosdk.live/react-native-sdk"
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
     <uses-permission android:name="android.permission.WAKE_LOCK" />
+  //highlight-end
 
     <application>
+  //highlight-start
    <meta-data
       android:name="live.videosdk.rnfgservice.notification_channel_name"
       android:value="Meeting Notification"
@@ -129,6 +146,7 @@ yarn add "@videosdk.live/react-native-sdk"
     />
     <service android:name="live.videosdk.rnfgservice.ForegroundService" android:foregroundServiceType="mediaProjection"></service>
     <service android:name="live.videosdk.rnfgservice.ForegroundServiceTask"></service>
+  //highlight-end
   </application>
 </manifest>
 ```
@@ -169,18 +187,24 @@ project(':rnfgservice').projectDir = new File(rootProject.projectDir, '../node_m
 ```
 
 ```java title="MainApplication.java"
+  //highlight-start
 import live.videosdk.rnincallmanager.InCallManagerPackage;
 import live.videosdk.rnwebrtc.WebRTCModulePackage;
 import live.videosdk.rnfgservice.ForegroundServicePackage;
+  //highlight-end
 
 public class MainApplication extends Application implements ReactApplication {
   private static List<ReactPackage> getPackages() {
       @SuppressWarnings("UnnecessaryLocalVariable")
       List<ReactPackage> packages = new PackageList(this).getPackages();
       // Packages that cannot be autolinked yet can be added manually here, for example:
+  //highlight-start
+
       packages.add(new ForegroundServicePackage());
       packages.add(new InCallManagerPackage());
       packages.add(new WebRTCModulePackage());
+  //highlight-end
+
       return packages;
   }
 }
@@ -443,9 +467,13 @@ function JoinScreen(props) {
 
 #### Output
 
-<img class="react-native-screen-img" alt="React-Native--Meeting-Screen" src={require('/static/img/quick-start/rn-joinscreen.jpg').default} />
+<div style={{textAlign: 'center'}}>
 
-### Step 4 : Implement Contorls
+<img style={{height:'500px'}} class="react-native-screen-img" alt="React-Native--Meeting-Screen" src={require('/static/img/quick-start/rn-joinscreen.jpg').default} />
+
+</div>
+
+### Step 4 : Implement Controls
 
 Next step is to create a `ControlsContainer` component that manage features such as Join or Leave Meeting and Enable or Disable Webcam/Mic.
 
@@ -540,7 +568,11 @@ function MeetingView() {
 
 #### Output
 
-<img class="react-native-screen-img" alt="React-Native--Meeting-Screen" src={require('/static/img/quick-start/rn-controls.jpg').default} />
+<div style={{textAlign: 'center'}}>
+
+<img style={{height:'500px'}} src={require('/static/img/quick-start/rn-controls.jpg').default} />
+
+</div>
 
 ### Step 5 : Render Participant List
 
@@ -660,11 +692,15 @@ function ParticipantView({ participantId }) {
 
 #### Output
 
-<img class="react-native-screen-img" alt="React-Native--Participant-View" src={require('/static/img/quick-start/rn-participant.jpg').default} />
+<center>
+
+<img src='https://cdn.videosdk.live/website-resources/docs-resources/react_native_quickstart_participant_list.png' style={{height: '600px'}}/>
+
+</center>
 
 :::note
 
-Stuck anywhere? Check out this [example code](https://github.com/videosdk-live/videosdk-rtc-react-native-sdk-example) on GitHub
+Stuck anywhere? Check out this [example code](https://github.com/videosdk-live/quickstart/tree/main/react-native) on GitHub
 
 :::
 
