@@ -3,7 +3,7 @@ title: Quick Start with React JS
 hide_title: true
 hide_table_of_contents: false
 description: Video SDK enables the opportunity to integrate native IOS, Android & Web SDKs to add live video & audio conferencing to your applications.
-sidebar_label: Start a Voice / Video Call
+sidebar_label: Start a Audio / Video Call
 pagination_label: Quick Start with React JS
 keywords:
   - audio calling
@@ -43,7 +43,7 @@ Visit VideoSDK **[dashboard](https://app.videosdk.live/api-keys)** to generate t
 
 ## Getting Started with the Code!
 
-Follow the steps to create the environment necessary to add video calls into your app. Also you can find the code sample for [quickstart here](https://github.com/videosdk-live/quickstart/tree/main/react).
+Follow the steps to create the environment necessary to add video calls into your app. Also you can find the code sample for [quickstart here](https://github.com/videosdk-live/quickstart/tree/main/react-rtc).
 
 ### Create new react app
 
@@ -442,5 +442,5 @@ import ReactPlayer from 'react-player'
 <br/>
 
 :::tip
-You can checkout the complete [quick start example here](https://github.com/videosdk-live/quickstart/tree/main/react).
+You can checkout the complete [quick start example here](https://github.com/videosdk-live/quickstart/tree/main/react-rtc).
 :::

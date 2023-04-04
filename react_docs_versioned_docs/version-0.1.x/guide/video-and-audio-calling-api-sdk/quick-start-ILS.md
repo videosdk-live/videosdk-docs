@@ -43,7 +43,7 @@ Visit VideoSDK **[dashboard](https://app.videosdk.live/api-keys)** to generate t
 
 ## Getting Started with the Code!
 
-Follow the steps to create the environment necessary to add video calls into your app.
+Follow the steps to create the environment necessary to add video calls into your app.Also you can find the code sample for [quickstart here](https://github.com/videosdk-live/quickstart/tree/main/react-hls).
 
 ### Create new react app
 
@@ -92,13 +92,9 @@ Your project structure should look like this.
    ├── node_modules
    ├── public
    ├── src
-   │    ├── api.js
+   │    ├── API.js
    │    ├── App.js
-   │    ├── App.css
    │    ├── index.js
-   │    ├── MeetingContainer.js
-   |    ├── ParticipantView.js
-   |    ├── PlayerView.js
    ├── package.json
    .    .
 ```
@@ -107,21 +103,28 @@ We are going to use functional components to leverage react's reusable component
 
 ### App Architecture
 
-App will contain a container component which includes user component with videos. Each video component will have conrols button for mic, camera , leave meeting ,screen share and HLS button.
+App will contain a container component which includes user component with videos. Each video component will have conrols button for mic, camera , leave meeting and HLS button.
 
 We are goting to work on these files:
 
 - API.js: Responsible to handle API calls such as generating unique meetingId and token
-- App.js: Responsible to render meeting container and meeting join.
-- MeetingContainer.js - Responsible to render conrols button for mic, camera , leave meeting ,screen share and HLS button , participant view and player view.
-- ParticipantView.js - Responsible to render participant audio , video and screen share.
-- PlayerView.js - Responsible to render player view for play hls stream.
+- App.js: Responsible to render container and meeting join.
+
+##### Architecture for Speaker
+
+![quick-start-speaker-architechture](https://cdn.videosdk.live/website-resources/docs-resources/react_quick_start_ils_speaker_arch.png)
+
+##### Architecture for Viewer
+
+![quick-start-viewer-architechture](https://cdn.videosdk.live/website-resources/docs-resources/react_quick_start_ils_viewer_arch.png)
 
 ### Step 1: Get started with API.js
 
 Before jumping to anything else, we have write API to generate unique meetingId. You will require auth token, you can generate it using either by using [videosdk-rtc-api-server-examples](https://github.com/videosdk-live/videosdk-rtc-api-server-examples) or generate it from the [Video SDK Dashboard](https://app.videosdk.live/api-keys) for developer.
 
 ```js title="API.js"
+//Auth token we will use to generate a meeting and connect to it
+//highlight-next-line
 export const authToken = "<Generated-from-dashbaord>";
 // API call to create meeting
 export const createMeeting = async ({ token }) => {
@@ -133,7 +136,8 @@ export const createMeeting = async ({ token }) => {
     },
     body: JSON.stringify({}),
   });
-
+  //Destructuring the roomId from the response
+  //highlight-next-line
   const { roomId } = await res.json();
   return roomId;
 };
@@ -156,55 +160,84 @@ Let's get started with change couple of lines of code in App.js
 
 ```js title="App.js"
 import "./App.css";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 import {
   MeetingProvider,
   MeetingConsumer,
   useMeeting,
   useParticipant,
+  Constants,
 } from "@videosdk.live/react-sdk";
-import { authToken, createMeeting } from "./API";
+import Hls from "hls.js";
 
-function JoinScreen() {
+import { authToken, createMeeting } from "./API";
+import ReactPlayer from "react-player";
+
+function JoinScreen({ getMeetingAndToken, setMode }) {
+  return null;
+}
+
+function ParticipantView(props) {
+  return null;
+}
+
+function Controls() {
+  return null;
+}
+
+function SpeakerView() {
+  return null;
+}
+
+function ViewerView() {
+  return null;
+}
+
+function Container(props) {
   return null;
 }
 
 function App() {
   const [meetingId, setMeetingId] = useState(null);
-  const [meetingMode, setMeetingMode] = useState(Constants.modes.CONFERENCE);
 
+  //State to handle the mode of the participant i.e. CONFERNCE or VIEWER
+  const [mode, setMode] = useState("CONFERENCE");
+
+  //Getting MeetingId from the API we created earlier
+  //highlight-start
   const getMeetingAndToken = async (id) => {
     const meetingId =
       id == null ? await createMeeting({ token: authToken }) : id;
     setMeetingId(meetingId);
   };
+  //highlight-end
 
-  const updateMeetingId = (meetingId) => {
-    setMeetingId(meetingId);
+  const onMeetingLeave = () => {
+    setMeetingId(null);
   };
 
   return authToken && meetingId ? (
     <MeetingProvider
+      //highlight-start
       config={{
         meetingId,
         micEnabled: true,
-        webcamEnabled: false,
+        webcamEnabled: true,
         name: "C.V. Raman",
-        mode: "CONFERENCE", // "CONFERENCE" || "VIWER"
-        multiStream: false,
+        //These will be the mode of the participant CONFERENCE or VIEWER
+        mode: mode,
       }}
       token={authToken}
+      //highlight-end
     >
       <MeetingConsumer>
-        {() => <Container meetingId={meetingId} meetingMode={meetingMode} />}
+        {() => (
+          <Container meetingId={meetingId} onMeetingLeave={onMeetingLeave} />
+        )}
       </MeetingConsumer>
     </MeetingProvider>
   ) : (
-    <JoinScreen
-      getMeetingAndToken={getMeetingAndToken}
-      updateMeetingId={updateMeetingId}
-      setMeetingMode={setMeetingMode}
-    />
+    <JoinScreen getMeetingAndToken={getMeetingAndToken} setMode={setMode} />
   );
 }
 
@@ -215,41 +248,44 @@ export default App;
 
 Join screen will work as medium to either schedule new meeting or to join existing meeting as a host or as a viewer.
 
+These will have 3 buttons:
+
+`1. Join as Host:` When this button is clicked, the person will join the entered `meetingId` as `HOST`.
+
+`2. Join as Viewer:` When this button is clicked, the person will join the entered `meetingId` as `VIEWER`.
+
+`3. Create Meeting:` When this button is clicked, the person will join a new meeting as `HOST`.
+
 ```js title="JoinScreen Component"
-function JoinScreen({ updateMeetingId, getMeetingAndToken, setMeetingMode }) {
+function JoinScreen({ getMeetingAndToken, setMode }) {
+  const [meetingId, setMeetingId] = useState(null);
+  //Set the mode of joining participant and set the meeting id or generate new one
+  //highlight-start
+  const onClick = async (mode) => {
+    setMode(mode);
+    await getMeetingAndToken(meetingId);
+  };
+  //highlight-end
   return (
-    <div>
+    <div className="container">
+      <button onClick={() => onClick("CONFERENCE")}>Create Meeting</button>
+      <br />
+      <br />
+      {" or "}
+      <br />
+      <br />
       <input
         type="text"
         placeholder="Enter Meeting Id"
         onChange={(e) => {
-          updateMeetingId(e.target.value);
+          setMeetingId(e.target.value);
         }}
       />
-      <button
-        onClick={() => {
-          getMeetingAndToken();
-          setMeetingMode(Constants.modes.CONFERENCE);
-        }}
-      >
-        Join as a host
-      </button>
-      <button
-        onClick={() => {
-          getMeetingAndToken();
-          setMeetingMode(Constants.modes.CONFERENCE);
-        }}
-      >
-        Create Meeting
-      </button>
-      <button
-        onClick={() => {
-          getMeetingAndToken();
-          setMeetingMode(Constants.modes.VIEWER);
-        }}
-      >
-        Join as viewer
-      </button>
+      <br />
+      <br />
+      <button onClick={() => onClick("CONFERENCE")}>Join as Host</button>
+      {" | "}
+      <button onClick={() => onClick("VIEWER")}>Join as Viewer</button>
     </div>
   );
 }
@@ -257,214 +293,188 @@ function JoinScreen({ updateMeetingId, getMeetingAndToken, setMeetingMode }) {
 
 #### Output
 
-![VideoSDK React Interactive Live Streaming Quick Start Join Screen](/img/quick-start/react-ils-join-screen.png)
+![VideoSDK React Interactive Live Streaming Quick Start Join Screen](https://cdn.videosdk.live/website-resources/docs-resources/quick_start_react_ils_join_screen.png)
 
-### Step 4: Implement Meeting Container
+### Step 4: Implement Container Component
 
-Next step is to create a meeting container to manage features such as join, leave, mute and unmute, screen share , start and stop hls.
+Next step is to create a container to manage features such as join, leave, mute and unmute, start and stop hls for the HOST and to show a HLS Player for the viewer.
 
-```js title="MeetingContainer Component"
-function MeetingContainer({ meetingId, meetingMode }) {
-  const [downStreamUrl, setDownStreamUrl] = useState(null);
-  const [afterMeetingJoinedHLSState, setAfterMeetingJoinedHLSState] =
-    useState(null);
-  const [joined, setJoined] = useState(false);
+We will check the mode of the `localParticipant`, if its `CONFERENCE` we will show `SpeakerView` else we will show `ViewerView`.
 
-  const _handleOnHlsStateChanged = (data) => {
-    if (
-      data.status === Constants.hlsEvents.HLS_STARTED ||
-      data.status === Constants.hlsEvents.HLS_STOPPED
-    ) {
-      setDownStreamUrl(
-        data.status === Constants.hlsEvents.HLS_STARTED
-          ? data.downstreamUrl
-          : null
-      );
-    }
-
-    if (data.status === Constants.hlsEvents.HLS_STARTING) {
-      setAfterMeetingJoinedHLSState("STARTING");
-    }
-
-    if (data.status === Constants.hlsEvents.HLS_STARTED) {
-      setAfterMeetingJoinedHLSState("STARTED");
-    }
-
-    if (data.status === Constants.hlsEvents.HLS_STOPPING) {
-      setAfterMeetingJoinedHLSState("STOPPING");
-    }
-
-    if (data.status === Constants.hlsEvents.HLS_STOPPED) {
-      setAfterMeetingJoinedHLSState("STOPPED");
-    }
-  };
-
-  const {
-    join,
-    leave,
-    toggleMic,
-    toggleWebcam,
-    toggleScreenShare,
-    startHls,
-    stopHls,
-  } = useMeeting({
-    onHlsStateChanged: _handleOnHlsStateChanged,
+```js title="Container Component"
+function Container(props) {
+  const [joined, setJoined] = useState(null);
+  //Get the method which will be used to join the meeting.
+  //highlight-next-line
+  const { join } = useMeeting();
+  const mMeeting = useMeeting({
+    //callback for when meeting is joined successfully
+    onMeetingJoined: () => {
+      setJoined("JOINED");
+    },
+    //callback for when meeting is left
+    onMeetingLeft: () => {
+      props.onMeetingLeave();
+    },
+    //callback for when there is error in meeting
+    onError: (error) => {
+      alert(error.message);
+    },
   });
-
-  const { participants } = useMeeting();
-
-  const participantsArr = [];
-  participants.forEach((values, keys) => {
-    if (values.mode === "CONFERENCE") {
-      participantsArr.push(values);
-    }
-  });
-  const participantMap = new Map(participantsArr.map((id) => [id.id, id]));
-
   const joinMeeting = () => {
-    setJoined(true);
+    setJoined("JOINING");
     join();
   };
 
   return (
-    <div
-      style={{
-        height: "100vh",
-        overflowY: "auto",
-        width: "100vw",
-        overflowX: "hidden",
-      }}
-    >
-      <div style={{ height: "40px" }}>
-        <header>Meeting Id: {meetingId}</header>
-      </div>
-      {joined ? (
-        meetingMode === Constants.modes.CONFERENCE && (
-          <div>
-            <button onClick={leave}>Leave</button>
-            <button onClick={toggleMic}>toggleMic</button>
-            <button onClick={toggleWebcam}>toggleWebcam</button>
-            <button onClick={toggleScreenShare}>toggleScreenShare</button>
-            <button
-              onClick={() => {
-                if (afterMeetingJoinedHLSState === "STARTED") {
-                  stopHls();
-                } else {
-                  const layout = {
-                    type: "GRID",
-                    priority: "SPEAKER",
-                    gridSize: 12,
-                  };
-                  startHls({ layout, theme: "LIGHT" });
-                }
-              }}
-            >
-              {afterMeetingJoinedHLSState === "STARTING"
-                ? "Starting HLS"
-                : afterMeetingJoinedHLSState === "STARTED"
-                ? afterMeetingJoinedHLSState === "STOPPING"
-                  ? "Stopping HLS"
-                  : "Stop HLS"
-                : "Start HLS"}
-            </button>
-          </div>
-        )
+    <div className="container">
+      <h3>Meeting Id: {props.meetingId}</h3>
+      {joined && joined == "JOINED" ? (
+        mMeeting.localParticipant.mode == Constants.modes.CONFERENCE ? (
+          <SpeakerView />
+        ) : mMeeting.localParticipant.mode == Constants.modes.VIEWER ? (
+          <ViewerView />
+        ) : null
+      ) : joined && joined == "JOINING" ? (
+        <p>Joining the meeting...</p>
       ) : (
         <button onClick={joinMeeting}>Join</button>
-      )}
-      {meetingMode === Constants.modes.CONFERENCE ? (
-        <div>
-          {chunk([...participantMap.keys()]).map((k) => (
-            <Row key={k} gutter={80}>
-              {k.map((l) => (
-                <Col span={4}>
-                  <ParticipantView key={l} participantId={l} />
-                </Col>
-              ))}
-            </Row>
-          ))}
-        </div>
-      ) : (
-        <div style={{ display: "flex", flex: 1 }}>
-          {joined && <PlayerView downStreamUrl={downStreamUrl} />}{" "}
-        </div>
       )}
     </div>
   );
 }
 ```
 
-#### Output of MeetingContainer Component
+### Step 5: Implement SpeakerView
 
-![VideoSDK React Interactive Live Streaming Quick Start Meeting Container Component](/img/quick-start/react-ils-container.png)
+Next step is to create `SpeakerView` and `Controls` componenets to manage features such as join, leave, mute and unmute.
 
-#### After Joining Meeting Output Of MeetingContainer Component
+1. We will get all the `participants` from `useMeeting` hook and filter them for the mode set to `CONFERENCE` so only Speakers are shown on the screen.
 
-![VideoSDK React Interactive Live Streaming Quick Start Meeting Container Component](/img/quick-start/react-ils-container-controls.png)
+```js title="SpeakerView"
+function SpeakerView() {
+  //Get the participants and hlsState from useMeeting
+  const { participants, hlsState } = useMeeting();
 
-### Step 5: Implement ParticipantView Component
+  //Filtering the host/speakers from all the participants
+  //highlight-start
+  const speakers = useMemo(() => {
+    const speakerParticipants = [...participants.values()].filter(
+      (participant) => {
+        return participant.mode == Constants.modes.CONFERENCE;
+      }
+    );
+    return speakerParticipants;
+  }, [participants]);
+  //highlight-end
+  return (
+    <div>
+      <p>Current HLS State: {hlsState}</p>
+      {/* Controls for the meeting */}
+      <Controls />
 
-Before implementing participantView component, We need to understand couple of concepts.
+      {/* Rendring all the HOST participants */}
+      {speakers.map((participant) => (
+        <ParticipantView participantId={participant.id} key={participant.id} />
+      ))}
+    </div>
+  );
+}
 
-#### 1. Forwarding Ref for mic and camera
+function Container(){
+  //highlight-next-line
+  ...
 
-Ref forwarding is a technique for automatically passing a ref through a component to one of its children.
-We are going to use Refs to attach audio and video tracks with components.
+  const mMeeting = useMeeting({
+    onMeetingJoined: () => {
+      //we will pin the local participant if he joins in CONFERENCE mode
+      //highlight-start
+      if (mMeetingRef.current.localParticipant.mode == "CONFERENCE") {
+        mMeetingRef.current.localParticipant.pin();
+      }
+      //highlight-end
+      setJoined("JOINED");
+    },
+    //highlight-next-line
+    ...
+  });
 
-```js title="Forwarding Ref for mic and camera"
-const webcamRef = useRef(null);
-const micRef = useRef(null);
+  //We will create a ref to meeting object so that when used inside the
+  //Callback functions, meeting state is maintained
+  //highlight-start
+  const mMeetingRef = useRef(mMeeting);
+  useEffect(() => {
+    mMeetingRef.current = mMeeting;
+  }, [mMeeting]);
+  //highlight-end
+
+  return <>...</>;
+}
 ```
 
-#### 2. useParticipant Hook
+2. We will add the `Controls` componenet which will allow the participant to toggle media.
 
-useParticipant hook is responsible to handle all the properties and events of one particular participant joined in the meeting. It will take participantId as argument.
-
-```js title="useParticipant Hook"
-const { webcamStream, micStream, webcamOn, micOn } = useParticipant(
-  props.participantId
-);
+```js title="Controls Component"
+function Controls() {
+  const { leave, toggleMic, toggleWebcam, startHls, stopHls } = useMeeting();
+  return (
+    <div>
+      <button onClick={() => leave()}>Leave</button>
+      &emsp;|&emsp;
+      <button onClick={() => toggleMic()}>toggleMic</button>
+      <button onClick={() => toggleWebcam()}>toggleWebcam</button>
+      &emsp;|&emsp;
+      <button
+        onClick={() => {
+          //We will start the HLS in SPOTLIGHT mode and PIN as
+          //priority so only speakers are visible in the HLS stream
+          //highlight-start
+          startHls({
+            layout: {
+              type: "SPOTLIGHT",
+              priority: "PIN",
+              gridSize: "20",
+            },
+            theme: "LIGHT",
+            mode: "video-and-audio",
+            quality: "high",
+            orientation: "landscape",
+          });
+          //highlight-end
+        }}
+      >
+        Start HLS
+      </button>
+      <button onClick={() => stopHls()}>Stop HLS</button>
+    </div>
+  );
+}
 ```
 
-#### 3. MediaStream API
+3. We will be createing the `ParticipantView` to show the participants name and media. For which, will be using the `webcamStream` and `micStream` from the `useParticipant` hook to play the media of the participant.
 
-MediaStream is useful to add MediaTrack to the audio / video tag to play the audio or video.
-
-```js title="MediaStream API"
-const webcamRef = useRef(null);
-const mediaStream = new MediaStream();
-mediaStream.addTrack(webcamStream.track);
-
-webcamRef.current.srcObject = mediaStream;
-webcamRef.current
-  .play()
-  .catch((error) => console.error("videoElem.current.play() failed", error));
-```
-
-#### 4. Implemeting ParticipantView Component
-
-Now let's use all this to create ParticipantView Component
-
-```js title="ParticipantView Component"
+```js title="ParticipantView"
 function ParticipantView(props) {
-  const webcamRef = useRef(null);
   const micRef = useRef(null);
-  const screenShareRef = useRef(null);
-  const {
-    displayName,
-    webcamStream,
-    micStream,
-    screenShareStream,
-    webcamOn,
-    micOn,
-    screenShareOn,
-  } = useParticipant(props.participantId);
+  const { webcamStream, micStream, webcamOn, micOn, isLocal, displayName } =
+    useParticipant(props.participantId);
 
+  const videoStream = useMemo(() => {
+    if (webcamOn && webcamStream) {
+      const mediaStream = new MediaStream();
+      mediaStream.addTrack(webcamStream.track);
+      return mediaStream;
+    }
+  }, [webcamStream, webcamOn]);
+
+  //Playing the audio in the <audio>
+  //highlight-start
   useEffect(() => {
     if (micRef.current) {
       if (micOn && micStream) {
         const mediaStream = new MediaStream();
         mediaStream.addTrack(micStream.track);
+
         micRef.current.srcObject = mediaStream;
         micRef.current
           .play()
@@ -476,74 +486,44 @@ function ParticipantView(props) {
       }
     }
   }, [micStream, micOn]);
+  //highlight-end
 
-  useEffect(() => {
-    if (webcamRef.current) {
-      if (webcamOn && webcamStream) {
-        const mediaStream = new MediaStream();
-        mediaStream.addTrack(webcamStream.track);
-        webcamRef.current.srcObject = mediaStream;
-        webcamRef.current
-          .play()
-          .catch((error) =>
-            console.error("videoElem.current.play() failed", error)
-          );
-      } else {
-        webcamRef.current.srcObject = null;
-      }
-    }
-  }, [webcamStream, webcamOn]);
-
-  useEffect(() => {
-    if (screenShareRef.current) {
-      if (screenShareOn) {
-        const mediaStream = new MediaStream();
-        mediaStream.addTrack(screenShareStream.track);
-        screenShareRef.current.srcObject = mediaStream;
-        screenShareRef.current
-          .play()
-          .catch((error) =>
-            console.error("videoElem.current.play() failed", error)
-          );
-      } else {
-        screenShareRef.current.srcObject = null;
-      }
-    }
-  }, [screenShareStream, screenShareOn]);
   return (
-    <div key={props.participantId}>
-      <audio ref={micRef} autoPlay />
-      {webcamRef || micOn ? (
-        <div>
-          <h2>{displayName}</h2>
-          <video height={"100%"} width={"100%"} ref={webcamRef} autoPlay />
-        </div>
-      ) : null}
-      {screenShareOn ? (
-        <div>
-          <h2>Screen Shared</h2>
-          <video height={"100%"} width={"100%"} ref={screenShareRef} autoPlay />
-        </div>
-      ) : null}
-      <br />
-      <span>
-        Mic:{micOn ? "Yes" : "No"}, Camera: {webcamOn ? "Yes" : "No"}, Screen
-        Share: {screenShareOn ? "Yes" : "No"}
-      </span>
+    <div>
+      <p>
+        Participant: {displayName} | Webcam: {webcamOn ? "ON" : "OFF"} | Mic:{" "}
+        {micOn ? "ON" : "OFF"}
+      </p>
+      <audio ref={micRef} autoPlay playsInline muted={isLocal} />
+      {webcamOn && (
+        <ReactPlayer
+          //
+          playsinline // very very imp prop
+          pip={false}
+          light={false}
+          controls={false}
+          muted={true}
+          playing={true}
+          //
+          url={videoStream}
+          //
+          height={"300px"}
+          width={"300px"}
+          onError={(err) => {
+            console.log(err, "participant video error");
+          }}
+        />
+      )}
     </div>
   );
 }
 ```
 
-#### Output Of ParticipantView Component
+#### Output Of SpeakerView Component
 
-![VideoSDK React Interactive Live Streaming Quick Start ParticipantView Component Component](/img/quick-start/react-ils-container.png)
+![VideoSDK React Interactive Live Streaming Quick Start ParticipantView Component Component](https://cdn.videosdk.live/website-resources/docs-resources/quick_start_react_ils_speaker.png)
 
-#### After Joining Meeting Output Of ParticipantView Component
-
-![VideoSDK React Interactive Live Streaming Quick Start ParticipantView Component Component](/img/quick-start/ils_container.png)
-
-### Step 6: Implement PlayerView Component
+### Step 6: Implement ViewerView
 
 When host start the live streaming, viewer will be able to see the live streaming.
 
@@ -574,74 +554,19 @@ $ yarn add hls.js
 </TabItem>
 </Tabs>
 
-After adding this you can add this code in PlayerView Component.
+With `hls.js` installed, we will get the `hlsUrls` from the `useMeeting` hook which will be used to play the HLS in the player.
 
 ```js
-import Hls from "hls.js";
-import { useEffect, useRef, useState } from "react";
+function ViewerView() {
+  // States to store downstream url and current HLS state
+  const playerRef = useRef(null);
+  //Getting the hlsUrls
+  const { hlsUrls, hlsState } = useMeeting();
 
-// Sleep function to wait for a few seconds.
-export async function sleep(ms) {
-  return new Promise((resolve) => {
-    setTimeout(resolve, ms);
-  });
-}
-
-function PlayerView({ downStreamUrl }) {
-  const [canPlay, setCanPlay] = useState(false);
-  const playerRef = useRef();
-
-  // when hls is started, we need to wait for a few seconds for the stream to start.
-  async function waitForHLSPlayable(downStreamUrl, maxRetry) {
-    return new Promise(async (resolve, reject) => {
-      if (maxRetry < 1) {
-        return reject(false);
-      }
-
-      let status;
-
-      try {
-        const res = await fetch(downStreamUrl, {
-          method: "GET",
-        });
-        status = res.status;
-      } catch (err) {}
-
-      if (status === 200) {
-        return resolve(true);
-      }
-
-      await sleep(1000);
-
-      return resolve(
-        await waitForHLSPlayable(downStreamUrl, maxRetry - 1).catch((err) => {})
-      );
-    });
-  }
-
-  // We are checking if the HLS stream is playable or not.
-  const checkHLSPlayable = async (downStreamUrl) => {
-    const canPlay = await waitForHLSPlayable(downStreamUrl, 20);
-
-    if (canPlay) {
-      setCanPlay(true);
-    } else {
-      setCanPlay(false);
-    }
-  };
-
-  // When the downStreamUrl changes, we need to check if the HLS stream is playable or not.
-  useEffect(async () => {
-    if (downStreamUrl) {
-      checkHLSPlayable(downStreamUrl);
-    } else {
-      setCanPlay(false);
-    }
-  }, [downStreamUrl]);
-
-  // When the canPlay state changes, we need to play the HLS stream.
+  //Playing the HLS stream when the downstreamUrl is present and it is playable
+  //highlight-start
   useEffect(() => {
-    if (downStreamUrl && canPlay) {
+    if (hlsUrls.downstreamUrl && hlsState == "HLS_PLAYABLE") {
       if (Hls.isSupported()) {
         const hls = new Hls({
           capLevelToPlayerSize: true,
@@ -653,67 +578,66 @@ function PlayerView({ downStreamUrl }) {
 
         let player = document.querySelector("#hlsPlayer");
 
-        hls.loadSource(downStreamUrl);
+        hls.loadSource(hlsUrls.downstreamUrl);
         hls.attachMedia(player);
-        hls.on(Hls.Events.MANIFEST_PARSED, function () {});
-        hls.on(Hls.Events.ERROR, function (err) {
-          console.log(err);
-        });
       } else {
         if (typeof playerRef.current?.play === "function") {
-          playerRef.current.src = downStreamUrl;
+          playerRef.current.src = hlsUrls.downstreamUrl;
           playerRef.current.play();
         }
       }
     }
-  }, [downStreamUrl, canPlay]);
+  }, [hlsUrls, hlsState, playerRef.current]);
+  //highlight-end
 
   return (
-    <div
-      style={{
-        height: "calc(100vh - 40px)",
-        maxHeight: "100%",
-        width: "100%",
-        overflow: "hidden",
-        position: "relative",
-      }}
-    >
-      {downStreamUrl && canPlay ? (
-        <video
-          ref={playerRef}
-          id="hlsPlayer"
-          autoPlay={true}
-          style={{ height: "100%", width: "100%" }}
-          controls
-          playsinline
-          playsInline
-          playing
-          onError={(err) => {
-            console.log(err, "hls video error");
-          }}
-        ></video>
-      ) : (
+    <div>
+      {/* Showing message if HLS is not started or is stopped by HOST */}
+      {hlsState != "HLS_PLAYABLE" ? (
         <div>
-          <h1>Wait for the host to start live strem</h1>
+          <p>HLS has not started yet or is stopped</p>
         </div>
+      ) : (
+        hlsState == "HLS_PLAYABLE" && (
+          <div>
+            <video
+              ref={playerRef}
+              id="hlsPlayer"
+              autoPlay={true}
+              controls
+              style={{ width: "100%", height: "100%" }}
+              playsinline
+              playsInline
+              muted={true}
+              playing
+              onError={(err) => {
+                console.log(err, "hls video error");
+              }}
+            ></video>
+          </div>
+        )
       )}
     </div>
   );
 }
-
-export default PlayerView;
 ```
 
-#### Output Of PlayerView Component
+#### Output of ViewerView
 
-![VideoSDK React Interactive Live Streaming Quick Start PlayerView Component Component](/img/quick-start/react-playerView.png)
-
-#### After Receive HLS Stream Output Of PlayerView Component
-
-![VideoSDK React Interactive Live Streaming Quick Start PlayerView Component Component](/img/quick-start/react-playerView-HLS.png)
+![VideoSDK React Interactive Live Streaming Quick Start Meeting Container Component](https://cdn.videosdk.live/website-resources/docs-resources/quick_start_react_ils_viewer.png)
 
 #### Final Output
 
-We are done with implementation of customised video calling app in reeact js using Video SDK. To explore more features go through Basic and Advanced features.
+We are done with implementation of customised video calling app in ReactJS using Video SDK. To explore more features go through Basic and Advanced features.
 
-<img width="100%" src="/img/quick-start/ils-final-output.gif"/>
+import ReactPlayer from 'react-player'
+
+<div style={{textAlign: 'center'}}>
+
+<ReactPlayer autoplay muted loop playing controls url="https://cdn.videosdk.live/website-resources/docs-resources/quick_start_react_ils_video.mp4" height="500px" width={"100%"} />
+
+</div>
+
+:::tip
+You can checkout the complete [quick start example here](https://github.com/videosdk-live/quickstart/tree/main/react-hls).
+:::
