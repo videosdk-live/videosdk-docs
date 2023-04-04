@@ -89,6 +89,13 @@ title: VideoSDK Class Methods
   - `OPTIONAL`
   - Set the initial custom audio track using different encoding parameters and optimization mode.
 
+- mode
+
+  - type: `Mode`
+  - `OPTIONAL`
+  - Set the participant mode i.e. `CONFERENCE` or `VIEWER`.
+  - Default value is `CONFERENCE`.
+
 ---
 
 #### Returns
