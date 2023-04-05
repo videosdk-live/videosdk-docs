@@ -466,7 +466,7 @@ class _ParticipantTileState extends State<ParticipantTile> {
 
 ##### Sample of mirror view video
 
-![mirror view](/img/mirror-view.jpg)
+![mirror view](https://cdn.videosdk.live/website-resources/docs-resources/mirror_view_mobile.jpg)
 
 ## API Reference
 
