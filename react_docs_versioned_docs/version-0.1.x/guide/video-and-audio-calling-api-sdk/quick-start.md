@@ -259,7 +259,7 @@ function JoinScreen({ getMeetingAndToken }) {
 
 ### Step 4: Implement MeetingView and Controls
 
-Next step is to create `MeetingView` and `Controls` componenets to manage features such as join, leave, mute and unmute.
+Next step is to create `MeetingView` and `Controls` components to manage features such as join, leave, mute and unmute.
 
 ```js title="MeetingView"
 function MeetingView(props) {
