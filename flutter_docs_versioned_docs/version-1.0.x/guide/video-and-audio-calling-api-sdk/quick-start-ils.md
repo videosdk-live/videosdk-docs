@@ -39,7 +39,7 @@ Visit VideoSDK **[dashboard](https://app.videosdk.live/api-keys)** to generate t
 
 ## Getting Started with the Code!
 
-Follow the steps to create the environment necessary to add video calls into your app. Also you can find the code sample for [quickstart here](https://github.com/videosdk-live/quickstart/tree/main/flutter).
+Follow the steps to create the environment necessary to add video calls into your app. Also you can find the code sample for [quickstart here](https://github.com/videosdk-live/quickstart/tree/main/flutter-hls).
 
 ### Create a new Flutter project.
 
@@ -918,5 +918,5 @@ If you get `webrtc/webrtc.h file not found` error at a runtime in ios then check
 :::
 
 :::tip
-You can checkout the complete [quick start example here](https://github.com/videosdk-live/quickstart/tree/main/flutter).
+You can checkout the complete [quick start example here](https://github.com/videosdk-live/quickstart/tree/main/flutter-hls).
 :::

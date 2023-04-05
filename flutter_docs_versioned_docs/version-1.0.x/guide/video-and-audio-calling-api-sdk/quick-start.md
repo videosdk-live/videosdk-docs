@@ -586,7 +586,7 @@ import ReactPlayer from 'react-player'
 
 <div style={{textAlign: 'center'}}>
 
-<ReactPlayer controls url='https://cdn.videosdk.live/website-resources/docs-resources/flutter_quick_start_video.mp4' height="560px" width={"100%"}/>
+<ReactPlayer controls url='https://cdn.videosdk.live/website-resources/docs-resources/flutter_rtc_quick_start_video.mp4' height="560px" width={"100%"}/>
 
 </div>
 
