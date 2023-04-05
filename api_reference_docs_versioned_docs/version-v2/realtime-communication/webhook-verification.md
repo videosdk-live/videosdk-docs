@@ -17,22 +17,10 @@ Every request will have a custom `videosdk-signature` header. This header is a s
 
 ### Sample code
 
-```js
-const crypto = require("crypto");
+<div>
 
-app.post("/webhook", (req, res) => {
-  const signature = req.headers["videosdk-signature"];
-  const body = req.body;
+import WebhookVerification from '../../../src/theme/WebhookVerificationContainer'
 
-  const isVerified = crypto.verify(
-    "RSA-SHA256",
-    Buffer.from(JSON.stringify(body)),
-    publicKey,
-    Buffer.from(signature, "base64")
-  );
+<WebhookVerification/>
 
-  if (isVerified) {
-    // your operations
-  }
-});
-```
+</div>
