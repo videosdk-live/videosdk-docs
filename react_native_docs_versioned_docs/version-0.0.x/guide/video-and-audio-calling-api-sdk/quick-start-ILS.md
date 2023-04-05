@@ -50,7 +50,7 @@ This App will contain two screen :
 
 <center>
 
-<img src='https://cdn.videosdk.live/website-resources/docs-resources/ils-app-architecture.png' />
+<img src='https://cdn.videosdk.live/website-resources/docs-resources/ils_app_arch.png' />
 
 </center>
 
@@ -452,7 +452,7 @@ These will have 3 buttons:
 
 `2. Join as Viewer:` When this button is clicked, the person will join the entered `meetingId` as `VIEWER`.
 
-`3. Create Meeting:` When this button is clicked, the person will join a new meeting as `HOST`.
+`3. Create Studio Room:` When this button is clicked, the person will join a new meeting as `HOST`.
 
 ```js title="JoinScreen Component"
 function JoinScreen({ getMeetingAndToken, setMode }) {
@@ -544,7 +544,7 @@ function JoinScreen({ getMeetingAndToken, setMode }) {
 
 ### Step 4: Implement Container Component
 
-Next step is to create a container that will manage `Join screen`, `SpeakerView` and `ViewerView` component basec on `mode`.
+Next step is to create a container that will manage `Join screen`, `SpeakerView` and `ViewerView` component based on `mode`.
 
 We will check the mode of the `localParticipant`, if its `CONFERENCE` we will show `SpeakerView` else we will show `ViewerView`.
 
@@ -625,7 +625,7 @@ const Button = ({ onPress, buttonText, backgroundColor, btnStyle }) => {
 
 ### Step 5: Implement SpeakerView
 
-Next step is to create `SpeakerView` and `Controls` componenets to manage features such as join, leave, mute and unmute.
+Next step is to create `SpeakerView` and `Controls` components to manage features such as join, leave, mute and unmute.
 
 1. We will get all the `participants` from `useMeeting` hook and filter them for the mode set to `CONFERENCE` so only Speakers are shown on the screen.
 
@@ -712,9 +712,7 @@ function Container(){
         mMeetingRef.current.localParticipant.pin();
       }
       //highlight-end
-    },
-    //highlight-next-line
-    ...
+    }
   });
 
   // We will create a ref to meeting object so that when used inside the
@@ -762,7 +760,7 @@ function ParticipantView({ participantId }) {
 }
 ```
 
-3. We will add the `Controls` componenet which will allow the speaker to toggle media and start / stop HLS.
+3. We will add the `Controls` component which will allow the speaker to toggle media and start / stop HLS.
 
 ```js title="Controls Component"
 function Controls() {
@@ -774,7 +772,7 @@ function Controls() {
     if (!hlsState || hlsState === "HLS_STOPPED") {
       startHls({
         layout: {
-          type: "GRID",
+          type: "SPOTLIGHT",
           priority: "PIN",
           gridSize: 4,
         },
