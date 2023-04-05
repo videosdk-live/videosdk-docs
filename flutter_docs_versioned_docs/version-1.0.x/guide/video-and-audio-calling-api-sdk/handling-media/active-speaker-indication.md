@@ -65,4 +65,4 @@ class _MeetingScreenState extends State<MeetingScreen> {
 
 The API references for all the methods and events utilised in this guide are provided below.
 
-- [speakerChanged()](/flutter/api/sdk-reference/room-class/events#speakerchanged)
+- [speakerChanged](/flutter/api/sdk-reference/room-class/events#speakerchanged)

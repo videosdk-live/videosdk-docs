@@ -23,9 +23,6 @@ While optimizing for the best viewing experience, it is necessary to fine-tune t
 
 For the best fine-tuning experience, we have introduced the ability to pass a custom video track for the participant's media before and during the meeting.
 
-1. [Custom Video Track](#custom-video-track)
-2. [Custom Screen Share Track](#custom-screen-share-track)
-
 ## Custom Video Track
 
 This feature can be used to add custom video encoder configurations and background removal & video filter from external libraries and send it to other participants.
@@ -195,24 +192,8 @@ class _MeetingScreenState extends State<MeetingScreen> {
   }
 
   void initRoom() {
-    //highlight-start
-    //Creating Custom Audio Track
-    CustomTrack audioTrack = await VideoSDK.createMicrophoneAudioTrack(
-        encoderConfig: CustomAudioTrackConfig.speech_standard);
-
-    //Creating a new Room with custom audio track
-    // create room
-    _room = VideoSDK.createRoom(
-      roomId: widget.meetingId,
-      token: widget.token,
-      displayName: "John Doe",
-      micEnabled: true,
-      camEnabled: true,
-      defaultCameraIndex:
-          1, // Index of MediaDevices will be used to set default camera
-      customMicrophoneAudioTrack: audioTrack, // custom audio track :: optional
-    );
-    //highlight-end
+    //highlight-next-line
+    ...
   }
 
   @override
@@ -221,6 +202,7 @@ class _MeetingScreenState extends State<MeetingScreen> {
       childern: [
         ElevatedButton(
           onPressed: ()async{
+            //highlight-start
             //Creating Custom Video Track
             CustomTrack videoTrack = await VideoSDK.createCameraVideoTrack(
               encoderConfig: CustomVideoTrackConfig.h1440p_w1920p,
@@ -228,6 +210,7 @@ class _MeetingScreenState extends State<MeetingScreen> {
             );
 
             _room.enableCam(videoTrack);
+            //higlight-end
           },
           child: const Text("Enable Cam with Custom Track"),
         ),

@@ -92,7 +92,7 @@ function ViewerListItem({ participantId }) {
   const onClickRequestJoinLiveStream = () => {
     publish("CONFERENCE");
   };
-  //higlight-end
+  //highlight-end
 
   return (
     <div>

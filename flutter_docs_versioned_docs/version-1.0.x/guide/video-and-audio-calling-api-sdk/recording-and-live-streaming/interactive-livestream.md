@@ -24,7 +24,7 @@ In an interactive live stream (HLS), viewers can take part in a variety of activ
 
 <center>
 
-![Screen Share with Audio](/img/VideoSDK-HLS.png)
+![Screen Share with Audio](https://cdn.videosdk.live/website-resources/docs-resources/mobile_hls.png)
 
 </center>
 

@@ -142,7 +142,7 @@ So if we look at creating a private chat between two participants only, we can h
 
 So you can use either of this topics and the private chat is ready.
 
-### Showing Latest Message Notificaiton
+### Displaying Latest Message Notificaiton
 
 You may want to show the notification to the user when new message arrives. So lets continue our example and add alert for the new images.
 

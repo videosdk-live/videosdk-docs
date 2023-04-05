@@ -41,7 +41,7 @@ Visit VideoSDK **[dashboard](https://app.videosdk.live/api-keys)** to generate t
 
 ## Getting Started with the Code!
 
-Follow the steps to create the environment necessary to add video calls into your app. Also you can find the code sample for [quickstart here](https://github.com/videosdk-live/quickstart/tree/main/flutter).
+Follow the steps to create the environment necessary to add video calls into your app. Also you can find the code sample for [quickstart here](https://github.com/videosdk-live/quickstart/tree/main/flutter-rtc).
 
 ### Create a new Flutter project.
 
@@ -87,7 +87,7 @@ App widget will contain `JoinScreen` and `MeetingScreen` widget. `MeetingScreen`
 
 <div style={{textAlign: 'center'}}>
 
-![VideoSDK Flutter Quick Start Architecture](https://cdn.videosdk.live/website-resources/docs-resources/flutter_app_structure.png)
+![VideoSDK Flutter Quick Start Architecture](https://cdn.videosdk.live/website-resources/docs-resources/flutter_quick_start_arch.png)
 
 </div>
 
@@ -263,9 +263,37 @@ class JoinScreen extends StatelessWidget {
 }
 ```
 
+- Update the home screen of the app in the `main.dart`
+
+```js title="main.dart"
+import 'package:flutter/material.dart';
+import 'join_screen.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  // This widget is the root of your application.
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'VideoSDK QuickStart',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      //highlight-next-line
+      home: JoinScreen(),
+    );
+  }
+}
+```
+
 #### Output
 
-![VideoSDK Flutter Quick Start Join Screen](https://cdn.videosdk.live/website-resources/docs-resources/flutter_join_screen.jpg)
+<img src='https://cdn.videosdk.live/website-resources/docs-resources/flutter_rtc_join_screen.png' width="350"/>
 
 ### Step 3 : Creating the MeetingControls
 
@@ -314,10 +342,6 @@ class MeetingControls extends StatelessWidget {
   }
 }
 ```
-
-#### Output
-
-![VideoSDK Flutter Quick Start Meeting Controls](/img/quick-start/flutter-meeting-controls.jpg)
 
 ### Step 4 : Creating ParticipantTile
 
@@ -548,32 +572,9 @@ class _MeetingScreenState extends State<MeetingScreen> {
 }
 ```
 
-### Step 6 : Change main.dart
+#### Output
 
-```js title="main.dart"
-import 'package:flutter/material.dart';
-import 'join_screen.dart';
-
-void main() {
-  runApp(const MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  // This widget is the root of your application.
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'VideoSDK QuickStart',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: JoinScreen(),
-    );
-  }
-}
-```
+<img src='https://cdn.videosdk.live/website-resources/docs-resources/flutter_rtc_meeting_screen.png' width="350"/>
 
 ## Run and Test
 
@@ -596,5 +597,5 @@ If you get `webrtc/webrtc.h file not found` error at a runtime in ios then check
 :::
 
 :::tip
-You can checkout the complete [quick start example here](https://github.com/videosdk-live/quickstart/tree/main/flutter).
+You can checkout the complete [quick start example here](https://github.com/videosdk-live/quickstart/tree/main/flutter-rtc).
 :::

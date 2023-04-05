@@ -72,7 +72,11 @@ class _MeetingScreenState extends State<MeetingScreen> {
 
 ### iOS Setup
 
+:::note
+
 For Flutter iOS Screen Share feature, you need to follow this guide [Flutter iOS Screen Share](/flutter/guide/video-and-audio-calling-api-sdk/extras/flutter-ios-screen-share)
+
+:::
 
 ### Rendering Screen Share Stream
 
@@ -223,7 +227,7 @@ class ScreenShareView extends StatelessWidget {
       color: Colors.grey.shade800,
       height: 300,
       width: 200,
-      //higlight-start
+      //highlight-start
       //show the screen share stream
       child: shareStream != null
           ? RTCVideoView(

@@ -24,8 +24,6 @@ Now we will see, how we can use PubSub to implement Chat functionality. If you a
 
 ## Implementing Chat
 
-### `Group Chat`
-
 1. First step in creating a group chat is choosing the topic which all the participants will publish and subscribe to send and receive the messages. We will be using `CHAT` as the topic for this one. So let us lets create a message input and send button to publish the messages using the `pubSub` from the `Room` object.
 
 ```js
@@ -46,21 +44,7 @@ class _ChatViewState extends State<ChatView> {
   void initState() {
     //highlight-next-line
     ...
-
-    //highlight-start
-    // Subscribing 'CHAT' Topic
-    widget.meeting.pubSub
-      .subscribe("CHAT", messageHandler)
-      .then((value) => setState((() => messages = value)));
-    //highlight-end
   }
-
-  //highlight-start
-  //Handler which will be called when new mesasge is received
-  void messageHandler(PubSubMessage message) {
-    setState(() => messages!.messages.add(message));
-  }
-  //highlight-end
 
   @override
   Widget build(BuildContext context) {
@@ -186,14 +170,6 @@ class _ChatViewState extends State<ChatView> {
   }
 }
 ```
-
-### `Private Chat`
-
-In the above example, if you want to convert into the private chat between two participants, then all you have to do is change the topic which will be unique to those two participants only.
-
-So if we look at creating a private chat between two participants only, we can have the topic something like `<participantId_of_A>_<participantId_of_B>` or `<participantId_of_B>_<participantId_of_A>`.
-
-So you can use either of this topics and the private chat is ready.
 
 ### Displaying Latest Message Notificaiton
 

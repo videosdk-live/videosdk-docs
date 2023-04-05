@@ -338,7 +338,7 @@ class _ParticipantTileState extends State<ParticipantTile> {
 
 <center>
 
-<img src='https://cdn.videosdk.live/website-resources/docs-resources/empty_participant_list.png' style={{height: '600px'}}/>
+<img src='https://cdn.videosdk.live/website-resources/docs-resources/display_video_empty_participant_list.png' style={{height: '600px'}}/>
 
 </center>
 
@@ -411,7 +411,7 @@ Unlike before, you don't need to render audio separately because RTCView is a co
 
 <center>
 
-<img src='https://cdn.videosdk.live/website-resources/docs-resources/participant_list_with_video.png' style={{height: '600px'}}/>
+<img src='https://cdn.videosdk.live/website-resources/docs-resources/display_video_participant_with_video.png' style={{height: '600px'}}/>
 
 </center>
 

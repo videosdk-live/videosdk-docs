@@ -106,20 +106,20 @@ class _ChatViewState extends State<ChatView> {
     //highlight-next-line
     ...
 
-    //higlight-start
+    //highlight-start
     // Subscribing 'CHAT' Topic
     widget.meeting.pubSub
       .subscribe("CHAT", messageHandler)
       .then((value) => setState((() => messages = value)));
-    //higlight-end
+    //highlight-end
   }
 
-  //higlight-start
+  //highlight-start
   //Handler which will be called when new mesasge is received
   void messageHandler(PubSubMessage message) {
     setState(() => messages!.messages.add(message));
   }
-  //higlight-end
+  //highlight-end
 
   @override
   Widget build(BuildContext context) {

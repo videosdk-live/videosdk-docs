@@ -100,7 +100,11 @@ const MeetingView = () => {
 
 ### iOS Setup
 
+:::note
+
 For React Native iOS Screen Share feature, you need to follow this guide [React Native iOS Screen Share](/react-native/guide/video-and-audio-calling-api-sdk/extras/react-native-ios-screen-share)
+
+:::
 
 ### Rendering Screen Share Stream
 

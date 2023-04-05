@@ -175,24 +175,8 @@ class _MeetingScreenState extends State<MeetingScreen> {
   }
 
   void initRoom() {
-    //highlight-start
-    //Creating Custom Audio Track
-    CustomTrack audioTrack = await VideoSDK.createMicrophoneAudioTrack(
-        encoderConfig: CustomAudioTrackConfig.speech_standard);
-
-    //Creating a new Room with custom audio track
-    // create room
-    _room = VideoSDK.createRoom(
-      roomId: widget.meetingId,
-      token: widget.token,
-      displayName: "John Doe",
-      micEnabled: true,
-      camEnabled: true,
-      defaultCameraIndex:
-          1, // Index of MediaDevices will be used to set default camera
-      customMicrophoneAudioTrack: audioTrack, // custom audio track :: optional
-    );
-    //highlight-end
+    //highlight-next-line
+    ...
   }
 
   @override
@@ -201,11 +185,13 @@ class _MeetingScreenState extends State<MeetingScreen> {
       childern: [
         ElevatedButton(
           onPressed: ()async{
+            //highlight-start
             //Creating Custom Audio Track
             CustomTrack audioTrack = await VideoSDK.createMicrophoneAudioTrack(
                 encoderConfig: CustomAudioTrackConfig.speech_standard);
 
             _room.unmuteMic(audioTrack);
+            //highlight-end
           },
           child: const Text("Unmute with Custom Track"),
         ),
