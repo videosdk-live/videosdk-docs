@@ -7,6 +7,8 @@ title: Webhook Verification
 
 VideoSdk signs the webhook events it sends to your endpoints by including a signature in each event’s `videosdk-signature` header. This allows you to verify that the events were sent by VideoSdk and not by a third party. You can verify signatures by following these steps.
 
+![img2.png](../../../static/img/webhook-verification.png)
+
 ## Public key
 
 Our RSA public key is available at [https://api.videosdk.live/v2/public/rsa-public-key](https://api.videosdk.live/v2/public/rsa-public-key). You can obtain it by making a GET request to this endpoint.
