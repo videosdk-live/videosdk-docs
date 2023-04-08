@@ -144,14 +144,14 @@ findViewById<View>(R.id.btnHls).setOnClickListener { view: View? ->
     //highlight-start
     val config = JSONObject()
     val layout = JSONObject()
-    JsonUtils.jsonPut(layout, "type", "GRID") 
-    JsonUtils.jsonPut(layout, "priority", "SPEAKER") 
-    JsonUtils.jsonPut(layout, "gridSize", 4) 
+    JsonUtils.jsonPut(layout, "type", "GRID")
+    JsonUtils.jsonPut(layout, "priority", "SPEAKER")
+    JsonUtils.jsonPut(layout, "gridSize", 4)
     JsonUtils.jsonPut(config, "layout", layout)
-    JsonUtils.jsonPut(config, "theme", "DARK") 
-    JsonUtils.jsonPut(config, "mode", "video-and-audio") 
-    JsonUtils.jsonPut(config, "quality", "high") 
-    JsonUtils.jsonPut(config, "orientation", "portrait") 
+    JsonUtils.jsonPut(config, "theme", "DARK")
+    JsonUtils.jsonPut(config, "mode", "video-and-audio")
+    JsonUtils.jsonPut(config, "quality", "high")
+    JsonUtils.jsonPut(config, "orientation", "portrait")
     //highlight-end
 
     // Start Hls
@@ -183,9 +183,9 @@ findViewById(R.id.btnHls).setOnClickListener(view -> {
     JsonUtils.jsonPut(layout, "gridSize", 4);
     JsonUtils.jsonPut(config, "layout", layout);
     JsonUtils.jsonPut(config, "theme", "DARK");
-    JsonUtils.jsonPut(config, "mode", "video-and-audio"); 
-    JsonUtils.jsonPut(config, "quality", "high"); 
-    JsonUtils.jsonPut(config, "orientation", "portrait"); 
+    JsonUtils.jsonPut(config, "mode", "video-and-audio");
+    JsonUtils.jsonPut(config, "quality", "high");
+    JsonUtils.jsonPut(config, "orientation", "portrait");
     //highlight-end
 
     // Start Hls
@@ -262,10 +262,6 @@ private final MeetingEventListener meetingEventListener = new MeetingEventListen
               break;
           case "HLS_STARTED":
               Log.d("onHlsStateChanged", "Meeting hls is started");
-              //highlight-start
-              // on hls started you will receive downstreamUrl
-              String downStreamUrl = HlsState.getString("downstreamUrl");
-              //highlight-end
               break;
           case "HLS_PLAYABLE":
               Log.d("onHlsStateChanged", "Meeting hls is playable now");
