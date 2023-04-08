@@ -1096,12 +1096,7 @@ public class SpeakerFragment extends Fragment {
 }
 ```
 
-<<<<<<< HEAD
-
-=======
-
-> > > > > > > origin/android
-> > > > > > > </TabItem>
+</TabItem>
 
 </Tabs>
 
