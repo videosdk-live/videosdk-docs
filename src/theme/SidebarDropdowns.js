@@ -27,7 +27,7 @@ export default function SidebarDropdowns() {
           version == versionList[0]
           ? "/guide/video-and-audio-calling-api-sdk/concept-and-architecture"
           : value == "prebuilt"
-          ? "/guide/prebuilt-video-and-audio-calling-api-sdk/getting-started"
+          ? "/guide/prebuilt-video-and-audio-calling/getting-started"
           : "/guide/video-and-audio-calling-api-sdk/getting-started"
         : "/api/sdk-reference/setup")
     );
