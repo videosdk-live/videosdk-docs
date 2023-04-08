@@ -94,6 +94,11 @@ export default function SidebarDropdowns() {
 
   const sdkList = [
     {
+      id: "prebuilt",
+      value: "Prebuilt (UIkit)",
+      icon: "/img/icons/libraries/ic_javascript.svg",
+    },
+    {
       id: "javascript",
       value: "Javascript",
       icon: "/img/icons/libraries/ic_javascript.svg",
@@ -138,7 +143,6 @@ export default function SidebarDropdowns() {
       {sdk != "docs" &&
       sdk != "no-code-sdk" &&
       sdk != "help_docs" &&
-      sdk != "prebuilt" &&
       sdk != "api-reference" ? (
         <div className="col dropdown dropdown--hoverable dropdown--left">
           <div className="row navbar__link--active">
@@ -151,7 +155,7 @@ export default function SidebarDropdowns() {
           </div>
           <ul className="dropdown__menu">
             {sdkList.map((e, i) => {
-              return e.id != "prebuilt" || viewType == "api" ? (
+              return (
                 <li key={e.id}>
                   <Link
                     className={
@@ -165,7 +169,7 @@ export default function SidebarDropdowns() {
                     {e.value}
                   </Link>
                 </li>
-              ) : null;
+              )
             })}
           </ul>
         </div>
@@ -173,8 +177,6 @@ export default function SidebarDropdowns() {
       {sdk != "docs" && sdk != "no-code-sdk" && sdk != "help_docs" ? (
         <div
           className={
-            (viewType == "guide" && sdk == "prebuilt") ||
-            (viewType == "api" && sdk == "prebuilt") ||
             sdk == "api-reference"
               ? "col dropdown dropdown--hoverable dropdown--left"
               : "dropdown dropdown--hoverable dropdown--right"

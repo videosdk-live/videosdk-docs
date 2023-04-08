@@ -75,50 +75,12 @@ module.exports = {
         {
           position: "left",
           label: "Guide",
-          items: [
-            // {
-            //   label: "No Code Video & Audio Calling SDK",
-            //   to: "no-code-sdk/guide/no-code-video-and-audio-calling/getting-started",
-            //   activeBaseRegex: "/*/no-code-sdk/*",
-            // },
-            {
-              label: "Prebuilt Video & Audio Calling SDK",
-              to: "prebuilt/guide/prebuilt-video-and-audio-calling/getting-started",
-              activeBaseRegex: "/*/prebuilt-video-and-audio-calling/*",
-            },
-            {
-              label: "Custom Video & Audio Calling SDK",
-              to: "javascript/guide/video-and-audio-calling-api-sdk/getting-started",
-              activeBaseRegex: "/*/video-and-audio-calling-api-sdk/*",
-            },
-          ],
+          to:"/javascript/guide/video-and-audio-calling-api-sdk/getting-started"
         },
         {
           position: "left",
           label: "API Reference",
-          items: [
-            {
-              label: "Custom SDK References",
-              to: "javascript/api/sdk-reference/setup",
-              activeBaseRegex:
-                "/react|flutter|react-native|javascript|ios|android/api/sdk-reference/*",
-            },
-            {
-              label: "Prebuilt SDK Reference",
-              to: "prebuilt/api/sdk-reference/setup",
-              activeBaseRegex: "/prebuilt/api/sdk-reference/*",
-            },
-            {
-              label: "Rest API Reference",
-              to: "api-reference/realtime-communication/intro",
-              activeBaseRegex: "api-reference/*/realtime-communication/*",
-            },
-          ],
-        },
-        {
-          position: "left",
-          label: "Tutorials",
-          to: "/docs/tutorials/introduction",
+          to:"javascript/api/sdk-reference/setup",
         },
         {
           position: "left",
