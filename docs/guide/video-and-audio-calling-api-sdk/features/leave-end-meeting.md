@@ -25,11 +25,11 @@ We've released a new version of pages with some improvements and smoother experi
 Here is the link of each SDK for this page.
 
 - [JS](/javascript/guide/video-and-audio-calling-api-sdk/features/leave-end-meeting)
-- [React](/react/guide/video-and-audio-calling-api-sdk/features/leave-end-meeting)
-- [React Native](/react-native/guide/video-and-audio-calling-api-sdk/features/leave-end-meeting)
-- [Android](/android/guide/video-and-audio-calling-api-sdk/features/leave-end-meeting)
+- [React](/react/guide/video-and-audio-calling-api-sdk/setup-call/leave-end-meeting)
+- [React Native](/react-native/guide/video-and-audio-calling-api-sdk/setup-call/leave-end-meeting)
+- [Android](/android/guide/video-and-audio-calling-api-sdk/setup-call/leave-end-meeting)
 - [iOS](/ios/guide/video-and-audio-calling-api-sdk/features/leave-end-meeting)
-- [Flutter](/flutter/guide/video-and-audio-calling-api-sdk/features/leave-end-room)
+- [Flutter](/flutter/guide/video-and-audio-calling-api-sdk/setup-call/leave-end-meeting)
 
 :::
 

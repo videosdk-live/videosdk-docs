@@ -25,11 +25,11 @@ We've released a new version of pages with some improvements and smoother experi
 Here is the link of each SDK for this page.
 
 - [JS](/javascript/guide/video-and-audio-calling-api-sdk/features/go-live-social-media)
-- [React](/react/guide/video-and-audio-calling-api-sdk/features/go-live-social-media)
-- [React Native](/react-native/guide/video-and-audio-calling-api-sdk/features/go-live-social-media)
-- [Android](/android/guide/video-and-audio-calling-api-sdk/features/go-live-social-media)
+- [React](/react/guide/video-and-audio-calling-api-sdk/recording-and-live-streaming/rtmp-livestream)
+- [React Native](/react-native/guide/video-and-audio-calling-api-sdk/recording-and-live-streaming/rtmp-livestream)
+- [Android](/android/guide/video-and-audio-calling-api-sdk/recording-and-live-streaming/rtmp-livestream)
 - [iOS](/ios/guide/video-and-audio-calling-api-sdk/features/go-live-social-media)
-- [Flutter](/flutter/guide/video-and-audio-calling-api-sdk/features/go-live-social-media)
+- [Flutter](/flutter/guide/video-and-audio-calling-api-sdk/recording-and-live-streaming/rtmp-livestream)
 
 :::
 

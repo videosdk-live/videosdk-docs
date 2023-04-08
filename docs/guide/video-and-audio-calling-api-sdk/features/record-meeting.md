@@ -25,11 +25,11 @@ We've released a new version of pages with some improvements and smoother experi
 Here is the link of each SDK for this page.
 
 - [JS](/javascript/guide/video-and-audio-calling-api-sdk/features/recording-meeting)
-- [React](/react/guide/video-and-audio-calling-api-sdk/features/recording-meeting)
-- [React Native](/react-native/guide/video-and-audio-calling-api-sdk/features/recording-meeting)
-- [Android](/android/guide/video-and-audio-calling-api-sdk/features/recording-meeting)
+- [React](/react/guide/video-and-audio-calling-api-sdk/recording-and-live-streaming/record-meeting)
+- [React Native](/react-native/guide/video-and-audio-calling-api-sdk/recording-and-live-streaming/record-meeting)
+- [Android](/android/guide/video-and-audio-calling-api-sdk/recording-and-live-streaming/record-meeting)
 - [iOS](/ios/guide/video-and-audio-calling-api-sdk/features/recording-meeting)
-- [Flutter](/flutter/guide/video-and-audio-calling-api-sdk/features/recording-room)
+- [Flutter](/flutter/guide/video-and-audio-calling-api-sdk/recording-and-live-streaming/record-meeting)
 
 :::
 

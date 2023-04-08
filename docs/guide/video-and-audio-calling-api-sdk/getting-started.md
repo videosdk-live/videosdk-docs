@@ -27,10 +27,10 @@ Here is the link of each SDK for this page.
 
 - [JS](/javascript/guide/video-and-audio-calling-api-sdk/getting-started)
 - [React](/react/guide/video-and-audio-calling-api-sdk/quick-start)
-- [React Native](/react-native/guide/video-and-audio-calling-api-sdk/getting-started)
-- [Android](/android/guide/video-and-audio-calling-api-sdk/getting-started)
-- [iOS](/ios/guide/video-and-audio-calling-api-sdk/getting-started)
-- [Flutter](/flutter/guide/video-and-audio-calling-api-sdk/getting-started)
+- [React Native](/react-native/guide/video-and-audio-calling-api-sdk/quick-start)
+- [Android](/android/guide/video-and-audio-calling-api-sdk/quick-start)
+- [iOS](/ios/guide/video-and-audio-calling-api-sdk/quick-start)
+- [Flutter](/flutter/guide/video-and-audio-calling-api-sdk/quick-start)
 
 :::
 
