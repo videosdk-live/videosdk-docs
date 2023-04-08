@@ -23,11 +23,11 @@ We've released a new version of pages with some improvements and smoother experi
 Here is the link of each SDK for this page.
 
 - [JS](/javascript/guide/video-and-audio-calling-api-sdk/features/start-join-meeting)
-- [React](/react/guide/video-and-audio-calling-api-sdk/features/start-join-meeting)
-- [React Native](/react-native/guide/video-and-audio-calling-api-sdk/features/start-join-meeting)
-- [Android](/android/guide/video-and-audio-calling-api-sdk/features/start-join-meeting)
+- [React](/react/guide/video-and-audio-calling-api-sdk/setup-call/join-meeting)
+- [React Native](/react-native/guide/video-and-audio-calling-api-sdk/setup-call/join-meeting)
+- [Android](/android/guide/video-and-audio-calling-api-sdk/setup-call/join-meeting)
 - [iOS](/ios/guide/video-and-audio-calling-api-sdk/features/start-join-meeting)
-- [Flutter](/flutter/guide/video-and-audio-calling-api-sdk/features/start-join-room)
+- [Flutter](/flutter/guide/video-and-audio-calling-api-sdk/setup-call/join-meeting)
 
 :::
 

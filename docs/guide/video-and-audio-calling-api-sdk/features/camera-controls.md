@@ -27,11 +27,11 @@ We've released a new version of pages with some improvements and smoother experi
 Here is the link of each SDK for this page.
 
 - [JS](/javascript/guide/video-and-audio-calling-api-sdk/features/camera-controls)
-- [React](/react/guide/video-and-audio-calling-api-sdk/features/camera-controls)
-- [React Native](/react-native/guide/video-and-audio-calling-api-sdk/features/camera-controls)
-- [Android](/android/guide/video-and-audio-calling-api-sdk/features/camera-controls)
+- [React](/react/guide/video-and-audio-calling-api-sdk/handling-media/on-off-camera)
+- [React Native](/react-native/guide/video-and-audio-calling-api-sdk/handling-media/on-off-camera)
+- [Android](/android/guide/video-and-audio-calling-api-sdk/handling-media/on-off-camera)
 - [iOS](/ios/guide/video-and-audio-calling-api-sdk/features/camera-controls)
-- [Flutter](/flutter/guide/video-and-audio-calling-api-sdk/features/camera-controls)
+- [Flutter](/flutter/guide/video-and-audio-calling-api-sdk/handling-media/on-off-camera)
 
 :::
 

@@ -25,11 +25,11 @@ We've released a new version of pages with some improvements and smoother experi
 Here is the link of each SDK for this page.
 
 - [JS](/javascript/guide/video-and-audio-calling-api-sdk/features/mic-controls)
-- [React](/react/guide/video-and-audio-calling-api-sdk/features/mic-controls)
-- [React Native](/react-native/guide/video-and-audio-calling-api-sdk/features/mic-controls)
-- [Android](/android/guide/video-and-audio-calling-api-sdk/features/mic-controls)
+- [React](/react/guide/video-and-audio-calling-api-sdk/handling-media/mute-unmute-mic)
+- [React Native](/react-native/guide/video-and-audio-calling-api-sdk/handling-media/mute-unmute-mic)
+- [Android](/android/guide/video-and-audio-calling-api-sdk/handling-media/mute-unmute-mic)
 - [iOS](/ios/guide/video-and-audio-calling-api-sdk/features/mic-controls)
-- [Flutter](/flutter/guide/video-and-audio-calling-api-sdk/features/mic-controls)
+- [Flutter](/flutter/guide/video-and-audio-calling-api-sdk/handling-media/mute-unmute-mic)
 
 :::
 

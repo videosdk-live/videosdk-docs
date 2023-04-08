@@ -78,7 +78,7 @@ export default function QuickstartPart() {
     },
     {
       Icon: CustomFlutterIcon,
-      link: "/flutter/guide/video-and-audio-calling-api-sdk/getting-started",
+      link: "/flutter/guide/video-and-audio-calling-api-sdk/concept-and-architecture",
       tooltip: "Flutter",
     },
     {

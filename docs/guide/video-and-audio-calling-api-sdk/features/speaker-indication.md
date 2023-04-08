@@ -24,11 +24,11 @@ We've released a new version of pages with some improvements and smoother experi
 Here is the link of each SDK for this page.
 
 - [JS](/javascript/guide/video-and-audio-calling-api-sdk/features/speaker-indication)
-- [React](/react/guide/video-and-audio-calling-api-sdk/features/speaker-indication)
-- [React Native](/react-native/guide/video-and-audio-calling-api-sdk/features/speaker-indication)
-- [Android](/android/guide/video-and-audio-calling-api-sdk/features/speaker-indication)
+- [React](/react/guide/video-and-audio-calling-api-sdk/handling-media/active-speaker-indication)
+- [React Native](/react-native/guide/video-and-audio-calling-api-sdk/handling-media/active-speaker-indication)
+- [Android](/android/guide/video-and-audio-calling-api-sdk/handling-media/active-speaker-indication)
 - [iOS](/ios/guide/video-and-audio-calling-api-sdk/features/speaker-indication)
-- [Flutter](/flutter/guide/video-and-audio-calling-api-sdk/features/speaker-indication)
+- [Flutter](/flutter/guide/video-and-audio-calling-api-sdk/handling-media/active-speaker-indication)
 
 :::
 

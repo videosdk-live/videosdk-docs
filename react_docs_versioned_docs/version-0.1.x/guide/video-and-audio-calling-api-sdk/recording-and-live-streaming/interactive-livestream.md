@@ -49,7 +49,7 @@ This guide will provide an overview of how to implement start and stop Interacti
     },
 
     // highlight-next-line
-    // Theme of interactive livestream layout
+    // Theme of livestream
     theme: "DARK", //  "LIGHT" | "DEFAULT"
 
     // highlight-next-line
@@ -57,13 +57,13 @@ This guide will provide an overview of how to implement start and stop Interacti
     mode: "video-and-audio", // "audio", Default : "video-and-audio"
 
     // highlight-next-line
-    // Quality of interactive livestream and is only applicable to `video-and-audio` type mode.
+    // Quality of livestream and is only applicable to `video-and-audio` type mode.
     quality: "high", // "low" | "med",  Default : "med"
 
     //highlight-start
-    // This mode refers to orientation of interactive livestream.
-    // landscape : Start interactive livestream of the meeting in horizontally
-    // portrait : Start interactive livestream of the meeting in vertically (Best for mobile view)
+    // This mode refers to orientation of recording.
+    // landscape : Livestream the meeting in horizontally
+    // portrait : Livestream the meeting in vertically (Best for mobile view)
     //highlight-end
     orientation: "landscape", // "portrait",  Default : "landscape"
   };

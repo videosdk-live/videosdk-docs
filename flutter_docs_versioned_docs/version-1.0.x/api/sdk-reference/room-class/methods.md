@@ -371,6 +371,44 @@ room.changeCam(deviceId);
 
 ---
 
+### getAudioOutputDevices()
+
+- It will return all the available audio output devices.
+
+#### Returns
+
+- List< [`MediaDeviceInfo`](https://api.flutter.dev/flutter/dart-html/MediaDeviceInfo-class.html) >
+
+#### Example
+
+```javascript
+List<MediaDeviceInfo> audioOutputDevices = room.getAudioOutputDevices();
+print(audioOutputDevices);
+```
+
+---
+
+### switchAudioDevice()
+
+- It is used to change the audio output device.
+- You can get list of connected audio output devices using [`getAudioOutputDevices`](#getaudiooutputdevices)
+
+#### Parameters
+
+- **device**: MediaDeviceInfo
+
+#### Returns
+
+- _`void`_
+
+#### Example
+
+```javascript
+room.switchAudioDevice(device);
+```
+
+---
+
 ### on()
 
 - It is used to listen [`Room`](introduction) related events.

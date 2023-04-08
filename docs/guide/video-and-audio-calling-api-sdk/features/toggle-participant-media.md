@@ -27,11 +27,11 @@ We've released a new version of pages with some improvements and smoother experi
 Here is the link of each SDK for this page.
 
 - [JS](/javascript/guide/video-and-audio-calling-api-sdk/features/toggle-participant-media)
-- [React](/react/guide/video-and-audio-calling-api-sdk/features/toggle-participant-media)
-- [React Native](/react-native/guide/video-and-audio-calling-api-sdk/features/toggle-participant-media)
-- [Android](/android/guide/video-and-audio-calling-api-sdk/features/toggle-participant-media)
+- [React](/react/guide/video-and-audio-calling-api-sdk/control-remote-participant/remote-participant-media)
+- [React Native](/react-native/guide/video-and-audio-calling-api-sdk/control-remote-participant/remote-participant-media)
+- [Android](/android/guide/video-and-audio-calling-api-sdk/control-remote-participant/remote-participant-media)
 - [iOS](/ios/guide/video-and-audio-calling-api-sdk/features/toggle-participant-media)
-- [Flutter](/flutter/guide/video-and-audio-calling-api-sdk/features/toggle-participant-media)
+- [Flutter](/flutter/guide/video-and-audio-calling-api-sdk/control-remote-participant/remote-participant-media)
 
 :::
 

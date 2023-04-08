@@ -25,10 +25,10 @@ We've released a new version of pages with some improvements and smoother experi
 Here is the link of each SDK for this page.
 
 - [JS](/javascript/guide/video-and-audio-calling-api-sdk/features/screenshare)
-- [React](/react/guide/video-and-audio-calling-api-sdk/features/screenshare)
-- [React Native](/react-native/guide/video-and-audio-calling-api-sdk/features/screenshare)
-- [Android](/android/guide/video-and-audio-calling-api-sdk/features/screenshare)
-- [Flutter](/flutter/guide/video-and-audio-calling-api-sdk/features/screenshare)
+- [React](/react/guide/video-and-audio-calling-api-sdk/handling-media/screen-share)
+- [React Native](/react-native/guide/video-and-audio-calling-api-sdk/handling-media/screen-share)
+- [Android](/android/guide/video-and-audio-calling-api-sdk/handling-media/screen-share)
+- [Flutter](/flutter/guide/video-and-audio-calling-api-sdk/handling-media/screen-share)
 
 :::
 
