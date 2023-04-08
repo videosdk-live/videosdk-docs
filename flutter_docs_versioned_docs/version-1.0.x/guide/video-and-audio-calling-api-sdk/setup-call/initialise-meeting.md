@@ -27,7 +27,7 @@ You can generate a `token` in two ways:
 
 2. **`Server`** : You can setup **JWT** in backend and make an API call to get the token from your server.
 
-To learn more about **Authentication** and token in detail you can follow [this guide](../authentication-and-token).
+To learn more about **Authentication** and token in detail you can follow [this guide](../authentication-and-tokens).
 
 ```js
 // With Temporary Token

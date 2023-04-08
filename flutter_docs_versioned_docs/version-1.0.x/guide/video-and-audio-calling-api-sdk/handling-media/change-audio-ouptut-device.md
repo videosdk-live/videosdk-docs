@@ -136,5 +136,5 @@ class _MeetingScreenState extends State<MeetingScreen> {
 
 The API references for all the methods and events utilised in this guide are provided below.
 
-- [getAudioOutputDevice()](/flutter/api/sdk-reference/room-class/medthods#getaudiooutputdevice)
-- [switchAudioDevice()](/flutter/api/sdk-reference/room-class/medthods#switchAudioDevice)
+- [getAudioOutputDevice()](/flutter/api/sdk-reference/room-class/methods#getaudiooutputdevice)
+- [switchAudioDevice()](/flutter/api/sdk-reference/room-class/methods#switchAudioDevice)

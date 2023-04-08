@@ -239,5 +239,5 @@ The API references for all the methods and events utilised in this guide are pro
 - [muteMic()](/flutter/api/sdk-reference/participant-class/methods#mutemic)
 - [enableCam()](/flutter/api/sdk-reference/participant-class/methods#enablecam)
 - [disableCam()](/flutter/api/sdk-reference/participant-class/methods#disablecam)
-- [Events.cameraRequested](/flutter/api/sdk-reference/use-meeting/events#camerarequested)
-- [Events.micRequested](/flutter/api/sdk-reference/use-meeting/events#micrequested)
+- [Events.cameraRequested](/flutter/api/sdk-reference/room-class/events#camerarequested)
+- [Events.micRequested](/flutter/api/sdk-reference/room-class/events#micrequested)

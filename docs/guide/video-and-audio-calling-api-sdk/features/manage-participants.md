@@ -27,7 +27,7 @@ Here is the link of each SDK for this page.
 - [JS](/javascript/guide/video-and-audio-calling-api-sdk/features/manage-participants)
 - [React](/react/guide/video-and-audio-calling-api-sdk/render-media/display-audio-video)
 - [React Native](/react-native/guide/video-and-audio-calling-api-sdk/render-media/display-video)
-- [Android](/android/guide/video-and-audio-calling-api-sdk/render-media/display-video)
+- [Android](/android/guide/video-and-audio-calling-api-sdk/render-media/display-video/render-participant)
 - [iOS](/ios/guide/video-and-audio-calling-api-sdk/features/manage-participants)
 - [Flutter](/flutter/guide/video-and-audio-calling-api-sdk/render-media/display-video)
 

@@ -259,4 +259,4 @@ All the messages from the PubSub which where published with `persist : true` and
 
 The API references for all the methods and events utilised in this guide are provided below.
 
-- [pubSub](/flutter/api/pubsub-class/introduction)
+- [pubSub](/flutter/api/sdk-reference/pubsub-class/introduction)
