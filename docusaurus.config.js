@@ -123,7 +123,7 @@ module.exports = {
         {
           position: "left",
           label: "Code Samples",
-          to: "https://github.com/videosdk-live",
+          to: "/code-sample",
         },
         {
           position: "left",
@@ -263,13 +263,13 @@ module.exports = {
               label: "API Reference",
               to: "/react/api/sdk-reference/setup",
             },
-            {
-              label: "Resources",
-              to: "/docs/tutorials/introduction",
-            },
+            // {
+            //   label: "Resources",
+            //   to: "/docs/tutorials/introduction",
+            // },
             {
               label: "Code Samples",
-              to: "/docs/code-sample/overview",
+              to: "/code-sample",
             },
             {
               label: "Product Updates",
