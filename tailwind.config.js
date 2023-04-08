@@ -42,13 +42,13 @@ module.exports = {
       // gray: colors.gray, default gray color
       primary: "#5568FE",
       grayb3: "#b3b3b3",
-      customgray:{
-        300: "#454545"
+      customgray: {
+        300: "#454545",
       },
       gray: {
         100: "#eeeeee",
         200: "#e0e0e0",
-        250: "#b2b2b2",
+        250: "#9a9fa5",
         300: "#bbbbbb",
         400: "#666666",
         500: "#444444",

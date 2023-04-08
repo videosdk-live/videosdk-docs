@@ -320,13 +320,13 @@ export default function CodeSample() {
               {codeSamples[selecteSDK].map((codeSample, idx) => {
                 return (
                   <Link to={codeSample.link} className="">
-                    <div className="relative bg-gray-750 w-full h-full p-3 rounded-xl border-class hover:cursor-pointer">
+                    <div className="relative bg-gray-750 w-full h-full p-4 rounded-xl border-class hover:cursor-pointer">
                       <ExternalLinkIcon className="absolute right-5 top-5" />
                       <p className="text-xl text-white-100 font-extrabold mb-0 flex itmes-center gap-3">
                         <img src={codeSample.icon} className="invert h-8 w-8" />{" "}
                         {codeSample.title}
                       </p>
-                      <p className="text-gray-500 mt-2 mb-0">
+                      <p className="text-gray-250 mt-2 mb-0">
                         {codeSample.description}
                       </p>
                     </div>
