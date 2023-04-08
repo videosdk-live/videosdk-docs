@@ -144,8 +144,8 @@ findViewById<View>(R.id.btnHls).setOnClickListener { view: View? ->
     //highlight-start
     val config = JSONObject()
     val layout = JSONObject()
-    JsonUtils.jsonPut(layout, "type", "GRID") 
-    JsonUtils.jsonPut(layout, "priority", "SPEAKER") 
+    JsonUtils.jsonPut(layout, "type", "SPOTLIGHT") 
+    JsonUtils.jsonPut(layout, "priority", "PIN") 
     JsonUtils.jsonPut(layout, "gridSize", 4) 
     JsonUtils.jsonPut(config, "layout", layout)
     JsonUtils.jsonPut(config, "theme", "DARK") 
@@ -178,8 +178,8 @@ findViewById(R.id.btnHls).setOnClickListener(view -> {
     //highlight-start
     JSONObject config = new JSONObject();
     JSONObject layout = new JSONObject();
-    JsonUtils.jsonPut(layout, "type", "GRID");
-    JsonUtils.jsonPut(layout, "priority", "SPEAKER");
+    JsonUtils.jsonPut(layout, "type", "SPOTLIGHT");
+    JsonUtils.jsonPut(layout, "priority", "PIN");
     JsonUtils.jsonPut(layout, "gridSize", 4);
     JsonUtils.jsonPut(config, "layout", layout);
     JsonUtils.jsonPut(config, "theme", "DARK");
@@ -204,7 +204,7 @@ findViewById(R.id.btnHls).setOnClickListener(view -> {
 </Tabs>
 
 :::note
-If you want to learn more about the Interactive Livestream and how you can implement it in your own platform, you can checkout this guide.
+If you want to learn more about the Interactive Livestream and how you can implement it in your own platform, you can checkout [this guide](/android/guide/interactive-live-streaming/integrate-hls/overview).
 :::
 
 ### Event associated with HLS
