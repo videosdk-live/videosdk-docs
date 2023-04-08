@@ -55,19 +55,19 @@ values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
 
 ```js
 private val meetingEventListener: MeetingEventListener = object : MeetingEventListener() {
-  fun onMeetingJoined() {
+  override fun onMeetingJoined() {
       Log.d("VideoSDK", "onMeetingJoined: ")
   }
 
-  fun onMeetingLeft() {
+  override fun onMeetingLeft() {
       Log.d("VideoSDK", "onMeetingLeft: ")
   }
 
-  fun onSpeakerChanged(participantId: String) {
+  override fun onSpeakerChanged(participantId: String) {
       Log.d("VideoSDK", "onSpeakerChanged: $participantId")
   }
 
-  fun onPresenterChanged(participantId: String) {
+  override fun onPresenterChanged(participantId: String) {
       Log.d("VideoSDK", "onPresenterChanged: $participantId")
   }
 }

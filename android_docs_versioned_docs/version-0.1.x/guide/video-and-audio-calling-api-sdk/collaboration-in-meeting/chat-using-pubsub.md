@@ -223,7 +223,7 @@ public class ChatActivity extends AppCompatActivity {
     public void onMessageReceived(PubSubMessage message) {
         // New message
         Toast.makeText(
-          ChatActivity.this, message.senderName + " says : "+ message.getMessag(), 
+          ChatActivity.this, message.senderName + " says : "+ message.getMessage(), 
           Toast.LENGTH_SHORT
         ).show();
     }
@@ -244,7 +244,7 @@ public class ChatActivity extends AppCompatActivity {
     for(PubSubMessage message : pubSubMessageList){
         // Persisted messages
         Toast.makeText(
-          ChatActivity.this, message.senderName + " says : "+ message.getMessag(), 
+          ChatActivity.this, message.senderName + " says : "+ message.getMessage(), 
           Toast.LENGTH_SHORT
         ).show();
     }

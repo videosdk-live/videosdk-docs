@@ -153,7 +153,30 @@
           "label": "Integrate HLS",
           "items": [
             "guide/interactive-live-streaming/integrate-hls/overview",
-            "guide/interactive-live-streaming/integrate-hls/setup-hls-player"
+            "guide/interactive-live-streaming/integrate-hls/setup-hls-player",
+            "guide/interactive-live-streaming/integrate-hls/start-hls",
+            "guide/interactive-live-streaming/integrate-hls/stop-hls"
+          ]
+        },
+        {
+          "type": "category",
+          "label": "Handling Participants",
+          "items": [
+            "guide/interactive-live-streaming/handling-participants/manage-roles",
+            "guide/interactive-live-streaming/handling-participants/invite-guest-on-stage",
+            "guide/interactive-live-streaming/handling-participants/display-attendees-count",
+            "guide/interactive-live-streaming/handling-participants/manage-on-screen-participants"
+            
+          ]
+        },
+        {
+          "type": "category",
+          "label": "Interaction in Livestream",
+          "items": [
+            "guide/interactive-live-streaming/interaction-in-livestream/chat",
+            "guide/interactive-live-streaming/interaction-in-livestream/raise-hand",
+            "guide/interactive-live-streaming/interaction-in-livestream/notify-attendees",
+            "guide/interactive-live-streaming/interaction-in-livestream/reactions"
           ]
         }
       ],

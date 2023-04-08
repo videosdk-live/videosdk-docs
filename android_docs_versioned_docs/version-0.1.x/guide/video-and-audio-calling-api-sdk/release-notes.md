@@ -7,6 +7,18 @@ pagination_label: Release Notes
 
 This page will keep you update all the releases of Android SDK.
 
+## v0.1.15
+
+**Release Date** : 31st March 2023
+
+**Change log** :
+
+- Add `HLS_PLAYABLE` state in `onHlsStateChanged` event.
+
+    **Docs** : [onHlsStateChanged](https://docs.videosdk.live/android/api/sdk-reference/meeting-class/meeting-event-listener-class#onhlsstatechanged)
+
+---
+
 ## v0.1.14
 
 **Release Date** : 28th February 2023

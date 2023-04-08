@@ -282,13 +282,13 @@ public class ViewerActivity extends AppCompatActivity {
 
 With this, the player is setup to play the HLS.
 
-<div style={{textAlign: 'center'}}>
+<center>
 
-<img style={{height: '450px',marginRight:'15px'}} src="/img/android/android_ils_quickstart_viewer_screen_waiting.jpg" />
+<img style={{height: '450px',marginRight:'15px'}} src="https://cdn.videosdk.live/website-resources/docs-resources/android_ils_quickstart_viewer_screen_waiting.jpg" />
 
-<img style={{height: '450px'}} src="/img/android/android_ils_quickstart_viewer_screen.jpg" />
+<img style={{height: '450px'}} src="https://cdn.videosdk.live/website-resources/docs-resources/android_ils_quickstart_viewer_screen.jpg" />
 
-</div>
+</center>
 
 ## API Reference
 
