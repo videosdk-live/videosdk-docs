@@ -167,6 +167,11 @@ Your project structure should look like this.
 You have to set JoinActivity as Launcher activity.
 
 :::
+<<<<<<< HEAD
+
+=======
+
+> > > > > > > origin/android
 
 ### App Architecture
 
@@ -306,7 +311,7 @@ values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
 class JoinActivity : AppCompatActivity() {
 
    //Replace with the token you generated from the VideoSDK Dashboard
-   private var sampleToken = ""
+   private var sampleToken = "";
 
    override fun onCreate(savedInstanceState: Bundle?) {
       super.onCreate(savedInstanceState)
@@ -508,7 +513,7 @@ Don't confuse with Room and Meeting keyword, both are same thing 😃
 
 :::
 
-5. Our App is completely based on audio and video commutation, that's why we need to ask for runtime permissions `RECORD_AUDIO` and `CAMERA`. So, we will implement permission logic on `JoinActivity`.
+5. Our App is completely based on audio and video communicatation, that's why we need to ask for runtime permissions `RECORD_AUDIO` and `CAMERA`. So, we will implement permission logic on `JoinActivity`.
 
 <Tabs
 defaultValue="Kotlin"
@@ -597,7 +602,7 @@ Create a new Activity named `MeetingActivity`.
 In `/app/res/layout/activity_meeting.xml` file, replace the content with the following.
 
 ```xml title="activty_meeting.xml"
-<<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mainLayout"
@@ -1091,7 +1096,12 @@ public class SpeakerFragment extends Fragment {
 }
 ```
 
-</TabItem>
+<<<<<<< HEAD
+
+=======
+
+> > > > > > > origin/android
+> > > > > > > </TabItem>
 
 </Tabs>
 
@@ -1253,7 +1263,7 @@ public class SpeakerFragment extends Fragment {
 
 - Here the participant's video is displayed using `VideoView`, but you may also use `SurfaceViewRender` for the same.
 - For `VideoView`, SDK version should be `0.1.13` or higher.
-- To know more about `VideoView`, please visit [here](/android/guide/video-and-audio-calling-api-sdk/components/videoView)
+- To know more about `VideoView`, please visit [here](/android/guide/video-and-audio-calling-api-sdk/render-media/display-video/understand-videoView-component)
 
 :::
 
@@ -1296,7 +1306,7 @@ public class SpeakerFragment extends Fragment {
 </FrameLayout>
 ```
 
-- Create a recycler view adapter named `ParticipantAdapter` which will show the participant list. Create `PeerViewHolder` in the adapter which will extend `RecyclerView.ViewHolder`.
+- Create a recycler view adapter named `SpeakerAdapter` which will show the participant list. Create `PeerViewHolder` in the adapter which will extend `RecyclerView.ViewHolder`.
 
 <Tabs
 defaultValue="Kotlin"
@@ -1577,6 +1587,52 @@ public class SpeakerAdapter extends RecyclerView.Adapter<SpeakerAdapter.PeerView
         participantView = view.findViewById(R.id.participantView);
     }
   }
+}
+```
+
+</TabItem>
+
+</Tabs>
+
+6. Add this adapter to the `SpeakerFragment`
+
+<Tabs
+defaultValue="Kotlin"
+groupId={"AndroidLanguage"}
+values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
+
+<TabItem value="Kotlin">
+
+```js title="SpeakerFragment.kt"
+ override fun onCreateView(
+      inflater: LayoutInflater, container: ViewGroup?,
+      savedInstanceState: Bundle?
+  ): View? {
+    //...
+    if (meeting != null) {
+      //...
+      val rvParticipants = findViewById<RecyclerView>(R.id.rvParticipants)
+      rvParticipants.layoutManager = GridLayoutManager(this, 2)
+      rvParticipants.adapter = ParticipantAdapter(meeting!!)
+  }
+}
+```
+
+</TabItem>
+
+<TabItem value="Java">
+
+```java title="SpeakerFragment.java"
+ @Override
+  public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                            Bundle savedInstanceState) {
+    //...
+    if (meeting != null) {
+      //...
+      final RecyclerView rvParticipants = findViewById(R.id.rvParticipants);
+      rvParticipants.setLayoutManager(new GridLayoutManager(this, 2));
+      rvParticipants.setAdapter(new ParticipantAdapter(meeting));
+    }
 }
 ```
 

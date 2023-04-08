@@ -2,7 +2,7 @@
 title: Mute / Unmute Mic | Video SDK
 hide_title: true
 hide_table_of_contents: false
-description: Video SDK and Audio SDK, developers need to implement a token server. This requires efforts on both the front-end and backend.
+description: Mic Controls features quick integrate in Javascript, React JS, Android, IOS, React Native, Flutter with Video SDK to add live video & audio conferencing to your applications.
 sidebar_label: Mute / Unmute Mic
 pagination_label: Mute / Unmute Mic
 keywords:

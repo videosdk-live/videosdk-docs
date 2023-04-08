@@ -33,7 +33,7 @@ In order to use PubSub in meeting, VideoSDK provides a hook `usePubSub` which al
 - This method is used for publishing message of specific topic.
 - This method can be accessed from the `usePubSub` hook by mentioning the `topic` for which the `publish()` will be used.
 - This method will accept two parameters as input:
-  - `message`: This will be the acutal message to be published. It has to be in `String` format.
+  - `message`: This will be the actual message to be published. It has to be in `String` format.
   - `options`: This object offered the option of keeping the message around for the duration of the session. When `persist` is set to `true`, that message will be retained for upcoming participants and will be available in [VideoSDK Session Dashboard](https://app.videosdk.live/meetings/sessions) with `.CSV` format after completion of session.
 
 ```js
@@ -164,7 +164,7 @@ PubSub is a very powerful mechanism which can be used to do alot of things which
 
 All the messages from the PubSub which were published with `persist : true` and can be downloaded as an `.csv` file. This file will be available in the VideoSDK dashboard as well as throught the [Sessions API](/api-reference/realtime-communication/fetch-session-using-sessionid).
 
-### API Reference
+## API Reference
 
 The API references for all the methods and events utilized in this guide are provided below.
 

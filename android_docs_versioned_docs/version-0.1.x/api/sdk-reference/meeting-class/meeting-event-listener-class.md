@@ -775,14 +775,13 @@ values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
 
 #### Event callback parameters
 
-- **HlsState**: String
-
-`HlsState` has following values
-
-- `HLS_STARTING` - HLS is in starting phase and hasn't started yet.
-- `HLS_STARTED` - HLS has started successfully.
-- `HLS_STOPPING` - HLS is in stopping phase and hasn't stopped yet.
-- `HLS_STOPPED` - HLS has stopped successfully.
+- **HlsState**: { **status**: String}
+  - `status` has following values :
+    - `HLS_STARTING` - HLS is in starting phase and hasn't started yet.
+    - `HLS_STARTED` - HLS has started successfully.
+    - `HLS_PLAYABLE` - HLS can be playable now.
+    - `HLS_STOPPING` - HLS is in stopping phase and hasn't stopped yet.
+    - `HLS_STOPPED` - HLS has stopped successfully.
 
 #### Example
 
@@ -794,20 +793,17 @@ values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
 <TabItem value="Kotlin">
 
 ```javascript
-  override fun onHlsStateChanged(HlsState: String?) {
-    when (HlsState) {
-        "HLS_STARTING" -> Log.d( "onHlsStateChanged",
-            "Meeting hls is starting"
-        )
-        "HLS_STARTED" -> Log.d( "onHlsStateChanged",
-            "Meeting hls is started"
-        )
-        "HLS_STOPPING" -> Log.d("onHlsStateChanged",
-            "Meeting hls is stopping"
-        )
-        "HLS_STOPPED" -> Log.d("onHlsStateChanged",
-            "Meeting hls is stopped"
-        )
+  override fun onHlsStateChanged(HlsState: JSONObject) {
+    when (HlsState.getString("status")) {
+        "HLS_STARTING" -> Log.d("onHlsStateChanged", "Meeting hls is starting")
+        "HLS_STARTED" -> Log.d("onHlsStateChanged", "Meeting hls is started")
+        "HLS_PLAYABLE" -> {
+            Log.d("onHlsStateChanged", "Meeting hls is playable now")
+            // on hls playable you will receive downstreamUrl
+            val downStreamUrl = HlsState.getString("downstreamUrl")
+        }
+        "HLS_STOPPING" -> Log.d("onHlsStateChanged", "Meeting hls is stopping")
+        "HLS_STOPPED" -> Log.d("onHlsStateChanged", "Meeting hls is stopped")
     }
   }
 ```
@@ -818,13 +814,18 @@ values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
 
 ```javascript
   @Override
-  public void onHlsStateChanged(String HlsState) {
-      switch (HlsState) {
+  public void onHlsStateChanged(JSONObject HlsState) {
+      switch (HlsState.getString("status")) {
           case "HLS_STARTING":
               Log.d("onHlsStateChanged", "Meeting hls is starting");
               break;
           case "HLS_STARTED":
               Log.d("onHlsStateChanged", "Meeting hls is started");
+              break;
+          case "HLS_PLAYABLE":
+              Log.d("onHlsStateChanged", "Meeting hls is playable now");
+              // on hls started you will receive downstreamUrl
+              String downStreamUrl = HlsState.getString("downstreamUrl");
               break;
           case "HLS_STOPPING":
               Log.d("onHlsStateChanged", "Meeting hls is stopping");

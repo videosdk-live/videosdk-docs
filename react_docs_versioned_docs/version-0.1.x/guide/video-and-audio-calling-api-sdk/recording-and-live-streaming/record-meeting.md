@@ -101,7 +101,7 @@ const MeetingView = () => {
   };
 
   const handleStopRecording = () => {
-    // Start Recording
+    // Stop Recording
     stopRecording();
   };
 
@@ -159,7 +159,7 @@ You can also go through this [guide to setup](/docs/tutorials/user-dashboard/rec
 
 With VideoSDK, you can also use your own custom designed layout template to record the meetings. In order to use the custom template, you need to create a template for which you can [follow this guide](/docs/tutorials/customized-layout). Once you have setup the template, you can use the [REST API to start](/api-reference/realtime-communication/start-recording) the recording with the `templateURL` parameter.
 
-## API Reference
+### API Reference
 
 The API references for all the methods utilized in this guide are provided below.
 

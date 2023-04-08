@@ -123,7 +123,7 @@ const MeetingView = () => {
 };
 ```
 
-### API Reference
+## API Reference
 
 The API references for all the methods and events utilized in this guide are provided below.
 

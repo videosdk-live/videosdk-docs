@@ -2,7 +2,7 @@
 title: On / Off Camera | Video SDK
 hide_title: true
 hide_table_of_contents: false
-description: Video SDK and Audio SDK, developers need to implement a token server. This requires efforts on both the front-end and backend.
+description: Camera Controls features quick integrate in Javascript, React JS, Android, IOS, React Native, Flutter with Video SDK to add live video & audio conferencing to your applications.
 sidebar_label: On / Off Camera
 pagination_label: On / Off Camera
 keywords:

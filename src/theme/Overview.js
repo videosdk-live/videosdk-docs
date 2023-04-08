@@ -121,7 +121,7 @@ function PlatformPart() {
       Icon: AndroidIcon,
       title: "Android",
       imgLink: "./svgs/android.svg",
-      link: "/android/guide/video-and-audio-calling-api-sdk/getting-started",
+      link: "/android/guide/video-and-audio-calling-api-sdk/concept-and-architecture",
     },
     {
       Icon: IOSIcon,
@@ -159,7 +159,7 @@ function PlatformPart() {
       Icon: AndroidIcon,
       title: "Android",
       imgLink: "./svgs/android.svg",
-      link: "/android/guide/video-and-audio-calling-api-sdk/getting-started",
+      link: "/android/guide/video-and-audio-calling-api-sdk/concept-and-architecture",
     },
     {
       Icon: IOSIcon,

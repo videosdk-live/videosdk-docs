@@ -6,6 +6,6 @@ title: Meeting Error Codes
 ---
 
 import ErrorCodesTable from "../../../../src/theme/ErrorCodesTable"
-import meetingErrorCodes from "./data/meetingErrorCodes.json"
+import meetingErrorCodes from "../../data/meetingErrorCodes.json"
 
 <ErrorCodesTable errorCodes={meetingErrorCodes} />

@@ -17,7 +17,9 @@ slug: quick-start
 
 # Quick Start
 
-VideoSDK enables the opportunity to integrate video & audio calling to Web, Android, IOS applications. it provides Programmable SDKs and REST APIs to build up scalable video conferencing applications.
+VideoSDK enables you to embed the video calling feature into your Android application in minutes.
+
+In this quickstart, we are going to explore group calling feature of Video SDK. We will go through step by step guide of integrating video calling with Android Video SDK.
 
 This guide will get you running with the VideoSDK video & audio calling in minutes.
 
@@ -39,7 +41,7 @@ Visit VideoSDK **[dashboard](https://app.videosdk.live/api-keys)** to generate t
 
 ## Getting Started with the Code!
 
-Follow the steps to add Video Call into your app.
+Follow the steps to create the environment necessary to add video calls into your app. Also you can find the code sample for [quickstart here](https://github.com/videosdk-live/quickstart/tree/main/android-rtc).
 
 ### Create new Android Project
 
@@ -53,17 +55,6 @@ After creating the project, Android Studio automatically starts gradle sync. Ens
 
 ### Integrate Video SDK
 
-- If your Android Studio Version is older than Android Studio Bumblebees, add the repository to project's `build.gradle` file.
-- If your are using Android Studio Bumblebees or newer Version, add the repository to `settings.gradle` file.
-
-:::note
-
-You can use imports with Maven Central after rtc-android-sdk version `0.1.12`.
-
-Whether on Maven or Jitpack, the same version numbers always refer to the same SDK.
-
-:::
-
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
@@ -74,17 +65,6 @@ values={[{label: 'Maven Central', value: 'Maven Central'},{label: 'Jitpack', val
 
 <TabItem value="Maven Central">
 
-```js title="build.gradle"
-allprojects {
-  repositories {
-    // ...
-    google()
-    mavenCentral()
-    maven { url "https://maven.aliyun.com/repository/jcenter" }
-  }
-}
-```
-
 ```js title="settings.gradle"
 dependencyResolutionManagement{
   repositories {
@@ -94,25 +74,12 @@ dependencyResolutionManagement{
     maven { url "https://maven.aliyun.com/repository/jcenter" }
   }
 }
-
 ```
 
 </TabItem>
 
 <TabItem value="Jitpack">
 
-```js title="build.gradle"
-allprojects {
-  repositories {
-    // ...
-    google()
-    maven { url 'https://jitpack.io' }
-    mavenCentral()
-    maven { url "https://maven.aliyun.com/repository/jcenter" }
-  }
-}
-```
-
 ```js title="settings.gradle"
 dependencyResolutionManagement{
   repositories {
@@ -123,18 +90,25 @@ dependencyResolutionManagement{
     maven { url "https://maven.aliyun.com/repository/jcenter" }
   }
 }
-
 ```
 
 </TabItem>
 
 </Tabs>
 
+:::note
+
+You can use imports with Maven Central after rtc-android-sdk version `0.1.12`.
+
+Whether on Maven or Jitpack, the same version numbers always refer to the same SDK.
+
+:::
+
 - Add the following dependency in your app's `app/build.gradle`.
 
 ```js title="app/build.gradle"
 dependencies {
-  implementation 'live.videosdk:rtc-android-sdk:0.1.14'
+  implementation 'live.videosdk:rtc-android-sdk:0.1.15'
 
   // library to perform Network call to generate a meeting id
   implementation 'com.amitshekhar.android:android-networking:1.0.2'
@@ -158,7 +132,6 @@ Android SDK compatible with armeabi-v7a, arm64-v8a, x86_64 architectures. If you
 <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
 <uses-permission android:name="android.permission.INTERNET" />
 <uses-permission android:name="android.permission.CAMERA" />
-
 ```
 
 :::note
@@ -194,11 +167,11 @@ You have to set JoinActivity as Launcher activity.
 
 ### App Architecture
 
-<div style={{textAlign: 'center'}}>
+<center>
 
-![VideoSDK Android Quick Start App Structure](/img/quick-start/android_AppStructure.jpg)
+<img src='https://cdn.videosdk.live/website-resources/docs-resources/android_quickstart_app_structure.png' />
 
-</div>
+</center>
 
 ### Step 1: Initialize VideoSDK
 
@@ -215,10 +188,11 @@ values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
 import live.videosdk.rtc.android.VideoSDK
 
 class MainApplication : Application() {
-    override fun onCreate() {
-        super.onCreate()
-        VideoSDK.initialize(applicationContext)
-    }
+  override fun onCreate() {
+      super.onCreate()
+      //highlight-next-line
+      VideoSDK.initialize(applicationContext)
+  }
 }
 ```
 </TabItem>
@@ -230,11 +204,12 @@ import android.app.Application;
 import live.videosdk.rtc.android.VideoSDK;
 
 public class MainApplication extends Application {
-    @Override
-    public void onCreate() {
-      super.onCreate();
-      VideoSDK.initialize(getApplicationContext());
-    }
+  @Override
+  public void onCreate() {
+    super.onCreate();
+    //highlight-next-line
+    VideoSDK.initialize(getApplicationContext());
+  }
 }
 ```
 </TabItem>
@@ -266,47 +241,50 @@ In `/app/res/layout/activity_join.xml` file, replace the content with the follow
 ```xml title="activity_join.xml"
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-  xmlns:tools="http://schemas.android.com/tools"
-  android:layout_width="match_parent"
-  android:layout_height="match_parent"
-  android:gravity="center"
-  android:orientation="vertical"
-  tools:context=".JoinActivity">
-  <Button
-    android:id="@+id/btnCreateMeeting"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_marginBottom="16dp"
-    android:text="Create Meeting" />
-  <TextView
-    style="@style/TextAppearance.AppCompat.Headline"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="OR" />
-  <com.google.android.material.textfield.TextInputLayout
-    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_marginVertical="16dp"
-    android:hint="Enter Meeting ID">
-    <EditText
-      android:id="@+id/etMeetingId"
-      android:layout_width="250dp"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".JoinActivity">
+
+    <Button
+        android:id="@+id/btnCreateMeeting"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="Create Meeting" />
+
+    <TextView
+        style="@style/TextAppearance.AppCompat.Headline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="OR" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="16dp"
+        android:hint="Enter Meeting ID">
+
+        <EditText
+            android:id="@+id/etMeetingId"
+            android:layout_width="250dp"
       android:layout_height="wrap_content" />
-  </com.google.android.material.textfield.TextInputLayout>
-  <Button
-    android:id="@+id/btnJoinMeeting"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="Join Meeting" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/btnJoinMeeting"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Join Meeting" />
 </LinearLayout>
 ```
 
 #### Integration of Create Meeting API
 
-1. Create field `sampleToken` in `JoinActivity` which will hold the generated token from the [VideoSDK dashboard](https://app.videosdk.live/api-keys). This token will use in VideoSDK config as well as generating meetingId.
-
-**Note** : This generated token is only valid for seven days, if you want to regenerate you can do it as well by clicking the same link.
+1. Create field `sampleToken` in `JoinActivity` which will hold the generated token from the [VideoSDK dashboard](https://app.videosdk.live/api-keys). This token will use in VideoSDK config as well as in generating meetingId.
 
 <Tabs
 defaultValue="Kotlin"
@@ -318,6 +296,7 @@ values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
 ```js title="JoinActivity.kt"
 class JoinActivity : AppCompatActivity() {
 
+  //highlight-next-line
   //Replace with the token you generated from the VideoSDK Dashboard
   private var sampleToken = ""
 
@@ -334,6 +313,7 @@ class JoinActivity : AppCompatActivity() {
 ```java title="JoinActivity.java"
 public class JoinActivity extends AppCompatActivity {
 
+  //highlight-next-line
   //Replace with the token you generated from the VideoSDK Dashboard
   private String sampleToken =""; 
 
@@ -375,7 +355,6 @@ class JoinActivity : AppCompatActivity() {
         val etMeetingId = findViewById<EditText>(R.id.etMeetingId)
 
         btnCreate.setOnClickListener { v: View? ->
-            // we will explore this method in the next step
             createMeeting(sampleToken)
         }
         btnJoin.setOnClickListener { v: View? ->
@@ -387,6 +366,7 @@ class JoinActivity : AppCompatActivity() {
     }
 
     private fun createMeeting(token: String) {
+      // we will explore this method in the next step
     }
 }
 ```
@@ -410,7 +390,6 @@ public class JoinActivity extends AppCompatActivity {
     final EditText etMeetingId = findViewById(R.id.etMeetingId);
 
     btnCreate.setOnClickListener(v -> {
-      // we will explore this method in the next step
       createMeeting(sampleToken);
     });
 
@@ -423,6 +402,7 @@ public class JoinActivity extends AppCompatActivity {
   }
 
   private void createMeeting(String token) {
+    // we will explore this method in the next step
   }
 }
 ```
@@ -430,7 +410,7 @@ public class JoinActivity extends AppCompatActivity {
 
 </Tabs>
 
-3. For **Create Button**, under `createMeeting` method we will gnerate meetingId by calling API and navigate to `MeetingActivity` with token and generated meetingId.
+3. For **Create Button**, under `createMeeting` method we will generate meetingId by calling API and navigate to `MeetingActivity` with token and generated meetingId.
 
 
 <Tabs
@@ -556,8 +536,10 @@ class JoinActivity : AppCompatActivity() {
 
   override fun onCreate(savedInstanceState: Bundle?) {
     //... button listeneres
+    //highlight-start
     checkSelfPermission(REQUESTED_PERMISSIONS[0], PERMISSION_REQ_ID)
     checkSelfPermission(REQUESTED_PERMISSIONS[1], PERMISSION_REQ_ID)
+    //highlight-end
   }
 }
 ```
@@ -586,8 +568,10 @@ public class JoinActivity extends AppCompatActivity {
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     //... button listeneres
+    //highlight-start
     checkSelfPermission(REQUESTED_PERMISSIONS[0], PERMISSION_REQ_ID);
     checkSelfPermission(REQUESTED_PERMISSIONS[1], PERMISSION_REQ_ID);
+    //highlight-end
   }
 }
 ```
@@ -621,14 +605,14 @@ In `/app/res/layout/activity_meeting.xml` file, replace the content with the fol
     android:layout_height="match_parent"
     android:gravity="center"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".MeetingActivity">
 
     <TextView
         android:id="@+id/tvMeetingId"
         style="@style/TextAppearance.AppCompat.Display1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        android:text="Meeting Id" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvParticipants"
@@ -664,7 +648,6 @@ In `/app/res/layout/activity_meeting.xml` file, replace the content with the fol
 
     </LinearLayout>
 
-
 </LinearLayout>
 ```
 
@@ -673,7 +656,7 @@ In `/app/res/layout/activity_meeting.xml` file, replace the content with the fol
 After getting token and meetigId from `JoinActivity`,
 
 1. Configure **VideoSDK** with token.
-2. Initialize the meeting with required params such as `meetingId`, `participantName`, `micEnabled`, `webcamEnabled`,`participantId` and map of `CustomStreamTrack`.
+2. Initialize the meeting with required params such as `meetingId`, `participantName`, `micEnabled`, `webcamEnabled` and more.
 3. Add `MeetingEventListener` for listening events such as **Meeting Join/Left** and **Participant Join/Left**.
 4. Join the room with `meeting.join()` method.
 
@@ -699,22 +682,28 @@ class MeetingActivity : AppCompatActivity() {
     val meetingId = intent.getStringExtra("meetingId")
     val participantName = "John Doe"
 
+    //highlight-next-line
     // 1. Configuration VideoSDK with Token
     VideoSDK.config(token)
+
+    //highlight-next-line
     // 2. Initialize VideoSDK Meeting
     meeting = VideoSDK.initMeeting(
       this@MeetingActivity, meetingId, participantName,
       micEnabled, webcamEnabled,null, null, null)
 
+    //highlight-next-line
     // 3. Add event listener for listening upcoming events
     meeting!!.addEventListener(meetingEventListener)
 
+    //highlight-next-line
     //4. Join VideoSDK Meeting
     meeting!!.join()
 
     (findViewById<View>(R.id.tvMeetingId) as TextView).text = meetingId
   }
 
+  //highlight-next-line
   // creating the MeetingEventListener
   private val meetingEventListener: MeetingEventListener = object : MeetingEventListener() {
     override fun onMeetingJoined() {
@@ -763,22 +752,28 @@ public class MeetingActivity extends AppCompatActivity {
     final String meetingId = getIntent().getStringExtra("meetingId");
     final String participantName = "John Doe";
 
+    //highlight-next-line
     // 1. Configuration VideoSDK with Token
     VideoSDK.config(token);
+
+    //highlight-next-line
     // 2. Initialize VideoSDK Meeting
     meeting = VideoSDK.initMeeting(
             MeetingActivity.this, meetingId, participantName,
             micEnabled, webcamEnabled,null, null, null);
 
+    //highlight-next-line
     // 3. Add event listener for listening upcoming events
     meeting.addEventListener(meetingEventListener);
 
+    //highlight-next-line
     //4. Join VideoSDK Meeting
     meeting.join();
 
     ((TextView)findViewById(R.id.tvMeetingId)).setText(meetingId);
   }
 
+  //highlight-next-line
   // creating the MeetingEventListener
   private final MeetingEventListener meetingEventListener = new MeetingEventListener() {
     @Override
@@ -836,10 +831,12 @@ class MeetingActivity : AppCompatActivity() {
     findViewById<View>(R.id.btnMic).setOnClickListener { view: View? ->
       if (micEnabled) {
         // this will mute the local participant's mic
+        //highlight-next-line
         meeting!!.muteMic()
         Toast.makeText(this@MeetingActivity, "Mic Muted", Toast.LENGTH_SHORT).show()
       } else {
         // this will unmute the local participant's mic
+        //highlight-next-line
         meeting!!.unmuteMic()
         Toast.makeText(this@MeetingActivity, "Mic Enabled", Toast.LENGTH_SHORT).show()
       }
@@ -850,10 +847,12 @@ class MeetingActivity : AppCompatActivity() {
     findViewById<View>(R.id.btnWebcam).setOnClickListener { view: View? ->
       if (webcamEnabled) {
         // this will disable the local participant webcam
+        //highlight-next-line
         meeting!!.disableWebcam()
         Toast.makeText(this@MeetingActivity, "Webcam Disabled", Toast.LENGTH_SHORT).show()
       } else {
         // this will enable the local participant webcam
+        //highlight-next-line
         meeting!!.enableWebcam()
         Toast.makeText(this@MeetingActivity, "Webcam Enabled", Toast.LENGTH_SHORT).show()
       }
@@ -863,6 +862,7 @@ class MeetingActivity : AppCompatActivity() {
     // leave meeting
     findViewById<View>(R.id.btnLeave).setOnClickListener { view: View? ->
       // this will make the local participant leave the meeting
+      //highlight-next-line
       meeting!!.leave()
     }
   }
@@ -890,10 +890,12 @@ public class MeetingActivity extends AppCompatActivity {
     findViewById(R.id.btnMic).setOnClickListener(view -> {
       if (micEnabled) {
         // this will mute the local participant's mic
+        //highlight-next-line
         meeting.muteMic();
         Toast.makeText(MeetingActivity.this, "Mic Disabled", Toast.LENGTH_SHORT).show();
       } else {
         // this will unmute the local participant's mic
+        //highlight-next-line
         meeting.unmuteMic();
         Toast.makeText(MeetingActivity.this, "Mic Enabled", Toast.LENGTH_SHORT).show();
       }
@@ -904,10 +906,12 @@ public class MeetingActivity extends AppCompatActivity {
     findViewById(R.id.btnWebcam).setOnClickListener(view -> {
       if (webcamEnabled) {
         // this will disable the local participant webcam
+        //highlight-next-line
         meeting.disableWebcam();
         Toast.makeText(MeetingActivity.this, "Webcam Disabled", Toast.LENGTH_SHORT).show();
       } else {
         // this will enable the local participant webcam
+        //highlight-next-line
         meeting.enableWebcam();
         Toast.makeText(MeetingActivity.this, "Webcam Enabled", Toast.LENGTH_SHORT).show();
       }
@@ -917,6 +921,7 @@ public class MeetingActivity extends AppCompatActivity {
     // leave meeting
     findViewById(R.id.btnLeave).setOnClickListener(view -> {
       // this will make the local participant leave the meeting
+      //highlight-next-line
       meeting.leave();
     });
   }
@@ -937,13 +942,13 @@ public class MeetingActivity extends AppCompatActivity {
 
 ### Step 5: Handling the Participants View
 
-We will be showing the list of participant in a recycler view.
+We will be showing the list of participant in a `RecyclerView`.
 
 :::info
 
 - Here the participant's video is displayed using `VideoView`, but you may also use `SurfaceViewRender` for the same.
 - For `VideoView`, SDK version should be `0.1.13` or higher.
-- To know more about `VideoView`, please visit [here](/android/guide/video-and-audio-calling-api-sdk/components/videoView) 
+- To know more about `VideoView`, please visit [here](/android/guide/video-and-audio-calling-api-sdk/render-media/display-video/understand-videoView-component) 
 
 :::
 
@@ -955,26 +960,34 @@ We will be showing the list of participant in a recycler view.
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    tools:layout_height="200dp"
-    android:background="@color/cardview_dark_background">
+    android:layout_height="200dp"
+    android:background="@color/cardview_dark_background"
+    tools:layout_height="200dp">
+
     <live.videosdk.rtc.android.VideoView
         android:id="@+id/participantView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:visibility="gone" />
-    <FrameLayout
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
-        android:background="@color/black">
+        android:background="#99000000"
+        android:orientation="horizontal">
+
         <TextView
             android:id="@+id/tvName"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:padding="4dp"
             android:textColor="@color/white" />
-    </FrameLayout>
+
+    </LinearLayout>
+
 </FrameLayout>
 ```
 
@@ -989,15 +1002,12 @@ values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
 
 ```js title="ParticipantAdapter.kt"
 class ParticipantAdapter(meeting: Meeting) : RecyclerView.Adapter<ParticipantAdapter.PeerViewHolder>() {
- 
-  private var containerHeight = 0
 
   override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PeerViewHolder {
-  containerHeight = parent.height
     return PeerViewHolder(
       LayoutInflater.from(parent.context)
         .inflate(R.layout.item_remote_peer, parent, false)
-      )
+    )
   }
 
   override fun onBindViewHolder(holder: PeerViewHolder, position: Int) {
@@ -1008,8 +1018,14 @@ class ParticipantAdapter(meeting: Meeting) : RecyclerView.Adapter<ParticipantAda
   }
 
   class PeerViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-    var participantView: VideoView = view.findViewById(R.id.participantView)
-    var tvName: TextView = view.findViewById(R.id.tvName)
+    // 'VideoView' to show Video Stream
+    var participantView: VideoView
+    var tvName: TextView
+
+    init {
+        tvName = view.findViewById(R.id.tvName)
+        participantView = view.findViewById(R.id.participantView)
+    }
   }
 }
 ```
@@ -1021,18 +1037,14 @@ class ParticipantAdapter(meeting: Meeting) : RecyclerView.Adapter<ParticipantAda
 ```java title="ParticipantAdapter.java"
 public class ParticipantAdapter extends RecyclerView.Adapter<ParticipantAdapter.PeerViewHolder> {
 
-  private int containerHeight;
-
   @NonNull
   @Override
   public PeerViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-    containerHeight = parent.getHeight();
-    return new PeerViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.item_remote_peer, parent, false));
+      return new PeerViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.item_remote_peer, parent, false));
   }
 
   @Override
   public void onBindViewHolder(@NonNull PeerViewHolder holder, int position) {
-
   }
 
   @Override
@@ -1047,10 +1059,10 @@ public class ParticipantAdapter extends RecyclerView.Adapter<ParticipantAdapter.
     public View itemView;
 
     PeerViewHolder(@NonNull View view) {
-      super(view);
-      itemView = view;
-      tvName = view.findViewById(R.id.tvName);
-      participantView = view.findViewById(R.id.participantView);
+        super(view);
+        itemView = view;
+        tvName = view.findViewById(R.id.tvName);
+        participantView = view.findViewById(R.id.participantView);
     }
   }
 }
@@ -1078,9 +1090,11 @@ class ParticipantAdapter(meeting: Meeting) :
   private val participants: MutableList<Participant> = ArrayList()
 
   init {
+    //highlight-next-line
     // adding the local participant(You) to the list
     participants.add(meeting.localParticipant)
 
+    //highlight-next-line
     // adding Meeting Event listener to get the participant join/leave event in the meeting.
     meeting.addEventListener(object : MeetingEventListener() {
       override fun onParticipantJoined(participant: Participant) {
@@ -1109,7 +1123,8 @@ class ParticipantAdapter(meeting: Meeting) :
   // replace getItemCount() method with following.
   // this method returns the size of total number of participants
   override fun getItemCount(): Int {
-        return participants.size
+    //highlight-next-line
+    return participants.size
   }
   //...
 }
@@ -1125,9 +1140,11 @@ public class ParticipantAdapter extends RecyclerView.Adapter<ParticipantAdapter.
   private final List<Participant> participants = new ArrayList<>();
 
   public ParticipantAdapter(Meeting meeting) {
+    //highlight-next-line
     // adding the local participant(You) to the list
     participants.add(meeting.getLocalParticipant());
 
+    //highlight-next-line
     // adding Meeting Event listener to get the participant join/leave event in the meeting.
     meeting.addEventListener(new MeetingEventListener() {
       @Override
@@ -1160,6 +1177,7 @@ public class ParticipantAdapter extends RecyclerView.Adapter<ParticipantAdapter.
   // this method returns the size of total number of participants
   @Override
   public int getItemCount() {
+    //highlight-next-line
     return participants.size();
   }
   //...
@@ -1186,10 +1204,6 @@ class ParticipantAdapter(meeting: Meeting) :
   override fun onBindViewHolder(holder: PeerViewHolder, position: Int) {
     val participant = participants[position]
 
-    val layoutParams = holder.itemView.layoutParams
-    layoutParams.height = containerHeight / 3
-    holder.itemView.layoutParams = layoutParams
-
     holder.tvName.text = participant.displayName
 
     // adding the initial video stream for the participant into the 'VideoView'
@@ -1197,6 +1211,7 @@ class ParticipantAdapter(meeting: Meeting) :
       if (stream.kind.equals("video", ignoreCase = true)) {
         holder.participantView.visibility = View.VISIBLE
         val videoTrack = stream.track as VideoTrack
+        //highlight-next-line
         holder.participantView.addTrack(videoTrack)
         break
       }
@@ -1208,12 +1223,14 @@ class ParticipantAdapter(meeting: Meeting) :
         if (stream.kind.equals("video", ignoreCase = true)) {
           holder.participantView.visibility = View.VISIBLE
           val videoTrack = stream.track as VideoTrack
+          //highlight-next-line
           holder.participantView.addTrack(videoTrack)
        }
       }
 
       override fun onStreamDisabled(stream: Stream) {
         if (stream.kind.equals("video", ignoreCase = true)) {
+          //highlight-next-line
           holder.participantView.removeTrack()
           holder.participantView.visibility = View.GONE
         }
@@ -1234,10 +1251,6 @@ public class ParticipantAdapter extends RecyclerView.Adapter<ParticipantAdapter.
   public void onBindViewHolder(@NonNull PeerViewHolder holder, int position) {
     Participant participant = participants.get(position);
 
-    ViewGroup.LayoutParams layoutParams = holder.itemView.getLayoutParams();
-    layoutParams.height = containerHeight / 3;
-    holder.itemView.setLayoutParams(layoutParams);
-
     holder.tvName.setText(participant.getDisplayName());
 
     // adding the initial video stream for the participant into the 'VideoView'
@@ -1246,6 +1259,7 @@ public class ParticipantAdapter extends RecyclerView.Adapter<ParticipantAdapter.
       if (stream.getKind().equalsIgnoreCase("video")) {
         holder.participantView.setVisibility(View.VISIBLE);
         VideoTrack videoTrack = (VideoTrack) stream.getTrack();
+        //highlight-next-line
         holder.participantView.addTrack(videoTrack)
         break;
       }
@@ -1257,6 +1271,7 @@ public class ParticipantAdapter extends RecyclerView.Adapter<ParticipantAdapter.
         if (stream.getKind().equalsIgnoreCase("video")) {
           holder.participantView.setVisibility(View.VISIBLE);
           VideoTrack videoTrack = (VideoTrack) stream.getTrack();
+          //highlight-next-line
           holder.participantView.addTrack(videoTrack)
         }
       }
@@ -1264,6 +1279,7 @@ public class ParticipantAdapter extends RecyclerView.Adapter<ParticipantAdapter.
       @Override
       public void onStreamDisabled(Stream stream) {
         if (stream.getKind().equalsIgnoreCase("video")) {
+          //highlight-next-line
           holder.participantView.removeTrack();
           holder.participantView.setVisibility(View.GONE);
         }
@@ -1316,26 +1332,22 @@ protected void onCreate(Bundle savedInstanceState) {
 
 :::note
 
-Stuck anywhere? Check out this [example code](https://github.com/videosdk-live/videosdk-rtc-android-java-sdk-example) on GitHub
+Stuck anywhere? Check out this [example code](https://github.com/videosdk-live/videosdk-rtc-android-java-sdk-example) on GitHub.
 
 :::
 
-### Step 6: Run and Test
+## Final Output
 
-The app is all set to test. Make sure to update the `sampleToken` in `JoinActivity.java`
-
-Your app should look like this after the implementation.
+We are done with implementation of customised video calling app in Android using Video SDK. To explore more features go through Basic and Advanced features.
 
 import ReactPlayer from 'react-player'
 
 <div style={{textAlign: 'center'}}>
 
-<ReactPlayer controls url="/img/quick-start/android-final-video.mp4" height="500px" width={"100%"} />
+<ReactPlayer muted controls url="https://cdn.videosdk.live/website-resources/docs-resources/android_quickstart.mp4" height="500px" width={"100%"} />
 
 </div>
 
-<br/>
-
-:::caution
-For the tutorial purpose, we used a static token to initialize and join the meeting. But for the production version of the app, we recommend you use an Authentication Server that will generate and pass on the token to the Client App. For more details checkout [how to do server setup](/android/guide/video-and-audio-calling-api-sdk/server-setup).
+:::tip
+You can checkout the complete [quick start example here](https://github.com/videosdk-live/quickstart/tree/main/android-rtc).
 :::

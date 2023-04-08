@@ -18,7 +18,7 @@ slug: chat-using-pubsub
 
 # Chat using PubSub
 
-For the communication or any kind of messaging in between the participants, VideoSDK provides `usePubSub` hook which use Publish-Subscirbe mechanism and can be used to develope wide varitey of functionalities. For example, participants could use it to send chat messages to each other, share files or other media, or even trigger actions like muting or unmuting audio or video.
+For the communication or any kind of messaging in between the participants, VideoSDK provides `usePubSub` hook which use Publish-Subscribe mechanism and can be used to develope wide varitey of functionalities. For example, participants could use it to send chat messages to each other, share files or other media, or even trigger actions like muting or unmuting audio or video.
 
 Now we will see, how we can use PubSub to implement Chat functionality. If you are not familiary with the PubSub mechanism and `usePubSub`hook, you can [follow this guide](./pubsub).
 
@@ -26,7 +26,7 @@ Now we will see, how we can use PubSub to implement Chat functionality. If you a
 
 ### `Group Chat`
 
-1. First step in creating a group chat is choosing the topic which all the participants will publish and subscribe to send and recevie the messages. We will be using `CHAT` as the topic for this one. So let us get the `publish()` and `messages` from the `usePubSub`hook.
+1. First step in creating a group chat is choosing the topic which all the participants will publish and subscribe to send and receive the messages. We will be using `CHAT` as the topic for this one. So let us get the `publish()` and `messages` from the `usePubSub`hook.
 
 ```js
 // importing usePubSub hook from react-sdk
@@ -146,7 +146,7 @@ function ChatView() {
 
 All the messages from the PubSub which where published with `persist : true` and can be downloaded as an `.csv` file. This file will be available in the VideoSDK dashboard as well as throught the [Sessions API](/api-reference/realtime-communication/fetch-session-using-sessionid).
 
-### API Reference
+## API Reference
 
 The API references for all the methods and events utilized in this guide are provided below.
 

@@ -72,15 +72,15 @@ The capabilities of the device have a significant impact on how custom track con
 
 - It will specifiy the optimization mode for the video track being generated.
 
-- `motion` : This type of track should more fcous on motion video. For example, webcam video, movies or video games.
+- `motion` : This type of track should more focus on motion video. For example, webcam video, movies or video games.
 
   - This type of track will degrade `resolution` in order to maintain `frame rate`.
 
-- `text` : This type of track should more fcous on significant sharp edges and areas of consistent color that can change frequently. For example, presentations or web pages with text content.
+- `text` : This type of track should more focus on significant sharp edges and areas of consistent color that can change frequently. For example, presentations or web pages with text content.
 
   - This type of track will degrade `frame rate` in order to maintain `resolution`.
 
-- `detail` : This type of track should more fcous on details of the video. For example, presentations, painting or line art.
+- `detail` : This type of track should more focus on details of the video. For example, presentations, painting or line art.
 
   - This type of track will degrade `frame rate` in order to maintain `resolution`.
 
@@ -245,7 +245,7 @@ In this section, we will understand participant size and platform wise `encoder(
 
 ![web_browser](/img/mobile_browser.png)
 
-##### 3. For Dektop + Mobile Browser
+##### 3. For Desktop + Mobile Browser
 
 ![web_browser](/img/mobile+web.png)
 
