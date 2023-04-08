@@ -217,4 +217,4 @@ const ParticipantView = ({ participantId }) => {
 
 The API references for all the methods and events utilised in this guide are provided below.
 
-- [useParticipant](/react/api/sdk-reference/use-participant/properties)
+- [useParticipant](/react-native/api/sdk-reference/use-participant/properties)

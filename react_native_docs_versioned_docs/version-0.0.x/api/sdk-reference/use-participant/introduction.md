@@ -97,9 +97,20 @@ title: Video SDK useParticipant Hook
 </div>
 <div class="col col--4 margin-bottom--sm" >
 
-- [setViewPort](methods#setviewport)
+- [pin](./methods#pin)
 
 </div>
+<div class="col col--4 margin-bottom--sm" >
+
+- [unpin](./methods#unpin)
+
+</div>
+<div class="col col--4 margin-bottom--sm" >
+
+- [remove](./methods#remove)
+
+</div>
+
 <div class="col col--4 margin-bottom--sm" >
 
 - [switchTo](./methods#switchto)

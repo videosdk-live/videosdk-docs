@@ -451,7 +451,7 @@ function Controls() {
 }
 ```
 
-3. We will be createing the `ParticipantView` to show the participants name and media. For which, will be using the `webcamStream` and `micStream` from the `useParticipant` hook to play the media of the participant.
+3. We will be creating the `ParticipantView` to show the participants name and media. For which, will be using the `webcamStream` and `micStream` from the `useParticipant` hook to play the media of the participant.
 
 ```js title="ParticipantView"
 function ParticipantView(props) {

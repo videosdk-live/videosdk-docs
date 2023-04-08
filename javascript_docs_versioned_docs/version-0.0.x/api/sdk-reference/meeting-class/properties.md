@@ -68,6 +68,8 @@ title: Meeting Class Properties
 
 - It will be the instance of [Participant](../participant-class/introduction.md) class for the local participant(You) who joined the meeting.
 
+---
+
 ### participants
 
 - type: [`Map`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map) of [Participant](../participant-class/introduction.md)

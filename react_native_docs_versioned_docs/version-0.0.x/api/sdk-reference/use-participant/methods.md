@@ -61,18 +61,29 @@ title: Methods returned by useParticipant Hook
 
 ---
 
-### setViewPort()
+### pin()
 
-- `setViewPort()` is used to set the quality of the participant's video stream based on the viewport height and width.
+- It is used to set pin state of the participant. You can use it to pin the screen share, camera or both of the participant. It accepts a optional paramter of type `String`. Default `SHARE_AND_CAM`
 
 #### Parameters
 
-- **width**: int
-- **height**: int
+- **pinType**: `SHARE_AND_CAM` | `CAM` | `SHARE`
 
-#### Returns
+---
 
-- `void`
+### unpin()
+
+- It is used to unpin participant. You can use it to unpin the screen share, camera or both of the participant. It accepts a optional paramter of type `String`. Default is `SHARE_AND_CAM`
+
+#### Parameters
+
+- **pinType**: `SHARE_AND_CAM` | `CAM` | `SHARE`
+
+---
+
+### remove()
+
+- It is used to remove a participant from the meeting
 
 ---
 
@@ -217,6 +228,5 @@ To view the metrics for the complete meeting using the stats API documented [her
 If you are getting `rtt` greater than 300ms, try using a different region which is nearest to your user. To know more about changing region [visit here](/api-reference/realtime-communication/create-room).
 
 :::
-
 
 </div>
