@@ -160,6 +160,6 @@ import ReactPlayer from 'react-player'
 
 ## API Reference
 
-The API references for all the methods and events utilised in this guide are provided below.
+The API references for all the methods and events utilized in this guide are provided below.
 
 - [usePubSub()](/react/api/sdk-reference/use-pubsub)

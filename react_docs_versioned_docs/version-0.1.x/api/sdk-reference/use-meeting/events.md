@@ -398,17 +398,17 @@ const {
 
 import { Constants, useMeeting } from "@videosdk.live/react-sdk";
 
-const Constants = VideoSDK.Constants;
-
 function onHlsStateChanged(data) {
    const { status } = data;
 
   if (status === Constants.hlsEvents.HLS_STARTING) {
     console.log("Meeting Hls is starting");
   } else if (status === Constants.hlsEvents.HLS_STARTED) {
+    console.log("Meeting Hls is started");
+  } else if (status === Constants.hlsEvents.HLS_PLAYABLE) {
     // on hlsStateChanged started you will receive downstreamUrl
     const {downstreamUrl}=data;
-    console.log("Meeting Hls is started");
+    console.log("Meeting Hls is playable");
   } else if (status === Constants.hlsEvents.HLS_STOPPING) {
     console.log("Meeting Hls is stopping");
   } else if (status === Constants.hlsEvents.HLS_STOPPED) {

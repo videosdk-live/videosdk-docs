@@ -111,7 +111,7 @@ const MeetingView = () => {
     if(presenterId){
       console.log(presenterId, "started screen share");
     }else{
-      console.log("some one stopped screen share");
+      console.log("someone stopped screen share");
     }
   }
   //highlight-end
@@ -235,7 +235,7 @@ const PresenterView = ({ presenterId }) => {
 };
 ```
 
-3. Let's now add the screen share audio to this component. YOu can get the `screenShareAudioStream` from the `useParticipant` hook.
+3. Let's now add the screen share audio to this component. You can get the `screenShareAudioStream` from the `useParticipant` hook.
 
 ```js
 const PresenterView = ({ presenterId }) => {
@@ -301,11 +301,11 @@ To use the audio and video communications in the web browser, your site must be 
 
 ### API Reference
 
-The API references for all the methods and events utilised in this guide are provided below.
+The API references for all the methods and events utilized in this guide are provided below.
 
-- [enableScreenShare()](/react/api/sdk-reference/use-meeting/methods#enablewebcam)
-- [disableScreenShare()](/react/api/sdk-reference/use-meeting/methods#disablewebcam)
-- [toggleScreenShare()](/react/api/sdk-reference/use-meeting/methods#togglewebcam)
+- [enableScreenShare()](/react/api/sdk-reference/use-meeting/methods#enablescreenshare)
+- [disableScreenShare()](/react/api/sdk-reference/use-meeting/methods#disablescreenshare)
+- [toggleScreenShare()](/react/api/sdk-reference/use-meeting/methods#togglescreenshare)
 - [onStreamEnabled()](/react/api/sdk-reference/use-participant/events#onstreamenabled)
 - [onStreamDisabled()](/react/api/sdk-reference/use-participant/events#onstreamdisabled)
 - [onPresenterChanged()](/react/api/sdk-reference/use-meeting/events#onpresenterchanged)

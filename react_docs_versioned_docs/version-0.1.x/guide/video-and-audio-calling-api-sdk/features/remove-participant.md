@@ -18,20 +18,17 @@ slug: remove-participant
 
 Remove participant allows removing participant while session is on-going. This can be helpful when moderation in particular meeting is required.
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
 ```js
 import { useParticipant } from "@videosdk.live/react-sdk";
 
 const ParticipantView = () => {
   // Get specific participant instance
-  const { participants } = useParticipant("<participant-id>");
+  const { remove } = useParticipant("<participant-id>");
 
   const onPress = () => {
     // Remove participant from active session
     // This will emit an event called "onParticipantLeft" to that particular participant
-    participant.remove();
+    remove();
   };
   return <>...</>;
 };

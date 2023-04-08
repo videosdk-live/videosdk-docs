@@ -336,7 +336,7 @@ const MeetingControls = () => {
 
 ## API Reference
 
-The API references for all the methods and events utilised in this guide are provided below.
+The API references for all the methods and events utilized in this guide are provided below.
 
 - [Custom Video Track](/react/api/sdk-reference/custom-tracks#custom-video-track)
 - [Custom Screen Share Track](/react/api/sdk-reference/custom-tracks#custom-screen-share-track)

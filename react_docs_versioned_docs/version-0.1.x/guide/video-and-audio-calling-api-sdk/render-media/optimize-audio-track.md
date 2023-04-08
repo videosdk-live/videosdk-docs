@@ -203,6 +203,6 @@ const MeetingControls = () => {
 
 ## API Reference
 
-The API references for all the methods and events utilised in this guide are provided below.
+The API references for all the methods and events utilized in this guide are provided below.
 
 - [Custom Audio Track](/react/api/sdk-reference/custom-tracks#custom-audio-track)

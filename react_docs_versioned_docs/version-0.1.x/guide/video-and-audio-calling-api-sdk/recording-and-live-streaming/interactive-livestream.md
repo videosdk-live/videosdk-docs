@@ -99,7 +99,7 @@ const MeetingView = () => {
   };
 
   const handleStopHls = () => {
-    // Start Hls
+    // Stop Hls
     stopHls();
   };
 
@@ -133,11 +133,13 @@ function onHlsStateChanged(data) {
   if (status === Constants.hlsEvents.HLS_STARTING) {
     console.log("Meeting Hls is starting");
   } else if (status === Constants.hlsEvents.HLS_STARTED) {
+    console.log("Meeting Hls is started");
+  } else if (status === Constants.hlsEvents.HLS_PLAYABLE) {
     //highlight-start
     // on hlsStateChanged started you will receive downstreamUrl
     const { downstreamUrl } = data;
     //highlight-end
-    console.log("Meeting Hls is started");
+    console.log("Meeting Hls is now playable");
   } else if (status === Constants.hlsEvents.HLS_STOPPING) {
     console.log("Meeting Hls is stopping");
   } else if (status === Constants.hlsEvents.HLS_STOPPED) {
@@ -163,7 +165,7 @@ With VideoSDK, you can also use your own custom designed layout template to live
 
 ## API Reference
 
-The API references for all the methods utilised in this guide are provided below.
+The API references for all the methods utilized in this guide are provided below.
 
 - [startHls](/react/api/sdk-reference/use-meeting/methods#starthls)
 - [stopHls](/react/api/sdk-reference/use-meeting/methods#stophls)

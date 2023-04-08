@@ -83,7 +83,7 @@ export default function QuickstartPart() {
     },
     {
       Icon: CustomReactNativeIcon,
-      link: "/react-native/guide/video-and-audio-calling-api-sdk/getting-started",
+      link: "/react-native/guide/video-and-audio-calling-api-sdk/concept-and-architecture",
       tooltip: "React Native",
     },
     {

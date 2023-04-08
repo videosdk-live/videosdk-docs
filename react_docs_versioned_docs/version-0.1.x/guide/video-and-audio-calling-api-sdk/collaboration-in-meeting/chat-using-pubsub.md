@@ -119,7 +119,7 @@ So if we look at creating a private chat between two participants only, we can h
 
 So you can use either of this topics and the private chat is ready.
 
-### Showing Latest Message Notificaiton
+### Display Latest Message Notificaiton
 
 You may want to show the notification to the user when new message arrives. So lets continue our example and add alert for the new images.
 
@@ -148,6 +148,6 @@ All the messages from the PubSub which where published with `persist : true` and
 
 ### API Reference
 
-The API references for all the methods and events utilised in this guide are provided below.
+The API references for all the methods and events utilized in this guide are provided below.
 
 - [usePubSub()](/react/api/sdk-reference/use-pubsub)

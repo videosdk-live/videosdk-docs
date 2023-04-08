@@ -85,6 +85,6 @@ let customTrack = await VideoSDK.createCameraVideoTrack({
 
 ## Pause Video Streams
 
-You might have observed that if there are to many participants on the screen and netowrk is not so good, participant videos keep frezzing. To solve these issue, you can listen to `video-quality-changed` event of all participants and if the quality stays `low` for a long duration, you can pause the stream for that particular participant and resume it after a set interval of time.
+You might have observed that if there are to many participants on the screen and network is not so good, participant videos keep frezzing. To solve these issue, you can listen to `video-quality-changed` event of all participants and if the quality stays `low` for a long duration, you can pause the stream for that particular participant and resume it after a set interval of time.
 
 These will help recover other participants video who are on much priority like the host or a presenter and reduce the overload on the network.

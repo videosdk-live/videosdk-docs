@@ -96,7 +96,7 @@ const MeetingView = () => {
   }
   //highlight-end
 
-  //Event to know some other particioant left
+  //Event to know some other participant left
   //highlight-start
   function onParticipantLeft(participant) {
     console.log(" onParticipantLeft", participant);
@@ -117,7 +117,7 @@ const MeetingView = () => {
 
 ### API Reference
 
-The API references for all the methods and events utilised in this guide are provided below.
+The API references for all the methods and events utilized in this guide are provided below.
 
 - [leave()](/react/api/sdk-reference/use-meeting/methods#leave)
 - [end()](/react/api/sdk-reference/use-meeting/methods#end)

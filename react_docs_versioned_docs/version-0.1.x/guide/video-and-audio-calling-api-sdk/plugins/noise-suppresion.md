@@ -199,7 +199,7 @@ return (
 
 ## API Reference
 
-The API references for all the methods and events utilised in this guide are provided below.
+The API references for all the methods and events utilized in this guide are provided below.
 
 - [createMicrophoneAudioTrack](/react/api/sdk-reference/custom-tracks#custom-audio-track)
 - [unmuteMic()](/react/api/sdk-reference/use-meeting/methods#unmutemic)

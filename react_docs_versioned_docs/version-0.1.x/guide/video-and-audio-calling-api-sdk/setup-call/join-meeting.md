@@ -77,7 +77,7 @@ const MeetingView = () => {
   }
   //highlight-end
 
-  //Event to know some other particioant joined
+  //Event to know some other participant joined
   //highlight-start
   function onParticipantJoined(participant) {
     console.log(" onParticipantJoined", participant);
@@ -98,7 +98,7 @@ const MeetingView = () => {
 
 #### API Reference
 
-The API references for all the methods and events utilised in this guide are provided below.
+The API references for all the methods and events utilized in this guide are provided below.
 
 - [MeetingProvider](/react/api/sdk-reference/meeting-provider)
 - [join()](/react/api/sdk-reference/use-meeting/methods#join)

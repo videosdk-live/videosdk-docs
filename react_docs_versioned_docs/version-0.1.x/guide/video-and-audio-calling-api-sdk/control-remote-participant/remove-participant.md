@@ -35,12 +35,12 @@ import { useParticipant } from "@videosdk.live/react-sdk";
 
 const ParticipantView = () => {
   // Get specific participant instance
-  const { participant } = useParticipant("<participant-id>");
+  const { remove } = useParticipant("<participant-id>");
 
-  const onPress = () => {
+  const handleRemoveParticipant = () => {
     // Remove participant from active session
     // This will emit an event called "onParticipantLeft" to that particular participant
-    participant.remove();
+    remove();
   };
   return (
     <>
@@ -77,8 +77,8 @@ import ReactPlayer from 'react-player'
 
 ## API Reference
 
-The API references for all the methods and events utilised in this guide are provided below.
+The API references for all the methods and events utilized in this guide are provided below.
 
-- remove()
+- [remove()](/react/api/sdk-reference/use-participant/methods#Remove)
 - [onMeetingLeft()](/react/api/sdk-reference/use-meeting/events#onmeetingleft)
 - [onParticipantLeft()](/react/api/sdk-reference/use-meeting/events#onparticipantleft)

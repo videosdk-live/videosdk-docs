@@ -3,8 +3,8 @@ title: Start a Video & Audio Call in React Native Android SDK - Video SDK Docs
 hide_title: false
 hide_table_of_contents: false
 description: Build customizable real-time video & audio calling applications in React Native Android SDK using Video SDK add live Video & Audio conferencing to your applications.
-sidebar_label: "React Native Android"
-pagination_label: "React Native Android"
+sidebar_label: "Integrate in Android"
+pagination_label: "Integrate in Android"
 keywords:
   - react native android sdk
   - react native js sdk
@@ -15,27 +15,43 @@ sidebar_position: 1
 slug: react-native-android-sdk
 ---
 
-# Getting Started - React Native Android SDK
+# Integrating React Native SDK for Android
 
 React Native SDK wraps up out React SDK. It also simplifies dependecies management.
-
-## Install a React Native SDK in Android
 
 ### Step 1: Install SDK from Npm or Yarn
 
 The easiest way to get started is by installing the sdk in your app.
 
-#### Npm
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs
+defaultValue="npm"
+groupId={"package-manager-group-id"}
+values={[
+{label: 'NPM', value: 'npm'},
+{label: 'YARN', value: 'yarn'},
+]}>
+<TabItem value="npm">
 
 ```js
-$ npm install "@videosdk.live/react-native-sdk"
+npm install "@videosdk.live/react-native-sdk"
 ```
 
-#### Yarn
+</TabItem>
+<TabItem value="yarn">
 
 ```js
-$ yarn add "@videosdk.live/react-native-sdk"
+yarn add "@videosdk.live/react-native-sdk"
 ```
+
+</TabItem>
+</Tabs>
+
+:::caution
+If you are using Windows machine, make sure to include the **double-quotes** while installation.
+:::
 
 ### Step 2: Add below lines in android/app/build.gradle
 
@@ -190,23 +206,3 @@ buildscript {
   }
 }
 ```
-
-```
-
-## Use hooks API
-
-Our React JS SDK provides two important hooks API:
-
-- **useMeeting** : Responsible to handle meeting environment.
-- **useParticipant** : Responsible to handle Participant
-
-Also, React Provider and Consumer to listen changes in meeting environment.
-
-- **MeetingProvider** : Meeting Provider is [Context.Provider](https://reactjs.org/docs/context.html#contextprovider) that allows consuming components to subscribe to meeting changes
-- **MeetingConsumer** : Meeting Consumer is [Context.Consumer](https://reactjs.org/docs/context.html#contextconsumer) that subscribes to meeting changes.
-
-:::note
-
-Check out official example of React Native SDK implementation: [videosdk-rtc-react-native-sdk-example](https://github.com/videosdk-live/videosdk-rtc-react-native-sdk-example)
-
-:::
