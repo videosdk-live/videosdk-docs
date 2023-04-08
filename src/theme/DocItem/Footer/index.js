@@ -5,7 +5,7 @@ export default function FooterWrapper(props) {
   return (
     <>
       <div id="tailwind">
-        <p className="mt-7 flex text-lg gap-5 justify-center items-center">
+        <p className="mt-7 flex flex-col md:flex-row text-lg gap-5 justify-center items-center">
           Got a Question?{" "}
           <a
             target="_blank"
