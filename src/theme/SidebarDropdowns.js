@@ -26,6 +26,8 @@ export default function SidebarDropdowns() {
         ? (value == "react" || "react-native" || "flutter" || "android") &&
           version == versionList[0]
           ? "/guide/video-and-audio-calling-api-sdk/concept-and-architecture"
+          : value == "prebuilt"
+          ? "/guide/prebuilt-video-and-audio-calling-api-sdk/getting-started"
           : "/guide/video-and-audio-calling-api-sdk/getting-started"
         : "/api/sdk-reference/setup")
     );
@@ -169,7 +171,7 @@ export default function SidebarDropdowns() {
                     {e.value}
                   </Link>
                 </li>
-              )
+              );
             })}
           </ul>
         </div>
