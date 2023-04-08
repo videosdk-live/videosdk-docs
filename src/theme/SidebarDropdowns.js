@@ -23,7 +23,8 @@ export default function SidebarDropdowns() {
       "/" +
       value +
       (currentPath.split("/")[version == versionList[0] ? 2 : 3] == "guide"
-        ? value != "javascript"
+        ? (value == "react" || "react-native" || "flutter" || "android") &&
+          version == versionList[0]
           ? "/guide/video-and-audio-calling-api-sdk/concept-and-architecture"
           : "/guide/video-and-audio-calling-api-sdk/getting-started"
         : "/api/sdk-reference/setup")
