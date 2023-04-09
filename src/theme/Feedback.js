@@ -3,10 +3,9 @@ import BrowserOnly from "@docusaurus/BrowserOnly";
 import { useLocation } from "@docusaurus/router";
 
 export default function Feedback() {
-  const [selectedRating, setSelectedRating] = useState();
-  const [showModal, setShowModal] = useState(false);
+  const [selectedRating, setSelectedRating] = useState(1);
+  const [showModal, setShowModal] = useState(true);
   const [feedback, setFeedback] = useState();
-  const [selectedOptions, setSelectedOptions] = useState([]);
   const location = useLocation();
 
   const options = {
@@ -17,38 +16,7 @@ export default function Feedback() {
       "Broken link or typo",
       "Did not solve my problem",
     ],
-    2: [
-      "Missing information or code",
-      "Content is confusing or hard to follow",
-      "Inaccurate or outdated information",
-      "Broken link or typo",
-      "Did not solve my problem",
-    ],
-    3: [
-      "Missing information or code",
-      "Content is confusing or hard to follow",
-      "Inaccurate or outdated information",
-      "Broken link or typo",
-      "Did not solve my problem",
-    ],
-    4: [
-      "Missing information or code",
-      "Content is confusing or hard to follow",
-      "Inaccurate or outdated information",
-      "Broken link or typo",
-      "Did not solve my problem",
-      "Content is easy to follow",
-      "Solved my problem",
-    ],
-    5: [
-      "Missing information or code",
-      "Content is confusing or hard to follow",
-      "Inaccurate or outdated information",
-      "Broken link or typo",
-      "Did not solve my problem",
-      "Content is easy to follow",
-      "Solved my problem",
-    ],
+    2: ["Content is easy to follow", "Solved my problem"],
   };
 
   const formRef = useRef();
@@ -81,8 +49,8 @@ export default function Feedback() {
     <div id="tailwind">
       <hr className="bg-gray-750" />
       <p className="font-semibold">Was this helpful?</p>
-      <div className="flex flex-row gap-2">
-        {[1, 2, 3, 4, 5].map((rating) => {
+      <div className="flex  flex-row-reverse gap-5 justify-end">
+        {[1, 2].map((rating) => {
           return (
             <img
               src={`/img/emoji-${rating}.png`}
@@ -108,13 +76,13 @@ export default function Feedback() {
                 }}
               ></div>
               <div className="flex items-center min-h-screen px-4 py-8 z-50">
-                <div className="relative w-full max-w-lg  mx-auto bg-white rounded-md shadow-lg bg-gray-700 p-8">
+                <div className="relative w-full max-w-lg  mx-auto bg-white rounded-xl shadow-lg bg-gray-700 p-8">
                   <div
                     onClick={() => {
                       _handleClick();
                       setShowModal(false);
                     }}
-                    className="w-10 h-10 rounded-full flex  items-center justify-center bg-white-100 absolute -top-5 -right-5 hover:cursor-pointer"
+                    className="w-10 h-10 rounded-full flex  items-center justify-center bg-white-100 absolute top-5 right-5 hover:cursor-pointer"
                   >
                     <img
                       src="/img/icons/libraries/close.svg"
@@ -148,16 +116,8 @@ export default function Feedback() {
                       value={selectedRating + " star"}
                     />
 
-                    <p className="text-xl font-bold text-center text-white-100 mb-3">
-                      Thank you for your feedback!
-                    </p>
-
-                    <p className="text-lg font-bold text-white-100 mb-3">
-                      {selectedRating == 1 ||
-                      selectedRating == 2 ||
-                      selectedRating == 3
-                        ? "What did you find challening?"
-                        : "What did you like the most?"}
+                    <p className="text-xl font-bold  text-white-100 mb-0">
+                      Provide additional feedback
                     </p>
 
                     {options[selectedRating].map((option, index) => {
@@ -169,7 +129,12 @@ export default function Feedback() {
                             value={option}
                             name="MultipleChoice"
                           />
-                          <p className="flex-1 mb-0">{option}</p>
+                          <label
+                            className="flex-1 mb-0 hover:cursor-pointer"
+                            for={`MultipleChoice_${index + 1}`}
+                          >
+                            {option}
+                          </label>
                         </div>
                       );
                     })}
