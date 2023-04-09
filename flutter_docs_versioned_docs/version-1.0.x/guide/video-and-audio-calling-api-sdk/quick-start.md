@@ -15,7 +15,7 @@ sidebar_position: 1
 slug: quick-start
 ---
 
-# Quick Start
+# Quick Start for Conference in Flutter
 
 VideoSDK enables you to embed the video calling feature into your Flutter application in minutes.
 

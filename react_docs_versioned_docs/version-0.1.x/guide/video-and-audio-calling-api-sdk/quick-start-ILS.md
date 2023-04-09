@@ -15,7 +15,7 @@ sidebar_position: 1
 slug: quick-start-ILS
 ---
 
-# Build a Video Calling App With Interactive Live Streaming Using VideoSDK in a React Project
+# Quick Start for Interactive Live Streaming in React
 
 VideoSDK enables you to embed the video calling feature into your React application in minutes.
 

@@ -15,7 +15,7 @@ sidebar_position: 1
 slug: quick-start-ILS
 ---
 
-# ILS QuickStart
+# Quick Start for Interactive Live Streaming in React Native
 
 VideoSDK enables you to embed the video calling feature into your React Native application in minutes.
 
