@@ -42,13 +42,13 @@ module.exports = {
       // gray: colors.gray, default gray color
       primary: "#5568FE",
       grayb3: "#b3b3b3",
-      customgray:{
-        300: "#454545"
+      customgray: {
+        300: "#454545",
       },
       gray: {
         100: "#eeeeee",
         200: "#e0e0e0",
-        250: "#b2b2b2",
+        250: "#9a9fa5",
         300: "#bbbbbb",
         400: "#666666",
         500: "#444444",
@@ -78,10 +78,23 @@ module.exports = {
       teal: colors.teal,
       cyan: colors.cyan,
       sky: colors.sky,
-      blue: colors.blue,
+      blue: {
+        ...colors.blue,
+        150: "#3E89FA",
+        250: "#4054F4",
+        350: "#4AA5FD",
+        450: "#6246FB",
+      },
       indigo: colors.indigo,
       violet: colors.violet,
-      purple: colors.purple,
+      purple: {
+        ...colors.purple,
+        350: "#6A65F1",
+        450: "#5568FE",
+        550: "#596BFF",
+        650: "#9665E9",
+        750: "#7964E7",
+      },
       fuchsia: colors.fuchsia,
       pink: colors.pink,
       rose: colors.rose,

@@ -23,9 +23,14 @@ export default function SidebarDropdowns() {
       "/" +
       value +
       (currentPath.split("/")[version == versionList[0] ? 2 : 3] == "guide"
-        ? (value == "react" || "react-native" || "flutter" || "android") &&
+        ? (value == "react" ||
+            value == "react-native" ||
+            value == "flutter" ||
+            value == "android") &&
           version == versionList[0]
           ? "/guide/video-and-audio-calling-api-sdk/concept-and-architecture"
+          : value == "prebuilt"
+          ? "/guide/prebuilt-video-and-audio-calling/getting-started"
           : "/guide/video-and-audio-calling-api-sdk/getting-started"
         : "/api/sdk-reference/setup")
     );
@@ -169,7 +174,7 @@ export default function SidebarDropdowns() {
                     {e.value}
                   </Link>
                 </li>
-              )
+              );
             })}
           </ul>
         </div>
