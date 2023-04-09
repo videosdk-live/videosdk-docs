@@ -126,7 +126,7 @@ and open [http://localhost/index.html](http://localhost/index.html) in your web 
 
 ![Prebuilt SDK Example to add video call widget in your web application](/img/prebuilt/prebuilt-grid.png)
 
-:::note
+:::tip
 
 Stuck anywhere? Check out this [example code](https://github.com/videosdk-live/videosdk-rtc-js-prebuilt-embedded-example) on github or [download](https://github.com/videosdk-live/videosdk-rtc-js-prebuilt-embedded-example/archive/refs/tags/v0.1.1.zip) the full source code and unzip on your computer.
 

@@ -334,7 +334,7 @@ extension MeetingViewController: ParticipantEventListener {
 }
 ```
 
-:::note
+:::tip
 
 Stuck anywhere? Check out this [example code](https://github.com/videosdk-live/videosdk-rtc-ios-sdk-example) on GitHub
 

@@ -932,7 +932,7 @@ function ViewerView({}) {
 
 </center>
 
-:::note
+:::tip
 
 Stuck anywhere? Check out this [example code](https://github.com/videosdk-live/quickstart/tree/main/react-native-hls) on GitHub
 

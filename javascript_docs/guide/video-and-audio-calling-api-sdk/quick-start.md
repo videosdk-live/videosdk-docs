@@ -464,7 +464,7 @@ function addDomEvents() {
 }
 ```
 
-:::note
+:::tip
 
 Stuck anywhere? Check out this [example code](https://github.com/videosdk-live/videosdk-rtc-javascript-sdk-example) on GitHub
 

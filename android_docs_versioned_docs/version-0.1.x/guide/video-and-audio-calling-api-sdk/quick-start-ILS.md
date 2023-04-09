@@ -2041,7 +2041,7 @@ public class ViewerFragment extends Fragment {
 
 <br/>
 
-:::note
+:::tip
 
 Stuck anywhere? Check out this [example code](https://github.com/videosdk-live/videosdk-hls-android-kotlin-example) on GitHub.
 

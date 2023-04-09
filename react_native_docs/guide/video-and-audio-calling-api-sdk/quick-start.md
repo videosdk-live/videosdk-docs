@@ -633,7 +633,7 @@ This will create a view as shown in an image below
 
 <img class="react-native-screen-img" alt="React-Native--Participant-View" src={require('/static/img/quick-start/participant-view-rn.jpg').default} />
 
-:::note
+:::tip
 
 Stuck anywhere? Check out this [example code](https://github.com/videosdk-live/videosdk-rtc-react-native-sdk-example) on GitHub
 

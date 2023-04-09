@@ -80,7 +80,7 @@ public class BanubaProcessor implements IVideoFrameProcessor {
 
 - Also you can use video filters during the meeting by passing the `CustomStreamTrack` in the `enableWebcam()` method of Meeting.
 
-:::note
+:::tip
 
 Stuck anywhere? Check out this [Code Sample of Banuba Intergation with Android-SDK](https://github.com/videosdk-live/videosdk-rtc-android-sdk-banuba-example.git) on GitHub
 

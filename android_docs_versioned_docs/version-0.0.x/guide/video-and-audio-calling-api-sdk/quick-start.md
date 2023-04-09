@@ -1257,7 +1257,7 @@ protected void onCreate(Bundle savedInstanceState) {
 
 </Tabs>
 
-:::note
+:::tip
 
 Stuck anywhere? Check out this [example code](https://github.com/videosdk-live/videosdk-rtc-android-java-sdk-example) on GitHub
 

@@ -493,7 +493,7 @@ const ParticipantView = ({ participantId }) => {
 };
 ```
 
-:::note
+:::tip
 
 Stuck anywhere? Check out this [example code](https://github.com/videosdk-live/videosdk-rtc-react-sdk-example) on GitHub
 
