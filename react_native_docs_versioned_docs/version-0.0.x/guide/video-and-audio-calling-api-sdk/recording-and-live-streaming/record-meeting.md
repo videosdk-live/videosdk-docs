@@ -135,8 +135,6 @@ const MeetingView = () => {
 ```js
 import { Constants, useMeeting } from "@videosdk.live/react-native-sdk";
 
-const Constants = VideoSDK.Constants;
-
 function onRecordingStateChanged(data) {
   const { status } = data;
 

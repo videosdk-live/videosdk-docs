@@ -125,8 +125,6 @@ If you want to learn more about the Interactive Livestream and how you can imple
 ```js
 import { Constants, useMeeting } from "@videosdk.live/react-sdk";
 
-const Constants = VideoSDK.Constants;
-
 function onHlsStateChanged(data) {
    const { status } = data;
 

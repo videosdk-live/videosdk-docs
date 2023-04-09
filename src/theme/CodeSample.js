@@ -47,7 +47,7 @@ export default function CodeSample() {
       {
         title: "quickstart/react-rtc",
         description:
-          "A example which guides developers on installation, configuration, and usage of VideoSDK to add video capabilities to your React JS applications quickly and easily",
+          "A short and sweet tutorial for getting up to speed with React VideoSDK in less than 10 minutes",
         tags: ["Web"],
         sdk: "React",
         icon: "/img/icons/libraries/github-mark.svg",
@@ -57,7 +57,7 @@ export default function CodeSample() {
       {
         title: "quickstart/react-hls",
         description:
-          "A example which guides developers on installation, configuration, and usage of VideoSDK to add livestreaming capabilities to your React JS applications quickly and easily",
+          "A short and sweet tutorial for getting up to speed with React VideoSDK in less than 10 minutes",
         tags: ["Web"],
         sdk: "React",
         icon: "/img/icons/libraries/github-mark.svg",
@@ -66,7 +66,7 @@ export default function CodeSample() {
       {
         title: "videosdk-rtc-react-sdk-example",
         description:
-          "A UI Template that demonstrates how to incorporate VideoSDK into a React JS project and includes essential features such as video/audio communication, screen sharing, and chat functionality.",
+          "A ready-to-use React UI kit Example for video and audio communication that includes important features like screen sharing, chat, etc, and covers all possible edge cases.",
         tags: ["Web"],
         sdk: "React",
         icon: "/img/icons/libraries/github-mark.svg",
@@ -75,7 +75,7 @@ export default function CodeSample() {
       {
         title: "videosdk-hls-react-sdk-example",
         description:
-          "A UI Template that demonstrates how to create an interactive live streaming application using React JS and enable real-time communication between broadcasters and their audience, allowing for features like chat, polls, or other forms of engagement",
+          "A ready-to-use React UI kit Example for interactive live streaming that enable real-time communication between broadcasters and their audience, allowing for features like chat, Add co-hosts, or other forms of engagement",
         tags: ["Web"],
         sdk: "React",
         icon: "/img/icons/libraries/github-mark.svg",
@@ -84,7 +84,7 @@ export default function CodeSample() {
       {
         title: "videosdk-rtc-nextjs-sdk-example",
         description:
-          "A UI Template that demonstrates how to create an interactive live streaming application using React JS and enable real-time communication between broadcasters and their audience, allowing for features like chat, polls, or other forms of engagement",
+          "A ready-to-use React Next JS UI kit Example for video and audio communication that includes important features like screen sharing, chat, etc, and covers all possible edge cases.",
         tags: ["Web"],
         sdk: "React",
         icon: "/img/icons/libraries/github-mark.svg",
@@ -95,7 +95,7 @@ export default function CodeSample() {
       {
         title: "quickstart/react-native",
         description:
-          "A example which guides developers on installation, configuration, and usage of VideoSDK to add video capabilities to your React Native mobile app quickly and easily",
+          "A short and sweet tutorial for getting up to speed with React Native VideoSDK in less than 10 minutes",
         tags: ["Mobile"],
         sdk: "React Native",
         icon: "/img/icons/libraries/github-mark.svg",
@@ -105,7 +105,7 @@ export default function CodeSample() {
       {
         title: "quickstart/react-native-hls",
         description:
-          "A example which guides developers on installation, configuration, and usage of VideoSDK to add livestreaming capabilities to your React Native mobile app quickly and easily",
+          "A short and sweet tutorial for getting up to speed with React Native VideoSDK in less than 10 minutes",
         tags: ["Mobile"],
         sdk: "React Native",
         icon: "/img/icons/libraries/github-mark.svg",
@@ -114,7 +114,7 @@ export default function CodeSample() {
       {
         title: "videosdk-rtc-react-native-sdk-example",
         description:
-          "A UI Template that demonstrates how to incorporate VideoSDK into a React Native project and includes essential features such as video/audio communication, screen sharing, and chat functionality.",
+          "A ready-to-use React Native UI kit Example for video and audio communication that includes important features like screen sharing, chat, etc, and covers all possible edge cases.",
         tags: ["Mobile"],
         sdk: "React Native",
         icon: "/img/icons/libraries/github-mark.svg",
@@ -123,7 +123,7 @@ export default function CodeSample() {
       {
         title: "videosdk-hls-react-native-sdk-example",
         description:
-          "A UI Template that demonstrates how to create an interactive live streaming application using React Native and enable real-time communication between broadcasters and their audience, allowing for features like chat, polls, or other forms of engagement",
+          "A ready-to-use React Native UI kit Example for interactive live streaming that enable real-time communication between broadcasters and their audience, allowing for features like chat, Add co-hosts, or other forms of engagement",
         tags: ["Mobile"],
         sdk: "React Native",
         icon: "/img/icons/libraries/github-mark.svg",
@@ -132,7 +132,7 @@ export default function CodeSample() {
       {
         title: "videosdk-rtc-react-native-call-trigger-example",
         description:
-          "A UI Template that demonstrates how to create an interactive live streaming application using React Native and enable real-time communication between broadcasters and their audience, allowing for features like chat, polls, or other forms of engagement",
+          "A ready-to-use React Native UI kit Example for video and audio communication that includes call trigger across android and iOS devices",
         tags: ["Mobile"],
         sdk: "React Native",
         icon: "/img/icons/libraries/github-mark.svg",
@@ -143,7 +143,7 @@ export default function CodeSample() {
       {
         title: "quickstart/android-rtc",
         description:
-          "A example which guides developers on installation, configuration, and usage of VideoSDK to add video capabilities to your Android app quickly and easily",
+          "A short and sweet tutorial for getting up to speed with Android VideoSDK in less than 10 minutes",
         tags: ["Mobile"],
         sdk: "Android",
         icon: "/img/icons/libraries/github-mark.svg",
@@ -153,7 +153,7 @@ export default function CodeSample() {
       {
         title: "quickstart/android-hls",
         description:
-          "A example which guides developers on installation, configuration, and usage of VideoSDK to add livestreaming capabilities to your Android app quickly and easily",
+          "A short and sweet tutorial for getting up to speed with Android VideoSDK in less than 10 minutes",
         tags: ["Mobile"],
         sdk: "Android",
         icon: "/img/icons/libraries/github-mark.svg",
@@ -162,7 +162,7 @@ export default function CodeSample() {
       {
         title: "videosdk-rtc-android-java-sdk-example",
         description:
-          "A UI Template that demonstrates how to incorporate VideoSDK into a Android (Java) project and includes essential features such as video/audio communication, screen sharing, and chat functionality.",
+          "A ready-to-use Android(Java) UI kit Example for video and audio communication that includes important features like screen sharing, chat, etc, and covers all possible edge cases.",
         tags: ["Mobile", "Java"],
         sdk: "Android",
         icon: "/img/icons/libraries/github-mark.svg",
@@ -171,7 +171,7 @@ export default function CodeSample() {
       {
         title: "videosdk-rtc-android-kotlin-sdk-example",
         description:
-          "A UI Template that demonstrates how to incorporate VideoSDK into a Android (Kotlin) project and includes essential features such as video/audio communication, screen sharing, and chat functionality.",
+          "A ready-to-use Android(Kotlin) UI kit Example for video and audio communication that includes important features like screen sharing, chat, etc, and covers all possible edge cases.",
         tags: ["Mobile", "Koltin"],
         sdk: "Android",
         icon: "/img/icons/libraries/github-mark.svg",
@@ -180,7 +180,7 @@ export default function CodeSample() {
       {
         title: "videosdk-hls-android-java-example",
         description:
-          "A UI Template that demonstrates how to create an interactive live streaming application using Android (Java) and enable real-time communication between broadcasters and their audience, allowing for features like chat, polls, or other forms of engagement",
+          "A ready-to-use Android(Java) UI kit Example for interactive live streaming that enable real-time communication between broadcasters and their audience, allowing for features like chat, screen share, or other forms of engagement",
         tags: ["Mobile", "Java"],
         sdk: "Android",
         icon: "/img/icons/libraries/github-mark.svg",
@@ -189,7 +189,7 @@ export default function CodeSample() {
       {
         title: "videosdk-hls-android-kotlin-example",
         description:
-          "A UI Template that demonstrates how to create an interactive live streaming application using Android (Kotlin) and enable real-time communication between broadcasters and their audience, allowing for features like chat, polls, or other forms of engagement",
+          "A ready-to-use Android(Kotlin) UI kit Example for interactive live streaming that enable real-time communication between broadcasters and their audience, allowing for features like chat, screen share, or other forms of engagement",
         tags: ["Mobile", "Kotlin"],
         sdk: "Android",
         icon: "/img/icons/libraries/github-mark.svg",
@@ -200,7 +200,7 @@ export default function CodeSample() {
       {
         title: "quickstart/flutter-rtc",
         description:
-          "A example which guides developers on installation, configuration, and usage of VideoSDK to add video capabilities to your Flutter app quickly and easily",
+          "A short and sweet tutorial for getting up to speed with Flutter VideoSDK in less than 10 minutes",
         tags: ["Mobile"],
         sdk: "Flutter",
         icon: "/img/icons/libraries/github-mark.svg",
@@ -210,7 +210,7 @@ export default function CodeSample() {
       {
         title: "quickstart/flutter-hls",
         description:
-          "A example which guides developers on installation, configuration, and usage of VideoSDK to add livestreaming capabilities to your Flutter app quickly and easily",
+          "A short and sweet tutorial for getting up to speed with Flutter VideoSDK in less than 10 minutes",
         tags: ["Mobile"],
         sdk: "Flutter",
         icon: "/img/icons/libraries/github-mark.svg",
@@ -219,7 +219,7 @@ export default function CodeSample() {
       {
         title: "videosdk-rtc-flutter-sdk-example",
         description:
-          "A UI Template that demonstrates how to incorporate VideoSDK into a Flutter project and includes essential features such as video/audio communication, screen sharing, and chat functionality.",
+          "A ready-to-use Flutter UI kit Example for video and audio communication that includes important features like screen sharing, chat, etc, and covers all possible edge cases.",
         tags: ["Mobile"],
         sdk: "Flutter",
         icon: "/img/icons/libraries/github-mark.svg",
@@ -228,7 +228,7 @@ export default function CodeSample() {
       {
         title: "videosdk-hls-flutter-sdk-example",
         description:
-          "A UI Template that demonstrates how to create an interactive live streaming application using Flutter and enable real-time communication between broadcasters and their audience, allowing for features like chat, polls, or other forms of engagement",
+          "A ready-to-use Flutter UI kit Example for interactive live streaming that enable real-time communication between broadcasters and their audience, allowing for features like chat, screen share, or other forms of engagement",
         tags: ["Mobile"],
         sdk: "Flutter",
         icon: "/img/icons/libraries/github-mark.svg",
@@ -248,7 +248,7 @@ export default function CodeSample() {
       {
         title: "videosdk-rtc-angular-javascript-example",
         description:
-          "A UI Template that demonstrates how to incorporate VideoSDK into a Javascript project and includes essential features such as video/audio communication, screen sharing, and chat functionality.",
+          "A UI Template that demonstrates how to incorporate VideoSDK into a Angular Javascript project and includes essential features such as video/audio communication, screen sharing, and chat functionality.",
         tags: ["Web"],
         sdk: "Javascript",
         icon: "/img/icons/libraries/github-mark.svg",
@@ -260,7 +260,7 @@ export default function CodeSample() {
       {
         title: "quickstart/ios-rtc",
         description:
-          "A example which guides developers on installation, configuration, and usage of VideoSDK to add video capabilities to your iOS app quickly and easily",
+          "A short and sweet tutorial for getting up to speed with iOS VideoSDK in less than 10 minutes",
         tags: ["Mobile"],
         sdk: "iOS",
         icon: "/img/icons/libraries/github-mark.svg",
@@ -269,7 +269,7 @@ export default function CodeSample() {
       {
         title: "videosdk-rtc-ios-sdk-example",
         description:
-          "A UI Template that demonstrates how to incorporate VideoSDK into a iOS project and includes essential features such as video/audio communication, screen sharing, and chat functionality.",
+          "A ready-to-use iOS UI kit Example for video and audio communication that includes important features like chat, change audio output, and covers all possible edge cases.",
         tags: ["Mobile"],
         sdk: "iOS",
         icon: "/img/icons/libraries/github-mark.svg",

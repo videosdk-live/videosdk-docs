@@ -32,8 +32,6 @@ Here is the usage of the event mentioned in this page.
 ```javascript
 import { Constants, useMeeting } from "@videosdk.live/react-sdk";
 
-const Constants = VideoSDK.Constants;
-
 function onError(data) {
   const { code, message } = data;
 }

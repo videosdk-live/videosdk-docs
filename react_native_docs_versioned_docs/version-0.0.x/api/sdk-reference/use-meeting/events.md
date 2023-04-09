@@ -186,8 +186,6 @@ const {
 
 import { Constants, useMeeting } from "@videosdk.live/react-native-sdk";
 
-const Constants = VideoSDK.Constants;
-
 function onRecordingStateChanged(data) {
    const { status } = data;
 
@@ -314,8 +312,6 @@ const {
 
 import { Constants, useMeeting } from "@videosdk.live/react-native-sdk";
 
-const Constants = VideoSDK.Constants;
-
 function onLivestreamStateChanged(data) {
    const { status } = data;
 
@@ -398,8 +394,6 @@ const {
 ```javascript
 
 import { Constants, useMeeting } from "@videosdk.live/react-native-sdk";
-
-const Constants = VideoSDK.Constants;
 
 function onHlsStateChanged(data) {
    const { status } = data;

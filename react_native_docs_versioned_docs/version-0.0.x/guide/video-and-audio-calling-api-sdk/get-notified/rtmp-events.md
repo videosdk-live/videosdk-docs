@@ -31,8 +31,6 @@ Here is the usage of the event mentioned in this page.
 ```javascript
 import { Constants, useMeeting } from "@videosdk.live/react-native-sdk";
 
-const Constants = VideoSDK.Constants;
-
 function onLivestreamStateChanged(data) {
   const { status } = data;
 
