@@ -67,8 +67,13 @@
       ]
     },
     {
-      "type": "doc",
-      "id": "realtime-communication/user-webhooks"
+      "type": "category",
+      "label": "User Webhooks",
+      "collapsed": true,
+      "items": [
+        "realtime-communication/user-webhooks",
+        "realtime-communication/webhook-verification"
+      ]
     }
   ]
 }
