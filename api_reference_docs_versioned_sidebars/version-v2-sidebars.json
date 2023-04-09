@@ -69,6 +69,10 @@
     {
       "type": "doc",
       "id": "realtime-communication/user-webhooks"
+    },
+    {
+      "type": "doc",
+      "id": "realtime-communication/firebase-cloud-function"
     }
   ]
 }
