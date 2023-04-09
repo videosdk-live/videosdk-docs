@@ -15,7 +15,7 @@ sidebar_position: 1
 slug: quick-start
 ---
 
-# Quick Start
+# Quick Start for Conference in Android
 
 VideoSDK enables you to embed the video calling feature into your Android application in minutes.
 

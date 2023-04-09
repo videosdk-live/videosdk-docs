@@ -1,24 +1,22 @@
 ---
-title: Run a sample Android Project - Video SDK Docs
+title: Run sample ILS Android Project - Video SDK Docs
 hide_title: true
 hide_table_of_contents: false
-description: Create customizable real-time video & audio calling applications with Android SDK with Video SDK add live Video & Audio conferencing to your applications.
-sidebar_label: "Run the Sample Conference Project"
-pagination_label: "Run the Sample Conference Project"
+description: Create customizable real-time video & audio calling applications with React JS SDK with Video SDK add live Video & Audio conferencing to your applications.
+sidebar_label: Run the Sample ILS Project
+pagination_label: Run the Sample ILS Project
 keywords:
   - android sdk
-  - java sdk
-  - kotlin sdk
   - sample project
   - android app
 image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
-slug: run-a-sample-android-project
+slug: run-a-sample-android-ils-project
 ---
 
-# Run a Sample Conference Project
+# Run a Sample ILS Project
 
-Video SDK provides open-source sample project [videosdk-rtc-android-kotlin-sdk-example](https://github.com/videosdk-live/videosdk-rtc-android-kotlin-sdk-example) on Github. This document introduces how to run this project.
+Video SDK provides open-source sample project [videosdk-hls-android-kotlin-example](https://github.com/videosdk-live/videosdk-hls-android-kotlin-example) on Github. This document introduces how to run this project.
 
 ## Prerequisites
 
@@ -49,7 +47,7 @@ values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
 <TabItem value="Kotlin">
 
 ```js
-git clone https://github.com/videosdk-live/videosdk-rtc-android-kotlin-sdk-example.git
+git clone https://github.com/videosdk-live/videosdk-hls-android-kotlin-example.git
 ```
 
 </TabItem>
@@ -57,7 +55,7 @@ git clone https://github.com/videosdk-live/videosdk-rtc-android-kotlin-sdk-examp
 <TabItem value="Java">
 
 ```js
-git clone https://github.com/videosdk-live/videosdk-rtc-android-java-sdk-example.git
+git clone https://github.com/videosdk-live/videosdk-hls-android-java-example.git
 ```
 
 </TabItem>

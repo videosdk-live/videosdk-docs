@@ -1,10 +1,10 @@
 ---
-title: Quick Start
+title: Quick Start with React Native
 hide_title: false
 hide_table_of_contents: false
 description: Video SDK enables the opportunity to integrate native iOS, Android & Web SDKs to add live video & audio conferencing to your applications.
 sidebar_label: Start a Audio / Video Call
-pagination_label: Quick Start
+pagination_label: Quick Start with React Native
 keywords:
   - audio calling
   - video calling
@@ -17,6 +17,8 @@ slug: quick-start
 ---
 
 import Mermaid from '@theme/Mermaid';
+
+# Quick Start for Conference in React Native
 
 VideoSDK enables the opportunity to integrate video & audio calling to Web, Android, iOS applications. It provides Programmable SDKs and REST APIs to build scalable video conferencing applications.
 
