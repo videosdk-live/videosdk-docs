@@ -47,7 +47,7 @@ export default function CodeSample() {
       {
         title: "quickstart/react-rtc",
         description:
-          "A short and sweet tutorial for getting up to speed with React VideoSDK in less than 10 minutes",
+          "A short and sweet tutorial for getting up to speed with React VideoSDK in less than 10 minutes.",
         tags: ["Web"],
         sdk: "React",
         icon: "/img/icons/libraries/github-mark.svg",
@@ -57,7 +57,7 @@ export default function CodeSample() {
       {
         title: "quickstart/react-hls",
         description:
-          "A short and sweet tutorial for getting up to speed with React VideoSDK in less than 10 minutes",
+          "A short and sweet tutorial for getting up to speed with React VideoSDK in less than 10 minutes.",
         tags: ["Web"],
         sdk: "React",
         icon: "/img/icons/libraries/github-mark.svg",
@@ -75,7 +75,7 @@ export default function CodeSample() {
       {
         title: "videosdk-hls-react-sdk-example",
         description:
-          "A ready-to-use React UI kit Example for interactive live streaming that enable real-time communication between broadcasters and their audience, allowing for features like chat, Add co-hosts, or other forms of engagement",
+          "A ready-to-use React UI kit Example for interactive live streaming that enable real-time communication between broadcasters and their audience, allowing for features like chat, Add co-hosts, or other forms of engagement.",
         tags: ["Web"],
         sdk: "React",
         icon: "/img/icons/libraries/github-mark.svg",
@@ -95,7 +95,7 @@ export default function CodeSample() {
       {
         title: "quickstart/react-native",
         description:
-          "A short and sweet tutorial for getting up to speed with React Native VideoSDK in less than 10 minutes",
+          "A short and sweet tutorial for getting up to speed with React Native VideoSDK in less than 10 minutes.",
         tags: ["Mobile"],
         sdk: "React Native",
         icon: "/img/icons/libraries/github-mark.svg",
@@ -105,7 +105,7 @@ export default function CodeSample() {
       {
         title: "quickstart/react-native-hls",
         description:
-          "A short and sweet tutorial for getting up to speed with React Native VideoSDK in less than 10 minutes",
+          "A short and sweet tutorial for getting up to speed with React Native VideoSDK in less than 10 minutes.",
         tags: ["Mobile"],
         sdk: "React Native",
         icon: "/img/icons/libraries/github-mark.svg",
@@ -123,7 +123,7 @@ export default function CodeSample() {
       {
         title: "videosdk-hls-react-native-sdk-example",
         description:
-          "A ready-to-use React Native UI kit Example for interactive live streaming that enable real-time communication between broadcasters and their audience, allowing for features like chat, Add co-hosts, or other forms of engagement",
+          "A ready-to-use React Native UI kit Example for interactive live streaming that enable real-time communication between broadcasters and their audience, allowing for features like chat, Add co-hosts, or other forms of engagement.",
         tags: ["Mobile"],
         sdk: "React Native",
         icon: "/img/icons/libraries/github-mark.svg",
@@ -132,7 +132,7 @@ export default function CodeSample() {
       {
         title: "videosdk-rtc-react-native-call-trigger-example",
         description:
-          "A ready-to-use React Native UI kit Example for video and audio communication that includes call trigger across android and iOS devices",
+          "A ready-to-use React Native UI kit Example for video and audio communication that includes call trigger across android and iOS devices.",
         tags: ["Mobile"],
         sdk: "React Native",
         icon: "/img/icons/libraries/github-mark.svg",
@@ -143,7 +143,7 @@ export default function CodeSample() {
       {
         title: "quickstart/android-rtc",
         description:
-          "A short and sweet tutorial for getting up to speed with Android VideoSDK in less than 10 minutes",
+          "A short and sweet tutorial for getting up to speed with Android VideoSDK in less than 10 minutes.",
         tags: ["Mobile"],
         sdk: "Android",
         icon: "/img/icons/libraries/github-mark.svg",
@@ -153,7 +153,7 @@ export default function CodeSample() {
       {
         title: "quickstart/android-hls",
         description:
-          "A short and sweet tutorial for getting up to speed with Android VideoSDK in less than 10 minutes",
+          "A short and sweet tutorial for getting up to speed with Android VideoSDK in less than 10 minutes.",
         tags: ["Mobile"],
         sdk: "Android",
         icon: "/img/icons/libraries/github-mark.svg",
@@ -180,7 +180,7 @@ export default function CodeSample() {
       {
         title: "videosdk-hls-android-java-example",
         description:
-          "A ready-to-use Android(Java) UI kit Example for interactive live streaming that enable real-time communication between broadcasters and their audience, allowing for features like chat, screen share, or other forms of engagement",
+          "A ready-to-use Android(Java) UI kit Example for interactive live streaming that enable real-time communication between broadcasters and their audience, allowing for features like chat, screen share, or other forms of engagement.",
         tags: ["Mobile", "Java"],
         sdk: "Android",
         icon: "/img/icons/libraries/github-mark.svg",
@@ -189,7 +189,7 @@ export default function CodeSample() {
       {
         title: "videosdk-hls-android-kotlin-example",
         description:
-          "A ready-to-use Android(Kotlin) UI kit Example for interactive live streaming that enable real-time communication between broadcasters and their audience, allowing for features like chat, screen share, or other forms of engagement",
+          "A ready-to-use Android(Kotlin) UI kit Example for interactive live streaming that enable real-time communication between broadcasters and their audience, allowing for features like chat, screen share, or other forms of engagement.",
         tags: ["Mobile", "Kotlin"],
         sdk: "Android",
         icon: "/img/icons/libraries/github-mark.svg",
@@ -200,7 +200,7 @@ export default function CodeSample() {
       {
         title: "quickstart/flutter-rtc",
         description:
-          "A short and sweet tutorial for getting up to speed with Flutter VideoSDK in less than 10 minutes",
+          "A short and sweet tutorial for getting up to speed with Flutter VideoSDK in less than 10 minutes.",
         tags: ["Mobile"],
         sdk: "Flutter",
         icon: "/img/icons/libraries/github-mark.svg",
@@ -210,7 +210,7 @@ export default function CodeSample() {
       {
         title: "quickstart/flutter-hls",
         description:
-          "A short and sweet tutorial for getting up to speed with Flutter VideoSDK in less than 10 minutes",
+          "A short and sweet tutorial for getting up to speed with Flutter VideoSDK in less than 10 minutes.",
         tags: ["Mobile"],
         sdk: "Flutter",
         icon: "/img/icons/libraries/github-mark.svg",
@@ -228,7 +228,7 @@ export default function CodeSample() {
       {
         title: "videosdk-hls-flutter-sdk-example",
         description:
-          "A ready-to-use Flutter UI kit Example for interactive live streaming that enable real-time communication between broadcasters and their audience, allowing for features like chat, screen share, or other forms of engagement",
+          "A ready-to-use Flutter UI kit Example for interactive live streaming that enable real-time communication between broadcasters and their audience, allowing for features like chat, screen share, or other forms of engagement.",
         tags: ["Mobile"],
         sdk: "Flutter",
         icon: "/img/icons/libraries/github-mark.svg",
@@ -260,7 +260,7 @@ export default function CodeSample() {
       {
         title: "quickstart/ios-rtc",
         description:
-          "A short and sweet tutorial for getting up to speed with iOS VideoSDK in less than 10 minutes",
+          "A short and sweet tutorial for getting up to speed with iOS VideoSDK in less than 10 minutes.",
         tags: ["Mobile"],
         sdk: "iOS",
         icon: "/img/icons/libraries/github-mark.svg",
@@ -280,7 +280,7 @@ export default function CodeSample() {
       {
         title: "videosdk-rtc-api-server-examples",
         description:
-          "A example which guides developers on how to use the VideoSDK APIs",
+          "A example which guides developers on how to use the VideoSDK APIs.",
         tags: ["Mobile"],
         sdk: "iOS",
         icon: "/img/icons/libraries/github-mark.svg",
