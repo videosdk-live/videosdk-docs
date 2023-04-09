@@ -39,7 +39,7 @@ export default function CodeSample() {
     {
       name: "Server Side",
       id: "server",
-      icon: "./svgs/ios.svg",
+      icon: "./svgs/server.svg",
     },
   ];
   const codeSamples = {

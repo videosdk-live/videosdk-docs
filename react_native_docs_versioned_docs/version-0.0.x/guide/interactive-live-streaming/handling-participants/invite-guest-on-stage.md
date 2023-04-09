@@ -33,13 +33,13 @@ Let's first have a look at how we will be using the `PubSub` mechanism to acheiv
 The host will see a list of participants who have joined as `VIEWER` along with a button that, when selected, will invite that user to join the livestream.
 
 ```js
-import { useMeeting, useParticipant } from "@videosdk.live/react-sdk";
+import { useMeeting, useParticipant } from "@videosdk.live/react-native-sdk";
+import { SafeAreaView, TouchableOpacity, Text, View } from "react-native";
 
 function MeetingView() {
-  const { meetingId } = useMeeting();
   return (
     <>
-      <p>{meetingId}</p>
+      <Text>Viewer List</Text>
       <ViewerList />
     </>
   );
@@ -55,24 +55,41 @@ function ViewerList() {
   //highlight-end
 
   return (
-    <div>
+    <SafeAreaView style={{ flex: 1 }}>
       {viewers.map((participant) => {
         return <ViewerListItem participantId={participant.id} />;
       })}
-    </div>
+    </SafeAreaView>
   );
 }
 function ViewerListItem({ participantId }) {
   const { displayName } = useParticipant(participantId);
   return (
-    <div>
-      {displayName} <button>Request to join Livestream</button>
-    </div>
+    <View
+      style={{
+        flexDirection: "row",
+        justifyContent: "center",
+        alignItems: "center",
+        marginVertical: 8,
+      }}
+    >
+      <Text>{displayName}</Text>
+      <TouchableOpacity
+        style={{
+          marginLeft: 12,
+          borderWidth: 1,
+          borderRadius: 12,
+          padding: 12,
+        }}
+      >
+        <Text>Request to join Livestream</Text>
+      </TouchableOpacity>
+    </View>
   );
 }
 ```
 
-![invite-guest-pubsub](https://cdn.videosdk.live/website-resources/docs-resources/react_ils_viewer_list.png)
+<img src="https://cdn.videosdk.live/website-resources/docs-resources/rn_ils_request_to_join.png" width="350" />
 
 ### Step 2: Requesting a Viewer to Join Livestream
 
@@ -81,7 +98,7 @@ We have a Viewer list ready. Now, let us handle the click event for the Join Liv
 We will be using `CHANGE_MODE_$participantId` as the topic for PubSub.
 
 ```js
-import { usePubSub } from "@videosdk.live/react-sdk";
+import { usePubSub } from "@videosdk.live/react-native-sdk";
 
 function ViewerListItem({ participantId }) {
   const { displayName } = useParticipant(participantId);
@@ -90,21 +107,36 @@ function ViewerListItem({ participantId }) {
   //Publishing the pubsub message with new mode
   //highlight-start
   const onClickRequestJoinLiveStream = () => {
-    publish("CONFERENCE");
+    publish({
+      mode: "VIEWER",
+    });
   };
   //highlight-end
 
   return (
-    <div>
-      {displayName}{" "}
-      <button
-        onClick={() => {
+    <View
+      style={{
+        flexDirection: "row",
+        justifyContent: "center",
+        alignItems: "center",
+        marginVertical: 8,
+      }}
+    >
+      <Text>{displayName}</Text>
+      <TouchableOpacity
+        onPress={() => {
           onClickRequestJoinLiveStream();
         }}
+        style={{
+          marginLeft: 12,
+          borderWidth: 1,
+          borderRadius: 12,
+          padding: 12,
+        }}
       >
-        Request to join Livestream
-      </button>
-    </div>
+        <Text>Request to join Livestream</Text>
+      </TouchableOpacity>
+    </View>
   );
 }
 ```
@@ -114,48 +146,75 @@ function ViewerListItem({ participantId }) {
 After implementing the Host requesting viewer to join the livestream, let's display the viewer's request dialogue and switch the `VIEWER` mode to `CONFERENCE`.
 
 ```js
-function MeetingView() {
-  const { localParticipant, changeMode } = useMeeting();
-  const [joinLivestreamRequest, setJoinLivestreamRequest] = useState();
+import { usePubSub } from "@videosdk.live/react-native-sdk";
+import Video from "react-native-video";
+import { Alert } from "react-native";
 
-  //Subscribe to new message on these topic and show confirmation dialog.
-  //highlight-start
-  const pubsub = usePubSub(`CHANGE_MODE_${localParticipant?.id}`, {
-    onMessageReceived: (pubSubMessage) => {
-      setJoinLivestreamRequest(pubSubMessage);
+function ViewerView({}) {
+  const { hlsState, hlsUrls, localParticipantId, changeMode } = useMeeting();
+
+  usePubSub(`CHANGE_MODE_${localParticipantId}`, {
+    onMessageReceived: (data) => {
+      const { message, senderName } = data;
+      if (message.mode === "CONFERENCE") {
+        showAlert(senderName);
+      }
     },
   });
-  //highlight-end
+
+  const showAlert = (senderName) => {
+    Alert.alert(
+      "Permission",
+      `${senderName} has requested you to join as a speaker`,
+      [
+        {
+          text: "Reject",
+          onPress: () => console.log("Cancel Pressed"),
+          style: "cancel",
+        },
+        {
+          text: "Accept",
+          onPress: () => {
+            changeMode("CONFERENCE");
+          },
+        },
+      ]
+    );
+  };
 
   return (
-    <>
-      ...
-      {joinLivestreamRequest && (
-        <div>
-          {joinLivestreamRequest.senderName} requested you to join Livestream
-          <button
-            onClick={() => {
-              changeMode(joinLivestreamRequest.message);
-              setJoinLivestreamRequest(null);
+    <SafeAreaView style={{ flex: 1 }}>
+      {hlsState == "HLS_PLAYABLE" ? (
+        <>
+          {/* Render VideoPlayer that will play `downstreamUrl`*/}
+          <Video
+            controls={true}
+            source={{
+              uri: hlsUrls.downstreamUrl,
             }}
-          >
-            Accept
-          </button>
-          <button
-            onClick={() => {
-              setJoinLivestreamRequest(null);
+            resizeMode={"stretch"}
+            style={{
+              flex: 1,
+              backgroundColor: "black",
             }}
-          >
-            Reject
-          </button>
-        </div>
+            onError={(e) => console.log("error", e)}
+          />
+        </>
+      ) : (
+        <SafeAreaView
+          style={{ flex: 1, justifyContent: "center", alignItems: "center" }}
+        >
+          <Text style={{ fontSize: 20 }}>
+            HLS is not started yet or is stopped
+          </Text>
+        </SafeAreaView>
       )}
-    </>
+    </SafeAreaView>
   );
 }
 ```
 
-![react_ils_cohost_join_request](https://cdn.videosdk.live/website-resources/docs-resources/react_ils_cohost_join_request.png)
+<img src="https://cdn.videosdk.live/website-resources/docs-resources/flutter_invite_guest_join_request.png" width="350" />
 
 ### Step 4: Pin the participant
 
@@ -191,13 +250,10 @@ function MeetingView() {
 }
 ```
 
-import ReactPlayer from 'react-player'
+:::tip
 
-<div style={{textAlign: 'center'}}>
-
-<ReactPlayer autoplay muted loop playing controls url="https://cdn.videosdk.live/website-resources/docs-resources/react_ils_invite_guest.mp4" height="500px" width={"100%"} />
-
-</div>
+If you want complete source code, you can checkout our [code sample](https://github.com/videosdk-live/videosdk-hls-react-native-sdk-example)
+:::
 
 ## API Reference
 

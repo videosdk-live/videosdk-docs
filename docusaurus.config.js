@@ -75,12 +75,12 @@ module.exports = {
         {
           position: "left",
           label: "Guide",
-          to:"/javascript/guide/video-and-audio-calling-api-sdk/getting-started"
+          to:"/react/guide/video-and-audio-calling-api-sdk/concept-and-architecture"
         },
         {
           position: "left",
           label: "API Reference",
-          to:"javascript/api/sdk-reference/setup",
+          to:"react/api/sdk-reference/setup",
         },
         {
           position: "left",

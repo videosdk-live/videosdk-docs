@@ -96,7 +96,7 @@ export default function SidebarDropdowns() {
     {
       id: "prebuilt",
       value: "Prebuilt (UIkit)",
-      icon: "/img/icons/libraries/ic_javascript.svg",
+      icon: "/img/icons/libraries/code.svg",
     },
     {
       id: "javascript",
