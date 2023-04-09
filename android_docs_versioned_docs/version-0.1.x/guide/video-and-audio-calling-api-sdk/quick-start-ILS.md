@@ -15,7 +15,7 @@ sidebar_position: 1
 slug: quick-start-ILS
 ---
 
-# ILS QuickStart
+# Quick Start for Interactive Live Streaming in Android
 
 VideoSDK enables you to embed the video calling feature into your Android application in minutes.
 

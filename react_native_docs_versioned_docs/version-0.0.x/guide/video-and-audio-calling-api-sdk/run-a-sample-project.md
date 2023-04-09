@@ -3,8 +3,8 @@ title: Run a sample React Native Project - Video SDK Docs
 hide_title: true
 hide_table_of_contents: false
 description: Create customizable real-time video & audio calling applications with React Native JS SDK with Video SDK add live Video & Audio conferencing to your applications.
-sidebar_label: "Run the Sample Project"
-pagination_label: "Run the Sample Project"
+sidebar_label: "Run the Sample Conference Project"
+pagination_label: "Run the Sample Conference Project"
 keywords:
   - react native sdk
   - react native js sdk
@@ -15,7 +15,7 @@ sidebar_position: 1
 slug: run-a-sample-react-native-project
 ---
 
-# Run a Sample Project
+# Run a Sample Conference Project
 
 Video SDK provides open-source sample project [videosdk-rtc-react-native-sdk-example](https://github.com/videosdk-live/videosdk-rtc-react-native-sdk-example) on Github. This document introduces how to run this project.
 

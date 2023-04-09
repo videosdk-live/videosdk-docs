@@ -15,7 +15,7 @@ sidebar_position: 1
 slug: quick-start-ils
 ---
 
-# Quick Start for Interactive Live Streaming
+# Quick Start for Interactive Live Streaming in Flutter
 
 VideoSDK enables you to embed the livestreaming experience into your Flutter application in minutes.
 
