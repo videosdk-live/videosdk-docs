@@ -294,13 +294,13 @@ export default function CodeSample() {
         <p className="text-5xl font-bold text-center py-5 text-white-100">
           Code Samples
         </p>
-        <div className="flex w-full flex-col gap-5">
-          <div className="flex ">
+        <div className="flex w-full flex-col gap-5 ">
+          <div className="flex overflow-scroll md:overflow-hidden">
             {sdks.map((sdk, index) => {
               return (
                 <div
                   key={sdk.id}
-                  className={`flex flex-row items-center justify-center gap-2 text-lg w-full p-3 border-2 rounded-lg hover:cursor-pointer ${
+                  className={`flex flex-row items-center justify-center gap-2 text-lg  w-full py-1 px-8 md:px-3 md:py-3 border-2 rounded-lg hover:cursor-pointer ${
                     selecteSDK == sdk.id
                       ? "bg-gray-750 text-white-100 font-bold"
                       : " "
@@ -316,7 +316,7 @@ export default function CodeSample() {
             })}
           </div>
           <div className="w-full">
-            <div className="flex-1 grid grid-cols-2 gap-5 w-full ">
+            <div className="flex-1 grid grid-cols-1 md:grid-cols-2 gap-5 w-full ">
               {codeSamples[selecteSDK].map((codeSample, idx) => {
                 return (
                   <Link to={codeSample.link} className="">
