@@ -3,8 +3,8 @@ import BrowserOnly from "@docusaurus/BrowserOnly";
 import { useLocation } from "@docusaurus/router";
 
 export default function Feedback() {
-  const [selectedRating, setSelectedRating] = useState(1);
-  const [showModal, setShowModal] = useState(true);
+  const [selectedRating, setSelectedRating] = useState();
+  const [showModal, setShowModal] = useState(false);
   const [feedback, setFeedback] = useState();
   const location = useLocation();
 
@@ -120,7 +120,7 @@ export default function Feedback() {
                       Provide additional feedback
                     </p>
 
-                    {options[selectedRating].map((option, index) => {
+                    {options[selectedRating]?.map((option, index) => {
                       return (
                         <div className="flex flex-row gap-2 items-center my-2">
                           <input
