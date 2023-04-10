@@ -156,31 +156,31 @@ module.exports = {
         width: 500,
       },
       links: [
-        {
-          title: "Get started",
-          items: [
-            {
-              label: "Sign Up",
-              href: "https://app.videosdk.live/signup",
-            },
-            {
-              label: "Get Started with Prebuilt SDK",
-              href: "/prebuilt/guide/prebuilt-video-and-audio-calling/getting-started",
-            },
-            {
-              label: "Get Started with Custom SDK",
-              href: "/react/guide/video-and-audio-calling-api-sdk/concept-and-architecture",
-            },
-            {
-              label: "Get Started with Interactive Live Streaming SDK",
-              href: "/react/guide/interactive-live-streaming/integrate-hls/overview",
-            },
-            // {
-            //   label: "Get Started with VOD",
-            //   href: "/docs/guide/video-on-demand/getting-started",
-            // },
-          ],
-        },
+        // {
+        //   title: "Get started",
+        //   items: [
+        //     {
+        //       label: "Sign Up",
+        //       href: "https://app.videosdk.live/signup",
+        //     },
+        //     {
+        //       label: "Get Started with Prebuilt SDK",
+        //       href: "/prebuilt/guide/prebuilt-video-and-audio-calling/getting-started",
+        //     },
+        //     {
+        //       label: "Get Started with Custom SDK",
+        //       href: "/react/guide/video-and-audio-calling-api-sdk/concept-and-architecture",
+        //     },
+        //     {
+        //       label: "Get Started with Interactive Live Streaming SDK",
+        //       href: "/react/guide/interactive-live-streaming/integrate-hls/overview",
+        //     },
+        //     // {
+        //     //   label: "Get Started with VOD",
+        //     //   href: "/docs/guide/video-on-demand/getting-started",
+        //     // },
+        //   ],
+        // },
         {
           title: "Conference SDK Quickstart",
           items: [

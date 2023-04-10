@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Link from "@docusaurus/Link";
 import ExternalLinkIcon from "../../static/icon/ExternalLinkIcon";
+import TestflightIcon from "../../static/icon/Testglighticon";
 
 export default function CodeSample() {
   const [selecteSDK, setSelectedSDK] = useState("react");
@@ -334,15 +335,51 @@ export default function CodeSample() {
               {codeSamples[selecteSDK].map((codeSample, idx) => {
                 return (
                   <Link to={codeSample.link} className="">
-                    <div className="relative bg-gray-750 w-full h-full p-4 rounded-xl border-class hover:cursor-pointer">
-                      <ExternalLinkIcon className="absolute right-5 top-5" />
-                      <p className="text-xl text-white-100 font-extrabold mb-0 flex itmes-center gap-3">
-                        <img src={codeSample.icon} className="invert h-8 w-8" />{" "}
-                        {codeSample.title}
-                      </p>
-                      <p className="text-gray-250 mt-2 mb-0">
-                        {codeSample.description}
-                      </p>
+                    <div className="relative bg-gray-750 flex flex-col w-full h-full p-4 rounded-xl border-class hover:cursor-pointer">
+                      <div className="flex flex-1 flex-col">
+                        <ExternalLinkIcon className="absolute right-5 top-5" />
+                        <p className="text-xl text-white-100 font-extrabold mb-0 flex itmes-center gap-3">
+                          <img
+                            src={codeSample.icon}
+                            className="invert h-8 w-8"
+                          />{" "}
+                          {codeSample.title}
+                        </p>
+                        <p className="text-gray-250 mt-2 mb-0">
+                          {codeSample.description}
+                        </p>
+                      </div>
+                      {(codeSample.testFlightLink ||
+                        codeSample.firebaseLink) && (
+                        <div className="h-[1px] w-full bg-gray-600 my-3"></div>
+                      )}
+
+                      <div className=" flex flex-row gap-4">
+                        {codeSample.testFlightLink && (
+                          <a
+                            href={codeSample.testFlightLink}
+                            className="flex flex-row items-center gap-3"
+                          >
+                            <img
+                              src="/img/icons/testflight.png"
+                              className="w-8 h-8"
+                            />
+                            <p className="mb-0">Try iOS app</p>
+                          </a>
+                        )}
+                        {codeSample.firebaseLink && (
+                          <a
+                            href={codeSample.firebaseLink}
+                            className="flex flex-row items-center gap-3"
+                          >
+                            <img
+                              src="/img/icons/icons8-firebase.svg"
+                              className="w-8 h-8"
+                            />
+                            <p className="mb-0">Try android app</p>
+                          </a>
+                        )}
+                      </div>
                     </div>
                   </Link>
                 );
