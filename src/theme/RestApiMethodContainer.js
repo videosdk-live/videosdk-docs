@@ -567,7 +567,7 @@ const MethodDescription = ({
             {
               required: true,
               key: "Authorization",
-              description: 'This will be a JWT token generate using VideoSDK ApiKey and Secret.\n\nNote that the token will not include any prefix such as "Basic " or "Bearer ". Just pass a token as value.\n\n You can generate a new token by refering this Guide: https://google.com',
+              description: 'This will be a JWT token generate using VideoSDK ApiKey and Secret.\n\nNote that the token will not include any prefix such as "Basic " or "Bearer ". Just pass a token as value.\n\n You can generate a new token by refering this Guide: [Generate Auth token](/api-reference/realtime-communication/intro)',
               values: "YOUR_TOKEN_WITHOUT_ANY_PREFIX",
             },
             {
@@ -581,7 +581,7 @@ const MethodDescription = ({
             {
               required: true,
               key: "Authorization",
-              description: 'This will be a JWT token generate using VideoSDK ApiKey and Secret.\n\nNote that the token will not include any prefix such as "Basic " or "Bearer ". Just pass a token as value.\n\n You can generate a new token by refering this Guide: https://google.com',
+              description: 'This will be a JWT token generate using VideoSDK ApiKey and Secret.\n\nNote that the token will not include any prefix such as "Basic " or "Bearer ". Just pass a token as value.\n\n You can generate a new token by refering this Guide: [Generate Auth token](/api-reference/realtime-communication/intro)',
               values: "YOUR_TOKEN_WITHOUT_ANY_PREFIX",
             },
           ]
