@@ -32,7 +32,7 @@ export default function ResourcePart() {
       title: "Code Sample",
       description:
         "A pre-built code showing you how to integrate video calling to your platform.",
-      link: "https://github.com/videosdk-live",
+      link: "/code-sample",
     },
   ];
 
