@@ -136,7 +136,7 @@ export default function SidebarDropdowns() {
     },
     {
       id: "api-reference",
-      value: "Server",
+      value: "Server Side",
       icon: "/img/icons/libraries/server.svg",
     },
   ];
