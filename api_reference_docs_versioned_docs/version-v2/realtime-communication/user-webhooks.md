@@ -1,8 +1,8 @@
 ---
 sidebar_position: 2
-sidebar_label: User Webhooks
-pagination_label: User Webhooks
-title: User Webhooks
+sidebar_label: Webhooks List
+pagination_label: Webhooks List
+title: Webhooks List
 ---
 
 <div class="sdk-api-ref-only-h4">
@@ -165,14 +165,32 @@ title: User Webhooks
 
 ### hls-started
 
-- When you use Http live streaming(HLS) in meeting this event will be fired
-  with `downstreamUrl` url which you can embed in hls player
+- When you use HTTP live streaming (HLS) in a meeting, this event will be fired when encoding of HLS has started.
 
 #### Example
 
 ```javascript
 {
     "webhookType": "hls-started",
+    "data": {
+        "meetingId": "jvsg-8rjn-j304",
+        "sessionId": "613731342f27f56e4fc4b6d0",
+        "downstreamUrl": "https://cdn.videosdk.live/meetings-hls/b8a770ef-d713-4a27-9ab7-e5a0b724caaf/index.m3u8"
+    },
+}
+```
+
+---
+
+### hls-playable
+
+- When you start HTTP live streaming (HLS) in a meeting, this event will be fired when HLS is in a playable state. So, now you can embed `downstreamUrl` in the HLS player.
+
+#### Example
+
+```javascript
+{
+    "webhookType": "hls-playable",
     "data": {
         "meetingId": "jvsg-8rjn-j304",
         "sessionId": "613731342f27f56e4fc4b6d0",
