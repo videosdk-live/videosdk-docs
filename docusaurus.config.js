@@ -75,12 +75,12 @@ module.exports = {
         {
           position: "left",
           label: "Guide",
-          to:"/react/guide/video-and-audio-calling-api-sdk/concept-and-architecture"
+          to: "/react/guide/video-and-audio-calling-api-sdk/concept-and-architecture",
         },
         {
           position: "left",
           label: "API Reference",
-          to:"react/api/sdk-reference/setup",
+          to: "react/api/sdk-reference/setup",
         },
         {
           position: "left",
@@ -171,10 +171,10 @@ module.exports = {
               label: "Get Started with Custom SDK",
               href: "/react/guide/video-and-audio-calling-api-sdk/concept-and-architecture",
             },
-            // {
-            //   label: "Get Started with Live Streaming",
-            //   href: "/docs/guide/standard-live-streaming-api-sdk/getting-started",
-            // },
+            {
+              label: "Get Started with Interactive Live Streaming SDK",
+              href: "/react/guide/interactive-live-streaming/integrate-hls/overview",
+            },
             // {
             //   label: "Get Started with VOD",
             //   href: "/docs/guide/video-on-demand/getting-started",
@@ -182,35 +182,56 @@ module.exports = {
           ],
         },
         {
-          title: "4 Steps Quickstart",
+          title: "Conference SDK Quickstart",
           items: [
             {
-              label: "Quick Start: Prebuilt JS SDK",
+              label: "Prebuilt JS SDK",
               to: "/prebuilt/guide/prebuilt-video-and-audio-calling/quick-start",
             },
             {
-              label: "Quick Start: React JS SDK",
+              label: "React JS SDK",
               to: "/react/guide/video-and-audio-calling-api-sdk/quick-start",
             },
             {
-              label: "Quick Start: JavaScript SDK",
+              label: "JavaScript SDK",
               to: "/javascript/guide/video-and-audio-calling-api-sdk/quick-start",
             },
             {
-              label: "Quick Start: React Native SDK",
+              label: "React Native SDK",
               to: "/react-native/guide/video-and-audio-calling-api-sdk/quick-start",
             },
             {
-              label: "Quick Start: Android SDK",
+              label: "Android SDK",
               to: "/android/guide/video-and-audio-calling-api-sdk/quick-start",
             },
             {
-              label: "Quick Start: iOS SDK",
+              label: "iOS SDK",
               to: "/ios/guide/video-and-audio-calling-api-sdk/quick-start",
             },
             {
-              label: "Quick Start: Flutter SDK",
+              label: "Flutter SDK",
               to: "/flutter/guide/video-and-audio-calling-api-sdk/quick-start",
+            },
+          ],
+        },
+        {
+          title: "Interactive Live Streaming SDK Quickstart",
+          items: [
+            {
+              label: "React JS SDK",
+              to: "/react/guide/video-and-audio-calling-api-sdk/quick-start-ILS",
+            },
+            {
+              label: "React Native SDK",
+              to: "/react-native/guide/video-and-audio-calling-api-sdk/quick-start-ILS",
+            },
+            {
+              label: "Android SDK",
+              to: "/android/guide/video-and-audio-calling-api-sdk/quick-start-ILS",
+            },
+            {
+              label: "Flutter SDK",
+              to: "/flutter/guide/video-and-audio-calling-api-sdk/quick-start-ILS",
             },
           ],
         },

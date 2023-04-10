@@ -67,8 +67,21 @@
       ]
     },
     {
-      "type": "doc",
-      "id": "realtime-communication/user-webhooks"
+      "type": "category",
+      "label": "User Webhooks",
+      "collapsed": true,
+      "items": [
+        "realtime-communication/user-webhooks",
+        "realtime-communication/webhook-verification"
+      ]
+    },
+    {
+      "type": "category",
+      "label": "Host into Serverless functions",
+      "collapsed": true,
+      "items": [
+        "realtime-communication/firebase-cloud-function"
+      ]
     }
   ]
 }

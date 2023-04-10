@@ -19,21 +19,21 @@ export default function SidebarDropdowns() {
 
   function getSdkRoutingPath(value) {
     var currentPath = location.pathname;
-    return (
-      "/" +
-      value +
-      (currentPath.split("/")[version == versionList[0] ? 2 : 3] == "guide"
-        ? (value == "react" ||
-            value == "react-native" ||
-            value == "flutter" ||
-            value == "android") &&
-          version == versionList[0]
-          ? "/guide/video-and-audio-calling-api-sdk/concept-and-architecture"
-          : value == "prebuilt"
-          ? "/guide/prebuilt-video-and-audio-calling/getting-started"
-          : "/guide/video-and-audio-calling-api-sdk/getting-started"
-        : "/api/sdk-reference/setup")
-    );
+    return value === "api-reference"
+      ? "/api-reference/realtime-communication/intro"
+      : "/" +
+          value +
+          (currentPath.split("/")[version == versionList[0] ? 2 : 3] == "guide"
+            ? (value == "react" ||
+                value == "react-native" ||
+                value == "flutter" ||
+                value == "android") &&
+              version == versionList[0]
+              ? "/guide/video-and-audio-calling-api-sdk/concept-and-architecture"
+              : value == "prebuilt"
+              ? "/guide/prebuilt-video-and-audio-calling/getting-started"
+              : "/guide/video-and-audio-calling-api-sdk/getting-started"
+            : "/api/sdk-reference/setup");
   }
 
   function getRouteVersion(value) {
@@ -134,6 +134,11 @@ export default function SidebarDropdowns() {
       value: "Flutter",
       icon: "/img/icons/libraries/ic_flutter.svg",
     },
+    {
+      id: "api-reference",
+      value: "Server Side",
+      icon: "/img/icons/libraries/server.svg",
+    },
   ];
 
   function getSDKName(value) {
@@ -145,10 +150,7 @@ export default function SidebarDropdowns() {
 
   return (
     <div className="row dropdown_menu">
-      {sdk != "docs" &&
-      sdk != "no-code-sdk" &&
-      sdk != "help_docs" &&
-      sdk != "api-reference" ? (
+      {sdk != "docs" && sdk != "no-code-sdk" && sdk != "help_docs" ? (
         <div className="col dropdown dropdown--hoverable dropdown--left">
           <div className="row navbar__link--active">
             {<img className="dropdown-logo" src={getSDKName(sdk)[0]?.icon} />}
@@ -182,9 +184,10 @@ export default function SidebarDropdowns() {
       {sdk != "docs" && sdk != "no-code-sdk" && sdk != "help_docs" ? (
         <div
           className={
-            sdk == "api-reference"
-              ? "col dropdown dropdown--hoverable dropdown--left"
-              : "dropdown dropdown--hoverable dropdown--right"
+            // sdk == "api-reference"
+            //   ? "col dropdown dropdown--hoverable dropdown--left"
+            //   :
+            "dropdown dropdown--hoverable dropdown--right"
           }
         >
           <a className="row navbar__link--active">
