@@ -33,7 +33,7 @@ This guide will provide an overview of how to implement chat and raise hand in a
 ### Send Message
 
 ```js
-// importing usePubSub hook from react-sdk
+// importing usePubSub hook from react-native-sdk
 import { usePubSub } from "@videosdk.live/react-native-sdk";
 
 const MeetingView = () => {
@@ -53,7 +53,7 @@ const MeetingView = () => {
 ### Raise Hand
 
 ```js
-// importing usePubSub hook from react-sdk
+// importing usePubSub hook from react-native-sdk
 import { usePubSub } from "@videosdk.live/react-native-sdk";
 
 const MeetingView = () => {

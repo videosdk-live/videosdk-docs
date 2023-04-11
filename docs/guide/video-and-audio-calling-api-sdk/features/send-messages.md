@@ -25,11 +25,11 @@ We've released a new version of pages with some improvements and smoother experi
 Here is the link of each SDK for this page.
 
 - [JS](/javascript/guide/video-and-audio-calling-api-sdk/features/pubsub)
-- [React](/react/guide/video-and-audio-calling-api-sdk/features/pubsub)
-- [React Native](/react-native/guide/video-and-audio-calling-api-sdk/features/pubsub)
-- [Android](/android/guide/video-and-audio-calling-api-sdk/features/pubsub)
+- [React](/react/guide/video-and-audio-calling-api-sdk/collaboration-in-meeting/chat-using-pubsub)
+- [React Native](/react-native/guide/video-and-audio-calling-api-sdk/collaboration-in-meeting/chat-using-pubsub)
+- [Android](/android/guide/video-and-audio-calling-api-sdk/collaboration-in-meeting/chat-using-pubsub)
 - [iOS](/ios/guide/video-and-audio-calling-api-sdk/features/pubsub)
-- [Flutter](/flutter/guide/video-and-audio-calling-api-sdk/features/pubsub)
+- [Flutter](/flutter/guide/video-and-audio-calling-api-sdk/collaboration-in-meeting/chat-using-pubsub)
 
 :::
 

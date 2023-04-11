@@ -15,6 +15,7 @@ import {
 import {
   useAnnouncementBar,
   useScrollPosition,
+  useNavbarMobileSidebar,
 } from "@docusaurus/theme-common/internal";
 import Logo from "@theme/Logo";
 import IconArrow from "@theme/Icon/Arrow";
@@ -117,16 +118,17 @@ const DocSidebarMobileSecondaryMenu = ({ toggleSidebar, sidebar, path }) => (
 );
 
 function DocSidebarMobile(props) {
+  const navbarSidebar = useNavbarMobileSidebar();
   return (
     <NavbarSecondaryMenuFiller
       component={DocSidebarMobileSecondaryMenu}
-      props={props}
+      props={{ ...props, toggleSidebar: navbarSidebar.toggle }}
     />
   );
 }
 
 const DocSidebarDesktopMemo = React.memo(DocSidebarDesktop);
-// const DocSidebarMobileMemo = React.memo(DocSidebarMobile);
+const DocSidebarMobileMemo = React.memo(DocSidebarMobile);
 export default function DocSidebar(props) {
   const windowSize = useWindowSize(); // Desktop sidebar visible on hydration: need SSR rendering
 
@@ -137,7 +139,7 @@ export default function DocSidebar(props) {
   return (
     <>
       {shouldRenderSidebarDesktop && <DocSidebarDesktopMemo {...props} />}
-      {shouldRenderSidebarMobile && <DocSidebarMobile {...props} />}
+      {shouldRenderSidebarMobile && <DocSidebarMobileMemo {...props} />}
     </>
   );
 }

@@ -3,8 +3,8 @@ title: Start a Video & Audio Call in React Native iOS SDK- Video SDK Docs
 hide_title: false
 hide_table_of_contents: false
 description: Build customizable real-time video & audio calling applications in React Native iOS SDK using Video SDK add live Video & Audio conferencing to your applications.
-sidebar_label: "React Native iOS"
-pagination_label: "React Native iOS"
+sidebar_label: "Integrate in iOS"
+pagination_label: "Integrate in iOS"
 keywords:
   - react native ios sdk
   - react native js sdk
@@ -15,11 +15,9 @@ sidebar_position: 1
 slug: react-native-ios-sdk
 ---
 
-# Getting Started - React Native iOS SDK
+# Integrating React Native SDK for iOS
 
 React JS SDK wraps up out JavaScript SDK into usable hooks API. It simplifies the code for React Native SDK.
-
-## Install a React Native SDK in iOS
 
 ### Step 1: Install SDK from Npm or Yarn
 
@@ -54,9 +52,29 @@ yarn add "@videosdk.live/react-native-sdk"
 
 ### Step 2: Install @videosdk.live/react-native-incallmanager to manage media-routes/sensors/events during a audio/video chat on React Native
 
-```js title="Install @videosdk.live/react-native-incallmanager"
-$ yarn add "@videosdk.live/react-native-incallmanager"
+<Tabs
+defaultValue="npm"
+groupId={"package-manager-group-id"}
+values={[
+{label: 'Npm', value: 'npm'},
+{label: 'Yarn', value: 'yarn'}
+]}>
+<TabItem value="npm">
+
+```js
+npm install "@videosdk.live/react-native-incallmanager"
 ```
+
+</TabItem>
+<TabItem value="yarn">
+
+```js
+yarn add "@videosdk.live/react-native-incallmanager"
+```
+
+</TabItem>
+
+</Tabs>
 
 ### Step 3: Install all the dependecies via CocoaPods
 
@@ -73,7 +91,7 @@ $[sudo] gem install cocoapods
 ### Step 5: Include in the Podfile in your react-native ios directory
 
 ```js title="Podfile"
-  pod 'react-native-webrtc', :path => '../node_modules/@videosdk.live/react-native-webrtc'
+pod 'react-native-webrtc', :path => '../node_modules/@videosdk.live/react-native-webrtc'
 ```
 
 ### Step 6: Change platform field of podfile to 12.0 or above it
@@ -83,7 +101,7 @@ You have change platform field of podfile to 12.0 or above it, as react-native-w
 ### Step 7: Install pods
 
 ```js
-$ Pod install
+Pod install
 ```
 
 ### Step 8: Declare permissions in Info.plist
@@ -108,21 +126,3 @@ import App from './src/App.js';
 register();
 AppRegistry.registerComponent(appName, () => App);
 ```
-
-## Use hooks API
-
-Our React JS SDK provides two important hooks API:
-
-- **useMeeting** : Responsible to handle meeting environment.
-- **useParticipant** : Responsible to handle Participant
-
-Also, React Provider and Consumer to listen changes in meeting environment.
-
-- **MeetingProvider** : Meeting Provider is [Context.Provider](https://reactjs.org/docs/context.html#contextprovider) that allows consuming components to subscribe to meeting changes
-- **MeetingConsumer** : Meeting Consumer is [Context.Consumer](https://reactjs.org/docs/context.html#contextconsumer) that subscribes to meeting changes.
-
-:::note
-
-Check out official example of React Native SDK implementation: [videosdk-rtc-react-native-sdk-example](https://github.com/videosdk-live/videosdk-rtc-react-native-sdk-example)
-
-:::

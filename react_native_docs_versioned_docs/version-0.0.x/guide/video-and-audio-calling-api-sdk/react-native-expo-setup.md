@@ -3,8 +3,8 @@ title: Start a Video & Audio Call in React Native - Video SDK Docs
 hide_title: false
 hide_table_of_contents: false
 description: Build customizable real-time video & audio calling applications in React Native Android SDK using Video SDK add live Video & Audio conferencing to your applications.
-sidebar_label: "React Native Expo Setup"
-pagination_label: "React Native Expo Setup"
+sidebar_label: "Expo Setup"
+pagination_label: "Expo Setup"
 keywords:
   - react native android sdk
   - react native js sdk
@@ -32,7 +32,7 @@ If you haven't used Expo CLI with an Expo account before, the eject command will
 
 ### Configuration options in app.json
 
-Ejecting requires the same configuration options as building a standalone app. [Follow these instructions before continuing to the next step](https://docs.expo.dev/archive/classic-updates/building-standalone-apps/#2-configure-appjson).
+Ejecting requires the same configuration options as building a standalone app. [Follow this instructions before continuing to the next step](https://docs.expo.dev/archive/classic-updates/building-standalone-apps/#2-configure-appjson).
 
 ### Eject
 

@@ -8,6 +8,17 @@ tags: [releasenotes]
 
 This page will keep you update all the releases of React Native SDK.
 
+## v0.0.45
+
+**Release Date** : 31st March 2023
+
+**Change log** :
+
+- `HLS_PLAYABLE` state added in `onHlsStateChanged` callback.
+- `hlsUrls` getters added in `useMeeting`
+
+---
+
 ## v0.0.44
 
 **Release Date** : 3rd March 2023

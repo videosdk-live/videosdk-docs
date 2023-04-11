@@ -92,6 +92,37 @@ title: useMeeting Hook Properties
 
 ---
 
+### hlsUrls
+
+- type : `Object`
+  - **downstreamUrl**: `String`
+  - **playbackHlsUrl**: `String`
+  - **livestreamUrl**: `String`
+- `hlsUrls` will proide all the URLs for the ongoing meeting HLS.
+
+---
+
+### hlsState
+
+- type : `string`
+- `hlsState` will be the current state of the meeting HLS.
+
+---
+
+### livestreamState
+
+- type : `string`
+- `livestreamState` will be the current state of the meeting Livestream.
+
+---
+
+### recordingState
+
+- type : `string`
+- `recordingState` will be the current state of the meeting recording.
+
+---
+
 ### localScreenShareOn
 
 - type : `boolean`

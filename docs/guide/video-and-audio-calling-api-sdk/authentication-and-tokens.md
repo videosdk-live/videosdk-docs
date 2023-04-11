@@ -26,11 +26,11 @@ We've released a new version of pages with some improvements and smoother experi
 Here is the link of each SDK for this page.
 
 - [JS](/javascript/guide/video-and-audio-calling-api-sdk/server-setup)
-- [React](/react/guide/video-and-audio-calling-api-sdk/server-setup)
-- [React Native](/react-native/guide/video-and-audio-calling-api-sdk/server-setup)
-- [Android](/android/guide/video-and-audio-calling-api-sdk/server-setup)
+- [React](/react/guide/video-and-audio-calling-api-sdk/authentication-and-token)
+- [React Native](/react-native/guide/video-and-audio-calling-api-sdk/authentication-and-token)
+- [Android](/android/guide/video-and-audio-calling-api-sdk/authentication-and-token)
 - [iOS](/ios/guide/video-and-audio-calling-api-sdk/server-setup)
-- [Flutter](/flutter/guide/video-and-audio-calling-api-sdk/server-setup)
+- [Flutter](/flutter/guide/video-and-audio-calling-api-sdk/authentication-and-tokens)
 
 :::
 

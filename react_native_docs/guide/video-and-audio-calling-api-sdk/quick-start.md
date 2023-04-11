@@ -9,7 +9,7 @@ keywords:
   - audio calling
   - video calling
   - real-time communication
-  - collabration
+  - collaboration
   - Javascript SDK implemntation
 image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
@@ -28,7 +28,7 @@ This guide will get you running with the VideoSDK video & audio calling in minut
 - NPM v6+ (comes installed with newer Node versions)
 - Android Studio or Xcode installed
 
-## Getting Started With the Code
+## Getting Started with the Code!
 
 ### Create a new react-native app
 
@@ -633,7 +633,7 @@ This will create a view as shown in an image below
 
 <img class="react-native-screen-img" alt="React-Native--Participant-View" src={require('/static/img/quick-start/participant-view-rn.jpg').default} />
 
-:::note
+:::tip
 
 Stuck anywhere? Check out this [example code](https://github.com/videosdk-live/videosdk-rtc-react-native-sdk-example) on GitHub
 

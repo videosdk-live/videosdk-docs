@@ -69,6 +69,23 @@ const participants = meeting.participants;
 - [disableMic](./methods.md#disablemic)
 
 </div>
+
+<div class="col col--4 margin-bottom--sm" >
+
+- [pin](./methods.md#pin)
+
+</div>
+
+<div class="col col--4 margin-bottom--sm" >
+
+- [unpin](./methods.md#unpin)
+
+</div>
+<div class="col col--4 margin-bottom--sm" >
+
+- [remove](./methods.md#remove)
+
+</div>
 <div class="col col--4 margin-bottom--sm" >
 
 - [setQuality](./methods.md#setquality)
@@ -77,16 +94,6 @@ const participants = meeting.participants;
 <div class="col col--4 margin-bottom--sm" >
 
 - [setViewPort](./methods.md#setviewport)
-
-</div>
-<div class="col col--4 margin-bottom--sm" >
-
-- [pin](./methods.md#pin)
-
-</div>
-<div class="col col--4 margin-bottom--sm" >
-
-- [unpin](./methods.md#unpin)
 
 </div>
 <div class="col col--4 margin-bottom--sm" >

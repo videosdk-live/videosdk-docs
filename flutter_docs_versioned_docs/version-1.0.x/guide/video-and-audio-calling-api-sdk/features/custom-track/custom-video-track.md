@@ -53,7 +53,7 @@ Above mentioned encoder configurations are valid for both, landscape as well as 
   - type: `String`
   - required: `false`
   - Allowed values : `user` | `environment`
-  - It will specifiy whether to use fron or back camera for the video track.
+  - It will specifiy whether to use front or back camera for the video track.
 
 - **multiStream**
 
@@ -116,13 +116,13 @@ Room room = VideoSDK.createRoom(
     );
 ```
 
-### Custom Track with `enableWebcam()`
+### Custom Track with `enableCam()`
 
-In order to switch tracks during the meeting, you have to pass the `CustomTrack` in the `room.enableWebcam()` method.
+In order to switch tracks during the meeting, you have to pass the `CustomTrack` in the `room.enableCam()` method.
 
 :::note
 
-Make sure to call `disableWebcam()` befor you create a new track as it may lead to unexpected behaviour.
+Make sure to call `disableCam()` before you create a new track as it may lead to unexpected behavior.
 
 :::
 

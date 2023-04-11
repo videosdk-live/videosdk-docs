@@ -86,6 +86,26 @@ title: Video SDK useMeeting Hook
 - [isLiveStreaming](./properties#islivestreaming)
 
 </div>
+<div class="col col--4 margin-bottom--sm">
+
+- [hlsState](./properties#hlsstate)
+
+</div>
+<div class="col col--4 margin-bottom--sm">
+
+- [livestreamState](./properties#livestreamstate)
+
+</div>
+<div class="col col--4 margin-bottom--sm">
+
+- [recordingstate](./properties#recordingstate)
+
+</div>
+<div class="col col--4 margin-bottom--sm">
+
+- [hlsUrls](./properties#hlsurls)
+
+</div>
 <div class="col col--4 margin-bottom--sm" >
 
 - [connections](./properties#connections)

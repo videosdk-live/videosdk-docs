@@ -7,6 +7,25 @@ pagination_label: Release Notes
 
 This page will keep you update all the releases of Flutter SDK.
 
+## v1.0.12
+
+**Release Date** : 24rd Mar 2023
+
+**Change Log** :
+
+1. [`pin()`](/flutter/api/sdk-reference/participant-class/methods#pin) added to pin a participant.
+2. [`unpin()`](flutter/api/sdk-reference/participant-class/methods#unpin) added to unpin a participant.
+3. [`changeMode()`](/flutter/api/sdk-reference/room-class/methods#changemode) allows the participant to switch mode between `CONFERENCE` and `VIEWER`.
+
+## v1.0.11
+
+**Release Date** : 03rd Mar 2023
+
+**Bug Fix** :
+
+- Fixed room not closing if leave() called before meeting is joined.
+- Internal dependencies updated.
+
 ## v1.0.10
 
 **Release Date** : 03rd Jan 2023

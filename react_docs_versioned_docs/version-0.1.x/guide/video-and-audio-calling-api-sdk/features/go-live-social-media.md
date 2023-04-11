@@ -56,8 +56,6 @@ const MeetingView = () => {
 ```js
 import { Constants, useMeeting } from "@videosdk.live/react-sdk";
 
-const Constants = VideoSDK.Constants;
-
 function onLivestreamStateChanged(data) {
   const { status } = data;
 

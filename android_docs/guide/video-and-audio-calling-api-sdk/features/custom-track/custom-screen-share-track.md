@@ -43,11 +43,13 @@ Above mentioned encoder configurations are valid for both, landscape as well as 
 :::
 
 - **data**
+
   - type: `Intent`
   - required: `true`
   - It is Intent received from onActivityResult when user provide permission for ScreenShare.
 
 - **context**
+
   - type: `Context`
   - required: `true`
   - Pass the Android Context for this parameter.
@@ -99,7 +101,7 @@ In order to switch tracks during the meeting, you have to pass the `CustomStream
 
 :::note
 
-Make sure to call `disableScreenShare()` before you create a new track as it may lead to unexpected behaviour.
+Make sure to call `disableScreenShare()` before you create a new track as it may lead to unexpected behavior.
 
 :::
 

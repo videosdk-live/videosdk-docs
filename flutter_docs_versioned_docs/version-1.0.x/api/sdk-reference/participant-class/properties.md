@@ -39,4 +39,20 @@ pagination_label: Participant Class Properties
 
 ---
 
+### pinState
+
+- type: `ParticipantPinState`
+
+- It will represents the current pin state of the participant. It has properties `cam` and `share` of type boolean.
+
+---
+
+### mode
+
+- type: `Mode`
+
+- It will represents the participants current mode.
+
+---
+
 </div>

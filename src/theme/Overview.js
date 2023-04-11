@@ -94,7 +94,7 @@ function PlatformPart() {
       Icon: ReactIcon,
       title: "React",
       imgLink: "./svgs/react.svg",
-      link: "/react/guide/video-and-audio-calling-api-sdk/getting-started",
+      link: "/react/guide/video-and-audio-calling-api-sdk/concept-and-architecture",
     },
     {
       Icon: JSIcon,
@@ -106,7 +106,7 @@ function PlatformPart() {
       Icon: ReactIcon,
       title: "React Native",
       imgLink: "./svgs/react-native.svg",
-      link: "/react-native/guide/video-and-audio-calling-api-sdk/getting-started",
+      link: "/react-native/guide/video-and-audio-calling-api-sdk/concept-and-architecture",
     },
   ];
 
@@ -115,13 +115,13 @@ function PlatformPart() {
       Icon: FlutterIcon,
       title: "Flutter",
       imgLink: "./svgs/flutter.svg",
-      link: "/flutter/guide/video-and-audio-calling-api-sdk/getting-started",
+      link: "/flutter/guide/video-and-audio-calling-api-sdk/concept-and-architecture",
     },
     {
       Icon: AndroidIcon,
       title: "Android",
       imgLink: "./svgs/android.svg",
-      link: "/android/guide/video-and-audio-calling-api-sdk/getting-started",
+      link: "/android/guide/video-and-audio-calling-api-sdk/concept-and-architecture",
     },
     {
       Icon: IOSIcon,
@@ -135,7 +135,7 @@ function PlatformPart() {
       Icon: ReactIcon,
       title: "React",
       imgLink: "./svgs/react.svg",
-      link: "/react/guide/video-and-audio-calling-api-sdk/getting-started",
+      link: "/react/guide/video-and-audio-calling-api-sdk/concept-and-architecture",
     },
     {
       Icon: JSIcon,
@@ -147,19 +147,19 @@ function PlatformPart() {
       Icon: ReactIcon,
       title: "React Native",
       imgLink: "./svgs/react-native.svg",
-      link: "/react-native/guide/video-and-audio-calling-api-sdk/getting-started",
+      link: "/react-native/guide/video-and-audio-calling-api-sdk/concept-and-architecture",
     },
     {
       Icon: FlutterIcon,
       title: "Flutter",
       imgLink: "./svgs/flutter.svg",
-      link: "/flutter/guide/video-and-audio-calling-api-sdk/getting-started",
+      link: "/flutter/guide/video-and-audio-calling-api-sdk/concept-and-architecture",
     },
     {
       Icon: AndroidIcon,
       title: "Android",
       imgLink: "./svgs/android.svg",
-      link: "/android/guide/video-and-audio-calling-api-sdk/getting-started",
+      link: "/android/guide/video-and-audio-calling-api-sdk/concept-and-architecture",
     },
     {
       Icon: IOSIcon,

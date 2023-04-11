@@ -33,7 +33,7 @@ The best practice is to use `setQuality("high")` for the participant who is in t
 
 ## Multi Stream Mode
 
-By defualt, VideoSDK sends multi resolution video streams to the servers so that if a user in the meeting is having trouble fetching a high resolution video stream due to network limitations he can downgrade to a lower resolution video for a better viewing experience.
+By default, VideoSDK sends multi resolution video streams to the servers so that if a user in the meeting is having trouble fetching a high resolution video stream due to network limitations he can downgrade to a lower resolution video for a better viewing experience.
 
 When you are doing a conference call where there are only 3-4 participants, there is no major network issues, we recommend you to send single stream of `540p`, saving on network bandwith and at the same time maintain the call quality to the maximum.
 
@@ -69,7 +69,7 @@ const meeting = VideoSDK.initMeeting({
 
 By default, VideoSDK will use a `720p` or `540p` video during the video call basis the device capabilites but you can customizes these setting according to your needs.
 
-You can choose the resolution of video you want to send based on your use case and pass it to VideoSDK during intialization of the meeting and also while enabling the webcam.
+You can choose the resolution of video you want to send based on your use case and pass it to VideoSDK during initialization of the meeting and also while enabling the webcam.
 
 You can create a Video Track using `createCameraVideoTrack()` method of `VideoSDK` class where you can pass different parameters which can be found [here](../features/custom-track/custom-video-track.md#parameters).
 
@@ -85,6 +85,6 @@ let customTrack = await VideoSDK.createCameraVideoTrack({
 
 ## Pause Video Streams
 
-You might have observed that if there are to many participants on the screen and netowrk is not so good, participant videos keep frezzing. To solve these issue, you can listen to `video-quality-changed` event of all participants and if the quality stays `low` for a long duration, you can pause the stream for that particular participant and resume it after a set interval of time.
+You might have observed that if there are to many participants on the screen and network is not so good, participant videos keep frezzing. To solve these issue, you can listen to `video-quality-changed` event of all participants and if the quality stays `low` for a long duration, you can pause the stream for that particular participant and resume it after a set interval of time.
 
 These will help recover other participants video who are on much priority like the host or a presenter and reduce the overload on the network.

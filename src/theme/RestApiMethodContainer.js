@@ -432,7 +432,7 @@ const MethodRequestResponse = ({
     },
   ];
 
-  useEffect(() => {}, [language]);
+  useEffect(() => { }, [language]);
 
   return (
     <div className="flex flex-col ">
@@ -447,7 +447,7 @@ const MethodRequestResponse = ({
         <div className="text-[#7D8EAD] text-sm font-medium pl-[3px] pr-[3px]">
           |
         </div>
-        <div className="flex-1 text-[#7D8EAD] text-sm font-medium">
+        <div className="flex-1 text-[#fff] text-sm font-medium">
           {apiEndpoint}
         </div>
         <div className="dropdown dropdown--hoverable dropdown--right">
@@ -536,10 +536,72 @@ const MethodDescription = ({
   responseParameters,
   queryParameters,
   parameters,
+  apiEndpoint,
+  methodType
 }) => {
   return (
     <div className="flex flex-col">
       <div className="text-gray-250">{description}</div>
+
+      <div className="mt-12">
+        <p className="font-extrabold text-lg">
+          HTTP method and endpoint
+        </p>
+
+        <div className="flex text-lg">
+          <div className="text-green-300 font-bold">
+            {methodType}
+          </div>
+          <p className="mx-2">{" | "}</p>
+          {apiEndpoint}
+        </div>
+      </div>
+
+      <div>
+        <div className="text-2xl mt-5 font-extrabold text-white-100">
+          Headers Parameters
+        </div>
+        <div className="bg-[#252A34] mt-3 mb-1 h-[1px]"></div>
+        {(postParameters?.length
+          ? [
+            {
+              required: true,
+              key: "Authorization",
+              description: 'This will be a JWT token generate using VideoSDK ApiKey and Secret.\n\nNote that the token will not include any prefix such as "Basic " or "Bearer ". Just pass a token as value.\n\n You can generate a new token by refering this Guide: [Generate Auth token](/api-reference/realtime-communication/intro)',
+              values: "YOUR_TOKEN_WITHOUT_ANY_PREFIX",
+            },
+            {
+              required: true,
+              key: "Content-Type",
+              description: "This is usefull for json body parameters, so that VideoSDK servers can understand that the incoming body parameter will be a JSON string.",
+              values: "application/json",
+            },
+          ]
+          : [
+            {
+              required: true,
+              key: "Authorization",
+              description: 'This will be a JWT token generate using VideoSDK ApiKey and Secret.\n\nNote that the token will not include any prefix such as "Basic " or "Bearer ". Just pass a token as value.\n\n You can generate a new token by refering this Guide: [Generate Auth token](/api-reference/realtime-communication/intro)',
+              values: "YOUR_TOKEN_WITHOUT_ANY_PREFIX",
+            },
+          ]
+        )?.map((parameter, index) => {
+          return (
+            <MethodParameter
+              parameterName={parameter.key}
+              description={parameter.description}
+              values={parameter.values}
+              defaultValue={parameter.defaultValue}
+              required={parameter.required}
+              showDivider={index != postParameters?.length - 1}
+              isDeprecated={parameter.isDeprecated}
+              isDiscontinued={parameter.isDiscontinued}
+              deprecatedMessage={parameter.deprecatedMessage}
+            />
+          );
+        })}
+      </div>
+
       {postParameters?.length != 0 && (
         <div>
           <div className="text-2xl mt-12 font-extrabold text-white-100">
@@ -671,23 +733,16 @@ const MethodParameter = ({
   deprecatedMessage,
   isDiscontinued,
 }) => {
-  console.log(
-    { isDeprecated, deprecatedMessage },
-    "isDeprecated, deprecatedMessage"
-  );
-
   let md =
     values && defaultValue
-      ? `${"#### values  :    " + values} \n${
-          defaultValue && "#### defaultValue  :    " + defaultValue
-        }\n ${description} `
+      ? `${"#### values  :    " + values} \n${defaultValue && "#### defaultValue  :    " + defaultValue
+      }\n ${description} `
       : values
-      ? `${"#### values  :    " + values} \n ${description} `
-      : defaultValue
-      ? `${
-          defaultValue && "#### defaultValue  :    " + defaultValue
-        }\n ${description} `
-      : `${description} `;
+        ? `${"#### values  :    " + values} \n ${description} `
+        : defaultValue
+          ? `${defaultValue && "#### defaultValue  :    " + defaultValue
+          }\n ${description} `
+          : `${description} `;
 
   let mdParmName = `## ${parameterName}`;
   return (
@@ -700,9 +755,8 @@ const MethodParameter = ({
                 overrides: {
                   h2: {
                     props: {
-                      className: `font-semibold text-xl pr-1.5 text-white-100 mb-1.5 ${
-                        isDeprecated || isDiscontinued ? "text-red-200" : ""
-                      }`,
+                      className: `font-semibold text-xl pr-1.5 text-white-100 mb-1.5 ${isDeprecated || isDiscontinued ? "text-red-200" : ""
+                        }`,
                     },
                   },
                 },
@@ -717,8 +771,8 @@ const MethodParameter = ({
             {isDiscontinued
               ? "@discontinued"
               : isDeprecated
-              ? "@deprecated"
-              : ""}
+                ? "@deprecated"
+                : ""}
           </div>
         ) : !isResponseParam ? (
           required ? (
@@ -796,6 +850,8 @@ function RestApiMethodContainer({
             postParameters={postParameters}
             parameters={parameters}
             responseParameters={responseParameters}
+            apiEndpoint={apiEndpoint}
+            methodType={methodType}
           />
         </div>
         <div className="lg:w-1/2 w-full lg:pt-0 pt-4 lg:pl-[18px] lg:sticky self-start flex-grow top-10">

@@ -89,6 +89,13 @@ title: VideoSDK Class Methods
   - `OPTIONAL`
   - Set the initial custom audio track using different encoding parameters and optimization mode.
 
+- mode
+
+  - type: `Mode`
+  - `OPTIONAL`
+  - Set the participant mode i.e. `CONFERENCE` or `VIEWER`.
+  - Default value is `CONFERENCE`.
+
 ---
 
 #### Returns
@@ -178,7 +185,7 @@ Above mentioned encoder configurations are valid for both, landscape as well as 
   - type: `String`
   - required: `false`
   - Allowed values : `user` | `environment`
-  - It will specifiy whether to use fron or back camera for the video track.
+  - It will specifiy whether to use front or back camera for the video track.
 
 - **multiStream**
 
@@ -213,7 +220,7 @@ CustomTrack videoTrack = await VideoSDK.createCameraVideoTrack(
 ### createMicrophoneAudioTrack
 
 - You can create a Audio Track using `createMicrophoneAudioTrack()` method of `VideoSDK` class.
-- This method can be used to create audio track using different encoding parameters and noise cancellation configration.
+- This method can be used to create audio track using different encoding parameters and noise cancellation configuration.
 
 #### Parameters
 

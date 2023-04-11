@@ -10,7 +10,7 @@ title: Methods returned by useMeeting Hook
 ### join()
 
 - It is used to join a meeting.
-- During intialization using the [`<MeetingProvider>`](../meeting-provider), if `joinWithoutInteraction` is set to `true`, participant will automatically join the meeting. If it is `false` explicity call for `join()` should be made.
+- During initialization using the [`<MeetingProvider>`](../meeting-provider), if `joinWithoutInteraction` is set to `true`, participant will automatically join the meeting. If it is `false` explicity call for `join()` should be made.
 
 #### Events associated with `join()`:
 
@@ -50,21 +50,21 @@ title: Methods returned by useMeeting Hook
 
 ---
 
-### enableMic()
+### unmuteMic()
 
-- `enableMic()` is used to enable mic of the local participant.
+- `unmuteMic()` is used to enable mic of the local participant.
 
-#### Events associated with `enableMic()`:
+#### Events associated with `unmuteMic()`:
 
 - Every Participant will receive a callback on [`onStreamEnabled()`](../use-participant/events#onstreamenabled) of the [`useParticipant()`](../use-participant/introduction.md) hook with `Stream` object.
 
 ---
 
-### disableMic()
+### muteMic()
 
-- `disableMic()` is used to disable mic of the local participant.
+- `muteMic()` is used to disable mic of the local participant.
 
-#### Events associated with `disableMic()`:
+#### Events associated with `muteMic()`:
 
 - Every Participant will receive a callback on [`onStreamDisabled()`](../use-participant/events#onstreamdisabled) of the [`useParticipant()`](../use-participant/introduction.md) hook with `Stream` object.
 
@@ -213,9 +213,9 @@ startRecording(webhookUrl, awsDirPath, config);
 
 ---
 
-### startLiveStream()
+### startLivestream()
 
-- `startLiveStream()` is used to start meeting livestreaming.
+- `startLivestream()` is used to start meeting livestreaming.
 
 - You will be able to start live stream meetings to other platforms such as Youtube, Facebook, etc. that support `RTMP` streaming.
 
@@ -256,20 +256,20 @@ const config = {
   theme: "DEFAULT",
 };
 
-const { startLiveStream } = useMeeting();
+const { startLivestream } = useMeeting();
 
 startLivestream(outputs, config);
 ```
 
 ---
 
-### stopLiveStream()
+### stopLivestream()
 
-- `stopLiveStream()` is used to stop the live streaming to social media.
+- `stopLivestream()` is used to stop the live streaming to social media.
 
-#### Events associated with `stopLiveStream()`:
+#### Events associated with `stopLivestream()`:
 
-- Every participant will receive a callback on [`onLiveStreamStopped()`](./events#onlivestreamstopped)
+- Every participant will receive a callback on [`onLivestreamStopped()`](./events#onlivestreamstopped)
 
 ---
 

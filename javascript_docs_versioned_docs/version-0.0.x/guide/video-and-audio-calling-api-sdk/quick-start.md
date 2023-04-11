@@ -9,7 +9,7 @@ keywords:
   - audio calling
   - video calling
   - real-time communication
-  - collabration
+  - collaboration
   - Javascript SDK implemntation
 image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
@@ -464,7 +464,7 @@ function addDomEvents() {
 }
 ```
 
-:::note
+:::tip
 
 Stuck anywhere? Check out this [example code](https://github.com/videosdk-live/videosdk-rtc-javascript-sdk-example) on GitHub
 

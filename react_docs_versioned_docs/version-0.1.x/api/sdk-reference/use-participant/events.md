@@ -72,6 +72,8 @@ const {
 });
 ```
 
+---
+
 ### onVideoQualityChanged()
 
 - `onVideoQualityChanged()` is a callback which gets triggered whenever a participant's video quality changes.
@@ -92,7 +94,5 @@ const {
   ...
 });
 ```
-
----
 
 </div>

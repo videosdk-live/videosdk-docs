@@ -9,7 +9,7 @@ keywords:
   - audio calling
   - video calling
   - real-time communication
-  - collabration
+  - collaboration
 image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
 slug: supported-platforms
@@ -23,13 +23,13 @@ This guide will follow installation guide for all the VideoSDK for Video & Audio
 
 ## Web SDK
 
-1. [JavaScript](/docs/guide/video-and-audio-calling-api-sdk/javascript-sdk)
-2. [React JS](/docs/guide/video-and-audio-calling-api-sdk/react-js-sdk)
+1. [JavaScript](/javascript/guide/video-and-audio-calling-api-sdk/getting-started)
+2. [React JS](/react/guide/video-and-audio-calling-api-sdk/concept-and-architecture)
 
 ## Mobile SDK
 
-1. [React Native Android](/docs/guide/video-and-audio-calling-api-sdk/react-native-android-sdk)
-2. [React Native IOS](/docs/guide/video-and-audio-calling-api-sdk/react-native-ios-sdk)
-3. [Android](/docs/guide/video-and-audio-calling-api-sdk/android-sdk)
-4. [IOS](/docs/guide/video-and-audio-calling-api-sdk/ios-sdk)
-5. [Flutter](/docs/guide/video-and-audio-calling-api-sdk/flutter-sdk)
+1. [React Native Android](/react-native/guide/video-and-audio-calling-api-sdk/react-native-android-sdk)
+2. [React Native IOS](/react-native/guide/video-and-audio-calling-api-sdk/react-native-ios-sdk)
+3. [Android](/android/guide/video-and-audio-calling-api-sdk/getting-started)
+4. [IOS](/ios/guide/video-and-audio-calling-api-sdk/getting-started)
+5. [Flutter](/flutter/guide/video-and-audio-calling-api-sdk/getting-started)

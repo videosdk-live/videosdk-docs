@@ -1,7 +1,7 @@
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 
 const pageOptions = {
-  editUrl: "https://github.com/videosdk-live/videosdk-docs/tree/develop",
+  editUrl: "https://github.com/videosdk-live/videosdk-docs/tree/main",
   showLastUpdateAuthor: true,
   showLastUpdateTime: true,
 };
@@ -23,18 +23,19 @@ module.exports = {
   // clientModules: [require.resolve("/js/sales-iq.js")],
   themeConfig: {
     defaultMode: "dark",
-    // announcementBar: {
-    //   id: "event_announcement_interactive_live_streaming_app",
-    //   id: "announcement_product_hunt",
-    //   content:
-    //     // "Beginning on Oct 21, recording files are being kept on Video SDK servers for 7 days",
-    //     `The recording can last up to 2 hours; if you want longer recordings, please <a target="_blank" rel="noopener noreferrer" href="https://www.videosdk.live/contact"><strong>contact us</strong></a>`,
-    //   // 'Please &nbsp;<a target="_blank" rel="noopener noreferrer" href="https://www.producthunt.com/posts/video-sdk-2-0?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-video&#0045;sdk&#0045;2&#0045;0"><strong>support us</strong></a>&nbsp; on Product Hunt and &nbsp;<a target="_blank" rel="noopener noreferrer" href="https://ctt.ac/Dvysi"><strong>spread the word</strong></a>',
-    //   // 'ZERO CODING!!! Create and join audio-video rooms in 5 mins with our newly launched "No Code SDK".&nbsp;&nbsp;<a target="_blank" rel="noopener noreferrer" href="https://docs.videosdk.live/no-code-sdk/guide/no-code-video-and-audio-calling/getting-started">Learn more</a> ',
-    //   backgroundColor: "#6246FB",
-    //   textColor: "#FFF",
-    //   isCloseable: true,
-    // },
+    announcementBar: {
+      id: "announcement_docs_rewamp",
+      content:
+        // "Beginning on Oct 21, recording files are being kept on Video SDK servers for 7 days",
+        // `The recording can last up to 2 hours; if you want longer recordings, please <a target="_blank" rel="noopener noreferrer" href="https://www.videosdk.live/contact"><strong>contact us</strong></a>`,
+        // 'Please &nbsp;<a target="_blank" rel="noopener noreferrer" href="https://www.producthunt.com/posts/video-sdk-2-0?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-video&#0045;sdk&#0045;2&#0045;0"><strong>support us</strong></a>&nbsp; on Product Hunt and &nbsp;<a target="_blank" rel="noopener noreferrer" href="https://ctt.ac/Dvysi"><strong>spread the word</strong></a>',
+        // 'ZERO CODING!!! Create and join audio-video rooms in 5 mins with our newly launched "No Code SDK".&nbsp;&nbsp;<a target="_blank" rel="noopener noreferrer" href="https://docs.videosdk.live/no-code-sdk/guide/no-code-video-and-audio-calling/getting-started">Learn more</a> ',
+        // `We are undertaking a comprehensive redesign of the <strong>React Documentation</strong>. You may view the legacy react documentation <a target="_blank" rel="noopener noreferrer" href="https://legacy-docs.videosdk.live/react/guide/video-and-audio-calling-api-sdk/getting-started"><strong>here</strong></a>`,
+        'We are launching our Interactive Live Streaming SDK on Product Hunt on Monday, April 10th, &nbsp;<a target="_blank" rel="noopener noreferrer" href="https://www.producthunt.com/products/video-sdk"><strong>FOLLOW</strong></a>&nbsp; us on Product Hunt!',
+      backgroundColor: "#6246FB",
+      textColor: "#FFF",
+      isCloseable: true,
+    },
 
     image: "img/videosdklive-thumbnail.jpg",
     algolia: {
@@ -74,55 +75,17 @@ module.exports = {
         {
           position: "left",
           label: "Guide",
-          items: [
-            // {
-            //   label: "No Code Video & Audio Calling SDK",
-            //   to: "no-code-sdk/guide/no-code-video-and-audio-calling/getting-started",
-            //   activeBaseRegex: "/*/no-code-sdk/*",
-            // },
-            {
-              label: "Prebuilt Video & Audio Calling SDK",
-              to: "prebuilt/guide/prebuilt-video-and-audio-calling/getting-started",
-              activeBaseRegex: "/*/prebuilt-video-and-audio-calling/*",
-            },
-            {
-              label: "Custom Video & Audio Calling SDK",
-              to: "javascript/guide/video-and-audio-calling-api-sdk/getting-started",
-              activeBaseRegex: "/*/video-and-audio-calling-api-sdk/*",
-            },
-          ],
+          to: "/react/guide/video-and-audio-calling-api-sdk/concept-and-architecture",
         },
         {
           position: "left",
           label: "API Reference",
-          items: [
-            {
-              label: "Custom SDK References",
-              to: "javascript/api/sdk-reference/setup",
-              activeBaseRegex:
-                "/react|flutter|react-native|javascript|ios|android/api/sdk-reference/*",
-            },
-            {
-              label: "Prebuilt SDK Reference",
-              to: "prebuilt/api/sdk-reference/setup",
-              activeBaseRegex: "/prebuilt/api/sdk-reference/*",
-            },
-            {
-              label: "Rest API Reference",
-              to: "api-reference/realtime-communication/intro",
-              activeBaseRegex: "api-reference/*/realtime-communication/*",
-            },
-          ],
-        },
-        {
-          position: "left",
-          label: "Tutorials",
-          to: "/docs/tutorials/introduction",
+          to: "react/api/sdk-reference/setup",
         },
         {
           position: "left",
           label: "Code Samples",
-          to: "https://github.com/videosdk-live",
+          to: "/code-sample",
         },
         {
           position: "left",
@@ -193,61 +156,82 @@ module.exports = {
         width: 500,
       },
       links: [
+        // {
+        //   title: "Get started",
+        //   items: [
+        //     {
+        //       label: "Sign Up",
+        //       href: "https://app.videosdk.live/signup",
+        //     },
+        //     {
+        //       label: "Get Started with Prebuilt SDK",
+        //       href: "/prebuilt/guide/prebuilt-video-and-audio-calling/getting-started",
+        //     },
+        //     {
+        //       label: "Get Started with Custom SDK",
+        //       href: "/react/guide/video-and-audio-calling-api-sdk/concept-and-architecture",
+        //     },
+        //     {
+        //       label: "Get Started with Interactive Live Streaming SDK",
+        //       href: "/react/guide/interactive-live-streaming/integrate-hls/overview",
+        //     },
+        //     // {
+        //     //   label: "Get Started with VOD",
+        //     //   href: "/docs/guide/video-on-demand/getting-started",
+        //     // },
+        //   ],
+        // },
         {
-          title: "Get started",
+          title: "Conference SDK Quickstart",
           items: [
             {
-              label: "Sign Up",
-              href: "https://app.videosdk.live/signup",
-            },
-            {
-              label: "Get Started with Prebuilt SDK",
-              href: "/prebuilt/guide/prebuilt-video-and-audio-calling/getting-started",
-            },
-            {
-              label: "Get Started with Custom SDK",
-              href: "/react/guide/video-and-audio-calling-api-sdk/getting-started",
-            },
-            // {
-            //   label: "Get Started with Live Streaming",
-            //   href: "/docs/guide/standard-live-streaming-api-sdk/getting-started",
-            // },
-            // {
-            //   label: "Get Started with VOD",
-            //   href: "/docs/guide/video-on-demand/getting-started",
-            // },
-          ],
-        },
-        {
-          title: "4 Steps Quickstart",
-          items: [
-            {
-              label: "Quick Start: Prebuilt JS SDK",
+              label: "Prebuilt JS SDK",
               to: "/prebuilt/guide/prebuilt-video-and-audio-calling/quick-start",
             },
             {
-              label: "Quick Start: React JS SDK",
+              label: "React JS SDK",
               to: "/react/guide/video-and-audio-calling-api-sdk/quick-start",
             },
             {
-              label: "Quick Start: JavaScript SDK",
+              label: "JavaScript SDK",
               to: "/javascript/guide/video-and-audio-calling-api-sdk/quick-start",
             },
             {
-              label: "Quick Start: React Native SDK",
+              label: "React Native SDK",
               to: "/react-native/guide/video-and-audio-calling-api-sdk/quick-start",
             },
             {
-              label: "Quick Start: Android SDK",
+              label: "Android SDK",
               to: "/android/guide/video-and-audio-calling-api-sdk/quick-start",
             },
             {
-              label: "Quick Start: iOS SDK",
+              label: "iOS SDK",
               to: "/ios/guide/video-and-audio-calling-api-sdk/quick-start",
             },
             {
-              label: "Quick Start: Flutter SDK",
+              label: "Flutter SDK",
               to: "/flutter/guide/video-and-audio-calling-api-sdk/quick-start",
+            },
+          ],
+        },
+        {
+          title: "Interactive Live Streaming SDK Quickstart",
+          items: [
+            {
+              label: "React JS SDK",
+              to: "/react/guide/video-and-audio-calling-api-sdk/quick-start-ILS",
+            },
+            {
+              label: "React Native SDK",
+              to: "/react-native/guide/video-and-audio-calling-api-sdk/quick-start-ILS",
+            },
+            {
+              label: "Android SDK",
+              to: "/android/guide/video-and-audio-calling-api-sdk/quick-start-ILS",
+            },
+            {
+              label: "Flutter SDK",
+              to: "/flutter/guide/video-and-audio-calling-api-sdk/quick-start-ILS",
             },
           ],
         },
@@ -262,13 +246,13 @@ module.exports = {
               label: "API Reference",
               to: "/react/api/sdk-reference/setup",
             },
-            {
-              label: "Resources",
-              to: "/docs/tutorials/introduction",
-            },
+            // {
+            //   label: "Resources",
+            //   to: "/docs/tutorials/introduction",
+            // },
             {
               label: "Code Samples",
-              to: "/docs/code-sample/overview",
+              to: "/code-sample",
             },
             {
               label: "Product Updates",

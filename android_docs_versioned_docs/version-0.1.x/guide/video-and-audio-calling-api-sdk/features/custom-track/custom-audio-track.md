@@ -25,6 +25,7 @@ We have introduced the ability to pass a custom Audio track for the Audio of the
 
 - You can create a Audio Track using `createAudioTrack()` method of `VideoSDK`.
 - This method can be used to create audio track using different encoding parameters.
+
 ### Parameters
 
 - **encoderConfig**:
@@ -32,7 +33,7 @@ We have introduced the ability to pass a custom Audio track for the Audio of the
   - type: `String`
   - required: `true`
   - default: `speech_standard`
-  - Allowed values : `speech_low_quality` | `speech_standard` | `music_standard` | `standard_stereo` | `high_quality` | `high_quality_stereo`  
+  - Allowed values : `speech_low_quality` | `speech_standard` | `music_standard` | `standard_stereo` | `high_quality` | `high_quality_stereo`
   - It will be the encoder configuration you want to use for Audio Track.
 
 - **context**
@@ -62,7 +63,7 @@ try {
   val audioCustomTrack: CustomStreamTrack = VideoSDK.createAudioTrack("high_quality",this)
 } catch (e: JSONException) {
    e.printStackTrace()
-}        
+}
 ```
 
 </TabItem>
@@ -74,7 +75,7 @@ try {
   CustomStreamTrack audioCustomTrack=VideoSDK.createAudioTrack("high_quality", this);
 }catch (JSONException e) {
   e.printStackTrace();
-}          
+}
 ```
 
 </TabItem>
@@ -105,11 +106,11 @@ override fun onCreate(savedInstanceState: Bundle?) {
 
     // create a new meeting instance
     val meeting = VideoSDK.initMeeting(
-      this@MainActivity,meetingId,participantName, 
+      this@MainActivity,meetingId,participantName,
       //MicEnabled , If true, it will use the passed custom track to turn mic on
-      true,  
+      true,
       //WebcamEnabled
-      true, 
+      true,
       //ParticipantId
       null,
       //Mode
@@ -129,7 +130,7 @@ override fun onCreate(savedInstanceState: Bundle?) {
 protected void onCreate(Bundle savedInstanceState) {
     //..
 
-    Map<String, CustomStreamTrack> customTracks = new HashMap<>(); 
+    Map<String, CustomStreamTrack> customTracks = new HashMap<>();
 
     CustomStreamTrack audioCustomTrack = VideoSDK.createAudioTrack("high_quality", this);
     customTracks.put("mic", audioCustomTrack);  //Key must be "mic"
@@ -164,7 +165,7 @@ You can also pass custom track in `changeMic()` method of `Meeting`.
 
 :::note
 
-Make sure to call `muteMic()` before you create a new track as it may lead to unexpected behaviour.
+Make sure to call `muteMic()` before you create a new track as it may lead to unexpected behavior.
 
 :::
 
@@ -184,7 +185,7 @@ try {
   meeting!!.changeMic(AppRTCAudioManager.AudioDevice.BLUETOOTH, audioCustomTrack)
 } catch (e: JSONException) {
   e.printStackTrace()
-}   
+}
 
 ```
 
@@ -201,7 +202,7 @@ try {
   meeting.changeMic(AppRTCAudioManager.AudioDevice.BLUETOOTH,audioCustomTrack);
 }catch (JSONException e) {
   e.printStackTrace();
-}    
+}
 
 ```
 

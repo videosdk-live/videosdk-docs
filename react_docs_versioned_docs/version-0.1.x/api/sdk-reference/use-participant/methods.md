@@ -51,6 +51,32 @@ title: Methods returned by useParticipant Hook
 
 ---
 
+### pin()
+
+- It is used to set pin state of the participant. You can use it to pin the screen share, camera or both of the participant. It accepts a optional paramter of type `String`. Default `SHARE_AND_CAM`
+
+#### Parameters
+
+- **pinType**: `SHARE_AND_CAM` | `CAM` | `SHARE`
+
+---
+
+### unpin()
+
+- It is used to unpin participant. You can use it to unpin the screen share, camera or both of the participant. It accepts a optional paramter of type `String`. Default is `SHARE_AND_CAM`
+
+#### Parameters
+
+- **pinType**: `SHARE_AND_CAM` | `CAM` | `SHARE`
+
+---
+
+### remove()
+
+- It is used to remove a participant from the meeting
+
+---
+
 ### setQuality()
 
 - `setQuality()` is used to set the quality of participants video.
@@ -58,21 +84,6 @@ title: Methods returned by useParticipant Hook
 #### Parameter
 
 - **quality** : _"low"_ | _"med"_ | _"high"_
-
----
-
-### setViewPort()
-
-- `setViewPort()` is used to set the quality of the participant's video stream based on the viewport height and width.
-
-#### Parameters
-
-- **width**: int
-- **height**: int
-
-#### Returns
-
-- `void`
 
 ---
 

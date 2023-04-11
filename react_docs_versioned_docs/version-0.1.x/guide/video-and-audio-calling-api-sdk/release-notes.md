@@ -8,6 +8,17 @@ tags: [releasenotes]
 
 This page will keep you update all the releases of React JS SDK.
 
+## v0.1.68
+
+**Release Date** : 31st March 2023
+
+**Change log** :
+
+- `HLS_PLAYABLE` state added in `onHlsStateChanged` callback.
+- `hlsUrls` getters added in `useMeeting`
+
+---
+
 ## v0.1.67
 
 **Release Date** : 3rd March 2023
@@ -95,6 +106,8 @@ This page will keep you update all the releases of React JS SDK.
 **Change log** :
 
 1. To obtain screen sharing statistics, the `useParticipant` hook now has a [`getShareStats`](../../api/sdk-reference/use-participant/methods.md#getsharestats) function.
+
+---
 
 ## v0.1.53
 

@@ -113,6 +113,42 @@ room.on(Events.presenterChanged, (activePresenterId) {
 
 ---
 
+### pinStateChanged
+
+- This event will be emitted when any [participant](../participant-class/introduction) pin state gets changed.
+- It will pass `participantId`, `state`, and `pinnedBy` as `Map<String, dynamic>` as an event handler parameter.
+
+#### Event handler parameters
+
+- **data**: `Map<String, dynamic>`{**participantId**:String, **state**:Map<String, dynamic>, **pinnedBy**:String}
+
+#### Example
+
+```javascript
+room.on(Events.pinStateChanged, (data) {
+  // do something
+});
+```
+
+### participantModeChanged
+
+- This event will be emitted when any [participant](../participant-class/introduction) mode gets changed.
+- It will pass `participantId`, and `pinnedBy` as `Map<String, dynamic>` as an event handler parameter.
+
+#### Event handler parameters
+
+- **data**: `Map<String, dynamic>`{**participantId**:String, **mode**:String}
+
+#### Example
+
+```javascript
+room.on(Events.participantModeChanged, (data) {
+  // do something
+});
+```
+
+---
+
 ### entryRequested
 
 - This event will be emitted when a new [participant](../participant-class/introduction), who is trying to join the room, is having permission **`ask_join`** in token.
@@ -370,6 +406,7 @@ room.on(Events.liveStreamStateChanged, (String status) {
 
 - `HLS_STARTING` - Hls is in starting phase and hasn't started yet.
 - `HLS_STARTED` - Hls has started successfully will return `downstreamUrl`.
+- `HLS_PLAYABLE` - Hls has started can be played now, it will return `downstreamUrl`.
 - `HLS_STOPPING` - Hls is in stopping phase and hasn't stopped yet.
 - `HLS_STOPPED` - Hls has stopped successfully.
 
@@ -378,7 +415,7 @@ room.on(Events.liveStreamStateChanged, (String status) {
 ```javascript
 room.on(Events.hlsStateChanged, (Map<String, dynamic> data) {
   toastMsg("Meeting HLS status : ${data['status']}");
-  if (data['status'] == "HLS_STARTED")
+  if (data['status'] == "HLS_PLAYABLE")
     log("DOWNSTREAM URL -- " + data['downstreamUrl']);
 });
 ```
@@ -418,6 +455,25 @@ _`This event will be deprecated soon`_
 ```javascript
 room.on(Events.hlsStopped, () => {
   //
+});
+```
+
+---
+
+### error
+
+- This event will be emitted when and error occurs in the room.
+
+#### Example
+
+```javascript
+room.on(Events.error, (error) {
+  log("VIDEOSDK ERROR :: " +
+      error['code'].toString() +
+      "  :: " +
+      error['name'].toString() +
+      " :: " +
+      error['message'].toString());
 });
 ```
 

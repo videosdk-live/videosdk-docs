@@ -31,11 +31,44 @@ title: Meeting Class Properties
 
 ---
 
+### hlsUrls
+
+- type : `Object`
+  - **downstreamUrl**: `String`
+  - **playbackHlsUrl**: `String`
+  - **livestreamUrl**: `String`
+- `hlsUrls` will proide all the URLs for the ongoing meeting HLS.
+
+---
+
+### hlsState
+
+- type : `string`
+- `hlsState` will be the current state of the meeting HLS.
+
+---
+
+### livestreamState
+
+- type : `string`
+- `livestreamState` will be the current state of the meeting Livestream.
+
+---
+
+### recordingState
+
+- type : `string`
+- `recordingState` will be the current state of the meeting recording.
+
+---
+
 ### localParticipant
 
 - type: [Participant](../participant-class/introduction.md)
 
 - It will be the instance of [Participant](../participant-class/introduction.md) class for the local participant(You) who joined the meeting.
+
+---
 
 ### participants
 

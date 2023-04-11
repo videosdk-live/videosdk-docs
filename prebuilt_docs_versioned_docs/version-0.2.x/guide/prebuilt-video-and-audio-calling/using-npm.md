@@ -9,7 +9,7 @@ keywords:
   - audio calling
   - video calling
   - real-time communication
-  - collabration
+  - collaboration
 image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
 slug: using-npm
@@ -97,7 +97,7 @@ export default function App() {
 }
 ```
 
-:::note
+:::tip
 
 Stuck anywhere? Check out this react [example code](https://github.com/videosdk-live/videosdk-rtc-react-prebuilt-example) on github or [download](https://github.com/videosdk-live/videosdk-rtc-react-prebuilt-example/archive/refs/heads/main.zip) the full source code and unzip on your computer.
 
@@ -145,7 +145,7 @@ export class AppComponent implements OnInit {
 }
 ```
 
-:::note
+:::tip
 
 Stuck anywhere? Check out this angular [example code](https://github.com/videosdk-live/videosdk-rtc-angular-prebuilt-example) on github or [download](https://github.com/videosdk-live/videosdk-rtc-angular-prebuilt-example/archive/refs/heads/main.zip) the full source code and unzip on your computer.
 
@@ -197,7 +197,7 @@ export default {
 
 ```
 
-:::note
+:::tip
 Stuck anywhere? Check out this vue [example code](https://github.com/videosdk-live/videosdk-rtc-vue-prebuilt-example) on github or [download](https://github.com/videosdk-live/videosdk-rtc-vue-prebuilt-example/archive/refs/heads/main.zip) the full source code and unzip on your computer.
 
 :::
