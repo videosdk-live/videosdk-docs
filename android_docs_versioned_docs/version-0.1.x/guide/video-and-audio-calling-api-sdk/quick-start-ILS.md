@@ -167,11 +167,6 @@ Your project structure should look like this.
 You have to set JoinActivity as Launcher activity.
 
 :::
-<<<<<<< HEAD
-
-=======
-
-> > > > > > > origin/android
 
 ### App Architecture
 
@@ -2040,12 +2035,6 @@ public class ViewerFragment extends Fragment {
 </center>
 
 <br/>
-
-:::tip
-
-Stuck anywhere? Check out this [example code](https://github.com/videosdk-live/videosdk-hls-android-kotlin-example) on GitHub.
-
-:::
 
 ## Final Output
 
