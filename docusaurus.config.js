@@ -23,19 +23,19 @@ module.exports = {
   // clientModules: [require.resolve("/js/sales-iq.js")],
   themeConfig: {
     defaultMode: "dark",
-    announcementBar: {
-      id: "announcement_docs_rewamp",
-      content:
-        // "Beginning on Oct 21, recording files are being kept on Video SDK servers for 7 days",
-        // `The recording can last up to 2 hours; if you want longer recordings, please <a target="_blank" rel="noopener noreferrer" href="https://www.videosdk.live/contact"><strong>contact us</strong></a>`,
-        // 'Please &nbsp;<a target="_blank" rel="noopener noreferrer" href="https://www.producthunt.com/posts/video-sdk-2-0?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-video&#0045;sdk&#0045;2&#0045;0"><strong>support us</strong></a>&nbsp; on Product Hunt and &nbsp;<a target="_blank" rel="noopener noreferrer" href="https://ctt.ac/Dvysi"><strong>spread the word</strong></a>',
-        // 'ZERO CODING!!! Create and join audio-video rooms in 5 mins with our newly launched "No Code SDK".&nbsp;&nbsp;<a target="_blank" rel="noopener noreferrer" href="https://docs.videosdk.live/no-code-sdk/guide/no-code-video-and-audio-calling/getting-started">Learn more</a> ',
-        // `We are undertaking a comprehensive redesign of the <strong>React Documentation</strong>. You may view the legacy react documentation <a target="_blank" rel="noopener noreferrer" href="https://legacy-docs.videosdk.live/react/guide/video-and-audio-calling-api-sdk/getting-started"><strong>here</strong></a>`,
-        'We are launching our Interactive Live Streaming SDK on Product Hunt on Monday, April 10th, &nbsp;<a target="_blank" rel="noopener noreferrer" href="https://www.producthunt.com/products/video-sdk"><strong>FOLLOW</strong></a>&nbsp; us on Product Hunt!',
-      backgroundColor: "#6246FB",
-      textColor: "#FFF",
-      isCloseable: true,
-    },
+    // announcementBar: {
+    //   id: "announcement_docs_rewamp",
+    //   content:
+    //     // "Beginning on Oct 21, recording files are being kept on Video SDK servers for 7 days",
+    //     // `The recording can last up to 2 hours; if you want longer recordings, please <a target="_blank" rel="noopener noreferrer" href="https://www.videosdk.live/contact"><strong>contact us</strong></a>`,
+    //     // 'Please &nbsp;<a target="_blank" rel="noopener noreferrer" href="https://www.producthunt.com/posts/video-sdk-2-0?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-video&#0045;sdk&#0045;2&#0045;0"><strong>support us</strong></a>&nbsp; on Product Hunt and &nbsp;<a target="_blank" rel="noopener noreferrer" href="https://ctt.ac/Dvysi"><strong>spread the word</strong></a>',
+    //     // 'ZERO CODING!!! Create and join audio-video rooms in 5 mins with our newly launched "No Code SDK".&nbsp;&nbsp;<a target="_blank" rel="noopener noreferrer" href="https://docs.videosdk.live/no-code-sdk/guide/no-code-video-and-audio-calling/getting-started">Learn more</a> ',
+    //     // `We are undertaking a comprehensive redesign of the <strong>React Documentation</strong>. You may view the legacy react documentation <a target="_blank" rel="noopener noreferrer" href="https://legacy-docs.videosdk.live/react/guide/video-and-audio-calling-api-sdk/getting-started"><strong>here</strong></a>`,
+    //     'We are launching our Interactive Live Streaming SDK on Product Hunt on Monday, April 10th, &nbsp;<a target="_blank" rel="noopener noreferrer" href="https://www.producthunt.com/products/video-sdk"><strong>FOLLOW</strong></a>&nbsp; us on Product Hunt!',
+    //   backgroundColor: "#6246FB",
+    //   textColor: "#FFF",
+    //   isCloseable: true,
+    // },
 
     image: "img/videosdklive-thumbnail.jpg",
     algolia: {
@@ -231,7 +231,7 @@ module.exports = {
             },
             {
               label: "Flutter SDK",
-              to: "/flutter/guide/video-and-audio-calling-api-sdk/quick-start-ILS",
+              to: "/flutter/guide/video-and-audio-calling-api-sdk/quick-start-ils",
             },
           ],
         },
