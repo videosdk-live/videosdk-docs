@@ -1601,9 +1601,9 @@ values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
     //...
     if (meeting != null) {
       //...
-      val rvParticipants = findViewById<RecyclerView>(R.id.rvParticipants)
-      rvParticipants.layoutManager = GridLayoutManager(this, 2)
-      rvParticipants.adapter = ParticipantAdapter(meeting!!)
+      val rvParticipants = view.findViewById<RecyclerView>(R.id.rvParticipants)
+      rvParticipants.layoutManager = GridLayoutManager(mContext, 2)
+      rvParticipants.adapter = SpeakerAdapter(meeting!!)
   }
 }
 ```
@@ -1619,9 +1619,9 @@ values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
     //...
     if (meeting != null) {
       //...
-      final RecyclerView rvParticipants = findViewById(R.id.rvParticipants);
-      rvParticipants.setLayoutManager(new GridLayoutManager(this, 2));
-      rvParticipants.setAdapter(new ParticipantAdapter(meeting));
+      final RecyclerView rvParticipants = view.findViewById(R.id.rvParticipants);
+      rvParticipants.setLayoutManager(new GridLayoutManager(mContext, 2));
+      rvParticipants.setAdapter(new SpeakerAdapter(meeting));
     }
 }
 ```
