@@ -1,10 +1,12 @@
-<h1 align="center">
-  <img src="https://www.linkpicture.com/q/videosdk_Full-Logo_blue.png"/><br/>
+<p align="center">
+<img width="400" src="https://static.videosdk.live/videosdk_logo_website_black.png"/>
+</p>
+<br/>
 <p align="center">
   Video SDK Documentation<br/>
   <a href="https://docs.videosdk.live/">docs.videosdk.live</a>
 </p>
-</h1>
+
 
 <p align="center">
    <a href="https://discord.gg/kgAvyxtTxv">
