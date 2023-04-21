@@ -145,7 +145,7 @@ function App() {
 }
 ```
 
-**`Step 4:`** Now we will initialize the meeting with the parameters we extracted from the URL
+**`Step 4:`** Now we will initialize the meeting with the parameters we extracted from the URL. Make sure `joinWithoutUserInteraction` is specified, so that the template engine is able to join directly into the meeting, on the page load.
 
 ```js title=App.js
 function App(){
@@ -441,7 +441,7 @@ export const Notification = () => {
 
 :::note
 
-For the CSS stylings and animations used in the project, please [refer to this file](/).
+For the CSS stylings and animations used in the project, please [refer to this file](https://github.com/videosdk-live/quickstart/blob/main/react-custom-template-manager/src/index.css).
 
 :::
 
