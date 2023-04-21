@@ -36,7 +36,7 @@ This guide will provide an overview of how to implement start and stop Meeting R
 
 :::note
 
-  If you don't have a value for `webhookUrl`,`awsDirPath` or `config`, you should pass `null` in place of the missing value. If you pass `null` in `awsDirPath` parameter then by default recordings will be store on the VideoSDK's storage.
+If you don't have a value for `webhookUrl`,`awsDirPath` or `config`, you should pass `null` in place of the missing value. If you pass `null` in `awsDirPath` parameter then by default recordings will be store on the VideoSDK's storage.
 :::
 
 import Tabs from '@theme/Tabs';
@@ -145,14 +145,14 @@ findViewById<View>(R.id.btnRecording).setOnClickListener { view: View? ->
       //highlight-start
       val config = JSONObject()
       val layout = JSONObject()
-      JsonUtils.jsonPut(layout, "type", "GRID") 
-      JsonUtils.jsonPut(layout, "priority", "SPEAKER") 
-      JsonUtils.jsonPut(layout, "gridSize", 4) 
+      JsonUtils.jsonPut(layout, "type", "GRID")
+      JsonUtils.jsonPut(layout, "priority", "SPEAKER")
+      JsonUtils.jsonPut(layout, "gridSize", 4)
       JsonUtils.jsonPut(config, "layout", layout)
-      JsonUtils.jsonPut(config, "theme", "DARK") 
-      JsonUtils.jsonPut(config, "mode", "video-and-audio") 
-      JsonUtils.jsonPut(config, "quality", "high") 
-      JsonUtils.jsonPut(config, "orientation", "portrait") 
+      JsonUtils.jsonPut(config, "theme", "DARK")
+      JsonUtils.jsonPut(config, "mode", "video-and-audio")
+      JsonUtils.jsonPut(config, "quality", "high")
+      JsonUtils.jsonPut(config, "orientation", "portrait")
       //highlight-end
 
       // Start Recording
@@ -185,9 +185,9 @@ findViewById(R.id.btnRecording).setOnClickListener(view -> {
       JsonUtils.jsonPut(layout, "gridSize", 4);
       JsonUtils.jsonPut(config, "layout", layout);
       JsonUtils.jsonPut(config, "theme", "DARK");
-      JsonUtils.jsonPut(config, "mode", "video-and-audio"); 
-      JsonUtils.jsonPut(config, "quality", "high"); 
-      JsonUtils.jsonPut(config, "orientation", "portrait"); 
+      JsonUtils.jsonPut(config, "mode", "video-and-audio");
+      JsonUtils.jsonPut(config, "quality", "high");
+      JsonUtils.jsonPut(config, "orientation", "portrait");
       //highlight-end
 
       // Start Recording
@@ -295,7 +295,7 @@ You can also go through this [guide to setup](/docs/tutorials/user-dashboard/rec
 
 ### Custom Template
 
-With VideoSDK, you can also use your own custom designed layout template to record the meetings. In order to use the custom template, you need to create a template for which you can [follow this guide](/docs/tutorials/customized-layout). Once you have setup the template, you can use the [REST API to start](/api-reference/realtime-communication/start-recording) the recording with the `templateURL` parameter.
+With VideoSDK, you can also use your own custom designed layout template to record the meetings. In order to use the custom template, you need to create a template for which you can [follow this guide](/react/guide/interactive-live-streaming/custom-template). Once you have setup the template, you can use the [REST API to start](/api-reference/realtime-communication/start-recording) the recording with the `templateURL` parameter.
 
 ### API Reference
 
