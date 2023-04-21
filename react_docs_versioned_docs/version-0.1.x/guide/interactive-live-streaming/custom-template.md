@@ -447,6 +447,12 @@ For the CSS stylings and animations used in the project, please [refer to this f
 
 **`Step 9:`** Once tested, you can deploy it using your backend or host it on services like [firebase](https://www.geeksforgeeks.org/how-to-deploy-react-project-on-firebase/) or vercel.
 
+:::tip
+
+You can checkout the github repository for sample custom template we just [created here](https://github.com/videosdk-live/videosdk-custom-recording-template-react-example).
+
+:::
+
 ### Setup Livestream Using Custom Template
 
 - To use Custom Template, you will need Host and Viewer setup from where the host will start the livestream and viewer can watch them.
