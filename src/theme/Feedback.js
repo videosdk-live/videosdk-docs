@@ -1,12 +1,14 @@
-import React, { useRef, useState } from "react";
-import BrowserOnly from "@docusaurus/BrowserOnly";
+import React, { useEffect, useRef, useState } from "react";
 import { useLocation } from "@docusaurus/router";
+import useIsBrowser from "@docusaurus/useIsBrowser";
 
 export default function Feedback() {
   const [selectedRating, setSelectedRating] = useState();
   const [showModal, setShowModal] = useState(false);
   const [feedback, setFeedback] = useState();
+  const [user, setUser] = useState();
   const location = useLocation();
+  const isBrowser = useIsBrowser();
 
   const options = {
     1: [
@@ -25,27 +27,27 @@ export default function Feedback() {
 
     formRef.current.submit();
   };
-  let user;
-  // if (document) {
-  //   let name = "user=";
-  //   let decodedCookie = decodeURIComponent(document.cookie);
-  //   let ca = decodedCookie.split(";");
-  //   for (let i = 0; i < ca.length; i++) {
-  //     let c = ca[i];
-  //     while (c.charAt(0) == " ") {
-  //       c = c.substring(1);
-  //     }
-  //     if (c.indexOf(name) == 0) {
-  //       user = JSON.parse(c.substring(name.length, c.length));
-  //       break;
-  //     }
-  //   }
-  // }
+  useEffect(() => {
+    if (isBrowser) {
+      try {
+        let name = "user=";
+        let decodedCookie = decodeURIComponent(document.cookie);
+        let ca = decodedCookie.split(";");
+        for (let i = 0; i < ca.length; i++) {
+          let c = ca[i];
+          while (c.charAt(0) == " ") {
+            c = c.substring(1);
+          }
+          if (c.indexOf(name) == 0) {
+            setUser(JSON.parse(c.substring(name.length, c.length)));
+            break;
+          }
+        }
+      } catch (error) {}
+    }
+  }, []);
 
   return (
-    // <BrowserOnly>
-    //   {() => {
-    //     return (
     <div id="tailwind">
       <hr className="bg-gray-750" />
       <p className="font-semibold">Was this helpful?</p>
@@ -155,7 +157,7 @@ export default function Feedback() {
                       type="hidden"
                       maxlength="2083"
                       name="Website"
-                      value={`https://docs.videosdk.live/${location.pathname}`}
+                      value={`https://docs.videosdk.live${location.pathname}`}
                       placeholder=""
                     />
 
@@ -183,8 +185,5 @@ export default function Feedback() {
         ) : null}
       </>
     </div>
-    // );
-    //   }}
-    // </BrowserOnly>
   );
 }
