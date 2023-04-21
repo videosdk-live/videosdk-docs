@@ -301,6 +301,15 @@ export default function CodeSample() {
         icon: "/img/icons/libraries/github-mark.svg",
         link: "https://github.com/videosdk-live/videosdk-rtc-api-server-examples",
       },
+      {
+        title: "videosdk-custom-recording-template-react-example",
+        description:
+          "A example which guides developers on how to use create customized templates for livestreaming and recording",
+        tags: ["Mobile"],
+        sdk: "iOS",
+        icon: "/img/icons/libraries/github-mark.svg",
+        link: "https://github.com/videosdk-live/videosdk-custom-recording-template-react-example",
+      },
     ],
   };
   return (
