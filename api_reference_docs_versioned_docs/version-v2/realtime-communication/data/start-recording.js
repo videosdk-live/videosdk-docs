@@ -25,7 +25,7 @@ const startRecording = {
       value:
         "https://www.example.com/?token=token&meetingId=74v5-v21l-n1ey&participantId=RECORDER_ID",
       description:
-        "[Customize Layout of Meeting Recording](/docs/tutorials/customized-layout).",
+        "[Customize Layout of Meeting Recording](/react/guide/interactive-live-streaming/custom-template).",
       required: false,
     },
     {

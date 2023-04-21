@@ -24,7 +24,7 @@ Here is a visual to better understand publish-subscribe mechanism.
 
 ![pubsub](/img/pubsub.png)
 
-## usePubSub
+## PubSub
 
 In order to use PubSub in meeting, VideoSDK provides a hook `usePubSub` which allows you to subscribe to any topic and publish to any topic allowing to pass on messages and instructions during the meeting easily.
 
@@ -158,7 +158,7 @@ class _ChatViewState extends State<ChatView> {
 }
 ```
 
-## Applications of usePubSub
+## Applications of PubSub
 
 PubSub is a very powerful mechanism which can be used to do alot of things which can make your meeting experience much more interactive. Some of the most common usecase that we have come across for the PubSub during a meeting are listed below:
 

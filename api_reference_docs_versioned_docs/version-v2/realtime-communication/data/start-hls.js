@@ -25,7 +25,7 @@ const startHLSstream = {
       value:
         "https://www.example.com/?token=tooken&meetingId=74v5-v21l-n1ey&participantId=RECORDER_ID",
       description:
-        "[Customize Layout of Meeting HLS](/docs/tutorials/customized-layout).",
+        "[Customize Layout of Meeting HLS](/react/guide/interactive-live-streaming/custom-template).",
       required: false,
     },
     {
