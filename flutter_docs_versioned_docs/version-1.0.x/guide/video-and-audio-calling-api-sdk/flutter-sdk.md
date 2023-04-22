@@ -17,7 +17,13 @@ slug: flutter-sdk
 
 # Getting Started - Flutter SDK
 
-Flutter SDK is natively written SDK using Dart. It is compatible with both IOS and Android.
+Flutter SDK is natively written SDK using Dart. It is compatible with IOS, Android, Web and Desktop apps (MacOs,Windows).
+
+:::important
+
+If you want to use Flutter SDK for Web or Desktop apps (MacOs,Windows), please update SDK version to `1.0.14` or higher. 
+
+:::
 
 ## Installing Flutter SDK
 
@@ -82,7 +88,7 @@ If necessary, in the same `build.gradle` you will need to increase `minSdkVersio
 
 If necessary, in the same `build.gradle` you will need to increase `compileSdkVersion` and `targetSdkVersion` up to `31` (currently default Flutter generator set it to `30`).
 
-### Step 3: iOS Setup
+### Step 3: IOS Setup
 
 VideoSDK requires you to add following permissions to your app so that it can access the audio and video from the device.
 
@@ -103,7 +109,20 @@ Update the minimum iOS platform version to `11.0`. You can update it in the `ios
 platform: ios, "11.0";
 ```
 
-### Step 4: Import it
+### Step 4: MacOs Setup
+
+VideoSDK requires you to add following permissions to your app so that it can access the audio and video from the device.
+
+Add the following entry to your `Info.plist` file, located at `<project root>/macos/Runner/Info.plist`:
+
+```xml
+<key>NSCameraUsageDescription</key>
+<string>$(PRODUCT_NAME) Camera Usage!</string>
+<key>NSMicrophoneUsageDescription</key>
+<string>$(PRODUCT_NAME) Microphone Usage!</string>
+```
+
+### Step 5: Import it
 
 Now in your Dart code, you can use:
 

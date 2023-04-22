@@ -7,6 +7,25 @@ pagination_label: Release Notes
 
 This page will keep you update all the releases of Flutter SDK.
 
+## v1.0.14
+
+**Release Date** : 22nd Apr 2023
+
+**Change Log** :
+
+1. Add support of Web and Desktop apps (MacOs,Windows).
+
+---
+## v1.0.13
+
+**Release Date** : 1st Apr 2023
+
+**Change Log** :
+
+1. `HLS_PLAYABLE` state added in the [`hlsStateChanged`](/flutter/api/sdk-reference/room-class/events#hlsstatechanged).
+2. `hlsUrls` getter added in the `Room`.
+
+---
 ## v1.0.12
 
 **Release Date** : 24rd Mar 2023
@@ -17,6 +36,7 @@ This page will keep you update all the releases of Flutter SDK.
 2. [`unpin()`](flutter/api/sdk-reference/participant-class/methods#unpin) added to unpin a participant.
 3. [`changeMode()`](/flutter/api/sdk-reference/room-class/methods#changemode) allows the participant to switch mode between `CONFERENCE` and `VIEWER`.
 
+---
 ## v1.0.11
 
 **Release Date** : 03rd Mar 2023
@@ -26,6 +46,7 @@ This page will keep you update all the releases of Flutter SDK.
 - Fixed room not closing if leave() called before meeting is joined.
 - Internal dependencies updated.
 
+---
 ## v1.0.10
 
 **Release Date** : 03rd Jan 2023
@@ -40,6 +61,7 @@ This page will keep you update all the releases of Flutter SDK.
    - [getAudioStats](../../api/sdk-reference/participant-class/methods.md#getaudiostats)
    - [getShareStats](../../api/sdk-reference/participant-class/methods.md#getsharestats)
 
+---
 ## v1.0.9
 
 **Release Date** : 09th Dec 2022

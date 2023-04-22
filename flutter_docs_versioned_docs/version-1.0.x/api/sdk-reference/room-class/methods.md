@@ -409,6 +409,45 @@ room.switchAudioDevice(device);
 
 ---
 
+### getMics()
+
+- It will return all the available audio input devices.
+
+#### Returns
+
+- List< [`MediaDeviceInfo`](https://api.flutter.dev/flutter/dart-html/MediaDeviceInfo-class.html) >
+
+#### Example
+
+```javascript
+List<MediaDeviceInfo> audioInputDevices = room.getMics();
+print(audioInputDevices);
+```
+
+---
+
+### changeMic()
+
+- It is used to change the audio input device.
+- You can get list of connected audio input devices using [`getMics`](#getmics)
+
+#### Parameters
+
+- **device**: MediaDeviceInfo
+
+#### Returns
+
+- _`void`_
+
+#### Example
+
+```javascript
+room.changeMic(device);
+```
+
+---
+
+
 ### on()
 
 - It is used to listen [`Room`](introduction) related events.
