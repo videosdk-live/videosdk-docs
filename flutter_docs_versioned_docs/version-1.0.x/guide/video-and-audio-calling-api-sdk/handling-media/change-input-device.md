@@ -180,7 +180,7 @@ class _MeetingScreenState extends State<MeetingScreen> {
 
 The API references for all the methods and events utilized in this guide are provided below.
 
-- [getMics()](/react-native/api/sdk-reference/use-meeting/methods#getmics)
-- [changeMic()](/react-native/api/sdk-reference/use-meeting/methods#changemic)
-- [getWebcams()](/react-native/api/sdk-reference/use-meeting/methods#getwebcams)
-- [changeWebcam()](/react-native/api/sdk-reference/use-meeting/methods#changewebcam)
+- [getMics()](/flutter/api/sdk-reference/room-class/methods#getmics)
+- [changeMic()](/flutter/api/sdk-reference/room-class/methods#changemic)
+- [getCameras()](/flutter/api/sdk-reference/room-class/methods#getcameras)
+- [changeCam()](/flutter/api/sdk-reference/room-class/methods#changecam)
