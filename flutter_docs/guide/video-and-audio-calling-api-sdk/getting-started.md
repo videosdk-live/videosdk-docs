@@ -43,7 +43,7 @@ import Card from '@theme/Card';
   </div>
   <div class="row ">
    <div class="col col--6" >
-      <Card heading="5. Basic Features" link="/flutter/guide/video-and-audio-calling-api-sdk/features/start-join-meeting" description="Explore basic features such as join, leave and customise sessions."  />
+      <Card heading="5. Basic Features" link="/flutter/guide/video-and-audio-calling-api-sdk/features/start-join-room" description="Explore basic features such as join, leave and customise sessions."  />
     </div>
     <div class="col col--6">
       <Card heading="6. Advanced Features" link="/flutter/guide/video-and-audio-calling-api-sdk/features/error-event" description="Explore advanced features such as screen sharing, recording and live streaming." />

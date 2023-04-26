@@ -3,8 +3,8 @@ title: Run a sample Flutter Project - Video SDK Docs
 hide_title: true
 hide_table_of_contents: false
 description: Create customizable real-time video & audio calling applications with Flutter SDK with Video SDK add live Video & Audio conferencing to your applications.
-sidebar_label: "Run the Sample Project"
-pagination_label: "Run the Sample Project"
+sidebar_label: "Run the Sample Conference Project"
+pagination_label: "Run the Sample Conference Project"
 keywords:
   - flutter sdk
   - dart sdk
@@ -15,11 +15,11 @@ sidebar_position: 1
 slug: run-a-sample-flutter-project
 ---
 
-# Run a Sample Project
+# Run a Sample Conference Project
 
-Video SDK provides open-source sample project [videosdk-rtc-javascript-sdk-example](https://github.com/videosdk-live/videosdk-rtc-javascript-sdk-example) on Github. This document introduces how to run this project.
+Video SDK provides open-source sample project [videosdk-rtc-flutter-sdk-example](https://github.com/videosdk-live/videosdk-rtc-flutter-sdk-example) on Github. This document introduces how to run this project.
 
-## Prerequisites
+### Prerequisites
 
 - If your target platform is iOS, your development environment must meet the following requirements:
   - Flutter 2.0 or later
@@ -38,8 +38,6 @@ Video SDK provides open-source sample project [videosdk-rtc-javascript-sdk-examp
 import APISecret from '../../../mdx/introduction/\_api-key.mdx';
 
 <APISecret title="Get your API key and Secret key" />
-
-## Run the Sample Project
 
 ### Step 1: Clone the sample project
 
