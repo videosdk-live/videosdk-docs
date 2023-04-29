@@ -8,6 +8,22 @@ tags: [releasenotes]
 
 This page will keep you update all the releases of JavaScript SDK.
 
+## v0.0.66
+
+**Release Date** : 29th April 2023
+
+**Change log** :
+
+- Added Typescript Support.
+
+**Bug Fix** :
+
+- The Remote participant audio levels remain consistent even when the local participant mutes or unmutes their microphone.
+
+- RTC stats are now available on the latest browser versions.
+
+---
+
 ## v0.0.63
 
 **Release Date** : 31st March 2023
@@ -15,7 +31,8 @@ This page will keep you update all the releases of JavaScript SDK.
 **Change log** :
 
 - `HLS_PLAYABLE` state added in `hls-state-changed` event.
-- `livestreamState`, `recordingState`, `hlsState` and `hlsUrls` getters added in Meeting
+- `livestreamState`, `recordingState`, `hlsState` and `hlsUrls` getters added in Meeting.
+- `hlsUrls` getter added in Meeting
 
 ---
 

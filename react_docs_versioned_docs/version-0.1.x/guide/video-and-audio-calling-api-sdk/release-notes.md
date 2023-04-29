@@ -8,6 +8,22 @@ tags: [releasenotes]
 
 This page will keep you update all the releases of React JS SDK.
 
+## v0.1.71
+
+**Release Date** : 29th April 2023
+
+**Change log** :
+
+- Added Typescript Support.
+
+**Bug Fix** :
+
+- The Remote participant audio levels remain consistent even when the local participant mutes or unmutes their microphone.
+
+- RTC stats are now available on the latest browser versions.
+
+---
+
 ## v0.1.68
 
 **Release Date** : 31st March 2023
@@ -15,7 +31,8 @@ This page will keep you update all the releases of React JS SDK.
 **Change log** :
 
 - `HLS_PLAYABLE` state added in `onHlsStateChanged` callback.
-- `hlsUrls` getters added in `useMeeting`
+- `livestreamState`, `recordingState`, `hlsState` getters added in useMeeting.
+- `hlsUrls` getter added in `useMeeting`.
 
 ---
 

@@ -8,6 +8,20 @@ tags: [releasenotes]
 
 This page will keep you update all the releases of React Native SDK.
 
+## v0.0.47
+
+**Release Date** : 29th April 2023
+
+**Change log** :
+
+- Added Typescript Support.
+
+**Bug Fix** :
+
+- The Remote participant audio levels remain consistent even when the local participant mutes or unmutes their microphone.
+
+---
+
 ## v0.0.45
 
 **Release Date** : 31st March 2023
