@@ -171,6 +171,10 @@
             "guide/interactive-live-streaming/interaction-in-livestream/raise-hand",
             "guide/interactive-live-streaming/interaction-in-livestream/notify-attendees"
           ]
+        },
+        {
+          "type": "doc",
+          "id": "guide/interactive-live-streaming/custom-template"
         }
       ],
       "collapsed": true

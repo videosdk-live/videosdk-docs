@@ -140,7 +140,42 @@ android {
 - Uncomment the following line to define a global platform for your project in `/ios/Podfile` :
 
 ```js title="Podfile"
-# platform :ios, '11.0'
+# platform :ios, '12.0'
+```
+
+#### For MacOS
+
+- Add the following entries to your `/macos/Runner/Info.plist` file which allow your app to access the camera and microphone.
+
+```xml
+<key>NSCameraUsageDescription</key>
+<string>$(PRODUCT_NAME) Camera Usage!</string>
+<key>NSMicrophoneUsageDescription</key>
+<string>$(PRODUCT_NAME) Microphone Usage!</string>
+```
+
+- Add the following entries to your `/macos/Runner/DebugProfile.entitlements` file which allow your app to access the camera, microphone and open outgoing network connections.
+
+```xml
+<key>com.apple.security.network.client</key>
+<true/>
+<key>com.apple.security.device.camera</key>
+<true/>
+<key>com.apple.security.device.microphone</key>
+<true/>
+```
+
+- Add the following entries to your `/macos/Runner/Release.entitlements` file which allow your app to access the camera, microphone and open outgoing network connections.
+
+```xml
+<key>com.apple.security.network.server</key>
+<true/>
+<key>com.apple.security.network.client</key>
+<true/>
+<key>com.apple.security.device.camera</key>
+<true/>
+<key>com.apple.security.device.microphone</key>
+<true/>
 ```
 
 ### Step 1: Get started with api_call.dart
@@ -244,12 +279,15 @@ class JoinScreen extends StatelessWidget {
               onPressed: () => onCreateButtonPressed(context),
               child: const Text('Create Meeting'),
             ),
-            TextField(
-              decoration: const InputDecoration(
-                hintText: 'Meeting Id',
-                border: OutlineInputBorder(),
+            Container(
+              margin: const EdgeInsets.fromLTRB(0, 8.0, 0, 8.0),
+              child: TextField(
+                decoration: const InputDecoration(
+                  hintText: 'Meeting Id',
+                  border: OutlineInputBorder(),
+                ),
+                controller: _meetingIdController,
               ),
-              controller: _meetingIdController,
             ),
             ElevatedButton(
               onPressed: () => onJoinButtonPressed(context),
@@ -534,17 +572,22 @@ class _MeetingScreenState extends State<MeetingScreen> {
 //highlight-start
               //render all participant
               Expanded(
-                child: GridView.builder(
-                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 2,
-                    crossAxisSpacing: 10,
-                    mainAxisSpacing: 10,
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: GridView.builder(
+                    gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 2,
+                      crossAxisSpacing: 10,
+                      mainAxisSpacing: 10,
+                      mainAxisExtent: 300,
+                    ),
+                    itemBuilder: (context, index) {
+                      return ParticipantTile(
+                        key: Key(participants.values.elementAt(index).id),
+                          participant: participants.values.elementAt(index));
+                    },
+                    itemCount: participants.length,
                   ),
-                  itemBuilder: (context, index) {
-                    return ParticipantTile(
-                        participant: participants.elementAt(index));
-                  },
-                  itemCount: participants.length,
                 ),
               ),
 //highlight-end
@@ -576,7 +619,7 @@ class _MeetingScreenState extends State<MeetingScreen> {
 
 #### Output
 
-<img src='https://cdn.videosdk.live/website-resources/docs-resources/flutter_rtc_meeting_screen.png' width="350"/>
+<img src='https://cdn.videosdk.live/website-resources/docs-resources/flutter_meeting_screen.png' width="350"/>
 
 ## Run and Test
 
@@ -588,7 +631,7 @@ import ReactPlayer from 'react-player'
 
 <div style={{textAlign: 'center'}}>
 
-<ReactPlayer controls url='https://cdn.videosdk.live/website-resources/docs-resources/flutter_rtc_quick_start_video.mp4' height="560px" width={"100%"}/>
+<ReactPlayer controls url='https://cdn.videosdk.live/website-resources/docs-resources/flutter_quickstart_video.mp4' height="560px" width={"100%"}/>
 
 </div>
 
