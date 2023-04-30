@@ -186,6 +186,10 @@
             "guide/interactive-live-streaming/interaction-in-livestream/notify-attendees",
             "guide/interactive-live-streaming/interaction-in-livestream/reactions"
           ]
+        },
+        {
+          "type": "doc",
+          "id": "guide/interactive-live-streaming/custom-template"
         }
       ],
       "collapsed": true
