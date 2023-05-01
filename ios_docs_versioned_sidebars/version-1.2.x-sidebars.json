@@ -30,6 +30,7 @@
         "guide/video-and-audio-calling-api-sdk/features/manage-participants",
         "guide/video-and-audio-calling-api-sdk/features/leave-end-meeting",
         "guide/video-and-audio-calling-api-sdk/features/camera-controls",
+        "guide/video-and-audio-calling-api-sdk/features/optimize-video-track",
         "guide/video-and-audio-calling-api-sdk/features/mic-controls",
         "guide/video-and-audio-calling-api-sdk/features/toggle-participant-media",
         "guide/video-and-audio-calling-api-sdk/features/remove-participant",
@@ -83,6 +84,10 @@
         "api/sdk-reference/stream-class/properties",
         "api/sdk-reference/stream-class/methods"
       ]
+    },
+    {
+      "type": "doc",
+      "id": "api/sdk-reference/custom-tracks"
     }
   ]
 }
