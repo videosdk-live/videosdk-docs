@@ -29,7 +29,7 @@ Using a custom template, you may create a variety of various modes. Here are a f
 
 - **`News Mode:`** Host can add dynamic text in lower third banner. in below image we have added some sample text in bottom left of the screen.
 
-<img src='/img/custom-template/mobile_custom_template.png'/>
+![Mobile Custom Template](https://cdn.videosdk.live/website-resources/docs-resources/mobile_custom_template.png)
 
 ### Custom template with VideoSDK
 
@@ -453,7 +453,7 @@ You can checkout the github repository for sample custom template we just [creat
 
 - To use Custom Template, you will need Host and Viewer setup from where the host will start the livestream and viewer can watch them.
 
-<img src="/img/custom-template/flutter_custom_template.png" />
+![Flutter Custom Template Example](https://cdn.videosdk.live/website-resources/docs-resources/flutter_custom_template.png)
 
 - You can clone this example and run it on your system.
 
@@ -483,6 +483,9 @@ void startHls() async {
       <String, dynamic>{
         "roomId": widget.room.id,
         "templateUrl": templateUrl,
+        "config":{
+            "orientation":"portrait",
+        },
       },
     ),
   );
@@ -511,7 +514,7 @@ import ReactPlayer from 'react-player'
 
 <div style={{textAlign: 'center'}}>
 
-<ReactPlayer autoplay muted loop playing controls url="/img/custom-template/flutter_custom_template_video.mp4" height="500px" width={"100%"} />
+<ReactPlayer autoplay muted loop playing controls url="https://cdn.videosdk.live/website-resources/docs-resources/flutter_custom_template_video.mp4" height="500px" width={"100%"} />
 
 </div>
 
