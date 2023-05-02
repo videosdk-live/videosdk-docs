@@ -7,6 +7,17 @@ pagination_label: Release Notes
 
 This page will keep you update all the releases of Android SDK.
 
+## v0.1.17
+
+**Release Date** : 2nd May 2023
+
+**Change log** :
+
+- Provide `multistream` parameter for sending multiple resolution layers or single resolution layer.
+
+   **Docs** : [Multi Stream](/android/api/sdk-reference/custom-tracks#custom-video-track)
+
+---
 ## v0.1.15
 
 **Release Date** : 31st March 2023
