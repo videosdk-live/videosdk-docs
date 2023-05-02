@@ -19,7 +19,7 @@ slug: picture-in-picture
 
 Picture-in-picture (PiP) is a feature that is commonly used in video conferencing software. It allows you to continue your video conference while also performing other tasks on your device. With PiP, you can keep the video conference window open and resize it to a smaller size, allowing you to work on other tasks while still being able to see and hear the other participants in the conference. This can be very helpful if you need to take notes, send an email, or look up information during the conference.
 
-In these guide we will go through how you can create a Picture-in-Picture feature when using VideoSDK.
+In this guide we will go through how you can create a Picture-in-Picture feature when using VideoSDK.
 
 ### Video PIP
 
@@ -139,7 +139,7 @@ function Controls() {
         pipVideo.srcObject.getTracks().forEach((track) => track.stop());
       });
 
-      //These will draw all the video elements in to the Canvas
+      //This will draw all the video elements in to the Canvas
       function drawCanvas() {
         //Getting all the video elements in the document
         const videos = document.querySelectorAll("video");
@@ -217,4 +217,4 @@ Here is the output of the PiP implementation we did.
 
 <ReactPlayer controls autoplay muted loop playing url='https://cdn.videosdk.live/website-resources/docs-resources/custom_video_pip.mp4' width={"100%"} />
 
-You can get the code sample for this feature in [our github repository](/).
+You can get the code sample for this feature in [our github repository](https://github.com/videosdk-live/videosdk-rtc-react-sdk-example/blob/main/src/meeting/components/BottomBar.js#L47).

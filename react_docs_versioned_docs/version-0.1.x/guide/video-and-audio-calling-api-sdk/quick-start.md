@@ -62,7 +62,7 @@ import TabItem from '@theme/TabItem';
 
 <Tabs
 defaultValue="npm"
-groupId={"server-group-id"}
+groupId={"bash-group-id"}
 values={[
 {label: 'NPM', value: 'npm'},
 {label: 'Yarn', value: 'yarn'},
@@ -121,6 +121,15 @@ We are going to work on two files:
 
 Prior to moving on, we must create an API request to generate unique meetingId. You will need an authentication token, which you can create either through the [videosdk-rtc-api-server-examples](https://github.com/videosdk-live/videosdk-rtc-api-server-examples) or directly from the [Video SDK Dashboard](https://app.videosdk.live/api-keys) for developers.
 
+<Tabs
+defaultValue="jsx"
+groupId={"js-group-id"}
+values={[
+{label: 'Javascript', value: 'jsx'},
+{label: 'Typescript', value: 'tsx'},
+]}>
+<TabItem value="jsx">
+
 ```js title="API.js"
 //Auth token we will use to generate a meeting and connect to it
 //highlight-next-line
@@ -142,6 +151,34 @@ export const createMeeting = async ({ token }) => {
 };
 ```
 
+</TabItem>
+<TabItem value="tsx">
+
+```js title="API.js"
+//Auth token we will use to generate a meeting and connect to it
+//highlight-next-line
+export const authToken: string = "YOUR GENERATED TOKEN HERE";
+
+// API call to create meeting
+export const createMeeting = async ({ token }: { token: string }) => {
+  const res = await fetch(`https://api.videosdk.live/v2/rooms`, {
+    method: "POST",
+    headers: {
+      authorization: `${authToken}`,
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({}),
+  });
+  //Destructuring the roomId from the response
+  //highlight-next-line
+  const { roomId }: { roomId: string } = await res.json();
+  return roomId;
+};
+```
+
+</TabItem>
+</Tabs>
+
 ### Step 2: Wireframe App.js with all the components
 
 To build up wireframe of App.js, we are going to use Video SDK Hooks and Context Providers. Video SDK provides MeetingProvider, MeetingConsumer, useMeeting and useParticipant hooks. Let's understand each of them.
@@ -157,6 +194,15 @@ Meeting Context helps to listen on all the changes when participant joines meeti
 
 Let's get started with change couple of lines of code in App.js
 
+<Tabs
+defaultValue="jsx"
+groupId={"js-group-id"}
+values={[
+{label: 'Javascript', value: 'jsx'},
+{label: 'Typescript', value: 'tsx'},
+]}>
+<TabItem value="jsx">
+
 ```js title="App.js"
 import "./App.css";
 import React, { useEffect, useMemo, useRef, useState } from "react";
@@ -169,7 +215,7 @@ import {
 import { authToken, createMeeting } from "./API";
 import ReactPlayer from "react-player";
 
-function JoinScreen() {
+function JoinScreen({ getMeetingAndToken }) {
   return null;
 }
 
@@ -226,9 +272,103 @@ function App() {
 export default App;
 ```
 
+</TabItem>
+<TabItem value="tsx">
+
+```js title="App.js"
+import "./App.css";
+import React, { useEffect, useMemo, useRef, useState } from "react";
+import {
+  MeetingProvider,
+  MeetingConsumer,
+  useMeeting,
+  useParticipant,
+} from "@videosdk.live/react-sdk";
+import { authToken, createMeeting } from "./API";
+import ReactPlayer from "react-player";
+
+function JoinScreen({
+  getMeetingAndToken,
+}: {
+  getMeetingAndToken: (meeting?: string) => void,
+}) {
+  return null;
+}
+
+function ParticipantView({ participantId }: { participantId: string }) {
+  return null;
+}
+
+function Controls() {
+  return null;
+}
+
+function MeetingView({
+  onMeetingLeave,
+  meetingId,
+}: {
+  onMeetingLeave: () => void,
+  meetingId: string,
+}) {
+  return null;
+}
+
+function App() {
+  const [meetingId, setMeetingId] = (useState < string) | (null > null);
+
+  //Getting the meeting id by calling the api we just wrote
+  //highlight-start
+  const getMeetingAndToken = async (id?: string) => {
+    const meetingId =
+      id == null ? await createMeeting({ token: authToken }) : id;
+    setMeetingId(meetingId);
+  };
+  //highlight-end
+
+  //This will set Meeting Id to null when meeting is left or ended
+  //highlight-start
+  const onMeetingLeave = () => {
+    setMeetingId(null);
+  };
+  //highlight-end
+
+  return authToken && meetingId ? (
+    <MeetingProvider
+      //highlight-start
+      config={{
+        meetingId,
+        micEnabled: true,
+        webcamEnabled: true,
+        name: "C.V. Raman",
+      }}
+      token={authToken}
+      //highlight-end
+    >
+      <MeetingView meetingId={meetingId} onMeetingLeave={onMeetingLeave} />
+    </MeetingProvider>
+  ) : (
+    <JoinScreen getMeetingAndToken={getMeetingAndToken} />
+  );
+}
+
+export default App;
+```
+
+</TabItem>
+</Tabs>
+
 ### Step 3: Implement Join Screen
 
 Join screen will work as medium to either schedule new meeting or to join existing meeting.
+
+<Tabs
+defaultValue="jsx"
+groupId={"js-group-id"}
+values={[
+{label: 'Javascript', value: 'jsx'},
+{label: 'Typescript', value: 'tsx'},
+]}>
+<TabItem value="jsx">
 
 ```js title="JoinScreen Component"
 function JoinScreen({ getMeetingAndToken }) {
@@ -253,6 +393,39 @@ function JoinScreen({ getMeetingAndToken }) {
 }
 ```
 
+</TabItem>
+<TabItem value="tsx">
+
+```js title="JoinScreen Component"
+function JoinScreen({
+  getMeetingAndToken,
+}: {
+  getMeetingAndToken: (meeting?: string) => void;
+}) {
+  const [meetingId, setMeetingId] = useState<string | undefined>();
+  const onClick = async () => {
+    getMeetingAndToken(meetingId);
+  };
+  return (
+    <div>
+      <input
+        type="text"
+        placeholder="Enter Meeting Id"
+        onChange={(e) => {
+          setMeetingId(e.target.value);
+        }}
+      />
+      <button onClick={onClick}>Join</button>
+      {" or "}
+      <button onClick={onClick}>Create Meeting</button>
+    </div>
+  );
+}
+```
+
+</TabItem>
+</Tabs>
+
 #### Output
 
 ![VideoSDK React JS Quick Start Join Screen](/img/quick-start/react-join-screen.jpeg)
@@ -260,6 +433,15 @@ function JoinScreen({ getMeetingAndToken }) {
 ### Step 4: Implement MeetingView and Controls
 
 Next step is to create `MeetingView` and `Controls` components to manage features such as join, leave, mute and unmute.
+
+<Tabs
+defaultValue="jsx"
+groupId={"js-group-id"}
+values={[
+{label: 'Javascript', value: 'jsx'},
+{label: 'Typescript', value: 'tsx'},
+]}>
+<TabItem value="jsx">
 
 ```js title="MeetingView"
 function MeetingView(props) {
@@ -322,6 +504,79 @@ function Controls() {
 }
 ```
 
+</TabItem>
+<TabItem value="tsx">
+
+```js title="MeetingView"
+function MeetingView({
+  onMeetingLeave,
+  meetingId,
+}: {
+  onMeetingLeave: () => void,
+  meetingId: string,
+}) {
+  const [joined, setJoined] = (useState < string) | (null > null);
+  //highlight-start
+  //Get the method which will be used to join the meeting.
+  //We will also get the participants list to display all participants
+  const { join, participants } = useMeeting({
+    //callback for when meeting is joined successfully
+    onMeetingJoined: () => {
+      setJoined("JOINED");
+    },
+    //callback for when meeting is left
+    onMeetingLeft: () => {
+      onMeetingLeave();
+    },
+  });
+  //highlight-end
+  const joinMeeting = () => {
+    setJoined("JOINING");
+    join();
+  };
+
+  return (
+    <div className="container">
+      <h3>Meeting Id: {meetingId}</h3>
+      {joined && joined == "JOINED" ? (
+        <div>
+          //highlight-start
+          <Controls />
+          //For rendering all the participants in the meeting
+          {[...participants.keys()].map((participantId) => (
+            <ParticipantView
+              participantId={participantId}
+              key={participantId}
+            />
+          ))}
+          //highlight-end
+        </div>
+      ) : joined && joined == "JOINING" ? (
+        <p>Joining the meeting...</p>
+      ) : (
+        <button onClick={joinMeeting}>Join</button>
+      )}
+    </div>
+  );
+}
+```
+
+```js title="Controls Component"
+function Controls() {
+  const { leave, toggleMic, toggleWebcam } = useMeeting();
+  return (
+    <div>
+      <button onClick={() => leave()}>Leave</button>
+      <button onClick={() => toggleMic()}>toggleMic</button>
+      <button onClick={() => toggleWebcam()}>toggleWebcam</button>
+    </div>
+  );
+}
+```
+
+</TabItem>
+</Tabs>
+
 ##### Output of Controls Component
 
 ![VideoSDK React JS Quick Start  Controls Component](/img/quick-start/react-container-controls.jpeg)
@@ -367,6 +622,15 @@ webcamRef.current
 #### 4. Implemeting `ParticipantView`
 
 Now let's use all this API to create `ParticipantView`
+
+<Tabs
+defaultValue="jsx"
+groupId={"js-group-id"}
+values={[
+{label: 'Javascript', value: 'jsx'},
+{label: 'Typescript', value: 'tsx'},
+]}>
+<TabItem value="jsx">
 
 ```js title="ParticipantView"
 function ParticipantView(props) {
@@ -430,6 +694,75 @@ function ParticipantView(props) {
   );
 }
 ```
+
+</TabItem>
+<TabItem value="tsx">
+
+```js title="ParticipantView"
+function ParticipantView({ participantId }: { participantId: string }) {
+  const micRef = useRef < HTMLAudioElement > null;
+  const { webcamStream, micStream, webcamOn, micOn, isLocal, displayName } =
+    useParticipant(participantId);
+
+  const videoStream = useMemo(() => {
+    if (webcamOn && webcamStream) {
+      const mediaStream = new MediaStream();
+      mediaStream.addTrack(webcamStream.track);
+      return mediaStream;
+    }
+  }, [webcamStream, webcamOn]);
+
+  useEffect(() => {
+    if (micRef.current) {
+      if (micOn && micStream) {
+        const mediaStream = new MediaStream();
+        mediaStream.addTrack(micStream.track);
+
+        micRef.current.srcObject = mediaStream;
+        micRef.current
+          .play()
+          .catch((error) =>
+            console.error("videoElem.current.play() failed", error)
+          );
+      } else {
+        micRef.current.srcObject = null;
+      }
+    }
+  }, [micStream, micOn]);
+
+  return (
+    <div key={participantId}>
+      <p>
+        Participant: {displayName} | Webcam: {webcamOn ? "ON" : "OFF"} | Mic:{" "}
+        {micOn ? "ON" : "OFF"}
+      </p>
+      <audio ref={micRef} autoPlay muted={isLocal} />
+      {webcamOn && (
+        <ReactPlayer
+          //
+          playsinline // very very imp prop
+          pip={false}
+          light={false}
+          controls={false}
+          muted={true}
+          playing={true}
+          //
+          url={videoStream}
+          //
+          height={"200px"}
+          width={"300px"}
+          onError={(err) => {
+            console.log(err, "participant video error");
+          }}
+        />
+      )}
+    </div>
+  );
+}
+```
+
+</TabItem>
+</Tabs>
 
 ## Final Output
 
