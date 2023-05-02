@@ -29,7 +29,7 @@ Using a custom template, you may create a variety of various modes. Here are a f
 
 - **`News Mode:`** Host can add dynamic text in lower third banner. in below image we have added some sample text in bottom left of the screen.
 
-<img src="/img/custom-template/mobile_custom_template.png" />
+![Mobile Custom Template ](https://cdn.videosdk.live/website-resources/docs-resources/mobile_custom_template.png)
 
 ### Custom template with VideoSDK
 
@@ -453,7 +453,7 @@ You can checkout the github repository for sample custom template we just [creat
 
 - To use Custom Template, you will need Host and Viewer setup from where the host will start the livestream and viewer can watch them.
 
-<img src="/img/custom-template/android_custom_template.png" />
+![Android Custom Template Example](https://cdn.videosdk.live/website-resources/docs-resources/android_custom_template.png)
 
 
 - You can clone this example and run it on your system.
@@ -462,12 +462,39 @@ You can checkout the github repository for sample custom template we just [creat
 git clone https://github.com/videosdk-live/quickstart.git
 ```
 
-- The cloned example will have a directory `android-custom-template-manager` which has to runned.
+- The cloned example will contain two directories under the `android-custom-template-manager` directory which has to runned.
 
-- To use the custom template which we just deployed, we will call the start HLS API instead of the `startHls` method from the `Meeting` class. This code has already been added in the example you cloned.
+  -  **For Kotlin** : `Videosdk_android_kotlin_hls_quickstart`
+  - **For Java** : `Videosdk_android_java_hls_quickstart`
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+
+<Tabs
+defaultValue="Kotlin"
+groupId={"AndroidLanguage"}
+values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
+
+<TabItem value="Kotlin">
+
+```js
+cd android-custom-template-manager
+cd Videosdk_android_kotlin_hls_quickstart
+```
+
+</TabItem>
+
+<TabItem value="Java">
+
+```js
+cd android-custom-template-manager
+cd Videosdk_android_java_hls_quickstart
+```
+</TabItem>
+
+</Tabs>
+
+- To use the custom template which we just deployed, we will call the start HLS API instead of the `startHls` method from the `Meeting` class. This code has already been added in the example you cloned.
 
 <Tabs
 defaultValue="Kotlin"
@@ -487,6 +514,10 @@ btnHls!!.setOnClickListener {
   val bodyJson = JSONObject()
   JsonUtils.jsonPut(bodyJson, "roomId", meeting!!.meetingId)
   JsonUtils.jsonPut(bodyJson, "templateUrl", templateUrl)
+
+  val config= new JSONObject()
+  JsonUtils.jsonPut(config,"orientation","portrait")
+  JsonUtils.jsonPut(bodyJson,"config",config)
 
   AndroidNetworking.post("https://api.videosdk.live/v2/hls/start")
     .addHeaders(
@@ -531,6 +562,10 @@ btnHls.setOnClickListener(v -> {
   JsonUtils.jsonPut(bodyJson, "roomId", meeting.getMeetingId());
   JsonUtils.jsonPut(bodyJson, "templateUrl", templateUrl);
 
+  JSONObject config= new JSONObject();
+  JsonUtils.jsonPut(config,"orientation","portrait");
+  JsonUtils.jsonPut(bodyJson,"config",config);
+
   AndroidNetworking.post("https://api.videosdk.live/v2/hls/start")
     .addHeaders("Authorization", token) //we will pass the token in the Headers
     .addJSONObjectBody(bodyJson)
@@ -565,7 +600,7 @@ import ReactPlayer from 'react-player'
 
 <div style={{textAlign: 'center'}}>
 
-<ReactPlayer autoplay muted loop playing controls url="/img/custom-template/android_custom_template_video.mp4" height="500px" width={"100%"} />
+<ReactPlayer autoplay muted loop playing controls url="https://cdn.videosdk.live/website-resources/docs-resources/android_custom_template_video.mp4" height="500px" width={"100%"} />
 
 </div>
 
