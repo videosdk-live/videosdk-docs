@@ -58,6 +58,12 @@ Above mentioned encoder configurations are valid for both, landscape as well as 
   - Allowed values: `motion` | `text` | `detail`
   - It will specifiy the optimization mode for the video track being generated.
 
+- **multiStream**:
+
+  - type: `boolean`
+  - required: `true`
+  - It will specifiy if the stream should send multiple resolution layers or single resolution layer.
+
 - **context**:
 
   - type: `Context`
@@ -99,7 +105,7 @@ values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
 <TabItem value="Kotlin">
 
 ```javascript
-val videoCustomTrack: CustomStreamTrack = VideoSDK.createCameraVideoTrack("h720p_w960p", "front", CustomStreamTrack.VideoMode.MOTION, this)
+val videoCustomTrack: CustomStreamTrack = VideoSDK.createCameraVideoTrack("h720p_w960p", "front", CustomStreamTrack.VideoMode.MOTION, false, this)
 ```
 
 </TabItem>
@@ -107,7 +113,7 @@ val videoCustomTrack: CustomStreamTrack = VideoSDK.createCameraVideoTrack("h720p
 <TabItem value="Java">
 
 ```javascript
-CustomStreamTrack customStreamTrack = VideoSDK.createCameraVideoTrack("h720p_w960p", "front", CustomStreamTrack.VideoMode.MOTION, this);
+CustomStreamTrack customStreamTrack = VideoSDK.createCameraVideoTrack("h720p_w960p", "front", CustomStreamTrack.VideoMode.MOTION, false, this);
 ```
 
 </TabItem>

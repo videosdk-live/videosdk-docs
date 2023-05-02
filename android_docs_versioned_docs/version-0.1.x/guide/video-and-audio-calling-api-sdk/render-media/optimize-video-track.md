@@ -63,8 +63,12 @@ val videoCustomTrack: CustomStreamTrack = VideoSDK.createCameraVideoTrack(
   CustomStreamTrack.VideoMode.MOTION, // CustomStreamTrack.VideoMode.TEXT, CustomStreamTrack.VideoMode.DETAIL ,  Default : CustomStreamTrack.VideoMode.MOTION
 
   // highlight-next-line
+  // multiStream - we will discuss this parameter in next step.
+  true, // false
+
+  // highlight-next-line
   // Pass Context
-  this
+  this,
   
   // highlight-next-line
   // This is Optional parameter. We will discuss this parameter in next step.
@@ -89,6 +93,10 @@ CustomStreamTrack customStreamTrack = VideoSDK.createCameraVideoTrack(
   // highlight-next-line
   // We will discuss this parameter in next step.
   CustomStreamTrack.VideoMode.MOTION, // CustomStreamTrack.VideoMode.TEXT, CustomStreamTrack.VideoMode.DETAIL ,  Default : CustomStreamTrack.VideoMode.MOTION
+
+  // highlight-next-line
+  // multiStream - we will discuss this parameter in next step.
+  true, // false
 
   // highlight-next-line
   // Pass Context
@@ -122,6 +130,30 @@ The capabilities of the device have a significant impact on how custom track con
 - `detail` : This type of track should more focus on details of the video. For example, presentations, painting or line art.
 
   - This type of track will degrade `frame rate` in order to maintain `resolution`.
+
+##### What is `multiStream`?
+
+- It will specifiy if the stream should send multiple resolution layers or single resolution layer.
+
+**`multiStream : true`** By default, VideoSDK sends multiple resolution video streams to the server (whether you are using custom video track or not), For instance, user device capabilty is 720p, so VideoSDK sends 720p along with 640p and 480p streams. This allows VideoSDK to deliver the appropriate stream to each participant based on their network bandwidth.
+
+<center>
+
+![Multi Stream False](/img/multistream_true.png)
+
+</center>
+
+**`multiStream : false`** If you want to restrict the VideoSDK to send only one stream to maintain quality, you can set `multiStream` to `false`.
+
+<center>
+
+![Multi Stream False](/img/multistream_false.png)
+
+</center>
+
+:::danger
+`setQuality` would not have any effect if multiStream is set to `false`.
+:::
 
 ##### What is `observer`?
 
@@ -164,7 +196,7 @@ override fun onCreate(savedInstanceState: Bundle?) {
   //highlight-start
   val customTracks: MutableMap<String, CustomStreamTrack> = HashMap()
   val videoCustomTrack: CustomStreamTrack =
-  VideoSDK.createCameraVideoTrack("h720p_w960p", "front", CustomStreamTrack.VideoMode.MOTION, this)
+  VideoSDK.createCameraVideoTrack("h720p_w960p", "front", CustomStreamTrack.VideoMode.MOTION, false, this)
   customTracks["video"] = videoCustomTrack  //Key must be "video"
   //highlight-end
 
@@ -179,6 +211,8 @@ override fun onCreate(savedInstanceState: Bundle?) {
     null,
     // Mode
     null,
+    // MultiStream
+    false,
     //Pass the custom tracks here
     //highlight-next-line
     customTracks
@@ -197,7 +231,7 @@ protected void onCreate(Bundle savedInstanceState) {
 
   //highlight-start
   Map<String, CustomStreamTrack> customTracks = new HashMap<>();
-  CustomStreamTrack videoCustomTrack = VideoSDK.createCameraVideoTrack("h720p_w960p", "front", CustomStreamTrack.VideoMode.MOTION, this);
+  CustomStreamTrack videoCustomTrack = VideoSDK.createCameraVideoTrack("h720p_w960p", "front", CustomStreamTrack.VideoMode.MOTION, false, this);
   customTracks.put("video", videoCustomTrack);  //Key must be "video"
   //highlight-end
 
@@ -212,6 +246,8 @@ protected void onCreate(Bundle savedInstanceState) {
     null,
     // Mode
     null,
+    // MultiStream
+    false,
     //Pass the custom tracks here
     //highlight-next-line
     customTracks
@@ -241,7 +277,7 @@ values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
 <TabItem value="Kotlin">
 
 ```javascript
-val customStreamTrack: CustomStreamTrack = VideoSDK.createCameraVideoTrack("h720p_w960p", "back", CustomStreamTrack.VideoMode.MOTION, this)
+val customStreamTrack: CustomStreamTrack = VideoSDK.createCameraVideoTrack("h720p_w960p", "back", CustomStreamTrack.VideoMode.MOTION, false, this)
 meeting!!.enableWebcam(customStreamTrack)
 ```
 
@@ -250,7 +286,7 @@ meeting!!.enableWebcam(customStreamTrack)
 <TabItem value="Java">
 
 ```javascript
-CustomStreamTrack customStreamTrack=VideoSDK.createCameraVideoTrack("h720p_w960p", "back", CustomStreamTrack.VideoMode.MOTION, this);
+CustomStreamTrack customStreamTrack=VideoSDK.createCameraVideoTrack("h720p_w960p", "back", CustomStreamTrack.VideoMode.MOTION, false, this);
 meeting.enableWebcam(customStreamTrack);
 ```
 
@@ -258,19 +294,13 @@ meeting.enableWebcam(customStreamTrack);
 
 </Tabs>
 
-### `Which Configuration is suitable for me ?`
+### `Which Configuration is suitable for Device ?`
 
-In this section, we will understand participant size and platform wise `encoder(Resolution)` and `multiStream` configuration.
+In this section, we will understand participant size wise `encoder(Resolution)` and `multiStream` configuration.
 
-##### For Desktop + Mobile 
-
-![desktop_mobile](/img/mobile+web.png)
-
-:::info
-
-MultiStream is not supported by the Android SDK. Hence, multiStream is always `false` for mobile (Andriod SDK).
-
-:::
+<center>
+<img src='https://cdn.videosdk.live/website-resources/docs-resources/mobile_device_config.png' />
+</center>
 
 ## Custom Screen Share Track
 

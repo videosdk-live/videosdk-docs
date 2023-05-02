@@ -65,7 +65,7 @@ class ChatActivity : AppCompatActivity() {
      * In MainActivity.kt, we have set Meeting property.
      *
      * For Example: (MainActivity.kt)
-     * var meeting = VideoSDK.initMeeting(context, meetingId, ParticipantName, micEnabled, webcamEnabled,paricipantId,mode,customTrack)
+     * var meeting = VideoSDK.initMeeting(context, meetingId, ParticipantName, micEnabled, webcamEnabled,paricipantId,mode,multiStream,customTrack)
      * (this.application as MainApplication).meeting = meeting
     */
 
@@ -128,7 +128,7 @@ public class ChatActivity extends AppCompatActivity {
      * In MainActivity.java, we have set Meeting property.
      *
      * For Example: (MainActivity.java)
-     * Meeting meeting = VideoSDK.initMeeting(context, meetingId, ParticipantName, micEnabled, webcamEnabled,participantId,mode,customTrack);
+     * Meeting meeting = VideoSDK.initMeeting(context, meetingId, ParticipantName, micEnabled, webcamEnabled,participantId,mode,mutliStream,customTrack);
      * ((MainApplication) this.getApplication()).setMeeting(meeting);
     */
 

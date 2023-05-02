@@ -61,6 +61,7 @@ Please refer this [documentation](/api-reference/realtime-communication/intro/) 
         boolean webcamEnabled,
         String participantId,
         String mode,
+        boolean multiStream,
         Map<String, CustomStreamTrack> customTracks
       )
 ```
@@ -123,6 +124,14 @@ Please refer this [documentation](/api-reference/realtime-communication/create-r
 - defaultValue : `CONFERENCE`
 - `REQUIRED`
 
+### multiStream
+
+- It will specifiy if the stream should send multiple resolution layers or single resolution layer.
+
+  - type: `boolean`
+  - `REQUIRED`
+  
+
 ### customTracks
 
 - If you want to use custom tracks from start of the meeting, you can pass map of custom tracks in this paramater.
@@ -170,6 +179,7 @@ var meeting = VideoSDK.initMeeting(
     true,
     null,
     null,
+    false,
     null
   )
 )
@@ -195,6 +205,7 @@ Meeting meeting = VideoSDK.initMeeting({
   true,
   null,
   null,
+  false,
   null
 });
 ```

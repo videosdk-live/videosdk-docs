@@ -112,6 +112,7 @@ class MainActivity : AppCompatActivity() {
         true, true, null, 
         //highlight-next-line
         "CONFERENCE", // allowed: CONFERENCE | VIEWER
+        false,
         null
     )
     // highlight-end
@@ -160,7 +161,8 @@ public class MainActivity extends AppCompatActivity {
             true, true, null, 
             //highlight-next-line
             "CONFERENCE", // allowed: CONFERENCE | VIEWER
-            , null
+            false,
+            null
     );
     // highlight-end
 

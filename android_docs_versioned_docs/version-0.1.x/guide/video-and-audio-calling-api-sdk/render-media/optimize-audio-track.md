@@ -113,6 +113,8 @@ override fun onCreate(savedInstanceState: Bundle?) {
     null,
     //Mode
     null,
+    //MultiStream
+    false,
     //Pass the custom tracks here
     //highlight-next-line
     customTracks
@@ -147,6 +149,8 @@ protected void onCreate(Bundle savedInstanceState) {
       null,
       //Mode
       null,
+      //MultiStream
+      false,
       //Pass the custom tracks here
       //highlight-next-line
       customTracks

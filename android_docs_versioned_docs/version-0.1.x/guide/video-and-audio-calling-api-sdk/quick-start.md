@@ -108,7 +108,7 @@ Whether on Maven or Jitpack, the same version numbers always refer to the same S
 
 ```js title="app/build.gradle"
 dependencies {
-  implementation 'live.videosdk:rtc-android-sdk:0.1.15'
+  implementation 'live.videosdk:rtc-android-sdk:0.1.17'
 
   // library to perform Network call to generate a meeting id
   implementation 'com.amitshekhar.android:android-networking:1.0.2'
@@ -690,7 +690,7 @@ class MeetingActivity : AppCompatActivity() {
     // 2. Initialize VideoSDK Meeting
     meeting = VideoSDK.initMeeting(
       this@MeetingActivity, meetingId, participantName,
-      micEnabled, webcamEnabled,null, null, null)
+      micEnabled, webcamEnabled,null, null, false, null)
 
     //highlight-next-line
     // 3. Add event listener for listening upcoming events
@@ -760,7 +760,7 @@ public class MeetingActivity extends AppCompatActivity {
     // 2. Initialize VideoSDK Meeting
     meeting = VideoSDK.initMeeting(
             MeetingActivity.this, meetingId, participantName,
-            micEnabled, webcamEnabled,null, null, null);
+            micEnabled, webcamEnabled,null, null, false, null);
 
     //highlight-next-line
     // 3. Add event listener for listening upcoming events
