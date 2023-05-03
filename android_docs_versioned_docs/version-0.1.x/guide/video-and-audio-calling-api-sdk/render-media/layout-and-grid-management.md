@@ -24,15 +24,24 @@ In this guide we will take a look at how to efficiently manage the participants 
 
 The most usual way to showing participants within a grid. There are multiple things you should keep in mind when showing participants in the grid.
 
-This includes the number of participants being shown on the screens, number of participants in the background(in the meeting but not showing on the screen).
+This includes the number of participants being shown on the screens, number of participants in the background(in the meeting but not on the grid), quality which is being consumed for each and every participant in the grid.
+### Quality of Participant's Video
 
-To best utilize the resourses, you should pause the streams of the participants who are not showing on the screen and resume them when they showing on the screen.
+When there are large number of participants present on the screen, it is best to consume them in lower resolutions. For this we recommend you to call the `setQuality` method on the participants present in the grid with dyanmic values based on the number of participants on the screen.
 
-In the recycleView, `onViewAttachedToWindow` called when a view created by the adapter has been attached to a window & `onViewDetachedFromWindow` called when a view created by the adapter has been detached from its window. Hence, you can pause the streams of the participants in `onViewAttachedToWindow` and resume the streams in `onViewDetachedFromWindow` methods of `RecyclerView`. You can [follow this guide](#pauseresume-stream) to pause/resume the stream.
+Here is the recommended video quality:
 
-:::note
-To know how to render participant in `RecyclerView` [click here](/android/guide/video-and-audio-calling-api-sdk/render-media/display-video/render-participant).
-:::
+1. Participants less than 3: `setQuality("high")`
+2. Participants between 3 to 4: `setQuality("med")`
+3. Participants greater than 4: `setQuality("low")`
+
+<center>
+<img src='https://cdn.videosdk.live/website-resources/docs-resources/grid_quality_mobile.png' />
+</center>
+
+### Grid with Screen Share
+
+When you are rendering a small grid along with the screen share of the presenter or you are showing a simple sidebar video of the participants while the screenshare is on, it is recommended to do `setQuality("low")` for the participants who are present in the sidebar.
 
 ## Grid with Pagination
 
@@ -123,4 +132,11 @@ for (Map.Entry<String, Stream> entry : participant.getStreams().entrySet()) {
 </TabItem>
 
 </Tabs>
+
+## API Reference
+
+The API references for all the methods and events utilised in this guide are provided below.
+
+- [setQuality](/android/api/sdk-reference/participant-class/methods#setquality)
+
 

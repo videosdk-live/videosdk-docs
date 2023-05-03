@@ -220,6 +220,7 @@ By using `config()` method, you can set the token property of VideoSDK class.
       boolean webcamEnabled, // flag to enable-webcam
       String participantId,  // id of participant
       String mode, // mode of participant
+      boolean multiStream, // multiStream
       Map<String, CustomStreamTrack> customTracks // map of customTracks
   )
 ```
@@ -270,6 +271,12 @@ You must ensure that the `participantId` is not repeated in the same meeting or 
   - It has to be of `String` type.
   - If you passed `null` then by default VideoSDK will set `CONFERENCE` mode.
 
+- **`multiStream`**:
+
+  -  It will specifiy if the stream should send multiple resolution layers or single resolution layer.
+
+    - It has to be of `boolean` type.
+
 - **`customTracks`**:
 
   -  If you want to set the initial custom tracks, then you can pass map of custom tracks in this paramater.
@@ -319,7 +326,7 @@ class MainActivity : AppCompatActivity() {
     // create a new meeting instance
     val meeting: Meeting = VideoSDK.initMeeting(
         this@MainActivity, meetingId, "NAME HERE",
-        true, true, null, null, null
+        true, true, null, null, false, null
     )
     // highlight-end
 
@@ -367,7 +374,7 @@ public class MainActivity extends AppCompatActivity {
     // create a new meeting instance
     Meeting meeting = VideoSDK.initMeeting(
             MainActivity.this, meetingId, "NAME HERE",
-            true, true, null, null, null
+            true, true, null, null, false, null
     );
     // highlight-end
 
