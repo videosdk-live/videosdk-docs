@@ -19,9 +19,9 @@ slug: picture-in-picture
 
 Picture-in-picture (PiP) is a feature that is commonly used in video conferencing software. It allows you to continue your video conference while also performing other tasks on your device. With PiP, you can keep the video conference window open and resize it to a smaller size, allowing you to work on other tasks while still being able to see and hear the other participants in the conference. This can be very helpful if you need to take notes, send an email, or look up information during the conference.
 
-In this guide we will go through how you can create a Picture-in-Picture feature when using VideoSDK.
+In this guide, we will go through how you can create a Picture-in-Picture feature with VideoSDK.
 
-### Video PIP
+### PiP Video
 
 All the mordern browsers supports poping a videostream our from the `HTMLVideoElement`. You can do it using directly from the controls show on the video element or use the Browser API method [`requestPictureInPicture()`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLVideoElement/requestPictureInPicture) on the video element.
 
@@ -31,7 +31,7 @@ import ReactPlayer from 'react-player'
 
 <br/>
 
-:::note
+:::important
 Chrome, Edge, and Safari support this browser Web API, however, Firefox has no programmatic way of triggering PiP.
 :::
 
