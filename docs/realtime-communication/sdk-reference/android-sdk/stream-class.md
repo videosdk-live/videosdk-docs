@@ -25,18 +25,6 @@ import MethodListGroup from '@theme/MethodListGroup';
 import MethodListItemLabel from '@theme/MethodListItemLabel';
 import MethodListHeading from '@theme/MethodListHeading';
 
-### Constructor
-
-<MethodListGroup>
-  <MethodListItemLabel name="__constructor"  >
-    <MethodListGroup>
-      <MethodListHeading heading="Constructors" />
-      <MethodListItemLabel name="Stream(Producer producer)"  type={"void"} />
-      <MethodListItemLabel name="Stream(Consumer consumer)"  type={"void"} />
-    </MethodListGroup>
-  </MethodListItemLabel>
-</MethodListGroup>
-
 ### Properties
 
 <MethodListGroup>

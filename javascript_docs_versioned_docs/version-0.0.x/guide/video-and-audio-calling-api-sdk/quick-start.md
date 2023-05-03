@@ -79,7 +79,7 @@ npm install -g live-server
   </head>
   <body>
     .....
-    <script src="https://sdk.videosdk.live/js-sdk/0.0.54/videosdk.js"></script>
+    <script src="https://sdk.videosdk.live/js-sdk/0.0.66/videosdk.js"></script>
   </body>
 </html>
 ```
@@ -153,7 +153,7 @@ Refer assets/index.css file from [here](https://github.com/videosdk-live/videosd
     <!--scripts-->
     <script src="./assets/js/config.js"></script>
     <script src="./assets/js/index.js"></script>
-    <script src="https://sdk.videosdk.live/js-sdk/0.0.54/videosdk.js"></script>
+    <script src="https://sdk.videosdk.live/js-sdk/0.0.66/videosdk.js"></script>
   </body>
 </html>
 ```
