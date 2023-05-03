@@ -24,7 +24,7 @@ We've released a new version of pages with some improvements and smoother experi
 Here is the link of SDK for this page.
 
 - [JS](/javascript/guide/video-and-audio-calling-api-sdk/javascript-sdk)
-:::
+  :::
 
 # Getting Started - JavaScript SDK
 
@@ -39,7 +39,7 @@ You can import this library using `<script>` tag. The easiest way to get started
   <head>....</head>
   <body>
     .....
-    <script src="https://sdk.videosdk.live/js-sdk/0.0.54/videosdk.js"></script>
+    <script src="https://sdk.videosdk.live/js-sdk/0.0.66/videosdk.js"></script>
   </body>
 </html>
 ```

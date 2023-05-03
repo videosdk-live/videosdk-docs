@@ -42,16 +42,6 @@ import MethodListHeading from '@theme/MethodListHeading';
 - `getTrack()` will return a MediaStreamTrack object stored in the MediaStream object
 - return type : `MediaStreamTrack`
 
-### getProducer()
-
-- `getProducer()` will return a producer of stream
-- return type : `Producer`
-
-### getConsumer()
-
-- `getConsumer()` will return a consumer of stream
-- return type : `Consumer`
-
 ## Methods
 
 ### pause()

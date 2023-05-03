@@ -29,22 +29,4 @@ pagination_label: Participant Class Properties
 
 - It represents a single media track within a stream.
 
----
-
-### producer
-
-- type: `Producer`
-
-- `producer` stand for producer of the stream.
-
-
----
-
-### consumer
-
-- type: `Consumer`
-
-- `consumer` stand for consumer of the stream.
-
-
 </div>

@@ -29,20 +29,4 @@ pagination_label: Stream Class Properties
 
 - `getTrack()` will return a MediaStreamTrack object stored in the MediaStream object.
 
----
-
-### getProducer()
-
-- type: `Producer`
-
-- `getProducer()` will return a producer of that stream.
-
----
-
-### getConsumer()
-
-- type: `Consumer`
-
-- `getConsumer()` will return a consumer of that stream.
-
 </div>
