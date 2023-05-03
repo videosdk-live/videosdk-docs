@@ -187,7 +187,7 @@ function ControlsContainer() {
         onPress={() => {
           PipHandler.enterPipMode(300, 500);
         }}
-        buttonText={"PIP"}
+        buttonText={"PiP"}
         backgroundColor={"blue"}
       />
       //highlight-end

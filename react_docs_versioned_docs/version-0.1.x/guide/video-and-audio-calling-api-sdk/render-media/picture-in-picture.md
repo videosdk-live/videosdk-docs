@@ -2,7 +2,7 @@
 title: Picture-in-Picture Mode | Video SDK
 hide_title: true
 hide_table_of_contents: false
-description: Video SDK and Audio SDK, developers need to implement a token server. This requires efforts on both the front-end and backend.
+description: Picture-in-picture (PiP) is a feature that is commonly used in video conferencing software. It allows you to continue your video conference while also performing other tasks on your device.
 sidebar_label: Picture-in-Picture Mode
 pagination_label: Picture-in-Picture Mode
 keywords:
@@ -55,11 +55,11 @@ function Controls() {
 ```js
 function Controls() {
   const togglePipMode = async () => {
-    //Check if browser supports PIP mode else show a message to user
+    //Check if browser supports PiP mode else show a message to user
     if ("pictureInPictureEnabled" in document) {
 
     } else {
-      alert("PIP is not supported by your browser");
+      alert("PiP is not supported by your browser");
     }
   };
   return ...;
@@ -75,14 +75,14 @@ function Controls() {
   const pipWindowRef = useRef();
 
   const togglePipMode = async () => {
-    //Check if browser supports PIP mode else show a message to user
+    //Check if browser supports PiP mode else show a message to user
     if ("pictureInPictureEnabled" in document) {
       //highlight-start
-      //Creating a Canvas which will render our PIP Stream
+      //Creating a Canvas which will render our PiP Stream
       const source = document.createElement("canvas");
       const ctx = source.getContext("2d");
 
-      //Create a Video tag which we will popout for PIP
+      //Create a Video tag which we will popout for PiP
       const pipVideo = document.createElement("video");
       pipWindowRef.current = pipVideo;
       pipVideo.autoplay = true;
@@ -94,14 +94,14 @@ function Controls() {
       //Do initial Canvas Paint
       drawCanvas()
 
-      //When Video is ready we will start PIP mode
+      //When Video is ready we will start PiP mode
       pipVideo.onloadedmetadata = () => {
         pipVideo.requestPictureInPicture();
       };
       await pipVideo.play();
       //highlight-end
     } else {
-      alert("PIP is not supported by your browser");
+      alert("PiP is not supported by your browser");
     }
   };
   return ...;
@@ -121,19 +121,19 @@ function Controls() {
   };
 
   const togglePipMode = async () => {
-    //Check if browser supports PIP mode else show a message to user
+    //Check if browser supports PiP mode else show a message to user
     if ("pictureInPictureEnabled" in document) {
 
       //Stream playing here
       //...
 
       //highlight-start
-      //When the PIP mode starts, we will start drawing canvas with PIP view
+      //When the PiP mode starts, we will start drawing canvas with PiP view
       pipVideo.addEventListener("enterpictureinpicture", (event) => {
         drawCanvas();
       });
 
-      //When PIP mode exits, we will dispose the track we created earlier
+      //When PiP mode exits, we will dispose the track we created earlier
       pipVideo.addEventListener("leavepictureinpicture", (event) => {
         pipWindowRef.current = null;
         pipVideo.srcObject.getTracks().forEach((track) => track.stop());
@@ -174,7 +174,7 @@ function Controls() {
       //highlight-end
 
     } else {
-      alert("PIP is not supported by your browser");
+      alert("PiP is not supported by your browser");
     }
   };
   return ...;
@@ -192,7 +192,7 @@ function Controls() {
   const togglePipMode = async () => {
 
     //highlight-start
-    //Check if PIP Window is active or not
+    //Check if PiP Window is active or not
     //If active we will turn it off
     if (pipWindowRef.current) {
       await document.exitPictureInPicture();
@@ -201,12 +201,12 @@ function Controls() {
     }
     //highlight-end
 
-    //Check if browser supports PIP mode else show a message to user
+    //Check if browser supports PiP mode else show a message to user
     if ("pictureInPictureEnabled" in document) {
       //highlight-next-line
       ...
     } else {
-      alert("PIP is not supported by your browser");
+      alert("PiP is not supported by your browser");
     }
   };
   return ...;
