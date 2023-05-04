@@ -8,6 +8,24 @@ tags: [releasenotes]
 
 This page will keep you update all the releases of React JS SDK.
 
+## v0.1.73
+
+**Release Date** : 4th May 2023
+
+**Bug Fix** :
+
+- Updated types definations
+
+## v0.1.72
+
+**Release Date** : 4th May 2023
+
+**Bug Fix** :
+
+- Fixed `changeMic` not switching mic issue.
+
+- Fixed `deviceId` ignored if device had a virtual camera.
+
 ## v0.1.71
 
 **Release Date** : 29th April 2023

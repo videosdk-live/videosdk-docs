@@ -8,6 +8,20 @@ tags: [releasenotes]
 
 This page will keep you update all the releases of JavaScript SDK.
 
+## v0.0.67
+
+**Release Date** : 4th May 2023
+
+**Bug Fix** :
+
+- Updated type definations
+
+- Fixed `changeMic` not switching mic issue.
+
+- Fixed `deviceId` ignored if device had a virtual camera.
+
+---
+
 ## v0.0.66
 
 **Release Date** : 29th April 2023

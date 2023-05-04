@@ -308,6 +308,11 @@ title: Video SDK useMeeting Hook
 </div>
 <div class="col col--4 margin-bottom--sm" >
 
+- [onRecordingStateChanged](./events#onrecordingstatechanged)
+
+</div>
+<div class="col col--4 margin-bottom--sm" >
+
 - [onMeetingJoined](./events#onmeetingjoined)
 
 </div>
@@ -328,12 +333,22 @@ title: Video SDK useMeeting Hook
 </div>
 <div class="col col--4 margin-bottom--sm" >
 
+- [onLiveStreamStateChanged](./events#onlivestreamstatechanged)
+
+</div>
+<div class="col col--4 margin-bottom--sm" >
+
 - [onHlsStarted](./events#onhlsstarted)
 
 </div>
 <div class="col col--4 margin-bottom--sm" >
 
 - [onHlsStopped](./events#onhlsstopped)
+
+</div>
+<div class="col col--4 margin-bottom--sm" >
+
+- [onHlsStateChanged](./events#onhlsstatechanged)
 
 </div>
 <div class="col col--4 margin-bottom--sm" >
@@ -384,6 +399,11 @@ title: Video SDK useMeeting Hook
 <div class="col col--4 margin-bottom--sm" >
 
 - [onMeetingStateChanged](./events#onmeetingstatechanged)
+
+</div>
+<div class="col col--4 margin-bottom--sm" >
+
+- [onParticipantModeChanged](./events#onparticipantmodechanged)
 
 </div>
 </div>
