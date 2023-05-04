@@ -8,6 +8,16 @@ tags: [releasenotes]
 
 This page will keep you update all the releases of React Native SDK.
 
+## v0.0.48
+
+**Release Date** : 4th May 2023
+
+**Bug Fix** :
+
+- Updated types definations
+
+- Fixed `changeMic` not switching mic issue.
+
 ## v0.0.47
 
 **Release Date** : 29th April 2023
