@@ -115,7 +115,7 @@ export default function QuickstartPart() {
     },
     {
       Icon: CustomIOSIcon,
-      link: "/ios/guide/video-and-audio-calling-api-sdk/getting-started",
+      link: "/ios/guide/video-and-audio-calling-api-sdk/quick-start",
       tooltip: "iOS",
     },
   ];
