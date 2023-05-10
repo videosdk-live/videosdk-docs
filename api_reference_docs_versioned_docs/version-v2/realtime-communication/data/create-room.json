@@ -40,7 +40,7 @@
         "key": "autoCloseConfig",
         "value": "see example",
         "values": "\n```\n{\n  'autoCloseConfig': {\n    'type': 'session-end-and-deactivate',\n    'duration': 60\n   }\n}\n```",
-        "description": "#### This configuration will be used to automatically close your meeting. \n - `type` \n\t * `session-ends`: This type will only close your meeting. \n\t * `session-end-and-deactivate`: This type will close your meeting and also deactivate the meetingId. \n - `duration` \n\t * This duration will be in minutes, and after that duration, your meeting will be closed. Default value is 480 minutes.",
+        "description": "#### This configuration will be used to automatically close the running session and also deactivate it, if configured. \n - `type` \n\t * `session-ends`: This will close the running session after provided duration. \n\t * `session-end-and-deactivate`: This will not only close the running session after provided duration but also deactivate the roomId. i.e. Only one session could be taken using this roomId, after that session ends no other session could be taken for the same roomId. \n - `duration` \n\t * This duration will be in minutes, and after that duration, your room will be closed. Default value is 480 minutes.",
         "required": false
       }
     ],
