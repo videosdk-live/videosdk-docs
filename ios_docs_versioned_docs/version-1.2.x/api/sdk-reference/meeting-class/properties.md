@@ -35,11 +35,42 @@ title: Meeting Class Properties
 
 - This will be the [`[Dictionary]`](https://developer.apple.com/documentation/swift/dictionary) what will container all participants attached with the key as id of that participant.
 
-```swift
+```js
 let remoteParticipantId = "ajf897";
 
 let remoteParticipant = participants[remoteParticipantId];
 ```
+
+---
+
+### hlsUrls
+
+- type : `HLSUrl`
+  - **downstreamUrl**: `String`
+  - **playbackHlsUrl**: `String`
+  - **livestreamUrl**: `String`
+- `hlsUrls` will proide all the URLs for the ongoing meeting HLS.
+
+---
+
+### hlsState
+
+- type : `HLSState`
+- `HLSState` will be the current state of the meeting HLS.
+
+---
+
+### liveStreamState
+
+- type : `LiveStreamState`
+- `LiveStreamState` will be the current state of the liveStream.
+
+---
+
+### recordingState
+
+- type : `RecordingState`
+- `RecordingState` will be the current state of the recording.
 
 ---
 

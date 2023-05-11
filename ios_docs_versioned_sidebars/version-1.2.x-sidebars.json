@@ -37,7 +37,9 @@
         "guide/video-and-audio-calling-api-sdk/features/speaker-indication",
         "guide/video-and-audio-calling-api-sdk/features/pubsub",
         "guide/video-and-audio-calling-api-sdk/features/record-meeting",
-        "guide/video-and-audio-calling-api-sdk/features/go-live-social-media"
+        "guide/video-and-audio-calling-api-sdk/features/go-live-social-media",
+        "guide/video-and-audio-calling-api-sdk/features/interactive-livestream",
+        "guide/video-and-audio-calling-api-sdk/features/error-events"
       ],
       "collapsed": true
     }

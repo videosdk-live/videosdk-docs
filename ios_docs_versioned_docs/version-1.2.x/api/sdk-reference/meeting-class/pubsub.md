@@ -11,7 +11,7 @@ title: PubSub
 
 ## Methods
 
-### Publish()
+### publish()
 
 - `publish()` is used to publish messages on a specified topic in the meeting.
 - While publishing message, if you provide `persist` as `true`, then it will persist the message throughout the meeting and newly joined partcipant will get all old messages of a meeting, otherwise not.
