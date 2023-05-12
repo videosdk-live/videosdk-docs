@@ -15,8 +15,8 @@ pagination_label: Meeting Class Events
 
 #### Example
 
-```swift
-  meeting.listeners.onMeetingJoined()
+```js
+meeting.listeners.onMeetingJoined();
 ```
 
 ---
@@ -27,8 +27,8 @@ pagination_label: Meeting Class Events
 
 #### Example
 
-```swift
-meeting.listeners.onMeetingLeft()
+```js
+meeting.listeners.onMeetingLeft();
 ```
 
 ---
@@ -43,8 +43,8 @@ meeting.listeners.onMeetingLeft()
 
 #### Example
 
-```swift
-meeting.listeners.onParticipantJoined(participant)
+```js
+meeting.listeners.onParticipantJoined(participant);
 ```
 
 ---
@@ -59,9 +59,10 @@ meeting.listeners.onParticipantJoined(participant)
 
 #### Example
 
-```swift
-meeting.listeners.onParticipantLeft(participant)
+```js
+meeting.listeners.onParticipantLeft(participant);
 ```
+
 ---
 
 ### onSpeakerChanged
@@ -76,7 +77,7 @@ meeting.listeners.onParticipantLeft(participant)
 
 #### Example
 
-```swift
+```js
 meeting.listeners.onSpeackerChanged(participantId: participantId)
 ```
 
@@ -95,9 +96,9 @@ meeting.listeners.onSpeackerChanged(participantId: participantId)
 
 #### Example
 
-```swift
+```js
 meeting.listeners.onMicRequested(participantId: participantId) {
-    // request accepted 
+    // request accepted
 } reject: {
     // request rejected
 }
@@ -118,9 +119,9 @@ meeting.listeners.onMicRequested(participantId: participantId) {
 
 #### Example
 
-```swift
+```js
 meeting.listeners.onWebcamRequested(participantId: participantId) {
-    // request accepted 
+    // request accepted
 } reject: {
     // request rejected
 }
@@ -134,8 +135,8 @@ meeting.listeners.onWebcamRequested(participantId: participantId) {
 
 #### Example
 
-```swift
-meeting.listeners.onRecordingStarted()
+```js
+meeting.listeners.onRecordingStarted();
 ```
 
 ---
@@ -146,8 +147,8 @@ meeting.listeners.onRecordingStarted()
 
 #### Example
 
-```swift
-meeting.listeners.onRecordingStopped()
+```js
+meeting.listeners.onRecordingStopped();
 ```
 
 ---
@@ -158,8 +159,8 @@ meeting.listeners.onRecordingStopped()
 
 #### Example
 
-```swift
-meeting.listeners.onLivestreamStarted()
+```js
+meeting.listeners.onLivestreamStarted();
 ```
 
 ---
@@ -170,8 +171,8 @@ meeting.listeners.onLivestreamStarted()
 
 #### Example
 
-```swift
-meeting.listeners.onLivestreamStopped()
+```js
+meeting.listeners.onLivestreamStopped();
 ```
 
 </div>

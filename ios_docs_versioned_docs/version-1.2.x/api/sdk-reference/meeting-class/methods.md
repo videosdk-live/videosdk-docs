@@ -114,7 +114,7 @@ title: Meeting Class Methods
 
 #### Example
 
-```swift
+```js
 let webhookUrl = "https://webhook.your-api-server.com"
 
 startRecording(webhookUrl: webhookUrl!)
@@ -133,8 +133,8 @@ startRecording(webhookUrl: webhookUrl!)
 
 #### Example
 
-```swift
-stopRecording()
+```js
+stopRecording();
 ```
 
 ---
@@ -157,7 +157,7 @@ stopRecording()
 
 #### Example
 
-```swift
+```js
 
 startLivestream(outputs: outputs)
 ```
@@ -173,10 +173,8 @@ startLivestream(outputs: outputs)
 
 #### Example
 
-```swift
+```js
 stopLivestream();
 ```
-
----
 
 </div>

@@ -5,7 +5,6 @@
       "label": "Introduction",
       "items": [
         "guide/video-and-audio-calling-api-sdk/getting-started",
-        "guide/video-and-audio-calling-api-sdk/signup-and-create-api",
         "guide/video-and-audio-calling-api-sdk/ios-sdk",
         "guide/video-and-audio-calling-api-sdk/server-setup",
         "guide/video-and-audio-calling-api-sdk/release-notes",
@@ -30,7 +29,6 @@
         "guide/video-and-audio-calling-api-sdk/features/manage-participants",
         "guide/video-and-audio-calling-api-sdk/features/leave-end-meeting",
         "guide/video-and-audio-calling-api-sdk/features/camera-controls",
-        "guide/video-and-audio-calling-api-sdk/features/optimize-video-track",
         "guide/video-and-audio-calling-api-sdk/features/mic-controls",
         "guide/video-and-audio-calling-api-sdk/features/toggle-participant-media",
         "guide/video-and-audio-calling-api-sdk/features/remove-participant",

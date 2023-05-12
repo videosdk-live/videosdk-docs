@@ -30,7 +30,7 @@ Now we will see, how we can use PubSub to implement Chat functionality. If you a
 
 ```js
 // importing usePubSub hook from react-native-sdk
-import { usePubSub } from "@videosdk.live/react-sdk";
+import { usePubSub } from "@videosdk.live/react-native-sdk";
 
 function ChatView() {
   // destructure publish method from usePubSub hook

@@ -35,7 +35,7 @@ title: Meeting Class Properties
 
 - This will be the [`[Dictionary]`](https://developer.apple.com/documentation/swift/dictionary) what will container all participants attached with the key as id of that participant.
 
-```swift
+```js
 let remoteParticipantId = "ajf897";
 
 let remoteParticipant = participants[remoteParticipantId];
