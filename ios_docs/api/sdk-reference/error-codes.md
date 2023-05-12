@@ -5,7 +5,7 @@ pagination_label: Meeting Error Codes
 title: Meeting Error Codes
 ---
 
-import ErrorCodesTable from "../../../../src/theme/ErrorCodesTable"
+import ErrorCodesTable from "../../../src/theme/ErrorCodesTable"
 import meetingErrorCodes from "./data/meetingErrorCodes.json"
 
 <ErrorCodesTable errorCodes={meetingErrorCodes} />

@@ -134,7 +134,7 @@ startRecording(webhookUrl: webhookUrl!)
 #### Example
 
 ```js
-stopRecording()
+stopRecording();
 ```
 
 ---
@@ -175,67 +175,6 @@ startLivestream(outputs: outputs)
 
 ```js
 stopLivestream();
-```
-
----
-
-### startHLS()
-
-- `startHLS()` will start HLS streaming of your meeting.
-
-- You will be able to start HLS and watch the live stream of meeting over HLS.
-
-- `mode` is used to either start hls streaming of video-and-audio both or only audio. And by default it will be video-and-audio.
-
-- `quality` is only applicable to video-and-audio.
-
-#### Parameters
-
-- **config**:
-  - **layout**:
-    - **type**: _.GRID_ | _.SPOTLIGHT_ | _.SIDEBAR_
-    - **priority**: _.SPEAKER_ | _.PIN_
-    - **gridSize**: Number _`max 25`_
-  - **theme**: _.DARK_ | _.LIGHT_ | _.DEFAULT_
-  - **mode**: _.video_and_audio_ | _.audio_
-  - **quality**: _.low_ | _.med_ | _.high_
-
-#### Events associated with `startHLS()`:
-
-- Every participant will receive a callback of state change of HLS [`onHlsStateChanged`](./events#onHlsStateChanged)
-
-#### Example
-
-```js
-var config: HLSConfig = HLSConfig(
-  layout: HLSLayout(
-    type: .GRID, 
-    priority: .SPEAKER, 
-    gridSize: 4
-  ), 
-  theme: .DARK, 
-  mode: .video_and_audio, 
-  quality: .high, 
-  orientation: .portrait
-)
-
-startHLS(config: config)
-```
-
----
-
-### stopHLS()
-
-- `stopHLS()` is used to stop the HLS streaming.
-
-#### Events associated with `stopHLS()`:
-
-- Every participant will receive a callback of state change of HLS [`onHlsStateChanged`](./events#onHlsStateChanged)
-
-#### Example
-
-```js
-stopHLS()
 ```
 
 </div>

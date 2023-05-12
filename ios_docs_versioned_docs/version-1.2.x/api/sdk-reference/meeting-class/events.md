@@ -16,7 +16,7 @@ pagination_label: Meeting Class Events
 #### Example
 
 ```js
-  meeting.listeners.onMeetingJoined()
+meeting.listeners.onMeetingJoined();
 ```
 
 ---
@@ -28,7 +28,7 @@ pagination_label: Meeting Class Events
 #### Example
 
 ```js
-meeting.listeners.onMeetingLeft()
+meeting.listeners.onMeetingLeft();
 ```
 
 ---
@@ -44,7 +44,7 @@ meeting.listeners.onMeetingLeft()
 #### Example
 
 ```js
-meeting.listeners.onParticipantJoined(participant)
+meeting.listeners.onParticipantJoined(participant);
 ```
 
 ---
@@ -60,8 +60,9 @@ meeting.listeners.onParticipantJoined(participant)
 #### Example
 
 ```js
-meeting.listeners.onParticipantLeft(participant)
+meeting.listeners.onParticipantLeft(participant);
 ```
+
 ---
 
 ### onSpeakerChanged
@@ -97,7 +98,7 @@ meeting.listeners.onSpeackerChanged(participantId: participantId)
 
 ```js
 meeting.listeners.onMicRequested(participantId: participantId) {
-    // request accepted 
+    // request accepted
 } reject: {
     // request rejected
 }
@@ -120,38 +121,10 @@ meeting.listeners.onMicRequested(participantId: participantId) {
 
 ```js
 meeting.listeners.onWebcamRequested(participantId: participantId) {
-    // request accepted 
+    // request accepted
 } reject: {
     // request rejected
 }
-```
-
----
-
-### onRecordingStateChanged()
-
-- This event will be emitted when the meeting's recording status changed.
-
-#### Example
-
-```js
-
-meeting.listeners.onRecordingStateChanged(state: RecordingState) {
-    switch(state) {
-        case .RECORDING_STARTING:
-            print("recording starting")
-        
-        case .RECORDING_STARTED:
-            print("recording started")
-            
-        case .RECORDING_STOPPING:
-            print("recording stoping")
-    
-        case .RECORDING_STOPPED:
-            print("recording stopped")
-    }
-}
-
 ```
 
 ---
@@ -163,7 +136,7 @@ meeting.listeners.onRecordingStateChanged(state: RecordingState) {
 #### Example
 
 ```js
-meeting.listeners.onRecordingStarted()
+meeting.listeners.onRecordingStarted();
 ```
 
 ---
@@ -175,35 +148,7 @@ meeting.listeners.onRecordingStarted()
 #### Example
 
 ```js
-meeting.listeners.onRecordingStopped()
-```
-
----
-
-### onLivestreamStateChanged()
-
-- This event will be emitted when the meeting's livestream status changed.
-
-#### Example
-
-```js
-
-meeting.listeners.onLivestreamStateChanged(state: LiveStreamState) {
-    switch(state) {
-        case .LIVESTREAM_STARTING:
-            print("livestream starting")
-        
-        case .LIVESTREAM_STARTED:
-            print("livestream started")
-            
-        case .LIVESTREAM_STOPPING:
-            print("livestream stoping")
-    
-        case .LIVESTREAM_STOPPED:
-            print("livestream stopped")
-    }
-}
-
+meeting.listeners.onRecordingStopped();
 ```
 
 ---
@@ -215,7 +160,7 @@ meeting.listeners.onLivestreamStateChanged(state: LiveStreamState) {
 #### Example
 
 ```js
-meeting.listeners.onLivestreamStarted()
+meeting.listeners.onLivestreamStarted();
 ```
 
 ---
@@ -227,106 +172,7 @@ meeting.listeners.onLivestreamStarted()
 #### Example
 
 ```js
-meeting.listeners.onLivestreamStopped()
+meeting.listeners.onLivestreamStopped();
 ```
-
----
-
-### onHlsStateChanged()
-
-- This event will be emitted when the meeting's HLS(Http Livestreaming) status changed.
-
-#### Example
-
-```js
-
-meeting.listeners.onHlsStateChanged(state: HLSState, hlsUrl: HLSUrl?) {
-    switch(state) {
-        case .HLS_STARTING:
-            print("HLS Starting")
-            
-        case .HLS_STARTED:
-            self.hlsStreamStarted = true
-            print("HLS Started")
-            
-        case .HLS_PLAYABLE:
-            print("HLS Playable")
-            
-        case .HLS_STOPPING:
-            print("HLS Stopping")
-            
-        case .HLS_STOPPED:
-            self.hlsStreamStarted = false
-            print("HLS Stopped")
-    }
-}
-
-```
-
----
-
-### onMeetingStateChanged()
-
-- This event will be triggered when state of meeting changes.
-- It will pass **`state`** as an event callback parameter which will indicate current state of the meeting.
-- All available states are `CONNECTING`, `CONNECTED`, `CLOSING`, `CLOSED` and `CANCELLED`.
-
-#### Event callback parameters
-
-- **data**: { **meetingState**: MeetingState }
-  - **meetingState**: MeetingState
-
-#### Example
-
-```js
-
-meeting.listeners.onMeetingStateChanged(meetingState: MeetingState) {
-    switch meetingState {
-        case .CONNECTING:
-            print("Meeting is connecting")
-            
-        case .CONNECTED:
-            print("Meeting is connected")
-            
-        case .CLOSING:
-            print("Meeting is closing")
-            
-        case .CLOSED:
-            print("Meeting connection closed")
-            
-        case .CANCELLED:
-            print("Meeting is cancelled")
-    }
-}
-
-```
-
----
-
-### onError()
-
-- This event will be triggered when any error occured.
-- It will pass **`error`** as an event parameter.
-- To see all available error codes from SDK. [Meeting Error Codes](../error-codes)
-
-#### Example
-
-```js
-meeting.listeners.onError(error: VideoSDKError) {
-    switch error {
-        case .INVALID_TOKEN: print("Invalid Token")
-
-        case .INVALID_MEETING_ID: print("Invalid Meeting Id")
-        
-        case .INVALID_API_KEY: print("Invalid API Key")
-        
-        case .INVALID_PERMISSIONS: print("Invalid Permissions")
-
-        ...
-    }
-}
-
-```
-
 
 </div>

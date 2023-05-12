@@ -45,26 +45,6 @@ import events from "./../data/meeting-class/events.json";
 - [listeners](./properties#listeners)
 
 </div>
-<div class="col col--4 margin-bottom--sm" >
-
-- [hlsUrls](./properties#hlsurls)
-
-</div>
-<div class="col col--4 margin-bottom--sm" >
-
-- [hlsState](./properties#hlsstate)
-
-</div>
-<div class="col col--4 margin-bottom--sm" >
-
-- [liveStreamState](./properties#livestreamstate)
-
-</div>
-<div class="col col--4 margin-bottom--sm" >
-
-- [recordingState](./properties#recordingstate)
-
-</div>
 
 </div>
 
@@ -127,16 +107,6 @@ import events from "./../data/meeting-class/events.json";
 - [stopLiveStream](./methods#stoplivestream)
 
 </div>
-<div class="col col--4 margin-bottom--sm" >
-
-- [startHLS](./methods#starthls)
-
-</div>
-<div class="col col--4 margin-bottom--sm" >
-
-- [stopHLS](./methods#stophls)
-
-</div>
 
 </div>
 
@@ -181,11 +151,6 @@ import events from "./../data/meeting-class/events.json";
 </div>
 <div class="col col--4 margin-bottom--sm" >
 
-- [onRecordingStateChanged](./events#onrecordingstatechanged)
-
-</div>
-<div class="col col--4 margin-bottom--sm" >
-
 - [onRecordingStarted](./events#onrecordingstarted)
 
 </div>
@@ -196,32 +161,12 @@ import events from "./../data/meeting-class/events.json";
 </div>
 <div class="col col--4 margin-bottom--sm" >
 
-- [onLivestreamStateChanged](./events#onlivestreamstatechanged)
-
-</div>
-<div class="col col--4 margin-bottom--sm" >
-
 - [onLivestreamStarted](./events#onlivestreamstarted)
 
 </div>
 <div class="col col--4 margin-bottom--sm" >
 
 - [onLivestreamStopped](./events#onlivestreamstopped)
-
-</div>
-<div class="col col--4 margin-bottom--sm" >
-
-- [onHlsStateChanged](./events#onhlsstatechanged)
-
-</div>
-<div class="col col--4 margin-bottom--sm" >
-
-- [onMeetingStateChanged](./events#onmeetingstatechanged)
-
-</div>
-<div class="col col--4 margin-bottom--sm" >
-
-- [onError](./events#onerror)
 
 </div>
 

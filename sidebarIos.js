@@ -8,14 +8,19 @@ module.exports = {
         "guide/video-and-audio-calling-api-sdk/signup-and-create-api",
         "guide/video-and-audio-calling-api-sdk/ios-sdk",
         "guide/video-and-audio-calling-api-sdk/server-setup",
+        "guide/video-and-audio-calling-api-sdk/release-notes",
+        "guide/video-and-audio-calling-api-sdk/known-issues",
       ],
-      collapsed: true,
+      collapsed: false,
     },
     {
       type: "category",
       label: "Quick Start Guide",
-      items: ["guide/video-and-audio-calling-api-sdk/quick-start"],
-      collapsed: true,
+      items: [
+        "guide/video-and-audio-calling-api-sdk/quick-start",
+        "guide/video-and-audio-calling-api-sdk/run-a-sample-project",
+      ],
+      collapsed: false,
     },
     {
       type: "category",
@@ -25,19 +30,16 @@ module.exports = {
         "guide/video-and-audio-calling-api-sdk/features/manage-participants",
         "guide/video-and-audio-calling-api-sdk/features/leave-end-meeting",
         "guide/video-and-audio-calling-api-sdk/features/camera-controls",
+        "guide/video-and-audio-calling-api-sdk/features/optimize-video-track",
         "guide/video-and-audio-calling-api-sdk/features/mic-controls",
         "guide/video-and-audio-calling-api-sdk/features/toggle-participant-media",
+        "guide/video-and-audio-calling-api-sdk/features/remove-participant",
         "guide/video-and-audio-calling-api-sdk/features/speaker-indication",
-      ],
-      collapsed: true,
-    },
-    {
-      type: "category",
-      label: "Advanced Features",
-      items: [
+        "guide/video-and-audio-calling-api-sdk/features/pubsub",
         "guide/video-and-audio-calling-api-sdk/features/record-meeting",
         "guide/video-and-audio-calling-api-sdk/features/go-live-social-media",
-        "guide/video-and-audio-calling-api-sdk/features/pubsub",
+        "guide/video-and-audio-calling-api-sdk/features/interactive-livestream",
+        "guide/video-and-audio-calling-api-sdk/features/error-events",
       ],
       collapsed: true,
     },
@@ -49,27 +51,45 @@ module.exports = {
     },
     {
       type: "doc",
-      id: "api/sdk-reference/video-sdk-class",
+      id: "api/sdk-reference/terminology",
     },
     {
       type: "doc",
-      id: "api/sdk-reference/meeting-class",
+      id: "api/sdk-reference/initMeeting",
+    },
+    {
+      type: "category",
+      label: "Meeting Class",
+      items: [
+        "api/sdk-reference/meeting-class/introduction",
+        "api/sdk-reference/meeting-class/properties",
+        "api/sdk-reference/meeting-class/methods",
+        "api/sdk-reference/meeting-class/events",
+        "api/sdk-reference/meeting-class/pubsub",
+      ],
+    },
+    {
+      type: "category",
+      label: "Participant Class",
+      items: [
+        "api/sdk-reference/participant-class/introduction",
+        "api/sdk-reference/participant-class/properties",
+        "api/sdk-reference/participant-class/methods",
+        "api/sdk-reference/participant-class/events",
+      ],
+    },
+    {
+      type: "category",
+      label: "Stream Class",
+      items: [
+        "api/sdk-reference/stream-class/introduction",
+        "api/sdk-reference/stream-class/properties",
+        "api/sdk-reference/stream-class/methods",
+      ],
     },
     {
       type: "doc",
-      id: "api/sdk-reference/participant-class",
-    },
-    {
-      type: "doc",
-      id: "api/sdk-reference/stream-class",
-    },
-    {
-      type: "doc",
-      id: "api/sdk-reference/meeting-event-listener-class",
-    },
-    {
-      type: "doc",
-      id: "api/sdk-reference/participant-event-listener-class",
+      id: "api/sdk-reference/custom-tracks",
     },
   ],
 };

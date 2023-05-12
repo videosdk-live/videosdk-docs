@@ -55,7 +55,7 @@ const MeetingView = () => {
 3. **recording-state-changed** - Whenever meeting recording state changes, then `recording-state-changed` event will trigger.
 
 ```js
-import { Constants, useMeeting } from "@videosdk.live/react-sdk";
+import { Constants, useMeeting } from "@videosdk.live/react-native-sdk";
 
 function onRecordingStateChanged(data) {
   const { status } = data;

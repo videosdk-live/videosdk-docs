@@ -43,37 +43,6 @@ let remoteParticipant = participants[remoteParticipantId];
 
 ---
 
-### hlsUrls
-
-- type : `HLSUrl`
-  - **downstreamUrl**: `String`
-  - **playbackHlsUrl**: `String`
-  - **livestreamUrl**: `String`
-- `hlsUrls` will proide all the URLs for the ongoing meeting HLS.
-
----
-
-### hlsState
-
-- type : `HLSState`
-- `HLSState` will be the current state of the meeting HLS.
-
----
-
-### liveStreamState
-
-- type : `LiveStreamState`
-- `LiveStreamState` will be the current state of the liveStream.
-
----
-
-### recordingState
-
-- type : `RecordingState`
-- `RecordingState` will be the current state of the recording.
-
----
-
 ### listeners
 
 - type: `MeetingMulticastDelegate`
