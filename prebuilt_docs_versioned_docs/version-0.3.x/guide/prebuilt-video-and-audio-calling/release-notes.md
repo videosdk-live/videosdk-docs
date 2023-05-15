@@ -7,6 +7,18 @@ pagination_label: Release Notes
 
 This page will keep you update all the releases of Prebuilt SDK.
 
+## v0.3.30
+
+**Release Date** : 15th May 2023
+
+**Change log** :
+
+1. `toggleVirtualBackground` parameter added in `permissions` object.
+
+   **Docs** : [`toggleVirtualBackground`](/prebuilt/api/sdk-reference/parameters/advance-parameters/permissions#togglevirtualbackground)
+
+2. Microphone dropdown now includes a speaker list.
+
 ## v0.3.29
 
 **Release Date** : 27th February 2023

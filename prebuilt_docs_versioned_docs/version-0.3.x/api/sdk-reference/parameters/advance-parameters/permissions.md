@@ -85,6 +85,12 @@ title: Permissions Parameters
 
 - `toggleWhiteboard` enables participant to toggle white board if set to `true`.
 
+### toggleVirtualBackground
+
+- type: `Boolean`
+
+- `toggleVirtualBackground` enables participant to see virtual background option if set to `true`.
+
 ### toggleRecording
 
 - type: `Boolean`
@@ -119,6 +125,7 @@ meeting.init({
     endMeeting: true,
     drawOnWhiteboard: true,
     toggleWhiteboard: true,
+    toggleVirtualBackground: true,
     toggleRecording: true,
     toggleLivestream: true,
     changeLayout: true,

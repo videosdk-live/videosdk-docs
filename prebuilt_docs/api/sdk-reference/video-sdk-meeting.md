@@ -66,6 +66,7 @@ meeting.init({
     toggleParticipantScreenshare: true, // Can toggle other partcipant's screen share
     drawOnWhiteboard: true, // Can draw on whiteboard
     toggleWhiteboard: true, // Can toggle whiteboard
+    toggleVirtualBackground:true // Can toggle virtual background
     toggleRecording: true, // Can toggle meeting recording
     removeParticipant: true, // Can remove participant
     endMeeting: true, // Can end meeting

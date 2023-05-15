@@ -27,7 +27,9 @@ Virtual background feature is supported from `0.3.21` version.
 
 You can personalise the background of your video call by blurring it or by replacing it with a static image.
 
-You can find `Virtual Background` option inside `More Options` Tab panel.
+### How it works ?
+
+- When `toggleVirtualBackground` value is set to `true`, you will be able to see `Virtual Background` option inside `More Options` Tab Panel as displayed in image below. By default it is set to `true`.
 
 ![Virtual Background on Videosdk](/img/prebuilt/virtual-background-option.jpg)
 
@@ -63,3 +65,16 @@ By clicking on &#128683; , you can remove the blur effect or any custom image if
 It will take 4-5 seconds to reflects the changes. Virtual background experience will be better untill 3-4 participants are using it.
 
 :::
+
+## Virtual Background attributes
+
+```js title="index.html"
+const config = {
+  // ...
+  permissions: {
+    // ...
+    toggleVirtualBackground: true,
+  },
+  // ...
+};
+```

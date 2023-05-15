@@ -75,6 +75,7 @@ meeting.init({
     toggleHls: true, // Can toggle Start HLS button
     drawOnWhiteboard: true, // Can draw on whiteboard
     toggleWhiteboard: true, // Can toggle whiteboard
+    toggleVirtualBackground: true, // Can toggle virtual background
     toggleRecording: true, // Can toggle meeting recording
     toggleLivestream: true, //can toggle live stream
     removeParticipant: true, // Can remove participant
