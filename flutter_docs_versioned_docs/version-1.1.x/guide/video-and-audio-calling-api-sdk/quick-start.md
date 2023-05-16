@@ -61,6 +61,11 @@ $ flutter pub add videosdk
 //run this command to add http library to perform network call to generate roomId
 $ flutter pub add http
 ```
+### Video SDK Compatibility
+
+| Android and iOS  | Web (Beta)           | Desktop (Beta) | Safari              | 
+|------------------|----------------|---------------------------|---------------------|
+| <center> :white_check_mark: </center>| <center> :white_check_mark: </center>| <center> :white_check_mark: </center> | <center> :x: </center>|
 
 ### Structure of the project
 
