@@ -34,17 +34,6 @@ Stream class defines instance of audio, video and shared screen stream of partic
 - [getTrack()](./properties#gettrack)
 
 </div>
-<div class="col col--4 margin-bottom--sm" >
-
-- [getProducer()](./properties#getproducer)
-
-</div>
-
-<div class="col col--4 margin-bottom--sm" >
-
-- [getConsumer()](./properties#getconsumer)
-
-</div>
 
 </div>
 

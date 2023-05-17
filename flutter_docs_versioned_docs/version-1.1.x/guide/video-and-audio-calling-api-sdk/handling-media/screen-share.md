@@ -19,9 +19,12 @@ slug: screen-share
 
 Screen sharing in a meeting is the process of sharing your device screen with other participants in the meeting. It allows everyone in the meeting to see exactly what you are seeing on your screen, which can be helpful for presentations, demonstrations, or collaborations.
 
-:::important
-Screen Share feature only supported in Android and iOS.
-:::
+### Screen Share feature Compatibility
+
+| Android and iOS app    | Web                  | MacOS desktop app    | Windows desktop app | Safari browser |
+|----------------------|----------------------|----------------------|---------------------|--------|
+|  <center> :white_check_mark: </center>  | <center>  :white_check_mark: </center>  |  <center> :white_check_mark: </center>  | <center>  :x:   </center>               |  <center> :x: </center>   |
+
 
 ### `enableScreenShare()`
 
