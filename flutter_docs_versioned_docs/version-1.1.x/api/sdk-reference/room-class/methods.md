@@ -106,11 +106,34 @@ title: Room Class Methods
 
 ---
 
+### getScreenShareSources()
+
+- It will return all available screens and opened windows.
+- This method only supports desktop apps.
+
+#### Returns
+
+- `Future<List<DesktopCapturerSource>>`
+
+#### Example
+
+```javascript
+meeting.getScreenShareSources().then((value) => print("Sources : $value"));
+```
+
+---
+
 ### enableScreenShare()
 
 - it is used to enable screen-sharing.
 - [`streamEnabled`](../participant-class/events#streamenabled) event will be emitted with [`stream`](../stream-class/introduction) object from the event handler, inside that [participant](../participant-class/introduction) object.
 - [presenterChanged](./events#presenterchanged) will also receive a callback with the `presenterId`.
+#### Parameters
+
+- **source**: 
+  - type : `DesktopCapturerSource`
+  - required : false
+  - It will specifiy selected screenShare source for desktop apps.
 
 #### Returns
 
