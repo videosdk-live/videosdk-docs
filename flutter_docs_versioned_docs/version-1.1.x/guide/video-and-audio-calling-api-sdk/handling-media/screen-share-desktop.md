@@ -339,6 +339,14 @@ class _ThumbnailWidgetState extends State<ThumbnailWidget> {
 }
 ```
 
+- `ScreenSelectDialog` will look like this :
+
+<center>
+
+<img src='https://cdn.videosdk.live/website-resources/docs-resources/flutter_screenshare_desktop_img.png' />
+
+</center>
+
 #### Step 2 : Pass selected source to `enableScreenShare()` method
 
 - Show the screen sharing source selection dialogue that we created in step 1 and start screenShare by using the `_room.enableScreenShare()` method with the chosen source.
@@ -404,6 +412,8 @@ class _MeetingScreenState extends State<MeetingScreen> {
   }
 }
 ```
+
+#### Output 
 
 import ReactPlayer from 'react-player'
 
