@@ -21,20 +21,20 @@ Screen sharing in a meeting is the process of sharing your device screen with ot
 
 ### Screen Share feature Compatibility
 
-| Android and iOS app    | Web                  | MacOS desktop app    | Windows desktop app | Safari browser |
-|----------------------|----------------------|----------------------|---------------------|--------|
-|  <center> :white_check_mark: </center>  | <center>  :white_check_mark: </center>  |  <center> :white_check_mark: </center>  | <center>  :x:   </center>               |  <center> :x: </center>   |
+| Android and iOS app    | Web                  | Desktop app    | Safari browser |
+|----------------------|----------------------|----------------------|--------|
+|  <center> :white_check_mark: </center>  | <center>  :white_check_mark: </center>  |  <center> :white_check_mark: </center>  |  <center> :x: </center>   |
 
 
 ### `enableScreenShare()`
 
-- By using `enableScreenShare()` function of `Room` object, local participant can share his/her mobile screen to other participants.
+- By using `enableScreenShare()` function of `Room` object, local participant can share his/her screen or window to other participants.
 
 - Screen Share stream of the participant can be accessed from the `streams` property of `Participant` object.
 
 ### `disableScreenShare()`
 
-- By using `disableScreenShare()` function of `Room` object, local participant can stop sharing his/her mobile screen to other participants.
+- By using `disableScreenShare()` function of `Room` object, local participant can stop sharing his/her screen or window to other participants.
 
 ```jsx
 import 'package:flutter/material.dart';

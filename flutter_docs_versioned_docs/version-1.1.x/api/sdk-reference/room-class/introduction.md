@@ -141,6 +141,11 @@ import events from '../data/events.json'
 </div>
 <div class="col col--4 margin-bottom--sm" >
 
+- [getScreenShareSources](./methods#getscreensharesources)
+
+</div>
+<div class="col col--4 margin-bottom--sm" >
+
 - [enableScreenShare](./methods#enablescreenshare)
 
 </div>
