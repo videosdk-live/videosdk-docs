@@ -32,7 +32,7 @@ export default function SidebarDropdowns() {
               ? "/guide/video-and-audio-calling-api-sdk/concept-and-architecture"
               : value == "prebuilt"
               ? "/guide/prebuilt-video-and-audio-calling/getting-started"
-              : "/guide/video-and-audio-calling-api-sdk/getting-started"
+              : "/guide/video-and-audio-calling-api-sdk/concept-and-architecture"
             : "/api/sdk-reference/setup");
   }
 
@@ -149,18 +149,18 @@ export default function SidebarDropdowns() {
   }
 
   return (
-    <div className="row dropdown_menu">
+    <div className='row dropdown_menu'>
       {sdk != "docs" && sdk != "no-code-sdk" && sdk != "help_docs" ? (
-        <div className="col dropdown dropdown--hoverable dropdown--left">
-          <div className="row navbar__link--active">
-            {<img className="dropdown-logo" src={getSDKName(sdk)[0]?.icon} />}
-            <div className="col" style={{ padding: "0px", fontSize: "1rem" }}>
+        <div className='col dropdown dropdown--hoverable dropdown--left'>
+          <div className='row navbar__link--active'>
+            {<img className='dropdown-logo' src={getSDKName(sdk)[0]?.icon} />}
+            <div className='col' style={{ padding: "0px", fontSize: "1rem" }}>
               {getSDKName(sdk)[0]?.value}
             </div>
 
-            <img src="/img/icons/ic_arrow_down.svg" />
+            <img src='/img/icons/ic_arrow_down.svg' />
           </div>
-          <ul className="dropdown__menu">
+          <ul className='dropdown__menu'>
             {sdkList.map((e, i) => {
               return (
                 <li key={e.id}>
@@ -170,9 +170,8 @@ export default function SidebarDropdowns() {
                         ? "dropdown__link dropdown__link--active"
                         : "dropdown__link"
                     }
-                    href={getSdkRoutingPath(e.id)}
-                  >
-                    <img className="dropdown-logo" src={e.icon} />
+                    href={getSdkRoutingPath(e.id)}>
+                    <img className='dropdown-logo' src={e.icon} />
                     {e.value}
                   </Link>
                 </li>
@@ -188,18 +187,17 @@ export default function SidebarDropdowns() {
             //   ? "col dropdown dropdown--hoverable dropdown--left"
             //   :
             "dropdown dropdown--hoverable dropdown--right"
-          }
-        >
-          <a className="row navbar__link--active">
-            <div className="col" style={{ padding: "0px" }}>
+          }>
+          <a className='row navbar__link--active'>
+            <div className='col' style={{ padding: "0px" }}>
               {sdk == "api-reference" ? "/" + version : version}
             </div>
             <img
-              src="/img/icons/ic_arrow_down.svg"
+              src='/img/icons/ic_arrow_down.svg'
               style={{ paddingLeft: "8px" }}
             />{" "}
           </a>
-          <ul className="dropdown__menu">
+          <ul className='dropdown__menu'>
             {versionList.map((v) => {
               return (
                 <li key={v}>
@@ -209,8 +207,7 @@ export default function SidebarDropdowns() {
                         ? "dropdown__link dropdown__link--active"
                         : "dropdown__link"
                     }
-                    href={getRouteVersion(v)}
-                  >
+                    href={getRouteVersion(v)}>
                     {sdk == "api-reference" ? "/" + v : v}
                   </Link>
                 </li>
