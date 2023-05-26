@@ -129,8 +129,8 @@ const MeetingView = () => {
 };
 ```
 
-:::note
-If you want to learn more about the Interactive Livestream and how you can implement it in your own platform, you can checkout this guide.
+:::tip
+If you want to learn more about the Interactive Livestream and how you can implement it in your own platform, you can checkout this [guide](/react-native/guide/interactive-live-streaming/integrate-hls/overview).
 :::
 
 ### Event associated with HLS

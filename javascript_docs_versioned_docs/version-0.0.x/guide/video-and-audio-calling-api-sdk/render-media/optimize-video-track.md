@@ -145,7 +145,7 @@ meeting = VideoSDK.initMeeting({
 
 #### 2. Setup Custom Track with methods
 
-In order to switch tracks during the meeting, you have to pass the `MediaStream` in the \*\*`enableWebcam()` method of `meeting` object.
+In order to switch tracks during the meeting, you have to pass the `MediaStream` in the `enableWebcam()` method of `meeting` object.
 
 :::tip
 Make sure to call `disableWebcam()` before you create a new track as it may lead to unexpected behavior.

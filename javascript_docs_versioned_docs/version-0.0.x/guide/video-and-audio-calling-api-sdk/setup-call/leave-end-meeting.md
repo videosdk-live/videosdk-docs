@@ -63,7 +63,7 @@ You should call the `leave()` method on the unmount of your main meeting compone
 Following callbacks are received when a participant leaves the meeting.
 
 - [Local Participant](../concept-and-architecture#2-participant) will receive a [`meeting-left`](/javascript/api/sdk-reference/meeting-class/events#meeting-left) event.
-- All [remote participants](../concept-and-architecture#2-participant) will receive a [`participant-left`](/javascript/api/sdk-reference/meeting-class/events#participant-left) event.
+- All [Remote participants](../concept-and-architecture#2-participant) will receive a [`participant-left`](/javascript/api/sdk-reference/meeting-class/events#participant-left) event.
 
 ### Events associated with End
 

@@ -23,7 +23,7 @@ During the meeting at any point a participant wishes to switch his/her input aud
 
 ### `getMics()`
 
-- This method of the `useMeeting` hook will give you the list of all the available mics which can be shown in a dropdown list.
+- This method of the **Meeting** class will give you the list of all the available mics which can be shown in a dropdown list.
 
 - This method will return an array of objects which will contain the `deviceId` and `label` of the audio input device.
 

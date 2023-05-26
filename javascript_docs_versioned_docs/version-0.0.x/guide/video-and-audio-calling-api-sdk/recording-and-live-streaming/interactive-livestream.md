@@ -108,10 +108,6 @@ stopHlsBtn.addEventListener("click", () => {
 });
 ```
 
-:::note
-If you want to learn more about the Interactive Livestream and how you can implement it in your own platform, you can checkout this guide.
-:::
-
 ### Event associated with HLS
 
 - **hls-state-changed** - Whenever meeting HLS state changes, then `hls-state-changed` event will trigger.
@@ -150,7 +146,7 @@ meeting.on("hls-state-changed", (data) => {
 
 ### Custom Template
 
-With VideoSDK, you can also use your own custom designed layout template to livestream the meetings. In order to use the custom template, you need to create a template for which you can [follow this guide](/javascript/guide/interactive-live-streaming/custom-template). Once you have setup the template, you can use the [REST API to start](/api-reference/realtime-communication/start-livestream) the livestream with the `templateURL` parameter.
+With VideoSDK, you can also use your own custom designed layout template to livestream the meetings. In order to use the custom template, you need to create a template for which you can [follow this guide](/react/guide/interactive-live-streaming/custom-template). Once you have setup the template, you can use the [REST API to start](/api-reference/realtime-communication/start-livestream) the livestream with the `templateURL` parameter.
 
 ### API Reference
 

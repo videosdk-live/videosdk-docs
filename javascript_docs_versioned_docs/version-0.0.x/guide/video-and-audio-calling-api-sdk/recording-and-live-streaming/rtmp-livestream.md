@@ -37,12 +37,6 @@ This guide will provide an overview of how to implement start and stop RTMP Live
 - `2. config (optional)`: This parameter will define how the livestream layout should look like.
 
   ```js
-  const outputs = [
-    {
-      url: "rtmp://a.rtmp.youtube.com/live2",
-      streamKey: "key",
-    },
-  ];
   const config = {
     // highlight-next-line
     // Layout Configuration
@@ -142,7 +136,7 @@ meeting.on("livestream-state-changed", (data) => {
 
 ### Custom Template
 
-With VideoSDK, you can also use your own custom designed layout template to livestream the meetings. In order to use the custom template, you need to create a template for which you can [follow this guide](/javascript/guide/interactive-live-streaming/custom-template). Once you have setup the template, you can use the [REST API to start](/api-reference/realtime-communication/start-livestream) the livestream with the `templateURL` parameter.
+With VideoSDK, you can also use your own custom designed layout template to livestream the meetings. In order to use the custom template, you need to create a template for which you can [follow this guide](/react/guide/interactive-live-streaming/custom-template). Once you have setup the template, you can use the [REST API to start](/api-reference/realtime-communication/start-livestream) the livestream with the `templateURL` parameter.
 
 ### API Reference
 

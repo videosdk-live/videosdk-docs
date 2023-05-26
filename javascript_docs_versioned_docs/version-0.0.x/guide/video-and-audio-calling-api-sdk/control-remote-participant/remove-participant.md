@@ -42,8 +42,8 @@ participant?.remove();
 
 Following callbacks are received when a participant is removed from the meeting.
 
-- Participant who was removed from the meeting will receive a callback on[`onMeetingLeft`](/react/api/sdk-reference/use-meeting/events#onmeetingleft) of `useMeeting()` hook.
-- All other [remote participants](../concept-and-architecture#2-participant) will receive a callback [`onParticipantLeft`](/react/api/sdk-reference/use-meeting/events#onparticipantleft) with Participant object.
+- Participant who was removed from the meeting will receive a callback on[`meeting-left`](/javascript/api/sdk-reference/meeting-class/events#meeting-left) of **Meeting** Class.
+- All other [remote participants](../concept-and-architecture#2-participant) will receive a callback [`participant-left`](/javascript/api/sdk-reference/meeting-class/events#participant-left) with Participant object.
 
 ## 2. Using VideoSDK Dashboard
 

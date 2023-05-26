@@ -138,8 +138,6 @@ You must ensure that the `participantId` is not repeated in the same meeting or 
 
 To know more about other properties, you can follow [our API Reference](/javascript/api/sdk-reference/initMeeting).
 
-With all the configuration options explained, here is how you will be using the `MeetingProvider`.
-
 ```js
 import { VideoSDK } from "@videosdk.live/js-sdk";
 
@@ -162,13 +160,12 @@ async function startMeeting() {
   // Configure authentication token
   VideoSDK.config(token);
 
-  // Initilize meeting
+  // Initialise meeting
   meeting = VideoSDK.initMeeting({
     meetingId: meetingId,
-    name: "<Name-of-participant>",
-    micEnabled: "<Flag-to-enable-mic>",
-    webcamEnabled: "<Flag-to-enable-webcam>",
-    participantId: "Id-of-participant", // optional, default: SDK will generate
+    name: "YOUR_NAME",
+    micEnabled: true,
+    webcamEnabled: true,
   });
 }
 ```

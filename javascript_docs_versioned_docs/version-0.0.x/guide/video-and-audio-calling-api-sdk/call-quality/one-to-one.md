@@ -31,7 +31,7 @@ import { VideoSDK } from "@videosdk.live/js-sdk";
 // Configure authentication token
 VideoSDK.config("<Authentication-token>");
 
-// Initilize meeting
+// Initialise meeting
 const meeting = VideoSDK.initMeeting({
   meetingId: "<Id-on-meeting>", // required
   name: "<Name-of-participant>", // required
