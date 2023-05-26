@@ -296,34 +296,31 @@ function Overview() {
 
         {/* CTA */}
         <div className="md:mt-20 mt-16  mb-10">
-          <div
-            style={{
-              backgroundImage:
-                "linear-gradient(92.19deg, #EE6E91 3.85%, #DE4CE3 50.19%, #9665E9 96.54%)",
-            }}
-            className="flex flex-row rounded-lg px-12 py-8"
-          >
-            <div className="flex flex-col flex-1">
-              <div className="flex flex-col flex-1">
-                <p className="lg:text-4xl md:text-lg text-base mb-4 text-white-100 font-extrabold  text-center md:text-left">
-                  Get 10,000 minutes free every month
-                </p>
-                <p className="text-white-150 text-base mt-0 text-center font-medium md:text-left">
-                  No credit card required
-                </p>
+          <div className="bg-purple-450 w-full rounded-[20px] md:px-12 px-5 md:py-9 py-5 flex md:flex-col lg:flex lg:flex-row ">
+            <div className="flex flex-col md:flex-row lg:flex-col flex-1">
+              <div className="flex flex-col md:flex-1 lg:flex-none">
+                <h3 className="mt-0 mb-2 text-2xl md:text-3xl font-extrabold text-white-100 lg:text-4xl">
+                  Let’s build together
+                </h3>
+                <h4 className="flex-1 hidden mt-0 text-white-100 opacity-80 mb-9 md:block ">
+                  No credit card is required to start.
+                </h4>
               </div>
-              <div className="flex items-center justify-center md:items-start md:justify-start ">
+              <div className="flex md:flex-1 lg:flex-none flex-col items-center justify-center md:items-start md:justify-end  mt-8 md:mt-0 lg:mt-12 md:flex-row lg:items-start lg:justify-start">
                 <Button
                   link="https://app.videosdk.live/login"
                   text="Start Building For Free"
                 />
               </div>
             </div>
-            <div>
-              <div className="hidden  md:block ">
-                <div className=" ">
-                  <img src="./img/mask-group.png" />
-                </div>
+            <div className="flex md:items-center md:justify-center lg:items-end lg:justify-end xl:self-end lg:mb-[-42px]">
+              <div className="hidden lg:block 2xl:w-full">
+                <img
+                  src={"./img/footer_image.png?webp"}
+                  alt="Start builing together"
+                  title="Start builing together"
+                  type="image/webp"
+                />
               </div>
             </div>
           </div>
