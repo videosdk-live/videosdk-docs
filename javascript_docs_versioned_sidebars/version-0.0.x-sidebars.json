@@ -21,7 +21,9 @@
     {
       "type": "category",
       "label": "Quick Start Guide",
-      "items": ["guide/video-and-audio-calling-api-sdk/quick-start"],
+      "items": [
+        "guide/video-and-audio-calling-api-sdk/quick-start"
+      ],
       "collapsed": false
     },
     {
@@ -59,6 +61,7 @@
               "type": "category",
               "label": "Rendering Media",
               "items": [
+                "guide/video-and-audio-calling-api-sdk/render-media/display-audio-video",
                 "guide/video-and-audio-calling-api-sdk/render-media/layout-and-grid-management",
                 "guide/video-and-audio-calling-api-sdk/render-media/understanding-call-quality",
                 "guide/video-and-audio-calling-api-sdk/render-media/optimize-video-track",
@@ -192,6 +195,15 @@
         "api/sdk-reference/connection/connection-class",
         "api/sdk-reference/connection/connection-meeting-class",
         "api/sdk-reference/connection/connection-participant-class"
+      ]
+    },
+    {
+      "type": "category",
+      "label": "Custom Tracks",
+      "items": [
+        "api/sdk-reference/custom-track/custom-video-track",
+        "api/sdk-reference/custom-track/custom-audio-track",
+        "api/sdk-reference/custom-track/custom-screen-share-track"
       ]
     },
     {
