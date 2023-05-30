@@ -99,7 +99,7 @@ function NotFound() {
             ] == "guide"
           ? sdk == "prebuilt"
             ? "guide/prebuilt-video-and-audio-calling/getting-started"
-            : sdk == "javascript"
+            : sdk == "ios"
             ? "guide/video-and-audio-calling-api-sdk/getting-started"
             : "guide/video-and-audio-calling-api-sdk/concept-and-architecture"
           : "api/sdk-reference/setup");
