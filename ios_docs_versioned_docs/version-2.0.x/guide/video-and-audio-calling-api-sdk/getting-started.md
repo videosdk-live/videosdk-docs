@@ -27,25 +27,21 @@ import Card from '@theme/Card';
 <div class="container guide-steps-block">
   <div class="row ">
     <div class="col col--6">
-      <Card heading="1. Get your API key and Secret" link="/ios/guide/video-and-audio-calling-api-sdk/signup-and-create-api" description="Generate your API key and Secret from Video SDK." />
+    <Card heading="1. Client Setup for iOS" link="/ios/guide/video-and-audio-calling-api-sdk/ios-sdk" description="Easy to integrate SDK with cross-channel support." />
     </div>
      <div class="col col--6">
-      <Card heading="2. Client Setup for iOS" link="/ios/guide/video-and-audio-calling-api-sdk/ios-sdk" description="Easy to integrate SDK with cross-channel support." />
+     <Card heading="2. Authentication and Tokens" link="/ios/guide/video-and-audio-calling-api-sdk/server-setup" description="Setup secured server authentication and authorization."  />
     </div>
   </div>
   <div class="row ">
    <div class="col col--6" >
-      <Card heading="3. Authentication and Tokens" link="/ios/guide/video-and-audio-calling-api-sdk/server-setup" description="Setup secured server authentication and authorization."  />
+    <Card heading="3. Start a Voice / Video Call" link="/ios/guide/video-and-audio-calling-api-sdk/quick-start" description="Get started with step by step guide of integrating Video SDK." />
     </div>
     <div class="col col--6">
-      <Card heading="4. Start a Voice / Video Call" link="/ios/guide/video-and-audio-calling-api-sdk/quick-start" description="Get started with step by step guide of integrating Video SDK." />
+      <Card heading="4. Basic Features" link="/ios/guide/video-and-audio-calling-api-sdk/features/start-join-meeting" description="Explore basic features such as join, leave and customise sessions."  />
     </div>
   </div>
-  <div class="row ">
-   <div class="col col--6" >
-      <Card heading="5. Basic Features" link="/ios/guide/video-and-audio-calling-api-sdk/features/start-join-meeting" description="Explore basic features such as join, leave and customise sessions."  />
-    </div>
-  </div>
+
 </div>
 
 ## Architecture
