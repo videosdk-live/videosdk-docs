@@ -82,10 +82,6 @@ resumeStreamBtn.addEventListener("click", () => {
 });
 ```
 
-:::note
-You can get the sample code for each of the layouts discussed above here.
-:::
-
 ## API Reference
 
 The API references for all the methods and events utilized in this guide are provided below.
