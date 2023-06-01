@@ -16,27 +16,20 @@ sidebar_position: 1
 slug: quick-start
 ---
 
-import Mermaid from '@theme/Mermaid';
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
+# Quick Start for Conference in React
 
-VideoSDK enables the opportunity to integrate video & audio calling to Web, Android, IOS applications. it provides Programmable SDKs and REST APIs to build up scalable video conferencing applications.
+VideoSDK enables you to embed the video calling feature into your Javascript application in minutes.
+
+In this quickstart, we are going to explore group calling feature of Video SDK. We will go through step by step guide of integrating video calling with Javascript Video SDK.
+
 This guide will get you running with the VideoSDK video & audio calling in minutes.
 
-<!-- ## Sample Project
+## Prerequisites
 
-This quick start will help you integrate some of the basic functionalities that VideoSDK provides. You can check out the complete source code for this guide [here](https://github.com/videosdk-live/videosdk-rtc-javascript-sdk-example). Once you are done with the tutorial given below your app should look like this.
+Before proceeding, ensure that your development environment meets the following requirements:
 
-## Screenshots
-
-![VideoSDK JS Quick Start Join Screen](/img/quick-start/js-join-screen.png) ![VideoSDK JS Quick Start Meeting Screen](/img/quick-start/js-grid-screen.png) -->
-
-## Prerequisite
-
-#### Software Requirements
-
-- Node.js v12+
-- NPM v6+ (comes pre-installed with newer Node versions)
+- Video SDK Developer Account (Not having one, follow **[Video SDK Dashboard](https://app.videosdk.live/)**)
+- Have Node and NPM installed on your device.
 
 :::important
 
@@ -45,29 +38,18 @@ Visit VideoSDK **[dashboard](https://app.videosdk.live/api-keys)** to generate t
 
 :::
 
-## Project Structure
+## Getting Started with the Code!
 
-1. Create one empty project using `mkdir folder_name` on your preferable location.
-2. Set up the structure of your project shown in the directory structure below:
+Follow the steps to create the environment necessary to add video calls into your app. Also you can find the code sample for [quickstart here](https://github.com/videosdk-live/quickstart/tree/main/js-rtc).
 
-```jsx title="Directory Structure"
-   root-Folder Name
-   ├── index.html
-   ├── assets
-   │    ├── css
-   |    |    ├── index.css
-   │    ├── js
-   |         ├── index.js
-   |         ├── config.js
-```
+First create one empty project using `mkdir folder_name` on your preferable location.
 
-3. To run your project; install live-server using the following command.
+### Install Video SDK
 
-```bash
-npm install -g live-server
-```
+You can import VideoSDK using `<script>` tag or you can install the VideoSDK using the below-mentioned npm command. Make sure you are in your app directory before you run this command.
 
-4. SDK Integration
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 <Tabs>
 <TabItem value="<script>" label="<script>" default>
@@ -101,374 +83,373 @@ yarn add @videosdk.live/js-sdk
 </TabItem>
 </Tabs>
 
-## Start Writing Your Code
+## Structure of the project
+
+Your project structure should look like this.
+
+```jsx title="Project Structure"
+  root
+   ├── index.html
+   ├── config.js
+   ├── index.js
+```
+
+We are going to work on two files:
+
+- index.html: Responsible to create basic UI.
+- config.js: Responsible to store token.
+- index.js: Responsible to render meeting view and join the meeting.
 
 ### Step 1 : Create UI
 
-For this tutorial, we have made use of bootstrap and [`index.css`](https://github.com/videosdk-live/videosdk-rtc-javascript-sdk-example/blob/main/index.css) file for making UI a bit responsive.
-Refer assets/index.css file from [here](https://github.com/videosdk-live/videosdk-rtc-javascript-sdk-example/blob/main/index.css) for basic css effects
+In this step, we are going to create HTML file which will have two screens `join-screen` and `grid-screen`.
 
 ```html title="index.html"
+<!DOCTYPE html>
 <html>
-  <head>
-    <!--favicon-->
-    <link
-      rel="shortcut icon"
-      href="https://videosdk.live/favicon/favicon.ico"
-    />
-    <meta charset="UTF-8" />
-    <link rel="stylesheet" href="./assets/css/index.css" />
-    <!--add necessary bootstrap links here -->
-    ...
-  </head>
-  <body class="bg-secondary">
-    <!--join-screen-->
-    <div
-      id="join-screen"
-      class="flex flex-row align-items-center justify-content-center h-100"
-    >
-      <button
-        class="btn btn-primary"
-        id="btnCreateMeeting"
-        onclick="meetingHandler(true)"
-      >
-        New Meeting
-      </button>
+  <head> </head>
 
-      <input
-        type="text"
-        id="txtMeetingCode"
-        placeholder="Enter Meeting Code .."
-      />
-      <button
-        id="btnJoinMeeting"
-        onclick="meetingHandler(false)"
-        class="btn btn-primary"
-      >
-        Join
-      </button>
+  <body>
+    <div id="join-screen">
+      <!-- Create new Meeting Button -->
+      <button id="createMeetingBtn">New Meeting</button>
+      OR
+      <!-- Join existing Meeting -->
+      <input type="text" id="meetingIdTxt" placeholder="Enter Meeting id" />
+      <button id="joinBtn">Join Meeting</button>
     </div>
-    <!--grid-screen-->
-    ...
-    <!--scripts-->
-    <script src="./assets/js/config.js"></script>
-    <script src="./assets/js/index.js"></script>
-    <script src="https://sdk.videosdk.live/js-sdk/0.0.67/videosdk.js"></script>
+
+    <!-- for Managing meeting status -->
+    <div id="textDiv"></div>
+
+    <div id="grid-screen" style="display: none">
+      <!-- To Display MeetingId -->
+      <h3 id="meetingIdHeading"></h3>
+
+      <!-- Controllers -->
+      <button id="leaveBtn">Leave</button>
+      <button id="toggleMicBtn">Toggle Mic</button>
+      <button id="toggleWebCamBtn">Toggle WebCam</button>
+
+      <!-- render Video -->
+      <div class="row" id="videoContainer"></div>
+    </div>
+
+    <!-- Add VideoSDK script -->
+    //highlight-next-line
+    <script src="https://sdk.videosdk.live/js-sdk/0.0.63/videosdk.js"></script>
+    <script src="config.js"></script>
+    <script src="index.js"></script>
   </body>
 </html>
 ```
 
-```html title="index.html"
-<!--grid screen-->
-<div id="grid-screen">
-  <div>
-    <input
-      type="text"
-      class="form-control navbar-brand"
-      id="lblMeetingId"
-      readonly
-    />
-    <button class="btn btn-dark" id="btnToggleMic">Unmute Mic</button>
-    <button class="btn btn-dark" id="btnToggleWebCam">Disable Webcam</button>
-    <button class="btn btn-dark" id="btnLeaveMeeting">Leave Meeting</button>
-  </div>
-  <br />
-  <div id="videoContainer"></div>
-  <div
-    style="
-          position: absolute;
-          top: 10px;
-          right: 0px;
-          height: 50%;
-          overflow-y: scroll;
-        "
-  >
-    <h3>Participants List</h3>
-    <div id="participantsList"></div>
-  </div>
-</div>
-```
+#### Output
 
-### Step 2 : Meeting Initialisation
+<center>
 
-- **config.js file** : set token in this file which is generated from [here](https://app.videosdk.live/login).
+<img src='https://cdn.videosdk.live/website-resources/docs-resources/js_join_screen.png' />
+
+</center>
+
+### Step 2 : Implement Join Screen
+
+Set token in `config.js` file which is generated from [here](https://app.videosdk.live/login).
 
 ```js title="config.js"
-TOKEN = "";
+// Auth token we will use to generate a meeting and connect to it
+TOKEN = "Your_Token_Here";
 ```
 
-- Now you have your token; to create a meeting make use of API_BASE_URL mentioned below in `index.js` file
+Now get all elements from DOM and declare following variables in `index.js` file and then add Event Listener to the join and create meeting buttons.
 
-```jsx title="setting up API_BASE_URL in index.js"
-const API_BASE_URL = "https://api.videosdk.live";
-```
+```js title="index.js"
+// Getting Elements from DOM
+const joinButton = document.getElementById("joinBtn");
+const leaveButton = document.getElementById("leaveBtn");
+const toggleMicButton = document.getElementById("toggleMicBtn");
+const toggleWebCamButton = document.getElementById("toggleWebCamBtn");
+const createButton = document.getElementById("createMeetingBtn");
+const videoContainer = document.getElementById("videoContainer");
+const textDiv = document.getElementById("textDiv");
 
-- validate your token, whether it is empty or not
-
-```js title="token validation index.js"
-//variables
-let token = "";
-
-//handlers
-async function tokenValidation() {
-  if (TOKEN != "") {
-    token = TOKEN;
-  } else {
-    alert("Please Provide Your Token First");
-  }
-}
-```
-
-- After checking your token now it's time to create a meeting that will generate one meeting object made up of multiple parameters.
-- The code below in the code block says that if **newMeeting parameter of a meetingHandler set to true, meeting will be created** and **if you have meetingId then you can set newMeeting to false and join operation will be performed.**
-
-```js title="create and validate meeting index.js"
-//variables
+// Declare Variables
+let meeting = null;
 let meetingId = "";
+let isMicOn = false;
+let isWebCamOn = false;
 
-async function meetingHandler(newMeeting) {
-  let joinMeetingName = "JS-SDK";
+async function initializeMeeting() {}
 
-  //request permission for accessing media(mic/webcam)
-  navigator.mediaDevices
-    .getUserMedia({
-      video: true,
-      audio: true,
-    })
-    .then((stream) => {});
+function createLocalParticipant() {}
 
-  //token validation
-  tokenValidation();
-  if (newMeeting) {
-    const url = `${API_BASE_URL}/v2/rooms`;
-    const options = {
-      method: "POST",
-      headers: { Authorization: token, "Content-Type": "application/json" },
-    };
+function createVideoElement() {}
 
-    const { roomId } = await fetch(url, options)
-      .then((response) => response.json())
-      .catch((error) => alert("error", error));
-    document.getElementById("lblMeetingId").value = roomId;
-    document.getElementById("home-screen").style.display = "none";
-    document.getElementById("grid-screen").style.display = "inline-block";
-    startMeeting(token, roomId, joinMeetingName);
-  } else {
-    meetingId = document.getElementById("txtMeetingCode").value;
-    document.getElementById("lblMeetingId").value = meetingId;
-    document.getElementById("home-screen").style.display = "none";
-    document.getElementById("grid-screen").style.display = "inline-block";
-    startMeeting(token, meetingId, joinMeetingName);
-  }
-}
+function createAudioElement() {}
+
+function setTrack() {}
+
+// Join Meeting Button Event Listener
+joinButton.addEventListener("click", async () => {
+  document.getElementById("join-screen").style.display = "none";
+  textDiv.textContent = "Joining the meeting...";
+
+  roomId = document.getElementById("meetingIdTxt").value;
+  meetingId = roomId;
+
+  await initializeMeeting();
+});
+
+// Create Meeting Button Event Listener
+createButton.addEventListener("click", async () => {
+  document.getElementById("join-screen").style.display = "none";
+  textDiv.textContent = "Please wait, we are joining the meeting";
+
+  //highlight-start
+  // API call to create meeting
+  const url = `https://api.videosdk.live/v2/rooms`;
+  const options = {
+    method: "POST",
+    headers: { Authorization: TOKEN, "Content-Type": "application/json" },
+  };
+
+  const { roomId } = await fetch(url, options)
+    .then((response) => response.json())
+    .catch((error) => alert("error", error));
+  meetingId = roomId;
+  //highlight-end
+
+  await initializeMeeting();
+});
 ```
 
-- so far you have created a meeting and to start a meeting;`startMeeting handler` is there.
+### Step 3 : Initialize meeting
+
+In this step, we will initialize meeting through `initMeeting()` function and join that meeting.
 
 ```js title="startMeeting index.js"
-//DOM elements
-let btnCreateMeeting = document.getElementById("btnCreateMeeting");
-let btnJoinMeeting = document.getElementById("btnJoinMeeting");
-let videoContainer = document.getElementById("videoContainer");
-let btnLeaveMeeting = document.getElementById("btnLeaveMeeting");
-let btnToggleMic = document.getElementById("btnToggleMic");
-let btnToggleWebCam = document.getElementById("btnToggleWebCam");
+// Initialize meeting
+async function initializeMeeting() {
+  window.VideoSDK.config(TOKEN);
 
-function startMeeting(token, meetingId, name) {
-  // Meeting config
-  window.VideoSDK.config(token);
-
-  // Meeting Init
   meeting = window.VideoSDK.initMeeting({
     meetingId: meetingId, // required
-    name: name, // required
+    name: "Thomas Edison", // required
     micEnabled: true, // optional, default: true
     webcamEnabled: true, // optional, default: true
-    maxResolution: "hd", // optional, default: "hd"
   });
 
-  //join meeting
   meeting.join();
 
-  //all remote participants
-  participants = meeting.participants;
+  // Creating local participant
+  createLocalParticipant();
 
-  //create Local Participant
-  createParticipant(meeting.localParticipant.id);
-
-  //local participant stream-enabled
+  // Setting local participant stream
   meeting.localParticipant.on("stream-enabled", (stream) => {
-    setTrack(
-      stream,
-      localParticipant,
-      localParticipantAudio,
-      meeting.localParticipant.id
-    );
+    setTrack(stream, null, meeting.localParticipant, true);
   });
 
-  //remote participant joined
-  meeting.on("participant-joined", (participant) => {...});
+  // meeting joined event
+  meeting.on("meeting-joined", () => {
+    textDiv.style.display = "none";
+    document.getElementById("grid-screen").style.display = "block";
+    document.getElementById(
+      "meetingIdHeading"
+    ).textContent = `Meeting Id: ${meetingId}`;
+  });
 
-  //remote participants left
-  meeting.on("participant-left", (participant) => {...});
+  // meeting left event
+  meeting.on("meeting-left", () => {
+    videoContainer.innerHTML = "";
+  });
 
-  addDomEvents();
+  // Remote participants Event
+  // participant joined
+  meeting.on("participant-joined", (participant) => {
+    //  ...
+  });
+
+  // participant left
+  meeting.on("participant-left", (participant) => {
+    //  ...
+  });
 }
-
-function setTrack(stream, videoElem, audioElement, id) {...}
 ```
 
-- Write a method createParticipant which will create both local and remote participants.
+#### Output
+
+<center>
+
+<img src='https://cdn.videosdk.live/website-resources/docs-resources/js_init_meeting.png' />
+
+</center>
+
+### Step 4 : Create Media Elements
+
+In this step, we will create a function that helps us to create audio and video elements for displaying local and remote participants. We will also set the appropriate media track based on whether it's a video or audio.
 
 ```js title=index.js
-...
-//createParticipant
-function createParticipant(participant) {
-
-  //create videoElem of participant
-  let participantVideo = createVideoElement(
-    participant.id,
-    participant.displayName
-  );
-
-  //create audioEle of participant
-  let participantAudio = createAudioElement(participant.id);
-
-  //append video and audio of participant to videoContainer div
-  videoContainer.appendChild(participantVideo);
-  videoContainer.appendChild(participantAudio);
-}
-
 // creating video element
-function createVideoElement(id, name) {
+function createVideoElement(pId, name) {
   let videoFrame = document.createElement("div");
-  videoFrame.classList.add("video-frame");
+  videoFrame.setAttribute("id", `f-${pId}`);
 
   //create video
   let videoElement = document.createElement("video");
-  videoElement.classList.add("video");
-  videoElement.setAttribute("id", `v-${id}`);
-  videoElement.setAttribute("autoplay", true);
+  videoElement.classList.add("video-frame");
+  videoElement.setAttribute("id", `v-${pId}`);
+  videoElement.setAttribute("playsinline", true);
+  videoElement.setAttribute("width", "300");
   videoFrame.appendChild(videoElement);
 
-  //add overlay
-  let overlay = document.createElement("div");
-  overlay.classList.add("overlay");
-  overlay.innerHTML = `Name : ${name}`;
+  let displayName = document.createElement("div");
+  displayName.innerHTML = `Name : ${name}`;
 
-  videoFrame.appendChild(overlay);
+  videoFrame.appendChild(displayName);
   return videoFrame;
 }
 
 // creating audio element
 function createAudioElement(pId) {
   let audioElement = document.createElement("audio");
-  audioElement.setAttribute("autoPlay", false);
-  audioElement.setAttribute("playsInline", "false");
+  audioElement.setAttribute("autoPlay", "false");
+  audioElement.setAttribute("playsInline", "true");
   audioElement.setAttribute("controls", "false");
   audioElement.setAttribute("id", `a-${pId}`);
   audioElement.style.display = "none";
   return audioElement;
 }
-```
 
-- `participant-joined` event is called when other participants join the meeting and `participant-left` event is called when participants leave the meeting.
-
-```js title="index.js"
-function startMeeting(token, meetingId, name) {
-  ...
-
-  //participant joined
-  meeting.on("participant-joined", (participant) => {
-    createParticipant(participant);
-    participant.on("stream-enabled", (stream) => {
-      console.log("Stream ENable : ", stream);
-      setTrack(
-        stream,
-        document.querySelector(`#v-${participant.id}`),
-        document.getElementById(`a-${participant.id}`),
-        participant.id
-      );
-    });
-  });
-
-  // participants left
-  meeting.on("participant-left", (participant) => {
-    let vElement = document.querySelector(`#v-${participant.id}`);
-    vElement.parentNode.removeChild(vElement);
-    let aElement = document.getElementById(`a-${participant.id}`);
-    aElement.parentNode.removeChild(aElement);
-    participants = new Map(meeting.participants);
-    //remove it from participant list participantId;
-    document.getElementById(`p-${participant.id}`).remove();
-  });
+// creating local participant
+function createLocalParticipant() {
+  let localParticipant = createVideoElement(
+    meeting.localParticipant.id,
+    meeting.localParticipant.displayName
+  );
+  videoContainer.appendChild(localParticipant);
 }
-```
 
-- To manage streams (audio/video) of any participant , create `setTrack handler`.
-
-```js title="index.js"
-function setTrack(stream, videoElem, audioElement, id) {
+// setting media track
+function setTrack(stream, audioElement, participant, isLocal) {
   if (stream.kind == "video") {
+    isWebCamOn = true;
     const mediaStream = new MediaStream();
     mediaStream.addTrack(stream.track);
-    videoElem.srcObject = mediaStream;
-    videoElem
+    let videoElm = document.getElementById(`v-${participant.id}`);
+    videoElm.srcObject = mediaStream;
+    videoElm
       .play()
       .catch((error) =>
         console.error("videoElem.current.play() failed", error)
       );
   }
   if (stream.kind == "audio") {
-    if (id == meeting.localParticipant.id) return;
-    const mediaStream = new MediaStream();
-    mediaStream.addTrack(stream.track);
-    audioElement.srcObject = mediaStream;
-    audioElement
-      .play()
-      .catch((error) => console.error("audioElem.play() failed", error));
+    if (isLocal) {
+      isMicOn = true;
+    } else {
+      const mediaStream = new MediaStream();
+      mediaStream.addTrack(stream.track);
+      audioElement.srcObject = mediaStream;
+      audioElement
+        .play()
+        .catch((error) => console.error("audioElem.play() failed", error));
+    }
   }
 }
 ```
 
-- To manage some common functionalities such as toggleMic and toggleWebcam add dom element events as shown below.
+### Step 5 : Handle participant events
+
+in this step three events are used `participant-joined`, `participant-left` and `stream-enabled`.
+Lets understand how we will use that event.
+
+1. `participant-joined`: When a remote participant joins this event will trigger, in event callback will create video and audio elements which we had define in previous steps for rendering their video and audio streams.
+
+2. `participant-left`: When a remote participant leaves this event will trigger, in event callback will remove the corresponding video and audio elements.
+
+3. `stream-enabled`: It Handle the media track of a specific participant by associating it with the appropriate video or audio element.
 
 ```js title="index.js"
-function addDomEvents() {
-  btnToggleMic.addEventListener("click", () => {
-    if (btnToggleMic.innerText == "Unmute Mic") {
-      meeting.unmuteMic();
-      btnToggleMic.innerText = "Mute Mic";
-    } else {
-      meeting.muteMic();
-      btnToggleMic.innerText = "Unmute Mic";
-    }
+// Initialize meeting
+async function initializeMeeting() {
+  // ...
+
+  //  participant joined
+  meeting.on("participant-joined", (participant) => {
+    let videoElement = createVideoElement(
+      participant.id,
+      participant.displayName
+    );
+    let audioElement = createAudioElement(participant.id);
+    // stream-enabled
+    participant.on("stream-enabled", (stream) => {
+      setTrack(stream, audioElement, participant, false);
+    });
+    videoContainer.appendChild(videoElement);
+    videoContainer.appendChild(audioElement);
   });
 
-  btnToggleWebCam.addEventListener("click", () => {
-    if (btnToggleWebCam.innerText == "Disable Webcam") {
-      meeting.disableWebcam();
-      btnToggleWebCam.innerText = "Enable Webcam";
-    } else {
-      meeting.enableWebcam();
-      btnToggleWebCam.innerText = "Disable Webcam";
-    }
-  });
+  // participants left
+  meeting.on("participant-left", (participant) => {
+    let vElement = document.getElementById(`f-${participant.id}`);
+    vElement.remove(vElement);
 
-  btnLeaveMeeting.addEventListener("click", async () => {
-    // leavemeeting
-    meeting.leave();
-    document.getElementById("join-screen").style.display = "inline-block";
-    document.getElementById("grid-screen").style.display = "none";
+    let aElement = document.getElementById(`a-${participant.id}`);
+    aElement.remove(aElement);
   });
 }
 ```
 
-:::tip
+#### Output
 
-Stuck anywhere? Check out this [example code](https://github.com/videosdk-live/videosdk-rtc-javascript-sdk-example) on GitHub
+<center>
 
-:::
+<img src='https://cdn.videosdk.live/website-resources/docs-resources/js_grid_screen.png' />
+
+</center>
+
+### Step 6 : Implement Controls
+
+In this step, we will implement meeting functionalities such as toggleMic, toggleWebcam and leave meeting
+
+```js title="index.js"
+// leave Meeting Button Event Listener
+leaveButton.addEventListener("click", async () => {
+  meeting?.leave();
+  document.getElementById("grid-screen").style.display = "none";
+  document.getElementById("join-screen").style.display = "block";
+});
+
+// Toggle Mic Button Event Listener
+toggleMicButton.addEventListener("click", async () => {
+  if (isMicOn) {
+    // Disable Mic in Meeting
+    meeting?.muteMic();
+  } else {
+    // Enable Mic in Meeting
+    meeting?.unmuteMic();
+  }
+  isMicOn = !isMicOn;
+});
+
+// Toggle Web Cam Button Event Listener
+toggleWebCamButton.addEventListener("click", async () => {
+  if (isWebCamOn) {
+    // Disable Webcam in Meeting
+    meeting?.disableWebcam();
+
+    let vElement = document.getElementById(`f-${meeting.localParticipant.id}`);
+    vElement.style.display = "none";
+  } else {
+    // Enable Webcam in Meeting
+    meeting?.enableWebcam();
+
+    let vElement = document.getElementById(`f-${meeting.localParticipant.id}`);
+    vElement.style.display = "inline";
+  }
+  isWebCamOn = !isWebCamOn;
+});
+```
 
 ## Run your code
 
@@ -478,11 +459,16 @@ Once you are all set with the steps mentioned above run your application as ment
 live-server --port=8000
 ```
 
-#### **It's outcome will look like this**
+## Final Output
 
-![JS-Join Screen](/img/quick-start/js-join-screen.png)
-![JS-Grid Screen](/img/quick-start/js-grid-screen.png)
+We are done with implementation of customised video calling app in Javascript using Video SDK. To explore more features go through Basic and Advanced features.
 
-:::caution
-For this tutorial purpose, we used a static token to initialize and join the meeting. But for the production version of the app, we recommend you use an Authentication Server that will generate and pass on the token to the Client App. For more details checkout [how to do server setup](/javascript/guide/video-and-audio-calling-api-sdk/server-setup).
+import ReactPlayer from 'react-player'
+
+<ReactPlayer controls autoplay muted loop playing url='https://cdn.videosdk.live/website-resources/docs-resources/js_quickstart_output.mp4' width={"100%"} />
+
+<br/>
+
+:::tip
+You can checkout the complete [quick start example here](https://github.com/videosdk-live/quickstart/tree/main/js-rtc).
 :::

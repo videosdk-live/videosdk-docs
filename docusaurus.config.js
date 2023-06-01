@@ -89,8 +89,13 @@ module.exports = {
         },
         {
           position: "left",
-          label: "Help",
+          label: "FAQ",
           to: "/help_docs/pricing",
+        },
+        {
+          position: "left",
+          label: "Careers",
+          to: "https://jobs.videosdk.live/jobs/Careers",
         },
         // {
         //   position: "left",

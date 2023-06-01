@@ -50,7 +50,19 @@ yarn add "@videosdk.live/react-native-sdk"
 </Tabs>
 
 :::caution
-If you are using Windows machine, make sure to include the **double-quotes** while installation.
+
+- If you are using Windows machine, make sure to include the **double-quotes** while installation.
+
+- If you are facing `Error: unable to get local issuer certificate`, below is the solution for the same
+
+```
+# for CMD
+set NODE_TLS_REJECT_UNAUTHORIZED=0
+
+# for PowerShell
+$env:NODE_TLS_REJECT_UNAUTHORIZED="0"
+```
+
 :::
 
 ### Step 2: Add below lines in android/app/build.gradle

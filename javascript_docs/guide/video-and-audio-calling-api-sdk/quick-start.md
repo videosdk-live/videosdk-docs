@@ -480,8 +480,17 @@ live-server --port=8000
 
 #### **It's outcome will look like this**
 
-![JS-Join Screen](/img/quick-start/js-join-screen.png)
-![JS-Grid Screen](/img/quick-start/js-grid-screen.png)
+<center>
+
+<img src='https://cdn.videosdk.live/website-resources/docs-resources/js-join-screen.png' />
+
+</center>
+
+<center>
+
+<img src='https://cdn.videosdk.live/website-resources/docs-resources/js_grid_screen.png' />
+
+</center>
 
 :::caution
 For this tutorial purpose, we used a static token to initialize and join the meeting. But for the production version of the app, we recommend you use an Authentication Server that will generate and pass on the token to the Client App. For more details checkout [how to do server setup](/javascript/guide/video-and-audio-calling-api-sdk/server-setup).

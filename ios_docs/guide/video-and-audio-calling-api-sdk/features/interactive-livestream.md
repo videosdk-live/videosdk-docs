@@ -48,7 +48,7 @@ This guide will provide an overview of how to implement start and stop Interacti
       type: .GRID, // .SPOTLIGHT | .SIDEBAR,  Default : .GRID
       priority: .SPEAKER, // .PIN, Default : .SPEAKER
       gridSize: 4 // MAX : 25
-    ), 
+    ),
 
     // highlight-next-line
     // Theme of livestream
@@ -80,14 +80,8 @@ This guide will provide an overview of how to implement start and stop Interacti
 #### Example
 
 ```js
-
-stopHLS()
-
+stopHLS();
 ```
-
-:::note
-If you want to learn more about the Interactive Livestream and how you can implement it in your own platform, you can checkout this guide.
-:::
 
 ### Event associated with HLS
 
@@ -101,17 +95,17 @@ func onHlsStateChanged(state: HLSState, hlsUrl: HLSUrl?) {
     switch(state) {
         case .HLS_STARTING:
             print("HLS Starting")
-            
+
         case .HLS_STARTED:
             self.hlsStreamStarted = true
             print("HLS Started")
-            
+
         case .HLS_PLAYABLE:
             print("HLS Playable")
-            
+
         case .HLS_STOPPING:
             print("HLS Stopping")
-            
+
         case .HLS_STOPPED:
             self.hlsStreamStarted = false
             print("HLS Stopped")

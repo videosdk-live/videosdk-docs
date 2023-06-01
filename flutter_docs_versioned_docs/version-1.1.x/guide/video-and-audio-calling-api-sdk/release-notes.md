@@ -3,6 +3,10 @@ sidebar_label: Release Notes
 pagination_label: Release Notes
 ---
 
+# Release Notes
+
+This page will keep you update all the releases of Flutter SDK.
+
 ## v1.1.2
 
 **Release Date** : 19th May 2023
@@ -17,6 +21,7 @@ pagination_label: Release Notes
    - [getScreenShareSources](../../api/sdk-reference/room-class/methods#getscreensharesources)
 
 ---
+
 ## v1.1.1
 
 **Release Date** : 16th May 2023
@@ -26,6 +31,7 @@ pagination_label: Release Notes
 1. Added support of screenShare feature for Flutter Web and MacOS platform
 
 ---
+
 ## v1.1.0
 
 **Release Date** : 25th Apr 2023
