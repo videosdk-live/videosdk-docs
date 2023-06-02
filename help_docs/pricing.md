@@ -289,11 +289,12 @@ slug: pricing
       - Broadcasting
       - Livestream Encoding
 #### 3. Limits for "Free Account"
-  - Maximum of 50 participants in one video conference room
-  - Maximum of 9 speakers in one Livestream speaker room
-  - Maximum of 100 viewers in one interactive Livestream (If used with chat feature)
 
-  Note: If one of the above-mentioned limits is reached, services will be held for “Free Account”
+- By default, maximum of 10 participants in one video conference room.
+- By default, maximum of 10 speakers in one Livestream speaker room.
+- By default, maximum of 150 viewers in one interactive Livestream (If used with chat feature).
+
+Note: If one of the above-mentioned limits is reached, services will be held. In order to increase the above limits, please [upgrade the plan](https://app.videosdk.live/profile/billing?page=1&perPage=20&default_action=save-card) on our dashboard and then contact us here : https://www.videosdk.live/contact
 
 ## Monthly invoices
 
@@ -331,19 +332,19 @@ slug: pricing
     - Invoice currency will be INR at the foreign exchange rate on the day of invoice generation.
     - As per the GST guidelines, 18% GST will be imposed on the final invoice amount, unmodified until the Government of India's law modification. And, under SAC Code - 998313, the applicable TDS would be 2%, under section 193(C) or 193(J) as technical services.
     - A user must provide registered GST & Company PAN data on the Video SDK user dashboard at least 3 days before invoice creation to get the GST invoice.
-
+  
 ## Quotas & limits
 
 - For "Free Account"
-    - Maximum of 50 participants in one video conference room
-    - Maximum of 9 speakers in one Livestream speaker room
-    - Maximum of 100 viewers in one Interactive Livestream (If used with chat feature)
-    
-    **Note:** If one of the above-mentioned limits is reached, services will be held for “Free Account”
-    
+  - By default, maximum of 10 participants in one video conference room.
+  - By default, maximum of 10 speakers in one Livestream speaker room.
+  - By default, maximum of 150 viewers in one interactive Livestream (If used with chat feature).
+
+Note: If one of the above-mentioned limits is reached, services will be held. In order to increase the above limits, please [upgrade the plan](https://app.videosdk.live/profile/billing?page=1&perPage=20&default_action=save-card) on our dashboard and then contact us here : https://www.videosdk.live/contact
+
 - For “Paid Accounts”
-    - Maximum of 50 participants in one video conference room
-    - Maximum of 9 speakers in one Livestream speaker room
-    - Maximum of 100 viewers in one Interactive Livestream (If used with chat feature)
-    
-    Note: Please contact us if you want to enhance the aforementioned quota for your [subscribed account](https://videosdk.live/contact)
+  - By default, maximum of 10 participants in one video conference room.
+  - By default, maximum of 10 speakers in one Livestream speaker room.
+  - By default, maximum of 150 viewers in one interactive Livestream (If used with chat feature).
+
+Note: Please contact us if you want to enhance the aforementioned quota for your [subscribed account](https://videosdk.live/contact)
