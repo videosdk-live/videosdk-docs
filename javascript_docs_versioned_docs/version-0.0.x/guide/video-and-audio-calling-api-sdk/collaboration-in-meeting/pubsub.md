@@ -81,10 +81,13 @@ function onMessageReceived(data) {
   console.log(`New message received: ${message}`);
 }
 
-function subscribe() {
+async function subscribe() {
   // Subscribe 'CHAT' topic
-  meeting?.pubSub?.subscribe("CHAT", onMessageReceived);
-}
+  let oldMessages = await meeting?.pubSub?.subscribe("CHAT", onMessageReceived);
+
+// Getting Old messages for upcoming participant
+  console.log(oldMessages);
+
 ```
 
 ## Applications of PubSub

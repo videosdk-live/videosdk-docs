@@ -55,8 +55,8 @@ msgSendBtn.addEventListener("click", async () => {
 
 ```js
 //subscribe to the 'CHAT' on meeting join
-meeting.on("meeting-joined", () => {
-  meeting.pubSub.subscribe("CHAT", (data) => {
+meeting.on("meeting-joined", async () => {
+  let oldMessages = await meeting.pubSub.subscribe("CHAT", (data) => {
     let { message, senderId, senderName, timestamp } = data;
 
     const chatBox = document.getElementById("chatArea");
@@ -76,6 +76,9 @@ meeting.on("meeting-joined", () => {
 
     chatBox.insertAdjacentHTML("beforeend", chatTemplate);
   });
+
+  // Getting Old messages for upcoming participant
+  console.log("OLD Message", oldMessages);
 });
 ```
 
