@@ -16,7 +16,7 @@ sidebar_position: 1
 slug: quick-start
 ---
 
-# Quick Start for Conference in React
+# Quick Start for Conference in Javascript
 
 VideoSDK enables you to embed the video calling feature into your Javascript application in minutes.
 
