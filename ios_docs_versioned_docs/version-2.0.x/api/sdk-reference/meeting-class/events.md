@@ -328,5 +328,51 @@ meeting.listeners.onError(error: VideoSDKError) {
 
 ```
 
+---
+
+### onPinStateChanged()
+
+- This event will be triggered when participant pin state changes.
+- It will pass **`participantId, pinType`** as an event parameter.
+- All available pin states are `SHARE_AND_CAM`, `CAM` and `SHARE`.
+
+#### Event parameters
+
+- **data**: { **participantId**: String, **pinType**: PinType }
+  - **participantId**: String
+  - **pinType**: PinType
+
+#### Example
+
+```js
+meeting.listeners.onPinStateChanged(participantId: String, pinType: PinType) {
+    ...
+}
+
+```
+
+---
+
+### onParticipantModeChanged()
+
+- This event will be triggered when participant mode changes.
+- It will pass **`participantId, mode`** as an event parameter.
+- All available participant modes are `CONFERENCE` and `VIEWER`.
+
+#### Event parameters
+
+- **data**: { **participantId**: String, **mode**: Mode }
+  - **participantId**: String
+  - **mode**: Mode
+
+#### Example
+
+```js
+meeting.listeners.onParticipantModeChanged(participantId: String, mode: Mode) {
+    ...
+}
+
+```
+
 
 </div>

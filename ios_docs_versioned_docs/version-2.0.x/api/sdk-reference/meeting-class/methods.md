@@ -202,7 +202,7 @@ stopLivestream();
 
 #### Events associated with `startHLS()`:
 
-- Every participant will receive a callback of state change of HLS [`onHlsStateChanged`](./events#onHlsStateChanged)
+- Every participant will receive a callback of state change of HLS [`onHlsStateChanged`](./events#onhlsstatechanged)
 
 #### Example
 
@@ -230,12 +230,33 @@ startHLS(config: config)
 
 #### Events associated with `stopHLS()`:
 
-- Every participant will receive a callback of state change of HLS [`onHlsStateChanged`](./events#onHlsStateChanged)
+- Every participant will receive a callback of state change of HLS [`onHlsStateChanged`](./events#onhlsstatechanged)
 
 #### Example
 
 ```js
 stopHLS()
+```
+
+---
+
+### changeMode()
+
+- `changeMode()` is used to change the mode of participant.
+
+#### Parameters
+
+- **mode**: Mode
+   - All available participant modes are `CONFERENCE` and `VIEWER`.
+
+#### Events associated with `changeMode()`:
+
+- Every participant will receive a callback of state change of mode [`onParticipantModeChanged`](./events#onparticipantmodechanged)
+
+#### Example
+
+```js
+changeMode(.VIEWER | .CONFERENCE)
 ```
 
 </div>
