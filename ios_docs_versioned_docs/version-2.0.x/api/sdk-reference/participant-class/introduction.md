@@ -86,6 +86,16 @@ let participants = meeting.participants;
 </div>
 <div class="col col--4 margin-bottom--sm" >
 
+- [pin](./methods#pin)
+
+</div>
+<div class="col col--4 margin-bottom--sm" >
+
+- [unpin](./methods#unpin)
+
+</div>
+<div class="col col--4 margin-bottom--sm" >
+
 - [remove](./methods#remove)
 
 </div>

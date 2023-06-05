@@ -94,4 +94,33 @@ pagination_label: Participant Class Methods
 
 - `void`
 
+---
+
+### pin()
+
+- `pin()` is used to pin this participant.
+
+#### Parameters
+
+- `peerId`: `String`
+- `pinType`: `PinType`
+
+#### Returns
+
+- `void`
+
+---
+
+### unpin()
+
+- `unpin()` is used to unpin this participant.
+
+#### Parameters
+
+- `pinType`: `PinType`
+
+#### Returns
+
+- `void`
+
 </div>

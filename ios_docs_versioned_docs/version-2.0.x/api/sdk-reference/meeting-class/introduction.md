@@ -224,6 +224,17 @@ import events from "./../data/meeting-class/events.json";
 - [onError](./events#onerror)
 
 </div>
+<div class="col col--4 margin-bottom--sm" >
+
+- [onPinStateChanged](./events#onpinstatechanged)
+
+</div>
+
+<div class="col col--4 margin-bottom--sm" >
+
+- [onParticipantModeChanged](./events#onparticipantmodechanged)
+
+</div>
 
 </div>
 
