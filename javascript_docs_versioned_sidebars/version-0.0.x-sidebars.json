@@ -67,7 +67,8 @@
                 "guide/video-and-audio-calling-api-sdk/render-media/understanding-call-quality",
                 "guide/video-and-audio-calling-api-sdk/render-media/optimize-video-track",
                 "guide/video-and-audio-calling-api-sdk/render-media/optimize-audio-track",
-                "guide/video-and-audio-calling-api-sdk/render-media/picture-in-picture"
+                "guide/video-and-audio-calling-api-sdk/render-media/picture-in-picture",
+                "guide/video-and-audio-calling-api-sdk/render-media/image-capturer"
               ],
               "collapsed": true
             },
