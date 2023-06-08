@@ -185,33 +185,11 @@ In this step, we are going to create HTML file which will render `join-screen`, 
       </p>
     </div>
     <div style="display: flex; align-items: center; margin-top: 8px">
-      <button
-        ng-show="disableWebcamBtn"
-        style="cursor: pointer"
-        ng-click="disableWebcam()"
-      >
-        Disable Webcam
+      <button style="cursor: pointer" ng-click="toggleWebcam()">
+        Toggle Webcam
       </button>
-      <button
-        ng-show="enableWebcamBtn"
-        style="margin-left: 4px; cursor: pointer"
-        ng-click="enableWebcam()"
-      >
-        Enable Webcam
-      </button>
-      <button
-        ng-show="disableMicBtn"
-        style="margin-left: 4px; cursor: pointer"
-        ng-click="muteMic()"
-      >
-        Disable Mic
-      </button>
-      <button
-        ng-show="enableMicBtn"
-        style="margin-left: 4px; cursor: pointer"
-        ng-click="unmuteMic()"
-      >
-        Enable Mic
+      <button style="margin-left: 4px; cursor: pointer" ng-click="toggleMic()">
+        Toggle Mic
       </button>
       <button class="leave-btn" ng-click="leaveMeeting()">Leave Meeting</button>
     </div>
@@ -575,115 +553,117 @@ $scope.handleMeetingEvents = function (meeting) {
 In this step, we will create a function that helps us to create audio and video elements for displaying local and remote participants. We will also set the appropriate media track based on whether it's a video or audio.
 
 ```js title=app.js
-// creating video element
-$scope.createVideoElement = function (
-  stream,
-  participant,
-  participantMediaElement
-) {
-  var video = document.createElement("video");
-  var mediaStream = new MediaStream();
-  mediaStream.addTrack(stream.track);
-  video.srcObject = mediaStream;
-  video.autoplay = true;
-  video.id = `v-${participant.id}`;
-  video.style.marginTop = "6px";
-  video.style.marginLeft = "4px";
-  video.style.marginRight = "4px";
-  video.style.width = "320px";
-  video.style.height = "300px";
-  video.style.objectFit = "cover";
-  video.style.transform = "rotate('90')";
-  video.style.borderRadius = "10px";
-  video.setAttribute("playsinline", true);
-  var videoElement = document.createElement("div");
-  videoElement.setAttribute("id", `video-container-${participant.id}`);
-  participantMediaElement.appendChild(videoElement);
-  videoElement.appendChild(video);
+myApp.controller("myController", function ($scope, $http, ENV) {
+  // creating video element
+  $scope.createVideoElement = function (
+    stream,
+    participant,
+    participantMediaElement
+  ) {
+    var video = document.createElement("video");
+    var mediaStream = new MediaStream();
+    mediaStream.addTrack(stream.track);
+    video.srcObject = mediaStream;
+    video.autoplay = true;
+    video.id = `v-${participant.id}`;
+    video.style.marginTop = "6px";
+    video.style.marginLeft = "4px";
+    video.style.marginRight = "4px";
+    video.style.width = "320px";
+    video.style.height = "300px";
+    video.style.objectFit = "cover";
+    video.style.transform = "rotate('90')";
+    video.style.borderRadius = "10px";
+    video.setAttribute("playsinline", true);
+    var videoElement = document.createElement("div");
+    videoElement.setAttribute("id", `video-container-${participant.id}`);
+    participantMediaElement.appendChild(videoElement);
+    videoElement.appendChild(video);
 
-  var cornerDisplayName = document.createElement("div");
-  cornerDisplayName.setAttribute("id", `name-container-${participant.id}`);
-  cornerDisplayName.style.position = "absolute";
-  cornerDisplayName.style.bottom = "16px";
-  cornerDisplayName.style.left = "16px";
-  cornerDisplayName.style.color = "white";
-  cornerDisplayName.style.backgroundColor = "rgba(0, 0, 0, 0.5)";
-  cornerDisplayName.style.padding = "2px";
-  cornerDisplayName.style.borderRadius = "2px";
-  cornerDisplayName.style.fontSize = "12px";
-  cornerDisplayName.style.fontWeight = "bold";
-  cornerDisplayName.style.zIndex = "1";
-  cornerDisplayName.style.padding = "4px";
-  cornerDisplayName.innerHTML =
-    participant.displayName.length > 15
-      ? participant.displayName.substring(0, 15) + "..."
-      : participant.displayName;
-  videoElement.appendChild(cornerDisplayName);
-};
+    var cornerDisplayName = document.createElement("div");
+    cornerDisplayName.setAttribute("id", `name-container-${participant.id}`);
+    cornerDisplayName.style.position = "absolute";
+    cornerDisplayName.style.bottom = "16px";
+    cornerDisplayName.style.left = "16px";
+    cornerDisplayName.style.color = "white";
+    cornerDisplayName.style.backgroundColor = "rgba(0, 0, 0, 0.5)";
+    cornerDisplayName.style.padding = "2px";
+    cornerDisplayName.style.borderRadius = "2px";
+    cornerDisplayName.style.fontSize = "12px";
+    cornerDisplayName.style.fontWeight = "bold";
+    cornerDisplayName.style.zIndex = "1";
+    cornerDisplayName.style.padding = "4px";
+    cornerDisplayName.innerHTML =
+      participant.displayName.length > 15
+        ? participant.displayName.substring(0, 15) + "..."
+        : participant.displayName;
+    videoElement.appendChild(cornerDisplayName);
+  };
 
-// creating audio element
-$scope.createAudioElement = function (
-  stream,
-  participant,
-  participantMediaElement
-) {
-  var audio = document.createElement("audio");
-  var mediaStream = new MediaStream();
-  mediaStream.addTrack(stream.track);
-  audio.srcObject = mediaStream;
-  audio.autoplay = true;
-  audio.muted;
-  audio.id = `audio-${participant.id}`;
-  var audioElement = document.createElement("div");
-  audioElement.setAttribute("id", `audio-container-${participant.id}`);
-  participantMediaElement.appendChild(audioElement);
-  audioElement.appendChild(audio);
-};
+  // creating audio element
+  $scope.createAudioElement = function (
+    stream,
+    participant,
+    participantMediaElement
+  ) {
+    var audio = document.createElement("audio");
+    var mediaStream = new MediaStream();
+    mediaStream.addTrack(stream.track);
+    audio.srcObject = mediaStream;
+    audio.autoplay = true;
+    audio.muted;
+    audio.id = `audio-${participant.id}`;
+    var audioElement = document.createElement("div");
+    audioElement.setAttribute("id", `audio-container-${participant.id}`);
+    participantMediaElement.appendChild(audioElement);
+    audioElement.appendChild(audio);
+  };
 
-// handle streams
-$scope.handleStreamEnabled = function (
-  stream,
-  participant,
-  isLocal,
-  participantMediaElement
-) {
-  if (stream.kind == "video") {
-    var nameElement = document.getElementById(
-      `name-container-${participant.id}`
-    );
-    participantMediaElement.removeChild(nameElement);
-    $scope.createVideoElement(stream, participant, participantMediaElement);
-  }
-  if (!isLocal) {
-    if (stream.kind == "audio") {
-      $scope.createAudioElement(stream, participant, participantMediaElement);
-    }
-  }
-};
-
-$scope.handleStreamDisabled = function (
-  stream,
-  participant,
-  isLocal,
-  participantMediaElement
-) {
-  if (stream.kind == "video") {
-    var videoElement = document.getElementById(
-      `video-container-${participant.id}`
-    );
-    var nameElement = $scope.createNameElement(participant);
-    participantMediaElement.removeChild(videoElement);
-    participantMediaElement.appendChild(nameElement);
-  }
-  if (!isLocal) {
-    if (stream.kind == "audio") {
-      var audioElement = document.getElementById(
-        `audio-container-${participant.id}`
+  // handle streams
+  $scope.handleStreamEnabled = function (
+    stream,
+    participant,
+    isLocal,
+    participantMediaElement
+  ) {
+    if (stream.kind == "video") {
+      var nameElement = document.getElementById(
+        `name-container-${participant.id}`
       );
-      participantMediaElement.removeChild(audioElement);
+      participantMediaElement.removeChild(nameElement);
+      $scope.createVideoElement(stream, participant, participantMediaElement);
     }
-  }
-};
+    if (!isLocal) {
+      if (stream.kind == "audio") {
+        $scope.createAudioElement(stream, participant, participantMediaElement);
+      }
+    }
+  };
+
+  $scope.handleStreamDisabled = function (
+    stream,
+    participant,
+    isLocal,
+    participantMediaElement
+  ) {
+    if (stream.kind == "video") {
+      var videoElement = document.getElementById(
+        `video-container-${participant.id}`
+      );
+      var nameElement = $scope.createNameElement(participant);
+      participantMediaElement.removeChild(videoElement);
+      participantMediaElement.appendChild(nameElement);
+    }
+    if (!isLocal) {
+      if (stream.kind == "audio") {
+        var audioElement = document.getElementById(
+          `audio-container-${participant.id}`
+        );
+        participantMediaElement.removeChild(audioElement);
+      }
+    }
+  };
+});
 ```
 
 ### Step 6 : Handle participant events
@@ -698,42 +678,45 @@ Let's understand the use of that events.
 
 3. `stream-enabled`: It Handle the media track of a specific participant by associating it with the appropriate video or audio element.
 
-4. `stream-disabled`: It Handle the media track of a specific participant when participant toogle video or audio by associating it with the appropriate video or audio element
+4. `stream-disabled`: It Handle the media track of a specific participant when participant toogle video or audio by associating it with the appropriate video or audio element.
 
 ```js title="index.js"
-// participant joined
-meeting.on("participant-joined", (participant) => {
-  console.log("New Participant Joined: ", participant.id);
+$scope.handleMeetingEvents = function (meeting) {
+  //...
+  // participant joined
+  meeting.on("participant-joined", (participant) => {
+    console.log("New Participant Joined: ", participant.id);
 
-  var { participantMediaElement } = $scope.participantGridGenerator({
-    participant: participant,
+    var { participantMediaElement } = $scope.participantGridGenerator({
+      participant: participant,
+    });
+    participant.setQuality("high");
+    participant.on("stream-enabled", (stream) => {
+      $scope.handleStreamEnabled(
+        stream,
+        participant,
+        false,
+        participantMediaElement
+      );
+    });
+    participant.on("stream-disabled", (stream) => {
+      $scope.handleStreamDisabled(
+        stream,
+        participant,
+        false,
+        participantMediaElement
+      );
+    });
   });
-  participant.setQuality("high");
-  participant.on("stream-enabled", (stream) => {
-    $scope.handleStreamEnabled(
-      stream,
-      participant,
-      false,
-      participantMediaElement
-    );
-  });
-  participant.on("stream-disabled", (stream) => {
-    $scope.handleStreamDisabled(
-      stream,
-      participant,
-      false,
-      participantMediaElement
-    );
-  });
-});
 
-// participants left
-meeting.on("participant-left", (participant) => {
-  var participantGridItem = document.getElementById(
-    `participant-grid-item-${participant.id}`
-  );
-  $scope.participantGridContainer.removeChild(participantGridItem);
-});
+  // participants left
+  meeting.on("participant-left", (participant) => {
+    var participantGridItem = document.getElementById(
+      `participant-grid-item-${participant.id}`
+    );
+    $scope.participantGridContainer.removeChild(participantGridItem);
+  });
+};
 ```
 
 #### Output
@@ -749,45 +732,39 @@ meeting.on("participant-left", (participant) => {
 In this step, we will implement meeting functionalities such as toggleMic, toggleWebcam and leave meeting
 
 ```js title="app.js"
-$scope.enableWebcamBtn = false;
-$scope.enableMicBtn = false;
-$scope.disableWebcamBtn = true;
-$scope.disableMicBtn = true;
+myApp.controller("myController", function ($scope, $http, ENV) {
+  //...
+  $scope.isWebcamOn = false;
+  $scope.isMicOn = false;
 
-// Disable Webcam in Meeting
-$scope.disableWebcam = function () {
-  $scope.meeting.disableWebcam();
-  $scope.enableWebcamBtn = true;
-  $scope.disableWebcamBtn = false;
-};
+  $scope.handleMeetingEvents = function (meeting) {
+    //..
+    // Toggle Webcam in Meeting
+    $scope.toggleWebcam = function () {
+      if ($scope.isWebcamOn) {
+        $scope.meeting.disableWebcam();
+      } else {
+        $scope.meeting.enableWebcam();
+      }
+    };
 
-// Enable Webcam in Meeting
-$scope.enableWebcam = function () {
-  $scope.meeting.enableWebcam();
-  $scope.enableWebcamBtn = false;
-  $scope.disableWebcamBtn = true;
-};
+    // Toggle Webcam in Meeting
+    $scope.toggleMic = function () {
+      if ($scope.isMicOn) {
+        $scope.meeting.muteMic();
+      } else {
+        $scope.meeting.unmuteMic();
+      }
+    };
 
-// Mute mic in Meeting
-$scope.muteMic = function () {
-  $scope.meeting.muteMic();
-  $scope.enableMicBtn = true;
-  $scope.disableMicBtn = false;
-};
-
-// Unmute mic in Meeting
-$scope.unmuteMic = function () {
-  $scope.meeting.unmuteMic();
-  $scope.enableMicBtn = false;
-  $scope.disableMicBtn = true;
-};
-
-// leave meeting
-$scope.leaveMeeting = function () {
-  $scope.meeting.leave();
-  $scope.showMeetingScreen = false;
-  $scope.showJoinScreen = true;
-};
+    // leave meeting
+    $scope.leaveMeeting = function () {
+      $scope.meeting.leave();
+      $scope.showMeetingScreen = false;
+      $scope.showJoinScreen = true;
+    };
+  };
+});
 ```
 
 ## Run your code

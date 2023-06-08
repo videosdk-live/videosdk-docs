@@ -20,7 +20,7 @@ slug: quick-start
 
 VideoSDK enables you to embed the video calling feature into your Angular 2 application in minutes.
 
-In this quickstart, we are going to explore group calling feature of Video SDK. We will go through step by step guide of integrating video calling with Angular JS Video SDK.
+In this quickstart, we are going to explore group calling feature of Video SDK. We will go through step by step guide of integrating video calling with Angular 2 Video SDK.
 
 This guide will get you running with the VideoSDK video & audio calling in minutes.
 
@@ -249,65 +249,26 @@ In this step, we are going to create HTML file which will render `join-screen` a
 - After joinScreen we will create `topBar` UI.
 
 ```html title="topBar.html"
-<div *ngIf="showTopBar" style="height: 65px; background-color: lightgray">
-  <div
-    style="
-      display: flex;
-      flex-direction: column;
-      margin-left: 16px;
-      margin-right: 16px;
-      padding-top: 8px;
-      padding-bottom: 8px;
-      height: 100%;
-    "
-  >
+<div
+  style="height: 70px; background-color: lightgray"
+  ng-controller="myController"
+  ng-show="showMeetingScreen"
+  id="top-bar"
+>
+  <div class="top-bar-div">
     <div>
       <p style="margin-top: 0px; margin-bottom: 0px; font-weight: 700">
-        MeetingId: {{ meetingId }}
+        MeetingId: {{meetingId}}
       </p>
     </div>
-    <div style="display: flex; margin-top: 8px">
-      <button
-        *ngIf="disableWebcamBtn"
-        style="cursor: pointer"
-        (click)="fireDisableWebcam()"
-      >
-        Disable Webcam
+    <div style="display: flex; align-items: center; margin-top: 8px">
+      <button style="cursor: pointer" ng-click="toggleWebcam()">
+        Toggle Webcam
       </button>
-      <button
-        *ngIf="enableWebcamBtn"
-        style="cursor: pointer"
-        (click)="fireEnableWebcam()"
-      >
-        Enable Webcam
+      <button style="margin-left: 4px; cursor: pointer" ng-click="toggleMic()">
+        Toggle Mic
       </button>
-      <button
-        *ngIf="disableMicBtn"
-        style="margin-left: 4px; cursor: pointer"
-        (click)="fireMuteMic()"
-      >
-        Disable Mic
-      </button>
-      <button
-        *ngIf="enableMicBtn"
-        style="margin-left: 4px; cursor: pointer"
-        (click)="fireUnmuteMic()"
-      >
-        Enable Mic
-      </button>
-      <button
-        style="
-          max-width: max-content;
-          margin-left: 4px;
-          cursor: pointer;
-          background-color: red;
-          color: white;
-          border: 2px solid red;
-        "
-        (click)="fireLeaveMeeting()"
-      >
-        Leave Meeting
-      </button>
+      <button class="leave-btn" ng-click="leaveMeeting()">Leave Meeting</button>
     </div>
   </div>
 </div>
@@ -317,9 +278,11 @@ In this step, we are going to create HTML file which will render `join-screen` a
 
 <center>
 
-<img src='https://cdn.videosdk.live/website-resources/docs-resources/angular/angualr2-topbar.png' />
+<img src='https://cdn.videosdk.live/website-resources/docs-resources/angular/angular2-topbar.png' />
 
 </center>
+
+<br/>
 
 - Now, we will place `join-screen` and `top-bar` component in one file called `app.component.html` and create `meeting-container` here.
 
@@ -329,12 +292,11 @@ In this step, we are going to create HTML file which will render `join-screen` a
   // highlight-next-line
   <app-join-screen></app-join-screen>
   <!-- join-screen End -->
-
 </div>
 <div *ngIf="showMeetingScreen">
   <!-- topbar Start -->
   // highlight-next-line
-  <app-top-bar />
+  <app-top-bar></app-top-bar>
   <!-- topbar End -->
 
   <!-- Meeting Container -->
@@ -358,7 +320,7 @@ In this step, we are going to create HTML file which will render `join-screen` a
   // highlight-end
 </div>
 
-<router-outlet /></router-outlet>
+<router-outlet></router-outlet>
 ```
 
 ### Step 3 : Implement Join Screen
@@ -510,11 +472,22 @@ In this step, we will initialize meeting through `initMeeting()` function and jo
   handleMeetingEvents(meeting: any) {}
 ```
 
+#### Output
+
+<center>
+
+<img src='https://cdn.videosdk.live/website-resources/docs-resources/angular/angular2-initMeeting.png' />
+
+</center>
+
+<br/>
+
 ### Step 5: Handle Meeting Events
 
-```js ="app.component.ts"
+In this step, we will create participant grid and handle events like `meeting-joined`, `meeting-left` and participant events.
 
-// variable initialization
+```js ="app.component.ts"
+export class AppComponent {
   handleMeetingEvents(meeting: any) {
     this.localParticipant = meeting.localParticipant;
     this.participants = meeting.participants;
@@ -524,10 +497,10 @@ In this step, we will initialize meeting through `initMeeting()` function and jo
       this.showMeetingScreen = true;
     }
 
-  // meeting joined event
-  meeting.on('meeting-joined', () => {
+    // meeting joined event
+    meeting.on("meeting-joined", () => {
       var showJoinScreenMessage = document.getElementById(
-        'show-join-screen-message'
+        "show-join-screen-message"
       );
       this.renderer.removeChild(document.body, showJoinScreenMessage);
       const { participantMediaElement } = this.participantGridGenerator(
@@ -535,8 +508,8 @@ In this step, we will initialize meeting through `initMeeting()` function and jo
       );
       this.showTopBar = true;
 
-      meeting.localParticipant.on('stream-enabled', (stream: any) => {
-        console.log('Stream Enabled: ');
+      meeting.localParticipant.on("stream-enabled", (stream: any) => {
+        console.log("Stream Enabled: ");
         this.handleStreamEnabled(
           stream,
           meeting.localParticipant,
@@ -544,8 +517,8 @@ In this step, we will initialize meeting through `initMeeting()` function and jo
           participantMediaElement
         );
       });
-    meeting.localParticipant.on('stream-disabled', (stream: any) => {
-        console.log('Stream Disabled: ');
+      meeting.localParticipant.on("stream-disabled", (stream: any) => {
+        console.log("Stream Disabled: ");
         this.handleStreamDisabled(
           stream,
           meeting.localParticipant,
@@ -557,7 +530,7 @@ In this step, we will initialize meeting through `initMeeting()` function and jo
 
     // meeting left event
     meeting.on("meeting-left", () => {
-    while (this.participantGridContainer.nativeElement.firstChild) {
+      while (this.participantGridContainer.nativeElement.firstChild) {
         this.participantGridContainer.nativeElement.removeChild(
           this.participantGridContainer.nativeElement.firstChild
         );
@@ -584,6 +557,7 @@ In this step, we will initialize meeting through `initMeeting()` function and jo
       //...
     });
   }
+}
 ```
 
 ### Step 6 : Create Media Elements
@@ -591,233 +565,234 @@ In this step, we will initialize meeting through `initMeeting()` function and jo
 In this step, we will create a function that helps us to create audio and video elements for displaying local and remote participants. We will also set the appropriate media track based on whether it's a video or audio.
 
 ```js title=app.component.ts
-// creating video element
-createVideoElement(
-  stream: any,
-  participant: any,
-  participantMediaElement: any
-) {
-  const video = this.renderer.createElement('video');
-  const mediaStream = new MediaStream();
-  mediaStream.addTrack(stream.track);
-  this.renderer.setAttribute(video, 'id', `v-${participant.id}`);
-  this.renderer.setAttribute(video, 'autoplay', 'true');
-  this.renderer.setAttribute(video, 'playsinline', 'true');
-  this.renderer.setAttribute(video, 'muted', 'true');
-  this.renderer.setAttribute(
-    video,
-    'style',
-    'width: 100%; height: 100%;position: absolute;top: 0;left: 0;object-fit: cover;'
-  );
-  this.renderer.setProperty(video, 'srcObject', mediaStream);
-  const videoElement = this.renderer.createElement('div');
-  this.renderer.setAttribute(
-    videoElement,
-    'id',
-    `video-container-${participant.id}`
-  );
-
-  this.renderer.setAttribute(
-    videoElement,
-    'style',
-    'width: 100%; height: 100%;'
-  );
-  this.renderer.setStyle(videoElement, 'position', 'relative');
-  this.renderer.appendChild(participantMediaElement, videoElement);
-  this.renderer.appendChild(videoElement, video);
-  const cornerDisplayName = this.renderer.createElement('div');
-  this.renderer.setAttribute(
-    cornerDisplayName,
-    'id',
-    `name-container-${participant.id}`
-  );
-  this.renderer.setStyle(cornerDisplayName, 'position', 'absolute');
-  this.renderer.setStyle(cornerDisplayName, 'bottom', '16px');
-  this.renderer.setStyle(cornerDisplayName, 'left', '16px');
-  this.renderer.setStyle(cornerDisplayName, 'color', 'white');
-  this.renderer.setStyle(
-    cornerDisplayName,
-    'backgroundColor',
-    'rgba(0, 0, 0, 0.5)'
-  );
-  this.renderer.setStyle(cornerDisplayName, 'padding', '2px');
-  this.renderer.setStyle(cornerDisplayName, 'borderRadius', '2px');
-  this.renderer.setStyle(cornerDisplayName, 'fontSize', '12px');
-  this.renderer.setStyle(cornerDisplayName, 'fontWeight', 'bold');
-  this.renderer.setStyle(cornerDisplayName, 'zIndex', '1');
-  this.renderer.setStyle(cornerDisplayName, 'padding', '4px');
-  cornerDisplayName.innerHTML =
-    participant.displayName.length > 15
-      ? participant.displayName.substring(0, 15) + '...'
-      : participant.displayName;
-  this.renderer.appendChild(videoElement, cornerDisplayName);
-}
-
-// creating audio element
-createAudioElement(
-  stream: any,
-  participant: any,
-  participantMediaElement: any
-) {
-  const audio = this.renderer.createElement('audio');
-  const mediaStream = new MediaStream();
-  mediaStream.addTrack(stream.track);
-  this.renderer.setAttribute(audio, 'id', `audio-${participant.id}`);
-  this.renderer.setAttribute(audio, 'autoplay', 'true');
-  this.renderer.setAttribute(audio, 'playsinline', 'true');
-  this.renderer.setAttribute(audio, 'muted', 'true');
-  this.renderer.setProperty(audio, 'srcObject', mediaStream);
-
-  const audioElement = this.renderer.createElement('div');
-  this.renderer.setAttribute(
-    audioElement,
-    'id',
-    `audio-container-${participant.id}`
-  );
-  this.renderer.appendChild(participantMediaElement, audioElement);
-  this.renderer.appendChild(audioElement, audio);
-}
-
-// creating name element
-createNameElemeent(participant: any) {
-  var nameElement = this.renderer.createElement('div');
-  this.renderer.setAttribute(
-    nameElement,
-    'id',
-    `name-container-${participant.id}`
-  );
-  nameElement.innerHTML = participant.displayName.charAt(0).toUpperCase();
-  this.renderer.setStyle(nameElement, 'backgroundColor', 'black');
-  this.renderer.setStyle(nameElement, 'color', 'white');
-  this.renderer.setStyle(nameElement, 'textAlign', 'center');
-  this.renderer.setStyle(nameElement, 'padding', '32px');
-  this.renderer.setStyle(nameElement, 'borderRadius', '100%');
-  this.renderer.setStyle(nameElement, 'fontSize', '20px');
-  return nameElement;
-}
-
-// handle streams
-handleStreamEnabled(
-  stream: any,
-  participant: any,
-  isLocal: any,
-  participantMediaElement: any
-) {
-  if (stream.kind == 'video') {
-    var nameElement = document.getElementById(
-      `name-container-${participant.id}`
+export class AppComponent {
+  isWebcamOn: boolean = false;
+  isMicOn: boolean = false;
+  // creating video element
+  createVideoElement(
+    stream: any,
+    participant: any,
+    participantMediaElement: any
+  ) {
+    const video = this.renderer.createElement("video");
+    const mediaStream = new MediaStream();
+    mediaStream.addTrack(stream.track);
+    this.renderer.setAttribute(video, "id", `v-${participant.id}`);
+    this.renderer.setAttribute(video, "autoplay", "true");
+    this.renderer.setAttribute(video, "playsinline", "true");
+    this.renderer.setAttribute(video, "muted", "true");
+    this.renderer.setAttribute(
+      video,
+      "style",
+      "width: 100%; height: 100%;position: absolute;top: 0;left: 0;object-fit: cover;"
     );
-    participantMediaElement.removeChild(nameElement);
-    this.createVideoElement(stream, participant, participantMediaElement);
-  }
-  if (!isLocal) {
-    if (stream.kind == 'audio') {
-      console.log('audio stream enabled');
-      this.createAudioElement(stream, participant, participantMediaElement);
-    }
-  }
-}
-
-handleStreamDisabled(
-  stream: any,
-  participant: any,
-  isLocal: any,
-  participantMediaElement: any
-) {
-  if (stream.kind == 'video') {
-    console.log('video stream disabled');
-    var videoElement = document.getElementById(
+    this.renderer.setProperty(video, "srcObject", mediaStream);
+    const videoElement = this.renderer.createElement("div");
+    this.renderer.setAttribute(
+      videoElement,
+      "id",
       `video-container-${participant.id}`
     );
-    var nameElement = this.createNameElemeent(participant);
-    this.renderer.removeChild(participantMediaElement, videoElement);
-    this.renderer.appendChild(participantMediaElement, nameElement);
+
+    this.renderer.setAttribute(
+      videoElement,
+      "style",
+      "width: 100%; height: 100%;"
+    );
+    this.renderer.setStyle(videoElement, "position", "relative");
+    this.renderer.appendChild(participantMediaElement, videoElement);
+    this.renderer.appendChild(videoElement, video);
+    const cornerDisplayName = this.renderer.createElement("div");
+    this.renderer.setAttribute(
+      cornerDisplayName,
+      "id",
+      `name-container-${participant.id}`
+    );
+    this.renderer.setStyle(cornerDisplayName, "position", "absolute");
+    this.renderer.setStyle(cornerDisplayName, "bottom", "16px");
+    this.renderer.setStyle(cornerDisplayName, "left", "16px");
+    this.renderer.setStyle(cornerDisplayName, "color", "white");
+    this.renderer.setStyle(
+      cornerDisplayName,
+      "backgroundColor",
+      "rgba(0, 0, 0, 0.5)"
+    );
+    this.renderer.setStyle(cornerDisplayName, "padding", "2px");
+    this.renderer.setStyle(cornerDisplayName, "borderRadius", "2px");
+    this.renderer.setStyle(cornerDisplayName, "fontSize", "12px");
+    this.renderer.setStyle(cornerDisplayName, "fontWeight", "bold");
+    this.renderer.setStyle(cornerDisplayName, "zIndex", "1");
+    this.renderer.setStyle(cornerDisplayName, "padding", "4px");
+    cornerDisplayName.innerHTML =
+      participant.displayName.length > 15
+        ? participant.displayName.substring(0, 15) + "..."
+        : participant.displayName;
+    this.renderer.appendChild(videoElement, cornerDisplayName);
   }
-  if (!isLocal) {
-    if (stream.kind == 'audio') {
-      console.log('audio stream disabled');
-      var audioElement = document.getElementById(
-        `audio-container-${participant.id}`
+
+  // creating audio element
+  createAudioElement(
+    stream: any,
+    participant: any,
+    participantMediaElement: any
+  ) {
+    const audio = this.renderer.createElement("audio");
+    const mediaStream = new MediaStream();
+    mediaStream.addTrack(stream.track);
+    this.renderer.setAttribute(audio, "id", `audio-${participant.id}`);
+    this.renderer.setAttribute(audio, "autoplay", "true");
+    this.renderer.setAttribute(audio, "playsinline", "true");
+    this.renderer.setAttribute(audio, "muted", "true");
+    this.renderer.setProperty(audio, "srcObject", mediaStream);
+
+    const audioElement = this.renderer.createElement("div");
+    this.renderer.setAttribute(
+      audioElement,
+      "id",
+      `audio-container-${participant.id}`
+    );
+    this.renderer.appendChild(participantMediaElement, audioElement);
+    this.renderer.appendChild(audioElement, audio);
+  }
+
+  // creating name element
+  createNameElemeent(participant: any) {
+    var nameElement = this.renderer.createElement("div");
+    this.renderer.setAttribute(
+      nameElement,
+      "id",
+      `name-container-${participant.id}`
+    );
+    nameElement.innerHTML = participant.displayName.charAt(0).toUpperCase();
+    this.renderer.setStyle(nameElement, "backgroundColor", "black");
+    this.renderer.setStyle(nameElement, "color", "white");
+    this.renderer.setStyle(nameElement, "textAlign", "center");
+    this.renderer.setStyle(nameElement, "padding", "32px");
+    this.renderer.setStyle(nameElement, "borderRadius", "100%");
+    this.renderer.setStyle(nameElement, "fontSize", "20px");
+    return nameElement;
+  }
+
+  // handle streams
+  handleStreamEnabled(
+    stream: any,
+    participant: any,
+    isLocal: any,
+    participantMediaElement: any
+  ) {
+    if (stream.kind == "video") {
+      this.isWebcamOn = true;
+      var nameElement = document.getElementById(
+        `name-container-${participant.id}`
       );
-      this.renderer.removeChild(participantMediaElement, audioElement);
+      participantMediaElement.removeChild(nameElement);
+      this.createVideoElement(stream, participant, participantMediaElement);
+    }
+    if (!isLocal) {
+      if (stream.kind == "audio") {
+        this.isMicOn = true;
+        console.log("audio stream enabled");
+        this.createAudioElement(stream, participant, participantMediaElement);
+      }
     }
   }
-}
 
-// generate participant grid
-participantGridGenerator(participant: any) {
-  var participantGridItem1 = this.renderer.createElement('div');
-  this.renderer.setStyle(
-    participantGridItem1,
-    'backgroundColor',
-    'lightgrey'
-  );
-  this.renderer.setStyle(participantGridItem1, 'borderRadius', '10px');
-  this.renderer.setStyle(participantGridItem1, 'aspectRatio', 16 / 9);
-  this.renderer.setStyle(participantGridItem1, 'width', '360px');
-  this.renderer.setStyle(participantGridItem1, 'marginTop', '8px');
-  this.renderer.setStyle(participantGridItem1, 'display', 'flex');
-  this.renderer.setStyle(participantGridItem1, 'alignItems', 'center');
-  this.renderer.setStyle(participantGridItem1, 'justifyContent', 'center');
-  this.renderer.setStyle(participantGridItem1, 'overflow', 'hidden');
-  this.renderer.setAttribute(
-    participantGridItem1,
-    'id',
-    `participant-grid-item-${participant.id}`
-  );
+  handleStreamDisabled(
+    stream: any,
+    participant: any,
+    isLocal: any,
+    participantMediaElement: any
+  ) {
+    if (stream.kind == "video") {
+      this.isWebcamOn = false;
+      console.log("video stream disabled");
 
-  this.renderer.setAttribute(participantGridItem1, 'class', 'col-4');
+      var videoElement = document.getElementById(
+        `video-container-${participant.id}`
+      );
 
-  var participantMediaElement1 = this.renderer.createElement('div');
-  this.renderer.setAttribute(
-    participantMediaElement1,
-    'id',
-    `participant-media-container-${participant.id}`
-  );
-  this.renderer.setStyle(participantMediaElement1, 'position', 'relative');
-  this.renderer.setStyle(participantMediaElement1, 'width', '100%');
-  this.renderer.setStyle(participantMediaElement1, 'height', '100%');
-  this.renderer.setStyle(participantMediaElement1, 'display', 'flex');
-  this.renderer.setStyle(participantMediaElement1, 'alignItems', 'center');
-  this.renderer.setStyle(
-    participantMediaElement1,
-    'justifyContent',
-    'center'
-  );
+      var nameElement = this.createNameElemeent(participant);
+      this.renderer.removeChild(participantMediaElement, videoElement);
+      this.renderer.appendChild(participantMediaElement, nameElement);
+    }
+    if (!isLocal) {
+      if (stream.kind == "audio") {
+        this.isMicOn = false;
+        console.log("audio stream disabled");
+        var audioElement = document.getElementById(
+          `audio-container-${participant.id}`
+        );
+        this.renderer.removeChild(participantMediaElement, audioElement);
+      }
+    }
+  }
 
-  var nameElement = this.createNameElemeent(participant);
-  this.renderer.appendChild(
-    this.participantGridContainer.nativeElement,
-    participantGridItem1
-  );
-  this.renderer.appendChild(participantGridItem1, participantMediaElement1);
-  this.renderer.appendChild(participantMediaElement1, nameElement);
-  var participantGridItem = document.getElementById(
-    `participant-grid-item-${participant.id}`
-  );
-  var participantMediaElement = document.getElementById(
-    `participant-media-container-${participant.id}`
-  );
+  // generate participant grid
+  participantGridGenerator(participant: any) {
+    var participantGridItem = this.renderer.createElement("div");
+    this.renderer.setStyle(participantGridItem, "backgroundColor", "lightgrey");
+    this.renderer.setStyle(participantGridItem, "borderRadius", "10px");
+    this.renderer.setStyle(participantGridItem, "aspectRatio", 16 / 9);
+    this.renderer.setStyle(participantGridItem, "width", "360px");
+    this.renderer.setStyle(participantGridItem, "marginTop", "8px");
+    this.renderer.setStyle(participantGridItem, "display", "flex");
+    this.renderer.setStyle(participantGridItem, "alignItems", "center");
+    this.renderer.setStyle(participantGridItem, "justifyContent", "center");
+    this.renderer.setStyle(participantGridItem, "overflow", "hidden");
 
-  return {
-    participantGridItem,
-    participantMediaElement,
-  };
+    this.renderer.setAttribute(
+      participantGridItem,
+      "id",
+      `participant-grid-item-${participant.id}`
+    );
+
+    this.renderer.setAttribute(participantGridItem, "class", "col-4");
+
+    var participantMediaElement = this.renderer.createElement("div");
+    this.renderer.setAttribute(
+      participantMediaElement,
+      "id",
+      `participant-media-container-${participant.id}`
+    );
+    this.renderer.setStyle(participantMediaElement, "position", "relative");
+    this.renderer.setStyle(participantMediaElement, "width", "100%");
+    this.renderer.setStyle(participantMediaElement, "height", "100%");
+    this.renderer.setStyle(participantMediaElement, "display", "flex");
+    this.renderer.setStyle(participantMediaElement, "alignItems", "center");
+    this.renderer.setStyle(participantMediaElement, "justifyContent", "center");
+
+    var nameElement = this.createNameElemeent(participant);
+    this.renderer.appendChild(
+      this.participantGridContainer.nativeElement,
+      participantGridItem
+    );
+    this.renderer.appendChild(participantGridItem, participantMediaElement);
+    this.renderer.appendChild(participantMediaElement, nameElement);
+
+    var getParticipantMediaElement = document.getElementById(
+      `participant-media-container-${participant.id}`
+    );
+
+    return {
+      getParticipantMediaElement,
+    };
+  }
 }
 ```
 
 ### Step 7 : Handle participant events
 
-In this step four events are used `participant-joined`, `participant-left` , `stream-enabled` and `stream-disabled`.
-Lets understand how we will use that event.
+In this step, we will implement four events `participant-joined`, `participant-left` , `stream-enabled` and `stream-disabled`.
 
-1. `participant-joined`: When a remote participant joins this event will trigger, in event callback will create video and audio elements which we had define in previous steps for rendering their video and audio streams.
+Let's understand the use of that events.
 
-2. `participant-left`: When a remote participant leaves this event will trigger, in event callback will remove the corresponding video and audio elements.
+1. `participant-joined`: When a remote participant joins, this event will trigger. In event callback will create video and audio elements which we had define in previous steps for rendering their video and audio streams.
+
+2. `participant-left`: When a remote participant leaves, this event will trigger. In event callback will remove the corresponding video and audio elements.
 
 3. `stream-enabled`: It Handle the media track of a specific participant by associating it with the appropriate video or audio element.
 
-4. `stream-disabled`: It Handle the media track of a specific participant when participant toogle video or audio by associating it with the appropriate video or audio element
+4. `stream-disabled`: It Handle the media track of a specific participant when participant toogle video or audio by associating it with the appropriate video or audio element.
 
 ```js title="app.component.ts"
 // participant joined
@@ -825,14 +800,15 @@ Lets understand how we will use that event.
 meeting.on("participant-joined", (participant: any) => {
   console.log("New Participant Joined: ", participant.id);
 
-  var { participantMediaElement } = this.participantGridGenerator(participant);
+  var { getParticipantMediaElement } =
+    this.participantGridGenerator(participant);
   participant.setQuality("high");
   participant.on("stream-enabled", (stream: any) => {
     this.handleStreamEnabled(
       stream,
       participant,
       false,
-      participantMediaElement
+      getParticipantMediaElement
     );
   });
   participant.on("stream-disabled", (stream: any) => {
@@ -840,7 +816,7 @@ meeting.on("participant-joined", (participant: any) => {
       stream,
       participant,
       false,
-      participantMediaElement
+      getParticipantMediaElement
     );
   });
 });
@@ -865,43 +841,31 @@ meeting.on("participant-left", (participant: any) => {
 
 ### Step 8 : Implement Controls
 
-In this step we will implement meeting functionalities such as toggleMic, toggleWebcam and leave meeting function in `app.component.ts` to call respective apis.
+In this step, we will implement meeting functionalities such as toggleMic, toggleWebcam and leave meeting function in `app.component.ts` to call respective APIs.
 
 ```js title="app.component.ts"
-// variable initialization
-enableWebcamBtn: boolean = false;
-enableMicBtn: boolean = false;
-disableWebcamBtn: boolean = true;
-disableMicBtn: boolean = true;
+export class AppComponent {
+  //..
+  toogleWebcam() {
+    if (this.isWebcamOn) {
+      this.meeting.disableWebcam();
+    } else {
+      this.meeting.enableWebcam();
+    }
+  }
 
-enableWebcam() {
-  this.meeting.enableWebcam();
-  this.enableWebcamBtn = false;
-  this.disableWebcamBtn = true;
-}
-
-muteMic() {
-  this.meeting.muteMic();
-  this.enableMicBtn = true;
-  this.disableMicBtn = false;
-}
-
-unmuteMic() {
-  this.meeting.unmuteMic();
-  this.enableMicBtn = false;
-  this.disableMicBtn = true;
-}
-
-leaveMeeting() {
-  this.meeting.leave();
-  this.showMeetingScreen = false;
-  this.showJoinScreen = true;
-}
-
-disableWebcam() {
-  this.meeting.disableWebcam();
-  this.enableWebcamBtn = true;
-  this.disableWebcamBtn = false;
+  toogleMic() {
+    if (this.isMicOn) {
+      this.meeting.muteMic();
+    } else {
+      this.meeting.unmuteMic();
+    }
+  }
+  leaveMeeting() {
+    this.meeting.leave();
+    this.showMeetingScreen = false;
+    this.showJoinScreen = true;
+  }
 }
 ```
 
@@ -911,14 +875,8 @@ disableWebcam() {
 <app-top-bar
   [meetingId]="meetingId"
   [showTopBar]="showTopBar"
-  [disableWebcamBtn]="disableWebcamBtn"
-  [enableWebcamBtn]="enableWebcamBtn"
-  [disableMicBtn]="disableMicBtn"
-  [enableMicBtn]="enableMicBtn"
-  (disableWebcam)="disableWebcam()"
-  (enableWebcam)="enableWebcam()"
-  (muteMic)="muteMic()"
-  (unmuteMic)="unmuteMic()"
+  (toogleWebcam)="toogleWebcam()"
+  (toogleMic)="toogleMic()"
   (leaveMeeting)="leaveMeeting()"
 ></app-top-bar>
 ```
@@ -931,37 +889,22 @@ import { Component, EventEmitter, Input, Output } from "@angular/core";
 @Component({
   selector: "app-top-bar",
   templateUrl: "./top-bar.component.html",
-  styleUrls: ["./top-bar.component.css"],
 })
 export class TopBarComponent {
   @Input() showTopBar: boolean = false;
-  @Input() disableWebcamBtn: boolean = false;
-  @Input() enableWebcamBtn: boolean = false;
-  @Input() disableMicBtn: boolean = false;
-  @Input() enableMicBtn: boolean = false;
-  @Output() disableWebcam = new EventEmitter();
-  @Output() enableWebcam = new EventEmitter();
-  @Output() muteMic = new EventEmitter();
-  @Output() unmuteMic = new EventEmitter();
+  @Output() toogleWebcam = new EventEmitter();
+  @Output() toogleMic = new EventEmitter();
   @Output() leaveMeeting = new EventEmitter();
   @Input() meetingId: string = "";
 
   constructor() {}
 
-  fireDisableWebcam() {
-    this.disableWebcam.emit();
+  fireToggleWebcam() {
+    this.toogleWebcam.emit();
   }
 
-  fireEnableWebcam() {
-    this.enableWebcam.emit();
-  }
-
-  fireMuteMic() {
-    this.muteMic.emit();
-  }
-
-  fireUnmuteMic() {
-    this.unmuteMic.emit();
+  fireToggleMic() {
+    this.toogleMic.emit();
   }
 
   fireLeaveMeeting() {
