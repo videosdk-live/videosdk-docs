@@ -22,6 +22,20 @@
       "type": "category",
       "label": "Quick Start Guide",
       "items": [
+        {
+          "type": "category",
+          "label": "Angular",
+          "items": [
+            {
+              "type": "doc",
+              "id": "guide/video-and-audio-calling-api-sdk/angular/angular-js/quick-start"
+            },
+            {
+              "type": "doc",
+              "id": "guide/video-and-audio-calling-api-sdk/angular/angular-2/quick-start"
+            }
+          ]
+        },
         "guide/video-and-audio-calling-api-sdk/quick-start"
       ],
       "collapsed": false

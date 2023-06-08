@@ -1,0 +1,984 @@
+---
+title: Quick Start
+hide_title: false
+hide_table_of_contents: false
+description: Video SDK enables the opportunity to integrate native IOS, Android & Web SDKs to add live video & audio conferencing to your applications.
+sidebar_label: Start a Voice / Video Call With Angular 2
+pagination_label: Quick Start
+keywords:
+  - audio calling
+  - video calling
+  - real-time communication
+  - collaboration
+  - Javascript SDK implemntation
+image: img/videosdklive-thumbnail.jpg
+sidebar_position: 1
+slug: quick-start
+---
+
+# Quick Start for Conference in Angular 2
+
+VideoSDK enables you to embed the video calling feature into your Angular 2 application in minutes.
+
+In this quickstart, we are going to explore group calling feature of Video SDK. We will go through step by step guide of integrating video calling with Angular JS Video SDK.
+
+This guide will get you running with the VideoSDK video & audio calling in minutes.
+
+## Prerequisites
+
+Before proceeding, ensure that your development environment meets the following requirements:
+
+- Video SDK Developer Account (Not having one, follow **[Video SDK Dashboard](https://app.videosdk.live/)**)
+- Have Node and NPM installed on your device.
+
+:::important
+
+One should have a VideoSDK account to generate token.
+Visit VideoSDK **[dashboard](https://app.videosdk.live/api-keys)** to generate token
+
+:::
+
+## Getting Started with the Code!
+
+Follow the steps to create the environment necessary to add video calls into your app. Also you can find the code sample for [quickstart here](https://github.com/videosdk-live/quickstart/tree/main/angular-rtc/videosdk_angular_2_quickstart).
+
+### Install Video SDK
+
+You can import VideoSDK using `<script>` tag or you can install the VideoSDK using the below-mentioned npm command. Make sure you are in your app directory before you run this command.
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs>
+<TabItem value="<script>" label="<script>" default>
+
+```html
+<html>
+  <head>
+    ....
+  </head>
+  <body>
+    .....
+    <script src="https://sdk.videosdk.live/js-sdk/0.0.67/videosdk.js"></script>
+  </body>
+</html>
+```
+
+</TabItem>
+<TabItem value="npm" label="npm">
+
+```bash
+npm install @videosdk.live/js-sdk
+```
+
+</TabItem>
+<TabItem value="yarn" label="yarn">
+
+```bash
+yarn add @videosdk.live/js-sdk
+```
+
+</TabItem>
+</Tabs>
+
+## Structure of the project
+
+Your project structure should look like this.
+
+```jsx title="Project Structure"
+  root
+   ├── node_modules
+   ├── src
+   │    ├── app
+   │        ├── join-screen
+   │             ├── join-screen.component.html
+   │             ├── join-screen.component.ts
+   │         ├── top-bar
+   │             ├── top-bar.component.html
+   │             ├── top-bar.component.ts
+   │    ├── app-routing.module.ts
+   │    ├── app.component.html
+   │    ├── app.component.ts
+   │    ├── app.module.ts
+   │    ├── meeting.service.ts
+   │    ├── enviroments
+   │        ├── enviroment.ts
+   │    ├── styles.css
+   │    ├── index.html
+```
+
+We are going to work on following files:
+
+- enviroment.ts: Responsible to store token.
+- meeting.service.ts: Responsible to handle API calls such as generating unique meetingId, validate meetingId and token.
+- join-screen.component.html: Responsible to create basic UI for joinScreen.
+- top-bar.component.html: Responsible to create basic topbar with webcam,mic and leave meeting button.
+- app.component.html: Responsible for render `Joinscreen`, `Topbar` and `ParticipantGrid`.
+- join-screen.component.ts: Responsible for handling the logic and functionality related to the `join-screen.component.html` template.
+- top-bar.component.ts : Responsible for handling the logic and functionality related to the `join-screen.component.html` template.
+- app.component.ts: Responsible for handling `joinMeeting`, `createMeeting` , handle meeting and participant related events and render `join-screen` , `top-bar` and `participantGrid`.
+
+### Step 1 : Get started with Meeting.service.ts
+
+Prior to moving on, we must create an API request to generate unique meetingId and validated meetingId. You will need an authentication token, which you can create either through the [videosdk-rtc-api-server-examples](https://github.com/videosdk-live/videosdk-rtc-api-server-examples) or directly from the [Video SDK Dashboard](https://app.videosdk.live/api-keys) for developers.
+
+Set token in `enviroment.ts` file which is generated from [here](https://app.videosdk.live/login).
+
+```ts title="enviroment.ts"
+// Auth token we will use to generate a meeting and connect to it
+export const environment = {
+  token: "YOUR_TOKEN_HERE",
+};
+```
+
+```ts title="meeting.service.ts"
+import { Injectable } from "@angular/core";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
+import { Observable } from "rxjs";
+import { map } from "rxjs/operators";
+import { environment } from "src/enviroments/enviroment";
+
+@Injectable({
+  providedIn: "root",
+})
+export class MeetingService {
+  private authToken = environment.token;
+
+  constructor(private http: HttpClient) {}
+
+  createMeeting(): Observable<string> {
+    const apiUrl = "https://api.videosdk.live/v2/rooms";
+    const headers = new HttpHeaders({
+      authorization: this.authToken,
+      "Content-Type": "application/json",
+    });
+
+    return this.http
+      .post<{ roomId: string }>(apiUrl, {}, { headers })
+      .pipe(map((response) => response.roomId));
+  }
+
+  validateMeeting(meetingId: string): Observable<boolean> {
+    const url = `https://api.videosdk.live/v2/rooms/validate/${meetingId}`;
+    const headers = new HttpHeaders({
+      authorization: this.authToken,
+      "Content-Type": "application/json",
+    });
+
+    return this.http
+      .get<{ roomId: string }>(url, {
+        headers,
+      })
+      .pipe(map((response) => response.roomId === meetingId));
+  }
+
+  ngOnInit() {}
+}
+```
+
+- After creating meeting service you have to import this `app.module.ts`
+
+```ts title="app.module.ts"
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from "@angular/core";
+import { BrowserModule } from "@angular/platform-browser";
+import { AppRoutingModule } from "./app-routing.module";
+import { AppComponent } from "./app.component";
+import { JoinScreenComponent } from "./join-screen/join-screen.component";
+import { TopBarComponent } from "./top-bar/top-bar.component";
+import { MeetingService } from "./meeting.service";
+import { HttpClientModule } from "@angular/common/http";
+import { FormsModule } from "@angular/forms";
+
+@NgModule({
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  declarations: [AppComponent, JoinScreenComponent, TopBarComponent],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
+  providers: [MeetingService],
+  bootstrap: [AppComponent],
+})
+export class AppModule {}
+```
+
+### Step 2 : Create UI
+
+In this step, we are going to create HTML file which will render `join-screen` and `top-bar`.
+
+- first we create `joinScreen` UI
+
+```html title="joinScreen.html"
+<div id="joinPage" class="main-bg" style="display: flex">
+  <div style="display: flex; flex-direction: column">
+    <h3>Angular 2 quickstart with Videosdk</h3>
+    <form name="myForm" style="display: flex">
+      <button (click)="fireCreateMeeting()">Create a meeting</button>
+      <p
+        style="
+          margin-left: 8px;
+          margin-right: 8px;
+          font-size: 14px;
+          margin-top: 2px;
+          margin-bottom: 0px;
+        "
+      >
+        OR
+      </p>
+      <input
+        name="meetingId"
+        type="text"
+        placeholder="Enter meeting id"
+        [(ngModel)]="meetingId"
+      />
+
+      <button (click)="fireValidateMeeting()" style="margin-left: 8px">
+        Join a meeting
+      </button>
+    </form>
+  </div>
+</div>
+```
+
+#### Output
+
+<center>
+
+<img src='https://cdn.videosdk.live/website-resources/docs-resources/angular/angular2-joinscreen.png' />
+
+</center>
+
+- After joinScreen we create `topBar` UI
+
+```html title="topBar.html"
+<div *ngIf="showTopBar" style="height: 65px; background-color: lightgray">
+  <div
+    style="
+      display: flex;
+      flex-direction: column;
+      margin-left: 16px;
+      margin-right: 16px;
+      padding-top: 8px;
+      padding-bottom: 8px;
+      height: 100%;
+    "
+  >
+    <div>
+      <p style="margin-top: 0px; margin-bottom: 0px; font-weight: 700">
+        MeetingId: {{ meetingId }}
+      </p>
+    </div>
+    <div style="display: flex; margin-top: 8px">
+      <button
+        *ngIf="disableWebcamBtn"
+        style="cursor: pointer"
+        (click)="fireDisableWebcam()"
+      >
+        Disable Webcam
+      </button>
+      <button
+        *ngIf="enableWebcamBtn"
+        style="cursor: pointer"
+        (click)="fireEnableWebcam()"
+      >
+        Enable Webcam
+      </button>
+      <button
+        *ngIf="disableMicBtn"
+        style="margin-left: 4px; cursor: pointer"
+        (click)="fireMuteMic()"
+      >
+        Disable Mic
+      </button>
+      <button
+        *ngIf="enableMicBtn"
+        style="margin-left: 4px; cursor: pointer"
+        (click)="fireUnmuteMic()"
+      >
+        Enable Mic
+      </button>
+      <button
+        style="
+          max-width: max-content;
+          margin-left: 4px;
+          cursor: pointer;
+          background-color: red;
+          color: white;
+          border: 2px solid red;
+        "
+        (click)="fireLeaveMeeting()"
+      >
+        Leave Meeting
+      </button>
+    </div>
+  </div>
+</div>
+```
+
+#### Output
+
+<center>
+
+<img src='https://cdn.videosdk.live/website-resources/docs-resources/angular/angualr2-topbar.png' />
+
+</center>
+
+- Now we place `join-screen` and `top-bar` component in one file called `app.component.html` and create `meeting-container` here.
+
+```html ="app.component.html"
+<div *ngIf="showJoinScreen">
+  <app-join-screen></app-join-screen>
+</div>
+<div *ngIf="showMeetingScreen">
+  <!-- topbar Start -->
+  <app-top-bar></app-top-bar>
+  <!-- topbar End -->
+
+  <!-- Meeting Container -->
+  <div
+    style="
+      display: flex;
+      flex-direction: column;
+      overflow-y: auto;
+      max-height: calc(100vh - 85px);
+    "
+  >
+    <div class="container">
+      <div
+        #participantGridContainer
+        id="participant-grid-container"
+        class="row"
+      ></div>
+    </div>
+  </div>
+</div>
+
+<router-outlet></router-outlet>
+```
+
+### Step 2 : Implement Join Screen
+
+Now we first create `createMeeting` and `validateMeeting` function in `app.component.ts` to call respective apis.
+
+```ts title="app.component.ts"
+import { Component, ElementRef, Renderer2, ViewChild } from "@angular/core";
+import { VideoSDK } from "@videosdk.live/js-sdk";
+import { environment } from "./../enviroments/enviroment";
+import { MeetingService } from "./meeting.service";
+
+@Component({
+  selector: "app-root",
+  templateUrl: "./app.component.html",
+  styleUrls: ["./app.component.css"],
+})
+export class AppComponent {
+  title = "videosdk_angular_2_quickstart";
+
+  meeting: any;
+  participantName: string = "";
+  meetingId: string = "";
+  showJoinScreen: boolean = true;
+  showMeetingScreen: boolean = false;
+  showTopBar: boolean = false;
+
+  constructor(
+    private renderer: Renderer2,
+    private meetingService: MeetingService
+  ) {
+    this.participantName = "Homi J. Bhabha";
+  }
+
+  createMeeting() {
+    this.meetingService.createMeeting().subscribe(
+      (roomId) => {
+        this.meetingId = roomId;
+        this.joinMeeting();
+      },
+      (error) => {
+        console.error("Failed to create meeting:", error);
+      }
+    );
+  }
+
+  validateMeeting(meetingId: any) {
+    this.meetingService.validateMeeting(meetingId).subscribe(
+      (isValid) => {
+        if (isValid) {
+          this.meetingId = meetingId;
+          this.joinMeeting();
+        } else {
+          alert("Invalid meeting id");
+        }
+      },
+      (error) => {
+        console.error("Failed to validate meeting:", error);
+        // Handle the error
+      }
+    );
+  }
+}
+```
+
+- After creating function we pass this function in `join-screen` component this way
+
+```html ="app.component.html"
+<app-join-screen
+  (validateMeeting)="validateMeeting($event)"
+  (createMeeting)="createMeeting()"
+></app-join-screen>
+```
+
+- Now in `join-screen.component.ts` we fire this function.
+
+```ts ="join-screen.component.ts"
+import { Component, EventEmitter, Input, Output } from "@angular/core";
+
+@Component({
+  selector: "app-join-screen",
+  templateUrl: "./join-screen.component.html",
+  styleUrls: ["./join-screen.component.css"],
+})
+export class JoinScreenComponent {
+  @Output() createMeeting = new EventEmitter();
+  @Output() validateMeeting = new EventEmitter<string>();
+  @Input() meetingId: string = "";
+
+  fireValidateMeeting() {
+    this.validateMeeting.emit(this.meetingId);
+  }
+
+  fireCreateMeeting() {
+    this.createMeeting.emit();
+  }
+
+  constructor() {}
+
+  ngOnInit() {}
+}
+```
+
+### Step 3 : Initialize meeting
+
+In this step, we will initialize meeting through `initMeeting()` function and join that meeting.
+
+```ts title="startMeeting app.component.ts"
+// Initialize meeting
+ async initMeeting() {
+    VideoSDK.config(environment.token);
+
+    this.meeting = VideoSDK.initMeeting({
+      meetingId: this.meetingId, // required
+      name: this.participantName, // required
+      micEnabled: true, // optional, default: true
+      webcamEnabled: true, // optional, default: true
+      maxResolution: "hd", // optional, default: "hd"
+    });
+  }
+
+  joinMeeting() {
+    this.initMeeting();
+    this.meeting.join();
+
+    this.handleMeetingEvents(this.meeting);
+    const showJoinScreenMessage = this.renderer.createElement("div");
+
+    this.renderer.setAttribute(
+      showJoinScreenMessage,
+      "id",
+      "show-join-screen-message"
+    );
+    this.renderer.setProperty(
+      showJoinScreenMessage,
+      "innerHTML",
+      "Please wait to join meeting..."
+    );
+    this.renderer.setStyle(showJoinScreenMessage, "color", "black");
+    this.renderer.setStyle(showJoinScreenMessage, "fontSize", "20px");
+    this.renderer.setStyle(showJoinScreenMessage, "fontWeight", "bold");
+    this.renderer.setStyle(showJoinScreenMessage, "marginTop", "20px");
+    this.renderer.setStyle(showJoinScreenMessage, "marginLeft", "20px");
+    this.renderer.appendChild(document.body, showJoinScreenMessage);
+  }
+
+ // for handle meeting events
+  handleMeetingEvents(meeting: any) {}
+```
+
+### Step 4: Handle Meeting Events
+
+```ts ="app.component.ts"
+
+// variable initialization
+  handleMeetingEvents(meeting: any) {
+    this.localParticipant = meeting.localParticipant;
+    this.participants = meeting.participants;
+
+    if (meeting) {
+      this.showJoinScreen = false;
+      this.showMeetingScreen = true;
+    }
+
+  // meeting joined event
+  meeting.on('meeting-joined', () => {
+      var showJoinScreenMessage = document.getElementById(
+        'show-join-screen-message'
+      );
+      this.renderer.removeChild(document.body, showJoinScreenMessage);
+      const { participantMediaElement } = this.participantGridGenerator(
+        this.meeting.localParticipant
+      );
+      this.showTopBar = true;
+
+      meeting.localParticipant.on('stream-enabled', (stream: any) => {
+        console.log('Stream Enabled: ');
+        this.handleStreamEnabled(
+          stream,
+          meeting.localParticipant,
+          true,
+          participantMediaElement
+        );
+      });
+    meeting.localParticipant.on('stream-disabled', (stream: any) => {
+        console.log('Stream Disabled: ');
+        this.handleStreamDisabled(
+          stream,
+          meeting.localParticipant,
+          true,
+          participantMediaElement
+        );
+      });
+    });
+
+    // meeting left event
+    meeting.on("meeting-left", () => {
+    while (this.participantGridContainer.nativeElement.firstChild) {
+        this.participantGridContainer.nativeElement.removeChild(
+          this.participantGridContainer.nativeElement.firstChild
+        );
+      }
+      this.showMeetingScreen = false;
+      this.showJoinScreen = true;
+    });
+
+    //remote participant events
+    // participant joined
+    meeting.on("participant-joined", (participant) => {
+      console.log("New Participant Joined: ", participant.id);
+
+      participant.on("stream-enabled", (stream) => {
+        //...
+      });
+      participant.on("stream-disabled", (stream) => {
+        //...
+      });
+    });
+
+    // participant left
+    meeting.on("participant-left", (participant) => {
+      //...
+    });
+  }
+```
+
+### Step 4 : Create Media Elements
+
+In this step, we will create a function that helps us to create audio and video elements for displaying local and remote participants. We will also set the appropriate media track based on whether it's a video or audio.
+
+```ts title=app.component.ts
+// creating video element
+createVideoElement(
+  stream: any,
+  participant: any,
+  participantMediaElement: any
+) {
+  const video = this.renderer.createElement('video');
+  const mediaStream = new MediaStream();
+  mediaStream.addTrack(stream.track);
+  this.renderer.setAttribute(video, 'id', `v-${participant.id}`);
+  this.renderer.setAttribute(video, 'autoplay', 'true');
+  this.renderer.setAttribute(video, 'playsinline', 'true');
+  this.renderer.setAttribute(video, 'muted', 'true');
+  this.renderer.setAttribute(
+    video,
+    'style',
+    'width: 100%; height: 100%;position: absolute;top: 0;left: 0;object-fit: cover;'
+  );
+  this.renderer.setProperty(video, 'srcObject', mediaStream);
+  const videoElement = this.renderer.createElement('div');
+  this.renderer.setAttribute(
+    videoElement,
+    'id',
+    `video-container-${participant.id}`
+  );
+
+  this.renderer.setAttribute(
+    videoElement,
+    'style',
+    'width: 100%; height: 100%;'
+  );
+  this.renderer.setStyle(videoElement, 'position', 'relative');
+  this.renderer.appendChild(participantMediaElement, videoElement);
+  this.renderer.appendChild(videoElement, video);
+  const cornerDisplayName = this.renderer.createElement('div');
+  this.renderer.setAttribute(
+    cornerDisplayName,
+    'id',
+    `name-container-${participant.id}`
+  );
+  this.renderer.setStyle(cornerDisplayName, 'position', 'absolute');
+  this.renderer.setStyle(cornerDisplayName, 'bottom', '16px');
+  this.renderer.setStyle(cornerDisplayName, 'left', '16px');
+  this.renderer.setStyle(cornerDisplayName, 'color', 'white');
+  this.renderer.setStyle(
+    cornerDisplayName,
+    'backgroundColor',
+    'rgba(0, 0, 0, 0.5)'
+  );
+  this.renderer.setStyle(cornerDisplayName, 'padding', '2px');
+  this.renderer.setStyle(cornerDisplayName, 'borderRadius', '2px');
+  this.renderer.setStyle(cornerDisplayName, 'fontSize', '12px');
+  this.renderer.setStyle(cornerDisplayName, 'fontWeight', 'bold');
+  this.renderer.setStyle(cornerDisplayName, 'zIndex', '1');
+  this.renderer.setStyle(cornerDisplayName, 'padding', '4px');
+  cornerDisplayName.innerHTML =
+    participant.displayName.length > 15
+      ? participant.displayName.substring(0, 15) + '...'
+      : participant.displayName;
+  this.renderer.appendChild(videoElement, cornerDisplayName);
+}
+
+// creating audio element
+createAudioElement(
+  stream: any,
+  participant: any,
+  participantMediaElement: any
+) {
+  const audio = this.renderer.createElement('audio');
+  const mediaStream = new MediaStream();
+  mediaStream.addTrack(stream.track);
+  this.renderer.setAttribute(audio, 'id', `audio-${participant.id}`);
+  this.renderer.setAttribute(audio, 'autoplay', 'true');
+  this.renderer.setAttribute(audio, 'playsinline', 'true');
+  this.renderer.setAttribute(audio, 'muted', 'true');
+  this.renderer.setProperty(audio, 'srcObject', mediaStream);
+
+  const audioElement = this.renderer.createElement('div');
+  this.renderer.setAttribute(
+    audioElement,
+    'id',
+    `audio-container-${participant.id}`
+  );
+  this.renderer.appendChild(participantMediaElement, audioElement);
+  this.renderer.appendChild(audioElement, audio);
+}
+
+// creating name element
+createNameElemeent(participant: any) {
+  var nameElement = this.renderer.createElement('div');
+  this.renderer.setAttribute(
+    nameElement,
+    'id',
+    `name-container-${participant.id}`
+  );
+  nameElement.innerHTML = participant.displayName.charAt(0).toUpperCase();
+  this.renderer.setStyle(nameElement, 'backgroundColor', 'black');
+  this.renderer.setStyle(nameElement, 'color', 'white');
+  this.renderer.setStyle(nameElement, 'textAlign', 'center');
+  this.renderer.setStyle(nameElement, 'padding', '32px');
+  this.renderer.setStyle(nameElement, 'borderRadius', '100%');
+  this.renderer.setStyle(nameElement, 'fontSize', '20px');
+  return nameElement;
+}
+
+// handle streams
+handleStreamEnabled(
+  stream: any,
+  participant: any,
+  isLocal: any,
+  participantMediaElement: any
+) {
+  if (stream.kind == 'video') {
+    var nameElement = document.getElementById(
+      `name-container-${participant.id}`
+    );
+    participantMediaElement.removeChild(nameElement);
+    this.createVideoElement(stream, participant, participantMediaElement);
+  }
+  if (!isLocal) {
+    if (stream.kind == 'audio') {
+      console.log('audio stream enabled');
+      this.createAudioElement(stream, participant, participantMediaElement);
+    }
+  }
+}
+
+handleStreamDisabled(
+  stream: any,
+  participant: any,
+  isLocal: any,
+  participantMediaElement: any
+) {
+  if (stream.kind == 'video') {
+    console.log('video stream disabled');
+    var videoElement = document.getElementById(
+      `video-container-${participant.id}`
+    );
+    var nameElement = this.createNameElemeent(participant);
+    this.renderer.removeChild(participantMediaElement, videoElement);
+    this.renderer.appendChild(participantMediaElement, nameElement);
+  }
+  if (!isLocal) {
+    if (stream.kind == 'audio') {
+      console.log('audio stream disabled');
+      var audioElement = document.getElementById(
+        `audio-container-${participant.id}`
+      );
+      this.renderer.removeChild(participantMediaElement, audioElement);
+    }
+  }
+}
+
+// generate participant grid
+participantGridGenerator(participant: any) {
+  var participantGridItem1 = this.renderer.createElement('div');
+  this.renderer.setStyle(
+    participantGridItem1,
+    'backgroundColor',
+    'lightgrey'
+  );
+  this.renderer.setStyle(participantGridItem1, 'borderRadius', '10px');
+  this.renderer.setStyle(participantGridItem1, 'aspectRatio', 16 / 9);
+  this.renderer.setStyle(participantGridItem1, 'width', '360px');
+  this.renderer.setStyle(participantGridItem1, 'marginTop', '8px');
+  this.renderer.setStyle(participantGridItem1, 'display', 'flex');
+  this.renderer.setStyle(participantGridItem1, 'alignItems', 'center');
+  this.renderer.setStyle(participantGridItem1, 'justifyContent', 'center');
+  this.renderer.setStyle(participantGridItem1, 'overflow', 'hidden');
+  this.renderer.setAttribute(
+    participantGridItem1,
+    'id',
+    `participant-grid-item-${participant.id}`
+  );
+
+  this.renderer.setAttribute(participantGridItem1, 'class', 'col-4');
+
+  var participantMediaElement1 = this.renderer.createElement('div');
+  this.renderer.setAttribute(
+    participantMediaElement1,
+    'id',
+    `participant-media-container-${participant.id}`
+  );
+  this.renderer.setStyle(participantMediaElement1, 'position', 'relative');
+  this.renderer.setStyle(participantMediaElement1, 'width', '100%');
+  this.renderer.setStyle(participantMediaElement1, 'height', '100%');
+  this.renderer.setStyle(participantMediaElement1, 'display', 'flex');
+  this.renderer.setStyle(participantMediaElement1, 'alignItems', 'center');
+  this.renderer.setStyle(
+    participantMediaElement1,
+    'justifyContent',
+    'center'
+  );
+
+  var nameElement = this.createNameElemeent(participant);
+  this.renderer.appendChild(
+    this.participantGridContainer.nativeElement,
+    participantGridItem1
+  );
+  this.renderer.appendChild(participantGridItem1, participantMediaElement1);
+  this.renderer.appendChild(participantMediaElement1, nameElement);
+  var participantGridItem = document.getElementById(
+    `participant-grid-item-${participant.id}`
+  );
+  var participantMediaElement = document.getElementById(
+    `participant-media-container-${participant.id}`
+  );
+
+  return {
+    participantGridItem,
+    participantMediaElement,
+  };
+}
+```
+
+### Step 6 : Handle participant events
+
+in this step four events are used `participant-joined`, `participant-left` , `stream-enabled` and `stream-disabled`.
+Lets understand how we will use that event.
+
+1. `participant-joined`: When a remote participant joins this event will trigger, in event callback will create video and audio elements which we had define in previous steps for rendering their video and audio streams.
+
+2. `participant-left`: When a remote participant leaves this event will trigger, in event callback will remove the corresponding video and audio elements.
+
+3. `stream-enabled`: It Handle the media track of a specific participant by associating it with the appropriate video or audio element.
+
+4. `stream-disabled`: It Handle the media track of a specific participant when participant toogle video or audio by associating it with the appropriate video or audio element
+
+```ts title="app.component.ts"
+// participant joined
+//remote participant
+meeting.on("participant-joined", (participant: any) => {
+  console.log("New Participant Joined: ", participant.id);
+
+  var { participantMediaElement } = this.participantGridGenerator(participant);
+  participant.setQuality("high");
+  participant.on("stream-enabled", (stream: any) => {
+    this.handleStreamEnabled(
+      stream,
+      participant,
+      false,
+      participantMediaElement
+    );
+  });
+  participant.on("stream-disabled", (stream: any) => {
+    this.handleStreamDisabled(
+      stream,
+      participant,
+      false,
+      participantMediaElement
+    );
+  });
+});
+
+// participants left
+meeting.on("participant-left", (participant: any) => {
+  console.log("Participant Left: ", participant.id);
+  var participantGridItem = document.getElementById(
+    `participant-grid-item-${participant.id}`
+  );
+  this.participantGridContainer.nativeElement.removeChild(participantGridItem);
+});
+```
+
+#### Output
+
+<center>
+
+<img src='https://cdn.videosdk.live/website-resources/docs-resources/js_grid_screen.png' />
+
+</center>
+
+### Step 6 : Implement Controls
+
+In this step we will implement meeting functionalities such as toggleMic, toggleWebcam and leave meeting function in `app.component.ts` to call respective apis.
+
+```ts title="app.component.ts"
+// variable initialization
+enableWebcamBtn: boolean = false;
+enableMicBtn: boolean = false;
+disableWebcamBtn: boolean = true;
+disableMicBtn: boolean = true;
+
+enableWebcam() {
+  this.meeting.enableWebcam();
+  this.enableWebcamBtn = false;
+  this.disableWebcamBtn = true;
+}
+
+muteMic() {
+  this.meeting.muteMic();
+  this.enableMicBtn = true;
+  this.disableMicBtn = false;
+}
+
+unmuteMic() {
+  this.meeting.unmuteMic();
+  this.enableMicBtn = false;
+  this.disableMicBtn = true;
+}
+
+leaveMeeting() {
+  this.meeting.leave();
+  this.showMeetingScreen = false;
+  this.showJoinScreen = true;
+}
+
+disableWebcam() {
+  this.meeting.disableWebcam();
+  this.enableWebcamBtn = true;
+  this.disableWebcamBtn = false;
+}
+```
+
+- After creating function we pass this function in `top-bar` component this way
+
+```html ="app.component.html"
+<app-top-bar
+  [meetingId]="meetingId"
+  [showTopBar]="showTopBar"
+  [disableWebcamBtn]="disableWebcamBtn"
+  [enableWebcamBtn]="enableWebcamBtn"
+  [disableMicBtn]="disableMicBtn"
+  [enableMicBtn]="enableMicBtn"
+  (disableWebcam)="disableWebcam()"
+  (enableWebcam)="enableWebcam()"
+  (muteMic)="muteMic()"
+  (unmuteMic)="unmuteMic()"
+  (leaveMeeting)="leaveMeeting()"
+></app-top-bar>
+```
+
+- Now in `top-bar.component.ts` we fire this function.
+
+```ts ="top-bar.component.ts"
+import { Component, EventEmitter, Input, Output } from "@angular/core";
+
+@Component({
+  selector: "app-top-bar",
+  templateUrl: "./top-bar.component.html",
+  styleUrls: ["./top-bar.component.css"],
+})
+export class TopBarComponent {
+  @Input() showTopBar: boolean = false;
+  @Input() disableWebcamBtn: boolean = false;
+  @Input() enableWebcamBtn: boolean = false;
+  @Input() disableMicBtn: boolean = false;
+  @Input() enableMicBtn: boolean = false;
+  @Output() disableWebcam = new EventEmitter();
+  @Output() enableWebcam = new EventEmitter();
+  @Output() muteMic = new EventEmitter();
+  @Output() unmuteMic = new EventEmitter();
+  @Output() leaveMeeting = new EventEmitter();
+  @Input() meetingId: string = "";
+
+  constructor() {}
+
+  fireDisableWebcam() {
+    this.disableWebcam.emit();
+  }
+
+  fireEnableWebcam() {
+    this.enableWebcam.emit();
+  }
+
+  fireMuteMic() {
+    this.muteMic.emit();
+  }
+
+  fireUnmuteMic() {
+    this.unmuteMic.emit();
+  }
+
+  fireLeaveMeeting() {
+    this.leaveMeeting.emit();
+  }
+}
+```
+
+## Run your code
+
+Once you are all set with the steps mentioned above run your application as mentioned in the code-block below.
+
+```bash
+ng serve
+```
+
+## Final Output
+
+We are done with implementation of customised video calling app in Angular JS using Video SDK. To explore more features go through Basic and Advanced features.
+
+import ReactPlayer from 'react-player'
+
+<ReactPlayer controls autoplay muted loop playing url='https://cdn.videosdk.live/website-resources/docs-resources/js_quickstart_output.mp4' width={"100%"} />
+
+<br/>
+
+:::tip
+You can checkout the complete [quick start example here](https://github.com/videosdk-live/quickstart/tree/main/angular-rtc).
+:::
