@@ -106,7 +106,7 @@ We are going to work on following files:
 
 - joinScreen.html: Responsible to create basic UI for joinScreen.
 - meetingContainer.html: Responsible to create simple grid-screen
-- topBar.html: Responsible to create basic topbar with webcam,mic and leave meeting button.
+- topBar.html: Responsible to create basic topbar with webcam, mic and leave meeting button.
 - config.js: Responsible to store token.
 - app.js: Responsible to render meeting view, joinscreen and topbar.
 
@@ -114,7 +114,7 @@ We are going to work on following files:
 
 In this step, we are going to create HTML file which will render `join-screen`, `top-bar` and `meeting-container`.
 
-- first we will create `joinScreen` UI
+1.1 Let's create `joinScreen` UI.
 
 ```html title="joinScreen.html"
 <div
@@ -169,7 +169,7 @@ In this step, we are going to create HTML file which will render `join-screen`, 
 
 </center>
 
-- Next step is to create `topBar` UI
+1.2 Next step is to create `topBar` UI.
 
 ```html title="topBar.html"
 <div
@@ -227,7 +227,7 @@ In this step, we are going to create HTML file which will render `join-screen`, 
 
 </center>
 
-- Now we will create `meetingContainer.html` after creating topbar.
+1.3 Now, we will create `meetingContainer.html` file.
 
 ```html ="meetingContainer.html"
 <div
@@ -241,7 +241,7 @@ In this step, we are going to create HTML file which will render `join-screen`, 
 </div>
 ```
 
-- The final step is to place each component in the "index.html" file after creating it.
+The final step is to place each component in the `index.html` file after creating it.
 
 ```html ="index.html"
 <!DOCTYPE html>
@@ -256,12 +256,18 @@ In this step, we are going to create HTML file which will render `join-screen`, 
   </head>
 
   <body>
-    <top-bar></top-bar>
+    //highlight-start
+    <top-bar />
+    //highlight-end
     <div ng-show="showJoinScreen">
-      <join-screen></join-screen>
+      //highlight-start
+      <join-screen />
+      //highlight-end
     </div>
     <div ng-show="showMeetingScreen">
-      <meeting-container></meeting-container>
+      //highlight-start
+      <meeting-container />
+      //highlight-end
     </div>
     <script src="https://sdk.videosdk.live/js-sdk/0.0.67/videosdk.js"></script>
   </body>
@@ -270,17 +276,17 @@ In this step, we are going to create HTML file which will render `join-screen`, 
 
 ### Step 2 : Implement Join Screen
 
-Set token in `config.js` file which is generated from [here](https://app.videosdk.live/login).
+Set the token in `config.js` file which is generated from [VideoSDK Dashbord](https://app.videosdk.live/login).
 
 ```js title="config.js"
 // Auth token we will use to generate a meeting and connect to it
 "use strict";
 angular.module("config", []).constant("ENV", {
-  token: YOUR_TOKEN,
+  token: "YOUR_TOKEN", // Add token here
 });
 ```
 
-Now get all elements from DOM and declare following variables in `app.js` file and then add Event Listener to the join and create meeting buttons.
+Now, get all the elements from DOM and declare following variables in `app.js` file and then add Event Listener to the join and create meeting buttons.
 
 ```js title="app.js"
 var myApp = angular.module("myApp", ["config"]);
@@ -402,7 +408,6 @@ $scope.initMeeting = function () {
     name: $scope.name, // required
     micEnabled: true, // optional, default: true
     webcamEnabled: true, // optional, default: true
-    maxResolution: "hd",
   });
   meeting.join();
   $scope.meeting = meeting;
@@ -435,7 +440,7 @@ $scope.initMeeting = function () {
 
 ### Step 4 : Handle Meeting Events
 
-In this step we will create participant grid and handle events like `meeting-joined`, `meeting-left` and participant events.
+In this step, we will create participant grid and handle events like `meeting-joined`, `meeting-left` and participant events.
 
 ```js ="app.js"
 // variable initialization
@@ -463,39 +468,36 @@ $scope.handleMeetingEvents = function (meeting) {
 
   // creating participant Grid
   $scope.participantGridGenerator = function ({ participant }) {
-    var participantGridItem1 = document.createElement("div");
-    participantGridItem1.style.backgroundColor = "lightgrey";
-    participantGridItem1.style.borderRadius = "10px";
-    participantGridItem1.style.height = "300px";
-    participantGridItem1.style.width = "320px";
-    participantGridItem1.style.marginTop = "8px";
-    participantGridItem1.style.display = "flex";
-    participantGridItem1.style.alignItems = "center";
-    participantGridItem1.style.justifyContent = "center";
-    participantGridItem1.style.position = "relative";
-    participantGridItem1.setAttribute(
+    var participantGridItem = document.createElement("div");
+    participantGridItem.style.backgroundColor = "lightgrey";
+    participantGridItem.style.borderRadius = "10px";
+    participantGridItem.style.height = "300px";
+    participantGridItem.style.width = "320px";
+    participantGridItem.style.marginTop = "8px";
+    participantGridItem.style.display = "flex";
+    participantGridItem.style.alignItems = "center";
+    participantGridItem.style.justifyContent = "center";
+    participantGridItem.style.position = "relative";
+    participantGridItem.setAttribute(
       "id",
       `participant-grid-item-${participant.id}`
     );
-    participantGridItem1.setAttribute("class", "col-4");
+    participantGridItem.setAttribute("class", "col-4");
     var participantMediaElement1 = document.createElement("div");
     participantMediaElement1.setAttribute(
       "id",
       `participant-media-container-${participant.id}`
     );
     var nameElement = $scope.createNameElement(participant);
-    $scope.participantGridContainer.appendChild(participantGridItem1);
-    participantGridItem1.appendChild(participantMediaElement1);
+    $scope.participantGridContainer.appendChild(participantGridItem);
+    participantGridItem.appendChild(participantMediaElement1);
     participantMediaElement1.appendChild(nameElement);
-    var participantGridItem = document.getElementById(
-      `participant-grid-item-${participant.id}`
-    );
+
     var participantMediaElement = document.getElementById(
       `participant-media-container-${participant.id}`
     );
 
     return {
-      participantGridItem,
       participantMediaElement,
     };
   };
@@ -686,12 +688,13 @@ $scope.handleStreamDisabled = function (
 
 ### Step 6 : Handle participant events
 
-in this step four events are used `participant-joined`, `participant-left` , `stream-enabled` and `stream-disabled`.
-Lets understand how we will use that event.
+In this step, we will implement four events `participant-joined`, `participant-left` , `stream-enabled` and `stream-disabled`.
 
-1. `participant-joined`: When a remote participant joins this event will trigger, in event callback will create video and audio elements which we had define in previous steps for rendering their video and audio streams.
+Let's understand the use of that events.
 
-2. `participant-left`: When a remote participant leaves this event will trigger, in event callback will remove the corresponding video and audio elements.
+1. `participant-joined`: When a remote participant joins, this event will trigger. In event callback will create video and audio elements which we had define in previous steps for rendering their video and audio streams.
+
+2. `participant-left`: When a remote participant leaves, this event will trigger. In event callback will remove the corresponding video and audio elements.
 
 3. `stream-enabled`: It Handle the media track of a specific participant by associating it with the appropriate video or audio element.
 

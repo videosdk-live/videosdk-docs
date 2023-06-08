@@ -96,15 +96,15 @@ Your project structure should look like this.
    │         ├── top-bar
    │             ├── top-bar.component.html
    │             ├── top-bar.component.ts
-   │    ├── app-routing.module.ts
-   │    ├── app.component.html
-   │    ├── app.component.ts
-   │    ├── app.module.ts
+   │    ├── app-routing.module.ts // Default
+   │    ├── app.component.html // Default
+   │    ├── app.component.ts // Default
+   │    ├── app.module.ts // Default
    │    ├── meeting.service.ts
    │    ├── enviroments
    │        ├── enviroment.ts
-   │    ├── styles.css
-   │    ├── index.html
+   │    ├── styles.css // Default
+   │    ├── index.html // Default
 ```
 
 We are going to work on following files:
@@ -115,23 +115,23 @@ We are going to work on following files:
 - top-bar.component.html: Responsible to create basic topbar with webcam,mic and leave meeting button.
 - app.component.html: Responsible for render `Joinscreen`, `Topbar` and `ParticipantGrid`.
 - join-screen.component.ts: Responsible for handling the logic and functionality related to the `join-screen.component.html` template.
-- top-bar.component.ts : Responsible for handling the logic and functionality related to the `join-screen.component.html` template.
-- app.component.ts: Responsible for handling `joinMeeting`, `createMeeting` , handle meeting and participant related events and render `join-screen` , `top-bar` and `participantGrid`.
+- top-bar.component.ts : Responsible for handling the logic and functionality related to the `top-bar.component.html` template.
+- app.component.ts: Responsible for handling `joinMeeting`, `createMeeting`, handle meeting and participant related events and render `join-screen`, `top-bar` and `participantGrid`.
 
 ### Step 1 : Get started with Meeting.service.ts
 
-Prior to moving on, we must create an API request to generate unique meetingId and validated meetingId. You will need an authentication token, which you can create either through the [videosdk-rtc-api-server-examples](https://github.com/videosdk-live/videosdk-rtc-api-server-examples) or directly from the [Video SDK Dashboard](https://app.videosdk.live/api-keys) for developers.
+Prior to moving on, we must create an API request to generate unique meetingId and validated meetingId. You will need an authentication token, which you can create either through the [videosdk-rtc-api-server-examples](https://github.com/videosdk-live/videosdk-rtc-api-server-examples) or directly from the [VideoSDK Dashboard](https://app.videosdk.live/api-keys) for developers.
 
-Set token in `enviroment.ts` file which is generated from [here](https://app.videosdk.live/login).
+Set token in `enviroment.ts` file which is generated from [VideoSDK Dashbord](https://app.videosdk.live/login).
 
-```ts title="enviroment.ts"
-// Auth token we will use to generate a meeting and connect to it
+```js title="enviroment.ts"
+// We will use Auth token to generate a meetingId and connect to it
 export const environment = {
   token: "YOUR_TOKEN_HERE",
 };
 ```
 
-```ts title="meeting.service.ts"
+```js title="meeting.service.ts"
 import { Injectable } from "@angular/core";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Observable } from "rxjs";
@@ -176,9 +176,9 @@ export class MeetingService {
 }
 ```
 
-- After creating meeting service you have to import this `app.module.ts`
+- After creating meeting service we will import it to `app.module.ts`.
 
-```ts title="app.module.ts"
+```js title="app.module.ts"
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
 import { AppRoutingModule } from "./app-routing.module";
@@ -193,6 +193,7 @@ import { FormsModule } from "@angular/forms";
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   declarations: [AppComponent, JoinScreenComponent, TopBarComponent],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
+  //highlight-next-line
   providers: [MeetingService],
   bootstrap: [AppComponent],
 })
@@ -203,7 +204,7 @@ export class AppModule {}
 
 In this step, we are going to create HTML file which will render `join-screen` and `top-bar`.
 
-- first we create `joinScreen` UI
+- First we will create `joinScreen` UI.
 
 ```html title="joinScreen.html"
 <div id="joinPage" class="main-bg" style="display: flex">
@@ -245,7 +246,7 @@ In this step, we are going to create HTML file which will render `join-screen` a
 
 </center>
 
-- After joinScreen we create `topBar` UI
+- After joinScreen we will create `topBar` UI.
 
 ```html title="topBar.html"
 <div *ngIf="showTopBar" style="height: 65px; background-color: lightgray">
@@ -320,18 +321,24 @@ In this step, we are going to create HTML file which will render `join-screen` a
 
 </center>
 
-- Now we place `join-screen` and `top-bar` component in one file called `app.component.html` and create `meeting-container` here.
+- Now, we will place `join-screen` and `top-bar` component in one file called `app.component.html` and create `meeting-container` here.
 
-```html ="app.component.html"
+```html title="app.component.html"
 <div *ngIf="showJoinScreen">
+  <!-- join-screen Start -->
+  // highlight-next-line
   <app-join-screen></app-join-screen>
+  <!-- join-screen End -->
+
 </div>
 <div *ngIf="showMeetingScreen">
   <!-- topbar Start -->
-  <app-top-bar></app-top-bar>
+  // highlight-next-line
+  <app-top-bar />
   <!-- topbar End -->
 
   <!-- Meeting Container -->
+  // highlight-start
   <div
     style="
       display: flex;
@@ -348,16 +355,17 @@ In this step, we are going to create HTML file which will render `join-screen` a
       ></div>
     </div>
   </div>
+  // highlight-end
 </div>
 
-<router-outlet></router-outlet>
+<router-outlet /></router-outlet>
 ```
 
-### Step 2 : Implement Join Screen
+### Step 3 : Implement Join Screen
 
-Now we first create `createMeeting` and `validateMeeting` function in `app.component.ts` to call respective apis.
+In this step, we will implement `createMeeting` and `validateMeeting` function in `app.component.ts` to call respective APIs.
 
-```ts title="app.component.ts"
+```js title="app.component.ts"
 import { Component, ElementRef, Renderer2, ViewChild } from "@angular/core";
 import { VideoSDK } from "@videosdk.live/js-sdk";
 import { environment } from "./../enviroments/enviroment";
@@ -418,16 +426,18 @@ export class AppComponent {
 
 - After creating function we pass this function in `join-screen` component this way
 
-```html ="app.component.html"
-<app-join-screen
-  (validateMeeting)="validateMeeting($event)"
-  (createMeeting)="createMeeting()"
-></app-join-screen>
+```html title="app.component.html"
+<div *ngIf="showJoinScreen">
+  <app-join-screen
+    (validateMeeting)="validateMeeting($event)"
+    (createMeeting)="createMeeting()"
+  ></app-join-screen>
+</div>
 ```
 
 - Now in `join-screen.component.ts` we fire this function.
 
-```ts ="join-screen.component.ts"
+```js ="join-screen.component.ts"
 import { Component, EventEmitter, Input, Output } from "@angular/core";
 
 @Component({
@@ -454,11 +464,11 @@ export class JoinScreenComponent {
 }
 ```
 
-### Step 3 : Initialize meeting
+### Step 4 : Initialize meeting
 
 In this step, we will initialize meeting through `initMeeting()` function and join that meeting.
 
-```ts title="startMeeting app.component.ts"
+```js title="startMeeting app.component.ts"
 // Initialize meeting
  async initMeeting() {
     VideoSDK.config(environment.token);
@@ -468,7 +478,6 @@ In this step, we will initialize meeting through `initMeeting()` function and jo
       name: this.participantName, // required
       micEnabled: true, // optional, default: true
       webcamEnabled: true, // optional, default: true
-      maxResolution: "hd", // optional, default: "hd"
     });
   }
 
@@ -501,9 +510,9 @@ In this step, we will initialize meeting through `initMeeting()` function and jo
   handleMeetingEvents(meeting: any) {}
 ```
 
-### Step 4: Handle Meeting Events
+### Step 5: Handle Meeting Events
 
-```ts ="app.component.ts"
+```js ="app.component.ts"
 
 // variable initialization
   handleMeetingEvents(meeting: any) {
@@ -577,11 +586,11 @@ In this step, we will initialize meeting through `initMeeting()` function and jo
   }
 ```
 
-### Step 4 : Create Media Elements
+### Step 6 : Create Media Elements
 
 In this step, we will create a function that helps us to create audio and video elements for displaying local and remote participants. We will also set the appropriate media track based on whether it's a video or audio.
 
-```ts title=app.component.ts
+```js title=app.component.ts
 // creating video element
 createVideoElement(
   stream: any,
@@ -797,9 +806,9 @@ participantGridGenerator(participant: any) {
 }
 ```
 
-### Step 6 : Handle participant events
+### Step 7 : Handle participant events
 
-in this step four events are used `participant-joined`, `participant-left` , `stream-enabled` and `stream-disabled`.
+In this step four events are used `participant-joined`, `participant-left` , `stream-enabled` and `stream-disabled`.
 Lets understand how we will use that event.
 
 1. `participant-joined`: When a remote participant joins this event will trigger, in event callback will create video and audio elements which we had define in previous steps for rendering their video and audio streams.
@@ -810,7 +819,7 @@ Lets understand how we will use that event.
 
 4. `stream-disabled`: It Handle the media track of a specific participant when participant toogle video or audio by associating it with the appropriate video or audio element
 
-```ts title="app.component.ts"
+```js title="app.component.ts"
 // participant joined
 //remote participant
 meeting.on("participant-joined", (participant: any) => {
@@ -854,11 +863,11 @@ meeting.on("participant-left", (participant: any) => {
 
 </center>
 
-### Step 6 : Implement Controls
+### Step 8 : Implement Controls
 
 In this step we will implement meeting functionalities such as toggleMic, toggleWebcam and leave meeting function in `app.component.ts` to call respective apis.
 
-```ts title="app.component.ts"
+```js title="app.component.ts"
 // variable initialization
 enableWebcamBtn: boolean = false;
 enableMicBtn: boolean = false;
@@ -916,7 +925,7 @@ disableWebcam() {
 
 - Now in `top-bar.component.ts` we fire this function.
 
-```ts ="top-bar.component.ts"
+```js ="top-bar.component.ts"
 import { Component, EventEmitter, Input, Output } from "@angular/core";
 
 @Component({
