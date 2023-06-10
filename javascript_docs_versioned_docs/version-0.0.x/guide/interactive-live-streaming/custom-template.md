@@ -82,11 +82,9 @@ import TabItem from '@theme/TabItem';
 
 ```html
 <html>
-  <head>
-    ....
-  </head>
+  <head></head>
   <body>
-    .....
+    // highlight-next-line
     <script src="https://sdk.videosdk.live/js-sdk/0.0.67/videosdk.js"></script>
   </body>
 </html>
@@ -123,7 +121,7 @@ You can use VideoSDK's React or JavaScript SDK to create custom template. Follow
    ├── index.js
 ```
 
-**`Step 2:`** Create UI that will be shown to your live stream
+**`Step 2:`** Create UI that will be shown to your live stream.
 
 ```html title="index.html"
 <!DOCTYPE html>
@@ -136,7 +134,7 @@ You can use VideoSDK's React or JavaScript SDK to create custom template. Follow
     <!-- render Video -->
     <div class="row" id="videoContainer"></div>
 
-    <script src="https://sdk.videosdk.live/js-sdk/0.0.63/videosdk.js"></script>
+    <script src="https://sdk.videosdk.live/js-sdk/0.0.67/videosdk.js"></script>
     <script src="index.js"></script>
   </body>
 </html>
@@ -311,7 +309,43 @@ npm install
 npm run start
 ```
 
-- This example has option on the Host side which will allow them to change the background of the viewer.
+- To use the custom template which we just deployed, we will call the [Start HLS API](https://docs.videosdk.live/api-reference/realtime-communication/start-hlsStream) instead of the `startHls` method from the `Meeting` class. This code has already been added in the example you cloned.
+
+:::important
+
+You can create your own custom template manager in JavaScript. In this example, we are using a React template manager for better understanding.
+
+:::
+
+```js
+<button
+  onClick={async () => {
+    const url = `https://api.videosdk.live/v2/hls/start`;
+    //Update your Custom Template URL here if you have deployed your own, if not deployed you can use this template from our URL.
+    //highlight-next-line
+    const templateUrl = `https://lab.videosdk.live/react-custom-template-demo?meetingId=${meetingId}&token=${authToken}`;
+    const options = {
+      method: "POST",
+      headers: {
+        Authorization: authToken,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        roomId: meetingId,
+        templateUrl: templateUrl,
+      }),
+    };
+
+    const result = await fetch(url, options)
+      .then((response) => response.json()) // result will have downstreamUrl
+      .catch((error) => console.error("error", error));
+  }}
+>
+  Start HLS
+</button>
+```
+
+- This example has two option on the Host side which will allow them to change the background and send the messages to the viewer.
 
 - Let's give this example a test run.
 

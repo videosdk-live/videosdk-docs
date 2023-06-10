@@ -60,7 +60,7 @@ import ReactPlayer from 'react-player'
 
 ## Using roles
 
-The mode of the participants is set during the meeting intialization in the `config` in `meeting`.
+The mode of the participants is set during the meeting intialization using `initMeeting`.
 
 ```js
 VideoSDK.config(token);

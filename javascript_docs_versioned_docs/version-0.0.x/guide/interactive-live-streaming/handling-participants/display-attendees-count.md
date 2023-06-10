@@ -18,7 +18,7 @@ slug: display-attendees-count
 
 # Display Attendees Count
 
-In this guide we will see how you can display the number of attendees.
+In this guide, we will see how you can display the number of attendees.
 
 :::note
 Before going forward in this guide, do make sure all the attendees join the meeting with mode as `VIEWER`

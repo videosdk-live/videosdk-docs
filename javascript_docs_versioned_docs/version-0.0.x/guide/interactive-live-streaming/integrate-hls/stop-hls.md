@@ -44,7 +44,7 @@ stopHlsBtn.addEventListener("click", () => {
 
 - **hls-state-changed** - Whenever meeting HLS state changes, then `hls-state-changed` event will trigger.
 
-- You can get the `downstreamUrl` of the HLS to play it on the Viewer side when the state changes to `HLS_STARTED`
+- You will get `HLS_STOPPING` and `HLS_STOPPED` status on calling `stopHls()`.
 
 ```js
 let meeting;
@@ -62,15 +62,15 @@ meeting.on("hls-state-changed", (data) => {
   if (status === Constants.hlsEvents.HLS_STARTING) {
     console.log("Meeting Hls is starting");
   } else if (status === Constants.hlsEvents.HLS_STARTED) {
-    //highlight-start
     // on hlsStateChanged started you will receive downstreamUrl
     const { downstreamUrl } = data;
-    //highlight-end
     console.log("Meeting Hls is started");
+    //highlight-start
   } else if (status === Constants.hlsEvents.HLS_STOPPING) {
     console.log("Meeting Hls is stopping");
   } else if (status === Constants.hlsEvents.HLS_STOPPED) {
     console.log("Meeting Hls is stopped");
+    //highlight-end
   } else {
     //
   }

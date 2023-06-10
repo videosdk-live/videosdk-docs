@@ -18,7 +18,7 @@ slug: invite-guest-on-stage
 
 # Invite Guest on Stage
 
-In this guide we will see how you can request a viewer to join your livestream by using the `changeMode()`.
+In this guide, we will see how you can request a viewer to join your livestream by using the `changeMode()`.
 
 :::note
 Before going forward in this guide, do make sure all the attendees join the meeting with mode as `VIEWER` and the host joins with mode as `CONFERENCE`

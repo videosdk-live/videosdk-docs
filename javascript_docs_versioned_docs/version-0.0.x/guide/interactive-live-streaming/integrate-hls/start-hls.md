@@ -17,7 +17,7 @@ slug: start-hls
 
 # Start HLS
 
-Before starting the HLS, the perquisite steps require you to have a VideoSDK Meeting running which you want to use for interactive livestream. To learn more about setting up a interactive live streaming, you can follow the steps [here in the quick start guide.](/react/guide/video-and-audio-calling-api-sdk/quick-start-ILS)
+Before starting the HLS, the perquisite steps require you to have a VideoSDK Meeting running which you want to use for interactive livestream. To learn more about setting up a interactive live streaming, you can follow the steps [here in the quick start guide.](/javascript/guide/video-and-audio-calling-api-sdk/quick-start-ILS)
 
 ## Starting HLS
 
