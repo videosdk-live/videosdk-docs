@@ -13,7 +13,7 @@ sidebar_position: 1
 slug: image-capturer
 ---
 
-# Image Capturer.
+# Image Capturer
 
 In this guide, we will see how you can capture images from participants video streams. For that, we will create a button, and when it's clicked, we will use the `ImageCapture` API of the browser to capture the image, which we will then render in Canvas.
 
