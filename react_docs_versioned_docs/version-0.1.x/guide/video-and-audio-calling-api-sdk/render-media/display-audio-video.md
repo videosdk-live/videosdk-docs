@@ -17,7 +17,7 @@ slug: display-audio-video
 
 # Display Audio and Video
 
-In this guide we will take a look at how to render the participant's audio and video on the screen.
+In this guide, we will take a look at how to render the participant's audio and video on the screen.
 
 ## Rendering Participant
 

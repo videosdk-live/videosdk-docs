@@ -17,13 +17,13 @@ slug: render-participant
 
 # Render Participant
 
-In this guide we will take a look at how to render the participant's video on the screen.
+In this guide, we will take a look at how to render the participant's video on the screen.
 
 :::info
 
 - Here the participant's video is displayed using `VideoView`, but you may also use `SurfaceViewRender` for the same.
 - For `VideoView`, SDK version should be `0.1.13` or higher.
-- To know more about `VideoView`, please visit [here](./understand-videoView-component) 
+- To know more about `VideoView`, please visit [here](./understand-videoView-component)
 
 :::
 
@@ -164,7 +164,7 @@ public class ParticipantAdapter extends RecyclerView.Adapter<ParticipantAdapter.
 </Tabs>
 
 **`Step 3:`** Next, we will render a list of `Participant` for the meeting.
-   We will initialize this list in the constructor of the `ParticipantAdapter`
+We will initialize this list in the constructor of the `ParticipantAdapter`
 
 <Tabs
 defaultValue="Kotlin"
@@ -176,8 +176,8 @@ values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
 ```js title="ParticipantAdapter.kt"
 class ParticipantAdapter(meeting: Meeting) :
     RecyclerView.Adapter<ParticipantAdapter.PeerViewHolder>() {
-    
-  //highlight-next-line  
+
+  //highlight-next-line
   // creating a empty list which will store all participants
   private val participants: MutableList<Participant> = ArrayList()
 
@@ -221,6 +221,7 @@ class ParticipantAdapter(meeting: Meeting) :
   //...
 }
 ```
+
 </TabItem>
 
 <TabItem value="Java">
@@ -276,6 +277,7 @@ public class ParticipantAdapter extends RecyclerView.Adapter<ParticipantAdapter.
   //...
 }
 ```
+
 </TabItem>
 
 </Tabs>
@@ -293,7 +295,7 @@ values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
 class ParticipantAdapter(meeting: Meeting) :
     RecyclerView.Adapter<ParticipantAdapter.PeerViewHolder>() {
 
-  //highlight-next-line    
+  //highlight-next-line
   // replace onBindViewHolder() method with following.
   override fun onBindViewHolder(holder: PeerViewHolder, position: Int) {
     val participant = participants[position]
@@ -335,6 +337,7 @@ class ParticipantAdapter(meeting: Meeting) :
   }
 }
 ```
+
 </TabItem>
 
 <TabItem value="Java">
@@ -388,6 +391,7 @@ public class ParticipantAdapter extends RecyclerView.Adapter<ParticipantAdapter.
   }
 }
 ```
+
 </TabItem>
 
 </Tabs>
@@ -462,6 +466,7 @@ class ParticipantAdapter(meeting: Meeting) :
   }
 }
 ```
+
 </TabItem>
 
 <TabItem value="Java">
@@ -479,6 +484,7 @@ public class ParticipantAdapter extends RecyclerView.Adapter<ParticipantAdapter.
   };
 }
 ```
+
 </TabItem>
 
 </Tabs>
@@ -492,4 +498,4 @@ public class ParticipantAdapter extends RecyclerView.Adapter<ParticipantAdapter.
 The API references for all the methods and events utilised in this guide are provided below.
 
 - [Participant](/android/api/sdk-reference/participant-class/introduction)
-- [VideoView](./understand-videoView-component) 
+- [VideoView](./understand-videoView-component)

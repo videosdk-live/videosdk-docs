@@ -66,14 +66,19 @@ export default function QuickstartPart() {
       tooltip: "React",
     },
     {
-      Icon: CustomFlutterIcon,
-      link: "/flutter/guide/video-and-audio-calling-api-sdk/quick-start-ils",
-      tooltip: "Flutter",
+      Icon: CustomJSIcon,
+      link: "/javascript/guide/video-and-audio-calling-api-sdk/quick-start-ILS",
+      tooltip: "JavaScript",
     },
     {
       Icon: CustomReactNativeIcon,
       link: "/react-native/guide/video-and-audio-calling-api-sdk/quick-start-ILS",
       tooltip: "React Native",
+    },
+    {
+      Icon: CustomFlutterIcon,
+      link: "/flutter/guide/video-and-audio-calling-api-sdk/quick-start-ils",
+      tooltip: "Flutter",
     },
     {
       Icon: CustomAndroidIcon,

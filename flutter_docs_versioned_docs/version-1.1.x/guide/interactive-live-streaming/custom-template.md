@@ -469,15 +469,15 @@ flutter pub get
 flutter run
 ```
 
-- To use the custom template which we just deployed, we will call the start HLS API instead of the `startHls` method from the `Room` class. This code has already been added in the example you cloned.
+- To use the custom template which we just deployed, we will call the [Start HLS API](https://docs.videosdk.live/api-reference/realtime-communication/start-hlsStream) instead of the `startHls` method from the `Room` class. This code has already been added in the example you cloned.
 
 ```js
 void startHls() async {
-  //Update your Custom Template URL here if you have deployed your own
-  //highlight-start
+  //Update your Custom Template URL here if you have deployed your own, if not deployed you can use this template from our URL.
+    //highlight-start
   String templateUrl =
       'https://lab.videosdk.live/react-custom-template-demo?meetingId=${widget.room.id}&token=${token}';
-  //highlight-end    
+  //highlight-end
   final body = utf8.encode(
     json.encode(
       <String, dynamic>{

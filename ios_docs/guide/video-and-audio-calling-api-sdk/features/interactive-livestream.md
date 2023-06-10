@@ -87,7 +87,7 @@ stopHLS();
 
 - **onHlsStateChanged** - Whenever meeting HLS state changes, then `onHlsStateChanged` event will trigger.
 
-- You can get the `downstreamUrl` of the HLS to play it on the Viewer side when the state changes to `HLSState.HLS_STARTED`
+- You will get `HLS_STOPPING` and `HLS_STOPPED` status on calling `stopHls()`.
 
 ```js
 
@@ -102,13 +102,14 @@ func onHlsStateChanged(state: HLSState, hlsUrl: HLSUrl?) {
 
         case .HLS_PLAYABLE:
             print("HLS Playable")
-
+  // highlight-start
         case .HLS_STOPPING:
             print("HLS Stopping")
 
         case .HLS_STOPPED:
             self.hlsStreamStarted = false
             print("HLS Stopped")
+  // highlight-stop
         }
 }
 
