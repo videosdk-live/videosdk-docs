@@ -15,7 +15,7 @@ sidebar_position: 1
 slug: quick-start-ILS
 ---
 
-# Quick Start for Interactive Live Streaming in React
+# Quick Start for Interactive Live Streaming in Javascript
 
 VideoSDK enables you to embed the video calling feature into your Javascript application in minutes.
 
@@ -54,10 +54,10 @@ import TabItem from '@theme/TabItem';
 ```html
 <html>
   <head>
-    ....
+    <!--.....-->
   </head>
   <body>
-    .....
+    <!--.....-->
     <script src="https://sdk.videosdk.live/js-sdk/0.0.67/videosdk.js"></script>
   </body>
 </html>
@@ -101,51 +101,49 @@ We are going to work on two files:
 
 In this step, we are going to create HTML file which will have two screens `join-screen` and `grid-screen`.
 
-```js title="index.html"
+```html title="index.html"
 <!DOCTYPE html>
 <html>
+  <head> </head>
 
-<head> </head>
-
-<body>
+  <body>
     <div id="join-screen">
-        <!-- Create new Meeting Button -->
-        <button id="createMeetingBtn">New Meeting</button>
-        OR
-        <!-- Join existing Meeting -->
-        <input type="text" id="meetingIdTxt" placeholder="Enter Meeting id" />
-        <button id="joinHostBtn">Join As Host</button>
-        <button id="joinViewerBtn">Join As Viewer</button>
+      <!-- Create new Meeting Button -->
+      <button id="createMeetingBtn">Create Meeting</button>
+      OR
+      <!-- Join existing Meeting -->
+      <input type="text" id="meetingIdTxt" placeholder="Enter Meeting id" />
+      <button id="joinHostBtn">Join As Host</button>
+      <button id="joinViewerBtn">Join As Viewer</button>
     </div>
 
     <!-- for Managing meeting status -->
     <div id="textDiv"></div>
 
     <div id="grid-screen" style="display: none">
-        <!-- To Display MeetingId -->
-        <h3 id="meetingIdHeading"></h3>
-        <h3 id="hlsStatusHeading"></h3>
+      <!-- To Display MeetingId -->
+      <h3 id="meetingIdHeading"></h3>
+      <h3 id="hlsStatusHeading"></h3>
 
-        <div id="speakerView" style="display: none">
-            <!-- Controllers -->
-            <button id="leaveBtn">Leave</button>
-            <button id="toggleMicBtn">Toggle Mic</button>
-            <button id="toggleWebCamBtn">Toggle WebCam</button>
-            <button id="startHlsBtn">Start HLS</button>
-            <button id="stopHlsBtn">Stop HLS</button>
-        </div>
+      <div id="speakerView" style="display: none">
+        <!-- Controllers -->
+        <button id="leaveBtn">Leave</button>
+        <button id="toggleMicBtn">Toggle Mic</button>
+        <button id="toggleWebCamBtn">Toggle WebCam</button>
+        <button id="startHlsBtn">Start HLS</button>
+        <button id="stopHlsBtn">Stop HLS</button>
+      </div>
 
-        <!-- render Video -->
-        <div id="videoContainer"></div>
+      <!-- render Video -->
+      <div id="videoContainer"></div>
     </div>
-    <script src="https://sdk.videosdk.live/js-sdk/0.0.63/videosdk.js"></script>
+    <script src="https://sdk.videosdk.live/js-sdk/0.0.67/videosdk.js"></script>
     <script src="config.js"></script>
     <script src="index.js"></script>
 
     <!-- hls lib script  -->
     <script src="https://cdn.jsdelivr.net/npm/hls.js"></script>
-</body>
-
+  </body>
 </html>
 ```
 
@@ -153,7 +151,7 @@ In this step, we are going to create HTML file which will have two screens `join
 
 <center>
 
-<img src='https://cdn.videosdk.live/website-resources/docs-resources/js_join_screen.png' />
+<img src='https://cdn.videosdk.live/website-resources/docs-resources/js_ils_join_screen.png' />
 
 </center>
 
@@ -200,7 +198,7 @@ let isWebCamOn = false;
 
 const Constants = VideoSDK.Constants;
 
-async function initializeMeeting() {}
+function initializeMeeting() {}
 
 function createLocalParticipant() {}
 
@@ -218,7 +216,7 @@ joinHostButton.addEventListener("click", async () => {
   roomId = document.getElementById("meetingIdTxt").value;
   meetingId = roomId;
 
-  await initializeMeeting(Constants.modes.CONFERENCE);
+  initializeMeeting(Constants.modes.CONFERENCE);
 });
 
 // Join Meeting As Viewer Button Event Listener
@@ -229,7 +227,7 @@ joinViewerButton.addEventListener("click", async () => {
   roomId = document.getElementById("meetingIdTxt").value;
   meetingId = roomId;
 
-  await initializeMeeting(Constants.modes.VIEWER);
+  initializeMeeting(Constants.modes.VIEWER);
 });
 
 // Create Meeting Button Event Listener
@@ -248,9 +246,17 @@ createButton.addEventListener("click", async () => {
     .catch((error) => alert("error", error));
   meetingId = roomId;
 
-  await initializeMeeting(Constants.modes.CONFERENCE);
+  initializeMeeting(Constants.modes.CONFERENCE);
 });
 ```
+
+#### Output
+
+<center>
+
+<img src='https://cdn.videosdk.live/website-resources/docs-resources/js_ils_waiting.png' />
+
+</center>
 
 ### Step 3: Initialize meeting
 
@@ -258,12 +264,12 @@ Initialise the meeting by mode passed to the function and only create a local pa
 
 ```js title="index.s"
 // Initialize meeting
-async function initializeMeeting(mode) {
+function initializeMeeting(mode) {
   window.VideoSDK.config(TOKEN);
 
   meeting = window.VideoSDK.initMeeting({
     meetingId: meetingId, // required
-    name: "Tirth", // required
+    name: "Thomas Edison", // required
     mode: mode,
   });
 
@@ -278,12 +284,17 @@ async function initializeMeeting(mode) {
     ).textContent = `Meeting Id: ${meetingId}`;
 
     if (meeting.hlsState === Constants.hlsEvents.HLS_STOPPED) {
-      hlsStatusHeading.textContent = "HLS Not Stared Yet";
+      hlsStatusHeading.textContent = "HLS has not stared yet";
     } else {
       hlsStatusHeading.textContent = `HLS Status: ${meeting.hlsState}`;
     }
 
     if (mode === Constants.modes.CONFERENCE) {
+      // highlight-start
+      // we will pin the local participant if he joins in `CONFERENCE` mode
+      meeting.localParticipant.pin();
+      // highlight-end
+
       document.getElementById("speakerView").style.display = "block";
     }
   });
@@ -305,7 +316,7 @@ async function initializeMeeting(mode) {
       setTrack(stream, null, meeting.localParticipant, true);
     });
 
-    //  participant joined
+    // participant joined
     meeting.on("participant-joined", (participant) => {
       if (participant.mode === Constants.modes.CONFERENCE) {
         participant.pin();
@@ -336,6 +347,14 @@ async function initializeMeeting(mode) {
   }
 }
 ```
+
+#### Output
+
+<center>
+
+<img src='https://cdn.videosdk.live/website-resources/docs-resources/js_ils_controls.png' />
+
+</center>
 
 ### Step 4: Speaker Controls
 
@@ -476,6 +495,14 @@ function setTrack(stream, audioElement, participant, isLocal) {
 }
 ```
 
+#### Output
+
+<center>
+
+<img src='https://cdn.videosdk.live/website-resources/docs-resources/js_ils_speaker_view.png' />
+
+</center>
+
 ### Step 6: Implement ViewerView
 
 When host start the live streaming, viewer will be able to see the live streaming.
@@ -485,44 +512,59 @@ To implement player view, we are going to use `hls.js`. It will be helpful to pl
 Now on the `hls-state-changed` event, when participant mode is set to `VIEWER` and the status of hls is `HLS_PLAYABLE`, we will pass the downstreamUrl to the hls.js and play it.
 
 ```js title="index.js"
-meeting.on("hls-state-changed", (data) => {
-  const { status } = data;
+// Initialize meeting
+function initializeMeeting() {
+  // ...
 
-  hlsStatusHeading.textContent = `HLS Status: ${status}`;
+  // hls-state-chnaged event
+  meeting.on("hls-state-changed", (data) => {
+    const { status } = data;
 
-  if (mode === Constants.modes.VIEWER) {
-    if (status === Constants.hlsEvents.HLS_PLAYABLE) {
-      const { downstreamUrl } = data;
-      let video = document.createElement("video");
-      video.setAttribute("width", "100%");
+    hlsStatusHeading.textContent = `HLS Status: ${status}`;
 
-      if (Hls.isSupported()) {
-        var hls = new Hls();
-        hls.loadSource(downstreamUrl);
-        hls.attachMedia(video);
-        hls.on(Hls.Events.MANIFEST_PARSED, function () {
-          video.play();
-        });
-      } else if (video.canPlayType("application/vnd.apple.mpegurl")) {
-        video.src = downstreamUrl;
-        video.addEventListener("canplay", function () {
-          video.play();
-        });
+    if (mode === Constants.modes.VIEWER) {
+      if (status === Constants.hlsEvents.HLS_PLAYABLE) {
+        const { downstreamUrl } = data;
+        let video = document.createElement("video");
+        video.setAttribute("width", "100%");
+        video.setAttribute("muted", "false");
+        // highlight-start
+        // enableAutoPlay for browser autoplay policy
+        video.setAttribute("autoplay", "true");
+        // highlight-end
+
+        if (Hls.isSupported()) {
+          var hls = new Hls();
+          hls.loadSource(downstreamUrl);
+          hls.attachMedia(video);
+          hls.on(Hls.Events.MANIFEST_PARSED, function () {
+            video.play();
+          });
+        } else if (video.canPlayType("application/vnd.apple.mpegurl")) {
+          video.src = downstreamUrl;
+          video.addEventListener("canplay", function () {
+            video.play();
+          });
+        }
+
+        videoContainer.appendChild(video);
       }
 
-      videoContainer.appendChild(video);
+      if (status === Constants.hlsEvents.HLS_STOPPING) {
+        videoContainer.innerHTML = "";
+      }
     }
-
-    if (status === Constants.hlsEvents.HLS_STOPPING) {
-      videoContainer.innerHTML = "";
-    }
-  }
-});
+  });
+}
 ```
 
-#### Output of ViewerView
+#### Output
 
-![VideoSDK React Interactive Live Streaming Quick Start Meeting Container Component](https://cdn.videosdk.live/website-resources/docs-resources/quick_start_react_ils_viewer.png)
+<center>
+
+<img src='https://cdn.videosdk.live/website-resources/docs-resources/js_ils_viewer_view.png' />
+
+</center>
 
 #### Final Output
 
@@ -532,7 +574,7 @@ import ReactPlayer from 'react-player'
 
 <div style={{textAlign: 'center'}}>
 
-<ReactPlayer autoplay muted loop playing controls url="https://cdn.videosdk.live/website-resources/docs-resources/quick_start_react_ils_video.mp4" height="500px" width={"100%"} />
+<ReactPlayer autoplay muted loop playing controls url="https://cdn.videosdk.live/website-resources/docs-resources/js_ils_quick_start.mp4" height="500px" width={"100%"} />
 
 </div>
 
