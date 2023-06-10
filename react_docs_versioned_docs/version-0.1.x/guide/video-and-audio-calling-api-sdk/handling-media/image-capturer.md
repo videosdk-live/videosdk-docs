@@ -60,8 +60,8 @@ useEffect(() => {
 return (
   <canvas
     ref={canvasRef}
-    id='previewCanvas'
-    className='object-contain h-1/2 w-1/2'
+    id="previewCanvas"
+    className="object-contain h-1/2 w-1/2"
   />
 );
 ```
