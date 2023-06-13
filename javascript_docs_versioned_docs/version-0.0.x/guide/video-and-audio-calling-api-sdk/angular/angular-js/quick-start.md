@@ -723,7 +723,7 @@ $scope.handleMeetingEvents = function (meeting) {
 
 <center>
 
-<img src='https://cdn.videosdk.live/website-resources/docs-resources/js_grid_screen.png' />
+<img src='https://cdn.videosdk.live/website-resources/docs-resources/angular/angularJS_participant_container.png' />
 
 </center>
 
@@ -734,8 +734,8 @@ In this step, we will implement meeting functionalities such as toggleMic, toggl
 ```js title="app.js"
 myApp.controller("myController", function ($scope, $http, ENV) {
   //...
-  $scope.isWebcamOn = false;
-  $scope.isMicOn = false;
+  $scope.isWebcamOn = true;
+  $scope.isMicOn = true;
 
   $scope.handleMeetingEvents = function (meeting) {
     //..
@@ -746,6 +746,7 @@ myApp.controller("myController", function ($scope, $http, ENV) {
       } else {
         $scope.meeting.enableWebcam();
       }
+      $scope.isWebcamOn = !$scope.isWebcamOn;
     };
 
     // Toggle Webcam in Meeting
@@ -781,10 +782,10 @@ We are done with implementation of customised video calling app in Angular JS us
 
 import ReactPlayer from 'react-player'
 
-<ReactPlayer controls autoplay muted loop playing url='https://cdn.videosdk.live/website-resources/docs-resources/js_quickstart_output.mp4' width={"100%"} />
+<ReactPlayer controls autoplay muted loop playing url='https://cdn.videosdk.live/website-resources/docs-resources/angular/AngularJS_output.mp4' width={"100%"} />
 
 <br/>
 
 :::tip
-You can checkout the complete [quick start example here](https://github.com/videosdk-live/quickstart/tree/main/angular-rtc).
+You can checkout the complete [quick start example here](https://github.com/videosdk-live/quickstart/tree/main/angular-rtc/videosdk_angular_js_quickstart).
 :::

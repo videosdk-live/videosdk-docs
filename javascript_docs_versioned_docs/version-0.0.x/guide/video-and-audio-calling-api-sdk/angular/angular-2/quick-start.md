@@ -566,8 +566,8 @@ In this step, we will create a function that helps us to create audio and video 
 
 ```js title=app.component.ts
 export class AppComponent {
-  isWebcamOn: boolean = false;
-  isMicOn: boolean = false;
+  isWebcamOn: boolean = true;
+  isMicOn: boolean = true;
   // creating video element
   createVideoElement(
     stream: any,
@@ -681,7 +681,6 @@ export class AppComponent {
     participantMediaElement: any
   ) {
     if (stream.kind == "video") {
-      this.isWebcamOn = true;
       var nameElement = document.getElementById(
         `name-container-${participant.id}`
       );
@@ -690,8 +689,6 @@ export class AppComponent {
     }
     if (!isLocal) {
       if (stream.kind == "audio") {
-        this.isMicOn = true;
-        console.log("audio stream enabled");
         this.createAudioElement(stream, participant, participantMediaElement);
       }
     }
@@ -704,9 +701,6 @@ export class AppComponent {
     participantMediaElement: any
   ) {
     if (stream.kind == "video") {
-      this.isWebcamOn = false;
-      console.log("video stream disabled");
-
       var videoElement = document.getElementById(
         `video-container-${participant.id}`
       );
@@ -717,8 +711,6 @@ export class AppComponent {
     }
     if (!isLocal) {
       if (stream.kind == "audio") {
-        this.isMicOn = false;
-        console.log("audio stream disabled");
         var audioElement = document.getElementById(
           `audio-container-${participant.id}`
         );
@@ -835,7 +827,7 @@ meeting.on("participant-left", (participant: any) => {
 
 <center>
 
-<img src='https://cdn.videosdk.live/website-resources/docs-resources/js_grid_screen.png' />
+<img src='https://cdn.videosdk.live/website-resources/docs-resources/angular/participantContainer.png' />
 
 </center>
 
@@ -852,6 +844,7 @@ export class AppComponent {
     } else {
       this.meeting.enableWebcam();
     }
+    this.isWebcamOn = !this.isWebcamOn;
   }
 
   toogleMic() {
@@ -860,7 +853,9 @@ export class AppComponent {
     } else {
       this.meeting.unmuteMic();
     }
+    this.isMicOn = !this.isMicOn;
   }
+
   leaveMeeting() {
     this.meeting.leave();
     this.showMeetingScreen = false;
@@ -927,10 +922,10 @@ We are done with implementation of customised video calling app in Angular JS us
 
 import ReactPlayer from 'react-player'
 
-<ReactPlayer controls autoplay muted loop playing url='https://cdn.videosdk.live/website-resources/docs-resources/js_quickstart_output.mp4' width={"100%"} />
+<ReactPlayer controls autoplay muted loop playing url='https://cdn.videosdk.live/website-resources/docs-resources/angular/angular2-output.mp4' width={"100%"} />
 
 <br/>
 
 :::tip
-You can checkout the complete [quick start example here](https://github.com/videosdk-live/quickstart/tree/main/angular-rtc).
+You can checkout the complete [quick start example here](https://github.com/videosdk-live/quickstart/tree/main/angular-rtc/videosdk_angular_2_quickstart).
 :::
