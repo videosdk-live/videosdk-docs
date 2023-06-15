@@ -123,4 +123,25 @@ pagination_label: Participant Class Methods
 
 - `void`
 
+---
+
+### getAudioStats()
+
+- `getAudioStats()` is used to get audio stats of this participant.
+
+#### Returns
+
+- `[String:Any]`
+
+
+---
+
+### getVideoStats()
+
+- `getVideoStats()` is used to get video stats of this participant.
+
+#### Returns
+
+- `[String:Any]`
+
 </div>
