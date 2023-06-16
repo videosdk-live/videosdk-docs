@@ -18,7 +18,7 @@ slug: manage-on-screen-participants
 
 # Manage On-Screen Participants
 
-It is important that only the necessary person is present on the screen when livestream is on. To handle these, we will be using the `pin` and `unpin` methods of the `useParticipant` hook.
+It is important that only the necessary person is present on the screen when livestream is on. To handle this, we will be using the `pin` and `unpin` methods of the `useParticipant` hook.
 
 :::note
 To ensure only the hosts/speakers are shown in the grid, you should use the `SPOTLIGHT` layout and `pin` as the priority when starting the interactive livestream.
@@ -28,11 +28,11 @@ Let us first explore two methods that we will be using to manage on-screen parti
 
 ### `pin()`
 
-With this method you can pin any participant's Camera, Screen Share or both. These can be useful to identify the participants based on which you can perform rendering participant grid.
+With this method you can pin any participant's Camera, Screen Share or both. This can be useful to identify the participants based on which you can perform rendering participant grid.
 
 ### `unpin()`
 
-With this methods you can unpin any participant's Camera, Screen Share or both. These can be useful to reset pin state of the participant.
+With this methods you can unpin any participant's Camera, Screen Share or both. This can be useful to reset pin state of the participant.
 
 ### Managing On-Screen Participants
 

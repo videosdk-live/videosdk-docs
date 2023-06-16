@@ -18,13 +18,14 @@ slug: layout-and-grid-management
 
 # Layout and Grid Management
 
-In this guide we will take a look at how to efficiently manage the participants in different types of layout.
+In this guide, we will take a look at how to efficiently manage the participants in different types of layout.
 
 ## Grid Layout
 
 The most usual way to showing participants within a grid. There are multiple things you should keep in mind when showing participants in the grid.
 
 This includes the number of participants being shown on the screens, number of participants in the background(in the meeting but not on the grid), quality which is being consumed for each and every participant in the grid.
+
 ### Quality of Participant's Video
 
 When there are large number of participants present on the screen, it is best to consume them in lower resolutions. For this we recommend you to call the `setQuality` method on the participants present in the grid with dyanmic values based on the number of participants on the screen.
@@ -102,7 +103,6 @@ for (Map.Entry<String, Stream> entry : participant.getStreams().entrySet()) {
 
 - `resume()` method is used to resume stream(webcam, screenShare and mic) of a particular participant.
 
-
 <Tabs
 defaultValue="Kotlin"
 groupId={"AndroidLanguage"}
@@ -126,7 +126,7 @@ for (Map.Entry<String, Stream> entry : participant.getStreams().entrySet()) {
   Stream stream = entry.getValue();
   //highlight-next-line
   stream.resume();
-}     
+}
 ```
 
 </TabItem>
@@ -138,5 +138,3 @@ for (Map.Entry<String, Stream> entry : participant.getStreams().entrySet()) {
 The API references for all the methods and events utilised in this guide are provided below.
 
 - [setQuality](/android/api/sdk-reference/participant-class/methods#setquality)
-
-

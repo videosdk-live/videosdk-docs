@@ -97,7 +97,7 @@ PubSub is a very powerful mechanism which can be used to do a lot of things whic
 1. [`Chat`](./chat-using-pubsub): You can utilise this to develop various Chat features, such as Private Chat and Group Chat. You can follow our chat [integration guide here](./chat-using-pubsub).
 2. `Raise Hand`: You can allow attendees to raise their hands at any time during the meeting, informing everyone else that someone has done so.
 3. `Layout Switching`: You can change the meeting's layout for every participant at once during the meeting, such as from Grid layout to Spotlight or Grid Layout to Sidebar Layout, etc.
-4. [`Whiteboard`](./canvas-drawing-using-pubsub): You can develop an interactive whiteboard functionality that is completely functional. You can follow our canvas drawing.
+4. `Whiteboard`: You can develop an interactive whiteboard functionality that is completely functional. You can follow our canvas drawing.
 5. `Poll`: You may make polls, let users respond to them, and display the results at the end of a poll.
 6. `Question Answer Session`: You can also design interactive functionality that is question-and-answer based.
 

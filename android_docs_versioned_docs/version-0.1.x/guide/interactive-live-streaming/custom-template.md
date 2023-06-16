@@ -455,7 +455,6 @@ You can checkout the github repository for sample custom template we just [creat
 
 ![Android Custom Template Example](https://cdn.videosdk.live/website-resources/docs-resources/android_custom_template.png)
 
-
 - You can clone this example and run it on your system.
 
 ```bash
@@ -464,7 +463,7 @@ git clone https://github.com/videosdk-live/quickstart.git
 
 - The cloned example will contain two directories under the `android-custom-template-manager` directory which has to runned.
 
-  -  **For Kotlin** : `Videosdk_android_kotlin_hls_quickstart`
+  - **For Kotlin** : `Videosdk_android_kotlin_hls_quickstart`
   - **For Java** : `Videosdk_android_java_hls_quickstart`
 
 import Tabs from '@theme/Tabs';
@@ -490,11 +489,12 @@ cd Videosdk_android_kotlin_hls_quickstart
 cd android-custom-template-manager
 cd Videosdk_android_java_hls_quickstart
 ```
+
 </TabItem>
 
 </Tabs>
 
-- To use the custom template which we just deployed, we will call the start HLS API instead of the `startHls` method from the `Meeting` class. This code has already been added in the example you cloned.
+- To use the custom template which we just deployed, we will call the [Start HLS API](https://docs.videosdk.live/api-reference/realtime-communication/start-hlsStream) instead of the `startHls` method from the `Meeting` class. This code has already been added in the example you cloned.
 
 <Tabs
 defaultValue="Kotlin"
@@ -505,12 +505,12 @@ values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
 
 ```js
 btnHls!!.setOnClickListener {
-  //Update your Custom Template URL here if you have deployed your own
+  //Update your Custom Template URL here if you have deployed your own, if not deployed you can use this template from our URL.
   //highlight-start
   val templateUrl =
       "https://lab.videosdk.live/react-custom-template-demo?meetingId=" + meeting!!.meetingId + "&token=" + token
   //highlight-end
-      
+
   val bodyJson = JSONObject()
   JsonUtils.jsonPut(bodyJson, "roomId", meeting!!.meetingId)
   JsonUtils.jsonPut(bodyJson, "templateUrl", templateUrl)
@@ -552,9 +552,9 @@ btnHls!!.setOnClickListener {
 
 ```js
 btnHls.setOnClickListener(v -> {
-  //Update your Custom Template URL here if you have deployed your own
+  //Update your Custom Template URL here if you have deployed your own, if not deployed you can use this template from our URL.
   //highlight-start
-  final String templateUrl = 
+  final String templateUrl =
   "https://lab.videosdk.live/react-custom-template-demo?meetingId=" + meeting.getMeetingId() + "&token=" + token;
   //highlight-end
 

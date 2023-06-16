@@ -57,10 +57,10 @@ import TabItem from '@theme/TabItem';
 ```html
 <html>
   <head>
-    ....
+    <!--.....-->
   </head>
   <body>
-    .....
+    <!--.....-->
     <script src="https://sdk.videosdk.live/js-sdk/0.0.67/videosdk.js"></script>
   </body>
 </html>
@@ -137,7 +137,7 @@ In this step, we are going to create HTML file which will have two screens `join
 
     <!-- Add VideoSDK script -->
     //highlight-next-line
-    <script src="https://sdk.videosdk.live/js-sdk/0.0.63/videosdk.js"></script>
+    <script src="https://sdk.videosdk.live/js-sdk/0.0.67/videosdk.js"></script>
     <script src="config.js"></script>
     <script src="index.js"></script>
   </body>
@@ -179,7 +179,7 @@ let meetingId = "";
 let isMicOn = false;
 let isWebCamOn = false;
 
-async function initializeMeeting() {}
+function initializeMeeting() {}
 
 function createLocalParticipant() {}
 
@@ -197,7 +197,7 @@ joinButton.addEventListener("click", async () => {
   roomId = document.getElementById("meetingIdTxt").value;
   meetingId = roomId;
 
-  await initializeMeeting();
+  initializeMeeting();
 });
 
 // Create Meeting Button Event Listener
@@ -219,7 +219,7 @@ createButton.addEventListener("click", async () => {
   meetingId = roomId;
   //highlight-end
 
-  await initializeMeeting();
+  initializeMeeting();
 });
 ```
 
@@ -227,9 +227,9 @@ createButton.addEventListener("click", async () => {
 
 In this step, we will initialize meeting through `initMeeting()` function and join that meeting.
 
-```js title="startMeeting index.js"
+```js title="index.js"
 // Initialize meeting
-async function initializeMeeting() {
+function initializeMeeting() {
   window.VideoSDK.config(TOKEN);
 
   meeting = window.VideoSDK.initMeeting({
@@ -371,10 +371,10 @@ Lets understand how we will use that event.
 
 ```js title="index.js"
 // Initialize meeting
-async function initializeMeeting() {
+function initializeMeeting() {
   // ...
 
-  //  participant joined
+  // participant joined
   meeting.on("participant-joined", (participant) => {
     let videoElement = createVideoElement(
       participant.id,

@@ -18,7 +18,7 @@ slug: invite-guest-on-stage
 
 # Invite Guest on Stage
 
-In this guide we will see how you can request a viewer to join your livestream by using the `changeMode()`.
+In this guide, we will see how you can request a viewer to join your livestream by using the `changeMode()`.
 
 :::note
 Before going forward in this guide, do make sure all the attendees join the meeting with mode as `VIEWER` and the host joins with mode as `CONFERENCE`
@@ -91,6 +91,7 @@ Here we are using `RecyclerView` to display viewer list with button.
 
 </LinearLayout>
 ```
+
 - Create a recycler view adapter named `ViewerListAdapter` which will show the viewer list. Create `PeerViewHolder` in the adapter which will extend `RecyclerView.ViewHolder`.
 
 import Tabs from '@theme/Tabs';
@@ -266,6 +267,7 @@ public class ViewerListAdapter extends RecyclerView.Adapter<ViewerListAdapter.Vi
 
 }
 ```
+
 </TabItem>
 
 </Tabs>
@@ -297,9 +299,9 @@ fun openViewerList() {
   for (i in 0 until meeting!!.participants.size) {
       val participant = participants.next()
       //highlight-start
-      if (participant.mode == "VIEWER") 
+      if (participant.mode == "VIEWER")
         viewerList.add(participant)
-      //highlight-end  
+      //highlight-end
   }
   viewerListView.layoutManager = LinearLayoutManager(mContext)
   //highlight-next-line
@@ -311,7 +313,6 @@ fun openViewerList() {
 </TabItem>
 
 <TabItem value="Java">
-
 
 ```js
 btnViewerList.setOnClickListener(v -> openParticipantList());
@@ -522,7 +523,7 @@ class ParticipantListAdapter(
 ) : RecyclerView.Adapter<ParticipantListAdapter.ViewHolder>() {
   // ...
 
- init { 
+ init {
     //...
     meeting.addEventListener(object : MeetingEventListener() {
       override fun onParticipantJoined(participant: Participant) {
@@ -546,7 +547,7 @@ class ParticipantListAdapter(
       //highlight-end
     })
   }
-  
+
   //...
   class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
       //...
@@ -581,7 +582,7 @@ public class ParticipantListAdapter extends RecyclerView.Adapter<ParticipantList
         //...
         Participant participant = meeting.getParticipants().get(data.getString("participantId"));
         if (data.getString("mode").equals("CONFERENCE"))
-        { 
+        {
           participant.pin("SHARE_AND_CAM");
         }else
         {
@@ -592,7 +593,7 @@ public class ParticipantListAdapter extends RecyclerView.Adapter<ParticipantList
     });
 
   }
-  
+
   //...
   static class ViewHolder extends RecyclerView.ViewHolder {
       //...

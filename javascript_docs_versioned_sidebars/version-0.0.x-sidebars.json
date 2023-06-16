@@ -36,7 +36,8 @@
             }
           ]
         },
-        "guide/video-and-audio-calling-api-sdk/quick-start"
+        "guide/video-and-audio-calling-api-sdk/quick-start",
+        "guide/video-and-audio-calling-api-sdk/quick-start-ILS"
       ],
       "collapsed": false
     },
@@ -67,7 +68,8 @@
                 "guide/video-and-audio-calling-api-sdk/handling-media/screen-share",
                 "guide/video-and-audio-calling-api-sdk/handling-media/active-speaker-indication",
                 "guide/video-and-audio-calling-api-sdk/handling-media/change-input-device",
-                "guide/video-and-audio-calling-api-sdk/handling-media/change-audio-output-device"
+                "guide/video-and-audio-calling-api-sdk/handling-media/change-audio-output-device",
+                "guide/video-and-audio-calling-api-sdk/handling-media/image-capturer"
               ],
               "collapsed": true
             },
@@ -153,6 +155,46 @@
               "collapsed": true
             }
           ]
+        }
+      ],
+      "collapsed": true
+    },
+    {
+      "type": "category",
+      "label": "Interactive Live Streaming",
+      "items": [
+        {
+          "type": "category",
+          "label": "Integrate HLS",
+          "items": [
+            "guide/interactive-live-streaming/integrate-hls/overview",
+            "guide/interactive-live-streaming/integrate-hls/start-hls",
+            "guide/interactive-live-streaming/integrate-hls/stop-hls",
+            "guide/interactive-live-streaming/integrate-hls/setup-hls-player"
+          ]
+        },
+        {
+          "type": "category",
+          "label": "Handling Participants",
+          "items": [
+            "guide/interactive-live-streaming/handling-participants/manage-roles",
+            "guide/interactive-live-streaming/handling-participants/invite-guest-on-stage",
+            "guide/interactive-live-streaming/handling-participants/display-attendees-count",
+            "guide/interactive-live-streaming/handling-participants/manage-on-screen-participants"
+          ]
+        },
+        {
+          "type": "category",
+          "label": "Interaction in Livestream",
+          "items": [
+            "guide/interactive-live-streaming/interaction-in-livestream/chat",
+            "guide/interactive-live-streaming/interaction-in-livestream/raise-hand",
+            "guide/interactive-live-streaming/interaction-in-livestream/notify-attendees"
+          ]
+        },
+        {
+          "type": "doc",
+          "id": "guide/interactive-live-streaming/custom-template"
         }
       ],
       "collapsed": true

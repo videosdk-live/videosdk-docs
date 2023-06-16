@@ -46,4 +46,20 @@ pagination_label: Participant Class Properties
 
 - It will represents the stream for that particular participant who has joined the meeting. Streams could be `audio` , `video` or `share`.
 
+---
+
+### pinState
+
+- type: `ParticipantPinState`
+
+- It will represents the state for that particular participant who has joined the meeting.
+
+---
+
+### mode
+
+- type: `Mode`
+
+- It will represents the mode for that particular participant who has joined the meeting. modes could be `VIEWER` or `CONFERENCE`.
+
 </div>

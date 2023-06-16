@@ -63,7 +63,7 @@ findViewById(R.id.btnStopHls).setOnClickListener(view -> {
 
 - **onHlsStateChanged** - Whenever meeting HLS state changes, then `onHlsStateChanged` event will trigger.
 
-- You can get the `downstreamUrl` of the HLS to play it on the Viewer side when the state changes to `HLS_PLAYABLE`.
+- You will get `HLS_STOPPING` and `HLS_STOPPED` status on calling `stopHls()`.
 
 <Tabs
 defaultValue="Kotlin"
@@ -80,13 +80,14 @@ private val meetingEventListener: MeetingEventListener = object : MeetingEventLi
         "HLS_STARTED" -> Log.d("onHlsStateChanged", "Meeting hls is started")
         "HLS_PLAYABLE" -> {
             Log.d("onHlsStateChanged", "Meeting hls is playable now")
-            //highlight-start
             // on hls playable you will receive downstreamUrl
             val downStreamUrl = HlsState.getString("downstreamUrl")
-            //highlight-end
         }
+            //highlight-start
         "HLS_STOPPING" -> Log.d("onHlsStateChanged", "Meeting hls is stopping")
         "HLS_STOPPED" -> Log.d("onHlsStateChanged", "Meeting hls is stopped")
+            //highlight-end
+
     }
   }
 }
@@ -114,24 +115,21 @@ private final MeetingEventListener meetingEventListener = new MeetingEventListen
               break;
           case "HLS_STARTED":
               Log.d("onHlsStateChanged", "Meeting hls is started");
-              //highlight-start
-              // on hls started you will receive downstreamUrl
-              String downStreamUrl = HlsState.getString("downstreamUrl");
-              //highlight-end
               break;
           case "HLS_PLAYABLE":
               Log.d("onHlsStateChanged", "Meeting hls is playable now");
-              //highlight-start
               // on hls playable you will receive downstreamUrl
               String downStreamUrl = HlsState.getString("downstreamUrl");
-              //highlight-end
               break;
+              //highlight-start
           case "HLS_STOPPING":
               Log.d("onHlsStateChanged", "Meeting hls is stopping");
               break;
           case "HLS_STOPPED":
               Log.d("onHlsStateChanged", "Meeting hls is stopped");
               break;
+              //highlight-end
+
       }
   }
 }
@@ -157,4 +155,3 @@ The API references for all the methods utilized in this guide are provided below
 - [startHls()](/android/api/sdk-reference/meeting-class/methods#starthls)
 - [stopHls()](/android/api/sdk-reference/meeting-class/methods#stophls)
 - [onHlsStateChanged](/android/api/sdk-reference/meeting-class/meeting-event-listener-class#onhlsstatechanged)
-

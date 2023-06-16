@@ -17,7 +17,7 @@ slug: layout-and-grid-management
 
 # Layout and Grid Management
 
-In this guide we will take a look at how to efficiently manage the participants in different types of layout.
+In this guide, we will take a look at how to efficiently manage the participants in different types of layout.
 
 ## Grid Layout
 
