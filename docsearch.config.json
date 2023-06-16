@@ -2,7 +2,7 @@
   "index_name": "VIDEO_SDK",
   "start_urls": [
     {
-      "url": "https://docs.videosdk.live/javascript/guide/video-and-audio-calling-api-sdk/getting-started",
+      "url": "https://docs.videosdk.live/javascript/guide/video-and-audio-calling-api-sdk/quick-start",
       "selectors_key": "javascript"
     },
 
@@ -12,7 +12,7 @@
     },
 
     {
-      "url": "https://docs.videosdk.live/react-native/guide/video-and-audio-calling-api-sdk/getting-started",
+      "url": "https://docs.videosdk.live/react-native/guide/video-and-audio-calling-api-sdk/quick-start",
       "selectors_key": "reactnative"
     },
 
@@ -27,7 +27,7 @@
     },
 
     {
-      "url": "https://docs.videosdk.live/flutter/guide/video-and-audio-calling-api-sdk/getting-started",
+      "url": "https://docs.videosdk.live/flutter/guide/video-and-audio-calling-api-sdk/quick-start",
       "selectors_key": "flutter"
     },
 

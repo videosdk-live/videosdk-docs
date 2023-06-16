@@ -7,7 +7,6 @@
   <a href="https://docs.videosdk.live/">docs.videosdk.live</a>
 </p>
 
-
 <p align="center">
    <a href="https://discord.gg/kgAvyxtTxv">
 <img src="https://img.shields.io/discord/734858252939952248?logo=discord&style=for-the-badge" />
@@ -21,6 +20,7 @@
 </p>
 
 ## Website
+
 This website is built using [Docusaurus 2](https://v2.docusaurus.io/), a modern static website generator.
 
 ### Built With
@@ -68,6 +68,7 @@ To just edit older documentation, go to the specified versioned folder for a sec
 
 For updating documentation, go to specific SDK folder, for example, you want to change documentation for JS SDK so you have to open [react_versioned_docs/version-0.25.x](./javascript_docs_versioned_docs/version-0.0.x)
 After opening this, you may seen below folder structure
+
 ```jsx title="Project Structure"
    javascript_docs_versioned_docs/version-0.0.x
    ├── api
@@ -76,4 +77,5 @@ After opening this, you may seen below folder structure
    │     ├── video-and-audio-calling-api-sdk
    .     .
 ```
-If you want to modify the [sdk-reference](https://docs.videosdk.live/javascript/api/sdk-reference/setup) of JS SDK, you have to open up `api/sdk-reference` and make changes accordingly or want to modify the [Guide](https://docs.videosdk.live/javascript/guide/video-and-audio-calling-api-sdk/getting-started) of JS SDK, you have to open up `guide/video-and-audio-calling-api-sdk` and make changes accordingly.
+
+If you want to modify the [sdk-reference](https://docs.videosdk.live/javascript/api/sdk-reference/setup) of JS SDK, you have to open up `api/sdk-reference` and make changes accordingly or want to modify the [Guide](https://docs.videosdk.live/javascript/guide/video-and-audio-calling-api-sdk/concept-and-architecture) of JS SDK, you have to open up `guide/video-and-audio-calling-api-sdk` and make changes accordingly.
