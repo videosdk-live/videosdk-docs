@@ -3,7 +3,7 @@ title: Quick Start with Android
 hide_title: false
 hide_table_of_contents: false
 description: Video SDK enables the opportunity to integrate native IOS, Android & Web SDKs to add live video & audio conferencing to your applications.
-sidebar_label: Start a Voice / Video Call
+sidebar_label: Start a Audio / Video Call
 pagination_label: Quick Start with Android
 keywords:
   - audio calling
@@ -195,6 +195,7 @@ class MainApplication : Application() {
   }
 }
 ```
+
 </TabItem>
 
 <TabItem value="Java">
@@ -212,6 +213,7 @@ public class MainApplication extends Application {
   }
 }
 ```
+
 </TabItem>
 
 </Tabs>
@@ -228,6 +230,7 @@ public class MainApplication extends Application {
 ### Step 2: Creating Joining Screen
 
 Create a new Activity named `JoinActivity`.
+
 #### Creating UI
 
 The Joining screen will include :
@@ -315,7 +318,7 @@ public class JoinActivity extends AppCompatActivity {
 
   //highlight-next-line
   //Replace with the token you generated from the VideoSDK Dashboard
-  private String sampleToken =""; 
+  private String sampleToken ="";
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -328,10 +331,7 @@ public class JoinActivity extends AppCompatActivity {
 
 </Tabs>
 
-
-
 2. On **Join Button** `onClick` events, we will naviagte to `MeetingActivity` with token and meetingId.
-
 
 <Tabs
 defaultValue="Kotlin"
@@ -344,7 +344,7 @@ values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
 class JoinActivity : AppCompatActivity() {
 
    //Replace with the token you generated from the VideoSDK Dashboard
-   private var sampleToken = "" 
+   private var sampleToken = ""
 
    override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -370,6 +370,7 @@ class JoinActivity : AppCompatActivity() {
     }
 }
 ```
+
 </TabItem>
 
 <TabItem value="Java">
@@ -378,7 +379,7 @@ class JoinActivity : AppCompatActivity() {
 public class JoinActivity extends AppCompatActivity {
 
   //Replace with the token you generated from the VideoSDK Dashboard
-  private String sampleToken =""; 
+  private String sampleToken ="";
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -406,12 +407,12 @@ public class JoinActivity extends AppCompatActivity {
   }
 }
 ```
+
 </TabItem>
 
 </Tabs>
 
 3. For **Create Button**, under `createMeeting` method we will generate meetingId by calling API and navigate to `MeetingActivity` with token and generated meetingId.
-
 
 <Tabs
 defaultValue="Kotlin"
@@ -455,6 +456,7 @@ class JoinActivity : AppCompatActivity() {
   }
 }
 ```
+
 </TabItem>
 
 <TabItem value="Java">
@@ -494,6 +496,7 @@ public class JoinActivity extends AppCompatActivity {
   }
 }
 ```
+
 </TabItem>
 
 </Tabs>
@@ -502,10 +505,9 @@ public class JoinActivity extends AppCompatActivity {
 
 Don't confuse with Room and Meeting keyword, both are same thing 😃
 
-::: 
+:::
 
 4. Our App is completely based on audio and video commutation, that's why we need to ask for runtime permissions `RECORD_AUDIO` and `CAMERA`. So, we will implement permission logic on `JoinActivity`.
-
 
 <Tabs
 defaultValue="Kotlin"
@@ -732,6 +734,7 @@ class MeetingActivity : AppCompatActivity() {
   }
 }
 ```
+
 </TabItem>
 
 <TabItem value="Java">
@@ -800,6 +803,7 @@ public class MeetingActivity extends AppCompatActivity {
   };
 }
 ```
+
 </TabItem>
 
 </Tabs>
@@ -948,7 +952,7 @@ We will be showing the list of participant in a `RecyclerView`.
 
 - Here the participant's video is displayed using `VideoView`, but you may also use `SurfaceViewRender` for the same.
 - For `VideoView`, SDK version should be `0.1.13` or higher.
-- To know more about `VideoView`, please visit [here](/android/guide/video-and-audio-calling-api-sdk/render-media/display-video/understand-videoView-component) 
+- To know more about `VideoView`, please visit [here](/android/guide/video-and-audio-calling-api-sdk/render-media/display-video/understand-videoView-component)
 
 :::
 
@@ -1085,7 +1089,7 @@ values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
 ```js title="ParticipantAdapter.kt"
 class ParticipantAdapter(meeting: Meeting) :
     RecyclerView.Adapter<ParticipantAdapter.PeerViewHolder>() {
-    
+
   // creating a empty list which will store all participants
   private val participants: MutableList<Participant> = ArrayList()
 
@@ -1129,6 +1133,7 @@ class ParticipantAdapter(meeting: Meeting) :
   //...
 }
 ```
+
 </TabItem>
 
 <TabItem value="Java">
@@ -1183,6 +1188,7 @@ public class ParticipantAdapter extends RecyclerView.Adapter<ParticipantAdapter.
   //...
 }
 ```
+
 </TabItem>
 
 </Tabs>
@@ -1239,6 +1245,7 @@ class ParticipantAdapter(meeting: Meeting) :
   }
 }
 ```
+
 </TabItem>
 
 <TabItem value="Java">
@@ -1288,6 +1295,7 @@ public class ParticipantAdapter extends RecyclerView.Adapter<ParticipantAdapter.
   }
 }
 ```
+
 </TabItem>
 
 </Tabs>

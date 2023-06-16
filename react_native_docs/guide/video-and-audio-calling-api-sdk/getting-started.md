@@ -39,7 +39,7 @@ import Card from '@theme/Card';
       <Card heading="3. Authentication and Tokens" link="/react-native/guide/video-and-audio-calling-api-sdk/server-setup" description="Setup secured server authentication and authorization."  />
     </div>
     <div class="col col--6">
-      <Card heading="4. Start a Voice / Video Call" link="/react-native/guide/video-and-audio-calling-api-sdk/quick-start" description="Get started with step by step guide of integrating Video SDK." />
+      <Card heading="4. Start a Audio / Video Call" link="/react-native/guide/video-and-audio-calling-api-sdk/quick-start" description="Get started with step by step guide of integrating Video SDK." />
     </div>
   </div>
   <div class="row ">
