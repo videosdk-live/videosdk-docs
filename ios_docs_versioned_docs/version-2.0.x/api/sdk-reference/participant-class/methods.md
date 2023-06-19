@@ -123,4 +123,47 @@ pagination_label: Participant Class Methods
 
 - `void`
 
+---
+
+### getAudioStats()
+
+- `getAudioStats()` will return an Dictionary which will contain details regarding the participant's critical audio metrics such as **Jitter**, **Packet Loss** etc.
+
+#### Returns
+
+- `Dictionary`
+  - `jitter` : It represents the distortion in the stream.
+  - `bitrate` : It represents the bitrate of the stream which is being transmitted.
+  - `totalPackets` : It represents the total packet count which were transmitted for that particiular stream.
+  - `packetsLost` : It represents the total packets lost during the transimission of the stream.
+  - `rtt` : It represents the time between the stream being reached to client from the server in milliseconds(ms).
+  - `codec`: It represents the codec used for the stream.
+  - `network`: It represents the network used to transmit the stream
+
+#### Returns
+
+- `[String:Any]`
+
+---
+
+### getVideoStats()
+
+- `getVideoStats()` will return an Dictionary which will contain details regarding the participant's critical video metrics such as **Jitter**, **Packet Loss** etc.
+
+#### Returns
+
+- `Dictionary`
+  - `jitter` : It represents the distortion in the stream.
+  - `bitrate` : It represents the bitrate of the stream which is being transmitted.
+  - `totalPackets` : It represents the total packet count which were transmitted for that particiular stream.
+  - `packetsLost` : It represents the total packets lost during the transimission of the stream.
+  - `rtt` : It represents the time between the stream being reached to client from the server in milliseconds(ms).
+  - `codec`: It represents the codec used for the stream.
+  - `network`: It represents the network used to transmit the stream
+  - `size`: It is object containing the height, width and frame rate of the stream.
+
+#### Returns
+
+- `[String:Any]`
+
 </div>

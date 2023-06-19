@@ -99,6 +99,16 @@ let participants = meeting.participants;
 - [remove](./methods#remove)
 
 </div>
+<div class="col col--4 margin-bottom--sm" >
+
+- [getAudioStats](./methods#getaudiostats)
+
+</div>
+<div class="col col--4 margin-bottom--sm" >
+
+- [getVideoStats](./methods#getvideostats)
+
+</div>
 
 </div>
 
