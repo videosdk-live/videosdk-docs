@@ -9,8 +9,6 @@ This page will let you updated with iOS SDK known issues with better solution.
 
 ## Issue : 1
 
-### Error
-
     dyld[14598]: Symbol not found: \_$s10Starscream14WebSocketEventO12disconnectedyACSS_s6UInt16VtcACmFWC Referenced from: /private/var/containers/Bundle/Application/52875D06-E266-4BF1-929D-AA46D0EA1DF4/VideoTest.app/Frameworks/VideoSDKRTC.framework/VideoSDKRTC Expected in: /private/var/containers/Bundle/Application/52875D06-E266-4BF1-929D-AA46D0EA1DF4/VideoTest.app/Frameworks/Starscream.framework/Starscream
 
 ### Solution

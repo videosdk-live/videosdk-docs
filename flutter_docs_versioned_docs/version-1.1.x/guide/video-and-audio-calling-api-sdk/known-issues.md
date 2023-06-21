@@ -9,8 +9,6 @@ This page will let you updated with Flutter SDK known issues with better solutio
 
 ## Issue : 1
 
-### Error
-
 `iOS: webrtc/webrtc.h file not found.`
 
 ### Solution
