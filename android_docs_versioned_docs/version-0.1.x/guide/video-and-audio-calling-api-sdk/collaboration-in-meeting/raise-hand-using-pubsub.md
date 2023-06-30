@@ -17,12 +17,12 @@ slug: raise-hand-using-pubsub
 
 # Raise Hand using PubSub
 
-Let us see, how we can use PubSub to implement Raise Hand functionality. If you are not familiary with the PubSub mechanism and `pubSub` class, you can [follow this guide](./pubsub).
+Let us see, how we can use PubSub to implement Raise Hand functionality. If you are not familiar with the PubSub mechanism and `pubSub` class, you can [follow this guide](./pubsub).
 
 ## Implementing Raise Hand
 
-1. First step in raise hand is choosing the topic which all the participants will publish and subscribe to know some participant raise their hand. We will be using `RAISE_HAND` as the topic for this one. 
-2. On the raiseHand button, publish any message to that specific topic. 
+1. First step in raise hand is choosing the topic which all the participants will publish and subscribe to know some participant raise their hand. We will be using `RAISE_HAND` as the topic for this one.
+2. On the raiseHand button, publish any message to that specific topic.
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -140,7 +140,7 @@ public class MainActivity extends AppCompatActivity {
     public void onMessageReceived(PubSubMessage message) {
         // Partcipant raise hand
         Toast.makeText(
-          MainActivity.this, message.senderName + " raise hand", 
+          MainActivity.this, message.senderName + " raise hand",
           Toast.LENGTH_SHORT
         ).show();
     }

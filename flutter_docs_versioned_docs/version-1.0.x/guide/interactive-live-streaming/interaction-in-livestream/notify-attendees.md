@@ -20,7 +20,7 @@ slug: notify-attendees
 
 When doing livestream, you may want to broadcast message to all the viewers at once.
 
-Let us see, how we can use PubSub to implement this functionality. If you are not familiary with the PubSub mechanism you can [follow this guide](/flutter/guide/video-and-audio-calling-api-sdk/collaboration-in-meeting/pubsub).
+Let us see, how we can use PubSub to implement this functionality. If you are not familiar with the PubSub mechanism you can [follow this guide](/flutter/guide/video-and-audio-calling-api-sdk/collaboration-in-meeting/pubsub).
 
 ### Notifying Attendees
 

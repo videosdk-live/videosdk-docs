@@ -18,7 +18,7 @@ slug: raise-hand
 
 # Raise Hand
 
-Let us see, how we can use PubSub to implement Raise hand functionality. If you are not familiary with the PubSub mechanism you can [follow this guide](/flutter/guide/video-and-audio-calling-api-sdk/collaboration-in-meeting/pubsub).
+Let us see, how we can use PubSub to implement Raise hand functionality. If you are not familiar with the PubSub mechanism you can [follow this guide](/flutter/guide/video-and-audio-calling-api-sdk/collaboration-in-meeting/pubsub).
 
 ### Implementing Raise Hand
 

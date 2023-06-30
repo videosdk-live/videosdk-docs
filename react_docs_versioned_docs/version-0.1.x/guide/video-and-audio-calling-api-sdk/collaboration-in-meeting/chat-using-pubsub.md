@@ -20,7 +20,7 @@ slug: chat-using-pubsub
 
 For the communication or any kind of messaging in between the participants, VideoSDK provides `usePubSub` hook which use Publish-Subscribe mechanism and can be used to develope wide varitey of functionalities. For example, participants could use it to send chat messages to each other, share files or other media, or even trigger actions like muting or unmuting audio or video.
 
-Now we will see, how we can use PubSub to implement Chat functionality. If you are not familiary with the PubSub mechanism and `usePubSub`hook, you can [follow this guide](./pubsub).
+Now we will see, how we can use PubSub to implement Chat functionality. If you are not familiar with the PubSub mechanism and `usePubSub`hook, you can [follow this guide](./pubsub).
 
 ## Implementing Chat
 

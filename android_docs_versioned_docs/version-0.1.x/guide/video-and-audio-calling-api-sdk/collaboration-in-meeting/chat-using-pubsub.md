@@ -19,14 +19,14 @@ slug: chat-using-pubsub
 
 For the communication or any kind of messaging in between the participants, VideoSDK provides `pubSub` class which use Publish-Subscribe mechanism and can be used to develope wide varitey of functionalities. For example, participants could use it to send chat messages to each other, share files or other media, or even trigger actions like muting or unmuting audio or video.
 
-Now we will see, how we can use PubSub to implement Chat functionality. If you are not familiary with the PubSub mechanism and `pubSub` class, you can [follow this guide](./pubsub).
+Now we will see, how we can use PubSub to implement Chat functionality. If you are not familiar with the PubSub mechanism and `pubSub` class, you can [follow this guide](./pubsub).
 
 ## Implementing Chat
 
 ### `Group Chat`
 
-1. First step in creating a group chat is choosing the topic which all the participants will publish and subscribe to send and receive the messages. We will be using `CHAT` as the topic for this one. 
-2. On the send button, publish the message that the sender typed in the `EditText` field. 
+1. First step in creating a group chat is choosing the topic which all the participants will publish and subscribe to send and receive the messages. We will be using `CHAT` as the topic for this one.
+2. On the send button, publish the message that the sender typed in the `EditText` field.
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -60,7 +60,7 @@ class ChatActivity : AppCompatActivity() {
     /**
      * Here, we have created 'MainApplication' class, which extends android.app.Application class.
      * It has Meeting property and getter and setter methods of Meeting property.
-     * In your android manifest, you must declare the class implementing android.app.Application 
+     * In your android manifest, you must declare the class implementing android.app.Application
      * (add the android:name=".MainApplication" attribute to the existing application tag):
      * In MainActivity.kt, we have set Meeting property.
      *
@@ -76,7 +76,7 @@ class ChatActivity : AppCompatActivity() {
   }
 
   private fun sendMessage() {
-    // get message from EditText 
+    // get message from EditText
     val message: String = etmessage.getText().toString()
     if (!TextUtils.isEmpty(message)) {
         val publishOptions = PubSubPublishOptions()
@@ -123,7 +123,7 @@ public class ChatActivity extends AppCompatActivity {
     /**
      * Here, we have created 'MainApplication' class, which extends android.app.Application class.
      * It has Meeting property and getter and setter methods of Meeting property.
-     * In your android manifest, you must declare the class implementing android.app.Application 
+     * In your android manifest, you must declare the class implementing android.app.Application
      * (add the android:name=".MainApplication" attribute to the existing application tag):
      * In MainActivity.java, we have set Meeting property.
      *
@@ -223,7 +223,7 @@ public class ChatActivity extends AppCompatActivity {
     public void onMessageReceived(PubSubMessage message) {
         // New message
         Toast.makeText(
-          ChatActivity.this, message.senderName + " says : "+ message.getMessage(), 
+          ChatActivity.this, message.senderName + " says : "+ message.getMessage(),
           Toast.LENGTH_SHORT
         ).show();
     }
@@ -244,7 +244,7 @@ public class ChatActivity extends AppCompatActivity {
     for(PubSubMessage message : pubSubMessageList){
         // Persisted messages
         Toast.makeText(
-          ChatActivity.this, message.senderName + " says : "+ message.getMessage(), 
+          ChatActivity.this, message.senderName + " says : "+ message.getMessage(),
           Toast.LENGTH_SHORT
         ).show();
     }
@@ -310,7 +310,6 @@ public class ChatActivity extends AppCompatActivity {
 </TabItem>
 
 </Tabs>
-
 
 ### `Private Chat`
 

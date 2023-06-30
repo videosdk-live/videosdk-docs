@@ -20,11 +20,11 @@ slug: notify-attendees
 
 When doing livestream, you may want to broadcast message to all the viewers at once.
 
-Let us see, how we can use PubSub to implement this functionality. If you are not familiary with the PubSub mechanism, you can [follow this guide](/android/guide/video-and-audio-calling-api-sdk/collaboration-in-meeting/pubsub).
+Let us see, how we can use PubSub to implement this functionality. If you are not familiar with the PubSub mechanism, you can [follow this guide](/android/guide/video-and-audio-calling-api-sdk/collaboration-in-meeting/pubsub).
 
 ### Notifying Attendees
 
-1. We will be publish the message that the sender typed in the `EditText` field to the topic `NOTIFY_ATTENDEES`. 
+1. We will be publish the message that the sender typed in the `EditText` field to the topic `NOTIFY_ATTENDEES`.
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -46,7 +46,7 @@ class SpeakerActivity : AppCompatActivity() {
   }
 
   private fun sendMessage() {
-    // get message from EditText 
+    // get message from EditText
     val message: String = etmessage.getText().toString()
     if (!TextUtils.isEmpty(message)) {
         val publishOptions = PubSubPublishOptions()
@@ -169,7 +169,7 @@ public class ViewerActivity extends AppCompatActivity {
     public void onMessageReceived(PubSubMessage message) {
         if(meeting.getLocalParticipant().getMode() == "VIEWER"){
             Toast.makeText(
-                ViewerActivity.this, message.getMessage(), 
+                ViewerActivity.this, message.getMessage(),
                 Toast.LENGTH_SHORT
                 ).show();
         }
@@ -192,7 +192,7 @@ public class ViewerActivity extends AppCompatActivity {
         // Persisted messages
         if(meeting.getLocalParticipant().getMode() == "VIEWER"){
             Toast.makeText(
-            ViewerActivity.this, message.getMessage(), 
+            ViewerActivity.this, message.getMessage(),
             Toast.LENGTH_SHORT
             ).show();
         }
