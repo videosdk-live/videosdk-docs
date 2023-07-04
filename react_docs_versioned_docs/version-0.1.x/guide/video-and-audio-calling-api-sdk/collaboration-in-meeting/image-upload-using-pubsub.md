@@ -28,15 +28,19 @@ We will achieve this using the following steps.
 
 - Firstly, we place input for the upload file.
 
-```html title="index.js"
-<div>
-  <input
-    type="file"
-    id="myFile"
-    name="filename"
-    onChange={handleImageUpload}
-  />
-</div>
+```js title="index.js"
+function App() {
+  return (
+    <div>
+      <input
+        type="file"
+        id="myFile"
+        name="filename"
+        onChange={handleImageUpload}
+      />
+    </div>
+  );
+}
 ```
 
 ### Step 2 : Send image using PubSub
@@ -151,14 +155,14 @@ usePubSub(`IMAGE_TRANSFER`, {
  });
 
 // Render image
-  return (
-    imageSrc && (
-      <div>
-        <p>Selected Image</p>
-        <img src={imageSrc} alt="demo" height={300} width={300} />
-      </div>
-	  );
-	)
+return (
+  imageSrc && (
+    <div>
+      <p>Selected Image</p>
+      <img src={imageSrc} alt="demo" height={300} width={300} />
+    </div>
+	);
+)
 ```
 
 ### Step 4 : Create Pubsub topic at receiver end
