@@ -28,13 +28,13 @@ We will achieve this using the following steps.
 
 - Firstly, we place input for the upload file.
 
-```html title="Index.html"
+```html title="index.js"
 <div>
   <input
     type="file"
     id="myFile"
     name="filename"
-    onChange="{handleImageUpload}"
+    onChange={handleImageUpload}
   />
 </div>
 ```
