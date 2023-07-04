@@ -1,5 +1,5 @@
 ---
-title: Image upload using PubSub in React- Video SDK Docs
+title: Image upload using PubSub- Video SDK Docs
 hide_title: false
 hide_table_of_contents: false
 description: PubSub features quick integrate in Javascript, React JS, Android, IOS, React Native, Flutter with Video SDK to add live video & audio conferencing to your applications.
@@ -13,10 +13,10 @@ keywords:
   - real-time communication
 image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
-slug: image-upload-using-pubsub-in-react
+slug: image-upload-using-pubsub
 ---
 
-# Image Uplaod Using Pubsub In React
+# Image Uplaod Using Pubsub
 
 In this guide, we will see how to upload image using pubsub. For that first, we place an input with the file type, after we select image then we upload that image using pubsub.
 
@@ -47,7 +47,13 @@ We will achieve this using the following steps.
 
 - After that, we will create `handleImageUpload()` In this, we will convert the image into `base64`, and then we divide that data into chunks.
 
-```js title="Index.js"
+:::note
+
+If you want to send a image that is larger than 3 MB, you must increase the chunkSize.
+
+:::
+
+```js title="index.js"
 import { usePubSub } from "@videosdk.live/react-sdk";
 
 const { publish } = usePubSub("IMAGE_TRANSFER", {});
@@ -107,7 +113,7 @@ const handleImageUpload = (event) => {
 
 - In this step, we will create `IMAGE_TRANSFER` Pubsub topic to receive the data at the receiver side and render the image using that chunk data.
 
-```js title="Index.js"
+```js title="index.js"
 import { usePubSub } from "@videosdk.live/react-sdk";
 import { useState,useEffect } from "react";
 
@@ -159,7 +165,7 @@ usePubSub(`IMAGE_TRANSFER`, {
 
 - Now we will create `IMAGE_TRANSFER` Pubsub topic at receiver end for receiving image.
 
-```js title="Index.js"
+```js title="index.js"
 import { usePubSub } from "@videosdk.live/react-sdk";
 import { useState } from "react";
 

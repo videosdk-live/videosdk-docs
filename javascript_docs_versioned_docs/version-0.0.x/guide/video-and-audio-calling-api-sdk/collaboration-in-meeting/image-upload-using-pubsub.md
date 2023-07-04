@@ -1,5 +1,5 @@
 ---
-title: Image upload using PubSub in JS - Video SDK Docs
+title: Image upload using PubSub - Video SDK Docs
 hide_title: false
 hide_table_of_contents: false
 description: PubSub features quick integrate in Javascript, React JS, Android, IOS, React Native, Flutter with Video SDK to add live video & audio conferencing to your applications.
@@ -13,14 +13,14 @@ keywords:
   - real-time communication
 image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
-slug: image-upload-using-pubsub-in-js
+slug: image-upload-using-pubsub
 ---
 
-# Image Uplaod Using Pubsub In JavaScript
+# Image Uplaod Using Pubsub
 
 This guide will show you how to upload an image using Pubsub. To do so, we first create an input with the file type, then select an image and upload it using Pubsub.
 
-If you are not familiar with the PubSub mechanism, you can [follow this guide](https://docs.videosdk.live/react/guide/video-and-audio-calling-api-sdk/collaboration-in-meeting/pubsub).
+If you are not familiar with the PubSub mechanism, you can [follow this guide](https://docs.videosdk.live/javascript/guide/video-and-audio-calling-api-sdk/collaboration-in-meeting/pubsub).
 
 We will achieve this using the following steps.
 
@@ -28,7 +28,7 @@ We will achieve this using the following steps.
 
 - Firstly, we place input for the upload file.
 
-```html title="Index.html"
+```html title="index.html"
 <div>
   <input
     type="file"
@@ -45,7 +45,13 @@ We will achieve this using the following steps.
 
 - After that, we will publish image using `IMAGE_TRANSFER` pubsub topic.
 
-```js title="Index.js"
+:::note
+
+If you want to send a image that is larger than 3 MB, you must increase the chunkSize.
+
+:::
+
+```js title="index.js"
 function uploadImage({ data }) {
   // Chunk size, you can change it according to your requirements
   const chunkSize = 100; // bits
@@ -103,7 +109,7 @@ const handleImageUpload = (event) => {
 
 - Now, we will create `handleImageTransfer()` for storing sender chunks data and generate an image on the basis of that data.
 
-```js title="Index.js"
+```js title="index.js"
 const generateImage = (messages) => {
   // Getting src of image
   const srcImage = messages
@@ -143,7 +149,7 @@ const handleImageTransfer = ({ message }) => {
 
 - Now, we will subscribe to `IMAGE_TRANSFER` topic on `meeting-joined` event for receiving image.
 
-```js title="Index.js"
+```js title="index.js"
 meeting.on("meeting-joined", () => {
   //...
 
@@ -154,7 +160,7 @@ meeting.on("meeting-joined", () => {
 
 - After that, we will unsubscribe this topic on meeting-left event for cleanup data.
 
-```js title="Index.js"
+```js title="index.js"
 meeting.on("meeting-left", () => {
   //...
 
