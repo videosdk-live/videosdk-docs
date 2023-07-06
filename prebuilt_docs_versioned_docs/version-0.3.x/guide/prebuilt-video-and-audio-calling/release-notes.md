@@ -7,6 +7,14 @@ pagination_label: Release Notes
 
 This page will keep you update all the releases of Prebuilt SDK.
 
+## v0.3.31
+
+**Release Date** : 5th July 2023
+
+**Change log** :
+
+1. Internal improvements
+
 ## v0.3.30
 
 **Release Date** : 15th May 2023
