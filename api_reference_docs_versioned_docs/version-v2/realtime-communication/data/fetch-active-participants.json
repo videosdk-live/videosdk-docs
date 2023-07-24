@@ -39,36 +39,126 @@
     ],
     "apiEndpoint": "https://api.videosdk.live/v2/sessions/${sessionId}/participants/active",
     "response": {
-      "data": {
-        "id": "61763c2597b0c743cf454204",
-        "roomId": "abc-xyzw-lmno",
-        "participants": [
-          {
-            "participantId": "ylgjhgeh",
-            "name": "Demo-3",
-            "timelog": [
-              {
-                "start": "2021-10-25T05:10:30.129Z",
-                "end": null
+      "pageInfo": {
+        "currentPage": 1,
+        "perPage": 20,
+        "lastPage": 1,
+        "total": 2
+      },
+      "data": [
+        {
+          "_id": "64bb3619669942e088479mm0",
+          "apiKey": "02jd88ag-f229-4c73-4be4-c35c2rf5f220",
+          "start": "2023-07-24T08:28:09.215Z",
+          "end": null,
+          "participants": [
+            {
+              "participantId": "iqpq5uen",
+              "name": "demo1",
+              "events": {
+                "mic": [],
+                "webcam": [],
+                "screenShare": [],
+                "screenShareAudio": []
+              },
+              "timelog": [
+                {
+                  "start": "2023-07-24T08:28:09.650Z",
+                  "end": null
+                }
+              ],
+              "initTime": 0.123,
+              "deviceInfo": {
+                "sdkType": "prebuilt",
+                "sdkVersion": "0.3.29",
+                "platform": "desktop",
+                "browserUserAgent": {
+                  "browser": {
+                    "name": "Firefox",
+                    "version": "115.0"
+                  },
+                  "os": {
+                    "name": "Linux"
+                  },
+                  "platform": {
+                    "type": "desktop"
+                  }
+                }
+              },
+              "changeModeHistory": [
+                {
+                  "mode": "CONFERENCE",
+                  "timelog": "2023-07-24T08:28:09.650Z",
+                  "_id": "53e3619fd374c412bhb9dbfd"
+                }
+              ],
+              "mode": "CONFERENCE",
+              "_id": "44be3619fdd71441213b9db4",
+              "geoLocation": {
+                "city": "Surat",
+                "region": "Gujarat",
+                "country": "India"
               }
-            ]
-          },
-          {
-            "participantId": "x9mwdb2l",
-            "name": "Demo-5",
-            "timelog": [
-              {
-                "start": "2021-10-25T05:10:41.865Z",
-                "end": null
+            },
+            {
+              "participantId": "mxavzgb5",
+              "name": "demo2",
+              "events": {
+                "mic": [],
+                "webcam": [],
+                "screenShare": [],
+                "screenShareAudio": []
+              },
+              "timelog": [
+                {
+                  "start": "2023-07-24T08:28:27.185Z",
+                  "end": null
+                }
+              ],
+              "initTime": 0.234,
+              "deviceInfo": {
+                "sdkType": "prebuilt",
+                "sdkVersion": "0.3.29",
+                "platform": "desktop",
+                "browserUserAgent": {
+                  "browser": {
+                    "name": "Firefox",
+                    "version": "115.0"
+                  },
+                  "os": {
+                    "name": "Linux"
+                  },
+                  "platform": {
+                    "type": "desktop"
+                  }
+                }
+              },
+              "changeModeHistory": [
+                {
+                  "mode": "CONFERENCE",
+                  "timelog": "2023-07-24T08:28:27.185Z",
+                  "_id": "44be364k6649433ge0879406"
+                }
+              ],
+              "mode": "CONFERENCE",
+              "_id": "64be362brtuyjk2e088479431",
+              "geoLocation": {
+                "city": "Surat",
+                "region": "Gujarat",
+                "country": "India"
               }
-            ]
+            }
+          ],
+          "region": "in002",
+          "hlsLog": [],
+          "roomId": "r10p-2qz8-si67",
+          "status": "ongoing",
+          "links": {
+            "get_session": "https://api.videosdk.live/v2/sessions/",
+            "get_all_participants": "https://api.videosdk.live/v2/sessions/64bb3619669942e088479mm0/participants"
           }
-        ],
-        "links": {
-          "get_all_participants": "https://api.videosdk.live/v2/sessions/61763c2597b0c743cf454204/participants",
-          "get_session": "https://api.videosdk.live/v2/sessions/"
         }
-      }
+      ]
     }
   }
 }
