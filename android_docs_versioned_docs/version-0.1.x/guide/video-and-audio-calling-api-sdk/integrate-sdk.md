@@ -75,7 +75,7 @@ Whether on Maven or Jitpack, the same version numbers always refer to the same S
 
 ```js title="app/build.gradle"
 dependencies {
-		implementation 'live.videosdk:rtc-android-sdk:0.1.17'
+		implementation 'live.videosdk:rtc-android-sdk:0.1.21'
 		// other app dependencies
 }
 ```
