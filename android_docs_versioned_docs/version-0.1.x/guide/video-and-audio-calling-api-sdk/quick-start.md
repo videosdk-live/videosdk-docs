@@ -108,7 +108,7 @@ Whether on Maven or Jitpack, the same version numbers always refer to the same S
 
 ```js title="app/build.gradle"
 dependencies {
-  implementation 'live.videosdk:rtc-android-sdk:0.1.17'
+  implementation 'live.videosdk:rtc-android-sdk:0.1.21'
 
   // library to perform Network call to generate a meeting id
   implementation 'com.amitshekhar.android:android-networking:1.0.2'

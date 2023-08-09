@@ -7,6 +7,35 @@ pagination_label: Release Notes
 
 This page will keep you update all the releases of Android SDK.
 
+## v0.1.21
+
+**Release Date** : 13th July 2023
+
+**Bug Fix** :
+
+- enable the camera when `onActivityResumed()` triggered
+
+---
+## v0.1.20
+
+**Release Date** : 10th June 2023
+
+**Bug Fix** :
+
+- Fix bluetooth permission issue for android version 12 and higher.
+
+---
+
+## v0.1.18
+
+**Release Date** : 10th May 2023
+
+**Bug Fix** :
+
+- Fix clash between `initMeeting` customTrack property and `enableWebcam()` customTrack property.
+
+---
+
 ## v0.1.17
 
 **Release Date** : 2nd May 2023
