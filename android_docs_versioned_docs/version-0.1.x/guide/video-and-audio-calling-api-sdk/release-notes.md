@@ -11,10 +11,6 @@ This page will keep you update all the releases of Android SDK.
 
 **Release Date** : 13th July 2023
 
-**Change log** :
-
-- Integrate Open telemetry Traces & Logs (internal-release)
-
 **Bug Fix** :
 
 - enable the camera when `onActivityResumed()` triggered
@@ -29,15 +25,7 @@ This page will keep you update all the releases of Android SDK.
 - Fix bluetooth permission issue for android version 12 and higher.
 
 ---
-## v0.1.19
 
-**Release Date** : 2nd June 2023
-
-**Change log** :
-
-- Add restart-ice notification (internal-release)
-
----
 ## v0.1.18
 
 **Release Date** : 10th May 2023
