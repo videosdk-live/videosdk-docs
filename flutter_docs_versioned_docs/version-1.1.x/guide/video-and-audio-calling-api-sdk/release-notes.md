@@ -13,11 +13,11 @@ This page will keep you update all the releases of Flutter SDK.
 
 **Change Log** :
 
-1. Internal improvements
+1. Internal improvements.
 
 **Bug Fix** :
 
-1. Fixed issues related to audio while toggling
+1. [Web] Fixed audio was missing to remote participant while local participant toggle mic.
 
 ---
 
@@ -31,9 +31,9 @@ This page will keep you update all the releases of Flutter SDK.
 
 **Bug Fix** :
 
-1. Fixed mic state issue
-2. Fixed crash issue for below Android 10
-3. Fixed issue with screen share foreground service
+1. Fixed mic state was inconsistent.
+2. [Android] Fixed crash issue for below Android 10.
+3. [Android] Fixed issue with screen share foreground service.
 
 ---
 
@@ -43,9 +43,10 @@ This page will keep you update all the releases of Flutter SDK.
 
 **Bug Fix** :
 
-1. Fixed VideoSDK Stats issues with latest chrome browser
+1. [Web] Fixed VideoSDK Stats issues with latest chrome browser
 
 ---
+
 ## v1.1.2
 
 **Release Date** : 19th May 2023
