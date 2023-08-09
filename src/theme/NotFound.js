@@ -109,44 +109,71 @@ function NotFound() {
   }, []);
 
   return (
-    <Layout
-      title={translate({
-        id: "theme.NotFound.title",
-        message: "Page Not Found",
-      })}
-    >
-      <main className="container margin-vert--xl">
-        <div className="row">
-          <div className="col col--6 col--offset-3">
-            <h1 className="hero__title">
-              <Translate
-                id="theme.NotFound.title"
-                description="The title of the 404 page"
-              >
-                Page Not Found
-              </Translate>
-            </h1>
-            <p>
+    <main style={{ paddingTop: 8, paddingBottom: 8 }} className="container">
+      <div>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <img
+            src={
+              "https://cdn.videosdk.live/website-resources/error-pages/404-error.png"
+            }
+          />
+          <div
+            style={{
+              marginTop: 8,
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <p
+              style={{
+                fontSize: 24,
+                color: "white",
+                fontWeight: 600,
+                paddingBottom: 0,
+                textAlign: "center",
+              }}
+            >
               <Translate
                 id="theme.NotFound.p1"
                 description="The first paragraph of the 404 page"
               >
-                We could not find what you were looking for.
+                Look like you’re lost in space
               </Translate>
             </p>
-            <p>
-              <Translate
-                id="theme.NotFound.p2"
-                description="The 2nd paragraph of the 404 page"
+
+            <a href={"https://docs.videosdk.live/"}>
+              <button
+                style={{
+                  backgroundColor: "#5977FB",
+                  border: 0,
+                  borderRadius: 4,
+                  paddingLeft: 20,
+                  paddingRight: 20,
+                  paddingTop: 16,
+                  paddingBottom: 16,
+                  fontSize: 16,
+                  color: "white",
+                  marginTop: 18,
+                  cursor: "pointer",
+                }}
+                className="bg-purple-350 mt-6 lg:mt-8 rounded px-4 py-2.5 text-base lg:px-6 lg:py-4 lg:text-xl text-white"
               >
-                Please contact the owner of the site that linked you to the
-                original URL and let them know their link is broken.
-              </Translate>
-            </p>
+                Go to Homepage
+              </button>
+            </a>
           </div>
         </div>
-      </main>
-    </Layout>
+      </div>
+    </main>
   );
 }
 
