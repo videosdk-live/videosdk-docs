@@ -25,21 +25,24 @@ export function MainCard({
   imgLink,
   showBorder,
   showBadge,
+  className,
 }) {
   return (
     <div
       style={{ backgroundImage: `${backgroundColor}` }}
-      className={`${
+      className={`flex flex-col flex-1 justify-between ${className} ${
         fullWidth ? "p-3 md:p-5" : onlyTitle ? "p-3 md:p-2" : "p-3 md:p-5"
-      } ${borderRadius ? borderRadius : "rounded"} bg-gray-750 ${
+      } ${borderRadius ? borderRadius : "rounded"} ${
+        showBorder ? "border-class" : ""
+      }  ${
         onlyTitle
           ? "md:w-full"
           : `h-full ${
               fullWidth ? "md:max-w-sm lg:max-w-full max-w-full" : "xl:max-w-sm"
             }  `
-      }  ${showBorder ? "border-class" : ""}`}
+      } bg-gray-750`}
     >
-      <div>
+      <div className="flex flex-col justify-between">
         <div className="flex flex-row">
           {(Icon || imgLink) && (
             <div
@@ -82,8 +85,8 @@ export function MainCard({
             </p>
           </div>
         )}
-        {EndPart && <EndPart />}
       </div>
+      {EndPart && <EndPart />}
     </div>
   );
 }
@@ -172,7 +175,7 @@ function PlatformPart() {
   return (
     <>
       <div className="md:block hidden">
-        <div className="grid grid-cols-2 gap-3 mt-4 md:gap-3  md:flex md:flex-row md:justify-between">
+        <div className="grid grid-cols-2 gap-3 mt-4 md:gap-3 md:flex md:flex-row md:justify-between">
           {platformArray.map((item, index) => {
             return (
               <Link to={item.link} className="w-full">
