@@ -1,7 +1,7 @@
 var $zoho = $zoho || {};
 $zoho.salesiq = $zoho.salesiq || {
   widgetcode:
-    "a86a9f994c41265b9143a523f63150b272a707adda561ec63e522c7393c7ebfb",
+    "siq3435f6f74f8d02c278ec6aaf6c9b2b0550f8c23ffe661405474a5b0bbc66c857",
   values: {},
   ready: function () {},
 };
