@@ -476,15 +476,10 @@ module.exports = {
     //   src: "https://cdn.videosdk.live/static-sites-scripts/product-hunt.js",
     //   async: true,
     // },
-    // {
-    //   // Zoho Sales IQ
-    //   src: "https://salesiq.zoho.in/widget",
-    //   async: true,
-    // },
     {
       // Zoho Sales IQ
-      src: "js/sales-iq.js",
-      async: false,
+      src: "https://docs.videosdk.live/js/sales-iq.js",
+      async: true,
     },
     // Amplitude
     { src: "https://docs.videosdk.live/js/amplitude.js", async: false },
