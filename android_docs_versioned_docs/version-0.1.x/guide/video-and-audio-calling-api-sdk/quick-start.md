@@ -17,6 +17,8 @@ slug: quick-start
 
 # Quick Start for Conference in Android
 
+<ReactPlayer controls url="https://www.youtube.com/watch?v=Kj7jS3dbJFA" height="500px" width={"100%"} />
+
 VideoSDK enables you to embed the video calling feature into your Android application in minutes.
 
 In this quickstart, we are going to explore group calling feature of Video SDK. We will go through step by step guide of integrating video calling with Android Video SDK.

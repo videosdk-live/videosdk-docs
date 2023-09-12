@@ -17,6 +17,8 @@ slug: quick-start-ILS
 
 # Quick Start for Interactive Live Streaming in React
 
+<ReactPlayer controls url="https://www.youtube.com/watch?v=L1x7wtH-ok8" height="500px" width={"100%"} />
+
 VideoSDK enables you to embed the video calling feature into your React application in minutes.
 
 In this quickstart, we are going to explore interactive live streaming feature of Video SDK. We will go through step by step guide of integrating video calling with React Video SDK

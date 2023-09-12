@@ -20,6 +20,8 @@ import Mermaid from '@theme/Mermaid';
 
 # Quick Start for Conference in React Native
 
+<ReactPlayer controls url="https://www.youtube.com/watch?v=pqg1y3eRyK4" height="500px" width={"100%"} />
+
 VideoSDK enables the opportunity to integrate video & audio calling to Web, Android, iOS applications. It provides Programmable SDKs and REST APIs to build scalable video conferencing applications.
 
 This guide will get you running with the VideoSDK video & audio calling in minutes.
