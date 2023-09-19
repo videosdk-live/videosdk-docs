@@ -1,0 +1,23 @@
+node_modules
+npm-debug.log
+package-lock.json
+
+# common
+README.md
+docker-compose.yml
+Dockerfile
+.dockerignore
+
+# git
+.git
+.gitattributes
+.gitignore
+
+# env
+.env
+.env.example
+
+
+
+
+
