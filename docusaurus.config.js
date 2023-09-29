@@ -481,6 +481,10 @@ module.exports = {
       src: "https://docs.videosdk.live/js/sales-iq.js",
       async: true,
     },
+    {
+      src: "https://docs.videosdk.live/js/getkoala.js",
+      async: true,
+    },
     // Amplitude
     { src: "https://docs.videosdk.live/js/amplitude.js", async: false },
   ],
