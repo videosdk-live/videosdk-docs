@@ -138,6 +138,7 @@ Create swift file for `MeetingData` and `RoomStruct` class model for setting dat
 
 ```js title="MeetingData.swift"
 import Foundation
+//highlight-start
 import VideoSDKRTC
 
 struct MeetingData {
@@ -149,11 +150,13 @@ struct MeetingData {
     let cameraEnabled: Bool
     let mode: Mode?
 }
+//highlight-end
 ```
 
 ```js title="RoomStruct.swift"
 import Foundation
 
+//highlight-start
 struct RoomsStruct: Codable {
     let createdAt, updatedAt, roomID: String?
     let links: Links?
@@ -175,6 +178,7 @@ struct Links: Codable {
         case getSession = "get_session"
     }
 }
+//highlight-end
 ```
 
 ## Step 1 : Get started with APIClient
@@ -186,7 +190,9 @@ using [videosdk-server-api-example](https://github.com/videosdk-live/videosdk-rt
 ```js title="APIService.swift"
 import Foundation
 
+//highlight-start
 let TOKEN_STRING: String = "<AUTH_TOKEN>";
+//highlight-end
 
 class APIService {
 
@@ -198,6 +204,7 @@ class APIService {
         request.addValue(TOKEN_STRING, forHTTPHeaderField: "authorization")
 
         URLSession.shared.dataTask(with: request, completionHandler: { (data: Data?, response: URLResponse?, error: Error?) in
+            //highlight-start
             DispatchQueue.main.async {
                 if let data = data, let utf8Text = String(data: data, encoding: .utf8)
                 {
@@ -210,6 +217,7 @@ class APIService {
                     }
                 }
             }
+            //highlight-end
         }).resume()
     }
 }
@@ -258,6 +266,7 @@ class StartMeetingViewController: UIViewController, UITextFieldDelegate {
         txtMeetingId.text = "PROVIDE-STATIC-MEETING-ID"
     }
 
+    //highlight-start
     /// MARK: method for joining meeting as Host through seague named as "StartMeeting"
     /// after validating the serverToken in not empty
     @IBAction func btnJoinMeetingHostTapped(_ sender: Any) {
@@ -304,7 +313,6 @@ class StartMeetingViewController: UIViewController, UITextFieldDelegate {
     }
 
     // MARK: - method for creating room api call and getting meetingId for joining meeting
-
     func joinRoom() {
         APIService.createMeeting(token: self.serverToken) { result in
             if case .success(let meetingId) = result {
@@ -333,6 +341,7 @@ class StartMeetingViewController: UIViewController, UITextFieldDelegate {
             mode: self.meetingMode
         )
     }
+    //highlight-end
 }
 ```
 
@@ -455,7 +464,7 @@ class CustomVideoPlayerView: UIView {
 
 ```
 
-## Step 4 : Initialize and Join Meeting
+## Step 4 : Initialize and Join Meeting for Conference
 
 Using the provided `token` and `meetingId`, we will configure and initialise the meeting in `viewDidLoad()`.
 
@@ -486,48 +495,29 @@ class MeetingViewController: UIViewController {
     @IBOutlet weak var lblLocalParticipantNoMedia: UILabel!
     // outlet for view for paricipants view
     @IBOutlet weak var viewParticipantContainer: UIView!
-    // outlet for leave button
-    @IBOutlet weak var btnLeave: UIButton!
-    // outlet for start/stop hls button
-    @IBOutlet weak var btnStartHLS: UIButton!
-    // outlet for toggle video button
-    @IBOutlet weak var btnToggleVideo: UIButton!
-    // outlet for toggle audio button
-    @IBOutlet weak var btnToggleMic: UIButton!
-    // outlet for videoPlayerView for viewer
-    @IBOutlet weak var videoPlayerView: UIView!
     // outlet for meeting controls view
     @IBOutlet weak var MeetingControlsView: UIView!
+    /// Meeting data - required to start
+    var meetingData: MeetingData!
+    /// current meeting reference
+    private var meeting: Meeting?
+    // MARK: - video participants including self to show in UI
+    private var participants: [Participant] = []
+
+    // For Conference
     // outlet for label of HLS state
     @IBOutlet weak var lblHLSState: UILabel!
     // outlet for Conference mode view
     @IBOutlet weak var viewConferenceMode: UIStackView!
     // outlet for view of HLSState
     @IBOutlet weak var viewHLSState: UIView!
-    // bool for mic
-    var micEnabled = true
-    // bool for video
-    var videoEnabled = true
     // string for meeting hls state
     var hlsState: String = "HLS_STOPPED"
-    // string for downstreamurl for HLS
-    var hlsDownstreamUrl: String? = ""
-    /// customVideoPlayerView instance for video player
-    var customVideoPlayerView: CustomVideoPlayerView? = nil
-    // label for placeholder for host streaming status for viewers
-    var noStreamingStartedView: UILabel? = nil
-    /// Meeting data - required to start
-    var meetingData: MeetingData!
-    /// current meeting reference
-    private var meeting: Meeting?
-
-    // MARK: - video participants including self to show in UI
-    private var participants: [Participant] = []
 
     // MARK: - Lifecycle Events
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        //highlight-start
         // configure the VideoSDK with token
         VideoSDK.config(token: meetingData.token)
         
@@ -550,29 +540,15 @@ class MeetingViewController: UIViewController {
             self.MeetingControlsView.isHidden = false
             self.viewHLSState.isHidden = false
         } else {
-            self.viewParticipantContainer.isHidden = true
-            self.viewHLSState.isHidden = true
-            self.viewConferenceMode.isHidden = true
-            self.videoPlayerView.isHidden = false
-            self.MeetingControlsView.isHidden = true
-            self.hlsDownstreamUrl = self.meeting?.hlsUrls?.downstreamUrl ?? ""
-            
-            if self.meeting?.meetingMode == .VIEWER {
-                if self.hlsDownstreamUrl != nil && (self.hlsDownstreamUrl?.count ?? 0) > 0 {
-                    self.playVideo(videoUrl: hlsDownstreamUrl!)
-                    removeLabelOfHostingState()
-                } else {
-                    self.showLabelOfHostingState()
-                    // label show
-                }
-            }
+            ...
         }
+        //highlight-end
     }
 
-	  override func viewWillAppear(_ animated: Bool) {
-	      super.viewWillAppear(animated)
-	      navigationController?.navigationBar.isHidden = true
-	  }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBar.isHidden = true
+    }
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
@@ -580,30 +556,30 @@ class MeetingViewController: UIViewController {
         NotificationCenter.default.removeObserver(self)
     }
 
-		// MARK: - Meeting
+    //highlight-start
+    // MARK: - Meeting
+    private func initializeMeeting() {
+        // Initialize the VideoSDK
+        meeting = VideoSDK.initMeeting(
+            meetingId: meetingData.meetingId,
+            participantName: meetingData.name,
+            micEnabled: meetingData.micEnabled,
+            webcamEnabled: meetingData.cameraEnabled
+        )
 
-		private func initializeMeeting() {
+        // Adding the listener to meeting
+        meeting?.addEventListener(self)
 
-		    // Initialize the VideoSDK
-		    meeting = VideoSDK.initMeeting(
-		        meetingId: meetingData.meetingId,
-		        participantName: meetingData.name,
-		        micEnabled: meetingData.micEnabled,
-		        webcamEnabled: meetingData.cameraEnabled
-		    )
-
-		    // Adding the listener to meeting
-		    meeting?.addEventListener(self)
-
-		    // joining the meeting
-		    meeting?.join()
-		}
+        // joining the meeting
+        meeting?.join()
+    }
+    //highlight-end
 }
 ```
 
-## Step 4 : Implement Controls
+## Step 4 : Implement Controls for Conference
 
-After initialising the meeting in previous step. We will now add **@IBOutlet** for `btnLeave`, `btnToggleVideo` and `btnToggleMic` which can controls the media in meeting.
+After initialising the meeting in previous step. We will now add **@IBOutlet** for `btnLeave`, `btnToggleVideo`, `btnStartHLS` and `btnToggleMic` which can controls the media in meeting.
 
 ```js title="MeetingViewController.swift"
 
@@ -614,6 +590,9 @@ class MeetingViewController: UIViewController {
 
     // outlet for leave button
     @IBOutlet weak var btnLeave: UIButton!
+
+    // outlet for start/stop hls button
+    @IBOutlet weak var btnStartHLS: UIButton!
 
     // outlet for toggle video button
     @IBOutlet weak var btnToggleVideo: UIButton!
@@ -627,15 +606,19 @@ class MeetingViewController: UIViewController {
     var videoEnabled = true
 
 
-    // outlet for leave button click event
+    // Outlet for leave button click event
     @IBAction func btnLeaveTapped(_ sender: Any) {
-            DispatchQueue.main.async {
+        DispatchQueue.main.async {
+            if self.participants.first(where: { $0.isLocal == true })?.mode == .CONFERENCE {
+                self.meeting?.end()
+            } else {
                 self.meeting?.leave()
-                self.dismiss(animated: true)
             }
+            self.dismiss(animated: true)
         }
+    }
 
-    // outlet for toggle mic button click event
+    // Outlet for toggle mic button click event
     @IBAction func btnToggleMicTapped(_ sender: Any) {
         if micEnabled {
             micEnabled = !micEnabled // false
@@ -646,7 +629,7 @@ class MeetingViewController: UIViewController {
         }
     }
 
-    // outlet for toggle video button click event
+    // Outlet for toggle video button click event
     @IBAction func btnToggleVideoTapped(_ sender: Any) {
         if videoEnabled {
             videoEnabled = !videoEnabled // false
@@ -657,8 +640,24 @@ class MeetingViewController: UIViewController {
         }
     }
 
-  //highlight-next-line
-...
+    // Outlet for Start/Stop HLS button click event
+    @IBAction func btnStartHLSTapped(_ sender: Any) {
+        if hlsState == "HLS_STOPPED" {
+            self.meeting?.startHLS(config: HLSConfig(layout: ConfigLayout(type: .SPOTLIGHT,
+                                                                          priority: .PIN,
+                                                                          gridSize: 20
+                                                                         ),
+                                                     theme: .DARK,
+                                                     mode: .video_and_audio,
+                                                     quality: .high,
+                                                     orientation: .portrait))
+        } else if (hlsState == "HLS_STARTED" || hlsState == "HLS_PLAYABLE") {
+            self.meeting?.stopHLS()
+        }
+    }
+
+    //highlight-next-line
+    ...
 
 }
 ```
@@ -671,195 +670,329 @@ class MeetingViewController: UIViewController {
 
 </center>
 
-## Step 5 : Implementing MeetingEventListener
+## Step 5 : Implementing Join Meeting for Viewer
 
-In this step, we'll create an extension for the `MeetingViewController` that implements the MeetingEventListener, which implements the `onMeetingJoined`, `onMeetingLeft`, `onParticipantJoined`, `onParticipantLeft`, `onParticipantChanged`, `onSpeakerChanged`, etc. methods.
+We will listen to the hlsStateChanged event and if the HLS is started, it will show the livestream using the native iOS AVPlayer.
 
 ```js title="MeetingViewController.swift"
-
 class MeetingViewController: UIViewController {
 
+    // MARK: - Properties
+    //highlight-next-line
+    ...
+    // For Viewer
+    // string for downstreamurl for HLS
+    var hlsDownstreamUrl: String? = ""
+    // outlet for videoPlayerView for viewer
+    @IBOutlet weak var videoPlayerView: UIView!
+    // custom video player instance of the view [CustomVideoPlayerView]
+    var customVideoPlayerView: CustomVideoPlayerView? = nil
+    // outlet for no streaming started label
+    var noStreamingStartedView: UILabel? = nil
+
+    // MARK: - Lifecycle Events
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        //highlight-next-line
+        ...
+
+        if self.meeting?.meetingMode == .CONFERENCE {
+            //highlight-next-line
+            ...
+        } else {
+            self.viewParticipantContainer.isHidden = true
+            self.viewHLSState.isHidden = true
+            self.viewConferenceMode.isHidden = true
+            self.videoPlayerView.isHidden = false
+            self.MeetingControlsView.isHidden = true
+            self.hlsDownstreamUrl = self.meeting?.hlsUrls?.downstreamUrl ?? ""
+            
+            if self.meeting?.meetingMode == .VIEWER {
+                if self.hlsDownstreamUrl != nil && (self.hlsDownstreamUrl?.count ?? 0) > 0 {
+                    // start the playing streaming video
+                    self.playVideo(videoUrl: hlsDownstreamUrl!)
+                    removeLabelOfHostingState()
+                } else {
+                    // show not streaming started or host has stopped streaming
+                    self.showLabelOfHostingState()
+                }
+            }
+        }
+    }
+}
+
+// MARK: Play/Pause Video controls for the Viewers
+private extension MeetingViewController {
+    
+    /// Method for starting video for the viewers if HLS is already started
+    func playVideo(videoUrl: String) {
+        let videoURL = URL(string: videoUrl)
+        self.customVideoPlayerView = CustomVideoPlayerView(frame: self.videoPlayerView.frame)
+        customVideoPlayerView?.isUserInteractionEnabled = true
+        self.videoPlayerView.addSubview(customVideoPlayerView!)
+        self.videoPlayerView.clipsToBounds = true
+        let player = AVPlayer(url: videoURL!)
+        customVideoPlayerView?.setPlayer(player)
+    }
+    
+    /// Method for stoping video for the viewers
+    func stopVideo() {
+        customVideoPlayerView?.pause()
+        customVideoPlayerView?.removeFromSuperview()
+    }
+    
+    /// Method for showing the label to viewer when Host has not started the streaming.
+    func showLabelOfHostingState() {
+        noStreamingStartedView = UILabel()
+        noStreamingStartedView?.text = "Host has not started hosting yet or streaming is stopped"
+        noStreamingStartedView?.textColor = .white
+        noStreamingStartedView?.font = UIFont.boldSystemFont(ofSize: 12)
+        noStreamingStartedView?.textAlignment = .center
+        noStreamingStartedView?.numberOfLines = 4
+        noStreamingStartedView?.frame = self.videoPlayerView.frame
+        self.videoPlayerView.addSubview(noStreamingStartedView!)
+    }
+    
+    /// Method for hiding the label to viewer once streaming is started
+    func removeLabelOfHostingState() {
+        noStreamingStartedView?.isHidden = true
+        noStreamingStartedView?.removeFromSuperview()
+    }
+}
+```
+
+
+## Step 6 : Implementing MeetingEventListener
+
+In this step, we'll create an extension for the `MeetingViewController` that implements the MeetingEventListener, which implements the `onMeetingJoined`, `onMeetingLeft`, `onParticipantJoined`, `onParticipantLeft`, `onSpeakerChanged`, `onHlsStateChanged` etc. methods.
+
+```js title="MeetingViewController.swift"
 //highlight-next-line
 ...
 
 extension MeetingViewController: MeetingEventListener {
 
-		/// Meeting started
-		func onMeetingJoined() {
+    /// Meeting started
+    func onMeetingJoined() {
+        // handle local participant on start
+        guard let localParticipant = self.meeting?.localParticipant else { return }
+        
+        // add to list
+        participants.append(localParticipant)
+        
+        // add event listener
+        localParticipant.addEventListener(self)
+        
+        if (localParticipant.mode == .CONFERENCE || !localParticipant.streams.isEmpty) {
+            
+            localParticipant.pin()
+            
+            localParticipant.setQuality(.high)
+            
+            if(localParticipant.isLocal){
+                self.localParticipantViewContainer.isHidden = false
+            } else {
+                self.remoteParticipantViewContainer.isHidden = false
+            }
+        }
+    }
 
-		    // handle local participant on start
-		    guard let localParticipant = self.meeting?.localParticipant else { return }
-		    // add to list
-		    participants.append(localParticipant)
+    /// Meeting ended
+    func onMeetingLeft() {
+        // remove listeners
+        meeting?.localParticipant.removeEventListener(self)
+        meeting?.removeEventListener(self)
+    }
 
-		    // add event listener
-		    localParticipant.addEventListener(self)
+    /// A new participant joined
+    func onParticipantJoined(_ participant: Participant) {
+        participants.append(participant)
+        
+        // add listener
+        participant.addEventListener(self)
+        
+        if participant.mode == .CONFERENCE && !participant.streams.isEmpty {
+            
+            participant.setQuality(.high)
+            
+            if(participant.isLocal){
+                self.localParticipantViewContainer.isHidden = false
+            } else {
+                self.remoteParticipantViewContainer.isHidden = false
+            }
+        }
+    }
 
-		    localParticipant.setQuality(.high)
+    /// A participant left from the meeting
+    /// - Parameter participant: participant object
+    func onParticipantLeft(_ participant: Participant) {
+        participant.removeEventListener(self)
+        guard let index = self.participants.firstIndex(where: { $0.id == participant.id }) else {
+            return
+        }
+        // remove participant from list
+        participants.remove(at: index)
+        // hide from ui
+        UIView.animate(withDuration: 0.5){
+            if(!participant.isLocal && participant.mode == .CONFERENCE){
+                self.remoteParticipantViewContainer.isHidden = true
+            }
+        }
+    }
 
-		    if(localParticipant.isLocal){
-		        self.localParticipantViewContainer.isHidden = false
-		    } else {
-		        self.remoteParticipantViewContainer.isHidden = false
-		    }
-		}
+    /// Called when speaker is changed
+    /// - Parameter participantId: participant id of the speaker, nil when no one is speaking.
+    func onSpeakerChanged(participantId: String?) {
+        
+        // show indication for active speaker
+        if let participant = participants.first(where: { $0.id == participantId }) {
+            self.showActiveSpeakerIndicator(participant.isLocal ? localParticipantViewContainer : remoteParticipantViewContainer, true)
+        }
+        
+        // hide indication for others participants
+        let otherParticipants = participants.filter { $0.id != participantId }
+        for participant in otherParticipants {
+            if participants.count > 1 && participant.isLocal {
+                self.showActiveSpeakerIndicator(localParticipantViewContainer, false)
+            } else {
+                self.showActiveSpeakerIndicator(remoteParticipantViewContainer, false)
+            }
+        }
+    }
 
-		/// Meeting ended
-		func onMeetingLeft() {
-		    // remove listeners
-		    meeting?.localParticipant.removeEventListener(self)
-		    meeting?.removeEventListener(self)
-		}
+    /// Method for decorating the view for indicating the speaker view
+    func showActiveSpeakerIndicator(_ view: UIView, _ show: Bool) {
+        view.layer.borderWidth = 4.0
+        view.layer.borderColor = show ? UIColor.blue.cgColor : UIColor.clear.cgColor
+    }
 
-		/// A new participant joined
-		func onParticipantJoined(_ participant: Participant) {
-		    participants.append(participant)
+    /// Called when HLS state is changed in the meeting
+    func onHlsStateChanged(state: HLSState, hlsUrl: HLSUrl?) {
+        /// Status of HLS when meeting is started/joined by user
+        let stateTitle = (state == .HLS_STARTING ? "Starting HLS" : ((state == .HLS_STARTED || state == .HLS_PLAYABLE) ? "Stop HLS" : ( state == .HLS_STOPPING ? "Stopping HLS" : (state == .HLS_STOPPED ? "Start HLS" : "Stop HLS"))))
+        
+        let HLSCurrentState = (state == .HLS_STARTING ? "Livestream is starting" : ((state == .HLS_STARTED || state == .HLS_PLAYABLE) ? "Live Stream is started" : ( state == .HLS_STOPPING ? "Livestream is stopping" : (state == .HLS_STOPPED ? "Livestream is stopped" : "Livestream is stopped"))))
+        
+        self.hlsState = state.rawValue
 
-		    // add listener
-		    participant.addEventListener(self)
+        DispatchQueue.main.async {
+            /// set label view which indicates the HLS State
+            self.lblHLSState.text = "Current HLS State: \(HLSCurrentState)"
+            /// modify the button text and color once HLS is started/stopeed accordingly
+            self.btnStartHLS.setTitle(stateTitle, for: .normal)
+            if state == .HLS_STARTED || state == .HLS_PLAYABLE {
+                self.btnStartHLS.tintColor = .red
+            } else {
+                self.btnStartHLS.tintColor = .systemBlue
+            }
+        }
 
-		    participant.setQuality(.high)
-
-		    if(participant.isLocal){
-		        self.localParticipantViewContainer.isHidden = false
-		    } else {
-		        self.remoteParticipantViewContainer.isHidden = false
-		    }
-		}
-
-		/// A participant left from the meeting
-		/// - Parameter participant: participant object
-		func onParticipantLeft(_ participant: Participant) {
-		    participant.removeEventListener(self)
-		    guard let index = self.participants.firstIndex(where: { $0.id == participant.id }) else {
-		        return
-		    }
-		    // remove participant from list
-		    participants.remove(at: index)
-		    // hide from ui
-		    UIView.animate(withDuration: 0.5){
-		        if(!participant.isLocal){
-		            self.remoteParticipantViewContainer.isHidden = true
-		        }
-		    }
-		}
-
-		/// Called when speaker is changed
-		/// - Parameter participantId: participant id of the speaker, nil when no one is speaking.
-		func onSpeakerChanged(participantId: String?) {
-
-		    // show indication for active speaker
-		    if let participant = participants.first(where: { $0.id == participantId }) {
-		        self.showActiveSpeakerIndicator(participant.isLocal ? localParticipantViewContainer : remoteParticipantViewContainer, true)
-		    }
-
-		    // hide indication for others participants
-		    let otherParticipants = participants.filter { $0.id != participantId }
-		    for participant in otherParticipants {
-		        if participants.count > 1 && participant.isLocal {
-		            showActiveSpeakerIndicator(localParticipantViewContainer, false)
-		        } else {
-		            showActiveSpeakerIndicator(remoteParticipantViewContainer, false)
-		        }
-		    }
-		}
-
-		func showActiveSpeakerIndicator(_ view: UIView, _ show: Bool) {
-		    view.layer.borderWidth = 4.0
-		    view.layer.borderColor = show ? UIColor.blue.cgColor : UIColor.clear.cgColor
-		}
+        /// modify the views based on the mode of meeting
+        if self.meeting?.meetingMode == .VIEWER {
+            if state == .HLS_PLAYABLE {
+                hlsDownstreamUrl = hlsUrl?.downstreamUrl ?? ""
+                self.playVideo(videoUrl: hlsDownstreamUrl!)
+            } else {
+                hlsDownstreamUrl = hlsUrl?.downstreamUrl ?? ""
+                self.stopVideo()
+            }
+        }
+    }
 
 }
 
-//highlight-next-line
-...
-
 ```
 
-## Step 6 : Implementing ParticipantEventListener
+## Step 7 : Implementing ParticipantEventListener
 
 In this stage, we'll add an extension for the `MeetingViewController` that implements the ParticipantEventListener, which implements the `onStreamEnabled` and `onStreamDisabled` methods for the audio and video of MediaStreams enabled or disabled.
 
 The function `updateUI` is frequently used to control or modify the user interface (enable / disable camera & mic) in accordance with MediaStream state.
 
 ```js title="MeetingViewController.swift"
-class MeetingViewController: UIViewController {
 
 //highlight-next-line
 ...
 
+// MARK: - ParticipantEventListener
+
 extension MeetingViewController: ParticipantEventListener {
-
-		/// Participant has enabled mic, video or screenshare
-		/// - Parameters:
-		///   - stream: enabled stream object
-		///   - participant: participant object
-		func onStreamEnabled(_ stream: MediaStream, forParticipant participant: Participant) {
-		    updateUI(participant: participant, forStream: stream, enabled: true)
-		}
-
-		/// Participant has disabled mic, video or screenshare
-		/// - Parameters:
-		///   - stream: disabled stream object
-		///   - participant: participant object
-		func onStreamDisabled(_ stream: MediaStream, forParticipant participant: Participant) {
-		    updateUI(participant: participant, forStream: stream, enabled: false)
-		}
+    
+    /// Participant has enabled mic, video or screenshare
+    /// - Parameters:
+    ///   - stream: enabled stream object
+    ///   - participant: participant object
+    func onStreamEnabled(_ stream: MediaStream, forParticipant participant: Participant) {
+        updateUI(participant: participant, forStream: stream, enabled: true)
+    }
+    
+    /// Participant has disabled mic, video or screenshare
+    /// - Parameters:
+    ///   - stream: disabled stream object
+    ///   - participant: participant object
+    func onStreamDisabled(_ stream: MediaStream, forParticipant participant: Participant) {
+        updateUI(participant: participant, forStream: stream, enabled: false)
+    }
 }
 
 private extension MeetingViewController {
-
+    
     func updateUI(participant: Participant, forStream stream: MediaStream, enabled: Bool) { // true
-        switch stream.kind {
-        case .state(value: .video):
-            if let videotrack = stream.track as? RTCVideoTrack {
-                if enabled {
-                    DispatchQueue.main.async {
+        if(participant.mode == .CONFERENCE) {
+            switch stream.kind {
+            case .state(value: .video):
+                if let videotrack = stream.track as? RTCVideoTrack {
+                    if enabled {
+                        DispatchQueue.main.async {
+                            UIView.animate(withDuration: 0.5){
+                                if(participant.isLocal){
+                                    self.localParticipantViewContainer.isHidden = false
+                                    self.localParticipantVideoView.isHidden = false
+                                    self.localParticipantVideoView.videoContentMode = .scaleAspectFill
+                                    self.localParticipantVideoView.clipsToBounds = true
+                                    self.localParticipantViewContainer.bringSubviewToFront(self.localParticipantVideoView)
+                                    videotrack.add(self.localParticipantVideoView)
+                                    self.lblLocalParticipantNoMedia.isHidden = true
+                                } else {
+                                    self.remoteParticipantViewContainer.isHidden = false
+                                    self.remoteParticipantVideoView.isHidden = false
+                                    self.remoteParticipantVideoView.videoContentMode = .scaleAspectFill
+                                    self.remoteParticipantVideoView.clipsToBounds = true
+                                    self.remoteParticipantViewContainer.bringSubviewToFront(self.remoteParticipantVideoView)
+                                    videotrack.add(self.remoteParticipantVideoView)
+                                    self.lblRemoteParticipantNoMedia.isHidden = true
+                                }
+                            }
+                        }
+                    } else {
                         UIView.animate(withDuration: 0.5){
                             if(participant.isLocal){
-                                self.localParticipantViewContainer.isHidden =   false
-                                self.localParticipantVideoView.isHidden = false
-                                self.localParticipantVideoView.videoContentMode = .scaleAspectFill
-                                self.localParticipantViewContainer.bringSubviewToFront(self.localParticipantVideoView)
-                                videotrack.add(self.localParticipantVideoView)
-                                self.lblLocalParticipantNoMedia.isHidden = true
+                                self.localParticipantViewContainer.isHidden = false
+                                self.localParticipantVideoView.isHidden = true
+                                self.lblLocalParticipantNoMedia.isHidden = false
+                                videotrack.remove(self.localParticipantVideoView)
                             } else {
                                 self.remoteParticipantViewContainer.isHidden = false
-                                self.remoteParticipantVideoView.isHidden = false
-                                self.remoteParticipantVideoView.videoContentMode = .scaleAspectFill
-                                self.remoteParticipantViewContainer.bringSubviewToFront(self.remoteParticipantVideoView)
-                                videotrack.add(self.remoteParticipantVideoView)
-                                self.lblRemoteParticipantNoMedia.isHidden = true
+                                self.remoteParticipantVideoView.isHidden = true
+                                self.lblRemoteParticipantNoMedia.isHidden = false
+                                videotrack.remove(self.remoteParticipantVideoView)
                             }
                         }
                     }
-                } else {
-                    UIView.animate(withDuration: 0.5){
-                        if(participant.isLocal){
-                            self.localParticipantViewContainer.isHidden = false
-                            self.localParticipantVideoView.isHidden = true
-                            self.lblLocalParticipantNoMedia.isHidden = false
-                            videotrack.remove(self.localParticipantVideoView)
-                        } else {
-                            self.remoteParticipantViewContainer.isHidden = false
-                            self.remoteParticipantVideoView.isHidden = true
-                            self.lblRemoteParticipantNoMedia.isHidden = false
-                            videotrack.remove(self.remoteParticipantVideoView)
-                        }
-                    }
                 }
+                
+            case .state(value: .audio):
+                if participant.isLocal {
+                    localParticipantViewContainer.layer.borderWidth = 4.0
+                    localParticipantViewContainer.layer.borderColor = enabled ? UIColor.clear.cgColor : UIColor.red.cgColor
+                } else {
+                    remoteParticipantViewContainer.layer.borderWidth = 4.0
+                    remoteParticipantViewContainer.layer.borderColor = enabled ? UIColor.clear.cgColor : UIColor.red.cgColor
+                }
+                
+            default:
+                break
             }
-
-        case .state(value: .audio):
-            if participant.isLocal {
-                localParticipantViewContainer.layer.borderWidth = 4.0
-                localParticipantViewContainer.layer.borderColor = enabled ? UIColor.clear.cgColor : UIColor.red.cgColor
-            } else {
-                remoteParticipantViewContainer.layer.borderWidth = 4.0
-                remoteParticipantViewContainer.layer.borderColor = enabled ? UIColor.clear.cgColor : UIColor.red.cgColor
-            }
-        default:
-            break
         }
     }
 }
@@ -877,34 +1010,8 @@ private extension MeetingViewController {
 
 </center>
 
-## Known Issue
-
-Please add the following line in the `MeetingViewController.swift` file's `viewDidLoad` method If you get your video out of the container view like below image.
-
-<center>
-
-<img src='https://cdn.videosdk.live/website-resources/docs-resources/ios_quickstart_known_issue.png' style={{height: '400px'}}/>
-
-</center>
-
-```js title="MeetingViewController.swift"
-override func viewDidLoad() {
-
-    localParticipantVideoView.frame = CGRect(x: 10, y: 0, width: localParticipantViewContainer.frame.width, height: localParticipantViewContainer.frame.height)
-
-    localParticipantVideoView.bounds = CGRect(x: 10, y: 0, width: localParticipantViewContainer.frame.width, height: localParticipantViewContainer.frame.height)
-
-    localParticipantVideoView.clipsToBounds = true
-
-    remoteParticipantVideoView.frame = CGRect(x: 10, y: 0, width: remoteParticipantViewContainer.frame.width, height: remoteParticipantViewContainer.frame.height)
-    remoteParticipantVideoView.bounds = CGRect(x: 10, y: 0, width: remoteParticipantViewContainer.frame.width, height: remoteParticipantViewContainer.frame.height)
-    remoteParticipantVideoView.clipsToBounds = true
-}
-
-```
-
 :::tip
 
-Stuck anywhere? Check out this [example code](https://github.com/videosdk-live/videosdk-rtc-ios-sdk-example) on GitHub
+Stuck anywhere? You can checkout the complete [quick start example here](https://github.com/videosdk-live/quickstart/tree/main/ios-hls).
 
 :::
