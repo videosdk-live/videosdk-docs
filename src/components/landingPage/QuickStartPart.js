@@ -8,6 +8,7 @@ import PrebuiltIcon from "../../../static/icon/Home_customsdk/PrebuiltIcon";
 import CustomReactNativeIcon from "../../../static/icon/Home_customsdk/CustomReactNativeIcon";
 import { MainCard } from "../../theme/Overview";
 import { createPopper } from "@popperjs/core";
+import CustomServerSideIcon from "../../../static/icon/Home_customsdk/CustomServerSideIcon";
 
 export default function QuickstartPart() {
   const QuickStartArray = [
@@ -52,6 +53,11 @@ export default function QuickstartPart() {
       link: "/android/guide/video-and-audio-calling-api-sdk/quick-start-ILS",
       tooltip: "Andorid",
     },
+    {
+      Icon: CustomServerSideIcon,
+      link: "/api-reference/realtime-communication/intro",
+      tooltip: "Server-side",
+    },
   ];
 
   const CustomSDKArray = [
@@ -89,6 +95,11 @@ export default function QuickstartPart() {
       Icon: CustomIOSIcon,
       link: "/ios/guide/video-and-audio-calling-api-sdk/quick-start",
       tooltip: "iOS",
+    },
+    {
+      Icon: CustomServerSideIcon,
+      link: "/api-reference/realtime-communication/intro",
+      tooltip: "Server-side",
     },
   ];
 
