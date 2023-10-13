@@ -49,6 +49,28 @@ yarn add "@videosdk.live/react-native-sdk"
 </TabItem>
 </Tabs>
 
+<Tabs
+defaultValue="npm"
+groupId={"package-manager-group-id"}
+values={[
+{label: 'NPM', value: 'npm'},
+{label: 'YARN', value: 'yarn'},
+]}>
+<TabItem value="npm">
+
+```js
+npm install "@videosdk.live/react-native-incallmanager"
+```
+
+</TabItem>
+<TabItem value="yarn">
+
+```js
+yarn add "@videosdk.live/react-native-incallmanager"
+```
+</TabItem>
+</Tabs>
+
 :::caution
 
 - If you are using Windows machine, make sure to include the **double-quotes** while installation.
@@ -71,7 +93,6 @@ $env:NODE_TLS_REJECT_UNAUTHORIZED="0"
 dependencies {
     implementation project(':rnfgservice')
     implementation project(':rnwebrtc')
-    implementation project(':rnincallmanager')
 }
 ```
 
@@ -80,9 +101,6 @@ dependencies {
 ```js title="android/settings.gradle"
 include ':rnwebrtc'
 project(':rnwebrtc').projectDir = new File(rootProject.projectDir, '../node_modules/@videosdk.live/react-native-webrtc/android')
-
-include ':rnincallmanager'
-project(':rnincallmanager').projectDir = new File(rootProject.projectDir, '../node_modules/@videosdk.live/react-native-incallmanager/android')
 
 include ':rnfgservice'
 project(':rnfgservice').projectDir = new File(rootProject.projectDir, '../node_modules/@videosdk.live/react-native-foreground-service/android')
@@ -93,7 +111,6 @@ project(':rnfgservice').projectDir = new File(rootProject.projectDir, '../node_m
 ```js title="MainApplication.java"
 //highlight-start
 import live.videosdk.rnfgservice.ForegroundServicePackage;
-import live.videosdk.rnincallmanager.InCallManagerPackage;
 import live.videosdk.rnwebrtc.WebRTCModulePackage;
  // highlight-end
 
@@ -106,7 +123,6 @@ public class MainApplication extends Application implements ReactApplication {
 //highlight-start
 
     packages.add(new ForegroundServicePackage());
-    packages.add(new InCallManagerPackage());
     packages.add(new WebRTCModulePackage());
  // highlight-end
 
