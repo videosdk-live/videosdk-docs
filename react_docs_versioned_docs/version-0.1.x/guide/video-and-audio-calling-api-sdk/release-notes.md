@@ -8,6 +8,16 @@ tags: [releasenotes]
 
 This page will keep you update all the releases of React JS SDK.
 
+## v0.1.77
+
+**Release Date** : 7th Oct 2023
+
+**Bug Fix** :
+
+- Fixed `trackEnded` issue while removing wired headset.
+
+---
+
 ## v0.1.73
 
 **Release Date** : 4th May 2023
