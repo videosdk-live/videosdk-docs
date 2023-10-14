@@ -56,7 +56,8 @@
 
 ```java title="android/app/build.gradle"
   dependencies {
-    compile project(':rnfgservice') compile project(':rnwebrtc') compile project(':rnincallmanager')
+    compile project(':rnfgservice')
+    compile project(':rnwebrtc')
   }
 ```
 
@@ -66,9 +67,6 @@
 include ':rnwebrtc'
 project(':rnwebrtc').projectDir = new File(rootProject.projectDir, '../node_modules/@videosdk.live/react-native-webrtc/android')
 
-include ':rnincallmanager'
-project(':rnincallmanager').projectDir = new File(rootProject.projectDir, '../node_modules/@videosdk.live/react-native-incallmanager/android')
-
 include ':rnfgservice'
 project(':rnfgservice').projectDir = new File(rootProject.projectDir, '../node_modules/@videosdk.live/react-native-foreground-service/android')
 ```
@@ -77,7 +75,6 @@ project(':rnfgservice').projectDir = new File(rootProject.projectDir, '../node_m
 
 ```java title="MainApplication.java"
 import live.videosdk.rnfgservice.ForegroundServicePackage;
-import live.videosdk.rnincallmanager.InCallManagerPackage;
 import live.videosdk.rnwebrtc.WebRTCModulePackage;
 
 public class MainApplication extends Application implements ReactApplication {
@@ -85,7 +82,6 @@ public class MainApplication extends Application implements ReactApplication {
       return Arrays.<ReactPackage>asList(
           /* Initialise foreground service, incall manager and webrtc module */
           new ForegroundServicePackage(),
-          new InCallManagerPackage(),
           new WebRTCModulePackage(),
       );
   }

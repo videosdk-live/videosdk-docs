@@ -36,40 +36,19 @@ values={[
 <TabItem value="npm">
 
 ```js
-npm install "@videosdk.live/react-native-sdk"
+npm install "@videosdk.live/react-native-sdk" "@videosdk.live/react-native-incallmanager"
 ```
 
 </TabItem>
 <TabItem value="yarn">
 
 ```js
-yarn add "@videosdk.live/react-native-sdk"
+yarn add "@videosdk.live/react-native-sdk" "@videosdk.live/react-native-incallmanager"
 ```
 
 </TabItem>
 </Tabs>
 
-<Tabs
-defaultValue="npm"
-groupId={"package-manager-group-id"}
-values={[
-{label: 'NPM', value: 'npm'},
-{label: 'YARN', value: 'yarn'},
-]}>
-<TabItem value="npm">
-
-```js
-npm install "@videosdk.live/react-native-incallmanager"
-```
-
-</TabItem>
-<TabItem value="yarn">
-
-```js
-yarn add "@videosdk.live/react-native-incallmanager"
-```
-</TabItem>
-</Tabs>
 
 :::caution
 

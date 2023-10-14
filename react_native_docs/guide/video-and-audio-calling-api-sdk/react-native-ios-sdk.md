@@ -38,7 +38,7 @@ values={[
 <TabItem value="npm">
 
 ```js
-npm install "@videosdk.live/react-native-sdk"
+npm install "@videosdk.live/react-native-sdk" 
 ```
 
 </TabItem>
