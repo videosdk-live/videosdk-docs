@@ -1802,3 +1802,37 @@ html[data-theme="dark"]
 .method_code_block>div>div>pre>code>.theme-code-block-highlighted-line {
   background: #333a47 !important;
 }
+
+.ais-SearchBox-input {
+  background: #000 !important;
+  border:2px solid #252a34 !important;
+  color: white !important;
+  font-size: 18px !important;
+}
+
+.ais-Pagination-link {
+  background: transparent !important;
+  color:white !important;
+  border:none !important;
+  box-shadow: none !important;
+}
+
+.ais-SearchBox-form {
+  background: transparent !important;
+}
+
+.ais-Hits-item {
+  background: transparent !important;
+  border-bottom:1.5px solid #252a34 !important;
+  font-size: 16px !important;
+  padding:10px 0px 10px 0px !important
+}
+
+.Pagination {
+  display: flex;
+  justify-content: center;
+  padding: 1rem 0;
+  margin: 0 auto;
+}
+
+

@@ -44,6 +44,10 @@ module.exports = {
       indexName: "VIDEO_SDK",
       contextualSearch: true,
       searchParameters: {},
+      replaceSearchResultPathname: {
+        from: "/docs/",
+        to: "/search",
+      },
     },
     colorMode: {
       defaultMode: "dark",
