@@ -336,15 +336,15 @@ Note: If one of the above-mentioned limits is reached, services will be held. In
 ## Quotas & limits
 
 - For "Free Account"
-  - By default, maximum of 10 participants in one video conference room.
-  - By default, maximum of 10 speakers in one Livestream speaker room.
-  - By default, maximum of 150 viewers in one interactive Livestream (If used with chat feature).
+  - By default, maximum of 50 participants in one video conference room.
+  - By default, maximum of 50 speakers in one Livestream speaker room.
+  - By default, maximum of 1000 viewers in one interactive Livestream (If used with chat feature).
 
 Note: If one of the above-mentioned limits is reached, services will be held. In order to increase the above limits, please [upgrade the plan](https://app.videosdk.live/profile/billing?page=1&perPage=20&default_action=save-card) on our dashboard and then contact us here : https://www.videosdk.live/contact
 
 - For “Paid Accounts”
-  - By default, maximum of 10 participants in one video conference room.
-  - By default, maximum of 10 speakers in one Livestream speaker room.
-  - By default, maximum of 150 viewers in one interactive Livestream (If used with chat feature).
+  - By default, maximum of 50 participants in one video conference room.
+  - By default, maximum of 50 speakers in one Livestream speaker room.
+  - By default, maximum of 1000 viewers in one interactive Livestream (If used with chat feature).
 
-Note: Please contact us if you want to enhance the aforementioned quota for your [subscribed account](https://videosdk.live/contact)
+📌 Note: Please contact us if you want to enhance the aforementioned quota for your [subscribed account](https://videosdk.live/contact)

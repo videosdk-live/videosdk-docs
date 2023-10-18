@@ -1,0 +1,48 @@
+name: Releases
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  deploy:
+    name: Build image
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v2
+
+      - name: Install kubectl
+        uses: azure/setup-kubectl@v3
+        with:
+          version: "v1.21.3"
+        id: install
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ap-south-1
+
+      - name: Login to Amazon ECR
+        id: login-ecr
+        uses: aws-actions/amazon-ecr-login@v1
+
+      - name: Build, tag, and push image to Amazon ECR
+        if: ${{ success() }}
+        env:
+          ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
+          ECR_REPOSITORY: videosdk-docs
+          IMAGE_TAG: ${{ github.event.release.tag_name }}
+        run: |
+          docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:dev-$IMAGE_TAG -t $ECR_REGISTRY/$ECR_REPOSITORY:latest .
+          docker push -a $ECR_REGISTRY/$ECR_REPOSITORY
+
+      - name: Update kube config
+        run: aws eks update-kubeconfig --name in1 --region ap-south-1
+
+      - name: Deploy image to Amazon EKS
+        if: ${{ success() }}
+        run: kubectl rollout restart -n website deployment/videosdk-docs

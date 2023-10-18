@@ -7,6 +7,42 @@ pagination_label: Release Notes
 
 This page will keep you update all the releases of Android SDK.
 
+## v0.1.24
+
+**Release Date** : 6th Oct 2023
+
+**Change log** :
+
+- Fixed meeting end issue
+
+---
+
+## v0.1.23
+
+**Release Date** : 5th Oct 2023
+
+**Change log** :
+
+- Change default videoTrack 
+
+**Bug Fix** :
+
+- Fix crash issue on socket fail
+- Fix Bluetooth issue for android version 13 
+
+---
+
+## v0.1.22
+
+**Release Date** : 24th august 2023
+
+**Change log** :
+
+- remove PCMU codec 
+- add consumer-rules
+
+---
+
 ## v0.1.21
 
 **Release Date** : 13th July 2023

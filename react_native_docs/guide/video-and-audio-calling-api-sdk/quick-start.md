@@ -55,14 +55,14 @@ values={[
 <TabItem value="npm">
 
 ```js
-npm install "@videosdk.live/react-native-sdk"
+npm install "@videosdk.live/react-native-sdk" "@videosdk.live/react-native-incallmanager"
 ```
 
 </TabItem>
 <TabItem value="yarn">
 
 ```js
-yarn add "@videosdk.live/react-native-sdk"
+yarn add "@videosdk.live/react-native-sdk" "@videosdk.live/react-native-incallmanager"
 ```
 
 </TabItem>
@@ -140,7 +140,8 @@ yarn add "@videosdk.live/react-native-sdk"
 
 ```java title="android/app/build.gradle"
   dependencies {
-    compile project(':rnfgservice') compile project(':rnwebrtc') compile project(':rnincallmanager')
+    compile project(':rnfgservice') 
+    compile project(':rnwebrtc')
   }
 ```
 
@@ -148,16 +149,12 @@ yarn add "@videosdk.live/react-native-sdk"
 include ':rnwebrtc'
 project(':rnwebrtc').projectDir = new File(rootProject.projectDir, '../node_modules/@videosdk.live/react-native-webrtc/android')
 
-include ':rnincallmanager'
-project(':rnincallmanager').projectDir = new File(rootProject.projectDir, '../node_modules/@videosdk.live/react-native-incallmanager/android')
-
 include ':rnfgservice'
 project(':rnfgservice').projectDir = new File(rootProject.projectDir, '../node_modules/@videosdk.live/react-native-foreground-service/android')
 ```
 
 ```java title="MainApplication.java"
 import live.videosdk.rnfgservice.ForegroundServicePackage;
-import live.videosdk.rnincallmanager.InCallManagerPackage;
 import live.videosdk.rnwebrtc.WebRTCModulePackage;
 
 public class MainApplication extends Application implements ReactApplication {
@@ -165,7 +162,6 @@ public class MainApplication extends Application implements ReactApplication {
       return Arrays.<ReactPackage>asList(
           /* Initialise foreground service, incall manager and webrtc module */
           new ForegroundServicePackage(),
-          new InCallManagerPackage(),
           new WebRTCModulePackage(),
       );
   }
@@ -183,13 +179,7 @@ android.enableDexingArtifactTransform.desugaring=false
 
 #### iOS Setup
 
-1. Install `react-native-incallmanager`
-
-```sh
-$ yarn add @videosdk.live/react-native-incallmanager
-```
-
-2. IMPORTANT: Make sure you are using CocoaPods 1.10 or higher.
+1. IMPORTANT: Make sure you are using CocoaPods 1.10 or higher.
 
 To update CocoaPods you simply install the gem again
 
@@ -197,7 +187,7 @@ To update CocoaPods you simply install the gem again
 $[sudo] gem install cocoapods
 ```
 
-3. Manual linking (if react-native-incall-manager is not linked automatically)
+2. Manual linking (if react-native-incall-manager is not linked automatically)
 
    3.1 Drag `node_modules/@videosdk.live/react-native-incall-manager/ios/RNInCallManager.xcodeproj` under `<your_xcode_project>/Libraries`
 
@@ -208,18 +198,18 @@ $[sudo] gem install cocoapods
    3.4 Select <your_xcode_project> --> Build Settings
    In Header Search Paths, add `$(SRCROOT)/../node_modules/@videosdk.live/react-native-incall-manager/ios/RNInCallManager`
 
-4. Change path of `react-native-webrtc`
+3. Change path of `react-native-webrtc`
 
 ```sh title="Podfile"
 pod ‘react-native-webrtc’, :path => ‘../node_modules/@videosdk.live/react-native-webrtc’
 ```
 
-5. Change your platform version
+4. Change your platform version
 
 You have change platform field of podfile to 12.0 or above it, as react-native-webrtc doesn’t support iOS < 12
 platform :ios, ‘12.0’
 
-6. Install pods
+5. Install pods
 
 After updating the version, you have to install pods.
 
@@ -227,11 +217,11 @@ After updating the version, you have to install pods.
 Pod install
 ```
 
-7. Add “libreact-native-webrtc.a” binary
+6. Add “libreact-native-webrtc.a” binary
 
 Add “libreact-native-webrtc.a” in Link Binary with libraries. In target of main project folder.
 
-8. Declare permissions in Info.plist :
+7. Declare permissions in Info.plist :
 
 Add following lines to info.plist (project folder/ios/projectname/info.plist):
 

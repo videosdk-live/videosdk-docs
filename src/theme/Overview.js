@@ -8,6 +8,7 @@ import AndroidIcon from "../../static/icon/AndroidIcon";
 import IOSIcon from "../../static/icon/IOSIcon";
 import QuickstartPart from "../components/landingPage/QuickStartPart";
 import ResourcePart from "../components/landingPage/ResourcePart";
+import CustomServerSideIcon from "../../static/icon/Home_customsdk/CustomServerSideIcon";
 const blogs = require("../../.docusaurus/docusaurus-plugin-content-blog/default/blog-post-list-prop-default.json");
 
 export function MainCard({
@@ -103,48 +104,7 @@ function PlatformPart() {
       Icon: JSIcon,
       title: "JavaScript",
       imgLink: "./svgs/js.svg",
-      link: "/javascript/guide/video-and-audio-calling-api-sdk/getting-started",
-    },
-    {
-      Icon: ReactIcon,
-      title: "React Native",
-      imgLink: "./svgs/react-native.svg",
-      link: "/react-native/guide/video-and-audio-calling-api-sdk/concept-and-architecture",
-    },
-  ];
-
-  const platformArray2 = [
-    {
-      Icon: FlutterIcon,
-      title: "Flutter",
-      imgLink: "./svgs/flutter.svg",
-      link: "/flutter/guide/video-and-audio-calling-api-sdk/concept-and-architecture",
-    },
-    {
-      Icon: AndroidIcon,
-      title: "Android",
-      imgLink: "./svgs/android.svg",
-      link: "/android/guide/video-and-audio-calling-api-sdk/concept-and-architecture",
-    },
-    {
-      Icon: IOSIcon,
-      title: "iOS",
-      imgLink: "./svgs/ios.svg",
-      link: "/ios/guide/video-and-audio-calling-api-sdk/getting-started",
-    },
-  ];
-  const mobileplatformArray = [
-    {
-      Icon: ReactIcon,
-      title: "React",
-      imgLink: "./svgs/react.svg",
-      link: "/react/guide/video-and-audio-calling-api-sdk/concept-and-architecture",
-    },
-    {
-      Icon: JSIcon,
-      title: "JavaScript",
-      imgLink: "./svgs/js.svg",
-      link: "/javascript/guide/video-and-audio-calling-api-sdk/getting-started",
+      link: "/javascript/guide/video-and-audio-calling-api-sdk/concept-and-architecture",
     },
     {
       Icon: ReactIcon,
@@ -169,49 +129,22 @@ function PlatformPart() {
       title: "iOS",
       imgLink: "./svgs/ios.svg",
       link: "/ios/guide/video-and-audio-calling-api-sdk/getting-started",
+    },
+    ,
+    {
+      Icon: CustomServerSideIcon,
+      title: "Server side",
+      imgLink: "./svgs/server_green.svg",
+      link: "/api-reference/realtime-communication/intro",
     },
   ];
 
   return (
     <>
-      <div className="md:block hidden">
-        <div className="grid grid-cols-2 gap-3 mt-4 md:gap-3 md:flex md:flex-row md:justify-between">
-          {platformArray.map((item, index) => {
-            return (
-              <Link to={item.link} className="w-full">
-                <MainCard
-                  key={index}
-                  Title={item.title}
-                  Icon={item.Icon}
-                  onlyTitle={true}
-                  imgLink={item.imgLink}
-                  showBorder
-                />
-              </Link>
-            );
-          })}
-        </div>
-        <div className="grid grid-cols-2 gap-3 mt-3 md:gap-3  md:flex md:flex-row md:justify-between">
-          {platformArray2.map((item, index) => {
-            return (
-              <Link to={item.link} className="w-full">
-                <MainCard
-                  key={index}
-                  Title={item.title}
-                  Icon={item.Icon}
-                  onlyTitle={true}
-                  showBorder
-                  imgLink={item.imgLink}
-                />
-              </Link>
-            );
-          })}
-        </div>
-      </div>
-      <div className="md:hidden block">
-        <div className="grid grid-cols-2 gap-3 mt-4 md:gap-5  md:flex md:flex-row md:justify-between">
-          {mobileplatformArray.map((item, index) => {
-            return (
+      <div className="grid grid-cols-2 md:grid-cols-3 gap-3 mt-4  md:justify-between">
+        {platformArray.map((item, index) => {
+          return (
+            <Link to={item.link} className={"w-full"}>
               <MainCard
                 key={index}
                 Title={item.title}
@@ -220,9 +153,9 @@ function PlatformPart() {
                 imgLink={item.imgLink}
                 showBorder
               />
-            );
-          })}
-        </div>
+            </Link>
+          );
+        })}
       </div>
     </>
   );

@@ -7,6 +7,16 @@ pagination_label: Release Notes
 
 This page will keep you update all the releases of Flutter SDK.
 
+## v1.1.6
+
+**Release Date** : 18th Sep 2023
+
+**Bug Fix** :
+
+1. Fixed issues with mediaConstraints on the arm64-v8a and x86_64 architectures.[below Android version 10]
+
+---
+
 ## v1.1.5
 
 **Release Date** : 8th Aug 2023
