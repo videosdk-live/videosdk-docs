@@ -16,7 +16,7 @@ sidebar_position: 1
 slug: image-upload-using-pubsub
 ---
 
-# Image Uplaod Using Pubsub
+# Image Uplaod Using Pubsub - React
 
 In this guide, we will see how to upload image using pubsub. For that first, we place an input with the file type, after we select image then we upload that image using pubsub.
 

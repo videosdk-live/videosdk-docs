@@ -16,7 +16,7 @@ sidebar_position: 1
 slug: notify-attendees
 ---
 
-# Notify Attendees in Realtime
+# Notify Attendees in Realtime - React
 
 When doing livestream, you may want to broadcast message to all the viewers at once.
 

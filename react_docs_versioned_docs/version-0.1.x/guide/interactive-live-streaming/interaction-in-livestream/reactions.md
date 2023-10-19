@@ -16,7 +16,7 @@ sidebar_position: 1
 slug: reactions
 ---
 
-# Reactions
+# Reactions - React
 
 When doing a livestream, one of the way to increase the interaction in between the viewer and speaker is by showing the viewers reaction to all. You might have seen emojis flying around during the livestream happening on instagram.
 

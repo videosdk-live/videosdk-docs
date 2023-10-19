@@ -15,7 +15,7 @@ sidebar_position: 1
 slug: media-events
 ---
 
-# Media Events
+# Media Events - React
 
 VideoSDK provides multiple types of events which can be listened to know the about the participant's media status in the meeting.
 

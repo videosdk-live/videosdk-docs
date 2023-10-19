@@ -15,7 +15,7 @@ sidebar_position: 1
 slug: screen-share
 ---
 
-# Screen Share
+# Screen Share - React
 
 Screen sharing in a meeting is the process of sharing your computer screen with other participants in the meeting. It allows everyone in the meeting to see exactly what you are seeing on your screen, which can be helpful for presentations, demonstrations, or collaborations.
 

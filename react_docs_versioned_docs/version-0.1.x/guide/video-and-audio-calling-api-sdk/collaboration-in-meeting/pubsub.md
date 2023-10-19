@@ -16,7 +16,7 @@ sidebar_position: 1
 slug: pubsub
 ---
 
-# PubSub
+# PubSub - React
 
 PubSub is a short acronym for Publish-Subscribe mechanism. This mechanism is used to send and recieve messages from a particular topic. As the name suggests, for someone to send a message, they have to specify the topic and the message which should be published and for someone to receive a message, they should be subscribed to that topic.
 

@@ -17,7 +17,7 @@ image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
 ---
 
-# Optimize Audio Track
+# Optimize Audio Track - React
 
 While optimizing for the best listening experience, it is necessary to fine-tune the audio track that is being used during the calls.
 
