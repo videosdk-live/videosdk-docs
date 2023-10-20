@@ -15,7 +15,7 @@ sidebar_position: 1
 slug: set-audio-volume
 ---
 
-# Setting Audio Volume
+# Setting Audio Volume - Javascript
 
 - By giving the ability to adjust the volume of participants in a meeting. This can help to improve the overall audio quality and ensure that everyone can be heard clearly.
 

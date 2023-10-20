@@ -28,7 +28,7 @@ function Hit({ hit }) {
 const { APPLICATION_ID, API_KEY } = config;
 const searchClient = algoliasearch(APPLICATION_ID, API_KEY);
 
-export default function search() {
+export default function Search() {
   const queryParams = new URLSearchParams(location.search);
   const paramValue = queryParams.get("q");
 

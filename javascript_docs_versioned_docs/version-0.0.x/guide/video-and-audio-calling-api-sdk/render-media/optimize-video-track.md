@@ -17,7 +17,7 @@ image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
 ---
 
-# Optimize Video Tracks
+# Optimize Video Tracks - Javascript
 
 While optimizing for the best viewing experience, it is necessary to fine-tune the video tracks that are being used during the calls.
 

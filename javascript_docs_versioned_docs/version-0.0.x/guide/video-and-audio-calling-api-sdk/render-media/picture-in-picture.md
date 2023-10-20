@@ -15,7 +15,7 @@ sidebar_position: 1
 slug: picture-in-picture
 ---
 
-# Picture-in-Picture Mode
+# Picture-in-Picture Mode - Javascript
 
 Picture-in-picture (PiP) is a feature that is commonly used in video conferencing software. It allows you to continue your video conference while also performing other tasks on your device. With PiP, you can keep the video conference window open and resize it to a smaller size, allowing you to work on other tasks while still being able to see and hear the other participants in the conference. This can be very helpful if you need to take notes, send an email, or look up information during the conference.
 

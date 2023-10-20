@@ -15,7 +15,7 @@ sidebar_position: 1
 slug: participant-events
 ---
 
-# Participant Events
+# Participant Events - Javascript
 
 VideoSDK provides multiple types of events which can be listened to know the about the participants in the meeting.
 

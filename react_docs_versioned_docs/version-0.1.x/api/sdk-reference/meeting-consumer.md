@@ -1,8 +1,9 @@
 ---
+title: "Meeting Consumer"
 sidebar_position: 1
 ---
 
-# Meeting Consumer
+# Meeting Consumer - React
 
 ## Using meeting consumer
 

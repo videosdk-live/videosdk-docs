@@ -15,7 +15,7 @@ sidebar_position: 1
 slug: error-events
 ---
 
-# Error Events
+# Error Events - Javascript
 
 VideoSDK provides `error` event which will notify you of any error happening during the meeting.
 

@@ -1,8 +1,9 @@
 ---
+title: "Setup"
 sidebar_position: 1
 ---
 
-# Setup
+# Setup - React
 
 `@videosdk.live/react-sdk` wraps up our `@videosdk.live/js-sdk` into usable hooks APIs. It simplifies code and concept for react-js
 

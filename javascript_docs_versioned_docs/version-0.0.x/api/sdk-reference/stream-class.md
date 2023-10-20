@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# Stream Class
+# Stream Class - Javascript
 
 Stream class is responsible for handling audio, video and screen sharing streams.
 

@@ -4,6 +4,8 @@ sidebar_label: Connection Class
 pagination_label: Connection Class
 ---
 
+# Connection Class - Javascript
+
 <div class="sdk-api-ref-only-h4">
 
 Connection class is used for making connections to different rooms, and it also provides facility to switch between rooms of a meeting
