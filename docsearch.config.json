@@ -2,72 +2,72 @@
   "index_name": "VIDEO_SDK",
   "start_urls": [
     {
-      "url": "https://docs.videosdk.live/javascript/guide/video-and-audio-calling-api-sdk/quick-start",
+      "url": "https://dev-docs.videosdk.live/javascript/guide/video-and-audio-calling-api-sdk/quick-start",
       "selectors_key": "javascript"
     },
     {
-      "url": "https://docs.videosdk.live/react/guide/video-and-audio-calling-api-sdk/quick-start",
+      "url": "https://dev-docs.videosdk.live/react/guide/video-and-audio-calling-api-sdk/quick-start",
       "selectors_key": "react"
     },
     {
-      "url": "https://docs.videosdk.live/react-native/guide/video-and-audio-calling-api-sdk/quick-start",
+      "url": "https://dev-docs.videosdk.live/react-native/guide/video-and-audio-calling-api-sdk/quick-start",
       "selectors_key": "reactnative"
     },
     {
-      "url": "https://docs.videosdk.live/android/guide/video-and-audio-calling-api-sdk/quick-start",
+      "url": "https://dev-docs.videosdk.live/android/guide/video-and-audio-calling-api-sdk/quick-start",
       "selectors_key": "android"
     },
     {
-      "url": "https://docs.videosdk.live/ios/guide/video-and-audio-calling-api-sdk/getting-started",
+      "url": "https://dev-docs.videosdk.live/ios/guide/video-and-audio-calling-api-sdk/getting-started",
       "selectors_key": "ios"
     },
     {
-      "url": "https://docs.videosdk.live/flutter/guide/video-and-audio-calling-api-sdk/quick-start",
+      "url": "https://dev-docs.videosdk.live/flutter/guide/video-and-audio-calling-api-sdk/quick-start",
       "selectors_key": "flutter"
     },
     {
-      "url": "https://docs.videosdk.live/prebuilt/guide/prebuilt-video-and-audio-calling/features/go-live-hls",
+      "url": "https://dev-docs.videosdk.live/prebuilt/guide/prebuilt-video-and-audio-calling/features/go-live-hls",
       "selectors_key": "prebuiltviewer"
     },
     {
-      "url": "https://docs.videosdk.live/javascript/guide/interactive-live-streaming/handling-participants/invite-guest-on-stage",
+      "url": "https://dev-docs.videosdk.live/javascript/guide/interactive-live-streaming/handling-participants/invite-guest-on-stage",
       "selectors_key": "javascriptviewer"
     },
     {
-      "url": "https://docs.videosdk.live/react/guide/interactive-live-streaming/handling-participants/invite-guest-on-stage",
+      "url": "https://dev-docs.videosdk.live/react/guide/interactive-live-streaming/handling-participants/invite-guest-on-stage",
       "selectors_key": "reactviewer"
     },
     {
-      "url": "https://docs.videosdk.live/react-native/guide/interactive-live-streaming/handling-participants/invite-guest-on-stage",
+      "url": "https://dev-docs.videosdk.live/react-native/guide/interactive-live-streaming/handling-participants/invite-guest-on-stage",
       "selectors_key": "reactnativeviewer"
     },
     {
-      "url": "https://docs.videosdk.live/android/guide/interactive-live-streaming/handling-participants/invite-guest-on-stage",
+      "url": "https://dev-docs.videosdk.live/android/guide/interactive-live-streaming/handling-participants/invite-guest-on-stage",
       "selectors_key": "androidviewer"
     },
     {
-      "url": "https://docs.videosdk.live/flutter/guide/interactive-live-streaming/handling-participants/invite-guest-on-stage",
+      "url": "https://dev-docs.videosdk.live/flutter/guide/interactive-live-streaming/handling-participants/invite-guest-on-stage",
       "selectors_key": "flutterviewer"
     },
     {
-      "url": "https://docs.videosdk.live/prebuilt/guide/prebuilt-video-and-audio-calling/features/whiteboard",
+      "url": "https://dev-docs.videosdk.live/prebuilt/guide/prebuilt-video-and-audio-calling/features/whiteboard",
       "selectors_key": "prebuiltwhiteboard"
     },
     {
-      "url": "https://docs.videosdk.live/react/guide/video-and-audio-calling-api-sdk/collaboration-in-meeting/canvas-drawing-using-pubsub",
+      "url": "https://dev-docs.videosdk.live/react/guide/video-and-audio-calling-api-sdk/collaboration-in-meeting/canvas-drawing-using-pubsub",
       "selectors_key": "reactwhiteboard"
     },
 
-    "https://docs.videosdk.live/"
+    "https://dev-docs.videosdk.live/"
   ],
   "stop_urls": [
-    "https://docs.videosdk.live/docs",
-    "https://docs.videosdk.live/react/guide/video-and-audio-calling-api-sdk/getting-started",
-    "https://docs.videosdk.live/react/guide/video-and-audio-calling-api-sdk/react-js-sdk",
-    "https://docs.videosdk.live/react/api/sdk-reference/use-connection",
-    "https://docs.videosdk.live/prebuilt/0.2.x/",
-    "https://docs.videosdk.live/prebuilt/0.1.x/",
-    "https://docs.videosdk.live/android/0.0.x/"
+    "https://dev-docs.videosdk.live/docs",
+    "https://dev-docs.videosdk.live/react/guide/video-and-audio-calling-api-sdk/getting-started",
+    "https://dev-docs.videosdk.live/react/guide/video-and-audio-calling-api-sdk/react-js-sdk",
+    "https://dev-docs.videosdk.live/react/api/sdk-reference/use-connection",
+    "https://dev-docs.videosdk.live/prebuilt/0.2.x/",
+    "https://dev-docs.videosdk.live/prebuilt/0.1.x/",
+    "https://dev-docs.videosdk.live/android/0.0.x/"
   ],
   "selectors": {
     "javascript": {
@@ -290,6 +290,20 @@
         "selector": "",
         "global": true,
         "default_value": "Canvas Drawing using PubSub - React"
+      },
+      "lvl1": "article h1",
+      "lvl2": "article h2",
+      "lvl3": "article h3",
+      "lvl4": "article h4",
+      "lvl5": "article h5, article td:first-child",
+      "lvl6": "article h6",
+      "text": "article p, article li, article td:last-child"
+    },
+    "default": {
+      "lvl0": {
+        "selector": "",
+        "global": true,
+        "default_value": "Documentation"
       },
       "lvl1": "article h1",
       "lvl2": "article h2",
