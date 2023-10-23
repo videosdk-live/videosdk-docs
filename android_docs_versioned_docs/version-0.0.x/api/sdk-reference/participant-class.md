@@ -15,7 +15,7 @@ sidebar_position: 1
 slug: participant-class
 ---
 
-# Participant Class
+# Participant Class - Android
 
 ## Introduction
 

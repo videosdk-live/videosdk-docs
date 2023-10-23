@@ -15,7 +15,7 @@ sidebar_position: 1
 slug: remote-participant-media
 ---
 
-# Toggle Remote Participant Media
+# Toggle Remote Participant Media - Android
 
 When hosting a meeting, it's important that the host of the meeting should be able to request someone's Mic or Camera to be turned on or should be able to turn them off.
 
@@ -148,6 +148,7 @@ This event will be emitted to the `Participant B` when any other `Participant A`
 - `listener`: MicRequestListener { accept: Method; reject: Method }
 
 ###### Usage
+
 <Tabs
 defaultValue="Kotlin"
 groupId={"AndroidLanguage"}
@@ -211,4 +212,3 @@ The API references for all the methods and events utilised in this guide are pro
 - [disableWebcam()](/android/api/sdk-reference/participant-class/methods#disablewebcam)
 - [onMicRequested()](/android/api/sdk-reference/meeting-class/meeting-event-listener-class#onmicrequested)
 - [onWebcamRequested()](/android/api/sdk-reference/meeting-class/meeting-event-listener-class#onwebcamrequested)
-

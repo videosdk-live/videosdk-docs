@@ -16,7 +16,7 @@ sidebar_position: 1
 slug: manage-participants
 ---
 
-# Manage Participants
+# Manage Participants - Android
 
 ## 1. Local Participant (self)
 

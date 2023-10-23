@@ -16,7 +16,7 @@ sidebar_position: 1
 slug: recording-room
 ---
 
-# Record Room
+# Record Room - Flutter
 
 Record room allows participants to record video & audio during the room. The recording files are available in developer dashboard.
 Any participant can start / stop recording any time during the room.

@@ -1,9 +1,11 @@
 ---
-title: Participant Class Properties
+title: Stream Class Properties
 sidebar_position: 1
 sidebar_label: Properties
-pagination_label: Participant Class Properties
+pagination_label: Stream Class Properties
 ---
+
+# Stream Class Properties - iOS
 
 <div class="sdk-api-ref-only-h4">
 

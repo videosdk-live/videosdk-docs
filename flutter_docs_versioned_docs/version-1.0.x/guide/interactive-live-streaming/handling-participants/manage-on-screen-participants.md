@@ -16,7 +16,7 @@ sidebar_position: 1
 slug: manage-on-screen-participants
 ---
 
-# Manage On-Screen Participants
+# Manage On-Screen Participants - Flutter
 
 It is important that only the necessary person are present on the screen when livestream is on. To handle this, we will be using the `pin` and `unpin` methods of the `Participant` object.
 

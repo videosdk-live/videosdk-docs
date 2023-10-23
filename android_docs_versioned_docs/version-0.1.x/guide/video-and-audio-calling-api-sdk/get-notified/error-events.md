@@ -15,7 +15,7 @@ sidebar_position: 1
 slug: error-events
 ---
 
-# Error Events
+# Error Events - Android
 
 VideoSDK provides `onError` event which will notify you of any error happening during the meeting.
 
@@ -46,7 +46,7 @@ private val meetingEventListener: MeetingEventListener = object : MeetingEventLi
   try {
       val errorCodes: JSONObject = VideoSDK.getErrorCodes()
       val code = error.getInt("code")
-      Log.d("#error", "Error is: " + error["message"])  
+      Log.d("#error", "Error is: " + error["message"])
   } catch (e: Exception) {
           e.printStackTrace()
       }
@@ -66,7 +66,7 @@ private final MeetingEventListener meetingEventListener = new MeetingEventListen
       try {
           JSONObject errorCodes = VideoSDK.getErrorCodes();
           int code = error.getInt("code");
-          Log.d("#error", "Error is: " + error.get("message")); 
+          Log.d("#error", "Error is: " + error.get("message"));
       } catch (Exception e) {
           e.printStackTrace();
       }

@@ -15,7 +15,7 @@ sidebar_position: 1
 slug: screen-share-desktop
 ---
 
-# Screen Share for Desktop apps
+# Screen Share for Desktop apps - Flutter
 
 Screen sharing in a meeting is the process of sharing your device screen with other participants in the meeting. It allows everyone in the meeting to see exactly what you are seeing on your screen, which can be helpful for presentations, demonstrations, or collaborations.
 
@@ -47,7 +47,7 @@ meeting.getScreenShareSources().then((value) => print("Sources : $value"));
 
 #### Step 1 : Create source selection dialogue
 
-- Create dialog box for selecting a screen or window to share during a meeting. It retrieves the available sources using `getScreenShareSources()` method, allows the user to select a source, and provides buttons to share or cancel the selection. 
+- Create dialog box for selecting a screen or window to share during a meeting. It retrieves the available sources using `getScreenShareSources()` method, allows the user to select a source, and provides buttons to share or cancel the selection.
 
 ```jsx title="screen_select_dialog.dart"
 import 'package:flutter/material.dart';
@@ -399,7 +399,7 @@ class _MeetingScreenState extends State<MeetingScreen> {
 
   Future<DesktopCapturerSource?> selectScreenSourceDialog(
       BuildContext context) async {
-    // return selected source which is returned from the dialog 
+    // return selected source which is returned from the dialog
     //highlight-start
     final source = await showDialog<DesktopCapturerSource>(
       context: context,
@@ -413,7 +413,7 @@ class _MeetingScreenState extends State<MeetingScreen> {
 }
 ```
 
-#### Output 
+#### Output
 
 import ReactPlayer from 'react-player'
 

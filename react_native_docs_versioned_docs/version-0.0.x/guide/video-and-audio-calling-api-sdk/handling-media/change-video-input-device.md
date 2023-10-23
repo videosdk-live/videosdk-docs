@@ -15,7 +15,7 @@ sidebar_position: 1
 slug: change-video-input-device
 ---
 
-# Change Video Input Device
+# Change Video Input Device - React Native
 
 During the meeting at any point a participant wishes to switch his/her input video device, it can be done using the below mentioned methods.
 

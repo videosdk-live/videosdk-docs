@@ -15,7 +15,7 @@ sidebar_position: 1
 slug: speaker-indication
 ---
 
-# Speaker Indication
+# Speaker Indication - Android
 
 Speaker indication feature in VideoSDK let you know, which participant is active speaker in a meeting.
 

@@ -5,6 +5,8 @@ pagination_label: Initializing a Meeting
 title: Initializing a Meeting
 ---
 
+# Initializing a Meeting - Android
+
 <div class="sdk-api-ref">
 
 ## initialize()
@@ -110,7 +112,7 @@ Please refer this [documentation](/api-reference/realtime-communication/create-r
 
   - type: `boolean`
   - `REQUIRED`
-  
+
 ### participantId
 
 - Unique Id of the participant. If you passed `null` then SDK will create an Id by itself and will use that id.

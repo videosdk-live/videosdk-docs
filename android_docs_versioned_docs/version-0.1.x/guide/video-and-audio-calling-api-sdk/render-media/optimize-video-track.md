@@ -17,7 +17,7 @@ image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
 ---
 
-# Optimize Video Tracks
+# Optimize Video Tracks - Android
 
 While optimizing for the best viewing experience, it is necessary to fine-tune the video tracks that are being used during the calls.
 
@@ -49,7 +49,7 @@ values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
 
 ```javascript
 val videoCustomTrack: CustomStreamTrack = VideoSDK.createCameraVideoTrack(
-  
+
   // highlight-next-line
   // This will accept the resolution (height x width) of video you want to capture.
   "h480p_w640p", // "h720p_w960p" | "h720p_w1280p" ... // Default : "h480p_w640p"
@@ -69,7 +69,7 @@ val videoCustomTrack: CustomStreamTrack = VideoSDK.createCameraVideoTrack(
   // highlight-next-line
   // Pass Context
   this,
-  
+
   // highlight-next-line
   // This is Optional parameter. We will discuss this parameter in next step.
   observer)
@@ -101,7 +101,7 @@ CustomStreamTrack customStreamTrack = VideoSDK.createCameraVideoTrack(
   // highlight-next-line
   // Pass Context
   this
-  
+
   // highlight-next-line
   // This is Optional parameter. We will discuss this parameter in next step.
   observer);
@@ -157,7 +157,7 @@ The capabilities of the device have a significant impact on how custom track con
 
 ##### What is `observer`?
 
-- If you want to use video filter from external SDK(e.g., [Banuba](https://www.banuba.com/)) then pass instance of `CapturerObserver` in this parameter. 
+- If you want to use video filter from external SDK(e.g., [Banuba](https://www.banuba.com/)) then pass instance of `CapturerObserver` in this parameter.
 
 :::note
 
@@ -330,15 +330,15 @@ VideoSDK.createScreenShareVideoTrack(
 
   //highlight-next-line
   // It is Intent received from onActivityResult when user provide permission for ScreenShare.
-  data, 
+  data,
 
   //highlight-next-line
   // Pass Conext
-  this) 
+  this)
 
   //highlight-next-line
   //Callback to this listener will be made when track is ready with CustomTrack as parameter
-  { 
+  {
     track ->
     meeting!!.enableScreenShare(track)
   }
@@ -357,11 +357,11 @@ VideoSDK.createScreenShareVideoTrack(
 
   /highlight-next-line
   // It is Intent received from onActivityResult when user provide permission for ScreenShare
-  data, 
+  data,
 
   //highlight-next-line
   // Pass Conext
-  this, 
+  this,
 
   //highlight-next-line
   //Callback to this listener will be made when track is ready with CustomTrack as parameter

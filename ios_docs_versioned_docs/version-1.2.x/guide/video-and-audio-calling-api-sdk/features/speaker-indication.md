@@ -15,7 +15,7 @@ sidebar_position: 1
 slug: speaker-indication
 ---
 
-# Speaker Indication
+# Speaker Indication - iOS
 
 Speaker indication feature in VideoSDK let you know, which participant in a meeting is active speaker.
 

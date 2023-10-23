@@ -5,6 +5,8 @@ pagination_label: Meeting Class Methods
 title: Meeting Class Methods
 ---
 
+# Meeting Class Methods - iOS
+
 <div class="sdk-api-ref-only-h4">
 
 ### join()
@@ -133,13 +135,13 @@ let awsDirPath = "/meeting-recordings/"
 
 let config: RecordingConfig = RecordingConfig(
                                 layout: ConfigLayout(
-                                  type: .GRID, 
-                                  priority: .PIN, 
+                                  type: .GRID,
+                                  priority: .PIN,
                                   gridSize: 4
-                                ), 
-                                theme: .DARK, 
-                                mode: .video_and_audio, 
-                                quality: .med, 
+                                ),
+                                theme: .DARK,
+                                mode: .video_and_audio,
+                                quality: .med,
                                 orientation: .landscape
                               )
 
@@ -160,7 +162,7 @@ startRecording(webhookUrl: webhookUrl!, awsDirPath: awsDirPath, config: config)
 #### Example
 
 ```js
-stopRecording()
+stopRecording();
 ```
 
 ---
@@ -235,13 +237,13 @@ stopLivestream();
 ```js
 var config: HLSConfig = HLSConfig(
                           layout: HLSLayout(
-                            type: .GRID, 
-                            priority: .SPEAKER, 
+                            type: .GRID,
+                            priority: .SPEAKER,
                             gridSize: 4
-                          ), 
-                          theme: .DARK, 
-                          mode: .video_and_audio, 
-                          quality: .high, 
+                          ),
+                          theme: .DARK,
+                          mode: .video_and_audio,
+                          quality: .high,
                           orientation: .portrait
                         )
 
@@ -261,7 +263,7 @@ startHLS(config: config)
 #### Example
 
 ```js
-stopHLS()
+stopHLS();
 ```
 
 ---
@@ -273,7 +275,7 @@ stopHLS()
 #### Parameters
 
 - **mode**: Mode
-   - All available participant modes are `CONFERENCE` and `VIEWER`.
+  - All available participant modes are `CONFERENCE` and `VIEWER`.
 
 #### Events associated with `changeMode()`:
 

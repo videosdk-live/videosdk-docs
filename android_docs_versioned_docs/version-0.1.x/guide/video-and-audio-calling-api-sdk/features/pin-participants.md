@@ -16,7 +16,7 @@ sidebar_position: 1
 slug: pin-participants
 ---
 
-# Pin Participants
+# Pin Participants - Android
 
 In any meeting with large number of participants, if you want to show only one or two participant(s) on main screen then you can pin that perticipants so that viewers can only focus upon that participants only.
 
@@ -70,24 +70,24 @@ values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
 <TabItem value="Java">
 
 ```js
- // Pin both webcam and screenshare of that participant
-  meeting.getParticipants().get(participantId).pin("SHARE_AND_CAM")
+// Pin both webcam and screenshare of that participant
+meeting.getParticipants().get(participantId).pin("SHARE_AND_CAM");
 
-  // Pin webcam of that participant
-  meeting.getParticipants().get(participantId).pin("CAM")
+// Pin webcam of that participant
+meeting.getParticipants().get(participantId).pin("CAM");
 
-  // Pin screenshare of that participant
-  meeting.getParticipants().get(participantId).pin("SHARE")
+// Pin screenshare of that participant
+meeting.getParticipants().get(participantId).pin("SHARE");
 
-  //
-  // Unpin both webcam and screenshare of that participant
-  meeting.getParticipants().get(participantId).unpin(null);
+//
+// Unpin both webcam and screenshare of that participant
+meeting.getParticipants().get(participantId).unpin(null);
 
-  // Unpin webcam of that participant
-  meeting.getParticipants().get(participantId).unpin("CAM");
+// Unpin webcam of that participant
+meeting.getParticipants().get(participantId).unpin("CAM");
 
-  // Unpin screenshare of that participant
-  meeting.getParticipants().get(participantId).unpin("SHARE");
+// Unpin screenshare of that participant
+meeting.getParticipants().get(participantId).unpin("SHARE");
 ```
 
 </TabItem>
@@ -108,7 +108,7 @@ values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
 ```javascript
  override fun onPinStateChanged(pinStateData: JSONObject?) {
    Log.d("onPinStateChanged: ", pinStateData.getString("peerId")) // id of participant who were pinned
-   Log.d("onPinStateChanged: ", pinStateData.getJSONObject("state")) // { cam: true, share: true } 
+   Log.d("onPinStateChanged: ", pinStateData.getJSONObject("state")) // { cam: true, share: true }
    Log.d("onPinStateChanged: ", pinStateData.getString("pinnedBy")) // id of participant who pinned that participant
   }
 ```
@@ -121,7 +121,7 @@ values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
 @Override
   public void onPinStateChanged(JSONObject pinStateData) {
     Log.d("onPinStateChanged: ", pinStateData.getString("peerId")); // id of participant who were pinned
-    Log.d("onPinStateChanged: ", pinStateData.getJSONObject("state")); // { cam: true, share: true } 
+    Log.d("onPinStateChanged: ", pinStateData.getJSONObject("state")); // { cam: true, share: true }
     Log.d("onPinStateChanged: ", pinStateData.getString("pinnedBy")); // id of participant who pinned that participant
   }
 

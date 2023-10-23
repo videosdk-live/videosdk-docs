@@ -5,6 +5,8 @@ pagination_label: useMeeting Hook Properties
 title: useMeeting Hook Properties
 ---
 
+# useMeeting Hook Properties - React Native
+
 <div class="sdk-api-ref-only-h4">
 
 ### meetingId

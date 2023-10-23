@@ -15,7 +15,7 @@ sidebar_position: 1
 slug: mute-unmute-mic
 ---
 
-# Mute / Unmute Mic
+# Mute / Unmute Mic - Android
 
 Muting and Unmuting your microphone refers to turning your microphone off and on, respectively.
 
@@ -167,13 +167,13 @@ values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
 
 ### Audio Permissions
 
-- To use the microphone in a meeting, you need to add permission in `app/src/main/AndroidManifest.xml` after `</application>`.           
+- To use the microphone in a meeting, you need to add permission in `app/src/main/AndroidManifest.xml` after `</application>`.
 
 ```xml title="AndroidManifest.xml"
 <uses-permission android:name="android.permission.RECORD_AUDIO" />
 ```
 
-- You need to set up a permission request that provides this access. 
+- You need to set up a permission request that provides this access.
 
 <Tabs
 defaultValue="Kotlin"

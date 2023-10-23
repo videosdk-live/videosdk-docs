@@ -5,6 +5,8 @@ sidebar_label: Events
 pagination_label: Room Class Events
 ---
 
+# Room Class Events - Flutter
+
 <div class="sdk-api-ref-only-h4">
 
 ---

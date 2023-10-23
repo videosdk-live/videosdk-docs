@@ -15,7 +15,7 @@ sidebar_position: 1
 slug: change-input-output-device
 ---
 
-# Change Input/Output Device
+# Change Input/Output Device - Android
 
 During the meeting at any point a participant wishes to switch his/her audio or video device, it can be done using the below mentioned methods.
 
@@ -225,7 +225,6 @@ values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
 </TabItem>
 
 </Tabs>
-
 
 ### API Reference
 

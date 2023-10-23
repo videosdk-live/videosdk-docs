@@ -16,7 +16,7 @@ sidebar_position: 1
 slug: camera-controls
 ---
 
-# Camera Controls
+# Camera Controls - Flutter
 
 Whenever any participant wants to start/stop broadcasting their video to other participant in a room, they can simply do it with VideoSDK Room.
 

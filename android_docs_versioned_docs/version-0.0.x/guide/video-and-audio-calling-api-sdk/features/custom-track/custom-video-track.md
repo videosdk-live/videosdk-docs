@@ -17,7 +17,7 @@ image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
 ---
 
-# Custom Video Track
+# Custom Video Track - Android
 
 We have introduced the ability to pass a custom video track for the video of the participants. This feature can be used to add custom video encoder config, video filter from external SDK(e.g., [Banuba](https://www.banuba.com/)) and send it to other participants.
 

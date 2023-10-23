@@ -15,7 +15,7 @@ sidebar_position: 1
 slug: join-meeting
 ---
 
-# Join Meeting
+# Join Meeting - Android
 
 ### Overview
 
@@ -50,6 +50,7 @@ class MainActivity : AppCompatActivity() {
   }
 }
 ```
+
 </TabItem>
 
 <TabItem value="Java">
@@ -69,10 +70,10 @@ public class MainActivity extends AppCompatActivity {
   }
 }
 ```
+
 </TabItem>
 
 </Tabs>
-
 
 ### Events associated with Join
 
@@ -115,11 +116,12 @@ class MainActivity : AppCompatActivity() {
     //highlight-start
     fun onParticipantJoined(participant: Participant) {
         Log.d("#VideoSDK", participant.displayName + " joined");
-    } 
+    }
     //highlight-end
   }
 }
 ```
+
 </TabItem>
 
 <TabItem value="Java">
@@ -160,6 +162,7 @@ public class MainActivity extends AppCompatActivity {
   };
 }
 ```
+
 </TabItem>
 
 </Tabs>

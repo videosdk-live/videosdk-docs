@@ -15,7 +15,7 @@ sidebar_position: 1
 slug: pause-resume-video-stream
 ---
 
-# Pause/Resume Video Stream
+# Pause/Resume Video Stream - Android
 
 Whenver you wish to stop/resume downlaod stream(webcam, screenShare and mic) of participant, you can simply do it by using `pause`, `resume` methods.
 
@@ -64,7 +64,6 @@ values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
 ## Resume video stream
 
 - `resume()` method is used to resume stream(webcam, screenShare and mic) of a particular participant.
-
 
 <Tabs
 defaultValue="Kotlin"

@@ -5,6 +5,8 @@ pagination_label: Methods returned by useParticipant Hook
 title: Methods returned by useParticipant Hook
 ---
 
+# Methods returned by useParticipant Hook - React Native
+
 <div class="sdk-api-ref-only-h4">
 
 ### enableMic()

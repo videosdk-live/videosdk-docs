@@ -5,6 +5,8 @@ pagination_label: Intro to Video SDK useParticipant Hook
 title: Video SDK useParticipant Hook
 ---
 
+# Video SDK useParticipant Hook - React Native
+
 <div class="sdk-api-ref">
 
 ## Introduction

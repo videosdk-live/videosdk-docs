@@ -5,6 +5,8 @@ pagination_label: Stream Class Methods
 title: Stream Class Methods
 ---
 
+# Stream Class Methods - Flutter
+
 <div class="sdk-api-ref-only-h4">
 
 ### resume()

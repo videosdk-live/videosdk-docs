@@ -5,6 +5,8 @@ sidebar_label: Properties
 pagination_label: Stream Class Properties
 ---
 
+# Stream Class Properties - Android
+
 <div class="sdk-api-ref-only-h4">
 
 ### getId()

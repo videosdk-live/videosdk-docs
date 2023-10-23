@@ -5,6 +5,8 @@ pagination_label: MeetingEventListener Class
 title: MeetingEventListener Class
 ---
 
+# MeetingEventListener Class - Android
+
 <div class="sdk-api-ref-only-h4">
 
 ---
@@ -475,9 +477,10 @@ values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
 ### onRecordingStateChanged()
 
 - This event will be emitted when the meeting's recording status changed.
+
 #### Event callback parameters
 
--  **recordingState**: String 
+- **recordingState**: String
 
 `recordingState` has following values
 
@@ -543,7 +546,6 @@ values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
 </Tabs>
 
 ---
-
 
 ### onRecordingStarted()
 
@@ -624,6 +626,7 @@ values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
 ### onLivestreamStateChanged()
 
 - This event will be emitted when the meeting's livestream status changed.
+
 #### Event callback parameters
 
 - **livestreamState**: String
@@ -997,11 +1000,12 @@ values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
 ### onPinStateChanged()
 
 - This event will be triggered when any participant got pinned or unpinned by any participant got pinned or unpinned by any participant.
+
 #### Event callback parameters
 
 - **pinStateData**: { **peerId**: String, **state**: JSONObject, **pinnedBy**: String }
   - **peerId**: String
-  - **state**: JSONObject 
+  - **state**: JSONObject
   - **pinnedBy**: String
 
 #### Example
@@ -1016,7 +1020,7 @@ values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
 ```javascript
  override fun onPinStateChanged(pinStateData: JSONObject?) {
    Log.d("onPinStateChanged: ", pinStateData.getString("peerId")) // id of participant who were pinned
-   Log.d("onPinStateChanged: ", pinStateData.getJSONObject("state")) // { cam: true, share: true } 
+   Log.d("onPinStateChanged: ", pinStateData.getJSONObject("state")) // { cam: true, share: true }
    Log.d("onPinStateChanged: ", pinStateData.getString("pinnedBy")) // id of participant who pinned that participant
   }
 ```
@@ -1029,7 +1033,7 @@ values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
 @Override
   public void onPinStateChanged(JSONObject pinStateData) {
     Log.d("onPinStateChanged: ", pinStateData.getString("peerId")); // id of participant who were pinned
-    Log.d("onPinStateChanged: ", pinStateData.getJSONObject("state")); // { cam: true, share: true } 
+    Log.d("onPinStateChanged: ", pinStateData.getJSONObject("state")); // { cam: true, share: true }
     Log.d("onPinStateChanged: ", pinStateData.getString("pinnedBy")); // id of participant who pinned that participant
   }
 

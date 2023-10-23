@@ -5,6 +5,8 @@ sidebar_label: Methods
 pagination_label: Participant Class Methods
 ---
 
+# Participant Class Methods - iOS
+
 <div class="sdk-api-ref-only-h4">
 
 ### enableWebcam()
@@ -66,7 +68,6 @@ pagination_label: Participant Class Methods
 - `void`
 
 ---
-
 
 ### setQuality()
 

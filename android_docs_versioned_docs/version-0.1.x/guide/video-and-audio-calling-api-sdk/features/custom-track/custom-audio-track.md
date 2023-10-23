@@ -17,7 +17,7 @@ image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
 ---
 
-# Custom Audio Track
+# Custom Audio Track - React Native
 
 We have introduced the ability to pass a custom Audio track for the Audio of the participants with different encoder configuration.
 

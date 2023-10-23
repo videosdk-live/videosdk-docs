@@ -15,7 +15,7 @@ sidebar_position: 1
 slug: stop-hls
 ---
 
-# Stop HLS
+# Stop HLS - Android
 
 This could refer to stopping the transmission of an ongoing HLS stream, which would mean the stream is no longer available to viewers.
 

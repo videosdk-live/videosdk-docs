@@ -16,7 +16,7 @@ sidebar_position: 1
 slug: chat-using-pubsub
 ---
 
-# Chat using PubSub
+# Chat using PubSub - Flutter
 
 For the communication or any kind of messaging in between the participants, VideoSDK provides `pubSub` which use Publish-Subsciribe mechanism and can be used to develope wide varitey of functionalities. For example, participants could use it to send chat messages to each other, share files or other media, or even trigger actions like muting or unmuting audio or video.
 

@@ -16,7 +16,7 @@ sidebar_position: 1
 slug: manage-participants
 ---
 
-# Manage Participants
+# Manage Participants - Android
 
 ## 1. Local Participant (self)
 
@@ -69,7 +69,7 @@ Other participants Map contains same properties as [LocalParticipant](/android/g
 
 - Here the participant's video is displayed using `VideoView`, but you may also use `SurfaceViewRender` for the same.
 - For `VideoView`, SDK version should be `0.1.13` or higher.
-- To know more about `VideoView`, please visit [here](/android/guide/video-and-audio-calling-api-sdk/components/videoView) 
+- To know more about `VideoView`, please visit [here](/android/guide/video-and-audio-calling-api-sdk/components/videoView)
 
 :::
 
@@ -85,7 +85,7 @@ values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
 
 ```js title="MainActivity.kt"
   import live.videosdk.rtc.android.VideoView
-  import org.webrtc.VideoTrack 
+  import org.webrtc.VideoTrack
 
   private fun displayLocalParticipant() {
     var localView: VideoView = findViewById(R.id.localView)

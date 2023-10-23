@@ -1,8 +1,9 @@
 ---
 sidebar_position: 1
+title: "RTC Stream"
 ---
 
-# RTC Stream
+# RTC Stream - React Native
 
 ## using RTCView in your app
 

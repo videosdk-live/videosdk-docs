@@ -15,7 +15,7 @@ sidebar_position: 1
 slug: room-events
 ---
 
-# Room Events
+# Room Events - Flutter
 
 VideoSDK provides multiple types of events which can be listened to know the current state of the room.
 

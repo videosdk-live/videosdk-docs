@@ -1,8 +1,9 @@
 ---
 sidebar_position: 1
+title: "Meeting Consumer"
 ---
 
-# Meeting Consumer
+# Meeting Consumer - React Native
 
 ## Using meeting consumer
 

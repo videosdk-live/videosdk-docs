@@ -15,7 +15,7 @@ sidebar_position: 1
 slug: rtmp-events
 ---
 
-# RTMP Events
+# RTMP Events - Flutter
 
 VideoSDK provides `livestreamStateChanged` event which will notify you of the current state of livestream for the meeting.
 

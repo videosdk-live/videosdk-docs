@@ -15,7 +15,7 @@ sidebar_position: 1
 slug: screen-share
 ---
 
-# Screen Share
+# Screen Share - Android
 
 Screen sharing in a meeting is the process of sharing your mobile screen with other participants in the meeting. It allows everyone in the meeting to see exactly what you are seeing on your screen, which can be helpful for presentations, demonstrations, or collaborations.
 
@@ -48,9 +48,9 @@ Screen sharing in a meeting is the process of sharing your mobile screen with ot
 <div style={{textAlign: 'center'}}>
 
 <img
-  src={require('/img/android/screenshare/user_permission.jpg').default}
-  alt="user permission"
-  width="450"
+src={require('/img/android/screenshare/user_permission.jpg').default}
+alt="user permission"
+width="450"
 />
 
 </div>
@@ -129,9 +129,9 @@ public void onActivityResult(int requestCode, int resultCode, Intent data) {
 <div style={{textAlign: 'center'}}>
 
 <img
-  src={require('/img/android/screenshare/notification.jpg').default}
-  alt="notification"
-  width="450"
+src={require('/img/android/screenshare/notification.jpg').default}
+alt="notification"
+width="450"
 />
 
 </div>
@@ -302,7 +302,7 @@ private final MeetingEventListener meetingEventListener = new MeetingEventListen
 
 - Here screenShare stream is displayed using `VideoView`, but you may also use `SurfaceViewRender` for the same.
 - For `VideoView`, SDK version should be `0.1.13` or higher.
-- To know more about `VideoView`, please visit [here](/android/guide/video-and-audio-calling-api-sdk/render-media/display-video/understand-videoView-component) 
+- To know more about `VideoView`, please visit [here](/android/guide/video-and-audio-calling-api-sdk/render-media/display-video/understand-videoView-component)
 
 :::
 

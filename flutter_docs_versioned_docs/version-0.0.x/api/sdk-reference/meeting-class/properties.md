@@ -5,6 +5,8 @@ pagination_label: Meeting Class Properties
 title: Meeting Class Properties
 ---
 
+# Meeting Class Properties - Flutter
+
 <div class="sdk-api-ref-only-h4">
 
 ### id

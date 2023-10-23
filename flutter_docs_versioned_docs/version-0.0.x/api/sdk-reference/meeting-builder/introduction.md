@@ -5,6 +5,8 @@ pagination_label: MeetingBuilder widget
 title: MeetingBuilder widget
 ---
 
+# MeetingBuilder widget - Flutter
+
 <div class="sdk-api-ref">
 
 MeetingBuilder is a widget provided by the SDK, which handles building a widget for the [`Meeting`](../meeting-class/introduction) instance initialized.

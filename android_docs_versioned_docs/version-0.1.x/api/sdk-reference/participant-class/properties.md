@@ -5,6 +5,8 @@ sidebar_label: Properties
 pagination_label: Participant Class Properties
 ---
 
+# Participant Class Properties - Android
+
 <div class="sdk-api-ref-only-h4">
 
 ### getId()
@@ -52,6 +54,5 @@ pagination_label: Participant Class Properties
 - type : `string`
 
 - ` getMode()` will return mode of the Participant.
-
 
 </div>

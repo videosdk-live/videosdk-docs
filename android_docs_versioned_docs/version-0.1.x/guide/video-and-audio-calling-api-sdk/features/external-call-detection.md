@@ -14,7 +14,7 @@ sidebar_position: 1
 slug: external-call-detection
 ---
 
-# External Call Detection
+# External Call Detection - Android
 
 External call detection feature in VideoSDK let you know, participant is on the call during meeting.
 

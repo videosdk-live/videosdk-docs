@@ -5,6 +5,8 @@ pagination_label: Room Class Methods
 title: Room Class Methods
 ---
 
+# Room Class Methods - Flutter
+
 <div class="sdk-api-ref-only-h4">
 
 ### join()

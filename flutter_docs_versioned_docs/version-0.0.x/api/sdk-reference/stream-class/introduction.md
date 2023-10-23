@@ -5,6 +5,8 @@ sidebar_label: Introduction
 pagination_label: Video SDK Stream Class
 ---
 
+# Video SDK Stream Class - Flutter
+
 <div class="sdk-api-ref">
 
 ## Introduction

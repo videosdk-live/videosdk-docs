@@ -15,7 +15,7 @@ sidebar_position: 1
 slug: setup-hls-player
 ---
 
-# Setup HLS Player
+# Setup HLS Player - Android
 
 In this guide, we will add player which will be responsible for playing the HLS stream.
 Before starting this guide, make sure you have a VideoSDK meetings setup allowing you to join the room. To learn more about setting up a VideoSDK meeting, follow this [quick start guide](/android/guide/video-and-audio-calling-api-sdk/quick-start).
@@ -104,7 +104,7 @@ class ViewerActivity : AppCompatActivity() {
         //...
 
         //highlight-next-line
-        // add listener to the meeting 
+        // add listener to the meeting
         meeting!!.addEventListener(meetingEventListener)
     }
 
@@ -202,7 +202,7 @@ public class ViewerActivity extends AppCompatActivity {
         //...
 
         //highlight-next-line
-        // add listener to the meeting 
+        // add listener to the meeting
         meeting.addEventListener(meetingEventListener);
     }
 

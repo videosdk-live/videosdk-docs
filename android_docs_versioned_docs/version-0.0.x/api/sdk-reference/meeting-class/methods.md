@@ -5,6 +5,8 @@ pagination_label: Meeting Class Methods
 title: Meeting Class Methods
 ---
 
+# Meeting Class Methods - React Native
+
 <div class="sdk-api-ref-only-h4">
 
 ### join()
@@ -394,7 +396,6 @@ meeting.changeMic(AppRTCAudioManager.AudioDevice.BLUETOOTH);
 
 </TabItem>
 
-
 </Tabs>
 
 ---
@@ -505,7 +506,6 @@ values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
 ```
 
 </TabItem>
-
 
 </Tabs>
 

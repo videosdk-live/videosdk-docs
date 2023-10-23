@@ -5,6 +5,8 @@ pagination_label: Intro to Video SDK usePubSub Hook
 title: Video SDK usePubSub Hook
 ---
 
+# Video SDK usePubsub Hook - React Native
+
 ## usePubSub Hook
 
 `usePubSub` takes all the properties and events as parameters and returns all the properties and methods to work pubsub instance.

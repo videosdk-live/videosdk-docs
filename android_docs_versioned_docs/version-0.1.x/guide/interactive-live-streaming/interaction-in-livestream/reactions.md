@@ -16,7 +16,7 @@ sidebar_position: 1
 slug: reactions
 ---
 
-# Reactions
+# Reactions - Android
 
 When doing a livestream, one of the way to increase the interaction in between the viewer and speaker is by showing the viewers reaction to all. You might have seen emojis flying around during the livestream happening on instagram.
 
@@ -25,7 +25,6 @@ Lets create a similar flying emoji by using the VideoSDK PubSub mechanism.
 ### Step 1: Creating a button to send reaction
 
 When `btnReaction` is clicked we will send the emoji name to all the participants using the VideoSDK PubSub mechanism and also shows emoji to localParticipant.
-
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -85,7 +84,7 @@ public class ILSViewActivity extends AppCompatActivity {
 
 Here we will listen to the `onMessageReceived` event of `PubSubMessageListener` to know someone send the reactions, and show the flying emoji whenever it triggered.
 
-To Display flyingEmoji, we are using `DirectionGenerator` class to specify direction and `ZeroGravityAnimation` class to give animation to the flyingEmoji. 
+To Display flyingEmoji, we are using `DirectionGenerator` class to specify direction and `ZeroGravityAnimation` class to give animation to the flyingEmoji.
 
 Copy `DirectionGenerator` and `ZeroGravityAnimation` classes from our [code sample](https://github.com/videosdk-live/videosdk-hls-android-kotlin-example/tree/main/app/src/main/java/live/videosdk/android/hlsdemo/common/reactions).
 
@@ -250,7 +249,6 @@ Here `viewerEmojiHolder` is FrameLayout, you can change recording to your requir
 <img style={{height: '450px'}} src="https://cdn.videosdk.live/website-resources/docs-resources/android_emoji_speaker.gif"/>
 
 </center>
-
 
 ### API Reference
 

@@ -14,7 +14,7 @@ sidebar_position: 1
 slug: pubsub-class
 ---
 
-# PubSub Class
+# PubSub Class - Android
 
 ## using PubSub Class
 

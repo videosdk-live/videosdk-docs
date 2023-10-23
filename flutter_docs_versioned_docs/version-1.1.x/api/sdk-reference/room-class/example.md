@@ -15,7 +15,7 @@ sidebar_position: 1
 slug: room-class-example
 ---
 
-# Room Class Example
+# Room Class Example - Flutter
 
 ```js title="Play with room instance"
 // Join the room

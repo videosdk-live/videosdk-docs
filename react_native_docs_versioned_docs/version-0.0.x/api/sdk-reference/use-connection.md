@@ -1,8 +1,9 @@
 ---
 sidebar_position: 1
+title: "useConnection Hook"
 ---
 
-# useConnection Hook
+# useConnection Hook - React Native
 
 `useConnection` hook abstracts connection class and takes all the properties and events as parameters and returns all the properties and methods to work connection instance.
 

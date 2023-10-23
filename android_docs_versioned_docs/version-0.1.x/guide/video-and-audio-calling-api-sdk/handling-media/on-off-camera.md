@@ -15,7 +15,7 @@ sidebar_position: 1
 slug: on-off-camera
 ---
 
-# On / Off Camera
+# On / Off Camera - Android
 
 Any participant can turn on or off his camera in the meeting using below methods.
 
@@ -36,7 +36,6 @@ Any participant can turn on or off his camera in the meeting using below methods
 - You can call this method when the local participant is broadcasting any video to others.
 
 #### Example
-
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -164,13 +163,13 @@ values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
 
 ### Video Permissions
 
-- To use the camera in a meeting, you need to add permission in `app/src/main/AndroidManifest.xml` after `</application>`.           
+- To use the camera in a meeting, you need to add permission in `app/src/main/AndroidManifest.xml` after `</application>`.
 
 ```xml title="AndroidManifest.xml"
 <uses-permission android:name="android.permission.CAMERA" />
 ```
 
-- You need to set up a permission request that provides this access. 
+- You need to set up a permission request that provides this access.
 
 <Tabs
 defaultValue="Kotlin"

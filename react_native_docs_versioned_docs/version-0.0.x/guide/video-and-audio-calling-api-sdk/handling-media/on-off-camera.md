@@ -15,7 +15,7 @@ sidebar_position: 1
 slug: on-off-camera
 ---
 
-# On / Off Camera
+# On / Off Camera - React Native
 
 Any participant can turn on or off his camera in the meeting using below methods.
 

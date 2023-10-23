@@ -5,6 +5,8 @@ pagination_label: PubSubMessage Class
 title: PubSubMessage Class
 ---
 
+# PubSubMessage Class - Flutter
+
 <div class="sdk-api-ref-only-h4">
 
 ## Properties

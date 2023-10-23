@@ -14,7 +14,7 @@ sidebar_position: 1
 slug: external-call-detection-event
 ---
 
-# External Call Detection Event
+# External Call Detection Event - Android
 
 External call detection event in VideoSDK let you know, participant is on the call during meeting.
 
@@ -22,7 +22,7 @@ Whenever local participant accept the incoming call or place outgoing call, `ext
 
 For example, the meeting is running with **Alice** and **Bob**. Whenever **Alice** receives the call or she call someone, **Alice** will receive `externalcall-started` event.
 
-We can access `externalcall-started` event through `Meeting` class. 
+We can access `externalcall-started` event through `Meeting` class.
 
 ### externalcall-started Event
 

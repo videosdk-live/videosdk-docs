@@ -15,7 +15,7 @@ sidebar_position: 1
 slug: render-participant
 ---
 
-# Render Participant
+# Render Participant - Android
 
 In this guide, we will take a look at how to render the participant's video on the screen.
 

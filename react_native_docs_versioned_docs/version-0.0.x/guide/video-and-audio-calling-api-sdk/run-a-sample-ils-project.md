@@ -15,7 +15,7 @@ sidebar_position: 1
 slug: run-a-sample-react-native-ils-project
 ---
 
-# Run a Sample ILS Project
+# Run a Sample ILS Project - React Native
 
 Video SDK provides open-source sample project [videosdk-hls-react-native-sdk-example](https://github.com/videosdk-live/videosdk-hls-react-native-sdk-example) on Github. This document introduces how to run this project.
 

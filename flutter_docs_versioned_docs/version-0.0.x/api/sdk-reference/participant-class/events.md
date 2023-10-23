@@ -5,6 +5,8 @@ sidebar_label: Events
 pagination_label: Participant Class Events
 ---
 
+# Participant Class Events - Flutter
+
 <div class="sdk-api-ref-only-h4">
 
 ---

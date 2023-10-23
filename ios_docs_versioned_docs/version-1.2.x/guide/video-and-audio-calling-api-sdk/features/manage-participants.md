@@ -16,7 +16,7 @@ sidebar_position: 1
 slug: manage-participants
 ---
 
-# Manage Participants
+# Manage Participants - iOS
 
 ## 1. Local Participant (self)
 

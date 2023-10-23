@@ -5,6 +5,8 @@ pagination_label: Room Class Methods
 title: Room Class Methods
 ---
 
+# Room Class Methods - Flutter
+
 <div class="sdk-api-ref-only-h4">
 
 ### join()
@@ -128,9 +130,10 @@ meeting.getScreenShareSources().then((value) => print("Sources : $value"));
 - it is used to enable screen-sharing.
 - [`streamEnabled`](../participant-class/events#streamenabled) event will be emitted with [`stream`](../stream-class/introduction) object from the event handler, inside that [participant](../participant-class/introduction) object.
 - [presenterChanged](./events#presenterchanged) will also receive a callback with the `presenterId`.
+
 #### Parameters
 
-- **source**: 
+- **source**:
   - type : `DesktopCapturerSource`
   - required : false
   - It will specifiy selected screenShare source for desktop apps.
@@ -470,10 +473,9 @@ room.changeMic(device);
 
 ---
 
-
 ### on()
 
-- It is used to listen [`Room`](introduction) related events.	- It is used to listen [`Room`](introduction) related events.
+- It is used to listen [`Room`](introduction) related events. - It is used to listen [`Room`](introduction) related events.
 
 #### Parameters
 

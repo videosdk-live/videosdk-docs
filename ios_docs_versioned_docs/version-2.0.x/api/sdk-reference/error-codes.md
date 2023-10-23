@@ -5,6 +5,8 @@ pagination_label: Meeting Error Codes
 title: Meeting Error Codes
 ---
 
+# Meeting Error Codes - iOS
+
 | Constant                                    | Code | Message                                                                                                               |
 | ------------------------------------------- | ---- | --------------------------------------------------------------------------------------------------------------------- |
 | **INVALID_API_KEY**                         | 4001 | `apikey` provided in the token is empty or invalid, please verify it on the dashboard.                                |

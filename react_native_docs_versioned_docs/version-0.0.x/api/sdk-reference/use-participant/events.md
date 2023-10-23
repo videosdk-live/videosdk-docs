@@ -5,6 +5,8 @@ sidebar_label: Event Callbacks
 pagination_label: useParticipant Hook Event Callbacks
 ---
 
+# useParticipant Hook Event Callbacks - React Native
+
 <div class="sdk-api-ref-only-h4">
 
 ### onStreamEnabled()

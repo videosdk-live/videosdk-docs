@@ -15,7 +15,7 @@ sidebar_position: 1
 slug: understanding-call-quality
 ---
 
-# Understanding Call Quality
+# Understanding Call Quality - Flutter
 
 When developing a video call app, customer satisfaction heavily depends on your app's video and audio quality and its fluctuation.
 

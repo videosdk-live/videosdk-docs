@@ -15,7 +15,7 @@ sidebar_position: 1
 slug: active-speaker-indication
 ---
 
-# Active Speaker Indication
+# Active Speaker Indication - React Native
 
 Active Speaker indication feature in VideoSDK let you know, which participant in a meeting is active speaker. This feature can be particularly useful in larger meetings or webinars, where there may be many participants and it can be difficult to tell who is speaking.
 

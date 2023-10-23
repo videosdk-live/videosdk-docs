@@ -15,7 +15,7 @@ sidebar_position: 1
 slug: mute-all-participants
 ---
 
-# Mute All Participants
+# Mute All Participants - Flutter
 
 If you are the host or moderator of a video conference, you may want to mute all the participants at once. This can be useful in various scenarios, such as when you want to deliver a presentation or when there is background noise that is causing distractions.
 

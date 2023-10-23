@@ -15,7 +15,7 @@ sidebar_position: 1
 slug: remote-participant-media
 ---
 
-# Toggle Remote Participant Media
+# Toggle Remote Participant Media - Flutter
 
 When hosting a meeting, it's important that the host of the meeting should be able to request someone's Mic or Camera to be turned on or should be able to turn them off.
 

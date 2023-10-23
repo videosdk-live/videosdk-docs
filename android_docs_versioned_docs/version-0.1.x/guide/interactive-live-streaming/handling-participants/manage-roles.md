@@ -16,7 +16,7 @@ sidebar_position: 1
 slug: manage-roles
 ---
 
-# Manage Roles
+# Manage Roles - Android
 
 ## Roles with VideoSDK
 
@@ -109,7 +109,7 @@ class MainActivity : AppCompatActivity() {
     // create a new meeting instance
     val meeting: Meeting = VideoSDK.initMeeting(
         this@MainActivity, meetingId, "NAME HERE",
-        true, true, null, 
+        true, true, null,
         //highlight-next-line
         "CONFERENCE", // allowed: CONFERENCE | VIEWER
         false,
@@ -121,6 +121,7 @@ class MainActivity : AppCompatActivity() {
   }
 }
 ```
+
 </TabItem>
 
 <TabItem value="Java">
@@ -158,7 +159,7 @@ public class MainActivity extends AppCompatActivity {
     // create a new meeting instance
     Meeting meeting = VideoSDK.initMeeting(
             MainActivity.this, meetingId, "NAME HERE",
-            true, true, null, 
+            true, true, null,
             //highlight-next-line
             "CONFERENCE", // allowed: CONFERENCE | VIEWER
             false,
@@ -170,6 +171,7 @@ public class MainActivity extends AppCompatActivity {
   }
 }
 ```
+
 </TabItem>
 
 </Tabs>
@@ -214,11 +216,9 @@ protected void onCreate(Bundle savedInstanceState) {
 
 </Tabs>
 
-
 ## Changing Participant's Mode
 
 Let's say you are hosting a livestream and you want one of your viewer to join the livestream with you. In this case you can change the mode of the participant using the `changeMode()` of the `Meeting` class.
-
 
 <Tabs
 defaultValue="Kotlin"

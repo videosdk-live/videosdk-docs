@@ -15,7 +15,7 @@ sidebar_position: 1
 slug: participant-events
 ---
 
-# Participant Events
+# Participant Events - Android
 
 VideoSDK provides multiple types of events which can be listened to know the about the participants in the meeting.
 
@@ -124,7 +124,7 @@ private final MeetingEventListener meetingEventListener = new MeetingEventListen
 
     // if reject request
     listener.reject();
-  }  
+  }
 
   @Override
   public void onMicRequested(String participantId, MicRequestListener listener) {
