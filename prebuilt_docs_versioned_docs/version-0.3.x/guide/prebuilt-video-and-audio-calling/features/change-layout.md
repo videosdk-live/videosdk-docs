@@ -17,6 +17,8 @@ sidebar_position: 1
 slug: change-layout
 ---
 
+# Change Layout - Prebuilt
+
 This feature allows participants to change layout in the meeting.
 
 - `changeLayout` : If Set to true then participants can change their layout from an ongoing meeting by clicking on config button as shown in the following figure.

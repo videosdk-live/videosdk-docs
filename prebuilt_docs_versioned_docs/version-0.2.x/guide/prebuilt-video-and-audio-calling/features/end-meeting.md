@@ -12,7 +12,7 @@ sidebar_position: 1
 slug: end-meeting
 ---
 
-# End Meeting
+# End Meeting - Prebuilt
 
 This feature allows any participant to end meeting.
 

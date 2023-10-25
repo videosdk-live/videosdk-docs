@@ -1,11 +1,12 @@
----
+ww---
 title: Video SDK Participant Class
 sidebar_position: 1
 sidebar_label: Introduction
 pagination_label: Video SDK Participant Class
+
 ---
 
-# Video SDK Participant Class - React Native
+# Video SDK Participant Class - Android
 
 <div class="sdk-api-ref">
 

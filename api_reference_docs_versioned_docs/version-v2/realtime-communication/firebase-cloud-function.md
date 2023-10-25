@@ -5,6 +5,8 @@ pagination_label: Firebase Cloud Function
 title: Firebase Cloud Function
 ---
 
+# Firebase Cloud Function - API
+
 <div class="sdk-api-ref-only-h4">
 
 Cloud Functions for Firebase is a serverless framework that lets you automatically run backend code in response to events triggered by Firebase features and HTTPS requests. There's no need to manage and scale your own servers.

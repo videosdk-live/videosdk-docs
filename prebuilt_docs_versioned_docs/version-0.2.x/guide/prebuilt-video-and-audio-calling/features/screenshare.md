@@ -20,7 +20,7 @@ sidebar_position: 1
 slug: screenshare
 ---
 
-# Share Your Screen
+# Share Your Screen - Prebuilt
 
 Screen sharing allows any participant who wants to share either the complete screen, a specific window or, a browser tab during the meeting.
 

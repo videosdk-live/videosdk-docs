@@ -15,7 +15,7 @@ sidebar_position: 1
 slug: waiting-screen
 ---
 
-# Waiting Screen
+# Waiting Screen - Prebuilt
 
 After the successfull integrating VideoSDK prebuilt features with your webApp, after joining the meeting you can see waiting screen.
 

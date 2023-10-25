@@ -1,8 +1,9 @@
 ---
 sidebar_position: 1
+title: "Get Recording Details"
 ---
 
-# Get Recording Details
+# Get Recording Details - API
 
 Use the following Rest API to get recording details.
 

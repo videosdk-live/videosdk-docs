@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# List Meetings
+# List Meetings - API
 
 Use the following Rest API to list meetings.
 

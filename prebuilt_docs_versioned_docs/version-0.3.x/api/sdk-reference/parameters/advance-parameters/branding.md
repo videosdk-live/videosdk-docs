@@ -5,6 +5,8 @@ pagination_label: Branding Parameters
 title: Branding Parameters
 ---
 
+# Branding Parameters - Prebuilt
+
 <div class="sdk-api-ref-only-h4">
 
 ## branding
@@ -33,7 +35,7 @@ title: Branding Parameters
 
 - type: `Boolean`
 
-- It it is `true`, powered by [videosdk.live](https://www.videosdk.live) will be shown below the branch name else it eill be hidden.
+- If it is `true`, powered by [videosdk.live](https://www.videosdk.live) will be shown below the branch name else it eill be hidden.
 
 ```js
 meeting.init({

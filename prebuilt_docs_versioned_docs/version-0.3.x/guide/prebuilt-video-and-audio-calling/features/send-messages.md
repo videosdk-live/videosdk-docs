@@ -18,7 +18,7 @@ sidebar_position: 1
 slug: send-messages
 ---
 
-# Send Messages
+# Send Messages - Prebuilt
 
 This feature allows participants who wants to notify other participants via chat messages or Raise hand in the meeting.
 

@@ -17,7 +17,7 @@ sidebar_position: 1
 slug: live-poll
 ---
 
-# Live Poll
+# Live Poll - Prebuilt
 
 Using this feature a host can create polls and guest participant can submit their opnions on that poll. This guide will provide an overview of how participant can create poll.
 

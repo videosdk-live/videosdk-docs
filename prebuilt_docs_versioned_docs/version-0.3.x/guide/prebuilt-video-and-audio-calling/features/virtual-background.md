@@ -23,7 +23,7 @@ Virtual background feature is supported from `0.3.21` version.
 
 :::
 
-# Virtual Background (BETA)
+# Virtual Background (BETA) - Prebuilt
 
 You can personalise the background of your video call by blurring it or by replacing it with a static image.
 

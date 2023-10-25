@@ -14,6 +14,8 @@ sidebar_position: 1
 slug: whitelist-domain
 ---
 
+# Whitelist Domain For Better Security - Prebuilt
+
 You can secure your prebuilt by using **Domain Whitelisting** feature in dashboard.
 
 **Domain Whitelisting** is a method of ensuring that no one but your organization is using your prebuilt. It’s one way of securing prebuilt, so others don’t attempt to piggy back on your account.

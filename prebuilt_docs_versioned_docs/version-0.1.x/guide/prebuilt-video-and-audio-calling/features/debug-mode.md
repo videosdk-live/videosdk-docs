@@ -3,7 +3,7 @@ sidebar_label: Debug Mode
 pagination_label: Debug Mode
 ---
 
-# Debug Mode
+# Debug Mode - Prebuilt
 
 This feature allows SDK to raise error pop up for providing invalid parameter during SDK integration.
 

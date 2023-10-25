@@ -14,7 +14,7 @@ sidebar_position: 1
 slug: pin-participants
 ---
 
-# Pin Participants
+# Pin Participants - Prebuilt
 
 This feature allows participants to pin self or other participants in the meeting.
 

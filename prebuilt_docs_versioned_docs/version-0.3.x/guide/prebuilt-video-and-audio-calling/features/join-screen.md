@@ -15,7 +15,7 @@ sidebar_position: 1
 slug: join-screen
 ---
 
-# Join Screen
+# Join Screen - Prebuilt
 
 After the successful installation of VideoSDK prebuilt, the next step is to integrate VideoSDK prebuilt features with your webApp.
 

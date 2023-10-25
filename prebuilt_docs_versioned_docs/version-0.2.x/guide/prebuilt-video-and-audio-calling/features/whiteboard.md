@@ -12,7 +12,7 @@ sidebar_position: 1
 slug: whiteboard
 ---
 
-# Whiteboard
+# Whiteboard - Prebuilt
 
 This feature allows participants to explain their thoughts to other participants by drawing on an interactive whiteboard.
 

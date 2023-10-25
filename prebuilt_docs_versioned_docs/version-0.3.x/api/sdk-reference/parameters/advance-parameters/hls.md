@@ -5,6 +5,8 @@ pagination_label: HLS Feature Parameter
 title: HLS Feature Parameter
 ---
 
+# HLS Feature Parameter - Prebuilt
+
 <div class="sdk-api-ref-only-h4">
 
 ## hls

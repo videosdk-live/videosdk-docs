@@ -1,8 +1,9 @@
 ---
 sidebar_position: 1
+title: "Get Meeting Details"
 ---
 
-# Get Meeting Details
+# Get Meeting Details - API
 
 Use the following Rest API to get meeting details.
 

@@ -21,7 +21,7 @@ sidebar_position: 1
 slug: camera-controls
 ---
 
-# Camera Controls
+# Camera Controls - Prebuilt
 
 Webcam control permissions allow the host to enable/disable their webcam along with other participants webcams as well as set default settings when the meeting starts.
 

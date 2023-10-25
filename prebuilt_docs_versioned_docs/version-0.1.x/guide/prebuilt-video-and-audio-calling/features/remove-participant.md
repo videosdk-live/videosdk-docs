@@ -13,7 +13,7 @@ sidebar_position: 1
 slug: remove-participant
 ---
 
-# Remove Participant
+# Remove Participant - Prebuilt
 
 This feature will allow any participant to remove other participant in the meeting.
 

@@ -1,8 +1,9 @@
 ---
 sidebar_position: 1
+title: "VideoSDKMeeting Class"
 ---
 
-# VideoSDKMeeting Class
+# VideoSDKMeeting Class - Prebuilt
 
 The entry point into real-time communication prebuilt SDK.
 

@@ -4,7 +4,7 @@ sidebar_label: Stop Recording
 hide_table_of_contents: true
 ---
 
-# Stop Recording
+# Stop Recording - API
 
 import Method from '../../../src/theme/RestApiMethodContainer'
 import data from './data/stop-recording.json'
