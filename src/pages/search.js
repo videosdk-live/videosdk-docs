@@ -9,7 +9,7 @@ import {
 } from "react-instantsearch";
 import config from "../../config.json";
 import BrowserOnly from "@docusaurus/BrowserOnly";
-import useIsBrowser from "@docusaurus/useIsBrowser";
+import ExecutionEnvironment from "@docusaurus/ExecutionEnvironment";
 
 function Hit({ hit }) {
   const parsedUrl = new URL(hit.url);
@@ -32,10 +32,9 @@ const searchClient = algoliasearch(APPLICATION_ID, API_KEY);
 export default function Search() {
   const queryParams = new URLSearchParams(location.search);
   const paramValue = queryParams.get("q");
-  const isOnlyBrowser = useIsBrowser();
 
   return (
-    isOnlyBrowser && (
+    ExecutionEnvironment.canUseDOM && (
       <BrowserOnly>
         {() => (
           <Layout
