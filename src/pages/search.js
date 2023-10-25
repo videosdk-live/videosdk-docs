@@ -9,6 +9,7 @@ import {
 } from "react-instantsearch";
 import config from "../../config.json";
 import BrowserOnly from "@docusaurus/BrowserOnly";
+import useIsBrowser from "@docusaurus/useIsBrowser";
 
 function Hit({ hit }) {
   const parsedUrl = new URL(hit.url);
@@ -31,46 +32,52 @@ const searchClient = algoliasearch(APPLICATION_ID, API_KEY);
 export default function Search() {
   const queryParams = new URLSearchParams(location.search);
   const paramValue = queryParams.get("q");
+  const isOnlyBrowser = useIsBrowser();
 
   return (
-    <BrowserOnly>
-      {() => (
-        <Layout
-          title={` Video SDK Documentation`}
-          description="Video SDK Docs, API reference, Tutorials, Embed Video calling SDK in your favorite languages to sample apps for Web, IOS, Android, React Native and Flutter."
-        >
-          <link
-            rel="stylesheet"
-            href="https://cdn.jsdelivr.net/npm/instantsearch.css@7/themes/satellite-min.css"
-          />
-          <main>
-            <div id="tailwind">
-              <InstantSearch
-                searchClient={searchClient}
-                indexName="VIDEO_SDK"
-                routing={true}
-                insights={true}
-                initialUiState={{
-                  VIDEO_SDK: {
-                    query: paramValue || "",
-                  },
-                }}
-              >
-                <div className=" px-20 py-14">
-                  <div className="w-full">
-                    <SearchBox placeholder="Type your search here" autoFocus />
+    isOnlyBrowser && (
+      <BrowserOnly>
+        {() => (
+          <Layout
+            title={` Video SDK Documentation`}
+            description="Video SDK Docs, API reference, Tutorials, Embed Video calling SDK in your favorite languages to sample apps for Web, IOS, Android, React Native and Flutter."
+          >
+            <link
+              rel="stylesheet"
+              href="https://cdn.jsdelivr.net/npm/instantsearch.css@7/themes/satellite-min.css"
+            />
+            <main>
+              <div id="tailwind">
+                <InstantSearch
+                  searchClient={searchClient}
+                  indexName="VIDEO_SDK"
+                  routing={true}
+                  insights={true}
+                  initialUiState={{
+                    VIDEO_SDK: {
+                      query: paramValue || "",
+                    },
+                  }}
+                >
+                  <div className=" px-20 py-14">
+                    <div className="w-full">
+                      <SearchBox
+                        placeholder="Type your search here"
+                        autoFocus
+                      />
 
-                    <div className="mt-4">
-                      <Hits hitComponent={Hit} />
-                      <Pagination className="Pagination" />
+                      <div className="mt-4">
+                        <Hits hitComponent={Hit} />
+                        <Pagination className="Pagination" />
+                      </div>
                     </div>
                   </div>
-                </div>
-              </InstantSearch>
-            </div>
-          </main>
-        </Layout>
-      )}
-    </BrowserOnly>
+                </InstantSearch>
+              </div>
+            </main>
+          </Layout>
+        )}
+      </BrowserOnly>
+    )
   );
 }
