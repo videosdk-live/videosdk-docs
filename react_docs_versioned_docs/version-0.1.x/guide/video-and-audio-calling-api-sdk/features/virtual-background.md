@@ -6,7 +6,7 @@ pagination_label: Virtual Background (BETA)
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Virtual Background (BETA)
+# Virtual Background (BETA) - React
 
 This feature allows participants to blur own Video Background or set custom image backgrounds for increasing best productivity and protect personal privacy during Video communication.
 

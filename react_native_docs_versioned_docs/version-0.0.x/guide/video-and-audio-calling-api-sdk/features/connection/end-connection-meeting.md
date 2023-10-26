@@ -3,7 +3,7 @@ sidebar_label: End Connection Meeting
 pagination_label: End Connection Meeting
 ---
 
-# End Connection Meeting
+# End Connection Meeting - React Native
 
 ### Method
 

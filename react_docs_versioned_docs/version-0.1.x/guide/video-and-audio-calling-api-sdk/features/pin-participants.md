@@ -16,7 +16,7 @@ sidebar_position: 1
 slug: pin-participants
 ---
 
-# Pin Participants
+# Pin Participants - React
 
 In any meeting with large number of participants, if you want to show only one or two participant(s) on main screen then you can pin that perticipants so that viewers can only focus upon that participants only.
 

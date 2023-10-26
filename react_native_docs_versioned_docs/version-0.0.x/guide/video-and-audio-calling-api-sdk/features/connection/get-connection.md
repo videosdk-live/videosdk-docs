@@ -3,7 +3,7 @@ sidebar_label: Get Connection
 pagination_label: Get Connection
 ---
 
-# Get Connection
+# Get Connection - React Native
 
 ## Get all Connection meetings
 

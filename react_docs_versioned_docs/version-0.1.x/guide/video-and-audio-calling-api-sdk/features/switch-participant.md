@@ -3,7 +3,7 @@ sidebar_label: Switch Participant
 pagination_label: Switch Participant
 ---
 
-# Switch Participant
+# Switch Participant - React
 
 If you are running more than one meeting concurrently and want to switch particular participant over meetings, VideoSDK Provide `switchTo` method to achieve this kind of setup.
 

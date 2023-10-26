@@ -19,7 +19,7 @@ sidebar_position: 1
 slug: play-external-video
 ---
 
-# Play External Video
+# Play External Video - React
 
 This feature allows participants to broadcast any external video by providing video link.
 Like screen share feature, one participant is broadcasting and other participants are receivers.

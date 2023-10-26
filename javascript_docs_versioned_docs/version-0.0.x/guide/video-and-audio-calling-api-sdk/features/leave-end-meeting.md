@@ -16,7 +16,7 @@ sidebar_position: 1
 slug: leave-end-meeting
 ---
 
-# Leave or End Meeting
+# Leave or End Meeting - Javascript
 
 Whenever participant wishes to end their communication in the meeting, they can simply leave the meeting.
 

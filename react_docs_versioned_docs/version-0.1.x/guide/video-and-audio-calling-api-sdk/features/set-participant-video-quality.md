@@ -15,7 +15,7 @@ sidebar_position: 1
 slug: set-participant-video-quality
 ---
 
-# Set Participant Video Quality
+# Set Participant Video Quality - React
 
 This feature allows participants to set other participant's video quality during the meeting.
 

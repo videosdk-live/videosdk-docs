@@ -6,7 +6,7 @@ pagination_label: Switch Connection Participant
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Switch Particpant from Connected Meeting
+# Switch Particpant from Connected Meeting - Javascript
 
 ### Method
 

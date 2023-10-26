@@ -6,7 +6,7 @@ pagination_label: Send Message
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Send Message to Connected Meeting
+# Send Message to Connected Meeting - Javascript
 
 ### Method
 

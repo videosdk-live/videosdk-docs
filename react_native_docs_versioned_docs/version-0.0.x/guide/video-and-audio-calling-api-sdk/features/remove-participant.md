@@ -14,7 +14,7 @@ sidebar_position: 1
 slug: remove-participant
 ---
 
-# Remove Participant
+# Remove Participant - React Native
 
 Remove participant allows removing participant while session is on-going. This can be helpful when moderation in particular meeting is required.
 

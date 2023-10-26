@@ -6,7 +6,7 @@ pagination_label: Noise Suppresion (BETA)
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Noise Suppresion (BETA)
+# Noise Suppresion (BETA) - React
 
 This feature allows participant to removes background noise from meetings and keep only particpant voice in the communication.
 

@@ -6,7 +6,7 @@ pagination_label: List Connection Participant
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# List out Participants of Connected Meeting
+# List out Participants of Connected Meeting - Javascript
 
 After getting a single meeting connection, all joined participants of that meeting can be fetched using `connection.meeting.participants`.
 

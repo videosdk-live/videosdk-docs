@@ -15,7 +15,7 @@ sidebar_position: 1
 slug: pause-resume-stream
 ---
 
-# Pause/Resume Video Stream
+# Pause/Resume Video Stream - React Native
 
 Whenver you wish to stop/resume downlaod stream(webcam, screenShare and mic) of participant, you can simply do it by using `pause`, `resume` methods.
 

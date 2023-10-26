@@ -16,7 +16,7 @@ sidebar_position: 1
 slug: screenshare
 ---
 
-# Share Your Screen
+# Share Your Screen - React Native
 
 Whenever any participant wants to share mobile screen, they can simply do it with VideoSDK Meeting.
 

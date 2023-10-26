@@ -3,7 +3,7 @@ sidebar_label: Switch Connection Participant
 pagination_label: Switch Connection Participant
 ---
 
-# Switch Particpant from Connected Meeting
+# Switch Particpant from Connected Meeting - React Native
 
 ### Method
 
