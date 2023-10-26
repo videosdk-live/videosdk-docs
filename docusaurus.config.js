@@ -43,11 +43,11 @@ module.exports = {
       apiKey: "44f55d0f080cb710e9456cbf632452e4",
       indexName: "VIDEO_SDK",
       contextualSearch: true,
-      searchParameters: {},
-      replaceSearchResultPathname: {
-        from: "/docs/",
-        to: "/search",
-      },
+      // searchParameters: {},
+      // replaceSearchResultPathname: {
+      //   from: "/docs/",
+      //   to: "/search",
+      // },
     },
     colorMode: {
       defaultMode: "dark",
