@@ -45,7 +45,7 @@ module.exports = {
       contextualSearch: true,
       searchParameters: {},
       replaceSearchResultPathname: {
-        from: "/docs",
+        from: "/docs/",
         to: "/search",
       },
     },
