@@ -24,6 +24,12 @@ VideoSDK also allows you to configure the recording layouts in numerous ways lik
 
 This guide will provide an overview of how to implement start and stop Meeting Recording.
 
+:::important
+
+To initiate automatic recording at the beginning of a `session`, simply provide the `autoStartConfig` feature `recording` during `room` creation. For more information on configuring the `autoStartConfig`, please refer to the provided documentation **[<u>here</u>](/api-reference/realtime-communication/create-room#autoStartConfig)**.
+
+:::
+
 ### `startRecording()`
 
 `startRecording()` can be used to start a recording of the meeting which can be accessed from the `Room` object. This method accepts three parameters:
@@ -186,3 +192,4 @@ The API references for all the methods utilized in this guide are provided below
 - [startRecording](/flutter/api/sdk-reference/room-class/methods#startrecording)
 - [stopRecording](/flutter/api/sdk-reference/room-class/methods#stoprecording)
 - [Events.recordingStateChanged](/flutter/api/sdk-reference/room-class/events#recordingstatechanged)
+- [autoStartConfig](/api-reference/realtime-communication/create-room#autoStartConfig)
