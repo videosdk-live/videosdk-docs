@@ -59,7 +59,6 @@ const createRoom = {
   - **mode**: _"video-and-audio"_ | _"audio"_
   - **quality**: _"low"_ | _"med"_ | _"high"_
   - **orientation**: _"portrait"_ | _"landscape"_
-  - **webhookUrl**: _"Webhook URL"_
   - **awsDirPath**: _"Your AWS S3 Bucket Path."_ 
 
 - **hls** :
