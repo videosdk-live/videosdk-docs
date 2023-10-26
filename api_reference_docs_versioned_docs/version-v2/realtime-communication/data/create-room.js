@@ -48,7 +48,7 @@ const createRoom = {
         value: "see example",
         values: "\n```\n{\n  'autoStartConfig': {\n    'recording': 'your recording config object',\n    'hls': 'your hls config object'\n   }\n}\n```",
         description: `#### This configuration enables automatic initiation of recording, HLS streaming, or both, providing a convenient way to capture and serve content in real-time. It streamlines the process of content management and delivery for enhanced user experience. \n
- * recording :
+ * **recording** :
   - **templateUrl** : [Customize Layout of Meeting Recording](/react/guide/interactive-live-streaming/custom-template)
   - **config** : 
     - **layout**:
