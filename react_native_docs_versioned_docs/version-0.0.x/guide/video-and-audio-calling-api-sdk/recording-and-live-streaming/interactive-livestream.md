@@ -30,6 +30,12 @@ In an interactive live stream (HLS), viewers can take part in a variety of activ
 VideoSDK also allows you to configure the interactive livestream layouts in numerous ways like by simply setting different prebuilt layouts in the configuration or by providing your own custom template to do the livestream according to your layout choice.
 ​
 This guide will provide an overview of how to implement start and stop Interactive live streaming (HLS).
+
+:::important
+
+To initiate automatic Interactive live streaming (HLS) at the beginning of a `session`, simply provide the `autoStartConfig` feature `hls` during `room` creation. For more information on configuring the `autoStartConfig`, please refer to the provided documentation **[<u>here</u>](/api-reference/realtime-communication/create-room#autoStartConfig)**.
+
+:::
 ​
 
 ### `startHls()`
@@ -183,3 +189,4 @@ The API references for all the methods utilised in this guide are provided below
 - [startHls](/react-native/api/sdk-reference/use-meeting/methods#starthls)
 - [stopHls](/react-native/api/sdk-reference/use-meeting/methods#stophls)
 - [onHlsStateChanged](/react-native/api/sdk-reference/use-meeting/events#onhlsstatechanged)
+- [autoStartConfig](/api-reference/realtime-communication/create-room#autoStartConfig)

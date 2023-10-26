@@ -8,8 +8,8 @@ hide_table_of_contents: true
 # Create a Room - API
 
 import Method from '../../../src/theme/RestApiMethodContainer'
-import data from './data/create-room.json'
+import { createRoom } from './data/create-room.js'
 
 <Method
-{...data.createRoom}
+{...createRoom}
 />

@@ -32,6 +32,12 @@ VideoSDK also allows you to configure the interactive livestream layouts in nume
 
 This guide will provide an overview of how to implement start and stop Interactive live streaming (HLS).
 
+:::important
+
+To initiate automatic Interactive live streaming (HLS) at the beginning of a `session`, simply provide the `autoStartConfig` feature `hls` during `room` creation. For more information on configuring the `autoStartConfig`, please refer to the provided documentation **[<u>here</u>](/api-reference/realtime-communication/create-room#autoStartConfig)**.
+
+:::
+
 ### `startHls()`
 
 `startHls()` can be used to start a interactive livestream of the meeting which can be accessed from the `Meeting` class. This method accepts one parameter:
@@ -305,3 +311,4 @@ The API references for all the methods utilised in this guide are provided below
 - [startHls()](/android/api/sdk-reference/meeting-class/methods#starthls)
 - [stopHls()](/android/api/sdk-reference/meeting-class/methods#stophls)
 - [onHlsStateChanged](/android/api/sdk-reference/meeting-class/meeting-event-listener-class#onhlsstatechanged)
+- [autoStartConfig](/api-reference/realtime-communication/create-room#autoStartConfig)
