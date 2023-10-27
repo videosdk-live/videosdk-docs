@@ -1,7 +1,7 @@
 const captureHLSstream = {
   title: "Capture HLS Stream",
   description:
-    "This API lets you capture an HLS stream in different formats.",
+    "This API lets you capture a thumbnail from the ongoing HLS stream in different formats.",
   headers: [
     {
       key: "Authorization",
@@ -25,7 +25,7 @@ const captureHLSstream = {
       value:
         "1",
       description:
-        "the time in seconds (if not specified: it will take real time capture) ",
+        "Time in seconds when the thumbnail should be captured (if not specified: it will take real time capture)",
       required: false,
     },
     {
@@ -33,13 +33,13 @@ const captureHLSstream = {
       value:
         "see example",
       description:
-        "capture image width",
+        "Specifies width for the thumbnail which is to be captured",
       required: false,
     },
     {
       key: "height",
       value: "see example",
-      description:"capture image height \n #### default values for width and height \n| quality | orientation | width(default) | height(default)\n| :---: | :---: | :---: | :---: |\n| high | landscape | 1920 | 1080 |\n| med | landscape | 1280 | 720 |\n| low | landscape | 854 | 480 |\n| high | portrait | 1080 | 1920 |\n| med | portrait | 720 | 1280 |\n| low | portrait | 480 | 854 |\n",
+      description:"Specifies height for the thumbnail which is to be captured \n #### default values for width and height \n| quality | orientation | width(default) | height(default)\n| :---: | :---: | :---: | :---: |\n| high | landscape | 1920 | 1080 |\n| med | landscape | 1280 | 720 |\n| low | landscape | 854 | 480 |\n| high | portrait | 1080 | 1920 |\n| med | portrait | 720 | 1280 |\n| low | portrait | 480 | 854 |\n",
       required: false,
     },
     {
@@ -47,7 +47,7 @@ const captureHLSstream = {
       value:
         "jpg",
       description:
-        "file supported formats: jpg(default), png and webp (webp only supports in realtime)",
+        "Specifies file format for the thumbnail which is to be captured. supported formats are jpg(default), png and webp (webp only supports in realtime)",
       required: false,
     },
   ],
