@@ -131,6 +131,11 @@
         "methodType": "GET",
         "api": "/v2/hls/${HlsId}",
         "link": "/api-reference/realtime-communication/fetch-an-hls"
+      },
+      {
+        "methodType": "POST",
+        "api": "/v2/hls/capture",
+        "link": "/api-reference/realtime-communication/capture-hlsStream"
       }
     ]
   }
