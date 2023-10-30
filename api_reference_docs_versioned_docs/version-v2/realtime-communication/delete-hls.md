@@ -1,15 +1,15 @@
 ---
-title: Create a Room 
+title: Delete A Hls 
 sidebar_position: 1
-sidebar_label: Create a Room
+sidebar_label: Delete a Hls
 hide_table_of_contents: true
 ---
 
 #
 
 import Method from '../../../src/theme/RestApiMethodContainer'
-import { createRoom } from './data/create-room.js'
+import data from './data/delete-hls.json'
 
 <Method
-{...createRoom}
+{...data.deleteHls}
 />

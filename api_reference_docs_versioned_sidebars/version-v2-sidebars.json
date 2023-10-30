@@ -65,6 +65,7 @@
         "realtime-communication/fetch-an-hls",
         "realtime-communication/fetch-active-hls",
         "realtime-communication/capture-hlsStream"
+        "realtime-communication/delete-hls"
       ]
     },
     {
