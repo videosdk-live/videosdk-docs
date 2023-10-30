@@ -5,6 +5,8 @@ pagination_label: userPatricipant Hook Properties
 title: userPatricipant Hook Properties
 ---
 
+# userPatricipant Hook Properties - React Native
+
 <div class="sdk-api-ref-only-h4">
 
 ### displayName

@@ -5,6 +5,8 @@ sidebar_label: Properties
 pagination_label: Participant Class Properties
 ---
 
+# Participant Class Properties - Javascript
+
 <div class="sdk-api-ref-only-h4">
 
 ### id

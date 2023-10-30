@@ -16,7 +16,7 @@ sidebar_position: 1
 slug: overview
 ---
 
-# Interactive Livestream (HLS)
+# Interactive Livestream (HLS) - Javascript
 
 ### What is Interactive Livestream (HLS)?
 

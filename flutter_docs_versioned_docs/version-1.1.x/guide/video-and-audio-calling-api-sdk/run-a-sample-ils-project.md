@@ -15,7 +15,7 @@ sidebar_position: 1
 slug: run-a-sample-ils-project
 ---
 
-# Run a Sample ILS Project
+# Run a Sample ILS Project - Flutter
 
 Video SDK provides open-source sample project [videosdk-hls-flutter-sdk-example](https://github.com/videosdk-live/videosdk-hls-flutter-sdk-example) on Github. This document introduces how to run this project.
 

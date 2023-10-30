@@ -15,7 +15,7 @@ sidebar_position: 1
 slug: pubsub-message-class
 ---
 
-# PubSubMessage Class
+# PubSubMessage Class - Android
 
 ## using PubSubMessage Class
 

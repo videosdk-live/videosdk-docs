@@ -6,7 +6,7 @@ pagination_label: Establish Connection
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Establish Connection between Meetings
+# Establish Connection between Meetings - Javascript
 
 ### Methods
 

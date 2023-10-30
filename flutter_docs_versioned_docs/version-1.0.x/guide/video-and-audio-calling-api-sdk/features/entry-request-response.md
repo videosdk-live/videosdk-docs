@@ -15,7 +15,7 @@ sidebar_position: 1
 slug: entry-request-response
 ---
 
-# Entry Request-Response
+# Entry Request-Response - Flutter
 
 - When anyone joins room, he/she will request for joining room and that request will get either accepted or denied by host.
 

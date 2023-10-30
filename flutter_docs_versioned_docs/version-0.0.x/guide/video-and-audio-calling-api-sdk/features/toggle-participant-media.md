@@ -18,6 +18,8 @@ sidebar_position: 1
 slug: toggle-participant-media
 ---
 
+# Toggle Participant Media - Flutter
+
 Control other participant's webcam and mic.
 For better idea, let's understand this with a real case scenario
 

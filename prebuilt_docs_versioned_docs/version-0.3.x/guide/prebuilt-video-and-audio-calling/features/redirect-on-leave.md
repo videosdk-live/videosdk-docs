@@ -18,6 +18,8 @@ sidebar_position: 1
 slug: redirect-on-leave
 ---
 
+# Redirect on Leave - Prebuilt
+
 Whenever participant wishes to end their communication in the meeting, they can simply leave the meeting.
 
 ### Leave Meeting Attributes

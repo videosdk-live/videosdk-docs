@@ -16,7 +16,7 @@ sidebar_position: 1
 slug: run-a-sample-ios-project
 ---
 
-# Run a Sample Project
+# Run a Sample Project - iOS
 
 Video SDK provides open-source sample project [videosdk-rtc-ios-sdk-example)](https://github.com/videosdk-live/videosdk-rtc-ios-sdk-example) on Github. This document introduces how to run this project.
 

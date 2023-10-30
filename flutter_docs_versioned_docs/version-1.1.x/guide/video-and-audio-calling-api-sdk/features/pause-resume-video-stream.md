@@ -15,7 +15,7 @@ sidebar_position: 1
 slug: pause-resume-video-stream
 ---
 
-# Participant Video Stream
+# Participant Video Stream - Flutter
 
 - Using this feature, you can pause/resume participant's video stream.
 

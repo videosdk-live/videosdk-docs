@@ -17,6 +17,8 @@ slug: quick-start
 
 # Quick Start for Conference in Flutter
 
+<ReactPlayer controls url="https://www.youtube.com/watch?v=4h57eVcaC34" height="500px" width={"100%"} />
+
 VideoSDK enables you to embed the video calling feature into your Flutter application in minutes.
 
 In this quickstart, we are going to explore group calling feature of Video SDK. We will go through step by step guide of integrating video calling with Flutter Video SDK.

@@ -4,7 +4,7 @@ pagination_label: Release Notes
 tags: [releasenotes]
 ---
 
-# Release Notes
+# Release Notes - Javascript
 
 This page will keep you update all the releases of JavaScript SDK.
 

@@ -16,7 +16,7 @@ sidebar_position: 1
 slug: mic-controls
 ---
 
-# Mic Controls
+# Mic Controls - React Native
 
 Whenever any participant wants to start / stop broadcasting their audio to other participant in meeting, they can simply do it with VideoSDK Meeting.
 

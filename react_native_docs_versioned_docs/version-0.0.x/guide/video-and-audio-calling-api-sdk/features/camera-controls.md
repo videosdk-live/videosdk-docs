@@ -18,7 +18,7 @@ sidebar_position: 1
 slug: camera-controls
 ---
 
-# Camera Controls
+# Camera Controls - React Native
 
 Whenever any participant wants to start/stop broadcasting their video to other participant in a meeting, they can simply do it with VideoSDK Meeting.
 

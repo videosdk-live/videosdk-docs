@@ -5,6 +5,8 @@ sidebar_label: Introduction
 pagination_label: Video SDK Participant Class
 ---
 
+# Video SDK Participant Class - Flutter
+
 <div id="tailwind" class="sdk-api-ref">
 
 ## Introduction

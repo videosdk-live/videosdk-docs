@@ -5,6 +5,8 @@ pagination_label: Meeting Class Methods
 title: Meeting Class Methods
 ---
 
+# Meeting Class Methods - iOS
+
 <div class="sdk-api-ref-only-h4">
 
 ### join()

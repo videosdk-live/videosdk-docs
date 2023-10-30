@@ -15,7 +15,7 @@ sidebar_position: 1
 slug: hls-events
 ---
 
-# HLS Events
+# HLS Events - Flutter
 
 VideoSDK provides `hlsStateChanged` event which will notify you of the current state of HLS for the meeting.
 

@@ -5,6 +5,8 @@ sidebar_label: Introduction
 pagination_label: Video SDK PubSub Class
 ---
 
+# Video SDK PubSub Class - Android
+
 <div class="sdk-api-ref">
 
 ## Introduction

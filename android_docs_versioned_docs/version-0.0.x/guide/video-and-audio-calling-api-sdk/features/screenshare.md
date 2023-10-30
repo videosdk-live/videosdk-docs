@@ -16,7 +16,7 @@ sidebar_position: 1
 slug: screenshare
 ---
 
-# Share Your Screen
+# Share Your Screen - Android
 
 - Whenever any participant wants to share a complete screen of mobile, they can simply do it with VideoSDK Meeting.
 
@@ -43,9 +43,9 @@ slug: screenshare
 <div style={{textAlign: 'center'}}>
 
 <img
-  src={require('/img/android/screenshare/user_permission.jpg').default}
-  alt="user permission"
-  width="450"
+src={require('/img/android/screenshare/user_permission.jpg').default}
+alt="user permission"
+width="450"
 />
 
 </div>
@@ -120,9 +120,9 @@ public void onActivityResult(int requestCode, int resultCode, Intent data) {
 <div style={{textAlign: 'center'}}>
 
 <img
-  src={require('/img/android/screenshare/notification.jpg').default}
-  alt="notification"
-  width="450"
+src={require('/img/android/screenshare/notification.jpg').default}
+alt="notification"
+width="450"
 />
 
 </div>
@@ -301,7 +301,7 @@ private fun updatePresenter(participantId: String?) {
             if ((stream.kind == "share")) {
                 val track: VideoTrack? = stream.track as VideoTrack
                 track?.removeSink(svrShare)
-                
+
                 svrShare!!.clearImage()
             }
         }

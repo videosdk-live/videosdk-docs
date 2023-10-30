@@ -6,7 +6,7 @@ pagination_label: Switch Participant
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Switch Participant
+# Switch Participant - Javascript
 
 If you are running more than one meeting concurrently and want to switch particular participant over meetings, VideoSDK Provide `switchTo` method to achieve this kind of setup.
 

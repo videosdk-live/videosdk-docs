@@ -4,6 +4,8 @@ sidebar_label: Connection Meeting Class
 pagination_label: Connection Meeting Class
 ---
 
+# Connection Meeting Class - Javascript
+
 `ConnectionMeeting` entity is an instance of a Meeting which is connected with the current meeting.
 
 <div class="sdk-api-ref-only-h4">

@@ -5,6 +5,8 @@ sidebar_label: Customized Live Stream
 hide_table_of_contents: false
 ---
 
+# Customized Live Stream - Javascript
+
 VideoSDK is a platform that offers a range of video streaming tools and solutions for content creators, publishers, and developers.
 
 ### Custom Template

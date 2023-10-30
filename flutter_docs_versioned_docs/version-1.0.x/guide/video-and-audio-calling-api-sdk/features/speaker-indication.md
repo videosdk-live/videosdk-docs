@@ -15,7 +15,7 @@ sidebar_position: 1
 slug: speaker-indication
 ---
 
-# Speaker Indication
+# Speaker Indication - Flutter
 
 Speaker indication feature in VideoSDK let you know, which participant in a room is active speaker.
 

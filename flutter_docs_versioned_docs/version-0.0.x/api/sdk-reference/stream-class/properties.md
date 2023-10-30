@@ -5,6 +5,8 @@ sidebar_label: Properties
 pagination_label: Stream Class Properties
 ---
 
+# Stream Class Properties - Flutter
+
 <div class="sdk-api-ref-only-h4">
 
 ### id

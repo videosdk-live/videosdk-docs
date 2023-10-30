@@ -1,4 +1,8 @@
-# iOS Setup
+---
+title: "iOS Setup"
+---
+
+# iOS Setup - React Native
 
 ## Follow below steps if you are setting up for iOS
 

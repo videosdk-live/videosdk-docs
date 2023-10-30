@@ -3,7 +3,7 @@ sidebar_position: 1
 sidebar_label: Remove Participant
 ---
 
-# Remove Participant
+# Remove Participant - API
 
 Use the following Rest API to remove a participant from a running session.
 

@@ -6,7 +6,7 @@ pagination_label: End Connection Meeting
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# End Connection Meeting
+# End Connection Meeting - Javascript
 
 ### Method
 

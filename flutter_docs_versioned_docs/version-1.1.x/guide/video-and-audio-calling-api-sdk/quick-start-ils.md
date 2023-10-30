@@ -17,6 +17,8 @@ slug: quick-start-ils
 
 # Quick Start for Interactive Live Streaming in Flutter
 
+<ReactPlayer controls url="https://www.youtube.com/watch?v=83HVyk9oezU" height="500px" width={"100%"} />
+
 VideoSDK enables you to embed the livestreaming experience into your Flutter application in minutes.
 
 In this quickstart, we are going to explore interactive livestreaming feature of Video SDK. We will go through step by step guide of integrating interactive livestreaming with Flutter Video SDK.

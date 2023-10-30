@@ -5,6 +5,8 @@ sidebar_label: Methods
 pagination_label: Participant Class Methods
 ---
 
+# Participant Class Methods - Android
+
 <div class="sdk-api-ref-only-h4">
 
 ### enableWebcam()
@@ -106,6 +108,7 @@ pagination_label: Participant Class Methods
 - `void`
 
 ---
+
 ### setViewPort()
 
 - `setViewPort()` is used to set the quality of the participant's video stream based on the viewport height and width.
@@ -236,7 +239,6 @@ To view the metrics for the complete meeting using the stats API documented [her
 If you are getting `roundTripTime` greater than 300ms, try using a different region which is nearest to your user. To know more about changing region [visit here](/api-reference/realtime-communication/create-room).
 
 :::
-
 
 ### addEventListener()
 

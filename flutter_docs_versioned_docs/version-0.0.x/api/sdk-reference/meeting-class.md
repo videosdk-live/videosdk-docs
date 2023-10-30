@@ -15,7 +15,7 @@ sidebar_position: 1
 slug: meeting-class
 ---
 
-# Meeting Class
+# Meeting Class - Flutter
 
 ## Using Meeting Class
 

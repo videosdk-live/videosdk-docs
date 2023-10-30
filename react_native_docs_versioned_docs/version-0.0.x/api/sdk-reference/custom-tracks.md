@@ -17,7 +17,7 @@ image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
 ---
 
-## Custom Video Track
+## Custom Video Track - React Native
 
 - You can create a Video Track using `createCameraVideoTrack()` method of `@videosdk.live/react-native-sdk`.
 - This method can be used to create video track using different encoding parameters, camera facing mode, and optimization mode.
@@ -108,7 +108,7 @@ let customTrack = await createCameraVideoTrack({
 });
 ```
 
-## Custom Audio Track
+## Custom Audio Track - React Native
 
 - You can create a Audio Track using `createMicrophoneAudioTrack()` method of `@videosdk.live/react-native-sdk`.
 - This method can be used to create audio track using different encoding parameters and noise cancellation configration.
@@ -175,7 +175,7 @@ let customTrack = await createMicrophoneAudioTrack({
 });
 ```
 
-## Custom Screen Share Track
+## Custom Screen Share Track - React Native
 
 - You can create a Video Track using `createScreenShareVideoTrack()` method of `@videosdk.live/react-native-sdk`.
 - This method can be used to create video track using different encoding parameters and optimization mode.

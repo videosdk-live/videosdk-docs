@@ -5,6 +5,8 @@ pagination_label: Intro to Video SDK Meeting Class
 title: Video SDK Meeting Class
 ---
 
+# Video SDK Meeting Class - Flutter
+
 <div id="tailwind" class="sdk-api-ref">
 
 ## Introduction

@@ -5,6 +5,8 @@ pagination_label: Initializing a Meeting
 title: Initializing a Meeting
 ---
 
+# Initializing a Meeting - Android
+
 <div class="sdk-api-ref">
 
 ## initialize()
@@ -131,7 +133,6 @@ Please refer this [documentation](/api-reference/realtime-communication/create-r
 
   - type: `boolean`
   - `REQUIRED`
-  
 
 ### customTracks
 
@@ -148,7 +149,6 @@ Please refer this [documentation](../../guide/video-and-audio-calling-api-sdk/fe
 
   - type: `JSONObject`
   - `REQUIRED`
-
 
 ## Returns
 

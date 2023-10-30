@@ -15,7 +15,7 @@ sidebar_position: 1
 slug: set-participant-video-quality
 ---
 
-# Set Video Quality
+# Set Video Quality - Javascript
 
 - Set Video Quality feature allows participants to set other participant's video quality during the meeting.
 

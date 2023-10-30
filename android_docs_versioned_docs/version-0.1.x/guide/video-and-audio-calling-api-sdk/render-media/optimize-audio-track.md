@@ -15,7 +15,7 @@ image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
 ---
 
-# Optimize Audio Track
+# Optimize Audio Track - Android
 
 While optimizing for the best listening experience, it is necessary to fine-tune the audio track that is being used during the calls.
 
@@ -44,7 +44,7 @@ values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
 <TabItem value="Kotlin">
 
 ```js
-val audioCustomTrack: CustomStreamTrack = VideoSDK.createAudioTrack("speech_standard",this) 
+val audioCustomTrack: CustomStreamTrack = VideoSDK.createAudioTrack("speech_standard",this)
 // `high_quality` | `music_standard`,  Default : `speech_standard`
 ```
 
@@ -53,7 +53,7 @@ val audioCustomTrack: CustomStreamTrack = VideoSDK.createAudioTrack("speech_stan
 <TabItem value="Java">
 
 ```js
-CustomStreamTrack audioCustomTrack=VideoSDK.createAudioTrack("speech_standard", this); 
+CustomStreamTrack audioCustomTrack=VideoSDK.createAudioTrack("speech_standard", this);
 // `high_quality` | `music_standard`,  Default : `speech_standard`
 ```
 

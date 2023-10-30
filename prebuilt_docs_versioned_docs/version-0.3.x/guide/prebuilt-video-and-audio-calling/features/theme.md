@@ -17,7 +17,7 @@ sidebar_position: 1
 slug: theme
 ---
 
-# Theme
+# Theme - Prebuilt
 
 Using this feature you can change your prebuilt SDK theme to either `DARK` or `LIGHT`.
 

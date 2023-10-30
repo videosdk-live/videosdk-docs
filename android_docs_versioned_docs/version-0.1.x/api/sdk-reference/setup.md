@@ -16,7 +16,7 @@ sidebar_position: 1
 slug: setup
 ---
 
-# Setup
+# Setup - Android
 
 ## Setting up android sdk
 
@@ -106,7 +106,6 @@ dependencyResolutionManagement{
 </TabItem>
 
 </Tabs>
-
 
 ### Step 2: Add the following dependency in your app's `app/build.gradle`.
 
@@ -228,11 +227,12 @@ override fun onCreate(savedInstanceState: Bundle?) {
   meeting = VideoSDK.initMeeting(
       this@MeetingActivity, meetingId, participantName,
       micEnabled, webcamEnabled, null, null, false, null, null)
-      
+
   // get permissions and join the meeting with meeting.join();
   // checkPermissionAndJoinMeeting();
 }
 ```
+
 </TabItem>
 
 <TabItem value="Java">
@@ -262,8 +262,9 @@ protected void onCreate(Bundle savedInstanceState) {
   // checkPermissionAndJoinMeeting();
 }
 ```
+
 </TabItem>
 
 </Tabs>
 
- All set! Here is the link to the complete sample code on [Github](https://github.com/videosdk-live/videosdk-rtc-android-java-sdk-example). Please refer to the [documentation](initMeeting) for a full list of available methods, events and features of the SDK.
+All set! Here is the link to the complete sample code on [Github](https://github.com/videosdk-live/videosdk-rtc-android-java-sdk-example). Please refer to the [documentation](initMeeting) for a full list of available methods, events and features of the SDK.

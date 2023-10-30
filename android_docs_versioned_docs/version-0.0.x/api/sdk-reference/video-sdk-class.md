@@ -15,7 +15,7 @@ sidebar_position: 1
 slug: videosdk-class
 ---
 
-# VideoSDK Class
+# VideoSDK Class - Android
 
 The entry point into real-time communication SDK.
 

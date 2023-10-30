@@ -3,7 +3,7 @@ sidebar_label: Release Notes
 pagination_label: Release Notes
 ---
 
-# Release Notes
+# Release Notes - Flutter
 
 This page will keep you update all the releases of Flutter SDK.
 

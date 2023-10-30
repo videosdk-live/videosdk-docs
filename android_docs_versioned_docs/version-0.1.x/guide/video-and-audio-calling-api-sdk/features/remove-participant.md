@@ -8,16 +8,15 @@ pagination_label: Remove Participant
 keywords:
   - remove participant
   - block participant
-  - react native
+  - android
 image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
 slug: remove-participant
 ---
 
-# Remove Participant
+# Remove Participant - Android
 
-Remove participant allows removing participant while session is on-going. This can be helpful when moderation in particular meeting is required. 
-
+Remove participant allows removing participant while session is on-going. This can be helpful when moderation in particular meeting is required.
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -51,7 +50,6 @@ participant.remove();
 </TabItem>
 
 </Tabs>
-
 
 ### Events
 

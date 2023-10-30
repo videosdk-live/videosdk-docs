@@ -15,7 +15,7 @@ sidebar_position: 1
 slug: entry-request-response
 ---
 
-# Entry Request-Response
+# Entry Request-Response - Flutter
 
 - When anyone joins meeting, he/she will request for joining meeting and that request will get either accepted or denied by host.
 

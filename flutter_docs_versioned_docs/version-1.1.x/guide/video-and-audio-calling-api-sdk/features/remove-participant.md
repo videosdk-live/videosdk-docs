@@ -15,7 +15,7 @@ sidebar_position: 1
 slug: remove-participant
 ---
 
-# Remove Participant
+# Remove Participant - Flutter
 
 - Whenever any participant (having privileges) wants to remove other participant in room, he/she can do it with this feature.
 

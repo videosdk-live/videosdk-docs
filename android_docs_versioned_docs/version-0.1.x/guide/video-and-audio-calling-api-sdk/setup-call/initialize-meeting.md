@@ -15,7 +15,7 @@ sidebar_position: 1
 slug: initialize-meeting
 ---
 
-# Initialize Meeting
+# Initialize Meeting - Android
 
 To configure a VideoSDK meeting you require two things, first the `token` which will be used for **Authentication** purpose and a `meetingId` which will be used to specify where a participant will join. Let's see each of the steps closely.
 
@@ -70,6 +70,7 @@ fun getToken(): String? {
   return token[0]
 }
 ```
+
 </TabItem>
 
 <TabItem value="Java">
@@ -109,6 +110,7 @@ public String getToken()
   return token[0];
 }
 ```
+
 </TabItem>
 
 </Tabs>
@@ -150,6 +152,7 @@ fun getMeetingId(token: String?): String? {
   return meetingId
 }
 ```
+
 </TabItem>
 
 <TabItem value="Java">
@@ -181,6 +184,7 @@ public String getMeetingId(String token) {
   return meetingId[0];
 }
 ```
+
 </TabItem>
 
 </Tabs>
@@ -192,14 +196,14 @@ To perform Network call you need to add [Fast Android Networking Library](https:
 ### Initialization of Meeting
 
 1. To initialize the meeting, first we have to initialize the VideoSDK.
-We can initialize the VideoSDK using `initialize()` method provided by the SDK.
+   We can initialize the VideoSDK using `initialize()` method provided by the SDK.
 
 ```js title="initialize"
   VideoSDK.initialize(Context context)
 ```
 
 2. Next, we have to set token property of VideoSDK class.
-By using `config()` method, you can set the token property of VideoSDK class.
+   By using `config()` method, you can set the token property of VideoSDK class.
 
 ```js title="config"
  VideoSDK.config(String token)
@@ -207,9 +211,9 @@ By using `config()` method, you can set the token property of VideoSDK class.
 
 3. Now, we can initialize the meeting using a factory method provided by the SDK called `initMeeting()`.
 
-  `initMeeting()` is responsible for initializing the meeting with the provided configuration, which includes the `meetingId`, `name`, `participantId` and many more.
+`initMeeting()` is responsible for initializing the meeting with the provided configuration, which includes the `meetingId`, `name`, `participantId` and many more.
 
-  Let's take a deeper look at the available configuration options first.
+Let's take a deeper look at the available configuration options first.
 
 ```js title="initMeeting"
   VideoSDK.initMeeting(
@@ -226,7 +230,7 @@ By using `config()` method, you can set the token property of VideoSDK class.
   )
 ```
 
-- **`context`** : 
+- **`context`** :
 
   - Context of activity.
   - It will accept `Context` type value.
@@ -274,15 +278,15 @@ You must ensure that the `participantId` is not repeated in the same meeting or 
 
 - **`multiStream`**:
 
-  -  It will specifiy if the stream should send multiple resolution layers or single resolution layer.
+  - It will specifiy if the stream should send multiple resolution layers or single resolution layer.
 
-    - It has to be of `boolean` type.
+  - It has to be of `boolean` type.
 
 - **`customTracks`**:
 
-  -  If you want to set the initial custom tracks, then you can pass map of custom tracks in this paramater.
+  - If you want to set the initial custom tracks, then you can pass map of custom tracks in this paramater.
 
-    - It has to be of `Map<String, CustomStreamTrack>` type.
+  - It has to be of `Map<String, CustomStreamTrack>` type.
 
 - **`metaData`**:
 
@@ -341,6 +345,7 @@ class MainActivity : AppCompatActivity() {
   }
 }
 ```
+
 </TabItem>
 
 <TabItem value="Java">
@@ -389,6 +394,7 @@ public class MainActivity extends AppCompatActivity {
   }
 }
 ```
+
 </TabItem>
 
 </Tabs>

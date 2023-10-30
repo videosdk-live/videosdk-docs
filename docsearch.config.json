@@ -5,30 +5,57 @@
       "url": "https://docs.videosdk.live/javascript/guide/video-and-audio-calling-api-sdk/quick-start",
       "selectors_key": "javascript"
     },
-
     {
       "url": "https://docs.videosdk.live/react/guide/video-and-audio-calling-api-sdk/quick-start",
       "selectors_key": "react"
     },
-
     {
       "url": "https://docs.videosdk.live/react-native/guide/video-and-audio-calling-api-sdk/quick-start",
       "selectors_key": "reactnative"
     },
-
     {
       "url": "https://docs.videosdk.live/android/guide/video-and-audio-calling-api-sdk/quick-start",
       "selectors_key": "android"
     },
-
     {
       "url": "https://docs.videosdk.live/ios/guide/video-and-audio-calling-api-sdk/getting-started",
       "selectors_key": "ios"
     },
-
     {
       "url": "https://docs.videosdk.live/flutter/guide/video-and-audio-calling-api-sdk/quick-start",
       "selectors_key": "flutter"
+    },
+    {
+      "url": "https://docs.videosdk.live/prebuilt/guide/prebuilt-video-and-audio-calling/features/go-live-hls",
+      "selectors_key": "prebuiltviewer"
+    },
+    {
+      "url": "https://docs.videosdk.live/javascript/guide/interactive-live-streaming/handling-participants/invite-guest-on-stage",
+      "selectors_key": "javascriptviewer"
+    },
+    {
+      "url": "https://docs.videosdk.live/react/guide/interactive-live-streaming/handling-participants/invite-guest-on-stage",
+      "selectors_key": "reactviewer"
+    },
+    {
+      "url": "https://docs.videosdk.live/react-native/guide/interactive-live-streaming/handling-participants/invite-guest-on-stage",
+      "selectors_key": "reactnativeviewer"
+    },
+    {
+      "url": "https://docs.videosdk.live/android/guide/interactive-live-streaming/handling-participants/invite-guest-on-stage",
+      "selectors_key": "androidviewer"
+    },
+    {
+      "url": "https://docs.videosdk.live/flutter/guide/interactive-live-streaming/handling-participants/invite-guest-on-stage",
+      "selectors_key": "flutterviewer"
+    },
+    {
+      "url": "https://docs.videosdk.live/prebuilt/guide/prebuilt-video-and-audio-calling/features/whiteboard",
+      "selectors_key": "prebuiltwhiteboard"
+    },
+    {
+      "url": "https://docs.videosdk.live/react/guide/video-and-audio-calling-api-sdk/collaboration-in-meeting/canvas-drawing-using-pubsub",
+      "selectors_key": "reactwhiteboard"
     },
 
     "https://docs.videosdk.live/"
@@ -43,20 +70,6 @@
     "https://docs.videosdk.live/android/0.0.x/"
   ],
   "selectors": {
-    "default": {
-      "lvl0": {
-        "selector": "",
-        "global": true,
-        "default_value": "Documentation"
-      },
-      "lvl1": "article h1",
-      "lvl2": "article h2",
-      "lvl3": "article h3",
-      "lvl4": "article h4",
-      "lvl5": "article h5, article td:first-child",
-      "lvl6": "article h6",
-      "text": "article p, article li, article td:last-child"
-    },
     "javascript": {
       "lvl0": {
         "selector": "",
@@ -173,6 +186,132 @@
       "lvl5": "article h5, article td:first-child",
       "lvl6": "article h6",
       "text": "article p, article li, article td:last-child"
+    },
+    "prebuiltviewer": {
+      "lvl0": {
+        "selector": "",
+        "global": true,
+        "default_value": "Viewer Mode In Prebuilt"
+      },
+      "lvl1": "article h1",
+      "lvl2": "article h2",
+      "lvl3": "article h3",
+      "lvl4": "article h4",
+      "lvl5": "article h5, article td:first-child",
+      "lvl6": "article h6",
+      "text": "article p, article li, article td:last-child"
+    },
+    "javascriptviewer": {
+      "lvl0": {
+        "selector": "",
+        "global": true,
+        "default_value": "Invite Guest on Stage - Javascript"
+      },
+      "lvl1": "article h1",
+      "lvl2": "article h2",
+      "lvl3": "article h3",
+      "lvl4": "article h4",
+      "lvl5": "article h5, article td:first-child",
+      "lvl6": "article h6",
+      "text": "article p, article li, article td:last-child"
+    },
+    "reactviewer": {
+      "lvl0": {
+        "selector": "",
+        "global": true,
+        "default_value": "Invite Guest on Stage - React"
+      },
+      "lvl1": "article h1",
+      "lvl2": "article h2",
+      "lvl3": "article h3",
+      "lvl4": "article h4",
+      "lvl5": "article h5, article td:first-child",
+      "lvl6": "article h6",
+      "text": "article p, article li, article td:last-child"
+    },
+    "reactnativeviewer": {
+      "lvl0": {
+        "selector": "",
+        "global": true,
+        "default_value": "Invite Guest on Stage - React Native"
+      },
+      "lvl1": "article h1",
+      "lvl2": "article h2",
+      "lvl3": "article h3",
+      "lvl4": "article h4",
+      "lvl5": "article h5, article td:first-child",
+      "lvl6": "article h6",
+      "text": "article p, article li, article td:last-child"
+    },
+    "androidviewer": {
+      "lvl0": {
+        "selector": "",
+        "global": true,
+        "default_value": "Invite Guest on Stage - Android"
+      },
+      "lvl1": "article h1",
+      "lvl2": "article h2",
+      "lvl3": "article h3",
+      "lvl4": "article h4",
+      "lvl5": "article h5, article td:first-child",
+      "lvl6": "article h6",
+      "text": "article p, article li, article td:last-child"
+    },
+    "flutterviewer": {
+      "lvl0": {
+        "selector": "",
+        "global": true,
+        "default_value": "Invite Guest on Stage - Flutter"
+      },
+      "lvl1": "article h1",
+      "lvl2": "article h2",
+      "lvl3": "article h3",
+      "lvl4": "article h4",
+      "lvl5": "article h5, article td:first-child",
+      "lvl6": "article h6",
+      "text": "article p, article li, article td:last-child"
+    },
+    "prebuiltwhiteboard": {
+      "lvl0": {
+        "selector": "",
+        "global": true,
+        "default_value": "Whiteboard - Prebuilt"
+      },
+      "lvl1": "article h1",
+      "lvl2": "article h2",
+      "lvl3": "article h3",
+      "lvl4": "article h4",
+      "lvl5": "article h5, article td:first-child",
+      "lvl6": "article h6",
+      "text": "article p, article li, article td:last-child"
+    },
+    "reactwhiteboard": {
+      "lvl0": {
+        "selector": "",
+        "global": true,
+        "default_value": "Canvas Drawing using PubSub - React"
+      },
+      "lvl1": "article h1",
+      "lvl2": "article h2",
+      "lvl3": "article h3",
+      "lvl4": "article h4",
+      "lvl5": "article h5, article td:first-child",
+      "lvl6": "article h6",
+      "text": "article p, article li, article td:last-child"
+    },
+    "default": {
+      "lvl0": {
+        "selector": "",
+        "global": true,
+        "default_value": "Documentation"
+      },
+      "lvl1": "article h1",
+      "lvl2": "article h2",
+      "lvl3": "article h3",
+      "lvl4": "article h4",
+      "lvl5": "article h5, article td:first-child",
+      "lvl6": "article h6",
+      "text": "article p, article li, article td:last-child"
     }
   },
 
@@ -188,5 +327,6 @@
       "type"
     ]
   },
+
   "nb_hits": 2227
 }

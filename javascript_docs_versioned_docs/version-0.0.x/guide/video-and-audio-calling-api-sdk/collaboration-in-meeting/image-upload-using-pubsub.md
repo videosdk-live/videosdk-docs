@@ -16,7 +16,7 @@ sidebar_position: 1
 slug: image-upload-using-pubsub
 ---
 
-# Image Uplaod Using Pubsub
+# Image Uplaod Using Pubsub - Javascript
 
 This guide will show you how to upload an image using Pubsub. To do so, we first create an input with the file type, then select an image and upload it using Pubsub.
 

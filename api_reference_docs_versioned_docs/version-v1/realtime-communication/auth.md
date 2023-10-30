@@ -1,8 +1,9 @@
 ---
 sidebar_position: 1
+title: "Authentication"
 ---
 
-# Authentication
+# Authentication - API
 
 ## Using an API to authenticate
 

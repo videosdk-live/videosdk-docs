@@ -15,7 +15,7 @@ sidebar_position: 1
 slug: mute-unmute-mic
 ---
 
-# Mute / Unmute Mic
+# Mute / Unmute Mic - Flutter
 
 Muting and Unmuting your microphone refers to turning your microphone off and on, respectively.
 

@@ -5,6 +5,8 @@ sidebar_label: ParticipantEventListener
 pagination_label: ParticipantEventListener Class
 ---
 
+# ParticipantEventListener Class - React Native
+
 <div class="sdk-api-ref-only-h4">
 
 ### implementation

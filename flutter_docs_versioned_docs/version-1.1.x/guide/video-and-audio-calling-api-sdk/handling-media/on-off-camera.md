@@ -15,7 +15,7 @@ sidebar_position: 1
 slug: on-off-camera
 ---
 
-# On / Off Camera
+# On / Off Camera - Flutter
 
 Any participant can turn on or off his camera in the meeting using below methods.
 

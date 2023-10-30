@@ -5,6 +5,8 @@ sidebar_label: Methods
 pagination_label: Participant Class Methods
 ---
 
+# Participant Class Methods - Flutter
+
 <div class="sdk-api-ref-only-h4">
 
 ### enableCam()

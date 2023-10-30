@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# Participant Class
+# Participant Class - Javascript
 
 Participant class includes all the properties, methods and events related to all the participants joined in a particular meeting.
 

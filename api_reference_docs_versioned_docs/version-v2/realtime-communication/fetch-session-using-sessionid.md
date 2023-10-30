@@ -1,11 +1,11 @@
 ---
-title: Fetch a Session 
+title: Fetch a Session
 sidebar_position: 1
 sidebar_label: Fetch a Session
 hide_table_of_contents: true
 ---
 
-#
+# Fetch a Session - API
 
 import Method from '../../../src/theme/RestApiMethodContainer'
 import data from './data/fetch-session-using-sessionid.json'

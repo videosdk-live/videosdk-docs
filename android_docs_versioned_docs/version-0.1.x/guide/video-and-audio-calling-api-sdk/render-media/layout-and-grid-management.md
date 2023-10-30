@@ -16,7 +16,7 @@ sidebar_position: 1
 slug: layout-and-grid-management
 ---
 
-# Layout and Grid Management
+# Layout and Grid Management - Android
 
 In this guide, we will take a look at how to efficiently manage the participants in different types of layout.
 

@@ -16,7 +16,7 @@ sidebar_position: 1
 slug: raise-hand
 ---
 
-# Raise Hand
+# Raise Hand - React
 
 Let us see, how we can use PubSub to implement Raise Hand functionality. If you are not familiar with the PubSub mechanism and `usePubSub`hook, you can [follow this guide](/react/guide/video-and-audio-calling-api-sdk/collaboration-in-meeting/pubsub).
 

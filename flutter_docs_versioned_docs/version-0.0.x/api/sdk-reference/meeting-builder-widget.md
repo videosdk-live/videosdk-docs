@@ -15,7 +15,7 @@ sidebar_position: 1
 slug: meeting-builder-widget
 ---
 
-# Meeting Builder Widget
+# Meeting Builder Widget - Flutter
 
 The entry point into real-time communication SDK.
 

@@ -15,7 +15,7 @@ sidebar_position: 1
 slug: setup-hls-player
 ---
 
-# Setup HLS Player
+# Setup HLS Player - React Native
 
 In this guide, we will create a new Component which will be responsible for playing the HLS stream.
 

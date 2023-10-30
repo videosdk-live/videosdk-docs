@@ -3,7 +3,7 @@ sidebar_position: 1
 sidebar_label: End Meeting Session
 ---
 
-# End Meeting Session
+# End Meeting Session - API
 
 Use the following Rest API to end a running session.
 

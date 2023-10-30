@@ -14,7 +14,7 @@ sidebar_position: 1
 slug: setup
 ---
 
-# Setup
+# Setup - Flutter
 
 Flutter SDK is client for real-time communication for android and ios devices. It inherits the same terminology as all other SDKs does.
 

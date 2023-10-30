@@ -15,7 +15,7 @@ sidebar_position: 1
 slug: mute-all-participants
 ---
 
-# Mute All Participants
+# Mute All Participants - Android
 
 If you are the host or moderator of a video conference, you may want to mute all the participants at once. This can be useful in various scenarios, such as when you want to deliver a presentation or when there is background noise that is causing distractions.
 
@@ -52,7 +52,7 @@ btnMuteAllParticipant.setOnClickListener(new View.OnClickListener() {
     final Iterator<Participant> participants = meeting.getParticipants().values().iterator();
     for (int i = 0; i < meeting.getParticipants().size(); i++) {
       final Participant participant = participants.next();
-      participant.disableMic();           
+      participant.disableMic();
     }
   }
 });

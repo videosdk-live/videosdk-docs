@@ -5,6 +5,8 @@ pagination_label: VideoSDK Class
 title: VideoSDK Class
 ---
 
+# VideoSDK Class - Flutter
+
 <div div id="tailwind" class="sdk-api-ref">
 
 ## Introduction

@@ -20,7 +20,7 @@ sidebar_position: 1
 slug: recording-meeting
 ---
 
-# Record Meeting
+# Record Meeting - Prebuilt
 
 Record meeting allows participants to record video & audio during the meeting. The recording files are available in customer dashboard.
 Any participant can start/stop recording any time during the meeting.

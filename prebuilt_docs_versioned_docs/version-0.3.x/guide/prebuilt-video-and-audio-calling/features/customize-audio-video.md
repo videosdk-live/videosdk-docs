@@ -17,6 +17,8 @@ sidebar_position: 1
 slug: customize-audio-video
 ---
 
+# Customize Audio/Video - Prebuilt
+
 We now have the option to customize the audio, video and screen sharing. This feature is used to pass resolution, optimization mode for associated audio, video, and screen sharing configuration.
 
 Three different configurations will be covered in this guide.

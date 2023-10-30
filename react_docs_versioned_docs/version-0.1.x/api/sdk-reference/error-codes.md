@@ -8,4 +8,6 @@ title: Meeting Error Codes
 import ErrorCodesTable from "../../../../src/theme/ErrorCodesTable"
 import meetingErrorCodes from "./data/meetingErrorCodes.json"
 
+# Meeting Error Codes - React
+
 <ErrorCodesTable errorCodes={meetingErrorCodes} />

@@ -5,6 +5,8 @@ pagination_label: VideoSDK Class Properties
 title: VideoSDK Class Properties
 ---
 
+# VideoSDK Class Properties - Flutter
+
 <div class="sdk-api-ref-only-h4">
 
 ### mediaDevices

@@ -3,7 +3,7 @@ sidebar_label: Send Message
 pagination_label: Send Message
 ---
 
-# Send Message to Connected Meeting
+# Send Message to Connected Meeting - React
 
 ### Method
 

@@ -5,6 +5,8 @@ pagination_label: Meeting Class Properties
 title: Meeting Class Properties
 ---
 
+# Meeting Class Properties - React Native
+
 <div class="sdk-api-ref-only-h4">
 
 ### getmeetingId()
@@ -65,7 +67,7 @@ Participant participant = meeting.getParticipants().get(remoteParticipantId);
 
 </Tabs>
 
---- 
+---
 
 ### pubSub
 

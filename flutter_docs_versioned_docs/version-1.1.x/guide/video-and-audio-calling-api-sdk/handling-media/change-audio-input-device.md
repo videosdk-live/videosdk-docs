@@ -14,7 +14,7 @@ sidebar_position: 1
 slug: change-audio-input-device
 ---
 
-# Change Audio Input Device
+# Change Audio Input Device - Flutter
 
 During the meeting at any point a participant wishes to switch his/her input audio device, it can be done using the below mentioned methods.
 

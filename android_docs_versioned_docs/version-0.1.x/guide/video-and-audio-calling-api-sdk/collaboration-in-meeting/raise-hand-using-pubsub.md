@@ -15,7 +15,7 @@ sidebar_position: 1
 slug: raise-hand-using-pubsub
 ---
 
-# Raise Hand using PubSub
+# Raise Hand using PubSub - Android
 
 Let us see, how we can use PubSub to implement Raise Hand functionality. If you are not familiar with the PubSub mechanism and `pubSub` class, you can [follow this guide](./pubsub).
 

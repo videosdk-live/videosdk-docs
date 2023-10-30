@@ -16,7 +16,7 @@ sidebar_position: 1
 slug: pubsub
 ---
 
-# PubSub
+# PubSub - Android
 
 PubSub is a short acronym for Publish-Subscribe mechanism. This mechanism is used to send and recieve messages from a particular topic. As the name suggests, for someone to send a message, they have to specify the topic and the message which should be published and for someone to receive a message, they should be subscribed to that topic.
 
@@ -31,11 +31,11 @@ In order to use PubSub in meeting, VideoSDK provides a class `pubSub` which allo
 ### `publish()`
 
 - This method is used for publishing message of specific topic.
-- This method can be accessed from the `pubSub` class, which is subclass of `Meeting` class. 
+- This method can be accessed from the `pubSub` class, which is subclass of `Meeting` class.
 - This method will accept following parameters as input:
-  - `topic`: This will be the topic for which you are publishing a message.                                    
+  - `topic`: This will be the topic for which you are publishing a message.
   - `message`: This will be the actual message to be published. It has to be in `String` format.
-  - `options`: This is an object of `PubSubPublishOptions` which specifies the options for publish. `PubSubPublishOptions` has 2 properties. 
+  - `options`: This is an object of `PubSubPublishOptions` which specifies the options for publish. `PubSubPublishOptions` has 2 properties.
     - `persist` : `persist` offered the option of keeping the message around for the duration of the session. When `persist` is set to `true`, that message will be retained for upcoming participants and will be available in [VideoSDK Session Dashboard](https://app.videosdk.live/meetings/sessions) with `.CSV` format after completion of session.
     - `sendOnly`: If you want to send a message to specific participants, you can pass their respective `participantId` in form of `String[]`. If you don't provide any IDs or pass a `null` value, the message will be sent to all participants by default. This is optional parameter.
   - `payload`: If you need to include additional information along with a message, you can pass here as `JSONObject`. This is optional parameter.
@@ -80,10 +80,10 @@ protected void sendMessage() {
 
 ### `subscribe()`
 
-- This method is used to subscribe for particular topic. 
+- This method is used to subscribe for particular topic.
 - This method will accept two parameters as input:
 
-  - `topic`: This will be the topic to be subscribed.                                    
+  - `topic`: This will be the topic to be subscribed.
   - `listener`: This is an object of `PubSubMessageListener`, which listens for upcoming messages and calls `onMessageReceived` function, when new message received.
 
 - This method will return `List<PubSubMessage>` which is a list of messages which were sent earlier.
@@ -164,10 +164,10 @@ protected void onCreate(Bundle savedInstanceState) {
 
 ### `unsubscribe()`
 
-- This method is used to unsubscribe for particular topic. 
+- This method is used to unsubscribe for particular topic.
 - This method will accept two parameters as input:
 
-  - `topic`: This will be the topic to be unsubscribed.                                    
+  - `topic`: This will be the topic to be unsubscribed.
   - `listener`: This is an object of `PubSubMessageListener`, which was passed in `subscribe()`.
 
 <Tabs

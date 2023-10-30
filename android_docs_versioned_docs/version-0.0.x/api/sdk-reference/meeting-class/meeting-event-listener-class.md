@@ -5,6 +5,8 @@ pagination_label: MeetingEventListener Class
 title: MeetingEventListener Class
 ---
 
+# MeetingEventListener Class - React Native
+
 <div class="sdk-api-ref-only-h4">
 
 ---
@@ -712,7 +714,7 @@ values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
           break;
     }
   }
-    
+
 ```
 
 </TabItem>
@@ -720,6 +722,5 @@ values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
 </Tabs>
 
 ---
-
 
 </div>

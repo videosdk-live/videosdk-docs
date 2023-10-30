@@ -15,7 +15,7 @@ sidebar_position: 1
 slug: display-audio-video
 ---
 
-# Display Audio and Video
+# Display Audio and Video - React
 
 In this guide, we will take a look at how to render the participant's audio and video on the screen.
 

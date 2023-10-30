@@ -1,8 +1,9 @@
 ---
+title: "Setup"
 sidebar_position: 1
 ---
 
-# Setup
+# Setup - Javascript
 
 With javascript SDK, you can
 

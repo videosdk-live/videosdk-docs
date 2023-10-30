@@ -14,7 +14,7 @@ sidebar_position: 1
 slug: run-a-sample-android-ils-project
 ---
 
-# Run a Sample ILS Project
+# Run a Sample ILS Project - Android
 
 Video SDK provides open-source sample project [videosdk-hls-android-kotlin-example](https://github.com/videosdk-live/videosdk-hls-android-kotlin-example) on Github. This document introduces how to run this project.
 

@@ -1,4 +1,8 @@
-# Android Setup
+---
+title: "Android Setup"
+---
+
+# Android Setup - React Native
 
 ## Follow below steps if you are setting up for Android
 
@@ -56,7 +60,7 @@
 
 ```java title="android/app/build.gradle"
   dependencies {
-    compile project(':rnfgservice') 
+    compile project(':rnfgservice')
     compile project(':rnwebrtc')
   }
 ```

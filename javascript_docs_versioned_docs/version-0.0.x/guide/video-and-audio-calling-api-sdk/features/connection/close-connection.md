@@ -6,7 +6,7 @@ pagination_label: Close Connection
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Close Connection
+# Close Connection - Javascript
 
 ### Method
 

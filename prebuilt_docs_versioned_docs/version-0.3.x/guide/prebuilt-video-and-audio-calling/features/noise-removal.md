@@ -17,7 +17,7 @@ sidebar_position: 1
 slug: noise-removal
 ---
 
-# AI Noise Removal (BETA)
+# AI Noise Removal (BETA) - Prebuilt
 
 With AI Noise Removal, you can filter out your background noise and make your virtual communication as smooth as face-to-face communication.
 

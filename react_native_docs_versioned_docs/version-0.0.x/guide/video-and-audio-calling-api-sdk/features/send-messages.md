@@ -16,7 +16,7 @@ sidebar_position: 1
 slug: send-messages
 ---
 
-# Send Messages
+# Send Messages - React Native
 
 Whenever any participant wants to notify other participants via chat messages or Raise hand, they can simply do it with VideoSDK Meeting.
 

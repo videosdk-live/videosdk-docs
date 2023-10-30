@@ -1,8 +1,9 @@
 ---
+title: "Setup"
 sidebar_position: 1
 ---
 
-# Setup
+# Setup - React Native
 
 ## Setting up react native sdk
 

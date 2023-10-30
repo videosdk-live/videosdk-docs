@@ -14,7 +14,7 @@ sidebar_position: 1
 slug: pubsub-options-class
 ---
 
-# PubSubOptions Class
+# PubSubOptions Class - Flutter
 
 ## using PubSubOptions Class
 

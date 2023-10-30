@@ -15,7 +15,7 @@ sidebar_position: 1
 slug: rtmp-events
 ---
 
-# RTMP Events
+# RTMP Events - React
 
 VideoSDK provides `onLivestreamStateChanged` event which will notify you of the current state of livestream for the meeting.
 

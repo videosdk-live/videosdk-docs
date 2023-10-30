@@ -17,7 +17,7 @@ sidebar_position: 1
 slug: customize-branding
 ---
 
-# Branding Logo
+# Branding Logo - Prebuilt
 
 This feature allows you to embed your branding to top of the meeting .
 

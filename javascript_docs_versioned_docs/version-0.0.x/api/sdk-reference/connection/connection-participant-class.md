@@ -4,6 +4,8 @@ sidebar_label: Connection Participant Class
 pagination_label: Connection Participant Class
 ---
 
+# Connection Participant Class - Javascript
+
 <div class="sdk-api-ref-only-h4">
 
 `ConnectionParticipant` class is used to represent participants of the connected meeting.

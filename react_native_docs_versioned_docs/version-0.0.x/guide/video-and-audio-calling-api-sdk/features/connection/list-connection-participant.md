@@ -3,7 +3,7 @@ sidebar_label: List Connection Participant
 pagination_label: List Connection Participant
 ---
 
-# List out Participants of Connected Meeting
+# List out Participants of Connected Meeting - React Native
 
 After getting a single meeting connection, all joined participants of that meeting can be fetched using `connection.meeting.participants`.
 

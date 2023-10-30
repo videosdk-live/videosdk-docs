@@ -16,7 +16,7 @@ sidebar_position: 1
 slug: screenshare
 ---
 
-# Share Your Screen
+# Share Your Screen - React
 
 Whenever any participant wants to share either the complete screen, a specific window or, a browser tab, they can simply do it with VideoSDK Meeting.
 

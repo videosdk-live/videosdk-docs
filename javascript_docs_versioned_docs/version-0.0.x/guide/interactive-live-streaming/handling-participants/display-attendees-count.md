@@ -16,7 +16,7 @@ sidebar_position: 1
 slug: display-attendees-count
 ---
 
-# Display Attendees Count
+# Display Attendees Count - Javascript
 
 In this guide, we will see how you can display the number of attendees.
 

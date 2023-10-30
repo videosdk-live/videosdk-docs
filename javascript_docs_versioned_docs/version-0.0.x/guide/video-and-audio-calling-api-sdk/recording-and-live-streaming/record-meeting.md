@@ -16,7 +16,7 @@ sidebar_position: 1
 slug: record-meeting
 ---
 
-# Record Meeting
+# Record Meeting - Javascript
 
 VideoSDK allows you to record video & audio during the meeting. The recording files are available in developer dashboard or you can also choose to store them in your own cloud storage.
 

@@ -6,7 +6,7 @@ pagination_label: Virtual Background (BETA)
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Virtual Background (BETA)
+# Virtual Background (BETA) - React
 
 Virtual backgrounds allow participants in a video call or meeting to replace their actual background with a digital image or video, which can be either preloaded images or user-uploaded images. This feature can be useful for a variety of reasons, such as maintaining privacy by hiding potentially distracting or private elements in the background, reducing visual clutter to help focus on the speaker or content, and adding an element of fun or creativity to a meeting.
 

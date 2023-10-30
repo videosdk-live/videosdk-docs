@@ -14,7 +14,7 @@ image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
 ---
 
-## Custom Video Track
+## Custom Video Track - Android
 
 - You can create a Video Track using `createCameraVideoTrack()` method of `VideoSDK`.
 - This method can be used to create video track using different encoding parameters, camera facing mode, and optimization mode.
@@ -30,13 +30,13 @@ sidebar_position: 1
 
 | Encoder Config | Resolution | Frame Rate |   Bitrate    |
 | -------------- | :--------: | :--------: | :----------: |
-| h144p_w176p     |   176x144   |   15 fps   |  120000 kbps  |
+| h144p_w176p    |  176x144   |   15 fps   | 120000 kbps  |
 | h240p_w320p    |  320x240   |   15 fps   | 150000 kbps  |
 | h480p_w640p    |  640x480   |   25 fps   | 300000 kbps  |
 | h480p_w720p    |  720x480   |   30 fps   | 450000 kbps  |
-| h720p_w960p    |  720x960   |   30 fps   | 1500000 kbps  |
-| h1080p_w1440p   |  1080x1440  |   30 fps   | 2500000 kbps |
-| h720p_w1280p  | 720x1280  |   30 fps   | 2000000 kbps |
+| h720p_w960p    |  720x960   |   30 fps   | 1500000 kbps |
+| h1080p_w1440p  | 1080x1440  |   30 fps   | 2500000 kbps |
+| h720p_w1280p   |  720x1280  |   30 fps   | 2000000 kbps |
 
 :::note
 
@@ -120,7 +120,7 @@ CustomStreamTrack customStreamTrack = VideoSDK.createCameraVideoTrack("h720p_w96
 
 </Tabs>
 
-## Custom Audio Track
+## Custom Audio Track - Android
 
 - You can create a Audio Track using `createAudioTrack()` method of `VideoSDK`.
 - This method can be used to create audio track using different encoding parameters.
@@ -178,7 +178,7 @@ CustomStreamTrack audioCustomTrack=VideoSDK.createAudioTrack("speech_standard", 
 
 </Tabs>
 
-## Custom Screen Share Track
+## Custom Screen Share Track - Android
 
 - You can create a Screen Share track using `createScreenShareVideoTrack()` method of `VideoSDK`.
 - This method can be used to create screen share track using different encoding parameters.
@@ -253,4 +253,3 @@ VideoSDK.createScreenShareVideoTrack("h720p_15fps", data, this, (track)->{
 </TabItem>
 
 </Tabs>
-

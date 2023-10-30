@@ -5,6 +5,8 @@ pagination_label: Meeting Class Methods
 title: Meeting Class Methods
 ---
 
+# Meeting Class Methods - Android
+
 <div class="sdk-api-ref-only-h4">
 
 ### join()
@@ -172,6 +174,7 @@ title: Meeting Class Methods
 #### Events associated with `startRecording()`:
 
 - Every participant will receive a callback on [`onRecordingStateChanged()`](./meeting-event-listener-class#onrecordingstatechanged)
+
 #### Example
 
 import Tabs from '@theme/Tabs';
@@ -272,6 +275,7 @@ meeting.stopRecording();
     - **priority**: _"SPEAKER"_ | _"PIN"_
     - **gridSize**: Number _`max 25`_
   - **theme**: _"DARK"_ | _"LIGHT"_ | _"DEFAULT"_
+
 #### Returns
 
 - _`void`_
@@ -279,7 +283,6 @@ meeting.stopRecording();
 #### Events associated with `startLiveStream()`:
 
 - Every participant will receive a callback on [`onLivestreamStateChanged()`](./meeting-event-listener-class#onlivestreamstatechanged)
-
 
 #### Example
 
@@ -347,6 +350,7 @@ meeting.startLivestream(outputs,config);
 #### Events associated with `stopLivestream()`:
 
 - Every participant will receive a callback on [`onLivestreamStateChanged()`](./meeting-event-listener-class#onlivestreamstatechanged)
+
 #### Example
 
 <Tabs
@@ -453,6 +457,7 @@ meeting.startHls(config);
 #### Returns
 
 - _`void`_
+
 #### Events associated with `stopHls()`:
 
 - Every participant will receive a callback on [`onHlsStateChanged()`](./meeting-event-listener-class#onhlsstatechanged)
@@ -502,7 +507,6 @@ meeting.stopHls();
 #### Events associated with `changeMode()`:
 
 - Every participant will receive a callback on [`onParticipantModeChanged()`](./meeting-event-listener-class#onparticipantmodechanged)
-
 
 #### Example
 
@@ -611,7 +615,6 @@ meeting.changeMic(AppRTCAudioManager.AudioDevice.BLUETOOTH);
 ```
 
 </TabItem>
-
 
 </Tabs>
 
@@ -723,7 +726,6 @@ values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
 ```
 
 </TabItem>
-
 
 </Tabs>
 

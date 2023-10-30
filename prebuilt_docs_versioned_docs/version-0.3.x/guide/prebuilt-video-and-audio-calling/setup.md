@@ -15,6 +15,8 @@ sidebar_position: 1
 slug: server-setup
 ---
 
+# Setup - Prebuilt
+
 import Mermaid from '@theme/Mermaid';
 
 To begin working with the VideoSDK, you need to setup a server that can authenticate & validate your API key and secret which we generated in the previous step. Follow this [Signup & Create API Key](signup-and-create-api) if you haven't generated API key and secret.

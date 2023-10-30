@@ -3,7 +3,7 @@ sidebar_label: Error Event
 pagination_label: Error Event
 ---
 
-# Error Event
+# Error Event - React
 
 This event is helpful for development level troubleshooting while integrating SDK.
 

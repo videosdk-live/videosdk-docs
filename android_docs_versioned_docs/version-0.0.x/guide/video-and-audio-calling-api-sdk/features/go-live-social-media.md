@@ -16,7 +16,7 @@ sidebar_position: 1
 slug: go-live-social-media
 ---
 
-# Go Live On Social Media
+# Go Live On Social Media - Android
 
 This feature allows participant to broadcast meeting on various social media platforms such as Facebook or Youtube.
 This guide will provide an overview of how participant can start and stop broadcasting meeting.
@@ -90,7 +90,6 @@ findViewById(R.id.btnLivestream).setOnClickListener(view -> {
 1. **livestream-started** - Whenever broadcasting of meeting started, `livestream-started` event will trigger.
 
 2. **livestream-stopped** - Whenever broadcasting of meeting stopped, `livestream-stopped` event will trigger.
-
 
 <Tabs
 defaultValue="Kotlin"

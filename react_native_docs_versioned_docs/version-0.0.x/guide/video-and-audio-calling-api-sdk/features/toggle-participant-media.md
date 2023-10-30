@@ -18,8 +18,11 @@ sidebar_position: 1
 slug: toggle-participant-media
 ---
 
-Control other participant's webcam and mic.
-For better idea, let's understand this with a real case scenario
+# Toggle Participant Media - React Native
+
+- React Native
+  Control other participant's webcam and mic.
+  For better idea, let's understand this with a real case scenario
 
 **Scenario 1 (Online Class)** - In this scenario, the lecturer(Local Participant) will control the student's(Other Participant) webcam and mic as per his/her needs.
 

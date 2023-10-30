@@ -16,7 +16,7 @@ sidebar_position: 1
 slug: manage-participants
 ---
 
-# Manage Participants
+# Manage Participants - React Native
 
 ## 1. Local Participant (self)
 

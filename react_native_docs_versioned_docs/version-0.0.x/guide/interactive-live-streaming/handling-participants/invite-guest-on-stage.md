@@ -16,7 +16,7 @@ sidebar_position: 1
 slug: invite-guest-on-stage
 ---
 
-# Invite Guest on Stage
+# Invite Guest on Stage - React Native
 
 In this guide, we will see how you can request a viewer to join your livestream by using the `changeMode()`.
 

@@ -5,6 +5,8 @@ pagination_label: VideoSDK Class Methods
 title: VideoSDK Class Methods
 ---
 
+# VideoSDK Class Methods - Flutter
+
 <div class="sdk-api-ref-only-h4">
 
 ### createRoom()

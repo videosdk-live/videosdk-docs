@@ -15,7 +15,7 @@ sidebar_position: 1
 slug: run-a-sample-react-native-project
 ---
 
-# Run a Sample Conference Project
+# Run a Sample Conference Project - React Native
 
 Video SDK provides open-source sample project [videosdk-rtc-react-native-sdk-example](https://github.com/videosdk-live/videosdk-rtc-react-native-sdk-example) on Github. This document introduces how to run this project.
 

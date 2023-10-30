@@ -17,7 +17,7 @@ sidebar_position: 1
 slug: go-live-hls
 ---
 
-# Go Live On HLS
+# Go Live On HLS - Prebuilt
 
 HLS allows participant to broadcast live streaming to other participants.
 This guide will provide an overview of how participant can start and stop broadcasting meeting.

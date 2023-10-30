@@ -15,7 +15,7 @@ sidebar_position: 1
 slug: left-screen
 ---
 
-# Left Screen
+# Left Screen - Prebuilt
 
 - Left screen will be shown when participant left the meeting if `redirectOnLeave` parameter is not provided while initializing the meeting.
 

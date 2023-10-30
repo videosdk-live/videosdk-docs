@@ -15,7 +15,7 @@ sidebar_position: 1
 slug: stream-class
 ---
 
-# Stream Class
+# Stream Class - Flutter
 
 ## using Stream Class
 

@@ -15,7 +15,7 @@ sidebar_position: 1
 slug: meeting-connection-events
 ---
 
-# Meeting Connection Events
+# Meeting Connection Events - React Native
 
 VideoSDK provides `onMeetingStateChanged` event which will notify you of the current connection state of the meeting.
 

@@ -3,7 +3,7 @@ sidebar_position: 1
 sidebar_label: List Meeting Sessions
 ---
 
-# List Meeting Sessions
+# List Meeting Sessions - API
 
 Use the following Rest API to list meeting sessions.
 

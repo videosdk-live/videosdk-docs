@@ -15,7 +15,7 @@ sidebar_position: 1
 slug: initialise-meeting
 ---
 
-# Initialise Meeting
+# Initialise Meeting - Flutter
 
 To configure a VideoSDK meeting you require two things, first the `token` which will be used for **Authentication** purpose and a `meetingId` which will be used to specify where a participant will join. Let's see each of the steps closely.
 

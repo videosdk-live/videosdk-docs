@@ -3,7 +3,7 @@ sidebar_label: Close Connection
 pagination_label: Close Connection
 ---
 
-# Close Connection
+# Close Connection - React
 
 ### Method
 

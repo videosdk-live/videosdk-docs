@@ -17,4 +17,4 @@ slug: terminology
 
 import Terminology from '../../../../mdx/introduction/\_terminology.mdx';
 
-<Terminology title="Terms related to VideoSDK " />
+<Terminology title="Terms related to VideoSDK - Javascript " />

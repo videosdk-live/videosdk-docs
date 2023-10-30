@@ -15,7 +15,7 @@ sidebar_position: 1
 slug: change-input-device
 ---
 
-# Change Input Device
+# Change Input Device - React
 
 During the meeting at any point a participant wishes to switch his/her input audio or video device, it can be done using the below mentioned methods.
 

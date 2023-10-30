@@ -5,6 +5,8 @@ pagination_label: Recording Parameters
 title: Recording Parameters
 ---
 
+# Recording Parameters - Prebuilt
+
 <div class="sdk-api-ref-only-h4">
 
 ## recording
@@ -19,13 +21,13 @@ title: Recording Parameters
 
 ### webhookUrl
 
-- type: `Boolean`
+- type: `String`
 
 - `recording.webhookUrl`, represents web hook url called when the recording of the meeting is created.
 
 ### awsDirPath
 
-- type: `Boolean`
+- type: `String`
 
 - `recording.awsDirPath` represents the path where recording will get stored.
 

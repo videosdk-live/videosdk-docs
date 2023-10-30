@@ -15,7 +15,7 @@ sidebar_position: 1
 slug: setup
 ---
 
-# Setup
+# Setup - iOS
 
 ## Setting up iOS sdk
 

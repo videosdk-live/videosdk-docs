@@ -5,6 +5,8 @@ pagination_label: PubSub Class Methods
 title: PubSub Class Methods
 ---
 
+# PubSub Class Methods - Flutter
+
 <div class="sdk-api-ref-only-h4">
 
 ### publish()

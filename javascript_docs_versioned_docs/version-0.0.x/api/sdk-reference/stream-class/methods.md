@@ -5,6 +5,8 @@ sidebar_label: Methods
 pagination_label: Stream Class Methods
 ---
 
+# Participant Class Methods - Javascript
+
 <div class="sdk-api-ref-only-h4">
 
 ### resume()

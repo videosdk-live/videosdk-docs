@@ -5,6 +5,8 @@ pagination_label: Basic Features
 title: Basic Features
 ---
 
+# Basic Features - Prebuilt
+
 <div class="sdk-api-ref-only-h4">
 
 ## apiKey

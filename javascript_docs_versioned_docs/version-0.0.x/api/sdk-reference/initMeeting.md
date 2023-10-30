@@ -5,6 +5,8 @@ pagination_label: Initializing a Meeting
 title: Initializing a Meeting
 ---
 
+# Initiallizing a Meeting - Javascript
+
 <div class="sdk-api-ref">
 
 ## config()

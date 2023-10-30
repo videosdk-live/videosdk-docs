@@ -3,7 +3,7 @@ sidebar_label: Send Message using PubSub
 pagination_label: PubSub
 ---
 
-# PubSub
+# PubSub - Javascript
 
 PubSub feature allows the participant to send and receive messages of the topics which he has subscribed.
 

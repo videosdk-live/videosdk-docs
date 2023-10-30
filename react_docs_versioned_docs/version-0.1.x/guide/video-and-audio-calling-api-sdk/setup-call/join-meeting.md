@@ -15,7 +15,7 @@ sidebar_position: 1
 slug: join-meeting
 ---
 
-# Join Meeting
+# Join Meeting - React
 
 ### Overview
 

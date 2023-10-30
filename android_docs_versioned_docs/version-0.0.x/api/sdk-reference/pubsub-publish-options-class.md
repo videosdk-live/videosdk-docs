@@ -14,7 +14,7 @@ sidebar_position: 1
 slug: pubsub-publish-options-class
 ---
 
-# PubSubPublishOptions Class
+# PubSubPublishOptions Class - Android
 
 ## using PubSubPublishOptions Class
 

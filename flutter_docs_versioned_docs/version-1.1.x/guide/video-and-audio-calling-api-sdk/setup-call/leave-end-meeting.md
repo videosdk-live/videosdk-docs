@@ -15,7 +15,7 @@ sidebar_position: 1
 slug: leave-end-meeting
 ---
 
-# Leave or End Meeting
+# Leave or End Meeting - Flutter
 
 Participant can choose to leave the meeting without removing all the other participants. This is typically done by `Leave Meeting`.
 

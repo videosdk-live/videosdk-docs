@@ -6,7 +6,7 @@ pagination_label: Get Connection
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Get Connection
+# Get Connection - Javascript
 
 ## Get all Connection meetings
 

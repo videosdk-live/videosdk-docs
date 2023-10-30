@@ -5,6 +5,8 @@ pagination_label: Methods returned by useMeeting Hook
 title: Methods returned by useMeeting Hook
 ---
 
+# Methods returned by useMeeting Hook - React
+
 <div class="sdk-api-ref-only-h4">
 
 ### join()

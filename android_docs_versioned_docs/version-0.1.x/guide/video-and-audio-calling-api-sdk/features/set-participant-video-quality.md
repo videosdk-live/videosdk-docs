@@ -15,7 +15,7 @@ sidebar_position: 1
 slug: set-participant-video-quality
 ---
 
-# Set Participant Video Quality
+# Set Participant Video Quality - Android
 
 This feature allows participants to set other participant's video quality during the meeting.
 
@@ -31,7 +31,6 @@ To know more about customTrack visit [here](/android/guide/video-and-audio-calli
 
 - `setQuality` method will accept `low`, `med` or `high` as string parameter.
 
-
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
@@ -44,7 +43,7 @@ values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
 
 ```js
 private fun setQuality()
-{  
+{
   val participants: Iterator<Participant> = meeting!!.participants.values.iterator()
   for (i in 0 until meeting!!.participants.size) {
     val participant = participants.next()
@@ -52,7 +51,7 @@ private fun setQuality()
     participant.quality = "low"
     //or
     participant.quality = "med"
-    //or 
+    //or
     participant.quality = "high"
   }
 }
@@ -68,7 +67,7 @@ private void setQuality() {
 
   for (int i = 0; i < meeting.getParticipants().size(); i++) {
     Participant participant = participants.next();
-    
+
     participant.setQuality("low");
     //or
     participant.setQuality("med");

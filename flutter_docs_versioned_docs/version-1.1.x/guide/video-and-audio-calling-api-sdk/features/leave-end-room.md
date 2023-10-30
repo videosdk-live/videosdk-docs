@@ -16,7 +16,7 @@ sidebar_position: 1
 slug: leave-end-room
 ---
 
-# Leave or End Room
+# Leave or End Room - Flutter
 
 Whenever participant wishes to end their communication in the room, they can simply leave the room.
 

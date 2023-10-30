@@ -15,16 +15,15 @@ sidebar_position: 1
 slug: screen-share
 ---
 
-# Screen Share
+# Screen Share - Flutter
 
 Screen sharing in a meeting is the process of sharing your device screen with other participants in the meeting. It allows everyone in the meeting to see exactly what you are seeing on your screen, which can be helpful for presentations, demonstrations, or collaborations.
 
 ### Screen Share feature Compatibility
 
-| Android and iOS app    | Web                  | Desktop app    | Safari browser |
-|----------------------|----------------------|----------------------|--------|
-|  <center> :white_check_mark: </center>  | <center>  :white_check_mark: </center>  |  <center> :white_check_mark: </center>  |  <center> :x: </center>   |
-
+| Android and iOS app                   | Web                                   | Desktop app                           | Safari browser         |
+| ------------------------------------- | ------------------------------------- | ------------------------------------- | ---------------------- |
+| <center> :white_check_mark: </center> | <center> :white_check_mark: </center> | <center> :white_check_mark: </center> | <center> :x: </center> |
 
 ### `enableScreenShare()`
 

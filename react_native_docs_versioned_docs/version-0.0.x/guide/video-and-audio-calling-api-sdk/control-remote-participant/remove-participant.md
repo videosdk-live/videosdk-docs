@@ -14,7 +14,7 @@ sidebar_position: 1
 slug: remove-participant
 ---
 
-# Remove Participant
+# Remove Participant - React Native
 
 This feature in a meeting allows the meeting host or organizer to remove a participant from the meeting. This can be helpful in situations where a participant is causing a disturbance, is behaving inappropriately, or is not following meeting guidelines.
 

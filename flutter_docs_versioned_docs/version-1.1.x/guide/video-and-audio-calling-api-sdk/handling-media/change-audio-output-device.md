@@ -15,7 +15,7 @@ sidebar_position: 1
 slug: change-audio-output-device
 ---
 
-# Change Audio Output Device
+# Change Audio Output Device - Flutter
 
 During the meeting at any point a participant wishes to switch his/her output audio like from headphones to speaker, it can be done using the below mentioned methods.
 

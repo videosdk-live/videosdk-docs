@@ -17,7 +17,7 @@ image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
 ---
 
-# Custom Screen Share Track
+# Custom Screen Share Track - React Native
 
 We have introduced the ability to pass a custom Screen Share track while sharing the screen of participants. This feature can be used to add custom video encoder config,background removal & video filter from external SDK(e.g., [Banuba](https://www.banuba.com/)) and send it to other participants.
 

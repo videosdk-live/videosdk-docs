@@ -15,7 +15,7 @@ sidebar_position: 1
 slug: rtmp-events
 ---
 
-# RTMP Events
+# RTMP Events - Javascript
 
 VideoSDK provides `livestream-state-changed` event which will notify you of the current state of livestream for the meeting.
 

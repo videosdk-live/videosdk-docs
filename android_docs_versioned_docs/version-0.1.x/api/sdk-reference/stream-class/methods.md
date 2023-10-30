@@ -5,6 +5,8 @@ sidebar_label: Methods
 pagination_label: Stream Class Methods
 ---
 
+# Stream Class Methods - Android
+
 <div class="sdk-api-ref-only-h4">
 
 ### resume()

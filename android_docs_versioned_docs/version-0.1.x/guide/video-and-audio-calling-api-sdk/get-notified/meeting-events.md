@@ -15,7 +15,7 @@ sidebar_position: 1
 slug: meeting-events
 ---
 
-# Meeting Events
+# Meeting Events - Android
 
 VideoSDK provides multiple types of events which can be listened to know the current state of the meeting.
 

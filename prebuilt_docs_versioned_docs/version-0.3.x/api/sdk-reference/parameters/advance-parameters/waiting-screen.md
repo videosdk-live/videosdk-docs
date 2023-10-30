@@ -5,6 +5,8 @@ pagination_label: WaitingScreen Parameters
 title: WaitingScreen Parameters
 ---
 
+# WaitingScreen Parameters - Prebuilt
+
 <div class="sdk-api-ref-only-h4">
 
 ## waitingScreen

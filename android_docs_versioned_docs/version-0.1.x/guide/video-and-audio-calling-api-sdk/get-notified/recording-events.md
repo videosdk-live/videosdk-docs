@@ -15,7 +15,7 @@ sidebar_position: 1
 slug: recording-events
 ---
 
-# Recording Events
+# Recording Events - Android
 
 VideoSDK provides `onRecordingStateChanged` event which will notify you of the current state of recording for the meeting.
 

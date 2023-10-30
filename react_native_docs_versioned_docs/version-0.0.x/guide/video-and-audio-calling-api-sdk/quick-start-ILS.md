@@ -17,6 +17,10 @@ slug: quick-start-ILS
 
 # Quick Start for Interactive Live Streaming in React Native
 
+import ReactPlayer from 'react-player'
+
+<ReactPlayer controls url="https://www.youtube.com/watch?v=LFNNigEkfdA" height="500px" width={"100%"} />
+
 VideoSDK enables you to embed the video calling feature into your React Native application in minutes.
 
 In this quickstart, we are going to explore interactive live streaming feature of Video SDK. We will go through step by step guide of integrating video calling with React Native Video SDK.

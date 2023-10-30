@@ -9,6 +9,8 @@ sidebar_position: 1
 slug: set-viewport
 ---
 
+# Set Viewport - Flutter
+
 When you are working with Video Calling, video quality is the most important part of communication. When a participant is shown on the screen, consuming multiple high quality although not required, will result in more memory and CPU usage of the device, eventually degrading quality.
 
 The way to optimize around these situation is to consume the video quality which is required to fit the view of a particular participant, resulting in better quality, less usage of network bandwidth and providing a better experience.

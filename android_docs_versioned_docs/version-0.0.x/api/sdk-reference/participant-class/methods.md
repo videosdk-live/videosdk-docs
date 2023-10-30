@@ -5,6 +5,8 @@ sidebar_label: Methods
 pagination_label: Participant Class Methods
 ---
 
+# Participant Class Methods - React Native
+
 <div class="sdk-api-ref-only-h4">
 
 ### enableWebcam()
@@ -80,6 +82,7 @@ pagination_label: Participant Class Methods
 - `void`
 
 ---
+
 ### setViewPort()
 
 - `setViewPort()` is used to set the quality of the participant's video stream based on the viewport height and width.

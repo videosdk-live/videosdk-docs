@@ -4,7 +4,7 @@ pagination_label: Release Notes
 tags: [releasenotes]
 ---
 
-# Release Notes
+# Release Notes - React Native
 
 This page will keep you update all the releases of React Native SDK.
 

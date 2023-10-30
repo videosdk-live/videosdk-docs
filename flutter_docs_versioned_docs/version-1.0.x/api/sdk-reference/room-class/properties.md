@@ -5,6 +5,8 @@ pagination_label: Room Class Properties
 title: Room Class Properties
 ---
 
+# Room Class Properties - Flutter
+
 <div class="sdk-api-ref-only-h4">
 
 ### id

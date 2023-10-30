@@ -5,6 +5,8 @@ pagination_label: Permissions Parameters
 title: Permissions Parameters
 ---
 
+# Permissions Parameters - Prebuilt
+
 <div class="sdk-api-ref-only-h4">
 
 ## permissions

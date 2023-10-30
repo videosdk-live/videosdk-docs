@@ -17,4 +17,4 @@ slug: authentication-and-tokens
 
 import ServerSetup from '../../../../mdx/introduction/\_server-setup.mdx';
 
-<ServerSetup />
+<ServerSetup title="Authentication and Tokens for VideoSDK - Flutter"/>

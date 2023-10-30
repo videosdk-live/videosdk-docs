@@ -16,7 +16,7 @@ sidebar_position: 1
 slug: run-a-sample-android-project
 ---
 
-# Run a Sample Conference Project
+# Run a Sample Conference Project - Android
 
 Video SDK provides open-source sample project [videosdk-rtc-android-kotlin-sdk-example](https://github.com/videosdk-live/videosdk-rtc-android-kotlin-sdk-example) on Github. This document introduces how to run this project.
 

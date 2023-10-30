@@ -15,7 +15,7 @@ sidebar_position: 1
 slug: meeting-class-example
 ---
 
-# Meeting Class Example
+# Meeting Class Example - Flutter
 
 ```js title="Play with meeting instance"
 // Join the meeting

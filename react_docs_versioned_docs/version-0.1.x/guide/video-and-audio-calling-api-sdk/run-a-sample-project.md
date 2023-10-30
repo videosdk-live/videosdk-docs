@@ -15,7 +15,7 @@ sidebar_position: 1
 slug: run-a-sample-react-project
 ---
 
-# Run a Sample Conference Project
+# Run a Sample Conference Project - React
 
 Video SDK provides open-source sample project [videosdk-rtc-react-sdk-example](https://github.com/videosdk-live/videosdk-rtc-react-sdk-example) on Github. This document introduces how to run this project.
 

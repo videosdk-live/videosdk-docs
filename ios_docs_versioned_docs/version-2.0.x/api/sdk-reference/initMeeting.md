@@ -5,6 +5,8 @@ pagination_label: Initializing a Meeting
 title: Initializing a Meeting
 ---
 
+# Initializing a Meeting - iOS
+
 <div class="api">
 
 ## config()

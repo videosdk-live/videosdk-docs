@@ -1,8 +1,9 @@
 ---
 sidebar_position: 1
+title: "Meeting Provider"
 ---
 
-# Meeting Provider
+# Meeting Provider - React Native
 
 Meeting Provider simplifies configuration of meeting with by wrapping up core logic with `react-context`.
 

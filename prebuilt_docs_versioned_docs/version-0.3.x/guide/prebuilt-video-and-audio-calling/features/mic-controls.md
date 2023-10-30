@@ -18,7 +18,7 @@ sidebar_position: 1
 slug: mic-controls
 ---
 
-# Mic Controls
+# Mic Controls - Prebuilt
 
 Different mic control permissions allows participant to enable/disable their own mic and other participant's mic too & also can set default participant's mic settings, when meeting start.
 

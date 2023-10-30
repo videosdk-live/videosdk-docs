@@ -16,7 +16,7 @@ sidebar_position: 1
 slug: canvas-drawing-using-pubsub
 ---
 
-# Canvas Drawing using PubSub
+# Canvas Drawing using PubSub - React
 
 When in a meeting, it can be very handy to just draw and share your views with all the collaborators. In order to do so, you will need a drawing board which is shared in realtime which you can develope using the publish-subscribe mechanism. If you are not familiar with the PubSub mechanism and `usePubSub`hook, you can [follow this guide](./pubsub).
 

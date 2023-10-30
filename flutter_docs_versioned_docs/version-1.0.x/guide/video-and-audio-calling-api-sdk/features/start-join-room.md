@@ -14,7 +14,7 @@ sidebar_position: 1
 slug: start-join-room
 ---
 
-# Start or Join Room
+# Start or Join Room - Flutter
 
 <div style={{display:'flex',flexDirection:'row',alignItems:'stretch',}}>
 <div style={{}}>

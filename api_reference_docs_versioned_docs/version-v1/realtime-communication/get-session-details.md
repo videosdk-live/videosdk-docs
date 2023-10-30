@@ -3,7 +3,7 @@ sidebar_position: 1
 sidebar_label: Get Session Details
 ---
 
-# Get Session Details
+# Get Session Details - API
 
 Use the following Rest API to list session details.
 

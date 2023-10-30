@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# List Meeting Recordings
+# List Meeting Recordings - API
 
 Use the following Rest API to list recordings.
 

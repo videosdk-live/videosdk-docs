@@ -18,7 +18,7 @@ slug: picture-in-picture
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Picture-in-Picture Mode
+# Picture-in-Picture Mode - React Native
 
 Picture-in-picture (PiP) is a feature that is commonly used in video conferencing software. It allows you to continue your video conference while also performing other tasks on your device. With PiP, you can keep the video conference window open and resize it to a smaller size, allowing you to work on other tasks while still being able to see and hear the other participants in the conference. This can be very helpful if you need to take notes, send an email, or look up information during the conference.
 

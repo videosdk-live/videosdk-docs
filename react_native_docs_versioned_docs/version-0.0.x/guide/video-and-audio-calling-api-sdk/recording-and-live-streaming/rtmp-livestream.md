@@ -16,7 +16,7 @@ sidebar_position: 1
 slug: rtmp-livestream
 ---
 
-# RTMP Livestream
+# RTMP Livestream - React Native
 
 RTMP is a popular protocol for live streaming video content from a VideoSDK to platforms such as YouTube, Twitch, Facebook, and others.
 

@@ -17,7 +17,7 @@ image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
 ---
 
-## Custom Video Track
+## Custom Video Track - Flutter
 
 - You can create a Video Track using `createCameraVideoTrack()` method of `VideoSDK` class.
 - This method can be used to create video track using different encoding parameters, camera facing mode, and optimization mode.

@@ -5,6 +5,8 @@ pagination_label: PubSubPublishOptions Class
 title: PubSubPublishOptions Class
 ---
 
+# PubSubPublishOptions Class - Flutter
+
 <div class="sdk-api-ref-only-h4">
 
 ## Properties

@@ -18,7 +18,7 @@ slug: dynamic-meeting-link
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Dynamic Meeting Link
+# Dynamic Meeting Link - Prebuilt
 
 If you don't want to have the same meeting id every time, you can generate a random id each time and use it. Let's see how it's done.
 
