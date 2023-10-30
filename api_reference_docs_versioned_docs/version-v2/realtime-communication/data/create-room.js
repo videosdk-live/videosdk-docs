@@ -46,7 +46,7 @@ const createRoom = {
       {
         key: "autoStartConfig",
         value: "see example",
-        values: "\n```\n{\n  'autoStartConfig': {\n    'recording': 'your recording config object',\n    'hls': 'your hls config object'\n   }\n}\n```",
+        values: "\n```\n{\n  'autoStartConfig': {\n    'recording': {\n      'config': {\n        'layout': { \n          'type': 'GRID',\n          'priority': 'SPEAKER',\n          'gridSize': 4\n        }\n      }\n    },\n    'hls': {\n      'config': {\n        'layout': { \n          'type': 'GRID',\n          'priority': 'SPEAKER',\n          'gridSize': 4\n        }\n      }\n    }\n}\n```",
         description: `#### This configuration enables automatic initiation of recording, HLS streaming, or both, providing a convenient way to capture and serve content in real-time. It streamlines the process of content management and delivery for enhanced user experience. \n
  * **recording** :
   - **templateUrl** : [Customize Layout of Meeting Recording](/react/guide/interactive-live-streaming/custom-template)
@@ -59,7 +59,6 @@ const createRoom = {
   - **mode**: _"video-and-audio"_ | _"audio"_
   - **quality**: _"low"_ | _"med"_ | _"high"_
   - **orientation**: _"portrait"_ | _"landscape"_
-  - **webhookUrl**: _"Webhook URL"_
   - **awsDirPath**: _"Your AWS S3 Bucket Path."_ 
 
 - **hls** :
