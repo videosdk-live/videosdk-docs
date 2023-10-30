@@ -32,10 +32,14 @@ In order to use PubSub in meeting, VideoSDK provides a hook `usePubSub` which al
 
 - This method is used for publishing message of specific topic.
 - This method can be accessed from the `pubSub` from the `Room`.
-- This method will accept thre parameters as input:
+- This method will accept following parameters as input:
   - `topic`: This will be the topic where the message will be published.
   - `message`: This will be the actual message to be published. It has to be in `String` format.
-  - `options`: This object offered the option of keeping the message around for the duration of the session. When `persist` is set to `true`, that message will be retained for upcoming participants and will be available in [VideoSDK Session Dashboard](https://app.videosdk.live/meetings/sessions) with `.CSV` format after completion of session.
+  - `options`: This is an object of `PubSubPublishOptions` which specifies the options for publish. `PubSubPublishOptions` has 2 properties. 
+    - `persist` : `persist` offered the option of keeping the message around for the duration of the session. When `persist` is set to `true`, that message will be retained for upcoming participants and will be available in [VideoSDK Session Dashboard](https://app.videosdk.live/meetings/sessions) with `.CSV` format after completion of session.
+    - `sendOnly`: If you want to send a message to specific participants, you can pass their respective `participantId` in form of `List<String>`. If you don't provide any IDs, the message will be sent to all participants by default. This is optional parameter.
+  - `payload`: If you need to include additional information along with a message, you can pass here as `Map<String, dynamic>`. This is optional parameter.
+
 
 ```js
 import 'package:flutter/material.dart';
@@ -84,6 +88,7 @@ class _MeetingScreenState extends State<MeetingScreen> {
   - `message`: This will be the acatual message that was send.
   - `timestamp`: This wil the timestamp for when the message was published.
   - `topic`: This will be the name of the topic message was published to.
+  - `payload`: This will be the data that you have send with message.
 
 ## Example
 

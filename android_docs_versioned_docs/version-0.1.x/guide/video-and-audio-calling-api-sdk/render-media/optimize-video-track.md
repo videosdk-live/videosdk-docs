@@ -52,7 +52,7 @@ val videoCustomTrack: CustomStreamTrack = VideoSDK.createCameraVideoTrack(
 
   // highlight-next-line
   // This will accept the resolution (height x width) of video you want to capture.
-  "h480p_w640p", // "h720p_w960p" | "h720p_w1280p" ... // Default : "h480p_w640p"
+  "h720p_w960p", // "h720p_w960p" | "h720p_w1280p" ... // Default : "h480p_w720p"
 
   // highlight-next-line
   // It will specifiy whether to use front or back camera for the video track.
@@ -64,7 +64,7 @@ val videoCustomTrack: CustomStreamTrack = VideoSDK.createCameraVideoTrack(
 
   // highlight-next-line
   // multiStream - we will discuss this parameter in next step.
-  true, // false
+  false, // true
 
   // highlight-next-line
   // Pass Context
@@ -96,7 +96,7 @@ CustomStreamTrack customStreamTrack = VideoSDK.createCameraVideoTrack(
 
   // highlight-next-line
   // multiStream - we will discuss this parameter in next step.
-  true, // false
+  false, // true
 
   // highlight-next-line
   // Pass Context
@@ -215,7 +215,9 @@ override fun onCreate(savedInstanceState: Bundle?) {
     false,
     //Pass the custom tracks here
     //highlight-next-line
-    customTracks
+    customTracks,
+    //MetaData
+    null
   )
 }
 ```
@@ -250,7 +252,9 @@ protected void onCreate(Bundle savedInstanceState) {
     false,
     //Pass the custom tracks here
     //highlight-next-line
-    customTracks
+    customTracks,
+    //MetaData
+    null
     );
 }
 ```

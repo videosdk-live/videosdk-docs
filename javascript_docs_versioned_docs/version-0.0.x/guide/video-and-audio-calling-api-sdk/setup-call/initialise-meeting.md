@@ -124,6 +124,12 @@ const meeting = VideoSDK.initMeeting({
 
   - This is a `boolean` flag, indicating whether a participant's webcam will be automatically enabled when they join a meeting.
 
+- **`metaData`**:
+
+  - If you want to provide additional details about a user joining a meeting, such as their profile image, you can pass that information in this parameter.
+  - It has to be of `Object` type.
+  - This is an `OPTIONAL` parameter.
+
 - **`participantId`**:
 
   - This will be the unique identifier for the participant inside the meeting.

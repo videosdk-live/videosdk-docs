@@ -84,11 +84,24 @@ meeting.on("meeting-joined", async () => {
 
 ### `Private Chat`
 
-In the above example, if you want to convert into the private chat between two participants, then all you have to do is change the topic which will be unique to those two participants only.
+In the above example, if you want to convert into the private chat between two participants, then all you have to do is set `sendOnly` property.
 
-So if we look at creating a private chat between two participants only, we can have the topic something like `<participantId_of_A>_<participantId_of_B>` or `<participantId_of_B>_<participantId_of_A>`.
+```js
+  // ... 
+  //publish chat meesage on button click
+  msgSendBtn.addEventListener("click", async () => {
+    const message = document.getElementById("txtChat").value;
 
-So you can use either of this topics and the private chat is ready.
+    document.getElementById("txtChat").value = "";
+
+    // Pass the participantId of the participant to whom you want to send the message.
+    meeting.pubSub
+      //highlight-next-line
+      .publish("CHAT", message, { persist: true , sendOnly : ['XYZ']} )
+      .then((res) => console.log(`response of publish : ${res}`))
+      .catch((err) => console.log(`error of publish : ${err}`));
+  });
+```
 
 ## Downloading Chat Messages
 

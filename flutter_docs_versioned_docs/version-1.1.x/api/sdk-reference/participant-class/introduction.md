@@ -47,6 +47,11 @@ pagination_label: Video SDK Participant Class
 - [streams](properties#streams)
 
 </div>
+<div class="col col--4 margin-bottom--sm" >
+
+- [metaData](properties#metadata)
+
+</div>
 </div>
 
 ## Participant Methods

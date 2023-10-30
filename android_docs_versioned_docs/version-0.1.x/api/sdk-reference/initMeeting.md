@@ -65,6 +65,7 @@ Please refer this [documentation](/api-reference/realtime-communication/intro/) 
         String mode,
         boolean multiStream,
         Map<String, CustomStreamTrack> customTracks
+        JSONObject metaData,
       )
 ```
 
@@ -142,6 +143,13 @@ Please refer this [documentation](/api-reference/realtime-communication/create-r
 
 Please refer this [documentation](../../guide/video-and-audio-calling-api-sdk/features/custom-track/custom-video-track) to know more about CustomTrack.
 
+### metaData
+
+- If you want to provide additional details about a user joining a meeting, such as their profile image, you can pass that information in this parameter.
+
+  - type: `JSONObject`
+  - `REQUIRED`
+
 ## Returns
 
 ### meeting
@@ -180,7 +188,8 @@ var meeting = VideoSDK.initMeeting(
     null,
     null,
     false,
-    null
+    null,
+    null,
   )
 )
 ```
@@ -206,7 +215,8 @@ Meeting meeting = VideoSDK.initMeeting({
   null,
   null,
   false,
-  null
+  null,
+  null,
 });
 ```
 

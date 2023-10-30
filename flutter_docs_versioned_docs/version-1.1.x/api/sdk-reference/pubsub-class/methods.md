@@ -29,6 +29,11 @@ title: PubSub Class Methods
   - type: [`PubSubPublishOptions`](pubsub-publish-options-class)
   - This specifies the options for publish.
 
+- payload
+  - type: `Map<String,dynamic>`
+  - If you need to include additional information along with a message, you can pass here as `Map<String, dynamic>`. This is optional parameter.
+
+
 #### Returns
 
 - _`Future<void>`_

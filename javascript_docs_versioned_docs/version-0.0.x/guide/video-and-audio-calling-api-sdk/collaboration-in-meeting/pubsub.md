@@ -30,9 +30,12 @@ In order to use PubSub in meeting, VideoSDK provides a `pubSub` property in meet
 
 - This method is used for publishing message of specific topic.
 - This method can be accessed from the `pubSub` property of meeting object by mentioning the `topic` for which the `publish()` will be used.
-- This method will accept two parameters as input:
+- This method will accept following parameters as input:
   - `message`: This will be the actual message to be published. It has to be in `String` format.
-  - `options`: This object offered the option of keeping the message around for the duration of the session. When `persist` is set to `true`, that message will be retained for upcoming participants and will be available in [VideoSDK Session Dashboard](https://app.videosdk.live/meetings/sessions) with `.CSV` format after completion of session.
+  - `options`: This object specifies the options for publish. You can set following properties :
+    - `persist` : `persist` offered the option of keeping the message around for the duration of the session. When `persist` is set to `true`, that message will be retained for upcoming participants and will be available in [VideoSDK Session Dashboard](https://app.videosdk.live/meetings/sessions) with `.CSV` format after completion of session.
+    - `sendOnly`: If you want to send a message to specific participants, you can pass their respective `participantId` in form of `Array<String>`. If you don't provide any IDs, the message will be sent to all participants by default.
+  - `payload`: If you need to include additional information along with a message, you can pass here as `Object`.
 
 ```js
 let meeting;
@@ -64,6 +67,7 @@ publishChat("Hello world!");
   - `message`: This will be the acatual message that was send.
   - `timestamp`: This wil the timestamp for when the message was published.
   - `topic`: This will be the name of the topic message was published to.
+  - `payload`: This will be the data that you have send with message.
 
 ## Example
 

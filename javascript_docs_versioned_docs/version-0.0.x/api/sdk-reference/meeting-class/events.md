@@ -576,7 +576,7 @@ meeting.on("switch-meeting", (data) => {
 meeting.on("meeting-state-changed", (data) => {
   const { state } = data;
 
-  swtich(state){
+  switch(state){
     case 'CONNECTING':
       console.log("Meeting is Connecting" );
       break;

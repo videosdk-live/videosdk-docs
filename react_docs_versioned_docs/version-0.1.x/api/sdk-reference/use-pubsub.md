@@ -76,7 +76,17 @@ const { publish, messages } = usePubSub(topic, {
 
 - type : `Object`
 
-- This is an object, which provides an option, such as persist, which persists message history for upcoming participants if provide `persist: true`.
+- This specifies the options for publish. You can specify following properties. 
+  - `persist`: When `persist` is set to `true`, that message will be retained for upcoming participants.
+  - `sendOnly`: If you want to send a message to specific participants, you can pass their respective `participantId` here. If you don't provide any IDs, the message will be sent to all participants by default.
+
+---
+
+##### payload
+
+- type : `Object`
+
+- If you need to include additional information along with a message, you can pass here.
 
 ---
 
@@ -86,7 +96,7 @@ const { publish, messages } = usePubSub(topic, {
 const { publish, messages } = usePubSub("CHAT");
 
 const sendMessage = (message) => {
-  publish(message, { persist: true });
+  publish(message, { persist: true }, null, null);
 };
 
 sendMessage("Hello");
@@ -105,6 +115,7 @@ sendMessage("Hello");
   senderId: String,
   senderName: String,
   timestamp: String,
-  topic: String
+  topic: String,
+  payload: Object
 }
 ```

@@ -65,7 +65,7 @@ class ChatActivity : AppCompatActivity() {
      * In MainActivity.kt, we have set Meeting property.
      *
      * For Example: (MainActivity.kt)
-     * var meeting = VideoSDK.initMeeting(context, meetingId, ParticipantName, micEnabled, webcamEnabled,paricipantId,mode,multiStream,customTrack)
+     * var meeting = VideoSDK.initMeeting(context, meetingId, ParticipantName, micEnabled, webcamEnabled,paricipantId,mode,multiStream,customTrack,metaData)
      * (this.application as MainApplication).meeting = meeting
     */
 
@@ -128,7 +128,7 @@ public class ChatActivity extends AppCompatActivity {
      * In MainActivity.java, we have set Meeting property.
      *
      * For Example: (MainActivity.java)
-     * Meeting meeting = VideoSDK.initMeeting(context, meetingId, ParticipantName, micEnabled, webcamEnabled,participantId,mode,multiStream,customTrack);
+     * Meeting meeting = VideoSDK.initMeeting(context, meetingId, ParticipantName, micEnabled, webcamEnabled,participantId,mode,multiStream,customTrack,metaData);
      * ((MainApplication) this.getApplication()).setMeeting(meeting);
     */
 
@@ -313,11 +313,89 @@ public class ChatActivity extends AppCompatActivity {
 
 ### `Private Chat`
 
-In the above example, if you want to convert into the private chat between two participants, then all you have to do is change the topic which will be unique to those two participants only.
+In the above example, if you want to convert into the private chat between two participants, then all you have to do is pass `sendOnly` parameter in `PubSubPublishOptions`.
 
-So if we look at creating a private chat between two participants only, we can have the topic something like `<participantId_of_A>_<participantId_of_B>` or `<participantId_of_B>_<participantId_of_A>`.
+<Tabs
+defaultValue="Kotlin"
+groupId={"AndroidLanguage"}
+values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
 
-So you can use either of this topics and the private chat is ready.
+<TabItem value="Kotlin">
+
+```js
+class ChatActivity : AppCompatActivity() {
+
+  //..
+  
+  private fun sendMessage() {
+    // get message from EditText
+    val message: String = etmessage.getText().toString()
+    if (!TextUtils.isEmpty(message)) {
+        val publishOptions = PubSubPublishOptions()
+        publishOptions.setPersist(true)
+        //highlight-start
+        // Pass the participantId of the participant to whom you want to send the message.
+        var sendOnly: Array<String> = arrayOf("xyz")
+        publishOptions.setSendOnly(sendOnly);
+        //highlight-end
+
+        // Sending the Message using the publish method
+        //highlight-next-line
+        meeting!!.pubSub.publish("CHAT", message, publishOptions)
+
+        // Clearing the message input
+        etmessage.setText("")
+    } else {
+        Toast.makeText(
+            this@ChatActivity, "Please Enter Message",
+            Toast.LENGTH_SHORT
+        ).show()
+    }
+  }
+}
+```
+
+</TabItem>
+
+<TabItem value="Java">
+
+```js
+public class ChatActivity extends AppCompatActivity {
+ 
+  //...
+
+  private void sendMessage()
+  {
+    // get message from EditText
+    String message = etmessage.getText().toString();
+    if (!message.equals("")) {
+        PubSubPublishOptions publishOptions = new PubSubPublishOptions();
+        publishOptions.setPersist(true);
+        //highlight-start
+        // Pass the participantId of the participant to whom you want to send the message.
+        String[] sendOnly = {
+          "xyz" 
+        };
+        publishOptions.setSendOnly(sendOnly);
+        //highlight-end
+
+        // Sending the Message using the publish method
+        //highlight-next-line
+        meeting.pubSub.publish("CHAT", message, publishOptions);
+
+        // Clearing the message input
+        etmessage.setText("");
+    } else {
+        Toast.makeText(ChatActivity.this, "Please Enter Message",
+                Toast.LENGTH_SHORT).show();
+    }
+  }
+}
+```
+
+</TabItem>
+
+</Tabs>
 
 ### Downloading Chat Messages
 

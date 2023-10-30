@@ -7,6 +7,19 @@ pagination_label: Release Notes
 
 This page will keep you update all the releases of Android SDK.
 
+## v0.1.25
+
+**Release Date** : 27th Oct 2023
+
+**Change log** :
+
+- Added `metaData` property associated with `Participant` to pass additional information.
+- Added `payload` feature in PubSub to pass additional payload data.
+- Added `sendOnly` feature to PubSub to Publish data for only Participants mentioned.
+- Provide `setActivityForLifeCycle()` to control camera only for specified activity.
+
+---
+
 ## v0.1.24
 
 **Release Date** : 6th Oct 2023

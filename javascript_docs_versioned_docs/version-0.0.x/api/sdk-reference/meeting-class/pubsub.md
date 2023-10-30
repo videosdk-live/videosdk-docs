@@ -32,6 +32,10 @@ title: PubSub
 - persist :
   - type : `Boolean`
 
+- payload :
+
+  - type : `Object`
+
 #### Returns
 
 - `void`
@@ -146,7 +150,7 @@ const _handleUnsubscribePubSub = async () => {
 
 - Name of a sender who has published this message.
 
-### timesatmp
+### timestamp
 
 - type : `DateTime`
 
@@ -157,5 +161,11 @@ const _handleUnsubscribePubSub = async () => {
 - type : `String`
 
 - Name of the topic.
+
+### payload
+
+- type : `Object`
+
+- The additional data that you have send with message.
 
 </div>

@@ -25,7 +25,7 @@ sidebar_position: 1
 
   - type: `String`
   - required: `true`
-  - default: `h480p_w640p`
+  - default: `h480p_w720p`
   - You can chose from the below mentioned list of values for the encoder config.
 
 | Encoder Config | Resolution | Frame Rate |   Bitrate    |

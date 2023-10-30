@@ -117,7 +117,9 @@ override fun onCreate(savedInstanceState: Bundle?) {
     false,
     //Pass the custom tracks here
     //highlight-next-line
-    customTracks
+    customTracks,
+    //MetaData
+    null
   )
 }
 ```
@@ -153,7 +155,9 @@ protected void onCreate(Bundle savedInstanceState) {
       false,
       //Pass the custom tracks here
       //highlight-next-line
-      customTracks
+      customTracks,
+      //MetaData
+      null
   );
 }
 ```

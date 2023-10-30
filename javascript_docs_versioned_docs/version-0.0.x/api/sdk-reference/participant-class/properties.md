@@ -39,4 +39,12 @@ pagination_label: Participant Class Properties
 
 - It will represents the stream for that particular participant who has joined the meeting. Streams could be `audio` , `video` or `share`.
 
+---
+
+### metaData
+
+- type: `Object`
+
+- It will represents the additional information, that you have passed in `initMeeting()`.
+
 </div>

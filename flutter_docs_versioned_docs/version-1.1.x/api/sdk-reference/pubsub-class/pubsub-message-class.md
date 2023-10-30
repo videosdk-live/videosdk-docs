@@ -57,4 +57,12 @@ title: PubSubMessage Class
 
 - Timestamp of when a message has been published.
 
+---
+
+### payload
+
+- type: `Map<String,dynamic>`
+
+- This is the data that you have send with message.
+
 </div>

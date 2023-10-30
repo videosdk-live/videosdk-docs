@@ -84,6 +84,7 @@ Meeting meeting = VideoSDK.initMeeting(
       micEnabled, // required
       webcamEnabled, // required
       null, // required
+      null, // required
       null // required
       )
 });
@@ -105,6 +106,7 @@ Meeting meeting = VideoSDK.initMeeting({
   micEnabled, // required
   webcamEnabled, // required
   null, // required
+  null // required
   null // required
 });
 ```

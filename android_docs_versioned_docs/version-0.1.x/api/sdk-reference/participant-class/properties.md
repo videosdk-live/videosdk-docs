@@ -55,4 +55,12 @@ pagination_label: Participant Class Properties
 
 - ` getMode()` will return mode of the Participant.
 
+---
+
+### getMetaData()
+
+- type : `JSONObject`
+
+- `getMetaData()` will return additional information, that you have passed in `initMeeting()`.
+
 </div>

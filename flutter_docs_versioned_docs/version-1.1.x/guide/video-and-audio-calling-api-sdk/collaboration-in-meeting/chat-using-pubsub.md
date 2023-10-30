@@ -189,11 +189,70 @@ class _ChatViewState extends State<ChatView> {
 
 ### `Private Chat`
 
-In the above example, if you want to convert into the private chat between two participants, then all you have to do is change the topic which will be unique to those two participants only.
+In the above example, if you want to convert into the private chat between two participants, then all you have to do is pass `sendOnly` parameter in `PubSubPublishOptions`.
 
-So if we look at creating a private chat between two participants only, we can have the topic something like `<participantId_of_A>_<participantId_of_B>` or `<participantId_of_B>_<participantId_of_A>`.
+```js
+import 'package:flutter/material.dart';
+import 'package:videosdk/videosdk.dart';
 
-So you can use either of this topics and the private chat is ready.
+class ChatView extends StatefulWidget {
+  final Room room;
+  ...
+}
+
+class _ChatViewState extends State<ChatView> {
+
+  //...
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children:[
+        Row(
+          children: [
+            Expanded(
+              child: TextField(
+                style: TextStyle(
+                  fontSize:16,
+                  fontWeight: FontWeight.w500,
+                ),
+                controller: msgTextController,
+                onChanged: (value) => setState(() {
+                  msgTextController.text;
+                }),
+                decoration: const InputDecoration(
+                  hintText: "Write your message",
+                  border: InputBorder.none,
+                ),
+              ),
+            ),
+            ElevatedButton(
+              onPressed:(){
+                if(!msgTextController.text.trim().isEmpty){
+                  //highlight-start
+                  // Pass the participantId of the participant to whom you want to send the message.
+                  widget.room.pubSub
+                        .publish(
+                          "CHAT",
+                          msgTextController.text,
+                          const PubSubPublishOptions(
+                            persist: true, sendOnly: ["xyz"]),
+                        )
+                        .then(
+                            (value) => msgTextController.clear())
+                  //highlight-end
+                }
+              },
+              child: const Text("Send Message"),
+            ),
+          ],
+        ),
+      ]
+    );
+  }
+
+}
+```
 
 ### Displaying Latest Message Notificaiton
 

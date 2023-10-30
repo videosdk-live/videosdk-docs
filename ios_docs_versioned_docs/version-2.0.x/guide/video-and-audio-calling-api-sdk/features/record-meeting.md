@@ -32,13 +32,30 @@ This guide will provide an overview of how to implement start and stop Meeting R
 /// webhook url
 private let recordingWebhookUrl = "<webhook-url-here>"
 
+/// aws directory path
+private let recordAwsDirPath = "<aws-dir-path>"
+
+/// custom configuration for recording
+private let recordConfig = RecordingConfig(
+                            layout: ConfigLayout(
+                                type: .GRID, 
+                                priority: .PIN, 
+                                gridSize: 4
+                            ), theme: .DARK, 
+                            mode: .video_and_audio, 
+                            quality: .med, 
+                            orientation: .landscape
+                           )
+
 /// keep track of recording
 private var recordingStarted = false
 
 @IBAction func recordButtonTapped(_ sender: Any) {
     if !recordingStarted {
         // start recording
-        meeting?.startRecording(webhookUrl: recordingWebhookUrl)
+        self.meeting?.startRecording(webhookUrl: recordingWebhookUrlrecordingWebhookUrl,
+                                     awsDirPath: recordAwsDirPath, 
+                                     config: recordConfig)
     } else {
         // stop recording
         meeting?.stopRecording()

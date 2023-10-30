@@ -29,6 +29,12 @@ title: PubSub Class Methods
   - type: [`PubSubPublishOptions`](pubsub-publish-options-class)
   - This specifies the options for publish.
 
+- payload
+
+  - type: `JSONObject`
+  - `OPTIONAL`
+  - If you need to include additional information along with a message, you can pass here as `JSONObject`. 
+
 #### Returns
 
 - _`void`_

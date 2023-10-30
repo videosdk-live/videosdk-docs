@@ -21,6 +21,7 @@ Every Context object in `react-js` comes with a Provider React component that al
     participantId: "xyz",
     multiStream: true,
     mode: "CONFERENCE", // "CONFERENCE" || "VIEWER"
+    metaData: {}
   }}
   token={"token"}
   joinWithoutUserInteraction // Boolean
@@ -109,12 +110,16 @@ Please refer this [documentation](/api-reference/realtime-communication/intro) t
   - defaultValue: true
   - `OPTIONAL`
 
+---
+
 ### customCameraVideoTrack
 
 - Set the initial custom video track using different encoding parameters, camera facing mode, and optimization mode.
 
   - type: `MediaStream`
   - `OPTIONAL`
+
+---
 
 ### customMicrophoneAudioTrack
 
@@ -135,3 +140,12 @@ Please refer this [documentation](/api-reference/realtime-communication/intro) t
   - `VIEWER`: Audio and video streams will not be produced or consumed in this mode.
 
   - defaultValue : `CONFERENCE`
+
+---
+
+### metaData
+
+- If you want to provide additional details about a user joining a meeting, such as their profile image, you can pass that information in this parameter.
+
+  - type: `Object`
+  - `OPTIONAL`

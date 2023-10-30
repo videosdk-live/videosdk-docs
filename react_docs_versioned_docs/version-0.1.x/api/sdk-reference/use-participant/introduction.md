@@ -71,6 +71,11 @@ title: Video SDK useParticipant Hook
 - [mode](./properties#mode)
 
 </div>
+<div class="col col--4 margin-bottom--sm" >
+
+- [metaData](./properties#metadata)
+
+</div>
 
 </div>
 

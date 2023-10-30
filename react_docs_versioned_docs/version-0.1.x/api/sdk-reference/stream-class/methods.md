@@ -1,8 +1,8 @@
 ---
-title: Participant Class Methods
+title: Stream Class Methods
 sidebar_position: 1
 sidebar_label: Methods
-pagination_label: Participant Class Methods
+pagination_label: Stream Class Methods
 ---
 
 # Participant Class Methods - React
