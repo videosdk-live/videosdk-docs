@@ -64,7 +64,7 @@
         "realtime-communication/fetch-all-hls",
         "realtime-communication/fetch-an-hls",
         "realtime-communication/fetch-active-hls",
-        "realtime-communication/capture-hlsStream"
+        "realtime-communication/capture-hlsStream",
         "realtime-communication/delete-hls"
       ]
     },
@@ -81,9 +81,7 @@
       "type": "category",
       "label": "Host into Serverless functions",
       "collapsed": true,
-      "items": [
-        "realtime-communication/firebase-cloud-function"
-      ]
+      "items": ["realtime-communication/firebase-cloud-function"]
     }
   ]
 }
