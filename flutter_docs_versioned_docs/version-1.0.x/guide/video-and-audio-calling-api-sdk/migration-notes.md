@@ -3,7 +3,7 @@ sidebar_label: Migration Notes
 pagination_label: Migration Notes
 ---
 
-# Migration Notes
+# Migration Notes - Flutter
 
 This page will guide you to migrate from previous version of Flutter SDK.
 

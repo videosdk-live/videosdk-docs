@@ -3,7 +3,7 @@ sidebar_label: Concept And Architecture
 pagination_label: Concept And Architecture
 ---
 
-# Concept and Architecture
+# Concept and Architecture - Flutter
 
 Before diving into the concept, let's understand the VideSDK, VideoSDK is a software development kit that offers tools and APIs for creating apps that are based on video and audio. It typically includes features such as video and audio calls, chat, cloud recording, simulcasting (RTMP), interactive live streaming (HLS), and many more across a wide range of platforms and devices.
 

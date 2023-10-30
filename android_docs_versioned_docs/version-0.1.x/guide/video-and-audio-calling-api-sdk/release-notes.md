@@ -3,7 +3,7 @@ sidebar_label: Release Notes
 pagination_label: Release Notes
 ---
 
-# Release Notes
+# Release Notes - Android
 
 This page will keep you update all the releases of Android SDK.
 
@@ -36,12 +36,12 @@ This page will keep you update all the releases of Android SDK.
 
 **Change log** :
 
-- Change default videoTrack 
+- Change default videoTrack
 
 **Bug Fix** :
 
 - Fix crash issue on socket fail
-- Fix Bluetooth issue for android version 13 
+- Fix Bluetooth issue for android version 13
 
 ---
 
@@ -51,7 +51,7 @@ This page will keep you update all the releases of Android SDK.
 
 **Change log** :
 
-- remove PCMU codec 
+- remove PCMU codec
 - add consumer-rules
 
 ---
@@ -65,6 +65,7 @@ This page will keep you update all the releases of Android SDK.
 - enable the camera when `onActivityResumed()` triggered
 
 ---
+
 ## v0.1.20
 
 **Release Date** : 10th June 2023
@@ -93,9 +94,10 @@ This page will keep you update all the releases of Android SDK.
 
 - Provide `multistream` parameter for sending multiple resolution layers or single resolution layer.
 
-   **Docs** : [Multi Stream](/android/api/sdk-reference/custom-tracks#custom-video-track)
+  **Docs** : [Multi Stream](/android/api/sdk-reference/custom-tracks#custom-video-track)
 
 ---
+
 ## v0.1.15
 
 **Release Date** : 31st March 2023
@@ -104,7 +106,7 @@ This page will keep you update all the releases of Android SDK.
 
 - Add `HLS_PLAYABLE` state in `onHlsStateChanged` event.
 
-    **Docs** : [onHlsStateChanged](https://docs.videosdk.live/android/api/sdk-reference/meeting-class/meeting-event-listener-class#onhlsstatechanged)
+  **Docs** : [onHlsStateChanged](https://docs.videosdk.live/android/api/sdk-reference/meeting-class/meeting-event-listener-class#onhlsstatechanged)
 
 ---
 
@@ -116,36 +118,38 @@ This page will keep you update all the releases of Android SDK.
 
 - Participant can toggle between the `CONFERENCE` and `VIEWER` mode using `changeMode()` method.
 
-    **Docs** : [changeMode()](https://docs.videosdk.live/android/api/sdk-reference/meeting-class/methods#changemode)
+  **Docs** : [changeMode()](https://docs.videosdk.live/android/api/sdk-reference/meeting-class/methods#changemode)
 
 - Provide `startHLS()` and `stopHLS()` method for live streaming.
 
-    **Docs** : [startHLS()](https://docs.videosdk.live/android/api/sdk-reference/meeting-class/methods#starthls)
+  **Docs** : [startHLS()](https://docs.videosdk.live/android/api/sdk-reference/meeting-class/methods#starthls)
 
-    **Docs** : [stopHLS()](https://docs.videosdk.live/android/api/sdk-reference/meeting-class/methods#stophls)
+  **Docs** : [stopHLS()](https://docs.videosdk.live/android/api/sdk-reference/meeting-class/methods#stophls)
 
 - Provide `pin()`/`unpin()` method for Pining / Unpining the participant.
 
-    **Docs** : [pin()/unpin()](https://docs.videosdk.live/android/guide/video-and-audio-calling-api-sdk/features/pin-participants)
+  **Docs** : [pin()/unpin()](https://docs.videosdk.live/android/guide/video-and-audio-calling-api-sdk/features/pin-participants)
 
 - Update `startRecording()`,`startLiveStream()` method
 
-    **Docs** : [startRecording()](https://docs.videosdk.live/android/api/sdk-reference/meeting-class/methods#startrecording)
+  **Docs** : [startRecording()](https://docs.videosdk.live/android/api/sdk-reference/meeting-class/methods#startrecording)
 
-    **Docs** : [startLiveStream()](https://docs.videosdk.live/android/api/sdk-reference/meeting-class/methods#startlivestream)
+  **Docs** : [startLiveStream()](https://docs.videosdk.live/android/api/sdk-reference/meeting-class/methods#startlivestream)
 
 ---
+
 ## v0.1.13
 
 **Release Date** : 13th january 2023
 
 **Change log** :
 
-- Provide  `VideoView`  component which can render video stream.
+- Provide `VideoView` component which can render video stream.
 
-    **Docs** : [VideoView](/android/guide/video-and-audio-calling-api-sdk/render-media/display-video/understand-videoView-component)
-    
+  **Docs** : [VideoView](/android/guide/video-and-audio-calling-api-sdk/render-media/display-video/understand-videoView-component)
+
 ---
+
 ## v0.1.12
 
 **Release Date** : 3rd Janurary 2023
@@ -153,6 +157,7 @@ This page will keep you update all the releases of Android SDK.
 **Change log** :
 
 - Provide support of [`mavenCentral()`](https://search.maven.org/artifact/live.videosdk/rtc-android-sdk)
+
 ---
 
 ## v0.1.11
@@ -187,7 +192,6 @@ This page will keep you update all the releases of Android SDK.
 
    **Docs** : [Multi Stream](https://docs.videosdk.live/android/guide/video-and-audio-calling-api-sdk/features/custom-track/custom-video-track)
 
-
 **Bug Fix** :
 
 1. Fix echo issue.
@@ -206,7 +210,6 @@ This page will keep you update all the releases of Android SDK.
 
    **Docs** : [onLivestreamStateChanged()](https://docs.videosdk.live/android/api/sdk-reference/meeting-class/meeting-event-listener-class#onlivestreamstatechanged)
 
-
 **Bug Fix** :
 
 1. Fix camera automatically enable when enable screenshare.
@@ -219,13 +222,13 @@ This page will keep you update all the releases of Android SDK.
 
 **Release Date** : 1st November 2022
 
-**Change log** : 
+**Change log** :
 
 1. Provide support for banuba integration.
 
-    **Code Sample** : [videosdk-rtc-android-sdk-banuba-example](https://github.com/videosdk-live/videosdk-rtc-android-sdk-banuba-example)
+   **Code Sample** : [videosdk-rtc-android-sdk-banuba-example](https://github.com/videosdk-live/videosdk-rtc-android-sdk-banuba-example)
 
-    **Docs** : [Banuba Intergation with VideoSDK](/android/guide/video-and-audio-calling-api-sdk/plugins/banuba-integration)
+   **Docs** : [Banuba Intergation with VideoSDK](/android/guide/video-and-audio-calling-api-sdk/plugins/banuba-integration)
 
 ---
 
@@ -233,7 +236,7 @@ This page will keep you update all the releases of Android SDK.
 
 **Release Date** : 21st October 2022
 
-**Change log** : 
+**Change log** :
 
 1. Add support of customTrack in changeMic() method.
 
@@ -273,4 +276,4 @@ This page will keep you update all the releases of Android SDK.
 
 **Change log** :
 
-1. Updated internal dependency. 
+1. Updated internal dependency.

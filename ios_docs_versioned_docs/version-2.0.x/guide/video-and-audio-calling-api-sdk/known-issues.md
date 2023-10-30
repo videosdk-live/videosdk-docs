@@ -3,7 +3,7 @@ sidebar_label: Known Issues
 pagination_label: Known Issues
 ---
 
-# Known Issues
+# Known Issues - iOS
 
 This page will let you updated with iOS SDK known issues with better solution.
 

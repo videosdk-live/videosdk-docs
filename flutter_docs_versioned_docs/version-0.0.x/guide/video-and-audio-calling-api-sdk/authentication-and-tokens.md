@@ -17,7 +17,7 @@ slug: authentication-and-tokens
 
 import Mermaid from '@theme/Mermaid';
 
-# Authentication and Token
+# Authentication and Token - Flutter
 
 VideoSDK uses access tokens for authentication. Using our dashboard ([app.videosdk.live](https://app.videosdk.live/)), anyone can generate access tokens tokens with an API key and secret pair.
 
