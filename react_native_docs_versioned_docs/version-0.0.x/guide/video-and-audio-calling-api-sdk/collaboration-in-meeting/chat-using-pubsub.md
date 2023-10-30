@@ -136,11 +136,31 @@ function ChatView() {
 
 ### `Private Chat`
 
-In the above example, if you want to convert into the private chat between two participants, then all you have to do is change the topic which will be unique to those two participants only.
+In the above example, if you want to convert into the private chat between two participants, then all you have to do is set `sendOnly` property.
 
-So if we look at creating a private chat between two participants only, we can have the topic something like `<participantId_of_A>_<participantId_of_B>` or `<participantId_of_B>_<participantId_of_A>`.
+```js
+import { SafeAreaView, TouchableOpacity, TextInput, Text } from "react-native";
 
-So you can use either of this topics and the private chat is ready.
+function ChatView() {
+  // destructure publish method from usePubSub hook
+  const { publish, messages } = usePubSub("CHAT");
+
+  // State to store the user typed message
+  const [message, setMessage] = useState("");
+
+  const handleSendMessage = () => {
+    // Sending the Message using the publish method
+    // Pass the participantId of the participant to whom you want to send the message.
+    // hightlight-next-line
+    publish(message, { persist: true, sendOnly: ['XYZ'] });
+    // Clearing the message input
+    setMessage("");
+  };
+
+ //...
+}
+```
+
 
 ### Displaying Latest Message Notificaiton
 

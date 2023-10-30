@@ -1,8 +1,8 @@
 ---
-title: Participant Class Methods
+title: Stream Class Methods
 sidebar_position: 1
 sidebar_label: Methods
-pagination_label: Participant Class Methods
+pagination_label: Stream Class Methods
 ---
 
 <div class="sdk-api-ref-only-h4">

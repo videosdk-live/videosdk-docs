@@ -310,6 +310,10 @@ public class MainActivity extends AppCompatActivity {
 
 </Tabs>
 
+:::important
+If the app goes to the background, VideoSDK detectes this event based on activity lifecycle and release the camera so that it can be used by other apps. In order to make sure this functionality works properly use  `VideoSDK.setActivityForLifeCycle(activity)` to specify which activity VideoSDK should monitor for lifecycle changes.
+:::
+
 ### API Reference
 
 The API references for all the methods and events utilised in this guide are provided below.

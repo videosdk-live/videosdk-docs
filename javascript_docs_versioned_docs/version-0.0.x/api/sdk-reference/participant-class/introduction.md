@@ -42,6 +42,11 @@ const participants = meeting.participants;
 - [streams](./properties.md#streams)
 
 </div>
+<div class="col col--4 margin-bottom--sm" >
+
+- [metaData](./properties.md#metadata)
+
+</div>
 
 </div>
 

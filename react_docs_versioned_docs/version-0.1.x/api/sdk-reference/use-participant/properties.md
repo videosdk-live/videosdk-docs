@@ -84,4 +84,10 @@ title: userPatricipant Hook Properties
 
 ---
 
+### metaData
+
+- type: `Object`
+
+- It will represents the additional information, that you have passed in `MeetingProvider`.
+
 </div>

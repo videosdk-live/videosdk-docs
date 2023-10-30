@@ -128,6 +128,8 @@ Please refer this [documentation](/api-reference/realtime-communication/intro) t
   - defaultValue: true
   - `OPTIONAL`
 
+---
+
 ### customCameraVideoTrack
 
 - Set the initial custom video track using different encoding parameters, camera facing mode, and optimization mode.
@@ -135,12 +137,16 @@ Please refer this [documentation](/api-reference/realtime-communication/intro) t
   - type: `MediaStream`
   - `OPTIONAL`
 
+---
+
 ### customMicrophoneAudioTrack
 
 - Set the initial custom audio track using different encoding parameters and optimization mode.
 
   - type: `MediaStream`
   - `OPTIONAL`
+
+---
 
 ### mode
 
@@ -152,3 +158,12 @@ Please refer this [documentation](/api-reference/realtime-communication/intro) t
   - `VIEWER`: Audio and video streams will not be produced or consumed in this mode.
 
   - defaultValue : `CONFERENCE`
+
+---
+
+### metaData
+
+- If you want to provide additional details about a user joining a meeting, such as their profile image, you can pass that information in this parameter.
+
+  - type: `Object`
+  - `OPTIONAL`

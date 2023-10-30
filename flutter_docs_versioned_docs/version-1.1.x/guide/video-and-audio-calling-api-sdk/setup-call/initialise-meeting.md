@@ -123,7 +123,7 @@ Room room = VideoSDK.createRoom(
 You must ensure that the `participantId` is not repeated in the same meeting or room, It will enable VideoSDK to eliminate any participant respect to that `participantId`.
 :::
 
-To know more about other properties, you can follow [our API Reference](/react/api/sdk-reference/meeting-provider).
+To know more about other properties, you can follow [our API Reference](../../../api/sdk-reference/videosdk-class/methods).
 
 With all the configuration options explained, here is how you will be using the `MeetingProvider`.
 

@@ -53,4 +53,12 @@ title: Properties
 
 - `getTimestamp()` will return timestamp at which, the pubsub message was sent.
 
+---
+
+### getPayload()
+
+- type: `JSONObject`
+
+- `getPayload()` will return data that you have send with message.
+
 </div>

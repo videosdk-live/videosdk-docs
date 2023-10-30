@@ -37,6 +37,7 @@ import MethodListHeading from '@theme/MethodListHeading';
       <MethodListItemLabel name="senderName" type={"String?"} />
       <MethodListItemLabel name="timestamp" type={"DateTime"} />
       <MethodListItemLabel name="topic" type={"String"} />
+      <MethodListItemLabel name="payload" type={"JSONObject"} />
     </MethodListGroup>
   </MethodListItemLabel>
 </MethodListGroup>

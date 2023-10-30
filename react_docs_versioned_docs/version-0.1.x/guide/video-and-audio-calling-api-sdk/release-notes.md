@@ -8,6 +8,18 @@ tags: [releasenotes]
 
 This page will keep you update all the releases of React JS SDK.
 
+## v0.1.78
+
+**Release Date** : 27th Oct 2023
+
+**Change Log** :
+
+- Added `metaData` property associated with `Participant` to pass additional information.
+- Added `payload` feature in PubSub to pass additional payload data.
+- Added `sendOnly` feature to PubSub to Publish data for only Participants mentioned.
+
+---
+
 ## v0.1.77
 
 **Release Date** : 7th Oct 2023
