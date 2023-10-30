@@ -19,4 +19,16 @@ title: PubSubPublishOptions Class
 
 - If the value of this property is true, then server will store pubsub messages for the upcoming participants.
 
+---
+
+### sendOnly
+
+- type: `List<String>`
+
+- If you want to send a message to specific participants, you can pass their respective `participantId` here. If you don't provide any IDs, the message will be sent to all participants by default.
+
+:::note
+Make sure that participantId present in the array must be subscribe to that specific topic.
+:::
+
 </div>

@@ -84,6 +84,12 @@ Map<String, Participant> participants = meeting.getParticipants();
 
 </div>
 
+<div class="col col--4 margin-bottom--sm" >
+
+- [getMetaData()](./properties#getmetadata)
+
+</div>
+
 </div>
 
 ## Participant Methods

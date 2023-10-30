@@ -136,6 +136,17 @@ Please refer this [documentation](/api-reference/realtime-communication/create-r
 
   - defaultValue : `CONFERENCE`
 
+---
+
+### metaData
+
+- If you want to provide additional details about a user joining a meeting, such as their profile image, you can pass that information in this parameter.
+
+  - type: `Object`
+  - `OPTIONAL`
+
+---
+
 ## Returns
 
 ### meeting

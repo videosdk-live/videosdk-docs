@@ -221,7 +221,8 @@ By using `config()` method, you can set the token property of VideoSDK class.
       String participantId,  // id of participant
       String mode, // mode of participant
       boolean multiStream, // multiStream
-      Map<String, CustomStreamTrack> customTracks // map of customTracks
+      Map<String, CustomStreamTrack> customTracks, // map of customTracks
+      JSONObject metaData // metaData
   )
 ```
 
@@ -283,6 +284,12 @@ You must ensure that the `participantId` is not repeated in the same meeting or 
 
     - It has to be of `Map<String, CustomStreamTrack>` type.
 
+- **`metaData`**:
+
+  -  If you want to provide additional details about a user joining a meeting, such as their profile image, you can pass that information in this parameter.
+
+    - It has to be of `JsonObject` type.
+
 With all the configuration options explained, here is how you can initialize the meeting.
 
 <Tabs
@@ -326,7 +333,7 @@ class MainActivity : AppCompatActivity() {
     // create a new meeting instance
     val meeting: Meeting = VideoSDK.initMeeting(
         this@MainActivity, meetingId, "NAME HERE",
-        true, true, null, null, false, null
+        true, true, null, null, false, null, null
     )
     // highlight-end
 
@@ -374,7 +381,7 @@ public class MainActivity extends AppCompatActivity {
     // create a new meeting instance
     Meeting meeting = VideoSDK.initMeeting(
             MainActivity.this, meetingId, "NAME HERE",
-            true, true, null, null, false, null
+            true, true, null, null, false, null, null
     );
     // highlight-end
 

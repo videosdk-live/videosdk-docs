@@ -663,7 +663,7 @@ class MeetingActivity : AppCompatActivity() {
     // Initialize VideoSDK Meeting
     meeting = VideoSDK.initMeeting(
         this@MeetingActivity, meetingId, localParticipantName,
-        streamEnable, streamEnable, null, mode, false, null
+        streamEnable, streamEnable, null, mode, false, null, null
     )
 
     //highlight-next-line
@@ -727,7 +727,7 @@ public class MeetingActivity extends AppCompatActivity {
     // Initialize VideoSDK Meeting
     meeting = VideoSDK.initMeeting(
             MeetingActivity.this, meetingId, localParticipantName,
-            streamEnable, streamEnable, null, mode, false, null);
+            streamEnable, streamEnable, null, mode, false, null, null);
 
     //highlight-next-line
     // join Meeting

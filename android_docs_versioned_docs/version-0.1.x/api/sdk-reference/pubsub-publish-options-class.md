@@ -31,6 +31,7 @@ import MethodListHeading from '@theme/MethodListHeading';
     <MethodListGroup>
       <MethodListHeading heading="Properties" />
       <MethodListItemLabel name="persist" type={"bool"} description={"Specifies whether to store messages on server for upcoming participants"} />
+      <MethodListItemLabel name="sendOnly" type={"String[]"} description={"Sends a message to only those participants which are paresent in array"} />
     </MethodListGroup>
   </MethodListItemLabel>
 </MethodListGroup>

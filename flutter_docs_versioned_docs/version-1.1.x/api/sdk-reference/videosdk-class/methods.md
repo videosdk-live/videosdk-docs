@@ -96,6 +96,12 @@ title: VideoSDK Class Methods
   - Set the participant mode i.e. `CONFERENCE` or `VIEWER`.
   - Default value is `CONFERENCE`.
 
+- metaData
+
+  - type: `Map<String,dynamic>`
+  - `OPTIONAL`
+  - If you want to provide additional details about a user joining a meeting, such as their profile image, you can pass that information in this parameter.
+  
 ---
 
 #### Returns
@@ -132,6 +138,7 @@ Room room = VideoSDK.createRoom(
     message: "Video SDK is sharing screen in the room",
     icon: "notification_share",
   ),
+  metaData: {},
 );
 ```
 

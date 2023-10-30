@@ -8,6 +8,20 @@ tags: [releasenotes]
 
 This page will keep you update all the releases of React Native SDK.
 
+## v0.0.53
+
+**Release Date** : 27th Oct 2023
+
+**Change Log** :
+
+- Added `metaData` property associated with `Participant` to pass additional information.
+- Added `payload` feature in PubSub to pass additional payload data.
+- Added `sendOnly` feature to PubSub to Publish data for only Participants mentioned.
+- Opentelemetry Logs added.
+- Mic Device disconnect (track ended issue fixed)
+
+---
+
 ## v0.0.52
 
 **Release Date** : 7th Oct 2023

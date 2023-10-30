@@ -55,4 +55,10 @@ pagination_label: Participant Class Properties
 
 ---
 
+### metaData
+
+- type: `Map<String,dynamic>`
+
+- It will represents the additional information, that you have passed in [`createRoom()`](../videosdk-class/methods.md).
+
 </div>

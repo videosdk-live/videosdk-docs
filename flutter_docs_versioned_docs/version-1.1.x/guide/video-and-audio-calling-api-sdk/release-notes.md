@@ -7,6 +7,18 @@ pagination_label: Release Notes
 
 This page will keep you update all the releases of Flutter SDK.
 
+## v1.1.7
+
+**Release Date** : 27th Oct 2023
+
+**Change Log** :
+
+1. Added `metaData` property associated with `Participant` to pass additional information.
+2. Added `payload` feature in PubSub to pass additional payload data.
+3. Added `sendOnly` feature to PubSub to Publish data for only Participants mentioned.
+
+---
+
 ## v1.1.6
 
 **Release Date** : 18th Sep 2023
