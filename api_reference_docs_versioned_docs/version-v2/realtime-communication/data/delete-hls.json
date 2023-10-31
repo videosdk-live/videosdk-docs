@@ -18,7 +18,7 @@
       "parameters": [
         {
           "key": "hlsId",
-          "description": "#### The ID of the Hls.",
+          "description": "#### The ID of the HLS.",
           "required": true
         }
       ],
