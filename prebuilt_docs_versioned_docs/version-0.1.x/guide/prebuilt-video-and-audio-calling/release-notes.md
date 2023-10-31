@@ -3,7 +3,7 @@ sidebar_label: Release Notes
 pagination_label: Release Notes
 ---
 
-# Release Notes
+# Release Notes - Prebuilt
 
 This page will keep you update all the releases of Prebuilt SDK.
 
@@ -76,4 +76,3 @@ This page will keep you update all the releases of Prebuilt SDK.
 - **Host control** : Permission to join without asking and toggle other participants’ mic & webcam.
 
 - **Join screen** : Make join screen visible, set title for join screen, set meeting link for copying
-
