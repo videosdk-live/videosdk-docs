@@ -1,7 +1,7 @@
 ---
-title: Delete A HLS - API
+title: Delete An HLS - API
 sidebar_position: 1
-sidebar_label: Delete a HLS
+sidebar_label: Delete an HLS
 hide_table_of_contents: true
 ---
 
