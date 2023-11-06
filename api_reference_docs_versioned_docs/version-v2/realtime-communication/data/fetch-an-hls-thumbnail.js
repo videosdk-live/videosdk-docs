@@ -1,5 +1,5 @@
-const captureHLSstream = {
-  title: "Capture HLS Stream",
+const fetchAnHlsThumbnail = {
+  title: "Fetch an HLS Thumbnail",
   description:
     "This API lets you capture a thumbnail from the ongoing HLS stream in different formats.",
   headers: [
@@ -22,30 +22,27 @@ const captureHLSstream = {
     },
     {
       key: "time",
-      value:
-        "1",
+      value: "1",
       description:
         "Time in seconds when the thumbnail should be captured (if not specified: it will take real time capture)",
       required: false,
     },
     {
       key: "width",
-      value:
-        "see example",
-      description:
-        "Specifies width for the thumbnail which is to be captured",
+      value: "see example",
+      description: "Specifies width for the thumbnail which is to be captured",
       required: false,
     },
     {
       key: "height",
       value: "see example",
-      description:"Specifies height for the thumbnail which is to be captured \n #### default values for width and height \n| quality | orientation | width(default) | height(default)\n| :---: | :---: | :---: | :---: |\n| high | landscape | 1920 | 1080 |\n| med | landscape | 1280 | 720 |\n| low | landscape | 854 | 480 |\n| high | portrait | 1080 | 1920 |\n| med | portrait | 720 | 1280 |\n| low | portrait | 480 | 854 |\n",
+      description:
+        "Specifies height for the thumbnail which is to be captured \n #### default values for width and height \n| quality | orientation | width(default) | height(default)\n| :---: | :---: | :---: | :---: |\n| high | landscape | 1920 | 1080 |\n| med | landscape | 1280 | 720 |\n| low | landscape | 854 | 480 |\n| high | portrait | 1080 | 1920 |\n| med | portrait | 720 | 1280 |\n| low | portrait | 480 | 854 |\n",
       required: false,
     },
     {
       key: "format",
-      value:
-        "jpg",
+      value: "jpg",
       description:
         "Specifies file format for the thumbnail which is to be captured. supported formats are jpg(default), png and webp (webp only supports in realtime)",
       required: false,
@@ -62,7 +59,8 @@ const captureHLSstream = {
     },
     {
       key: "meta",
-      description: "metadata of the file. that includes file createdAt, width, height and format.",
+      description:
+        "metadata of the file. that includes file createdAt, width, height and format.",
     },
     {
       key: "filePath",
@@ -75,7 +73,7 @@ const captureHLSstream = {
     {
       key: "fileName",
       description: "name of captured file in HLS stream.",
-    }
+    },
   ],
   queryParameters: [],
   parameters: [],
@@ -84,15 +82,15 @@ const captureHLSstream = {
     message: "captured thumbnail successfully",
     roomId: "abcd-abcd-abcd",
     meta: {
-        createdAt: "2023-10-19T07:24:55.195Z",
-        width: 1280, // if not set then default width
-        height: 720, // if not set then default height
-        format: "jpg" // default format
+      createdAt: "2023-10-19T07:24:55.195Z",
+      width: 1280, // if not set then default width
+      height: 720, // if not set then default height
+      format: "jpg", // default format
     },
     filePath: "<cdn url>", // https://cdn.videosdk.live/thumbnail/<filename>.<format>
     fileSize: 415153,
-    fileName: "<filename>"
+    fileName: "<filename>",
   },
 };
 
-export { captureHLSstream };
+export { fetchAnHlsThumbnail };

@@ -1,28 +1,28 @@
 {
-    "deleteHls": {
-      "title": "Delete a Hls",
-      "description": "This API lets you delete a particular hls by passing hls Id as parameter.",
-      "headers": [
-        {
-          "key": "Authorization",
-          "value": "$YOUR_TOKEN"
-        },
-        {
-          "key": "Content-Type",
-          "value": "application/json"
-        }
-      ],
-      "methodType": "DELETE",
-      "postParameters": [],
-      "queryParameters": [],
-      "parameters": [
-        {
-          "key": "hlsId",
-          "description": "#### The ID of the Hls.",
-          "required": true
-        }
-      ],
-      "apiEndpoint": "https://api.videosdk.live/v2/hls/${hlsId}",
-      "response": "Room Hls Recording deleted successfully !"
-    }
+  "deleteHls": {
+    "title": "Delete an HLS",
+    "description": "This API lets you delete a particular hls by passing hls Id as parameter.",
+    "headers": [
+      {
+        "key": "Authorization",
+        "value": "$YOUR_TOKEN"
+      },
+      {
+        "key": "Content-Type",
+        "value": "application/json"
+      }
+    ],
+    "methodType": "DELETE",
+    "postParameters": [],
+    "queryParameters": [],
+    "parameters": [
+      {
+        "key": "hlsId",
+        "description": "#### The ID of the HLS.",
+        "required": true
+      }
+    ],
+    "apiEndpoint": "https://api.videosdk.live/v2/hls/${hlsId}",
+    "response": "Room Hls Recording deleted successfully !"
   }
+}

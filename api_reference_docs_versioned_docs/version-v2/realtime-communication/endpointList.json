@@ -135,7 +135,7 @@
       {
         "methodType": "POST",
         "api": "/v2/hls/capture",
-        "link": "/api-reference/realtime-communication/capture-hlsStream"
+        "link": "/api-reference/realtime-communication/fetch-an-hls-thumbnail"
       }
     ]
   }
