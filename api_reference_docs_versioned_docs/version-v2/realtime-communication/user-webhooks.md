@@ -90,6 +90,24 @@ title: Webhooks List
 
 ---
 
+### recording-starting
+
+- A "Recording Starting" webhook is triggered when the recording process for a meeting is initiated.
+
+#### Example
+
+```javascript
+{
+    "webhookType": "recording-starting",
+    "data": {
+        "meetingId": "jvsg-8rjn-j304",
+        "sessionId": "613731342f27f56e4fc4b6d0",
+    },
+}
+```
+
+---
+
 ### recording-started
 
 - Recording started webhook will be received when successfully recording is started in meeting
@@ -99,6 +117,24 @@ title: Webhooks List
 ```javascript
 {
     "webhookType": "recording-started",
+    "data": {
+        "meetingId": "jvsg-8rjn-j304",
+        "sessionId": "613731342f27f56e4fc4b6d0",
+    },
+}
+```
+
+---
+
+### recording-stopping
+
+- A "Recording Stopping" webhook is triggered when the recording end process for a meeting is initiated.
+
+#### Example
+
+```javascript
+{
+    "webhookType": "recording-stopping",
     "data": {
         "meetingId": "jvsg-8rjn-j304",
         "sessionId": "613731342f27f56e4fc4b6d0",
@@ -129,6 +165,42 @@ title: Webhooks List
 
 ---
 
+### recording-failed
+
+- A "Recording Failed" webhook is generated when the recording process encounters an interruption or issue during either the starting or stopping phases.
+
+#### Example
+
+```javascript
+{
+    "webhookType": "recording-failed",
+    "data": {
+        "meetingId": "jvsg-8rjn-j304",
+        "sessionId": "613731342f27f56e4fc4b6d0",
+    },
+}
+```
+
+---
+
+### livestream-starting
+
+- A "Livestream Starting" webhook is triggered when the livestreaming process for a meeting is initiated.
+
+#### Example
+
+```javascript
+{
+    "webhookType": "livestream-starting",
+    "data": {
+        "meetingId": "jvsg-8rjn-j304",
+        "sessionId": "613731342f27f56e4fc4b6d0",
+    },
+}
+```
+
+---
+
 ### livestream-started
 
 - When you use live-streaming in our meeting service you will receive this webhook when livestream is successfully started.
@@ -147,6 +219,24 @@ title: Webhooks List
 
 ---
 
+### livestream-stopping
+
+- A "Livestream Stopping" webhook is triggered when the livestream end process for a meeting is initiated.
+
+#### Example
+
+```javascript
+{
+    "webhookType": "livestream-stopping",
+    "data": {
+        "meetingId": "jvsg-8rjn-j304",
+        "sessionId": "613731342f27f56e4fc4b6d0",
+    },
+}
+```
+
+---
+
 ### livestream-stopped
 
 - When live-stream is stopped in meeting this webhook is fired with following payload
@@ -156,6 +246,42 @@ title: Webhooks List
 ```javascript
 {
     "webhookType": "livestream-stopped",
+    "data": {
+        "meetingId": "jvsg-8rjn-j304",
+        "sessionId": "613731342f27f56e4fc4b6d0",
+    },
+}
+```
+
+---
+
+### livestream-failed
+
+- A "Livestream Failed" webhook is generated when the livestream process encounters an interruption or issue during either the starting or stopping phases.
+
+#### Example
+
+```javascript
+{
+    "webhookType": "livestream-failed",
+    "data": {
+        "meetingId": "jvsg-8rjn-j304",
+        "sessionId": "613731342f27f56e4fc4b6d0",
+    },
+}
+```
+
+---
+
+### hls-starting
+
+- An "HLS Starting" webhook is generated when the HLS (HTTP Live Streaming) process for a meeting is initiated.
+
+#### Example
+
+```javascript
+{
+    "webhookType": "hls-starting",
     "data": {
         "meetingId": "jvsg-8rjn-j304",
         "sessionId": "613731342f27f56e4fc4b6d0",
@@ -203,6 +329,24 @@ title: Webhooks List
 
 ---
 
+### hls-stopping
+
+- An "HLS Stopping" webhook is generated when the HLS (HTTP Live Streaming) end process for a meeting is initiated.
+
+#### Example
+
+```javascript
+{
+    "webhookType": "hls-stopping",
+    "data": {
+        "meetingId": "jvsg-8rjn-j304",
+        "sessionId": "613731342f27f56e4fc4b6d0",
+    },
+}
+```
+
+---
+
 ### hls-stopped
 
 - This event is fired when you stop a http live streaming in meeting it has following payload
@@ -212,6 +356,24 @@ title: Webhooks List
 ```javascript
 {
     "webhookType": "hls-stopped",
+    "data": {
+        "meetingId": "jvsg-8rjn-j304",
+        "sessionId": "613731342f27f56e4fc4b6d0",
+    },
+}
+```
+
+---
+
+### hls-failed
+
+- An "HLS Failed" webhook is generated when the HLS (HTTP Live Streaming) process encounters an interruption or issue during either the starting or stopping phases.
+
+#### Example
+
+```javascript
+{
+    "webhookType": "hls-failed",
     "data": {
         "meetingId": "jvsg-8rjn-j304",
         "sessionId": "613731342f27f56e4fc4b6d0",

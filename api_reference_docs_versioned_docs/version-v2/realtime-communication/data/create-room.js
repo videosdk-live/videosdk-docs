@@ -33,7 +33,7 @@ const createRoom = {
         key: "webhook",
         value: "see example",
         values: "\n```\n{\n  'webhook': {\n    'endPoint': 'your webhook endpoint',\n    'events': ['webhook event type_1', 'webhook event type_2']\n   }\n}\n```",
-        description: "#### You can subscribe from various events to get webhook. \n - `participant-joined` \n - `participant-left` \n - `session-started` \n - `session-ended` \n - `recording-started` \n - `recording-stopped` \n - `livestream-started` \n - `livestream-stopped` \n - `hls-started` \n - `hls-playable` \n - `hls-stopped` - \n Please refer this [User webhooks](/api-reference/realtime-communication/user-webhooks) for more information. All User webhooks endpoint must me a `POST` method in your api server / webhook server.",
+        description: "#### You can subscribe from various events to get webhook. \n - `participant-joined` \n - `participant-left` \n - `session-started` \n - `session-ended` \n - `recording-starting` \n - `recording-started` \n - `recording-stopping` \n - `recording-stopped` \n - `recording-failed` \n - `livestream-starting` \n - `livestream-started` \n - `livestream-stopping` \n - `livestream-stopped` \n - `livestream-failed` \n - `hls-starting` \n - `hls-started` \n - `hls-playable` \n - `hls-stopping` \n - `hls-stopped` \n - `hls-failed` - \n Please refer this [User webhooks](/api-reference/realtime-communication/user-webhooks) for more information. All User webhooks endpoint must me a `POST` method in your api server / webhook server.",
         required: false
       },
       {
