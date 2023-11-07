@@ -29,18 +29,33 @@ Here are the following steps for implementing waiting lobby.
   - While generating token you can provide expiration time, permissions and roles which will be discussed later.
 - VideoSDK server will only allow entry in meeting if the token is valid.
 - You have to generate a two different `token` with different permissions:
-  - One token with `allow_join` permission who can join meeting directly.
-  - One token with `ask_join` permission who ask for permission to join meeting.
-- While generating token you have pass this payload
 
-```js
-{
- apikey: API_KEY, //MANDATORY
- permissions: [`allow_join`, `ask_join` , `allow_mod`], //MANDATORY
- version: 2, //OPTIONAL
- roles: ['CRAWLER'], //OPTIONAL
-}
-```
+  - If you're creating a token for a host, you can provide this payload.
+
+  - ```js
+    {
+     apikey: API_KEY, //MANDATORY
+     permissions: [`allow_join`], //MANDATORY //allow_join permission to directly join meeting
+    roomId: ROOM_ID, //OPTIONAL
+    version: 2, //OPTIONAL
+    participantId: PARTICIPANT_ID, //OPTIONAL
+    roles: ['CRAWLER'], //OPTIONAL
+    }
+    ```
+  - If you generating token for guest then you can provide this payload.
+
+  - ```js
+    {
+     apikey: API_KEY, //MANDATORY
+     permissions: [`ask_join`], //MANDATORY //ask_join permission to ask permission to host for joinning meeting
+     roomId: ROOM_ID, //OPTIONAL
+     version: 2, //OPTIONAL
+     participantId: PARTICIPANT_ID, //OPTIONAL
+     roles: ['CRAWLER'], //OPTIONAL
+    }
+    ```
+
+- Here is a detailed explanation of the parameter.
 
 - **`apikey`(Mandatory)**: These must be the API Key generated from the VideoSDK Dashobard. You can get it from [here](https://app.videosdk.live/api-keys).
 
@@ -52,50 +67,26 @@ Here are the following steps for implementing waiting lobby.
   - **`ask_join`**: The participant requires to **ask for permission to join** the meeting. The participant having the permission `allow_join` can accept or reject a participant whenever someone wants to join.
   - **`allow_mod`**: The participant is **allowed to toggle** webcam & mic of other participants.
 
+- **`roomId`(optional)**: To provide customised access control, you can make the token applicable to a particular room by including the `roomId` in the payload.
+
+- **`participantId`(optional)**: You can include the `participantId` in the payload to limit the token's access to a particular participant.
+
 - **`version`(optional)**: For accessing the v2 API, you need to provide `2` as the version value.
 
 - **`roles`(optional)**:
 
-  - **`CRAWLER`**: This role is only for accessing v2 API, you can not use this token for running the `Meeting`/`Room`.
+  - **`crawler`**: This role is only for accessing v2 API, you can not use this token for running the `Meeting`/`Room`.
+  - **`rtc`**: This role is only allow for running the `Meeting` / `Room`, you can not use server-side APIs.
 
-Then, you will sign this payload with your **`SECRET KEY`** and `jwt` options using the **`HS256 algorithm`**.
+- Then, you will sign this payload with your **`SECRET KEY`** and `jwt` options using the **`HS256 algorithm`**.
 
-To learn more about **Authentication** and token in detail you can follow [this guide](../authentication-and-token).
+- To learn more about **Authentication** and token in detail you can follow [this guide](../authentication-and-token).
 
 ### Generating Meeting Id
 
 With the token ready, we can get the `meetingId` from the [VideoSDK's rooms API](/api-reference/realtime-communication/create-room).
 
-```js
-const getMeetingId = async (token) => {
-  try {
-    //We will use VideoSDK rooms API endpoint to create a meetingId
-    //highlight-next-line
-    const VIDEOSDK_API_ENDPOINT = `https://api.videosdk.live/v2/rooms`;
-    const options = {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        // We will pass the token in the headers
-        // highlight-next-line
-        Authorization: token,
-      },
-    };
-    const meetingId = await fetch(VIDEOSDK_API_ENDPOINT, options)
-      .then(async (result) => {
-        const { roomId } = await result.json();
-        return roomId;
-      })
-      .catch((error) => console.log("error", error));
-
-    //we will return the meetingId which we got from the response of the api
-    //highlight-next-line
-    return meetingId;
-  } catch (e) {
-    console.log(e);
-  }
-};
-```
+- You can [checkout this guide](/react/guide/video-and-audio-calling-api-sdk/setup-call/initialise-meeting#generating-meeting-id) for generate meetingId.
 
 ### Initialization of Meeting
 
@@ -106,11 +97,6 @@ We can initialize the meeting using the `MeetingProvider` from the React SDK. Th
 `MeetingProvider` is React [Context.Provider](https://reactjs.org/docs/context.html#contextprovider) that allows consuming components to subscribe to meeting changes.
 
 We will be passing the initialization configuration for the meeting and the token in the `MeetingProvider`.
-
-while passing token in the `MeetingProvider` you have to keep this thing in mind.
-
-- If you are joinning meeting as a host then here you have to pass `allow_join` permission token that you are created from backend.
-- If you are joinning meeting as a guest then here you have to pass `ask_join` permission token that you are created from backend.
 
 For take a deeper look at the available configuration options you can [check this out](/react/guide/video-and-audio-calling-api-sdk/setup-call/initialise-meeting#initialization-of-meeting).
 
@@ -123,7 +109,10 @@ For take a deeper look at the available configuration options you can [check thi
     webcamEnabled: "<Flag-to-enable-webcam>",
     participantId: "Id-of-participant", // optional, default: SDK will generate
   }}
-  token={"token"}
+  // If a participant joins as a host, provide them with the "allow_join" permission token. Otherwise, provide the "ask_join" permission token.
+  token={
+    isHost ? "allow_join token will be here" : "ask_join token will be here"
+  }
   joinWithoutUserInteraction // Boolean
 ></MeetingProvider>
 ```
