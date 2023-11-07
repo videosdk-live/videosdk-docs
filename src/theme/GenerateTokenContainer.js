@@ -16,9 +16,9 @@ const generateCode = ({ language }) => {
       code += "const payload = {\n";
       code += " apikey: API_KEY,\n";
       code += " permissions: [`allow_join`], // `ask_join` || `allow_mod` \n";
-      code += " roomId: ROOM_ID //OPTIONAL\n";
+      code += " roomId: ROOM_ID, //OPTIONAL\n";
       code += " version: 2, //OPTIONAL\n";
-      code += " participantId: PARTICIPANT_ID //OPTIONAL \n";
+      code += " participantId: PARTICIPANT_ID, //OPTIONAL \n";
       code += " roles: ['crawler'], // `rtc` //OPTIONAL\n";
       code += "};\n";
       code += "\n";
@@ -40,7 +40,7 @@ const generateCode = ({ language }) => {
       code += "$payload->apikey = $VIDEOSDK_API_KEY;\n";
       code += "$payload->permissions = array(\n";
       code += '\t"allow_join",\n';
-      code += '\t"ask_join"\n';
+      code += '\t"ask_join",\n';
       code += '\t"allow_mod"\n';
       code += ");\n";
       code += "$payload->roomId = $VIDEOSDK_ROOM_ID; //OPTIONAL\n";
@@ -58,11 +58,12 @@ const generateCode = ({ language }) => {
       return code;
     case "python":
       var code = "import jwt\n";
+      code += "import datetime\n";
       code += "\n";
       code += 'VIDEOSDK_API_KEY = "YOUR_API_KEY"\n';
       code += 'VIDEOSDK_SECRET_KEY = "YOUR_SECRET_KEY"\n';
-      code += 'VIDEOSDK_ROOM_ID = "YOUR_ROOM_ID";\n';
-      code += 'VIDEOSDK_PARTICIPANT_ID = "YOUR_PARTICIPANT_ID";\n';
+      code += 'VIDEOSDK_ROOM_ID = "YOUR_ROOM_ID"\n';
+      code += 'VIDEOSDK_PARTICIPANT_ID = "YOUR_PARTICIPANT_ID"\n';
       code += "\n";
       code += "expiration_in_seconds = 7200\n";
       code +=
@@ -72,12 +73,12 @@ const generateCode = ({ language }) => {
       code += "\t'exp': expiration,\n";
       code += "\t'apikey': VIDEOSDK_API_KEY,\n";
       code += "\t'permissions': ['allow_join', 'ask_join', 'allow_mod'],\n";
-      code += "\t'roomId': VIDEOSDK_ROOM_ID, //OPTIONAL \n";
-      code += "\t'version': 2, //OPTIONAL\n";
-      code += "\t'participantId': VIDEOSDK_PARTICIPANT_ID, //OPTIONAL\n";
-      code += "\t'roles': ['crawler', 'rtc'], //OPTIONAL \n";
+      code += "\t'roomId': VIDEOSDK_ROOM_ID, #OPTIONAL \n";
+      code += "\t'version': 2, #OPTIONAL\n";
+      code += "\t'participantId': VIDEOSDK_PARTICIPANT_ID, #OPTIONAL\n";
+      code += "\t'roles': ['crawler', 'rtc'], #OPTIONAL \n";
       code += "}, key=VIDEOSDK_SECRET_KEY, algorithm= 'HS256')\n";
-      code += "token = token.decode('UTF-8')\n";
+      code += "print(token)\n";
       return code;
     case "dotnet":
       var code = "using JWT.Algorithms;\n";
@@ -110,65 +111,77 @@ const generateCode = ({ language }) => {
       code += "import (\n";
       code += '\t"github.com/dgrijalva/jwt-go"\n';
       code += '\t"fmt"\n';
+      code += '\t"time"\n';
       code += ")\n";
-      code += 'var VIDEOSDK_API_KEY = "YOUR_API_KEY"\n';
-      code += 'var VIDEOSDK_SECRET_KEY = "YOUR_SECRET_KEY"\n';
-      code += 'var VIDEOSDK_ROOM_ID = "YOUR_ROOM_ID";\n';
-      code += 'var VIDEOSDK_PARTICIPANT_ID = "YOUR_PARTICIPANT_ID";\n';
+      code += "func main() {\n";
+      code += '     var VIDEOSDK_API_KEY = "YOUR_API_KEY"\n';
+      code += '     var VIDEOSDK_SECRET_KEY = "YOUR_SECRET_KEY"\n';
+      code += '     var VIDEOSDK_ROOM_ID = "YOUR_ROOM_ID"\n';
+      code += '     var VIDEOSDK_PARTICIPANT_ID = "YOUR_PARTICIPANT_ID"\n';
       code += "\n";
-      code += "var permissions [3]string\n";
-      code += 'permissions[0] = "allow_join"\n';
-      code += 'permissions[1] = "ask_join"\n';
-      code += 'permissions[2] = "allow_mod"\n';
+      code += "     var permissions [3]string\n";
+      code += '     permissions[0] = "allow_join"\n';
+      code += '     permissions[1] = "ask_join"\n';
+      code += '     permissions[2] = "allow_mod"\n';
       code += "\n";
-      code += "var roles [2]string\n";
-      code += 'roles[0] = "crawler"\n';
-      code += 'roles[1] = "rtc"\n';
+      code += "     var roles [2]string\n";
+      code += '     roles[0] = "crawler"\n';
+      code += '     roles[1] = "rtc"\n';
       code += "\n";
-      code += "atClaims := jwt.MapClaims{}\n";
-      code += 'atClaims["apikey"] = VIDEOSDK_API_KEY\n';
-      code += 'atClaims["permissions"] = permissions\n';
-      code += 'atClaims["roomId"] = VIDEOSDK_ROOM_ID, //OPTIONAL \n';
-      code += 'atClaims["version"] = 2, //OPTIONAL\n';
+      code += "     atClaims := jwt.MapClaims{}\n";
+      code += '     atClaims["apikey"] = VIDEOSDK_API_KEY\n';
+      code += '     atClaims["permissions"] = permissions\n';
+      code += '     atClaims["roomId"] = VIDEOSDK_ROOM_ID //OPTIONAL \n';
+      code += '     atClaims["version"] = 2 //OPTIONAL\n';
       code +=
-        'atClaims["participantId"] = VIDEOSDK_PARTICIPANT_ID, //OPTIONAL\n';
-      code += 'atClaims["roles"] = roles //OPTIONAL\n';
-      code += 'atClaims["iat"] = time.Now().Unix()\n';
-      code += 'atClaims["exp"] = time.Now().Add(time.Minute * 120).Unix()\n';
-      code += "at := jwt.NewWithClaims(jwt.SigningMethodHS256, atClaims)\n";
+        '           atClaims["participantId"] = VIDEOSDK_PARTICIPANT_ID //OPTIONAL\n';
+      code += '     atClaims["roles"] = roles //OPTIONAL\n';
+      code += '     atClaims["iat"] = time.Now().Unix()\n';
+      code +=
+        '     atClaims["exp"] = time.Now().Add(time.Minute * 120).Unix()\n';
+      code +=
+        "     at := jwt.NewWithClaims(jwt.SigningMethodHS256, atClaims)\n";
       code += "\n";
-      code += "token, err := at.SignedString([]byte(VIDEOSDK_SECRET_KEY))\n";
-      code += "if err != nil {\n";
-      code += '    fmt.Printf("%v\\n", err)\n';
-      code += "}\n";
-      code += "var tokenString = token\n";
+      code +=
+        "     token, err := at.SignedString([]byte(VIDEOSDK_SECRET_KEY))\n";
+      code += "     if err != nil {\n";
+      code += '         fmt.Printf("%v\\n", err)\n';
+      code += "     }\n";
+      code += "     var tokenString = token\n";
+      code += "}";
       return code;
     case "java":
       var code = "import java.util.*;\n";
       code += "import io.jsonwebtoken.Jwts;\n";
       code += "import io.jsonwebtoken.SignatureAlgorithm;\n";
       code += "\n";
-      code += 'String VIDEOSDK_API_KEY = "YOUR_API_KEY";\n';
-      code += 'String VIDEOSDK_SECRET_KEY = "YOUR_SECRET_KEY";\n';
-      code += 'String VIDEOSDK_ROOM_ID = "YOUR_ROOM_ID";\n';
-      code += 'String VIDEOSDK_PARTICIPANT_ID = "YOUR_PARTICIPANT_ID";\n';
+      code += "public class Main {\n";
+      code += "    public static void main(String[] args) {\n";
+      code += '        String VIDEOSDK_API_KEY = "YOUR_API_KEY";\n';
+      code += '        String VIDEOSDK_SECRET_KEY = "YOUR_SECRET_KEY";\n';
+      code += '        String VIDEOSDK_ROOM_ID = "YOUR_ROOM_ID";\n';
+      code +=
+        '        String VIDEOSDK_PARTICIPANT_ID = "YOUR_PARTICIPANT_ID";\n';
       code += "\n";
-      code += "Map<String, Object> payload = new HashMap<>(); 	\n";
-      code += 'payload.put("apikey", VIDEOSDK_API_KEY);\n';
+      code += "        Map<String, Object> payload = new HashMap<>(); 	\n";
+      code += '        payload.put("apikey", VIDEOSDK_API_KEY);\n';
       code +=
-        'payload.put("permissions", new String[]{"allow_join", "ask_join", "allow_mod"});\n';
-      code += 'payload.put("roomId", VIDEOSDK_ROOM_ID); //OPTIONAL\n';
-      code += 'payload.put("version", 2); //OPTIONAL\n';
+        '        payload.put("permissions", new String[]{"allow_join", "ask_join", "allow_mod"});\n';
+      code += '        payload.put("roomId", VIDEOSDK_ROOM_ID); //OPTIONAL\n';
+      code += '        payload.put("version", 2); //OPTIONAL\n';
       code +=
-        'payload.put("participantId", VIDEOSDK_PARTICIPANT_ID); //OPTIONAL\n';
+        '        payload.put("participantId", VIDEOSDK_PARTICIPANT_ID); //OPTIONAL\n';
       code +=
-        'payload.put("roles", new String[]{"crawler", "rtc"}); //OPTIONAL\n';
+        '        payload.put("roles", new String[]{"crawler", "rtc"}); //OPTIONAL\n';
       code += "\n";
-      code += "String token = Jwts.builder().setClaims(payload)\n";
+      code += "        String token = Jwts.builder().setClaims(payload)\n";
       code +=
-        "	.setExpiration(new Date(System.currentTimeMillis() + 7200 * 1000))\n";
+        "	                     .setExpiration(new Date(System.currentTimeMillis() + 7200 * 1000))\n";
       code +=
-        "	.signWith(SignatureAlgorithm.HS256,VIDEOSDK_SECRET_KEY.getBytes()).compact();\n";
+        "	                     .signWith(SignatureAlgorithm.HS256,VIDEOSDK_SECRET_KEY.getBytes()).compact();\n";
+      code += "        System.out.println(token);\n";
+      code += "      }   \n";
+      code += "}\n";
       return code;
     case "ruby":
       var code = "require 'jwt'\n";
@@ -183,10 +196,10 @@ const generateCode = ({ language }) => {
       code += "payload = {\n";
       code += "    apikey: $VIDEOSDK_API_KEY,\n";
       code += '    permissions: ["allow_join", "ask_join", "allow_mod"],\n';
-      code += "    roomId: $VIDEOSDK_ROOM_ID, //OPTIONAL\n";
-      code += "    version: 2, //OPTIONAL\n";
-      code += "    participantId: $VIDEOSDK_PARTICIPANT_ID, //OPTIONAL\n";
-      code += '    roles: ["crawler", "rtc"], //OPTIONAL\n';
+      code += "    roomId: $VIDEOSDK_ROOM_ID, # OPTIONAL\n";
+      code += "    version: 2, # OPTIONAL\n";
+      code += "    participantId: $VIDEOSDK_PARTICIPANT_ID, # OPTIONAL\n";
+      code += '    roles: ["crawler", "rtc"], # OPTIONAL\n';
       code += "    iat: now.to_i,\n";
       code += "    exp: exp.to_i\n";
       code += "}\n";
@@ -202,7 +215,7 @@ const generateCode = ({ language }) => {
       code += "    apikey:String,\n";
       code += "    permissions:[String;3],\n";
       code += "    roomId:String, //OPTIONAL\n";
-      code += "    version:Number, //OPTIONAL\n";
+      code += "    version:i32, //OPTIONAL\n";
       code += "    roles:[String;2], //OPTIONAL\n";
       code += "}\n";
       code += "\n";
@@ -215,9 +228,9 @@ const generateCode = ({ language }) => {
       code += "    apikey : videosdk_api_key,\n";
       code +=
         '    permissions: [String::from("allow_join"),String::from("ask_join"),String::from("allow_mod")],\n';
-      code += "    roomId : VIDEOSDK_ROOM_ID, //OPTIONAL \n";
+      code += "    roomId : videosdk_room_id, //OPTIONAL \n";
       code += "    version : 2, //OPTIONAL\n";
-      code += "    participantId : VIDEOSDK_PARTICIPANT_ID, //OPTIONAL\n";
+      code += "    participantId : videosdk_participant_id, //OPTIONAL\n";
       code +=
         '    roles: [String::from("crawler"),String::from("rtc")], //OPTIONAL\n';
       code += "};\n";
@@ -319,13 +332,13 @@ const MethodRequestResponse = () => {
               : language.id == "php"
               ? "{3-6,9,12-24,26,28}"
               : language.id == "python"
-              ? "{3-6,8,12-19}"
+              ? "{4-7,9,13-20}"
               : language.id == "dotnet"
               ? "{4-7,10-19}"
               : language.id == "go"
-              ? "{6-9,12-14,17-18,21-29,31}"
+              ? "{8-11,14-16,19-20,23-31,33}"
               : language.id == "java"
-              ? "{5-8,11-16,19-20}"
+              ? "{7-10,13-18,21-22}"
               : language.id == "ruby"
               ? "{3-6,9,11-18,21}"
               : language.id == "rust"
