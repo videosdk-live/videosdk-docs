@@ -36,10 +36,10 @@ Here are the following steps for implementing waiting lobby.
     {
      apikey: API_KEY, //MANDATORY
      permissions: [`allow_join`], //MANDATORY //allow_join permission to directly join meeting
-    roomId: ROOM_ID, //OPTIONAL
-    version: 2, //OPTIONAL
-    participantId: PARTICIPANT_ID, //OPTIONAL
-    roles: ['CRAWLER'], //OPTIONAL
+     version: 2, //OPTIONAL
+     roomId: ROOM_ID, //OPTIONAL
+     participantId: PARTICIPANT_ID, //OPTIONAL
+     roles: ['crawler'], //OPTIONAL
     }
     ```
   - If you generating token for guest then you can provide this payload.
@@ -48,10 +48,10 @@ Here are the following steps for implementing waiting lobby.
     {
      apikey: API_KEY, //MANDATORY
      permissions: [`ask_join`], //MANDATORY //ask_join permission to ask permission to host for joinning meeting
-     roomId: ROOM_ID, //OPTIONAL
      version: 2, //OPTIONAL
+     roomId: ROOM_ID, //OPTIONAL
      participantId: PARTICIPANT_ID, //OPTIONAL
-     roles: ['CRAWLER'], //OPTIONAL
+     roles: ['crawler'], //OPTIONAL
     }
     ```
 
@@ -67,11 +67,13 @@ Here are the following steps for implementing waiting lobby.
   - **`ask_join`**: The participant requires to **ask for permission to join** the meeting. The participant having the permission `allow_join` can accept or reject a participant whenever someone wants to join.
   - **`allow_mod`**: The participant is **allowed to toggle** webcam & mic of other participants.
 
+- **`version`(optional)**: For accessing the v2 API, you need to provide `2` as the version value.
+
+  - For passing `roomId`, `participantId` or `roles` parameters in payload, it is essential to set the version value to `2`.
+
 - **`roomId`(optional)**: To provide customised access control, you can make the token applicable to a particular room by including the `roomId` in the payload.
 
 - **`participantId`(optional)**: You can include the `participantId` in the payload to limit the token's access to a particular participant.
-
-- **`version`(optional)**: For accessing the v2 API, you need to provide `2` as the version value.
 
 - **`roles`(optional)**:
 
