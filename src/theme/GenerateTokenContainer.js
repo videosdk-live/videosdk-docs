@@ -16,8 +16,8 @@ const generateCode = ({ language }) => {
       code += "const payload = {\n";
       code += " apikey: API_KEY,\n";
       code += " permissions: [`allow_join`], // `ask_join` || `allow_mod` \n";
-      code += " roomId: ROOM_ID, //OPTIONAL\n";
       code += " version: 2, //OPTIONAL\n";
+      code += " roomId: ROOM_ID, //OPTIONAL\n";
       code += " participantId: PARTICIPANT_ID, //OPTIONAL \n";
       code += " roles: ['crawler'], // `rtc` //OPTIONAL\n";
       code += "};\n";
@@ -43,8 +43,8 @@ const generateCode = ({ language }) => {
       code += '\t"ask_join",\n';
       code += '\t"allow_mod"\n';
       code += ");\n";
-      code += "$payload->roomId = $VIDEOSDK_ROOM_ID; //OPTIONAL\n";
       code += "$payload->version = 2; //OPTIONAL\n";
+      code += "$payload->roomId = $VIDEOSDK_ROOM_ID; //OPTIONAL\n";
       code +=
         "$payload->participantId = $VIDEOSDK_PARTICIPANT_ID; //OPTIONAL\n";
       code += "$payload->roles = array(\n";
@@ -98,8 +98,8 @@ const generateCode = ({ language }) => {
       code += '\t.AddClaim("apikey", VIDEOSDK_API_KEY)\n';
       code +=
         '\t.AddClaim("permissions", new string[3] { "allow_join", "ask_join", "allow_mod" })\n';
-      code += '\t.AddClaim("roomId" , VIDEOSDK_ROOM_ID) //OPTIONAL\n';
       code += '\t.AddClaim("version", 2) //OPTIONAL\n';
+      code += '\t.AddClaim("roomId" , VIDEOSDK_ROOM_ID) //OPTIONAL\n';
       code +=
         '\t.AddClaim("participantId", VIDEOSDK_PARTICIPANT_ID), //OPTIONAL\n';
       code +=
@@ -131,8 +131,8 @@ const generateCode = ({ language }) => {
       code += "     atClaims := jwt.MapClaims{}\n";
       code += '     atClaims["apikey"] = VIDEOSDK_API_KEY\n';
       code += '     atClaims["permissions"] = permissions\n';
-      code += '     atClaims["roomId"] = VIDEOSDK_ROOM_ID //OPTIONAL \n';
       code += '     atClaims["version"] = 2 //OPTIONAL\n';
+      code += '     atClaims["roomId"] = VIDEOSDK_ROOM_ID //OPTIONAL \n';
       code +=
         '           atClaims["participantId"] = VIDEOSDK_PARTICIPANT_ID //OPTIONAL\n';
       code += '     atClaims["roles"] = roles //OPTIONAL\n';
@@ -167,8 +167,8 @@ const generateCode = ({ language }) => {
       code += '        payload.put("apikey", VIDEOSDK_API_KEY);\n';
       code +=
         '        payload.put("permissions", new String[]{"allow_join", "ask_join", "allow_mod"});\n';
-      code += '        payload.put("roomId", VIDEOSDK_ROOM_ID); //OPTIONAL\n';
       code += '        payload.put("version", 2); //OPTIONAL\n';
+      code += '        payload.put("roomId", VIDEOSDK_ROOM_ID); //OPTIONAL\n';
       code +=
         '        payload.put("participantId", VIDEOSDK_PARTICIPANT_ID); //OPTIONAL\n';
       code +=
@@ -196,8 +196,8 @@ const generateCode = ({ language }) => {
       code += "payload = {\n";
       code += "    apikey: $VIDEOSDK_API_KEY,\n";
       code += '    permissions: ["allow_join", "ask_join", "allow_mod"],\n';
-      code += "    roomId: $VIDEOSDK_ROOM_ID, # OPTIONAL\n";
       code += "    version: 2, # OPTIONAL\n";
+      code += "    roomId: $VIDEOSDK_ROOM_ID, # OPTIONAL\n";
       code += "    participantId: $VIDEOSDK_PARTICIPANT_ID, # OPTIONAL\n";
       code += '    roles: ["crawler", "rtc"], # OPTIONAL\n';
       code += "    iat: now.to_i,\n";
@@ -214,8 +214,8 @@ const generateCode = ({ language }) => {
       code += "struct  Payload{\n";
       code += "    apikey:String,\n";
       code += "    permissions:[String;3],\n";
-      code += "    roomId:String, //OPTIONAL\n";
       code += "    version:i32, //OPTIONAL\n";
+      code += "    roomId:String, //OPTIONAL\n";
       code += "    roles:[String;2], //OPTIONAL\n";
       code += "}\n";
       code += "\n";
@@ -228,8 +228,8 @@ const generateCode = ({ language }) => {
       code += "    apikey : videosdk_api_key,\n";
       code +=
         '    permissions: [String::from("allow_join"),String::from("ask_join"),String::from("allow_mod")],\n';
-      code += "    roomId : videosdk_room_id, //OPTIONAL \n";
       code += "    version : 2, //OPTIONAL\n";
+      code += "    roomId : videosdk_room_id, //OPTIONAL \n";
       code += "    participantId : videosdk_participant_id, //OPTIONAL\n";
       code +=
         '    roles: [String::from("crawler"),String::from("rtc")], //OPTIONAL\n';
