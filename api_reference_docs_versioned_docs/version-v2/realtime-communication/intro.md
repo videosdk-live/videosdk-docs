@@ -67,9 +67,22 @@ If you are concerned with security and want to generate token only for v2 API ac
 
   Available permissions are:
 
-  - **allow_join**: The participant is **allowed to join** the meeting directly.
-  - **ask_join**: The participant requires to **ask for permission to join** the meeting.
-  - **allow_mod**: The participant is **allowed to toggle** webcam & mic of other participants.
+  - **`allow_join`**: The participant is **allowed to join** the meeting directly.
+  - **`ask_join`**: The participant requires to **ask for permission to join** the meeting.
+  - **`allow_mod`**: The participant is **allowed to toggle** webcam & mic of other participants.
+
+- **`version`(optional)**: For accessing the v2 API, you need to provide `2` as the version value.
+
+  - For passing `roomId`, `participantId` or `roles` parameters in payload, it is essential to set the version value to `2`.
+
+- **`roomId`(optional)**: To provide customised access control, you can make the token applicable to a particular room by including the `roomId` in the payload.
+
+- **`participantId`(optional)**: You can include the `participantId` in the payload to limit the token's access to a particular participant.
+
+- **`roles`(optional)**:
+
+  - **`crawler`**: This role is only for accessing v2 API, you can not use this token for running the `Meeting`/`Room`.
+  - **`rtc`**: This role is only allow for running the `Meeting` / `Room`, you can not use server-side APIs.
 
 Then, you will sign this payload with your `SECRET`and jwt options.
 
