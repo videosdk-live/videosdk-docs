@@ -8,8 +8,6 @@ const generateCode = ({ language }) => {
       code += "\n";
       code += "const API_KEY = <YOUR API KEY>;\n";
       code += "const SECRET = <YOUR SECRET>;\n";
-      code += "const ROOM_ID = <YOUR ROOM ID>;\n";
-      code += "const PARTICIPANT_ID = <YOUR PARTICIPANT ID>;\n";
       code += "\n";
       code +=
         "const options = { \n expiresIn: '120m', \n algorithm: 'HS256' \n};\n";
@@ -17,9 +15,9 @@ const generateCode = ({ language }) => {
       code += " apikey: API_KEY,\n";
       code += " permissions: [`allow_join`], // `ask_join` || `allow_mod` \n";
       code += " version: 2, //OPTIONAL\n";
-      code += " roomId: ROOM_ID, //OPTIONAL\n";
-      code += " participantId: PARTICIPANT_ID, //OPTIONAL \n";
-      code += " roles: ['crawler'], // `rtc` //OPTIONAL\n";
+      code += " roomId: `2kyv-gzay-64pg`, //OPTIONAL\n";
+      code += " participantId: `lxvdplwt`, //OPTIONAL \n";
+      code += " roles: ['crawler', 'rtc'], //OPTIONAL\n";
       code += "};\n";
       code += "\n";
       code += "const token = jwt.sign(payload, SECRET, options);\n";
@@ -30,8 +28,6 @@ const generateCode = ({ language }) => {
       code += "\n";
       code += '$VIDEOSDK_API_KEY = "YOUR_API_KEY";\n';
       code += '$VIDEOSDK_SECRET_KEY = "YOUR_SECRET_KEY";\n';
-      code += '$VIDEOSDK_ROOM_ID = "YOUR_ROOM_ID";\n';
-      code += '$VIDEOSDK_PARTICIPANT_ID = "YOUR_PARTICIPANT_ID";\n';
       code += "\n";
       code += "$issuedAt = new DateTimeImmutable();\n";
       code += "$expire = $issuedAt->modify('+2 hours')->getTimestamp();\n";
@@ -39,14 +35,11 @@ const generateCode = ({ language }) => {
       code += "$payload = (object)[];\n";
       code += "$payload->apikey = $VIDEOSDK_API_KEY;\n";
       code += "$payload->permissions = array(\n";
-      code += '\t"allow_join",\n';
-      code += '\t"ask_join",\n';
-      code += '\t"allow_mod"\n';
-      code += ");\n";
+      code += '\t"allow_join"\n';
+      code += "); // `ask_join` || `allow_mod` \n";
       code += "$payload->version = 2; //OPTIONAL\n";
-      code += "$payload->roomId = $VIDEOSDK_ROOM_ID; //OPTIONAL\n";
-      code +=
-        "$payload->participantId = $VIDEOSDK_PARTICIPANT_ID; //OPTIONAL\n";
+      code += "$payload->roomId = `2kyv-gzay-64pg`; //OPTIONAL\n";
+      code += "$payload->participantId = `lxvdplwt`; //OPTIONAL\n";
       code += "$payload->roles = array(\n";
       code += '\t"crawler",\n';
       code += '\t"rtc"\n';
@@ -62,8 +55,6 @@ const generateCode = ({ language }) => {
       code += "\n";
       code += 'VIDEOSDK_API_KEY = "YOUR_API_KEY"\n';
       code += 'VIDEOSDK_SECRET_KEY = "YOUR_SECRET_KEY"\n';
-      code += 'VIDEOSDK_ROOM_ID = "YOUR_ROOM_ID"\n';
-      code += 'VIDEOSDK_PARTICIPANT_ID = "YOUR_PARTICIPANT_ID"\n';
       code += "\n";
       code += "expiration_in_seconds = 7200\n";
       code +=
@@ -72,10 +63,10 @@ const generateCode = ({ language }) => {
       code += "token = jwt.encode(payload={\n";
       code += "\t'exp': expiration,\n";
       code += "\t'apikey': VIDEOSDK_API_KEY,\n";
-      code += "\t'permissions': ['allow_join', 'ask_join', 'allow_mod'],\n";
-      code += "\t'roomId': VIDEOSDK_ROOM_ID, #OPTIONAL \n";
+      code += "\t'permissions': ['allow_join'], # 'ask_join' || 'allow_mod' \n";
       code += "\t'version': 2, #OPTIONAL\n";
-      code += "\t'participantId': VIDEOSDK_PARTICIPANT_ID, #OPTIONAL\n";
+      code += "\t'roomId': `2kyv-gzay-64pg`, #OPTIONAL \n";
+      code += "\t'participantId': `lxvdplwt`, #OPTIONAL\n";
       code += "\t'roles': ['crawler', 'rtc'], #OPTIONAL \n";
       code += "}, key=VIDEOSDK_SECRET_KEY, algorithm= 'HS256')\n";
       code += "print(token)\n";
@@ -86,8 +77,6 @@ const generateCode = ({ language }) => {
       code += "\n";
       code += 'string VIDEOSDK_API_KEY = "YOUR_API_KEY";\n';
       code += 'string VIDEOSDK_SECRET_KEY = "YOUR_SECRET_KEY";\n';
-      code += 'string VIDEOSDK_ROOM_ID = "YOUR_ROOM_ID";\n';
-      code += 'string VIDEOSDK_PARTICIPANT_ID = "YOUR_PARTICIPANT_ID";\n';
       code += "\n";
       code += "var token = JwtBuilder.Create()\n";
       code += "\t.WithAlgorithm(new HMACSHA256Algorithm()) // symmetric\n";
@@ -97,11 +86,10 @@ const generateCode = ({ language }) => {
       code += '\t.AddClaim("iat", DateTimeOffset.UtcNow.ToUnixTimeSeconds())\n';
       code += '\t.AddClaim("apikey", VIDEOSDK_API_KEY)\n';
       code +=
-        '\t.AddClaim("permissions", new string[3] { "allow_join", "ask_join", "allow_mod" })\n';
+        '\t.AddClaim("permissions", new string[1] { "allow_join"}) // "ask_join" || "allow_mod" \n';
       code += '\t.AddClaim("version", 2) //OPTIONAL\n';
-      code += '\t.AddClaim("roomId" , VIDEOSDK_ROOM_ID) //OPTIONAL\n';
-      code +=
-        '\t.AddClaim("participantId", VIDEOSDK_PARTICIPANT_ID), //OPTIONAL\n';
+      code += '\t.AddClaim("roomId" , "2kyv-gzay-64pg") //OPTIONAL\n';
+      code += '\t.AddClaim("participantId", "lxvdplwt"), //OPTIONAL\n';
       code +=
         '\t.AddClaim("roles", new string[2] { "crawler", "rtc" }) //OPTIONAL\n';
       code += "\t.Encode();\n";
@@ -116,13 +104,10 @@ const generateCode = ({ language }) => {
       code += "func main() {\n";
       code += '     var VIDEOSDK_API_KEY = "YOUR_API_KEY"\n';
       code += '     var VIDEOSDK_SECRET_KEY = "YOUR_SECRET_KEY"\n';
-      code += '     var VIDEOSDK_ROOM_ID = "YOUR_ROOM_ID"\n';
-      code += '     var VIDEOSDK_PARTICIPANT_ID = "YOUR_PARTICIPANT_ID"\n';
       code += "\n";
-      code += "     var permissions [3]string\n";
-      code += '     permissions[0] = "allow_join"\n';
-      code += '     permissions[1] = "ask_join"\n';
-      code += '     permissions[2] = "allow_mod"\n';
+      code += "     var permissions [1]string\n";
+      code +=
+        '     permissions[0] = "allow_join"  // "ask_join" || "allow_mod" \n';
       code += "\n";
       code += "     var roles [2]string\n";
       code += '     roles[0] = "crawler"\n';
@@ -132,9 +117,8 @@ const generateCode = ({ language }) => {
       code += '     atClaims["apikey"] = VIDEOSDK_API_KEY\n';
       code += '     atClaims["permissions"] = permissions\n';
       code += '     atClaims["version"] = 2 //OPTIONAL\n';
-      code += '     atClaims["roomId"] = VIDEOSDK_ROOM_ID //OPTIONAL \n';
-      code +=
-        '           atClaims["participantId"] = VIDEOSDK_PARTICIPANT_ID //OPTIONAL\n';
+      code += '     atClaims["roomId"] = "2kyv-gzay-64pg" //OPTIONAL \n';
+      code += '     atClaims["participantId"] = "lxvdplwt" //OPTIONAL\n';
       code += '     atClaims["roles"] = roles //OPTIONAL\n';
       code += '     atClaims["iat"] = time.Now().Unix()\n';
       code +=
@@ -159,18 +143,14 @@ const generateCode = ({ language }) => {
       code += "    public static void main(String[] args) {\n";
       code += '        String VIDEOSDK_API_KEY = "YOUR_API_KEY";\n';
       code += '        String VIDEOSDK_SECRET_KEY = "YOUR_SECRET_KEY";\n';
-      code += '        String VIDEOSDK_ROOM_ID = "YOUR_ROOM_ID";\n';
-      code +=
-        '        String VIDEOSDK_PARTICIPANT_ID = "YOUR_PARTICIPANT_ID";\n';
       code += "\n";
       code += "        Map<String, Object> payload = new HashMap<>(); 	\n";
       code += '        payload.put("apikey", VIDEOSDK_API_KEY);\n';
       code +=
-        '        payload.put("permissions", new String[]{"allow_join", "ask_join", "allow_mod"});\n';
+        '        payload.put("permissions", new String[]{"allow_join"}); // "ask_join" || "allow_mod"\n';
       code += '        payload.put("version", 2); //OPTIONAL\n';
-      code += '        payload.put("roomId", VIDEOSDK_ROOM_ID); //OPTIONAL\n';
-      code +=
-        '        payload.put("participantId", VIDEOSDK_PARTICIPANT_ID); //OPTIONAL\n';
+      code += '        payload.put("roomId", "2kyv-gzay-64pg"); //OPTIONAL\n';
+      code += '        payload.put("participantId", "lxvdplwt"); //OPTIONAL\n';
       code +=
         '        payload.put("roles", new String[]{"crawler", "rtc"}); //OPTIONAL\n';
       code += "\n";
@@ -188,17 +168,15 @@ const generateCode = ({ language }) => {
       code += "\n";
       code += '$VIDEOSDK_API_KEY = "YOUR_API_KEY"\n';
       code += '$VIDEOSDK_SECRET_KEY = "YOUR_SECRET_KEY"\n';
-      code += '$VIDEOSDK_ROOM_ID = "YOUR_ROOM_ID";\n';
-      code += '$VIDEOSDK_PARTICIPANT_ID = "YOUR_PARTICIPANT_ID";\n';
       code += "\n";
       code += "now = Time.now\n";
       code += "exp = now + 7200\n";
       code += "payload = {\n";
       code += "    apikey: $VIDEOSDK_API_KEY,\n";
-      code += '    permissions: ["allow_join", "ask_join", "allow_mod"],\n';
+      code += '    permissions: ["allow_join"], # "ask_join" || "allow_mod"\n';
       code += "    version: 2, # OPTIONAL\n";
-      code += "    roomId: $VIDEOSDK_ROOM_ID, # OPTIONAL\n";
-      code += "    participantId: $VIDEOSDK_PARTICIPANT_ID, # OPTIONAL\n";
+      code += "    roomId: `2kyv-gzay-64pg`, # OPTIONAL\n";
+      code += "    participantId: `lxvdplwt`, # OPTIONAL\n";
       code += '    roles: ["crawler", "rtc"], # OPTIONAL\n';
       code += "    iat: now.to_i,\n";
       code += "    exp: exp.to_i\n";
@@ -213,24 +191,23 @@ const generateCode = ({ language }) => {
       code += "#[derive(Debug, Serialize)]\n";
       code += "struct  Payload{\n";
       code += "    apikey:String,\n";
-      code += "    permissions:[String;3],\n";
+      code += "    permissions:[String;1],\n";
       code += "    version:i32, //OPTIONAL\n";
       code += "    roomId:String, //OPTIONAL\n";
+      code += "    participantId:String, //OPTIONAL\n";
       code += "    roles:[String;2], //OPTIONAL\n";
       code += "}\n";
       code += "\n";
       code += 'let videosdk_api_key=String::from("");\n';
       code += 'let videosdk_secret_key=String::from("");\n';
-      code += 'let videosdk_room_id=String::from("");\n';
-      code += 'let videosdk_participant_id=String::from("");\n';
       code += "\n";
       code += "let payload = Payload {\n";
       code += "    apikey : videosdk_api_key,\n";
       code +=
-        '    permissions: [String::from("allow_join"),String::from("ask_join"),String::from("allow_mod")],\n';
+        '    permissions: [String::from("allow_join")], // String::from("ask_join") || String::from("allow_mod")\n';
       code += "    version : 2, //OPTIONAL\n";
-      code += "    roomId : videosdk_room_id, //OPTIONAL \n";
-      code += "    participantId : videosdk_participant_id, //OPTIONAL\n";
+      code += "    roomId :  `2kyv-gzay-64pg`, //OPTIONAL \n";
+      code += "    participantId : `lxvdplwt`, //OPTIONAL\n";
       code +=
         '    roles: [String::from("crawler"),String::from("rtc")], //OPTIONAL\n';
       code += "};\n";
@@ -328,21 +305,21 @@ const MethodRequestResponse = () => {
         <CodeBlock
           metastring={
             language.id == "node"
-              ? "{3-6,9,13-18,21}"
+              ? "{3-4,7,11-16,19}"
               : language.id == "php"
-              ? "{3-6,9,12-24,26,28}"
+              ? "{3-4,7,10-22,24,26}"
               : language.id == "python"
-              ? "{4-7,9,13-20}"
+              ? "{4-5,7,11-18}"
               : language.id == "dotnet"
-              ? "{4-7,10-19}"
+              ? "{4-5,8-17}"
               : language.id == "go"
-              ? "{8-11,14-16,19-20,23-31,33}"
+              ? "{8-9,11-12,14-16,18-27,29}"
               : language.id == "java"
-              ? "{7-10,13-18,21-22}"
+              ? "{7-8,11-16,19-20}"
               : language.id == "ruby"
-              ? "{3-6,9,11-18,21}"
+              ? "{3-4,7,9-16,19}"
               : language.id == "rust"
-              ? "{12-15,18-23,26}"
+              ? "{13-14,17-22,25}"
               : ""
           }
           language={language.code}
