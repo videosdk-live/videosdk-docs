@@ -175,9 +175,9 @@ class _MeetingScreenState extends State<MeetingScreen> {
 
 ### Storage Configuration
 
-While recording your meetings, you can choose to store them on the VideoSDK's storage or you can also configure your own **`AWS S3 Storage or Azure Blob`** to store the meeting recordings directly on your storage.
+While recording your meetings, you can choose to store them on the VideoSDK's storage or you can also configure your own **`AWS S3 Storage, Azure Blob or GCP Cloud Storage`** to store the meeting recordings directly on your storage.
 
-You can configure your own **`AWS S3 Storage or Azure Blob`** from the [VideoSDK Dashboard's API section](https://app.videosdk.live/api-keys).
+You can configure your own **`AWS S3 Storage, Azure Blob or GCP Cloud Storage`** from the [VideoSDK Dashboard's API section](https://app.videosdk.live/api-keys).
 
 You can also go through this [guide to setup](/docs/tutorials/user-dashboard/recording-storage-config) the storage or watch this [video to configure](https://www.loom.com/share/23a2617f824a4a5da004d14d1a541a9d) your storage.
 
