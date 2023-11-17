@@ -14,7 +14,7 @@ hide_table_of_contents: true
 ## Prerequisites
 
 - An active [VideoSDK Developer Account](https://app.videosdk.live)
-- `Aws S3` or `Azure Blob Storage` or `GCP Cloud Storage` Credentials
+- `Aws S3`, `Azure Blob Storage` or `GCP Cloud Storage` Credentials
 
 ## How to setup ?
 
