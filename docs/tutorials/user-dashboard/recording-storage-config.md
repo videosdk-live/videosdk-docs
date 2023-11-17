@@ -63,7 +63,7 @@ hide_table_of_contents: true
 
 <img src="/img/tutorial/dashboard/gcp.png" alt="GCP Cloud Storage" width="436" height="632"/>
 
-1. You will need Google Cloud Storage Bucket. [Learn to create Google Cloud Storage Bucket](https://cloud.google.com/storage/docs/creating-bucketsr).
+1. You will need Google Cloud Storage Bucket. [Learn to create Google Cloud Storage Bucket](https://cloud.google.com/storage/docs/creating-buckets).
 
 2. After creation, click on the <b> &#xFE19; </b>button in the upper right corner and select **`Project settings`**.
 
