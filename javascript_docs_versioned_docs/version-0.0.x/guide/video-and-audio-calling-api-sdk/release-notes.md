@@ -388,15 +388,15 @@ _This version will store timeline of the session, session stats and participant 
 
 1. Release Custom Video track feature
 
-   **Docs** : [How to use Custom Video track?](https://docs.videosdk.live/javascript/guide/video-and-audio-calling-api-sdk/features/custom-track/custom-video-track)
+   **Docs** : [How to use Custom Video track?](https://docs.videosdk.live/javascript/guide/video-and-audio-calling-api-sdk/render-media/optimize-video-track)
 
 2. Release Custom Audio track feature
 
-   **Docs** : [How to use Custom Audio track?](https://docs.videosdk.live/javascript/guide/video-and-audio-calling-api-sdk/features/custom-track/custom-audio-track)
+   **Docs** : [How to use Custom Audio track?](https://docs.videosdk.live/javascript/guide/video-and-audio-calling-api-sdk/render-media/optimize-audio-track)
 
 3. Release Custom Screen Share track feature
 
-   **Docs** : [How to use Custom Screen Share track?](https://docs.videosdk.live/javascript/guide/video-and-audio-calling-api-sdk/features/custom-track/custom-screen-share-track)
+   **Docs** : [How to use Custom Screen Share track?](https://docs.videosdk.live/javascript/guide/video-and-audio-calling-api-sdk/render-media/optimize-video-track#custom-screen-share-track)
 
 ---
 

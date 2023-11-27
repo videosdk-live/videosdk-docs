@@ -7,6 +7,7 @@
     "build": "docusaurus build",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",
+    "deploy:prod": "docusaurus build --out-dir .docusaurus_build",
     "clear": "docusaurus clear && rm -rf docusaurus.zip",
     "serve": "docusaurus serve",
     "start": "npm run serve -- --port 3002 --host localhost",

@@ -48,7 +48,7 @@ hide_table_of_contents: true
 
 - Once that bot participant opens the web-application into the Server virtual tab, youw web-application code will be executed.
 - While developing the web-application for custom template, you will hve to fetch the url parameters and then use those parameters while initializing the VideoSDK.
-- You can use [React SDK](react/guide/video-and-audio-calling-api-sdk/getting-started) or [Javascript SDK](/javascript/guide/video-and-audio-calling-api-sdk/getting-started), as they support web application.
+- You can use [React SDK](/react/guide/video-and-audio-calling-api-sdk/quick-start) or [Javascript SDK](/javascript/guide/video-and-audio-calling-api-sdk/getting-started), as they support web application.
 
 ```js
 const url = new URLSearchParams(window.location.search);
