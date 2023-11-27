@@ -147,7 +147,7 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 <Tabs
-defaultValue="npm"
+defaultValue="react-native-cli"
 groupId={"platform-manager"}
 values={[
 {label: 'React Native CLI', value: 'react-native-cli'},
