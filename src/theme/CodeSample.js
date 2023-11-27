@@ -102,7 +102,15 @@ export default function CodeSample() {
         icon: "/img/icons/libraries/github-mark.svg",
         link: "https://github.com/videosdk-live/quickstart/tree/main/react-native",
       },
-
+      {
+        title: "quickstart/expo-react-native-rtc",
+        description:
+          "A short and sweet tutorial for getting up to speed with Expo React Native VideoSDK in less than 10 minutes.",
+        tags: ["Mobile"],
+        sdk: "React Native",
+        icon: "/img/icons/libraries/github-mark.svg",
+        link: "https://github.com/videosdk-live/quickstart/tree/main/expo-react-native-rtc",
+      },
       {
         title: "quickstart/react-native-hls",
         description:
@@ -324,11 +332,10 @@ export default function CodeSample() {
               return (
                 <div
                   key={sdk.id}
-                  className={`flex flex-row items-center justify-center gap-2 text-lg  w-full py-1 px-8 md:px-3 md:py-3 border-2 rounded-lg hover:cursor-pointer ${
-                    selecteSDK == sdk.id
-                      ? "bg-gray-750 text-white-100 font-bold"
-                      : " "
-                  } hover:border-gray-100 border-gray-750`}
+                  className={`flex flex-row items-center justify-center gap-2 text-lg  w-full py-1 px-8 md:px-3 md:py-3 border-2 rounded-lg hover:cursor-pointer ${selecteSDK == sdk.id
+                    ? "bg-gray-750 text-white-100 font-bold"
+                    : " "
+                    } hover:border-gray-100 border-gray-750`}
                   onClick={() => {
                     setSelectedSDK(sdk.id);
                   }}
@@ -360,8 +367,8 @@ export default function CodeSample() {
                       </div>
                       {(codeSample.testFlightLink ||
                         codeSample.firebaseLink) && (
-                        <div className="h-[1px] w-full bg-gray-600 my-3"></div>
-                      )}
+                          <div className="h-[1px] w-full bg-gray-600 my-3"></div>
+                        )}
 
                       <div className=" flex flex-row gap-4">
                         {codeSample.testFlightLink && (

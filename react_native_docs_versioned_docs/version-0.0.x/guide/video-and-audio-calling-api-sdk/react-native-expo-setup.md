@@ -49,6 +49,8 @@ npx expo prebuild
 
 Once these are finished, you should see the android and ios directories in your project. You can then complete the iOS and Android setup requried for the VideoSDK.
 
-**Android Setup** : [Integrate in Android](https://docs.videosdk.live/react-native/guide/video-and-audio-calling-api-sdk/react-native-android-sdk)
+**Android Setup** : [Integrate in Android](./react-native-android-sdk)
 
-**iOS Setup** : [Integrate in iOS](https://docs.videosdk.live/react-native/guide/video-and-audio-calling-api-sdk/react-native-ios-sdk)
+**iOS Setup** : [Integrate in iOS](./react-native-ios-sdk)
+
+**Code Example** : [Expo App Example](https://github.com/videosdk-live/quickstart/tree/main/expo-react-native-rtc)
