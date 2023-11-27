@@ -16,30 +16,39 @@ sidebar_position: 1
 
 # Using VideoSDK with Expo
 
-Inorder to use the VideoSDK with Expo, you first need to Expo Eject which will allow you to make the necessary changes to the native modules of the app.
+## Introduction
 
-## Expo Ejecting to React Native
+This documentation provides a step-by-step guide on integrating VideoSDK with Expo, a popular framework for building cross-platform mobile applications using React Native. Follow these instructions to seamlessly incorporate VideoSDK into your Expo project.
 
-### Install Expo CLI
+## Prerequisites
 
-If you don't have it, run `npm install -g expo-cli` to get our command line library.
+Before you begin, make sure you have Node.js and npm installed on your machine. If you don't have Expo installed globally, run the following command:
 
-```js
+```bash
 npm install -g expo-cli
 ```
 
-If you haven't used Expo CLI with an Expo account before, the eject command will ask you to create one.
+## Setting up Expo Project
 
-### Configuration options in app.json
+### Create a New Expo Project
 
-Ejecting requires the same configuration options as building a standalone app. [Follow this instructions before continuing to the next step](https://docs.expo.dev/archive/classic-updates/building-standalone-apps/#2-configure-appjson).
+Start a new Expo project by running the following commands:
 
-### Eject
-
-From your project directory, run `expo eject`. This will download the required dependencies and build native projects under the `ios` and `android` directories.
-
-```js
-expo eject
+```bash
+expo init YourProjectName
+cd YourProjectName
 ```
 
-Once these are finished, you should see the `android` and `ios` directories in your project. You can then complete the [iOS](./react-native-ios-sdk.md) and [Android setup](./react-native-android-sdk.md) requried for the VideoSDK.
+### Adding Android and iOS Folders
+
+Execute the following command to add Android and iOS folders:
+
+```bash
+npx expo prebuild
+```
+
+Once these are finished, you should see the android and ios directories in your project. You can then complete the iOS and Android setup requried for the VideoSDK.
+
+**Android Setup** : [Integrate in Android](https://docs.videosdk.live/react-native/guide/video-and-audio-calling-api-sdk/react-native-android-sdk)
+
+**iOS Setup** : [Integrate in iOS](https://docs.videosdk.live/react-native/guide/video-and-audio-calling-api-sdk/react-native-ios-sdk)
