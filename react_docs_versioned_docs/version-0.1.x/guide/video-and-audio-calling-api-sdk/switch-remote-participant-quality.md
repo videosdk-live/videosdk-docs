@@ -1,22 +1,29 @@
 ---
-title: Change Camera Resolution
+title: Switch Remote Participant Quality
 hide_title: true
 hide_table_of_contents: false
-description: Change Camera Resolution
-sidebar_label: Change Camera Resolution
-pagination_label: Change Camera Resolution
+description: Switch Remote Participant Quality
+sidebar_label: Switch Remote Participant Quality
+pagination_label: Switch Remote Participant Quality
 keywords:
   - audio calling
   - video calling
-  - change camera resolution
+  - switch remote participant quality
 image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
-slug: camera-resolution
+slug: switch-remote-participant-quality
 ---
 
-# Change Camera Resolution - React
+# Switch Remote Participant Quality - React
 
-In this guide we will explain how to change remote participant camera resolution by following steps.
+In this guide we will explain how to change camera resolution of remote participant.
+This involves the use of a [pubsub mechanism](/react/guide/video-and-audio-calling-api-sdk/collaboration-in-meeting/pubsub) to communicate resolution changes between participants and creating custom video tracks with the desired resolution.
+
+For better understanding let's explore one secenario, If participant A wants to change the camera resolution of participant B, participant A publishes a topic called `CHANGE_RESOLUTION` with either `SD` or `HD` as the value. Participant B subscribes to the `CHANGE_RESOLUTION` topic and receives the value shared by participant A. Subsequently, a custom video track is created with the new resolution value, and this track is passed into the `changeWebcam()` function.
+
+Here's a visual representation to enhance understanding
+
+![change-resolution](/img/change-resolution.png)
 
 ### Step 1 : Create a Pubsub Topic
 
@@ -60,57 +67,32 @@ function ParticipantView({ participantId }) {
 - On button click we will publish pubsub topic with `sd` or `hd` value.
 
 ```js
-// ...
-
 import { useParticipant } from "@videosdk.live/react-sdk";
 
 function ParticipantView({ participantId }) {
   //..
   //highlight-start
   const {
-    //..
     webcamOn,
     //..
   } = useParticipant(participantId);
 
-  {
-    webcamOn && (
+  return (
+    { webcamOn && (
       <div style={{ position: "absolute", top: "1", right: "10" }}>
         <div>
-          {[
-            { value: "sd", label: "SD", res: "h480p_w640p" },
+          {[{ value: "sd", label: "SD", res: "h480p_w640p" },
             { value: "hd", label: "HD", res: "h720p_w1280p" },
           ].map(({ value, label, res }) =>
             label === "SD" || label === "HD" ? (
               <button
-                style={{
-                  display: "inline-flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  padding: "3px 8px",
-                  border: "1px solid",
-                  borderColor:
-                    participantResolution?.res === value
-                      ? "#5568FE"
-                      : "#FFFFFF",
-                  borderRadius: "3px",
-                  fontSize: "14px",
-                  fontWeight: "500",
-                  color: "#FFFFFF",
-                  backgroundColor:
-                    participantResolution?.res === value
-                      ? "#5568FE"
-                      : "#1A1C22",
-                }}
                 onClick={async (e) => {
                   publish(
                     {
                       resolution: value,
                       resolutionValue: res,
                     },
-                    {
-                      persist: true,
-                    }
+                    {persist: true}
                   );
                   e.stopPropagation();
                 }}
@@ -121,8 +103,8 @@ function ParticipantView({ participantId }) {
           )}
         </div>
       </div>
-    );
-  }
+    )}
+  )
   //highlight-end
 }
 ```
@@ -285,17 +267,18 @@ export default ResolutionListner;
 ```js
 function MeetingContainer() {
   //..
-
   return (
-    // ..
     //highlight-start
     <ResolutionListner />
     //highlight-end
+    // ..
   );
-
-  //..
 }
 ```
+
+import ReactPlayer from "react-player";
+
+<ReactPlayer autoplay muted loop playing url="/video/switch-remote-participant-quality.mp4" width={"100%"} height="500px" />
 
 ## API Reference
 

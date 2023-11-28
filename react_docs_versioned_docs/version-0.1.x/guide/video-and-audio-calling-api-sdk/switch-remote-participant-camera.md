@@ -1,22 +1,29 @@
 ---
-title: Switching Remote Participant Camera
+title: Switch Remote Participant Camera
 hide_title: true
 hide_table_of_contents: false
-description: Switching Remote Participant Camera
-sidebar_label: Switching Remote Participant Camera
-pagination_label: Switching Remote Participant Camera
+description: Switch Remote Participant Camera
+sidebar_label: Switch Remote Participant Camera
+pagination_label: Switch Remote Participant Camera
 keywords:
   - audio calling
   - video calling
-  - Switching Remote Participant Camera
+  - switch remote participant camera
 image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
-slug: change-remote-participant-media
+slug: switch-remote-participant-camera
 ---
 
-# Switching Remote Participant Camera - React
+# Switch Remote Participant Camera - React
 
-This guide explains how to switch remote participant camera using following steps.
+In this guide we will explain how to change camera of remote participant.
+This involves the use of a [pubsub mechanism](/react/guide/video-and-audio-calling-api-sdk/collaboration-in-meeting/pubsub) to communicate resolution changes between participants and creating custom video tracks with the desired resolution.
+
+For better understanding let's explore one secenario, If participant A wants to change the camera resolution of participant B, participant A publishes a topic called `SWITCH_PARTICIPANT_CAMERA` with either `front` or `back` as the value. Participant B subscribes to the `SWITCH_PARTICIPANT_CAMERA` topic and receives the value shared by participant A. Subsequently, a custom video track is created with the new resolution value, and this track is passed into the `changeWebcam()` function.
+
+Here's a visual representation to enhance understanding
+
+![switch-remote-participant-camera](/img/change-remote-camera.png)
 
 ### Step 1 : Create a Pubsub Topic
 
@@ -40,15 +47,15 @@ export const MeetingAppProvider = ({
   return (
     <MeetingAppContext.Provider
       value={{
-        // ..
-
-        // states
+        //
         cameraFacingMode,
         selectedWebcamDevice,
 
-        // setters
+        //
         setCameraFacingMode,
         setSelectedWebcamDevice,
+
+        //..
       }}
     >
       {children}
@@ -61,8 +68,6 @@ export const MeetingAppProvider = ({
 - Now, we will create a pubsub topic called `SWITCH_PARTICIPANT_CAMERA` in `ParticipantView` Component.
 
 ```js
-//..
-
 import { usePubSub } from "@videosdk.live/react-sdk";
 
 function ParticipantView({ participantId }) {
@@ -134,8 +139,6 @@ export default useMediaStream;
 - On Click of the button we will publish camera facing value through pubusb.
 
 ```js
-// ...
-
 import { useParticipant } from "@videosdk.live/react-sdk";
 
 function ParticipantView({ participantId }) {
@@ -146,44 +149,22 @@ function ParticipantView({ participantId }) {
     isLocal,
   } = useParticipant(participantId);
 
-  {
-    !isLocal && (
+ return (
+  {!isLocal && (
       <div style={{ position: "absolute", top: "1", left: "10" }}>
         <div>
-          {[
-            { value: "front", label: "FRONT", res: "h480p_w640p" },
+          {[{ value: "front", label: "FRONT", res: "h480p_w640p" },
             { value: "back", label: "BACK", res: "h720p_w1280p" },
           ].map(({ value, label, res }) =>
             label === "FRONT" || label === "BACK" ? (
               <button
-                style={{
-                  display: "inline-flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  padding: "3px 8px",
-                  border: "1px solid",
-                  borderColor:
-                    cameraFacingMode?.facingMode === value
-                      ? "#5568FE"
-                      : "#FFFFFF",
-                  borderRadius: "3px",
-                  fontSize: "14px",
-                  fontWeight: "500",
-                  color: "#FFFFFF",
-                  backgroundColor:
-                    cameraFacingMode?.facingMode === value
-                      ? "#5568FE"
-                      : "#1A1C22",
-                }}
                 onClick={async (e) => {
                   switchCameraPublish(
                     {
                       facingMode: value,
                       isChangeWebcam: true,
                     },
-                    {
-                      persist: true,
-                    }
+                    {persist: true}
                   );
                   e.stopPropagation();
                 }}
@@ -194,9 +175,9 @@ function ParticipantView({ participantId }) {
           )}
         </div>
       </div>
-    );
-    //highlight-end
-  }
+  )}
+ )
+  //highlight-end
 }
 ```
 
@@ -306,6 +287,10 @@ function MeetingContainer() {
   //..
 }
 ```
+
+import ReactPlayer from "react-player";
+
+<ReactPlayer autoplay muted loop playing url="/video/switch-remote-participant-camera.mp4" height="500px" width={"100%"} />
 
 ## API Reference
 
