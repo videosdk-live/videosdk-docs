@@ -5,7 +5,6 @@ import FirefoxIcon from "../../static/icon/supportedList/FirefoxIcon";
 import OperaIcon from "../../static/icon/supportedList/OperaIcon";
 import SafariIcon from "../../static/icon/supportedList/SafariIcon";
 import SamsungInternetIcon from "../../static/icon/supportedList/SamsungInternetIcon";
-import WebviewIcon from "../../static/icon/supportedList/WebviewIcon";
 import DesktopIcon from "../../static/icon/supportedList/DesktopIcon";
 import MobileIcon from "../../static/icon/supportedList/MobileIcon";
 import AndroidSDKIcon from "../../static/icon/supportedList/AndroidSDKIcon";
@@ -13,7 +12,13 @@ import IOSSDKIcon from "../../static/icon/supportedList/IOSSDKIcon";
 import RightIcon from "../../static/icon/supportedList/RightIcon";
 import WrongIcon from "../../static/icon/supportedList/WrongIcon";
 
-const MethodRequestResponse = () => {
+const SupportList = ({
+  isSDKListInclude,
+  renderOnlySDKList,
+  isAndroidSDKInclude = true,
+  isiOSSDKInclude = true,
+  isScreenShareFeatureInclude = true,
+}) => {
   const featureList = [
     {
       feature: "Audio",
@@ -21,16 +26,15 @@ const MethodRequestResponse = () => {
         chrome: "78",
         edge: "83",
         firefox: "78",
-        opera: "NA",
+        opera: "18",
         safari: "13.1",
         chrome_android: "78",
         firefox_android: "78",
-        opera_android: "NA",
+        opera_android: "73",
         safari_ios: "13.1",
-        samsung_internet: "NA",
-        webview_android: "NA",
+        samsung_internet: "4",
         android_sdk: "5",
-        ios_sdk: "NA",
+        ios_sdk: "11",
       },
     },
     {
@@ -39,34 +43,15 @@ const MethodRequestResponse = () => {
         chrome: "78",
         edge: "83",
         firefox: "78",
-        opera: "NA",
+        opera: "18",
         safari: "13.1",
         chrome_android: "78",
         firefox_android: "78",
-        opera_android: "NA",
+        opera_android: "73",
         safari_ios: "13.1",
-        samsung_internet: "NA",
-        webview_android: "NA",
+        samsung_internet: "4",
         android_sdk: "5",
-        ios_sdk: "NA",
-      },
-    },
-    {
-      feature: "Screen Sharing",
-      versions: {
-        chrome: "78",
-        edge: "83",
-        firefox: "NA",
-        opera: "NA",
-        safari: "13.1",
-        chrome_android: "NA",
-        firefox_android: "NA",
-        opera_android: "NA",
-        safari_ios: "NA",
-        samsung_internet: "NA",
-        webview_android: "NA",
-        android_sdk: "5",
-        ios_sdk: "NA",
+        ios_sdk: "11",
       },
     },
     {
@@ -82,12 +67,31 @@ const MethodRequestResponse = () => {
         opera_android: "NA",
         safari_ios: "14",
         samsung_internet: "NA",
-        webview_android: "NA",
-        android_sdk: "NA",
+        android_sdk: "8",
         ios_sdk: "NA",
       },
     },
   ];
+
+  if (isScreenShareFeatureInclude) {
+    featureList.splice(2, 0, {
+      feature: "Screen Sharing",
+      versions: {
+        chrome: "78",
+        edge: "83",
+        firefox: "NA",
+        opera: "59",
+        safari: "13.1",
+        chrome_android: "NA",
+        firefox_android: "NA",
+        opera_android: "NA",
+        safari_ios: "NA",
+        samsung_internet: "NA",
+        android_sdk: "5",
+        ios_sdk: "11",
+      },
+    });
+  }
 
   const browserLists = {
     desktop: [
@@ -107,11 +111,33 @@ const MethodRequestResponse = () => {
         value: "samsung_internet",
         Icon: SamsungInternetIcon,
       },
-      { name: "WebView Android", value: "webview_android", Icon: WebviewIcon },
-      { name: "Android SDK", value: "android_sdk", Icon: AndroidSDKIcon },
-      { name: "iOS SDK", value: "ios_sdk", Icon: IOSSDKIcon },
     ],
   };
+
+  if (isSDKListInclude) {
+    browserLists.mobile.push(
+      { name: "Android SDK", value: "android_sdk", Icon: AndroidSDKIcon },
+      { name: "iOS SDK", value: "ios_sdk", Icon: IOSSDKIcon }
+    );
+  }
+
+  let sdkBrowserList = [];
+
+  if (isAndroidSDKInclude) {
+    sdkBrowserList.push({
+      name: "Android SDK",
+      value: "android_sdk",
+      Icon: AndroidSDKIcon,
+    });
+  }
+
+  if (isiOSSDKInclude) {
+    sdkBrowserList.push({
+      name: "iOS SDK",
+      value: "ios_sdk",
+      Icon: IOSSDKIcon,
+    });
+  }
 
   const BrowserCell = ({ name, Icon }) => (
     <th className="vertical-cell p-2 py-3">
@@ -126,17 +152,28 @@ const MethodRequestResponse = () => {
     </th>
   );
 
-  const renderVersionCell = (version, status) => (
-    <div className="flex flex-col items-center justify-center">
-      {status === "right" ? <RightIcon /> : <WrongIcon />}
-      <span
-        className={`inline-flex mt-2 m-0 p-0 text-base text-center font-semibold text-white ${
-          status === "right" ? "text-green-550" : "text-red-500"
-        }`}
-      >
-        {version}
-      </span>
-    </div>
+  const BrowserTableCell = ({ versions, value }) => (
+    <td className="p-2">
+      <div className="flex flex-col items-center justify-center">
+        {versions[value] === "NA" ? <WrongIcon /> : <RightIcon />}
+        <span
+          className={`inline-flex mt-2 m-0 p-0 text-base text-center font-semibold text-white ${
+            versions[value] === "NA" ? "text-red-500" : "text-green-550"
+          }`}
+        >
+          {versions[value]}
+        </span>
+      </div>
+    </td>
+  );
+
+  const BrowserTableRow = ({ feature, versions, browserList }) => (
+    <tr key={feature} className="bg-transparent">
+      <td className="px-4 py-2 whitespace-nowrap">{feature}</td>
+      {browserList.map(({ name, value, Icon }) => (
+        <BrowserTableCell key={name} versions={versions} value={value} />
+      ))}
+    </tr>
   );
 
   return (
@@ -146,51 +183,93 @@ const MethodRequestResponse = () => {
           <tr>
             <th className="py-1"></th>
 
-            <th colSpan={browserLists.desktop.length} className="py-1">
-              <DesktopIcon />
-            </th>
-
-            <th colSpan={browserLists.mobile.length} className="py-1">
-              <MobileIcon />
-            </th>
-          </tr>
-
-          <tr className="bg-transparent">
-            <th></th>
-            {[...browserLists.desktop, ...browserLists.mobile].map(
-              ({ name, Icon }) => (
-                <BrowserCell key={name} name={name} Icon={Icon} />
-              )
+            {renderOnlySDKList ? (
+              featureList.map(({ feature }) => (
+                <th key={feature} className="px-4 py-2 whitespace-nowrap">
+                  {feature}
+                </th>
+              ))
+            ) : (
+              <>
+                <th colSpan={browserLists.desktop.length} className="py-1">
+                  <DesktopIcon />
+                </th>
+                <th colSpan={browserLists.mobile.length} className="py-1">
+                  <MobileIcon />
+                </th>
+              </>
             )}
           </tr>
-        </thead>
 
-        <tbody>
-          {featureList.map(({ feature, versions }) => (
-            <tr key={feature} className="bg-transparent">
-              <td className="px-4 py-2 whitespace-nowrap">{feature}</td>
+          {!renderOnlySDKList && (
+            <tr className="bg-transparent">
+              <th></th>
               {[...browserLists.desktop, ...browserLists.mobile].map(
-                ({ name, value }) => (
-                  <td key={name} className="p-2">
-                    {renderVersionCell(
-                      versions[value],
-                      versions[value] === "NA" ? "wrong" : "right"
-                    )}
-                  </td>
+                ({ name, Icon }) => (
+                  <BrowserCell key={name} name={name} Icon={Icon} />
                 )
               )}
             </tr>
-          ))}
+          )}
+        </thead>
+
+        <tbody>
+          {renderOnlySDKList
+            ? sdkBrowserList.map(({ name, value, Icon }) => (
+                <tr key={name} className="bg-transparent">
+                  <td className="px-4 py-2 whitespace-nowrap">
+                    <div className="flex flex-col items-center justify-center">
+                      {<Icon />}
+                      <span
+                        className={`inline-flex mt-2 m-0 p-0 text-base text-center font-semibold text-white `}
+                      >
+                        {name}
+                      </span>
+                    </div>
+                  </td>
+                  {featureList.map(({ versions }) => (
+                    <BrowserTableCell
+                      key={name}
+                      versions={versions}
+                      value={value}
+                    />
+                  ))}
+                </tr>
+              ))
+            : featureList.map(({ feature, versions }) => (
+                <BrowserTableRow
+                  key={feature}
+                  feature={feature}
+                  versions={versions}
+                  browserList={
+                    renderOnlySDKList
+                      ? sdkBrowserList
+                      : [...browserLists.desktop, ...browserLists.mobile]
+                  }
+                />
+              ))}
         </tbody>
       </table>
     </div>
   );
 };
 
-function SupportedListContainer() {
+function SupportedListContainer({
+  isSDKListInclude,
+  renderOnlySDKList,
+  isAndroidSDKInclude,
+  isiOSSDKInclude,
+  isScreenShareFeatureInclude,
+}) {
   return (
     <div id="tailwind">
-      <MethodRequestResponse />
+      <SupportList
+        isSDKListInclude={isSDKListInclude}
+        renderOnlySDKList={renderOnlySDKList}
+        isAndroidSDKInclude={isAndroidSDKInclude}
+        isiOSSDKInclude={isiOSSDKInclude}
+        isScreenShareFeatureInclude={isScreenShareFeatureInclude}
+      />
     </div>
   );
 }

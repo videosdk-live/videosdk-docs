@@ -1,5 +1,5 @@
 ---
-title: Supported Device List
+title: Supported Browser List
 hide_title: false
 hide_table_of_contents: false
 description: VideoSDK supports many programmable interfaces such as javascript, react, react native, android, ios and flutter.
@@ -12,11 +12,11 @@ keywords:
   - collaboration
 image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
-slug: supported-list
+slug: supported-browser-list.md
 ---
 
-# Supported Devices
+# Supported Browsers
 
 import SupportList from '../../../../src/theme/SupportedListContainer'
 
-<SupportList/>
+<SupportList isSDKListInclude={false}/>
