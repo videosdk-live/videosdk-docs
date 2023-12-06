@@ -82,6 +82,11 @@ module.exports = {
           to: "/react/guide/video-and-audio-calling-api-sdk/concept-and-architecture",
         },
         {
+          type: "html",
+          position: "left",
+          value: `<div class="navbarNew"><a href="/tutorials">Tutorials</a><div class="navbarNew-text"><p>NEW</p></div></div>`,
+        },
+        {
           position: "left",
           label: "API Reference",
           to: "react/api/sdk-reference/setup",
@@ -96,11 +101,11 @@ module.exports = {
           label: "FAQ",
           to: "/help_docs/pricing",
         },
-        {
-          position: "left",
-          label: "Careers",
-          to: "https://jobs.videosdk.live/jobs/Careers",
-        },
+        // {
+        //   position: "left",
+        //   label: "Careers",
+        //   to: "https://jobs.videosdk.live/jobs/Careers",
+        // },
         // {
         //   position: "left",
         //   label: "Experiment Lab",
@@ -129,7 +134,7 @@ module.exports = {
         // },
 
         {
-          label: "Start Project",
+          label: "Try it for free",
           href: "https://app.videosdk.live/login",
           position: "right",
         },
@@ -335,11 +340,15 @@ module.exports = {
           sidebarPath: require.resolve("./sidebars.js"),
         },
         blog: {
-          path: "blog",
+          // path: "blog",
+          routeBasePath: "/tutorials",
           showReadingTime: true,
-          // Please change this to your repo.
-          //editUrl:
-          //  "https://github.com/facebook/docusaurus/edit/master/website/blog/",
+          readingTime: ({ content, frontMatter, defaultReadingTime }) =>
+            frontMatter.hide_reading_time
+              ? undefined
+              : defaultReadingTime({ content }),
+          blogSidebarTitle: "All Tutorials",
+          blogSidebarCount: "ALL",
         },
         theme: {
           customCss: [require.resolve("./src/css/styles.css")],
