@@ -182,7 +182,7 @@ function Overview() {
       <SectionContainer>
         {/* starting section */}
         <div>
-          {blogs.items.length > 0 && (
+          {/* {blogs.items.length > 0 && (
             <div className="flex mt-3">
               <div className="bg-white-100 text-black h-6 w-20 p-1.5 rounded-sm">
                 <p className="text-xs leading-3 justify-center font-medium items-center">
@@ -197,7 +197,7 @@ function Overview() {
                 );
               })}
             </div>
-          )}
+          )} */}
 
           {/* QuickStart */}
           <div className="md:mt-4 mt-10">
