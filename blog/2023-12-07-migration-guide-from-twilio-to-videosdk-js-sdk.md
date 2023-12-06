@@ -15,6 +15,8 @@ slug: migration-guide-from-twilio-to-videosdk-js-sdk
 hide_table_of_contents: false
 ---
 
+<!-- truncate -->
+
 ## Overview
 
 This migration guide provides a seamless transition from Twilio to VideoSDK, offering a simplified and intuitive comparison of key elements. Whether you're already familiar with Twilio or new to both platforms, this guide ensures a smooth migration process.
@@ -98,7 +100,7 @@ Using this method, VideoSDK will set a browser global:
 const VideoSDK = window.VideoSDK;
 ```
 
-## **Room Creation**
+## Room Creation
 
 Before integration, create a room using the [REST API Rooms resource](https://docs.videosdk.live/api-reference/realtime-communication/create-room). Refer to the docs for details.
 
@@ -108,7 +110,7 @@ cURL -XPOST <https://api.videosdk.live/v2/rooms> \\
 		 -H 'Content-Type: application/json'
 ```
 
-## Step 1 : **Connect to a Room**
+## Step 1 : Connect to a Room
 
 - In Twilio, you can connect to a room using the `video.connect()` method, which accepts the `token` and `connectOptions` as parameters.
 - In VideoSDK, you need to first configure the token using `VideoSDK.config('TOKEN')`, and then initialize VideoSDK using the `initMeeting` method, which accepts parameters such as the meetingId and participant name. You can refer to other parameters from this [reference](https://docs.videosdk.live/javascript/api/sdk-reference/initMeeting#initmeeting).
@@ -163,7 +165,7 @@ function initializeMeeting() {
 }
 ```
 
-## Step 2 : **Render Local Participant**
+## Step 2 : Render Local Participant
 
 - In Twilio and VideoSDK, you can access the localParticipant by using `room.localParticipant` and `meeting.localParticipant` respectively.
 - To get the MediaStream in VideoSDK, listen for the `stream-enabled` event of the Participant class and set the audio and video tracks accordingly.
@@ -343,7 +345,7 @@ function setTrack(stream, audioElement, participant, isLocal) {
 // }
 ```
 
-## Step 3 : **Handle Connected Participants**
+## Step 3 : Handle Connected Participants
 
 - To receive notifications when a remote participant joins or leaves a call in Twilio, you can use the `participantConnected` and `participantDisconnected` events of the room.
 - Similarly, in VideoSDK, you can use the `participant-joined` and `participant-left` events of the meeting to be notified when a remote participant joins or leaves the call.
@@ -418,7 +420,7 @@ Below is a list of all Twilio events used in this demo and VideoSDK’s equivale
 | disconnected            | [meeting-left](https://docs.videosdk.live/javascript/api/sdk-reference/meeting-class/events#meeting-left)             |
 | dominantSpeakerChanged  | [speaker-changed](https://docs.videosdk.live/javascript/api/sdk-reference/meeting-class/events#speaker-changed)       |
 
-## Step 4 : **Mute and UnMute Your Local Media**
+## Step 4 : Mute and UnMute Your Local Media
 
 - In Twilio, you can mute or unmute your LocalAudioTracks (microphone) and LocalVideoTracks (camera) by calling the disable or enable method.
 - In VideoSDK, you can use the `muteMic` function for the microphone and the `disableWebcam` function for the camera.
@@ -447,7 +449,7 @@ meeting.enableWebcam(); // Enable Webcam in Meeting
 //highlight-end
 ```
 
-## Step 5 : **Disconnect from a Room**
+## Step 5 : Disconnect from a Room
 
 - In Twilio, you have the ability to disconnect from a Room in which you are currently participating. Other Participants will receive a `participantDisconnected` event.
 - In VideoSDK, you can also disconnect from a Room you are currently participating in. Other Participants will receive a `participant-left` event, while the local participant will receive a `meeting-left` event.
@@ -483,7 +485,7 @@ meeting?.end();
 
 ## Conclusion
 
-As you conclude this migration journey, you've successfully adapted your application from Twilio to VideoSDK. The [developed project](https://github.com/videosdk-live/quickstart/tree/main/js-rtc) showcases the implementation of VideoSDK in action, emphasizing its simplicity and efficiency.
+As you conclude this migration journey, you've successfully adapted your application from Twilio to VideoSDK. The [developed project](https://github.com/videosdk-live/migration-to-X/tree/main/Twilio/js-quickstart) showcases the implementation of VideoSDK in action, emphasizing its simplicity and efficiency.
 
 Key Takeaways:
 

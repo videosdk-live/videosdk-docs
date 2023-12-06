@@ -1855,6 +1855,18 @@ article[itemProp='blogPost']:has(> #__blog-post-container) h1 {
   color: #fff ;
 }
 
+article[itemProp='blogPost']:has(> #__blog-post-container) h2 {
+  color: #fff ;
+}
+
+article[itemProp='blogPost']:has(> #__blog-post-container) h3 {
+  color: #fff ;
+}
+
+article[itemProp='blogPost']:has(> #__blog-post-container) h4 {
+  color: #fff ;
+}
+
 article[itemProp='blogPost']:not(:has(> #__blog-post-container)) h2 a:hover{
   color: #5677FB ;
 }
