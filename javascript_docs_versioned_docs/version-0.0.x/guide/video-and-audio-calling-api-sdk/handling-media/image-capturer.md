@@ -13,44 +13,88 @@ sidebar_position: 1
 slug: image-capturer
 ---
 
-# Image Capturer - Javascript
+# Image Capturer
 
-In this guide, we will see how you can capture images from participants video streams. For that, we will create a button, and when it's clicked, we will use the `ImageCapture` API of the browser to capture the image, which we will then render in Canvas.
+In this guide, we will see how to capture image of participant from video stream.
+
+### `captureImage()`
+
+- By using `captureImage()` function of `meeting` object, you can capture image of a participant from video stream. 
+
+- You can pass your desired height and width in `captureImage()` as parameter. If you pass `null` or `0` as height/width, videosdk will automatically take height/width according to participant's webcamStream.
+
+- `captureImage()` will return image in a form of `base64`.
 
 ```js
-const participants = meeting.participants;
-const participant = participants.get("<participant-id>");
-
-participant.on("stream-enabled", (stream) => {
-  if (stream.kind == "video") {
-    // ...
-
-    let button = document.createElement("button");
-    button.innerHTML = "capture screen";
-    button.addEventListener("click", async () => {
-      const track = new MediaStream();
-
-      track.addTrack(stream.track);
-      let imageCapture = new ImageCapture(track.getVideoTracks()[0]);
-      const image = await imageCapture.grabFrame();
-
-      const canvas = document.getElementById("canvas");
-      canvas.width = image.width;
-      canvas.height = image.height;
-      let ratio = 16 / 9;
-      let x = (canvas.width - image.width * ratio) / 2;
-      let y = (canvas.height - image.height * ratio) / 2;
-      canvas.getContext("2d").clearRect(0, 0, x / 2, y / 2);
-      canvas.getContext("2d").drawImage(image, 0, 0);
-    });
-
-    // Append button to your video container
-  }
-});
+btnCaptureImage.addEventListener("click", async () => {
+  let base64 = await meeting.localParticipant.captureImage({height:400,width:400}); // captureImage will return base64
+  console.log("base64",base64);
+}
 ```
+
+### How to transer a image to remote participants?
+
+- You can transfer a image to remote participants, using [VideoSDK's temporary file storage system](../collaboration-in-meeting/upload-fetch-temporary-file.md) and [pubsub mechanism](../collaboration-in-meeting/pubsub.md).
+
+- The following example will demonstrate how you can transfer a image to all the remote participants or a particular remote participant.
+
+1. Upload a image file to the VideoSDK's temporary file storage system.
+
+```js
+async function uploadFile() {
+    const base64Data = "<base64>"; // pass base64 which is return by captureImage() function
+    const token = "<Your Token>";
+    const fileName = "myImage.jpeg";  // Provide name with extension here
+    const url = await meeting.uploadBase64File({base64Data,token,fileName});
+    console.log("fileUrl",url);
+}
+```
+
+2. Publish the `fileUrl` to a remote participants. We will be using `IMAGE_TRANSFER` as the topic for this one.
+
+```js
+function PublishUrl() {
+  const url = "<fileUrl>"; // pass fileUrl which is return by uploadBase64File() function
+  // publish on `IMAGE_TRANSFER` topic
+  meeting.pubSub.publish("IMAGE_TRANSFER", url);
+}
+
+```
+
+:::note
+
+If you want to send fileUrl to a specific a participant, you can set `sendOnly` property of [publish()](/react-native/api/sdk-reference/use-pubsub#publish) function. 
+
+:::
+
+3. Subscibe to a `IMAGE_TRANSFER` topic to get the `fileUrl` and retrieve the file from the VideoSDK's temporary file storage system. 
+
+```js
+
+meeting.on("meeting-joined", () => {
+  //...
+
+  // subscribe to IMAGE_TRANSFER topic
+  meeting.pubSub.subscribe("IMAGE_TRANSFER", handleImageTransfer);
+});
+
+
+const handleImageTransfer = ({ message }) => {
+  const { url } = message;
+
+  const base64 = await meeting.fetchBase64File({url,token});
+  base64 = "data:data:image/jpeg;base64,"+base64;
+
+  const captureImage = document.getElementById("captureImage");
+
+  captureImage.src = base64;
+}
+```
+
 
 ## API Reference
 
 The API references for all the methods utilized in this guide are provided below.
 
-- [stream-enabled](/javascript/api/sdk-reference/participant-class/events#stream-enabled)
+- [Participant](/javascript/api/sdk-reference/participant-class/introduction)
+- [Meeting](/javascript/api/sdk-reference/meeting-class/introduction)

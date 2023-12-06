@@ -38,16 +38,19 @@ async function getBase64Data() {
 
 :::note
 
-You can only capture a image of local participant. If you called `captureImage()` function on Remote participant, it will give you an error.
+You can only capture an image of local participant. If you called `captureImage()` function on Remote participant, it will give you an error. If you want to capture an image of remote participant you can refer below documentation.
 
 :::
 
-### How to transer a image to remote participants?
 
-- You can transfer a image to remote participants, using [VideoSDK's temporary file storage system](../collaboration-in-meeting/upload-fetch-temporary-file.md) and [pubsub mechanism](../collaboration-in-meeting/pubsub.md).
+### How to Capture an image of remote participant ?
 
-- The following example will demonstrate how you can transfer a image to all the remote participants or a particular remote participant.
 
+- You can capture an image of remote participants, using [VideoSDK's temporary file storage system](../collaboration-in-meeting/upload-fetch-temporary-file.md) and [pubsub mechanism](../collaboration-in-meeting/pubsub.md).
+
+- The following example will demonstrate how you can capture an image of remote participants.
+
+1. 
 1. Upload a image file to the VideoSDK's temporary file storage system.
 
 ```js
