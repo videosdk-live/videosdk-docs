@@ -19,6 +19,8 @@ slug: migration-guide-from-twilio-to-videosdk-android-sdk
 hide_table_of_contents: false
 ---
 
+<!-- truncate -->
+
 ## Overview
 
 This migration guide provides a seamless transition from Twilio to VideoSDK, offering a simplified and intuitive comparison of key elements. Whether you're already familiar with Twilio or new to both platforms, this guide ensures a smooth migration process.
@@ -66,7 +68,7 @@ Before integration, create a room using the [REST API Rooms resource](https://do
 
 ```js
 cURL -XPOST https://api.videosdk.live/v2/rooms \
-		 -H 'Authorization: $VIDEOSDK_TOKEN' \ 
+		 -H 'Authorization: $VIDEOSDK_TOKEN' \
 		 -H 'Content-Type: application/json'
 ```
 
@@ -96,13 +98,11 @@ dependencies {
 
 On the top right of your Android studio, click Sync Now after making these changes.
 
-
 ## Step 2 : Connect to a room
 
 - In Twilio, You can initiate a connection to a video room using **`video.connect()`**. This method sets up a connection by specifying the room name, access token, and optionally including local audio, video, and data tracks.
 
 - In VideoSDK, the process begins with setting up the SDK by initializing it and providing authentication through a token. After that you can initialize the meeting with required params such as `meetingId`, `participantName`, `micEnabled`, `webcamEnabled` and [more](https://docs.videosdk.live/android/api/sdk-reference/initMeeting). To join the meeting/room, you can simply call the **`meeting.join()`** method.
-
 
 ```js
 
@@ -127,7 +127,7 @@ private fun connectToRoom() {
 
 	// 2. Configuration VideoSDK with Token
     VideoSDK.config(VIDEOSDK_ACCESS_TOKEN);
-    
+
     var meetingId:String = "<Meeting-Id>";
 
     // 3. Initialize VideoSDK Meeting
@@ -137,7 +137,7 @@ private fun connectToRoom() {
 
     // 4. Join VideoSDK Meeting
     meeting!!.join();
-        
+
 }
 ```
 
@@ -174,7 +174,7 @@ private val meetingEventListener: MeetingEventListener = object : MeetingEventLi
 - Below is a list of all Twilio events and VideoSDK’s equivalents.
 
 | **Twillio Event**           | **VideoSDK event**        |
-|-----------------------------|---------------------------|
+| --------------------------- | ------------------------- |
 | onConnected()               | onMeetingJoined()         |
 | onDisconnected()            | onMeetingLeft()           |
 | onParticipantConnected()    | onParticipantJoined()     |
@@ -182,7 +182,6 @@ private val meetingEventListener: MeetingEventListener = object : MeetingEventLi
 | onDominantSpeakerChanged()  | onSpeakerChanged()        |
 | onRecordingStarted()        | onRecordingStateChanged() |
 | onRecordingStopped()        | onRecordingStateChanged() |
-
 
 ## Step 4 : Set up local media
 
@@ -194,22 +193,22 @@ private val meetingEventListener: MeetingEventListener = object : MeetingEventLi
 
 ### Render local participant’s video
 
-- Twilio provides a `VideoView` component to display participants' video feeds. 
-    - To display the video from the local participant, you have to link the `LocalVideoTrack` to the `VideoView` using the `addSink` method: **`localVideoTrack.addSink(localVideoView)`**. 
-    - If you want to stop displaying the local participant's video in the `VideoView`, you can remove the track using **`localVideoTrack.removeSink(localVideoView)`**.
+- Twilio provides a `VideoView` component to display participants' video feeds.
 
-- Similarly, VideoSDK offers a [VideoView](https://docs.videosdk.live/android/guide/video-and-audio-calling-api-sdk/render-media/display-video/understand-videoView-component) component to display participants' video stream. 
-    - To display the local participant's video, you have to add the track to the `VideoView` using the `addTrack` method: **`localVideoView.addTrack(track)`**. 
-    - When you want to stop displaying the local participant's video in the `VideoView`, you can remove the track using **`localVideoView.removeTrack()`** method.
+  - To display the video from the local participant, you have to link the `LocalVideoTrack` to the `VideoView` using the `addSink` method: **`localVideoTrack.addSink(localVideoView)`**.
+  - If you want to stop displaying the local participant's video in the `VideoView`, you can remove the track using **`localVideoTrack.removeSink(localVideoView)`**.
 
-- In Twilio , `LocalVideoTrack` is used to render a local participant’s video. However, VideoSDK have events `onStreamEnabled` and `onStreamDisabled` in `ParticipantEventListener`  from which you can get track of audio, video.
+- Similarly, VideoSDK offers a [VideoView](https://docs.videosdk.live/android/guide/video-and-audio-calling-api-sdk/render-media/display-video/understand-videoView-component) component to display participants' video stream.
 
-    - **onStreamEnabled()** - `onStreamEnabled()` is a callback which gets triggered whenever a participant's video, audio or screen share stream is enabled.
-    - **onStreamDisabled()** -  `onStreamDisabled()` is a callback which gets triggered whenever a participant's video, audio or screen share stream is disabled.
+  - To display the local participant's video, you have to add the track to the `VideoView` using the `addTrack` method: **`localVideoView.addTrack(track)`**.
+  - When you want to stop displaying the local participant's video in the `VideoView`, you can remove the track using **`localVideoView.removeTrack()`** method.
 
+- In Twilio , `LocalVideoTrack` is used to render a local participant’s video. However, VideoSDK have events `onStreamEnabled` and `onStreamDisabled` in `ParticipantEventListener` from which you can get track of audio, video.
+
+  - **onStreamEnabled()** - `onStreamEnabled()` is a callback which gets triggered whenever a participant's video, audio or screen share stream is enabled.
+  - **onStreamDisabled()** - `onStreamDisabled()` is a callback which gets triggered whenever a participant's video, audio or screen share stream is disabled.
 
 ```js title="VideoActivity.xml"
-
 /* Twilio Code :
 	<com.twilio.video.VideoView
 	  android:id="@+id/localVideoView"
@@ -223,7 +222,6 @@ private val meetingEventListener: MeetingEventListener = object : MeetingEventLi
   android:layout_width="wrap_content"
   android:layout_height="wrap_content"
 />
-
 ```
 
 ```js
@@ -307,7 +305,7 @@ private fun remoteParticipantListener(): RemoteParticipant.Listener? {
       ) {
           remoteVideoTrack.addSink(participantVideoView)
       }
-      
+
 
       override fun onVideoTrackUnsubscribed(
           remoteParticipant: RemoteParticipant,
@@ -330,11 +328,11 @@ private val meetingEventListener: MeetingEventListener = object : MeetingEventLi
 private val participantEventListener: ParticipantEventListener =
   object : ParticipantEventListener() {
       override fun onStreamEnabled(stream: Stream) {
-          if (stream.kind.equals("video", ignoreCase = true)) { 
+          if (stream.kind.equals("video", ignoreCase = true)) {
               val track = stream.track as VideoTrack
 							participantVideoView.addTrack(track)
           }
-          
+
       }
 
       override fun onStreamDisabled(stream: Stream) {
@@ -342,10 +340,9 @@ private val participantEventListener: ParticipantEventListener =
               val track: VideoTrack = stream.track as VideoTrack
 							participantVideoView.removeTrack()
           }
-      } 
+      }
   }
 ```
-
 
 ## Features
 
@@ -424,12 +421,12 @@ private val meetingEventListener: MeetingEventListener = object : MeetingEventLi
     override fun onMeetingLeft() {}
 }
 
-// To leave the meeting without removing all the participant 
+// To leave the meeting without removing all the participant
 // you need to call leave() of the Meeting class.
 meeting?.leave();
 
 
-// To leave the meeting by removing all the participant 
+// To leave the meeting by removing all the participant
 // you need to call end() of the Meeting class.
 meeting?.end();
 
