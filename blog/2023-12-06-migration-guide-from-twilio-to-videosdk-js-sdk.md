@@ -481,13 +481,7 @@ meeting?.end();
 //highlight-end
 ```
 
-## Contact Us
-
-For any further assistance, questions, or community engagement, we welcome you to join our [Discord channel](https://discord.com/invite/Gpmj6eCq5u). Connect with fellow developers, share insights, and stay updated on the latest developments.
-
-If you require developer support or need personalized assistance, you can schedule a session with our team through our [Developer Support portal](https://bookings.videosdk.live/#/customer/discovery). We are here to ensure a smooth integration and address any queries you may have. Your success with VideoSDK is our priority.
-
-## **Conclusion**
+## Conclusion
 
 As you conclude this migration journey, you've successfully adapted your application from Twilio to VideoSDK. The [developed project](https://github.com/videosdk-live/quickstart/tree/main/js-rtc) showcases the implementation of VideoSDK in action, emphasizing its simplicity and efficiency.
 
@@ -499,3 +493,9 @@ Key Takeaways:
 - Global scalability and minimal latency ensure a seamless user experience.
 
 Feel free to explore the developed project's codebase for a hands-on understanding of VideoSDK integration. As you transition, VideoSDK empowers your application with robust real-time communication features, providing a foundation for future scalability and innovation.
+
+## Contact Us
+
+For any further assistance, questions, or community engagement, we welcome you to join our [Discord channel](https://discord.com/invite/Gpmj6eCq5u). Connect with fellow developers, share insights, and stay updated on the latest developments.
+
+If you require developer support or need personalized assistance, you can schedule a session with our team through our [Developer Support portal](https://bookings.videosdk.live/#/customer/discovery). We are here to ensure a smooth integration and address any queries you may have. Your success with VideoSDK is our priority.
