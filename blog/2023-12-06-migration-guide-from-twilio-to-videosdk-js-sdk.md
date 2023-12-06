@@ -11,254 +11,491 @@ slug: migration-guide-from-twilio-to-videosdk-js-sdk
 #     title: Co-creator of Docusaurus 1
 #     url: https://github.com/JoelMarcey
 #     image_url: https://github.com/JoelMarcey.png
-#   - name: Sébastien Lorber
-#     title: Docusaurus maintainer
-#     url: https://sebastienlorber.com
-#     image_url: https://github.com/slorber.png
 # tags: [hello, docusaurus-v2]
 hide_table_of_contents: false
 ---
 
-<!-- truncate -->
+## Overview
 
-# Initialise Meeting - React
+This migration guide provides a seamless transition from Twilio to VideoSDK, offering a simplified and intuitive comparison of key elements. Whether you're already familiar with Twilio or new to both platforms, this guide ensures a smooth migration process.
 
-To configure a VideoSDK meeting you require two things, first the `token` which will be used for **Authentication** purpose and a `meetingId` which will be used to specify where a participant will join. Let's see each of the steps closely.
+We're here to help you switch from Twilio to VideoSDK. We'll use the Twilio Quickstart sample app as a starting point. You can find the code for the sample app here: [](https://github.dev/twilio/video-quickstart-js)[https://github.com/twilio/video-quickstart-js](https://github.com/twilio/video-quickstart-js)
 
-### Generating Token
+## Concept
 
-You can generate a `token` in two ways:
+1.  **Meeting / Room:**
+    - This is like a virtual place where people can have real-time conversations using voice, video, and screen sharing.
+    - Think of it as a virtual room where participants interact.
+    - Each meeting or room has a unique ID (meetingId or roomId).
+2.  **Participant:**
+    - Both VideoSDK and Twilio Video includes the concepts of **Participant.**
+    - There are two types:
+      - **Local Participant:** This is you on your device. You control your own audio and video.
+      - **Remote Participant:** This is someone else in the meeting. They receive your audio and video and can send their own.
+3.  **MediaStream & Track:**
+    - **MediaStream:** Think of it as a bundle of audio and video tracks that are shared in real-time between participants.
+    - **Track:** This is like a continuous flow of audio or video. For example, your video feed from the camera is a video track, and the audio from the microphone is an audio track.
+4.  **Session:**
+    - A session is like a specific instance of an ongoing meeting or room.
+    - Imagine a meeting happening right now as a session.
+    - Each session has its own ID (sessionId).
 
-1. **`Temporary Token`** : You can visit [Dashboard's API Key section](https://app.videosdk.live/api-keys) and generate the temporary token from there.
+If you want to learn about this concept in depth you can refer this guide [Concept and Architecture](https://docs.videosdk.live/javascript/guide/video-and-audio-calling-api-sdk/concept-and-architecture)
 
-2. **`Server`** : You can setup **JWT** in backend and make an API call to get the token from your server.
+## VideoSDK Setup
 
-To learn more about **Authentication** and token in detail you can follow [this guide](../authentication-and-token).
+### API Key
+
+In Twilio you have to create API key manually(using CLI or from Dashboard), in VideoSDK the default API key is automatically created in [VideoSDK dashboard](https://app.videosdk.live).
+
+### Token
+
+In Twilio, you can generate a token using CLI or the Twilio helper library in the backend environment.
+
+For VideoSDK, there are two ways to generate a token. You can [generate it from the VideoSDK Dashboard](https://docs.videosdk.live/javascript/guide/video-and-audio-calling-api-sdk/authentication-and-token#1-generating-token-from-dashboard) or [in your backend](https://docs.videosdk.live/javascript/guide/video-and-audio-calling-api-sdk/authentication-and-token#2-generating-token-in-your-backend).
+
+In Twilio, you need to provide a different token for each participant, which can be complex during development. In VideoSDK, it is optional to specify the same token for different participants. You can also restrict a specific token for a specific meetingID or participantID.
+
+## Installation
+
+You can install the VidoeSDK library using [NPM](https://www.npmjs.com/).
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs
+defaultValue="npm"
+groupId={"server-group-id"}
+values={[
+{label: 'NPM', value: 'npm'},
+{label: 'Yarn', value: 'yarn'},
+]}>
+<TabItem value="npm">
 
 ```js
-// With Temporary Token
-const getToken = async () => {
-  // Update the token here from the VideoSDK dashboard
-  // highlight-next-line
-  let token = "YOUR_TOKEN";
-};
+npm install @videosdk.live/js-sdk
+```
 
-// Server
-const getToken = async () => {
-  // highlight-start
-  const response = await fetch(`http://localhost:3000/get-token`, {
-    method: "GET",
-    headers: {
-      Accept: "application/json",
-      "Content-Type": "application/json",
-    },
+</TabItem>
+<TabItem value="yarn">
+
+```js
+yarn add @videosdk.live/js-sdk
+```
+
+</TabItem>
+</Tabs>
+
+You can also include it in your application using our CDN.
+
+```jsx
+<script src="<https://sdk.videosdk.live/js-sdk/0.0.67/videosdk.js>"></script>
+```
+
+Using this method, VideoSDK will set a browser global:
+
+```jsx
+const VideoSDK = window.VideoSDK;
+```
+
+## **Room Creation**
+
+Before integration, create a room using the [REST API Rooms resource](https://docs.videosdk.live/api-reference/realtime-communication/create-room). Refer to the docs for details.
+
+```jsx
+cURL -XPOST <https://api.videosdk.live/v2/rooms> \\
+		 -H 'Authorization: $VIDEOSDK_TOKEN' \\
+		 -H 'Content-Type: application/json'
+```
+
+## Step 1 : **Connect to a Room**
+
+- In Twilio, you can connect to a room using the `video.connect()` method, which accepts the `token` and `connectOptions` as parameters.
+- In VideoSDK, you need to first configure the token using `VideoSDK.config('TOKEN')`, and then initialize VideoSDK using the `initMeeting` method, which accepts parameters such as the meetingId and participant name. You can refer to other parameters from this [reference](https://docs.videosdk.live/javascript/api/sdk-reference/initMeeting#initmeeting).
+- When joining and leaving a room, the Twilio Local Participant receives the `connected` and `disconnected` events of the room.
+- On the other hand, the VideoSDK Local Participant receives the `meeting-joined` and `meeting-left` events of the meeting when joining and leaving the room.
+
+```js
+// const video = Twilio.Video;
+//highlight-next-line
+let meeting = null; // Declare global variable
+
+function initializeMeeting() {
+  // Twilio Code :
+
+  // connect("$TOKEN", { name: "my-new-room" }).then(
+  //   (room) => {
+  //     console.log(`Successfully joined a Room: ${room}`);
+  //     room.on("connected", (participant) => {
+  //       console.log(`Local Participant Joined Successfully`);
+  //     });
+  //     room.on("disconnected", (participant) => {
+  //       console.log(`Local Participant Left the Room`);
+  //     });
+  //   },
+  //   (error) => {
+  //     console.error(`Unable to connect to Room: ${error.message}`);
+  //   }
+  // );
+
+  //highlight-start
+  window.VideoSDK.config("$TOKEN");
+
+  let meetingId = "abcd-efgh-ijkl"; // You can replace the meetingId
+
+  meeting = window.VideoSDK.initMeeting({
+    meetingId: meetingId, // required
+    name: "The Migrator", // required
+    micEnabled: true, // optional, default: true
+    webcamEnabled: true, // optional, default: true
   });
-  const { token } = await response.json();
-  // highlight-end
-  return token;
-};
+
+  meeting.join();
+
+  meeting.on("meeting-joined", () => {
+    console.log(`Local Participant Joined Successfully`);
+  });
+
+  meeting.on("meeting-left", () => {
+    console.log(`Local Participant Left the Room`);
+  });
+  //highlight-end
+}
 ```
 
-### Generating Meeting Id
+## Step 2 : **Render Local Participant**
 
-With the token ready, we can get the `meetingId` from the [VideoSDK's rooms API](/api-reference/realtime-communication/create-room).
+- In Twilio and VideoSDK, you can access the localParticipant by using `room.localParticipant` and `meeting.localParticipant` respectively.
+- To get the MediaStream in VideoSDK, listen for the `stream-enabled` event of the Participant class and set the audio and video tracks accordingly.
+- In the code snippet below, we have defined the magic functions `createVideoElement`, `createAudioElement`, and `setTrack` to help render the Local and Remote Participants easily.
+- VideoSDK automatically detaches the MediaStream Tracks when you leave the meeting. Additionally, you can pause and resume the participant stream using the [pause()](https://docs.videosdk.live/javascript/api/sdk-reference/stream-class/methods#pause) and [resume()](https://docs.videosdk.live/javascript/api/sdk-reference/stream-class/methods#resume) methods of the [Stream](https://docs.videosdk.live/javascript/api/sdk-reference/stream-class/introduction) Class.
 
-```js
-const getMeetingId = async (token) => {
-  try {
-    //We will use VideoSDK rooms API endpoint to create a meetingId
-    //highlight-next-line
-    const VIDEOSDK_API_ENDPOINT = `https://api.videosdk.live/v2/rooms`;
-    const options = {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        // We will pass the token in the headers
-        // highlight-next-line
-        Authorization: token,
-      },
-    };
-    const meetingId = await fetch(VIDEOSDK_API_ENDPOINT, options)
-      .then(async (result) => {
-        const { roomId } = await result.json();
-        return roomId;
-      })
-      .catch((error) => console.log("error", error));
+```jsx
+function initializeMeeting() {
+  // ...
 
-    //we will return the meetingId which we got from the response of the api
-    //highlight-next-line
-    return meetingId;
-  } catch (e) {
-    console.log(e);
-  }
-};
-```
+  // Handle the LocalParticipant's media.
+  // participantConnected(room.localParticipant, room);
 
-### Initialization of Meeting
-
-We can initialize the meeting using the `MeetingProvider` from the React SDK. The `MeetingProvider` is responsible for initializing the meeting with the provided configuration, which includes the `token`, `meetingId`, `participantId` and many more.
-
-#### Meeting Provider
-
-`MeetingProvider` is React [Context.Provider](https://reactjs.org/docs/context.html#contextprovider) that allows consuming components to subscribe to meeting changes.
-
-We will be passing the initialization configuration for the meeting and the token in the `MeetingProvider`.
-
-Let's take a deeper look at the available configuration options first.
-
-```js
-<MeetingProvider
-  config={{
-    meetingId: "<Id-of-meeting>",
-    name: "<Name-of-participant>",
-    micEnabled: "<Flag-to-enable-mic>",
-    webcamEnabled: "<Flag-to-enable-webcam>",
-    participantId: "Id-of-participant", // optional, default: SDK will generate
-  }}
-  token={"token"}
-  joinWithoutUserInteraction // Boolean
-></MeetingProvider>
-```
-
-- **`meetingId`** :
-
-  - meetingId is unique identifiers that allow participants to join a specific meeting or room.
-  - It will be in the format of `xxx-yyy-zzz` and will be generated using the [VideoSDK's Room API](/api-reference/realtime-communication/create-room).
-
-- **`name`**:
-
-  - This will represent the name of the participant in the meeting.
-  - It will accept `String`type value.
-
-- **`micEnabled`**:
-
-  - This is a `boolean` flag, indicating whether a participant's microphone will be automatically enabled when they join a meeting.
-
-- **`webcamEnabled`**:
-
-  - This is a `boolean` flag, indicating whether a participant's webcam will be automatically enabled when they join a meeting.
-
-- **`metaData`**:
-
-  - If you want to provide additional details about a user joining a meeting, such as their profile image, you can pass that information in this parameter.
-  - It has to be of `Object` type.
-  - This is an `OPTIONAL` parameter.
-
-- **`participantId`**:
-
-  - This will be the unique identifier for the participant inside the meeting.
-
-    - It can be used to specify the **unique identifier** which can be linked with **your own database** service.
-    - It has to be of `String` type.
-    - This is an `OPTIONAL` parameter. By default VideoSDK will generate unique id for each participant.
-
-:::caution
-You must ensure that the `participantId` is not repeated in the same meeting or room, It will enable VideoSDK to eliminate any participant respect to that `participantId`.
-:::
-
-###### Other Options for Meeting Provider
-
-- **`joinWithoutInteraction`**:
-
-  - This is a `boolean` flag, when set to `true`, allows a participant to join a meeting directly without explicitly calling the `join()` function.
-
-  - This is an `OPTIONAL` parameter. By default, it is set to `false` meaning, user has to manually call the `join()`
-
-To know more about other properties, you can follow [our API Reference](/react/api/sdk-reference/meeting-provider).
-
-With all the configuration options explained, here is how you will be using the `MeetingProvider`.
-
-```js
-// importing
-import { MeetingProvider, useMeeting } from "@videosdk.live/react-sdk";
-
-const getToken = async () => {
+  // creating local participant
   //highlight-next-line
-  ...
-};
-const getMeetingId = async () => {
-  //highlight-next-line
-  ...
-};
+  createLocalParticipant();
 
-const App = () => {
-  const [meetingId, setMeetingId] = useState();
-  const [token, setToken] = useState();
+  // setting local participant stream
+  //highlight-start
+  meeting.localParticipant.on("stream-enabled", (stream) => {
+    setTrack(stream, null, meeting.localParticipant, true);
+  });
+  //highlight-end
 
-  const fetchMeetingIdandToken = async () => {
-    //We will fetch token and meetingId and update it in the state
-    //highlight-start
-    const newToken = await getToken();
-    const newMeetingId = await getMeetingId(newToken);
-    setToken(newToken);
-    setMeetingId(newMeetingId);
-    //highlight-end
-  };
+  // ...
+}
+//highlight-start
+// creating video element
+function createVideoElement(pId, name) {
+  let videoFrame = document.createElement("div");
+  videoFrame.setAttribute("id", `f-${pId}`);
 
-  useEffect(() => {
-    //We will first load the token and generate a meeting id and pass it to the Meeting Provider
-    //highlight-next-line
-    fetchMeetingIdAndToken();
-  }, []);
+  //create video
+  let videoElement = document.createElement("video");
+  videoElement.classList.add("video-frame");
+  videoElement.setAttribute("id", `v-${pId}`);
+  videoElement.setAttribute("playsinline", true);
+  videoElement.setAttribute("width", "300");
+  videoFrame.appendChild(videoElement);
 
-  // Init Meeting Provider
-  return token && meetingId ? (
-    <MeetingProvider
-      config={{
-        // Pass the generated meeting id
-        //highlight-next-line
-        meetingId: meetingId,
-        name: "NAME HERE",
-        micEnabled: true,
-        webcamEnabled: true,
-      }}
-      // Pass the generated token
-      //highlight-next-line
-      token={token}
-      joinWithoutInteraction={true}
-    >
-      <MeetingView />
-    </MeetingProvider>
-  ) : (
-    <></>
+  let displayName = document.createElement("div");
+  displayName.innerHTML = `Name : ${name}`;
+
+  videoFrame.appendChild(displayName);
+  return videoFrame;
+}
+
+// creating audio element
+function createAudioElement(pId) {
+  let audioElement = document.createElement("audio");
+  audioElement.setAttribute("autoPlay", "false");
+  audioElement.setAttribute("playsInline", "true");
+  audioElement.setAttribute("controls", "false");
+  audioElement.setAttribute("id", `a-${pId}`);
+  audioElement.style.display = "none";
+  return audioElement;
+}
+
+// creating local participant
+function createLocalParticipant() {
+  let localParticipant = createVideoElement(
+    meeting.localParticipant.id,
+    meeting.localParticipant.displayName
   );
-};
+  videoContainer.appendChild(localParticipant);
+}
 
-const MeetingView = () => {
-  // Get Meeting object using useMeeting hook
-  const meeting = useMeeting();
-  console.log("Meeting Obj",meeting);
+// setting media track
+function setTrack(stream, audioElement, participant, isLocal) {
+  if (stream.kind == "video") {
+    isWebCamOn = true;
+    const mediaStream = new MediaStream();
+    mediaStream.addTrack(stream.track);
+    let videoElm = document.getElementById(`v-${participant.id}`);
+    videoElm.srcObject = mediaStream;
+    videoElm
+      .play()
+      .catch((error) =>
+        console.error("videoElem.current.play() failed", error)
+      );
+  }
+  if (stream.kind == "audio") {
+    if (isLocal) {
+      isMicOn = true;
+    } else {
+      const mediaStream = new MediaStream();
+      mediaStream.addTrack(stream.track);
+      audioElement.srcObject = mediaStream;
+      audioElement
+        .play()
+        .catch((error) => console.error("audioElem.play() failed", error));
+    }
+  }
+}
+//highlight-end
 
-  return <>...</>;
-};
+// Twilio Code :
 
+// function setupParticipantContainer(participant, room) {
+//   const { identity, sid } = participant;
+
+//   // Add a container for the Participant's media.
+//   const $container =
+//     $(`<div class="participant" data-identity="${identity}" id="${sid}">
+//     <audio autoplay ${
+//       participant === room.localParticipant ? "muted" : ""
+//     } style="opacity: 0"></audio>
+//     <video autoplay muted playsinline style="opacity: 0"></video>
+//   </div>`);
+
+//   // Add the Participant's container to the DOM.
+//   $participants.append($container);
+// }
+
+// function participantConnected(participant, room) {
+//   // Set up the Participant's media container.
+//   setupParticipantContainer(participant, room);
+
+//   // Handle the TrackPublications already published by the Participant.
+//   participant.tracks.forEach((publication) => {
+//     trackPublished(publication, participant);
+//   });
+
+//   // Handle theTrackPublications that will be published by the Participant later.
+//   participant.on("trackPublished", (publication) => {
+//     trackPublished(publication, participant);
+//   });
+// }
+
+// function trackPublished(publication, participant) {
+//   // If the TrackPublication is already subscribed to, then attach the Track to the DOM.
+//   if (publication.track) {
+//     attachTrack(publication.track, participant);
+//   }
+
+//   // Once the TrackPublication is subscribed to, attach the Track to the DOM.
+//   publication.on("subscribed", (track) => {
+//     attachTrack(track, participant);
+//   });
+
+//   // Once the TrackPublication is unsubscribed from, detach the Track from the DOM.
+//   publication.on("unsubscribed", (track) => {
+//     detachTrack(track, participant);
+//   });
+// }
+
+// function attachTrack(track, participant) {
+//   // Attach the Participant's Track to the thumbnail.
+//   const $media = $(`div#${participant.sid} > ${track.kind}`, $participants);
+//   $media.css("opacity", "");
+//   track.attach($media.get(0));
+
+//   // If the attached Track is a VideoTrack that is published by the active
+//   // Participant, then attach it to the main video as well.
+//   if (track.kind === "video" && participant === activeParticipant) {
+//     track.attach($activeVideo.get(0));
+//     $activeVideo.css("opacity", "");
+//   }
+// }
+
+// function detachTrack(track, participant) {
+//   // Detach the Participant's Track from the thumbnail.
+//   const $media = $(`div#${participant.sid} > ${track.kind}`, $participants);
+//   const mediaEl = $media.get(0);
+//   $media.css("opacity", "0");
+//   track.detach(mediaEl);
+//   mediaEl.srcObject = null;
+
+//   // If the detached Track is a VideoTrack that is published by the active
+//   // Participant, then detach it from the main video as well.
+//   if (track.kind === "video" && participant === activeParticipant) {
+//     const activeVideoEl = $activeVideo.get(0);
+//     track.detach(activeVideoEl);
+//     activeVideoEl.srcObject = null;
+//     $activeVideo.css("opacity", "0");
+//   }
+// }
 ```
 
-### React Hooks Support
+## Step 3 : **Handle Connected Participants**
 
-VideoSDK's React SDK provides Hooks which can be used to access the state of the meeting and listen to the events happening in the meeting.
+- To receive notifications when a remote participant joins or leaves a call in Twilio, you can use the `participantConnected` and `participantDisconnected` events of the room.
+- Similarly, in VideoSDK, you can use the `participant-joined` and `participant-left` events of the meeting to be notified when a remote participant joins or leaves the call.
+- In addition, the `stream-enabled` event of the Participant class is used to manage the media track of a specific participant by associating it with the appropriate video or audio element.
 
-:::caution
-All the hooks mentioned below are accessible within the `MeetingProvider` only.
-:::
+```jsx
+function initializeMeeting() {
+  // ...
 
-#### useMeeting
+  // Twilio Code :
 
-`useMeeting` hook abstracts meeting class and is responsible to provide the states and events update happening in the meeting like participant joining and leaving a meeting. To know more about the properties and events accessible by this hook, go through [our API Reference](/react/api/sdk-reference/use-meeting/introduction).
+  // // Subscribe to the media published by RemoteParticipants already in the Room.
+  // room.participants.forEach((participant) => {
+  //   participantConnected(participant, room);
+  // });
 
-#### useParticipant
+  // // Subscribe to the media published by RemoteParticipants joining the Room later.
+  // room.on("participantConnected", (participant) => {
+  //   participantConnected(participant, room);
+  // });
 
-`useParticipant` hook abstracts participant class and is responsible to provide the states and events update happening for a particular participant like webcam, mic streams status etc. To know more about the properties and events accessible by this hook, go through [our API Reference](/react/api/sdk-reference/use-participant/introduction).
+  // // Handle a disconnected RemoteParticipant.
+  // room.on("participantDisconnected", (participant) => {
+  //   participantDisconnected(participant, room);
+  // });
 
-#### usePubsub
+  //highlight-start
+  //  participant joined
+  meeting.on("participant-joined", (participant) => {
+    let videoElement = createVideoElement(
+      participant.id,
+      participant.displayName
+    );
+    let audioElement = createAudioElement(participant.id);
 
-`usePubsub` hook abstracts PubSub class and is responsible to provide a separate communication channel for all the participants in the meeting. It can be used to develop features like Chat, Raise Hand etc. To know more about the usePubsub hook, take a look at detailed explanation of [publish-subscribe mechanism](/react/guide/video-and-audio-calling-api-sdk/collaboration-in-meeting/pubsub).
+    participant.on("stream-enabled", (stream) => {
+      setTrack(stream, audioElement, participant, false);
+    });
+    videoContainer.appendChild(videoElement);
+    videoContainer.appendChild(audioElement);
+  });
 
-### API Reference
+  // participants left
+  meeting.on("participant-left", (participant) => {
+    let vElement = document.getElementById(`f-${participant.id}`);
+    vElement.remove(vElement);
 
-The API references for all the methods utilized in this guide are provided below.
+    let aElement = document.getElementById(`a-${participant.id}`);
+    aElement.remove(aElement);
+  });
+  //highlight-end
+  // ...
+}
 
-- [useMeeting](/react/api/sdk-reference/use-meeting/introduction)
-- [useParticipant](/react/api/sdk-reference/use-participant/introduction)
-- [usePubsub](/react/api/sdk-reference/use-pubsub)
-- [MeetingProvider](/react/api/sdk-reference/meeting-provider)
+// Twilio Code :
+
+// function participantDisconnected(participant, room) {
+//   // Remove the Participant's media container.
+//   $(`div#${participant.sid}`, $participants).remove();
+// }
+```
+
+#### Mapping Twilio’s events to VideoSDK
+
+Below is a list of all Twilio events used in this demo and VideoSDK’s equivalents.
+
+| Twilio Events           | VideoSDK Events                                                                                                       |
+| ----------------------- | --------------------------------------------------------------------------------------------------------------------- |
+| participantConnected    | [participant-joined](https://docs.videosdk.live/javascript/api/sdk-reference/meeting-class/events#participant-joined) |
+| participantDisconnected | [participant-left](https://docs.videosdk.live/javascript/api/sdk-reference/meeting-class/events#participant-left)     |
+| connected               | [meeting-joined](https://docs.videosdk.live/javascript/api/sdk-reference/meeting-class/events#meeting-joined)         |
+| disconnected            | [meeting-left](https://docs.videosdk.live/javascript/api/sdk-reference/meeting-class/events#meeting-left)             |
+| dominantSpeakerChanged  | [speaker-changed](https://docs.videosdk.live/javascript/api/sdk-reference/meeting-class/events#speaker-changed)       |
+
+## Step 4 : **Mute and UnMute Your Local Media**
+
+- In Twilio, you can mute or unmute your LocalAudioTracks (microphone) and LocalVideoTracks (camera) by calling the disable or enable method.
+- In VideoSDK, you can use the `muteMic` function for the microphone and the `disableWebcam` function for the camera.
+
+```jsx
+// Twilio Code :
+
+// room.localParticipant.audioTracks.forEach(publication => {
+//   publication.track.disable(); // Disable Mic in Meeting
+//   publication.track.enable();  // Enable Mic in Meeting
+// });
+
+// room.localParticipant.videoTracks.forEach(publication => {
+//   publication.track.disable(); // Disable Webcam in Meeting
+//   publication.track.enable(); // Enable Webcam in Meeting
+// });
+
+//highlight-start
+meeting.muteMic(); // Disable Mic in Meeting
+
+meeting.unmuteMic(); // Enable Mic in Meeting
+
+meeting.disableWebcam(); // Disable Webcam in Meeting
+
+meeting.enableWebcam(); // Enable Webcam in Meeting
+//highlight-end
+```
+
+## Step 5 : **Disconnect from a Room**
+
+- In Twilio, you have the ability to disconnect from a Room in which you are currently participating. Other Participants will receive a `participantDisconnected` event.
+- In VideoSDK, you can also disconnect from a Room you are currently participating in. Other Participants will receive a `participant-left` event, while the local participant will receive a `meeting-left` event.
+
+```jsx
+// Twilio Code :
+
+// room.on('disconnected', room => {
+//   // Detach the local media elements
+//   room.localParticipant.tracks.forEach(publication => {
+//     const attachedElements = publication.track.detach();
+//     attachedElements.forEach(element => element.remove());
+//   });
+// });
+
+// // To disconnect from a Room
+// room.disconnect();
+
+//highlight-start
+meeting.on("meeting-left", () => {
+  //Meeting Left
+});
+
+// To leave the meeting without removing all the participant
+// you need to call leave() which is the part of the meeting object.
+meeting?.leave();
+
+// To leave the meeting by removing all the participant
+// you need to call end() which is the part of the meeting object.
+meeting?.end();
+//highlight-end
+```
+
+## Contact Us
+
+For any further assistance, questions, or community engagement, we welcome you to join our [Discord channel](https://discord.com/invite/Gpmj6eCq5u). Connect with fellow developers, share insights, and stay updated on the latest developments.
+
+If you require developer support or need personalized assistance, you can schedule a session with our team through our [Developer Support portal](https://bookings.videosdk.live/#/customer/discovery). We are here to ensure a smooth integration and address any queries you may have. Your success with VideoSDK is our priority.
+
+## **Conclusion**
+
+As you conclude this migration journey, you've successfully adapted your application from Twilio to VideoSDK. The [developed project](https://github.com/videosdk-live/quickstart/tree/main/js-rtc) showcases the implementation of VideoSDK in action, emphasizing its simplicity and efficiency.
+
+Key Takeaways:
+
+- Automatic API key generation streamlines the setup process.
+- Token generation is simplified, offering flexibility for participants.
+- Granular control over participant tokens enhances security.
+- Global scalability and minimal latency ensure a seamless user experience.
+
+Feel free to explore the developed project's codebase for a hands-on understanding of VideoSDK integration. As you transition, VideoSDK empowers your application with robust real-time communication features, providing a foundation for future scalability and innovation.
