@@ -437,7 +437,7 @@ meeting?.end();
 
 ## Conclusion
 
-As you conclude this migration journey, you've successfully adapted your application from Twilio to VideoSDK. The [developed project](https://github.com/videosdk-live/quickstart/tree/main/android-rtc) showcases the implementation of VideoSDK in action, emphasizing its simplicity and efficiency.
+As you conclude this migration journey, you've successfully adapted your application from Twilio to VideoSDK. The [developed project](https://github.com/videosdk-live/migration-to-X/tree/main/Twilio/android-quickstart) showcases the implementation of VideoSDK in action, emphasizing its simplicity and efficiency.
 
 Key Takeaways:
 
