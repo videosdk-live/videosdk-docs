@@ -1929,3 +1929,9 @@ article[itemProp='blogPost']:not(:has(> #__blog-post-container)) footer{
     font-weight: 700;
   }
 }
+
+.sdkcard {
+  border: 1px solid #666
+}
+
+

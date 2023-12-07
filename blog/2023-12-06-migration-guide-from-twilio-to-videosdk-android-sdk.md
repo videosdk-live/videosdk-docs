@@ -1,5 +1,5 @@
 ---
-title: Migration Guide Twilio to Video SDK - Android
+title: Migration Guide From Twilio Video to Video SDK - Android
 description: Explore the seamless transition from Twilio to Video SDK for android with our comprehensive migration guide. Elevate your video communication with expert insights and step-by-step instructions.
 keywords:
   - Twilio to Video SDK migration guide for Android
@@ -15,7 +15,7 @@ slug: migration-guide-from-twilio-to-videosdk-android-sdk
 #     title: Docusaurus maintainer
 #     url: https://sebastienlorber.com
 #     image_url: https://github.com/slorber.png
-# tags: [hello, docusaurus-v2]
+tags: [Migration Guide, Twilio, Android]
 hide_table_of_contents: false
 ---
 

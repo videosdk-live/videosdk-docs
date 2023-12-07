@@ -1,5 +1,5 @@
 ---
-title: Migration Guide From Twilio to Video SDK - React
+title: Migration Guide From Twilio Video to Video SDK - React
 description: Easily migrate from Twilio to VideoSDK on React. Our guide provides concise steps for seamless integration, enhancing your app's video capabilities effortlessly.
 keywords:
   - Guide From Twilio to Video SDK for React
@@ -15,7 +15,7 @@ slug: migration-guide-from-twilio-to-videosdk-web-edition
 #     title: Docusaurus maintainer
 #     url: https://sebastienlorber.com
 #     image_url: https://github.com/slorber.png
-# tags: [hello, docusaurus-v2]
+tags: [Migration Guide, Twilio, React]
 hide_table_of_contents: false
 ---
 
