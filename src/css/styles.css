@@ -1867,6 +1867,11 @@ article[itemProp='blogPost']:has(> #__blog-post-container) h4 {
   color: #fff ;
 }
 
+#__docusaurus_skipToContent_fallback aside {
+  border-right: 1px solid #252A34 ;
+}
+
+
 article[itemProp='blogPost']:not(:has(> #__blog-post-container)) h2 a:hover{
   color: #5677FB ;
 }

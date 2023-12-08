@@ -421,104 +421,45 @@ const SupportFeatureList = () => {
       { name: "VideoSDK iOS", value: "videosdk_ios" },
     ],
   };
-  const BrowserCell = ({ name, Icon }) => (
+  const BrowserCell = ({ name }) => (
     <th className="vertical-cell p-2 py-3">
-      <div className="">
-        <span className=" inline-flex m-0 p-0 text-base text-white">
-          {name}
-        </span>
-      </div>
-      <div className="mt-3">{/* <Icon /> */}</div>
+      <span className=" inline-flex m-0 p-0 text-base text-white">{name}</span>
     </th>
   );
 
-  // const BrowserTableCell = ({ link }) => {
-  //   console.log("link", link);
-  //   return (
-  //     <td className="p-2">
-  //       <div className="flex flex-col items-center justify-center">
-  //         <a href={link} target="_blank" rel="noopener noreferrer">
-  //           <RightIcon />
-  //         </a>
-  //         <span className="inline-flex mt-2 m-0 p-0 text-base text-center font-semibold text-white text-green-550">
-  //           {link ? "Available" : "NA"}
-  //         </span>
-  //       </div>
-  //     </td>
-  //   );
-  // };
-
-  // const BrowserTableRow = ({ feature, links }) => {
-  //   console.log("browserList", links, feature);
-  //   return (
-  //     <tr key={feature} className="bg-transparent">
-  //       <td className="px-4 py-2 whitespace-nowrap">{feature}</td>
-  //       {sdkLists.desktop.map(({ name, value }) => (
-  //         <BrowserTableCell key={name} link={links[value]} />
-  //       ))}
-  //     </tr>
-  //   );
-  // };
-
-  const BrowserTableCell = ({ link }) => (
-    <td className="p-2">
+  const BrowserTableCell = ({ links, value }) => (
+    <td key={value} className="p-2">
       <div className="flex flex-col items-center justify-center">
-        <a href={link} target="_blank" rel="noopener noreferrer">
-          <RightIcon />
-        </a>
-        {link ? (
-          <span className="inline-flex mt-2 m-0 p-0 text-base text-center font-semibold text-white text-green-550">
-            Available
-          </span>
+        {!links[value] && (
+          <a
+            href={links[value?.concat("_link")]}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div className="rounded-full bg-green-500 flex items-center p-0.5">
+              <RightIcon />
+            </div>
+          </a>
+        )}
+
+        {links[value] === "NA" ? (
+          <div className="rounded-full bg-red-500 flex items-center p-0.5">
+            <WrongWithoutBgIcon />
+          </div>
         ) : (
-          <span className="inline-flex mt-2 m-0 p-0 text-base text-center font-semibold text-white text-red-550">
-            NA
-          </span>
+          <span className="inline-flex">{links[value]}</span>
         )}
       </div>
     </td>
   );
 
-  // const BrowserTableRow = ({ feature }) => (
-  //   <tr key={feature} className="bg-transparent">
-  //     <td className="px-4 py-2 whitespace-nowrap">{feature}</td>
-  //     {sdkLists.desktop.map(({ value }) => (
-  //       <BrowserTableCell key={value} link={links[value]} />
-  //     ))}
-  //   </tr>
-  // );
-
   const BrowserTableRow = ({ feature, links }) => {
     return (
       <tr key={feature} className="bg-transparent">
         <td className="px-2 py-2 whitespace-nowrap">{feature}</td>
-        {sdkLists.desktop.map(({ name, value }) => {
-          return (
-            <td key={value} className="p-2">
-              <div className="flex flex-col items-center justify-center">
-                {!links[value] && (
-                  <a
-                    href={links[value?.concat("_link")]}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <div className="rounded-full bg-green-500 flex items-center p-0.5">
-                      <RightIcon />
-                    </div>
-                  </a>
-                )}
-
-                {links[value] === "NA" ? (
-                  <div className="rounded-full bg-red-500 flex items-center p-0.5">
-                    <WrongWithoutBgIcon />
-                  </div>
-                ) : (
-                  <span className="inline-flex">{links[value]}</span>
-                )}
-              </div>
-            </td>
-          );
-        })}
+        {sdkLists.desktop.map(({ name, value }) => (
+          <BrowserTableCell name={name} value={value} links={links} />
+        ))}
       </tr>
     );
   };

@@ -12,6 +12,11 @@ const SupportSDKList = () => {
       href: "/tutorials/migration-guide-from-twilio-to-videosdk-android-sdk",
     },
     {
+      Icon: IOSIcon,
+      title: "iOS",
+      href: "/tutorials/migration-guide-from-twilio-to-videosdk-android-sdk",
+    },
+    {
       Icon: ReactIcon,
       title: "React",
       href: "/tutorials/migration-guide-from-twilio-to-videosdk-web-edition",
@@ -24,10 +29,10 @@ const SupportSDKList = () => {
   ];
 
   return (
-    <div className="grid grid-cols-3 gap-6 my-6">
+    <div className="grid grid-cols-4 gap-6 my-6">
       {SdkList.map(({ Icon, title, href }) => (
         <a href={href}>
-          <div className="col-span-1 sdkcard flex flex-col items-center justify-center py-5 rounded-md">
+          <div className="col-span-1 sdkcard flex flex-col items-center justify-center py-6 rounded-md">
             <Icon />
             <div className="mt-3">
               <p className="text-base mb-0 text-white-100">{title}</p>
