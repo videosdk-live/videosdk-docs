@@ -19,9 +19,17 @@ hide_table_of_contents: false
 
 ## Overview
 
+**Welcome to your smooth transition to VideoSDK with JavaScript!**
+
+This comprehensive guide empowers you to seamlessly migrate from Twilio to VideoSDK in Javascript. We understand that adapting to new technology can be challenging, which is why we've designed this guide to be clear, concise, and informative.
+
+We've created a straightforward comparison of Twilio and VideoSDK elements, making it easy to identify key differences and understand their corresponding counterparts. Whether you're a seasoned Twilio user or new to both platforms, this guide caters to your level of expertise, ensuring a smooth learning curve.
+
 This migration guide provides a seamless transition from Twilio to VideoSDK, offering a simplified and intuitive comparison of key elements. Whether you're already familiar with Twilio or new to both platforms, this guide ensures a smooth migration process.
 
-We're here to help you switch from Twilio to VideoSDK. We'll use the Twilio Quickstart sample app as a starting point. You can find the code for the sample app here: [](https://github.dev/twilio/video-quickstart-js)[https://github.com/twilio/video-quickstart-js](https://github.com/twilio/video-quickstart-js)
+## Getting Started
+
+To facilitate the transition, we'll leverage the familiar Twilio Quickstart sample app as a starting point. You can find the code for the app readily available here:[https://github.com/twilio/video-quickstart-js](https://github.com/twilio/video-quickstart-js)
 
 ## Concept
 

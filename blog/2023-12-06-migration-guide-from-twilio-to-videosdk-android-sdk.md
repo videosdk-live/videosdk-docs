@@ -23,9 +23,13 @@ hide_table_of_contents: false
 
 ## Overview
 
-This migration guide provides a seamless transition from Twilio to VideoSDK, offering a simplified and intuitive comparison of key elements. Whether you're already familiar with Twilio or new to both platforms, this guide ensures a smooth migration process.
+**Welcome to the Twilio-to-VideoSDK Migration Guide for Android!**
 
-We're here to help you switch from Twilio to VideoSDK. We'll use the Twilio Quickstart sample app as a starting point. You can find the code for the sample app here: [https://github.com/twilio/video-quickstart-android/tree/master/quickstartKotlin](https://github.com/twilio/video-quickstart-android/tree/master/quickstartKotlin)
+As you navigate the transition from Twilio to VideoSDK, this guide serves as a roadmap for your smooth and efficient migration. We understand that transitioning to a new platform can be difficult, but fear not! This guide is designed to provide a simple and insightful comparison of key components, making the process clear and accessible even if you're new to both platforms.
+
+We have created a guide to ensure a seamless migration experience. We'll use the well-known Twilio Quickstart sample application as a starting point, providing you with familiar basics and a solid context. You can easily access the code of the sample application here: [https://github.com/twilio/video-quickstart-android/tree/master/quickstartKotlin](https://github.com/twilio/video-quickstart-android/tree/master/quickstartKotlin)
+
+Throughout this guide, we'll provide you with the knowledge and resources you need to successfully migrate your Android app to VideoSDK. Let's begin your journey to a richer and more engaging communication experience!
 
 ## Concept
 

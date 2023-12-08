@@ -23,7 +23,15 @@ hide_table_of_contents: false
 
 ## Overview
 
-This migration guide provides a step-by-step transition from using Twilio to VideoSDK for your real-time communication needs. The process involves understanding key concepts, setup differences, installation procedures, and code adjustments.
+**Welcome to the Twilio-to-VideoSDK Migration Guide for React!**
+
+This guide is your trusted companion as you navigate the transition from Twilio to VideoSDK for your React apps. We understand that migrating to a new platform can be difficult, so we've designed this comprehensive guide to ensure a smooth and successful journey.
+
+Through step-by-step instructions, we'll equip you with the knowledge and resources you need to effectively transfer your real-time communication capabilities. We'll explore key concepts, explore setup differences, walk you through the installation process, and guide you through the necessary code adjustments.
+
+By the end of this guide, you'll feel confident leveraging VideoSDK's power and flexibility to enhance your React apps and captivate your audience with seamless video and audio experiences.
+
+So, embrace the future of communication, and let's get started!
 
 ## Concepts
 
