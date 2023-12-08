@@ -465,7 +465,7 @@ const SupportFeatureList = () => {
   };
 
   return (
-    <div className="max-w-screen-lg mt-10">
+    <div className="max-w-screen-lg mt-10 mb-8">
       <table className="min-w-full">
         <thead className="bg-transparent">
           <tr className="bg-transparent">

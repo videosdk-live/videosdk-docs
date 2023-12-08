@@ -37,9 +37,17 @@ import SupportSDKList from '../src/theme/SupportedSDKListContainer'
 
 <SupportSDKList  />
 
-### **Feature Boost**
+### **Feature Map Comparison**
 
-VideoSDK not only matches but surpasses Twilio Video with [additional features](/tutorials/twilio-to-videosdk-feature-map). This migration is not just a transfer; It's an upgrade to a world of enhanced possibilities. Elevate your applications effortlessly!
+VideoSDK not only matches but surpasses Twilio Video with additional features. This migration is not just a transfer; It's an upgrade to a world of enhanced possibilities. Elevate your applications effortlessly!
+
+:::info
+Select the appropriate icon ✅ to access the documentation, denoted by an (a), applicable across all platforms.
+:::
+
+import SupportFeatureList from '../src/theme/SupportedFeatureListContainer'
+
+<SupportFeatureList  />
 
 We are excited to welcome you to the VideoSDK community and look forward to empowering your projects with the future of video communication.
 
