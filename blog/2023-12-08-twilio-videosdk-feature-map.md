@@ -1,9 +1,7 @@
 ---
-title: Twilio to Video SDK Feature Map Comparison
-sidebar_label: Feature Map
-pagination_label: Feature Map
+title: Feature Map Comparison
 description: Unlock advanced capabilities with Feature Boost VideoSDK and effortlessly transition to Twilio. Explore our comprehensive migration guide for a seamless integration experience. Enhance your video solutions today!.
-slug: twilio-videosdk-feature-map
+slug: twilio-to-videosdk-feature-map
 # authors:
 #   - name: Joel Marcey
 #     title: Co-creator of Docusaurus 1

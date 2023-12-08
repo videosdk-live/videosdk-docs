@@ -1,5 +1,5 @@
 ---
-title: Migration Guide From Twilio Video to Video SDK - Javascript
+title: JavaScript - Migration Guide From Twilio Video to Video SDK
 description: Explore the seamless transition from Twilio to Video SDK for javascript with our comprehensive migration guide. Elevate your video communication with expert insights and step-by-step instructions.
 keywords:
   - Twilio to Video SDK migration guide for Javascript

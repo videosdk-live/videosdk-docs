@@ -3,7 +3,7 @@ title: Twilio to Video SDK Migration Guide
 description: Explore a smooth transition from VideoSDK to Twilio for enhanced video capabilities. Discover the seamless migration process and unlock a new level of video communication with our comprehensive guide..
 keywords:
   - Overview
-slug: twilio-videosdk-migration-guide
+slug: twilio-to-videosdk-migration-guide
 # authors:
 #   - name: Joel Marcey
 #     title: Co-creator of Docusaurus 1
@@ -39,7 +39,7 @@ import SupportSDKList from '../src/theme/SupportedSDKListContainer'
 
 ### **Feature Boost**
 
-VideoSDK not only matches but surpasses Twilio Video with [additional features](/tutorials/twilio-videosdk-feature-map). This migration is not just a transfer; It's an upgrade to a world of enhanced possibilities. Elevate your applications effortlessly!
+VideoSDK not only matches but surpasses Twilio Video with [additional features](/tutorials/twilio-to-videosdk-feature-map). This migration is not just a transfer; It's an upgrade to a world of enhanced possibilities. Elevate your applications effortlessly!
 
 We are excited to welcome you to the VideoSDK community and look forward to empowering your projects with the future of video communication.
 
