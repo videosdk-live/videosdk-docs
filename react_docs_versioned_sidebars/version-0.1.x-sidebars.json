@@ -153,6 +153,7 @@
           "items": [
             "guide/interactive-live-streaming/integrate-hls/overview",
             "guide/interactive-live-streaming/integrate-hls/start-hls",
+            "guide/interactive-live-streaming/integrate-hls/generate-hls-thumbnail",
             "guide/interactive-live-streaming/integrate-hls/stop-hls",
             "guide/interactive-live-streaming/integrate-hls/setup-hls-player"
           ]
