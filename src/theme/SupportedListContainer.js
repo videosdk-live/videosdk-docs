@@ -18,6 +18,7 @@ const SupportList = ({
   isAndroidSDKInclude = true,
   isiOSSDKInclude = true,
   isScreenShareFeatureInclude = true,
+  isPictureInPictureInclude = true,
 }) => {
   const featureList = [
     {
@@ -54,23 +55,6 @@ const SupportList = ({
         ios_sdk: "11",
       },
     },
-    {
-      feature: "Picture-in-picture",
-      versions: {
-        chrome: "70",
-        edge: "79",
-        firefox: "NA",
-        opera: "73",
-        safari: "13.1",
-        chrome_android: "NA",
-        firefox_android: "NA",
-        opera_android: "NA",
-        safari_ios: "14",
-        samsung_internet: "NA",
-        android_sdk: "8",
-        ios_sdk: "NA",
-      },
-    },
   ];
 
   if (isScreenShareFeatureInclude) {
@@ -89,6 +73,26 @@ const SupportList = ({
         samsung_internet: "NA",
         android_sdk: "5",
         ios_sdk: "11",
+      },
+    });
+  }
+
+  if (isPictureInPictureInclude) {
+    featureList.splice(3, 0, {
+      feature: "Picture-in-picture",
+      versions: {
+        chrome: "70",
+        edge: "79",
+        firefox: "NA",
+        opera: "73",
+        safari: "13.1",
+        chrome_android: "NA",
+        firefox_android: "NA",
+        opera_android: "NA",
+        safari_ios: "14",
+        samsung_internet: "NA",
+        android_sdk: "8",
+        ios_sdk: "NA",
       },
     });
   }
@@ -260,6 +264,7 @@ function SupportedListContainer({
   isAndroidSDKInclude,
   isiOSSDKInclude,
   isScreenShareFeatureInclude,
+  isPictureInPictureInclude,
 }) {
   return (
     <div id="tailwind">
@@ -269,6 +274,7 @@ function SupportedListContainer({
         isAndroidSDKInclude={isAndroidSDKInclude}
         isiOSSDKInclude={isiOSSDKInclude}
         isScreenShareFeatureInclude={isScreenShareFeatureInclude}
+        isPictureInPictureInclude={isPictureInPictureInclude}
       />
     </div>
   );

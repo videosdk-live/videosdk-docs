@@ -3,8 +3,8 @@ title: Supported Browser List
 hide_title: false
 hide_table_of_contents: false
 description: Build customizable real-time video & audio calling applications in Android SDK using Video SDK add live Video & Audio conferencing to your applications.
-sidebar_label: Supported Platforms
-pagination_label: Supported Platforms
+sidebar_label: Supported Browsers
+pagination_label: Supported Browsers
 keywords:
   - android sdk
   - java sdk
@@ -16,6 +16,10 @@ slug: supported-browser-list
 ---
 
 # Supported Browsers
+
+:::note
+The following browser versions represent the minimum required versions to ensure full support for the listed features.
+:::
 
 import SupportList from '../../../../src/theme/SupportedListContainer'
 
