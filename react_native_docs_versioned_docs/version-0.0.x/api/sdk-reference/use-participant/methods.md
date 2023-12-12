@@ -91,9 +91,9 @@ title: Methods returned by useParticipant Hook
 
 ### captureImage()
 
-- It is used to capture image of local participant using video-stream.
+- It is used to capture image of local participant's current videoStream.
 
-- It will return image in a form of base64 data.
+- It will return image in a form of `base64`.
 
 #### Parameters
 

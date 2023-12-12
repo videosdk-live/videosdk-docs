@@ -13,7 +13,7 @@ sidebar_position: 1
 slug: upload-fetch-temporary-file
 ---
 
-# Upload and Retrieve the Temporary File
+# Upload and Retrieve the Temporary File - ReactNative
 
 In this guide, we'll demonstrate how to upload and retrieve files from the VideoSDK's temporary file storage system.
 
@@ -32,20 +32,13 @@ In this guide, we'll demonstrate how to upload and retrieve files from the Video
 const { uploadBase64File } = useFile();
 
 async function uploadFile() {
-    const base64Data = "<Your File's base64Data>"; // Convert your file to base64Data and pass here 
+    const base64Data = "<Your File's base64>"; // Convert your file to base64 and pass here 
     const token = "<Your Token>";
     const fileName = "myImage.jpeg";  // Provide name with extension here
     const url = await uploadBase64File({base64Data,token,fileName});
     console.log("fileUrl",url);
 }
 ```
-
-:::note
-
-The file stored in the system will be automatically deleted once the current room/meeting comes to an end.
-
-:::
-
 
 ### `fetchBase64File()`
 
@@ -65,6 +58,12 @@ async function fetchFile() {
     console.log("base64",base64);
 }
 ```
+
+:::note
+
+The file stored in the system will be automatically deleted once the current room/meeting comes to an end.
+
+:::
 
 
 
