@@ -15,6 +15,7 @@
       "items": [
         "guide/video-and-audio-calling-api-sdk/flutter-sdk",
         "guide/video-and-audio-calling-api-sdk/release-notes",
+        "guide/video-and-audio-calling-api-sdk/supported-browser-list",
         "guide/video-and-audio-calling-api-sdk/known-issues"
       ],
       "collapsed": true

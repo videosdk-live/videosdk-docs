@@ -1835,6 +1835,25 @@ html[data-theme="dark"]
   margin: 0 auto;
 }
 
+.horizontal-tb {
+  writing-mode: horizontal-tb;
+ 
+}
+.vertical-rl {
+  writing-mode: vertical-rl;
+
+}
+.vertical-lr {
+  writing-mode: vertical-lr;
+}
+
+.table-th {
+  flex:1 !important
+}
+
+.vertical-cell{
+  vertical-align: bottom
+}
 
 article[itemProp='blogPost']:not(:has(> #__blog-post-container)) {
   padding-left: 24px ;

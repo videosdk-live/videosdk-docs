@@ -15,7 +15,8 @@
       "items": [
         "guide/video-and-audio-calling-api-sdk/integrate-sdk",
         "guide/video-and-audio-calling-api-sdk/known-issues",
-        "guide/video-and-audio-calling-api-sdk/release-notes"
+        "guide/video-and-audio-calling-api-sdk/release-notes",
+        "guide/video-and-audio-calling-api-sdk/supported-browser-list"
       ],
       "collapsed": true
     },
