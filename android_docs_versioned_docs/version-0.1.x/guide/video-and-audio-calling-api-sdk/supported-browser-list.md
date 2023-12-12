@@ -10,6 +10,7 @@ keywords:
   - java sdk
   - kotlin sdk
   - chromebook sdk
+  - supported browsers list
 image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
 slug: supported-browser-list

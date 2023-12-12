@@ -10,6 +10,7 @@ keywords:
   - video calling
   - real-time communication
   - collaboration
+  - supported browsers list
 image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
 slug: supported-browser-list.md
