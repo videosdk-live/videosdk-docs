@@ -137,7 +137,7 @@ Let's take a deeper look at the available configuration options first.
   - If you want to provide additional details about a user joining a meeting, such as their profile image, you can pass that information in this parameter.
   - It has to be of `Object` type.
   - This is an `OPTIONAL` parameter.
-  
+
 - **`participantId`**:
 
   - This will be the unique identifier for the participant inside the meeting.
@@ -152,7 +152,7 @@ You must ensure that the `participantId` is not repeated in the same meeting or 
 
 ###### Other Options for Meeting Provider
 
-- **`joinWithoutInteraction`**:
+- **`joinWithoutUserInteraction`**:
 
   - This is a `boolean` flag, when set to `true`, allows a participant to join a meeting directly without explicitly calling the `join()` function.
 
@@ -209,7 +209,7 @@ const App = () => {
       // Pass the generated token
       //highlight-next-line
       token={token}
-      joinWithoutInteraction={true}
+      joinWithoutUserInteraction={true}
     >
       <MeetingView />
     </MeetingProvider>
