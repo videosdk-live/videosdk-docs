@@ -32,13 +32,10 @@ Livestream experience is important while undertaking interactive live streaming 
 
 Latency is the delay between capturing video content and its playback. Key factors that affecting latency :
 
-- **Segment duration**: Optimize for latency by adjusting segment durations.
 - **Buffering**: Balance buffer size for smoother playback against latency.
-- **Playlist Updates**: Manage playlist intervals to impact latency.
-- **Keyframe Intervals**: Tune intervals for optimal latency and segment size.
 - **Network Conditions**: Efficient servers and network health contribute to lower latency.
 
-For real-time interactions, consider low-latency protocols like WebRTC. HLS excels in adaptive streaming and on-demand scenarios, offering flexibility but introducing some latency.
+Standard HLS has a latency around 5-6 seconds.
 
 ### HLS Architecture of VideoSDK
 
