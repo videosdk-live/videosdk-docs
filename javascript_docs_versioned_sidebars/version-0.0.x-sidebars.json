@@ -14,7 +14,8 @@
       "label": "Install the SDK",
       "items": [
         "guide/video-and-audio-calling-api-sdk/javascript-sdk",
-        "guide/video-and-audio-calling-api-sdk/release-notes"
+        "guide/video-and-audio-calling-api-sdk/release-notes",
+        "guide/video-and-audio-calling-api-sdk/supported-browser"
       ],
       "collapsed": true
     },

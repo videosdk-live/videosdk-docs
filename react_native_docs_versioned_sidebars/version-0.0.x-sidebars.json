@@ -16,7 +16,8 @@
         "guide/video-and-audio-calling-api-sdk/react-native-android-sdk",
         "guide/video-and-audio-calling-api-sdk/react-native-ios-sdk",
         "guide/video-and-audio-calling-api-sdk/react-native-expo-setup",
-        "guide/video-and-audio-calling-api-sdk/release-notes"
+        "guide/video-and-audio-calling-api-sdk/release-notes",
+        "guide/video-and-audio-calling-api-sdk/supported-device-os"
       ],
       "collapsed": true
     },
