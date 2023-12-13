@@ -1,19 +1,19 @@
 ---
-title: Supported Browser List
+title: Supported Browsers
 hide_title: false
 hide_table_of_contents: false
-description: Build customizable real-time video & audio calling applications in Android SDK using Video SDK add live Video & Audio conferencing to your applications.
+description: VideoSDK supports many programmable interfaces such as javascript, react, react native, android, ios and flutter.
 sidebar_label: Supported Browsers
 pagination_label: Supported Browsers
 keywords:
-  - android sdk
-  - java sdk
-  - kotlin sdk
-  - chromebook sdk
-  - supported browsers list
+  - audio calling
+  - video calling
+  - real-time communication
+  - collaboration
+  - supported browsers
 image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
-slug: supported-browser-list
+slug: supported-browser
 ---
 
 # Supported Browsers
@@ -24,4 +24,4 @@ The following browser versions represent the minimum required versions to ensure
 
 import SupportList from '../../../../src/theme/SupportedListContainer'
 
-<SupportList renderOnlySDKList={true} isiOSSDKInclude={false}/>
+<SupportList isSDKListInclude={false}/>

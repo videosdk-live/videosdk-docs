@@ -1,5 +1,5 @@
 ---
-title: Supported Browser List
+title: Supported Browsers
 hide_title: false
 hide_table_of_contents: false
 description: VideoSDK supports many programmable interfaces such as javascript, react, react native, android, ios and flutter.
@@ -10,10 +10,10 @@ keywords:
   - video calling
   - real-time communication
   - collaboration
-  - supported browsers list
+  - supported browsers
 image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
-slug: supported-browser-list.md
+slug: supported-browser
 ---
 
 # Supported Browsers

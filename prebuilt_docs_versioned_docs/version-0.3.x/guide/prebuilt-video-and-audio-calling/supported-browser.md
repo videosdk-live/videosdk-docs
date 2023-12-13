@@ -1,5 +1,5 @@
 ---
-title: Supported Browser List
+title: Supported Browsers
 hide_title: false
 hide_table_of_contents: false
 description: Prebuilt Video SDK Embedded is an easy-to-use audio video calling API. Embed video meetings add live video & audio conferencing to your applications or website.
@@ -11,10 +11,10 @@ keywords:
   - live video
   - prebuilt video sdk
   - video sdk embed
-  - supported browsers list
+  - supported browsers
 image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
-slug: supported-browser-list.md
+slug: supported-browser
 ---
 
 # Supported Browsers
