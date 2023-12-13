@@ -13,7 +13,7 @@ sidebar_position: 1
 slug: upload-fetch-temporary-file
 ---
 
-# Upload and Retrieve the Temporary File - ReactNative
+# Upload and Retrieve the Temporary File - React Native
 
 In this guide, we'll demonstrate how to upload and retrieve files from the VideoSDK's temporary file storage system.
 

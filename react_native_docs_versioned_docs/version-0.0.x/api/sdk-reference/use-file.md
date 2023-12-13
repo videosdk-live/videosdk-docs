@@ -15,7 +15,7 @@ title: Video SDK useFile Hook
 
 - By using `uploadBase64File()` function, you can upload your file to Videosdk's Temporary storage.
 
-- The function will return the corresponding `fileUrl`, which will use to retrieve the file.
+- The function will return the corresponding `fileUrl`, which will use to retrieve the file from the VideoSDK's storage system.
 
 ```js
 const { uploadBase64File } = useFile();
@@ -33,7 +33,7 @@ async function uploadFile() {
 
 - By using `fetchBase64File()` function, you can retrieve your file from the Videosdk's Temporary storage.
 
-- `fetchBase64File()` will return image in form of `base64`.
+- `fetchBase64File()` will return image in form of `base64` string.
 
 ```js
 const { fetchBase64File } = useFile();
