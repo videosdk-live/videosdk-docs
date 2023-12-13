@@ -129,6 +129,19 @@ participant.unpin("CAM");
 
 ---
 
+### captureImage()
+
+- It is used to capture image of the participant's current videoStream.
+
+- It will return image in a form of `base64`.
+
+#### Parameters
+
+- **height**: number
+- **width**: number
+
+---
+
 ### setViewPort()
 
 - `setViewPort()` is used to set the quality of the participant's video stream based on the viewport height and width.
