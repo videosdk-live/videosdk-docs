@@ -52,7 +52,7 @@ You can only capture an image of local participant. If you called `captureImage(
 
 ### How to capture image of remote participant ?
 
-- Before proceeding, it's crucial to comprehend the [VideoSDK's temporary file storage system](/react-native/guide/video-and-audio-calling-api-sdk/collaboration-in-meeting/upload-fetch-temporary-file) and the underlying [pubsub mechanism](/react-native/guide/video-and-audio-calling-api-sdk/collaboration-in-meeting/chat-using-pubsub).
+- Before proceeding, it's crucial to comprehend the [VideoSDK's temporary file storage system](/react-native/guide/video-and-audio-calling-api-sdk/collaboration-in-meeting/upload-fetch-temporary-file) and the underlying [pubsub mechanism](/react-native/guide/video-and-audio-calling-api-sdk/collaboration-in-meeting/pubsub).
 
 - Let's break down the steps using the names Participant A and Participant B for clarity:
 
