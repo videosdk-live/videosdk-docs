@@ -133,16 +133,6 @@ import events from "./../data/meeting-class/events.json";
 </div>
 <div class="col col--4 margin-bottom--sm" >
 
-- [uploadBase64File](/javascript/api/sdk-reference/meeting-class/methods#uploadbase64file)
-
-</div>
-<div class="col col--4 margin-bottom--sm" >
-
-- [fetchBase64File](/javascript/api/sdk-reference/meeting-class/methods#fetchbase64file)
-
-</div>
-<div class="col col--4 margin-bottom--sm" >
-
 - [startRecording](./methods.md#startrecording)
 
 </div>
