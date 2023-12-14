@@ -26,19 +26,21 @@ This can be very helpful in Video KYC use cases where you can capture the image 
 - The `captureImage()` function returns the image in the form of a `base64` string.
 
 ```js
-import { useMeeting, useParticipant } from '@videosdk.live/react-native-sdk';
+import { useMeeting, useParticipant } from "@videosdk.live/react-native-sdk";
 
-const {localParticipant} = useMeeting()
+const { localParticipant } = useMeeting();
 
-const { webcamStream, webcamOn, captureImage } = useParticipant(localParticipant.id);
+const { webcamStream, webcamOn, captureImage } = useParticipant(
+  localParticipant.id
+);
 
 async function imageCapture() {
-    if (webcamOn && webcamStream) {
-      const base64 = await captureImage({height:400,width:400}); // captureImage will return base64 string
-      console.log("base64",base64);
-    } else {
-      console.error("Camera must be on to capture an image");
-    }
+  if (webcamOn && webcamStream) {
+    const base64 = await captureImage({ height: 400, width: 400 }); // captureImage will return base64 string
+    console.log("base64", base64);
+  } else {
+    console.error("Camera must be on to capture an image");
+  }
 }
 ```
 
@@ -48,17 +50,16 @@ You can only capture an image of local participant. If you called `captureImage(
 
 :::
 
-
 ### How to capture image of remote participant ?
 
-- Before proceeding, it's crucial to comprehend the [VideoSDK's temporary file storage system](../collaboration-in-meeting/upload-fetch-temporary-file.md) and the underlying [pubsub mechanism](../collaboration-in-meeting/pubsub.md).
+- Before proceeding, it's crucial to comprehend the [VideoSDK's temporary file storage system](/react-native/guide/video-and-audio-calling-api-sdk/collaboration-in-meeting/upload-fetch-temporary-file) and the underlying [pubsub mechanism](/react-native/guide/video-and-audio-calling-api-sdk/collaboration-in-meeting/chat-using-pubsub).
 
 - Let's break down the steps using the names Participant A and Participant B for clarity:
 
 #### Step 1 : Initiate Image Capture Request
 
-- In this step, we'll send a request to the Participant B whom we want to capture image using pubsub. 
-- In order to do that, we will create pubsub topic called  `IMAGE_CAPTURE`  in  `ParticipantView`  Component.​  
+- In this step, we'll send a request to the Participant B whom we want to capture image using pubsub.
+- In order to do that, we will create pubsub topic called `IMAGE_CAPTURE` in `ParticipantView` Component.​
 - Here, we are using `sendOnly` property of `publish()` method. Therefore, the request will be send to that participant only.
 
 ```js
@@ -78,7 +79,7 @@ function ParticipantView({ participantId }) {
     // Here, it will be Participant B id, because we want to capture the the image of Participant B
     publish("Sending request to capture image", { persist: false, sendOnly: [participantId] });
   };
-  
+
   return <>
     // other components
     <TouchableOpacity style={{ width: 80, height : 45, backgroundColor: 'red', position: 'absolute', top: 10 }} onPress={() => {
@@ -95,7 +96,7 @@ function ParticipantView({ participantId }) {
 
 #### Step 2 : Capture and Upload File
 
-- To capture image from remote participant [Participant B], we've created the `CaptureImageListener` component. When a participant receives an image capture request, this component uses the `captureImage` function of  `useParticipant` hook to capture the image.
+- To capture image from remote participant [Participant B], we've created the `CaptureImageListener` component. When a participant receives an image capture request, this component uses the `captureImage` function of `useParticipant` hook to capture the image.
 
 ```js
 import {
@@ -134,49 +135,47 @@ const CaptureImageListner = ({ localParticipantId }) => {
 
   return <></>;
 };
-  
+
 export default CaptureImageListner;
 ```
 
-- The captured image is then stored in the VideoSDK's temporary file storage system using the  `uploadBase64File()` function of `useFile` hook. This operation returns a unique `fileUrl` of the stored image.
+- The captured image is then stored in the VideoSDK's temporary file storage system using the `uploadBase64File()` function of `useFile` hook. This operation returns a unique `fileUrl` of the stored image.
 
 ```js
 const CaptureImageListner = ({ localParticipantId }) => {
-
   const { uploadBase64File } = useFile();
-  
+
   async function captureAndStoreImage({ senderId }) {
     // capture image
-    const base64Data = await captureImage({height:400,width:400});
+    const base64Data = await captureImage({ height: 400, width: 400 });
     const token = "<YOUR-TOKEN>";
-    const fileName = "myCapture.jpeg";  // specify a name for image file with extension
+    const fileName = "myCapture.jpeg"; // specify a name for image file with extension
     // upload image to videosdk storage system
-    const fileUrl = await uploadBase64File({base64Data,token,fileName});
-    console.log('fileUrl',fileUrl)
+    const fileUrl = await uploadBase64File({ base64Data, token, fileName });
+    console.log("fileUrl", fileUrl);
   }
 
   //...
-}
+};
 ```
 
 - Next, the `fileUrl` is sent back to the participant who initiated the request using the `IMAGE_TRANSFER` topic.
 
 ```js
 const CaptureImageListner = ({ localParticipantId }) => {
-
   //...
 
   // publish image Transfer
-  const { publish: imageTransferPublish } = usePubSub('IMAGE_TRANSFER');
+  const { publish: imageTransferPublish } = usePubSub("IMAGE_TRANSFER");
 
   async function captureAndStoreImage({ senderId }) {
     //...
-    const fileUrl = await uploadBase64File({base64Data,token,fileName});
-    imageTransferPublish(fileUrl, { persist: false , sendOnly: [senderId] });
+    const fileUrl = await uploadBase64File({ base64Data, token, fileName });
+    imageTransferPublish(fileUrl, { persist: false, sendOnly: [senderId] });
   }
 
   //...
-}
+};
 ```
 
 - We've rendered the `CaptureImageListener` component within the `MeetingView` component.
@@ -225,7 +224,7 @@ function ShowImage() {
     onMessageReceived: (message) => {
       if (message.senderId !== mMeeting.localParticipant.id) {
         fetchFile({ url: message.message }); // pass fileUrl to fetch the file
-      } 
+      }
     }
   });
   ​
@@ -241,41 +240,39 @@ function ShowImage() {
 - With the `base64` data in hand, we display the image in a modal. This seamless image presentation is integrated into the `MeetingView` component.
 
 ```js
-import {
-  Image,
-  Modal,
-  Pressable
-} from 'react-native';
+import { Image, Modal, Pressable } from "react-native";
 
 function ShowImage() {
+  //...
 
- //...
-
- return <>
-  {bitMapImg ? (
-    <View>
-      <Modal animationType={"slide"} transparent={false} >
-        <View style={{
-          flex: 1,
-          flexDirection: 'column',
-          justifyContent: 'center',
-          alignItems: 'center'
-        }}>
-          <View>
-            <Image
-              style={{ height: 400, width: 300, objectFit: "contain" }}
-              source={{ uri: `data:image/jpeg;base64,${bitMapImg}` }}
-            />
-            <Pressable
-              onPress={() => setbitMapImg(null)}>
-            <Text style={{color:"black"}}>Close Dialog</Text>
-          </Pressable>
-          </View>
+  return (
+    <>
+      {bitMapImg ? (
+        <View>
+          <Modal animationType={"slide"} transparent={false}>
+            <View
+              style={{
+                flex: 1,
+                flexDirection: "column",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              <View>
+                <Image
+                  style={{ height: 400, width: 300, objectFit: "contain" }}
+                  source={{ uri: `data:image/jpeg;base64,${bitMapImg}` }}
+                />
+                <Pressable onPress={() => setbitMapImg(null)}>
+                  <Text style={{ color: "black" }}>Close Dialog</Text>
+                </Pressable>
+              </View>
+            </View>
+          </Modal>
         </View>
-      </Modal>
-    </View>
-  ) : null}
- </>;
+      ) : null}
+    </>
+  );
 }
 ```
 
