@@ -291,7 +291,7 @@ function MeetingView() {
 
 :::note
 
-The file stored in the [VideoSDK's temporary file storage system](../collaboration-in-meeting/upload-fetch-temporary-file.md) will be automatically deleted once the current room/meeting comes to an end.
+The file stored in the [VideoSDK's temporary file storage system](/react-native/guide/video-and-audio-calling-api-sdk/collaboration-in-meeting/upload-fetch-temporary-file) will be automatically deleted once the current room/meeting comes to an end.
 
 :::
 
