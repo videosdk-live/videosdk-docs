@@ -66,7 +66,8 @@
             "guide/video-and-audio-calling-api-sdk/handling-media/screen-share",
             "guide/video-and-audio-calling-api-sdk/handling-media/active-speaker-indication",
             "guide/video-and-audio-calling-api-sdk/handling-media/change-input-device",
-            "guide/video-and-audio-calling-api-sdk/handling-media/change-audio-output-device"
+            "guide/video-and-audio-calling-api-sdk/handling-media/change-audio-output-device",
+            "guide/video-and-audio-calling-api-sdk/handling-media/image-capturer"
           ],
           "collapsed": true
         },
@@ -103,7 +104,8 @@
           "label": "Collaboration in Meeting",
           "items": [
             "guide/video-and-audio-calling-api-sdk/collaboration-in-meeting/pubsub",
-            "guide/video-and-audio-calling-api-sdk/collaboration-in-meeting/chat-using-pubsub"
+            "guide/video-and-audio-calling-api-sdk/collaboration-in-meeting/chat-using-pubsub",
+            "guide/video-and-audio-calling-api-sdk/collaboration-in-meeting/upload-fetch-temporary-file"
           ],
           "collapsed": true
         },

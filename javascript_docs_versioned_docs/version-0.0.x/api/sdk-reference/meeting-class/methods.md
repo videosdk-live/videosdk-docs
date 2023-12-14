@@ -135,6 +135,71 @@ title: Meeting Class Methods
 
 ---
 
+### uploadBase64File()
+
+- It is used to upload your file to Videosdk's Temporary storage
+
+- `base64Data` convert your file to base64 and pass here.
+- `token` pass your videosdk token. Read more about token [here](/javascript/guide/video-and-audio-calling-api-sdk/authentication-and-token)
+- `fileName` provide your fileName with extension
+
+- The method will return the corresponding fileUrl, which will use to retrieve the file from the VideoSDK's storage system.
+
+#### Parameters
+
+- **base64Data**: String
+- **token**: String
+- **fileName**: String
+
+#### Returns
+
+- `fileUrl` - It will use to retrieve the file from the VideoSDK's storage system.
+
+#### Example
+
+```javascript
+const fileUrl = await meeting.uploadBase64File({
+  base64Data: "<Your File's base64>", // Convert your file to base64 and pass here
+  token: "<Your Token>",
+  fileName: "myImage.jpeg", // Provide name with extension here,
+});
+
+console.log("fileUrl", fileUrl);
+```
+
+---
+
+### fetchBase64File()
+
+- It is used to retrieve your file from the Videosdk's Temporary storage
+
+- `url` pass fileUrl which is returned by uploadBase64File()
+- `token` pass your videosdk token. Read more about token [here](/javascript/guide/video-and-audio-calling-api-sdk/authentication-and-token)
+
+- The method will return image in form of base64 string.
+
+#### Parameters
+
+- **url**: String
+- **token**: String
+
+#### Returns
+
+- `base64` - image in form of base64 string.
+
+#### Example
+
+```javascript
+let base64 = await meeting.fetchBase64File({
+  url: "<Your FileUrl>"; // Provide fileUrl which is returned by uploadBase64File(),
+  token :"<Your Token>",
+});
+
+console.log("base64", base64);
+```
+
+---
+
 ### startRecording()
 
 - It is used to start meeting recording.
