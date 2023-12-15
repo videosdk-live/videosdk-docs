@@ -45,9 +45,9 @@ async function imageCapture() {
 }
 ```
 
-:::note
+:::tip
 
-You can only capture an image of local participant. If you called `captureImage()` function on remote participant, you will receive an error. If you want to capture an image of a remote participant, check the documentation below.
+Instead of using the `participants.get(participantId)`.captureImage() method to capture an image of a remote participant, it is recommended to follow the below documentation for a more effective approach. `participants.get(participantId)`.captureImage() method captures an image from the video stream you are currently consuming from the remote participant. The alternative documentation likely offers a better and more appropriate way to achieve the desired result.
 
 :::
 
