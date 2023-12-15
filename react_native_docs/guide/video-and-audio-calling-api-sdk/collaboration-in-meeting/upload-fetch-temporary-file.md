@@ -3,7 +3,7 @@ title: Upload & Fetch Temporary File | Video SDK
 hide_title: true
 hide_table_of_contents: false
 description: Upload & Fetch Temporary File.
-sidebar_label:  Upload-Fetch Temporary File
+sidebar_label: Upload-Fetch Temporary File
 pagination_label: Upload-Fetch Temporary File
 keywords:
   - upload temporary file
@@ -16,7 +16,6 @@ slug: upload-fetch-temporary-file
 # Upload and Retrieve the Temporary File - React Native
 
 In this guide, we'll demonstrate how to upload and retrieve files from the VideoSDK's temporary file storage system.
-
 
 ### `uploadBase64File()`
 
@@ -32,11 +31,11 @@ In this guide, we'll demonstrate how to upload and retrieve files from the Video
 const { uploadBase64File } = useFile();
 
 async function uploadFile() {
-    const base64Data = "<Your File's base64>"; // Convert your file to base64 and pass here 
-    const token = "<Your Token>";
-    const fileName = "myImage.jpeg";  // Provide name with extension here
-    const url = await uploadBase64File({base64Data,token,fileName});
-    console.log("fileUrl",url);
+  const base64Data = "<Your File's base64>"; // Convert your file to base64 and pass here
+  const token = "<VIDEOSDK_TOKEN>";
+  const fileName = "myImage.jpeg"; // Provide name with extension here
+  const url = await uploadBase64File({ base64Data, token, fileName });
+  console.log("fileUrl", url);
 }
 ```
 
@@ -52,10 +51,10 @@ async function uploadFile() {
 const { fetchBase64File } = useFile();
 
 async function fetchFile() {
-    const url = "<Your FileUrl>"; // Provide fileUrl which is returned by uploadBase64File()
-    const token = "<Your Token>";
-    const base64 = await fetchBase64File({url,token});
-    console.log("base64",base64);
+  const url = "<Your FileUrl>"; // Provide fileUrl which is returned by uploadBase64File()
+  const token = "<VIDEOSDK_TOKEN>";
+  const base64 = await fetchBase64File({ url, token });
+  console.log("base64", base64);
 }
 ```
 
@@ -64,6 +63,3 @@ async function fetchFile() {
 The file stored in the system will be automatically deleted once the current room/meeting comes to an end.
 
 :::
-
-
-

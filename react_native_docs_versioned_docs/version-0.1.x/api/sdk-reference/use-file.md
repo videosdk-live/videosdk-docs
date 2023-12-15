@@ -21,11 +21,11 @@ title: Video SDK useFile Hook
 const { uploadBase64File } = useFile();
 
 async function uploadFile() {
-    const base64Data = "<Your File's base64Data>"; // Convert your file to base64 and pass here 
-    const token = "<Your Token>";
-    const fileName = "myImage.jpeg";  // Provide name with extension here
-    const url = await uploadBase64File({base64Data,token,fileName});
-    console.log("fileUrl",url);
+  const base64Data = "<Your File's base64Data>"; // Convert your file to base64 and pass here
+  const token = "<VIDEOSDK_TOKEN>";
+  const fileName = "myImage.jpeg"; // Provide name with extension here
+  const url = await uploadBase64File({ base64Data, token, fileName });
+  console.log("fileUrl", url);
 }
 ```
 
@@ -39,12 +39,9 @@ async function uploadFile() {
 const { fetchBase64File } = useFile();
 
 async function fetchFile() {
-    const url = "<Your FileUrl>"; // Provide fileUrl which is returned by uploadBase64File()
-    const token = "<Your Token>";
-    const base64 = await fetchBase64File({url,token});
-    console.log("base64",base64);
+  const url = "<Your FileUrl>"; // Provide fileUrl which is returned by uploadBase64File()
+  const token = "<VIDEOSDK_TOKEN>";
+  const base64 = await fetchBase64File({ url, token });
+  console.log("base64", base64);
 }
 ```
-
-
-
