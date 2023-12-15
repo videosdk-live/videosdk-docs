@@ -203,38 +203,6 @@ async function captureImageAndDisplay(message) {
   base64 = "data:data:image/jpeg;base64," + base64;
   captureImage.src = base64;
 }
-
-meeting.on("meeting-joined", () => {
-  // ...
-  meeting.pubSub.subscribe("IMAGE_TRANSFER", (data) => {
-    if (data.senderId !== meeting.localParticipant.id) {
-      captureImageAndDisplay(data);
-    }
-  });
-});
-```
-
-- With the `base64` data in hand, we display the image.
-
-```js
-let captureImage = document.getElementById("captureImage");
-
-async function captureImageAndDisplay(message) {
-  const token = "<YOUR-TOKEN>";
-  let base64 = await meeting.fetchBase64File({
-    url: message.message,
-    token,
-  });
-  console.log("base64", base64); // here is your image in a form of base64
-
-  base64 = "data:data:image/jpeg;base64," + base64;
-  captureImage.src = base64;
-}
-```
-
-```html
-<!--  -->
-<img id="captureImage" />
 ```
 
 ```html
@@ -254,15 +222,21 @@ The API references for all the methods utilized in this guide are provided below
 
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 
 - # [stream-enabled](/javascript/api/sdk-reference/participant-class/events#stream-enabled)
   =======
+  > > > > > > > # Stashed changes
+  > > > > > > >
   > > > > > > > Stashed changes
 - [captureImage](/javascript/api/sdk-reference/participant-class/methods#captureimage)
 - [pub-sub](/javascript/api/sdk-reference/meeting-class/properties#pubsub)
 - [uploadbase64file](/javascript/api/sdk-reference/meeting-class/methods#uploadbase64file)
 - [fetchbase64file](javascript/api/sdk-reference/meeting-class/methods#fetchbase64file)
   <<<<<<< Updated upstream
+  <<<<<<< Updated upstream
+  > > > > > > > # Stashed changes
+  > > > > > > >
   > > > > > > > # Stashed changes
   > > > > > > >
   > > > > > > > Stashed changes
