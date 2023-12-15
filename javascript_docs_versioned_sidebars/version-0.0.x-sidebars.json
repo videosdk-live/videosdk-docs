@@ -103,7 +103,8 @@
           "label": "Collaboration in Meeting",
           "items": [
             "guide/video-and-audio-calling-api-sdk/collaboration-in-meeting/pubsub",
-            "guide/video-and-audio-calling-api-sdk/collaboration-in-meeting/chat-using-pubsub"
+            "guide/video-and-audio-calling-api-sdk/collaboration-in-meeting/chat-using-pubsub",
+            "guide/video-and-audio-calling-api-sdk/collaboration-in-meeting/upload-fetch-temporary-file"
           ],
           "collapsed": true
         },
