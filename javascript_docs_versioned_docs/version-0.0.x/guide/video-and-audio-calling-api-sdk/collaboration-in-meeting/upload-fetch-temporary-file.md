@@ -37,7 +37,7 @@ meeting = VideoSDK.initMeeting({
 
 const fileUrl = await meeting.uploadBase64File({
   base64Data: "<Your File's base64>", // Convert your file to base64 and pass here
-  token: "<Your Token>",
+  token: "<VIDEOSDK_TOKEN>",
   fileName: "myImage.jpeg", // Provide name with extension here,
 });
 ```
@@ -60,7 +60,7 @@ meeting = VideoSDK.initMeeting({
 
 let base64 = await meeting.fetchBase64File({
   url: "<Your FileUrl>"; // Provide fileUrl which is returned by uploadBase64File(),
-  token :"<Your Token>",
+  token :"<VIDEOSDK_TOKEN>",
 });
 
 console.log("base64", base64);

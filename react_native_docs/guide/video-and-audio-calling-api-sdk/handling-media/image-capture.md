@@ -148,7 +148,7 @@ const CaptureImageListner = ({ localParticipantId }) => {
   async function captureAndStoreImage({ senderId }) {
     // capture image
     const base64Data = await captureImage({ height: 400, width: 400 });
-    const token = "<YOUR-TOKEN>";
+    const token = "<VIDEOSDK_TOKEN>";
     const fileName = "myCapture.jpeg"; // specify a name for image file with extension
     // upload image to videosdk storage system
     const fileUrl = await uploadBase64File({ base64Data, token, fileName });
@@ -229,7 +229,7 @@ function ShowImage() {
   });
   ​
   async function fetchFile({ url }) {
-    const token = "<YOUR-TOKEN>";
+    const token = "<VIDEOSDK_TOKEN>";
     const base64 = await fetchBase64File({ url, token });
     console.log("base64",base64); // here is your image in a form of base64
     setbitMapImg(base64);
