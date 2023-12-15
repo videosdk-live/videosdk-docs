@@ -14,7 +14,8 @@
       "label": "Install the SDK",
       "items": [
         "guide/video-and-audio-calling-api-sdk/integrate-sdk",
-        "guide/video-and-audio-calling-api-sdk/release-notes"
+        "guide/video-and-audio-calling-api-sdk/release-notes",
+        "guide/video-and-audio-calling-api-sdk/supported-browser"
       ],
       "collapsed": true
     },
@@ -154,6 +155,7 @@
             "guide/interactive-live-streaming/integrate-hls/overview",
             "guide/interactive-live-streaming/integrate-hls/start-hls",
             "guide/interactive-live-streaming/integrate-hls/stop-hls",
+            "guide/interactive-live-streaming/integrate-hls/generate-hls-thumbnail",
             "guide/interactive-live-streaming/integrate-hls/setup-hls-player"
           ]
         },

@@ -114,6 +114,12 @@ const participants = meeting.participants;
 
 </div>
 
+<div class="col col--4 margin-bottom--sm" >
+
+- [captureImage](./methods.md#captureimage)
+
+</div>
+
 </div>
 
 ## Participant Events

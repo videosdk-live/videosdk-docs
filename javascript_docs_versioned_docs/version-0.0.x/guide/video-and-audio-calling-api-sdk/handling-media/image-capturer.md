@@ -33,8 +33,16 @@ meeting = VideoSDK.initMeeting({
   // ...
 });
 
-const base64Data = await meeting.localParticipant.captureImage(); // captureImage will return base64 string
-console.log("base64", base64);
+let isWebcamOn; // status of your webcam, true/false
+
+async function imageCapture() {
+  if (isWebcamOn) {
+    const base64Data = await meeting.localParticipant.captureImage(); // captureImage will return base64 string
+    console.log("base64", base64);
+  } else {
+    console.error("Camera must be on to capture an image");
+  }
+}
 ```
 
 :::note
@@ -130,7 +138,7 @@ async function captureAndStoreImage() {
   // upload image to videosdk storage system
   const fileUrl = await meeting.uploadBase64File({
     base64Data,
-    token: "<Your Token>",
+    token: "VIDEOSDK_TOKEN",
     fileName: "myImage.jpeg", // specify a name for image file with extension
   });
 
@@ -146,7 +154,7 @@ async function captureAndStoreImage() {
 
   const fileUrl = await meeting.uploadBase64File({
     base64Data,
-    token: "<Your Token>",
+    token: "VIDEOSDK_TOKEN",
     fileName: "myImage.jpeg", // specify a name for image file with extension
   });
 
@@ -169,7 +177,7 @@ async function captureAndStoreImage() {
 
 ```js
 async function captureImageAndDisplay(message) {
-  const token = "<YOUR-TOKEN>";
+  const token = "VIDEOSDK_TOKEN";
   let base64 = await meeting.fetchBase64File({
     url: message.message,
     token,
@@ -193,7 +201,7 @@ meeting.on("meeting-joined", () => {
 let captureImage = document.getElementById("captureImage");
 
 async function captureImageAndDisplay(message) {
-  const token = "<YOUR-TOKEN>";
+  const token = "VIDEOSDK_TOKEN";
   let base64 = await meeting.fetchBase64File({
     url: message.message,
     token,
@@ -220,6 +228,7 @@ The file stored in the [VideoSDK's temporary file storage system](/javascript/gu
 
 The API references for all the methods utilized in this guide are provided below.
 
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
@@ -239,4 +248,9 @@ The API references for all the methods utilized in this guide are provided below
   > > > > > > >
   > > > > > > > # Stashed changes
   > > > > > > >
-  > > > > > > > Stashed changes
+  > > > > > > > # Stashed changes
+- [captureImage](/javascript/api/sdk-reference/participant-class/methods#captureimage)
+- [pub-sub](/javascript/api/sdk-reference/meeting-class/properties#pubsub)
+- [uploadbase64file](/javascript/api/sdk-reference/meeting-class/methods#uploadbase64file)
+- [fetchbase64file](/javascript/api/sdk-reference/meeting-class/methods#fetchbase64file)
+  > > > > > > > main

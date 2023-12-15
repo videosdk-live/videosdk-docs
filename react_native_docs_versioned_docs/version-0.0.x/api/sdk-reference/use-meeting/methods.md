@@ -12,7 +12,7 @@ title: Methods returned by useMeeting Hook
 ### join()
 
 - It is used to join a meeting.
-- During initialization using the [`<MeetingProvider>`](../meeting-provider), if `joinWithoutInteraction` is set to `true`, participant will automatically join the meeting. If it is `false` explicity call for `join()` should be made.
+- During initialization using the [`<MeetingProvider>`](../meeting-provider), if `joinWithoutUserInteraction` is set to `true`, participant will automatically join the meeting. If it is `false` explicity call for `join()` should be made.
 
 #### Events associated with `join()`:
 

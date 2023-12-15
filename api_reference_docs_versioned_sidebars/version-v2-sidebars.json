@@ -26,9 +26,7 @@
         "realtime-communication/fetch-participants",
         "realtime-communication/fetch-active-participants",
         "realtime-communication/end-session",
-        "realtime-communication/remove-participant",
-        "realtime-communication/fetch-session-quality-stats",
-        "realtime-communication/fetch-session-peer-quality-stats"
+        "realtime-communication/remove-participant"
       ]
     },
     {
@@ -81,9 +79,7 @@
       "type": "category",
       "label": "Host into Serverless functions",
       "collapsed": true,
-      "items": [
-        "realtime-communication/firebase-cloud-function"
-      ]
+      "items": ["realtime-communication/firebase-cloud-function"]
     }
   ]
 }

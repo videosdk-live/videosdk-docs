@@ -21,7 +21,7 @@ Every Context object in `react-js` comes with a Provider React component that al
     participantId: "xyz",
     multiStream: true,
     mode: "CONFERENCE", // "CONFERENCE" || "VIEWER"
-    metaData: {}
+    metaData: {},
   }}
   token={"token"}
   joinWithoutUserInteraction // Boolean
@@ -81,11 +81,11 @@ Please refer this [documentation](/api-reference/realtime-communication/intro) t
 
 ---
 
-### joinWithoutInteraction
+### joinWithoutUserInteraction
 
-- If `joinWithoutInteraction` is `true`, participant will directly join the meeting with requring to explicitly calling `join()`.
+- If `joinWithoutUserInteraction` is `true`, participant will directly join the meeting with requring to explicitly calling `join()`.
 
-- If `joinWithoutInteraction` is `false`, participant has to call `join()` to join the meeting.
+- If `joinWithoutUserInteraction` is `false`, participant has to call `join()` to join the meeting.
 
   - type: `Boolean`
   - default: false
