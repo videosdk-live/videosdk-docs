@@ -499,7 +499,7 @@ void startHls() async {
     },
     body: body,
   );
-  log("response ${json.decode(httpResponse.body)}"); // result will have downstreamUrl
+  log("response ${json.decode(httpResponse.body)}"); // result will have playbackHlsUrl and livestreamUrl
 }
 
 ElevatedButton(

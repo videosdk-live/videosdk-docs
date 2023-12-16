@@ -398,17 +398,26 @@ room.on(Events.liveStreamStateChanged, (String status) {
 
 #### Event callback parameters
 
-- **data**: { **status**: String , **downstreamUrl**: String }
+- **data**: { **status**: String , **livestreamUrl**: String , **playbackHlsUrl**: String }
   - **status**: String
-  - **downstreamUrl**: String _`will receive this property only in HLS_STARTED status`_
+  - **livestreamUrl**: String _`will receive this property only in HLS_STARTED status`_
+  - **playbackHlsUrl**: String _`will receive this property only in HLS_STARTED status`_
 
 `status` has following values
 
 - `HLS_STARTING` - Hls is in starting phase and hasn't started yet.
-- `HLS_STARTED` - Hls has started successfully will return `downstreamUrl`.
-- `HLS_PLAYABLE` - Hls has started can be played now, it will return `downstreamUrl`.
+- `HLS_STARTED` - Hls has started successfully will return `playbaclHlsUrl` and `livestreamUrl`.
+- `HLS_PLAYABLE` - Hls has started can be played now, it will return `playbaclHlsUrl` and `livestreamUrl`.
 - `HLS_STOPPING` - Hls is in stopping phase and hasn't stopped yet.
 - `HLS_STOPPED` - Hls has stopped successfully.
+
+- when you receive `HLS_PLAYABLE` status you will receive 2 urls in response
+  - `playbackHlsUrl` - Live HLS with playback support
+  - `livestreamUrl` - Live HLS without playback support
+
+:::note
+`downstreamUrl` is now depecated. Use `playbackHlsUrl` or `livestreamUrl` in place of `downstreamUrl`
+:::
 
 #### Example
 
@@ -416,7 +425,7 @@ room.on(Events.liveStreamStateChanged, (String status) {
 room.on(Events.hlsStateChanged, (Map<String, dynamic> data) {
   toastMsg("Meeting HLS status : ${data['status']}");
   if (data['status'] == "HLS_PLAYABLE")
-    log("DOWNSTREAM URL -- " + data['downstreamUrl']);
+    log("PLAYBACKHLS URL -- " + data['playbackHlsUrl']);
 });
 ```
 

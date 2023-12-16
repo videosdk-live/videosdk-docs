@@ -46,6 +46,10 @@ stopHlsBtn.addEventListener("click", () => {
 
 - You will get `HLS_STOPPING` and `HLS_STOPPED` status on calling `stopHls()`.
 
+:::note
+`downstreamUrl` is now depecated. Use `playbackHlsUrl` or `livestreamUrl` in place of `downstreamUrl`
+:::
+
 ```js
 let meeting;
 
@@ -62,8 +66,8 @@ meeting.on("hls-state-changed", (data) => {
   if (status === Constants.hlsEvents.HLS_STARTING) {
     console.log("Meeting Hls is starting");
   } else if (status === Constants.hlsEvents.HLS_STARTED) {
-    // on hlsStateChanged started you will receive downstreamUrl
-    const { downstreamUrl } = data;
+    // on hlsStateChanged started you will receive playbackHlsUrl and livestreamUrl
+    const { playbackHlsUrl } = data;
     console.log("Meeting Hls is started");
     //highlight-start
   } else if (status === Constants.hlsEvents.HLS_STOPPING) {

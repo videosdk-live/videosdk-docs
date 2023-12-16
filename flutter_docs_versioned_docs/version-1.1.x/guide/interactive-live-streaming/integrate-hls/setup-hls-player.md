@@ -40,9 +40,9 @@ class HlsScreen extends StatefulWidget {
 
 class _HlsScreenState extends State<HlsScreen> {
   //highlight-start
-  //Declare state of the HLS and the downstreamUrl
+  //Declare state of the HLS and the playbackHlsUrl
   String hlsState = "HLS_STOPPED";
-  String? downstreamUrl;
+  String? playbackHlsUrl;
   //highlight-end
 
   @override
@@ -51,7 +51,7 @@ class _HlsScreenState extends State<HlsScreen> {
     //highlight-start
     //initialize the state from the room object
     hlsState = widget.room.hlsState;
-    downstreamUrl = widget.room.hlsDownstreamUrl;
+    playbackHlsUrl = widget.room.hlsPlaybackHlsUrl;
     //highlight-end
 
     //setup hlsStateChanged event listener
@@ -79,7 +79,7 @@ class _HlsScreenState extends State<HlsScreen> {
             hlsState = status;
             //we will update the downstream URL if the HLS state is HLS_PLAYABLE and HLS_STOPPED
             if (status == "HLS_PLAYABLE" || status == "HLS_STOPPED") {
-              downstreamUrl = data['downstreamUrl'];
+              playbackHlsUrl = data['playbackHlsUrl'];
             }
           });
         }
@@ -90,7 +90,7 @@ class _HlsScreenState extends State<HlsScreen> {
 }
 ```
 
-**`Step 2:`** Now let's add the placeholder that will be shown when there is no active HLS. For these, we will use the `downstreamUrl` identify if there is an active HLS.
+**`Step 2:`** Now let's add the placeholder that will be shown when there is no active HLS. For these, we will use the `playbackHlsUrl` identify if there is an active HLS.
 
 ```js
 import 'package:flutter/material.dart';
@@ -105,7 +105,7 @@ class HlsScreen extends StatefulWidget {
 
 class _HlsScreenState extends State<HlsScreen> {
   String hlsState = "HLS_STOPPED";
-  String? downstreamUrl;
+  String? playbackHlsUrl;
 
   @override
   void initState() {
@@ -119,8 +119,8 @@ class _HlsScreenState extends State<HlsScreen> {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         //Render the text placeholder if downstream url is null
-        downstreamUrl != null
-              ? LivestreamPlayer(downstreamUrl: downstreamUrl!)
+        playbackHlsUrl != null
+              ? LivestreamPlayer(playbackHlsUrl: playbackHlsUrl!)
               : const Text("Host has not started the HLS"),
       ],
     );
@@ -142,17 +142,17 @@ class _HlsScreenState extends State<HlsScreen> {
 flutter pub add flutter_vlc_player
 ```
 
-**`Step 2:`** Next we will be `StatefulWidget` named `LivestreamPlayer` which will play our livestream from the provided `downstreamUrl`.
+**`Step 2:`** Next we will be `StatefulWidget` named `LivestreamPlayer` which will play our livestream from the provided `playbackHlsUrl`.
 
 ```js
 import 'package:flutter/material.dart';
 import 'package:flutter_vlc_player/flutter_vlc_player.dart';
 
 class LivestreamPlayer extends StatefulWidget {
-  final String downstreamUrl;
+  final String playbackHlsUrl;
   const LivestreamPlayer({
     Key? key,
-    required this.downstreamUrl,
+    required this.playbackHlsUrl,
   }) : super(key: key);
 
   @override
@@ -170,8 +170,8 @@ class LivestreamPlayerState extends State<LivestreamPlayer>
   void initState() {
     super.initState();
     //highlight-start
-    //initialize the player with downstreamUrl
-    _controller = VlcPlayerController.network(widget.downstreamUrl,
+    //initialize the player with playbackHlsUrl
+    _controller = VlcPlayerController.network(widget.playbackHlsUrl,
         options: VlcPlayerOptions());
     //highlight-end
   }

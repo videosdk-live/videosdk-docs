@@ -24,6 +24,10 @@ VideoSDK provides `hlsStateChanged` event which will notify you of the current s
 - This event will be triggered when the meeting's HLS status changed.
 - This event can be subscribed from `Room` Object.
 
+:::note
+`downstreamUrl` is now depecated. Use `playbackHlsUrl` or `livestreamUrl` in place of `downstreamUrl`
+:::
+
 ### Example
 
 Here is the usage of the event mentioned in this page.
@@ -62,7 +66,7 @@ class _MeetingScreenState extends State<MeetingScreen> {
       //Status can be :: HLS_STOPPED
       log("Meeting HLS status : ${data['status']}");
       if (data['status'] == "HLS_PLAYABLE")
-        log("DOWNSTREAM URL -- " + data['downstreamUrl']);
+        log("PLAYBACKHLS URL -- " + data['playbackHlsUrl']);
     });
   }
   //highlight-end

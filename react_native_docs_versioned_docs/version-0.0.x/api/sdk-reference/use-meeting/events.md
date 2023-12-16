@@ -405,8 +405,8 @@ function onHlsStateChanged(data) {
   } else if (status === Constants.hlsEvents.HLS_STARTED) {
     console.log("Meeting Hls is started");
   } else if (status === Constants.hlsEvents.HLS_PLAYABLE) {
-    // on hlsStateChanged started you will receive downstreamUrl
-    const {downstreamUrl}=data;
+    // on hlsStateChanged started you will receive  playbackHlsUrl and livestreamUrl
+    const { playbackHlsUrl }=data;
     console.log("Meeting Hls is playable");
   } else if (status === Constants.hlsEvents.HLS_STOPPING) {
     console.log("Meeting Hls is stopping");
@@ -433,16 +433,21 @@ const {
 
 - This event callback is trigger when meeting `HLS` is started.
 
+:::note
+`downstreamUrl` is now depecated. Use `playbackHlsUrl` or `livestreamUrl` in place of `downstreamUrl`
+:::
+
 #### Event callback parameters
 
-- **data**: { **downstreamUrl**: String; }
-  - **downstreamUrl**: String
+- **data**: { **playbackHlsUrl**:String; **livestreamUrl**:String }
+  - **playbackHlsUrl**: String
+  - **livestreamUrl**: String
 
 #### Example
 
 ```js
-function onHlsStarted({ downstreamUrl }) {
-  console.log("onHlsStarted", downstreamUrl);
+function onHlsStarted({ playbackHlsUrl, livestreamUrl }) {
+  console.log("onHlsStarted", playbackHlsUrl, livestreamUrl);
 }
 ```
 

@@ -23,6 +23,13 @@ VideoSDK provides `onHlsStateChanged` event which will notify you of the current
 
 - This event will be triggered when the meeting's HLS status changed.
 - You can implement this method of the abstract Class `MeetingEventListener` and add the listener to `Meeting` class using the `addEventListener()` method of `Meeting` Class.
+- when you receive `HLS_PLAYABLE` status you will receive 2 urls in response
+  - `playbackHlsUrl` - Live HLS with playback support
+  - `livestreamUrl` - Live HLS without playback support
+
+:::note
+`downstreamUrl` is now depecated. Use `playbackHlsUrl` or `livestreamUrl` in place of `downstreamUrl`
+:::
 
 ### Example
 
@@ -46,8 +53,9 @@ private val meetingEventListener: MeetingEventListener = object : MeetingEventLi
         "HLS_STARTED" -> Log.d("onHlsStateChanged", "Meeting hls is started")
         "HLS_PLAYABLE" -> {
             Log.d("onHlsStateChanged", "Meeting hls is playable now")
-            // on hls playable you will receive downstreamUrl
-            val downStreamUrl = HlsState.getString("downstreamUrl")
+            // on hls playable you will receive playbackHlsUrl and livestreamUrl
+            val playbackHlsUrl = HlsState.getString("playbackHlsUrl")
+            val livestreamUrl = HlsState.getString("livestreamUrl")
         }
         "HLS_STOPPING" -> Log.d("onHlsStateChanged", "Meeting hls is stopping")
         "HLS_STOPPED" -> Log.d("onHlsStateChanged", "Meeting hls is stopped")
@@ -81,8 +89,9 @@ private final MeetingEventListener meetingEventListener = new MeetingEventListen
               break;
           case "HLS_PLAYABLE":
               Log.d("onHlsStateChanged", "Meeting hls is playable now");
-              // on hls playable you will receive downstreamUrl
-              String downStreamUrl = HlsState.getString("downstreamUrl");
+              // on hls started you will receive playbackHlsUrl and livestreamUrl
+              String playbackHlsUrl = HlsState.getString("playbackHlsUrl");
+              String livestreamUrl = HlsState.getString("livestreamUrl");
               break;
           case "HLS_STOPPING":
               Log.d("onHlsStateChanged", "Meeting hls is stopping");

@@ -53,7 +53,7 @@ const startHLSstream = {
     },
     {
       key: "livestreamUrl",
-      description: "Live HLS without playback sipport",
+      description: "Live HLS without playback support",
     },
     {
       key: "downstreamUrl",

@@ -65,6 +65,10 @@ findViewById(R.id.btnStopHls).setOnClickListener(view -> {
 
 - You will get `HLS_STOPPING` and `HLS_STOPPED` status on calling `stopHls()`.
 
+:::note
+`downstreamUrl` is now depecated. Use `playbackHlsUrl` or `livestreamUrl` in place of `downstreamUrl`
+:::
+
 <Tabs
 defaultValue="Kotlin"
 groupId={"AndroidLanguage"}
@@ -80,8 +84,9 @@ private val meetingEventListener: MeetingEventListener = object : MeetingEventLi
         "HLS_STARTED" -> Log.d("onHlsStateChanged", "Meeting hls is started")
         "HLS_PLAYABLE" -> {
             Log.d("onHlsStateChanged", "Meeting hls is playable now")
-            // on hls playable you will receive downstreamUrl
-            val downStreamUrl = HlsState.getString("downstreamUrl")
+             // on hls playable you will receive playbackHlsUrl and livestreamUrl
+            val playbackHlsUrl = HlsState.getString("playbackHlsUrl")
+            val livestreamUrl = HlsState.getString("livestreamUrl")
         }
             //highlight-start
         "HLS_STOPPING" -> Log.d("onHlsStateChanged", "Meeting hls is stopping")
@@ -118,8 +123,9 @@ private final MeetingEventListener meetingEventListener = new MeetingEventListen
               break;
           case "HLS_PLAYABLE":
               Log.d("onHlsStateChanged", "Meeting hls is playable now");
-              // on hls playable you will receive downstreamUrl
-              String downStreamUrl = HlsState.getString("downstreamUrl");
+              // on hls started you will receive playbackHlsUrl and livestreamUrl
+              String playbackHlsUrl = HlsState.getString("playbackHlsUrl");
+              String livestreamUrl = HlsState.getString("livestreamUrl");
               break;
               //highlight-start
           case "HLS_STOPPING":

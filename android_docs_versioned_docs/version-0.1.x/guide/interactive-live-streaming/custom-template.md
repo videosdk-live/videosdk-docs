@@ -498,6 +498,10 @@ cd Videosdk_android_java_hls_quickstart
 
 - To use the custom template which we just deployed, we will call the [Start HLS API](https://docs.videosdk.live/api-reference/realtime-communication/start-hlsStream) instead of the `startHls` method from the `Meeting` class. This code has already been added in the example you cloned.
 
+:::note
+`downstreamUrl` is now depecated. Use `playbackHlsUrl` or `livestreamUrl` in place of `downstreamUrl`
+:::
+
 <Tabs
 defaultValue="Kotlin"
 groupId={"AndroidLanguage"}
@@ -531,7 +535,7 @@ btnHls!!.setOnClickListener {
     .getAsJSONObject(object : JSONObjectRequestListener {
         override fun onResponse(response: JSONObject) {
             try {
-                Log.d("TAG", "onResponse: $response") // result will have downstreamUrl
+                Log.d("TAG", "onResponse: $response") // result will have playbackHlsUrl and livestreamUrl
             } catch (e: Exception) {
                 e.printStackTrace()
             }
@@ -576,7 +580,7 @@ btnHls.setOnClickListener(v -> {
         @Override
         public void onResponse(JSONObject response) {
             try {
-                Log.d("TAG", "onResponse: " + response.toString()); // result will have downstreamUrl
+                Log.d("TAG", "onResponse: " + response.toString()); // result will have playbackHlsUrl and livestreamUrl
             } catch (Exception e) {
                 e.printStackTrace();
             }

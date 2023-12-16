@@ -70,7 +70,15 @@ dependencies {
 
 ### `2. Initialize player and Playing HLS stream`
 
-**`Step 1:`** Now that player is setup, let's initialize player and play the HLS once it becomes playable. For these, we will get the `downstreamUrl` when the `onHlsStateChanged` event of `MeetingEventListener` state changes to `HLS_PLAYABLE`.
+**`Step 1:`** Now that player is setup, let's initialize player and play the HLS once it becomes playable. For these, we will get the `playbackHlsUrl` and `livestreamUrl` when the `onHlsStateChanged` event of `MeetingEventListener` state changes to `HLS_PLAYABLE`.
+
+- when you receive `HLS_PLAYABLE` status you will receive 2 urls
+  - `playbackHlsUrl` - Live HLS with playback support
+  - `livestreamUrl` - Live HLS without playback support
+
+:::note
+`downstreamUrl` is now depecated. Use `playbackHlsUrl` or `livestreamUrl` in place of `downstreamUrl`
+:::
 
 **`Step 2:`** We also need to release player and show `TextView` which shows there is no active HLS. We will release player when the `onHlsStateChanged` event of `MeetingEventListener` state changes to `HLS_STOPPED`.
 
@@ -92,7 +100,8 @@ class ViewerActivity : AppCompatActivity() {
     private var player: ExoPlayer? = null
     private var dataSourceFactory: DefaultHttpDataSource.Factory? = null
     private val startAutoPlay = true
-    private var downStreamUrl: String? = ""
+    private var playbackHlsUrl: String? = ""
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -122,8 +131,8 @@ class ViewerActivity : AppCompatActivity() {
         override fun onHlsStateChanged(HlsState: JSONObject) {
             if (HlsState.has("status")) {
                 try {
-                    if (HlsState.getString("status") == "HLS_PLAYABLE" && HlsState.has("downstreamUrl")) {
-                        downStreamUrl = HlsState.getString("downstreamUrl")
+                    if (HlsState.getString("status") == "HLS_PLAYABLE" && HlsState.has("playbackHlsUrl")) {
+                        playbackHlsUrl = HlsState.getString("playbackHlsUrl")
                         waitingLayout!!.visibility = View.GONE
                         playerView!!.visibility = View.VISIBLE
                         // initialize player
@@ -132,7 +141,7 @@ class ViewerActivity : AppCompatActivity() {
                     if (HlsState.getString("status") == "HLS_STOPPED") {
                         // release the player
                         releasePlayer()
-                        downStreamUrl = null
+                        playbackHlsUrl = null
                         waitingLayout!!.text = "Host has stopped \n the live streaming"
                         waitingLayout!!.visibility = View.VISIBLE
                         playerView!!.visibility = View.GONE
@@ -149,7 +158,7 @@ class ViewerActivity : AppCompatActivity() {
         if (player == null) {
             dataSourceFactory = DefaultHttpDataSource.Factory()
             val mediaSource = HlsMediaSource.Factory(dataSourceFactory!!).createMediaSource(
-                MediaItem.fromUri(Uri.parse(downStreamUrl))
+                MediaItem.fromUri(Uri.parse(playbackHlsUrl))
             )
             val playerBuilder = ExoPlayer.Builder( /* context= */this@ViewerActivity)
             player = playerBuilder.build()
@@ -189,7 +198,7 @@ public class ViewerActivity extends AppCompatActivity {
 
     private DefaultHttpDataSource.Factory dataSourceFactory;
     private boolean startAutoPlay = true;
-    private String downStreamUrl = "";
+    private String playbackHlsUrl = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -223,8 +232,8 @@ public class ViewerActivity extends AppCompatActivity {
         public void onHlsStateChanged(JSONObject HlsState) {
             if (HlsState.has("status")) {
                 try {
-                    if (HlsState.getString("status").equals("HLS_PLAYABLE") && HlsState.has("downstreamUrl")) {
-                        downStreamUrl = HlsState.getString("downstreamUrl");
+                    if (HlsState.getString("status").equals("HLS_PLAYABLE") && HlsState.has("playbackHlsUrl")) {
+                        playbackHlsUrl = HlsState.getString("playbackHlsUrl");
                         waitingLayout.setVisibility(View.GONE);
                         playerView.setVisibility(View.VISIBLE);
                         // initialize player
@@ -233,7 +242,7 @@ public class ViewerActivity extends AppCompatActivity {
                     if (HlsState.getString("status").equals("HLS_STOPPED")) {
                         // release the player
                         releasePlayer();
-                        downStreamUrl = null;
+                        playbackHlsUrl = null;
                         waitingLayout.setText("Host has stopped \n the live streaming");
                         waitingLayout.setVisibility(View.VISIBLE);
                         playerView.setVisibility(View.GONE);
@@ -250,7 +259,7 @@ public class ViewerActivity extends AppCompatActivity {
         if (player == null) {
             dataSourceFactory = new DefaultHttpDataSource.Factory();
             HlsMediaSource mediaSource = new HlsMediaSource.Factory(dataSourceFactory).createMediaSource(
-                    MediaItem.fromUri(Uri.parse(this.downStreamUrl)));
+                    MediaItem.fromUri(Uri.parse(this.playbackHlsUrl)));
 
             ExoPlayer.Builder playerBuilder =
                     new ExoPlayer.Builder(/* context= */ ViewerActivity.this);

@@ -145,6 +145,10 @@ function ViewerListItem({ participantId }) {
 
 After implementing the Host requesting viewer to join the livestream, let's display the viewer's request dialogue and switch the `VIEWER` mode to `CONFERENCE`.
 
+:::note
+`downstreamUrl` is now depecated. Use `playbackHlsUrl` or `livestreamUrl` in place of `downstreamUrl`
+:::
+
 ```js
 import { usePubSub } from "@videosdk.live/react-native-sdk";
 import Video from "react-native-video";
@@ -186,11 +190,11 @@ function ViewerView({}) {
     <SafeAreaView style={{ flex: 1 }}>
       {hlsState == "HLS_PLAYABLE" ? (
         <>
-          {/* Render VideoPlayer that will play `downstreamUrl`*/}
+          {/* Render VideoPlayer that will play `playbackHlsUrl`*/}
           <Video
             controls={true}
             source={{
-              uri: hlsUrls.downstreamUrl,
+              uri: hlsUrls.playbackHlsUrl,
             }}
             resizeMode={"stretch"}
             style={{

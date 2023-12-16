@@ -36,7 +36,14 @@ When doing interactive live streaming maintaining the role of users is quite imp
 
 - It is particularly useful for events with a large number of viewers who prefer not to engage with the host.
 
-- In SAS, each speaker attends a VideoSDK meeting in `CONFERENCE` mode, while viewers can simply watch the livestream using the `downstreamUrl`. Unlike the speakers, viewers do not need to join the meeting in `CONFERENCE` or `VIEWER` mode. This allows for a seamless streaming experience without any unnecessary interruptions or distractions.
+- In SAS, each speaker attends a VideoSDK meeting in `CONFERENCE` mode, while viewers can simply watch the livestream using the `playbackHlsUrl` and `livestreamUrl`. Unlike the speakers, viewers do not need to join the meeting in `CONFERENCE` or `VIEWER` mode. This allows for a seamless streaming experience without any unnecessary interruptions or distractions.
+- when you receive `HLS_PLAYABLE` status you will receive 2 urls in response
+  - `playbackHlsUrl` - Live HLS with playback support
+  - `livestreamUrl` - Live HLS without playback support
+
+:::note
+`downstreamUrl` is now depecated. Use `playbackHlsUrl` or `livestreamUrl` in place of `downstreamUrl`
+:::
 
 import ReactPlayer from 'react-player'
 

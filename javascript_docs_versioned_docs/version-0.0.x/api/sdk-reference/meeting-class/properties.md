@@ -36,10 +36,13 @@ title: Meeting Class Properties
 ### hlsUrls
 
 - type : `Object`
-  - **downstreamUrl**: `String`
   - **playbackHlsUrl**: `String`
   - **livestreamUrl**: `String`
 - `hlsUrls` will proide all the URLs for the ongoing meeting HLS.
+
+:::note
+`downstreamUrl` is now depecated. Use `playbackHlsUrl` or `livestreamUrl` in place of `downstreamUrl`
+:::
 
 ---
 

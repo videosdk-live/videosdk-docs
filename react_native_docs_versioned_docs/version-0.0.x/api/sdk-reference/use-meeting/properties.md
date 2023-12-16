@@ -76,7 +76,6 @@ title: useMeeting Hook Properties
 ### hlsUrls
 
 - type : `Object`
-  - **downstreamUrl**: `String`
   - **playbackHlsUrl**: `String`
   - **livestreamUrl**: `String`
 - `hlsUrls` will proide all the URLs for the ongoing meeting HLS.

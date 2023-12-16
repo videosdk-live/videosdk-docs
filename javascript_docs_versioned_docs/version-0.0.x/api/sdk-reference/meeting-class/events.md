@@ -410,17 +410,22 @@ meeting.on("livestream-stopped", () => {
 
 #### Event callback parameters
 
-- **data**: { **status**: String , **downstreamUrl**: String }
+- **data**: { **status**: String , **playbackHlsUrl**: String , **livestreamUrl**: String }
   - **status**: String
-  - **downstreamUrl**: String _`will receive this property only in HLS_STARTED status`_
+  - **playbackHlsUrl**: String _`will receive this property only in HLS_STARTED status`_
+  - **livestreamUrl**: String _`will receive this property only in HLS_STARTED status`_
 
 `status` has following values
 
 - `HLS_STARTING` - Hls is in starting phase and hasn't started yet.
-- `HLS_STARTED` - Hls has started successfully will return `downstreamUrl`.
-- `HLS_PLAYABLE` - Hls has started and the `downstreamUrl` is noy playable.
+- `HLS_STARTED` - Hls has started successfully will return `playbackHlsUrl` and `livestreamUrl`.
+- `HLS_PLAYABLE` - Hls has started and the `playbackHlsUrl` and `livestreamUrl` is not playable.
 - `HLS_STOPPING` - Hls is in stopping phase and hasn't stopped yet.
 - `HLS_STOPPED` - Hls has stopped successfully.
+
+:::note
+`downstreamUrl` is now depecated. Use `playbackHlsUrl` or `livestreamUrl` in place of `downstreamUrl`
+:::
 
 #### Example
 
@@ -435,8 +440,8 @@ meeting.on("hls-state-changed", (data) => {
   if (status === Constants.hlsEvents.HLS_STARTING) {
     console.log("Meeting Hls is starting");
   } else if (status === Constants.hlsEvents.HLS_STARTED) {
-    // when hls is started you will receive downstreamUrl
-    const { downstreamUrl } = data;
+    // when hls is started you will receive playbackHlsUrl
+    const { playbackHlsUrl } = data;
 
     console.log("Meeting Hls is started");
   } else if (status === Constants.hlsEvents.HLS_STOPPING) {
@@ -451,8 +456,6 @@ meeting.on("hls-state-changed", (data) => {
 
 ---
 
----
-
 ### hls-started
 
 _`This event will be deprecated soon`_
@@ -461,13 +464,18 @@ _`This event will be deprecated soon`_
 
 #### Event callback parameters
 
-- **data**: { **downstreamUrl**: String; }
-  - **downstreamUrl**: String
+- **data**: { **playbackHlsUrl**: String; **livestreamUrl**: String }
+  - **playbackHlsUrl**: String
+  - **livestreamUrl**: String
+
+:::note
+`downstreamUrl` is now depecated. Use `playbackHlsUrl` or `livestreamUrl` in place of `downstreamUrl`
+:::
 
 #### Example
 
 ```javascript
-meeting.on("hls-started", ({ downstreamUrl }) => {
+meeting.on("hls-started", ({ playbackHlsUrl, livestreamUrl }) => {
   //
 });
 ```
@@ -576,24 +584,24 @@ meeting.on("switch-meeting", (data) => {
 meeting.on("meeting-state-changed", (data) => {
   const { state } = data;
 
-  switch(state){
-    case 'CONNECTING':
-      console.log("Meeting is Connecting" );
+  switch (state) {
+    case "CONNECTING":
+      console.log("Meeting is Connecting");
       break;
-    case 'CONNECTED':
-      console.log("Meeting is Connected" );
+    case "CONNECTED":
+      console.log("Meeting is Connected");
       break;
-    case 'FAILED':
-      console.log("Meeting connection failed" );
+    case "FAILED":
+      console.log("Meeting connection failed");
       break;
-    case 'DISCONNECTED':
-      console.log("Meeting connection disconnected abruptly" );
+    case "DISCONNECTED":
+      console.log("Meeting connection disconnected abruptly");
       break;
-    case 'CLOSING':
-      console.log("Meeting is closing" );
+    case "CLOSING":
+      console.log("Meeting is closing");
       break;
-    case 'CLOSED':
-      console.log("Meeting connection closed" );
+    case "CLOSED":
+      console.log("Meeting connection closed");
       break;
   }
   //

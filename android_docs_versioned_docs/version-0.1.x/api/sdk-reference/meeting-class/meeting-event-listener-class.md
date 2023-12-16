@@ -779,12 +779,21 @@ values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
 #### Event callback parameters
 
 - **HlsState**: { **status**: String}
+
   - `status` has following values :
     - `HLS_STARTING` - HLS is in starting phase and hasn't started yet.
     - `HLS_STARTED` - HLS has started successfully.
     - `HLS_PLAYABLE` - HLS can be playable now.
     - `HLS_STOPPING` - HLS is in stopping phase and hasn't stopped yet.
     - `HLS_STOPPED` - HLS has stopped successfully.
+
+- when you receive `HLS_PLAYABLE` status you will receive 2 urls in response
+  - `playbackHlsUrl` - Live HLS with playback support
+  - `livestreamUrl` - Live HLS without playback support
+
+:::note
+`downstreamUrl` is now depecated. Use `playbackHlsUrl` or `livestreamUrl` in place of `downstreamUrl`
+:::
 
 #### Example
 
@@ -802,8 +811,10 @@ values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
         "HLS_STARTED" -> Log.d("onHlsStateChanged", "Meeting hls is started")
         "HLS_PLAYABLE" -> {
             Log.d("onHlsStateChanged", "Meeting hls is playable now")
-            // on hls playable you will receive downstreamUrl
-            val downStreamUrl = HlsState.getString("downstreamUrl")
+            // on hls playable you will receive playbackHlsUrl and livestreamUrl
+            val playbackHlsUrl = HlsState.getString("playbackHlsUrl")
+            val livestreamUrl = HlsState.getString("livestreamUrl")
+
         }
         "HLS_STOPPING" -> Log.d("onHlsStateChanged", "Meeting hls is stopping")
         "HLS_STOPPED" -> Log.d("onHlsStateChanged", "Meeting hls is stopped")
@@ -827,8 +838,9 @@ values={[{label: 'Kotlin', value: 'Kotlin'},{label: 'Java', value: 'Java'},]}>
               break;
           case "HLS_PLAYABLE":
               Log.d("onHlsStateChanged", "Meeting hls is playable now");
-              // on hls started you will receive downstreamUrl
-              String downStreamUrl = HlsState.getString("downstreamUrl");
+              // on hls started you will receive playbackHlsUrl and livestreamUrl
+              String playbackHlsUrl = HlsState.getString("playbackHlsUrl");
+              String livestreamUrl = HlsState.getString("livestreamUrl");
               break;
           case "HLS_STOPPING":
               Log.d("onHlsStateChanged", "Meeting hls is stopping");

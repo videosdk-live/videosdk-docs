@@ -872,6 +872,10 @@ yarn add react-native-video
 
 With `react-native-video` installed, we will get the `hlsUrls` and `isHlsPlayable` from the `useMeeting` hook which will be used to play the HLS in the player.
 
+:::note
+`downstreamUrl` is now depecated. Use `playbackHlsUrl` or `livestreamUrl` in place of `downstreamUrl`
+:::
+
 ```js
 //highlight-start
 // imports react-native-video
@@ -888,11 +892,11 @@ function ViewerView({}) {
           {/* Render Header for copy meetingId and leave meeting*/}
           <HeaderView />
 
-          {/* Render VideoPlayer that will play `downstreamUrl`*/}
+          {/* Render VideoPlayer that will play `playbackHlsUrl`*/}
           <Video
             controls={true}
             source={{
-              uri: hlsUrls.downstreamUrl,
+              uri: hlsUrls.playbackHlsUrl,
             }}
             resizeMode={"stretch"}
             style={{

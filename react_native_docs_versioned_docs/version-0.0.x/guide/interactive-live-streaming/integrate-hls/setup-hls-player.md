@@ -82,6 +82,10 @@ npm install react-native-video
 
 **`Step 2:`** Next we will be adding a `Video` component which will play our livestream.
 
+:::note
+`downstreamUrl` is now depecated. Use `playbackHlsUrl` or `livestreamUrl` in place of `downstreamUrl`
+:::
+
 ```js
 // imports react-native-video
 import Video from "react-native-video";
@@ -92,11 +96,11 @@ function HLSPlayer() {
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: "black" }}>
        {hlsState == "HLS_PLAYABLE" ? (
-          {/* Render VideoPlayer that will play `downstreamUrl`*/}
+          {/* Render VideoPlayer that will play `playbackHlsUrl`*/}
           <Video
             controls={true}
             source={{
-              uri: hlsUrls.downstreamUrl,
+              uri: hlsUrls.playbackHlsUrl,
             }}
             resizeMode={"stretch"}
             style={{

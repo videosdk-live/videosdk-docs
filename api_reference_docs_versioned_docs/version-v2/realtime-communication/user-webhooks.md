@@ -303,7 +303,7 @@ title: Webhooks List
     "data": {
         "meetingId": "jvsg-8rjn-j304",
         "sessionId": "613731342f27f56e4fc4b6d0",
-        "downstreamUrl": "https://cdn.videosdk.live/meetings-hls/b8a770ef-d713-4a27-9ab7-e5a0b724caaf/index.m3u8"
+        "playbackHlsUrl": "https://cdn.videosdk.live/meetings-hls/b8a770ef-d713-4a27-9ab7-e5a0b724caaf/index.m3u8"
     },
 }
 ```
@@ -312,7 +312,15 @@ title: Webhooks List
 
 ### hls-playable
 
-- When you start HTTP live streaming (HLS) in a meeting, this event will be fired when HLS is in a playable state. So, now you can embed `downstreamUrl` in the HLS player.
+- When you start HTTP live streaming (HLS) in a meeting, this event will be fired when HLS is in a playable state. So, now you can embed `playbackHlsUrl` in the HLS player.
+
+- On hls-playable you get `playbackHlsUrl` and `livestreamUrl`.
+  - `playbackHlsUrl` - Live HLS with playback support
+  - `livestreamUrl` - Live HLS without playback support
+
+:::note
+`downstreamUrl` is now depecated. Use `playbackHlsUrl` or `livestreamUrl` in place of `downstreamUrl`
+:::
 
 #### Example
 
@@ -322,7 +330,7 @@ title: Webhooks List
     "data": {
         "meetingId": "jvsg-8rjn-j304",
         "sessionId": "613731342f27f56e4fc4b6d0",
-        "downstreamUrl": "https://cdn.videosdk.live/meetings-hls/b8a770ef-d713-4a27-9ab7-e5a0b724caaf/index.m3u8"
+        "playbackHlsUrl": "https://cdn.videosdk.live/meetings-hls/b8a770ef-d713-4a27-9ab7-e5a0b724caaf/index.m3u8"
     },
 }
 ```

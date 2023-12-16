@@ -118,7 +118,15 @@ stopHlsBtn.addEventListener("click", () => {
 
 - **hls-state-changed** - Whenever meeting HLS state changes, then `hls-state-changed` event will trigger.
 
-- You can get the `downstreamUrl` of the HLS to play it on the Viewer side when the state changes to `Constants.hlsEvents.HLS_STARTED`
+- You can get the `playbaclHlsUrl` and `livestreamUrl` of the HLS to play it on the Viewer side when the state changes to `Constants.hlsEvents.HLS_STARTED`
+
+- when you receive `HLS_PLAYABLE` status you will receive 2 urls in response
+  - `playbackHlsUrl` - Live HLS with playback support
+  - `livestreamUrl` - Live HLS without playback support
+
+:::note
+`downstreamUrl` is now depecated. Use `playbackHlsUrl` or `livestreamUrl` in place of `downstreamUrl`
+:::
 
 ```js
 let meeting;
@@ -136,8 +144,8 @@ meeting.on("hls-state-changed", (data) => {
   if (status === Constants.hlsEvents.HLS_STARTING) {
     console.log("Meeting Hls is starting");
   } else if (status === Constants.hlsEvents.HLS_STARTED) {
-    // when hls is started you will receive downstreamUrl
-    const { downstreamUrl } = data;
+    // when hls is started you will receive playbaclHlsUrl and livestreamUrl.
+    const { playbackHlsUrl } = data;
 
     console.log("Meeting Hls is started");
   } else if (status === Constants.hlsEvents.HLS_STOPPING) {

@@ -44,7 +44,11 @@ To play the HLS stream we will be using the [hls.js](https://www.npmjs.com/packa
 
 ### `2. Playing HLS stream`
 
-- Now on the `hls-state-changed` event, when you get `HLS_PLAYABLE` for the viewer participant, create a video element in the videoContainer div and pass downstreamUrl to hls.js.
+- Now on the `hls-state-changed` event, when you get `HLS_PLAYABLE` for the viewer participant, create a video element in the videoContainer div and pass playbackHlsUrl to hls.js.
+
+:::note
+`downstreamUrl` is now depecated. Use `playbackHlsUrl` or `livestreamUrl` in place of `downstreamUrl`
+:::
 
 ```js
 meeting.on("hls-state-changed", (data) => {
@@ -52,7 +56,7 @@ meeting.on("hls-state-changed", (data) => {
 
   if (mode === Constants.modes.VIEWER) {
     if (status === Constants.hlsEvents.HLS_PLAYABLE) {
-      const { downstreamUrl } = data;
+      const { playbackHlsUrl } = data;
       let video = document.createElement("video");
       video.setAttribute("width", "100%");
 
@@ -68,7 +72,7 @@ meeting.on("hls-state-changed", (data) => {
           highBufferWatchdogPeriod: 0, // if media element is expected to play and if currentTime has not moved for more than highBufferWatchdogPeriod and if there are more than maxBufferHole seconds buffered upfront, hls.js will jump buffer gaps, or try to nudge playhead to recover playback.
           nudgeOffset: 0.05, // In case playback continues to stall after first playhead nudging, currentTime will be nudged evenmore following nudgeOffset to try to restore playback. media.currentTime += (nb nudge retry -1)*nudgeOffset
           nudgeMaxRetry: 1, // Max nb of nudge retries before hls.js raise a fatal BUFFER_STALLED_ERROR
-          maxFragLookUpTolerance: .1, // This tolerance factor is used during fragment lookup. 
+          maxFragLookUpTolerance: 0.1, // This tolerance factor is used during fragment lookup.
           liveSyncDurationCount: 1, // if set to 3, playback will start from fragment N-3, N being the last fragment of the live playlist
           abrEwmaFastLive: 1, // Fast bitrate Exponential moving average half-life, used to compute average bitrate for Live streams.
           abrEwmaSlowLive: 3, // Slow bitrate Exponential moving average half-life, used to compute average bitrate for Live streams.
@@ -76,13 +80,13 @@ meeting.on("hls-state-changed", (data) => {
           abrEwmaSlowVoD: 3, // Slow bitrate Exponential moving average half-life, used to compute average bitrate for VoD streams
           maxStarvationDelay: 1, // ABR algorithm will always try to choose a quality level that should avoid rebuffering
         });
-        hls.loadSource(downstreamUrl);
+        hls.loadSource(playbackHlsUrl);
         hls.attachMedia(video);
         hls.on(Hls.Events.MANIFEST_PARSED, function () {
           video.play();
         });
       } else if (video.canPlayType("application/vnd.apple.mpegurl")) {
-        video.src = downstreamUrl;
+        video.src = playbackHlsUrl;
         video.addEventListener("canplay", function () {
           video.play();
         });

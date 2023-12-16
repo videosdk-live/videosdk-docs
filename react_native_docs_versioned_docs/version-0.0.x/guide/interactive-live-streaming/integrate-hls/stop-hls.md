@@ -55,6 +55,10 @@ const MeetingView = () => {
 
 - **onHlsStateChanged** - Whenever meeting HLS state changes, then `onHlsStateChanged` event will trigger.
 
+:::note
+`downstreamUrl` is now depecated. Use `playbackHlsUrl` or `livestreamUrl` in place of `downstreamUrl`
+:::
+
 - You will get `HLS_STOPPING` and `HLS_STOPPED` status on calling `stopHls()`.
 
 ```js
@@ -68,8 +72,8 @@ function onHlsStateChanged(data) {
   } else if (status === Constants.hlsEvents.HLS_STARTED) {
     console.log("Meeting Hls is started");
   } else if (status === Constants.hlsEvents.HLS_PLAYABLE) {
-    // on hlsStateChanged started you will receive downstreamUrl
-    const { downstreamUrl } = data;
+    // on hlsStateChanged started you will receive  playbackHlsUrl and livestreamUrl
+    const {  playbackHlsUrl } = data;
     console.log("Meeting Hls is Playable");
     // highlight-start
   } else if (status === Constants.hlsEvents.HLS_STOPPING) {

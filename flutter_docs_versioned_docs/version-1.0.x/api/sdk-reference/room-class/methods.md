@@ -283,7 +283,7 @@ room.stopLivestream();
 ### startHls()
 
 - It is used to start HLS.
-- All [participants](properties#participants) and [localParticipant](properties#localparticipant), will receive [`hlsStarted`](events#hlsstarted) event with the `downstreamUrl` of the HLS feed.
+- All [participants](properties#participants) and [localParticipant](properties#localparticipant), will receive [`hlsStarted`](events#hlsstarted) event with the `playbackHlsUrl` and `liveStreamUrl` of the HLS feed.
 
 #### Parameters
 

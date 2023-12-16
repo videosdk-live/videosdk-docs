@@ -126,7 +126,13 @@ If you want to learn more about the Interactive Livestream and how you can imple
 
 - **onHlsStateChanged** - Whenever meeting HLS state changes, then `onHlsStateChanged` event will trigger.
 
-- You can get the `downstreamUrl` of the HLS to play it on the Viewer side when the state changes to `Constants.hlsEvents.HLS_STARTED`
+- You can get the `playbaclHlsUrl` and `livestreamUrl` of the HLS to play it on the Viewer side when the state changes to `Constants.hlsEvents.HLS_STARTED`
+  - `playbackHlsUrl` - Live HLS with playback support
+  - `livestreamUrl` - Live HLS without playback support
+
+:::note
+`downstreamUrl` is now depecated. Use `playbackHlsUrl` or `livestreamUrl` in place of `downstreamUrl`
+:::
 
 ```js
 import { Constants, useMeeting } from "@videosdk.live/react-sdk";
@@ -140,8 +146,8 @@ function onHlsStateChanged(data) {
     console.log("Meeting Hls is started");
   } else if (status === Constants.hlsEvents.HLS_PLAYABLE) {
     //highlight-start
-    // on hlsStateChanged started you will receive downstreamUrl
-    const { downstreamUrl } = data;
+    // on hlsStateChanged started you will receive  playbackHlsUrl and livestreamUrl
+    const {  playbackHlsUrl } = data;
     //highlight-end
     console.log("Meeting Hls is now playable");
   } else if (status === Constants.hlsEvents.HLS_STOPPING) {

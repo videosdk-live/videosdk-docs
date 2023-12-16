@@ -217,7 +217,13 @@ If you want to learn more about the Interactive Livestream and how you can imple
 
 - **onHlsStateChanged** - Whenever meeting HLS state changes, then `onHlsStateChanged` event will trigger.
 
-- You can get the `downstreamUrl` of the HLS to play it on the Viewer side when the state changes to `HLS_PLAYABLE`.
+- You can get the `playbackHlsUrl` and `livestreamUrl` of the HLS to play it on the Viewer side when the state changes to `HLS_PLAYABLE`.
+  - `playbackHlsUrl` - Live HLS with playback support
+  - `livestreamUrl` - Live HLS without playback support
+
+:::note
+`downstreamUrl` is now depecated. Use `playbackHlsUrl` or `livestreamUrl` in place of `downstreamUrl`
+:::
 
 <Tabs
 defaultValue="Kotlin"
@@ -235,8 +241,9 @@ private val meetingEventListener: MeetingEventListener = object : MeetingEventLi
         "HLS_PLAYABLE" -> {
             Log.d("onHlsStateChanged", "Meeting hls is playable now")
             //highlight-start
-            // on hls playable you will receive downstreamUrl
-            val downStreamUrl = HlsState.getString("downstreamUrl")
+             // on hls playable you will receive playbackHlsUrl and livestreamUrl
+            val playbackHlsUrl = HlsState.getString("playbackHlsUrl")
+            val livestreamUrl = HlsState.getString("livestreamUrl")
             //highlight-end
         }
         "HLS_STOPPING" -> Log.d("onHlsStateChanged", "Meeting hls is stopping")
@@ -272,8 +279,9 @@ private final MeetingEventListener meetingEventListener = new MeetingEventListen
           case "HLS_PLAYABLE":
               Log.d("onHlsStateChanged", "Meeting hls is playable now");
               //highlight-start
-              // on hls playable you will receive downstreamUrl
-              String downStreamUrl = HlsState.getString("downstreamUrl");
+              // on hls started you will receive playbackHlsUrl and livestreamUrl
+              String playbackHlsUrl = HlsState.getString("playbackHlsUrl");
+              String livestreamUrl = HlsState.getString("livestreamUrl");
               //highlight-end
               break;
           case "HLS_STOPPING":

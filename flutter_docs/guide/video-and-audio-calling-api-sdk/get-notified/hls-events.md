@@ -62,7 +62,7 @@ class _MeetingScreenState extends State<MeetingScreen> {
       //Status can be :: HLS_STOPPED
       log("Meeting HLS status : ${data['status']}");
       if (data['status'] == "HLS_PLAYABLE")
-        log("DOWNSTREAM URL -- " + data['downstreamUrl']);
+        log("PLAYBACKHLS URL -- " + data['playbackHlsUrl']);
     });
   }
   //highlight-end

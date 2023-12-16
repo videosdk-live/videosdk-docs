@@ -24,6 +24,10 @@ VideoSDK provides `hls-state-changed` event which will notify you of the current
 - This event will be triggered when the meeting's HLS status changed.
 - This event can be subscribed from the `meeting` object.
 
+:::note
+`downstreamUrl` is now depecated. Use `playbackHlsUrl` or `livestreamUrl` in place of `downstreamUrl`
+:::
+
 ### Example
 
 Here is the usage of the event mentioned in this page.
@@ -44,8 +48,8 @@ meeting.on("hls-state-changed", (data) => {
   if (status === Constants.hlsEvents.HLS_STARTING) {
     console.log("Meeting Hls is starting");
   } else if (status === Constants.hlsEvents.HLS_STARTED) {
-    // when hls is started you will receive downstreamUrl
-    const { downstreamUrl } = data;
+    // when hls is started you will receive playbackHlsUrl and livestreamUrl.
+    const { playbackHlsUrl } = data;
 
     console.log("Meeting Hls is started");
   } else if (status === Constants.hlsEvents.HLS_STOPPING) {

@@ -1734,6 +1734,14 @@ In `/app/res/layout/fragment_viewer.xml` file, replace the content with the foll
 
 1. Initialize player and play the HLS when the meeting HLS state is `HLS_PLAYABLE`, and release it when the HLS state is `HLS_STOPPED`. Whenever the meeting HLS state changes, the event `onHlsStateChanged` will be triggered.
 
+- when you receive `HLS_PLAYABLE` status you will receive 2 urls
+  - `playbackHlsUrl` - Live HLS with playback support
+  - `livestreamUrl` - Live HLS without playback support
+
+:::note
+`downstreamUrl` is now depecated. Use `playbackHlsUrl` or `livestreamUrl` in place of `downstreamUrl`
+:::
+
 <Tabs
 defaultValue="Kotlin"
 groupId={"AndroidLanguage"}
@@ -1749,7 +1757,8 @@ class ViewerFragment : Fragment() {
   private var player: ExoPlayer? = null
   private var dataSourceFactory: DefaultHttpDataSource.Factory? = null
   private val startAutoPlay = true
-  private var downStreamUrl: String? = ""
+  private var playbackHlsUrl: String? = ""
+
 
   override fun onCreateView(
     inflater: LayoutInflater, container: ViewGroup?,
@@ -1803,8 +1812,8 @@ class ViewerFragment : Fragment() {
       override fun onHlsStateChanged(HlsState: JSONObject) {
         if (HlsState.has("status")) {
             try {
-              if (HlsState.getString("status") == "HLS_PLAYABLE" && HlsState.has("downstreamUrl")) {
-                downStreamUrl = HlsState.getString("downstreamUrl")
+              if (HlsState.getString("status") == "HLS_PLAYABLE" && HlsState.has("playbackHlsUrl")) {
+                playbackHlsUrl = HlsState.getString("playbackHlsUrl")
                 waitingLayout!!.visibility = View.GONE
                 playerView!!.visibility = View.VISIBLE
                 // initialize player
@@ -1813,7 +1822,7 @@ class ViewerFragment : Fragment() {
               if (HlsState.getString("status") == "HLS_STOPPED") {
                 // release the player
                 releasePlayer()
-                downStreamUrl = null
+                playbackHlsUrl = null
                 waitingLayout!!.text = "Host has stopped \n the live streaming"
                 waitingLayout!!.visibility = View.VISIBLE
                 playerView!!.visibility = View.GONE
@@ -1830,7 +1839,7 @@ class ViewerFragment : Fragment() {
     if (player == null) {
       dataSourceFactory = DefaultHttpDataSource.Factory()
       val mediaSource = HlsMediaSource.Factory(dataSourceFactory!!).createMediaSource(
-          MediaItem.fromUri(Uri.parse(downStreamUrl))
+          MediaItem.fromUri(Uri.parse(playbackHlsUrl))
       )
       val playerBuilder = ExoPlayer.Builder( /* context = */mContext!!)
       player = playerBuilder.build()
@@ -1857,7 +1866,7 @@ class ViewerFragment : Fragment() {
   override fun onDestroy() {
     mContext = null
     mActivity = null
-    downStreamUrl = null
+    playbackHlsUrl = null
     releasePlayer()
     if (meeting != null) {
         meeting!!.removeAllListeners()
@@ -1888,7 +1897,7 @@ public class ViewerFragment extends Fragment {
 
   private DefaultHttpDataSource.Factory dataSourceFactory;
   private boolean startAutoPlay=true;
-  private String downStreamUrl = "";
+  private String playbackHlsUrl = "";
   private static Activity mActivity;
   private static Context mContext;
 
@@ -1956,8 +1965,8 @@ public class ViewerFragment extends Fragment {
       public void onHlsStateChanged(JSONObject HlsState) {
         if (HlsState.has("status")) {
           try {
-            if (HlsState.getString("status").equals("HLS_PLAYABLE") && HlsState.has("downstreamUrl")) {
-              downStreamUrl = HlsState.getString("downstreamUrl");
+            if (HlsState.getString("status").equals("HLS_PLAYABLE") && HlsState.has("playbackHlsUrl")) {
+              playbackHlsUrl = HlsState.getString("playbackHlsUrl");
               waitingLayout.setVisibility(View.GONE);
               playerView.setVisibility(View.VISIBLE);
               // initialize player
@@ -1966,7 +1975,7 @@ public class ViewerFragment extends Fragment {
             if (HlsState.getString("status").equals("HLS_STOPPED")) {
               // release the player
               releasePlayer();
-              downStreamUrl = null;
+              playbackHlsUrl = null;
               waitingLayout.setText("Host has stopped \n the live streaming");
               waitingLayout.setVisibility(View.VISIBLE);
               playerView.setVisibility(View.GONE);
@@ -1983,7 +1992,7 @@ public class ViewerFragment extends Fragment {
     if (player == null) {
       dataSourceFactory = new DefaultHttpDataSource.Factory();
       HlsMediaSource mediaSource = new HlsMediaSource.Factory(dataSourceFactory).createMediaSource(
-              MediaItem.fromUri(Uri.parse(this.downStreamUrl)));
+              MediaItem.fromUri(Uri.parse(this.playbackHlsUrl)));
       ExoPlayer.Builder playerBuilder =
               new ExoPlayer.Builder(/* context= */ mContext);
       player = playerBuilder.build();
@@ -2010,7 +2019,7 @@ public class ViewerFragment extends Fragment {
   public void onDestroy() {
     mContext = null;
     mActivity = null;
-    downStreamUrl = null;
+    playbackHlsUrl = null;
     releasePlayer();
     if (meeting != null) {
       meeting.removeAllListeners();

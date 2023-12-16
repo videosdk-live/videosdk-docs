@@ -146,7 +146,13 @@ If any pinned participant started screenshare then only screenshare view will be
 
 - **hlsStateChanged** - Whenever meeting HLS state changes, then `hlsStateChanged` event will trigger.
 
-- You can get the `downstreamUrl` of the HLS to play it on the Viewer side when the state changes to `HLS_PLAYABLE`
+- You can get the `playbackHlsUrl` and ` livestreamUrl` of the HLS to play it on the Viewer side when the state changes to `HLS_PLAYABLE`
+  - `playbackHlsUrl` - Live HLS with playback support
+  - `livestreamUrl` - Live HLS without playback support
+
+:::note
+`downstreamUrl` is now depecated. Use `playbackHlsUrl` or `livestreamUrl` in place of `downstreamUrl`
+:::
 
 ```js
 import 'package:flutter/material.dart';
@@ -182,7 +188,7 @@ class _MeetingScreenState extends State<MeetingScreen> {
       //Status can be :: HLS_STOPPED
       log("Meeting HLS status : ${data['status']}");
       if (data['status'] == "HLS_PLAYABLE")
-        log("DOWNSTREAM URL -- " + data['downstreamUrl']);
+        log("PLAYBACKHLS URL -- " + data['playbackHlsUrl']);
     });
   }
   //highlight-end

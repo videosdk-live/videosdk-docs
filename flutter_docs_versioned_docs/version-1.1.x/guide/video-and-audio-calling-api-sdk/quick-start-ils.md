@@ -738,6 +738,10 @@ Let's create `StatefulWidget` named `ILSViewerView` in the `ils_viewer_view.dart
 
 ILSViewerView will listen to the `hlsStateChanged` event and if the HLS is started, it will show the livestream using the `flutter_vlc_player` library.
 
+:::note
+`downstreamUrl` is now depecated. Use `playbackHlsUrl` or `livestreamUrl` in place of `downstreamUrl`
+:::
+
 ```js title="ils_viewer_view.dart"
 import 'package:flutter/material.dart';
 import 'package:videosdk/videosdk.dart';
@@ -753,15 +757,15 @@ class ILSViewerView extends StatefulWidget {
 
 class _ILSViewerViewState extends State<ILSViewerView> {
   String hlsState = "HLS_STOPPED";
-  String? downstreamUrl;
+  String? playbackHlsUrl;
 
   @override
   void initState() {
     super.initState();
     //highlight-start
-    //initialize the room's hls state and hls's downstreamUrl
+    //initialize the room's hls state and hls's playbackHlsUrl
     hlsState = widget.room.hlsState;
-    downstreamUrl = widget.room.hlsDownstreamUrl;
+    playbackHlsUrl = widget.room.hlsPlaybackHlsUrl;
     //add the hlsStateChanged event listener
     setMeetingEventListener();
     //highlight-end
@@ -797,9 +801,9 @@ class _ILSViewerViewState extends State<ILSViewerView> {
             ),
           ),
           //highlight-start
-          //Show the livestream player if the downstreamUrl is present
-          downstreamUrl != null
-              ? LivestreamPlayer(downstreamUrl: downstreamUrl!)
+          //Show the livestream player if the playbackHlsUrl is present
+          playbackHlsUrl != null
+              ? LivestreamPlayer(playbackHlsUrl: playbackHlsUrl!)
               : const Text("Host has not started the HLS",
                   style: TextStyle(color: Colors.white)),
           //highlight-end
@@ -819,7 +823,7 @@ class _ILSViewerViewState extends State<ILSViewerView> {
           setState(() {
             hlsState = status;
             if (status == "HLS_PLAYABLE" || status == "HLS_STOPPED") {
-              downstreamUrl = data['downstreamUrl'];
+              playbackHlsUrl = data['playbackHlsUrl'];
             }
           });
         }
@@ -837,10 +841,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_vlc_player/flutter_vlc_player.dart';
 
 class LivestreamPlayer extends StatefulWidget {
-  final String downstreamUrl;
+  final String playbackHlsUrl;
   const LivestreamPlayer({
     Key? key,
-    required this.downstreamUrl,
+    required this.playbackHlsUrl,
   }) : super(key: key);
 
   @override
@@ -859,7 +863,7 @@ class LivestreamPlayerState extends State<LivestreamPlayer>
     super.initState();
     //highlight-start
     //initializing the player
-    _controller = VlcPlayerController.network(widget.downstreamUrl,
+    _controller = VlcPlayerController.network(widget.playbackHlsUrl,
         options: VlcPlayerOptions());
         //highlight-end
   }
