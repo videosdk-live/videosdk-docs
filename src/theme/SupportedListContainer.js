@@ -11,6 +11,7 @@ import AndroidSDKIcon from "../../static/icon/supportedList/AndroidSDKIcon";
 import IOSSDKIcon from "../../static/icon/supportedList/IOSSDKIcon";
 import RightIcon from "../../static/icon/supportedList/RightIcon";
 import WrongIcon from "../../static/icon/supportedList/WrongIcon";
+import SDKIcon from "../../static/icon/supportedList/SDKIcon";
 
 const SupportList = ({
   isSDKListInclude,
@@ -19,6 +20,8 @@ const SupportList = ({
   isiOSSDKInclude = true,
   isScreenShareFeatureInclude = true,
   isPictureInPictureInclude = true,
+  isSDKListRenderSeperately,
+  isFlutterSDK,
 }) => {
   const featureList = [
     {
@@ -28,11 +31,11 @@ const SupportList = ({
         edge: "83",
         firefox: "78",
         opera: "18",
-        safari: "13.1",
+        safari: isFlutterSDK ? "NA" : "13.1",
         chrome_android: "78",
         firefox_android: "78",
         opera_android: "73",
-        safari_ios: "13.1",
+        safari_ios: isFlutterSDK ? "NA" : "13.1",
         samsung_internet: "4",
         android_sdk: "5",
         ios_sdk: "11",
@@ -45,11 +48,11 @@ const SupportList = ({
         edge: "83",
         firefox: "78",
         opera: "18",
-        safari: "13.1",
+        safari: isFlutterSDK ? "NA" : "13.1",
         chrome_android: "78",
         firefox_android: "78",
         opera_android: "73",
-        safari_ios: "13.1",
+        safari_ios: isFlutterSDK ? "NA" : "13.1",
         samsung_internet: "4",
         android_sdk: "5",
         ios_sdk: "11",
@@ -63,9 +66,9 @@ const SupportList = ({
       versions: {
         chrome: "78",
         edge: "83",
-        firefox: "NA",
+        firefox: "66",
         opera: "59",
-        safari: "13.1",
+        safari: isFlutterSDK ? "NA" : "13.1",
         chrome_android: "NA",
         firefox_android: "NA",
         opera_android: "NA",
@@ -85,11 +88,11 @@ const SupportList = ({
         edge: "79",
         firefox: "NA",
         opera: "73",
-        safari: "13.1",
+        safari: isFlutterSDK ? "NA" : "13.1",
         chrome_android: "NA",
         firefox_android: "NA",
         opera_android: "NA",
-        safari_ios: "14",
+        safari_ios: isFlutterSDK ? "NA" : "14",
         samsung_internet: "NA",
         android_sdk: "8",
         ios_sdk: "NA",
@@ -126,6 +129,7 @@ const SupportList = ({
   }
 
   let sdkBrowserList = [];
+  let sdkList = [];
 
   if (isAndroidSDKInclude) {
     sdkBrowserList.push({
@@ -141,6 +145,21 @@ const SupportList = ({
       value: "ios_sdk",
       Icon: IOSSDKIcon,
     });
+  }
+
+  if (isSDKListRenderSeperately) {
+    sdkList.push(
+      {
+        name: "Android SDK",
+        value: "android_sdk",
+        Icon: AndroidSDKIcon,
+      },
+      {
+        name: "iOS SDK",
+        value: "ios_sdk",
+        Icon: IOSSDKIcon,
+      }
+    );
   }
 
   const BrowserCell = ({ name, Icon }) => (
@@ -184,7 +203,26 @@ const SupportList = ({
     <div className="max-w-screen-lg mt-10">
       <table className="min-w-full">
         <thead className="bg-transparent">
-          <tr>
+          {isSDKListRenderSeperately && (
+            <tr>
+              <th className="py-1"></th>
+              <th
+                colSpan={sdkList.length}
+                className="px-4 py-2 whitespace-nowrap"
+              >
+                Mobile
+              </th>
+              <th
+                colSpan={
+                  browserLists.desktop.length + browserLists.mobile.length
+                }
+                className="px-4 py-2 whitespace-nowrap"
+              >
+                Web Browsers
+              </th>
+            </tr>
+          )}
+          <tr className="bg-transparent">
             <th className="py-1"></th>
 
             {renderOnlySDKList ? (
@@ -195,6 +233,11 @@ const SupportList = ({
               ))
             ) : (
               <>
+                {isSDKListRenderSeperately && (
+                  <th colSpan={sdkList.length} className="py-1">
+                    <SDKIcon />
+                  </th>
+                )}
                 <th colSpan={browserLists.desktop.length} className="py-1">
                   <DesktopIcon />
                 </th>
@@ -208,6 +251,10 @@ const SupportList = ({
           {!renderOnlySDKList && (
             <tr className="bg-transparent">
               <th></th>
+              {isSDKListRenderSeperately &&
+                sdkList.map(({ name, Icon }) => (
+                  <BrowserCell key={name} name={name} Icon={Icon} />
+                ))}
               {[...browserLists.desktop, ...browserLists.mobile].map(
                 ({ name, Icon }) => (
                   <BrowserCell key={name} name={name} Icon={Icon} />
@@ -248,6 +295,12 @@ const SupportList = ({
                   browserList={
                     renderOnlySDKList
                       ? sdkBrowserList
+                      : isSDKListRenderSeperately
+                      ? [
+                          ...sdkList,
+                          ...browserLists.desktop,
+                          ...browserLists.mobile,
+                        ]
                       : [...browserLists.desktop, ...browserLists.mobile]
                   }
                 />
@@ -265,6 +318,8 @@ function SupportedListContainer({
   isiOSSDKInclude,
   isScreenShareFeatureInclude,
   isPictureInPictureInclude,
+  isSDKListRenderSeperately,
+  isFlutterSDK,
 }) {
   return (
     <div id="tailwind">
@@ -275,6 +330,8 @@ function SupportedListContainer({
         isiOSSDKInclude={isiOSSDKInclude}
         isScreenShareFeatureInclude={isScreenShareFeatureInclude}
         isPictureInPictureInclude={isPictureInPictureInclude}
+        isSDKListRenderSeperately={isSDKListRenderSeperately}
+        isFlutterSDK={isFlutterSDK}
       />
     </div>
   );

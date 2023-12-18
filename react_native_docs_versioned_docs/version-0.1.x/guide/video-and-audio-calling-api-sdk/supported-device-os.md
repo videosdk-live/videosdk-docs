@@ -19,7 +19,7 @@ slug: supported-device-os
 # Supported Device OS
 
 :::note
-The following browser versions represent the minimum required versions to ensure full support for the listed features.
+The following device OS version represent the minimum required version to ensure full support for the listed features.
 :::
 
 import SupportList from '../../../../src/theme/SupportedListContainer'
