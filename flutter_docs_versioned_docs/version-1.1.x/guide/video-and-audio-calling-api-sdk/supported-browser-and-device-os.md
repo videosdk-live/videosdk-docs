@@ -19,9 +19,9 @@ slug: supported-browser-and-device-os
 # Supported Browsers and Device OS
 
 :::note
-The following browser versions represent the minimum required versions to ensure full support for the listed features.
+The following browser and device OS versions represent the minimum required versions to ensure full support for the listed features.
 :::
 
 import SupportList from '../../../../src/theme/SupportedListContainer'
 
-<SupportList isSDKListInclude={true} />
+<SupportList isSDKListInclude={false} isSDKListRenderSeperately={true} isFlutterSDK={true}  />
