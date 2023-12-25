@@ -35,13 +35,9 @@ import { usePubSub } from "@videosdk.live/react-sdk";
 function ParticipantView({ participantId }) {
   //..
   //highlight-start
-  const [participantResolution, setParticipantResolution] = useState("sd");
-
   const { publish } = usePubSub(`CHANGE_RESOLUTION_${participantId}`, {
     onMessageReceived: async ({ message }) => {
-      setParticipantResolution({
-        res: message.resolution,
-      });
+      console.log("message", message);
     },
     onOldMessagesReceived: async (messages) => {
       const newResolution = messages.map(({ message }) => {
@@ -49,9 +45,7 @@ function ParticipantView({ participantId }) {
       });
       newResolution.forEach((res) => {
         if (res.resolution) {
-          setParticipantResolution({
-            res: res.resolution,
-          });
+          console.log("resolution", res.resolution);
         }
       });
     },
@@ -109,87 +103,7 @@ function ParticipantView({ participantId }) {
 }
 ```
 
-### Step 3 : Create `useMediaStream` hook
-
-We created this hook for calling `createCameraVideoTrack()` fromm SDK
-
-- First we create `selectedWebcamDevice` and `webCamResolution` state for accessing it's value globally.
-
-```js
-export const MeetingAppProvider = ({
-  children,
-  selectedWebcam,
-  // other params
-}) => {
-  // ..
-  //highlight-start
-  const [selectedWebcamDevice, setSelectedWebcamDevice] =
-    useState(selectedWebcam);
-  const [webCamResolution, setWebCamResolution] = useState("h480p_w640p");
-  //highlight-end
-  //..
-
-  return (
-    <MeetingAppContext.Provider
-      value={{
-        //
-        //highlight-start
-        selectedWebcamDevice,
-        webCamResolution,
-        //
-        setSelectedWebcamDevice,
-        setWebCamResolution,
-        //highlight-end
-      }}
-    >
-      {children}
-    </MeetingAppContext.Provider>
-  );
-};
-```
-
-- After creating states in `MeetingAppContext` we will create `useMediaStream` hook.
-
-```js
-import { createCameraVideoTrack } from "@videosdk.live/react-sdk";
-import { useMeetingAppContext } from "../context/MeetingAppContext";
-import { useEffect, useRef } from "react";
-
-//highlight-start
-const useMediaStream = () => {
-  const { selectedWebcamDevice, webCamResolution } = useMeetingAppContext();
-
-  const webcamResolutionRef = useRef();
-
-  useEffect(() => {
-    webcamResolutionRef.current = webCamResolution;
-  }, [webCamResolution]);
-
-  const getVideoTrack = async ({ webcamId, encoderConfig, facingMode }) => {
-    try {
-      const track = await createCameraVideoTrack({
-        cameraId: webcamId ? webcamId : selectedWebcamDevice.id,
-        encoderConfig: encoderConfig
-          ? encoderConfig
-          : webcamResolutionRef.current,
-        facingMode: facingMode,
-        optimizationMode: "motion",
-        multiStream: false,
-      });
-      return track;
-    } catch (error) {
-      return null;
-    }
-  };
-
-  return { getVideoTrack };
-};
-// highlight-end
-
-export default useMediaStream;
-```
-
-### Step 4 : Create `ResolutionListner` Component
+### Step 3 : Create `ResolutionListner` Component
 
 Now create `ResolutionListner` component for subscribe on `CHANGE_RESOLUTION` topic.
 
@@ -198,7 +112,11 @@ Now create `ResolutionListner` component for subscribe on `CHANGE_RESOLUTION` to
 - After creating custom video track with received value we pass that track in `changeWebcam` method for changing camera resilution.
 
 ```js
-import { useMeeting, usePubSub } from "@videosdk.live/react-sdk";
+import {
+  useMeeting,
+  usePubSub,
+  createCameraVideoTrack,
+} from "@videosdk.live/react-sdk";
 import { useEffect, useRef } from "react";
 import { useMeetingAppContext } from "../context/MeetingAppContext";
 import useMediaStream from "../hooks/useMediaStream";
@@ -207,34 +125,21 @@ import useMediaStream from "../hooks/useMediaStream";
 const ResolutionListner = () => {
   const mMeeting = useMeeting();
 
-  const { selectedWebcamDevice, setWebCamResolution, webCamResolution } =
-    useMeetingAppContext();
-
-  const selectedWebcamDeviceRef = useRef();
-  const webCamResolutionRef = useRef();
-
-  useEffect(() => {
-    webCamResolutionRef.current = webCamResolution;
-  }, [webCamResolution]);
-
-  useEffect(() => {
-    selectedWebcamDeviceRef.current = selectedWebcamDevice;
-  }, [selectedWebcamDevice]);
-
-  const { getVideoTrack } = useMediaStream();
-
   const { publish } = usePubSub(
     `CHANGE_RESOLUTION_${mMeeting?.localParticipant?.id}`,
     {
       onMessageReceived: async ({ message }) => {
-        if (webCamResolutionRef.current === message.resolutionValue) return;
-        setWebCamResolution(message.resolutionValue);
         let customTrack;
         await mMeeting?.disableWebcam();
-        customTrack = await getVideoTrack({
-          webcamId: selectedWebcamDeviceRef.current.id,
-          encoderConfig: message.resolutionValue,
-        });
+        try {
+          customTrack = await createCameraVideoTrack({
+            encoderConfig: message.resolutionValue,
+            optimizationMode: "motion",
+            multiStream: false,
+          });
+        } catch (error) {
+          console.log("error in creating custom video track", error);
+        }
 
         mMeeting.changeWebcam(customTrack);
       },
@@ -260,7 +165,7 @@ const ResolutionListner = () => {
 export default ResolutionListner;
 ```
 
-### Step 5 : Place `ResolutionListner` in `MeetingContainer`
+### Step 4 : Place `ResolutionListner` in `MeetingContainer`
 
 - Place `ResolutionListner` in `MeetingContainer` for receiving and sending camera resolution of participants.
 

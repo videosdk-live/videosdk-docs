@@ -27,45 +27,7 @@ Here's a visual representation to enhance understanding
 
 ### Step 1 : Create a Pubsub Topic
 
-- First we create `cameraFacingMode` and `selectedWebcamDevice` state in `MeetingAppContext` for accessing that value globally.
-
-```js
-export const MeetingAppProvider = ({
-  children,
-  selectedWebcam,
-  //.. other params
-}) => {
-  //highlight-start
-  //..
-  const [cameraFacingMode, setCameraFacingMode] = useState({
-    facingMode: "front",
-  });
-  const [selectedWebcamDevice, setSelectedWebcamDevice] =
-    useState(selectedWebcam);
-  //..
-
-  return (
-    <MeetingAppContext.Provider
-      value={{
-        //
-        cameraFacingMode,
-        selectedWebcamDevice,
-
-        //
-        setCameraFacingMode,
-        setSelectedWebcamDevice,
-
-        //..
-      }}
-    >
-      {children}
-    </MeetingAppContext.Provider>
-  );
-  //highlight-end
-};
-```
-
-- Now, we will create a pubsub topic called `SWITCH_PARTICIPANT_CAMERA` in `ParticipantView` Component.
+- We will create a pubsub topic called `SWITCH_PARTICIPANT_CAMERA` in `ParticipantView` Component.
 
 ```js
 import { usePubSub } from "@videosdk.live/react-sdk";
@@ -73,15 +35,12 @@ import { usePubSub } from "@videosdk.live/react-sdk";
 function ParticipantView({ participantId }) {
   // ..
   //highlight-start
-  const { cameraFacingMode, setCameraFacingMode } = useMeetingAppContext();
 
   const { publish: switchCameraPublish } = usePubSub(
     `SWITCH_PARTICIPANT_CAMERA_${participantId}`,
     {
       onMessageReceived: async ({ message }) => {
-        setCameraFacingMode({
-          facingMode: message.facingMode,
-        });
+        console.log("message", message);
       },
     }
   );
@@ -89,50 +48,7 @@ function ParticipantView({ participantId }) {
 }
 ```
 
-### Step 2 : Create `useMediaStream` hook
-
-- After creating states in `MeetingAppContext` we will create `useMediaStream` hook.
-
-```js
-import { createCameraVideoTrack } from "@videosdk.live/react-sdk";
-import { useMeetingAppContext } from "../context/MeetingAppContext";
-import { useEffect, useRef } from "react";
-
-//highlight-start
-const useMediaStream = () => {
-  const { selectedWebcamDevice, webCamResolution } = useMeetingAppContext();
-
-  const webcamResolutionRef = useRef();
-
-  useEffect(() => {
-    webcamResolutionRef.current = webCamResolution;
-  }, [webCamResolution]);
-
-  const getVideoTrack = async ({ webcamId, encoderConfig, facingMode }) => {
-    try {
-      const track = await createCameraVideoTrack({
-        cameraId: webcamId ? webcamId : selectedWebcamDevice.id,
-        encoderConfig: encoderConfig
-          ? encoderConfig
-          : webcamResolutionRef.current,
-        facingMode: facingMode,
-        optimizationMode: "motion",
-        multiStream: false,
-      });
-      return track;
-    } catch (error) {
-      return null;
-    }
-  };
-
-  return { getVideoTrack };
-};
-// highlight-end
-
-export default useMediaStream;
-```
-
-### Step 3 : Create Switch Button
+### Step 2 : Create Switch Button
 
 - We will create a switch button with `FRONT` and `BACK` options on top of the participant grid item.
 
@@ -181,7 +97,7 @@ function ParticipantView({ participantId }) {
 }
 ```
 
-### Step 4 : Create `SwitchCameraListner` Component
+### Step 3 : Create `SwitchCameraListner` Component
 
 Now create `SwitchCameraListner` component for subscribe on `SWITCH_PARTICIPANT_CAMERA` topic.
 
@@ -192,7 +108,11 @@ Now create `SwitchCameraListner` component for subscribe on `SWITCH_PARTICIPANT_
 - After creating track we will pass that track in `changeWebcam()` for changing camera.
 
 ```js
-import { useMeeting, usePubSub } from "@videosdk.live/react-sdk";
+import {
+  useMeeting,
+  usePubSub,
+  createCameraVideoTrack,
+} from "@videosdk.live/react-sdk";
 import { useMeetingAppContext } from "../context/MeetingAppContext";
 import { useEffect, useRef, useState } from "react";
 import useMediaStream from "../hooks/useMediaStream";
@@ -224,17 +144,6 @@ const SwitchCameraListner = () => {
     getWebcams(mMeeting?.getWebcams);
   }, []);
 
-  const { selectedWebcamDevice, setSelectedWebcamDevice } =
-    useMeetingAppContext();
-
-  const selectedWebcamDeviceRef = useRef();
-
-  useEffect(() => {
-    selectedWebcamDeviceRef.current = selectedWebcamDevice;
-  }, [selectedWebcamDevice]);
-
-  const { getVideoTrack } = useMediaStream();
-
   usePubSub(`SWITCH_PARTICIPANT_CAMERA_${mMeeting?.localParticipant?.id}`, {
     onMessageReceived: async ({ message }) => {
       let customTrack;
@@ -246,16 +155,18 @@ const SwitchCameraListner = () => {
         webcam.label.toLowerCase().includes(message.facingMode)
       )?.label;
 
-      setSelectedWebcamDevice({
-        id: deviceId,
-        label,
-      });
-
       if (message.isChangeWebcam) {
         mMeeting?.disableWebcam();
-        customTrack = await getVideoTrack({
-          webcamId: deviceId,
-        });
+        try {
+          customTrack = await createCameraVideoTrack({
+            cameraId: deviceId,
+            facingMode: message.facingMode,
+            optimizationMode: "motion",
+            multiStream: false,
+          });
+        } catch (error) {
+          console.log("error in creating custom video track", error);
+        }
         mMeeting.changeWebcam(customTrack);
         return;
       }
@@ -269,7 +180,7 @@ const SwitchCameraListner = () => {
 export default SwitchCameraListner;
 ```
 
-### Step 5 : Place `SwitchCameraListner` in `MeetingContainer`
+### Step 4 : Place `SwitchCameraListner` in `MeetingContainer`
 
 - Place `SwitchCameraListner` In `MeetingContainer` for receiving and sending data to participants.
 
