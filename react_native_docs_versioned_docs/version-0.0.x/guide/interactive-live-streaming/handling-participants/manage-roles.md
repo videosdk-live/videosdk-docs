@@ -93,7 +93,7 @@ const App = () => {
         mode: "CONFERENCE", // allowed: CONFERENCE | VIEWER
       }}
       token={token}
-      joinWithoutInteraction={true}
+      joinWithoutUserInteraction={true}
     >
       <Container />
     </MeetingProvider>

@@ -28,6 +28,15 @@ In an interactive live stream (HLS), viewers can take part in a variety of activ
 
 Livestream experience is important while undertaking interactive live streaming in order to increase audience. To do this, the livestream should be able to respond to the viewer's network bandwidth, and change the stream's resolution as necessary. Therefore, adaptive live streaming refers to a feed that automatically adjusts to a lower or higher resolution dependent on the user's preferences.
 
+### What is Latency?
+
+Latency is the delay between capturing video content and its playback. Key factors that affecting latency :
+
+- **Buffering**: Balance buffer size for smoother playback against latency.
+- **Network Conditions**: Efficient servers and network health contribute to lower latency.
+
+Standard HLS has a latency around 5-6 seconds.
+
 ### HLS Architecture of VideoSDK
 
 <center>

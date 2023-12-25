@@ -693,7 +693,9 @@ function ParticipantView({ participantId }) {
 
 :::tip
 
-Stuck anywhere? Check out this [example code](https://github.com/videosdk-live/quickstart/tree/main/react-native) on GitHub
+Stuck anywhere? Check out this [example code](https://github.com/videosdk-live/quickstart/tree/main/react-native) on GitHub.
+
+**Expo** user, you can refer this [example code](https://github.com/videosdk-live/quickstart/tree/main/expo-react-native-rtc) on GitHub.
 
 :::
 

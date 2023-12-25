@@ -188,19 +188,44 @@ android.enableDexingArtifactTransform.desugaring=false
 
 ### Step 9: Register services at index page of project
 
-```js title="index.js"
-// Import the library
-  // highlight-next-line
+<Tabs
+defaultValue="react-native-cli"
+groupId={"platform-manager"}
+values={[
+{label: 'React Native CLI', value: 'react-native-cli'},
+{label: 'Expo', value: 'expo'}
+]}>
+<TabItem value="react-native-cli">
+
+```js
 import { register } from '@videosdk.live/react-native-sdk';
 import { AppRegistry } from 'react-native';
 import { name as appName } from './app.json';
 import App from './src/App.js';
 ​
 // Register the service
-  // highlight-next-line
 register();
+
 AppRegistry.registerComponent(appName, () => App);
 ```
+
+</TabItem>
+<TabItem value="expo">
+
+```js
+import { register } from '@videosdk.live/react-native-sdk';
+import App from './App';
+import { registerRootComponent } from 'expo';
+
+// Register the service
+register();
+
+registerRootComponent(App);
+```
+
+</TabItem>
+
+</Tabs>
 
 ### Minimum OS/SDK versions
 
