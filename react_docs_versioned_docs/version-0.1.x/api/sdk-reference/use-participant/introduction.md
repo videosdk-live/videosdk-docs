@@ -142,6 +142,11 @@ title: Video SDK useParticipant Hook
 - [getVideoStats](./methods.md#getvideostats)
 
 </div>
+<div class="col col--4 margin-bottom--sm" >
+
+- [captureImage](./methods#captureimage)
+
+</div>
 </div>
 
 ## Event Callbacks

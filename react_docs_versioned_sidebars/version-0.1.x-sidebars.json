@@ -100,7 +100,8 @@
           "items": [
             "guide/video-and-audio-calling-api-sdk/collaboration-in-meeting/pubsub",
             "guide/video-and-audio-calling-api-sdk/collaboration-in-meeting/chat-using-pubsub",
-            "guide/video-and-audio-calling-api-sdk/collaboration-in-meeting/canvas-drawing-using-pubsub"
+            "guide/video-and-audio-calling-api-sdk/collaboration-in-meeting/canvas-drawing-using-pubsub",
+            "guide/video-and-audio-calling-api-sdk/collaboration-in-meeting/upload-fetch-temporary-file"
           ],
           "collapsed": true
         },
@@ -240,6 +241,10 @@
     {
       "type": "doc",
       "id": "api/sdk-reference/use-pubsub"
+    },
+    {
+      "type": "doc",
+      "id": "api/sdk-reference/use-file"
     },
     {
       "type": "doc",
