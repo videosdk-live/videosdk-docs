@@ -78,6 +78,10 @@ Future<String> createMeeting(String token) async {
 
 We can initialize a new meeting using the `createRoom` method of the `VideoSDK` class. `createRoom` method returns a `Room` object, which will be configured using the provided `token`, `meetingId`, `participantId` and other paramters.
 
+:::tip
+When conducting one-to-one meetings, it is recommended to set `multistream:false`.For more information on multistream, refer to the [multistream documentation](/flutter/guide/video-and-audio-calling-api-sdk/render-media/optimize-video-track#what-is-multistream).
+:::
+
 #### createRoom()
 
 Let's take a deeper look at the available configuration options first.
@@ -90,6 +94,7 @@ Room room = VideoSDK.createRoom(
   micEnabled: "<Flag-to-enable-mic>",,
   camEnabled: "<Flag-to-enable-webcam>",
   participantId: "Id-of-participant", // optional, default: SDK will generate
+  multistream: true,
 );
 ```
 
@@ -118,6 +123,10 @@ Room room = VideoSDK.createRoom(
     - It can be used to specify the **unique identifier** which can be linked with **your own database** service.
     - It has to be of `String` type.
     - This is an `OPTIONAL` parameter. By default VideoSDK will generate unique id for each participant.
+
+- **`multistream`**:
+
+  - This is a `boolean` flag, indicating if the stream should send multiple resolution layers or single resolution layer.
 
 :::caution
 You must ensure that the `participantId` is not repeated in the same meeting or room, It will enable VideoSDK to eliminate any participant respect to that `participantId`.
