@@ -89,6 +89,19 @@ title: Methods returned by useParticipant Hook
 
 ---
 
+### captureImage()
+
+- It is used to capture image of local participant's current videoStream.
+
+- It will return image in a form of `base64`.
+
+#### Parameters
+
+- **height**: number
+- **width**: number
+
+---
+
 ### switchTo()
 
 - If you want a participant from a connected meeting to be switched from one meeting to another meeting, `switchTo()` method is used. This method accept `meetingId`, `token` and `payload` as an object.
