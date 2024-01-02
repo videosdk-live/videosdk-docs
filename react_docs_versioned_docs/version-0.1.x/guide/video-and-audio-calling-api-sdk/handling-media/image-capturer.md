@@ -22,7 +22,7 @@ This can be very helpful in Video KYC use cases where you can capture the image 
 ### `captureImage()`
 
 - By using `captureImage()` function of `useParticipant` hook, you can capture image of a local participant from their video stream.
-- You can specify the desired height and width in the `captureImage()` function.
+- You can specify the desired height and width in the `captureImage()` function, but these are optional. If not provided, the VideoSDK will automatically use the dimensions of the local participant's webcamStream.
 - The `captureImage()` function returns the image in the form of a `base64` string.
 
 ```js
