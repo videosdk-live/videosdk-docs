@@ -59,7 +59,7 @@ import TabItem from '@theme/TabItem';
   </head>
   <body>
     .....
-    <script src="https://sdk.videosdk.live/js-sdk/0.0.67/videosdk.js"></script>
+    <script src="https://sdk.videosdk.live/js-sdk/0.0.78/videosdk.js"></script>
   </body>
 </html>
 ```

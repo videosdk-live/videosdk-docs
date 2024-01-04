@@ -99,7 +99,7 @@ yarn add @videosdk.live/js-sdk
 You can also include it in your application using our CDN.
 
 ```jsx
-<script src="<https://sdk.videosdk.live/js-sdk/0.0.67/videosdk.js>"></script>
+<script src="<https://sdk.videosdk.live/js-sdk/0.0.78/videosdk.js>"></script>
 ```
 
 Using this method, VideoSDK will set a browser global:

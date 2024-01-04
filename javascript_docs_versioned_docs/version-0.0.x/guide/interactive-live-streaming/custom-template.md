@@ -87,7 +87,7 @@ import TabItem from '@theme/TabItem';
   <head></head>
   <body>
     // highlight-next-line
-    <script src="https://sdk.videosdk.live/js-sdk/0.0.67/videosdk.js"></script>
+    <script src="https://sdk.videosdk.live/js-sdk/0.0.78/videosdk.js"></script>
   </body>
 </html>
 ```
@@ -136,7 +136,7 @@ You can use VideoSDK's React or JavaScript SDK to create custom template. Follow
     <!-- render Video -->
     <div class="row" id="videoContainer"></div>
 
-    <script src="https://sdk.videosdk.live/js-sdk/0.0.67/videosdk.js"></script>
+    <script src="https://sdk.videosdk.live/js-sdk/0.0.78/videosdk.js"></script>
     <script src="index.js"></script>
   </body>
 </html>
