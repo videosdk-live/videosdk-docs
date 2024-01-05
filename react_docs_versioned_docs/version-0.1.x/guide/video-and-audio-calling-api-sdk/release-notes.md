@@ -8,6 +8,14 @@ tags: [releasenotes]
 
 This page will keep you update all the releases of React JS SDK.
 
+## v0.1.82
+
+**Release Date** : 5th Jan 2024
+
+**Bug fix** :
+- When the participant mode changes participants list is reactive
+
+
 ## v0.1.81
 
 **Release Date** : 30th Dec 2023
