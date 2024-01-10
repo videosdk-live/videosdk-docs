@@ -1,0 +1,38 @@
+[
+  {
+    "href": "./methods#config",
+    "label": "config"
+  },
+  {
+    "href": "./methods#getdevices",
+    "label": "getdevices"
+  },
+  {
+    "href": "./methods#getcameras",
+    "label": "getcameras"
+  },
+  {
+    "href": "./methods#getmicrophones",
+    "label": "getmicrophones"
+  },
+  {
+    "href": "./methods#getplaybackdevices",
+    "label": "getplaybackdevices"
+  },
+  {
+    "href": "./methods#requestpermission",
+    "label": "requestpermission"
+  },
+  {
+    "href": "./methods#checkpermissions",
+    "label": "checkpermissions"
+  },
+  {
+    "href": "./methods#on",
+    "label": "on"
+  },
+  {
+    "href": "./methods#off",
+    "label": "off"
+  }
+]

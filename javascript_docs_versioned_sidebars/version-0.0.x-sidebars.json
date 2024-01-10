@@ -205,6 +205,15 @@
     },
     {
       "type": "category",
+      "label": "VideoSDK Class",
+      "items": [
+        "api/sdk-reference/videosdk-class/introduction",
+        "api/sdk-reference/videosdk-class/methods",
+        "api/sdk-reference/videosdk-class/events"
+      ]
+    },
+    {
+      "type": "category",
       "label": "Meeting Class",
       "items": [
         "api/sdk-reference/meeting-class/introduction",
@@ -232,17 +241,7 @@
         "api/sdk-reference/stream-class/properties",
         "api/sdk-reference/stream-class/methods"
       ]
-    },
-    {
-      "type": "category",
-      "label": "Connection",
-      "items": [
-        "api/sdk-reference/connection/introduction",
-        "api/sdk-reference/connection/connection-class",
-        "api/sdk-reference/connection/connection-meeting-class",
-        "api/sdk-reference/connection/connection-participant-class"
-      ]
-    },
+    },  
     {
       "type": "category",
       "label": "Custom Tracks",

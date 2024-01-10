@@ -76,7 +76,13 @@ import events from "./../data/meeting-class/events.json";
 </div>
 <div class="col col--4 margin-bottom--sm" >
 
-- [connections](./properties.md#connections)
+- [selectedCameraDevice](./properties.md#selectedcameradevice)
+
+</div>
+
+<div class="col col--4 margin-bottom--sm" >
+
+- [selectedMicrophoneDevice](./properties.md#selectedmicrophonedevice)
 
 </div>
 
