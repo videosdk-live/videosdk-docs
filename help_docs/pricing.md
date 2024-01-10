@@ -35,7 +35,6 @@ slug: pricing
           | Resolution | Per participant min |
           | --- | --- |
           | Audio | $0.0006 |
-          | SD Video | $0.002 |
           | HD Video | $0.003 |
           | Full HD Video | $0.007 |
           | 2K Video | $0.007 |
@@ -57,7 +56,7 @@ slug: pricing
 #### **4. What are charges for live-messaging & signaling?**
   - For live-messaging, live-comments, signaling & interactions - You can use PubSub feature & it’s free. Currently, we don’t have plans to charge for it.
 #### **5. Does Free 10000 mins include all video call/conference resolutions?**
-  - Yes, Free 10000 mins include all (SD, HD, Full HD, 2K & 2K+) resolutions.
+  - Yes, Free 10000 mins include all (HD, Full HD, 2K & 2K+) resolutions.
 #### **6. Does Free 10000 mins include composer service mins as well?**
   - No, Free 10000 mins includes only call/conference; composer services like cloud recording, re-streaming (RTMP-out), and recorded video hosting are not included.
 
@@ -80,29 +79,27 @@ slug: pricing
             
 #### **3. If I am using less than 10000 mins every month & not using add-on services (cloud recording, re-streaming, etc.), then will the Video SDK be free for me?**
   - Technically.. YES, in such a case the Video SDK would be free for you.
-#### **4. If I have used, total of 25000 mins, among which 7000 audio mins, 8000 SD mins & 10000 HD mins, then which mins will be counted as free mins?**
+#### **4. If I have used, total of 25000 mins, among which 7000 audio mins & 18000 HD mins, then which mins will be counted as free mins?**
   - Free 10000 mins are exhausted as per below sequence
         
     i. Audio mins
   
-    ii. SD Video mins
+    ii. HD Video mins
   
-    iii. HD Video mins
+    iii. Full HD Video mins
   
-    iv. Full HD Video mins
+    iv. 2K Video mins
   
-    v. 2K Video mins
-  
-    vi. 2K+ Video mins
+    v. 2K+ Video mins
        
-  - in your case, first 7000 audio mins would be considered FREE & then 3000 SD mins
-  - Hence, you will be invoiced for 5000 SD mins & 10000 HD mins.
+  - in your case, first 7000 audio mins would be considered FREE & then 3000 HD mins
+  - Hence, you will be invoiced for 15000 HD mins.
 #### **5. I have used only 4000 mins this month, will the remaining free mins (6000 mins) be carried forward to next month?**
   - No. The remaining free mins will be cleared at the end of each calendar month
 #### **6. I have usage more than 100K mins per month & my invoice size is larger. How to reduce it?**
   - It’s really justified to reduce your costs at volume usage. If your monthly usage is more than 100K mins per month, please contact sales on [https://videosdk.live/contact](https://videosdk.live/contact) or write on support@videosdk.live
 #### **7. I have set the maxResolution to be (320 x 180) only, then why am I charged for HD video?**
-  - You would be using either SD, HD, Full HD, 2K or 2K+, by aggregate resolution.
+  - You would be using either HD, Full HD, 2K or 2K+, by aggregate resolution.
   - Aggregate resolution means a sum resolution of all video-streams, a user is watching at a time.
   - If a user is watching 8 video-streams of (320 x 180) then he is consuming [(360 x 180) x 8 video = 4,60,800px] hence he will be charged for HD resolution min.
 #### **8. How do you calculate the aggregate video resolution?**
@@ -112,20 +109,18 @@ slug: pricing
     | Videos on-screen* | Aggregated resolution | Price, per user per minute |
     | --- | --- | --- |
     | 0 | Only audio | $0.0006 |
-    | 1-2 | SD | $0.002 |
-    | 3-5 | HD | $0.003 |
+    | 1-5 | HD | $0.003 |
     | 6-10 | Full HD | $0.007 |
     | 11-17 | 2K | $0.007 |
     | 18+ | 2K+ | $0.007 |
-    - Considering SD (640 x 360) resolution (16:9) per video, and one local user (self) video.
+    - Considering HD (1280 x 720) resolution (16:9) per video, and one local user (self) video.
 #### **9. In detail, how do you calculate the aggregate video resolution?**
   - As described above, it’s an aggregate resolution, the end-user is downloading/viewing. We are following below standard resolution to calculate your usage.
         
         
     | Video type | Aggregate resolution (px) | 16:9 Aspect ratio |
     | --- | --- | --- |
-    | SD | <= 2,30,400px | 360p: 640 x 360 |
-    | HD | 2,30,401px to 9,21,600px | 720p: 1280 × 720 |
+    | HD | <=9,21,600px | 720p: 1280 × 720 |
     | Full HD | 9,21,601px to 20,73,600px | 1080p: 1920 x 1080 |
     | 2K | 20,73,601px to 36,86,400px | 2K: 2560 × 1440 |
     | 2K+ | 36,86,401px to 82,94,400px+ | 2K+: 3840 × 2160 |
@@ -152,7 +147,6 @@ slug: pricing
         | Resolution | Per speaker min | Per viewer min |
         | --- | --- | --- |
         | Audio | $0.0006 | $0.0003 |
-        | Video (SD) | $0.002 | $0.001 |
         | Video (HD) | $0.003 | $0.0015 |
         | Video (Full HD) | $0.007 | $0.0035 |
         | Video (2K) | $0.007 | $0.0035 |
@@ -175,7 +169,7 @@ slug: pricing
 #### **4. What are charges for live-messaging & signaling?**
   - For live-messaging, live-comments, signaling & interactions - You can use PubSub feature & it’s free. Currently, we don’t have plans to charge for it.
 #### **5. Does Free 10000 mins include all video resolutions?**
-  - Yes, Free 10000 mins include all (SD, HD, Full HD, 2K & 2K+) resolutions in Interactive livestreaming.
+  - Yes, Free 10000 mins include all (HD, Full HD, 2K & 2K+) resolutions in Interactive livestreaming.
 #### **6. Does Free 10000 mins include composer service mins as well?**
   - No, Free 10000 mins includes only speaker & viewer-min service; composer services like cloud recording, re-streaming (RTMP-out), HLS Conversion & recorded video hosting are not included.
 
@@ -205,41 +199,37 @@ slug: pricing
     - For detailed information, please refer to our [pricing blog](https://videosdk.live/blog/video-sdk-api-pricing)
 #### **3. If I am using less than 10000 mins every month & not using add-on services (cloud recording, re-streaming, etc.), then will the Video SDK be free for me?**
   - Technically.. YES, in such a case the Video SDK would be free for you.
-#### **4. If I have used, total of 13200 free mins, among which 100 speaker-audio mins, 4000 viewer-audio mins, 100 speaker-SD mins & 9000 viewer-SD mins, then which mins will be counted as free mins?**
+#### **4. If I have used, total of 13200 free mins, among which 100 speaker-audio mins, 4000 viewer-audio mins, 100 speaker-HD mins & 9000 viewer-HD mins, then which mins will be counted as free mins?**
   - Free 10000 mins are exhausted as per below sequence
       
     i. Viewer-audio mins
     
-    ii. Viewer-SD mins
+    ii. Viewer-HD mins
     
-    iii. Viewer-HD mins
+    iii. Viewer-Full HD mins
     
-    iv. Viewer-Full HD mins
+    iv. Viewer-2K mins
     
-    v. Viewer-2K mins
+    v. Viewer-2K+ mins
     
-    vi. Viewer-2K+ mins
+    vi. Speaker-audio mins
     
-    vii. Speaker-audio mins
+    vii. Speaker-HD mins
     
-    ii. Speaker-SD mins
+    viii. Speaker-Full HD mins
     
-    iii. Speaker-HD mins
+    ix. Speaker-2K mins
     
-    iv. Speaker-Full HD mins
-    
-    v. Speaker-2K mins
-    
-    vi. Speaker-2K+ mins
+    x. Speaker-2K+ mins
       
-  - In your case, first 4000 viewer-audio mins, then 6000 viewer-SD mins would be considered FREE.
-  - Hence, you will be invoiced for 3000 viewer-SD mins, 100 speaker-audio mins & 100 speaker-SD mins; plus livestream encoding charges.
+  - In your case, first 4000 viewer-audio mins, then 6000 viewer-HD mins would be considered FREE.
+  - Hence, you will be invoiced for 3000 viewer-HD mins, 100 speaker-audio mins & 100 speaker-HD mins; plus livestream encoding charges.
 #### **5. I have used only 4000 mins this month, will the remaining free mins (6000 mins) be carried forward to next month?**
   - No. The remaining free mins will be cleared at the end of each calendar month.
 #### **6. I have usage of more than 100K mins per month & my invoice size is larger. How to reduce it?**
   - It’s really justified to reduce your costs at volume usage. If your monthly usage is more than 100K mins per month, please contact sales on [https://videosdk.live/contact](https://videosdk.live/contact) or write on support@videosdk.live
 #### **7. I have set the maxResolution to be (320 x 180) only, then why am I charged for HD video?**
-  - You would be using either SD, HD, Full HD, 2K or 2K+, by aggregate resolution.
+  - You would be using either HD, Full HD, 2K or 2K+, by aggregate resolution.
   - Aggregate resolution means a sum resolution of all video-streams, a speaker/viewer is watching at a time.
   - If a speaker/viewer is watching 8 video-streams of (320 x 180) then he is consuming [(360 x 180) x 8 video = 4,60,800px] hence he will be charged for HD resolution min.
 #### **8. How do you calculate the aggregate video resolution?**
@@ -248,19 +238,17 @@ slug: pricing
     | Videos on-screen* | Aggregate resolution | Price, per speaker per min | Price, per viewer per min |
     | --- | --- | --- | --- |
     | 0 | Only audio | $0.0006 | $0.0003 |
-    | 1-2 | SD | $0.002 | $0.001 |
-    | 3-5 | HD | $0.003 | $0.0015 |
+    | 1-5 | HD | $0.003 | $0.0015 |
     | 6-10 | Full HD | $0.007 | $0.0035 |
     | 11-17 | 2K | $0.007 | $0.0035 |
     | 18+ | 2K+ | $0.007 | $0.0035 |
-  - Considering SD (640 x 360) resolution (16:9) per video, and one local user (self) video
+  - Considering HD (1280 x 720) resolution (16:9) per video, and one local user (self) video
 #### **9. In detail, how do you calculate the aggregate video resolution?**
   - As described above, it’s an aggregate resolution, the end-user is downloading/viewing. We are following below standard resolution to calculate your usage.
     
     | Video type | Aggregate resolution (px) | 16:9 Aspect ratio |
     | --- | --- | --- |
-    | SD | <= 2,30,400px | 360p: 640 x 360 |
-    | HD | 2,30,401px to 9,21,600px | 720p: 1280 × 720 |
+    | HD | <=9,21,600px | 720p: 1280 × 720 |
     | Full HD | 9,21,601px to 20,73,600px | 1080p: 1920 x 1080 |
     | 2K | 20,73,601px to 36,86,400px | 2K: 2560 × 1440 |
     | 2K+ | 36,86,401px to 82,94,400px+ | 2K+: 3840 × 2160 |
@@ -310,28 +298,25 @@ Note: If one of the above-mentioned limits is reached, services will be held. In
     3. Interactive Livestream - Viewer minutes
 - For three services that comes under free quota of 10000 minutes, it’s usage will be added up at the end of the month, and the 10,000 free minutes will be adjusted against the used services in the order shown below.
     1. Viewer-audio mins
-    2. Viewer-SD mins
-    3. Viewer-HD mins
-    4. Viewer-Full HD mins
-    5. Viewer-2K mins
-    6. Viewer-2K+ mins
-    7. Speaker-audio mins
-    8. Speaker-SD mins
-    9. Speaker-HD mins
-    10. Speaker-Full HD mins
-    11. Speaker-2K mins
-    12. Speaker-2K+ mins
-    13. Audio conferencing mins
-    14. SD Video conferencing mins
-    15. HD Video conferencing mins
-    16. Full HD Video conferencing mins
-    17. 2K Video conferencing mins
-    18. 2K+ Video conferencing mins
+    2. Viewer-HD mins
+    3. Viewer-Full HD mins
+    4. Viewer-2K mins
+    5. Viewer-2K+ mins
+    6. Speaker-audio mins
+    7. Speaker-HD mins
+    8. Speaker-Full HD mins
+    9. Speaker-2K mins
+    10. Speaker-2K+ mins
+    11. Audio conferencing mins
+    12. HD Video conferencing mins
+    13. Full HD Video conferencing mins
+    14. 2K Video conferencing mins
+    15. 2K+ Video conferencing mins
 - No taxes are applied on an invoice, unaltered until respective government law update
 - Exceptions for Indian registered businesses
     - Invoice currency will be INR at the foreign exchange rate on the day of invoice generation.
     - As per the GST guidelines, 18% GST will be imposed on the final invoice amount, unmodified until the Government of India's law modification. And, under SAC Code - 998313, the applicable TDS would be 2%, under section 193(C) or 193(J) as technical services.
-    - A user must provide registered GST & Company PAN data on the Video SDK user dashboard at least 3 days before invoice creation to get the GST invoice.
+    - Users are required to submit their registered GST and Company PAN details on the Video SDK user dashboard no later than the last day of the month. This ensures the generation of the GST invoice at the end of that month.
   
 ## Quotas & limits
 
