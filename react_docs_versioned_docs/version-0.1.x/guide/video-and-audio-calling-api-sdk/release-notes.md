@@ -15,6 +15,7 @@ This page will keep you update all the releases of React JS SDK.
 **Bug fix** :
 - When the participant mode changes participants list is reactive
 
+---
 
 ## v0.1.81
 
