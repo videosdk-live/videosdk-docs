@@ -92,6 +92,10 @@ const getMeetingId = async (token) => {
 
 We can initialize the meeting using the `initMeeting` method of the `VideoSDK` class. The `initMeeting` is responsible for initializing the meeting with the provided configuration, which includes the `meetingId`, `participantId` and many more.
 
+:::tip
+When conducting one-to-one meetings, it is recommended to set `multistream:false`.For more information on multistream, refer to the [multistream documentation](/javascript/guide/video-and-audio-calling-api-sdk/render-media/optimize-video-track#what-is-multistream).
+:::
+
 Let's take a deeper look at the available configuration options first.
 
 ```js
@@ -103,6 +107,7 @@ const meeting = VideoSDK.initMeeting({
   micEnabled: "<Flag-to-enable-mic>",
   webcamEnabled: "<Flag-to-enable-webcam>",
   participantId: "Id-of-participant", // optional, default: SDK will generate
+  multistream: true,
 });
 ```
 
@@ -137,6 +142,10 @@ const meeting = VideoSDK.initMeeting({
     - It can be used to specify the **unique identifier** which can be linked with **your own database** service.
     - It has to be of `String` type.
     - This is an `OPTIONAL` parameter. By default VideoSDK will generate unique id for each participant.
+
+- **`multistream`**:
+
+  - This is a `boolean` flag, indicating if the stream should send multiple resolution layers or single resolution layer.
 
 :::caution
 You must ensure that the `participantId` is not repeated in the same meeting or room, It will enable VideoSDK to eliminate any participant respect to that `participantId`.

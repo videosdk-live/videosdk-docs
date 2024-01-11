@@ -213,6 +213,10 @@ To perform Network call you need to add [Fast Android Networking Library](https:
 
 `initMeeting()` is responsible for initializing the meeting with the provided configuration, which includes the `meetingId`, `name`, `participantId` and many more.
 
+:::tip
+When conducting one-to-one meetings, it is recommended to set `multistream:false`.For more information on multistream, refer to the [multistream documentation](/android/guide/video-and-audio-calling-api-sdk/render-media/optimize-video-track#what-is-multistream).
+:::
+
 Let's take a deeper look at the available configuration options first.
 
 ```js title="initMeeting"
@@ -261,6 +265,10 @@ Let's take a deeper look at the available configuration options first.
   - It has to be of `String` type.
   - If you passed `null` then by default VideoSDK will generate unique id for each participant.
 
+- **`multistream`**:
+
+  - This is a `boolean` flag, indicating if the stream should send multiple resolution layers or single resolution layer.
+
 :::caution
 You must ensure that the `participantId` is not repeated in the same meeting or room, It will enable VideoSDK to eliminate any participant respect to that `participantId`.
 :::
@@ -290,9 +298,9 @@ You must ensure that the `participantId` is not repeated in the same meeting or 
 
 - **`metaData`**:
 
-  -  If you want to provide additional details about a user joining a meeting, such as their profile image, you can pass that information in this parameter.
+  - If you want to provide additional details about a user joining a meeting, such as their profile image, you can pass that information in this parameter.
 
-    - It has to be of `JsonObject` type.
+  - It has to be of `JsonObject` type.
 
 With all the configuration options explained, here is how you can initialize the meeting.
 

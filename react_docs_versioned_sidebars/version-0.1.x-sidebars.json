@@ -110,6 +110,8 @@
           "label": "Control Remote Participant",
           "items": [
             "guide/video-and-audio-calling-api-sdk/control-remote-participant/remote-participant-media",
+            "guide/video-and-audio-calling-api-sdk/control-remote-participant/switch-remote-participant-quality",
+            "guide/video-and-audio-calling-api-sdk/control-remote-participant/switch-remote-participant-camera",
             "guide/video-and-audio-calling-api-sdk/control-remote-participant/mute-all-participants",
             "guide/video-and-audio-calling-api-sdk/control-remote-participant/remove-participant"
           ],
