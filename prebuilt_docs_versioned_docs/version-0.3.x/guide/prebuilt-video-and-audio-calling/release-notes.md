@@ -7,6 +7,24 @@ pagination_label: Release Notes
 
 This page will keep you update all the releases of Prebuilt SDK.
 
+## 0.3.37
+
+**Release Date** : 31st Oct 2023
+
+**Change log** :
+
+1. HLS Player Improvements
+
+## v0.3.36
+
+**Release Date** : 31st Oct 2023
+
+**Change log** :
+
+1. `moreOptionsEnabled` param added for show/hide More Option Tabpanel.
+
+     **Docs** : [`moreOptionsEnabled`](/prebuilt/api/sdk-reference/parameters/basic-parameters#moreoptionsenabled) 
+
 ## v0.3.31
 
 **Release Date** : 5th July 2023
@@ -14,6 +32,7 @@ This page will keep you update all the releases of Prebuilt SDK.
 **Change log** :
 
 1. Internal improvements
+
 
 ## v0.3.30
 

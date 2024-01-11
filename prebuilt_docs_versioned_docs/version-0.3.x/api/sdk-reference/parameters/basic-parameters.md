@@ -233,4 +233,14 @@ meeting.init({
 
 ---
 
+## moreOptionsEnabled
+
+- type: `Boolean`
+
+- Setting `moreOptionsEnabled` to `true` or `false` will show or hide More Option tab panel in the meeting.
+
+- Default: `true`
+
+---
+
 </div>

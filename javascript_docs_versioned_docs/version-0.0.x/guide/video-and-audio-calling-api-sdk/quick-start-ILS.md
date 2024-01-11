@@ -58,7 +58,7 @@ import TabItem from '@theme/TabItem';
   </head>
   <body>
     <!--.....-->
-    <script src="https://sdk.videosdk.live/js-sdk/0.0.67/videosdk.js"></script>
+    <script src="https://sdk.videosdk.live/js-sdk/0.0.78/videosdk.js"></script>
   </body>
 </html>
 ```
@@ -137,7 +137,7 @@ In this step, we are going to create HTML file which will have two screens `join
       <!-- render Video -->
       <div id="videoContainer"></div>
     </div>
-    <script src="https://sdk.videosdk.live/js-sdk/0.0.67/videosdk.js"></script>
+    <script src="https://sdk.videosdk.live/js-sdk/0.0.78/videosdk.js"></script>
     <script src="config.js"></script>
     <script src="index.js"></script>
 

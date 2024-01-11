@@ -8,6 +8,35 @@ tags: [releasenotes]
 
 This page will keep you update all the releases of JavaScript SDK.
 
+## v0.0.78
+
+**Release Date** : 30th Dec 2023
+
+**Change Log** :
+
+- Reduce SDK size.
+
+---
+
+## v0.0.75
+
+**Release Date** : 1st Dec 2023
+
+**Change Log** :
+
+- Added `captureImage` method in the `Participant` object to capture the image of the user from MediaStream.
+
+   **Docs** : [captureImage()](https://docs.videosdk.live/javascript/api/sdk-reference/participant-class/methods#captureimage)
+
+
+- Added methods `uploadBase64File` and `fetchBase64File` to upload and download a temporary file.
+
+   **Docs** : [uploadBase64File](https://docs.videosdk.live/javascript/api/sdk-reference/meeting-class/methods#uploadbase64file)
+   
+   **Docs** : [fetchbase64file](https://docs.videosdk.live/javascript/api/sdk-reference/meeting-class/methods#fetchbase64file)
+
+---
+
 ## v0.0.74
 
 **Release Date** : 27th Oct 2023

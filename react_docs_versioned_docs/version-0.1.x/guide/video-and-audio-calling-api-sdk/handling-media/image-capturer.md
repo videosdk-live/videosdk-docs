@@ -19,6 +19,14 @@ This guide will help us to capture image of participant from video stream.
 
 This can be very helpful in Video KYC use cases where you can capture the image of user holding their identity.
 
+:::note
+
+captureImage() supported from `0.0.79` version.
+
+Enhance the `captureImage` method by making the height and width parameters optional from `0.0.81` version.
+
+:::
+
 ### `captureImage()`
 
 - By using `captureImage()` function of `useParticipant` hook, you can capture image of a local participant from their video stream.

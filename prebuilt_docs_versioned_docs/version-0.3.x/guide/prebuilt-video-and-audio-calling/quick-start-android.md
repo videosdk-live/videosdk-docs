@@ -109,7 +109,7 @@ public class MainActivity extends AppCompatActivity {
   //Declare following variables
   private String token  = "REPLACE_YOUR_TOKEN_HERE";
 
-  private String prebuiltVersion = "0.3.31";
+  private String prebuiltVersion = "0.3.37";
 
   private String meetingId = "MEETING_ID";
 

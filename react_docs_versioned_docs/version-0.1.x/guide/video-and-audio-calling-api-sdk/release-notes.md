@@ -8,6 +8,45 @@ tags: [releasenotes]
 
 This page will keep you update all the releases of React JS SDK.
 
+## v0.1.82
+
+**Release Date** : 5th Jan 2024
+
+**Bug fix** :
+- When the participant mode changes participants list is reactive
+
+---
+
+## v0.1.81
+
+**Release Date** : 30th Dec 2023
+
+**Bug fix** :
+
+- Reduce SDK size.
+- Enhance the `captureImage` method by making the height and width parameters optional.
+
+---
+
+## v0.1.79
+
+**Release Date** : 1st Dec 2023
+
+**Change Log** :
+
+- Added `captureImage` method in the `useParticipant` hook to capture the image of the user from MediaStream.
+
+   **Docs** : [captureImage()](https://docs.videosdk.live/react/api/sdk-reference/use-participant/methods#captureimage)
+
+
+- Added methods `uploadBase64File` and `fetchBase64File` in `useFile` hook to upload and download a temporary file.
+
+   **Docs** : [uploadBase64File](https://docs.videosdk.live/react/api/sdk-reference/use-file#uploadbase64file)
+   
+   **Docs** : [fetchbase64file](https://docs.videosdk.live/react/api/sdk-reference/use-file#fetchbase64file)
+
+---
+
 ## v0.1.78
 
 **Release Date** : 27th Oct 2023
