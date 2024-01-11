@@ -85,8 +85,7 @@ function ParticipantView({ participantId }) {
                     {
                       resolution: value,
                       resolutionValue: res,
-                    },
-                    {persist: true}
+                    } 
                   );
                   e.stopPropagation();
                 }}

@@ -76,11 +76,7 @@ function ParticipantView({ participantId }) {
               <button
                 onClick={async (e) => {
                   switchCameraPublish(
-                    {
-                      facingMode: value,
-                      isChangeWebcam: true,
-                    },
-                    {persist: true}
+                    {facingMode: value}
                   );
                   e.stopPropagation();
                 }}
@@ -155,21 +151,19 @@ const SwitchCameraListner = () => {
         webcam.label.toLowerCase().includes(message.facingMode)
       )?.label;
 
-      if (message.isChangeWebcam) {
-        mMeeting?.disableWebcam();
-        try {
-          customTrack = await createCameraVideoTrack({
-            cameraId: deviceId,
-            facingMode: message.facingMode,
-            optimizationMode: "motion",
-            multiStream: false,
-          });
-        } catch (error) {
-          console.log("error in creating custom video track", error);
-        }
-        mMeeting.changeWebcam(customTrack);
-        return;
+      await mMeeting?.disableWebcam();
+      try {
+        customTrack = await createCameraVideoTrack({
+          cameraId: deviceId,
+          facingMode: message.facingMode,
+          optimizationMode: "motion",
+          multiStream: false,
+        });
+      } catch (error) {
+        console.log("error in creating custom video track", error);
       }
+
+      mMeeting.changeWebcam(customTrack);
     },
   });
 
