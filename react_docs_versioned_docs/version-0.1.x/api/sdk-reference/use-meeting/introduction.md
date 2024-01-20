@@ -108,16 +108,6 @@ title: Video SDK useMeeting Hook
 - [hlsUrls](./properties#hlsurls)
 
 </div>
-<div class="col col--4 margin-bottom--sm">
-
-- [connections](./properties#connections)
-
-</div>
-<div class="col col--4 margin-bottom--sm">
-
-- [messages](./properties#messages)
-
-</div>
 </div>
 
 ## Methods
@@ -258,11 +248,6 @@ title: Video SDK useMeeting Hook
 - [seekVideo](./methods#seekvideo)
 
 </div>
-<div class="col col--4 margin-bottom--sm">
-
-- [connectTo](./methods#connectto)
-
-</div>
 </div>
 
 ## Event Callbacks
@@ -376,21 +361,6 @@ title: Video SDK useMeeting Hook
 <div class="col col--4 margin-bottom--sm" >
 
 - [onMicRequested](./events#onmicrequested)
-
-</div>
-<div class="col col--4 margin-bottom--sm" >
-
-- [onSwitchMeeting](./events#onswitchmeeting)
-
-</div>
-<div class="col col--4 margin-bottom--sm" >
-
-- [onConnectionOpen](./events#onconnectionopen)
-
-</div>
-<div class="col col--4 margin-bottom--sm" >
-
-- [onConnectionClose](./events#onconnectionclose)
 
 </div>
 <div class="col col--4 margin-bottom--sm" >

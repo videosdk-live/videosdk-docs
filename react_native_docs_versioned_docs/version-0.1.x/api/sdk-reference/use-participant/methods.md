@@ -100,7 +100,7 @@ title: Methods returned by useParticipant Hook
 - **height**: number
 - **width**: number
 
----
+<!-- ---
 
 ### switchTo()
 
@@ -152,7 +152,7 @@ useMeeting({
 });
 ```
 
----
+--- -->
 
 ### getVideoStats()
 

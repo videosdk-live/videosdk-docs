@@ -48,6 +48,11 @@ import events from "./../data/videosdk-class/events.json";
 </div>
 <div class="col col--4 margin-bottom--sm" >
 
+- [getNetworkStats](./methods#getnetworkstats)
+
+</div>
+<div class="col col--4 margin-bottom--sm" >
+
 - [requestPermission](./methods#requestpermission)
 
 </div>

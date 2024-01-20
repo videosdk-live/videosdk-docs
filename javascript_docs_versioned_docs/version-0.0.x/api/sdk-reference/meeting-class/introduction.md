@@ -204,11 +204,6 @@ import events from "./../data/meeting-class/events.json";
 </div>
 <div class="col col--4 margin-bottom--sm" >
 
-- [connectTo](./methods.md#connectto)
-
-</div>
-<div class="col col--4 margin-bottom--sm" >
-
 - [on](./methods.md#on)
 
 </div>
@@ -307,21 +302,6 @@ import events from "./../data/meeting-class/events.json";
 <div class="col col--4 margin-bottom--sm" >
 
 - [hls-stopped](./events.md#hls-stopped)
-
-</div>
-<div class="col col--4 margin-bottom--sm" >
-
-- [connection-open](./events.md#connection-open)
-
-</div>
-<div class="col col--4 margin-bottom--sm" >
-
-- [connection-close](./events.md#connection-close)
-
-</div>
-<div class="col col--4 margin-bottom--sm" >
-
-- [switch-meeting](./events.md#switch-meeting)
 
 </div>
 

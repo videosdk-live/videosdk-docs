@@ -113,6 +113,38 @@ title: VideoSDK Class Methods
 #### Returns
 
 - `Promise<Array<PlaybackDeviceInfo>>`
+---
+
+### getNetworkStats()
+
+-  The `getNetworkStats()` method will return `Promise` that resolves with an object containing network speed statistics or rejects with an error message if the operation fails or exceeds the specified timeout.
+- The result object will include the `downloadSpeed` and `uploadSpeed`, expressed in megabytes per second (MB/s).
+
+#### Parameters
+
+- `timeoutDuration`
+   - It helps to prevent the method from getting stuck indefinitely when fetching network statistics. It lets you set a maximum time for the operation, and if it takes longer than that, the method stops gracefully. 
+   - You can provide `timeoutDuration` in milliseconds. If not provided or is not an integer, the default timeout is set to `60,000` milliseconds (1 minute).
+   - `Optional`
+
+#### Returns
+
+- `{Promise<{downloadSpeed: number,uploadSpeed: number}> }`
+
+#### Example
+
+```js
+try {
+  const options = { timeoutDuration: 45000 }; // Set a custom timeout of 45 seconds
+  const networkStats = await VideoSDK.getNetworkStats(options);
+  console.log("Download Speed: ", networkStats["downloadSpeed"]);  // will return value in mb/s
+  console.log("Upload Speed: ", networkStats["uploadSpeed"]); // will return value in mb/s
+} catch(ex)
+{
+  console.log("Error in networkStats: ", ex);
+}
+
+```
 
 ---
 
