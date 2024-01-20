@@ -8,13 +8,27 @@ tags: [releasenotes]
 
 This page will keep you update all the releases of JavaScript SDK.
 
+## v0.0.80
+
+**Release Date** : 19th January 2024
+
+**Change Log** :
+
+- Provide `getNetworkStats()` method in `VideoSDK` class to get `downloadSpeed` and `uploadSpeed` of network. 
+
+   **Docs** : [getNetworkStats()](../../api/sdk-reference/videosdk-class/methods.md#getnetworkstats)
+
+- Change `Permission` parameter to `Optional` in `requestPermission()` and `checkPermissions()` methods of `VideoSDK` class.
+
+---
+
 ## v0.0.79
 
 **Release Date** : 5th January 2024
 
 **Change Log** :
 
-- Provide Pre-Call feature.
+- Provide Pre-Call Screen's features.
 
    - Provide `getDevices()` method in `VideoSDK` class to get list of media input/output devices. 
 

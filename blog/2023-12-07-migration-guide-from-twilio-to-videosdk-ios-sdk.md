@@ -102,8 +102,18 @@ There is two ways to implement the VideoSDK dependency into your application:
 - In Twilio, You can initiate a connection to a video room using `TwilioVideoSDK.connect()`. This method sets up a connection by specifying the connection options and delegate of the meeting.
 - In VideoSDK, the process begins with setting up the SDK by initializing it and providing authentication through a token. After that you can initialize the meeting with required params such as `meetingId`, `participantId`, `participantName`,  `micEnabled`,  `webcamEnabled` and more. To join the meeting/room, you can simply call the `meeting.join()` method.
 
-```jsx
-/* Twilio Code :
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs
+defaultValue="Twilio"
+groupId={"Twilio"}
+values={[{label: 'Twilio', value: 'Twilio'},]}>
+
+<TabItem value="Twilio">
+
+```js
 @IBAction func createARoom(sender: AnyObject) {
     let connectOptions = ConnectOptions(token: accessToken) { (builder) in
         builder.roomName = "my-room"
@@ -122,9 +132,21 @@ func roomDidConnect(room: Room) {
         // Set the delegate of the local particiant to receive callbacks
         localParticipant.delegate = self
     }
-}*/
+}
+```
 
-// meeting
+</TabItem>
+
+</Tabs>
+
+<Tabs
+defaultValue="VideoSDK"
+groupId={"VideoSDK"}
+values={[{label: 'VideoSDK', value: 'VideoSDK'}]}>
+
+<TabItem value="VideoSDK">
+
+```js
 private var meeting: Meeting?
 
 override func viewDidLoad() {
@@ -141,18 +163,28 @@ override func viewDidLoad() {
         webcamEnabled: <flag-to-enalbe-camera> // optional, default: true
     )
 
-		// join
-		meeting?.join();
+	// join
+	meeting?.join();
 }
 ```
+
+</TabItem>
+
+</Tabs>
 
 ## Step 3 : Handle Connected Participants
 
 - In both Twilio and VideoSDK, you can utilise event listeners attached to the room or meeting object to capture crucial moments during a video conference. This listener include the meeting being connected or disconnected and participants joining or leaving the meeting events.
 
-```jsx
-/* Twilio Code :
 
+<Tabs
+defaultValue="Twilio"
+groupId={"Twilio"}
+values={[{label: 'Twilio', value: 'Twilio'},]}>
+
+<TabItem value="Twilio">
+
+```js
 // MARK: RoomDelegate
 
 func roomDidConnect(room: Room) { ... }
@@ -162,26 +194,41 @@ func participantDidConnect(room: Room, participant: RemoteParticipant) { ... }
 func participantDidDisconnect(room: Room, participant: RemoteParticipant) { ... }
 
 func roomDidDisconnect(room: Room, error: Error?) { ... }
+```
 
-*/
+</TabItem>
 
+</Tabs>
+
+<Tabs
+defaultValue="VideoSDK"
+groupId={"VideoSDK"}
+values={[{label: 'VideoSDK', value: 'VideoSDK'}]}>
+
+<TabItem value="VideoSDK">
+
+```js
 // MARK: - MeetingEventListener [RoomDelegate]
 
 extension YourViewController: MeetingEventListener {
-
-		// [roomDidConnect]
+    // [roomDidConnect]
     func onMeetingJoined() { ... }
 
-		// [roomDidDisconnect]
+    // [roomDidDisconnect]
     func onMeetingLeft() { ... }
 
     // [participantDidConnect]
     func onParticipantJoined(_ participant: Participant) { ... }
 
-		// [participantDidDisconnect]
+    // [participantDidDisconnect]
     func onParticipantLeft(_ participant: Participant) { ... }
 }
 ```
+
+</TabItem>
+
+</Tabs>
+
 
 #### Mapping Twilio’s events to VideoSDK
 
@@ -212,8 +259,14 @@ Below is a list of all Twilio events used in this demo and VideoSDK’s equivale
   - onStreamEnabled() - `onStreamEnabled()` is a callback which gets triggered whenever a participant's video, audio or screen share stream is enabled.
   - onStreamDisabled() - `onStreamDisabled()` is a callback which gets triggered whenever a participant's video, audio or screen share stream is disabled.
 
-```jsx
-/* Twilio Code :
+<Tabs
+defaultValue="Twilio"
+groupId={"Twilio"}
+values={[{label: 'Twilio', value: 'Twilio'},]}>
+
+<TabItem value="Twilio">
+
+```js
 // Use CameraSource to produce video from the device's front camera.
 
 if let camera = CameraSource(delegate: self),
@@ -237,37 +290,49 @@ if let camera = TVICameraCapturer(source: .frontCamera),
 } else {
     print("Couldn't create CameraCapturer or LocalVideoTrack")
 }
-*/
+```
 
+</TabItem>
+
+</Tabs>
+
+<Tabs
+defaultValue="VideoSDK"
+groupId={"VideoSDK"}
+values={[{label: 'VideoSDK', value: 'VideoSDK'}]}>
+
+<TabItem value="VideoSDK">
+
+```js
 // MARK: - ParticipantEventListener
 
 extension YourViewController: ParticipantEventListener {
-
     /// Participant has enabled mic, video or screenshare
     func onStreamEnabled(_ stream: MediaStream, forParticipant participant: Participant) {
-
         if stream.kind == .state(value: .video)  {
             // show stream in cell
             if let cell = self.cellForParticipant(participant) {
                 cell.updateView(forStream: stream, enabled: true)
             }
         } else { ... }
-
     }
 
     /// Participant has disabled mic, video or screenshare
     func onStreamDisabled(_ stream: MediaStream, forParticipant participant: Participant) {
-
-				if stream.kind == .state(value: .video) {
-	          // hide stream in cell
-	          if let cell = self.cellForParticipant(participant) {
-	              cell.updateView(forStream: stream, enabled: false)
+		if stream.kind == .state(value: .video) {
+	        // hide stream in cell
+	        if let cell = self.cellForParticipant(participant) {
+	            cell.updateView(forStream: stream, enabled: false)
             }
         } else { ... }
-
     }
 }
 ```
+
+</TabItem>
+
+</Tabs>
+
 
 ## Step 5 : Working with Remote Participants
 
@@ -276,34 +341,63 @@ extension YourViewController: ParticipantEventListener {
 - In Twilio, you can get the all the connected remote participants through `remoteParticipants` property of `Room` class.
 - Similarly, In VideoSDK you can get all the connected participant using  `participants` property of `Meeting` class.
 
-```jsx
-/* Twilio Code :
-  // MARK: RoomDelegate
+<Tabs
+defaultValue="Twilio"
+groupId={"Twilio"}
+values={[{label: 'Twilio', value: 'Twilio'},]}>
 
-	func roomDidConnect(room: Room) {
-	    //...
-	    // Connected participants already in the room
-	    print("Number of connected Participants \(room.remoteParticipants.count)")
-	
-	    // Set the delegate of the remote participants to receive callbacks
-	    for remoteParticipant in room.remoteParticipants {
-	      remoteParticipant.delegate = self
-	    }
-	}
-*/
+<TabItem value="Twilio">
 
+```js
+// MARK: RoomDelegate
+
+func roomDidConnect(room: Room) {
+    //...
+    // Connected participants already in the room
+    print("Number of connected Participants \(room.remoteParticipants.count)")
+
+    // Set the delegate of the remote participants to receive callbacks
+    for remoteParticipant in room.remoteParticipants {
+        remoteParticipant.delegate = self
+    }
+}
+```
+
+</TabItem>
+
+</Tabs>
+
+<Tabs
+defaultValue="VideoSDK"
+groupId={"VideoSDK"}
+values={[{label: 'VideoSDK', value: 'VideoSDK'}]}>
+
+<TabItem value="VideoSDK">
+
+```js
 // Get the first participant from the meeting
 let participant = meeting.participants.first?.value;
 print("(participant.displayName) is in the room.");
 ```
+
+</TabItem>
+
+</Tabs>
+
 
 ### Display a Remote Participant's Video
 
 - In Twilio, you receive events `didSubscribeToVideoTrack` whenever a remote participant enabled their webcam. These events notify you when a participant starts sharing their video.
 - Similarly, in VideoSDK, you have `onStreamEnabled` and `onStreamDisabled` events. These events serve a similar purpose for both local and remote participants, triggered whenever participant enabled or disabled their webcam respectively.
 
+<Tabs
+defaultValue="Twilio"
+groupId={"Twilio"}
+values={[{label: 'Twilio', value: 'Twilio'},]}>
+
+<TabItem value="Twilio">
+
 ```js
-/* Twilio code:
 // MARK: RemoteParticipantDelegate
 
 /*
@@ -332,8 +426,20 @@ func videoViewDimensionsDidChange(view: VideoView, dimensions: CMVideoDimensions
     print("The dimensions of the video track changed to: \(dimensions.width)x\(dimensions.height)")
     self.view.setNeedsLayout()
 }
-*/
+```
 
+</TabItem>
+
+</Tabs>
+
+<Tabs
+defaultValue="VideoSDK"
+groupId={"VideoSDK"}
+values={[{label: 'VideoSDK', value: 'VideoSDK'}]}>
+
+<TabItem value="VideoSDK">
+
+```js
 // MARK: - MeetingEventListener
 
 extension YourViewController: MeetingEventListener {
@@ -349,7 +455,6 @@ extension YourViewController: ParticipantEventListener {
 
     /// Participant has enabled mic, video or screenshare
     func onStreamEnabled(_ stream: MediaStream, forParticipant participant: Participant) {
-
         if stream.kind == .state(value: .video)  {
             // show stream in cell
             if let cell = self.cellForParticipant(participant) {
@@ -360,12 +465,10 @@ extension YourViewController: ParticipantEventListener {
                 cell.updateView(forStream: stream, enabled: true)
             }
         }
-
     }
 
     /// Participant has disabled mic, video or screenshare
     func onStreamDisabled(_ stream: MediaStream, forParticipant participant: Participant) {
-
         if stream.kind == .state(value: .video) {
 	          // hide stream in cell
 	          if let cell = self.cellForParticipant(participant) {
@@ -376,28 +479,51 @@ extension YourViewController: ParticipantEventListener {
                 cell.updateView(forStream: stream, enabled: false)
             }
         }
-
     }
 }
 ```
+
+</TabItem>
+
+</Tabs>
+
 
 ### Disconnect from a Room
 
 - In Twilio, you have the ability to disconnect from a room in which you are currently participating. Other Participants will receive a `participantDisconnected` event.
 - In VideoSDK, you can also disconnect from a room you are currently participating in. Other Participants will receive a `onParticipantLeft` event, while the local participant will receive a `onMeetingLeft` event.
 
-```js
-/* Twilio Code :
+<Tabs
+defaultValue="Twilio"
+groupId={"Twilio"}
+values={[{label: 'Twilio', value: 'Twilio'},]}>
 
+<TabItem value="Twilio">
+
+```js
 // To disconnect from a Room, we call:
 room?.disconnect()
+
 // This results in a callback to RoomDelegate#roomDidDisconnect(room: Room, error: Error?)
+
 // MARK: RoomDelegate
 func roomDidDisconnect(room: Room, error: Error?) {
     print("Disconnected from room \(room.name)")
 }
-*/
+```
 
+</TabItem>
+
+</Tabs>
+
+<Tabs
+defaultValue="VideoSDK"
+groupId={"VideoSDK"}
+values={[{label: 'VideoSDK', value: 'VideoSDK'}]}>
+
+<TabItem value="VideoSDK">
+
+```js
 // MARK: - MeetingEventListener [RoomDelegate]
 
 extension YourViewController: MeetingEventListener {
@@ -418,6 +544,11 @@ meeting?.leave()
 // you need to call end() of the Meeting class.
 meeting?.end();
 ```
+
+</TabItem>
+
+</Tabs>
+
 
 ## Conclusion
 

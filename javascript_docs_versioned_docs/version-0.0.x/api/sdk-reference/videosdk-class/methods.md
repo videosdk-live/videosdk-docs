@@ -156,8 +156,9 @@ try {
 
 - `Permission`
   - A `string` specifying the types of media to request.
-  - `Required`
+  - `Optional`
   - Allow Values : `audio` ,`video`,`audio_video`
+  - Default : `audio_video`
 
 #### Returns
 
@@ -196,8 +197,9 @@ try {
 
 - `Permission`
   - A `string` specifying the types of media to check.
-  - `Required`
+  - `Optional`
   - Allow Values : `audio` ,`video`,`audio_video`
+  - Default : `audio_video`
 
 #### Returns
 
