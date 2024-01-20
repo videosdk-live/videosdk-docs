@@ -48,6 +48,25 @@ const { deviceId, label } = mics[0];
 meeting?.changeMic(deviceId);
 ```
 
+## Getting Current Used Audio Input Device
+
+- You can get audio device that is currently used in the meeting using `selectedMicrophoneDevice` property of `Meeting` class.
+
+#### Example
+
+```js
+let meeting;
+
+// Initialize Meeting
+meeting = VideoSDK.initMeeting({
+  // ...
+});
+
+// ...
+
+console.log("Currently used Audio Input Device : ", meeting?.selectedMicrophoneDevice);
+```
+
 ## Changing Camera Input Device
 
 ### `getWebcams()`
@@ -75,6 +94,25 @@ const webcams = await meeting?.getWebcams();
 const { deviceId, label } = webcams[0];
 
 meeting?.changeWebcam(deviceId);
+```
+
+## Getting Currently Used Camera Input Device
+
+- You can get camera device currently used in the meeting using `selectedCameraDevice` property of `Meeting` class.
+
+#### Example
+
+```js
+let meeting;
+
+// Initialize Meeting
+meeting = VideoSDK.initMeeting({
+  // ...
+});
+
+// ...
+
+console.log("Currently used Webcam : ", meeting?.selectedCameraDevice);
 ```
 
 ## API Reference

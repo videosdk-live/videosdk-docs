@@ -92,11 +92,23 @@ const remoteParticipant = participants.get(remoteParticipantId);
 
 ---
 
-### connections
+<!-- ### connections
 
 - type : `Map<String,Connection>`
 
-- Whenever any connection is being made with other meeting using [`meeting.connectTo`](./methods.md#connectto) , it will get stored to connections property of a meeting class.
+- Whenever any connection is being made with other meeting using [`meeting.connectTo`](./methods.md#connectto) , it will get stored to connections property of a meeting class. -->
+
+### selectedCameraDevice
+
+- type : `InputDeviceInfo`
+- `selectedCameraDevice` will be return `InputDeviceInfo` object describing the camera device used during the meeting.
+
+---
+
+### selectedMicrophoneDevice
+
+- type : `InputDeviceInfo`
+- `selectedMicrophoneDevice` will be return `InputDeviceInfo` object describing the microphone device used during the meeting.
 
 ---
 

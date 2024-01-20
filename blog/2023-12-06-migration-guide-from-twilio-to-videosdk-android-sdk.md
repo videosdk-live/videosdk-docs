@@ -108,9 +108,17 @@ On the top right of your Android studio, click Sync Now after making these chang
 
 - In VideoSDK, the process begins with setting up the SDK by initializing it and providing authentication through a token. After that you can initialize the meeting with required params such as `meetingId`, `participantName`, `micEnabled`, `webcamEnabled` and [more](https://docs.videosdk.live/android/api/sdk-reference/initMeeting). To join the meeting/room, you can simply call the **`meeting.join()`** method.
 
-```js
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
-/* Twilio Code :
+<Tabs
+defaultValue="Twilio"
+groupId={"Twilio"}
+values={[{label: 'Twilio', value: 'Twilio'},]}>
+
+<TabItem value="Twilio">
+
+```js
 private fun connectToRoom() {
     room = connect(this, accessToken, roomListener) {
         roomName("<Room-Name>")
@@ -122,8 +130,20 @@ private fun connectToRoom() {
         enableAutomaticSubscription(enableAutomaticSubscription)
     }
 }
-*/
+```
 
+</TabItem>
+
+</Tabs>
+
+<Tabs
+defaultValue="VideoSDK"
+groupId={"VideoSDK"}
+values={[{label: 'VideoSDK', value: 'VideoSDK'}]}>
+
+<TabItem value="VideoSDK">
+
+```js
 private fun connectToRoom() {
 
 	// 1. Initialize VideoSDK
@@ -145,13 +165,22 @@ private fun connectToRoom() {
 }
 ```
 
+</TabItem>
+
+</Tabs>
+
 ## Step 3: Handle Room Events
 
 - In both Twilio and VideoSDK, you can utilize event listeners attached to the room or meeting object to capture crucial moments during a video conference. This listener include the meeting being connected or disconnected and participants joining or leaving the meeting events.
 
-```js
+<Tabs
+defaultValue="Twilio"
+groupId={"Twilio"}
+values={[{label: 'Twilio', value: 'Twilio'},]}>
 
-/* Twilio Code :
+<TabItem value="Twilio">
+
+```js
 private val roomListener = object : Room.Listener {
   override fun onConnected(room: Room) {}
 
@@ -161,8 +190,20 @@ private val roomListener = object : Room.Listener {
 
   override fun onParticipantDisconnected(room: Room, participant: RemoteParticipant) {}
 }
-*/
+```
 
+</TabItem>
+
+</Tabs>
+
+<Tabs
+defaultValue="VideoSDK"
+groupId={"VideoSDK"}
+values={[{label: 'VideoSDK', value: 'VideoSDK'}]}>
+
+<TabItem value="VideoSDK">
+
+```js
 private val meetingEventListener: MeetingEventListener = object : MeetingEventListener() {
     override fun onMeetingJoined() {}
 
@@ -172,8 +213,11 @@ private val meetingEventListener: MeetingEventListener = object : MeetingEventLi
 
     override fun onParticipantLeft(participant: Participant) {}
 }
-
 ```
+
+</TabItem>
+
+</Tabs>
 
 - Below is a list of all Twilio events and VideoSDK’s equivalents.
 
@@ -212,40 +256,67 @@ private val meetingEventListener: MeetingEventListener = object : MeetingEventLi
   - **onStreamEnabled()** - `onStreamEnabled()` is a callback which gets triggered whenever a participant's video, audio or screen share stream is enabled.
   - **onStreamDisabled()** - `onStreamDisabled()` is a callback which gets triggered whenever a participant's video, audio or screen share stream is disabled.
 
-```js title="VideoActivity.xml"
-/* Twilio Code :
-	<com.twilio.video.VideoView
-	  android:id="@+id/localVideoView"
-	  android:layout_width="wrap_content"
-	  android:layout_height="wrap_content"
-	/>
-*/
 
-<live.videosdk.rtc.android.VideoView
-  android:id="@+id/localVideoView"
-  android:layout_width="wrap_content"
-  android:layout_height="wrap_content"
+<Tabs
+defaultValue="Twilio - XML File"
+groupId={"Twilio"}
+values={[{label: 'Twilio - XML File', value: 'Twilio - XML File'},{label: 'Twilio - Kotlin File', value: 'Twilio - Kotlin File'},]}>
+
+<TabItem value="Twilio - XML File">
+
+```js
+<com.twilio.video.VideoView
+   android:id="@+id/localVideoView"
+   android:layout_width="wrap_content"
+   android:layout_height="wrap_content"
 />
 ```
 
-```js
+</TabItem>
 
-/* Twilio Code :
+<TabItem value="Twilio - Kotlin File">
+
+```js
 private var localVideoTrack: LocalVideoTrack = //...
 
 private fun addLocalParticipantVideo() {
-  with(localVideoTrack){
-      this?.addSink(localVideoView)
-  }
+    with(localVideoTrack){
+        this?.addSink(localVideoView)
+    }
 }
 
 private fun removeLocalParticipantVideo(){
-	with(localVideoTrack) {
-      this?.removeSink(localVideoView)
-  }
+    with(localVideoTrack) {
+        this?.removeSink(localVideoView)
+    }
 }
-*/
+```
 
+</TabItem>
+
+</Tabs>
+
+
+<Tabs
+defaultValue="VideoSDK - XML File"
+groupId={"VideoSDK"}
+values={[{label: 'VideoSDK - XML File', value: 'VideoSDK - XML File'},{label: 'VideoSDK - Kotlin File', value: 'VideoSDK - Kotlin File'},]}>
+
+<TabItem value="VideoSDK - XML File">
+
+```js
+<live.videosdk.rtc.android.VideoView
+   android:id="@+id/localVideoView"
+   android:layout_width="wrap_content"
+   android:layout_height="wrap_content"
+/>
+```
+
+</TabItem>
+
+<TabItem value="VideoSDK - Kotlin File">
+
+```js
 private fun setLocalListeners() {
   meeting!!.localParticipant.addEventListener(object : ParticipantEventListener() {
       override fun onStreamEnabled(stream: Stream) {
@@ -264,6 +335,10 @@ private fun setLocalListeners() {
 }
 ```
 
+</TabItem>
+
+</Tabs>
+
 ## Step 5 : Working with Remote Participants
 
 ### Get Connected Participants
@@ -272,17 +347,39 @@ private fun setLocalListeners() {
 
 - Similarly, In VideoSDK you can get all the connected participant using `getParticipants()` method of `Meeting` class.
 
-```js
-/* Twilio Code :
-	// Get the first participant from the room
-	val participant = room.remoteParticipants[0]
-  Log.i("RemoteParticipants", participant.identity + " is in the room.")
-*/
+<Tabs
+defaultValue="Twilio"
+groupId={"Twilio"}
+values={[{label: 'Twilio', value: 'Twilio'},]}>
 
+<TabItem value="Twilio">
+
+```js
+// Get the first participant from the room
+val participant = room.remoteParticipants[0]
+Log.i("RemoteParticipants", participant.identity + " is in the room.")
+```
+
+</TabItem>
+
+</Tabs>
+
+<Tabs
+defaultValue="VideoSDK"
+groupId={"VideoSDK"}
+values={[{label: 'VideoSDK', value: 'VideoSDK'}]}>
+
+<TabItem value="VideoSDK">
+
+```js
 // Get the first participant from the meeting
 val participant = meeting!!.participants[0]
 Log.i("RemoteParticipants", participant.displayName + " is in the room.")
 ```
+
+</TabItem>
+
+</Tabs>
 
 ### Display a Remote Participant's Video
 
@@ -290,8 +387,15 @@ Log.i("RemoteParticipants", participant.displayName + " is in the room.")
 
 - Similarly, in VideoSDK, you have `onStreamEnabled` and `onStreamDisabled` events. These events serve a similar purpose for both local and remote participants, triggered whenever participant enabled or disabled their webcam respectively.
 
+
+<Tabs
+defaultValue="Twilio"
+groupId={"Twilio"}
+values={[{label: 'Twilio', value: 'Twilio'},]}>
+
+<TabItem value="Twilio">
+
 ```js
-/* Twilio Code :
 private fun roomListener(): Room.Listener? {
   return object : Room.Listener {
       override fun onParticipantConnected(room: Room, participant: RemoteParticipant) {
@@ -305,8 +409,8 @@ private fun remoteParticipantListener(): RemoteParticipant.Listener? {
       override fun onVideoTrackSubscribed(
           participant: RemoteParticipant,
           remoteVideoTrackPublication: RemoteVideoTrackPublication,
-          remoteVideoTrack: RemoteVideoTrack
-      ) {
+          remoteVideoTrack: RemoteVideoTrack)
+      {
           remoteVideoTrack.addSink(participantVideoView)
       }
 
@@ -314,39 +418,53 @@ private fun remoteParticipantListener(): RemoteParticipant.Listener? {
       override fun onVideoTrackUnsubscribed(
           remoteParticipant: RemoteParticipant,
           remoteVideoTrackPublication: RemoteVideoTrackPublication,
-          remoteVideoTrack: RemoteVideoTrack
-      ) {
+          remoteVideoTrack: RemoteVideoTrack)
+      {
           remoteVideoTrack.removeSink(participantVideoView)
       }
   }
 }
-*/
+```
 
+</TabItem>
 
+</Tabs>
+
+<Tabs
+defaultValue="VideoSDK"
+groupId={"VideoSDK"}
+values={[{label: 'VideoSDK', value: 'VideoSDK'}]}>
+
+<TabItem value="VideoSDK">
+
+```js
 private val meetingEventListener: MeetingEventListener = object : MeetingEventListener() {
     override fun onParticipantJoined(participant: Participant) {
-				participant.addEventListener(participantEventListener)
-		}
+        participant.addEventListener(participantEventListener)
+    }
 }
 
 private val participantEventListener: ParticipantEventListener =
   object : ParticipantEventListener() {
-      override fun onStreamEnabled(stream: Stream) {
-          if (stream.kind.equals("video", ignoreCase = true)) {
-              val track = stream.track as VideoTrack
-							participantVideoView.addTrack(track)
-          }
+    override fun onStreamEnabled(stream: Stream) {
+        if (stream.kind.equals("video", ignoreCase = true)) {
+            val track = stream.track as VideoTrack
+            participantVideoView.addTrack(track)
+        }
+    }
 
-      }
-
-      override fun onStreamDisabled(stream: Stream) {
-          if (stream.kind.equals("video", ignoreCase = true)) {
-              val track: VideoTrack = stream.track as VideoTrack
-							participantVideoView.removeTrack()
-          }
-      }
+    override fun onStreamDisabled(stream: Stream) {
+        if (stream.kind.equals("video", ignoreCase = true)) {
+            val track: VideoTrack = stream.track as VideoTrack
+            participantVideoView.removeTrack()
+        }
+    }
   }
 ```
+
+</TabItem>
+
+</Tabs>
 
 ## Features
 
@@ -355,15 +473,38 @@ private val participantEventListener: ParticipantEventListener =
 - In Twilio, you can **mute/unmute** your LocalAudioTracks (microphone) by the setting `enable` property to `true/false`.
 - In VideoSDK, you can **mute/unmute** Local participant’s microphone through `muteMic()` and `unmuteMic()` method of `Meeting` object.
 
+<Tabs
+defaultValue="Twilio"
+groupId={"Twilio"}
+values={[{label: 'Twilio', value: 'Twilio'},]}>
+
+<TabItem value="Twilio">
+
 ```js
 private fun muteClickListener(): View.OnClickListener {
     return View.OnClickListener {
-        /* Twilio Code :
-                localAudioTrack?.let {
+        localAudioTrack?.let {
             val enable = !it.isEnabled
             it.enable(enable)
-            }
-        */
+        } 
+    }
+}
+```
+
+</TabItem>
+
+</Tabs>
+
+<Tabs
+defaultValue="VideoSDK"
+groupId={"VideoSDK"}
+values={[{label: 'VideoSDK', value: 'VideoSDK'}]}>
+
+<TabItem value="VideoSDK">
+
+```js
+private fun muteClickListener(): View.OnClickListener {
+    return View.OnClickListener {
         if(micEnabled){
             meeting!!.muteMic()
         } else {
@@ -374,20 +515,48 @@ private fun muteClickListener(): View.OnClickListener {
 }
 ```
 
+</TabItem>
+
+</Tabs>
+
 ### Toggle Webcam of Local participant
 
 - In Twilio, you can **enable/disable** your LocalVideoTracks (WebCam) by the setting enable property to `true/false`.
 - In VideoSDK, you can **enable/disable** Local participant’s WebCam by calling `enableWebcam()` and `disableWebcam()` method of `Meeting` object.
 
+
+<Tabs
+defaultValue="Twilio"
+groupId={"Twilio"}
+values={[{label: 'Twilio', value: 'Twilio'},]}>
+
+<TabItem value="Twilio">
+
+```js
+private fun localVideoClickListener(): View.OnClickListener {
+    return View.OnClickListener { 
+        localVideoTrack?.let {
+            val enable = !it.isEnabled
+            it.enable(enable)
+        }  
+    }
+}
+```
+
+</TabItem>
+
+</Tabs>
+
+<Tabs
+defaultValue="VideoSDK"
+groupId={"VideoSDK"}
+values={[{label: 'VideoSDK', value: 'VideoSDK'}]}>
+
+<TabItem value="VideoSDK">
+
 ```js
 private fun localVideoClickListener(): View.OnClickListener {
     return View.OnClickListener {
-        /* Twilio Code :
-            localVideoTrack?.let {
-                val enable = !it.isEnabled
-                it.enable(enable)
-            }
-        */
         if (webcamEnabled) {
             meeting!!.disableWebcam()
         } else {
@@ -398,15 +567,23 @@ private fun localVideoClickListener(): View.OnClickListener {
 }
 ```
 
+</TabItem>
+
+</Tabs>
+
 ### Disconnect from a Room
 
 - In Twilio, you have the ability to disconnect from a room in which you are currently participating. Other Participants will receive a `onParticipantDisconnected` event.
 - In VideoSDK, you can also disconnect from a room you are currently participating in. Other Participants will receive a `onParticipantLeft` event, while the local participant will receive a `onMeetingLeft` event.
 
+<Tabs
+defaultValue="Twilio"
+groupId={"Twilio"}
+values={[{label: 'Twilio', value: 'Twilio'},]}>
+
+<TabItem value="Twilio">
+
 ```js
-
-/* Twilio Code :
-
 private fun roomListener(): Room.Listener? {
   return object : Room.Listener {
       override fun onDisconnected(room: Room, e: TwilioException?) {
@@ -417,10 +594,20 @@ private fun roomListener(): Room.Listener? {
 
 // To disconnect from a Room
 room?.disconnect();
+```
 
-*/
+</TabItem>
 
+</Tabs>
 
+<Tabs
+defaultValue="VideoSDK"
+groupId={"VideoSDK"}
+values={[{label: 'VideoSDK', value: 'VideoSDK'}]}>
+
+<TabItem value="VideoSDK">
+
+```js
 private val meetingEventListener: MeetingEventListener = object : MeetingEventListener() {
     override fun onMeetingLeft() {}
 }
@@ -433,8 +620,11 @@ meeting?.leave();
 // To leave the meeting by removing all the participant
 // you need to call end() of the Meeting class.
 meeting?.end();
-
 ```
+
+</TabItem>
+
+</Tabs>
 
 ## Conclusion
 

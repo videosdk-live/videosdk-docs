@@ -461,7 +461,7 @@ handleGetMics();
 - _`void`_
 
 ---
-
+<!-- 
 ### connectTo()
 
 - This method is used for establishing the connection to other meetings.
@@ -500,7 +500,7 @@ meeting.on("connection-open", (connection) => {
 });
 ```
 
----
+--- -->
 
 ### on()
 

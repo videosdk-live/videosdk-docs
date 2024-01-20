@@ -590,7 +590,7 @@ const {
 
 ---
 
-### onSwitchMeeting()
+<!-- ### onSwitchMeeting()
 
 - This event will be triggered when participant is requested to switch to another meeting.
 
@@ -681,7 +681,7 @@ const {
 });
 ```
 
----
+--- -->
 
 ### onError()
 

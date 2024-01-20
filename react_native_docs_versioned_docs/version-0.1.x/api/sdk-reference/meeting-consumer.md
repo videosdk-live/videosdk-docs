@@ -60,11 +60,6 @@ It requires <a href="https://reactjs.org/docs/render-props.html#using-props-othe
 </div>
 <div class="col col--4 margin-bottom--sm" >
 
-- [onMainParticipantChanged](./use-meeting/properties#onmainparticipantchanged)
-
-</div>
-<div class="col col--4 margin-bottom--sm" >
-
 - [activeSpeakerId](./use-meeting/properties#activespeakerid)
 
 </div>
@@ -112,16 +107,6 @@ It requires <a href="https://reactjs.org/docs/render-props.html#using-props-othe
 <div class="col col--4 margin-bottom--sm" >
 
 - [isHls](./use-meeting/properties#ishls)
-
-</div>
-<div class="col col--4 margin-bottom--sm" >
-
-- [connections](./use-meeting/properties#connections)
-
-</div>
-<div class="col col--4 margin-bottom--sm" >
-
-- [messages](./use-meeting/properties#messages)
 
 </div>
 </div>
@@ -264,11 +249,6 @@ It requires <a href="https://reactjs.org/docs/render-props.html#using-props-othe
 - [seekVideo](./use-meeting/methods#seekvideo)
 
 </div>
-<div class="col col--4 margin-bottom--sm" >
-
-- [connectTo](./use-meeting/methods#connectto)
-
-</div>
 </div>
 
 ## Event Callbacks
@@ -382,21 +362,6 @@ It requires <a href="https://reactjs.org/docs/render-props.html#using-props-othe
 <div class="col col--4 margin-bottom--sm" >
 
 - [onMicRequested](./use-meeting/events#onmicrequested)
-
-</div>
-<div class="col col--4 margin-bottom--sm" >
-
-- [onSwitchMeeting](./use-meeting/events#onswitchmeeting)
-
-</div>
-<div class="col col--4 margin-bottom--sm" >
-
-- [onConnectionOpen](./use-meeting/events#onconnectionopen)
-
-</div>
-<div class="col col--4 margin-bottom--sm" >
-
-- [onConnectionClose](./use-meeting/events#onconnectionclose)
 
 </div>
 <div class="col col--4 margin-bottom--sm" >

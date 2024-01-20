@@ -477,6 +477,7 @@ MeetingScreen will accept meetingId and token in constructor
 - **token** - VideoSdk Auth token
 
 ```js title="meeting_screen.dart"
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:videosdk/videosdk.dart';
 import './participant_tile.dart';
@@ -509,7 +510,9 @@ class _MeetingScreenState extends State<MeetingScreen> {
       displayName: "John Doe",
       micEnabled: micEnabled,
       camEnabled: camEnabled,
-      defaultCameraIndex: 1,  // Index of MediaDevices will be used to set default camera
+      defaultCameraIndex: kIsWeb
+          ? 0
+          : 1  // Index of MediaDevices will be used to set default camera
     );
 //highlight-end
 

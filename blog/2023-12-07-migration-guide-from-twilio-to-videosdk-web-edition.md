@@ -104,40 +104,68 @@ cURL -XPOST <https://api.videosdk.live/v2/rooms> \\
 
 - Replace Twilio's `connect` method with VideoSDK's `MeetingProvider` from `@videosdk.live/react-sdk`.
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs
+defaultValue="Twilio"
+groupId={"Twilio"}
+values={[{label: 'Twilio', value: 'Twilio'},]}>
+
+<TabItem value="Twilio">
+
+```js
+const VideoChat = () => {
+  //...
+
+  const handleSubmit = useCallback(
+    async (event) => {
+      event.preventDefault();
+      setConnecting(true);
+       const data = await fetch("/video/token", {
+         method: "POST",
+         body: JSON.stringify({
+           identity: username,
+           room: roomName,
+         }),
+         headers: {
+           "Content-Type": "application/json",
+         },
+       }).then((res) => res.json());
+       Video.connect(data.token, {
+         name: roomName,
+       })
+        .then((room) => {
+          setConnecting(false);
+          setRoom(room);
+        })
+        .catch((err) => {
+          console.error(err);
+          setConnecting(false);
+        });
+    },
+    [roomName, username]
+  );
+
+};
+```
+
+</TabItem>
+
+</Tabs>
+
+<Tabs
+defaultValue="VideoSDK"
+groupId={"VideoSDK"}
+values={[{label: 'VideoSDK', value: 'VideoSDK'}]}>
+
+<TabItem value="VideoSDK">
+
 ```js
 import { MeetingProvider } from "@videosdk.live/react-sdk";
 
 const VideoChat = () => {
   //...
-
-  // const handleSubmit = useCallback(
-  //   async (event) => {
-  //     event.preventDefault();
-  //     setConnecting(true);
-  //      const data = await fetch("/video/token", {
-  //        method: "POST",
-  //        body: JSON.stringify({
-  //          identity: username,
-  //          room: roomName,
-  //        }),
-  //        headers: {
-  //          "Content-Type": "application/json",
-  //        },
-  //      }).then((res) => res.json());
-  //      Video.connect(data.token, {
-  //        name: roomName,
-  //      })
-  //       .then((room) => {
-  //         setConnecting(false);
-  //         setRoom(room);
-  //       })
-  //       .catch((err) => {
-  //         console.error(err);
-  //         setConnecting(false);
-  //       });
-  //   },
-  //   [roomName, username]
-  // );
 
   const token = "YOUR_GENERATED_TOKEN";
   return (
@@ -155,8 +183,13 @@ const VideoChat = () => {
       </MeetingConsumer>
     </MeetingProvider>
   );
+
 };
 ```
+
+</TabItem>
+
+</Tabs>
 
 Let’s explore `MeetingProvider`, `MeetingConsumer`, `useMeeting()`, `useParticipant()` methods for further example.
 
@@ -170,35 +203,55 @@ Let’s explore `MeetingProvider`, `MeetingConsumer`, `useMeeting()`, `usePartic
 - In Twilio, the local participant is accessed through `room.localParticipant`, whereas in VideoSDK, the equivalent is retrieved using `meeting.localParticipant`.
 - When it comes to retrieving the list of participants, Twilio utilizes room.participants, while VideoSDK employs `meeting.participants`.
 
+<Tabs
+defaultValue="Twilio"
+groupId={"Twilio"}
+values={[{label: 'Twilio', value: 'Twilio'},]}>
+
+<TabItem value="Twilio">
+
 ```js
-// const Room = ({ roomName, token, handleLogout }) => {
-//   const [room, setRoom] = useState(null);
-//   const [participants, setParticipants] = useState([]);
+const Room = ({ roomName, token, handleLogout }) => {
+  const [room, setRoom] = useState(null);
+  const [participants, setParticipants] = useState([]);
 
-//   const remoteParticipants = participants.map(participant => (
-//     <Participant key={participant.sid} participant={participant} />
-//   ));
+  const remoteParticipants = participants.map(participant => (
+    <Participant key={participant.sid} participant={participant} />
+  ));
 
-//   return (
-//     <div className="room">
-//       <h2>Room: {roomName}</h2>
-//       <button onClick={handleLogout}>Log out</button>
-//       <div className="local-participant">
-//         {room ? (
-//           <Participant
-//                key={room.localParticipant.sid}
-//                participant={room.localParticipant}
-//            />
-//         ) : (
-//           ''
-//         )}
-//       </div>
-//       <h3>Remote Participants</h3>
-//       <div className="remote-participants">{remoteParticipants}</div>
-//     </div>
-//   );
-// });
+  return (
+    <div className="room">
+      <h2>Room: {roomName}</h2>
+      <button onClick={handleLogout}>Log out</button>
+      <div className="local-participant">
+        {room ? (
+          <Participant
+               key={room.localParticipant.sid}
+               participant={room.localParticipant}
+           />
+        ) : (
+          ''
+        )}
+      </div>
+      <h3>Remote Participants</h3>
+      <div className="remote-participants">{remoteParticipants}</div>
+    </div>
+  );
+};
+```
 
+</TabItem>
+
+</Tabs>
+
+<Tabs
+defaultValue="VideoSDK"
+groupId={"VideoSDK"}
+values={[{label: 'VideoSDK', value: 'VideoSDK'}]}>
+
+<TabItem value="VideoSDK">
+
+```js
 import { useMeeting } from "@videosdk.live/react-sdk";
 
 const Room = ({ meetingId, onMeetingLeave }) => {
@@ -248,6 +301,10 @@ const Room = ({ meetingId, onMeetingLeave }) => {
 };
 ```
 
+</TabItem>
+
+</Tabs>
+
 #### Mapping Twilio’s events to VideoSDK
 
 Below is a list of all Twilio events used in this demo and VideoSDK’s equivalents.
@@ -265,71 +322,102 @@ Below is a list of all Twilio events used in this demo and VideoSDK’s equivale
 - In Twilio, the rendering of audio and video involves setting tracks in the `useState` through the use of subscribe and unsubscribe methods.
 - In VideoSDK, the process differs. We retrieve the `webcamStream` and `micStream` from `useParticipant()`. Subsequently, the `micStream` is passed using a reference in the audio component, while the `webcamStreamUrl` is passed to `ReactPlayer` for video rendering.
 
+<Tabs
+defaultValue="Twilio"
+groupId={"Twilio"}
+values={[{label: 'Twilio', value: 'Twilio'},]}>
+
+<TabItem value="Twilio">
+
+```js
+const Participant = ({ participant }) => {
+  const [videoTracks, setVideoTracks] = useState([]);
+  const [audioTracks, setAudioTracks] = useState([]);
+
+  const videoRef = useRef();
+
+  const trackpubsToTracks = (trackMap) =>
+    Array.from(trackMap.values())
+      .map((publication) => publication.track)
+      .filter((track) => track !== null);
+
+  useEffect(() => {
+    setVideoTracks(trackpubsToTracks(participant.videoTracks));
+    setAudioTracks(trackpubsToTracks(participant.audioTracks));
+
+    const trackSubscribed = (track) => {
+      if (track.kind === "video") {
+        setVideoTracks((videoTracks) => [...videoTracks, track]);
+      } else if (track.kind === "audio") {
+        setAudioTracks((audioTracks) => [...audioTracks, track]);
+      }
+    };
+
+    const trackUnsubscribed = (track) => {
+      if (track.kind === "video") {
+        setVideoTracks((videoTracks) => videoTracks.filter((v) => v !== track));
+      } else if (track.kind === "audio") {
+        setAudioTracks((audioTracks) => audioTracks.filter((a) => a !== track));
+      }
+    };
+
+    participant.on("trackSubscribed", trackSubscribed);
+    participant.on("trackUnsubscribed", trackUnsubscribed);
+
+    return () => {
+      setVideoTracks([]);
+      setAudioTracks([]);
+      participant.removeAllListeners();
+    };
+  }, [participant]);
+
+  useEffect(() => {
+    const videoTrack = videoTracks[0];
+    if (videoTrack) {
+      videoTrack.attach(videoRef.current);
+      return () => {
+        videoTrack.detach();
+      };
+    }
+  }, [videoTracks]);
+
+  useEffect(() => {
+    const audioTrack = audioTracks[0];
+    if (audioTrack) {
+      audioTrack.attach(audioRef.current);
+      return () => {
+        audioTrack.detach();
+      };
+    }
+  }, [audioTracks]);
+
+  return (
+    <div className="participant">
+      {<h3>{participant.identity}</h3>
+      <video ref={videoRef} autoPlay={true} />
+      <audio ref={audioRef} autoPlay={true} muted={true} />}
+    </div>
+  );
+};
+```
+
+</TabItem>
+
+</Tabs>
+
+<Tabs
+defaultValue="VideoSDK"
+groupId={"VideoSDK"}
+values={[{label: 'VideoSDK', value: 'VideoSDK'}]}>
+
+<TabItem value="VideoSDK">
+
 ```js
 import ReactPlayer from "react-player";
 import { useParticipant } from "@videosdk.live/react-sdk";
 
-const Participant = ({ participant }) => {
-  // const [videoTracks, setVideoTracks] = useState([]);
-  // const [audioTracks, setAudioTracks] = useState([]);
-
-  // const videoRef = useRef();
+const Participant = ({ participant }) => {;
   const audioRef = useRef();
-
-  // const trackpubsToTracks = (trackMap) =>
-  //   Array.from(trackMap.values())
-  //     .map((publication) => publication.track)
-  //     .filter((track) => track !== null);
-
-  // useEffect(() => {
-  //   setVideoTracks(trackpubsToTracks(participant.videoTracks));
-  //   setAudioTracks(trackpubsToTracks(participant.audioTracks));
-
-  //   const trackSubscribed = (track) => {
-  //     if (track.kind === "video") {
-  //       setVideoTracks((videoTracks) => [...videoTracks, track]);
-  //     } else if (track.kind === "audio") {
-  //       setAudioTracks((audioTracks) => [...audioTracks, track]);
-  //     }
-  //   };
-
-  //   const trackUnsubscribed = (track) => {
-  //     if (track.kind === "video") {
-  //       setVideoTracks((videoTracks) => videoTracks.filter((v) => v !== track));
-  //     } else if (track.kind === "audio") {
-  //       setAudioTracks((audioTracks) => audioTracks.filter((a) => a !== track));
-  //     }
-  //   };
-
-  //   participant.on("trackSubscribed", trackSubscribed);
-  //   participant.on("trackUnsubscribed", trackUnsubscribed);
-
-  //   return () => {
-  //     setVideoTracks([]);
-  //     setAudioTracks([]);
-  //     participant.removeAllListeners();
-  //   };
-  // }, [participant]);
-
-  // useEffect(() => {
-  //   const videoTrack = videoTracks[0];
-  //   if (videoTrack) {
-  //     videoTrack.attach(videoRef.current);
-  //     return () => {
-  //       videoTrack.detach();
-  //     };
-  //   }
-  // }, [videoTracks]);
-
-  // useEffect(() => {
-  //   const audioTrack = audioTracks[0];
-  //   if (audioTrack) {
-  //     audioTrack.attach(audioRef.current);
-  //     return () => {
-  //       audioTrack.detach();
-  //     };
-  //   }
-  // }, [audioTracks]);
 
   const { webcamStream, micStream, webcamOn, micOn, isLocal, displayName } =
     useParticipant(participant.participantId);
@@ -362,10 +450,6 @@ const Participant = ({ participant }) => {
 
   return (
     <div className="participant">
-      {/* <h3>{participant.identity}</h3>
-      <video ref={videoRef} autoPlay={true} />
-      <audio ref={audioRef} autoPlay={true} muted={true} /> */}
-
       <audio ref={audioRef} autoPlay muted={isLocal} />
       {webcamOn && (
         <ReactPlayer
@@ -391,9 +475,35 @@ const Participant = ({ participant }) => {
 };
 ```
 
+</TabItem>
+
+</Tabs>
+
 ## Step 4: Implement Meeting Controls
 
 - The implementation of additional controls, such as toggling the microphone and webcam, is achieved through methods provided by `useMeeting()` in VideoSDK.
+
+<!-- <Tabs
+defaultValue="Twilio"
+groupId={"Twilio"}
+values={[{label: 'Twilio', value: 'Twilio'},]}>
+
+<TabItem value="Twilio">
+
+```js
+
+```
+
+</TabItem>
+
+</Tabs> -->
+
+<Tabs
+defaultValue="VideoSDK"
+groupId={"VideoSDK"}
+values={[{label: 'VideoSDK', value: 'VideoSDK'}]}>
+
+<TabItem value="VideoSDK">
 
 ```js
 function Controls(props) {
@@ -408,29 +518,57 @@ function Controls(props) {
 }
 ```
 
+</TabItem>
+
+</Tabs>
+
 ## Step 5 : Disconnect from a Room
 
 - To exit a meeting, Twilio uses `room.disconnect()`, while VideoSDK utilizes `meeting.leave()`.
 
+<Tabs
+defaultValue="Twilio"
+groupId={"Twilio"}
+values={[{label: 'Twilio', value: 'Twilio'},]}>
+
+<TabItem value="Twilio">
+
 ```js
 function Controls(props) {
   //..
-  // const [room, setRoom] = useState(null);
-  // const handleLogout = useCallback(() => {
-  //   setRoom((prevRoom) => {
-  //     if (prevRoom) {
-  //       prevRoom.localParticipant.tracks.forEach((trackPub) => {
-  //         trackPub.track.stop();
-  //       });
-  //       prevRoom.disconnect();
-  //     }
-  //     return null;
-  //   });
-  // }, []);
+  const [room, setRoom] = useState(null);
+  const handleLogout = useCallback(() => {
+    setRoom((prevRoom) => {
+      if (prevRoom) {
+        prevRoom.localParticipant.tracks.forEach((trackPub) => {
+          trackPub.track.stop();
+        });
+        prevRoom.disconnect();
+      }
+      return null;
+    });
+  }, []);
 
-  // return (
-  //     <button onClick={handleLogout}>Log out</button>
-  // );
+  return (
+      <button onClick={handleLogout}>Log out</button>
+  );
+}
+```
+
+</TabItem>
+
+</Tabs>
+
+<Tabs
+defaultValue="VideoSDK"
+groupId={"VideoSDK"}
+values={[{label: 'VideoSDK', value: 'VideoSDK'}]}>
+
+<TabItem value="VideoSDK">
+
+```js
+function Controls(props) {
+  //..
 
   const { leave } = useMeeting();
   return (
@@ -440,6 +578,10 @@ function Controls(props) {
   );
 }
 ```
+
+</TabItem>
+
+</Tabs>
 
 ## Conclusion
 

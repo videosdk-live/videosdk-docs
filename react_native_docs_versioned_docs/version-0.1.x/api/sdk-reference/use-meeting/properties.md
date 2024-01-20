@@ -132,9 +132,9 @@ title: useMeeting Hook Properties
 
 ---
 
-### connections
+<!-- ### connections
 
 - type : `Map<string, Connection>`
-- Whenever any connection is being made with other meeting using [`connectTo`](./methods.md#connectto) , it will get stored to connections property of a meeting class.
+- Whenever any connection is being made with other meeting using [`connectTo`](./methods.md#connectto) , it will get stored to connections property of a meeting class. -->
 
 </div>

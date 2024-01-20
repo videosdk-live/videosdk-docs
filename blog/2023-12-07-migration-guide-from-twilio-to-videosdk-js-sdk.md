@@ -125,30 +125,49 @@ cURL -XPOST <https://api.videosdk.live/v2/rooms> \\
 - When joining and leaving a room, the Twilio Local Participant receives the `connected` and `disconnected` events of the room.
 - On the other hand, the VideoSDK Local Participant receives the `meeting-joined` and `meeting-left` events of the meeting when joining and leaving the room.
 
+
+<Tabs
+defaultValue="Twilio"
+groupId={"Twilio"}
+values={[{label: 'Twilio', value: 'Twilio'},]}>
+
+<TabItem value="Twilio">
+
 ```js
-// const video = Twilio.Video;
-//highlight-next-line
+const video = Twilio.Video;
+function initializeMeeting() {
+  connect("$TOKEN", { name: "my-new-room" }).then(
+      (room) => {
+        console.log(`Successfully joined a Room: ${room}`);
+        room.on("connected", (participant) => {
+          console.log(`Local Participant Joined Successfully`);
+        });
+        room.on("disconnected", (participant) => {
+          console.log(`Local Participant Left the Room`);
+        });
+      },
+      (error) => {
+        console.error(`Unable to connect to Room: ${error.message}`);
+      }
+  );
+}
+```
+
+</TabItem>
+
+</Tabs>
+
+<Tabs
+defaultValue="VideoSDK"
+groupId={"VideoSDK"}
+values={[{label: 'VideoSDK', value: 'VideoSDK'}]}>
+
+<TabItem value="VideoSDK">
+
+```js
 let meeting = null; // Declare global variable
 
 function initializeMeeting() {
-  // Twilio Code :
-
-  // connect("$TOKEN", { name: "my-new-room" }).then(
-  //   (room) => {
-  //     console.log(`Successfully joined a Room: ${room}`);
-  //     room.on("connected", (participant) => {
-  //       console.log(`Local Participant Joined Successfully`);
-  //     });
-  //     room.on("disconnected", (participant) => {
-  //       console.log(`Local Participant Left the Room`);
-  //     });
-  //   },
-  //   (error) => {
-  //     console.error(`Unable to connect to Room: ${error.message}`);
-  //   }
-  // );
-
-  //highlight-start
   window.VideoSDK.config("$TOKEN");
 
   let meetingId = "abcd-efgh-ijkl"; // You can replace the meetingId
@@ -169,9 +188,12 @@ function initializeMeeting() {
   meeting.on("meeting-left", () => {
     console.log(`Local Participant Left the Room`);
   });
-  //highlight-end
 }
 ```
+
+</TabItem>
+
+</Tabs>
 
 ## Step 2 : Render Local Participant
 
@@ -180,7 +202,108 @@ function initializeMeeting() {
 - In the code snippet below, we have defined the magic functions `createVideoElement`, `createAudioElement`, and `setTrack` to help render the Local and Remote Participants easily.
 - VideoSDK automatically detaches the MediaStream Tracks when you leave the meeting. Additionally, you can pause and resume the participant stream using the [pause()](https://docs.videosdk.live/javascript/api/sdk-reference/stream-class/methods#pause) and [resume()](https://docs.videosdk.live/javascript/api/sdk-reference/stream-class/methods#resume) methods of the [Stream](https://docs.videosdk.live/javascript/api/sdk-reference/stream-class/introduction) Class.
 
-```jsx
+
+<Tabs
+defaultValue="Twilio"
+groupId={"Twilio"}
+values={[{label: 'Twilio', value: 'Twilio'},]}>
+
+<TabItem value="Twilio">
+
+```js
+function setupParticipantContainer(participant, room) {
+  const { identity, sid } = participant;
+
+  // Add a container for the Participant's media.
+  const $container =
+    $(`<div class="participant" data-identity="${identity}" id="${sid}">
+    <audio autoplay ${
+      participant === room.localParticipant ? "muted" : ""
+    } style="opacity: 0"></audio>
+    <video autoplay muted playsinline style="opacity: 0"></video>
+  </div>`);
+
+  // Add the Participant's container to the DOM.
+  $participants.append($container);
+}
+
+function participantConnected(participant, room) {
+  // Set up the Participant's media container.
+  setupParticipantContainer(participant, room);
+
+  // Handle the TrackPublications already published by the Participant.
+  participant.tracks.forEach((publication) => {
+    trackPublished(publication, participant);
+  });
+
+  // Handle theTrackPublications that will be published by the Participant later.
+  participant.on("trackPublished", (publication) => {
+    trackPublished(publication, participant);
+  });
+}
+
+function trackPublished(publication, participant) {
+  // If the TrackPublication is already subscribed to, then attach the Track to the DOM.
+  if (publication.track) {
+    attachTrack(publication.track, participant);
+  }
+
+  // Once the TrackPublication is subscribed to, attach the Track to the DOM.
+  publication.on("subscribed", (track) => {
+    attachTrack(track, participant);
+  });
+
+  // Once the TrackPublication is unsubscribed from, detach the Track from the DOM.
+  publication.on("unsubscribed", (track) => {
+    detachTrack(track, participant);
+  });
+}
+
+function attachTrack(track, participant) {
+  // Attach the Participant's Track to the thumbnail.
+  const $media = $(`div#${participant.sid} > ${track.kind}`, $participants);
+  $media.css("opacity", "");
+  track.attach($media.get(0));
+
+  // If the attached Track is a VideoTrack that is published by the active
+  // Participant, then attach it to the main video as well.
+  if (track.kind === "video" && participant === activeParticipant) {
+    track.attach($activeVideo.get(0));
+    $activeVideo.css("opacity", "");
+  }
+}
+
+function detachTrack(track, participant) {
+  // Detach the Participant's Track from the thumbnail.
+  const $media = $(`div#${participant.sid} > ${track.kind}`, $participants);
+  const mediaEl = $media.get(0);
+  $media.css("opacity", "0");
+  track.detach(mediaEl);
+  mediaEl.srcObject = null;
+
+  // If the detached Track is a VideoTrack that is published by the active
+  // Participant, then detach it from the main video as well.
+  if (track.kind === "video" && participant === activeParticipant) {
+    const activeVideoEl = $activeVideo.get(0);
+    track.detach(activeVideoEl);
+    activeVideoEl.srcObject = null;
+    $activeVideo.css("opacity", "0");
+  }
+}
+```
+
+</TabItem>
+
+</Tabs>
+
+<Tabs
+defaultValue="VideoSDK"
+groupId={"VideoSDK"}
+values={[{label: 'VideoSDK', value: 'VideoSDK'}]}>
+
+<TabItem value="VideoSDK">
+
+```js
 function initializeMeeting() {
   // ...
 
@@ -188,19 +311,16 @@ function initializeMeeting() {
   // participantConnected(room.localParticipant, room);
 
   // creating local participant
-  //highlight-next-line
   createLocalParticipant();
 
   // setting local participant stream
-  //highlight-start
   meeting.localParticipant.on("stream-enabled", (stream) => {
     setTrack(stream, null, meeting.localParticipant, true);
   });
-  //highlight-end
 
   // ...
 }
-//highlight-start
+
 // creating video element
 function createVideoElement(pId, name) {
   let videoFrame = document.createElement("div");
@@ -268,90 +388,11 @@ function setTrack(stream, audioElement, participant, isLocal) {
     }
   }
 }
-//highlight-end
-
-// Twilio Code :
-
-// function setupParticipantContainer(participant, room) {
-//   const { identity, sid } = participant;
-
-//   // Add a container for the Participant's media.
-//   const $container =
-//     $(`<div class="participant" data-identity="${identity}" id="${sid}">
-//     <audio autoplay ${
-//       participant === room.localParticipant ? "muted" : ""
-//     } style="opacity: 0"></audio>
-//     <video autoplay muted playsinline style="opacity: 0"></video>
-//   </div>`);
-
-//   // Add the Participant's container to the DOM.
-//   $participants.append($container);
-// }
-
-// function participantConnected(participant, room) {
-//   // Set up the Participant's media container.
-//   setupParticipantContainer(participant, room);
-
-//   // Handle the TrackPublications already published by the Participant.
-//   participant.tracks.forEach((publication) => {
-//     trackPublished(publication, participant);
-//   });
-
-//   // Handle theTrackPublications that will be published by the Participant later.
-//   participant.on("trackPublished", (publication) => {
-//     trackPublished(publication, participant);
-//   });
-// }
-
-// function trackPublished(publication, participant) {
-//   // If the TrackPublication is already subscribed to, then attach the Track to the DOM.
-//   if (publication.track) {
-//     attachTrack(publication.track, participant);
-//   }
-
-//   // Once the TrackPublication is subscribed to, attach the Track to the DOM.
-//   publication.on("subscribed", (track) => {
-//     attachTrack(track, participant);
-//   });
-
-//   // Once the TrackPublication is unsubscribed from, detach the Track from the DOM.
-//   publication.on("unsubscribed", (track) => {
-//     detachTrack(track, participant);
-//   });
-// }
-
-// function attachTrack(track, participant) {
-//   // Attach the Participant's Track to the thumbnail.
-//   const $media = $(`div#${participant.sid} > ${track.kind}`, $participants);
-//   $media.css("opacity", "");
-//   track.attach($media.get(0));
-
-//   // If the attached Track is a VideoTrack that is published by the active
-//   // Participant, then attach it to the main video as well.
-//   if (track.kind === "video" && participant === activeParticipant) {
-//     track.attach($activeVideo.get(0));
-//     $activeVideo.css("opacity", "");
-//   }
-// }
-
-// function detachTrack(track, participant) {
-//   // Detach the Participant's Track from the thumbnail.
-//   const $media = $(`div#${participant.sid} > ${track.kind}`, $participants);
-//   const mediaEl = $media.get(0);
-//   $media.css("opacity", "0");
-//   track.detach(mediaEl);
-//   mediaEl.srcObject = null;
-
-//   // If the detached Track is a VideoTrack that is published by the active
-//   // Participant, then detach it from the main video as well.
-//   if (track.kind === "video" && participant === activeParticipant) {
-//     const activeVideoEl = $activeVideo.get(0);
-//     track.detach(activeVideoEl);
-//     activeVideoEl.srcObject = null;
-//     $activeVideo.css("opacity", "0");
-//   }
-// }
 ```
+
+</TabItem>
+
+</Tabs>
 
 ## Step 3 : Handle Connected Participants
 
@@ -359,29 +400,56 @@ function setTrack(stream, audioElement, participant, isLocal) {
 - Similarly, in VideoSDK, you can use the `participant-joined` and `participant-left` events of the meeting to be notified when a remote participant joins or leaves the call.
 - In addition, the `stream-enabled` event of the Participant class is used to manage the media track of a specific participant by associating it with the appropriate video or audio element.
 
-```jsx
+<Tabs
+defaultValue="Twilio"
+groupId={"Twilio"}
+values={[{label: 'Twilio', value: 'Twilio'},]}>
+
+<TabItem value="Twilio">
+
+```js
 function initializeMeeting() {
   // ...
 
-  // Twilio Code :
+  // Subscribe to the media published by RemoteParticipants already in the Room.
+  room.participants.forEach((participant) => {
+    participantConnected(participant, room);
+  });
 
-  // // Subscribe to the media published by RemoteParticipants already in the Room.
-  // room.participants.forEach((participant) => {
-  //   participantConnected(participant, room);
-  // });
+  // Subscribe to the media published by RemoteParticipants joining the Room later.
+  room.on("participantConnected", (participant) => {
+    participantConnected(participant, room);
+  });
 
-  // // Subscribe to the media published by RemoteParticipants joining the Room later.
-  // room.on("participantConnected", (participant) => {
-  //   participantConnected(participant, room);
-  // });
+  // Handle a disconnected RemoteParticipant.
+  room.on("participantDisconnected", (participant) => {
+    participantDisconnected(participant, room);
+  });
+  
+}
 
-  // // Handle a disconnected RemoteParticipant.
-  // room.on("participantDisconnected", (participant) => {
-  //   participantDisconnected(participant, room);
-  // });
+function participantDisconnected(participant, room) {
+  // Remove the Participant's media container.
+  $(`div#${participant.sid}`, $participants).remove();
+}
+```
 
-  //highlight-start
-  //  participant joined
+</TabItem>
+
+</Tabs>
+
+<Tabs
+defaultValue="VideoSDK"
+groupId={"VideoSDK"}
+values={[{label: 'VideoSDK', value: 'VideoSDK'}]}>
+
+<TabItem value="VideoSDK">
+
+```js
+function initializeMeeting() {
+  // ...
+
+  // participant joined
   meeting.on("participant-joined", (participant) => {
     let videoElement = createVideoElement(
       participant.id,
@@ -404,17 +472,14 @@ function initializeMeeting() {
     let aElement = document.getElementById(`a-${participant.id}`);
     aElement.remove(aElement);
   });
-  //highlight-end
+
   // ...
 }
-
-// Twilio Code :
-
-// function participantDisconnected(participant, room) {
-//   // Remove the Participant's media container.
-//   $(`div#${participant.sid}`, $participants).remove();
-// }
 ```
+
+</TabItem>
+
+</Tabs>
 
 #### Mapping Twilio’s events to VideoSDK
 
@@ -433,20 +498,37 @@ Below is a list of all Twilio events used in this demo and VideoSDK’s equivale
 - In Twilio, you can mute or unmute your LocalAudioTracks (microphone) and LocalVideoTracks (camera) by calling the disable or enable method.
 - In VideoSDK, you can use the `muteMic` function for the microphone and the `disableWebcam` function for the camera.
 
-```jsx
-// Twilio Code :
+<Tabs
+defaultValue="Twilio"
+groupId={"Twilio"}
+values={[{label: 'Twilio', value: 'Twilio'},]}>
 
-// room.localParticipant.audioTracks.forEach(publication => {
-//   publication.track.disable(); // Disable Mic in Meeting
-//   publication.track.enable();  // Enable Mic in Meeting
-// });
+<TabItem value="Twilio">
 
-// room.localParticipant.videoTracks.forEach(publication => {
-//   publication.track.disable(); // Disable Webcam in Meeting
-//   publication.track.enable(); // Enable Webcam in Meeting
-// });
+```js
+room.localParticipant.audioTracks.forEach(publication => {
+  publication.track.disable(); // Disable Mic in Meeting
+  publication.track.enable();  // Enable Mic in Meeting
+});
 
-//highlight-start
+room.localParticipant.videoTracks.forEach(publication => {
+  publication.track.disable(); // Disable Webcam in Meeting
+  publication.track.enable(); // Enable Webcam in Meeting
+});
+```
+
+</TabItem>
+
+</Tabs>
+
+<Tabs
+defaultValue="VideoSDK"
+groupId={"VideoSDK"}
+values={[{label: 'VideoSDK', value: 'VideoSDK'}]}>
+
+<TabItem value="VideoSDK">
+
+```js
 meeting.muteMic(); // Disable Mic in Meeting
 
 meeting.unmuteMic(); // Enable Mic in Meeting
@@ -454,29 +536,49 @@ meeting.unmuteMic(); // Enable Mic in Meeting
 meeting.disableWebcam(); // Disable Webcam in Meeting
 
 meeting.enableWebcam(); // Enable Webcam in Meeting
-//highlight-end
 ```
+
+</TabItem>
+
+</Tabs>
 
 ## Step 5 : Disconnect from a Room
 
 - In Twilio, you have the ability to disconnect from a Room in which you are currently participating. Other Participants will receive a `participantDisconnected` event.
 - In VideoSDK, you can also disconnect from a Room you are currently participating in. Other Participants will receive a `participant-left` event, while the local participant will receive a `meeting-left` event.
 
-```jsx
-// Twilio Code :
+<Tabs
+defaultValue="Twilio"
+groupId={"Twilio"}
+values={[{label: 'Twilio', value: 'Twilio'},]}>
 
-// room.on('disconnected', room => {
-//   // Detach the local media elements
-//   room.localParticipant.tracks.forEach(publication => {
-//     const attachedElements = publication.track.detach();
-//     attachedElements.forEach(element => element.remove());
-//   });
-// });
+<TabItem value="Twilio">
 
-// // To disconnect from a Room
-// room.disconnect();
+```js
+room.on('disconnected', room => {
+  // Detach the local media elements
+  room.localParticipant.tracks.forEach(publication => {
+    const attachedElements = publication.track.detach();
+    attachedElements.forEach(element => element.remove());
+  });
+});
 
-//highlight-start
+// To disconnect from a Room
+room.disconnect();
+```
+
+</TabItem>
+
+</Tabs>
+
+<Tabs
+defaultValue="VideoSDK"
+groupId={"VideoSDK"}
+values={[{label: 'VideoSDK', value: 'VideoSDK'}]}>
+
+<TabItem value="VideoSDK">
+
+```js
 meeting.on("meeting-left", () => {
   //Meeting Left
 });
@@ -488,8 +590,11 @@ meeting?.leave();
 // To leave the meeting by removing all the participant
 // you need to call end() which is the part of the meeting object.
 meeting?.end();
-//highlight-end
 ```
+
+</TabItem>
+
+</Tabs>
 
 ## Conclusion
 

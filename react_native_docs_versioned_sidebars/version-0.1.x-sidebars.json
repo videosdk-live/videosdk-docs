@@ -222,10 +222,6 @@
     },
     {
       "type": "doc",
-      "id": "api/sdk-reference/use-connection"
-    },
-    {
-      "type": "doc",
       "id": "api/sdk-reference/use-pubsub"
     },
     {

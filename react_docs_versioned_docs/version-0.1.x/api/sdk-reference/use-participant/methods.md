@@ -102,7 +102,7 @@ title: Methods returned by useParticipant Hook
 
 ---
 
-### switchTo()
+<!-- ### switchTo()
 
 - If you want a participant from a connected meeting to be switched from one meeting to another meeting, `switchTo()` method is used. This method accept `meetingId`, `token` and `payload` as an object.
 
@@ -152,7 +152,7 @@ useMeeting({
 });
 ```
 
----
+--- -->
 
 ### getVideoStats()
 

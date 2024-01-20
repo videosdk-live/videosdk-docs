@@ -8,6 +8,66 @@ tags: [releasenotes]
 
 This page will keep you update all the releases of JavaScript SDK.
 
+## v0.0.80
+
+**Release Date** : 19th January 2024
+
+**Change Log** :
+
+- Provide `getNetworkStats()` method in `VideoSDK` class to get `downloadSpeed` and `uploadSpeed` of network. 
+
+   **Docs** : [getNetworkStats()](../../api/sdk-reference/videosdk-class/methods.md#getnetworkstats)
+
+- Change `Permission` parameter to `Optional` in `requestPermission()` and `checkPermissions()` methods of `VideoSDK` class.
+
+---
+
+## v0.0.79
+
+**Release Date** : 5th January 2024
+
+**Change Log** :
+
+- Provide Pre-Call Screen's features.
+
+   - Provide `getDevices()` method in `VideoSDK` class to get list of media input/output devices. 
+
+       **Docs** : [getDevices()](../../api/sdk-reference/videosdk-class/methods.md#getdevices)
+
+   - Provide `getCameras()` method in `VideoSDK` class to get list of camera input devices. 
+
+      **Docs** : [getCameras()](../../api/sdk-reference/videosdk-class/methods.md#getcameras)
+
+   - Provide `getMicrophones()` method in `VideoSDK` class to get list of audio input devices. 
+
+      **Docs** : [getMicrophones()](../../api/sdk-reference/videosdk-class/methods.md#getmicrophones)
+
+   - Provide `getPlaybackDevices()` method in `VideoSDK` class to get list of audio output devices. 
+
+      **Docs** : [getPlaybackDevices()](../../api/sdk-reference/videosdk-class/methods.md#getplaybackdevices)
+
+   - Provide `requestPermission()` method in `VideoSDK` class to request a media permission.
+
+      **Docs** : [requestPermission()](../../api/sdk-reference/videosdk-class/methods.md#requestpermission)
+
+   - Provide `checkPermission()` method in `VideoSDK` class to check status of a media permissions.
+
+      **Docs** : [checkPermission()](../../api/sdk-reference/videosdk-class/methods.md#checkpermission)
+
+- Provide Getter for currently used webcam and mic device
+
+   - Provide `selectedCameraDevice` property in `Meeting` class to get currently used camera device in the meeting.
+
+      **Docs** : [selectedCameraDevice](../../api/sdk-reference/meeting-class/properties.md#selectedcameradevice)
+
+   - Provide `selectedMicrophoneDevice` property in `Meeting` class to get currently used microphone device in the meeting.
+
+      **Docs** : [selectedMicrophoneDevice](../../api/sdk-reference/meeting-class/properties.md#selectedmicrophonedevice)
+
+- Optimized Reconnection Logics.
+
+---
+
 ## v0.0.78
 
 **Release Date** : 30th Dec 2023

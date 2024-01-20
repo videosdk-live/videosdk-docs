@@ -452,7 +452,7 @@ handleGetWebcams();
 
 ---
 
-### connectTo()
+<!-- ### connectTo()
 
 - `connectTo()` is used to open a connection to the provided `meetingId` in the parameters.
 
@@ -463,7 +463,7 @@ handleGetWebcams();
 
 #### Events associated with `connectTo()`:
 
-- [`onConnectionOpen()`](./events#onconnectionopen) event will trigger to all the participant.
+- [`onConnectionOpen()`](./events#onconnectionopen) event will trigger to all the participant. -->
 
 ### changeMode()
 
