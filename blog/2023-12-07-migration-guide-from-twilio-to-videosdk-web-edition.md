@@ -483,7 +483,7 @@ const Participant = ({ participant }) => {;
 
 - The implementation of additional controls, such as toggling the microphone and webcam, is achieved through methods provided by `useMeeting()` in VideoSDK.
 
-<Tabs
+<!-- <Tabs
 defaultValue="Twilio"
 groupId={"Twilio"}
 values={[{label: 'Twilio', value: 'Twilio'},]}>
@@ -496,7 +496,7 @@ values={[{label: 'Twilio', value: 'Twilio'},]}>
 
 </TabItem>
 
-</Tabs>
+</Tabs> -->
 
 <Tabs
 defaultValue="VideoSDK"
@@ -506,7 +506,7 @@ values={[{label: 'VideoSDK', value: 'VideoSDK'}]}>
 <TabItem value="VideoSDK">
 
 ```js
-ffunction Controls(props) {
+function Controls(props) {
   //..
   const { toggleMic, toggleWebcam } = useMeeting();
   return (
