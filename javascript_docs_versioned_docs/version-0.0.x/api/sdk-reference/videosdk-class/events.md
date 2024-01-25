@@ -13,7 +13,7 @@ pagination_label: VideoSDK Class Events
 
 ### device-changed
 
-- A `device-changed` event is triggered whenever a media device such as a camera, microphone, or speaker is connected to or removed from the system.
+- The `device-changed` event is triggered whenever a media device such as a camera, microphone, or speaker is connected to or removed from the system.
 
 #### Event callback parameters
 

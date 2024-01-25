@@ -52,7 +52,7 @@ This page will keep you update all the releases of JavaScript SDK.
 
    - Provide `checkPermission()` method in `VideoSDK` class to check status of a media permissions.
 
-      **Docs** : [checkPermission()](../../api/sdk-reference/videosdk-class/methods.md#checkpermission)
+      **Docs** : [checkPermission()](../../api/sdk-reference/videosdk-class/methods.md#checkpermissions)
 
 - Provide Getter for currently used webcam and mic device
 
