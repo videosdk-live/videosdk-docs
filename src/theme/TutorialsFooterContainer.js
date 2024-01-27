@@ -7,7 +7,7 @@ const Footer = () => {
         Got a Question?{" "}
         <a
           target="_blank"
-          href="https://www.videosdk.live/contact"
+          href="https://www.videosdk.live/alternative/twilio-vs-videosdk#talk-to-expert"
           className="px-2 py-1 gap-3 rounded-lg bg-gray-750 border-class flex justify-center max-w-max text-white-100"
         >
           Talk to our Migration Expert
