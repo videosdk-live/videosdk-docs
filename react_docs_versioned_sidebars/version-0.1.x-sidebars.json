@@ -209,6 +209,15 @@
     },
     {
       "type": "category",
+      "label": "useMediaDevice Hook",
+      "items": [
+        "api/sdk-reference/use-mediaDevice/introduction",
+        "api/sdk-reference/use-mediaDevice/methods",
+        "api/sdk-reference/use-mediaDevice/events"
+      ]
+    },
+    {
+      "type": "category",
       "label": "useMeeting Hook",
       "items": [
         "api/sdk-reference/use-meeting/introduction",
@@ -247,6 +256,10 @@
     {
       "type": "doc",
       "id": "api/sdk-reference/custom-tracks"
+    },
+    {
+      "type": "doc",
+      "id": "api/sdk-reference/network-statistics"
     },
     {
       "type": "doc",

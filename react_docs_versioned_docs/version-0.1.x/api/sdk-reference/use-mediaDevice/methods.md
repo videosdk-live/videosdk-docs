@@ -1,24 +1,13 @@
 ---
 sidebar_position: 1
 sidebar_label: Methods
-pagination_label: VideoSDK Class Methods
-title: VideoSDK Class Methods
+pagination_label: Methods returned by useMediaDevice Hook
+title: Methods returned by useMediaDevice Hook
 ---
 
-# VideoSDK Class Methods - Javascript
+# Methods returned by useMediaDevice Hook - React
 
 <div class="sdk-api-ref-only-h4">
-
-### config()
-
-- Before initializing the meeting, you will first need to provide `token`. By using `config()` method, you can set the token property of VideoSDK class. 
-- Please refer this [documentation](/api-reference/realtime-communication/intro/) to generate a token.
-
-#### Returns
-
-- `void`
-
----
 
 ### getDevices()
 
@@ -51,7 +40,7 @@ title: VideoSDK Class Methods
 - `CameraDeviceInfo` class has four properties :
 
   1. `CameraDeviceInfo.deviceId`
-        - Returns a string that is an identifier for the represented device, persisted across sessions.
+        - Returns a string that is an identifier for the represented devic, persisted across sessions.
 
   2. `CameraDeviceInfo.groupId`
       - Returns a string that is a group identifier. Two devices have the same group identifier if they belong to the same physical device — for example a monitor with both a built-in camera and a microphone.
@@ -113,38 +102,6 @@ title: VideoSDK Class Methods
 #### Returns
 
 - `Promise<Array<PlaybackDeviceInfo>>`
----
-
-### getNetworkStats()
-
--  The `getNetworkStats()` method will return a `Promise` that resolves with an object, containing network speed statistics or rejects with an error message, if the operation fails or exceeds the specified timeout.
-- The result object will include the `downloadSpeed` and `uploadSpeed`, expressed in megabytes per second (MB/s).
-
-#### Parameters
-
-- `timeoutDuration`
-   - It helps prevent the method from getting stuck indefinitely when fetching network statistics. It lets you set a maximum time for the operation, and if it takes longer than that, the method stops gracefully. 
-   - You can specify `timeoutDuration` in milliseconds. If it is not provided or is not an integer, the default timeout is set to `60,000` milliseconds (1 minute).
-   - `Optional`
-
-#### Returns
-
-- `Promise<{downloadSpeed: number,uploadSpeed: number}>`
-
-#### Example
-
-```js
-try {
-  const options = { timeoutDuration: 45000 }; // Set a custom timeout of 45 seconds
-  const networkStats = await VideoSDK.getNetworkStats(options);
-  console.log("Download Speed: ", networkStats["downloadSpeed"]);  // will return value in Mb/s
-  console.log("Upload Speed: ", networkStats["uploadSpeed"]); // will return value in Mb/s
-} catch(ex)
-{
-  console.log("Error in networkStats: ", ex);
-}
-
-```
 
 ---
 
@@ -167,14 +124,16 @@ try {
 #### Example
 
 ```js
+import { Constants, useMediaDevice } from "@videosdk.live/react-sdk";
+
+const { requestPermission } = useMediaDevice();
+
 try {
-  const requestPermission = await VideoSDK.requestPermission(
-      VideoSDK.Constants.permission.AUDIO_AND_VIDEO,
-  );
+  const requestAudioVideoPermission = await requestPermission(Constants.permission.AUDIO_VIDEO);
   console.log(
-    "request Audio and Video Permissions",
-    requestPermission.get(VideoSDK.Constants.permission.AUDIO),
-    requestPermission.get(VideoSDK.Constants.permission.VIDEO)
+      "request Audio and Video Permissions",
+      requestAudioVideoPermission.get(Constants.permission.AUDIO),
+      requestAudioVideoPermission.get(Constants.permission.VIDEO)
   );
 } catch(ex)
 {
@@ -208,14 +167,17 @@ try {
 #### Example
 
 ```js
+
+import { Constants, useMediaDevice } from "@videosdk.live/react-sdk";
+
+const { checkPermissions } = useMediaDevice();
+
 try {
-  const checkAudioVideoPermission = await VideoSDK.checkPermissions(
-    VideoSDK.Constants.permission.AUDIO_AND_VIDEO,
-  );
+  const checkAudioVideoPermission = await checkPermissions();
   console.log(
     "check Audio and Video Permissions",
-    checkAudioVideoPermission.get(VideoSDK.Constants.permission.AUDIO),
-    checkAudioVideoPermission.get(VideoSDK.Constants.permission.VIDEO)
+    checkAudioVideoPermission.get(Constants.permission.AUDIO),
+    checkAudioVideoPermission.get(Constants.permission.VIDEO)
   );
 } catch(ex)
 {
@@ -227,46 +189,6 @@ try {
 :::tip
 `checkPermissions()` will throw an error when the browser doesn't support permission check functionality.
 :::
-
----
-
-### on()
-
-#### Parameters
-
-- eventType : [`event of VideoSDK class`](./events.md)
-- listener : `function`
-
-#### Returns
-
-- `void`
-
-#### Example
-
-```js
-//for device-changed-event
-VideoSDK.on("device-changed", deviceChangeEventListener);
-```
-
----
-
-### off()
-
-#### Parameters
-
-- eventType : [`event of VideoSDK class`](./events.md)
-- listener : `function`
-
-#### Returns
-
-- `void`
-
-#### Example
-
-```js
-//for device-changed-event
-VideoSDK.off("device-changed", deviceChangeEventListener);
-```
 
 ---
 

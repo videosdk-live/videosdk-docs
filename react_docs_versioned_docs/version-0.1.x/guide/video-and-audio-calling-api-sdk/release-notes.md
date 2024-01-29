@@ -8,6 +8,44 @@ tags: [releasenotes]
 
 This page will keep you update all the releases of React JS SDK.
 
+## v0.1.83
+
+**Release Date** : 25th Jan 2024
+
+**Change Log** :
+
+- Provide Pre-Call Screen's features.
+
+   - Provide `getDevices()` method in `useMediaDevice` hook to get list of media input/output devices. 
+
+       **Docs** : [getDevices()](../../api/sdk-reference/use-mediaDevice/methods.md#getdevices)
+
+   - Provide `getCameras()` method in `useMediaDevice` hook to get list of camera input devices. 
+
+      **Docs** : [getCameras()](../../api/sdk-reference/use-mediaDevice/methods.md#getcameras)
+
+   - Provide `getMicrophones()` method in `useMediaDevice` hook to get list of audio input devices. 
+
+      **Docs** : [getMicrophones()](../../api/sdk-reference/use-mediaDevice/methods.md#getmicrophones)
+
+   - Provide `getPlaybackDevices()` method in `useMediaDevice` hook to get list of audio output devices. 
+
+      **Docs** : [getPlaybackDevices()](../../api/sdk-reference/use-mediaDevice/methods.md#getplaybackdevices)
+
+   - Provide `requestPermission()` method in `useMediaDevice` hook to request a media permission.
+
+      **Docs** : [requestPermission()](../../api/sdk-reference/use-mediaDevice/methods.md#requestpermission)
+
+   - Provide `checkPermission()` method in `useMediaDevice` hook to check status of a media permissions.
+
+      **Docs** : [checkPermission()](../../api/sdk-reference/use-mediaDevice/methods.md#checkpermissions)
+   
+   - Provide `getNetworkStats()` method to get `downloadSpeed` and `uploadSpeed` of network. 
+
+   **Docs** : [getNetworkStats()](../../api/sdk-reference/network-statistics#getnetworkstats)
+
+---
+
 ## v0.1.82
 
 **Release Date** : 5th Jan 2024
