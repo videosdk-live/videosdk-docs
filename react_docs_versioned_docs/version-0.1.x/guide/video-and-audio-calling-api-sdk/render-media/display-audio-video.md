@@ -17,11 +17,11 @@ slug: display-audio-video
 
 # Display Audio and Video - React
 
-In this guide, we will take a look at how to render the participant's audio and video on the screen.
+This guide elaborates on how to render a participant's audio and video on the screen.
 
 ## Rendering Participant
 
-The three steps are involve to achieve this process.
+The steps involved in rendering the audio and video of a participant are as follows.
 
 1. [Get Mic and Webcam Status](#1-get-mic-and-webcam-status)
 2. [Rendering Video](#2-rendering-video)
@@ -29,16 +29,16 @@ The three steps are involve to achieve this process.
 
 ### `1. Get Mic and Webcam Status`
 
-We must determine whether the participant's audio or video is on or off before rendering him or her. Hence, if the webcam is not turned on, we will begin by rendering the participant's frames with their name in them; otherwise, we will render the video.
+To render a participant, it is essential to determine whether their audio or video is on or off. If the webcam is not turned on, start by rendering the participant's frames with their name; otherwise, render the video.
 
-**`Step 1:`** Let's get every `participants` from `useMeeting` and create a straightforward box with each person's name.
+**`Step 1:`** First, retrieve every `participant` from the `useMeeting` hook and create a simple box with each of their names.
 
 ```js
 const MeetingView = () => {
   //Getting all the participants
   const { participants } = useMeeting();
 
-  //Looping over the participants and rendering a simple
+  //Looping over the participants and rendering a simple box
   return (
     <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)" }}>
       {[...participants.keys()].map((participantId, index) => (
@@ -68,7 +68,7 @@ const ParticipantView = ({ participantId }) => {
 
 **`Step 2:`** To display the status of each participant's microphone and webcam in the grid, you can use the `micOn` and `webcamOn` properties of the `useParticipant` hook.
 
-Here's a code code snippet of rendering mic and webcam status:
+Here's a code snippet of rendering mic and webcam status:
 
 ```js
 const ParticipantView = ({ participantId }) => {
@@ -100,9 +100,9 @@ const ParticipantView = ({ participantId }) => {
 
 ### `2. Rendering Video`
 
-The status of the `webcam` and `mic` is now displayed. If the webcam is turned `on`, we will require the participant's `webcamStream` which we will obtain from the `useParticipant` hook, in order to display the participant's video.
+The status of the `webcam` and `mic` is now displayed. Now whenever a participant's webcam is turned `on`, to display their video, you will require their  `webcamStream` which can be obtained from the `useParticipant` hook.
 
-**`Step 1:`** Let's get the `webcamStream` and define a `<video>` tag which will render the video of the participant. We will use the `useRef` to create a reference to this video tag.
+**`Step 1:`** Obtain the `webcamStream` and define a `<video>` tag which will render the video of the participant. You need to use the `useRef` hook to create a reference to this video tag.
 
 ```js
 import { useRef } from "react";
@@ -131,7 +131,7 @@ const ParticipantView = ({ participantId }) => {
 };
 ```
 
-**`Step 2:`** Now that we have our `<video>` element in place, we will add a `useEffect` so that, when the `webcamStream` is discovered, it will immediately add to the `<video>` element.
+**`Step 2:`** Now that you have the `<video>` element in place, you need to add a `useEffect` hook so that, when the `webcamStream` is discovered, it will be immediately added to the `<video>` element.
 
 ```js
 const ParticipantView = ({ participantId }) => {
@@ -182,9 +182,9 @@ const ParticipantView = ({ participantId }) => {
 
 #### `2.1 Maintaining the aspect ratio`
 
-If you wish to maintain the aspect ratio of the video, meaning showing vertical video and not making it fill the complete space of the view, you can set the `object-fit: contain`.
+If you want to maintain the aspect ratio of the video, displaying it vertically without filling the entire view, you can use `object-fit:contain`.
 
-If you wish to always fill the view irrespective of the video resolution you can set the `object-fit:cover`.
+However, if you prefer to always fill the view regardless of the video resolution you can use `object-fit:cover`.
 
 ```js
 const ParticipantView = ({ participantId }) => {
@@ -213,7 +213,7 @@ const ParticipantView = ({ participantId }) => {
 
 #### `2.2 Mirror Local Video View`
 
-If you wish to show the mirror view of the local participant, you can apply the transformation style to the participant's view.
+If you want to display the mirror view of the local participant, you can apply the transformation style to the participant's view.
 
 ```js
 const ParticipantView = ({ participantId }) => {
@@ -255,9 +255,9 @@ const ParticipantView = ({ participantId }) => {
 
 ### `3. Rendering Audio`
 
-Now we have displayed the webcam and mic status along with the video of the particiapnt. If the mic is turned `on` we will need the `micStream` of the participant which we will obtain from the `useParticipant` hook, in order to play the participant's audio.
+You have succesfully displayed the webcam and mic status along with the participant's video. Now, whenever a participant's mic is turned `on`, to play their audio. you will require their `micStream` which can be obtained from the `useParticipant` hook 
 
-**`Step 1:`** Let's get the `micStream` and define a `<audio>` tag which will render the audio of the participant. We will use the `useRef` to create a reference to this audio tag.
+**`Step 1:`** Obtain the `micStream` and define a `<audio>` tag which will render the audio of the participant. You need to use the `useRef` hook to create a reference to this audio tag.
 
 ```js
 import { useRef } from "react";
@@ -285,15 +285,15 @@ const ParticipantView = ({ participantId }) => {
 };
 ```
 
-**`Step 2:`** Now that we have our `<audio>` element in place, we will add a useEffect so that, when the `micStream` is discovered, it will immediately add to the `<audio>` element.
+**`Step 2:`** Now that you have the `<audio>` element in place, you need to add a `useEffect` hook so that, when the `micStream` is discovered, it will  be immediately added to the `<audio>` element.
 
 ```js
 const ParticipantView = ({ participantId }) => {
-  //Getting the webcamStream property
+  //Getting the micStream property
   const { displayName, micOn, webcamOn, webcamStream } =
     useParticipant(participantId);
 
-  // ... webcam stream dispalying here
+  // ... mic stream dispalying here
 
   const micRef = useRef(null);
 
@@ -331,8 +331,8 @@ const ParticipantView = ({ participantId }) => {
 ```
 
 :::caution
-While rendering the audio, we should **not render the audio of local participant** as it will create the echo.
-So to solve that we will `mute the audio` of the `localParticipant`
+While rendering the audio,you should **not render the audio of the local participant** as it will create echo.
+So to avoid that, `mute the audio` of the `localParticipant`, by setting the `muted` property as follows.
 
 ```js
 const ParticipantView = ({ participantId }) => {
@@ -364,11 +364,11 @@ const ParticipantView = ({ participantId }) => {
 
 ## Autoplay Audio and Video
 
-`autoplay` refers to the parameter which is passed to `<audio>` and `<video>` whose media should be played automatically without user clicking on the video or hitting the play button.
+`autoplay` is a parameter passed to `<audio>` and `<video>` elements, indicating that their media should play automatically without requiring the user to click on the video or hit the play button.
 
-While building a audio-video calling app, it is necessary to mae sure that `autoplay` flag is set to `true` so that any media loaded is played although the `play()` was not called.
+When developing an audio-video calling app, ensure that the `autoplay` flag is set to `true`, allowing any loaded media to play even if the `play()` method was not explicitly called.
 
-You can learn more about the `autoplay flag` at the [**official documentation**](https://developer.mozilla.org/en-US/docs/Web/Media/Autoplay_guide).
+You can learn more about the `autoplay flag` in the [**official documentation**](https://developer.mozilla.org/en-US/docs/Web/Media/Autoplay_guide).
 
 ## API Reference
 

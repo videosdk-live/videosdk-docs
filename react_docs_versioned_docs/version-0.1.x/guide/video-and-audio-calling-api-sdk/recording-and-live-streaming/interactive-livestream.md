@@ -13,14 +13,14 @@ keywords:
   - real-time communication
 image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
-slug: interactive-livestream
+slug: interactive-livestream 
 ---
 
 # Interactive Livestream (HLS) - React
 
 Interactive live streaming (HLS) refers to a type of live streaming where viewers can actively engage with the content being streamed and with other viewers in real-time.
 
-In an interactive live stream (HLS), viewers can take part in a variety of activities like live polling, Q&A sessions, and even sending virtual gifts to the content creator or each other.
+In an interactive live stream (HLS), viewers can participate in various activities, such as live polling, Q&A sessions, and even sending virtual gifts to the content creator or each other.
 
 <center>
 
@@ -28,21 +28,20 @@ In an interactive live stream (HLS), viewers can take part in a variety of activ
 
 </center>
 
-VideoSDK also allows you to configure the interactive livestream layouts in numerous ways like by simply setting different prebuilt layouts in the configuration or by providing your own custom template to do the livestream according to your layout choice.
+VideoSDK enables you to configure the interactive livestream layout in various ways, either by setting different prebuilt layouts in the configuration or by providing your own custom template for livestreaming according to your layout choice.
 
-This guide will provide an overview of how to implement start and stop Interactive live streaming (HLS).
+This guide provides an overview of how to implement starting and stopping Interactive Live Streaming (HLS).
 
 :::important
-
-To initiate automatic Interactive live streaming (HLS) at the beginning of a `session`, simply provide the `autoStartConfig` feature `hls` during `room` creation. For more information on configuring the `autoStartConfig`, please refer to the provided documentation **[<u>here</u>](/api-reference/realtime-communication/create-room#autoStartConfig)**.
+To initiate automatic Interactive live streaming (HLS) at the beginning of a `session`, simply provide the `autoStartConfig` feature, `hls` during `room` creation. For more information on configuring the `autoStartConfig`, please refer to the provided documentation **[<u>here</u>](/api-reference/realtime-communication/create-room#autoStartConfig)**.
 
 :::
 
 ### `startHls()`
 
-`startHls()` can be used to start a interactive livestream of the meeting which can be accessed from the `useMeeting` hook. This method accepts one parameter:
+The `startHls()` method, accesible from the `useMeeting` hook, can be used to initiate interactive livestream of a meeting. This method accepts the following parameter:
 
-- `config (optional)`: This parameter will define how the interactive livestream layout should look like.
+- `config (optional)`: This parameter defines how the interactive livestream layout should look like.
 
   ```js
   const config = {
@@ -79,7 +78,8 @@ To initiate automatic Interactive live streaming (HLS) at the beginning of a `se
 
 ### `stopHls()`
 
-- `stopHls()` is used to stop interactive livestream of the meeting which can be accessed from the `useMeeting` hook.
+- The `stopHls()` method, accesible from the `useMeeting` hook, can be used to stop the interactive livestream of a meeting.
+
 
 #### Example
 
@@ -119,14 +119,14 @@ const MeetingView = () => {
 ```
 
 :::tip
-If you want to learn more about the Interactive Livestream and how you can implement it in your own platform, you can checkout this [guide](/react/guide/interactive-live-streaming/integrate-hls/overview).
+If you want to learn more about the Interactive Livestream and how to implement it on your own platform, you can checkout this [guide](/react/guide/interactive-live-streaming/integrate-hls/overview).
 :::
 
 ### Event associated with HLS
 
-- **onHlsStateChanged** - Whenever meeting HLS state changes, then `onHlsStateChanged` event will trigger.
+- **onHlsStateChanged** - The `onHlsStateChanged` event is triggered whenever the state of meeting HLS changes.
 
-- You can get the `downstreamUrl` of the HLS to play it on the Viewer side when the state changes to `Constants.hlsEvents.HLS_STARTED`
+- You can get the `downstreamUrl` of the HLS to play on the Viewer side when the state changes to `Constants.hlsEvents.HLS_STARTED`
 
 ```js
 import { Constants, useMeeting } from "@videosdk.live/react-sdk";
@@ -140,7 +140,7 @@ function onHlsStateChanged(data) {
     console.log("Meeting Hls is started");
   } else if (status === Constants.hlsEvents.HLS_PLAYABLE) {
     //highlight-start
-    // on hlsStateChanged started you will receive downstreamUrl
+    // on hlsStateChanged you will receive downstreamUrl
     const { downstreamUrl } = data;
     //highlight-end
     console.log("Meeting Hls is now playable");
@@ -165,7 +165,7 @@ const {
 
 ### Custom Template
 
-With VideoSDK, you can also use your own custom designed layout template to livestream the meetings. In order to use the custom template, you need to create a template for which you can [follow this guide](/react/guide/interactive-live-streaming/custom-template). Once you have setup the template, you can use the [REST API to start](/api-reference/realtime-communication/start-livestream) the livestream with the `templateURL` parameter.
+With VideoSDK, you have the option to employ your custom-designed layout template for meeting recordings. To use a custom template, [follow this guide](/react/guide/interactive-live-streaming/custom-template) to create and set up the template. Once the template is configured, you can initiate recording using the [REST API](/api-reference/realtime-communication/start-livestream), specifying the `templateURL` parameter.
 
 ### API Reference
 

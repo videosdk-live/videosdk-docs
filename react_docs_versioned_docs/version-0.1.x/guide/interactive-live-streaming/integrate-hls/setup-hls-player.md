@@ -17,14 +17,14 @@ slug: setup-hls-player
 
 # Setup HLS Player - React
 
-In this guide, we will create a new Component which will be responsible for playing the HLS stream.
-Before starting this guide, make sure you have a VideoSDK meetings setup allowing you to join the room. To learn more about setting up a VideoSDK meeting, follow this quick start guide.
+This guide focus on we will creating the Component responsible for playing the HLS stream.
+Before proceeding, ensure that you have set up a VideoSDK meeting, enabling you to join the room. For instructions on setting up a VideoSDK meeting, refer to the quick start guide.
 
-To play the HLS stream we will be using the [hls.js](https://www.npmjs.com/package/hls.js/v/canary) library.
+For playing the HLS stream, you need to use the [hls.js](https://www.npmjs.com/package/hls.js/v/canary) library.
 
 ### `1. Setup Component with HLS events`
 
-**`Step 1:`** Let us first start by creating the new component named `HLSPlayer` which will be placed inside the `MeetingProvider` so we can access the VideoSDK hooks.
+**`Step 1:`** Begin by creating a new component named `HLSPlayer`. Place this component inside the `MeetingProvider` to ensure access to the VideoSDK hooks.
 
 ```js
 function Container() {
@@ -36,7 +36,7 @@ function HLSPlayer() {
 }
 ```
 
-**`Step 2:`** Now let's add the placeholder that will be shown when there is no active HLS. For these, we will use the `hlsState` from the `useMeeting` hook to identify if there is an active HLS.
+**`Step 2:`** Now, incorporate the placeholder that will be displayed when there is no active HLS. Utilize the `hlsState` from the useMeeting hook to determine the presence of an active HLS.
 
 ```js
 import { useMeeting, Constants } from "@videosdk.live/react-sdk";
@@ -60,13 +60,13 @@ function HLSPlayer() {
 
 ### `2. Playing HLS stream`
 
-**`Step 1:`** We will be using the [hls.js](https://www.npmjs.com/package/hls.js) library to play the HLS stream. So let's start by installing the library.
+**`Step 1:`** To play the HLS stream, you need to have the [hls.js](https://www.npmjs.com/package/hls.js) library. To install the library, use the following command.
 
 ```bash
 npm install "hls.js"
 ```
 
-**`Step 2:`** Next we will be adding a `<video>` element which will play our livestream.
+**`Step 2:`** Next step is to add a `<video>` element that will play the livestream.
 
 ```js
 import Hls from "hls.js";
@@ -103,7 +103,7 @@ function HLSPlayer() {
 }
 ```
 
-**`Step 3:`** Now that video player is ready, let's play the HLS once it becomes playable. For these, we will get the `hlsUrls` from the `useMeeting` and also check if the `hlsState` is `HLS_PLAYABLE` before playing the stream.
+**`Step 3:`** Now that the video player is ready, play the HLS stream once it becomes playable. To achieve this, obtain the `hlsUrls` from the `useMeeting` hook and ensure that the `hlsState` is `HLS_PLAYABLE` before initiating the stream playback.
 
 ```js
 function HLSPlayer() {
@@ -150,7 +150,7 @@ function HLSPlayer() {
 }
 ```
 
-With this, the player is setup to play the HLS.
+With this, the player is all set to play the HLS stream.
 
 ![VideoSDK React Interactive Live Streaming Quick Start Meeting Container Component](https://cdn.videosdk.live/website-resources/docs-resources/quick_start_react_ils_viewer.png)
 

@@ -17,17 +17,17 @@ slug: error-events
 
 # Error Events - React
 
-VideoSDK provides `onError` event which will notify you of any error happening during the meeting.
+VideoSDK provides the `onError` event which informs you about any error happening during the meeting.
 
 ### onError
 
-- This event will be triggered whenever any invalid configuration provided or server/network errors arise, this event will trigger with a specific error code and message.
-- This event is helpful for development level troubleshooting while integrating SDK.
-- This event can be subscribed from the `useMeeting` hook.
+- This event is triggered whenever an invalid configuration is provided or server/network errors arise. In such cases, the event will trigger with a specific error code and message. 
+- It is particularly useful for development-level troubleshooting during SDK integration.
+- It can be subscribed to, from the `useMeeting` hook.
 
 ### Example
 
-Here is the usage of the event mentioned in this page.
+Here is an example demonstrating the usage of the event mentioned on this page.
 
 ```javascript
 import { Constants, useMeeting } from "@videosdk.live/react-sdk";
@@ -47,7 +47,7 @@ const {
 
 ### Error Codes
 
-We have depicted a specific constant with code and message in the below table.
+We have provided a specific constant along with the corresponding code and message in the table below.
 
 | Constant                                      | Code | Message                                                                                                                     |
 | --------------------------------------------- | ---- | --------------------------------------------------------------------------------------------------------------------------- |

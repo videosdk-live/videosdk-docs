@@ -17,13 +17,13 @@ slug: initialise-meeting
 
 # Initialise Meeting - React
 
-To configure a VideoSDK meeting you require two things, first the `token` which will be used for **Authentication** purpose and a `meetingId` which will be used to specify where a participant will join. Let's see each of the steps closely.
+To configure a VideoSDK meeting you require two things, first the `token` which will be used for **Authentication** purpose and a `meetingId` which will be used to specify where a participant will join. Examine each of the steps closely.
 
 ### Generating Token
 
 You can generate a `token` in two ways:
 
-1. **`Temporary Token`** : You can visit [Dashboard's API Key section](https://app.videosdk.live/api-keys) and generate the temporary token from there.
+1. **`Temporary Token`** : You can visit [Dashboard's API Key section](https://app.videosdk.live/api-keys) and generate a temporary token from there.
 
 2. **`Server`** : You can setup **JWT** in backend and make an API call to get the token from your server.
 
@@ -55,19 +55,19 @@ const getToken = async () => {
 
 ### Generating Meeting Id
 
-With the token ready, we can get the `meetingId` from the [VideoSDK's rooms API](/api-reference/realtime-communication/create-room).
+With the token ready, you can now get the `meetingId` from the [VideoSDK's rooms API](/api-reference/realtime-communication/create-room).
 
 ```js
 const getMeetingId = async (token) => {
   try {
-    //We will use VideoSDK rooms API endpoint to create a meetingId
+    //Use VideoSDK rooms API endpoint to create a meetingId
     //highlight-next-line
     const VIDEOSDK_API_ENDPOINT = `https://api.videosdk.live/v2/rooms`;
     const options = {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        // We will pass the token in the headers
+        // Pass the token in the headers
         // highlight-next-line
         Authorization: token,
       },
@@ -79,7 +79,7 @@ const getMeetingId = async (token) => {
       })
       .catch((error) => console.log("error", error));
 
-    //we will return the meetingId which we got from the response of the api
+    //Return the meetingId received from the response of the api
     //highlight-next-line
     return meetingId;
   } catch (e) {
@@ -90,19 +90,19 @@ const getMeetingId = async (token) => {
 
 ### Initialization of Meeting
 
-We can initialize the meeting using the `MeetingProvider` from the React SDK. The `MeetingProvider` is responsible for initializing the meeting with the provided configuration, which includes the `token`, `meetingId`, `participantId` and many more.
+You can initialize the meeting using the `MeetingProvider` from the React SDK. The `MeetingProvider` is responsible for initializing the meeting with the provided configuration, which includes the `token`, `meetingId`, `participantId` and many more.
 
 #### Meeting Provider
 
-`MeetingProvider` is React [Context.Provider](https://reactjs.org/docs/context.html#contextprovider) that allows consuming components to subscribe to meeting changes.
+`MeetingProvider` is React's [Context.Provider](https://reactjs.org/docs/context.html#contextprovider) that allows consuming components to subscribe to changes in the meeting.
 
-We will be passing the initialization configuration for the meeting and the token in the `MeetingProvider`.
+You have to pass the initialization configuration for the meeting and the token in the `MeetingProvider`.
 
 :::tip
-When conducting one-to-one meetings, it is recommended to set `multistream:false`.For more information on multistream, refer to the [multistream documentation](/react/guide/video-and-audio-calling-api-sdk/render-media/optimize-video-track#what-is-multistream).
+When conducting one-to-one meetings, it is recommended to set `multistream:false`. For more information on multistream, refer to the [multistream documentation](/react/guide/video-and-audio-calling-api-sdk/render-media/optimize-video-track#what-is-multistream).
 :::
 
-Let's take a deeper look at the available configuration options first.
+Take a deeper look at the available configuration options first.
 
 ```js
 <MeetingProvider
@@ -121,13 +121,13 @@ Let's take a deeper look at the available configuration options first.
 
 - **`meetingId`** :
 
-  - meetingId is unique identifiers that allow participants to join a specific meeting or room.
+  - This is a unique identifier that allows participants to join a specific meeting or room.
   - It will be in the format of `xxx-yyy-zzz` and will be generated using the [VideoSDK's Room API](/api-reference/realtime-communication/create-room).
 
 - **`name`**:
 
-  - This will represent the name of the participant in the meeting.
-  - It will accept `String`type value.
+  - This represents the name of the participant in the meeting.
+  - It will accept `String` type value.
 
 - **`micEnabled`**:
 
@@ -145,7 +145,7 @@ Let's take a deeper look at the available configuration options first.
 
 - **`participantId`**:
 
-  - This will be the unique identifier for the participant inside the meeting.
+  - This is a unique identifier for the participant's inside the meeting.
 
     - It can be used to specify the **unique identifier** which can be linked with **your own database** service.
     - It has to be of `String` type.
@@ -153,26 +153,26 @@ Let's take a deeper look at the available configuration options first.
 
 - **`multistream`**:
 
-  - This is a `boolean` flag, indicating if the stream should send multiple resolution layers or single resolution layer.
+  - This is a `boolean` flag, indicating whether the stream should send multiple resolution layers or a single resolution layer.
 
 :::caution
-You must ensure that the `participantId` is not repeated in the same meeting or room, It will enable VideoSDK to eliminate any participant respect to that `participantId`.
+You must ensure that the `participantId` is not repeated in the same meeting or room. This will enable VideoSDK to eliminate any participant associated with that `participantId`.
 :::
 
 ###### Other Options for Meeting Provider
 
 - **`joinWithoutUserInteraction`**:
 
-  - This is a `boolean` flag, when set to `true`, allows a participant to join a meeting directly without explicitly calling the `join()` function.
+  - This is a `boolean` flag, when set to `true`, it allows a participant to join a meeting directly without explicitly calling the `join()` function.
 
-  - This is an `OPTIONAL` parameter. By default, it is set to `false` meaning, user has to manually call the `join()`
+  - This is an `OPTIONAL` parameter. By default, it is set to `false` meaning, user has to manually call the `join()` function
 
 To know more about other properties, you can follow [our API Reference](/react/api/sdk-reference/meeting-provider).
 
-With all the configuration options explained, here is how you will be using the `MeetingProvider`.
+With all the configuration options explained, here is how you will use the `MeetingProvider`.
 
 ```js
-// importing
+// imports
 import { MeetingProvider, useMeeting } from "@videosdk.live/react-sdk";
 
 const getToken = async () => {
@@ -189,7 +189,7 @@ const App = () => {
   const [token, setToken] = useState();
 
   const fetchMeetingIdandToken = async () => {
-    //We will fetch token and meetingId and update it in the state
+    //Fetch the token and meetingId and update it in the state
     //highlight-start
     const newToken = await getToken();
     const newMeetingId = await getMeetingId(newToken);
@@ -199,7 +199,7 @@ const App = () => {
   };
 
   useEffect(() => {
-    //We will first load the token and generate a meeting id and pass it to the Meeting Provider
+    //Load the token and generate a meeting id and pass it to the Meeting Provider
     //highlight-next-line
     fetchMeetingIdAndToken();
   }, []);
@@ -239,7 +239,7 @@ const MeetingView = () => {
 
 ### React Hooks Support
 
-VideoSDK's React SDK provides Hooks which can be used to access the state of the meeting and listen to the events happening in the meeting.
+VideoSDK's React SDK provides hooks which can be used to access the state of the meeting and listen to the events happening in the meeting.
 
 :::caution
 All the hooks mentioned below are accessible within the `MeetingProvider` only.
@@ -247,15 +247,15 @@ All the hooks mentioned below are accessible within the `MeetingProvider` only.
 
 #### useMeeting
 
-`useMeeting` hook abstracts meeting class and is responsible to provide the states and events update happening in the meeting like participant joining and leaving a meeting. To know more about the properties and events accessible by this hook, go through [our API Reference](/react/api/sdk-reference/use-meeting/introduction).
+The `useMeeting` hook abstracts the meeting class and is responsible for providing the state and event updates happening in the meeting like participant joining and leaving a meeting. To know more about the properties and events accessible by this hook, go through [our API Reference](/react/api/sdk-reference/use-meeting/introduction).
 
 #### useParticipant
 
-`useParticipant` hook abstracts participant class and is responsible to provide the states and events update happening for a particular participant like webcam, mic streams status etc. To know more about the properties and events accessible by this hook, go through [our API Reference](/react/api/sdk-reference/use-participant/introduction).
+The `useParticipant` hook abstracts the participant class and is responsible for providing the state and event updates happening for a particular participant like webcam, mic stream status etc. To know more about the properties and events accessible by this hook, go through [our API Reference](/react/api/sdk-reference/use-participant/introduction).
 
 #### usePubsub
 
-`usePubsub` hook abstracts PubSub class and is responsible to provide a separate communication channel for all the participants in the meeting. It can be used to develop features like Chat, Raise Hand etc. To know more about the usePubsub hook, take a look at detailed explanation of [publish-subscribe mechanism](/react/guide/video-and-audio-calling-api-sdk/collaboration-in-meeting/pubsub).
+The `usePubsub` hook abstracts the PubSub class and is responsible for providing a separate communication channel for all the participants in the meeting. It can be used to develop features like Chat, Raise Hand etc. To know more about the usePubsub hook, take a look at detailed explanation of [publish-subscribe mechanism](/react/guide/video-and-audio-calling-api-sdk/collaboration-in-meeting/pubsub).
 
 ### API Reference
 

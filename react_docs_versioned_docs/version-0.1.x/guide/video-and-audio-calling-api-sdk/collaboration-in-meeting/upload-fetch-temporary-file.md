@@ -15,7 +15,7 @@ slug: upload-fetch-temporary-file
 
 # Upload and Retrieve the Temporary File - React
 
-In this guide, we'll demonstrate how to upload and retrieve files from the VideoSDK's temporary file storage system.
+This guide demonstrates how to upload and retrieve files from VideoSDK's temporary file storage system.
 
 ### `uploadBase64File()`
 
@@ -25,7 +25,7 @@ In this guide, we'll demonstrate how to upload and retrieve files from the Video
 
 - You have to pass `base64Data`,`token`,`fileName` as parameter in `uploadBase64File()` function.
 
-- The function will return the corresponding `fileUrl`, which will use to retrieve the file.
+- The function will return the corresponding `fileUrl`, which you can then use to retrieve the file.
 
 ```js
 const { uploadBase64File } = useFile();
@@ -41,7 +41,7 @@ async function uploadFile() {
 
 ### `fetchBase64File()`
 
-- By using `fetchBase64File()` function of `useFile` hook, you can retrieve your file from the Videosdk's Temporary storage.
+- By using `fetchBase64File()` function of `useFile` hook, you can retrieve your file from Videosdk's Temporary storage.
 
 - You have to pass `fileUrl` which is returned by `uploadBase64File()` function and `token` as parameter to retrieve file.
 
