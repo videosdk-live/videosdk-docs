@@ -104,7 +104,7 @@ participant.on("media-status-changed", (data) => {
 
 ### Audio Permissions
 
-- By default, VideSDK ask for audio permissions when the participants requests to turn on the mic and once the permission is granted the mic gets turned on. If the permission is denied, VideoSDK will send the error message in the `error` event of the `meeting` object.
+- By default, VideoSDK ask for audio permissions when the participants requests to turn on the mic and once the permission is granted the mic gets turned on. If the permission is denied, VideoSDK will send the error message in the `error` event of the `meeting` object.
 
 import ReactPlayer from 'react-player'
 

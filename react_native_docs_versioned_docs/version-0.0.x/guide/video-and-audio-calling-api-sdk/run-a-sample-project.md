@@ -63,9 +63,9 @@ Paste earlier generated temporary token here.
 REACT_APP_VIDEOSDK_TOKEN = "TEMPORARY-TOKEN";
 ```
 
-### Step 4: Install the dependecies
+### Step 4: Install the dependencies
 
-Install dependecies all the project dependencies.
+Install dependencies all the project dependencies.
 
 ```js
 npm install

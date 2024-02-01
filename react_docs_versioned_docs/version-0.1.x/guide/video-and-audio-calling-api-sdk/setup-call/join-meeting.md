@@ -19,7 +19,7 @@ slug: join-meeting
 
 ### Overview
 
-With our React SDK, you can choose to manually call `join()` method or leave it up to the VideoSDK to automatically call it when the `MeetingProvider` is rendered.
+With our React SDK, you can choose to manually call the `join()` method or leave it up to the VideoSDK to automatically call it when the `MeetingProvider` is rendered.
 
 Before joining the meeting, it has to be initialized. If you have not initialized a meeting yet, you can [follow the guide here.](./initialise-meeting)
 
@@ -63,7 +63,7 @@ const MeetingView = () => {
 
 Following events are received when a participant successfully joins a meeting.
 
-- [Local Participant](../concept-and-architecture#2-participant) will receive an [`onMeetingJoined`](/react/api/sdk-reference/use-meeting/events#onmeetingjoined) event, when successfully joined.
+- [Local Participant](../concept-and-architecture#2-participant) will receive an [`onMeetingJoined`](/react/api/sdk-reference/use-meeting/events#onmeetingjoined) event, when the meeting is successfully joined.
 - [Remote Participant](../concept-and-architecture#2-participant) will receive an [`onParticipantJoined`](/react/api/sdk-reference/use-meeting/events#onparticipantjoined) event with the newly joined `Participant` object from the event callback.
 
 ```js
@@ -84,7 +84,7 @@ const MeetingView = () => {
   }
   //highlight-end
 
-  //Getting the join method from hook and assigning event callbacks
+  //Getting the join method from the hook and assigning event callbacks
   //highlight-start
   const { join } = useMeeting({
     onMeetingJoined,

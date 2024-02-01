@@ -13,37 +13,37 @@ keywords:
 image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
 slug: mute-unmute-mic
----
+---  
 
 # Mute / Unmute Mic - React Native
 
 Muting and Unmuting your microphone refers to turning your microphone off and on, respectively.
 
-When you mute your microphone, you prevent any sound from your microphone from being transmitted to other meeting participants, while unmuting it allows others to hear you.
+Muting your microphone prevents the transmission of any sound from your microphone to other meeting participants, while unmuting allows them to hear you.
 
 ### `unmuteMic()`
 
-- By using `unmuteMic()` function of `useMeeting` hook, local participant can publish audio to other participants.
+- By using the `unmuteMic()` function of the `useMeeting` hook, local participant can publish audio to other participants.
 
-  - You can call this method when the local participant is not broadcasting any audio to others.
+  - You can only call this method when the local participant is not broadcasting audio to others.
 
-- You can pass customised audio track in `unmuteMic()` by using [Custom Audio Track](/react-native/guide/video-and-audio-calling-api-sdk/render-media/optimize-audio-track).
+- You can pass customised audio track in the `unmuteMic()` method by using [Custom Audio Track](/react-native/guide/video-and-audio-calling-api-sdk/render-media/optimize-audio-track).
 
-- Audio stream of the participant can be accessed from the `micStream` property of `useParticipant` hook.
+- Audio stream of the participant can be accessed from the `micStream` property of the `useParticipant` hook.
 
 ### `muteMic()`
 
-- By using `muteMic()` function of `useMeeting` hook, local participant can stop publish audio to other participants.
+- By using the `muteMic()` function of the `useMeeting` hook, local participant can stop publishing audio to other participants.
 
-- You can call this method when the local participant is broadcasting any audio to others.
+- You can only call this method when the local participant is broadcasting audio to others.
 
 ### `toggleMic()`
 
-- By using `toggleMic()` function of `useMeeting` hook, local participant can start or stop publish audio to other participants based on the current state of the mic.
+- By utilizing the `toggleMic()` function of `useMeeting` hook, local participant can start or stop publishing audio to other participants based on the current state of the mic.
 
-- You can pass customised audio track in `toggleMic()` by using [Custom Audio Track](/react-native/guide/video-and-audio-calling-api-sdk/render-media/optimize-audio-track).
+- You can pass customised audio track in the `toggleMic()` method by using [Custom Audio Track](/react-native/guide/video-and-audio-calling-api-sdk/render-media/optimize-audio-track).
 
-- Audio stream of the participant can be accessed from the `micStream` property of `useParticipant` hook.
+- Audio stream of the participant can be accessed from the `micStream` property of the `useParticipant` hook.
 
 #### Example
 
@@ -107,8 +107,8 @@ const MeetingView = () => {
 
 ### Getting Participant Mic Status
 
-- You can get the **local participant's** media status from the `useMeeting` hook property named `localMicOn`.
-- If `localMicOn` is `true`, it means that the local participant's microphone is currently active. If it is `false`, it means that the local participant's microphone is currently muted or inactive.
+- You can get the **local participant's** media status from the `useMeeting` hook using a property called `localMicOn`.
+- If `localMicOn` is `true`, it indicates that the local participant's microphone is currently active. If it is `false`, it means that the local participant's microphone is currently muted or inactive.
 
 ```js
 import { useMeeting } from "@videosdk.live/react-native-sdk";
@@ -127,7 +127,7 @@ const MeetingView = () => {
 };
 ```
 
-- To get the status of **any participant** you can use the `micOn` property of the `useParticipant` hook. This parameter will be `true` if **participant's** `mic is on` else it will be `false`.
+- To get the status of **any participant's** microphone, you can use the `micOn` property of the `useParticipant` hook. This parameter will be `true` if **participant's** `mic is on`, else it will be `false`.
 
 ```js
 import { useParticipant } from "@videosdk.live/react-native-sdk";
@@ -148,23 +148,23 @@ const ParticipantView = (participantId) => {
 
 ### Events associated with unmuteMic
 
-- Every Participant will receive a callback on [`onStreamEnabled()`](/react-native/api/sdk-reference/use-participant/events#onstreamenabled) of the [`useParticipant()`](/react-native/api/sdk-reference/use-participant/introduction) hook with `Stream` object.
+- Every Participant will receive a callback [`onStreamEnabled()`](/react-native/api/sdk-reference/use-participant/events#onstreamenabled) event of the [`useParticipant()`](/react-native/api/sdk-reference/use-participant/introduction) hook with the `Stream` object.
 
-- Every Participant will receive a callback on [`onMediaStatusChanged()`](/react-native/api/sdk-reference/use-participant/events#onmediastatuschanged) of the [`useParticipant()`](/react-native/api/sdk-reference/use-participant/introduction) hook with the kind of media and its status.
+- Every Participant will receive a callback [`onMediaStatusChanged()`](/react-native/api/sdk-reference/use-participant/events#onmediastatuschanged) event of the [`useParticipant()`](/react-native/api/sdk-reference/use-participant/introduction) hook with the kind of media and its status.
 
 ### Events associated with muteMic
 
-- Every Participant will receive a callback on [`onStreamDisabled()`](/react-native/api/sdk-reference/use-participant/events#onstreamdisabled) of the [`useParticipant()`](/react-native/api/sdk-reference/use-participant/introduction) hook with `Stream` object.
+- Every Participant will receive a callback on [`onStreamDisabled()`](/react-native/api/sdk-reference/use-participant/events#onstreamdisabled) event of the [`useParticipant()`](/react-native/api/sdk-reference/use-participant/introduction) hook with the `Stream` object.
 
-- Every Participant will receive a callback on [`onMediaStatusChanged()`](/react-native/api/sdk-reference/use-participant/events#onmediastatuschanged) of the [`useParticipant()`](/react-native/api/sdk-reference/use-participant/introduction) hook with the kind of media and its status.
+- Every Participant will receive a callback on [`onMediaStatusChanged()`](/react-native/api/sdk-reference/use-participant/events#onmediastatuschanged) event of the [`useParticipant()`](/react-native/api/sdk-reference/use-participant/introduction) hook with the kind of media and its status.
 
 ### Events associated with toggleMic
 
-- Every Participant will receive a callback on [`onStreamEnabled()`](/react-native/api/sdk-reference/use-participant/events#onstreamdisabled) of the [`useParticipant()`](/react-native/api/sdk-reference/use-participant/introduction) hook with `Stream` object if the **audio broadcasting was started**.
+- Every Participant will receive a callback on [`onStreamEnabled()`](/react-native/api/sdk-reference/use-participant/events#onstreamdisabled) event of the [`useParticipant()`](/react-native/api/sdk-reference/use-participant/introduction) hook with the `Stream` object if the **audio broadcasting was started**.
 
-- Every Participant will receive a callback on [`onStreamDisabled()`](/react-native/api/sdk-reference/use-participant/events#onstreamdisabled) of the [`useParticipant()`](/react-native/api/sdk-reference/use-participant/introduction) hook with `Stream` object if the **audio broadcasting was stopped**.
+- Every Participant will receive a callback on [`onStreamDisabled()`](/react-native/api/sdk-reference/use-participant/events#onstreamdisabled) event of the [`useParticipant()`](/react-native/api/sdk-reference/use-participant/introduction) hook with `Stream` object if the **audio broadcasting was stopped**.
 
-- Every Participant will receive a callback on [`onMediaStatusChanged()`](/react-native/api/sdk-reference/use-participant/events#onmediastatuschanged) of the [`useParticipant()`](/react-native/api/sdk-reference/use-participant/introduction) hook with the kind of media and its status.
+- Every Participant will receive a callback on [`onMediaStatusChanged()`](/react-native/api/sdk-reference/use-participant/events#onmediastatuschanged) event of the [`useParticipant()`](/react-native/api/sdk-reference/use-participant/introduction) hook with the kind of media and its status.
 
 ```js
 import { useParticipant } from "@videosdk.live/react-native-sdk";
@@ -189,7 +189,7 @@ const ParticipantView = (participantId) => {
   //highlight-end
 
 
-  //Callback for when participants media gets changed
+  //Callback for when participant's media changes
   //highlight-start
   function onMediaStatusChanged(data) {
     const { kind, newStatus} = data;

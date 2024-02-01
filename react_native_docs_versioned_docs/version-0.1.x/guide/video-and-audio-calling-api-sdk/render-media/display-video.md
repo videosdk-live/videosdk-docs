@@ -13,24 +13,24 @@ keywords:
 image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
 slug: display-video
----
+--- 
 
 # Display Video - React Native
 
-In this guide, we will take a look at how to render the participant's audio and video on the screen.
+This guide elaborates on how to render a participant's video on the screen. With React Native, there's no need to specifically render a participant's audio, as it is handled by the native functionality.
 
 ## Rendering Participant
 
-The two steps are involve to achieve this process.
+The steps involved in rendering the video of a participant are as follows.
 
 1. [Get Mic and Webcam Status](#1-get-mic-and-webcam-status)
 2. [Rendering Video](#2-rendering-video)
 
 ### `1. Get Mic and Webcam Status`
 
-We must determine whether the participant's audio or video is on or off before rendering him or her. Hence, if the webcam is not turned on, we will begin by rendering the participant's frames with their name in them; otherwise, we will render the video.
+To render a participant, it is essential to determine whether their audio or video is on or off. If the webcam is not turned on, start by rendering the participant's frames with their name; otherwise, render the video.
 
-**`Step 1:`** Let's get every `participants` from `useMeeting` and create a straightforward box with each person's name.
+**`Step 1:`** First, retrieve every `participant` from the `useMeeting` hook and create a simple box with each of their names.
 
 ```js
 import {
@@ -134,7 +134,7 @@ function ParticipantView({ participantId }) {
 
 ### `2. Rendering Video`
 
-The status of the `webcam` and `mic` is now displayed. If the webcam is turned `on`, we will require the participant's `webcamStream` which we will obtain from the `useParticipant` hook, in order to display the participant's video.
+The status of the `webcam` and `mic` is now displayed. Now whenever a participant's webcam is turned `on`, to display their video, you will require their  `webcamStream` which can be obtained from the `useParticipant` hook.
 
 ```js
 const ParticipantView = ({ participantId }) => {
@@ -172,7 +172,7 @@ const ParticipantView = ({ participantId }) => {
 
 :::caution
 
-Unlike before, you don't need to render audio separately because RTCView is a component that handles audio stream automatically.
+Here, you don't need to render audio separately because RTCView is a component that handles audio stream automatically.
 :::
 
 <center>
@@ -183,7 +183,7 @@ Unlike before, you don't need to render audio separately because RTCView is a co
 
 #### `2.1 Mirror Local Video View`
 
-If you wish to show the mirror view of the local participant, you can pass boolean value to `mirror` property of RTCView.
+If you want to display the mirror view of the local participant, you can pass a boolean value to `mirror` property of RTCView.
 
 ```js
 const ParticipantView = ({ participantId }) => {

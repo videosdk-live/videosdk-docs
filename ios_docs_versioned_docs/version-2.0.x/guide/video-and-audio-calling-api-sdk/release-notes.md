@@ -61,7 +61,7 @@ This page will keep you update all the releases of iOS SDK.
 
 **Change log** :
 
-1.  Replace Starscream dependency with VidesdkWebSocket.
+1.  Replace Starscream dependency with VideoSDKWebSocket.
 
 ---
 

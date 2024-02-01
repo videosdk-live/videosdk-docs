@@ -331,7 +331,7 @@ const ParticipantView = ({ participantId }) => {
 ```
 
 :::caution
-While rendering the audio,you should **not render the audio of the local participant** as it will create echo.
+While rendering the audio, you should **not render the audio of the local participant** as it will create echo.
 So to avoid that, `mute the audio` of the `localParticipant`, by setting the `muted` property as follows.
 
 ```js

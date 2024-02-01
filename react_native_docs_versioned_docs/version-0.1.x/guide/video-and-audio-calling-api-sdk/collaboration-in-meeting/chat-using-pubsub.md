@@ -10,7 +10,7 @@ keywords:
   - Stop Livestream meeting
   - audio calling
   - video calling
-  - real-time communication
+  - real-time communication 
 image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
 slug: chat-using-pubsub
@@ -18,15 +18,15 @@ slug: chat-using-pubsub
 
 # Chat using PubSub - React Native
 
-For the communication or any kind of messaging in between the participants, VideoSDK provides `usePubSub` hook which use Publish-Subsciribe mechanism and can be used to develope wide varitey of functionalities. For example, participants could use it to send chat messages to each other, share files or other media, or even trigger actions like muting or unmuting audio or video.
+For communication or any kind of messaging between participants, VideoSDK provides the `usePubSub` hook, which utilizes the Publish-Subscribe mechanism. It can be employed to develop a wide variety of functionalities. For example, participants could use it to send chat messages to each other, share files or other media, or even trigger actions like muting or unmuting audio or video.
 
-Now we will see, how we can use PubSub to implement Chat functionality. If you are not familiar with the PubSub mechanism and `usePubSub`hook, you can [follow this guide](./pubsub).
+This guide focuses on using PubSub to implement Chat functionality. If you are not familiar with the PubSub mechanism and `usePubSub` hook, you can [follow this guide](./pubsub).
 
 ## Implementing Chat
 
 ### `Group Chat`
 
-1. First step in creating a group chat is choosing the topic which all the participants will publish and subscribe to send and receive the messages. We will be using `CHAT` as the topic for this one. So let us get the `publish()` and `messages` from the `usePubSub`hook.
+1. The initial step in setting up a group chat involves selecting a topic to which all participants will publish and subscribe, facilitating the exchange of messages. In the following example, `CHAT` is used as the topic. Next obtain the `publish()` and `messages` from the `usePubSub`hook.
 
 ```js
 // importing usePubSub hook from react-native-sdk
@@ -40,7 +40,7 @@ function ChatView() {
 }
 ```
 
-2. Now lets create a message input and send button to publish the messages.
+2. Next create a message input and a send button to publish the messages.
 
 ```js
 import { SafeAreaView, TouchableOpacity, TextInput, Text } from "react-native";
@@ -84,7 +84,7 @@ function ChatView() {
 }
 ```
 
-3. Final step in the group chat would be to display the messages others send. For this will use the `messages` and display all the messages.
+3. The final step in the group chat is to display the messages sent by others. For this use the `messages` and display all the messages.
 
 ```js
 import { SafeAreaView, TouchableOpacity, TextInput, Text } from "react-native";
@@ -136,7 +136,7 @@ function ChatView() {
 
 ### `Private Chat`
 
-In the above example, if you want to convert into the private chat between two participants, then all you have to do is set `sendOnly` property.
+In the above example, to convert the chat into a private one between two participants, set the `sendOnly` property.
 
 ```js
 import { SafeAreaView, TouchableOpacity, TextInput, Text } from "react-native";
@@ -164,7 +164,7 @@ function ChatView() {
 
 ### Displaying Latest Message Notificaiton
 
-You may want to show the notification to the user when new message arrives. So lets continue our example and add alert for the new images.
+To show the notification to the user when a new message arrives, following code snippet has to be followed.
 
 ```js
 function ChatView() {
@@ -187,7 +187,7 @@ function ChatView() {
 
 ## Downloading Chat Messages
 
-All the messages from the PubSub which where published with `persist : true` and can be downloaded as an `.csv` file. This file will be available in the VideoSDK dashboard as well as throught the [Sessions API](/api-reference/realtime-communication/fetch-session-using-sessionid).
+All the messages from PubSub published with `persist : true` can be downloaded as an `.csv` file. This file will be accessible in the VideoSDK dashboard and through the [Sessions API](/api-reference/realtime-communication/fetch-session-using-sessionid).
 
 ## API Reference
 

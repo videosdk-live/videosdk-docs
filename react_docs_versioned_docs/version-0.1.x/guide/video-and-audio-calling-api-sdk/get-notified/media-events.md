@@ -7,7 +7,7 @@ sidebar_label: Media Events
 pagination_label: Media Events
 keywords:
   - audio calling
-  - video calling
+  - video calling 
   - real-time communication
   - collaboration
 image: img/videosdklive-thumbnail.jpg
@@ -19,22 +19,22 @@ slug: media-events
 
 VideoSDK offers various events that can be monitored to obtain information about the media status of participants in the meeting.
 
-Here are the events which specifically relate to the stream.
+Here are the events specifically related to the stream:
 
-### onStreamEnabled
+### onStreamEnabled()
 
 - This event is triggered whenever a participant's video, audio or screen share stream is enabled.
-- It can be subscribed to, from the `useParticipant` hook.
+- It can be subscribed to using the `useParticipant` hook.
 
-### onStreamDisabled
+### onStreamDisabled()
 
 - This event is triggered whenever a participant's video, audio or screen share stream is disabled.
-- It can be subscribed to, from the `useParticipant` hook.
+- It can be subscribed to using the `useParticipant` hook.
 
-### onMediaStatusChanged
+### onMediaStatusChanged()
 
-- This event will be triggered whenever a participant's video or audio stream is disabled or enabled.
-- It can be subscribed to, from the `useParticipant` hook.
+- This event is triggered whenever a participant's video or audio stream is disabled or enabled.
+- It can be subscribed to using the `useParticipant` hook.
 
 ### Example
 

@@ -10,7 +10,7 @@ keywords:
   - Camera off
   - Webcam on
   - Webcam off
-  - audio calling
+  - audio calling 
   - video calling
   - real-time communication
 image: img/videosdklive-thumbnail.jpg
@@ -18,6 +18,7 @@ sidebar_position: 1
 ---
 
 # Optimize Audio Track - React
+
 To optimize the listening experience, it's essential to fine-tune the audio tracks used during calls. 
 
 For an enhanced fine-tuning experience, we've introduced the capability to provide a custom audio track for a participant's media before and during the meeting.
@@ -74,14 +75,14 @@ Here are different configurations for customizing audio tracks based on specific
 
 ### `How to Setup Custom Audio Track ?`
 
-The custom track can be configured both before and after the meeting is initialized. Following are the methods that help in doing so.
+The custom track can be configured both before and after the meeting is initialized. Following are the methods that help in doing so:
 
 1. [Setting up a Custom Track while initialization of the meeting](#1-setup-custom-track-while-initialization-of-the-meeting)
 2. [Setting up a Custom Track with methods](#2-setup-custom-track-with-methods)
 
 ##### 1. Setup Custom Track while initialization of the meeting
 
-If you are passing `micEnabled: true` in the `config` of `MeetingProvider` and want to use custom tracks from start of the meeting, you can pass a custom track in the `config` as shown below.
+If you are enabling the mic (`micEnabled: true`) in the `config` of `MeetingProvider` and wish to use custom tracks from the start of the meeting, you can pass a custom track in the `config` as demonstrated below.
 
 :::caution
 Custom Track will not apply on `micEnabled: false` configuration.
@@ -141,7 +142,7 @@ function App() {
 To switch tracks during the meeting, you need to pass the `MediaStream` in the **`unmuteMic()` or `toggleMic()`** method of `useMeeting`.
 
 :::tip
-Make sure to call `muteMic()` before you create a new track as it may lead to unexpected behavior.
+Make sure to call the `muteMic()` method before you create a new track as it may lead to unexpected behavior.
 :::
 
 ##### Example

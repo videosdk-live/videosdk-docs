@@ -17,7 +17,7 @@ slug: react-native-android-sdk
 
 # Integrating React Native SDK for Android
 
-React Native SDK wraps up out React SDK. It also simplifies dependecies management.
+React Native SDK wraps up out React SDK. It also simplifies dependencies management.
 
 ### Step 1: Install SDK from Npm or Yarn
 

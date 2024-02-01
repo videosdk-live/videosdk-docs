@@ -130,7 +130,7 @@ class _MeetingScreenState extends State<MeetingScreen> {
       setState(()=>localParticipantMode = _room.localParticipant.mode);
     });
 
-    _room.on(Events.participantModeChanged, (Map<String, dyanmic> data){
+    _room.on(Events.participantModeChanged, (Map<String, dynamic> data){
       if(data['participantId']){
         setState(()=>localParticipantMode = _room.localParticipant.mode);
       }

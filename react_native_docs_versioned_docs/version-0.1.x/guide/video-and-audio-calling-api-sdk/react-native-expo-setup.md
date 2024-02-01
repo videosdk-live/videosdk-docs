@@ -18,11 +18,11 @@ sidebar_position: 1
 
 ## Introduction
 
-This documentation provides a step-by-step guide on integrating VideoSDK with Expo, a popular framework for building cross-platform mobile applications using React Native. Follow these instructions to seamlessly incorporate VideoSDK into your Expo project.
+This documentation offers a comprehensive, step-by-step guide on seamlessly integrating VideoSDK with Expo. Expo is a popular framework for developing cross-platform mobile applications using React Native. Follow these instructions to incorporate VideoSDK into your Expo project effortlessly.
 
 ## Prerequisites
 
-Before you begin, make sure you have Node.js and npm installed on your machine. If you don't have Expo installed globally, run the following command:
+Before you start, ensure that you have Node.js and npm installed on your machine. If Expo is not installed globally, execute the following command:
 
 ```bash
 npm install -g expo-cli
@@ -32,7 +32,7 @@ npm install -g expo-cli
 
 ### Create a New Expo Project
 
-Start a new Expo project by running the following commands:
+To Create a new Expo, execute the following commands::
 
 ```bash
 expo init YourProjectName
@@ -41,13 +41,12 @@ cd YourProjectName
 
 ### Adding Android and iOS Folders
 
-Execute the following command to add Android and iOS folders:
+Run the following command to add Android and iOS folders:
 
 ```bash
 npx expo prebuild
 ```
-
-Once these are finished, you should see the android and ios directories in your project. You can then complete the iOS and Android setup requried for the VideoSDK.
+Once these steps are completed, you will find the `android` and `ios` directories in your project. You can proceed to complete the required iOS and Android setup for the VideoSDK.
 
 **Android Setup** : [Integrate in Android](./react-native-android-sdk)
 

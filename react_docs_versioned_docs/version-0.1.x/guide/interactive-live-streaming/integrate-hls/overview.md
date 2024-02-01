@@ -12,7 +12,7 @@ keywords:
   - video calling
   - real-time communication
 image: img/videosdklive-thumbnail.jpg
-sidebar_position: 1
+sidebar_position: 1 
 slug: overview
 ---
 
@@ -61,9 +61,9 @@ You can use HLS with VideoSDK in two different ways.
 
 #### 1. Simple Adaptive Streaming
 
-In the context of simple adaptive streaming, the term refers to live streams where there is minimal interaction between hosts and viewers. 
+Simple Adaptive Streaming refers to a type of live stream where there is minimal interaction between hosts and viewers.
 
-These types of livestreams are particularly useful when there is a large audience, and the viewers don't actively engage with the hosts. In such a scenario, presenters participate in a VideoSDK meeting, while viewers primarily watch the livestream without direct interaction with the hosts.
+This type of livestream is particularly useful when there is a large audience, and the viewers don't actively engage with the hosts. In such a scenario, presenters participate in a VideoSDK meeting, while viewers primarily watch the livestream without direct interaction with the hosts.
 
 import ReactPlayer from 'react-player'
 

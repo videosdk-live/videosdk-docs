@@ -23,17 +23,17 @@ Muting your microphone prevents the transmission of any sound from your micropho
 
 ### `unmuteMic()`
 
-- By using `unmuteMic()` function of `useMeeting` hook, local participant can publish audio to other participants.
+- By using the `unmuteMic()` function of the `useMeeting` hook, local participant can publish audio to other participants.
 
   - You can only call this method when the local participant is not broadcasting audio to others.
 
-- You can pass customised audio track in `unmuteMic()` by using [Custom Audio Track](/react/guide/video-and-audio-calling-api-sdk/render-media/optimize-audio-track).
+- You can pass customised audio track in the `unmuteMic()` method by using [Custom Audio Track](/react/guide/video-and-audio-calling-api-sdk/render-media/optimize-audio-track).
 
-- Audio stream of the participant can be accessed from the `micStream` property of `useParticipant` hook.
+- Audio stream of the participant can be accessed from the `micStream` property of the `useParticipant` hook.
 
 ### `muteMic()`
 
-- By using `muteMic()` function of `useMeeting` hook, local participant can stop publish audio to other participants.
+- By using the `muteMic()` function of the `useMeeting` hook, local participant can stop publishing audio to other participants.
 
 - You can only call this method when the local participant is broadcasting audio to others.
 
@@ -41,9 +41,9 @@ Muting your microphone prevents the transmission of any sound from your micropho
 
 - By utilizing the `toggleMic()` function of `useMeeting` hook, local participant can start or stop publishing audio to other participants based on the current state of the mic.
 
-- You can pass customised audio track in `toggleMic()` by using [Custom Audio Track](/react/guide/video-and-audio-calling-api-sdk/render-media/optimize-audio-track).
+- You can pass customised audio track in the `toggleMic()` method by using [Custom Audio Track](/react/guide/video-and-audio-calling-api-sdk/render-media/optimize-audio-track).
 
-- Audio stream of the participant can be accessed from the `micStream` property of `useParticipant` hook.
+- Audio stream of the participant can be accessed from the `micStream` property of the `useParticipant` hook.
 
 #### Example
 
@@ -131,7 +131,7 @@ const ParticipantView = (participantId) => {
   //highlight-end
 
 
-  //Callback for when participant's media gets changed
+  //Callback for when participant's media changes
   //highlight-start
   function onMediaStatusChanged(data) {
     const { kind, newStatus} = data;
@@ -154,7 +154,7 @@ const ParticipantView = (participantId) => {
 
 ### Getting Participant's Mic Status
 
-- You can get the **local participant's** mic status from the `useMeeting` hook property named `localMicOn`.
+- You can get the **local participant's** mic status from the `useMeeting` hook using a property called `localMicOn`.
 - If `localMicOn` is `true`, it means that the local participant's microphone is currently active. If it is `false`, it means that the local participant's microphone is currently muted or inactive.
 
 ```js
@@ -168,7 +168,7 @@ const MeetingView = () => {
 };
 ```
 
-- To get the status of **any other participant** you can use the `micOn` property of the `useParticipant` hook. This parameter will be `true` if the **participant's** `mic is on` otherwise, it will be `false`.
+- To get the status of **any other participant's** media you can use the `micOn` property of the `useParticipant` hook. This parameter will be `true` if the **participant's** `mic is on` otherwise, it will be `false`.
 
 ```js
 import { useParticipant } from "@videosdk.live/react-sdk";

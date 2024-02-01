@@ -17,11 +17,11 @@ slug: react-native-android-sdk
 
 # Integrating React Native SDK for Android
 
-React Native SDK wraps up out React SDK. It also simplifies dependecies management.
+The React Native SDK encapsulates our React JS SDK, streamlining dependency management for a more efficient development experience.
 
-### Step 1: Install SDK from Npm or Yarn
+### Step 1: Install the SDK.
 
-The easiest way to get started is by installing the sdk in your app.
+The simplest way to get started is by installing the SDK in your application using the provided command:
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -52,7 +52,7 @@ yarn add "@videosdk.live/react-native-sdk" "@videosdk.live/react-native-incallma
 
 :::caution
 
-- If you are using Windows machine, make sure to include the **double-quotes** while installation.
+- If you are using a Windows machine, make sure to include the **double-quotes** while installation.
 
 - If you are facing `Error: unable to get local issuer certificate`, below is the solution for the same
 
@@ -66,7 +66,7 @@ $env:NODE_TLS_REJECT_UNAUTHORIZED="0"
 
 :::
 
-### Step 2: Add below lines in android/app/build.gradle
+### Step 2: Include the following lines in your `android/app/build.gradle` file:
 
 ```js title="android/app/build.gradle"
 dependencies {
@@ -75,7 +75,7 @@ dependencies {
 }
 ```
 
-### Step 3: Add below lines in android/settings.gradle
+### Step 3: Include the following lines in your `android/settings.gradle` file:
 
 ```js title="android/settings.gradle"
 include ':rnwebrtc'
@@ -85,7 +85,7 @@ include ':rnfgservice'
 project(':rnfgservice').projectDir = new File(rootProject.projectDir, '../node_modules/@videosdk.live/react-native-foreground-service/android')
 ```
 
-### Step 4: Add below lines in MainApplication.java
+### Step 4: Include the following lines in your `MainApplication.java` file:
 
 ```js title="MainApplication.java"
 //highlight-start
@@ -110,20 +110,20 @@ public class MainApplication extends Application implements ReactApplication {
 }
 ```
 
-### Step 5: Add this line to `android/gradle.properties`:
+### Step 5: Include the following line in your `android/gradle.properties` file:
 
 ```java title="android/gradle.properties"
 /* This one fixes a weird WebRTC runtime problem on some devices. */
 android.enableDexingArtifactTransform.desugaring=false
 ```
 
-### Step 6 (OPTIONAL): Add below line in the android/app/proguard-rules.pro (optional: if you are using Proguard):
+### Step 6 (OPTIONAL): Include the following lines in your `android/app/proguard-rules.pro` file (optional: if you are using Proguard):
 
 ```js title="android/app/proguard-rules.pro"
 -keep class org.webrtc.** { *; }
 ```
 
-### Step 7: Update colors.xml for internal dependencies
+### Step 7: Update your `colors.xml` file for internal dependencies.
 
 ```js title="android/app/src/main/res/values/colors.xml"
 <resources>
@@ -136,14 +136,14 @@ android.enableDexingArtifactTransform.desugaring=false
 </resources>
 ```
 
-### Step 8: update AndroidManifest.xml file for the permissions
+### Step 8: Update your `AndroidManifest.xml` file for permissions.
 
 ```js title="AndroidManifest.xml"
 <manifest
   xmlns:android="http://schemas.android.com/apk/res/android"
   package="com.cool.app"
 >
-    <!-- Give all the required permissions to app -->
+    <!-- Provide all the required permissions to app -->
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <!-- Needed to communicate with already-paired Bluetooth devices. (Legacy up to Android 11) -->
@@ -186,7 +186,7 @@ android.enableDexingArtifactTransform.desugaring=false
 </manifest>
 ```
 
-### Step 9: Register services at index page of project
+### Step 9: Register the services in the index page of your project
 
 <Tabs
 defaultValue="react-native-cli"
@@ -229,7 +229,7 @@ registerRootComponent(App);
 
 ### Minimum OS/SDK versions
 
-In the `build.gradle` file, update the minimum OS/SDK version to `23`.
+In your `build.gradle` file, update the minimum OS/SDK version to `23`.
 
 ```java title=build.gradle
 buildscript {

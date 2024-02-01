@@ -7,7 +7,7 @@ sidebar_label: Recording Events
 pagination_label: Recording Events
 keywords:
   - audio calling
-  - video calling
+  - video calling 
   - real-time communication
   - collaboration
 image: img/videosdklive-thumbnail.jpg
@@ -17,16 +17,16 @@ slug: recording-events
 
 # Recording Events - React Native
 
-VideoSDK provides `onRecordingStateChanged` event which will notify you of the current state of recording for the meeting.
+VideoSDK provides the `onRecordingStateChanged()` event, which notifies you of the current state of recording for the meeting.
 
-### onRecordingStateChanged
+### onRecordingStateChanged()
 
-- This event will be triggered when the meeting's recording status changed.
-- This event can be subscribed from the `useMeeting` hook.
+- This event is triggered when the recording status of the meeting changes. 
+- It can be subscribed to using the `useMeeting` hook.
 
 ### Example
 
-Here is the usage of the event mentioned in this page.
+Here is an example demonstrating the usage of the event mentioned on this page.
 
 ```javascript
 import { Constants, useMeeting } from "@videosdk.live/react-native-sdk";

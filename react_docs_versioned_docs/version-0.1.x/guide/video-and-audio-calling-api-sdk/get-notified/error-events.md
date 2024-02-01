@@ -7,7 +7,7 @@ sidebar_label: Error Events
 pagination_label: Error Events
 keywords:
   - audio calling
-  - video calling
+  - video calling 
   - real-time communication
   - collaboration
 image: img/videosdklive-thumbnail.jpg
@@ -17,13 +17,13 @@ slug: error-events
 
 # Error Events - React
 
-VideoSDK provides the `onError` event which informs you about any error happening during the meeting.
+VideoSDK provides the `onError()` event which informs you about any error happening during the meeting.
 
-### onError
+### onError()
 
 - This event is triggered whenever an invalid configuration is provided or server/network errors arise. In such cases, the event will trigger with a specific error code and message. 
 - It is particularly useful for development-level troubleshooting during SDK integration.
-- It can be subscribed to, from the `useMeeting` hook.
+- It can be subscribed to using the `useMeeting` hook.
 
 ### Example
 

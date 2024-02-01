@@ -12,12 +12,12 @@ keywords:
   - collaboration
 image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
-slug: understanding-call-quality
+slug: understanding-call-quality 
 ---
 
 # Understanding Call Quality - React
 
-When developing a video call app, customer satisfaction heavily depends on your app's video and audio quality and its fluctuation.
+When developing a video call app, customer satisfaction heavily depends on the app's video and audio quality and its fluctuation.
 
 ## Call Quality
 
@@ -25,7 +25,7 @@ From the user's perspective, good video quality is defined as smooth and clear v
 
 ## Factors affecting Quality
 
-When measuring video and audio quality, several variables come into play. The common factors affecting quality are:
+When measuring video and audio quality, several variables come into play. The common factors affecting quality are as follows:
 
 ### `1. Network Bandwidth`
 
@@ -37,7 +37,7 @@ When measuring video and audio quality, several variables come into play. The co
 
 - Latency refers to the time it takes for data to transfer from one machine to another.
 - If the meeting is hosted in `Ohio` region, and users are joining from `Singapore` region, this can result in a  long delay for data to transfer between mackines. Therefore, it is advisable to choose a server based on your user base.
-- In VideoSDK you can set the server during the creation of a Meeting/Room.
+- With VideoSDK, you can specify the server during the creation of a Meeting/Room.
 
 ### `3. CPU Usage`
 
@@ -49,7 +49,7 @@ When measuring video and audio quality, several variables come into play. The co
 
 - The camera and microphone should capture high-quality streams to ensure that remote users don't receive a low-quality stream even if they have bad network bandwidth.
 
-## Identifying Quality Issues
+## Identifying various issues related to Quality.
 
 In order to identify potential issues, VideoSDK collects various audio and video-related metrics that can help pinpoint quality concerns. Take a look at these metrics and understand what they indicate.
 
@@ -115,7 +115,7 @@ VideoSDK provides methods to check the realtime statistics of audio and video of
 
 ### `getVideoStats()`
 
-- The `getVideoStats()` method returns an object containing the different quality parameters for video stream, which can be accessed through the `useParicipant` hook.
+- The `getVideoStats()` method returns an object containing the different quality parameters for video stream, which can be accessed through the `useParticipant` hook.
 
 - This object will contain values for the specific participant's video stream, including resolution, frame rate, bitrate, jitter, round trip time, and packet loss.
 
@@ -127,13 +127,13 @@ VideoSDK provides methods to check the realtime statistics of audio and video of
 
 ### `getAudioStats()`
 
-- The `getAudioStats()` method returns an object containing the different quality parameters for audio stream, which can be accessed through the `useParicipant` hook.
+- The `getAudioStats()` method returns an object containing the different quality parameters for audio stream, which can be accessed through the `useParticipant` hook.
 
 - This object will contain values for the specific participant's audio stream, including bitrate, jitter, round trip time and packet loss.
 
 ### `getShareStats()`
 
-- The `getShareStats()` method returns an object containing the different quality parameters for screen share stream, which can be accessed through the `useParicipant` hook.
+- The `getShareStats()` method returns an object containing the different quality parameters for screen share stream, which can be accessed through the `useParticipant` hook.
 
 - This objects will contain values for the specific participant's screen share stream, including resolution, frame rate, bitrate, jitter, round trip time, and packet loss.
 

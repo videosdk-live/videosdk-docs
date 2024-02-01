@@ -11,18 +11,18 @@ keywords:
 image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
 slug: image-capturer
----
+--- 
 
 # Image Capturer - React Native
 
-This guide will help us to capture image of participant from video stream.
+This guide provides instructions on capturing images of participants from a video stream. 
 
-This can be very helpful in Video KYC use cases where you can capture the image of user holding their identity.
+This capability proves particularly valuable in Video KYC scenarios, enabling the capture of images where users can hold up their identity for verification.
 
 ### `captureImage()`
 
-- By using `captureImage()` function of `useParticipant` hook, you can capture image of a local participant from their video stream.
-- You can specify the desired height and width in the `captureImage()` function, but these are optional. If not provided, the VideoSDK will automatically use the dimensions of the local participant's webcamStream.
+- By using the `captureImage()` function of the `useParticipant` hook, you can capture image of a local participant from their video stream. 
+- You have the option to specify the desired height and width in the `captureImage()` function; however, these parameters are optional. If not provided, the VideoSDK will automatically use the dimensions of the local participant's webcamStream. 
 - The `captureImage()` function returns the image in the form of a `base64` string.
 
 ```js
@@ -44,22 +44,22 @@ async function imageCapture() {
 
 :::note
 
-You can only capture an image of local participant. If you called `captureImage()` function on remote participant, you will receive an error. If you want to capture an image of a remote participant, check the documentation below.
+You can only capture an image of local participant. If you called `captureImage()` function on a remote participant, you will receive an error. If you want to capture an image of a remote participant, check the documentation below.
 
 :::
 
 
 ### How to capture image of remote participant ?
 
-- Before proceeding, it's crucial to comprehend the [VideoSDK's temporary file storage system](../collaboration-in-meeting/upload-fetch-temporary-file.md) and the underlying [pubsub mechanism](../collaboration-in-meeting/pubsub.md).
+- Before proceeding, it's crucial to understand [VideoSDK's temporary file storage system](../collaboration-in-meeting/upload-fetch-temporary-file.md) and the underlying [pubsub mechanism](../collaboration-in-meeting/pubsub.md).
 
-- Let's break down the steps using the names Participant A and Participant B for clarity:
+- Here's a break down of the steps, using the names Participant A and Participant B for clarity:
 
 #### Step 1 : Initiate Image Capture Request
 
-- In this step, we'll send a request to the Participant B whom we want to capture image using pubsub. 
-- In order to do that, we will create pubsub topic called  `IMAGE_CAPTURE`  in  `ParticipantView`  Component.​  
-- Here, we are using `sendOnly` property of `publish()` method. Therefore, the request will be send to that participant only.
+- In this step, you'll send a request to Participant B, whose image you want to capture, using pubsub.
+- In order to do that, you have to create a pubsub topic called `IMAGE_CAPTURE` in the `ParticipantView` Component.​
+- Here, you will be using the `sendOnly` property of the `publish()` method. Therefore, the request will be sent to that participant only.
 
 ```js
 import {usePubSub} from '@videosdk.live/react-native-sdk';
@@ -74,8 +74,8 @@ function ParticipantView({ participantId }) {
 ​
   // send Request to participant
   function sendRequest() {
-    // Pass the participantId of the participant to whom you want to capture an image
-    // Here, it will be Participant B id, because we want to capture the the image of Participant B
+    // Pass the participantId of the participant whose image you want to capture
+    // Here, it will be Participant B's id, as you want to capture the image of Participant B
     publish("Sending request to capture image", { persist: false, sendOnly: [participantId] });
   };
   
@@ -138,7 +138,7 @@ const CaptureImageListner = ({ localParticipantId }) => {
 export default CaptureImageListner;
 ```
 
-- The captured image is then stored in the VideoSDK's temporary file storage system using the  `uploadBase64File()` function of `useFile` hook. This operation returns a unique `fileUrl` of the stored image.
+- The captured image is then stored in the VideoSDK's temporary file storage system using the  `uploadBase64File()` function of the `useFile` hook. This operation returns a unique `fileUrl` of the stored image.
 
 ```js
 const CaptureImageListner = ({ localParticipantId }) => {
@@ -179,7 +179,7 @@ const CaptureImageListner = ({ localParticipantId }) => {
 }
 ```
 
-- We've rendered the `CaptureImageListener` component within the `MeetingView` component.
+- Then the `CaptureImageListener` component has to be rendered within the `MeetingView` component.
 
 ```js
 import CaptureImageListner from './captureImageListner';
@@ -203,9 +203,9 @@ function MeetingView() {
 
 #### Step 3 : Fetch and Display Image
 
-- To display a captured image, we introduce the `ShowImage` component. Here's how it works:
+- To display a captured image, the `ShowImage` component is used. Here's how it works:
 
-- Within `ShowImage`, we subscribe to the `IMAGE_TRANSFER` topic, receiving the `fileUrl` associated with the captured image. Once obtained, we leverage the `fetchBase64File()` function from the `useFile` hook to retrieve the file in `base64` format from VideoSDK's temporary storage.
+- Within `ShowImage`, you need to subscribe to the `IMAGE_TRANSFER` topic, receiving the `fileUrl` associated with the captured image. Once obtained, leverage the `fetchBase64File()` function from the `useFile` hook to retrieve the file in `base64` format from VideoSDK's temporary storage.
 
 ```js
 import {
@@ -238,7 +238,7 @@ function ShowImage() {
 }
 ```
 
-- With the `base64` data in hand, we display the image in a modal. This seamless image presentation is integrated into the `MeetingView` component.
+- With the `base64` data in hand, you can now display the image in a modal. This seamless image presentation is integrated into the `MeetingView` component.
 
 ```js
 import {

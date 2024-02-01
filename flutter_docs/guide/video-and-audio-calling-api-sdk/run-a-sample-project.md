@@ -63,9 +63,9 @@ Paste earlier generated temporary token here.
 AUTH_TOKEN = "TEMPORARY-TOKEN";
 ```
 
-### Step 4: Install the dependecies
+### Step 4: Install the dependencies
 
-Install all the dependecies to run the project.
+Install all the dependencies to run the project.
 
 ```js
 flutter pub get

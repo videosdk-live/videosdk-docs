@@ -19,7 +19,7 @@ This guide demonstrates how to upload and retrieve files from VideoSDK's tempora
 
 ### `uploadBase64File()`
 
-- By using `uploadBase64File()` function of `useFile` hook, you can upload your file to Videosdk's Temporary storage.
+- By using the `uploadBase64File()` function of the `useFile` hook, you can upload your file to Videosdk's Temporary storage.
 
 - The `uploadBase64File()` function only works with `base64`. Therefore, it is necessary to convert your file into `base64` format.
 
@@ -41,7 +41,7 @@ async function uploadFile() {
 
 ### `fetchBase64File()`
 
-- By using `fetchBase64File()` function of `useFile` hook, you can retrieve your file from Videosdk's Temporary storage.
+- By using the `fetchBase64File()` function of the `useFile` hook, you can retrieve your file from Videosdk's Temporary storage.
 
 - You have to pass `fileUrl` which is returned by `uploadBase64File()` function and `token` as parameter to retrieve file.
 

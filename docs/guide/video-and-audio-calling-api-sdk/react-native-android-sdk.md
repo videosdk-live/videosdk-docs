@@ -29,7 +29,7 @@ Here is the link of SDK for this page.
 
 # Getting Started - React Native Android SDK
 
-React Native SDK wraps up out React SDK. It also simplifies dependecies management.
+React Native SDK wraps up out React SDK. It also simplifies dependencies management.
 
 ## Install a React Native SDK in Android
 

@@ -179,18 +179,18 @@ export const createMeeting = async ({ token }: { token: string }) => {
 
 ### Step 2: Wireframe App.js with all the components
 
-To build up wireframe of App.js, you will be using VideoSDK Hooks and Context Providers. VideoSDK provides MeetingProvider, MeetingConsumer, useMeeting and useParticipant hooks. Let's understand each of them.
+To build up wireframe of App.js, you need to use VideoSDK Hooks and Context Providers. VideoSDK provides MeetingProvider, MeetingConsumer, useMeeting and useParticipant hooks.
 
-First we will explore Context Provider and Consumer. Context is primarily used when some data needs to be accessible by many components at different nesting levels.
+First you need to understand Context Provider and Consumer. Context is primarily used when some data needs to be accessible by many components at different nesting levels.
 
 - **MeetingProvider**: This is the Context Provider. It accepts value `config` and `token` as props. The Provider component accepts a value prop to be passed to consuming components that are descendants of this Provider. One Provider can be connected to many consumers. Providers can be nested to override values deeper within the tree.
 - **MeetingConsumer**: This is the Context Consumer. All consumers that are descendants of a Provider will re-render whenever the Provider’s value prop changes.
 - **useMeeting**: This is the meeting hook API. It includes all the information related to meeting such as join, leave, enable/disable mic or webcam etc.
 - **useParticipant**: This is the participant hook API. It is responsible for handling all the events and props related to one particular participant such as name, webcamStream, micStream etc.
 
-Meeting Context helps to listen for all the changes when a participant joins the meeting or makes changes to the mic or camera etc.
+The Meeting Context provides a way to listen for any changes that occur when a participant joins the meeting or makes modifications to their microphone, camera, and other settings.
 
-Let's get started by changing a couple of lines of code in App.js
+Begin by making a few changes to the code in the App.js file.
 
 <Tabs
 defaultValue="jsx"
@@ -581,11 +581,11 @@ function Controls() {
 
 ### Step 5: Implement Participant View
 
-Before implementing participant view, you need to understand a couple of concepts.
+Before implementing the participant view, you need to understand a couple of concepts.
 
 ###### 1. Forwarding Ref for mic and camera
 
-`useRef` hook is responsible  for referencing the audio and video components. It will be used to play and stop the audio and video of the participant.
+The `useRef` hook is responsible  for referencing the audio and video components. It will be used to play and stop the audio and video of the participant.
 
 ```js title="Forwarding Ref for mic and camera"
 const webcamRef = useRef(null);
@@ -594,7 +594,7 @@ const micRef = useRef(null);
 
 ###### 2. useParticipant Hook
 
-`useParticipant` hook is responsible for handling all the properties and events of one particular participant joined in the meeting. It will take participantId as argument.
+The `useParticipant` hook is responsible for handling all the properties and events of one particular participant joined in the meeting. It will take participantId as argument.
 
 ```js title="useParticipant Hook"
 const { webcamStream, micStream, webcamOn, micOn } = useParticipant(
@@ -604,7 +604,7 @@ const { webcamStream, micStream, webcamOn, micOn } = useParticipant(
 
 ###### 3. MediaStream API
 
-MediaStream is useful for adding a MediaTrack to the audio/video tag to play the audio or video.
+The MediaStream API is beneficial for adding a MediaTrack to the audio/video tag, enabling the playback of audio or video.
 
 ```js title="MediaStream API"
 const webcamRef = useRef(null);
@@ -617,7 +617,7 @@ webcamRef.current
   .catch((error) => console.error("videoElem.current.play() failed", error));
 ```
 
-#### 4. Implemeting `ParticipantView`
+#### 4. Implement `ParticipantView`
 
 Now you can use both of the hooks and the API to create `ParticipantView`
 
@@ -672,7 +672,7 @@ function ParticipantView(props) {
       {webcamOn && (
         <ReactPlayer
           //
-          playsinline // very very imp prop
+          playsinline // extremely crucial prop
           pip={false}
           light={false}
           controls={false}
@@ -738,7 +738,7 @@ function ParticipantView({ participantId }: { participantId: string }) {
       {webcamOn && (
         <ReactPlayer
           //
-          playsinline // very very imp prop
+          playsinline // extremely crucial prop
           pip={false}
           light={false}
           controls={false}

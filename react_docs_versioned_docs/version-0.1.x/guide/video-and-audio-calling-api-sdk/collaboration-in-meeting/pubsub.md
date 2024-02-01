@@ -26,7 +26,7 @@ Here is a visual to better understand the publish-subscribe mechanism.
 
 ## usePubSub
 
-To utilize PubSub in a meeting, VideoSDK provides a hook called usePubSub. This hook enables you to subscribe to any topic and publish to any topic, facilitating the exchange of messages and instructions seamlessly during the meeting.
+To utilize PubSub in a meeting, VideoSDK provides a hook called `usePubSub`. This hook enables you to subscribe to any topic and publish to any topic, facilitating the exchange of messages and instructions seamlessly during the meeting.
 
 ### `publish()`
 
@@ -63,11 +63,9 @@ function MeetingView() {
 
 ## Receiving the messages
 
-- The `messages` property of the `usePubSub` hook will store all the past and upcoming messages for a particular topic.
+- The `messages `property of the `usePubSub` hook is an array of objects that stores both past and upcoming messages for a particular topic.
 
-- `messages` is an array of Objects containing all the messages.
-
-This object contains following properties:
+It contains the following properties:
 
 - `senderId`: Represents the `participantId` of the participant who sent the message.
 - `senderName`: Represents the `displayName` of the participant who sent the message.
@@ -114,11 +112,11 @@ function ChatView() {
 
 ## Events associated with PubSub
 
-### onMessageReceived
+### onMessageReceived()
 
 - This event callback is triggered when a new message is received on the subscribed topic.
 
-### onOldMessagesReceived
+### onOldMessagesReceived()
 
 - This event callback is triggered when you subscribe to the topic, and it contains all the past messages from that topic that were published with `persist : true`.
 
@@ -153,7 +151,7 @@ function MeetingView() {
 }
 ```
 
-## Applications of usePubSub
+## Applications of `usePubSub`
 
 PubSub is a powerful mechanism that can be employed to enhance the interactive aspects of your meeting experience. Some common use cases for PubSub during a meeting include:
 

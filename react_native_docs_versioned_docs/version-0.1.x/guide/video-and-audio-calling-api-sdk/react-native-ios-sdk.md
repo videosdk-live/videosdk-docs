@@ -17,11 +17,11 @@ slug: react-native-ios-sdk
 
 # Integrating React Native SDK for iOS
 
-React JS SDK wraps up out JavaScript SDK into usable hooks API. It simplifies the code for React Native SDK.
+The React Native SDK encapsulates our React JS SDK, streamlining dependency management for a more efficient development experience.
 
-### Step 1: Install SDK from Npm or Yarn
+### Step 1: Install the SDK.
 
-The easiest way to get started is by installing the sdk in your app.
+The simplest way to get started is by installing the SDK in your application using the provided command:
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -50,7 +50,7 @@ yarn add "@videosdk.live/react-native-sdk"
 
 </Tabs>
 
-### Step 2: Install @videosdk.live/react-native-incallmanager to manage media-routes/sensors/events during a audio/video chat on React Native
+### Step 2: Install @videosdk.live/react-native-incallmanager to manage media-routes/sensors/events during a audio/video chat on React Native.
 
 <Tabs
 defaultValue="npm"
@@ -76,27 +76,27 @@ yarn add "@videosdk.live/react-native-incallmanager"
 
 </Tabs>
 
-### Step 3: Install all the dependecies via CocoaPods
+### Step 3: Install all the dependencies via CocoaPods.
 
-IMPORTANT: Make sure you are using CocoaPods 1.10 or higher.
+IMPORTANT: Make sure to use CocoaPods version 1.10 or higher.
 
 ```js
 $[sudo] gem install cocoapods
 ```
 
-### Step 4: Manual linking (if react-native-incall-manager is not linked automatically)
+### Step 4: Manually link react-native-incall-manager (if it is not linked automatically).
 
-- Select `Your_Xcode_Project/TARGETS/BuildSettings`, in Header Search Paths, add `"$(SRCROOT)/../node_modules/@videosdk.live/react-native-incall-manager/ios/RNInCallManager"`
+- Select `Your_Xcode_Project/TARGETS/BuildSettings`, in Header Search Paths, and add `"$(SRCROOT)/../node_modules/@videosdk.live/react-native-incall-manager/ios/RNInCallManager"`
 
-### Step 5: Include in the Podfile in your react-native ios directory
+### Step 5: Include this in the Podfile of your react-native ios directory:
 
 ```js title="Podfile"
 pod 'react-native-webrtc', :path => '../node_modules/@videosdk.live/react-native-webrtc'
 ```
 
-### Step 6: Change platform field of podfile to 12.0 or above it
+### Step 6: Change the platform field of podfile to 12.0 or above.
 
-You have change platform field of podfile to 12.0 or above it, as react-native-webrtc doesn’t support iOS < 12 platform :ios, ‘12.0’
+You need to change the platform field in the Podfile to 12.0 or above because react-native-webrtc doesn't support iOS versions earlier than 12.0. Update the line: platform : ios, ‘12.0’.
 
 ### Step 7: Install pods
 
@@ -104,7 +104,7 @@ You have change platform field of podfile to 12.0 or above it, as react-native-w
 Pod install
 ```
 
-### Step 8: Declare permissions in Info.plist
+### Step 8: Declare permissions in your Info.plist file.
 
 ```js title="ios/projectname/info.plist"
 <key>NSCameraUsageDescription</key>
@@ -113,7 +113,7 @@ Pod install
 <string>Microphone permission description</string>
 ```
 
-### Step 9: Register services at index page of project
+### Step 9: Register the services in the index page of your project.
 
 <Tabs
 defaultValue="react-native-cli"

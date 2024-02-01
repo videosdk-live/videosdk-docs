@@ -12,7 +12,7 @@ keywords:
   - video calling
   - real-time communication
 image: img/videosdklive-thumbnail.jpg
-sidebar_position: 1
+sidebar_position: 1 
 slug: record-meeting
 ---
 
@@ -32,7 +32,7 @@ To initiate automatic recording at the beginning of a `session`, simply provide 
 
 ### `startRecording()`
 
-The `startRecording()` method, accesible from the `useMeeting` hook, can be used to initiate the recording of a meeting. This method accepts the following three parameters:
+The `startRecording()` method, accesible from the `useMeeting` hook, is used to initiate the recording of a meeting. This method accepts the following three parameters:
 
 - `1. webhookUrl (optional)`: This is the webhook URL where you can listen to events related to the recording, such as the start and stop of recording. It triggers when the recording is completed and stored on the server. You can learn more about webhooks [here](https://en.wikipedia.org/wiki/Webhook)
 
@@ -80,7 +80,7 @@ The `startRecording()` method, accesible from the `useMeeting` hook, can be used
 
 ### `stopRecording()`
 
-The `stopRecording()` method, accesible from the `useMeeting` hook, can be used to stop the recording of a meeting.
+The `stopRecording()` method, accesible from the `useMeeting` hook, is used to stop the recording of a meeting.
 
 #### Example
 
@@ -122,7 +122,7 @@ const MeetingView = () => {
 
 ### Event associated with Recording
 
-- **onRecordingStateChanged** - The `onRecordingStateChanged` event is triggered whenever the state of meeting recording changes.
+- **onRecordingStateChanged** - The `onRecordingStateChanged()` event is triggered whenever the state of meeting recording changes.
 
 ```js
 import { Constants, useMeeting } from "@videosdk.live/react-sdk";
@@ -159,7 +159,7 @@ For detailed instructions on configuring storage or a step-by-step guide, you ca
 
 ### Custom Template
 
-With VideoSDK, you have the option to employ your custom-designed layout template for meeting recordings. To use a custom template, [follow this guide](/react/guide/interactive-live-streaming/custom-template) to create and set up the template. Once the template is configured, you can initiate recording using the [REST API](/api-reference/realtime-communication/start-recording), specifying the `templateURL` parameter.
+With VideoSDK, you have the option to employ your own custom-designed layout template for meeting recordings. To use a custom template, [follow this guide](/react/guide/interactive-live-streaming/custom-template) to create and set up the template. Once the template is configured, you can initiate recording using the [REST API](/api-reference/realtime-communication/start-recording), specifying the `templateURL` parameter.
 
 ### API Reference
 

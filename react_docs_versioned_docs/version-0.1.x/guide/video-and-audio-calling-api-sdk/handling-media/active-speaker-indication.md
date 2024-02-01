@@ -13,13 +13,13 @@ keywords:
 image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
 slug: active-speaker-indication
----
+--- 
 
 # Active Speaker Indication - React
 
-The Active Speaker indication feature in VideoSDK lets you know, which participant in a meeting is the active speaker. This feature proves especially valuable in larger meetings or webinars, where numerous participants can make it challenging to identify the active speaker.
+The Active Speaker Indication feature in VideoSDK allows you to identify the participant who is currently the active speaker in a meeting. This feature proves especially valuable in larger meetings or webinars, where numerous participants can make it challenging to identify the active speaker.
 
-Whenever any participant speaks in the meeting, the `onSpeakerChanged` event will trigger with the participant id of the active speaker.
+Whenever any participant speaks in a meeting, the `onSpeakerChanged` event will trigger, providing the participant ID of the active speaker.
 
 For example, the meeting is running with **Alice** and **Bob**. Whenever any of them speaks, `onSpeakerChanged` event will trigger and return the speaker's `participantId`.
 

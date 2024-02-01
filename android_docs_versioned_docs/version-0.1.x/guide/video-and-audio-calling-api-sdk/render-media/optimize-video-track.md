@@ -55,7 +55,7 @@ val videoCustomTrack: CustomStreamTrack = VideoSDK.createCameraVideoTrack(
   "h720p_w960p", // "h720p_w960p" | "h720p_w1280p" ... // Default : "h480p_w720p"
 
   // highlight-next-line
-  // It will specifiy whether to use front or back camera for the video track.
+  // It will specify whether to use front or back camera for the video track.
   "front", "back",  Default : "front"
 
   // highlight-next-line
@@ -87,7 +87,7 @@ CustomStreamTrack customStreamTrack = VideoSDK.createCameraVideoTrack(
   "h480p_w640p", // "h720p_w960p" | "h720p_w1280p" ... // Default : "h480p_w640p"
 
   // highlight-next-line
-  // It will specifiy whether to use front or back camera for the video track.
+  // It will specify whether to use front or back camera for the video track.
   "front", // "back,  Default : "front""
 
   // highlight-next-line
@@ -117,7 +117,7 @@ The capabilities of the device have a significant impact on how custom track con
 
 ##### What is `optimizationMode`?
 
-- It will specifiy the optimization mode for the video track being generated.
+- It will specify the optimization mode for the video track being generated.
 
 - `motion` : This type of track should more focus on motion video. For example, webcam video, movies or video games.
 
@@ -133,7 +133,7 @@ The capabilities of the device have a significant impact on how custom track con
 
 ##### What is `multiStream`?
 
-- It will specifiy if the stream should send multiple resolution layers or single resolution layer.
+- It will specify if the stream should send multiple resolution layers or single resolution layer.
 
 **`multiStream : true`** By default, VideoSDK sends multiple resolution video streams to the server (whether you are using custom video track or not), For instance, user device capabilty is 720p, so VideoSDK sends 720p along with 640p and 480p streams. This allows VideoSDK to deliver the appropriate stream to each participant based on their network bandwidth.
 

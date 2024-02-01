@@ -70,7 +70,7 @@ yarn add "@videosdk.live/react-native-sdk"
 $ yarn add "@videosdk.live/react-native-incallmanager"
 ```
 
-### Step 3: Install all the dependecies via CocoaPods
+### Step 3: Install all the dependencies via CocoaPods
 
 IMPORTANT: Make sure you are using CocoaPods 1.10 or higher.
 

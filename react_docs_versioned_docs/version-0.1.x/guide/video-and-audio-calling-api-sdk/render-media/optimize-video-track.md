@@ -13,7 +13,7 @@ keywords:
   - audio calling
   - video calling
   - real-time communication
-image: img/videosdklive-thumbnail.jpg
+image: img/videosdklive-thumbnail.jpg 
 sidebar_position: 1
 ---
 
@@ -54,7 +54,7 @@ let customTrack = await createCameraVideoTrack({
   encoderConfig: "h480p_w640p", // "h540p_w960p" | "h720p_w1280p" ... // Default : "h360p_w640p"
 
   // highlight-next-line
-  // For Mobile browser It will specifiy whether to use front or back camera for the video track.
+  // For Mobile browser It will specify whether to use front or back camera for the video track.
   facingMode: "environment", // "front",  Default : "environment"
 
   // highlight-next-line
@@ -111,17 +111,17 @@ The `setQuality` parameter will not have any effect if multiStream is set to `fa
 
 ### `How to Setup Custom Video Track ?`
 
-The custom track can be configured both before and after the meeting is initialized. Following are the methods that help in doing so.
+The custom track can be configured both before and after the meeting is initialized. Following are the methods that help in doing so:
 
 1. [Setting up a Custom Track while initialization of the meeting](#1-setup-custom-track-while-initialization-of-the-meeting)
 2. [Setting up a Custom Track with methods](#2-setup-custom-track-with-methods)
 
 ##### 1. Setting up a Custom Track while initialization of the meeting
 
-If you are passing `webcamEnabled: true` in the `config` of `MeetingProvider` and want to use custom tracks from start of the meeting, you can pass a custom track in the `config` as shown below.
+If you are enabling the webcam (`webcamEnabled: true`) in the `config` of `MeetingProvider` and wish to use custom tracks from the start of the meeting, you can pass a custom track in the `config` as demonstrated below.
 
 :::caution
-Custom Track will not apply on `webcamEnabled: false` configuration.
+Custom Track will not apply on the `webcamEnabled: false` configuration.
 :::
 
 ##### Example
@@ -175,7 +175,7 @@ function App() {
 To switch tracks during the meeting, you need to pass the `MediaStream` in the **`enableWebcam()` or `toggleWebcam()`** method of `useMeeting`.
 
 :::tip
-Make sure to call `disableWebcam()` before you create a new track as it may lead to unexpected behavior.
+Make sure to call the `disableWebcam()`method before you create a new track as it may lead to unexpected behavior.
 :::
 
 ##### Example
@@ -281,7 +281,7 @@ In order to switch tracks during the meeting, you have to pass the `MediaStream`
 
 :::note
 
-Make sure to call `disableScreenShare()` before you create a new track as it may lead to unexpected behavior.
+Make sure to call the `disableScreenShare()` method before you create a new track as it may lead to unexpected behavior.
 
 :::
 

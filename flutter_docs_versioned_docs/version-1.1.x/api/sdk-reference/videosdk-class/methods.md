@@ -58,7 +58,7 @@ title: VideoSDK Class Methods
   - type: [`bool`](https://api.dart.dev/stable/2.15.1/dart-core/bool-class.html)
   - `OPTIONAL`
   - Default value is `true`.
-  - It will specifiy if the stream should send multiple resolution layers or single resolution.
+  - It will specify if the stream should send multiple resolution layers or single resolution.
 
 - participantId
 
@@ -194,14 +194,14 @@ Above mentioned encoder configurations are valid for both, landscape as well as 
   - type: `String`
   - required: `false`
   - Allowed values : `user` | `environment`
-  - It will specifiy whether to use front or back camera for the video track.
+  - It will specify whether to use front or back camera for the video track.
 
 - **multiStream**
 
   - type: `boolean`
   - required: `false`
   - default: true
-  - It will specifiy if the stream should send multiple resolution layers or single resolution layer.
+  - It will specify if the stream should send multiple resolution layers or single resolution layer.
 
   :::info
 

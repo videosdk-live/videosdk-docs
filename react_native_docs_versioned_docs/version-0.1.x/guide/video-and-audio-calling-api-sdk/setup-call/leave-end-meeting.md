@@ -19,18 +19,18 @@ slug: leave-end-meeting
 
 Participant can choose to leave the meeting without removing all the other participants. This is typically done by `Leave Meeting`.
 
-Alternatively, if the participant is the host or the last person remaining in the session, they can choose `End Meeting` by removing all other participants, which will end the session for everyone.
+Alternatively, if the participant is the host or the last person remaining in the session, they can choose to `End Meeting` by removing all other participants, which will end the session for everyone.
 
 ### `leave()`
 
-To leave the meeting without removing all the participant you need to call `leave()` which is the part of the `useMeeting` hook of React SDK.
+To leave the meeting without removing all the participants you need to call `leave()` which is the part of the `useMeeting` hook of React SDK.
 
 ### `end()`
 
-To leave the meeting by removing all the participant you need to call `end()` which is the part of the `useMeeting` hook of React SDK.
+To end the meeting by removing all the participants you need to call `end()` which is the part of the `useMeeting` hook of React SDK.
 
 :::note
-This methods can be called after the meeting is joined successfully.
+These methods can be called only after the meeting is joined successfully.
 :::
 
 #### Example
@@ -90,27 +90,27 @@ You should call the `leave()` method on the unmount of your main meeting compone
 
 Following callbacks are received when a participant leaves the meeting.
 
-- [Local Participant](../concept-and-architecture#2-participant) will receive a callback on[`onMeetingLeft`](/react-native/api/sdk-reference/use-meeting/events#onmeetingleft) of `useMeeting()` hook.
-- All [remote participants](../concept-and-architecture#2-participant) will receive a callback [`onParticipantLeft`](/react-native/api/sdk-reference/use-meeting/events#onparticipantleft) with Participant object.
+- [Local Participant](../concept-and-architecture#2-participant) will receive a callback [`onMeetingLeft`](/react-native/api/sdk-reference/use-meeting/events#onmeetingleft) of the `useMeeting()` hook.
+- All [remote participants](../concept-and-architecture#2-participant) will receive a callback [`onParticipantLeft`](/react-native/api/sdk-reference/use-meeting/events#onparticipantleft) with the Participant object.
 
 ### Events associated with End
 
 Following callbacks are received when a participant ends the meeting.
 
-- All [remote participants](../concept-and-architecture#2-participant) and local participant will receive a callback on [`onMeetingLeft`](/react-native/api/sdk-reference/use-meeting/events#onmeetingleft) of `useMeeting()` hook.
+- All [remote participants](../concept-and-architecture#2-participant) and local participant will receive a callback [`onMeetingLeft`](/react-native/api/sdk-reference/use-meeting/events#onmeetingleft) of the `useMeeting()` hook.
 
 ```jsx
 import { useMeeting } from "@videosdk.live/react-native-sdk";
 
 const MeetingView = () => {
-  //Event to know meeting is left
+  //Event to determine if the meeting has been left
   //highlight-start
   function onMeetingLeft() {
     console.log("onMeetingLeft");
   }
   //highlight-end
 
-  //Event to know some other participant left
+  //Event to determine if some other participant has left
   //highlight-start
   function onParticipantLeft(participant) {
     console.log(" onParticipantLeft", participant);

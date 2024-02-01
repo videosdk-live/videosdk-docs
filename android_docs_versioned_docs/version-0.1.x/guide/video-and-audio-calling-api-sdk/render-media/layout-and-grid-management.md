@@ -28,7 +28,7 @@ This includes the number of participants being shown on the screens, number of p
 
 ### Quality of Participant's Video
 
-When there are large number of participants present on the screen, it is best to consume them in lower resolutions. For this we recommend you to call the `setQuality` method on the participants present in the grid with dyanmic values based on the number of participants on the screen.
+When there are large number of participants present on the screen, it is best to consume them in lower resolutions. For this we recommend you to call the `setQuality` method on the participants present in the grid with dynamic values based on the number of participants on the screen.
 
 Here is the recommended video quality:
 

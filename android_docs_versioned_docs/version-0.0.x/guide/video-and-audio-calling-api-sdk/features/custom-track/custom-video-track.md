@@ -47,7 +47,7 @@ Above mentioned encoder configurations are valid for both, landscape as well as 
   - type: `String`
   - required: `true`
   - Allowed values : `front` | `back`
-  - It will specifiy wheater to use front or back camera for the video track.
+  - It will specify wheater to use front or back camera for the video track.
 
 - **context**:
 
@@ -60,7 +60,7 @@ Above mentioned encoder configurations are valid for both, landscape as well as 
   - type: `boolean`
   - required: `true`
   - default: true
-  - It will specifiy if the stream should send multiple resolution layers or single resolution layer.
+  - It will specify if the stream should send multiple resolution layers or single resolution layer.
 
     :::info
 

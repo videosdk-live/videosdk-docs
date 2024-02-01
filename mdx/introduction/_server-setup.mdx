@@ -35,10 +35,10 @@ The best practice for getting token includes generating it from your backend ser
 #### 2. Generating token in your backend
 
 - Your server will generate access token using your API key and secret.
-  - While generating token you can provide **expiration time, permissions and roles** which will be discussed later.
+  - While generating a token, you can provide **expiration time, permissions and roles** which are discussed later in this section.
 - Your client obtains token from your backend server.
 - For token validation, client will pass this token to VideoSDK server.
-- VideoSDK server will only allow entry in meeting if the token is valid.
+- VideoSDK server will only allow entry in the meeting if the token is valid.
 
 ![img2.png](../../static/img/authentication-and-token.png)
 
@@ -82,9 +82,9 @@ Follow our official example repositories to setup token API [videosdk-rtc-api-se
 - **`roles`(optional)**:
 
   - **`crawler`**: This role is only for accessing [v2 API](/api-reference/realtime-communication/intro), you can not use this token for running the `Meeting`/`Room`.
-  - **`rtc`**: This role is only allowed for running the `Meeting` / `Room`, you can not use [server-side APIs](/api-reference/realtime-communication/intro).
+  - **`rtc`**: This role is only allowed for running the `Meeting` / `Room`, with this role you can not use [server-side APIs](/api-reference/realtime-communication/intro).
 
-Then, you will sign this payload with your **`SECRET KEY`** and `jwt` options using the **`HS256 algorithm`**.
+Then, you have to sign this payload with your **`SECRET KEY`** and `jwt` options using the **`HS256 algorithm`**.
 
 ### Expiration time
 
@@ -95,7 +95,7 @@ You can set any expiration time to the token. But in the **production environmen
 If your token is expired, the user won't be able to join the meeting and all the API calls will give error with message `Token is invalid or expired`.
 
 :::note
-Token is validated only once while joining the meeting, so if a person joins the meeting and token gets expired after that, there won't be any issue in the meeting.
+Token is validated only once while joining the meeting, so if a person joins the meeting and the token gets expired after that, there won't be any issue in the current meeting.
 :::
 
 ### How to check validity of token?

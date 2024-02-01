@@ -136,7 +136,7 @@ meeting.getScreenShareSources().then((value) => print("Sources : $value"));
 - **source**:
   - type : `DesktopCapturerSource`
   - required : false
-  - It will specifiy selected screenShare source for desktop apps.
+  - It will specify selected screenShare source for desktop apps.
 
 #### Returns
 

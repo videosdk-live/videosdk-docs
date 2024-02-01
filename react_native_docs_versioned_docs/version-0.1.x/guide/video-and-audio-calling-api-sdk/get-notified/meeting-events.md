@@ -7,7 +7,7 @@ sidebar_label: Meeting Events
 pagination_label: Meeting Events
 keywords:
   - audio calling
-  - video calling
+  - video calling 
   - real-time communication
   - collaboration
 image: img/videosdklive-thumbnail.jpg
@@ -17,29 +17,29 @@ slug: meeting-events
 
 # Meeting Events - React Native
 
-VideoSDK provides multiple types of events which can be listened to know the current state of the meeting.
+VideoSDK provides several types of events that can be listened to in order to determine the current state of the meeting. 
 
-Here are the events which specifically relate to the meeting.
+Here are the events specifically related to the meeting:
 
-### onMeetingJoined
+### onMeetingJoined()
 
 - This event is triggered when the meeting is successfully joined.
-- This event can be subscribed from the `useMeeting` hook.
+- It can be subscribed to using the `useMeeting` hook.
 
-### onMeetingLeft
+### onMeetingLeft()
 
 - This event is triggered when the meeting is left.
-- This event can be subscribed from the `useMeeting` hook.
+- It can be subscribed to using the `useMeeting` hook.
 
-### onSpeakerChanged
+### onSpeakerChanged()
 
-- This event is triggered when the active speaker in the meeting gets changed.
-- This event can be subscribed from the `useMeeting` hook.
+- This event is triggered when there is a change in the active speaker during the meeting.
+- It can be subscribed to using the `useMeeting` hook.
 
-### onPresenterChanged
+### onPresenterChanged()
 
-- This event is triggered when the presenter in the meeting gets changed.
-- This event can be subscribed from the `useMeeting` hook.
+- This event is triggered when there is a change in the presenter during the meeting.
+- It can be subscribed to using the `useMeeting` hook.
 
 ### Example
 

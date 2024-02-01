@@ -13,17 +13,17 @@ keywords:
 image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
 slug: remote-participant-media
----
+--- 
 
 # Toggle Remote Participant Media - React Native
 
-When hosting a meeting, it's important that the host of the meeting should be able to request someone's Mic or Camera to be turned on or should be able to turn them off.
+When hosting a meeting, it's essential for the host to have the capability to request that someone's microphone or camera be turned on, or to turn them off as needed. This guide focuses on this very aspect of controlling other participant's media.
 
 :::note
-Participant who will be controlling other participant's mic and camera should have permission **`allow_mod`** passed in the token. To know more about permissions [**visit here**](/react-native/guide/video-and-audio-calling-api-sdk/authentication-and-token).
+The Participant with the capability to control other participant's media should have permission **`allow_mod`** passed in the token. To know more about permissions [**visit here**](/react-native/guide/video-and-audio-calling-api-sdk/authentication-and-token).
 :::
 
-Before we discuss the methods and events associated with this functionality, here is how the flow would look like.
+Before delving into the methods and events associated with this functionality, explore how the flow would unfold.
 
 ![img1](../../../../../static/img/toggle-remote-media.png)
 
@@ -31,29 +31,32 @@ Before we discuss the methods and events associated with this functionality, her
 
 ### `enableMic()`
 
-- If you wish to turn **on** the microphone of a participant, you will be calling the `enableMic()` from the `useParticipant` hook.
+- If the host wishes to activate a participant's microphone, the `enableMic()` method from the `useParticipant` hook should be employed.
 
-- When this method is called, the participant whose microphone is requested will receive the `onMicRequested` event with the `participantId` of the participant who requested it and two callback functions `accept` and `reject` which should be called based on decision made by the user.
+- Upon invoking this method, the participant whose microphone is requested for, will receive the `onMicRequested` event. This event contains the `participantId` of the host making the request, along with two callback functions—`accept` and `reject`. The participant can decide to accept or reject the incoming request.
 
-- **Example:** Meeting is running with **Participant A** and **Participant B**. Now **Participant A** wants to Enable Mic of **Participant B**, so **Participant A** will use `enableMic()` function to request **Participant B**, after that **Participant B** recieve the `onMicRequested` event, from there user can either accept or reject the incoming request.
+- For instance, if a meeting involves **Participant A** and **Participant B**, and the host (**Participant A**) desires to enable the microphone of **Participant B**, the host will utilize the `enableMic()` function to send a request to **Participant B**. Subsequently, **Participant B** will receive the `onMicRequested` event and can choose to either accept or reject the incoming request.
 
 ### `enableWebcam()`
 
-- If you wish to turn **on** the camera of a participant, you will be calling the `enableWebcam()` from the `useParticipant` hook.
+- If the host wishes to activate a participant's camera, the `enableWebcam()` method from the `useParticipant` hook should be employed.
 
-- When this method is called, the participant whose camera is requested will receive the `onWebcamRequested` event with the `participantId` of the participant who requested it and two callback functions `accept` and `reject` which should be called based on decision made by the user.
+- Upon invoking this method, the participant whose camera is requested for, will receive the `onWebcamRequested` event. This event contains the `participantId` of the host making the request, along with two callback functions—`accept` and `reject`. The participant can decide to accept or reject the incoming request.
 
-- **Example:** Meeting is running with **Participant A** and **Participant B**. Now **Participant A** wants to Enable Webcam of **Participant B**, so **Participant A** will use `enableWebcam()` function to request **Participant B**, after that **Participant B** recieve the `onWebcamRequested` event, from there user can either accept or reject the incoming request.
+- For instance, if a meeting involves **Participant A** and **Participant B**, and the host (**Participant A**) desires to enable the camera of **Participant B**, the host will utilize the `enableWebcam()` function to send a request to **Participant B**. Subsequently, **Participant B** will receive the `onMicRequested` event and can choose to either accept or reject the incoming request.
 
 ### `disableMic()`
 
-- If you wish to turn **off** the microphone of a participant, you will be calling the `disableMic()` from the `useParticipant` hook.
-- This will disable the microphone of the participant.
+- If the host wishes to deactivate a participant's microphone, the `disableMic()` method from the `useParticipant` hook should be employed.
+
+- This will automatically disable the microphone of the participant.
 
 ### `disableWebcam()`
 
-- If you wish to turn **off** the camera of a participant, you will be calling the `disableWebcam()` from the `useParticipant` hook.
-- This will disable the camera of the participant.
+- If the host wishes to deactivate a participant's camera, the `disableWebcam()` method from the `useParticipant` hook should be employed.
+
+- This will automatically disable the camera of the participant.
+
 
 #### Example
 
@@ -127,19 +130,19 @@ const ParticipantView = () => {
 
 ### `onWebcamRequested`
 
-This event will be emitted to the `Participant B` when any other `Participant A` requests to enable webcam of that participant (`Participant B`). This event handler will receieve following three arguments:
+This event is triggered for a participant (`Participant B`) when the host (`Participant A`), requests to enable their webcam. The event handler for this event will receive the following three arguments:
 
 - `accept()` - Callback function to accept the request.
 - `reject()` - Callback function to reject the request.
-- `participantId` - ParticipantId of the requesting participant
+- `participantId` - ParticipantId of the requesting participant.
 
-### `onMicRequested`
+### `onMicRequested()`
 
-This event will be emitted to the `Participant B` when any other `Participant A` requests to enable mic of that participant (`Participant B`). This event handler will receieve following three arguments:
+This event is triggered for a participant (`Participant B`) when the host (`Participant A`), requests to enable their microphone. The event handler for this event will receive the following three arguments:
 
 - `accept()` - Callback function to accept the request.
 - `reject()` - Callback function to reject the request.
-- `participantId` - ParticipantId of the requesting participant
+- `participantId` - ParticipantId of the requesting participant.
 
 ###### Usage
 

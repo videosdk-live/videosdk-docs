@@ -305,7 +305,7 @@ export const ParticipantView = (props) => {
       {webcamOn && webcamStream ? (
         <ReactPlayer
           //
-          playsinline // very very imp prop
+          playsinline // extremely crucial prop
           pip={false}
           light={false}
           controls={false}

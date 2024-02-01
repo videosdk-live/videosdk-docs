@@ -11,7 +11,7 @@ keywords:
   - real-time communication
   - collaboration
 image: img/videosdklive-thumbnail.jpg
-sidebar_position: 1
+sidebar_position: 1 
 slug: picture-in-picture
 ---
 
@@ -19,7 +19,7 @@ slug: picture-in-picture
 
 Picture-in-picture (PiP) is a commonly used feature in video conferencing software, enabling users to simultaneously engage in a video conference and perform other tasks on their device. With PiP, you can keep the video conference window open, resize it to a smaller size, and continue working on other tasks while still seeing and hearing the other participants in the conference. This feature proves beneficial when you need to take notes, send an email, or look up information during the conference.
 
-In this guide, we will walk through the steps to implement a Picture-in-Picture feature using VideoSDK.
+This guide explains the steps to implement the Picture-in-Picture feature using VideoSDK.
 
 ### PiP Video
 
