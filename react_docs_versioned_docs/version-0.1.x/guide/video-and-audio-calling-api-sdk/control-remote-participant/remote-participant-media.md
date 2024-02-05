@@ -99,21 +99,21 @@ const ParticipantView = () => {
 
 ## Events
 
-### `onWebcamRequested`
+### `onWebcamRequested()`
 
 This event is triggered for a participant (`Participant B`) when the host (`Participant A`), requests to enable their webcam. The event handler for this event will receive the following three arguments:
 
 - `accept()` - Callback function to accept the request.
 - `reject()` - Callback function to reject the request.
-- `participantId` - ParticipantId of the requesting participant
+- `participantId` - ParticipantId of the requesting participant.
 
-### `onMicRequested`
+### `onMicRequested()`
 
 This event is triggered for a participant (`Participant B`) when the host (`Participant A`), requests to enable their microphone. The event handler for this event will receive the following three arguments:
 
 - `accept()` - Callback function to accept the request.
 - `reject()` - Callback function to reject the request.
-- `participantId` - ParticipantId of the requesting participant
+- `participantId` - ParticipantId of the requesting participant.
 
 ###### Usage
 

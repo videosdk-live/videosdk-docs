@@ -14,7 +14,7 @@ keywords:
 image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
 slug: raise-hand
----
+--- 
 
 # Raise Hand - React
 
@@ -22,7 +22,7 @@ This guide explains how PubSub can be used to implement the Raise Hand functiona
 
 ### Implementing Raise Hand
 
-1. To implement this functionality, first create a Raise Hand button. When this button is clicked, publish a message with the topic `RAISE_HAND`
+1. To implement this functionality, first create a Raise Hand button. When this button is clicked, publish a message with the topic `RAISE_HAND`.
 
 ```js
 // importing usePubSub hook from react-sdk

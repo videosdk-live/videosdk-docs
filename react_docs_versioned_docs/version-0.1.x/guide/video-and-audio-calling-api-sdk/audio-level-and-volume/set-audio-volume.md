@@ -17,11 +17,11 @@ slug: set-audio-volume
 
 # Setting Audio Volume - React
 
-- Providing the ability to adjust the volume of participants in a meeting enhances overall audio quality and ensures that everyone can be heard clearly.
+- Providing the ability to adjust the volume of participants in a meeting enhances the overall audio quality and ensures that everyone can be heard clearly.
 
 - In meetings with multiple participants, variations in the volume of each person's voice are common. Some may speak more softly or have a quieter microphone, while others may speak louder or have a microphone that picks up more background noise.
 
-- By allowing hosts or participants to adjust the volume of individual participants, it becomes easier to balance out these differences and ensure that everyone can be heard clearly. This can lead to more productive and efficient meetings, as people will be able to communicate more effectively."
+- By allowing hosts or participants to adjust the volume of individual participants, it becomes easier to balance out these differences and ensure that everyone can be heard clearly. This can lead to more productive and efficient meetings, as people will be able to communicate more effectively.
 
 
 ## Meeting Volume

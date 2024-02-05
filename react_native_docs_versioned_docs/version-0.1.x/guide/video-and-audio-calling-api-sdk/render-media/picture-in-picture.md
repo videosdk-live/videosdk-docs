@@ -13,16 +13,16 @@ keywords:
 image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
 slug: picture-in-picture
----
+--- 
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 # Picture-in-Picture Mode - React Native
 
-Picture-in-picture (PiP) is a feature that is commonly used in video conferencing software. It allows you to continue your video conference while also performing other tasks on your device. With PiP, you can keep the video conference window open and resize it to a smaller size, allowing you to work on other tasks while still being able to see and hear the other participants in the conference. This can be very helpful if you need to take notes, send an email, or look up information during the conference.
+Picture-in-picture (PiP) is a commonly used feature in video conferencing software, enabling users to simultaneously engage in a video conference and perform other tasks on their device. With PiP, you can keep the video conference window open, resize it to a smaller size, and continue working on other tasks while still seeing and hearing the other participants in the conference. This feature proves beneficial when you need to take notes, send an email, or look up information during the conference.
 
-In this guide, we will go through how you can create a Picture-in-Picture feature with VideoSDK.
+This guide explains the steps to implement the Picture-in-Picture feature using VideoSDK.
 
 <center>
 
@@ -32,14 +32,14 @@ In this guide, we will go through how you can create a Picture-in-Picture featur
 
 :::important
 
-- Picture-in-Picture (PiP) doesn't work after screen sharing.
-- PiP is only supported in Android Devices.
+- Picture-in-Picture (PiP) functionality is not supported after screen sharing
+- PiP is available exclusively on Android devices.
 
 :::
 
 ### `Step 1:` Install Package
 
-In this step, we will install third party package [react-native-pip-android](https://www.npmjs.com/package/react-native-pip-android) to achieve PiP mode in android.
+To begin with, you need to install a third party package [react-native-pip-android](https://www.npmjs.com/package/react-native-pip-android) to achieve PiP mode in android.
 
 <Tabs
 defaultValue="npm"
@@ -66,7 +66,7 @@ yarn add react-native-pip-android
 
 ### `Step 2:` Setup
 
-Add the following attribute in `/android/app/src/main/AndroidManifest.xml` file.
+Include the following attribute in `/android/app/src/main/AndroidManifest.xml` file.
 
 ```js
   <activity
@@ -77,7 +77,7 @@ Add the following attribute in `/android/app/src/main/AndroidManifest.xml` file.
         ...
 ```
 
-### `Step 3:` Import Activity in MainActivity.java file
+### `Step 3:` Import Activity in `MainActivity.java` file
 
 ```js
 ...
@@ -93,9 +93,9 @@ public class MainActivity extends ReactActivity {
   }
 ```
 
-### `Step 4:` Setup PiP on Render participant media
+### `Step 4:` Setup PiP for Rendering participant media
 
-In accordance with the value of the `usePipModeListener` hook, you can render anything you want. In the example below, we'll render a participant list.
+To set up Picture-in-Picture (PiP) mode for rendering participant media, you can utilize the `usePipModeListener` hook to control the rendering. The example below demonstrate s how to render a participant list.
 
 ```js
 //highlight-next-line
@@ -155,7 +155,7 @@ function MeetingView() {
 
 ### `Step 5:` Enter in PiP mode
 
-The `enterPipMode` method of `PipHandler` accepts the PiP box's height and width and enables entry into PiP mode for the App.
+To enter Picture-in-Picture (PiP) mode, use the `enterPipMode` method of `PipHandler`. Provide the PiP box's height and width as parameters to this method.
 
 ```js
 function ControlsContainer() {

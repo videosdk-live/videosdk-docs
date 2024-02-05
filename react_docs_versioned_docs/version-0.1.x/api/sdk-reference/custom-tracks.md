@@ -69,21 +69,21 @@ Above mentioned encoder configurations are valid for both, landscape as well as 
   - type: `String`
   - required: `false`
   - Allowed values : `front` | `environment`
-  - It will specifiy whether to use front or back camera for the video track.
+  - It will specify whether to use front or back camera for the video track.
 
 - **optimizationMode**
 
   - type: `String`
   - required: `false`
   - Allowed values: `motion` | `text` | `detail`
-  - It will specifiy the optimization mode for the video track being generated.
+  - It will specify the optimization mode for the video track being generated.
 
 - **multiStream**
 
   - type: `boolean`
   - required: `false`
   - default: `true`
-  - It will specifiy if the stream should send multiple resolution layers or single resolution layer.
+  - It will specify if the stream should send multiple resolution layers or single resolution layer.
 
 :::info
 
@@ -207,7 +207,7 @@ Above mentioned encoder configurations are valid for both, landscape as well as 
   - type: `String`
   - required: `false`
   - Allowed values: `motion` | `text` | `detail`
-  - It will specifiy the optimization mode for the video track being generated.
+  - It will specify the optimization mode for the video track being generated.
 
 #### Returns
 

@@ -75,10 +75,10 @@ let customTrack = await createMicrophoneAudioTrack({
 
 The custom track can be set up both before and after the initialization of the meeting.
 
-1. [Setup Custom Track while initialization of the meeting](#1-setup-custom-track-while-initialization-of-the-meeting)
-2. [Setup Custom Track with methods](#2-setup-custom-track-with-methods)
+1. [Setting up a Custom Track during the initialization of a meeting](#1-setup-custom-track-while-initialization-of-the-meeting)
+2. [Setting up a Custom Track with methods](#2-setup-custom-track-with-methods)
 
-##### 1. Setup Custom Track while initialization of the meeting
+##### 1. Setting up a Custom Track during the initialization of a meeting
 
 If you are passing `micEnabled: true` in the `config` of `MeetingProvider` and want to use custom tracks from start of the meeting, you can pass custom track in the `config` as shown below.
 
@@ -135,7 +135,7 @@ function App() {
 }
 ```
 
-#### 2. Setup Custom Track with methods
+#### 2. Setting up a Custom Track with methods
 
 In order to switch tracks during the meeting, you have to pass the `MediaStream` in the **`unmuteMic()` or `toggleMic()`** method of `useMeeting`.
 

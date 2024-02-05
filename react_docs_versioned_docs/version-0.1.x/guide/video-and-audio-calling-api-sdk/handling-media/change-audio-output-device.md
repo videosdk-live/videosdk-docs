@@ -14,14 +14,14 @@ image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
 slug: change-audio-ouptut-device
 ---
-
+ 
 # Change Audio Output Device - React
 
 During the meeting, at any point, a participant wishing to switch their output audio device, such as from headphones to speakers, can do so using the below-mentioned methods.
 
 #### Getting Output device
 
-- To get all the available audio output devices, you can use the `navigator.mediaDevices` and filter it based on the device kind as `audiooutput`.
+- To get all the available audio output devices, you can use the `navigator.mediaDevices`, and then filter it based on the device kind as `audiooutput`.
 
 ```js
 const getAudioOutputDevice = () => {
@@ -36,7 +36,7 @@ const getAudioOutputDevice = () => {
 
 #### Changing Output Device
 
-- To change the output audio device, you will have to set the `sinkId` for each `<audio>` element you are using to render the audio in the meeting.
+- To change the output audio device, you need to set the `sinkId` for each `<audio>` element used to render the audio in the meeting.
 
 ```js
 const setAudioOutputDevice = (deviceId) => {
@@ -53,7 +53,7 @@ To learn more about changing the audio output device [check this documentation](
 
 ### Setting Audio Volume
 
-- To set the audio volume for the meeting, adjust the volume property for each `<audio>` element used, to render the paricipant audio.
+- To set the audio volume for the meeting, you need to adjust the volume property for each `<audio>` element used to render the paricipant audio.
 
 - Value for the `volume` property for the `<audio>` can be between `0` and `1`.
 

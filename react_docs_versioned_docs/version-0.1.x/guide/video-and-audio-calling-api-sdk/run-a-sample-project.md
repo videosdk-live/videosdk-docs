@@ -21,8 +21,8 @@ VideoSDK provides an open-source sample project [videosdk-rtc-react-sdk-example]
 
 ## Prerequisites
  
-- React Js 16 or later
-- Node 10 or later
+- React Js version 16 or later
+- Node version 10 or later
 - Valid VideoSDK [Account](https://app.videosdk.live/)
 
 import APISecret from '../../../../mdx/introduction/\_api-key.mdx';
@@ -55,7 +55,7 @@ Modify the file by pasting the previously generated temporary token here.
 REACT_APP_VIDEOSDK_TOKEN = "TEMPORARY-TOKEN";
 ```
 
-### Step 4: Install the dependecies
+### Step 4: Install the dependencies
 
 Install all the project dependencies.
 

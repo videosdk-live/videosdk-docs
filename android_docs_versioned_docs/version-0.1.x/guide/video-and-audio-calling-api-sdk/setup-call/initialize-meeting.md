@@ -286,7 +286,7 @@ You must ensure that the `participantId` is not repeated in the same meeting or 
 
 - **`multiStream`**:
 
-  - It will specifiy if the stream should send multiple resolution layers or single resolution layer.
+  - It will specify if the stream should send multiple resolution layers or single resolution layer.
 
   - It has to be of `boolean` type.
 

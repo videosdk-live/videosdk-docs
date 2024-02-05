@@ -6,7 +6,7 @@ description: Video SDK and Audio SDK, developers need to implement a token serve
 sidebar_label: Mute All Participants
 pagination_label: Mute All Participants
 keywords:
-  - audio calling
+  - audio calling 
   - video calling
   - real-time communication
   - collaboration
@@ -19,7 +19,7 @@ slug: mute-all-participants
 
 When hosting a meeting, it's essential for the host to have the capability to mute all the participants at once. This can be useful in various scenarios, such as when the host wants to deliver a presentation or when there is background noise causing distractions. This guide focuses on this very aspect of muting all other participants' microphone.
 
-- To achieve this, iterate over the list of all participants from the `useMeeting` hook and call `disableMic` method from `useParticipant` hook.
+- To achieve this, iterate over the list of all participants from the `useMeeting` hook and call the `disableMic` method from the `useParticipant` hook.
 
 ```javascript
 import { useMeeting } from "@videosdk.live/react-sdk";

@@ -7,7 +7,7 @@ sidebar_label: Waiting Lobby
 pagination_label: Waiting Lobby
 keywords:
   - audio calling
-  - video calling
+  - video calling 
   - real-time communication
   - collaboration
 image: img/videosdklive-thumbnail.jpg
@@ -89,9 +89,9 @@ const meeting = VideoSDK.initMeeting({
 
 ## Events associated with Waiting Lobby
 
-The following callbacks are received when a participant successfully joins the meeting.
+The following events are received when a participant successfully joins the meeting.
 
-- When a participant joins as a host, they will receive an `entry-requested` event when a guest participant tries to join the meeting.
+- When a participant joins as a host, they will receive an `entry-requested` event whenever a guest participant tries to join the meeting.
 
 - When a host allows a guest participant to join the meeting, the guest will receive an `entry-responded` event with the newly joined `Participant` object.
 

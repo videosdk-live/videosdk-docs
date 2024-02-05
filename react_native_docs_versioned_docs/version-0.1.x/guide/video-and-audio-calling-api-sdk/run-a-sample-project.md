@@ -17,21 +17,21 @@ slug: run-a-sample-react-native-project
 
 # Run a Sample Conference Project - React Native
 
-Video SDK provides open-source sample project [videosdk-rtc-react-native-sdk-example](https://github.com/videosdk-live/videosdk-rtc-react-native-sdk-example) on Github. This document introduces how to run this project.
+VideoSDK provides an open-source sample project [videosdk-rtc-react-native-sdk-example](https://github.com/videosdk-live/videosdk-rtc-react-native-sdk-example) on Github. This document introduces how to run the project.
 
 ## Prerequisites
 
-- React Native 0.59.10 or later
-- Node 10 or later
+- React Native version 0.59.10 or later
+- Node version 10 or later
 - Valid Video SDK [Account](https://app.videosdk.live/)
 - For Android
-  - Java Development Kit (JDK) 8 or later
+  - Java Development Kit (JDK) version 8 or later
   - Android Studio (latest version recommended)
-  - A physical or virtual mobile device running Android 5.0 or later
+  - A physical or virtual mobile device running Android version 5.0 or later
 - For iOS
-  - Xcode 9.4 or later
+  - Xcode version 9.4 or later
   - CocoaPods
-  - A physical or virtual mobile device running iOS 9.0 or later
+  - A physical or virtual mobile device running iOS version 9.0 or later
 
 import APISecret from '../../../../mdx/introduction/\_api-key.mdx';
 
@@ -57,15 +57,15 @@ cp env.example .env;
 
 ### Step 3: Modify .env file
 
-Paste earlier generated temporary token here.
+Modify the file by pasting the previously generated temporary token here.
 
 ```js title=".env"
 REACT_APP_VIDEOSDK_TOKEN = "TEMPORARY-TOKEN";
 ```
 
-### Step 4: Install the dependecies
+### Step 4: Install the dependencies
 
-Install dependecies all the project dependencies.
+Install all the project dependencies.
 
 ```js
 npm install
@@ -73,7 +73,7 @@ npm install
 
 ### Step 5: Run the sample app
 
-Bingo, it's time to push the launch button.
+Bingo, it's time to push the launch button!
 
 ```js
 npm run start

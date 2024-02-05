@@ -21,9 +21,9 @@ import ReactPlayer from 'react-player'
 
 <ReactPlayer controls url="https://www.youtube.com/watch?v=LFNNigEkfdA" height="500px" width={"100%"} />
 
-VideoSDK enables you to embed the video calling feature into your React Native application in minutes.
+VideoSDK empowers you to seamlessly integrate the interactive live streaming feature into your React Native application within minutes.
 
-In this quickstart, we are going to explore interactive live streaming feature of Video SDK. We will go through step by step guide of integrating video calling with React Native Video SDK.
+In this quickstart, you'll explore this feature of VideoSDK. Follow the step-by-step guide to integrate it within your application.
 
 ### Prerequisites
 
@@ -44,13 +44,14 @@ Visit VideoSDK **[dashboard](https://app.videosdk.live/api-keys)** to generate t
 
 ### App Architecture
 
-This App will contain two screen :
+The App will contain the following screens:
 
-1. `Join Screen` : This screen allows SPEAKER to create studio or join predefined studio and VIEWER to join predefined studio.
+1. `Join Screen` : This screen allows the SPEAKER to create a studio or join a predefined studio, and VIEWER to join a predefined studio.
 
-2. `Speaker Screen` : This screen basically contain speaker list and some studio controls such as Enable / Disable Mic & Camera and Leave studio.
+2. `Speaker Screen` :  This screen contains the list of speakers and studio controls, such as enabling/disabling the microphone and camera, and leaving the studio.
 
-3. `Viewer Screen` : This screen basically contain live stream player in which viewer will play stream.
+3. `Viewer Screen` : This screen includes a live stream player where viewers can watch the stream.
+
 
 <center>
 
@@ -62,17 +63,17 @@ This App will contain two screen :
 
 ### Create App
 
-Create new react-native app by applying below commands.
+Create a new React Native App using the below command.
 
 ```js
 npx react-native init AppName
 ```
 
-For react-native setup, you can follow [Official Docs](https://reactnative.dev/docs/environment-setup).
+For React Native setup, you can follow the [Official Documentation](https://reactnative.dev/docs/environment-setup).
 
 ### VideoSDK Installation
 
-Install the VideoSDK by following the below command. Do make sure you should be in your project directory before you run this command.
+Install the VideoSDK by using the following command. Ensure that you are in your project directory before running this command.
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -116,7 +117,7 @@ yarn add "@videosdk.live/react-native-sdk"  "@videosdk.live/react-native-incallm
 
 #### Android Setup
 
-1. Add required permission in AndroidManifest.xml file.
+1. Add the required permissions in the `AndroidManifest.xml` file.
 
 ```xml title="AndroidManifest.xml"
 <manifest
@@ -167,7 +168,7 @@ yarn add "@videosdk.live/react-native-sdk"  "@videosdk.live/react-native-incallm
 </manifest>
 ```
 
-2. Update colors.xml for internal dependencies
+2. Update your `colors.xml` file for internal dependencies.
 
 ```js title="android/app/src/main/res/values/colors.xml"
 <resources>
@@ -180,7 +181,7 @@ yarn add "@videosdk.live/react-native-sdk"  "@videosdk.live/react-native-incallm
 </resources>
 ```
 
-3. Linking VideoSDK Dependencies.
+3. Link the necessary VideoSDK Dependencies.
 
 ```java title="android/app/build.gradle"
   dependencies {
@@ -225,13 +226,13 @@ public class MainApplication extends Application implements ReactApplication {
 android.enableDexingArtifactTransform.desugaring=false
 ```
 
-4. Add below line in the proguard-rules.pro (optional: if you are using Proguard)
+4. Include the following line in your `proguard-rules.pro` file (optional: if you are using Proguard)
 
 ```java title="android/app/proguard-rules.pro"
 -keep class org.webrtc.** { *; }
 ```
 
-5. In the `build.gradle` file, update the minimum OS/SDK version to `23`.
+5. In your `build.gradle` file, update the minimum OS/SDK version to `23`.
 
 ```java title=build.gradle
 buildscript {
@@ -243,44 +244,43 @@ buildscript {
 
 #### iOS Setup
 
-1. **IMPORTANT**: Make sure you are using CocoaPods 1.10 or higher.
+1. **IMPORTANT**: Ensure that you are using CocoaPods version 1.10 or later.
 
-To update CocoaPods you simply install the gem again
+To update CocoaPods, you can reinstall the gem using the following command:
 
 ```gem
 $ sudo gem install cocoapods
 ```
 
-2. Manual linking (if react-native-incall-manager is not linked automatically)
+2. Manually link react-native-incall-manager (if it is not linked automatically).
 
 - Select `Your_Xcode_Project/TARGETS/BuildSettings`, in Header Search Paths, add `"$(SRCROOT)/../node_modules/@videosdk.live/react-native-incall-manager/ios/RNInCallManager"`
 
-3. Change path of `react-native-webrtc`
+3. Change the path of `react-native-webrtc` using the following command:
 
 ```sh title="Podfile"
 pod ‘react-native-webrtc’, :path => ‘../node_modules/@videosdk.live/react-native-webrtc’
 ```
 
-4. Change your platform version
+4. Change the version of your platform.
 
-You have change platform field of podfile to 12.0 or above it, as react-native-webrtc doesn’t support iOS < 12
-platform :ios, ‘12.0’
+You need to change the platform field in the Podfile to 12.0 or above because react-native-webrtc doesn't support iOS versions earlier than 12.0. Update the line: platform : ios, ‘12.0’.
 
 5. Install pods
 
-After updating the version, you have to install pods.
+After updating the version, you need to install the pods by running the following command:
 
 ```sh
 Pod install
 ```
 
-6. Add “libreact-native-webrtc.a” binary
+6. Add “libreact-native-webrtc.a” binary.
 
-Add “libreact-native-webrtc.a” in Link Binary with libraries. In target of main project folder.
+Add the "libreact-native-webrtc.a" binary to the "Link Binary With Libraries" section in the target of your main project folder.
 
 7. Declare permissions in Info.plist :
 
-Add following lines to info.plist (project folder/ios/projectname/info.plist):
+Add the following lines to your info.plist file located at (project folder/ios/projectname/info.plist):
 
 ```html title="ios/projectname/info.plist"
 <key>NSCameraUsageDescription</key>
@@ -291,7 +291,7 @@ Add following lines to info.plist (project folder/ios/projectname/info.plist):
 
 #### Register Service
 
-Register VideoSDK services in root `index.js` file for initialization service.
+Register VideoSDK services in your root `index.js` file for the initialization service.
 
 ```js title="index.js"
 import { AppRegistry } from "react-native";
@@ -306,7 +306,7 @@ AppRegistry.registerComponent(appName, () => App);
 
 ### Step 1: Get started with API.js
 
-Before jumping to anything else, we have write API to generate unique meetingId. You will require auth token, you can generate it using either by using [videosdk-rtc-api-server-examples](https://github.com/videosdk-live/videosdk-rtc-api-server-examples) or generate it from the [Video SDK Dashboard](https://app.videosdk.live/api-keys) for developer.
+Prior to moving on, you must create an API request to generate a unique meetingId. You will need an authentication token, which you can create either through the [videosdk-rtc-api-server-examples](https://github.com/videosdk-live/videosdk-rtc-api-server-examples) or directly from the [VideoSDK Dashboard](https://app.videosdk.live/api-keys) for developers.
 
 ```js title="API.js"
 //Auth token we will use to generate a meeting and connect to it
@@ -331,18 +331,18 @@ export const createMeeting = async ({ token }) => {
 
 ### Step 2: Wireframe App.js with all the components
 
-To build up wireframe of App.js, we are going to use Video SDK Hooks and Context Providers. Video SDK provideos MeetingProvider, MeetingConsumer, useMeeting and useParticipant hooks. Let's understand each of them.
+To build up wireframe of App.js, you need to use VideoSDK Hooks and Context Providers. VideoSDK provides MeetingProvider, MeetingConsumer, useMeeting and useParticipant hooks.
 
-First we will explore Context Provider and Consumer. Context is primarily used when some data needs to be accessible by many components at different nesting levels.
+First you need to understand Context Provider and Consumer. Context is primarily used when some data needs to be accessible by many components at different nesting levels.
 
-- **MeetingProvider**: It is Context Provider. It accepts value `config` and `token` as props. The Provider component accepts a value prop to be passed to consuming components that are descendants of this Provider. One Provider can be connected to many consumers. Providers can be nested to override values deeper within the tree.
-- **MeetingConsumer**: It is Context Consumer. All consumers that are descendants of a Provider will re-render whenever the Provider’s value prop changes.
-- **useMeeting**: It is meeting react hook API for meeting. It includes all the information related to meeting such as join, leave, enable/disable mic or webcam etc.
-- **useParticipant**: It is participant hook API. useParticipant hook is responsible to handle all the events and props related to one particular participant such as name, webcamStream, micStream etc.
+- **MeetingProvider**: This is the Context Provider. It accepts value `config` and `token` as props. The Provider component accepts a value prop to be passed to consuming components that are descendants of this Provider. One Provider can be connected to many consumers. Providers can be nested to override values deeper within the tree.
+- **MeetingConsumer**: This is the Context Consumer. All consumers that are descendants of a Provider will re-render whenever the Provider’s value prop changes.
+- **useMeeting**: This is the meeting hook API. It includes all the information related to meeting such as join, leave, enable/disable mic or webcam etc.
+- **useParticipant**: This is the participant hook API. It is responsible for handling all the events and props related to one particular participant such as name, webcamStream, micStream etc.
 
-Meeting Context helps to listen on all the changes when participant joines meeting or changes mic or camera etc.
+The Meeting Context provides a way to listen for any changes that occur when a participant joins the meeting or makes modifications to their microphone, camera, and other settings.
 
-Let's get started with change couple of lines of code in App.js
+Begin by making a few changes to the code in the App.js file.
 
 ```js title="App.js"
 import React, { useState, useMemo, useRef, useEffect } from "react";
@@ -365,7 +365,7 @@ import {
 } from "@videosdk.live/react-native-sdk";
 import { createMeeting, authToken } from "./api";
 
-// Responsible for either schedule new meeting or to join existing meeting as a host or as a viewer.
+// Responsible for either scheduling a new meeting or joining an existing one as a host or as a viewer.
 function JoinScreen({ getMeetingAndToken, setMode }) {
   return null;
 }
@@ -390,7 +390,7 @@ function ViewerView() {
   return null;
 }
 
-// Responsible for managing two view (Speaker & Viewer) based on provided mode (`CONFERENCE` & `VIEWER`)
+// Responsible for managing two views (Speaker & Viewer) based on provided mode (`CONFERENCE` & `VIEWER`)
 function Container(props) {
   return null;
 }
@@ -398,10 +398,10 @@ function Container(props) {
 function App() {
   const [meetingId, setMeetingId] = useState(null);
 
-  //State to handle the mode of the participant i.e. CONFERNCE or VIEWER
+  //State to handle the mode of the participant i.e. CONFERENCE or VIEWER
   const [mode, setMode] = useState("CONFERENCE");
 
-  //Getting MeetingId from the API we created earlier
+  //Getting MeetingId from the API created earlier
   //highlight-start
   const getMeetingAndToken = async (id) => {
     const meetingId =
@@ -418,7 +418,7 @@ function App() {
         micEnabled: true,
         webcamEnabled: true,
         name: "C.V. Raman",
-        //These will be the mode of the participant CONFERENCE or VIEWER
+        //This will be the mode of the participant CONFERENCE or VIEWER
         mode: mode,
       }}
       token={authToken}
@@ -436,13 +436,13 @@ export default App;
 
 ### Step 3: Implement Join Screen
 
-Join screen will work as medium to either schedule new meeting or to join existing meeting as a host or as a viewer.
+Join screen will work as medium to either schedule a new meeting or to join an existing one as a host or as a viewer.
 
-These will have 3 buttons:
+This functionality will have 3 buttons:
 
-`1. Join as Host:` When this button is clicked, the person will join the entered `meetingId` as `HOST`.
+`1. Join as Host:` When this button is clicked, the person will join the meeting with the entered `meetingId` as `HOST`.
 
-`2. Join as Viewer:` When this button is clicked, the person will join the entered `meetingId` as `VIEWER`.
+`2. Join as Viewer:` When this button is clicked, the person will join the meeting with the entered `meetingId` as `VIEWER`.
 
 `3. Create Studio Room:` When this button is clicked, the person will join a new meeting as `HOST`.
 
@@ -536,9 +536,9 @@ function JoinScreen({ getMeetingAndToken, setMode }) {
 
 ### Step 4: Implement Container Component
 
-Next step is to create a container that will manage `Join screen`, `SpeakerView` and `ViewerView` component based on `mode`.
+Next step is to create a container to manage `Join screen`, `SpeakerView` and `ViewerView` components based on the `mode`.
 
-We will check the mode of the `localParticipant`, if its `CONFERENCE` we will show `SpeakerView` else we will show `ViewerView`.
+You need to determine the mode of the `localParticipant`, if its `CONFERENCE`, display the `SpeakerView` component otherwise show the `ViewerView` component.
 
 ```js title="Container Component"
 function Container() {
@@ -619,14 +619,14 @@ const Button = ({ onPress, buttonText, backgroundColor, btnStyle }) => {
 
 Next step is to create `SpeakerView` and `Controls` components to manage features such as join, leave, mute and unmute.
 
-1. We will get all the `participants` from `useMeeting` hook and filter them for the mode set to `CONFERENCE` so only Speakers are shown on the screen.
+1. You have to retrieve all the `participants` using the `useMeeting` hook and filter them based on the mode set to `CONFERENCE` ensuring that only Speakers are displayed on the screen.
 
 ```js title="SpeakerView"
 function SpeakerView() {
   // Get the Participant Map and meetingId
   const { meetingId, participants } = useMeeting({});
 
-  // For getting speaker participant, we will filter out `CONFERENCE` mode participant
+  // For getting speaker participant, filter out `CONFERENCE` mode participant
   const speakers = useMemo(() => {
     const speakerParticipants = [...participants.values()].filter(
       (participant) => {
@@ -698,7 +698,7 @@ function Container(){
 
   const mMeeting = useMeeting({
     onMeetingJoined: () => {
-      // We will pin the local participant if he joins in CONFERENCE mode
+      // Pin the local participant if he joins in CONFERENCE mode
       //highlight-start
       if (mMeetingRef.current.localParticipant.mode == "CONFERENCE") {
         mMeetingRef.current.localParticipant.pin();
@@ -707,7 +707,7 @@ function Container(){
     }
   });
 
-  // We will create a ref to meeting object so that when used inside the
+  // Create a ref to meeting object so that when used inside the
   // Callback functions, meeting state is maintained
   //highlight-start
   const mMeetingRef = useRef(mMeeting);
@@ -720,7 +720,7 @@ function Container(){
 }
 ```
 
-2. We will be creating the `ParticipantView` to show the participants media. For which, will be using the `webcamStream` from the `useParticipant` hook to play the media of the participant.
+2. You need to then create the `ParticipantView` to display the participant's  media. To play the media, use the `webcamStream` and `micStream` from the `useParticipant` hook.
 
 ```js title="ParticipantView"
 function ParticipantView({ participantId }) {
@@ -752,7 +752,7 @@ function ParticipantView({ participantId }) {
 }
 ```
 
-3. We will add the `Controls` component which will allow the speaker to toggle media and start / stop HLS.
+3. You have to add the `Controls` component which will allow the speaker to toggle their media and start/stop HLS.
 
 ```js title="Controls Component"
 function Controls() {
@@ -841,11 +841,11 @@ function Controls() {
 
 ### Step 6: Implement ViewerView
 
-When **HOST** (`CONFERENCE` mode participant) start the live streaming, viewer will be able to see the live streaming.
+When the **HOST** (`CONFERENCE` mode participant) initiates the live streaming, viewers will be able to watch it.
 
-To implement player view, we are going to use [react-native-video](https://www.npmjs.com/package/react-native-video). It will be helpful to play HLS stream.
+To implement the player view, you have to use [react-native-video](https://www.npmjs.com/package/react-native-video). It will be helpful for playing the HLS stream.
 
-Let's first add this package.
+Begin by adding this package.
 
 <Tabs
 defaultValue="npm"
@@ -870,7 +870,7 @@ yarn add react-native-video
 </TabItem>
 </Tabs>
 
-With `react-native-video` installed, we will get the `hlsUrls` and `isHlsPlayable` from the `useMeeting` hook which will be used to play the HLS in the player.
+With `react-native-video` installed, you can now get the `hlsUrls` and `isHlsPlayable` from the `useMeeting` hook which will be used to play the HLS in the player.
 
 ```js
 //highlight-start
@@ -885,7 +885,7 @@ function ViewerView({}) {
     <SafeAreaView style={{ flex: 1, backgroundColor: "black" }}>
       {hlsState == "HLS_PLAYABLE" ? (
         <>
-          {/* Render Header for copy meetingId and leave meeting*/}
+          {/* Render Header for copying the meetingId and leaving meeting*/}
           <HeaderView />
 
           {/* Render VideoPlayer that will play `downstreamUrl`*/}

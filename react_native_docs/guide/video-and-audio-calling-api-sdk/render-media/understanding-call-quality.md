@@ -111,7 +111,7 @@ VideoSDK provides methods to check the realtime statistics of the audio and vide
 
 ### `getVideoStats()`
 
-- `getVideoStats()` returns an array of object containing the different quality parameters for video stream which can be accessed through the `useParicipant` hook.
+- `getVideoStats()` returns an array of object containing the different quality parameters for video stream which can be accessed through the `useParticipant` hook.
 
 - This objects will have values for the specific participant's video stream resolution, frame rate, bitrate, jitter, round trip time, and packet loss.
 
@@ -123,13 +123,13 @@ VideoSDK provides methods to check the realtime statistics of the audio and vide
 
 ### `getAudioStats()`
 
-- `getAudioStats()` returns an array of object containing the different quality parameters for audio stream which can be accessed through the `useParicipant` hook.
+- `getAudioStats()` returns an array of object containing the different quality parameters for audio stream which can be accessed through the `useParticipant` hook.
 
 - This objects will have values for the specific participant's audio stream bitrate, jitter, round trip time and packet loss.
 
 ### `getShareStats()`
 
-- `getShareStats()` returns an array of object containing the different quality parameters for screen share stream which can be accessed through the `useParicipant` hook.
+- `getShareStats()` returns an array of object containing the different quality parameters for screen share stream which can be accessed through the `useParticipant` hook.
 
 - This objects will have values for the specific participant's screen share stream resolution, frame rate, bitrate, jitter, round trip time, and packet loss.
 

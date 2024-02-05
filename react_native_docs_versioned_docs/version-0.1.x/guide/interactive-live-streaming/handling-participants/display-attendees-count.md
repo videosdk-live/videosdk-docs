@@ -8,7 +8,7 @@ pagination_label: Display Attendees Count
 keywords:
   - Start HLS meeting
   - Stop HLS meeting
-  - audio calling
+  - audio calling 
   - video calling
   - real-time communication
 image: img/videosdklive-thumbnail.jpg
@@ -18,13 +18,13 @@ slug: display-attendees-count
 
 # Display Attendees Count - React Native
 
-In this guide, we will see how you can display the number of attendees in realtime.
+This guide explains the process of displaying the number of attendees in realtime.
 
 :::note
-Before going forward in this guide, do make sure all the attendees join the meeting with mode as `VIEWER`
+Before proceeding with this guide, ensure that all attendees join the meeting with the mode set to `VIEWER`.
 :::
 
-**`Step 1:`** We will get the `participants` from the `useMeeting` hook.
+**`Step 1:`** Start by obtaining all the `participants` using the `useMeeting` hook. 
 
 ```js
 import { useMeeting } from "@videosdk.live/react-native-sdk";
@@ -36,7 +36,7 @@ function AttendessCount() {
 }
 ```
 
-**`Step 2:`** With all the participants, we will filter out participants who have joined as a `VIEWER` and then display that count.
+**`Step 2:`** Subsequently, filter out those who have joined as `VIEWER` and display the count.
 
 ```js
 import { useMeeting } from "@videosdk.live/react-native-sdk";

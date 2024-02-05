@@ -11,18 +11,18 @@ keywords:
 image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
 slug: image-capturer
----
+--- 
 
 # Image Capturer - Javascript
 
-This guide will help us to capture image of participant from video stream.
+This guide provides instructions on capturing images of participants from a video stream. 
 
-This can be very helpful in Video KYC use cases where you can capture the image of user holding their identity.
+This capability proves particularly valuable in Video KYC scenarios, enabling the capture of images where users can hold up their identity for verification.
 
 ### `captureImage()`
 
-- By using `captureImage()` method of `Participant` class, you can capture image of a local participant from their video stream.
-- You can specify the desired height and width in the `captureImage()` function, but these are optional. If not provided, the VideoSDK will automatically use the dimensions of the local participant's webcamStream.
+- By using the `captureImage()` method of the `Participant` class, you can capture image of a local participant from their video stream.
+- You have the option to specify the desired height and width in the `captureImage()` function; however, these parameters are optional. If not provided, the VideoSDK will automatically use the dimensions of the local participant's webcamStream. 
 - The `captureImage()` function returns the image in the form of a `base64` string.
 
 ```js
@@ -47,21 +47,21 @@ async function imageCapture() {
 
 :::tip
 
-Instead of using the `participants.get(participantId)`.captureImage() method to capture an image of a remote participant, it is recommended to follow the below documentation for a more effective approach. `participants.get(participantId)`.captureImage() method captures an image from the video stream you are currently consuming from the remote participant. The alternative documentation likely offers a better and more appropriate way to achieve the desired result.
+Rather than utilizing the `participants.get(participantId).captureImage()` method to capture an image of a remote participant, it is advisable to refer to the provided documentation for a more effective approach. The `participants.get(participantId).captureImage()` method captures an image from the current video stream being consumed from the remote participant. The alternative documentation is likely to provide a better and more appropriate method to achieve the desired result.
 
 :::
 
 ### How to capture image of remote participant ?
 
-- Before proceeding, it's crucial to comprehend the [VideoSDK's temporary file storage system](/javascript/guide/video-and-audio-calling-api-sdk/collaboration-in-meeting/upload-fetch-temporary-file) and the underlying [pubsub mechanism](/javascript/guide/video-and-audio-calling-api-sdk/collaboration-in-meeting/pubsub).
+- Before proceeding, it's crucial to understand [VideoSDK's temporary file storage system](/javascript/guide/video-and-audio-calling-api-sdk/collaboration-in-meeting/upload-fetch-temporary-file) and the underlying [pubsub mechanism](/javascript/guide/video-and-audio-calling-api-sdk/collaboration-in-meeting/pubsub).
 
-- Let's break down the steps using the names Participant A and Participant B for clarity:
+- Here's a break down of the steps, using the names Participant A and Participant B for clarity:
 
 #### Step 1 : Initiate Image Capture Request
 
-- In this step, we'll send a request to the Participant B whom we want to capture image using pubsub.
-- In order to do that, we will create pubsub topic called `IMAGE_CAPTURE` in `index.js` File.​
-- Here, we are using `sendOnly` property of `publish()` method. Therefore, the request will be send to that participant only.
+- In this step, you have to first send a request to Participant B, whose image you want to capture, using pubsub.
+- In order to do that, you have to create a pubsub topic called `IMAGE_CAPTURE` in the `index.js` File.​
+- Here, you will be using the `sendOnly` property of the `publish()` method. Therefore, the request will be sent to that participant only.
 
 ```js title="index.js"
 let meeting;
@@ -72,8 +72,8 @@ meeting = VideoSDK.initMeeting({
 });
 
 function sendRequest({ participantId }) {
-  // Pass the participantId of the participant to whom you want to capture an image
-  // Here, it will be Participant B id, because we want to capture the image of Participant B
+  // Pass the participantId of the participant twhose image you want to capture 
+  // Here, it will be Participant B's id, as you want to capture the the image of Participant B
   let message = "Sending request to capture image";
   meeting.pubSub
     .publish("IMAGE_CAPTURE", message, {
@@ -87,7 +87,7 @@ function sendRequest({ participantId }) {
 
 #### Step 2 : Capture and Upload File
 
-- To capture image from remote participant [Participant B], we've subscribe to the pusub topic on `meeting-joined` event of `Meeting` class. When a participant receives an image capture request, this component uses the `captureImage` method of `Participant` class to capture the image.
+- To capture an image from the remote participant [Participant B], you have to subscribe to the pubsub topic on the `meeting-joined` event of the `Meeting` class. When a participant receives an image capture request, this component uses the `captureImage` method of the `Participant` class to capture the image.
 
 ```js title="index.js"
 let meeting;
@@ -122,7 +122,7 @@ meeting.on("meeting-joined", () => {
 });
 ```
 
-- The captured image is then stored in the VideoSDK's temporary file storage system using the `uploadBase64File()` method of `Meeting` class. This operation returns a unique `fileUrl` of the stored image.
+- The captured image is then stored in VideoSDK's temporary file storage system using the `uploadBase64File()` function of the `Meeting` class. This operation returns a unique `fileUrl` of the stored image.
 
 ```js
 let meeting;
@@ -172,8 +172,8 @@ async function captureAndStoreImage() {
 ```
 
 #### Step 2 : Fetch and Display Image
-
-- After publish on `IMAGE_TRANSFER`, we subscribe to the `IMAGE_TRANSFER` topic in `meeting-joined` event of `Meeting` class, receiving the `fileUrl` associated with the captured image. Once obtained, we leverage the `fetchBase64File()` method of `Meeting` class to retrieve the file in `base64` format from VideoSDK's temporary storage.
+ 
+- Upon publishing on the `IMAGE_TRANSFER` topic, subscribe to the same topic within the `meeting-joined` event of the `Meeting` class. This will provide access to the `fileUrl` associated with the captured image. Once obtained, use the `fetchBase64File()` method of the `Meeting` class to retrieve the file in `base64` format from VideoSDK's temporary storage.
 
 ```js
 async function captureImageAndDisplay(message) {
@@ -195,7 +195,7 @@ meeting.on("meeting-joined", () => {
 });
 ```
 
-- With the `base64` data in hand, we display the image.
+- With the `base64` data in hand, you can now display the image.
 
 ```js
 let captureImage = document.getElementById("captureImage");

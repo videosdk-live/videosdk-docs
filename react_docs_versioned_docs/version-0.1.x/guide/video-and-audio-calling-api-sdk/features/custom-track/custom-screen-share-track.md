@@ -46,7 +46,7 @@ Above mentioned encoder configurations are valid for both, landscape as well as 
   - type: `String`
   - required: `false`
   - Allowed values: `motion` | `text` | `detail`
-  - It will specifiy the optimization mode for the video track being generated.
+  - It will specify the optimization mode for the video track being generated.
 
 #### Returns
 

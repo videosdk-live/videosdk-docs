@@ -15,23 +15,23 @@ keywords:
   - real-time communication
 image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
----
+--- 
 
 # Optimize Audio Track - React Native
 
-While optimizing for the best listening experience, it is necessary to fine-tune the audio track that is being used during the calls.
+To optimize the listening experience, it's essential to fine-tune the audio tracks used during calls. 
 
-For the best fine-tuning experience, we have introduced the ability to pass a custom audio track for the participant's media before and during the meeting.
+For an enhanced fine-tuning experience, we've introduced the capability to provide a custom audio track for a participant's media before and during the meeting.
 
 ## Custom Audio Track
 
-This feature can be used to add custom layers like background noise removal, echo cancellation, etc. on audio and send it to other participants.
+This feature allows you to incorporate custom layers like background noise removal, echo cancellation, etc. and send these modifications to other participants.
 
-### `How to Create Custom Audio Track ?`
+### `How to Create a Custom Audio Track ?`
 
 - You can create a Audio Track using `createMicrophoneAudioTrack()` method of `@videosdk.live/react-native-sdk`.
 
-- This method can be used to create audio track using different encoding parameters and noise cancellation configuration.
+- This method enables the creation of a audio track with various encoding parameters and noise cancellation configuration, ultimately returning a MediaStream.
 
 #### Example
 
@@ -64,23 +64,24 @@ let customTrack = await createMicrophoneAudioTrack({
   },
 });
 ```
+Here are different configurations for customizing audio tracks based on specific use cases:
 
 - `speech_standard` : This config is optimised for normal voice communication.
 
-- `high_quality` : This config is used for getting RAW audio, where you can apply your `noiseConfig`.
+- `high_quality` : This config is used for obtaining RAW audio, allowing you to apply your `noiseConfig`.
 
-- `music_standard` : This config is optimised for communication, where sharing of musical notes such as songs or instrumental sounds, is important.
+- `music_standard` : This config is optimised for communication scenarios, where the sharing of musical elements, such as songs or instrumental sounds, is crucial.
 
 ### `How to Setup Custom Audio Track ?`
 
-The custom track can be set up both before and after the initialization of the meeting.
+The custom track can be configured both before and after the meeting is initialized. Following are the methods that help in doing so:
 
-1. [Setup Custom Track while initialization of the meeting](#1-setup-custom-track-while-initialization-of-the-meeting)
-2. [Setup Custom Track with methods](#2-setup-custom-track-with-methods)
+1. [Setting up a Custom Track during the initialization of a meeting](#1-setup-custom-track-while-initialization-of-the-meeting)
+2. [Setting up a Custom Track with methods](#2-setup-custom-track-with-methods)
 
-##### 1. Setup Custom Track while initialization of the meeting
+##### 1. Setting up a Custom Track during the initialization of a meeting
 
-If you are passing `micEnabled: true` in the `config` of `MeetingProvider` and want to use custom tracks from start of the meeting, you can pass custom track in the `config` as shown below.
+If you are enabling the mic (`micEnabled: true`) in the `config` of `MeetingProvider` and wish to use custom tracks from the start of the meeting, you can pass a custom track in the `config` as demonstrated below.
 
 :::caution
 Custom Track will not apply on `micEnabled: false` configuration.
@@ -135,12 +136,12 @@ function App() {
 }
 ```
 
-#### 2. Setup Custom Track with methods
+#### 2. Setting up a Custom Track with methods
 
-In order to switch tracks during the meeting, you have to pass the `MediaStream` in the **`unmuteMic()` or `toggleMic()`** method of `useMeeting`.
+To switch tracks during the meeting, you need to pass the `MediaStream` in the **`unmuteMic()` or `toggleMic()`** method of the `useMeeting` hook.
 
 :::tip
-Make sure to call `muteMic()` before you create a new track as it may lead to unexpected behavior.
+Make sure to call the `muteMic()` method before you create a new track as it may lead to unexpected behavior.
 :::
 
 ##### Example

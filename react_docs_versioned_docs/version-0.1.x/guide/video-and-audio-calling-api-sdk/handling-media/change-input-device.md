@@ -14,7 +14,7 @@ image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
 slug: change-input-device
 ---
-
+ 
 # Change Input Device - React
 
 During the meeting, at any point, a participant wishing to switch their input audio or video device, can do so using the below-mentioned methods.
@@ -25,7 +25,7 @@ During the meeting, at any point, a participant wishing to switch their input au
 
 - This method of the `useMeeting` hook will provide you with a list of all the available mics, which can be displayed in a dropdown list.
 
-- This method will return an array of objects which will contain the `deviceId` and  the `label` of the audio input device.
+- It will return an array of objects, which will contain the `deviceId` and  the `label` of the audio input device.
 
 ### `changeMic()`
 
@@ -77,7 +77,7 @@ const MeetingView = () => {
 
 - This method of the `useMeeting` hook will provide you with a list of all the available cameras, which can be displayed in a dropdown list.
 
-- This method will return an array of objects which will contain the `deviceId` and `label` of the camera input device.
+- It will return an array of objects, which will contain the `deviceId` and `label` of the camera input device.
 
 ### `changeWebcam()`
 

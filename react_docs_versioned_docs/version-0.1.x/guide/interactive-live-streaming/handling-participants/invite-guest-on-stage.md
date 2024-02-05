@@ -13,7 +13,7 @@ keywords:
   - real-time communication
 image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
-slug: invite-guest-on-stage
+slug: invite-guest-on-stage 
 ---
 
 # Invite Guest on Stage - React
@@ -28,7 +28,7 @@ The diagram below illustrates the utilization of the `PubSub` mechanism to facil
 
 ![invite-guest-pubsub](https://cdn.videosdk.live/website-resources/docs-resources/invite_guest_pubsub.png)
 
-### Step 1: Loading Viewer List
+### Step 1: Loading the Viewer List
 
 First, the host will be presented with a list of participants who have joined as `VIEWER`, accompanied by a button that, when selected, will invite that user to join the livestream.
 
@@ -163,8 +163,8 @@ To ensure the participant appears on the livestream, they have to be pinned. Thi
 function MeetingView() {
   const mMeeting = useMeeting({});
 
-  //We are using a reference to the meeting object because
-  //While referencing it in the callbacks we want to use its latest state
+  //Here a reference to the meeting object is used because
+  //while referencing it in the callbacks its latest state has to be obtained.
   const mMeetingRef = useRef();
 
   useEffect(() => {

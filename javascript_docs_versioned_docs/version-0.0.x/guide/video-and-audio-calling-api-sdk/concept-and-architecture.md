@@ -5,7 +5,7 @@ pagination_label: Concept And Architecture
 
 # Concept and Architecture - Javascript
 
-Before diving into the concept, let's understand the VideSDK, VideoSDK is a software development kit that offers tools and APIs for creating apps that are based on video and audio. It typically includes features such as video and audio calls, chat, cloud recording, simulcasting (RTMP), interactive live streaming (HLS), and many more across a wide range of platforms and devices.
+Before diving into the concept, it's essential to understand the VideoSDK. VideoSDK is a software development kit that offers tools and APIs for creating apps that are based on video and audio. It typically includes features such as video and audio calls, chat, cloud recording, simulcasting (RTMP), interactive live streaming (HLS), and many more across a wide range of platforms and devices.
 
 ## Concepts
 
@@ -13,7 +13,7 @@ Before diving into the concept, let's understand the VideSDK, VideoSDK is a soft
 
 ### `1. Meeting / Room`
 
-- Meeting or Room object in the VideoSDK provide a virtual place for participants to interact and engage in real-time voice, video, and screen-sharing sessions. The object is in charge of handling media streams and participant communication.
+- Meeting or Room object in the VideoSDK provides a virtual place for participants to interact and engage in real-time voice, video, and screen-sharing sessions. The object is in charge of handling media streams and participant communication.
 
 - Meeting or Room can be uniquely identified by `meetingId` or `roomId`.
 
@@ -27,7 +27,7 @@ Before diving into the concept, let's understand the VideSDK, VideoSDK is a soft
   - The local participant in a meeting/room can also connect with other participants by transmitting and receiving audio and video streams, exchanging chat messages, and more.
 
 - `2.2 Remote Participant` :
-  The remote participant receives audio and video streams from the local participant and other remote participants and also has the ability to exchange audio, video, and chat messages with the local participant.
+  The remote participant receives audio and video streams from both the local participant and other remote participants. Additionally, they have the ability to exchange audio, video, and chat messages with the local participant.
 
 - Each participant in VideoSDK can be uniquely identified by `participantId`.
 
@@ -60,17 +60,17 @@ Before diving into the concept, let's understand the VideSDK, VideoSDK is a soft
 
 ### `7. Simulcasting (RTMP)`
 
-- RTMP is a popular protocol for live streaming video content from a VideoSDK to platforms such as YouTube, Twitch, Facebook, and others.
+- RTMP is a popular protocol for live streaming video content from the VideoSDK to platforms such as YouTube, Twitch, Facebook, and others.
 - By providing the platform-specific `stream key` and `stream URL`, the VideoSDK can connect to the platform's RTMP server and transmit the live video stream.
 
 ### `8. Interactive Live Streaming (HLS)`
 
 - Interactive live streaming (HLS) refers to a type of live streaming where viewers can actively engage with the content being streamed and with other viewers in real-time.
 
-- In an interactive live stream (HLS), viewers can take part in a variety of activities like live polling, Q&A sessions, and even sending virtual gifts to the content creator or each other.
+- In an interactive live stream (HLS), viewers can participate in various activities, such as live polling, Q&A sessions, and even sending virtual gifts to the content creator or each other.
 
 ## Architecture
 
-This diagram demonstrates end-to-end flow to implement video & audio calls, record calls, and go live on social media.
+This diagram illustrates the comprehensive flow for implementing video and audio calls, recording calls, and broadcasting live on social media platforms.
 
 ![Video-sdk-architecture!](/img/video-sdk-archietecture.svg)

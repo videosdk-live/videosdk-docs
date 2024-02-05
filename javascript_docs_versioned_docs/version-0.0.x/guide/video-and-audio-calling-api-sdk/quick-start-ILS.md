@@ -11,17 +11,15 @@ keywords:
   - real-time communication
   - collaboration
 image: img/videosdklive-thumbnail.jpg
-sidebar_position: 1
+sidebar_position: 1 
 slug: quick-start-ILS
 ---
 
 # Quick Start for Interactive Live Streaming in Javascript
 
-VideoSDK enables you to embed the video calling feature into your Javascript application in minutes.
+VideoSDK empowers you to seamlessly integrate the interactive live streaming feature into your Javascript application within minutes.
 
-In this quickstart, we are going to explore interactive live streaming feature of Video SDK. We will go through step by step guide of integrating video calling with Javascript Video SDK
-
-This guide will get you running with the VideoSDK video & audio calling in minutes.
+In this quickstart, you'll explore this feature of VideoSDK. Follow the step-by-step guide to integrate it within your application.
 
 ## Prerequisites
 
@@ -39,11 +37,11 @@ Visit VideoSDK **[dashboard](https://app.videosdk.live/api-keys)** to generate t
 
 ## Getting Started with the Code!
 
-Follow the steps to create the environment necessary to add video calls into your app.Also you can find the code sample for [quickstart here](https://github.com/videosdk-live/quickstart/tree/main/js-hls).
+Follow the steps to create the environment necessary to add video calls into your app. You can also find the code sample for [quickstart here](https://github.com/videosdk-live/quickstart/tree/main/js-hls).
 
 ### Install Video SDK
 
-You can import VideoSDK using `<script>` tag or you can install the VideoSDK using the below-mentioned npm command. Make sure you are in your app directory before you run this command.
+Import VideoSDK using the `<script>` tag or Install it using the following npm command. Make sure you are in your app directory before you run this command.
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -91,15 +89,15 @@ Your project structure should look like this.
    ├── index.js
 ```
 
-We are going to work on two files:
+You will be working on the following files:
 
-- index.html: Responsible to create basic UI.
-- config.js: Responsible to store token.
-- index.js: Responsible to render meeting view and join the meeting.
+- index.html: Responsible for creating a basic UI.
+- config.js: Responsible for storing the token.
+- index.js: Responsible for rendering the meeting view and the join meeting functionality.
 
-### Step 1 : Create UI
+### Step 1 : Design the user interface (UI)
 
-In this step, we are going to create HTML file which will have two screens `join-screen` and `grid-screen`.
+Create an HTML file containing the screens, `join-screen` and `grid-screen`.
 
 ```html title="index.html"
 <!DOCTYPE html>
@@ -157,24 +155,24 @@ In this step, we are going to create HTML file which will have two screens `join
 
 ### Step 2: Implement Join Screen
 
-Set token in `config.js` file which is generated from [here](https://app.videosdk.live/login).
+Configure the token in the `config.js` file, which you can obtain from the [VideoSDK Dashbord](https://app.videosdk.live/login).
 
 ```js title="config.js"
-// Auth token we will use to generate a meeting and connect to it
+// Auth token will be used to generate a meeting and connect to it
 TOKEN = "Your_Token_Here";
 ```
 
-Now get all elements from DOM and declare following variables in `index.js` file and then add Event Listener to the join and create meeting buttons.
+Next, retrieve all the elements from the DOM and declare the following variables in the `index.js` file. Then, add an event listener to the join and create meeting buttons.
 
-Join screen will work as medium to either schedule new meeting or to join existing meeting as a host or as a viewer.
+Join screen will serve as a medium to either schedule a new meeting or join an existing one as a host or a viewer.
 
-These will have 3 buttons:
+This functionality will have 3 buttons:
 
-`1. Join as Host:` When this button is clicked, the person will join the entered `meetingId` as `HOST`.
+`1. Join as Host:` When this button is clicked, the person will join the meeting with the entered `meetingId` as `HOST`.
 
-`2. Join as Viewer:` When this button is clicked, the person will join the entered `meetingId` as `VIEWER`.
+`2. Join as Viewer:` When this button is clicked, the person will join the meeting with the entered `meetingId` as `VIEWER`.
 
-`3. New Meeting:` When this button is clicked, the person will join a new meeting as `HOST`.
+`3. Create Meeting:` When this button is clicked, the person will join a new meeting as `HOST`.
 
 ```js title="index.js"
 // getting Elements from Dom
@@ -260,7 +258,7 @@ createButton.addEventListener("click", async () => {
 
 ### Step 3: Initialize meeting
 
-Initialise the meeting by mode passed to the function and only create a local participant stream when mode is "CONFERENCE".
+Initialize the meeting based on the mode passed to the function and only create a local participant stream when the mode is `CONFERENCE`.
 
 ```js title="index.s"
 // Initialize meeting
@@ -291,7 +289,7 @@ function initializeMeeting(mode) {
 
     if (mode === Constants.modes.CONFERENCE) {
       // highlight-start
-      // we will pin the local participant if he joins in `CONFERENCE` mode
+      // Pin the local participant if he joins in `CONFERENCE` mode
       meeting.localParticipant.pin();
       // highlight-end
 
@@ -358,9 +356,9 @@ function initializeMeeting(mode) {
 
 ### Step 4: Speaker Controls
 
-Next step is to create `SpeakerView` and `Controls` componenets to manage features such as join, leave, mute and unmute.
+Next step is to create `SpeakerView` and `Controls` components to manage features such as join, leave, mute and unmute.
 
-We will get all the `participants` from `meeting` object and filter them for the mode set to `CONFERENCE` so only Speakers are shown on the screen.
+You have to retrieve all the `participants` using the `meeting` object and filter them based on the mode set to `CONFERENCE` ensuring that only Speakers are displayed on the screen.
 
 ```js title="index.js"
 // leave Meeting Button Event Listener
@@ -423,7 +421,7 @@ stopHlsButton.addEventListener("click", async () => {
 
 ### Step 5: Speaker Media Elements
 
-In this step, we will create a function that helps us to create audio and video elements for displaying local and remote participants for speaker. We will also set the appropriate media track based on whether it's a video or audio.
+In this step, Create a function to generate audio and video elements for displaying both local and remote participants for the speaker. Set the corresponding media track based on whether it's a video or audio stream.
 
 ```js title="index.js"
 // creating video element
@@ -505,11 +503,11 @@ function setTrack(stream, audioElement, participant, isLocal) {
 
 ### Step 6: Implement ViewerView
 
-When host start the live streaming, viewer will be able to see the live streaming.
+When the host initiates the live streaming, viewers will be able to watch it.
 
-To implement player view, we are going to use `hls.js`. It will be helpful to play hls stream.We have already added script of `hls.js` in `index.html` file.
+To implement the player view, you have to use `hls.js`. It will be helpful for playing the HLS stream. The script of `hls.js` file already added in the `index.html` file.
 
-Now on the `hls-state-changed` event, when participant mode is set to `VIEWER` and the status of hls is `HLS_PLAYABLE`, we will pass the downstreamUrl to the hls.js and play it.
+Now on the `hls-state-changed` event, when participant mode is set to `VIEWER` and the status of hls is `HLS_PLAYABLE`, pass the downstreamUrl to the hls.js and play it.
 
 ```js title="index.js"
 // Initialize meeting
@@ -586,7 +584,7 @@ function initializeMeeting() {
 
 #### Final Output
 
-We are done with implementation of customised video calling app in Javascript using Video SDK. To explore more features go through Basic and Advanced features.
+You have completed the implementation of a customised live streaming app in Javascript using VideoSDK. To explore more features, go through Basic and Advanced features.
 
 import ReactPlayer from 'react-player'
 

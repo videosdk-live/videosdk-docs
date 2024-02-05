@@ -27,63 +27,63 @@ slug: react-native-ios-screen-share
 
 ### Step 1 : Open Target
 
-Open your project with xcode, select **File > New > Target** in menu bar.
+Open your project with xcode, the select **File > New > Target** in menu bar.
 
 ![IOS Screen Share](/img/ios-screenshare/step1-xcode.png)
 
 ### Step 2 : Select Target
 
-Choose **Broadcast Upload Extension**, and click next.
+Select **Broadcast Upload Extension** and click next.
 
 ![IOS Screen Share](/img/ios-screenshare/step2-xcode.png)
 
 ### Step 3 : Configure Broadcast Upload Extension
 
-Enter extensions name in **Product Name** field, choose team from dropdown, Uncheck include UI extension field and click finish.
+Enter the extension's name in the **Product Name** field, choose the team from the dropdown, uncheck the "Include UI extension" field, and click "Finish."
 
 ![IOS Screen Share](/img/ios-screenshare/step3-xcode.png)
 
 ### Step 4 : Activate Extension scheme
 
-You will be prompted **Activate "Your-Extension-name" scheme?** pop-up, click activate.
+You will be prompted with a popup : **Activate "Your-Extension-name" scheme?**, click on activate.
 
 ![IOS Screen Share](/img/ios-screenshare/step4-xcode.png)
-
-Now, broadcast folder will appear in xcode left side bar.
+ 
+Now, the "Broadcast" folder will appear in the Xcode left side bar.
 
 ![IOS Screen Share](/img/ios-screenshare/step5-xcode.png)
 
 ### Step 5 : Add External file in Created Extension
 
-Open [videosdk-rtc-react-native-sdk-example](https://github.com/videosdk-live/videosdk-rtc-react-native-sdk-example/tree/master/ios/BroadcastScreen), Copy `SampleUploader.swift`, `SocketConnection.swift`, `DarwinNotificationCenter.swift`, and `Atomic.swift` files to your extension's folder and make sure they're added to the target.
+Open the [videosdk-rtc-react-native-sdk-example](https://github.com/videosdk-live/videosdk-rtc-react-native-sdk-example/tree/master/ios/BroadcastScreen) repository, and copy the following files: `SampleUploader.swift`, `SocketConnection.swift`, `DarwinNotificationCenter.swift`, and `Atomic.swift` to your extension's folder. Ensure that these files are added to the target.
 
 ### Step 6 : Update `SampleHandler.swift` file
 
-Open [SampleHandler.swift](https://github.com/videosdk-live/videosdk-rtc-react-native-sdk-example/blob/master/ios/BroadcastScreen/SampleHandler.swift) and Copy `SampleHandler.swift` file content and paste it to your extensions `SampleHandler.swift` file.
+Open [SampleHandler.swift](https://github.com/videosdk-live/videosdk-rtc-react-native-sdk-example/blob/master/ios/BroadcastScreen/SampleHandler.swift), and copy the content of the file. Paste this content into your extension's SampleHandler.swift file.
 
 ### Step 7 : Add Capability in App
 
-In Xcode, go to **YourappName > Signing & Capabilities**. and click on **+Capability** to configure app group.
+In Xcode, navigate to **YourappName > Signing & Capabilities**, and click on **+Capability** to configure the app group.
 
 ![IOS Screen Share](/img/ios-screenshare/step8-xcode.png)
 
-Select **App Groups** from list
+Choose **App Groups** from the list.
 
 ![IOS Screen Share](/img/ios-screenshare/step9-xcode.png)
-
-After that, you have to select or add generated app group id which you have created before.
+ 
+After that, select or add the generated App Group ID that you have created before.
 
 ![IOS Screen Share](/img/ios-screenshare/step10-xcode.png)
 
 ### Step 8 : Add Capability in Extension
 
-Go to **Your-Extension-Name > Signing & Capabilities** and configure **App Group** functionality which we had perform in previous steps. (Group id should be same for both targets)
+Go to **Your-Extension-Name > Signing & Capabilities** and configure **App Group** functionality which we had perform in previous steps. (Group id should be same for both targets).
 
 ![IOS Screen Share](/img/ios-screenshare/step11-xcode.png)
 
 ### Step 9 : Add App Group Id in Extension File
 
-Go to extensions `SampleHandler.swift` file and paste your group Id in `appGroupIdentifier` constant.
+Go to the extension's `SampleHandler.swift` file and paste your group ID in the `appGroupIdentifier` constant.
 
 ![IOS Screen Share](/img/ios-screenshare/step12-xcode.png)
 
@@ -92,44 +92,44 @@ Go to extensions `SampleHandler.swift` file and paste your group Id in `appGroup
 1.  Add a new key **RTCScreenSharingExtension** in Info.plist with the extension's Bundle Identifier as the value.
 2.  Add a new key **RTCAppGroupIdentifier** in Info.plist with the extension's App groups Id as the value.
 
-**Note** : For extension's Bundle Identifier, go to **TARGETS > Your-Extension-Name > Signing & Capabilities** .
+**Note** : For the extension's Bundle Identifier, go to **TARGETS > Your-Extension-Name > Signing & Capabilities** .
 
 ![IOS Screen Share](/img/ios-screenshare/step13-xcode.png)
 
 :::note
 
-You can also check out extension [example code](https://github.com/videosdk-live/videosdk-rtc-react-native-sdk-example/tree/master/ios/BroadcastScreen) on github
+You can also check out the extension's [example code](https://github.com/videosdk-live/videosdk-rtc-react-native-sdk-example/tree/master/ios/BroadcastScreen) on github.
 :::
 
 ## Create iOS Native Module for RPSystemBroadcastPickerView
 
 ### Step 1 : Add Files in iOS Project
 
-Go to **Xcode > Your App**, create new file name `VideosdkRPK.swift`
+Go to **Xcode > Your App** and create a new file named `VideosdkRPK.swift`.
 
 ![IOS Screen Share](/img/ios-screenshare/step18-xcode.png)
 ![IOS Screen Share](/img/ios-screenshare/step19-xcode.png)
 
-After click on Create button, it will prompt you to create bridging header.
+After clicking the Create button, it will prompt you to create a bridging header.
 
 ![IOS Screen Share](/img/ios-screenshare/step20-xcode.png)
 
-After creating bridging header file, create Objective-c file name `VideosdkRPK`
+After creating the bridging header file, create an Objective-c file named `VideosdkRPK`.
 
 ![IOS Screen Share](/img/ios-screenshare/step21-xcode.png)
 ![IOS Screen Share](/img/ios-screenshare/step22-xcode.png)
 
-- For `VideosdkRPK.swift` file, copy the content from [VideosdkRPK.swift](https://github.com/videosdk-live/videosdk-rtc-react-native-sdk-example/blob/master/ios/VideosdkRPK.swift).
+- For the `VideosdkRPK.swift` file, copy the content from [here](https://github.com/videosdk-live/videosdk-rtc-react-native-sdk-example/blob/master/ios/VideosdkRPK.swift).
 
-- For `Appname-Bridging-Header` file, just add `#import "React/RCTEventEmitter.h"` line.
+- In the `Appname-Bridging-Header` file, add the line `#import "React/RCTEventEmitter.h"`.
 
-- For `VideosdkRPK.m` file, copy the content from [VideosdkRPK.m](https://github.com/videosdk-live/videosdk-rtc-react-native-sdk-example/blob/master/ios/VideosdkRPK.m).
+- For the `VideosdkRPK.m` file, copy the content from [here](https://github.com/videosdk-live/videosdk-rtc-react-native-sdk-example/blob/master/ios/VideosdkRPK.m).
 
 ### Step 2 : Integrate Native Module on React native side
 
-- Create file with name `VideosdkRPK.js` and copy the code from [VideosdkRPK.js](https://github.com/videosdk-live/videosdk-rtc-react-native-sdk-example/blob/master/VideosdkRPK.js).
+- Create a file named `VideosdkRPK.js` and copy the ccontent from [here](https://github.com/videosdk-live/videosdk-rtc-react-native-sdk-example/blob/master/VideosdkRPK.js).
 
-- Add below lines for handling enable and disable screen share event.
+- Add the lines given below for handling the enable and disable screen share event.
 
 ```js
 import React, { useEffect } from "react";
@@ -174,11 +174,11 @@ return (
 );
 ```
 
-- `VideosdkRPK.startBroadcast()` method results below image
+- The `VideosdkRPK.startBroadcast()` method produces the following result.
 
 ![IOS Screen Share](/img/ios-screenshare/step23-xcode.png)
 
-After clicking **Start Broadcast** button, we wiil be able to get the screen stream in session.
+After clicking the **Start Broadcast** button, you will be able to get the screen share stream in the session.
 
 <!-- ## How to Create App Group in Apple Store
 ### Step 1 : Go to App store

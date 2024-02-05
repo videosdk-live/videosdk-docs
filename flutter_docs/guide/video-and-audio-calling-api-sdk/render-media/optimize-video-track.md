@@ -27,7 +27,7 @@ For the best fine-tuning experience, we have introduced the ability to pass a cu
 
 This feature can be used to add custom video encoder configurations and background removal & video filter from external libraries and send it to other participants.
 
-### `How to Create Custom Video Track ?`
+### `How to Create a Custom Video Track ?`
 
 - You can create a Video Track using `createCameraVideoTrack()` method of `VideoSDK` class.
 
@@ -48,7 +48,7 @@ CustomTrack customTrack = await VideoSDK.createCameraVideoTrack({
   encoderConfig: "h480p_w640p", // "h540p_w960p" | "h720p_w1280p" ... // Default : "h360p_w640p"
 
   // highlight-next-line
-  // For Mobile browser It will specifiy whether to use front or back camera for the video track.
+  // For Mobile browser It will specify whether to use front or back camera for the video track.
   facingMode: "environment", // "user",  Default : "environment"
 
   // highlight-next-line
@@ -64,7 +64,7 @@ The capabilities of the device have a significant impact on how custom track con
 
 ##### What is `multiStream`?
 
-- It will specifiy if the stream should send multiple resolution layers or single resolution layer.
+- It will specify if the stream should send multiple resolution layers or single resolution layer.
 
 **`multiStream : true`** By default, VideoSDK sends multiple resolution video streams to the server (whether you are using custom video track or not), For instance, user device capabilty is 720p, so VideoSDK sends 720p along with 640p and 480p streams. This allows VideoSDK to deliver the appropriate stream to each participant based on their network bandwidth.
 
@@ -86,14 +86,14 @@ The capabilities of the device have a significant impact on how custom track con
 `setQuality` would not have any effect if multiStream is set to `false`.
 :::
 
-### `How to Setup Custom Video Track ?`
+### `How to Setup a Custom Video Track ?`
 
 The custom track can be set up both before and after the initialization of the meeting.
 
-1. [Setup Custom Track while initialization of the meeting](#1-setup-custom-track-while-initialization-of-the-meeting)
-2. [Setup Custom Track with methods](#2-setup-custom-track-with-methods)
+1. [Setting up a Custom Track during the initialization of a meeting](#1-setup-custom-track-while-initialization-of-the-meeting)
+2. [Setting up a Custom Track with methods](#2-setup-custom-track-with-methods)
 
-##### 1. Setup Custom Track while initialization of the meeting
+##### 1. Setting up a Custom Track during the initialization of a meeting
 
 If you are passing `webcamEnabled: true` in the `createRoom` and want to use custom tracks from start of the meeting, you can pass custom track in the `customCameraVideoTrack` as shown below.
 
@@ -157,7 +157,7 @@ class _MeetingScreenState extends State<MeetingScreen> {
 }
 ```
 
-#### 2. Setup Custom Track with methods
+#### 2. Setting up a Custom Track with methods
 
 In order to switch tracks during the meeting, you have to pass the `CustomTrack` in the **`enableCam()`** method of `Room`.
 

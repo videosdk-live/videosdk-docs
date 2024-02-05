@@ -9,32 +9,30 @@ keywords:
   - Start Livestream meeting
   - Stop Livestream meeting
   - audio calling
-  - video calling
+  - video calling 
   - real-time communication
 image: img/videosdklive-thumbnail.jpg
-sidebar_position: 1
+sidebar_position: 1 
 slug: rtmp-livestream
 ---
 
 # RTMP Livestream - React Native
 
-RTMP is a popular protocol for live streaming video content from a VideoSDK to platforms such as YouTube, Twitch, Facebook, and others.
+RTMP is a widely used protocol for live streaming video content from VideoSDK to platforms like YouTube, Twitch, Facebook, and others.
 
-By providing the platform-specific stream key and stream URL, the VideoSDK can connect to the platform's RTMP server and transmit the live video stream.
+To initiate live streaming from VideoSDK to platforms supporting RTMP ingestion, you simply need to provide the platform-specific stream key and stream URL. This enables VideoSDK to connect to the platform's RTMP server and transmit the live video stream.
 
-VideoSDK allows you to livestream your meeting to platform which support RTMP ingestion just by providing the platform-specific stream key and stream URL, we can connect to the platform's RTMP server and transmit the live video stream.
+Furthermore, VideoSDK offers flexibility in configuring livestream layouts. You can achieve this by either selecting different prebuilt layouts in the configuration or by providing your custom template for livestreaming, catering to your specific layout preferences.
 
-VideoSDK also allows you to configure the livestream layouts in numerous ways like by simply setting different prebuilt layouts in the configuration or by providing your own custom template to do the livestream according to your layout choice.
-
-This guide will provide an overview of how to implement start and stop RTMP Livestreaming.
+This guide will provide an overview of how to implement starting and stopping RTMP livestreaming with VideoSDK.
 
 ### `startLivestream()`
 
-`startLivestream()` can be used to start a RTMP livestream of the meeting which can be accessed from the `useMeeting` hook. This method accepts two parameters:
+The `startLivestream()` method, accesible from the `useMeeting` hook, is used to initiate the RTMP livestream of a meeting. This method accepts the following two parameters:
 
-- `1. outputs`: This parameter accepts an array of objects which contains the RTMP `url` and `streamKey` of the platforms you want to start the livestream.
+- `1. outputs`: This parameter takes an array of objects containing the RTMP `url` and `streamKey` specific to the platform where you want to initiate the livestream.
 
-- `2. config (optional)`: This parameter will define how the livestream layout should look like.
+- `2. config (optional)`: This parameter defines the layout configuration for the livestream.
 
   ```js
   const config = {
@@ -63,7 +61,7 @@ This guide will provide an overview of how to implement start and stop RTMP Live
 
 ### `stopLivestream()`
 
-- `stopLivestream()` is used to stop the meeting livestream which can be accessed from the `useMeeting` hook.
+The `stopLivestream()` method, accesible from the `useMeeting` hook, is used to stop the RTMP livestream of a meeting.
 
 #### Example
 
@@ -123,7 +121,7 @@ const MeetingView = () => {
 
 ### Event associated with Livestream
 
-- **onLivestreamStateChanged** - Whenever meeting livestream state changes, then `onLivestreamStateChanged` event will trigger.
+- **onLivestreamStateChanged** - The `onLivestreamStateChanged()` event is triggered whenever the state of meeting livestream changes.
 
 ```js
 import { Constants, useMeeting } from "@videosdk.live/react-native-sdk";
@@ -154,7 +152,7 @@ const {
 
 ### Custom Template
 
-With VideoSDK, you can also use your own custom designed layout template to livestream the meetings. In order to use the custom template, you need to create a template for which you can [follow this guide](/react/guide/interactive-live-streaming/custom-template). Once you have setup the template, you can use the [REST API to start](/api-reference/realtime-communication/start-livestream) the livestream with the `templateURL` parameter.
+With VideoSDK, you can also use your own custom designed layout template to record the meetings. In order to use the custom template, you need to create a template for which you can [follow this guide](/react/guide/interactive-live-streaming/custom-template). Once you have setup the template, you can use the [REST API to start](/api-reference/realtime-communication/start-recording) the recording with the `templateURL` parameter.
 
 ### API Reference
 

@@ -6,7 +6,7 @@ tags: [releasenotes]
 
 # Release Notes - React Native
 
-This page will keep you update all the releases of React Native SDK.
+This page will keep you updated on all the releases of React Native SDK.
 
 ## v0.1.0
 

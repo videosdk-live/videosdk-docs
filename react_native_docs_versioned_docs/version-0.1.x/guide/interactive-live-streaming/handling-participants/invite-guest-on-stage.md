@@ -12,25 +12,25 @@ keywords:
   - video calling
   - real-time communication
 image: img/videosdklive-thumbnail.jpg
-sidebar_position: 1
+sidebar_position: 1 
 slug: invite-guest-on-stage
 ---
 
 # Invite Guest on Stage - React Native
 
-In this guide, we will see how you can request a viewer to join your livestream by using the `changeMode()`.
+This guide explains the process of inviting a viewer to join a livestream using the `changeMode()` method.
 
 :::note
-Before going forward in this guide, do make sure all the attendees join the meeting with mode as `VIEWER` and the host joins with mode as `CONFERENCE`
+Before proceeding with this guide, ensure that all attendees join the meeting with the mode set to `VIEWER`, while the host joins with the mode set to `CONFERENCE`.
 :::
 
-Let's first have a look at how we will be using the `PubSub` mechanism to acheive the requesting and switching of the participant's mode.
+The diagram below illustrates the utilization of the `PubSub` mechanism to facilitate the requesting and switching of the participant's mode.
 
 ![invite-guest-pubsub](https://cdn.videosdk.live/website-resources/docs-resources/invite_guest_pubsub.png)
 
-### Step 1: Loading Viewer List
+### Step 1: Loading the Viewer List
 
-The host will see a list of participants who have joined as `VIEWER` along with a button that, when selected, will invite that user to join the livestream.
+First, the host will be presented with a list of participants who have joined as `VIEWER`, accompanied by a button that, when selected, will invite that user to join the livestream.
 
 ```js
 import { useMeeting, useParticipant } from "@videosdk.live/react-native-sdk";
@@ -93,9 +93,7 @@ function ViewerListItem({ participantId }) {
 
 ### Step 2: Requesting a Viewer to Join Livestream
 
-We have a Viewer list ready. Now, let us handle the click event for the Join Livestream button.
-
-We will be using `CHANGE_MODE_$participantId` as the topic for PubSub.
+Now, with the Viewer list in place, handle the click event for the "Join Livestream" button by utilizing `CHANGE_MODE_$participantId` as the topic for PubSub.
 
 ```js
 import { usePubSub } from "@videosdk.live/react-native-sdk";
@@ -143,7 +141,7 @@ function ViewerListItem({ participantId }) {
 
 ### Step 3: Showing Viewer Request Dialog
 
-After implementing the Host requesting viewer to join the livestream, let's display the viewer's request dialogue and switch the `VIEWER` mode to `CONFERENCE`.
+After implementing the host's request for a viewer to join the livestream, display the viewer's request dialogue and switch the mode from `VIEWER` to `CONFERENCE`.
 
 ```js
 import { usePubSub } from "@videosdk.live/react-native-sdk";
@@ -218,14 +216,14 @@ function ViewerView({}) {
 
 ### Step 4: Pin the participant
 
-We need to pin the participant so that he/she can appears on the livestream. To achieve this, we will listen to the callback on the `onParticipantModeChanged` of `useMeeting` hook.
+To ensure the participant appears on the livestream, they have to be pinned. This can be achieved by listening to the callback on the `onParticipantModeChanged` event of the `useMeeting` hook.
 
 ```js
 function MeetingView() {
   const mMeeting = useMeeting({});
 
-  //We are using a reference to the meeting object because
-  //While referencing it in the callbacks we want to use its latest state
+  ///Here a reference to the meeting object is used because
+  //while referencing it in the callbacks its latest state has to be obtained.
   const mMeetingRef = useRef();
 
   useEffect(() => {
@@ -252,7 +250,7 @@ function MeetingView() {
 
 :::tip
 
-If you want complete source code, you can checkout our [code sample](https://github.com/videosdk-live/videosdk-hls-react-native-sdk-example)
+For the complete source code, you can checkout our [code sample](https://github.com/videosdk-live/videosdk-hls-react-native-sdk-example)
 :::
 
 ## API Reference

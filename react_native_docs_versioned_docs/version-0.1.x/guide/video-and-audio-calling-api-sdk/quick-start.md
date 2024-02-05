@@ -22,9 +22,9 @@ import Mermaid from '@theme/Mermaid';
 
 <ReactPlayer controls url="https://www.youtube.com/watch?v=pqg1y3eRyK4" height="500px" width={"100%"} />
 
-VideoSDK enables the opportunity to integrate video & audio calling to Web, Android, iOS applications. It provides Programmable SDKs and REST APIs to build scalable video conferencing applications.
+VideoSDK empowers you to seamlessly integrate video and audio calling features into your Web, Android or iOS application within minutes. It provides Programmable SDKs and REST APIs to build scalable video conferencing applications.
 
-This guide will get you running with the VideoSDK video & audio calling in minutes.
+In this quickstart, you'll explore the video and audio calling feature of VideoSDK. Follow the step-by-step guide to integrate it within your application. 
 
 ### Prerequisites
 
@@ -34,11 +34,11 @@ This guide will get you running with the VideoSDK video & audio calling in minut
 
 ### App Architecture
 
-This App will contain two screen :
+The App will contain two screens :
 
-1. `Join Screen` : This screen allows user to either create meeting or join predefined meeting.
+1. `Join Screen` : This screen allows users to either create a meeting or join a predefined meeting.
 
-2. `Meeting Screen` : This screen basically contain participant list and some meeting controls such as Enable / Disable Mic & Camera and Leave meeting.
+2. `Meeting Screen` : This screen contains a participant list and meeting controls, such as enabling/disabling the microphone and camera, and leaving the meeting.
 
 <center>
 
@@ -50,17 +50,17 @@ This App will contain two screen :
 
 ### Create App
 
-Create new react-native app by applying below commands.
+Create a new React Native App using the below command.
 
 ```js
 npx react-native init AppName
 ```
 
-For react-native setup, you can follow [Official Docs](https://reactnative.dev/docs/environment-setup).
+For React Native setup, you can follow the [Official Documentation](https://reactnative.dev/docs/environment-setup).
 
 ### VideoSDK Installation
 
-Install the VideoSDK by following the below command. Do make sure you should be in your project directory before you run this command.
+Install the VideoSDK by using the following command. Ensure that you are in your project directory before running this command.
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -104,7 +104,7 @@ yarn add "@videosdk.live/react-native-sdk" "@videosdk.live/react-native-incallma
 
 #### Android Setup
 
-1. Add required permission in AndroidManifest.xml file.
+1. Add the required permissions in the `AndroidManifest.xml` file.
 
 ```xml title="AndroidManifest.xml"
 <manifest
@@ -155,7 +155,7 @@ yarn add "@videosdk.live/react-native-sdk" "@videosdk.live/react-native-incallma
 </manifest>
 ```
 
-2. Update colors.xml for internal dependencies
+2. Update your `colors.xml` file for internal dependencies.
 
 ```js title="android/app/src/main/res/values/colors.xml"
 <resources>
@@ -168,7 +168,7 @@ yarn add "@videosdk.live/react-native-sdk" "@videosdk.live/react-native-incallma
 </resources>
 ```
 
-3. Linking VideoSDK Dependencies.
+3. Link the necessary VideoSDK Dependencies.
 
 ```java title="android/app/build.gradle"
   dependencies {
@@ -213,13 +213,13 @@ public class MainApplication extends Application implements ReactApplication {
 android.enableDexingArtifactTransform.desugaring=false
 ```
 
-4. Add below line in the proguard-rules.pro (optional: if you are using Proguard)
+4. Include the following line in your `proguard-rules.pro` file (optional: if you are using Proguard)
 
 ```java title="android/app/proguard-rules.pro"
 -keep class org.webrtc.** { *; }
 ```
 
-5. In the `build.gradle` file, update the minimum OS/SDK version to `23`.
+5. In your `build.gradle` file, update the minimum OS/SDK version to `23`.
 
 ```java title=build.gradle
 buildscript {
@@ -232,44 +232,43 @@ buildscript {
 #### iOS Setup
 
 
-1. **IMPORTANT**: Make sure you are using CocoaPods 1.10 or higher.
+1. **IMPORTANT**: Ensure that you are using CocoaPods version 1.10 or later.
 
-To update CocoaPods you simply install the gem again
+To update CocoaPods, you can reinstall the gem using the following command:
 
 ```gem
 $ sudo gem install cocoapods
 ```
 
-2. Manual linking (if react-native-incall-manager is not linked automatically)
+2. Manually link react-native-incall-manager (if it is not linked automatically).
 
 - Select `Your_Xcode_Project/TARGETS/BuildSettings`, in Header Search Paths, add `"$(SRCROOT)/../node_modules/@videosdk.live/react-native-incall-manager/ios/RNInCallManager"`
 
-3. Change path of `react-native-webrtc`
+3. Change the path of `react-native-webrtc` using the following command:
 
 ```sh title="Podfile"
 pod ‘react-native-webrtc’, :path => ‘../node_modules/@videosdk.live/react-native-webrtc’
 ```
 
-4. Change your platform version
+4. Change the version of your platform.
 
-You have change platform field of podfile to 12.0 or above it, as react-native-webrtc doesn’t support iOS < 12
-platform :ios, ‘12.0’
+You need to change the platform field in the Podfile to 12.0 or above because react-native-webrtc doesn't support iOS versions earlier than 12.0. Update the line: platform : ios, ‘12.0’.
 
-5. Install pods
+5. Install pods.
 
-After updating the version, you have to install pods.
+After updating the version, you need to install the pods by running the following command:
 
 ```sh
 Pod install
 ```
 
-6. Add “libreact-native-webrtc.a” binary
+6. Add “libreact-native-webrtc.a” binary.
 
-Add “libreact-native-webrtc.a” in Link Binary with libraries. In target of main project folder.
+Add the "libreact-native-webrtc.a" binary to the "Link Binary With Libraries" section in the target of your main project folder.
 
 7. Declare permissions in Info.plist :
 
-Add following lines to info.plist (project folder/ios/projectname/info.plist):
+Add the following lines to your info.plist file located at (project folder/ios/projectname/info.plist):
 
 ```html title="ios/projectname/info.plist"
 <key>NSCameraUsageDescription</key>
@@ -280,7 +279,7 @@ Add following lines to info.plist (project folder/ios/projectname/info.plist):
 
 #### Register Service
 
-Register VideoSDK services in root `index.js` file for initialization service.
+Register VideoSDK services in your root `index.js` file for the initialization service.
 
 ```js title="index.js"
 import { AppRegistry } from "react-native";
@@ -295,7 +294,7 @@ AppRegistry.registerComponent(appName, () => App);
 
 ### Step 1 : Get started with api.js
 
-Before jumping to anything else, we have write API to generate unique meetingId. You will require auth token, you can generate it using either by using [videosdk-rtc-api-server-examples](https://github.com/videosdk-live/videosdk-rtc-api-server-examples) or generate it from the [Video SDK Dashboard](https://app.videosdk.live/api-keys) for developer.
+Prior to moving on, you must create an API request to generate a unique meetingId. You will need an authentication token, which you can create either through the [videosdk-rtc-api-server-examples](https://github.com/videosdk-live/videosdk-rtc-api-server-examples) or directly from the [VideoSDK Dashboard](https://app.videosdk.live/api-keys) for developers.
 
 ```js title=api.js
 export const token = "<Generated-from-dashbaord>";
@@ -317,18 +316,18 @@ export const createMeeting = async ({ token }) => {
 
 ### Step 2: Wireframe App.js with all the components
 
-To build up wireframe of App.js, we are going to use Video SDK Hooks and Context Providers. Video SDK provideos MeetingProvider, MeetingConsumer, useMeeting and useParticipant hooks. Let's understand each of them.
+To build up wireframe of App.js, you need to use VideoSDK Hooks and Context Providers. VideoSDK provides MeetingProvider, MeetingConsumer, useMeeting and useParticipant hooks.
 
-First we will explore Context Provider and Consumer. Context is primarily used when some data needs to be accessible by many components at different nesting levels.
+First you need to understand Context Provider and Consumer. Context is primarily used when some data needs to be accessible by many components at different nesting levels.
 
-- **MeetingProvider**: It is Context Provider. It accepts value `config` and `token` as props. The Provider component accepts a value prop to be passed to consuming components that are descendants of this Provider. One Provider can be connected to many consumers. Providers can be nested to override values deeper within the tree.
-- **MeetingConsumer**: It is Context Consumer. All consumers that are descendants of a Provider will re-render whenever the Provider’s value prop changes.
-- **useMeeting**: It is meeting react hook API for meeting. It includes all the information related to meeting such as join, leave, enable/disable mic or webcam etc.
-- **useParticipant**: It is participant hook API. useParticipant hook is responsible to handle all the events and props related to one particular participant such as name, webcamStream, micStream etc.
+- **MeetingProvider**: This is the Context Provider. It accepts value `config` and `token` as props. The Provider component accepts a value prop to be passed to consuming components that are descendants of this Provider. One Provider can be connected to many consumers. Providers can be nested to override values deeper within the tree.
+- **MeetingConsumer**: This is the Context Consumer. All consumers that are descendants of a Provider will re-render whenever the Provider’s value prop changes.
+- **useMeeting**: This is the meeting hook API. It includes all the information related to meeting such as join, leave, enable/disable mic or webcam etc.
+- **useParticipant**: This is the participant hook API. It is responsible for handling all the events and props related to one particular participant such as name, webcamStream, micStream etc.
 
-Meeting Context helps to listen on all the changes when participant joines meeting or changes mic or camera etc.
+The Meeting Context provides a way to listen for any changes that occur when a participant joins the meeting or makes modifications to their microphone, camera, and other settings.
 
-Let's get started with change couple of lines of code in App.js
+Begin by making a few changes to the code in the App.js file.
 
 ```js
 import React, { useState } from "react";
@@ -391,7 +390,7 @@ export default function App() {
 
 ### Step 3 : Implement Join Screen
 
-Join screen will work as medium to either schedule new meeting or to join existing meeting.
+Join screen will serve as a medium to either schedule a new meeting or join an existing one.
 
 ```js title="JoinScreen Component"
 function JoinScreen(props) {
@@ -468,9 +467,9 @@ function JoinScreen(props) {
 
 ### Step 4 : Implement Controls
 
-Next step is to create a `ControlsContainer` component that manage features such as Join or Leave Meeting and Enable or Disable Webcam/Mic.
+Next step is to create a `ControlsContainer` component to manage features such as Join or Leave Meeting and Enable or Disable Webcam/Mic.
 
-In this steps we will use `useMeeting` hook to get all required method such as `join()`, `leave()`, `toggleWebcam` and `toggleMic`.
+In this step, the `useMeeting` hook is utilized to acquire all the required methods such as `join()`, `leave()`, `toggleWebcam` and `toggleMic`.
 
 ```js title="ControlsContainer Component"
 const Button = ({ onPress, buttonText, backgroundColor }) => {
@@ -569,9 +568,9 @@ function MeetingView() {
 
 ### Step 5 : Render Participant List
 
-After implementing controls, now it's time to render joined participants.
+After implementing the controls, next step is to render the joined participants.
 
-We will get joined `participants` from `useMeeting` Hook.
+You can get all the joined `participants` from the `useMeeting` Hook.
 
 ```js title="ParticipantList Component"
 function ParticipantView() {
@@ -624,13 +623,13 @@ function MeetingView() {
 }
 ```
 
-### Step 6 : Handling Participant Media
+### Step 6 : Handling Participant's Media
 
-Before Handling Participant Media, We need to understand couple of concepts.
+Before Handling the Participant's Media, you need to understand a couple of concepts.
 
 #### 1. useParticipant Hook
-
-useParticipant hook is responsible to handle all the properties and events of one particular participant joined in the meeting. It will take participantId as argument.
+ 
+The `useParticipant` hook is responsible for handling all the properties and events of one particular participant joined in the meeting. It will take participantId as argument.
 
 ```js title="useParticipant Hook Example"
 const { webcamStream, webcamOn, displayName } = useParticipant(participantId);
@@ -638,7 +637,7 @@ const { webcamStream, webcamOn, displayName } = useParticipant(participantId);
 
 #### 2. MediaStream API
 
-MediaStream is useful to add MediaTrack to the `RTCView` component to play the audio and video.
+The MediaStream API is beneficial for adding a MediaTrack into the `RTCView` component, enabling the playback of audio or video.
 
 ```js title="useParticipant Hook Example"
 <RTCView
@@ -695,7 +694,7 @@ function ParticipantView({ participantId }) {
 
 Stuck anywhere? Check out this [example code](https://github.com/videosdk-live/quickstart/tree/main/react-native) on GitHub.
 
-**Expo** user, you can refer this [example code](https://github.com/videosdk-live/quickstart/tree/main/expo-react-native-rtc) on GitHub.
+**Expo** user, you can refer to this [example code](https://github.com/videosdk-live/quickstart/tree/main/expo-react-native-rtc) on GitHub.
 
 :::
 

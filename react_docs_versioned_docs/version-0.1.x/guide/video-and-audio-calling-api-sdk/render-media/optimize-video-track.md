@@ -13,7 +13,7 @@ keywords:
   - audio calling
   - video calling
   - real-time communication
-image: img/videosdklive-thumbnail.jpg
+image: img/videosdklive-thumbnail.jpg 
 sidebar_position: 1
 ---
 
@@ -30,7 +30,7 @@ For an enhanced fine-tuning experience, we've introduced the capability to provi
 
 This feature allows you to incorporate custom video encoder configurations, choose optimization modes (focusing on **motion**, **text** or **detail** of the video), and apply background removal and video filters from external libraries (e.g., [videosdk-media-processor](https://www.npmjs.com/package/@videosdk.live/videosdk-media-processor-web)), then send these modifications to other participants.
 
-### `How to Create Custom Video Track ?`
+### `How to Create a Custom Video Track ?`
 
 - You can create a Custom Video Track using `createCameraVideoTrack()` method of `@videosdk.live/react-sdk`.
 - This method enables the creation of a video track with various encoding parameters, camera facing modes, and optimization modes, ultimately returning a `MediaStream`.
@@ -54,7 +54,7 @@ let customTrack = await createCameraVideoTrack({
   encoderConfig: "h480p_w640p", // "h540p_w960p" | "h720p_w1280p" ... // Default : "h360p_w640p"
 
   // highlight-next-line
-  // For Mobile browser It will specifiy whether to use front or back camera for the video track.
+  // For Mobile browser It will specify whether to use front or back camera for the video track.
   facingMode: "environment", // "front",  Default : "environment"
 
   // highlight-next-line
@@ -109,19 +109,19 @@ Setting **`multiStream : false`** restricts VideoSDK to send only one stream, he
 The `setQuality` parameter will not have any effect if multiStream is set to `false`.
 :::
 
-### `How to Setup Custom Video Track ?`
+### `How to Setup a Custom Video Track ?`
 
-The custom track can be configured both before and after the meeting is initialized. Following are the methods that help in doing so.
+The custom track can be configured both before and after the meeting is initialized. Following are the methods that help in doing so:
 
-1. [Setting up a Custom Track while initialization of the meeting](#1-setup-custom-track-while-initialization-of-the-meeting)
+1. [Setting up a Custom Track during the initialization of a meeting](#1-setup-custom-track-while-initialization-of-the-meeting)
 2. [Setting up a Custom Track with methods](#2-setup-custom-track-with-methods)
 
-##### 1. Setting up a Custom Track while initialization of the meeting
+##### 1. Setting up a Custom Track during the initialization of a meeting
 
-If you are passing `webcamEnabled: true` in the `config` of `MeetingProvider` and want to use custom tracks from start of the meeting, you can pass a custom track in the `config` as shown below.
+If you are enabling the webcam (`webcamEnabled: true`) in the `config` of `MeetingProvider` and wish to use custom tracks from the start of the meeting, you can pass a custom track in the `config` as demonstrated below.
 
 :::caution
-Custom Track will not apply on `webcamEnabled: false` configuration.
+Custom Track will not apply on the `webcamEnabled: false` configuration.
 :::
 
 ##### Example
@@ -172,10 +172,10 @@ function App() {
 
 #### 2. Setting up a Custom Track with methods
 
-To switch tracks during the meeting, you need to pass the `MediaStream` in the **`enableWebcam()` or `toggleWebcam()`** method of `useMeeting`.
+To switch tracks during the meeting, you need to pass the `MediaStream` in the **`enableWebcam()` or `toggleWebcam()`** method of the `useMeeting` hook.
 
 :::tip
-Make sure to call `disableWebcam()` before you create a new track as it may lead to unexpected behavior.
+Make sure to call the `disableWebcam()` method before you create a new track as it may lead to unexpected behavior.
 :::
 
 ##### Example
@@ -255,9 +255,9 @@ In this section, the focus is on understanding participant size and platform-wis
 This feature enables the customization of screenshare streams with enhanced optimization modes and predefined encoder configuration (resolution + FPS) for specific use cases, which can then be sent to other participants.
 
 
-### `How to Create Custom Screen Share Track ?`
+### `How to Create a Custom Screen Share Track ?`
 
-- You can create a Video Track using `createScreenShareVideoTrack()` method of `@videosdk.live/react-sdk`.
+- You can create a Video Track using the `createScreenShareVideoTrack()` method of `@videosdk.live/react-sdk`.
 - This method enables the creation of a video track with different encoding parameters and optimization modes.
 
 #### Example
@@ -275,13 +275,13 @@ let customShareTrack = await createScreenShareVideoTrack({
 
 You can learn more about the `optimizationMode` from [here](#what-is-optimizationmode)
 
-### `How to Setup Custom Screen Share Track ?`
+### `How to Setup a Custom Screen Share Track ?`
 
-In order to switch tracks during the meeting, you have to pass the `MediaStream` in the **`enableScreenShare()` or `toggleScreenShare()`** method of `useMeeting`.
+In order to switch tracks during the meeting, you have to pass the `MediaStream` in the **`enableScreenShare()` or `toggleScreenShare()`** method of the `useMeeting` hook.
 
 :::note
 
-Make sure to call `disableScreenShare()` before you create a new track as it may lead to unexpected behavior.
+Make sure to call the `disableScreenShare()` method before you create a new track as it may lead to unexpected behavior.
 
 :::
 

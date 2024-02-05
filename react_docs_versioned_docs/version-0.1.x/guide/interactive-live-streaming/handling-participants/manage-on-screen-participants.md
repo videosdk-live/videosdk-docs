@@ -14,11 +14,11 @@ keywords:
 image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
 slug: manage-on-screen-participants
----
+--- 
 
 # Manage On-Screen Participants - React 
 
-When engaging in interactive live streaming, it is essential to have only the necessary participant on the screen during the livestream. To manage this, the `pin` and `unpin` methods of the useParticipant hook are employed.
+When engaging in interactive live streaming, it is essential to have only the necessary participant on the screen during the livestream. To manage this, the `pin` and `unpin` methods of the `useParticipant` hook are employed.
 
 :::note
 To ensure only the hosts/speakers are displayed in the grid, utilize the `SPOTLIGHT` layout and prioritize the `pin` function when initiating the interactive livestream.
@@ -44,8 +44,8 @@ import { useMeeting } from "@videosdk.live/react-sdk";
 function MeetingView() {
   const mMeeting = useMeeting({});
 
-  //We are using a reference to the meeting object because
-  //While referencing it in the callbacks we want to use its latest state
+  //Here a reference to the meeting object is used because
+  //while referencing it in the callbacks its latest state has to be obtained.
   const mMeetingRef = useRef();
 
   useEffect(() => {
@@ -56,7 +56,7 @@ function MeetingView() {
     onMeetingJoined: () => {
       //highlight-start
       const localParticipant = mMeetingRef.current?.localParticipant;
-      //We will pin the participant if mode is conference
+      //Pin the participant if the mode is conference
       if (localParticipant.mode == Constants.modes.CONFERENCE) {
         localParticipant.pin();
       } else {
@@ -67,7 +67,7 @@ function MeetingView() {
     onParticipantModeChanged: ({ participantId, mode }) => {
       const localParticipant = mMeetingRef.current?.localParticipant;
       //highlight-start
-      //We will pin the participant if mode is conference else unpin him
+      //Pin the participant if the mode is conference else unpin them
       if (participantId == localParticipant.id) {
         if (localParticipant.mode == Constants.modes.CONFERENCE) {
           localParticipant.pin();

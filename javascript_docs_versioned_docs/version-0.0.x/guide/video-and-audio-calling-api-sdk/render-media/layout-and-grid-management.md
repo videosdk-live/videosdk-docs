@@ -11,7 +11,7 @@ keywords:
   - real-time communication
   - collaboration
 image: img/videosdklive-thumbnail.jpg
-sidebar_position: 1
+sidebar_position: 1 
 slug: layout-and-grid-management
 ---
 
@@ -21,43 +21,45 @@ In this guide, we will take a look at how to efficiently manage the participants
 
 ## Grid Layout
 
-The most usual way to showing participants within a grid. There are multiple things you should keep in mind when showing participants in the grid.
+This guide focuses on how to efficiently manage the participants in different types of layout.
 
-This includes the number of participants being shown on the screens, number of participants in the background(in the meeting but not on the grid), quality which is being consumed for each and every participant in the grid.
+## Grid Layout
+
+The most common way to display participants is within a grid. There are several factors to consider when showing participants in the grid, including the number of participants displayed on the screens, the number of participants in the background (in the meeting but not on the grid), and the quality being consumed for each participant in the grid.
 
 ### Quality of Participant's Video
 
-When there are large number of participants present on the screen, it is best to consume them in lower resolutions. For this we recommend you to call the `setQuality` method on the participants present in the grid with dyanmic values based on the number of participants on the screen.
+When dealing with a large number of participants on the screen, it is advisable to consume their video streams at lower resolutions. To achieve this, we recommend using the `setQuality` method on the participants displayed in the grid, adjusting the values dynamically based on the number of participants visible on the screen.
 
-Here is the recommended video quality:
+The recommended video quality settings are as follows:
 
-1. Participants less than 3: `setQuality("high")`
-2. Participants between 4 to 6: `setQuality("med")`
-3. Participants greater than 6: `setQuality("low")`
+1. For fewer than 3 participants: `setQuality("high")`
+2. For 4 to 6 participants: `setQuality("med")`
+3. For more than 6 participants: `setQuality("low")`
 
 ![grid-quality](/img/grid-quality.png)
 
 ### Grid with Screen Share
 
-When you are rendering a small grid along with the screen share of the presenter or you are showing a simple sidebar video of the participants while the screenshare is on, it is recommended to do `setQuality("low")` for the participants who are present in the sidebar.
+When rendering a small grid alongside the screen share of the presenter, or when showing a simple sidebar video of the participants while the screenshare is on, it is recommended to set the quality to 'low' (`setQuality("low")`) for the participants present in the sidebar.
 
 ## Sidebar Layout
 
-If you have a layout where the speaker is being displayed in the large view and rest of the participants of the meeting are in the small views in a sidebar, you should use `setQuality("high")` for the speaker participant in large view and for rest of the participants you should use `setQuality("low")`.
+For a layout, where the speaker is displayed in the large view, and the rest of the participants are in small views in a sidebar, you should use `setQuality("high")` for the speaker participant, and `setQuality("low")` for the rest of the participants. 
 
 ![sidebar-quality](/img/sidebar-quality.png)
 
 ## Spotlight Layout
 
-If you have a spotlight layout where the speaker is the only one being displayed on the screen then you should use `setQuality("high")` for the speaker participant.
+For a spotlight layout, where the speaker is the only one being displayed on the screen, you should use `setQuality("high")` for the speaker participant.
 
 ![spotlight-quality](/img/spotlight-quality.png)
 
 ## Grid with Pagination
 
-If you are having large video calls where there are multiple speakers with video turned on, it is best to implement a pagination type setup where only a few (6-9) participants are shown on the grid and rest can be seen by changing the page.
+When hosting large video calls with multiple speakers displaying their video feeds, it is recommended to implement a pagination-style setup. Display a limited number (6-9) of participants on the grid, allowing users to switch between pages to view additional participants.
 
-**To best utilize the resourses, you should pause the streams of the participants who are not present in the grid and resume them when the come in to the grid, you can resume their streams.**
+**To optimize resources, consider pausing the streams of participants who are not currently visible on the grid. When they come into view, you can then resume their streams.**
 
 ![grid-pagination](/img/grid-pagination.png)
 

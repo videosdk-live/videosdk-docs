@@ -17,33 +17,33 @@ slug: meeting-events
 
 # Meeting Events - Javascript
 
-VideoSDK provides multiple types of events which can be listened to know the current state of the meeting.
+VideoSDK provides several types of events that can be listened to in order to determine the current state of the meeting. 
 
-Here are the events which specifically relate to the meeting.
+Here are the events which specifically relate to the meeting:
 
 ### meeting-joined
 
 - This event is triggered when the meeting is successfully joined.
-- This event can be subscribed from the `meeting` object.
+- It can be subscribed to using the `meeting` object.
 
 ### meeting-left
 
 - This event is triggered when the meeting is left.
-- This event can be subscribed from the `meeting` object.
+- It can be subscribed to using the `meeting` object.
 
 ### speaker-changed
 
-- This event is triggered when the active speaker in the meeting gets changed.
-- This event can be subscribed from the `meeting` object.
+- This event is triggered when there is a change in the active speaker during the meeting.
+- It can be subscribed to using the `meeting` object.
 
 ### presenter-changed
 
-- This event is triggered when the presenter in the meeting gets changed.
-- This event can be subscribed from the `meeting` object.
+- This event is triggered when there is a change in the presenter during the meeting.
+- It can be subscribed to using the `meeting` object.
 
 ### Example
 
-Here is the usage of all the events mentioned in this page.
+Here is an example demonstrating the usage of the event mentioned on this page.
 
 ```js
 let meeting;

@@ -16,15 +16,15 @@ sidebar_position: 1
 slug: chat-using-pubsub
 ---
 
-# Chat using PubSub - React
+# Chat using PubSub - React 
 
 For communication or any kind of messaging between participants, VideoSDK provides the `usePubSub` hook, which utilizes the Publish-Subscribe mechanism. It can be employed to develop a wide variety of functionalities. For example, participants could use it to send chat messages to each other, share files or other media, or even trigger actions like muting or unmuting audio or video.
 
-This guide focuses on using PubSub to implement Chat functionality. If you are not familiar with the PubSub mechanism and `usePubSub` hook, you can [follow this guide](/react/guide/video-and-audio-calling-api-sdk/collaboration-in-meeting/pubsub).
+This guide focuses on using PubSub to implement Chat functionality. If you are not familiar with the PubSub mechanism and the `usePubSub` hook, you can [follow this guide](/react/guide/video-and-audio-calling-api-sdk/collaboration-in-meeting/pubsub).
 
 ### Implementing Chat
 
-1. The initial step in setting up a group chat involves selecting a topic to which all participants will publish and subscribe, facilitating the exchange of messages. In the following example, `CHAT` is used as the topic. Next, obtain the `publish()` and `messages` from the `usePubSub`hook.
+1. The initial step in setting up a group chat involves selecting a topic to which all participants will publish and subscribe, facilitating the exchange of messages. In the following example, `CHAT` is used as the topic. Next, obtain the `publish()` method and the `messages` array from the `usePubSub`hook.
 
 ```js
 // importing usePubSub hook from react-sdk

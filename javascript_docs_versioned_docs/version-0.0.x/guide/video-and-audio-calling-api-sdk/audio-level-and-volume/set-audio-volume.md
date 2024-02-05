@@ -17,17 +17,17 @@ slug: set-audio-volume
 
 # Setting Audio Volume - Javascript
 
-- By giving the ability to adjust the volume of participants in a meeting. This can help to improve the overall audio quality and ensure that everyone can be heard clearly.
+- Providing the ability to adjust the volume of participants in a meeting enhances the overall audio quality and ensures that everyone can be heard clearly.
 
-- When there are multiple participants in a meeting, it is common for there to be variations in the volume of each person's voice. Some people may speak more softly or have a quieter microphone, while others may speak louder or have a microphone that picks up more background noise.
+- In meetings with multiple participants, variations in the volume of each person's voice are common. Some may speak more softly or have a quieter microphone, while others may speak louder or have a microphone that picks up more background noise.
 
-- By allowing hosts or participants to adjust the volume of individual participants, it becomes easier to balance out this differences and ensure that everyone can be heard clearly. This can lead to more productive and efficient meetings, as people will be able to communicate more effectively.
+- By allowing hosts or participants to adjust the volume of individual participants, it becomes easier to balance out these differences and ensure that everyone can be heard clearly. This can lead to more productive and efficient meetings, as people will be able to communicate more effectively.
 
 ## Meeting Volume
 
-- To the set the audio volume for the meeting, you can set the volume property for each of the `<audio>` you are using to render the paricipant audio.
+- To set the audio volume for the meeting, adjust the volume property for each `<audio>` element used, to render the paricipant audio.
 
-- Value for the `volume` property for the `<audio>` can be betwenn `0` to `1`.
+- Value for the `volume` property for the `<audio>` can be between `0` and `1`.
 
 ```js
 const setAudioVolume = (volume) => {
@@ -44,9 +44,9 @@ To learn more about changing the audio volume [check this documentation](https:/
 
 ## Participant Volume
 
-- You can perform this operation for individual participants as well by providing a unique ID for each participant's `<audio>` element and then setting the volume for the participant participant.
+- This operation can be performed for individual participants as well by providing a unique ID for each participant's `<audio>` element and then setting the volume for them.
 
-- Assuming, you provide `<audio>` element id like `a-<participantId>`, you can set the volume for that participant as shown below.
+- Assuming you provide `<audio>` element IDs like `a-<participantId>`, you can set the volume for a specific participant as shown below.
 
 ```js
 const setAudioVolume = (volume, participantId) => {

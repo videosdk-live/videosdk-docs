@@ -4,7 +4,7 @@ hide_title: true
 hide_table_of_contents: false
 description: Video SDK and Audio SDK, developers need to implement a token server. This requires efforts on both the front-end and backend.
 sidebar_label: Participant Events
-pagination_label: Participant Events
+pagination_label: Participant Events 
 keywords:
   - audio calling
   - video calling
@@ -19,29 +19,29 @@ slug: participant-events
 
 VideoSDK provides various events that can be utilized to gather information about the participants in the meeting.
 
-Here are the events that specifically relate to the participants.
+Here are the events specifically related to the participant:
 
-### onParticipantJoined
+### onParticipantJoined()
 
 - This event is triggered when someone joins the meeting, returning the `Participant` object as parameter.
-- It can be subscribed to, from the `useMeeting` hook.
+- It can be subscribed to using the `useMeeting` hook.
 
-### onParticipantLeft
+### onParticipantLeft()
 
 - This event is triggered when someone leaves the meeting.
-- It can be subscribed to, from the `useMeeting` hook.
+- It can be subscribed to using the `useMeeting` hook.
 
-### onWebcamRequested
+### onWebcamRequested()
 
-- This event will be triggered for participant `B`, when another participant, `A` requests to enable the webcam of participant `B`.
+- This event is triggered for participant `B`, when another participant, `A` requests to enable their webcam.
 - Upon accepting the request, participant `B`'s webcam will be enabled.
-- It can be subscribed to, from the `useMeeting` hook.
+- It can be subscribed to using the `useMeeting` hook.
 
-### onMicRequested
+### onMicRequested()
 
-- This event will be triggered for participant `B` when another participant, `A` requests to enable the mic of participant `B`.
+- This event is triggered for participant `B`, when another participant, `A` requests to enable their mic.
 - Upon accepting the request, participant `B`'s mic will be enabled.
-- It can be subscribed to, from the `useMeeting` hook.
+- It can be subscribed to using the `useMeeting` hook.
 
 ### Example
 

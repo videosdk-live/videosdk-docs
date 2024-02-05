@@ -11,7 +11,7 @@ keywords:
 image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
 slug: image-capturer
----
+--- 
 
 # Image Capturer - React
 
@@ -29,8 +29,8 @@ Enhance the `captureImage()` function by making the height and width parameters,
 
 ### `captureImage()`
 
-- By using `captureImage()` function of `useParticipant` hook, you can capture image of a local participant from their video stream.
-- You can specify the desired height and width in the `captureImage()` function, but these are optional. If not provided, the VideoSDK will automatically use the dimensions of the local participant's webcamStream.
+- By using the `captureImage()` function of the `useParticipant` hook, you can capture image of a local participant from their video stream.
+- You have the option to specify the desired height and width in the `captureImage()` function; however, these parameters are optional. If not provided, the VideoSDK will automatically use the dimensions of the local participant's webcamStream. 
 - The `captureImage()` function returns the image in the form of a `base64` string.
 
 ```js
@@ -66,7 +66,7 @@ You can only capture an image of the local participant. If you called `captureIm
 
 #### Step 1 : Initiate Image Capture Request
 
-- In this step, you'll send a request to Participant B, whose image you want to capture, using pubsub.
+- In this step, you have to first send a request to Participant B, whose image you want to capture, using pubsub.
 - In order to do that, you have to create a pubsub topic called `IMAGE_CAPTURE` in the `ParticipantView` Component.​
 - Here, you will be using the `sendOnly` property of the `publish()` method. Therefore, the request will be sent to that participant only.
 
@@ -151,7 +151,7 @@ const CaptureImageListner = ({ localParticipantId }) => {
 export default CaptureImageListner;
 ```
 
-- The captured image is then stored in VideoSDK's temporary file storage system using the `uploadBase64File()` function of `useFile` hook. This operation returns a unique `fileUrl` of the stored image.
+- The captured image is then stored in VideoSDK's temporary file storage system using the `uploadBase64File()` function of the `useFile` hook. This operation returns a unique `fileUrl` of the stored image.
 
 ```js title="CaptureImageListner.js"
 const CaptureImageListner = ({ localParticipantId }) => {

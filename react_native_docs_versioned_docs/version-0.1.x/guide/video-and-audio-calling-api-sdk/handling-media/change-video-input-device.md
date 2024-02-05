@@ -11,23 +11,23 @@ keywords:
   - video calling
   - real-time communication
 image: img/videosdklive-thumbnail.jpg
-sidebar_position: 1
+sidebar_position: 1 
 slug: change-video-input-device
 ---
 
 # Change Video Input Device - React Native
 
-During the meeting at any point a participant wishes to switch his/her input video device, it can be done using the below mentioned methods.
+During the meeting, at any point, a participant wishing to switch their input video device, can do so using the below-mentioned methods.
 
 ### `getWebcams()`
 
-- This method of the `useMeeting` hook will give you the list of all the available cameras which can be shown in a list.
+- This method of the `useMeeting` hook will provide you with a list of all the available cameras, which can be displayed in a list.
 
-- This method will return an array of objects which will contain the `deviceId` and `label` of the camera input device.
+- It will return an array of objects, which will contain the `deviceId` and `label` of the camera input device.
 
 ### `changeWebcam()`
 
-- Once you know which device you want to switch camera input to, you can pass the `deviceId` to this method to change the camera input device.
+- Once you know which device you want to switch the camera input to, you can pass the `deviceId` to this method to change the camera input device.
 
 #### Example
 

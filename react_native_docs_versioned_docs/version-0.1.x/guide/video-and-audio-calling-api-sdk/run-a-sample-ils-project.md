@@ -17,21 +17,21 @@ slug: run-a-sample-react-native-ils-project
 
 # Run a Sample ILS Project - React Native
 
-Video SDK provides open-source sample project [videosdk-hls-react-native-sdk-example](https://github.com/videosdk-live/videosdk-hls-react-native-sdk-example) on Github. This document introduces how to run this project.
+Video SDK provides an open-source sample project [videosdk-hls-react-native-sdk-example](https://github.com/videosdk-live/videosdk-hls-react-native-sdk-example) on Github. This document introduces how to run the project.
 
 ## Prerequisites
 
-- React Native 0.59.10 or later
-- Node 10 or later
+- React Native version 0.59.10 or later
+- Node version 10 or later
 - Valid Video SDK [Account](https://app.videosdk.live/)
 - For Android
-  - Java Development Kit (JDK) 8 or later
+  - Java Development Kit (JDK) version 8 or later
   - Android Studio (latest version recommended)
-  - A physical or virtual mobile device running Android 5.0 or later
+  - A physical or virtual mobile device running Android version 5.0 or later
 - For iOS
-  - Xcode 9.4 or later
+  - Xcode version 9.4 or later
   - CocoaPods
-  - A physical or virtual mobile device running iOS 9.0 or later
+  - A physical or virtual mobile device running iOS version 9.0 or later
 
 import APISecret from '../../../../mdx/introduction/\_api-key.mdx';
 
@@ -49,7 +49,7 @@ git clone https://github.com/videosdk-live/videosdk-hls-react-native-sdk-example
 
 ### Step 2: Modify `src/api/api.js` file
 
-Generate temporary token from [Video SDK Account](https://app.videosdk.live/signup).
+Modify the file by pasting the previously generated temporary token here.
 
 ```js
 export const getToken = async () => {
@@ -59,7 +59,7 @@ export const getToken = async () => {
 
 ### Step 3: Install the dependencies
 
-Install dependencies of all the project dependencies.
+Install all the project dependencies.
 
 ```
 npm install
@@ -67,7 +67,7 @@ npm install
 
 ### Step 4: Run the sample app
 
-Bingo, it's time to push the launch button.
+Bingo, it's time to push the launch button!
 
 ```
 npm run start

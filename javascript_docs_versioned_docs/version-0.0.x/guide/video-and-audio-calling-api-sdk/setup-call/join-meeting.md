@@ -8,7 +8,7 @@ pagination_label: Join Meeting
 keywords:
   - audio calling
   - video calling
-  - real-time communication
+  - real-time communication 
   - collaboration
 image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
@@ -23,8 +23,8 @@ Before joining the meeting, it has to be initialized. If you have not initialize
 
 ### `join()`
 
-- To join the meeting you can call the `join()` on the created `meeting` object.
-- This method can be called after the meeting is initialized from the `initMeeting` method.
+- To join a meeting you can call the `join()` method on the created `meeting` object.
+- This method can be invoked after the meeting is initialized using the `initMeeting` method.
 
 ```js
 let meeting;
@@ -44,10 +44,10 @@ joinBtn.addEventListener("click", () => {
 
 ### Events associated with Join
 
-Following callbacks are received when a participant is successfully joined.
+Following events are received when a participant successfully joins a meeting.
 
-- [Local Participant](../concept-and-architecture#2-participant) will receive a [`meeting-joined`](/javascript/api/sdk-reference/meeting-class/events#meeting-joined) event, when successfully joined.
-- [Remote Participant](../concept-and-architecture#2-participant) will receive a [`participant-joined`](/javascript/api/sdk-reference/meeting-class/events#participant-joined) event with the newly joined `Participant` object.
+- The [Local Participant](../concept-and-architecture#2-participant) will receive the [`meeting-joined`](/javascript/api/sdk-reference/meeting-class/events#meeting-joined) event, when the meeting is successfully joined.
+- The [Remote Participant](../concept-and-architecture#2-participant) will receive the [`participant-joined`](/javascript/api/sdk-reference/meeting-class/events#participant-joined) event with the newly joined `Participant` object.
 
 ```js
 let meeting;

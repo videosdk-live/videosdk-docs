@@ -12,16 +12,16 @@ keywords:
   - interactive live streaming
 image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
-slug: start-hls
+slug: start-hls 
 ---
 
 # Start HLS - React
 
-Before initiating HLS, it is essential to have a VideoSDK Meeting in progress, which you intend to utilize for interactive live streaming. For detailed instructions on setting up interactive live streaming, please refer to the steps outlined in the  [quick start guide here.](/react/guide/video-and-audio-calling-api-sdk/quick-start-ILS)
+Before initiating HLS, it is essential to have a VideoSDK Meeting in progress, which you intend to utilize for interactive live streaming. For detailed instructions on setting up interactive live streaming, please refer to the steps outlined in the [quick start guide here.](/react/guide/video-and-audio-calling-api-sdk/quick-start-ILS)
 
 ## Starting HLS
 
-Once the user has joined the meeting, the `startHls()` method, accesible from the `useMeeting` hook, can be used to initiate interactive livestream of a meeting. This method accepts the following parameter:
+Once the user has joined the meeting, the `startHls()` method, accesible from the `useMeeting` hook, is used to initiate interactive livestream of a meeting. This method accepts the following parameter:
 
 - `config (optional)`: This parameter defines how the interactive livestream layout should look like.
 
@@ -59,7 +59,7 @@ Once the user has joined the meeting, the `startHls()` method, accesible from th
 ```
 
 :::note
-If you wish for only the conference participants to be visible in the livestream, you can `pin` all participants in the conference mode and commence the livestream with the `SPOTLIGHT` layout, prioritizing pinned participants
+If you wish for only the conference participants to be visible in the livestream, you can `pin` all participants in the conference mode and commence the livestream with the `SPOTLIGHT` layout, prioritizing pinned participants.
 :::
 
 ### Example
@@ -127,7 +127,7 @@ If a pinned participant begins screenshare, only the screenshare view will be vi
 
 ## Event associated with HLS
 
-- **onHlsStateChanged** - The `onHlsStateChanged` event is triggered whenever the state of meeting HLS changes.
+- **onHlsStateChanged** - The `onHlsStateChanged()` event is triggered whenever the state of meeting HLS changes.
 
 - You can get the `downstreamUrl` of the HLS to play on the Viewer side when the state changes to `Constants.hlsEvents.HLS_PLAYABLE` as well as from the `hlsUrls` from the `useMeeting` hook.
 
@@ -168,7 +168,7 @@ const {
 
 ## Custom Template
 
-With VideoSDK, you have the option to employ your custom-designed layout template for meeting recordings. To use a custom template, [follow this guide](/react/guide/interactive-live-streaming/custom-template) to create and set up the template. Once the template is configured, you can initiate recording using the [REST API](/api-reference/realtime-communication/start-livestream), specifying the `templateURL` parameter.
+With VideoSDK, you have the option to employ your own custom-designed layout template for meeting recordings. To use a custom template, [follow this guide](/react/guide/interactive-live-streaming/custom-template) to create and set up the template. Once the template is configured, you can initiate recording using the [REST API](/api-reference/realtime-communication/start-livestream), specifying the `templateURL` parameter.
 
 ## API Reference
 

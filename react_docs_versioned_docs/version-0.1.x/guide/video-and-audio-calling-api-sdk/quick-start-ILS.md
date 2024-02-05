@@ -19,9 +19,9 @@ slug: quick-start-ILS
 
 <ReactPlayer controls url="https://www.youtube.com/watch?v=L1x7wtH-ok8" height="500px" width={"100%"} />
 
-VideoSDK enables you to embed the interactive live streaming feature into your React application in minutes.
+VideoSDK empowers you to seamlessly integrate the interactive live streaming feature into your React application within minutes.
 
-In this quickstart, we are going to explore interactive live streaming feature of VideoSDK. We will go through the step-by-step guide of integrating it with the React VideoSDK
+In this quickstart, you'll explore this feature of VideoSDK. Follow the step-by-step guide to integrate it within your application.
 
 ## Prerequisites
 
@@ -298,7 +298,7 @@ function JoinScreen({ getMeetingAndToken, setMode }) {
 
 Next step is to create a container to manage features such as join, leave, mute, unmute, start and stop HLS for the HOST and to display an HLS Player for the viewer.
 
-You'll determine the mode of the `localParticipant`, if its `CONFERENCE`, display the `SpeakerView` component otherwise show the `ViewerView` component.
+You need to determine the mode of the `localParticipant`, if its `CONFERENCE`, display the `SpeakerView` component otherwise show the `ViewerView` component.
 
 ```js title="Container Component"
 function Container(props) {
@@ -411,7 +411,7 @@ function Container(){
 }
 ```
 
-2. You have to add the `Controls` component which will allow the participant to toggle media.
+2. You have to add the `Controls` component which will allow the participant to toggle their media.
 
 ```js title="Controls Component"
 function Controls() {
@@ -497,7 +497,7 @@ function ParticipantView(props) {
       {webcamOn && (
         <ReactPlayer
           //
-          playsinline // very very imp prop
+          playsinline // extremely crucial prop
           pip={false}
           light={false}
           controls={false}
@@ -520,11 +520,11 @@ function ParticipantView(props) {
 
 #### Output Of SpeakerView Component
 
-![VideoSDK React Interactive Live Streaming Quick Start ParticipantView Component Component](https://cdn.videosdk.live/website-resources/docs-resources/quick_start_react_ils_speaker.png)
+![VideoSDK React Interactive Live Streaming Quick Start ParticipantView Component](https://cdn.videosdk.live/website-resources/docs-resources/quick_start_react_ils_speaker.png)
 
 ### Step 6: Implement ViewerView
 
-When the host starts live streaming, viewer will be able to see it.
+When the host initiates the live streaming, viewers will be able to watch it.
 
 To implement the player view, you have to use `hls.js`. It will be helpful for playing the HLS stream.
 

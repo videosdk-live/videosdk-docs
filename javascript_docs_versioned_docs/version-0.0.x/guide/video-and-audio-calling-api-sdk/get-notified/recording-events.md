@@ -17,16 +17,16 @@ slug: recording-events
 
 # Recording Events - Javascript
 
-VideoSDK provides `recording-state-changed` event which will notify you of the current state of recording for the meeting.
+VideoSDK provides the `recording-state-changed` event, which notifies you of the current state of recording for the meeting.
 
 ### recording-state-changed
 
-- This event will be triggered when the meeting's recording status changed.
-- This event can be subscribed from the `meeting` object.
+- This event is triggered when the recording status of the meeting changes. 
+- It can be subscribed to using the `meeting` object.
 
 ### Example
 
-Here is the usage of the event mentioned in this page.
+Here is an example demonstrating the usage of the event mentioned on this page.
 
 ```javascript
 let meeting;

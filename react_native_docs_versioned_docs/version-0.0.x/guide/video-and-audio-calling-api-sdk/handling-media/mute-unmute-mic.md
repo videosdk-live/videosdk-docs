@@ -150,13 +150,13 @@ const ParticipantView = (participantId) => {
 
 - Every Participant will receive a callback on [`onStreamEnabled()`](/react-native/api/sdk-reference/use-participant/events#onstreamenabled) of the [`useParticipant()`](/react-native/api/sdk-reference/use-participant/introduction) hook with `Stream` object.
 
-- Every Participant will receive a callback on [`onMediaStatusChanged()`](/react-native/api/sdk-reference/use-participant/events#onmediastatuschanged) of the [`useParticipant()`](/react-native/api/sdk-reference/use-participant/introduction) hook with the kind of media and its status.
+- Every Participant will receive a callback on [`onMediaStatusChanged()`](/react-native/api/sdk-reference/use-participant/events#onmediastatuschanged) of the [`useParticipant()`](/react-native/api/sdk-reference/use-participant/introduction) hook with the type of media and its status.
 
 ### Events associated with muteMic
 
 - Every Participant will receive a callback on [`onStreamDisabled()`](/react-native/api/sdk-reference/use-participant/events#onstreamdisabled) of the [`useParticipant()`](/react-native/api/sdk-reference/use-participant/introduction) hook with `Stream` object.
 
-- Every Participant will receive a callback on [`onMediaStatusChanged()`](/react-native/api/sdk-reference/use-participant/events#onmediastatuschanged) of the [`useParticipant()`](/react-native/api/sdk-reference/use-participant/introduction) hook with the kind of media and its status.
+- Every Participant will receive a callback on [`onMediaStatusChanged()`](/react-native/api/sdk-reference/use-participant/events#onmediastatuschanged) of the [`useParticipant()`](/react-native/api/sdk-reference/use-participant/introduction) hook with the type of media and its status.
 
 ### Events associated with toggleMic
 
@@ -164,7 +164,7 @@ const ParticipantView = (participantId) => {
 
 - Every Participant will receive a callback on [`onStreamDisabled()`](/react-native/api/sdk-reference/use-participant/events#onstreamdisabled) of the [`useParticipant()`](/react-native/api/sdk-reference/use-participant/introduction) hook with `Stream` object if the **audio broadcasting was stopped**.
 
-- Every Participant will receive a callback on [`onMediaStatusChanged()`](/react-native/api/sdk-reference/use-participant/events#onmediastatuschanged) of the [`useParticipant()`](/react-native/api/sdk-reference/use-participant/introduction) hook with the kind of media and its status.
+- Every Participant will receive a callback on [`onMediaStatusChanged()`](/react-native/api/sdk-reference/use-participant/events#onmediastatuschanged) of the [`useParticipant()`](/react-native/api/sdk-reference/use-participant/introduction) hook with the type of media and its status.
 
 ```js
 import { useParticipant } from "@videosdk.live/react-native-sdk";

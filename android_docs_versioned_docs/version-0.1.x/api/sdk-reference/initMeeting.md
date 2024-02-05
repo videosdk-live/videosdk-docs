@@ -129,7 +129,7 @@ Please refer this [documentation](/api-reference/realtime-communication/create-r
 
 ### multiStream
 
-- It will specifiy if the stream should send multiple resolution layers or single resolution layer.
+- It will specify if the stream should send multiple resolution layers or single resolution layer.
 
   - type: `boolean`
   - `REQUIRED`

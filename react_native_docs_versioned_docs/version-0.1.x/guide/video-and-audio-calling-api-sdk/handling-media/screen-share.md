@@ -13,7 +13,7 @@ keywords:
 image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
 slug: screen-share
----
+--- 
 
 # Screen Share - React Native
 
@@ -21,23 +21,23 @@ Screen sharing in a meeting is the process of sharing your device screen with ot
 
 ### `enableScreenShare()`
 
-- By using `enableScreenShare()` function of `useMeeting` hook, local participant can share his/her desktop screen to other participants.
+- By using the `enableScreenShare()` function of the `useMeeting` hook, the local participant can share their mobile screen to other participants.
 
-- You can pass customised screenshare track in `enableScreenShare()` by using [Custom Screen Share Track](/react-native/guide/video-and-audio-calling-api-sdk/render-media/optimize-video-track#custom-screen-share-track).
+- You can also pass a customised screenshare track in the `enableScreenShare()` method by using [Custom Screen Share Track](/react-native/guide/video-and-audio-calling-api-sdk/render-media/optimize-video-track#custom-screen-share-track).
 
-- Screen Share stream of the participant can be accessed from the `screenShareStream` property of `useParticipant` hook.
+- The Screen Share stream of a participant can be accessed from the `screenShareStream` property of the `useParticipant` hook.
 
 ### `disableScreenShare()`
 
-- By using `disableScreenShare()` function of `useMeeting` hook, local participant can stop sharing his/her desktop screen to other participants.
+- By using the `disableScreenShare()` function of the `useMeeting` hook, the local participant can stop sharing their mobile screen to other participants.
 
 ### `toggleScreenShare()`
 
-- By using `toggleScreenShare()` function of `useMeeting` hook, local participant can start or stop sharing his desktop screen to other participants based on the current state of the screen sharing.
+- By using the `toggleScreenShare()` function of the `useMeeting` hook, the local participant can start or stop sharing their mobile screen to other participants based on the current state of the screen sharing.
 
-- You can pass customised screenshare track in `toggleScreenShare()` by using [Custom Screen Share Track](/react-native/guide/video-and-audio-calling-api-sdk/render-media/optimize-video-track#custom-screen-share-track).
+- You can also pass a customised screenshare track in the `toggleScreenShare()` method by using [Custom Screen Share Track](/react-native/guide/video-and-audio-calling-api-sdk/render-media/optimize-video-track#custom-screen-share-track).
 
-- Screen Share stream of the participant can be accessed from the `screenShareStream` property of `useParticipant` hook.
+- The Screen Share stream of a participant can be accessed from the `screenShareStream` property of the `useParticipant` hook.
 
 ```jsx
 import { useMeeting } from "@videosdk.live/react-native-sdk";
@@ -108,7 +108,7 @@ For React Native iOS Screen Share feature, you need to follow this guide [React 
 
 ### Rendering Screen Share Stream
 
-1. To render the screenshare, you will need the `participantId` who is presenting the screen, which can be found from the `presenterId` property of `useMeeting` hook.
+1. To render the screenshare, you will need the `participantId` of the user presenting the screen. This can be obtained from the `presenterId` property of the `useMeeting` hook.
 
 ```js
 import {
@@ -130,7 +130,7 @@ const PresenterView = ({ presenterId }) => {
 };
 ```
 
-2. Now that the we have `presenterId`, we will get the `screenShareStream` from the `useParticipant` hook and play it in the `RTCView` component.
+2. Now that you have the `presenterId`, you can obtain the `screenShareStream` using the `useParticipant` hook and play it in the `RTCView` component.
 
 ```js
 const PresenterView = ({ presenterId }) => {
@@ -155,23 +155,23 @@ const PresenterView = ({ presenterId }) => {
 
 ### Events associated with enableScreenShare
 
-- Every Participant will receive a callback on [`onStreamEnabled()`](/react-native/api/sdk-reference/use-participant/events#onstreamenabled) of the [`useParticipant()`](/react-native/api/sdk-reference/use-participant/introduction) hook with `Stream` object.
+- Every Participant will receive a callback on [`onStreamEnabled()`](/react-native/api/sdk-reference/use-participant/events#onstreamenabled) event of the [`useParticipant()`](/react-native/api/sdk-reference/use-participant/introduction) hook with the `Stream` object.
 
-- Every Participant will receive [`onPresenterChanged()`](/react-native/api/sdk-reference/use-meeting/events#onpresenterchanged) callback of the [`useMeeting`](/react-native/api/sdk-reference/use-meeting/introduction) hook with the participantId as `presenterId` who started the screen share.
+- Every Participant will receive the [`onPresenterChanged()`](/react-native/api/sdk-reference/use-meeting/events#onpresenterchanged) callback of the [`useMeeting`](/react-native/api/sdk-reference/use-meeting/introduction) hook, which provides the `participantId` as the `presenterId` of the participant who started the screen share.
 
 ### Events associated with disableScreenShare
 
-- Every Participant will receive a callback on [`onStreamDisabled()`](/react-native/api/sdk-reference/use-participant/events#onstreamdisabled) of the [`useParticipant()`](/react-native/api/sdk-reference/use-participant/introduction) hook with `Stream` object.
+- Every Participant will receive a callback on [`onStreamDisabled()`](/react-native/api/sdk-reference/use-participant/events#onstreamdisabled) event of the [`useParticipant()`](/react-native/api/sdk-reference/use-participant/introduction) hook with the `Stream` object.
 
-- Every Participant will receive [`onPresenterChanged()`](/react-native/api/sdk-reference/use-meeting/events#onpresenterchanged) callback of the [`useMeeting`](/react-native/api/sdk-reference/use-meeting/introduction) hook with the `presenterId` as `null` indicating there is no presenter.
+- Every Participant will receive the [`onPresenterChanged()`](/react-native/api/sdk-reference/use-meeting/events#onpresenterchanged) callback of the [`useMeeting`](/react-native/api/sdk-reference/use-meeting/introduction) hook, with the `presenterId` as `null`, indicating that there is no current presenter.
 
 ### Events associated with toggleScreenShare
 
-- Every Participant will receive a callback on [`onStreamEnabled()`](/react-native/api/sdk-reference/use-participant/events#onstreamdisabled) of the [`useParticipant()`](/react-native/api/sdk-reference/use-participant/introduction) hook with `Stream` object if the **screen share broadcasting was started**.
+- Every Participant will receive a callback on [`onStreamEnabled()`](/react-native/api/sdk-reference/use-participant/events#onstreamdisabled) event of the [`useParticipant()`](/react-native/api/sdk-reference/use-participant/introduction) hook with the `Stream` object, if the **screen share broadcasting was started**.
 
-- Every Participant will receive a callback on [`onStreamDisabled()`](/react-native/api/sdk-reference/use-participant/events#onstreamdisabled) of the [`useParticipant()`](/react-native/api/sdk-reference/use-participant/introduction) hook with `Stream` object if the **screen share broadcasting was stopped**.
+- Every Participant will receive a callback on [`onStreamDisabled()`](/react-native/api/sdk-reference/use-participant/events#onstreamdisabled) event of the [`useParticipant()`](/react-native/api/sdk-reference/use-participant/introduction) hook with the `Stream` object, if the **screen share broadcasting was stopped**.
 
-- Every Participant will receive [`onPresenterChanged()`](/react-native/api/sdk-reference/use-meeting/events#onpresenterchanged) callback of the [`useMeeting`](/react-native/api/sdk-reference/use-meeting/introduction) hook with the participantId as `presenterId` who started the screen share or `null` if the screen share was turned off.
+- Every Participant will receive the [`onPresenterChanged()`](/react-native/api/sdk-reference/use-meeting/events#onpresenterchanged) callback of the [`useMeeting`](/react-native/api/sdk-reference/use-meeting/introduction) hook, providing the `participantId` as the `presenterId` of the participant who started the screen share or `null` if the screen share was turned off.
 
 ```js
 import { useParticipant, useMeeting } from "@videosdk.live/react-native-sdk";

@@ -6,7 +6,7 @@ tags: [releasenotes]
 
 # Release Notes - Javascript
 
-This page will keep you update all the releases of JavaScript SDK.
+This page will provide you with updates on all releases of the Javascript SDK.
 
 ## v0.0.80
 

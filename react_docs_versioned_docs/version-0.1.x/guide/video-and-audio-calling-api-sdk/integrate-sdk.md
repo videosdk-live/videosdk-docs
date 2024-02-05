@@ -21,7 +21,7 @@ Our React JS SDK provides a wrapper over JavaScript SDK converting it into usabl
 
 You can install our React SDK by using Yarn or [NPM](https://www.npmjs.com/package/@videosdk.live/react-sdk) package managers.
 
-Before installing the React SDK make sure you have Node environment already setup on your machine.
+Before installing the React SDK, make sure you have the Node environment already setup on your machine.
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -50,7 +50,7 @@ yarn add "@videosdk.live/react-sdk"
 </Tabs>
 
 :::caution
-If you are using Windows machine, make sure to include the **double-quotes** while installation.
+If you are using a Windows machine, make sure to include the **double-quotes** while installation.
 :::
 
 ### Typescript Support

@@ -14,7 +14,7 @@ keywords:
 image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
 slug: rtmp-livestream
----
+--- 
 
 # RTMP Livestream - React
 
@@ -29,7 +29,7 @@ This guide will provide an overview of how to implement starting and stopping RT
 
 ### `startLivestream()`
 
-The `startLivestream()` method, accesible from the `useMeeting` hook, can be used to initiate the RTMP livestream of a meeting. This method accepts the following two parameters:
+The `startLivestream()` method, accesible from the `useMeeting` hook, is used to initiate the RTMP livestream of a meeting. This method accepts the following two parameters:
 
 - `1. outputs`: This parameter takes an array of objects containing the RTMP `url` and `streamKey` specific to the platform where you want to initiate the livestream.
 
@@ -62,7 +62,7 @@ The `startLivestream()` method, accesible from the `useMeeting` hook, can be use
 
 ### `stopLivestream()`
 
-The `stopLivestream()` method, accesible from the `useMeeting` hook, can be used to stop the RTMP livestream of a meeting.
+The `stopLivestream()` method, accesible from the `useMeeting` hook, is used to stop the RTMP livestream of a meeting.
 
 #### Example
 
@@ -108,7 +108,7 @@ const MeetingView = () => {
 
 ### Event associated with Livestream
 
-- **onLivestreamStateChanged** - The `onLivestreamStateChanged` event is triggered whenever the state of meeting livestream changes.
+- **onLivestreamStateChanged** - The `onLivestreamStateChanged()` event is triggered whenever the state of meeting livestream changes.
 
 ```js
 import { Constants, useMeeting } from "@videosdk.live/react-sdk";
@@ -139,7 +139,7 @@ const {
 
 ### Custom Template
 
-With VideoSDK, you have the option to employ your custom-designed layout template for livestreaming a meeting. To use a custom template, [follow this guide](/react/guide/interactive-live-streaming/custom-template) to create and set up the template. Once the template is configured, you can initiate recording using the [REST API](/api-reference/realtime-communication/start-livestream), specifying the `templateURL` parameter.
+With VideoSDK, you have the option to employ your own custom-designed layout template for livestreaming a meeting. To use a custom template, [follow this guide](/react/guide/interactive-live-streaming/custom-template) to create and set up the template. Once the template is configured, you can initiate recording using the [REST API](/api-reference/realtime-communication/start-livestream), specifying the `templateURL` parameter.
 
 
 ### API Reference

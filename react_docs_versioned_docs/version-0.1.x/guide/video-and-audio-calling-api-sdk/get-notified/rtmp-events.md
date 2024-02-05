@@ -4,7 +4,7 @@ hide_title: true
 hide_table_of_contents: false
 description: Video SDK and Audio SDK, developers need to implement a token server. This requires efforts on both the front-end and backend.
 sidebar_label: RTMP Events
-pagination_label: RTMP Events
+pagination_label: RTMP Events 
 keywords:
   - audio calling
   - video calling
@@ -17,12 +17,12 @@ slug: rtmp-events
 
 # RTMP Events - React
 
-VideoSDK provides the `onLivestreamStateChanged` event, which informs you about the current state of the livestream for the meeting.
+VideoSDK provides the `onLivestreamStateChanged()` event, which informs you about the current state of the livestream for the meeting.
 
-### onLivestreamStateChanged
+### onLivestreamStateChanged()
 
 - This event is triggered when the  livestream status of the meeting changes.
-- It can be subscribed to, from the `useMeeting` hook.
+- It can be subscribed to using the `useMeeting` hook.
 
 ### Example
 

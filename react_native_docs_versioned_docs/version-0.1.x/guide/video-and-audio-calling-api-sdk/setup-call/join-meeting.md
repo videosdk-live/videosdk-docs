@@ -19,13 +19,13 @@ slug: join-meeting
 
 ### Overview
 
-With our React Native SDK, you can choose to manually call the `join()` or leave it up to the VideoSDK to automatically call the `join()` when the `MeetingProvider` is rendered.
+With our React Native SDK, you can choose to manually call the `join()` method or leave it up to the VideoSDK to automatically call the `join()` when the `MeetingProvider` is rendered.
 
 Before joining the meeting, it has to be initialized. If you have not initialized a meeting yet, you can [follow the guide here.](./initialise-meeting)
 
 ### `join()`
 
-- To join the meeting you can call the `join()` which is the part of the `useMeeting` hook of React SDK.
+- To join a meeting you can call the `join()` method which is the part of the `useMeeting` hook of React SDK.
 - This method can be called after the meeting is initialized from the `MeetingProvider`.
 
 :::caution
@@ -68,30 +68,30 @@ const MeetingView = () => {
 
 ### Events associated with Join
 
-Following callbacks are received when a participant is successfully joined.
+Following events are received when a participant successfully joins a meeting.
 
-- [Local Participant](../concept-and-architecture#2-participant) will receive a [`onMeetingJoined`](/react-native/api/sdk-reference/use-meeting/events#onmeetingjoined) event, when successfully joined.
-- [Remote Participant](../concept-and-architecture#2-participant) will receive a [`onParticipantJoined`](/react-native/api/sdk-reference/use-meeting/events#onparticipantjoined) event with the newly joined `Participant` object from the event callback.
+- [The Local Participant](../concept-and-architecture#2-participant) will receive an [`onMeetingJoined`](/react-native/api/sdk-reference/use-meeting/events#onmeetingjoined) event, when the meeting is successfully joined.
+- The [Remote Participant](../concept-and-architecture#2-participant) will receive an [`onParticipantJoined`](/react-native/api/sdk-reference/use-meeting/events#onparticipantjoined) event with the newly joined `Participant` object from the event callback.
 
 ```js
 import { useMeeting } from "@videosdk.live/react-native-sdk";
 
 const MeetingView = () => {
-  //Event to know meeting is joined
+  //Event to determine if the meeting has been joined
   //highlight-start
   function onMeetingJoined() {
     console.log("onMeetingJoined");
   }
   //highlight-end
 
-  //Event to know some other participant joined
+  //Event to determine some other participant has joined
   //highlight-start
   function onParticipantJoined(participant) {
     console.log(" onParticipantJoined", participant);
   }
   //highlight-end
 
-  //Getting the join method from hook and assigning event callbacks
+  //Getting the join method from the hook and assigning event callbacks
   //highlight-start
   const { join } = useMeeting({
     onMeetingJoined,

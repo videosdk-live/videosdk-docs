@@ -11,33 +11,33 @@ keywords:
   - audio calling
   - video calling
   - real-time communication
-image: img/videosdklive-thumbnail.jpg
+image: img/videosdklive-thumbnail.jpg 
 sidebar_position: 1
 slug: pubsub
 ---
 
 # PubSub - React Native
 
-PubSub is a short acronym for Publish-Subscribe mechanism. This mechanism is used to send and recieve messages from a particular topic. As the name suggests, for someone to send a message, they have to specify the topic and the message which should be published and for someone to receive a message, they should be subscribed to that topic.
+PubSub is a concise acronym for the Publish-Subscribe mechanism. This mechanism is employed to send and receive messages within a specified topic. As the name implies, to send a message, one must specify the topic and the message to be published. Similarly, to receive a message, a subscriber must be connected to that particular topic.
 
-Here is a visual to better understand publish-subscribe mechanism.
+Here is a visual to better understand the publish-subscribe mechanism.
 
 ![pubsub](/img/pubsub.png)
 
 ## usePubSub
 
-In order to use PubSub in meeting, VideoSDK provides a hook `usePubSub` which allows you to subscribe to any topic and publish to any topic allowing to pass on messages and instructions during the meeting easily.
+To utilize PubSub in a meeting, VideoSDK provides a hook called `usePubSub`. This hook enables you to subscribe to any topic and publish to any topic, facilitating the exchange of messages and instructions seamlessly during the meeting.
 
 ### `publish()`
 
-- This method is used for publishing message of specific topic.
-- This method can be accessed from the `usePubSub` hook by mentioning the `topic` for which the `publish()` will be used.
-- This method will accept two parameters as input:
-  - `message`: This will be the actual message to be published. It has to be in `String` format.
-  - `options`: This object specifies the options for publish. You can set following properties :
-    - `persist` : `persist` offered the option of keeping the message around for the duration of the session. When `persist` is set to `true`, that message will be retained for upcoming participants and will be available in [VideoSDK Session Dashboard](https://app.videosdk.live/meetings/sessions) with `.CSV` format after completion of session.
+- This method is used for publishing a message for a specific topic.
+- It can be accessed from the `usePubSub` hook by specifying the `topic` for which `publish()` will be used.
+- It will accept following parameters as input:
+  - `message`: This parameter represents the actual message to be published and should be in `String` format.
+  - `options`: This object specifies the options for publishing. You can set following properties :
+    - `persist` : When set to true, this option retains the message for the duration of the session. If persist is true, the message will be available for upcoming participants and can be accessed in the [VideoSDK Session Dashboard](https://app.videosdk.live/meetings/sessions) in CSV format after the session is completed.
     - `sendOnly`: If you want to send a message to specific participants, you can pass their respective `participantId` here. If you don't provide any IDs, the message will be sent to all participants by default.
-  - `payload`: If you need to include additional information along with a message, you can pass here as `Object`.
+  - `payload`: If you need to include additional information along with a message, you can pass it here as an `object`.
 
 ```js
 // importing usePubSub hook from react-native-sdk
@@ -70,18 +70,16 @@ function MeetingView() {
 
 ## Receiving the messages
 
-- `messages` property of the `usePubSub` hook will hold all the past and new upcoming messages for that particular topic.
+- The `messages `property of the `usePubSub` hook is an array of objects that stores both past and upcoming messages for a particular topic.
 
-- `messages` is an array of Object containing all the messages.
+It contains the following properties:
 
-This object contains following properties:
-
-- `senderId`: This represents the `participantId` of the participant who send the message.
-- `senderName`: This represents the `displayName` of the participant who send the message.
-- `message`: This will be the acatual message that was send.
-- `timestamp`: This wil the timestamp for when the message was published.
-- `topic`: This will be the name of the topic message was published to.
-- `payload`: This will be the data that you have send with message.
+- `senderId`: Represents the `participantId` of the participant who sent the message.
+- `senderName`: Represents the `displayName` of the participant who sent the message.
+- `message`: The acatual message that was sent.
+- `timestamp`: The timestamp for when the message was published.
+- `topic`: The name of the topic the message was published to.
+- `payload`: The data that was sent along with message.
 
 ## Example
 
@@ -128,13 +126,13 @@ function ChatView() {
 
 ## Events associated with PubSub
 
-### onMessageReceived
+### onMessageReceived()
 
 - This event callback is triggered when a new message is received on the subscribed topic.
 
-### onOldMessagesReceived
+### onOldMessagesReceived()
 
-- This event callback is triggered once when you subscribe to the topic and it contains all the past messages from that topic which where published with `persist : true`.
+- This event callback is triggered when you subscribe to the topic, and it contains all the past messages from that topic that were published with `persist : true`.
 
 ```js
 // importing usePubSub hook from react-native-sdk
@@ -173,20 +171,20 @@ function MeetingView() {
 }
 ```
 
-## Applications of usePubSub
+## Applications of `usePubSub`
 
 PubSub is a very powerful mechanism which can be used to do alot of things which can make your meeting experience much more interactive. Some of the most common usecase that we have come across for the PubSub during a meeting are listed below:
 
-1. [`Chat`](./chat-using-pubsub): You can utilise this to develop various Chat features, such as Private Chat and Group Chat. You can follow our chat [integration guide here](./chat-using-pubsub).
-2. `Raise Hand`: You can allow attendees to raise their hands at any time during the meeting, informing everyone else that someone has done so.
-3. `Layout Switching`: You can change the meeting's layout for every participant at once during the meeting, such as from Grid layout to Spotlight or Grid Layout to Sidebar Layout, etc.
+1. [`Chat`](./chat-using-pubsub): You can utilise this to develop features, like Private Chat or Group Chat. You can follow our chat [integration guide here](./chat-using-pubsub).
+2. `Raise Hand`: You can allow attendees to raise their hands at any point during the meeting, informing everyone else that someone has a question or input.
+3. `Layout Switching`: You can change the meeting's layout for every participant at once during the meeting, such as from Grid layout to Spotlight or from Grid Layout to Sidebar,etc.
 4. `Whiteboard`: You can develop an interactive whiteboard functionality that is completely functional.
-5. `Poll`: You may make polls, let users respond to them, and display the results at the end of a poll.
-6. `Question Answer Session`: You can also design interactive functionality that is question-and-answer based.
+5. `Poll`: You can make polls, let users respond to them, and display the results at the end of a poll.
+6. `Question Answer Session`: You can also design interactive features based on a question-and-answer format.
 
 ## Downloading PubSub Messages
 
-All the messages from the PubSub which were published with `persist : true` and can be downloaded as an `.csv` file. This file will be available in the VideoSDK dashboard as well as throught the [Sessions API](/api-reference/realtime-communication/fetch-session-using-sessionid).
+All the messages from PubSub published with `persist : true` can be downloaded as an `.csv` file. This file will be accessible in the VideoSDK dashboard and through the [Sessions API](/api-reference/realtime-communication/fetch-session-using-sessionid).
 
 ## API Reference
 

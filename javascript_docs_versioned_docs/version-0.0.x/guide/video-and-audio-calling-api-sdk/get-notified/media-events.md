@@ -17,9 +17,9 @@ slug: media-events
 
 # Media Events - Javascript
 
-VideoSDK provides multiple types of events which can be listened to know the about the participant's media status in the meeting.
+VideoSDK offers various events that can be monitored to obtain information about the media status of participants in the meeting.
 
-Here are the events which specifically relate to the stream.
+Here are the events specifically related to the stream:
 
 ### stream-enabled
 
@@ -38,7 +38,7 @@ Here are the events which specifically relate to the stream.
 
 ### Example
 
-Here is the usage of all the events mentioned in this page.
+Here is an example demonstrating the usage of all the events mentioned on this page.
 
 ```js
 const participants = meeting.participants;

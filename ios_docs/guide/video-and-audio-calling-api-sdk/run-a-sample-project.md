@@ -41,7 +41,7 @@ Clone the repository to your local environment.
 $ git clone https://github.com/videosdk-live/videosdk-rtc-ios-sdk-example.git
 ```
 
-### Step 2: Install the dependecies
+### Step 2: Install the dependencies
 
 Install all the pod dependencies
 

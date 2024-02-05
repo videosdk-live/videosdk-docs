@@ -8,7 +8,7 @@ pagination_label: HLS Events
 keywords:
   - audio calling
   - video calling
-  - real-time communication
+  - real-time communication 
   - collaboration
 image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
@@ -17,12 +17,12 @@ slug: hls-events
 
 # HLS Events - React
 
-VideoSDK provides the `onHlsStateChanged` event, which informs you about the current state of HLS for the meeting.
+VideoSDK provides the `onHlsStateChanged()` event, which informs you about the current state of HLS for the meeting.
 
-### onHlsStateChanged
+### onHlsStateChanged()
 
 - This event is triggered when the HLS status of the meeting changes.
-- It can be subscribed to, from the `useMeeting` hook.
+- It can be subscribed to using the `useMeeting` hook.
 
 ### Example
 

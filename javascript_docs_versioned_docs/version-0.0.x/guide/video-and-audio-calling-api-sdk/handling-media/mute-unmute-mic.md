@@ -9,7 +9,7 @@ keywords:
   - audio calling
   - video calling
   - real-time communication
-  - collaboration
+  - collaboration 
 image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
 slug: mute-unmute-mic
@@ -19,23 +19,23 @@ slug: mute-unmute-mic
 
 Muting and Unmuting your microphone refers to turning your microphone off and on, respectively.
 
-When you mute your microphone, you prevent any sound from your microphone from being transmitted to other meeting participants, while unmuting it allows others to hear you.
+Muting your microphone prevents the transmission of any sound from your microphone to other meeting participants, while unmuting allows them to hear you.
 
 ### `unmuteMic()`
 
-- By using `unmuteMic()` function of `meeting` object, local participant can publish audio to other participants.
+- By using the `unmuteMic()` function of the `meeting` object, the local participant can publish their audio to other participants.
 
-  - You can call this method when the local participant is not broadcasting any audio to others.
+  - You can only call this method when the local participant is not broadcasting audio to others.
 
-- You can pass customised audio track in `unmuteMic()` by using [Custom Audio Track](/javascript/guide/video-and-audio-calling-api-sdk/render-media/optimize-audio-track).
+- You can also pass a customised audio track in `unmuteMic()` by using [Custom Audio Track](/javascript/guide/video-and-audio-calling-api-sdk/render-media/optimize-audio-track).
 
-- Audio stream of the participant can be accessed from the `streams` property of `Participant` object.
+- Audio stream of the participant can be accessed from the `streams` property of the `Participant` object.
 
 ### `muteMic()`
 
-- By using `muteMic()` function of `meeting` object, local participant can stop publish audio to other participants.
+- By using the `muteMic()` function of the `meeting` object, the local participant can stop publishing their audio to other participants.
 
-- You can call this method when the local participant is broadcasting any audio to others.
+- You can only call this method when the local participant is broadcasting audio to others.
 
 #### Example
 
@@ -66,15 +66,15 @@ To learn, how to render a audio in the meeting, follow this detailed [guide](/ja
 
 ### Events associated with unmuteMic
 
-- Every Participant will receive a callback on [`stream-enabled`](/javascript/api/sdk-reference/participant-class/events#stream-enabled) of the [`participant`](/javascript/api/sdk-reference/participant-class/introduction) object with `Stream` object.
+- Every Participant will receive a callback on [`stream-enabled`](/javascript/api/sdk-reference/participant-class/events#stream-enabled) event of the [`participant`](/javascript/api/sdk-reference/participant-class/introduction) object with the `Stream` object.
 
-- Every Participant will receive a callback on [`media-status-changed`](/javascript/api/sdk-reference/participant-class/events#media-status-changed) of the [`participant`](/javascript/api/sdk-reference/participant-class/introduction) object with the kind of media and its status.
+- Every Participant will receive a callback on [`media-status-changed`](/javascript/api/sdk-reference/participant-class/events#media-status-changed) event of the [`participant`](/javascript/api/sdk-reference/participant-class/introduction) object with the type of media and its status.
 
 ### Events associated with muteMic
 
-- Every Participant will receive a callback on [`stream-disabled`](/react/api/sdk-reference/use-participant/events#onstreamdisabled) of the [`participant`](/javascript/api/sdk-reference/participant-class/introduction) object with `Stream` object.
+- Every Participant will receive a callback on [`stream-disabled`](/react/api/sdk-reference/use-participant/events#onstreamdisabled) event of the [`participant`](/javascript/api/sdk-reference/participant-class/introduction) object with the `Stream` object.
 
-- Every Participant will receive a callback on [`media-status-changed`](/javascript/api/sdk-reference/participant-class/events#media-status-changed) of the [`participant`](/javascript/api/sdk-reference/participant-class/introduction) object with the kind of media and its status.
+- Every Participant will receive a callback on [`media-status-changed`](/javascript/api/sdk-reference/participant-class/events#media-status-changed) event of the [`participant`](/javascript/api/sdk-reference/participant-class/introduction) object with the type of media and its status.
 
 ```js
 const participants = meeting.participants;
@@ -104,7 +104,7 @@ participant.on("media-status-changed", (data) => {
 
 ### Audio Permissions
 
-- By default, VideSDK ask for audio permissions when the participants requests to turn on the mic and once the permission is granted the mic gets turned on. If the permission is denied, VideoSDK will send the error message in the `error` event of the `meeting` object.
+- By default, VideoSDK will request audio permission when a participant attempts to turn on the mic. Once the permission is granted, the mic is activated. If the permission is denied, VideoSDK will send an error message in the `onError` event callback of the `meeting` object.
 
 import ReactPlayer from 'react-player'
 
@@ -116,7 +116,7 @@ import ReactPlayer from 'react-player'
 
 ### Troubleshoot Audio Permissions
 
-- If a participant denies the microphone permission, they can **manually grant** it by following below shown steps.
+- If a participant denies the microphone permission, they can **manually grant** it by following the below shown steps.
 
 <div style={{textAlign: 'center'}}>
 

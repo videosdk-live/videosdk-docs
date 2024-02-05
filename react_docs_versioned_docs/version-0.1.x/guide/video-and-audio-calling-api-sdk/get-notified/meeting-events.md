@@ -1,6 +1,6 @@
 ---
 title: Meeting Events | Video SDK
-hide_title: true
+hide_title: true 
 hide_table_of_contents: false
 description: Video SDK and Audio SDK, developers need to implement a token server. This requires efforts on both the front-end and backend.
 sidebar_label: Meeting Events
@@ -19,27 +19,27 @@ slug: meeting-events
 
 VideoSDK provides several types of events that can be listened to in order to determine the current state of the meeting. 
 
-Here are the events that specifically relate to the meeting.
+Here are the events specifically related to the meeting:
 
-### onMeetingJoined
+### onMeetingJoined()
 
 - This event is triggered when the meeting is successfully joined.
-- It can be subscribed to, from the `useMeeting` hook.
+- It can be subscribed to using the `useMeeting` hook.
 
-### onMeetingLeft
+### onMeetingLeft()
 
 - This event is triggered when the meeting is left.
-- It can be subscribed to, from the `useMeeting` hook.
+- It can be subscribed to using the `useMeeting` hook.
 
-### onSpeakerChanged
+### onSpeakerChanged()
 
 - This event is triggered when there is a change in the active speaker during the meeting.
-- This event can be subscribed to, from the `useMeeting` hook.
+- It can be subscribed to using the `useMeeting` hook.
 
-### onPresenterChanged
+### onPresenterChanged()
 
 - This event is triggered when there is a change in the presenter during the meeting.
-- This event can be subscribed to, from the `useMeeting` hook.
+- It can be subscribed to using the `useMeeting` hook.
 
 ### Example
 

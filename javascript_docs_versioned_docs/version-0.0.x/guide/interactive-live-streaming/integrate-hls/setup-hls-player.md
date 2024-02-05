@@ -17,15 +17,15 @@ slug: setup-hls-player
 
 # Setup HLS Player - Javascript
 
-In this guide, we will create a new Component which will be responsible for playing the HLS stream.
-Before starting this guide, make sure you have a VideoSDK meetings setup allowing you to join the room. To learn more about setting up a VideoSDK meeting, follow this quick start guide.
+This guide focuses on creating the Component responsible for playing the HLS stream.
+Before proceeding, ensure that you have set up a VideoSDK meeting, enabling you to join the room. For instructions on setting up a VideoSDK meeting, refer to the [quick start guide](../../video-and-audio-calling-api-sdk//quick-start.md).
 
-To play the HLS stream we will be using the [hls.js](https://www.npmjs.com/package/hls.js/v/canary) library.
+For playing the HLS stream, you need to use the [hls.js](https://www.npmjs.com/package/hls.js/v/canary) library.
 
 ### `1. Setup Component with HLS events`
 
-**`Step 1:`** Let us first start by creating the video container and import [hls.js](https://hlsjs.video-dev.org/demo/) library using `<script>` tag in html file.
-
+**`Step 1:`** Begin by creating the video container in your HTML file and importing the [hls.js](https://hlsjs.video-dev.org/demo/) library using the `<script>` tag.
+ 
 ```html
 <!DOCTYPE html>
 <html>
@@ -44,7 +44,7 @@ To play the HLS stream we will be using the [hls.js](https://www.npmjs.com/packa
 
 ### `2. Playing HLS stream`
 
-- Now on the `hls-state-changed` event, when you get `HLS_PLAYABLE` for the viewer participant, create a video element in the videoContainer div and pass downstreamUrl to hls.js.
+- Now, on the `hls-state-changed` event, when you receive `HLS_PLAYABLE` for the viewer participant, generate a video element within the videoContainer div and provide the downstreamUrl to hls.js.
 
 ```js
 meeting.on("hls-state-changed", (data) => {

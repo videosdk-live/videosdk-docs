@@ -12,26 +12,26 @@ keywords:
   - real-time communication
 image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
-slug: change-audio-ouptut-device
+slug: change-audio-ouptut-device 
 ---
 
 # Change Audio Output Device - React Native
 
-During the meeting at any point a participant wishes to switch his/her output audio like from headphones to speaker, it can be done using the below mentioned methods.
+During the meeting, at any point, a participant wishing to switch their output audio device, such as from headphones to speakers, can do so using the below-mentioned methods.
 
 ### Getting Output Device
 
-`getAudioDeviceList()` method will help you to list down all possible connected audio devices.
+The `getAudioDeviceList()` method enables you to retrieve a list of all possible connected audio devices.
 
 ##### Supported Audio Output Devices :
 
-**SPEAKER_PHONE** - Switch audio to device speaker
+**SPEAKER_PHONE** - Switch audio to the device speaker
 
-**EARPIECE** - Switch audio to device earpiece
+**EARPIECE** - Switch audio to the device earpiece
 
-**WIRED_HEADSET** - Switch audio to connected wired device
+**WIRED_HEADSET** - Switch audio to the connected wired device
 
-**BLUETOOTH** - Switch audio to connected bluetooth device
+**BLUETOOTH** - Switch audio to the connected bluetooth device
 
 ```js
 import { getAudioDeviceList } from "@videosdk.live/react-native-sdk";
@@ -48,7 +48,7 @@ const MeetingView = () => {
 
 ### Changing Output Device
 
-This method will help you to switch specific audio output device.
+The `switchAudioDevice()` method sllows you to switch to a specific audio output device of your choice.
 
 ```js
 import { switchAudioDevice } from "@videosdk.live/react-native-sdk";
@@ -70,6 +70,6 @@ const MeetingView = () => {
 
 :::note
 
-`EARPIECE` is not supported whenever `WIRED_HEADSET` or `BLUETOOTH` device is connected.
+`EARPIECE` is not supported when a `WIRED_HEADSET` or `BLUETOOTH` device is connected.
 
 :::

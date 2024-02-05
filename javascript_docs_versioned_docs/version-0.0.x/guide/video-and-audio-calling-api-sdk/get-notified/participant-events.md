@@ -17,35 +17,35 @@ slug: participant-events
 
 # Participant Events - Javascript
 
-VideoSDK provides multiple types of events which can be listened to know the about the participants in the meeting.
+VideoSDK provides various events that can be utilized to gather information about the participants in the meeting.
 
-Here are the events which specifically relate to the participants.
+Here are the events specifically related to the participant:
 
 ### participant-joined
 
-- This event is triggered when someone joins the meeting and return the `Participant` object as parameter.
-- This event can be subscribed from the `meeting` object.
+- This event is triggered when someone joins the meeting, returning the `Participant` object as parameter.
+- It can be subscribed to using the `meeting` object.
 
 ### participant-left
 
-- This event is triggered when the someone leaves the meeting.
-- This event can be subscribed from the `meeting` object.
+- This event is triggered someone leaves the meeting.
+- It can be subscribed to using the `meeting` object.
 
 ### webcam-requested
 
-- This event will be triggered to the participant `B` when any other participant `A` requests to enable webcam of participant `B`.
-- On accepting the request, webcam of participant `B` will be enabled.
-- This event can be subscribed from the `meeting` object.
+- This event is triggered for participant `B`, when another participant, `A` requests to enable their webcam.
+- Upon accepting the request, participant `B`'s webcam will be enabled.
+- It can be subscribed to using the `meeting` object.
 
 ### mic-requested
 
-- This event will be triggered to the participant `B` when any other participant `A` requests to enable mic of participant `B`.
-- On accepting the request, mic of participant `B` will be enabled.
-- This event can be subscribed from the `meeting` object.
+- This event is triggered for participant `B`, when another participant, `A` requests to enable their mic.
+- Upon accepting the request, participant `B`'s mic will be enabled.
+- It can be subscribed to using the `meeting` object.
 
 ### Example
 
-Here is the usage of all the events mentioned in this page.
+Here is an example demonstrating the usage of the event mentioned on this page.
 
 ```js
 let meeting;
