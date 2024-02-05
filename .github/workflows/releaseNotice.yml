@@ -25,7 +25,7 @@ jobs:
                 "type": "header",
                 "text": {
                   "type": "plain_text",
-                  "text": "JS SDK with ${{ github.event.release.tag_name}} is published!"
+                  "text": "Documentation with ${{ github.event.release.tag_name}} is published!"
                 }
               },
               {
