@@ -15,25 +15,25 @@ keywords:
   - real-time communication
 image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
----
+--- 
 
 # Optimize Video Tracks - Javascript
 
-While optimizing for the best viewing experience, it is necessary to fine-tune the video tracks that are being used during the calls.
+To optimize the viewing experience, it's essential to fine-tune the video tracks used during calls. 
 
-For the best fine-tuning experience, we have introduced the ability to pass a custom video track for the participant's media before and during the meeting.
+For an enhanced fine-tuning experience, we've introduced the capability to provide a custom video track for a participant's media before and during the meeting.
 
 1. [Custom Video Track](#custom-video-track)
 2. [Custom Screen Share Track](#custom-screen-share-track)
 
 ## Custom Video Track
 
-This feature can be used to add custom video encoder configurations, optimization mode (whether you want to focus on **motion**, **text** or **detail** of the video) and background removal & video filter from external libraries(e.g., [videosdk-media-processor](https://www.npmjs.com/package/@videosdk.live/videosdk-media-processor-web)) and send it to other participants.
+This feature allows you to incorporate custom video encoder configurations, choose optimization modes (focusing on **motion**, **text** or **detail** of the video), and apply background removal and video filters from external libraries (e.g., [videosdk-media-processor](https://www.npmjs.com/package/@videosdk.live/videosdk-media-processor-web)), then send these modifications to other participants.
 
-### `How to Create Custom Video Track ?`
+### `How to Create a Custom Video Track ?`
 
-- You can create a Video Track using `createCameraVideoTrack()` method.
-- This method can be used to create video track using different encoding parameters, camera facing mode, and optimization mode and return `MediaStream`.
+- You can create a Custom Video Track using `createCameraVideoTrack()`.
+- This method enables the creation of a video track with various encoding parameters, camera facing modes, and optimization modes, ultimately returning a `MediaStream`.
 
 #### Example
 
@@ -63,30 +63,30 @@ let customTrack = await VideoSDK.createCameraVideoTrack({
 ```
 
 :::caution
-The capabilities of the device have a significant impact on how custom track configurations behave. Assuming a case where you set encoder configuration to 1080p but the webcam only supports 720p, then encoder configuration will automatically switch to the highest resolution that the device can handle, which is 720p.
+The behavior of custom track configurations is influenced by the capabilities of the device. For example, if you set the encoder configuration to 1080p but the webcam only supports 720p, the encoder configuration will automatically adjust to the highest resolution that the device can handle, which in this case is 720p.
 :::
 
 ##### What is `optimizationMode`?
 
-- It will specify the optimization mode for the video track being generated.
+- This parameter specifies the optimization mode for the video track being generated.
 
-- `motion` : This type of track should more focus on motion video. For example, webcam video, movies or video games.
+- `motion` : This type of track focuses more on motion video such as webcam video, movies or video games.
 
-  - This type of track will degrade `resolution` in order to maintain `frame rate`.
+  - It will degrade `resolution` in order to maintain `frame rate`.
 
-- `text` : This type of track should more focus on significant sharp edges and areas of consistent color that can change frequently. For example, presentations or web pages with text content.
+- `text` : This type of track focuses on significant sharp edges and areas of consistent color that can change frequently such as presentations or web pages with text content.
 
-  - This type of track will degrade `frame rate` in order to maintain `resolution`.
+  - It will degrade `frame rate` in order to maintain `resolution`.
 
-- `detail` : This type of track should more focus on details of the video. For example, presentations, painting or line art.
+- `detail` : This type of track focuses more on the details of the video such as, presentations, painting or line art.
 
-  - This type of track will degrade `frame rate` in order to maintain `resolution`.
+  - It will degrade `frame rate` in order to maintain `resolution`.
 
 ##### What is `multiStream`?
 
-- It will specify if the stream should send multiple resolution layers or single resolution layer.
+- This parameter specifies whether the stream should send multiple resolution layers or a single resolution layer.
 
-**`multiStream : true`** By default, VideoSDK sends multiple resolution video streams to the server (whether you are using custom video track or not), For instance, user device capabilty is 720p, so VideoSDK sends 720p along with 640p and 480p streams. This allows VideoSDK to deliver the appropriate stream to each participant based on their network bandwidth.
+The **`multiStream : true`** configuration indicates that VideoSDK, by default, sends multiple resolution video streams to the server. For example, if a user's device capability is 720p, VideoSDK sends streams in 720p, 640p, and 480p resolution. This enables VideoSDK to deliver the appropriate stream to each participant based on their network bandwidth.
 
 <center>
 
@@ -94,7 +94,7 @@ The capabilities of the device have a significant impact on how custom track con
 
 </center>
 
-**`multiStream : false`** If you want to restrict the VideoSDK to send only one stream to maintain quality, you can set `multiStream` to `false`.
+Setting **`multiStream : false`** restricts VideoSDK to send only one stream, helping to maintain quality by focusing on a single resolution.
 
 <center>
 
@@ -103,19 +103,19 @@ The capabilities of the device have a significant impact on how custom track con
 </center>
 
 :::danger
-`setQuality` would not have any effect if multiStream is set to `false`.
+The `setQuality` parameter will not have any effect if multiStream is set to `false`.
 :::
 
-### `How to Setup Custom Video Track ?`
+### `How to Setup a Custom Video Track ?`
 
-The custom track can be set up both before and after the initialization of the meeting.
+The custom track can be configured both before and after the meeting is initialized. Following are the methods that help in doing so:
 
-1. [Setup Custom Track while initialization of the meeting](#1-setup-custom-track-while-initialization-of-the-meeting)
-2. [Setup Custom Track with methods](#2-setup-custom-track-with-methods)
+1. [Setting up a Custom Track during the initialization of a meeting](#1-setup-custom-track-while-initialization-of-the-meeting)
+2. [Setting up a Custom Track with methods](#2-setup-custom-track-with-methods)
 
-##### 1. Setup Custom Track while initialization of the meeting
+##### 1. Setting up a Custom Track during the initialization of a meeting
 
-If you are passing `webcamEnabled: true` in the config of `initMeeting` method and want to use custom tracks from start of the meeting, you can pass custom track in the config as shown below.
+If you are enabling the webcam (`webcamEnabled: true`) in the `config` of the `initMeeting` method and wish to use custom tracks from the start of the meeting, you can pass a custom track in the `config` as demonstrated below.
 
 :::caution
 Custom Track will not apply on `webcamEnabled: false` configuration.
@@ -143,12 +143,12 @@ meeting = VideoSDK.initMeeting({
 });
 ```
 
-#### 2. Setup Custom Track with methods
+#### 2. Setting up a Custom Track with methods
 
-In order to switch tracks during the meeting, you have to pass the `MediaStream` in the `enableWebcam()` method of `meeting` object.
+To switch tracks during the meeting, you need to pass the `MediaStream` in the `enableWebcam()` method of the `meeting` object.
 
 :::tip
-Make sure to call `disableWebcam()` before you create a new track as it may lead to unexpected behavior.
+Make sure to call the `disableWebcam()` method before you create a new track as it may lead to unexpected behavior.
 :::
 
 ##### Example
@@ -181,7 +181,7 @@ Using custom video tracks is not just limited to the video tracks created using 
 
 ### `Which Configuration is suitable for me ?`
 
-In this section, we will understand participant size and platform wise `encoder(Resolution)` and `multiStream` configuration.
+In this section, the focus is on understanding participant size and platform-wise `encoder(Resolution)` and `multiStream` configuration.
 
 ##### 1. For Desktop Browser
 
@@ -197,12 +197,12 @@ In this section, we will understand participant size and platform wise `encoder(
 
 ## Custom Screen Share Track
 
-This feature can be used to customise screenshare streams with enhanced optimization mode and predefined encoderConfig(Resolution + FPS) for specific use-case and send it to other participants.
+This feature enables the customization of screenshare streams with enhanced optimization modes and predefined encoder configuration (resolution + FPS) for specific use cases, which can then be sent to other participants.
 
-### `How to Create Custom Screen Share Track ?`
+### `How to Create a Custom Screen Share Track ?`
 
-- You can create a Video Track using `createScreenShareVideoTrack()` method.
-- This method can be used to create video track using different encoding parameters and optimization mode.
+- You can create a Video Track using the `createScreenShareVideoTrack()` method.
+- This method enables the creation of a video track with different encoding parameters and optimization modes.
 
 #### Example
 
@@ -217,9 +217,9 @@ let customShareTrack = await VideoSDK.createScreenShareVideoTrack({
 
 You can learn about `optimizationMode` from here [What is optimizationMode ?](#what-is-optimizationmode)
 
-### `How to Setup Custom Screen Share Track ?`
+### `How to Setup a Custom Screen Share Track ?`
 
-In order to switch tracks during the meeting, you have to pass the `MediaStream` in the \*\*`enableScreenShare()` method of `meeting` object.
+In order to switch tracks during the meeting, you have to pass the `MediaStream` in the \*\*`enableScreenShare()` method of the `meeting` object.
 
 :::note
 

@@ -17,7 +17,7 @@ slug: setup-hls-player
 
 # Setup HLS Player - React
 
-This guide focus on we will creating the Component responsible for playing the HLS stream.
+This guide focuses on creating the Component responsible for playing the HLS stream.
 Before proceeding, ensure that you have set up a VideoSDK meeting, enabling you to join the room. For instructions on setting up a VideoSDK meeting, refer to the [quick start guide](../../video-and-audio-calling-api-sdk//quick-start.md).
 
 For playing the HLS stream, you need to use the [hls.js](https://www.npmjs.com/package/hls.js/v/canary) library.

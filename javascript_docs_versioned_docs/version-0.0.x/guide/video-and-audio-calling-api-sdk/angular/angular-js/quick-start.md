@@ -13,16 +13,14 @@ keywords:
   - Javascript SDK implemntation
 image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
-slug: quick-start
+slug: quick-start 
 ---
 
 # Quick Start for Conference in Angular JS
 
-VideoSDK enables you to embed the video calling feature into your Angular JS application in minutes.
+VideoSDK empowers you to seamlessly integrate the video calling feature into your Angular JS application within minutes.
 
-In this quickstart, we are going to explore group calling feature of Video SDK. We will go through step by step guide of integrating video calling with Angular JS Video SDK.
-
-This guide will get you running with the VideoSDK video & audio calling in minutes.
+In this quickstart, you'll explore the group calling feature of VideoSDK. Follow the step-by-step guide to integrate it within your application.
 
 ## Prerequisites
 
@@ -40,11 +38,11 @@ Visit VideoSDK **[dashboard](https://app.videosdk.live/api-keys)** to generate t
 
 ## Getting Started with the Code!
 
-Follow the steps to create the environment necessary to add video calls into your app. Also you can find the code sample for [quickstart here](https://github.com/videosdk-live/quickstart/tree/main/angular-rtc/videosdk_angular_js_quickstart).
+Follow the steps to create the environment necessary to add video calls into your app. You can also find the code sample for [quickstart here](https://github.com/videosdk-live/quickstart/tree/main/angular-rtc/videosdk_angular_js_quickstart).
 
 ### Install Video SDK
 
-You can import VideoSDK using `<script>` tag or you can install the VideoSDK using the below-mentioned npm command. Make sure you are in your app directory before you run this command.
+Import VideoSDK using the `<script>` tag or Install it using the following npm command. Make sure you are in your app directory before you run this command.
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -102,19 +100,19 @@ Your project structure should look like this.
    ├── index.js
 ```
 
-We are going to work on following files:
+You will be working on the following files:
 
-- joinScreen.html: Responsible to create basic UI for joinScreen.
-- meetingContainer.html: Responsible to create simple grid-screen
-- topBar.html: Responsible to create basic topbar with webcam, mic and leave meeting button.
-- config.js: Responsible to store token.
-- app.js: Responsible to render meeting view, joinscreen and topbar.
+- joinScreen.html: Responsible for creating a basic UI for the joinScreen functionality.
+- meetingContainer.html: Responsible for creating a simple grid-screen for the meeting.
+- topBar.html: Responsible for creating a basic topbar with webcam, mic and leave meeting buttons.
+- config.js: Responsible for storing the token.
+- app.js: Responsible for rendering components such as meeting view, joinscreen and topbar.
 
-### Step 1 : Create UI
+### Step 1 : Design the user interface (UI)
 
-In this step, we are going to create HTML file which will render `join-screen`, `top-bar` and `meeting-container`.
+Create an HTML file that will render the `join-screen`, `top-bar` and `meeting-container` components.
 
-1.1 Let's create `joinScreen` UI.
+1.1 First, Create the UI for the `joinScreen` functionality.
 
 ```html title="joinScreen.html"
 <div
@@ -169,7 +167,7 @@ In this step, we are going to create HTML file which will render `join-screen`, 
 
 </center>
 
-1.2 Next step is to create `topBar` UI.
+1.2 Next, Create the `topBar` UI.
 
 ```html title="topBar.html"
 <div
@@ -205,7 +203,7 @@ In this step, we are going to create HTML file which will render `join-screen`, 
 
 </center>
 
-1.3 Now, we will create `meetingContainer.html` file.
+1.3 Subsequently, create the `meetingContainer.html` file.
 
 ```html ="meetingContainer.html"
 <div
@@ -219,7 +217,8 @@ In this step, we are going to create HTML file which will render `join-screen`, 
 </div>
 ```
 
-The final step is to place each component in the `index.html` file after creating it.
+Finally, assemble the components by creating the `index.html` file and incorporating all the previously created components into it.
+
 
 ```html ="index.html"
 <!DOCTYPE html>
@@ -254,17 +253,17 @@ The final step is to place each component in the `index.html` file after creatin
 
 ### Step 2 : Implement Join Screen
 
-Set the token in `config.js` file which is generated from [VideoSDK Dashbord](https://app.videosdk.live/login).
+Configure the token in the `config.js` file, which you can obtain from the [VideoSDK Dashbord](https://app.videosdk.live/login).
 
 ```js title="config.js"
-// Auth token we will use to generate a meeting and connect to it
+// Auth token will be used to generate a meeting and connect to it
 "use strict";
 angular.module("config", []).constant("ENV", {
   token: "YOUR_TOKEN", // Add token here
 });
 ```
 
-Now, get all the elements from DOM and declare following variables in `app.js` file and then add Event Listener to the join and create meeting buttons.
+Next, retrieve all the elements from the DOM and declare the following variables in the `app.js` file. Then, add an event listener to the join and create meeting buttons.
 
 ```js title="app.js"
 var myApp = angular.module("myApp", ["config"]);
@@ -374,7 +373,7 @@ myApp.controller("myController", function ($scope, ENV) {
 
 ### Step 3 : Initialize meeting
 
-In this step, we will initialize meeting through `initMeeting()` function and join that meeting.
+Following that, initialize the meeting using the `initMeeting()` function and proceed to join the meeting.
 
 ```js title="app.js"
 // Initialize meeting
@@ -418,7 +417,7 @@ $scope.initMeeting = function () {
 
 ### Step 4 : Handle Meeting Events
 
-In this step, we will create participant grid and handle events like `meeting-joined`, `meeting-left` and participant events.
+Once the meeting is successfully initialized, create the participant grid and manage events such as `meeting-joined`, `meeting-left`, and participant events.
 
 ```js ="app.js"
 // variable initialization
@@ -548,9 +547,9 @@ $scope.handleMeetingEvents = function (meeting) {
 };
 ```
 
-### Step 5 : Create Media Elements
+### Step 5 : Create the Media Elements
 
-In this step, we will create a function that helps us to create audio and video elements for displaying local and remote participants. We will also set the appropriate media track based on whether it's a video or audio.
+In this step, Create a function to generate audio and video elements for displaying both local and remote participants. Set the corresponding media track based on whether it's a video or audio stream.
 
 ```js title=app.js
 myApp.controller("myController", function ($scope, $http, ENV) {
@@ -668,17 +667,17 @@ myApp.controller("myController", function ($scope, $http, ENV) {
 
 ### Step 6 : Handle participant events
 
-In this step, we will implement four events `participant-joined`, `participant-left` , `stream-enabled` and `stream-disabled`.
+Thereafter, implement the events related to the participants and the stream.
 
-Let's understand the use of that events.
+Following are the events to be executed in this step: 
 
-1. `participant-joined`: When a remote participant joins, this event will trigger. In event callback will create video and audio elements which we had define in previous steps for rendering their video and audio streams.
+1. `participant-joined`: When a remote participant joins, this event will trigger. In the event callback, create video and audio elements previously defined for rendering their video and audio streams.
 
-2. `participant-left`: When a remote participant leaves, this event will trigger. In event callback will remove the corresponding video and audio elements.
+2. `participant-left`: When a remote participant leaves, this event will trigger. In the event callback, remove the corresponding video and audio elements.
 
-3. `stream-enabled`: It Handle the media track of a specific participant by associating it with the appropriate video or audio element.
+3. `stream-enabled`: This event manages the media track of a specific participant by associating it with the appropriate video or audio element.
 
-4. `stream-disabled`: It Handle the media track of a specific participant when participant toogle video or audio by associating it with the appropriate video or audio element.
+4. `stream-disabled`: This event manages the media track of a specific participant, when they toggle their camera or mic by associating it with the appropriate video or audio element.
 
 ```js title="index.js"
 $scope.handleMeetingEvents = function (meeting) {
@@ -729,7 +728,7 @@ $scope.handleMeetingEvents = function (meeting) {
 
 ### Step 7 : Implement Controls
 
-In this step, we will implement meeting functionalities such as toggleMic, toggleWebcam and leave meeting
+Next, implement the meeting controls such as toggleMic, toggleWebcam and leave meeting.
 
 ```js title="app.js"
 myApp.controller("myController", function ($scope, $http, ENV) {
@@ -770,7 +769,7 @@ myApp.controller("myController", function ($scope, $http, ENV) {
 
 ## Run your code
 
-Once you are all set with the steps mentioned above run your application as mentioned in the code-block below.
+Once you have completed all the steps mentioned above, run your application using the code block below.
 
 ```bash
 live-server --port=8000
@@ -778,7 +777,7 @@ live-server --port=8000
 
 ## Final Output
 
-We are done with implementation of customised video calling app in Angular JS using Video SDK. To explore more features go through Basic and Advanced features.
+You have completed the implementation of a customized video calling app in Angular JS using VideoSDK. To explore more features, go through Basic and Advanced features.
 
 import ReactPlayer from 'react-player'
 

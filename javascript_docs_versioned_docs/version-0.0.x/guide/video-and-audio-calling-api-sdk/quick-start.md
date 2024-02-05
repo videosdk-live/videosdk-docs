@@ -12,17 +12,15 @@ keywords:
   - collaboration
   - Javascript SDK implemntation
 image: img/videosdklive-thumbnail.jpg
-sidebar_position: 1
+sidebar_position: 1 
 slug: quick-start
 ---
 
 # Quick Start for Conference in Javascript
 
-VideoSDK enables you to embed the video calling feature into your Javascript application in minutes.
+VideoSDK empowers you to seamlessly integrate the video calling feature into your Javascript application within minutes.
 
-In this quickstart, we are going to explore group calling feature of Video SDK. We will go through step by step guide of integrating video calling with Javascript Video SDK.
-
-This guide will get you running with the VideoSDK video & audio calling in minutes.
+In this quickstart, you'll explore the group calling feature of VideoSDK. Follow the step-by-step guide to integrate it within your application.
 
 ## Prerequisites
 
@@ -40,13 +38,13 @@ Visit VideoSDK **[dashboard](https://app.videosdk.live/api-keys)** to generate t
 
 ## Getting Started with the Code!
 
-Follow the steps to create the environment necessary to add video calls into your app. Also you can find the code sample for [quickstart here](https://github.com/videosdk-live/quickstart/tree/main/js-rtc).
+Follow the steps to create the environment necessary to add video calls into your app. You can also find the code sample for [quickstart here](https://github.com/videosdk-live/quickstart/tree/main/js-rtc).
 
 First create one empty project using `mkdir folder_name` on your preferable location.
 
 ### Install Video SDK
 
-You can import VideoSDK using `<script>` tag or you can install the VideoSDK using the below-mentioned npm command. Make sure you are in your app directory before you run this command.
+Import VideoSDK using the `<script>` tag or Install it using the following npm command. Make sure you are in your app directory before you run this command.
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -94,15 +92,15 @@ Your project structure should look like this.
    ├── index.js
 ```
 
-We are going to work on two files:
+You will be working on the following files:
 
-- index.html: Responsible to create basic UI.
-- config.js: Responsible to store token.
-- index.js: Responsible to render meeting view and join the meeting.
+- index.html: Responsible for creating a basic UI.
+- config.js: Responsible for storing the token.
+- index.js: Responsible for rendering the meeting view and the join meeting functionality.
 
-### Step 1 : Create UI
+### Step 1 : Design the user interface (UI)
 
-In this step, we are going to create HTML file which will have two screens `join-screen` and `grid-screen`.
+Create an HTML file containing the screens, `join-screen` and `grid-screen`.
 
 ```html title="index.html"
 <!DOCTYPE html>
@@ -154,14 +152,13 @@ In this step, we are going to create HTML file which will have two screens `join
 
 ### Step 2 : Implement Join Screen
 
-Set token in `config.js` file which is generated from [here](https://app.videosdk.live/login).
+Configure the token in the `config.js` file, which you can obtain from the [VideoSDK Dashbord](https://app.videosdk.live/login).
 
 ```js title="config.js"
-// Auth token we will use to generate a meeting and connect to it
+// Auth token will be used to generate a meeting and connect to it
 TOKEN = "Your_Token_Here";
 ```
-
-Now get all elements from DOM and declare following variables in `index.js` file and then add Event Listener to the join and create meeting buttons.
+Next, retrieve all the elements from the DOM and declare the following variables in the `index.js` file. Then, add an event listener to the join and create meeting buttons.
 
 ```js title="index.js"
 // Getting Elements from DOM
@@ -225,7 +222,7 @@ createButton.addEventListener("click", async () => {
 
 ### Step 3 : Initialize meeting
 
-In this step, we will initialize meeting through `initMeeting()` function and join that meeting.
+Following that, initialize the meeting using the `initMeeting()` function and proceed to join the meeting.
 
 ```js title="index.js"
 // Initialize meeting
@@ -284,9 +281,9 @@ function initializeMeeting() {
 
 </center>
 
-### Step 4 : Create Media Elements
+### Step 4 : Create the Media Elements
 
-In this step, we will create a function that helps us to create audio and video elements for displaying local and remote participants. We will also set the appropriate media track based on whether it's a video or audio.
+In this step, Create a function to generate audio and video elements for displaying both local and remote participants. Set the corresponding media track based on whether it's a video or audio stream.
 
 ```js title=index.js
 // creating video element
@@ -360,14 +357,15 @@ function setTrack(stream, audioElement, participant, isLocal) {
 
 ### Step 5 : Handle participant events
 
-in this step three events are used `participant-joined`, `participant-left` and `stream-enabled`.
-Lets understand how we will use that event.
+Thereafter, implement the events related to the participants and the stream.
 
-1. `participant-joined`: When a remote participant joins this event will trigger, in event callback will create video and audio elements which we had define in previous steps for rendering their video and audio streams.
+Following are the events to be executed in this step: 
 
-2. `participant-left`: When a remote participant leaves this event will trigger, in event callback will remove the corresponding video and audio elements.
+1. `participant-joined`: When a remote participant joins, this event will trigger. In the event callback, create video and audio elements previously defined for rendering their video and audio streams.
 
-3. `stream-enabled`: It Handle the media track of a specific participant by associating it with the appropriate video or audio element.
+2. `participant-left`: When a remote participant leaves, this event will trigger. In the event callback, remove the corresponding video and audio elements.
+
+3. `stream-enabled`: This event manages the media track of a specific participant by associating it with the appropriate video or audio element.
 
 ```js title="index.js"
 // Initialize meeting
@@ -410,7 +408,7 @@ function initializeMeeting() {
 
 ### Step 6 : Implement Controls
 
-In this step, we will implement meeting functionalities such as toggleMic, toggleWebcam and leave meeting
+Next, implement the meeting controls such as toggleMic, toggleWebcam and leave meeting.
 
 ```js title="index.js"
 // leave Meeting Button Event Listener
@@ -453,7 +451,7 @@ toggleWebCamButton.addEventListener("click", async () => {
 
 ## Run your code
 
-Once you are all set with the steps mentioned above run your application as mentioned in the code-block below.
+Once you have completed all the steps mentioned above, run your application using the code block below.
 
 ```bash
 live-server --port=8000
@@ -461,7 +459,7 @@ live-server --port=8000
 
 ## Final Output
 
-We are done with implementation of customised video calling app in Javascript using Video SDK. To explore more features go through Basic and Advanced features.
+You have completed the implementation of a customized video calling app in Javascript using VideoSDK. To explore more features, go through Basic and Advanced features.
 
 import ReactPlayer from 'react-player'
 

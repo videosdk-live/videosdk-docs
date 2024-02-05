@@ -30,7 +30,7 @@ For an enhanced fine-tuning experience, we've introduced the capability to provi
 
 This feature allows you to incorporate custom video encoder configurations, choose optimization modes (focusing on **motion**, **text** or **detail** of the video), and apply background removal and video filters from external libraries (e.g., [videosdk-media-processor](https://www.npmjs.com/package/@videosdk.live/videosdk-media-processor-web)), then send these modifications to other participants.
 
-### `How to Create Custom Video Track ?`
+### `How to Create a Custom Video Track ?`
 
 - You can create a Custom Video Track using `createCameraVideoTrack()` method of `@videosdk.live/react-native-sdk`.
 - This method enables the creation of a video track with various encoding parameters, camera facing modes, and optimization modes, ultimately returning a `MediaStream`.
@@ -108,14 +108,14 @@ Setting **`multiStream : false`** restricts VideoSDK to send only one stream, he
 The `setQuality` parameter will not have any effect if multiStream is set to `false`.
 :::
 
-### `How to Setup Custom Video Track ?`
+### `How to Setup a Custom Video Track ?`
 
 The custom track can be configured both before and after the meeting is initialized. Following are the methods that help in doing so:
 
-1. [Setup Custom Track while initialization of the meeting](#1-setup-custom-track-while-initialization-of-the-meeting)
-2. [Setup Custom Track with methods](#2-setup-custom-track-with-methods)
+1. [Setting up a Custom Track during the initialization of a meeting](#1-setup-custom-track-while-initialization-of-the-meeting)
+2. [Setting up a Custom Track with methods](#2-setup-custom-track-with-methods)
 
-##### 1. Setup Custom Track while initialization of the meeting
+##### 1. Setting up a Custom Track during the initialization of a meeting
 
 If you are enabling the webcam (`webcamEnabled: true`) in the `config` of `MeetingProvider` and wish to use custom tracks from the start of the meeting, you can pass a custom track in the `config` as demonstrated below.
 
@@ -169,7 +169,7 @@ function App() {
 }
 ```
 
-#### 2. Setup Custom Track with methods
+#### 2. Setting up a Custom Track with methods
 
 To switch tracks during the meeting, you need to pass the `MediaStream` in the **`enableWebcam()` or `toggleWebcam()`** method of `useMeeting`.
 

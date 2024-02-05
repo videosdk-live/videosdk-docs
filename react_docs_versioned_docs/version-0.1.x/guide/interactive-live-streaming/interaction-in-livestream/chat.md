@@ -24,7 +24,7 @@ This guide focuses on using PubSub to implement Chat functionality. If you are n
 
 ### Implementing Chat
 
-1. The initial step in setting up a group chat involves selecting a topic to which all participants will publish and subscribe, facilitating the exchange of messages. In the following example, `CHAT` is used as the topic. Next, obtain the `publish()` and `messages` from the `usePubSub`hook.
+1. The initial step in setting up a group chat involves selecting a topic to which all participants will publish and subscribe, facilitating the exchange of messages. In the following example, `CHAT` is used as the topic. Next, obtain the `publish()` method and the `messages` array from the `usePubSub`hook.
 
 ```js
 // importing usePubSub hook from react-sdk

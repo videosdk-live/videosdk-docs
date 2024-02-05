@@ -18,19 +18,19 @@ slug: invite-guest-on-stage
 
 # Invite Guest on Stage - Javascript
 
-In this guide, we will see how you can request a viewer to join your livestream by using the `changeMode()`.
+This guide explains the process of inviting a viewer to join a livestream using the `changeMode()` method.
 
 :::note
-Before going forward in this guide, do make sure all the attendees join the meeting with mode as `VIEWER` and the host joins with mode as `CONFERENCE`
+Before proceeding with this guide, ensure that all attendees join the meeting with the mode set to `VIEWER`, while the host joins with the mode set to `CONFERENCE`.
 :::
 
-Let's first have a look at how we will be using the `PubSub` mechanism to acheive the requesting and switching of the participant's mode.
+The diagram below illustrates the utilization of the `PubSub` mechanism to facilitate the requesting and switching of the participant's mode.
 
 ![invite-guest-pubsub](https://cdn.videosdk.live/website-resources/docs-resources/invite_guest_pubsub.png)
 
 ### Step 1: Loading Viewer List
 
-The host will see a list of participants who have joined as `VIEWER` along with a button that, when selected, will invite that user to join the livestream.
+First, the host will be presented with a list of participants who have joined as `VIEWER`, accompanied by a button that, when selected, will invite that user to join the livestream.
 
 ```js
 const participants = meeting.participants;
@@ -59,9 +59,7 @@ viewers.map((participant) => {
 
 ### Step 2: Requesting a Viewer to Join Livestream
 
-We have a Viewer list ready. Now, let us handle the click event for the Join Livestream button.
-
-We will be using `CHANGE_MODE_$participantId` as the topic for PubSub.
+Now, with the Viewer list in place, handle the click event for the "Join Livestream" button by utilizing `CHANGE_MODE_$participantId` as the topic for PubSub.
 
 ```js
 const participants = meeting.participants;
@@ -97,7 +95,7 @@ viewers.map((participant) => {
 
 ### Step 3: Showing Viewer Request Dialog
 
-After implementing the Host requesting viewer to join the livestream, let's display the viewer's request dialogue and switch the `VIEWER` mode to `CONFERENCE`.
+After implementing the host's request for a viewer to join the livestream, display the viewer's request dialogue and switch the mode from `VIEWER` to `CONFERENCE`.
 
 ```js
 function onMessageReceived(data) {

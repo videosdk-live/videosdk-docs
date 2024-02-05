@@ -66,7 +66,7 @@ You can only capture an image of the local participant. If you called `captureIm
 
 #### Step 1 : Initiate Image Capture Request
 
-- In this step, you'll send a request to Participant B, whose image you want to capture, using pubsub.
+- In this step, you have to first send a request to Participant B, whose image you want to capture, using pubsub.
 - In order to do that, you have to create a pubsub topic called `IMAGE_CAPTURE` in the `ParticipantView` Component.​
 - Here, you will be using the `sendOnly` property of the `publish()` method. Therefore, the request will be sent to that participant only.
 

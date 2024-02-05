@@ -8,12 +8,12 @@ import TabItem from '@theme/TabItem';
 
 # Virtual Background (BETA) - Javascript
 
-Virtual backgrounds allow participants in a video call or meeting to replace their actual background with a digital image or video, which can be either preloaded images or user-uploaded images. This feature can be useful for a variety of reasons, such as maintaining privacy by hiding potentially distracting or private elements in the background, reducing visual clutter to help focus on the speaker or content, and adding an element of fun or creativity to a meeting.
+Virtual backgrounds enhance the video call or meeting experience by enabling participants to replace their physical background with a digital image or video. This feature offers several benefits, including maintaining privacy, reducing visual distractions, and adding an element of creativity or fun to the meeting. Users can choose from preloaded images or upload their own backgrounds.
 
 :::important
 
 - Currently, this feature is only available on Google Chrome, Firefox and Brave browser.
-- This feature is in Beta release, so feel free to reach out to us on Discord. We'd love to hear feedback from you.
+- This feature is in Beta release, so feel free to reach out to us on Discord. We'd love to hear your feedback.
 
 :::
 
@@ -46,7 +46,7 @@ yarn add "@videosdk.live/videosdk-media-processor-web"
 
 ### Instantiate Virtual Background Processor
 
-With the library installed lets create an instance of the `VirtualBackgrouProcessor`.
+After installing the library, initialize an instance of the `VirtualBackgroundProcessor`. 
 
 ```js
 // Import package
@@ -65,11 +65,11 @@ const videoProcessor = new VirtualBackgroundProcessor();
 
 ### Using Virtual Background
 
-To use the virtual background processor, you will be first initializing it, then you will start processing a stream and finally pass the processed video stream to the VideoSDK.
+Utilize the processor by first initializing it, then start processing a stream, and finally, pass the processed video stream to VideoSDK.
 
 #### Initializing
 
-First thing to do is initialize the virtual background processor if its not already ready.
+The first step is to initialize the virtual background processor if it's not already prepared.
 
 ```js
 // Import package
@@ -100,13 +100,12 @@ StartVirtualBackgroundBtn.addEventListener("click", async () => {
 
 ### Starting the Processor
 
-To start processsing a video stream you will need `MediaStram` which you want to process and `config` which should be used from processing. When the required parameters are passed to the processor, it will return `MediaStream`.
+To initiate the processing of a video stream, you need to provide a `MediaStream` that you want to process and a `config` to be used for processing. Once these parameters are passed to the processor, it will return a `MediaStream`.
 
-1. **MediaStream** : [MediaStream](https://developer.mozilla.org/en-US/docs/Web/API/MediaStream) is just a video stream which is being capture from the camera. You can use the `createCameraVideoTrack` to create a `MediaStream`.
-
+1. **MediaStream** : [MediaStream](https://developer.mozilla.org/en-US/docs/Web/API/MediaStream) is essentially a video stream captured from the camera. You can use the `createCameraVideoTrack` method to generate a `MediaStream`.
 2. **config** : This object accepts `type` and `imageUrl` property. `type` property accepts filter type `image` or `blur`. `imageUrl` is the path of the image and it will be ignored on `blur` filter type.
 
-   **NOTE** : If you want to display specific background image, do make sure it is uploaded on CDN.
+   **NOTE** : If you intend to display a specific background image, make sure it is uploaded on a CDN.
 
 ```js
 // Import package
@@ -150,7 +149,7 @@ StartVirtualBackgroundBtn.addEventListener("click", async () => {
 
 ### Passing Processed Stream to VideoSDK
 
-Now that we have the processed stream you can pass it in the `enableWebcam()` or `changeWebcam()`.
+Once you have the processed stream, you can pass it to functions like `enableWebcam()`, `changeWebcam()` or `toggleWebcam()` to apply the virtual background effect during your meeting.
 
 ```js
 // Import package
@@ -197,7 +196,7 @@ StartVirtualBackgroundBtn.addEventListener("click", async () => {
 
 ### Updating Video Processor Configuration
 
-If you wish to change the background while the Video Processor is running, you can call the `updateProcessorConfig` method and change the filters or processing type.
+If you want to change the background while the Video Processor is running, you can call the `updateProcessorConfig` method to modify the filters or processing type. 
 
 ```js
 // Import package
@@ -229,7 +228,7 @@ updateVirtualBackgroundBtn.addEventListener("click", async () => {
 
 ### Stopping Virtual Background Processor
 
-You can use the `stop()` on the processor to stop the background processing and then replace the video stream with a new plain video stream.
+Additionally, you can use the `stop()` method on the processor to halt the background processing and replace the video stream with a new plain video stream.
 
 ```js
 // Import package
@@ -260,7 +259,7 @@ stopVirtualBackgroundBtn.addEventListener("click", async () => {
 
 ### Extras
 
-You can also pass this processed stream during initialization of the meeting as well
+You can also pass the processed stream during initialization of the meeting.
 
 ```js
 // Import package

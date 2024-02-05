@@ -5,7 +5,7 @@ hide_table_of_contents: false
 description: Remove a participant or a peer from the meeting while it is still in progress. It helps in meeting moderation.
 sidebar_label: Remove Participant
 pagination_label: Remove Participant
-keywords:
+keywords: 
   - remove participant
   - block participant
   - react js
@@ -54,8 +54,8 @@ const ParticipantView = () => {
 
 Following callbacks are received when a participant is removed from the meeting.
 
-- The participant who was removed from the meeting will receive a callback on the [`onMeetingLeft`](/react/api/sdk-reference/use-meeting/events#onmeetingleft) method of the `useMeeting()` hook.
-- All other [remote participants](../concept-and-architecture#2-participant) will receive a callback on the[`onParticipantLeft`](/react/api/sdk-reference/use-meeting/events#onparticipantleft) method with the Participant object.
+- The participant who was removed from the meeting will receive a callback on the [`onMeetingLeft`](/react/api/sdk-reference/use-meeting/events#onmeetingleft) event of the `useMeeting()` hook.
+- All other [remote participants](../concept-and-architecture#2-participant) will receive a callback on the [`onParticipantLeft`](/react/api/sdk-reference/use-meeting/events#onparticipantleft) event with the Participant object.
 
 ## 2. Using VideoSDK Dashboard
 

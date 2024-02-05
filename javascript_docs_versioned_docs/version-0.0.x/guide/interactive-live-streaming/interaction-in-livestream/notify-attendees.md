@@ -18,13 +18,11 @@ slug: notify-attendees
 
 # Notify Attendees in Realtime - Javascript
 
-When doing livestream, you may want to broadcast message to all the viewers at once.
-
-Let us see, how we can use PubSub to implement this functionality. If you are not familiar with the PubSub mechanism and `usePubSub`hook, you can [follow this guide](/react/guide/video-and-audio-calling-api-sdk/collaboration-in-meeting/pubsub).
+This guide explains how PubSub can be used to implement the functionality of broadcasting a message to all the viewers at once. If you are not familiar with the PubSub mechanism and `pubSub`, you can [follow this guide](./pubsub).
 
 ### Notifying Attendees
 
-1. We will be creating a button and text input to take the message input and we will publish a message it the topic `NOTIFY_ATTENDEES`
+1. To implement this functionality, begin by creating a "Notify Attendees" button along with a text input to capture the message. When a message is entered into the input and the button is clicked, publish a message with the topic `NOTIFY_ATTENDEES`.
 
 ```js
 let meeting;
@@ -43,7 +41,7 @@ notifyAttendeesBtn.addEventListener("click", async () => {
 });
 ```
 
-2. Now let us show an alert to all the viewers displaying the message posted by the speaker.
+2. Next, alert all the speakers, displaying the message posted by the speaker.
 
 ```js
 let meeting;

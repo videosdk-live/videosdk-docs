@@ -14,23 +14,23 @@ image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
 slug: leave-end-meeting
 ---
-
+ 
 # Leave or End Meeting - Javascript
 
-Participant can choose to leave the meeting without removing all the other participants. This is typically done by `Leave Meeting`.
+A participant can choose to leave a meeting without removing all the other participants. This is typically done using the `Leave Meeting` functionality.
 
-Alternatively, if the participant is the host or the last person remaining in the session, they can choose `End Meeting` by removing all other participants, which will end the session for everyone.
+Alternatively, if the participant is the host or the last person remaining in the session, they can choose to `End Meeting` by removing all other participants, which will end the session for everyone.
 
 ### `leave()`
 
-To leave the meeting without removing all the participant you need to call `leave()` which is the part of the `meeting` object.
+To leave the meeting without removing all the participants, you need to call the `leave()` method which is a part of the `meeting` object.
 
 ### `end()`
 
-To leave the meeting by removing all the participant you need to call `end()` which is the part of the `meeting` object.
+To end the meeting by removing all the participant you need to call the `end()` method which is a part of the `meeting` object.
 
 :::note
-This methods can be called after the meeting is joined successfully.
+These methods can be called only after the meeting is joined successfully.
 :::
 
 #### Example
@@ -58,18 +58,18 @@ leaveBtn.addEventListener("click", () => {
 You should call the `leave()` method on the unmount of your main meeting component so that meeting is left once the view is unmounted.
 :::
 
-### Events associated with Leave
+### Events associated with the leave() method.
 
 Following callbacks are received when a participant leaves the meeting.
 
-- [Local Participant](../concept-and-architecture#2-participant) will receive a [`meeting-left`](/javascript/api/sdk-reference/meeting-class/events#meeting-left) event.
-- All [Remote participants](../concept-and-architecture#2-participant) will receive a [`participant-left`](/javascript/api/sdk-reference/meeting-class/events#participant-left) event.
+- The [Local Participant](../concept-and-architecture#2-participant) will receive a [`meeting-left`](/javascript/api/sdk-reference/meeting-class/events#meeting-left) event.
+- All [Remote Participants](../concept-and-architecture#2-participant) will receive a [`participant-left`](/javascript/api/sdk-reference/meeting-class/events#participant-left) event.
 
-### Events associated with End
+### Events associated with the end() method.
 
-Following events are received when a participant ends the meeting.
+Following callbacks are received when a participant ends the meeting.
 
-- All [remote participants](../concept-and-architecture#2-participant) and [local participant](../concept-and-architecture#2-participant) will receive a callback on [`meeting-left`](/javascript/api/sdk-reference/meeting-class/events#meeting-left) event.
+- All [remote participants](../concept-and-architecture#2-participant) and the [local participant](../concept-and-architecture#2-participant) will receive a callback on [`meeting-left`](/javascript/api/sdk-reference/meeting-class/events#meeting-left) event.
 
 ```js
 let meeting;

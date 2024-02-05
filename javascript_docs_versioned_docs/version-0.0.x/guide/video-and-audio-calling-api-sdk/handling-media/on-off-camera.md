@@ -13,27 +13,27 @@ keywords:
 image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
 slug: on-off-camera
----
+--- 
 
 # On / Off Camera - Javascript
 
-Any participant can turn on or off his camera in the meeting using below methods.
+Participants in the meeting have the ability to toggle their cameras on or off using the methods outlined below.
 
 ### `enableWebcam()`
 
-- By using `enableWebcam()` function of `meeting` object, local participant can publish video to other participants.
+- By using the `enableWebcam()` function of the `meeting` object, the local participant can publish their video to other participants.
 
-- You can call this method when the local participant is not broadcasting any video to others.
+- You can only call this method when the local participant is not broadcasting video to others.
 
-- You can pass customised video track in `enableWebcam()` by using [Custom Video Track](/javascript/guide/video-and-audio-calling-api-sdk/render-media/optimize-video-track).
+- You can also pass a customised video track in `enableWebcam()` by using [Custom Video Track](/javascript/guide/video-and-audio-calling-api-sdk/render-media/optimize-video-track).
 
-- Video stream of the participant can be accessed from the `streams` property of `Participant` object.
+- The video stream of a participant can be accessed from the `streams` property of the `Participant` object.
 
 ### `disableWebcam()`
 
-- By using `disableWebcam()` function of `meeting` object, local participant can stop publish video to other participants.
+- By using the `disableWebcam()` function of the `meeting` object, the local participant can stop publishing their video to other participants.
 
-- You can call this method when the local participant is broadcasting any video to others.
+- You can only call this method when the local participant is broadcasting video to others.
 
 #### Example
 
@@ -64,15 +64,15 @@ To learn, how to render video in the meeting, follow this detailed [guide](/java
 
 ### Events associated with enableWebcam
 
-- Every Participant will receive a callback on [`stream-enabled`](/javascript/api/sdk-reference/participant-class/events#stream-enabled) of the [`participant`](/javascript/api/sdk-reference/participant-class/introduction) object with `Stream` object.
+- Every Participant will receive a callback on[`stream-enabled`](/javascript/api/sdk-reference/participant-class/events#stream-enabled) event of the [`participant`](/javascript/api/sdk-reference/participant-class/introduction) object with the `Stream` object.
 
-- Every Participant will receive a callback on [`media-status-changed`](/javascript/api/sdk-reference/participant-class/events#media-status-changed) of the [`participant`](/javascript/api/sdk-reference/participant-class/introduction) object with the kind of media and its status.
+- Every Participant will receive a callback on [`media-status-changed`](/javascript/api/sdk-reference/participant-class/events#media-status-changed) event of the [`participant`](/javascript/api/sdk-reference/participant-class/introduction) object with the type of media and its status.
 
 ### Events associated with disableWebcam
 
-- Every Participant will receive a callback on [`stream-disabled`](/react/api/sdk-reference/use-participant/events#onstreamdisabled) of the [`participant`](/javascript/api/sdk-reference/participant-class/introduction) object with `Stream` object.
+- Every Participant will receive a callback on [`stream-disabled`](/react/api/sdk-reference/use-participant/events#onstreamdisabled) event of the [`participant`](/javascript/api/sdk-reference/participant-class/introduction) object with `Stream` object.
 
-- Every Participant will receive a callback on [`media-status-changed`](/javascript/api/sdk-reference/participant-class/events#media-status-changed) of the [`participant`](/javascript/api/sdk-reference/participant-class/introduction) object with the kind of media and its status.
+- Every Participant will receive a callback on [`media-status-changed`](/javascript/api/sdk-reference/participant-class/events#media-status-changed) event of the [`participant`](/javascript/api/sdk-reference/participant-class/introduction) object with the type of media and its status.
 
 ```js
 const participants = meeting.participants;
@@ -102,7 +102,7 @@ participant.on("media-status-changed", (data) => {
 
 ### Video Permissions
 
-- By default, VideoSDK ask for video permissions when the participants requests to turn on the camera and once the permission is granted the camera gets turned on. If the permission is denied, VideoSDK will send the error message in the `error` event of the `meeting` object.
+- By default, VideoSDK will request video permission when the participants attempts to turn on the camera. Once the permission is granted the camera gets turned on. If the permission is denied, VideoSDK will send an error message in the `onError` event callback of the `meeting` object.
 
 import ReactPlayer from 'react-player'
 
@@ -114,7 +114,7 @@ import ReactPlayer from 'react-player'
 
 ### Troubleshoot Video Permissions
 
-- If a participant denies the camera permission, he can **manually grant** it by following below shown steps.
+- If a participant denies the camera permission, they can **manually grant** it by following below shown steps.
 
 <div style={{textAlign: 'center'}}>
 

@@ -5,7 +5,7 @@ hide_table_of_contents: false
 description: Speaker Indication features quick integrate in Javascript, React JS, Android, IOS, React Native, Flutter with Video SDK to add live video & audio conferencing to your applications.
 sidebar_label: Change Input Device
 pagination_label: Change Input Device
-keywords:
+keywords: 
   - Active Speaker
   - audio calling
   - video calling
@@ -17,19 +17,19 @@ slug: change-input-device
 
 # Change Input Device - Javascript
 
-During the meeting at any point a participant wishes to switch his/her input audio or video device, it can be done using the below mentioned methods.
+During the meeting, at any point, a participant wishing to switch their input audio or video device, can do so using the below-mentioned methods.
 
 ## Changing Audio Input Device
 
 ### `getMics()`
 
-- This method of the **Meeting** class will give you the list of all the available mics which can be shown in a dropdown list.
+- This method of the **Meeting** class will provide you with a list of all the available mics, which can be displayed in a dropdown list.
 
-- This method will return an array of objects which will contain the `deviceId` and `label` of the audio input device.
+- It will return an array of objects, which will contain the `deviceId` and  the `label` of the audio input device.
 
 ### `changeMic()`
 
-- Once you know which device you want to switch audio input to, you can pass the `deviceId` to this method to change the audio input device.
+- Once you know which device you want to switch the audio input to, you can pass the `deviceId` to this method to change the audio input device.
 
 #### Example
 
@@ -48,9 +48,9 @@ const { deviceId, label } = mics[0];
 meeting?.changeMic(deviceId);
 ```
 
-## Getting Current Used Audio Input Device
+## Getting the Audio Input Device currently in use.
 
-- You can get audio device that is currently used in the meeting using `selectedMicrophoneDevice` property of `Meeting` class.
+- You can get the audio device that is currently in use in the meeting,using the `selectedMicrophoneDevice` property of the `Meeting` class.
 
 #### Example
 
@@ -71,13 +71,13 @@ console.log("Currently used Audio Input Device : ", meeting?.selectedMicrophoneD
 
 ### `getWebcams()`
 
-- This method of the `meeting` object will give you the list of all the available cameras which can be shown in a dropdown list.
+- This method of the **Meeting** class will provide you with a list of all the available cameras, which can be displayed in a dropdown list.
 
 - This method will return an array of objects which will contain the `deviceId` and `label` of the camera input device.
 
 ### `changeWebcam()`
 
-- Once you know which device you want to switch camera input to, you can pass the `deviceId` to this method to change the camera input device.
+- Once you know which device you want to switch the camera input to, you can pass the `deviceId` to this method to change the camera input device.
 
 #### Example
 
@@ -96,9 +96,9 @@ const { deviceId, label } = webcams[0];
 meeting?.changeWebcam(deviceId);
 ```
 
-## Getting Currently Used Camera Input Device
+## Getting the Camera Device currently in use.
 
-- You can get camera device currently used in the meeting using `selectedCameraDevice` property of `Meeting` class.
+- You can get the camera device that is currently in use in the meeting, using the `selectedCameraDevice` property of the `Meeting` class.
 
 #### Example
 

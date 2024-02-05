@@ -18,11 +18,11 @@ slug: raise-hand
 
 # Raise Hand - Javascript
 
-Let us see, how we can use PubSub to implement Raise Hand functionality. If you are not familiar with the PubSub mechanism and `pubSub` property of meeting object, you can [follow this guide](/javascript/guide/video-and-audio-calling-api-sdk/collaboration-in-meeting/pubsub).
+This guide explains how PubSub can be used to implement the Raise Hand functionality. If you are not familiar with the PubSub mechanism and `pubSub` property of meeting object, you can [follow this guide](/javascript/guide/video-and-audio-calling-api-sdk/collaboration-in-meeting/pubsub).
 
 ### Implementing Raise Hand
 
-1. We will be creating a button when clicked, we will publish a message it the topic `RAISE_HAND`
+1. To implement this functionality, first create a Raise Hand button. When this button is clicked, publish a message with the topic `RAISE_HAND`.
 
 ```js
 let meeting;
@@ -40,7 +40,7 @@ raiseHandBtn.addEventListener("click", () => {
 });
 ```
 
-2. Now let us show an alert to all the speakers showing who raised the hand.
+2. Next, alert all the speakers, displaying the identity of the participant who raised their hand.
 
 ```js
 let meeting;

@@ -27,11 +27,11 @@ Participants in the meeting have the ability to toggle their cameras on or off u
 
 - You can also pass a customised video track in `enableWebcam()` by using [Custom Video Track](/react-native/guide/video-and-audio-calling-api-sdk/render-media/optimize-video-track).
 
-- Video stream of the participant can be accessed from the `webcamStream` property of the `useParticipant` hook.
+- The video stream of a participant can be accessed from the `webcamStream` property of the `useParticipant` hook.
 
 ### `disableWebcam()`
 
-- By using the `disableWebcam()` function of the `useMeeting` hook, local participant can stop publishing their video to other participants.
+- By using the `disableWebcam()` function of the `useMeeting` hook, the local participant can stop publishing their video to other participants.
 
 - You can only call this method when the local participant is broadcasting video to others.
 
@@ -39,9 +39,9 @@ Participants in the meeting have the ability to toggle their cameras on or off u
 
 - By using the `toggleWebcam()` function of the `useMeeting` hook, local participant can start or stop publishing their video to other participants based on the current state of the camera.
 
-- You can pass a customised video track in `toggleWebcam()` by using [Custom Video Track](/react-native/guide/video-and-audio-calling-api-sdk/render-media/optimize-video-track).
+- You can also pass a customised video track in `toggleWebcam()` by using [Custom Video Track](/react-native/guide/video-and-audio-calling-api-sdk/render-media/optimize-video-track).
 
-- Video stream of the participant can be accessed from the `webcamStream` property of `useParticipant` hook.
+- The video stream of a participant can be accessed from the `webcamStream` property of `useParticipant` hook.
 
 #### Example
 
@@ -148,13 +148,13 @@ const ParticipantView = (participantId) => {
 
 - Every Participant will receive a callback on [`onStreamEnabled()`](/react-native/api/sdk-reference/use-participant/events#onstreamenabled) event of the [`useParticipant()`](/react-native/api/sdk-reference/use-participant/introduction) hook with the `Stream` object.
 
-- Every Participant will receive a callback on [`onMediaStatusChanged()`](/react-native/api/sdk-reference/use-participant/events#onmediastatuschanged) event of the [`useParticipant()`](/react-native/api/sdk-reference/use-participant/introduction) hook with the kind of media and its status.
+- Every Participant will receive a callback on [`onMediaStatusChanged()`](/react-native/api/sdk-reference/use-participant/events#onmediastatuschanged) event of the [`useParticipant()`](/react-native/api/sdk-reference/use-participant/introduction) hook with the type of media and its status.
 
 ### Events associated with disableWebcam
 
 - Every Participant will receive a callback on [`onStreamDisabled()`](/react-native/api/sdk-reference/use-participant/events#onstreamdisabled) event of the [`useParticipant()`](/react-native/api/sdk-reference/use-participant/introduction) hook with the `Stream` object.
 
-- Every Participant will receive a callback on [`onMediaStatusChanged()`](/react-native/api/sdk-reference/use-participant/events#onmediastatuschanged) event of the [`useParticipant()`](/react-native/api/sdk-reference/use-participant/introduction) hook with the kind of media and its status.
+- Every Participant will receive a callback on [`onMediaStatusChanged()`](/react-native/api/sdk-reference/use-participant/events#onmediastatuschanged) event of the [`useParticipant()`](/react-native/api/sdk-reference/use-participant/introduction) hook with the type of media and its status.
 
 ### Events associated with toggleWebcam
 
@@ -162,7 +162,7 @@ const ParticipantView = (participantId) => {
 
 - Every Participant will receive a callback on [`onStreamDisabled()`](/react-native/api/sdk-reference/use-participant/events#onstreamdisabled) event of the [`useParticipant()`](/react-native/api/sdk-reference/use-participant/introduction) hook with the `Stream` object if the **video broadcasting was stopped**.
 
-- Every Participant will receive a callback on [`onMediaStatusChanged()`](/react-native/api/sdk-reference/use-participant/events#onmediastatuschanged) event of the [`useParticipant()`](/react-native/api/sdk-reference/use-participant/introduction) hook with the kind of media and its status.
+- Every Participant will receive a callback on [`onMediaStatusChanged()`](/react-native/api/sdk-reference/use-participant/events#onmediastatuschanged) event of the [`useParticipant()`](/react-native/api/sdk-reference/use-participant/introduction) hook with the type of media and its status.
 
 ```js
 import { useParticipant } from "@videosdk.live/react-native-sdk";

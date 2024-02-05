@@ -59,7 +59,7 @@ Once the user has joined the meeting, the `startHls()` method, accesible from th
 ```
 
 :::note
-If you wish for only the conference participants to be visible in the livestream, you can `pin` all participants in the conference mode and commence the livestream with the `SPOTLIGHT` layout, prioritizing pinned participants
+If you wish for only the conference participants to be visible in the livestream, you can `pin` all participants in the conference mode and commence the livestream with the `SPOTLIGHT` layout, prioritizing pinned participants.
 :::
 
 ### Example
@@ -168,7 +168,7 @@ const {
 
 ## Custom Template
 
-With VideoSDK, you have the option to employ your own ustom-designed layout template for meeting recordings. To use a custom template, [follow this guide](/react/guide/interactive-live-streaming/custom-template) to create and set up the template. Once the template is configured, you can initiate recording using the [REST API](/api-reference/realtime-communication/start-livestream), specifying the `templateURL` parameter.
+With VideoSDK, you have the option to employ your own custom-designed layout template for meeting recordings. To use a custom template, [follow this guide](/react/guide/interactive-live-streaming/custom-template) to create and set up the template. Once the template is configured, you can initiate recording using the [REST API](/api-reference/realtime-communication/start-livestream), specifying the `templateURL` parameter.
 
 ## API Reference
 

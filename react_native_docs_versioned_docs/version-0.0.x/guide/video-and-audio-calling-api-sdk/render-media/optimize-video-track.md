@@ -30,7 +30,7 @@ For the best fine-tuning experience, we have introduced the ability to pass a cu
 
 This feature can be used to add custom video encoder configurations, optimization mode (whether you want to focus on **motion**, **text** or **detail** of the video) and background removal & video filter from external libraries and send it to other participants.
 
-### `How to Create Custom Video Track ?`
+### `How to Create a Custom Video Track ?`
 
 - You can create a Video Track using `createCameraVideoTrack()` method of `@videosdk.live/react-native-sdk`.
 - This method can be used to create video track using different encoding parameters, camera facing mode, and optimization mode and return `MediaStream`.
@@ -108,14 +108,14 @@ The capabilities of the device have a significant impact on how custom track con
 `setQuality` would not have any effect if multiStream is set to `false`.
 :::
 
-### `How to Setup Custom Video Track ?`
+### `How to Setup a Custom Video Track ?`
 
 The custom track can be set up both before and after the initialization of the meeting.
 
-1. [Setup Custom Track while initialization of the meeting](#1-setup-custom-track-while-initialization-of-the-meeting)
-2. [Setup Custom Track with methods](#2-setup-custom-track-with-methods)
+1. [Setting up a Custom Track during the initialization of a meeting](#1-setup-custom-track-while-initialization-of-the-meeting)
+2. [Setting up a Custom Track with methods](#2-setup-custom-track-with-methods)
 
-##### 1. Setup Custom Track while initialization of the meeting
+##### 1. Setting up a Custom Track during the initialization of a meeting
 
 If you are passing `webcamEnabled: true` in the `config` of `MeetingProvider` and want to use custom tracks from start of the meeting, you can pass custom track in the `config` as shown below.
 
@@ -169,7 +169,7 @@ function App() {
 }
 ```
 
-#### 2. Setup Custom Track with methods
+#### 2. Setting up a Custom Track with methods
 
 In order to switch tracks during the meeting, you have to pass the `MediaStream` in the **`enableWebcam()` or `toggleWebcam()`** method of `useMeeting`.
 

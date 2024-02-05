@@ -13,17 +13,17 @@ keywords:
 image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
 slug: picture-in-picture
----
+--- 
 
 # Picture-in-Picture Mode - Javascript
 
-Picture-in-picture (PiP) is a feature that is commonly used in video conferencing software. It allows you to continue your video conference while also performing other tasks on your device. With PiP, you can keep the video conference window open and resize it to a smaller size, allowing you to work on other tasks while still being able to see and hear the other participants in the conference. This can be very helpful if you need to take notes, send an email, or look up information during the conference.
+Picture-in-picture (PiP) is a commonly used feature in video conferencing software, enabling users to simultaneously engage in a video conference and perform other tasks on their device. With PiP, you can keep the video conference window open, resize it to a smaller size, and continue working on other tasks while still seeing and hearing the other participants in the conference. This feature proves beneficial when you need to take notes, send an email, or look up information during the conference.
 
-In this guide, we will go through how you can create a Picture-in-Picture feature with VideoSDK.
+This guide explains the steps to implement the Picture-in-Picture feature using VideoSDK.
 
 ### PiP Video
 
-All the mordern browsers supports poping a videostream our from the `HTMLVideoElement`. You can do it using directly from the controls show on the video element or use the Browser API method [`requestPictureInPicture()`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLVideoElement/requestPictureInPicture) on the video element.
+All modern day browsers support popping a video stream out from the `HTMLVideoElement`. You can achieve this either directly from the controls shown on the video element or by using the Browser API method [`requestPictureInPicture()`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLVideoElement/requestPictureInPicture) on the video element.
 
 import ReactPlayer from 'react-player'
 
@@ -37,7 +37,7 @@ Chrome, Edge, and Safari support this browser Web API, however, Firefox has no p
 
 ### Customize Video PiP with multiple video streams
 
-**`Step 1:`** Let us create a button which will toggle the PiP mode when in the Meeting. This button will call the `togglePipMode()` method on when clicked.
+**`Step 1:`** Create a button that toggles the Picture-in-Picture (PiP) mode during the meeting. This button should invoke the `togglePipMode()` method when clicked.
 
 ```js
 const togglePipBtn = document.getElementById("togglePipBtn");
@@ -47,7 +47,7 @@ togglePipBtn.addEventListener("click", () => {
 });
 ```
 
-**`Step 2:`** First thing we will do it check if the browser supports the PiP mode else show a message to the user.
+**`Step 2:`** The first step is to check if the browser supports PiP mode; if not, display a message to the user.
 
 ```js
 const togglePipMode = async () => {
@@ -62,7 +62,7 @@ const togglePipMode = async () => {
 
 ```
 
-**`Step 3:`** Now, when the browser supports the PiP mode, we will create a `Canvas` element and a `Video` element. And create a Stream from the Canvas and play it in the video element. We will request the PiP mode on the video element when the metadata has been loaded.
+**`Step 3:`** Now, if the browser supports PiP mode, create a `Canvas` element and a `Video` element. Generate a Stream from the Canvas and play it in the video element. Request PiP mode for the video element once the metadata has been loaded.
 
 ```js
 const togglePipMode = async () => {
@@ -97,7 +97,7 @@ const togglePipMode = async () => {
 };
 ```
 
-**`Step 4:`** We will paint the canvas with the Participant Grid which will be visible in the PiP window.
+**`Step 4:`** The next step is to paint the canvas with the Participant Grid, which will be visible in the PiP window.
 
 ```js
 const getRowCount = (length) => {
@@ -165,10 +165,10 @@ const togglePipMode = async () => {
 ```
 
 :::note
-We will be showing only the participants who have their video turned on in the PiP mode.
+Only the participants who have their video turned on, will be shown in the PiP mode.
 :::
 
-**`Step 5:`** We will exit the PiP mode if it is already active.
+**`Step 5:`** Exit the PiP mode if it is alreay active.
 
 ```js
 const togglePipMode = async () => {
@@ -192,6 +192,6 @@ const togglePipMode = async () => {
 };
 ```
 
-Here is the output of the PiP implementation we did.
+Here is the output of the PiP implementation.
 
 <ReactPlayer controls autoplay muted loop playing url='https://cdn.videosdk.live/website-resources/docs-resources/custom_video_pip.mp4' width={"100%"} />

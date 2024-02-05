@@ -25,7 +25,7 @@ Screen sharing in a meeting is the process of sharing your device screen with ot
 
 - You can also pass a customised screenshare track in the `enableScreenShare()` method by using [Custom Screen Share Track](/react-native/guide/video-and-audio-calling-api-sdk/render-media/optimize-video-track#custom-screen-share-track).
 
-- Screen Share stream of the participant can be accessed from the `screenShareStream` property of the `useParticipant` hook.
+- The Screen Share stream of a participant can be accessed from the `screenShareStream` property of the `useParticipant` hook.
 
 ### `disableScreenShare()`
 
@@ -37,7 +37,7 @@ Screen sharing in a meeting is the process of sharing your device screen with ot
 
 - You can also pass a customised screenshare track in the `toggleScreenShare()` method by using [Custom Screen Share Track](/react-native/guide/video-and-audio-calling-api-sdk/render-media/optimize-video-track#custom-screen-share-track).
 
-- Screen Share stream of the participant can be accessed from the `screenShareStream` property of the `useParticipant` hook.
+- The Screen Share stream of a participant can be accessed from the `screenShareStream` property of the `useParticipant` hook.
 
 ```jsx
 import { useMeeting } from "@videosdk.live/react-native-sdk";

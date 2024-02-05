@@ -6,7 +6,7 @@ description: PubSub features quick integrate in Javascript, React JS, Android, I
 sidebar_label: PubSub
 pagination_label: PubSub
 keywords:
-  - Start Livestream meeting
+  - Start Livestream meeting 
   - Stop Livestream meeting
   - audio calling
   - video calling
@@ -63,13 +63,13 @@ function MeetingView() {
 
 ## Receiving the messages
 
-- The `messages `property of the `usePubSub` hook is an array of objects that stores both past and upcoming messages for a particular topic.
+- The `messages` property of the `usePubSub` hook is an array of objects that stores both past and upcoming messages for a particular topic.
 
 It contains the following properties:
 
 - `senderId`: Represents the `participantId` of the participant who sent the message.
 - `senderName`: Represents the `displayName` of the participant who sent the message.
-- `message`: The acatual message that was sent.
+- `message`: The actual message that was sent.
 - `timestamp`: The timestamp for when the message was published.
 - `topic`: The name of the topic the message was published to.
 - `payload`: The data that was sent along with message.
@@ -157,7 +157,7 @@ PubSub is a powerful mechanism that can be employed to enhance the interactive a
 
 1. [`Chat`](./chat-using-pubsub): You can utilise this to develop features, like Private Chat or Group Chat. You can follow our chat [integration guide here](./chat-using-pubsub).
 2. `Raise Hand`: You can allow attendees to raise their hands at any point during the meeting, informing everyone else that someone has a question or input.
-3. `Layout Switching`: You can change the meeting's layout for every participant at once during the meeting, such as from Grid layout to Spotlight or from Grid Layout to Sideba, etc.
+3. `Layout Switching`: You can change the meeting's layout for every participant at once during the meeting, such as from Grid layout to Spotlight or from Grid Layout to Sidebar,etc.
 4. [`Whiteboard`](./canvas-drawing-using-pubsub): You can develop an interactive whiteboard functionality that is completely functional. You can follow our canvas drawing [guide here](./canvas-drawing-using-pubsub).
 5. `Poll`: You can make polls, let users respond to them, and display the results at the end of a poll.
 6. `Question Answer Session`: You can also design interactive features based on a question-and-answer format.

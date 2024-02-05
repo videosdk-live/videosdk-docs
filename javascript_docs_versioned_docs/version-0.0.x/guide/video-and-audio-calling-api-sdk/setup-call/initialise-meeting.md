@@ -5,7 +5,7 @@ hide_table_of_contents: false
 description: Video SDK and Audio SDK, developers need to implement a token server. This requires efforts on both the front-end and backend.
 sidebar_label: Initialise Meeting
 pagination_label: Initialise Meeting
-keywords:
+keywords: 
   - audio calling
   - video calling
   - real-time communication
@@ -17,13 +17,13 @@ slug: initialise-meeting
 
 # Initialise Meeting - Javascript
 
-To configure a VideoSDK meeting you require two things, first the `token` which will be used for **Authentication** purpose and a `meetingId` which will be used to specify where a participant will join. Let's see each of the steps closely.
+To configure a VideoSDK meeting you require two things, first the `token` which will be used for **Authentication** purpose and a `meetingId` which will be used to specify where a participant will join. Examine each of the steps closely.
 
 ### Generating Token
 
 You can generate a `token` in two ways:
 
-1. **`Temporary Token`** : You can visit [Dashboard's API Key section](https://app.videosdk.live/api-keys) and generate the temporary token from there.
+1. **`Temporary Token`** : You can visit [Dashboard's API Key section](https://app.videosdk.live/api-keys) and generate a temporary token from there.
 
 2. **`Server`** : You can setup **JWT** in backend and make an API call to get the token from your server.
 
@@ -55,19 +55,19 @@ const getToken = async () => {
 
 ### Generating Meeting Id
 
-With the token ready, we can get the `meetingId` from the [VideoSDK's rooms API](/api-reference/realtime-communication/create-room).
+With the token ready, you can now get the `meetingId` from the [VideoSDK's rooms API](/api-reference/realtime-communication/create-room).
 
 ```js
 const getMeetingId = async (token) => {
   try {
-    //We will use VideoSDK rooms API endpoint to create a meetingId
+    //Use VideoSDK rooms API endpoint to create a meetingId
     //highlight-next-line
     const VIDEOSDK_API_ENDPOINT = `https://api.videosdk.live/v2/rooms`;
     const options = {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        // We will pass the token in the headers
+        // Pass the token in the headers
         // highlight-next-line
         Authorization: token,
       },
@@ -79,7 +79,7 @@ const getMeetingId = async (token) => {
       })
       .catch((error) => console.log("error", error));
 
-    //we will return the meetingId which we got from the response of the api
+    //Return the meetingId which we got from the response of the api
     //highlight-next-line
     return meetingId;
   } catch (e) {
@@ -90,13 +90,13 @@ const getMeetingId = async (token) => {
 
 ### Initialization of Meeting
 
-We can initialize the meeting using the `initMeeting` method of the `VideoSDK` class. The `initMeeting` is responsible for initializing the meeting with the provided configuration, which includes the `meetingId`, `participantId` and many more.
+You can initialize the meeting using the `initMeeting` method of the `VideoSDK` class. The `initMeeting` is responsible for initializing the meeting with the provided configuration, which includes the `meetingId`, `participantId` and many more.
 
 :::tip
 When conducting one-to-one meetings, it is recommended to set `multistream:false`.For more information on multistream, refer to the [multistream documentation](/javascript/guide/video-and-audio-calling-api-sdk/render-media/optimize-video-track#what-is-multistream).
 :::
 
-Let's take a deeper look at the available configuration options first.
+Take a deeper look at the available configuration options first.
 
 ```js
 VideoSDK.config(token);
@@ -113,13 +113,13 @@ const meeting = VideoSDK.initMeeting({
 
 - **`meetingId`** :
 
-  - meetingId is unique identifiers that allow participants to join a specific meeting or room.
+  - This is a unique identifier that allows participants to join a specific meeting or room.
   - It will be in the format of `xxx-yyy-zzz` and will be generated using the [VideoSDK's Room API](/api-reference/realtime-communication/create-room).
 
 - **`name`**:
 
-  - This will represent the name of the participant in the meeting.
-  - It will accept `String`type value.
+  - This represents the name of the participant in the meeting.
+  - It will accept `String` type value.
 
 - **`micEnabled`**:
 
@@ -137,7 +137,7 @@ const meeting = VideoSDK.initMeeting({
 
 - **`participantId`**:
 
-  - This will be the unique identifier for the participant inside the meeting.
+  - This is a unique identifier for the participant's inside the meeting.
 
     - It can be used to specify the **unique identifier** which can be linked with **your own database** service.
     - It has to be of `String` type.
@@ -145,10 +145,10 @@ const meeting = VideoSDK.initMeeting({
 
 - **`multistream`**:
 
-  - This is a `boolean` flag, indicating if the stream should send multiple resolution layers or single resolution layer.
+  - This is a `boolean` flag, indicating whether the stream should send multiple resolution layers or a single resolution layer.
 
 :::caution
-You must ensure that the `participantId` is not repeated in the same meeting or room, It will enable VideoSDK to eliminate any participant respect to that `participantId`.
+You must ensure that the `participantId` is not repeated in the same meeting or room. This will enable VideoSDK to eliminate any participant associated with that `participantId`.
 :::
 
 To know more about other properties, you can follow [our API Reference](/javascript/api/sdk-reference/initMeeting).

@@ -18,7 +18,7 @@ slug: manage-on-screen-participants
 
 # Manage On-Screen Participants - React 
 
-When engaging in interactive live streaming, it is essential to have only the necessary participant on the screen during the livestream. To manage this, the `pin` and `unpin` methods of the useParticipant hook are employed.
+When engaging in interactive live streaming, it is essential to have only the necessary participant on the screen during the livestream. To manage this, the `pin` and `unpin` methods of the `useParticipant` hook are employed.
 
 :::note
 To ensure only the hosts/speakers are displayed in the grid, utilize the `SPOTLIGHT` layout and prioritize the `pin` function when initiating the interactive livestream.

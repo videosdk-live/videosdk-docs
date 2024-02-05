@@ -17,11 +17,11 @@ slug: javascript-sdk
 
 # Getting Started - JavaScript SDK
 
-There are two ways to install JavaScript SDK.
+There are two methods to install the JavaScript SDK.
 
-## First Way: Install via using `<script>` tag
+## First Method: Install via the `<script>` tag.
 
-You can import this library using `<script>` tag. The easiest way to get started is to load this library from CDN, and add a couple of lines of code to your web page or app.
+Import the given library using the `<script>` tag. The easiest way to get started is to load this library from a CDN and add a couple of lines of code to your web page or app.
 
 ```js title="Install via <script>"
 <html>
@@ -33,9 +33,9 @@ You can import this library using `<script>` tag. The easiest way to get started
 </html>
 ```
 
-## Second Way: Install using package manager
+## Second Method: Install using the package manager.
 
-Another interesting option is to install library in your app and bundle it using webpack or rollup.
+An alternate method is to install the library in your app and bundle it using webpack or rollup.
 
 ### Npm
 

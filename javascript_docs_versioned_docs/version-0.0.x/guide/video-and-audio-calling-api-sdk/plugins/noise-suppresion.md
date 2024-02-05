@@ -8,11 +8,11 @@ import TabItem from '@theme/TabItem';
 
 # Noise Suppresion (BETA) - Javascript
 
-Noise Suppresion identifies and filter out background noise from an audio input, during a meeting or call. This features can be particularly useful in noisy environments or when participants are using low-quality microphones.
+Noise suppression is a feature that identifies and filters out background noise from an audio input during a meeting or call. This feature can be particularly useful in noisy environments or when participants are using low-quality microphones.
 
 :::important
 
-This feature is in Beta release, so feel free to reach out to us on Discord. We'd love to hear feedback from you.
+This feature is in Beta release, so feel free to reach out to us on Discord. We'd love to hear your feedback.
 
 :::
 
@@ -43,7 +43,7 @@ yarn add "@videosdk.live/videosdk-media-processor-web"
 
 ### Instantiate `VideoSDKNoiseSuppressor`
 
-With the library installed lets create an instance of the `VideoSDKNoiseSuppressor`.
+After installing the library, initialize an instance of the `VideoSDKNoiseSuppressor`. 
 
 ```js
 // Import package
@@ -62,7 +62,7 @@ const noiseProcessor = new VideoSDKNoiseSuppressor();
 
 ### Getting Processed Stream
 
-We will get the processed stream using the `getNoiseSuppressedAudioStream` which will take `MediaStream` as input and give back the noise suppressed stream.
+You can obtain the processed stream using the `getNoiseSuppressedAudioStream` method, which takes a `MediaStream` as input and returns the noise-suppressed stream.
 
 ```js
 // Import package
@@ -94,7 +94,7 @@ startNoiseSuppressionBtn.addEventListener("click", async () => {
 
 ### Passing Processed Stream to VideoSDK
 
-Now that we have the processed stream you can pass it in the `enableWebcam()`, `changeWebcam()` or `toggleWebcam()`.
+Once you have the processed stream, you can pass it to functions like `enableMic()`, `changMic()` or `toggleMic()` to apply the noise suppresion effect during your meeting.
 
 ```js
 // Import package
@@ -128,7 +128,7 @@ startNoiseSuppressionBtn.addEventListener("click", async () => {
 
 ### Stopping Noise Suppression
 
-You can use the stop the noise suppression by replacing the audio stream with a new plain audio stream.
+You can stop the noise suppression by replacing the audio stream with a new plain audio stream.
 
 ```js
 // Import package
@@ -158,7 +158,7 @@ stopNoiseSuppressionBtn.addEventListener("click", async () => {
 
 ### Extras
 
-You can also pass this processed stream during initialization of the meeting as well
+You can also pass this processed stream during initialization of the meeting.
 
 ```js
 // Import package

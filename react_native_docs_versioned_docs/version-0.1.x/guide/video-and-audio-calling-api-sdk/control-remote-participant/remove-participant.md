@@ -61,8 +61,8 @@ const ParticipantView = () => {
 
 Following callbacks are received when a participant is removed from the meeting.
 
-- Participant who was removed from the meeting will receive a callback on the [`onMeetingLeft`](/react-native/api/sdk-reference/use-meeting/events#onmeetingleft) method of the `useMeeting()` hook.
-- All other [remote participants](../concept-and-architecture#2-participant) will receive a callback on the [`onParticipantLeft`](/react-native/api/sdk-reference/use-meeting/events#onparticipantleft) method with the Participant object.
+- Participant who was removed from the meeting will receive a callback on the [`onMeetingLeft`](/react-native/api/sdk-reference/use-meeting/events#onmeetingleft) event of the `useMeeting()` hook.
+- All other [remote participants](../concept-and-architecture#2-participant) will receive a callback on the [`onParticipantLeft`](/react-native/api/sdk-reference/use-meeting/events#onparticipantleft) event with the Participant object.
 
 ## 2. Using VideoSDK Dashboard
 

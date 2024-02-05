@@ -25,7 +25,7 @@ Before joining the meeting, it has to be initialized. If you have not initialize
 
 ### `join()`
 
-- To join the meeting you can call the `join()` which is the part of the `useMeeting` hook of React SDK.
+- To join a meeting you can call the `join()` method which is the part of the `useMeeting` hook of React SDK.
 - This method can be called after the meeting is initialized from the `MeetingProvider`.
 
 :::caution
@@ -70,8 +70,8 @@ const MeetingView = () => {
 
 Following events are received when a participant successfully joins a meeting.
 
-- [Local Participant](../concept-and-architecture#2-participant) will receive an [`onMeetingJoined`](/react-native/api/sdk-reference/use-meeting/events#onmeetingjoined) event, when the meeting is successfully joined.
-- [Remote Participant](../concept-and-architecture#2-participant) will receive an [`onParticipantJoined`](/react-native/api/sdk-reference/use-meeting/events#onparticipantjoined) event with the newly joined `Participant` object from the event callback.
+- [The Local Participant](../concept-and-architecture#2-participant) will receive an [`onMeetingJoined`](/react-native/api/sdk-reference/use-meeting/events#onmeetingjoined) event, when the meeting is successfully joined.
+- The [Remote Participant](../concept-and-architecture#2-participant) will receive an [`onParticipantJoined`](/react-native/api/sdk-reference/use-meeting/events#onparticipantjoined) event with the newly joined `Participant` object from the event callback.
 
 ```js
 import { useMeeting } from "@videosdk.live/react-native-sdk";

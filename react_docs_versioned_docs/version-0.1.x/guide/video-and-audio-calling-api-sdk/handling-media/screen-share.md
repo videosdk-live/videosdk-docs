@@ -25,7 +25,7 @@ Screen sharing in a meeting is the process of sharing your computer screen with 
 
 - You can also pass a customised screenshare track in the `enableScreenShare()` method by using [Custom Screen Share Track](/react/guide/video-and-audio-calling-api-sdk/render-media/optimize-video-track#custom-screen-share-track).
 
-- Screen Share stream of the participant can be accessed from the `screenShareStream` property of the `useParticipant` hook.
+- The Screen Share stream of a participant can be accessed from the `screenShareStream` property of the `useParticipant` hook.
 
 ### `disableScreenShare()`
 
@@ -37,7 +37,7 @@ Screen sharing in a meeting is the process of sharing your computer screen with 
 
 - You can also pass a customised screenshare track in the `toggleScreenShare()` method by using [Custom Screen Share Track](/react/guide/video-and-audio-calling-api-sdk/render-media/optimize-video-track#custom-screen-share-track).
 
-- Screen Share stream of the participant can be accessed from the `screenShareStream` property of `useParticipant` hook.
+- The Screen Share stream of a participant can be accessed from the `screenShareStream` property of `useParticipant` hook.
 
 :::note
 Screen Sharing is only supported in the **Desktop browsers** and **not in mobile/tab browser**.
@@ -165,7 +165,7 @@ To enable screen sharing with audio, select the **Share tab audio** option when 
 
 </center>
 
-After clicking `Share` button, you will receive the selected tab's audio stream in the participant's `screenShareAudioStream`.
+After clicking the `Share` button, you will receive the selected tab's audio stream in the participant's `screenShareAudioStream`.
 
 :::note
 Screen Share with Audio is only supported while sharing **Chrome Tab** in a **Chromium based browser** like Google Chrome, Brave etc.

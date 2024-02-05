@@ -17,11 +17,11 @@ slug: stop-hls
 
 # Stop HLS - Javascript
 
-This could refer to stopping the transmission of an ongoing HLS stream, which would mean the stream is no longer available to viewers.
+Stopping HLS refers to the process of halting the ongoing HLS stream transmission, indicating that the stream is no longer accessible to viewers.
 
 ## Stopping HLS
 
-`stopHls()` can be used to stop a interactive livestream of the meeting which can be accessed from the `meeting` object.
+The `stopHls()` method, accesible from the `meeting` object, is used to stop the interactive livestream of a meeting.
 
 ### Example
 
@@ -42,7 +42,7 @@ stopHlsBtn.addEventListener("click", () => {
 
 ## Event associated with HLS
 
-- **hls-state-changed** - Whenever meeting HLS state changes, then `hls-state-changed` event will trigger.
+- **hls-state-changed** - The `hls-state-changed` event is triggered whenever the state of meeting HLS changes.
 
 - You will get `HLS_STOPPING` and `HLS_STOPPED` status on calling `stopHls()`.
 

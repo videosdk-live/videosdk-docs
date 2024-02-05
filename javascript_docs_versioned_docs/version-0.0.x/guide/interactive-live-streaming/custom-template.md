@@ -7,33 +7,35 @@ hide_table_of_contents: false
 
 # Customized Live Stream - Javascript
 
-VideoSDK is a platform that offers a range of video streaming tools and solutions for content creators, publishers, and developers.
+VideoSDK offers a range of video streaming tools and solutions for content creators, publishers, and developers.
 
 ### Custom Template
 
-- Custom template is template for live stream, which allows users to add real-time graphics to their streams.
-- With custom templates, users can create unique and engaging video experiences by overlaying graphics, text, images, and animations onto their live streams. These graphics can be customized to match the branding.
-- Custom templates enable users to create engaging video content with real-time graphics, with live scoreboards, social media feeds, and other customizations, users can easily create unique and visually appealing streams that stands out from the crowd.
+- A custom template is a specialized layout for a live stream that allows users to integrate real-time graphics into their broadcasts. 
+
+- With custom templates, users can enhance their video content by overlaying graphics, text, images, and animations onto their live streams. These elements can be customized to align with specific branding requirements.
+
+- By leveraging custom templates, users can craft dynamic and engaging video experiences. Whether incorporating live scoreboards, social media feeds, or other personalized elements, users have the flexibility to create visually appealing streams that stand out and capture audience attention.
 
 :::note
 
-Custom templates can be used with recordings and RTMP service provided by VideoSDK as well.
+Custom templates can also be used with recordings and RTMP service provided by VideoSDK.
 
 :::
 
 ### What you can do with Custom Template
 
-Using a custom template, you may create a variety of various modes. Here are a few of the more well-known modes that you can create.
+By utilizing a custom template, you have the flexibility to create various modes for your live stream. Here are some popular modes that you can design:
 
-- **`PK Host:`** Host can organise player vs player battle. Below image is example of gaming battle.
+- **`PK Host:`** The host can organize a player vs. player battle, as illustrated in the example of a gaming battle shown below.
 
 ![pk host](https://cdn.videosdk.live/website-resources/docs-resources/custom_template_pk_battle.png)
 
-- **`Watermark:`** Host can add & update watermark anywhere in the template. In below image we have added VideoSDK watermark on top right side of the screen.
+- **`Watermark:`** The host has the ability to add and update watermarks anywhere in the template; for instance, the image below features a VideoSDK watermark on the top right side of the screen.
 
 ![watermark host](https://cdn.videosdk.live/website-resources/docs-resources/custom_template_water_mark.png)
 
-- **`News Mode:`** Host can add dynamic text in lower third banner. in below image we have added some sample text in bottom left of the screen.
+- **`News Mode:`** Additionally, the host can incorporate dynamic text in the lower third banner, as demonstrated by the sample text in the bottom left of the screen.
 
 ![news mode](https://cdn.videosdk.live/website-resources/docs-resources/custom_template_news_live.png)
 
@@ -41,29 +43,29 @@ Using a custom template, you may create a variety of various modes. Here are a f
 
 In this section, we will discuss how Custom Templates work with VideoSDK.
 
-- **`Host`**: The host is responsible for starting the live streaming by passing the `templateURL`. The `templateURL` is the URL of the hosted template webpage. The host is also responsible for managing the template, such as changing text, logos, and switching template layout, among other things.
+- **`Host`**: The host initiates live streaming by providing the `templateURL`. The `templateURL` is the URL of the hosted template webpage. The host is also responsible for managing the template, including tasks such as altering text, logos, and switching template layouts.
 
-- **`VideoSDK Template Engine`** : The VideoSDK Template Engine accepts and opens the templateURL in the browser. It listens to all the events performed by the Host and enables customization of the template according to the Host's preferences.
+- **`VideoSDK Template Engine`** : The VideoSDK Template Engine accepts and opens the templateURL in the browser, actively listening to all events initiated by the Host. It facilitates the customization of the template in accordance with the host's preferences.
 
-- **`Viewer`**: The viewer can stream the content. They can watch the live stream with the added real-time graphics, which makes for a unique and engaging viewing experience.
+- **`Viewer`**: Viewers can stream the content, experiencing the live stream with added real-time graphics. This feature contributes to a distinctive and engaging viewing experience.
 
 ![custom template](https://cdn.videosdk.live/website-resources/docs-resources/custom_template.png)
 
 ### Understanding Template URL
 
-The template URL is the webpage that VideoSDK Template Engine will open while composing the live stream.
+The template URL is a webpage that VideoSDK Template Engine will open while composing the live stream.
 
-The template URL will appear as shown below.
+It will appear as shown below.
 
 ![template url](https://cdn.videosdk.live/website-resources/docs-resources/custom_template_url.png)
 
-The Template URL consists of two parts:
+The Template URL comprises of two essential parts:
 
-- Your actual page URL, which will look something like `https://example.com/videosdk-template`.
-- Query parameters, which will allow the VideoSDK Template Engine to join the meeting when the URL is opened. There are a total of three query parameters:
-  - `token`: This will be your token, which will be used to join the meeting.
-  - `meetingId`: This will be the meeting ID that will be joined by the VideoSDK Template Engine.
-  - `participantId`: This will be the participant ID of the VideoSDK Template Engine, which should be passed while joining the template engine in your template so that the tempalte engine participant is not visible to other participants. **This parameter will be added by the** **VideoSDK**.
+- Your actual page URL, resembling something like `https://example.com/videosdk-template`.
+- Query parameters, designed to enable the VideoSDK Template Engine to seamlessly join the meeting upon opening the URL. There are three key query parameters in total:
+  - `token`: Your token, serving as the authentication key to join the meeting.
+  - `meetingId`: The meeting Id of the meeting that the VideoSDK Template Engine will join.
+  - `participantId`: The participant ID of the VideoSDK Template Engine. This should be included when joining the template engine in your template, ensuring that the template engine participant remains invisible to other participants. **This parameter is automatically added by the VideoSDK**.
 
 :::info
 
@@ -73,7 +75,7 @@ Above mentioned query parameters are mandatory. Apart from these parameters, you
 
 ### **Creating Template**
 
-**`Step 1:`** Import VideoSDK using `<script>` tag or you can install the VideoSDK using the below-mentioned npm command.
+**`Step 1:`** Import VideoSDK using `<script>` tag or install it using the below-mentioned npm command.
 Make sure you are in your app directory before you run this command.
 
 import Tabs from '@theme/Tabs';
@@ -123,7 +125,7 @@ You can use VideoSDK's React or JavaScript SDK to create custom template. Follow
    ├── index.js
 ```
 
-**`Step 2:`** Create UI that will be shown to your live stream.
+**`Step 2:`** Craft a user interface (UI) tailored for your live stream presentation.
 
 ```html title="index.html"
 <!DOCTYPE html>
@@ -142,7 +144,7 @@ You can use VideoSDK's React or JavaScript SDK to create custom template. Follow
 </html>
 ```
 
-**`Step 3:`** Next we will fetch the query parameters, from the URL which we will later use to initialize the meeting and get the elements from DOM
+**`Step 3:`** Next, fetch the query parameters, from the URL which will be later used to initialize the meeting and get the elements from DOM.
 
 ```js title=index.js
 const url = window.location;
@@ -156,7 +158,7 @@ const videoContainer = document.getElementById("videoContainer");
 const textDiv = document.getElementById("textDiv");
 ```
 
-**`Step 4:`** Now we will initialize the meeting with the parameters we extracted from the URL. Make sure to directly initialize, so that the template engine is able to join directly into the meeting, on the page load.
+**`Step 4:`** Subsequently, initialize the meeting with the parameters that were extracted from the URL. Ensure direct initialization so that the template engine seamlessly joins the meeting upon page load.
 
 ```js title=index.js
 window.VideoSDK.config(token);
@@ -176,7 +178,7 @@ meeting.on("meeting-joined", () => {
 });
 ```
 
-**`Step 5:`** Let us create the container which will render the meeting view for us on `participant-joined` event.
+**`Step 5:`** Next step is to create the container that will render the meeting view on the `participant-joined` event.
 
 ```js title=index.js
 //  participant joined
@@ -264,11 +266,11 @@ function setTrack(stream, audioElement, participant, isLocal) {
 }
 ```
 
-**`Step 6:`** Now listen to the PubSub messages from the `CHANGE_BACKGROUND` topic, which will change the background color of the meeting.
+**`Step 6:`**  Now, listen to PubSub messages from the `CHANGE_BACKGROUND` topic, triggering a change in the meeting's background color accordingly.
 
 :::note
 
-We will be using the PubSub mechanism to communicate with the template. You can learn more about [PubSub from here](../video-and-audio-calling-api-sdk/collaboration-in-meeting/pubsub).
+The PubSub mechanism is utilized to communicate with the template. You can learn more about [PubSub from here](../video-and-audio-calling-api-sdk/collaboration-in-meeting/pubsub).
 
 :::
 
@@ -283,39 +285,32 @@ meeting.on("meeting-joined", () => {
 });
 ```
 
-**`Step 9:`** Once tested, you can deploy it using your backend or host it on services like [firebase](https://www.geeksforgeeks.org/how-to-deploy-react-project-on-firebase/) or vercel.
+**`Step 7:`** Once tested, you can deploy it using your backend or host it on services like [firebase](https://www.geeksforgeeks.org/how-to-deploy-react-project-on-firebase/) or vercel.
 
 :::tip
 
-You can checkout the github repository for sample custom template we just [created here](https://github.com/videosdk-live/videosdk-custom-recording-template-js-example).
+You can checkout the github repository for sample custom template [created here](https://github.com/videosdk-live/videosdk-custom-recording-template-js-example).
 
 :::
 
 ### Setup Livestream Using Custom Template
 
-- To use Custom Template, you will need Host and Viewer setup from where the host will start the livestream and viewer can watch them.
+- To utilize Custom Templates with Livestream, you need to establish both the Host and Viewer setups. The Host initiates the livestream, while Viewers can watch the broadcast.
 
 ![template manager](https://cdn.videosdk.live/website-resources/docs-resources/custom_template_manager.png)
 
-- You can clone this example and run it on your system.
+- To understand custom templates, clone this example and run it on your system.
 
 ```bash
-git clone https://github.com/videosdk-live/quickstart.git
+git clone https://github.com/videosdk-live/videosdk-custom-recording-template-js-example.git
 ```
 
-- The cloned example will have a directory `react-custom-template-manager` which has to runned.
 
-```js
-cd react-custom-template-manager
-npm install
-npm run start
-```
-
-- To use the custom template which we just deployed, we will call the [Start HLS API](https://docs.videosdk.live/api-reference/realtime-communication/start-hlsStream) instead of the `startHls` method from the `Meeting` class. This code has already been added in the example you cloned.
+- To utilize the custom template that has been deployed, invoke the [Start HLS API](https://docs.videosdk.live/api-reference/realtime-communication/start-hlsStream) instead of the `startHls` method from the `Meeting` class. The necessary code has already been incorporated in the cloned example above.
 
 :::important
 
-You can create your own custom template manager in JavaScript. In this example, we are using a React template manager for better understanding.
+You can create your own custom template manager in JavaScript. In this example, we are using one for better understanding.
 
 :::
 
@@ -325,7 +320,7 @@ You can create your own custom template manager in JavaScript. In this example, 
     const url = `https://api.videosdk.live/v2/hls/start`;
     //Update your Custom Template URL here if you have deployed your own, if not deployed you can use this template from our URL.
     //highlight-next-line
-    const templateUrl = `https://lab.videosdk.live/react-custom-template-demo?meetingId=${meetingId}&token=${authToken}`;
+    const templateUrl = `https://lab.videosdk.live/js-template-demo/?meetingId=${meetingId}&token=${authToken}`;
     const options = {
       method: "POST",
       headers: {
@@ -347,9 +342,9 @@ You can create your own custom template manager in JavaScript. In this example, 
 </button>
 ```
 
-- This example has two option on the Host side which will allow them to change the background and send the messages to the viewer.
+- In this example, the host has two options on their side, enabling them to change the background and send messages to the viewers.
 
-- Let's give this example a test run.
+- Given below is a test run of the example.
 
 import ReactPlayer from 'react-player'
 

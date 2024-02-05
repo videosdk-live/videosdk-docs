@@ -110,7 +110,7 @@ The App will contain a `MeetingView` component which includes a `ParticipantView
 
 ![VideoSDK React JS Quick Start Architecture](/img/react-quick-start.png)
 
-You will be working on two files:
+You will be working on the following files:
 
 - API.js: Responsible for handling API calls such as generating unique meetingId and token
 - App.js: Responsible for rendering `MeetingView` and joining the meeting.

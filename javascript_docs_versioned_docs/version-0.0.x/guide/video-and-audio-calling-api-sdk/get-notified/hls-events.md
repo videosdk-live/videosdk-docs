@@ -17,16 +17,16 @@ slug: hls-events
 
 # HLS Events - Javascript
 
-VideoSDK provides `hls-state-changed` event which will notify you of the current state of HLS for the meeting.
+VideoSDK provides the `hls-state-changed` event, which informs you about the current state of HLS for the meeting.
 
 ### hls-state-changed
 
-- This event will be triggered when the meeting's HLS status changed.
-- This event can be subscribed from the `meeting` object.
+- This event is triggered when the HLS status of the meeting changes.
+- It can be subscribed to using the `meeting` object.
 
 ### Example
 
-Here is the usage of the event mentioned in this page.
+Here is an example demonstrating the usage of the event mentioned on this page.
 
 ```javascript
 let meeting;

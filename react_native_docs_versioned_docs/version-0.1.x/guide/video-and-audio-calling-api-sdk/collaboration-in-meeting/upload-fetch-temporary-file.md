@@ -44,9 +44,9 @@ async function uploadFile() {
 
 - By using the `fetchBase64File()` function of the `useFile` hook, you can retrieve your file from Videosdk's Temporary storage.
 
-- You have to pass `fileUrl` which is returned by `uploadBase64File()` function and `token` as parameter to retrieve file.
+- You have to pass the `fileUrl` which is returned by `uploadBase64File()` function, and the `token` as parameters to retrieve a file.
 
-- `fetchBase64File()` will return image in form of `base64`.
+- This method will return the image in the form of `base64`.
 
 ```js
 const { fetchBase64File } = useFile();

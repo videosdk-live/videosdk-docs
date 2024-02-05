@@ -12,24 +12,24 @@ keywords:
   - collaboration
 image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
-slug: display-audio-video
+slug: display-audio-video 
 ---
 
 # Display Audio and Video - Javascript
 
-In this guide, we will take a look at how to render the participant's audio and video on the screen.
+This guide elaborates on how to render a participant's audio and video on the screen.
 
 ## Rendering Participant
 
-The three steps are involve to achieve this process.
+The steps involved in rendering the audio and video of a participant are as follows.
 
-1. [Create Container](#1-create-container)
+1. [Create a Container](#1-create-container)
 2. [Rendering Video](#2-rendering-video)
 3. [Rendering Audio](#3-rendering-audio)
 
-### `1. Create Container`
+### `1. Create a Container`
 
-First you will need to create container `div` in your UI where all the videos will get added.
+First, create a `div` container in your UI to hold all the video elements.
 
 ```html
 <!DOCTYPE html>
@@ -45,7 +45,7 @@ First you will need to create container `div` in your UI where all the videos wi
 
 ### `2. Rendering Video`
 
-On every participant's `stream-enabled` stream, you will get a `stream` object as a parameter, and by using that, you can create video elements in a div container.
+On the `stream-enabled` event for each participant, you will receive a `stream` object as a parameter. You can use this object to create video elements within a div container.
 
 ```js
 const videoContainer = document.getElementById("videoContainer");
@@ -103,7 +103,7 @@ function createVideoElement(stream, participant) {
 
 #### `Mirror Local Video View`
 
-If you wish to show the mirror view of the local participant, you can apply the transformation style to the participant's view.
+If you want to display the mirror view of the local participant, you can apply the transformation style to the participant's view.
 
 ```js
 function createVideoElement(stream, participant) {
@@ -131,7 +131,7 @@ function createVideoElement(stream, participant) {
 
 ### `3. Rendering Audio`
 
-On every participant's `stream-enabled` stream, you will get a `stream` object as a parameter, and by using that, you can create audio elements.
+On the `stream-enabled` event for each participant, you will receive a `stream` object as a parameter. You can use this object to create audio elements.
 
 ```js
 const participants = meeting.participants;
@@ -164,17 +164,17 @@ function createAudioElement(stream, participant) {
 ```
 
 :::caution
-While rendering the audio, we should **not render the audio of local participant** as it will create the echo.
-So to solve that you should not create audio element for local participant
+While rendering the audio, you should **not render the audio of the local participant** as it will create echo.
+So to avoid that, you should not create an audio element for the local participant.
 :::
 
 ## Autoplay Audio and Video
 
-`autoplay` refers to the parameter which is passed to `<audio>` and `<video>` whose media should be played automatically without user clicking on the video or hitting the play button.
+`autoplay` is a parameter passed to `<audio>` and `<video>` elements, indicating that their media should play automatically without requiring the user to click on the video or hit the play button.
 
-While building a audio-video calling app, it is necessary to mae sure that `autoplay` flag is set to `true` so that any media loaded is played although the `play()` was not called.
+When developing an audio-video calling app, ensure that the `autoplay` flag is set to `true`, allowing any loaded media to play even if the `play()` method was not explicitly called.
 
-You can learn more about the `autoplay flag` at the [**official documentation**](https://developer.mozilla.org/en-US/docs/Web/Media/Autoplay_guide).
+You can learn more about the `autoplay flag` in the [**official documentation**](https://developer.mozilla.org/en-US/docs/Web/Media/Autoplay_guide).
 
 ## API Reference
 

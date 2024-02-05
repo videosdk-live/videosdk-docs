@@ -101,8 +101,6 @@ import ReactPlayer from 'react-player'
 
 - With VideoSDK, this factor is addressed as we automatically choose the nearest available server for participants. However, if you are geofencing to a specific region, ensure that you choose the server nearest to your users.
 
-
-
 <center>
 
 ![resolution-and-bitrate](/img/rtt.png)

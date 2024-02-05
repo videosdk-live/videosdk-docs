@@ -27,11 +27,11 @@ Participants in the meeting have the ability to toggle their cameras on or off u
 
 - You can also pass a customised video track in `enableWebcam()` by using [Custom Video Track](/react/guide/video-and-audio-calling-api-sdk/render-media/optimize-video-track).
 
-- Video stream of the participant can be accessed from the `webcamStream` property of the `useParticipant` hook.
+- The video stream of a participant can be accessed from the `webcamStream` property of the `useParticipant` hook.
 
 ### `disableWebcam()`
 
-- By using the `disableWebcam()` function of the `useMeeting` hook, local participant can stop publishing their video to other participants.
+- By using the `disableWebcam()` function of the `useMeeting` hook, the local participant can stop publishing their video to other participants.
 
 - You can only call this method when the local participant is broadcasting video to others.
 
@@ -41,7 +41,7 @@ Participants in the meeting have the ability to toggle their cameras on or off u
 
 - You can also pass a customised video track in `toggleWebcam()` by using [Custom Video Track](/react/guide/video-and-audio-calling-api-sdk/render-media/optimize-video-track).
 
-- Video stream of the participant can be accessed from the `webcamStream` property of `useParticipant` hook.
+- The video stream of a participant can be accessed from the `webcamStream` property of `useParticipant` hook.
 
 #### Example
 
@@ -90,13 +90,13 @@ To learn, how to render video in the meeting, follow this detailed [guide](/reac
 
 - Every Participant will receive a callback on [`onStreamEnabled()`](/react/api/sdk-reference/use-participant/events#onstreamenabled) event of the [`useParticipant()`](/react/api/sdk-reference/use-participant/introduction) hook with the `Stream` object.
 
-- Every Participant will receive a callback on [`onMediaStatusChanged()`](/react/api/sdk-reference/use-participant/events#onmediastatuschanged) event of the [`useParticipant()`](/react/api/sdk-reference/use-participant/introduction) hook with the kind of media and its status.
+- Every Participant will receive a callback on [`onMediaStatusChanged()`](/react/api/sdk-reference/use-participant/events#onmediastatuschanged) event of the [`useParticipant()`](/react/api/sdk-reference/use-participant/introduction) hook with the type of media and its status.
 
 ### Events associated with disableWebcam
 
 - Every Participant will receive a callback on [`onStreamDisabled()`](/react/api/sdk-reference/use-participant/events#onstreamdisabled) event of the [`useParticipant()`](/react/api/sdk-reference/use-participant/introduction) hook with the `Stream` object.
 
-- Every Participant will receive a callback on [`onMediaStatusChanged()`](/react/api/sdk-reference/use-participant/events#onmediastatuschanged) event of the [`useParticipant()`](/react/api/sdk-reference/use-participant/introduction) hook with the kind of media and its status.
+- Every Participant will receive a callback on [`onMediaStatusChanged()`](/react/api/sdk-reference/use-participant/events#onmediastatuschanged) event of the [`useParticipant()`](/react/api/sdk-reference/use-participant/introduction) hook with the type of media and its status.
 
 ### Events associated with toggleWebcam
 
@@ -104,7 +104,7 @@ To learn, how to render video in the meeting, follow this detailed [guide](/reac
 
 - Every Participant will receive a callback on [`onStreamDisabled()`](/react/api/sdk-reference/use-participant/events#onstreamdisabled) event of the [`useParticipant()`](/react/api/sdk-reference/use-participant/introduction) hook with the `Stream` object if the **video broadcasting was stopped**.
 
-- Every Participant will receive a callback on [`onMediaStatusChanged()`](/react/api/sdk-reference/use-participant/events#onmediastatuschanged) event of the [`useParticipant()`](/react/api/sdk-reference/use-participant/introduction) hook with the kind of media and its status.
+- Every Participant will receive a callback on [`onMediaStatusChanged()`](/react/api/sdk-reference/use-participant/events#onmediastatuschanged) event of the [`useParticipant()`](/react/api/sdk-reference/use-participant/introduction) hook with the type of media and its status.
 
 ```js
 import { useParticipant } from "@videosdk.live/react-sdk";
@@ -181,7 +181,7 @@ const ParticipantView = (participantId) => {
 
 ### Video Permissions
 
-- By default, VideoSDK will request video permission when the participants attempts to turn on the camera. Once the permission is granted the camera gets turned on. If the permission is denied, VideoSDK will send an error message in the `onError` event callback of `useMeeting` hook.
+- By default, VideoSDK will request video permission when the participants attempts to turn on the camera. Once the permission is granted the camera gets turned on. If the permission is denied, VideoSDK will send an error message in the `onError` event callback of the `useMeeting` hook.
 
 import ReactPlayer from 'react-player'
 

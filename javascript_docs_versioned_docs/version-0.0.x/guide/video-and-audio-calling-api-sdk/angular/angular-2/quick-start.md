@@ -15,14 +15,12 @@ image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
 slug: quick-start
 ---
-
+ 
 # Quick Start for Conference in Angular 2
 
-VideoSDK enables you to embed the video calling feature into your Angular 2 application in minutes.
+VideoSDK empowers you to seamlessly integrate the video calling feature into your Angular 2 application within minutes.
 
-In this quickstart, we are going to explore group calling feature of Video SDK. We will go through step by step guide of integrating video calling with Angular 2 Video SDK.
-
-This guide will get you running with the VideoSDK video & audio calling in minutes.
+In this quickstart, you'll explore the group calling feature of VideoSDK. Follow the step-by-step guide to integrate it within your application.
 
 ## Prerequisites
 
@@ -40,11 +38,11 @@ Visit VideoSDK **[dashboard](https://app.videosdk.live/api-keys)** to generate t
 
 ## Getting Started with the Code!
 
-Follow the steps to create the environment necessary to add video calls into your app. Also you can find the code sample for [quickstart here](https://github.com/videosdk-live/quickstart/tree/main/angular-rtc/videosdk_angular_2_quickstart).
+Follow the steps to create the environment necessary to add video calls into your app. You can also find the code sample for [quickstart here](https://github.com/videosdk-live/quickstart/tree/main/angular-rtc/videosdk_angular_2_quickstart).
 
 ### Install Video SDK
 
-You can import VideoSDK using `<script>` tag or you can install the VideoSDK using the below-mentioned npm command. Make sure you are in your app directory before you run this command.
+Import VideoSDK using the `<script>` tag or Install it using the following npm command. Make sure you are in your app directory before you run this command.
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -107,22 +105,24 @@ Your project structure should look like this.
    │    ├── index.html // Default
 ```
 
-We are going to work on following files:
+You will be working on the following files:
 
-- enviroment.ts: Responsible to store token.
-- meeting.service.ts: Responsible to handle API calls such as generating unique meetingId, validate meetingId and token.
-- join-screen.component.html: Responsible to create basic UI for joinScreen.
-- top-bar.component.html: Responsible to create basic topbar with webcam,mic and leave meeting button.
-- app.component.html: Responsible for render `Joinscreen`, `Topbar` and `ParticipantGrid`.
+- enviroment.ts: Responsible for storing the token.
+- meeting.service.ts: Responsible for handling API calls such as generating a unique meetingId, validating a meetingId and a token.
+- join-screen.component.html: Responsible for creating a basic UI for the joinScreen functionality.
+- top-bar.component.html: Responsible for creating a basic topbar with webcam, mic and leave meeting buttons.
+- app.component.html: Responsible for rendering components such as `Joinscreen`, `Topbar` and `ParticipantGrid`.
 - join-screen.component.ts: Responsible for handling the logic and functionality related to the `join-screen.component.html` template.
 - top-bar.component.ts : Responsible for handling the logic and functionality related to the `top-bar.component.html` template.
-- app.component.ts: Responsible for handling `joinMeeting`, `createMeeting`, handle meeting and participant related events and render `join-screen`, `top-bar` and `participantGrid`.
+- app.component.ts: Handles various meeting and participant-related events, including `joinMeeting` and `createMeeting`. Additionally, responsible for rendering components such as `join-screen`, `top-bar`, and `participantGrid`.
+
 
 ### Step 1 : Get started with Meeting.service.ts
 
-Prior to moving on, we must create an API request to generate unique meetingId and validated meetingId. You will need an authentication token, which you can create either through the [videosdk-rtc-api-server-examples](https://github.com/videosdk-live/videosdk-rtc-api-server-examples) or directly from the [VideoSDK Dashboard](https://app.videosdk.live/api-keys) for developers.
+Prior to moving on, you must create an API request to generate a unique meetingId. You will need an authentication token, which you can create either through the [videosdk-rtc-api-server-examples](https://github.com/videosdk-live/videosdk-rtc-api-server-examples) or directly from the [VideoSDK Dashboard](https://app.videosdk.live/api-keys) for developers.
 
-Set token in `enviroment.ts` file which is generated from [VideoSDK Dashbord](https://app.videosdk.live/login).
+Configure the token in the `enviroment.ts` file, which you can obtain from the [VideoSDK Dashbord](https://app.videosdk.live/login).
+
 
 ```js title="enviroment.ts"
 // We will use Auth token to generate a meetingId and connect to it
@@ -176,7 +176,7 @@ export class MeetingService {
 }
 ```
 
-- After creating meeting service we will import it to `app.module.ts`.
+- Once the meeting service is successfully created, import it into the `app.module.ts` file.
 
 ```js title="app.module.ts"
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from "@angular/core";
@@ -200,11 +200,11 @@ import { FormsModule } from "@angular/forms";
 export class AppModule {}
 ```
 
-### Step 2 : Create UI
+### Step 2 : Design the user interface (UI)
 
-In this step, we are going to create HTML file which will render `join-screen` and `top-bar`.
+Create an HTML file that will render the `join-screen` and `top-bar` components.
 
-- First we will create `joinScreen` UI.
+- First, Create the UI for the `joinScreen` functionality..
 
 ```html title="joinScreen.html"
 <div id="joinPage" class="main-bg" style="display: flex">
@@ -246,7 +246,7 @@ In this step, we are going to create HTML file which will render `join-screen` a
 
 </center>
 
-- After joinScreen we will create `topBar` UI.
+- Next, Create the `topBar` UI.
 
 ```html title="topBar.html"
 <div
@@ -284,7 +284,7 @@ In this step, we are going to create HTML file which will render `join-screen` a
 
 <br/>
 
-- Now, we will place `join-screen` and `top-bar` component in one file called `app.component.html` and create `meeting-container` here.
+- Finally, assemble the components by creating the `app.component.html` file and incorporating the previously created components into it. Additionally, create the `meeting-container` here.
 
 ```html title="app.component.html"
 <div *ngIf="showJoinScreen">
@@ -325,7 +325,7 @@ In this step, we are going to create HTML file which will render `join-screen` a
 
 ### Step 3 : Implement Join Screen
 
-In this step, we will implement `createMeeting` and `validateMeeting` function in `app.component.ts` to call respective APIs.
+Subsequently, implement the `createMeeting` and `validateMeeting` function sin `app.component.ts` to call the respective APIs.
 
 ```js title="app.component.ts"
 import { Component, ElementRef, Renderer2, ViewChild } from "@angular/core";
@@ -386,7 +386,7 @@ export class AppComponent {
 }
 ```
 
-- After creating function we pass this function in `join-screen` component this way
+- After creating the above functions, pass them to the `join-screen` component as follows:
 
 ```html title="app.component.html"
 <div *ngIf="showJoinScreen">
@@ -397,7 +397,7 @@ export class AppComponent {
 </div>
 ```
 
-- Now in `join-screen.component.ts` we fire this function.
+- Next in the `join-screen.component.ts` file, run the function.
 
 ```js ="join-screen.component.ts"
 import { Component, EventEmitter, Input, Output } from "@angular/core";
@@ -428,7 +428,7 @@ export class JoinScreenComponent {
 
 ### Step 4 : Initialize meeting
 
-In this step, we will initialize meeting through `initMeeting()` function and join that meeting.
+Following that, initialize the meeting using the `initMeeting()` function and proceed to join the meeting.
 
 ```js title="startMeeting app.component.ts"
 // Initialize meeting
@@ -484,7 +484,7 @@ In this step, we will initialize meeting through `initMeeting()` function and jo
 
 ### Step 5: Handle Meeting Events
 
-In this step, we will create participant grid and handle events like `meeting-joined`, `meeting-left` and participant events.
+Once the meeting is successfully initialized, create the participant grid and manage events such as `meeting-joined`, `meeting-left`, and participant events.
 
 ```js ="app.component.ts"
 export class AppComponent {
@@ -562,7 +562,7 @@ export class AppComponent {
 
 ### Step 6 : Create Media Elements
 
-In this step, we will create a function that helps us to create audio and video elements for displaying local and remote participants. We will also set the appropriate media track based on whether it's a video or audio.
+In this step, Create a function to generate audio and video elements for displaying both local and remote participants. Set the corresponding media track based on whether it's a video or audio stream.
 
 ```js title=app.component.ts
 export class AppComponent {
@@ -774,17 +774,17 @@ export class AppComponent {
 
 ### Step 7 : Handle participant events
 
-In this step, we will implement four events `participant-joined`, `participant-left` , `stream-enabled` and `stream-disabled`.
+Thereafter, implement the events related to the participants and the stream.
 
-Let's understand the use of that events.
+Following are the events to be executed in this step: 
 
-1. `participant-joined`: When a remote participant joins, this event will trigger. In event callback will create video and audio elements which we had define in previous steps for rendering their video and audio streams.
+1. `participant-joined`: When a remote participant joins, this event will trigger. In the event callback, create video and audio elements previously defined for rendering their video and audio streams.
 
-2. `participant-left`: When a remote participant leaves, this event will trigger. In event callback will remove the corresponding video and audio elements.
+2. `participant-left`: When a remote participant leaves, this event will trigger. In the event callback, remove the corresponding video and audio elements.
 
-3. `stream-enabled`: It Handle the media track of a specific participant by associating it with the appropriate video or audio element.
+3. `stream-enabled`: This event manages the media track of a specific participant by associating it with the appropriate video or audio element.
 
-4. `stream-disabled`: It Handle the media track of a specific participant when participant toogle video or audio by associating it with the appropriate video or audio element.
+4. `stream-disabled`: This event manages the media track of a specific participant, when they toggle their camera or mic by associating it with the appropriate video or audio element.
 
 ```js title="app.component.ts"
 // participant joined
@@ -833,7 +833,7 @@ meeting.on("participant-left", (participant: any) => {
 
 ### Step 8 : Implement Controls
 
-In this step, we will implement meeting functionalities such as toggleMic, toggleWebcam and leave meeting function in `app.component.ts` to call respective APIs.
+Next, implement meeting functionalities such as toggleMic, toggleWebcam and leave meeting function in `app.component.ts` to call the respective APIs.
 
 ```js title="app.component.ts"
 export class AppComponent {
@@ -864,7 +864,7 @@ export class AppComponent {
 }
 ```
 
-- After creating function we pass this function in `top-bar` component this way
+- After creating the above function, pass it to the `top-bar` component as follows:
 
 ```html ="app.component.html"
 <app-top-bar
@@ -876,7 +876,7 @@ export class AppComponent {
 ></app-top-bar>
 ```
 
-- Now in `top-bar.component.ts` we fire this function.
+- Next in the `top-bar.component.ts` file, run this function:
 
 ```js ="top-bar.component.ts"
 import { Component, EventEmitter, Input, Output } from "@angular/core";
@@ -910,7 +910,7 @@ export class TopBarComponent {
 
 ## Run your code
 
-Once you are all set with the steps mentioned above run your application as mentioned in the code-block below.
+Once you have completed all the steps mentioned above, run your application using the code block below.
 
 ```bash
 ng serve
@@ -918,7 +918,7 @@ ng serve
 
 ## Final Output
 
-We are done with implementation of customised video calling app in Angular JS using Video SDK. To explore more features go through Basic and Advanced features.
+You have completed the implementation of a customized video calling app in Angular 2 using VideoSDK. To explore more features, go through Basic and Advanced features.
 
 import ReactPlayer from 'react-player'
 

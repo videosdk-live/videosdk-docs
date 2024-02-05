@@ -4,7 +4,7 @@ hide_title: false
 hide_table_of_contents: false
 description: PubSub features quick integrate in Javascript, React JS, Android, IOS, React Native, Flutter with Video SDK to add live video & audio conferencing to your applications.
 sidebar_label: Chat using PubSub
-pagination_label: Chat using PubSub
+pagination_label: Chat using PubSub 
 keywords:
   - Start Livestream meeting
   - Stop Livestream meeting
@@ -18,15 +18,16 @@ slug: chat-using-pubsub
 
 # Chat using PubSub - Javascript
 
-For the communication or any kind of messaging in between the participants, VideoSDK provides `pubSub` property in meeting object which use Publish-Subscribe mechanism and can be used to develope wide varitey of functionalities. For example, participants could use it to send chat messages to each other, share files or other media, or even trigger actions like muting or unmuting audio or video.
+For communication or any kind of messaging between participants, VideoSDK provides the `pubSub` property, which utilizes the Publish-Subscribe mechanism. It can be employed to develop a wide variety of functionalities. For example, participants could use it to send chat messages to each other, share files or other media, or even trigger actions like muting or unmuting audio or video.
 
-Now we will see, how we can use PubSub to implement Chat functionality. If you are not familiar with the PubSub mechanism and `pubSub` in meeting object, you can [follow this guide](./pubsub).
+This guide focuses on using PubSub to implement Chat functionality. If you are not familiar with the PubSub mechanism and `pubSub`, you can [follow this guide](./pubsub).
 
 ## Implementing Chat
 
 ### `Group Chat`
 
-1. First step in creating a group chat is choosing the topic which all the participants will publish and subscribe to send and receive the messages. We will be using `CHAT` as the topic for this one. So let us lets create a message input and send button to publish the messages using the `pubSub` from the `meeting` object.
+1. The initial step in setting up a group chat involves selecting a topic to which all participants will publish and subscribe, facilitating the exchange of messages. In the following example, `CHAT` is used as the topic. 
+Next step is to create a message input and a send button to publish the messages using the `pubSub` method from the `meeting` object.
 
 ```js
 let meeting;
@@ -51,7 +52,7 @@ msgSendBtn.addEventListener("click", async () => {
 });
 ```
 
-2. Final step in the group chat would be to display the messages others send. For this will use the messages and display all the messages by subscribing to the topic CHAT.
+2. The final step in the group chat is to display the messages sent by others. For this use the `messages` array and display all the messages.
 
 ```js
 //subscribe to the 'CHAT' on meeting join
@@ -84,7 +85,7 @@ meeting.on("meeting-joined", async () => {
 
 ### `Private Chat`
 
-In the above example, if you want to convert into the private chat between two participants, then all you have to do is set `sendOnly` property.
+In the above example, to convert the chat into a private one between two participants, set the `sendOnly` property.
 
 ```js
   // ... 
@@ -105,7 +106,7 @@ In the above example, if you want to convert into the private chat between two p
 
 ## Downloading Chat Messages
 
-All the messages from the PubSub which where published with `persist : true` and can be downloaded as an `.csv` file. This file will be available in the VideoSDK dashboard as well as throught the [Sessions API](/api-reference/realtime-communication/fetch-session-using-sessionid).
+All the messages from PubSub published with `persist : true` can be downloaded as an `.csv` file. This file will be available in the VideoSDK dashboard as well as throught the [Sessions API](/api-reference/realtime-communication/fetch-session-using-sessionid).
 
 ## API Reference
 

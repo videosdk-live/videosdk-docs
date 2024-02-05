@@ -17,18 +17,17 @@ slug: meeting-connection-events
 
 # Meeting Connection Events - Javascript
 
-VideoSDK provides `meeting-state-changed` event which will notify you of the current connection state of the meeting.
+VideoSDK offers the `meeting-state-changed` event, providing information about the current connection state of the meeting.
 
 ### meeting-state-changed
 
-- This event will be triggered when state of meeting changes.
-- It will pass **`state`** as an event callback parameter which will indicate current state of the meeting.
-- All available states are `CONNECTING`, `CONNECTED`, `FAILED`, `DISCONNECTED`, `CLOSING`, `CLOSED`.
-- This event can be subscribed from the `meeting` object.
+- This event is triggered when the state of a meeting changes.
+- The event callback will include the current state of the meeting, which can be one of the following: `CONNECTING`, `CONNECTED`, `FAILED`, `DISCONNECTED`, `CLOSING`, `CLOSED`. 
+- It can be subscribed to using the `meeting` object.
 
 ### Example
 
-Here is the usage of the event mentioned in this page.
+Here is an example demonstrating the usage of the event mentioned on this page.
 
 ```javascript
 let meeting;
