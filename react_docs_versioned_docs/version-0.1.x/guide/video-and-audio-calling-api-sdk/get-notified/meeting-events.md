@@ -17,33 +17,33 @@ slug: meeting-events
 
 # Meeting Events - React
 
-VideoSDK provides multiple types of events which can be listened to know the current state of the meeting.
+VideoSDK provides several types of events that can be listened to in order to determine the current state of the meeting. 
 
-Here are the events which specifically relate to the meeting.
+Here are the events that specifically relate to the meeting.
 
 ### onMeetingJoined
 
 - This event is triggered when the meeting is successfully joined.
-- This event can be subscribed from the `useMeeting` hook.
+- It can be subscribed to, from the `useMeeting` hook.
 
 ### onMeetingLeft
 
 - This event is triggered when the meeting is left.
-- This event can be subscribed from the `useMeeting` hook.
+- It can be subscribed to, from the `useMeeting` hook.
 
 ### onSpeakerChanged
 
-- This event is triggered when the active speaker in the meeting gets changed.
-- This event can be subscribed from the `useMeeting` hook.
+- This event is triggered when there is a change in the active speaker during the meeting.
+- This event can be subscribed to, from the `useMeeting` hook.
 
 ### onPresenterChanged
 
-- This event is triggered when the presenter in the meeting gets changed.
-- This event can be subscribed from the `useMeeting` hook.
+- This event is triggered when there is a change in the presenter during the meeting.
+- This event can be subscribed to, from the `useMeeting` hook.
 
 ### Example
 
-Here is the usage of all the events mentioned in this page.
+Here is an example demonstrating the usage of all the events mentioned on this page.
 
 ```js
 function onMeetingJoined() {

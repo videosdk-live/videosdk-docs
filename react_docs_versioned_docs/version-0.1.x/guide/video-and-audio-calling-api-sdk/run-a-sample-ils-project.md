@@ -17,13 +17,13 @@ slug: run-a-sample-react-ils-project
 
 # Run a Sample ILS Project - React
 
-Video SDK provides open-source sample project [videosdk-hls-react-sdk-example](https://github.com/videosdk-live/videosdk-hls-react-sdk-example) on Github. This document introduces how to run this project.
+Video SDK provides an open-source sample project [videosdk-hls-react-sdk-example](https://github.com/videosdk-live/videosdk-hls-react-sdk-example) on Github. This document introduces how to run the project.
 
 ## Prerequisites
 
 - React Js 16 or later
 - Node 10 or later
-- Valid Video SDK [Account](https://app.videosdk.live/)
+- Valid VideoSDK [Account](https://app.videosdk.live/)
 
 import APISecret from '../../../../mdx/introduction/\_api-key.mdx';
 
@@ -49,7 +49,7 @@ cp .env.example .env;
 
 ### Step 3: Modify .env file
 
-Paste earlier generated temporary token here.
+Modify the file by pasting the previously generated temporary token here.
 
 ```js title=".env"
 REACT_APP_VIDEOSDK_TOKEN = "TEMPORARY-TOKEN";
@@ -65,7 +65,7 @@ npm install
 
 ### Step 5: Run the Sample App
 
-Bingo, it's time to push the launch button.
+Bingo, it's time to push the launch button!
 
 ```js
 npm run start

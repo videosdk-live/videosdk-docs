@@ -23,14 +23,14 @@ Alternatively, if the participant is the host or the last person remaining in th
 
 ### `leave()`
 
-To leave the meeting without removing all the participant you need to call `leave()` which is the part of the `useMeeting` hook of React SDK.
+To leave the meeting without removing all the participants you need to call `leave()` which is the part of the `useMeeting` hook of React SDK.
 
 ### `end()`
 
-To leave the meeting by removing all the participant you need to call `end()` which is the part of the `useMeeting` hook of React SDK.
+To end the meeting by removing all the participants you need to call `end()` which is the part of the `useMeeting` hook of React SDK.
 
 :::note
-This methods can be called after the meeting is joined successfully.
+These methods can be called after the meeting is joined successfully.
 :::
 
 #### Example
@@ -89,14 +89,14 @@ Following callbacks are received when a participant ends the meeting.
 import { useMeeting } from "@videosdk.live/react-sdk";
 
 const MeetingView = () => {
-  //Event to know meeting is left
+  //Event to determine if the meeting has been left
   //highlight-start
   function onMeetingLeft() {
     console.log("onMeetingLeft");
   }
   //highlight-end
 
-  //Event to know some other participant left
+  //Event to determine if some other participant has left
   //highlight-start
   function onParticipantLeft(participant) {
     console.log(" onParticipantLeft", participant);

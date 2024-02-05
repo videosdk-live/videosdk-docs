@@ -6,7 +6,7 @@ tags: [releasenotes]
 
 # Release Notes - React
 
-This page will keep you update all the releases of React JS SDK.
+This page will keep you updated on all the releases of React JS SDK.
 
 ## v0.1.83
 

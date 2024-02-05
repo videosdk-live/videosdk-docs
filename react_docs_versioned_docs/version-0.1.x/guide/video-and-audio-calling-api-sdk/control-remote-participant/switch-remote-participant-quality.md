@@ -16,18 +16,17 @@ slug: switch-remote-participant-quality
 
 # Switch Remote Participant Quality - React
 
-In this guide we will explain how to change camera resolution of remote participant.
-This involves the use of a [pubsub mechanism](/react/guide/video-and-audio-calling-api-sdk/collaboration-in-meeting/pubsub) to communicate resolution changes between participants and creating custom video tracks with the desired resolution.
+This guide outlines the process of changing the camera resolution of a remote participant in a meeting. The method involves utilizing a [pubsub mechanism](/react/guide/video-and-audio-calling-api-sdk/collaboration-in-meeting/pubsub) to communicate resolution changes among participants and creating custom video tracks with the desired resolution.
 
-For better understanding let's explore one secenario, If participant A wants to change the camera resolution of participant B, participant A publishes a topic called `CHANGE_RESOLUTION` with either `SD` or `HD` as the value. Participant B subscribes to the `CHANGE_RESOLUTION` topic and receives the value shared by participant A. Subsequently, a custom video track is created with the new resolution value, and this track is passed into the `changeWebcam()` function.
+For a clearer understanding, consider this scenario: If participant A wishes to change the camera resolution of participant B, participant A publishes a topic called `CHANGE_RESOLUTION` with either `SD` or `HD` as the value. Participant B subscribes to the `CHANGE_RESOLUTION` topic and receives the value shared by participant A. Following this, a custom video track is generated with the new resolution value, and this track is then passed into the `changeWebcam()` function.
 
-Here's a visual representation to enhance understanding
+Here's a visual representation to enhance the understanding:
 
 ![change-resolution](/img/change-resolution.png)
 
 ### Step 1 : Create a Pubsub Topic
 
-- We will create a pubsub topic called `CHANGE_RESOLUTION` in `ParticipantView` Component for publishing selected camera resolution value.
+- First create a pubsub topic called `CHANGE_RESOLUTION` in `ParticipantView` Component for publishing selected camera resolution value.
 
 ```js
 import { usePubSub } from "@videosdk.live/react-sdk";
@@ -56,9 +55,9 @@ function ParticipantView({ participantId }) {
 
 ### Step 2 : Create Switch Button in `ParticipantView` Component
 
-- We will create a switch button with `SD` and `HD` options on top of the participant grid item.
+- Next, create a switch button with `SD` and `HD` options on top of the participant grid item.
 
-- On button click we will publish pubsub topic with `sd` or `hd` value.
+- Upon clicking the button, publish a pubsub topic with either the `sd` or `hd` value to communicate the desired resolution change.
 
 ```js
 import { useParticipant } from "@videosdk.live/react-sdk";
@@ -102,13 +101,13 @@ function ParticipantView({ participantId }) {
 }
 ```
 
-### Step 3 : Create `ResolutionListner` Component
+### Step 3 : Create a `ResolutionListener` Component
 
-Now create `ResolutionListner` component for subscribe on `CHANGE_RESOLUTION` topic.
+Now, create a `ResolutionListener` component to subscribe to the `CHANGE_RESOLUTION` topic.
 
-- In this, we will receive `SD` or `HD` value. based on that value we will create custom video track
+- Within this component, you will receive either `SD` or `HD` as the value. Based on this value, create a custom video track.
 
-- After creating custom video track with received value we pass that track in `changeWebcam` method for changing camera resilution.
+- After creating the custom video track with the received value, pass that track into the `changeWebcam` method to initiate the camera resolution change.
 
 ```js
 import {
@@ -161,19 +160,19 @@ const ResolutionListner = () => {
 };
 // highlight-end
 
-export default ResolutionListner;
+export default ResolutionListener;
 ```
 
-### Step 4 : Place `ResolutionListner` in `MeetingContainer`
+### Step 4 : Place the `ResolutionListener` component in `MeetingContainer`
 
-- Place `ResolutionListner` in `MeetingContainer` for receiving and sending camera resolution of participants.
+- Finally, render the `ResolutionListener` component in the `MeetingContainer` to facilitate the reception and transmission of camera resolution changes among participants.
 
 ```js
 function MeetingContainer() {
   //..
   return (
     //highlight-start
-    <ResolutionListner />
+    <ResolutionListener />
     //highlight-end
     // ..
   );

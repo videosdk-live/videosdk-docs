@@ -21,21 +21,21 @@ Screen sharing in a meeting is the process of sharing your computer screen with 
 
 ### `enableScreenShare()`
 
-- By using `enableScreenShare()` function of `useMeeting` hook, local participant can share his/her desktop screen to other participants.
+- By using `enableScreenShare()` function of `useMeeting` hook, the local participant can share their desktop screen to other participants.
 
-- You can pass customised screenshare track in `enableScreenShare()` by using [Custom Screen Share Track](/react/guide/video-and-audio-calling-api-sdk/render-media/optimize-video-track#custom-screen-share-track).
+- You can also pass customised screenshare track in `enableScreenShare()` by using [Custom Screen Share Track](/react/guide/video-and-audio-calling-api-sdk/render-media/optimize-video-track#custom-screen-share-track).
 
 - Screen Share stream of the participant can be accessed from the `screenShareStream` property of `useParticipant` hook.
 
 ### `disableScreenShare()`
 
-- By using `disableScreenShare()` function of `useMeeting` hook, local participant can stop sharing his/her desktop screen to other participants.
+- By using `disableScreenShare()` function of `useMeeting` hook, the local participant can stop sharing their desktop screen to other participants.
 
 ### `toggleScreenShare()`
 
-- By using `toggleScreenShare()` function of `useMeeting` hook, local participant can start or stop sharing his desktop screen to other participants based on the current state of the screen sharing.
+- By using `toggleScreenShare()` function of `useMeeting` hook, the local participant can start or stop sharing their desktop screen to other participants based on the current state of the screen sharing.
 
-- You can pass customised screenshare track in `toggleScreenShare()` by using [Custom Screen Share Track](/react/guide/video-and-audio-calling-api-sdk/render-media/optimize-video-track#custom-screen-share-track).
+- You can also pass customised screenshare track in `toggleScreenShare()` by using [Custom Screen Share Track](/react/guide/video-and-audio-calling-api-sdk/render-media/optimize-video-track#custom-screen-share-track).
 
 - Screen Share stream of the participant can be accessed from the `screenShareStream` property of `useParticipant` hook.
 
@@ -83,23 +83,23 @@ const MeetingView = () => {
 
 ### Events associated with enableScreenShare
 
-- Every Participant will receive a callback on [`onStreamEnabled()`](/react/api/sdk-reference/use-participant/events#onstreamenabled) of the [`useParticipant()`](/react/api/sdk-reference/use-participant/introduction) hook with `Stream` object.
+- Every Participant will receive a callback on [`onStreamEnabled()`](/react/api/sdk-reference/use-participant/events#onstreamenabled) event of the [`useParticipant()`](/react/api/sdk-reference/use-participant/introduction) hook with the `Stream` object.
 
-- Every Participant will receive [`onPresenterChanged()`](/react/api/sdk-reference/use-meeting/events#onpresenterchanged) callback of the [`useMeeting`](/react/api/sdk-reference/use-meeting/introduction) hook with the participantId as `presenterId` who started the screen share.
+- Every Participant will receive [`onPresenterChanged()`](/react/api/sdk-reference/use-meeting/events#onpresenterchanged) callback of the [`useMeeting`](/react/api/sdk-reference/use-meeting/introduction) hook with the `participantId` as `presenterId` who started the screen share.
 
 ### Events associated with disableScreenShare
 
-- Every Participant will receive a callback on [`onStreamDisabled()`](/react/api/sdk-reference/use-participant/events#onstreamdisabled) of the [`useParticipant()`](/react/api/sdk-reference/use-participant/introduction) hook with `Stream` object.
+- Every Participant will receive a callback on [`onStreamDisabled()`](/react/api/sdk-reference/use-participant/events#onstreamdisabled) event of the [`useParticipant()`](/react/api/sdk-reference/use-participant/introduction) hook with the `Stream` object.
 
 - Every Participant will receive [`onPresenterChanged()`](/react/api/sdk-reference/use-meeting/events#onpresenterchanged) callback of the [`useMeeting`](/react/api/sdk-reference/use-meeting/introduction) hook with the `presenterId` as `null` indicating there is no presenter.
 
 ### Events associated with toggleScreenShare
 
-- Every Participant will receive a callback on [`onStreamEnabled()`](/react/api/sdk-reference/use-participant/events#onstreamdisabled) of the [`useParticipant()`](/react/api/sdk-reference/use-participant/introduction) hook with `Stream` object if the **screen share broadcasting was started**.
+- Every Participant will receive a callback on [`onStreamEnabled()`](/react/api/sdk-reference/use-participant/events#onstreamdisabled) event of the [`useParticipant()`](/react/api/sdk-reference/use-participant/introduction) hook with the `Stream` object if the **screen share broadcasting was started**.
 
-- Every Participant will receive a callback on [`onStreamDisabled()`](/react/api/sdk-reference/use-participant/events#onstreamdisabled) of the [`useParticipant()`](/react/api/sdk-reference/use-participant/introduction) hook with `Stream` object if the **screen share broadcasting was stopped**.
+- Every Participant will receive a callback on [`onStreamDisabled()`](/react/api/sdk-reference/use-participant/events#onstreamdisabled) event of the [`useParticipant()`](/react/api/sdk-reference/use-participant/introduction) hook with the `Stream` object if the **screen share broadcasting was stopped**.
 
-- Every Participant will receive [`onPresenterChanged()`](/react/api/sdk-reference/use-meeting/events#onpresenterchanged) callback of the [`useMeeting`](/react/api/sdk-reference/use-meeting/introduction) hook with the participantId as `presenterId` who started the screen share or `null` if the screen share was turned off.
+- Every Participant will receive [`onPresenterChanged()`](/react/api/sdk-reference/use-meeting/events#onpresenterchanged) callback of the [`useMeeting`](/react/api/sdk-reference/use-meeting/introduction) hook with the `participantId` as `presenterId` who started the screen share or `null` if the screen share was turned off.
 
 ```js
 import { useParticipant, useMeeting } from "@videosdk.live/react-sdk";
@@ -157,7 +157,7 @@ const ParticipantView = (participantId) => {
 
 ### Screen Share with Audio
 
-To do screen share with audio, select the **Share tab audio** option when sharing the chrome tab as shown below.
+To enable screen sharing with audio, select the **Share tab audio** option when sharing the chrome tab as shown below.
 
 <center>
 
@@ -165,7 +165,7 @@ To do screen share with audio, select the **Share tab audio** option when sharin
 
 </center>
 
-After clicking `Share` button, you will receive a selected tab audio stream in the participant's `screenShareAudioStream`.
+After clicking `Share` button, you will receive the selected tab's audio stream in the participant's `screenShareAudioStream`.
 
 :::note
 Screen Share with Audio is only supported while sharing **Chrome Tab** in a **Chromium based browser** like Google Chrome, Brave etc.
@@ -190,7 +190,7 @@ const PresenterView = ({ presenterId }) => {
 };
 ```
 
-2. Now that the we have `presenterId`, we will get the `screenShareStream` from the `useParticipant` hook and play it in the video tag.
+2. Now that you have the `presenterId`, you can get the `screenShareStream` from the `useParticipant` hook and play it in the video tag.
 
 ```js
 const PresenterView = ({ presenterId }) => {
@@ -235,7 +235,7 @@ const PresenterView = ({ presenterId }) => {
 };
 ```
 
-3. Let's now add the screen share audio to this component. You can get the `screenShareAudioStream` from the `useParticipant` hook.
+3. You can then add the screen share audio to this component. Retrieve the `screenShareAudioStream` from the `useParticipant` hook.
 
 ```js
 const PresenterView = ({ presenterId }) => {
@@ -285,7 +285,7 @@ const PresenterView = ({ presenterId }) => {
 
 ### Troubleshoot MacOS Screen Share Permissions
 
-- If you are using the MacOS, you will have to allow the browser to do screen share. You can follow the steps shown in the video to do so.
+- If you are using MacOS, you will have to allow the browser to do screen share. You can follow the steps shown in the video to do so.
 
 import ReactPlayer from 'react-player'
 

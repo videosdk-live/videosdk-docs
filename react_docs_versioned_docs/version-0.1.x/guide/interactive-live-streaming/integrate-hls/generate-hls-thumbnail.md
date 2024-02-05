@@ -17,21 +17,21 @@ slug: generate-hls-thumbnail
 
 # Generate HLS Thumbnail - React
 
-After initiating the HLS stream, you can effortlessly capture a thumbnail from the ongoing HLS stream in various formats.
+After initiating the HLS stream, you can effortlessly capture a thumbnail from the ongoing stream in various formats.
 
 The use cases of HLS thumbnail include:
 
-1. **Content Preview**: HLS thumbnails provide a quick preview of the content being streamed, helping users decide whether to join or continue watching.
+1. **Content Preview**: HLS Thumbnails provide a quick preview of the content being streamed, helping users decide whether to join or continue watching.
 
-2. **Enhanced User Experience**: Thumbnails offer a visual cue about the content, improving the overall user experience by making it more interactive and engaging.
+2. **Enhanced User Experience**: HLS Thumbnails offer a visual cue about the content, improving the overall user experience by making it more interactive and engaging.
 
-3. **Adaptive Thumbnails**: Thumbnails can dynamically update to reflect changes in the live stream, providing users with real-time snapshots of the ongoing content.
+3. **Adaptive Thumbnails**: HLS Thumbnails can dynamically update to reflect changes in the live stream, offering users real-time snapshots of the ongoing content.
 
-Follow these steps to achieve this functionality.
+The following are the steps involved in generating an HLS Thumbnail.
 
 ## Step 1: Implement `captureHLSThumbnail()` to Call API
 
-In this step, make a call to the HLS capture API by providing the `roomId` parameter. Refer to the [guide](/api-reference/realtime-communication/fetch-an-hls-thumbnail) for detailed explanations.
+Initiate a call to the HLS capture API by providing the `roomId` parameter. Refer to the [guide](/api-reference/realtime-communication/fetch-an-hls-thumbnail) for detailed explanations.
 
 ```js
 const captureHLSThumbnail = async ({ roomId }) => {
@@ -56,7 +56,7 @@ const captureHLSThumbnail = async ({ roomId }) => {
 
 ## Step 2: Create a Button to Capture Thumbnail
 
-To capture an HLS thumbnail while the stream is active, include a condition based on the [hlsState](/react/api/sdk-reference/use-meeting/properties#hlsstate). Store the captured image and error message in the `useState` for display.
+To capture an HLS thumbnail while the stream is active, incorporate a condition based on the [hlsState](/react/api/sdk-reference/use-meeting/properties#hlsstate). Utilize the `useState` hook to manage and store the captured image along with any error messages. 
 
 ```js
 function Controls(props) {
@@ -92,7 +92,7 @@ function Controls(props) {
 
 ## Step 3: Display Captured Image
 
-Display the image returned by the [captureHlsThumbnail](#step-1-implement-capturehlsthumbnail-to-call-api) API call. If the capture fails, show an error message from the API response.
+Subsequently, showcase the image obtained from the [captureHlsThumbnail](#step-1-implement-capturehlsthumbnail-to-call-api) API call. In the event of a capture failure, present the error message retrieved from the API response, providing users with relevant feedback on the thumbnail capture process.
 
 ```js
 function Controls(props) {

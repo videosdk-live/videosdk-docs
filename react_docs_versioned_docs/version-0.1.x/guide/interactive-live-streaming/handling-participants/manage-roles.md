@@ -20,11 +20,11 @@ slug: manage-roles
 
 ## Roles with VideoSDK
 
-When doing interactive live streaming maintaining the role of users is quite important. To help manage these roles better, VideoSDK allows a participant with two types of modes:
+When engaging in interactive live streaming, managing user roles is crucial. VideoSDK supports two participant modes to facilitate role management:
 
-**`1. CONFERENCE`** When a participant is joining with mode set to `CONFERENCE`, we will be able to **publish and consume the media** of other participants and also interact with them using the features like chat, poll etc.
+**`1. CONFERENCE`** When a participant joins with the mode set to `CONFERENCE`, they have the capability to both publish and consume the media of other participants. Additionally, they can interact with others using features like chat and polls.
 
-**`2. VIEWER`** When a participant is joining with mode set to `VIEWER`, that participant is **not allowed to publish or consume any media** from other participants. Although they can interact with other participants using chat, polls etc.
+**`2. VIEWER`** When a participant joins with the mode set to `VIEWER`, they are restricted from both **publishing and consuming any media** from other participants. However, they can still interact with other participants using features like chat and polls.
 
 ![manage-roles](https://cdn.videosdk.live/website-resources/docs-resources/meeting_modes.jpg)
 
@@ -32,11 +32,12 @@ When doing interactive live streaming maintaining the role of users is quite imp
 
 ##### 1. Simple Adaptive Streaming
 
-- Simple Adaptive Streaming (SAS) is a type of livestreaming that requires minimal interaction between the host and viewers.
+- Simple Adaptive Streaming (SAS) is a type of livestreaming designed for events where minimal interaction between the host and viewers is preferred.
 
-- It is particularly useful for events with a large number of viewers who prefer not to engage with the host.
+- Ideal for scenarios with a large audience that does not actively engage with the host, SAS operates with each speaker participating in a VideoSDK meeting in `CONFERENCE` mode. 
 
-- In SAS, each speaker attends a VideoSDK meeting in `CONFERENCE` mode, while viewers can simply watch the livestream using the `downstreamUrl`. Unlike the speakers, viewers do not need to join the meeting in `CONFERENCE` or `VIEWER` mode. This allows for a seamless streaming experience without any unnecessary interruptions or distractions.
+- Viewers, on the other hand, can effortlessly watch the livestream using the downstreamUrl. Unlike the speakers, viewers are not required to join the meeting in `CONFERENCE` or `VIEWER` mode. This setup ensures a smooth streaming experience without unnecessary interruptions or distractions.
+
 
 import ReactPlayer from 'react-player'
 
@@ -48,9 +49,11 @@ import ReactPlayer from 'react-player'
 
 ##### 2. Adaptive Streaming with increased engagement
 
-- If you're looking to increase engagement with your audience during a live streaming event, consider using Adaptive Streaming technology. With this approach, you can incorporate interactive features such as polls and conversations, and give viewers the ability to join and leave the livestream as the host decides.
+- If you aim to enhance engagement with your audience during a live streaming event, Adaptive Streaming technology is the way to go. This approach allows you to integrate interactive features like polls and conversations, empowering viewers to join and leave the livestream at the host's discretion.
 
-- To set this up, have all speakers join as `CONFERENCE` mode participants, while the audience joins as `VIEWER` mode participants. This way, everyone can participate in the interactive elements of the live stream and create a more dynamic and engaging experience for all.
+- To implement this, ensure that all speakers join as `CONFERENCE` mode participants, while the audience joins as `VIEWER` mode participants. This setup enables everyone to actively participate in the interactive elements of the live stream, creating a more dynamic and engaging experience for all involved.
+
+
 
 <div style={{textAlign: 'center'}}>
 
@@ -60,7 +63,7 @@ import ReactPlayer from 'react-player'
 
 ## Using roles
 
-The mode of the participants is set during the meeting intialization in the `config` in `MeetingProvider`.
+The mode of the participants is configured during the meeting initialization within the `config` parameter of the `MeetingProvider`.
 
 ```js
 import { MeetingProvider, useMeeting } from "@videosdk.live/react-sdk";
@@ -115,7 +118,8 @@ const Container = () => {
 
 ## Getting Participant Mode
 
-You can identify the participants role by using `mode` property from `useParticipant` hook.
+The role of the participant is identified using the `mode` property from `useParticipant` hook.
+
 
 ```js
 function ParticipantView({ participantId }) {
@@ -131,7 +135,7 @@ function ParticipantView({ participantId }) {
 
 ## Changing Participant's Mode
 
-Let's say you are hosting a livestream and you want one of your viewer to join the livestream with you. In this case you can change the mode of the participant using the `changeMode()` of the `useMeeting` hook.
+Suppose you are hosting a livestream and wish to have one of your viewers join the livestream with you. In this scenario, you can modify the mode of the participant using the `changeMode()` method provided by the `useMeeting` hook.
 
 ```js
 function Container() {

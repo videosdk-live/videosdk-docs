@@ -5,7 +5,7 @@ pagination_label: Concept And Architecture
 
 # Concept and Architecture - React
 
-Before diving into the concept, let's understand the VideSDK, VideoSDK is a software development kit that offers tools and APIs for creating apps that are based on video and audio. It typically includes features such as video and audio calls, chat, cloud recording, simulcasting (RTMP), interactive live streaming (HLS), and many more across a wide range of platforms and devices.
+Before diving into the concept, let's understand the VideoSDK, VideoSDK is a software development kit that offers tools and APIs for creating apps that are based on video and audio. It typically includes features such as video and audio calls, chat, cloud recording, simulcasting (RTMP), interactive live streaming (HLS), and many more across a wide range of platforms and devices.
 
 ## Concepts
 
@@ -13,7 +13,7 @@ Before diving into the concept, let's understand the VideSDK, VideoSDK is a soft
 
 ### `1. Meeting / Room`
 
-- Meeting or Room object in the VideoSDK provide a virtual place for participants to interact and engage in real-time voice, video, and screen-sharing sessions. The object is in charge of handling media streams and participant communication.
+- Meeting or Room object in the VideoSDK provides a virtual place for participants to interact and engage in real-time voice, video, and screen-sharing sessions. The object is in charge of handling media streams and participant communication.
 
 - Meeting or Room can be uniquely identified by `meetingId` or `roomId`.
 
@@ -60,7 +60,7 @@ Before diving into the concept, let's understand the VideSDK, VideoSDK is a soft
 
 ### `7. Simulcasting (RTMP)`
 
-- RTMP is a popular protocol for live streaming video content from a VideoSDK to platforms such as YouTube, Twitch, Facebook, and others.
+- RTMP is a popular protocol for live streaming video content from the VideoSDK to platforms such as YouTube, Twitch, Facebook, and others.
 - By providing the platform-specific `stream key` and `stream URL`, the VideoSDK can connect to the platform's RTMP server and transmit the live video stream.
 
 ### `8. Interactive Live Streaming (HLS)`

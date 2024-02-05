@@ -16,27 +16,27 @@ sidebar_position: 1
 slug: manage-on-screen-participants
 ---
 
-# Manage On-Screen Participants - React
+# Manage On-Screen Participants - React 
 
-It is important that only the necessary person is present on the screen when livestream is on. To handle this, we will be using the `pin` and `unpin` methods of the `useParticipant` hook.
+When engaging in interactive live streaming, it is essential to have only the necessary participant on the screen during the livestream. To manage this, the `pin` and `unpin` methods of the useParticipant hook are employed.
 
 :::note
-To ensure only the hosts/speakers are shown in the grid, you should use the `SPOTLIGHT` layout and `pin` as the priority when starting the interactive livestream.
+To ensure only the hosts/speakers are displayed in the grid, utilize the `SPOTLIGHT` layout and prioritize the `pin` function when initiating the interactive livestream.
 :::
 
-Let us first explore two methods that we will be using to manage on-screen participats.
+Below is an explanation of the methods used to manage on-screen participants.
 
 ### `pin()`
 
-With these method you can pin any participant's Camera, Screen Share or both. This can be useful to identify the participants based on which you can perform rendering participant grid.
+This method allows you to pin any participant's camera, screen share, or both. It is particularly useful for identifying specific participants, enabling you to optimize the rendering of the participant grid.
 
 ### `unpin()`
 
-With these methods you can unpin any participant's Camera, Screen Share or both. This can be useful to reset pin state of the participant.
+This method allows you to unpin any participant's camera, screen share, or both. It is particularly useful for resetting the pin state of the participant.
 
 ### Managing On-Screen Participants
 
-1. If you want to pin all the hosts/speakers automatically, you can do it by listenting to the `onMeetingJoined` callback and `onParticipantModeChanged`, where you can `pin` and `unpin` based on the mode.
+1. If you want to automatically pin all the hosts/speakers, you can achieve this by listening to the `onMeetingJoined` callback and `onParticipantModeChanged` event. In these callbacks, you can `pin` and `unpin` participants based on their mode.
 
 ```js
 import { useMeeting } from "@videosdk.live/react-sdk";
@@ -82,7 +82,7 @@ function MeetingView() {
 }
 ```
 
-2. When rendering the participant grid on the Speaker side, make sure to show only the participants who are in `CONFERENCE` mode. You can filter the participants as shown in below examples.
+2. When rendering the participant grid on the Speaker side, ensure that only participants in `CONFERENCE` mode are displayed. You can filter the participants as shown in the example provided below.
 
 ```js
 const { participants } = useMeeting();

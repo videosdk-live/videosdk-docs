@@ -17,21 +17,19 @@ slug: quick-start
 
 # Quick Start for Conference in React
 
-VideoSDK enables you to embed the video calling feature into your React application in minutes.
+VideoSDK empowers you to seamlessly integrate the video calling feature into your React application within minutes.
 
-In this quickstart, we are going to explore group calling feature of Video SDK. We will go through step by step guide of integrating video calling with React Video SDK.
-
-This guide will get you running with the VideoSDK video & audio calling in minutes.
+In this quickstart, you'll explore the group calling feature of VideoSDK. Follow the step-by-step guide to integrate it within your application.
 
 ## Prerequisites
 
 Before proceeding, ensure that your development environment meets the following requirements:
 
-- Video SDK Developer Account (Not having one, follow **[Video SDK Dashboard](https://app.videosdk.live/)**)
+- VideoSDK Developer Account (Not having one, follow **[VideoSDK Dashboard](https://app.videosdk.live/)**)
 - Basic understanding of React
-- **[React Video SDK](https://www.npmjs.com/package/@videosdk.live/react-sdk)**
+- **[React VideoSDK](https://www.npmjs.com/package/@videosdk.live/react-sdk)**
 - Have Node and NPM installed on your device.
-- The basic understanding of Hooks (useState, useRef, useEffect)
+- Basic understanding of Hooks (useState, useRef, useEffect)
 - React Context API (optional)
 
 :::important
@@ -43,9 +41,9 @@ Visit VideoSDK **[dashboard](https://app.videosdk.live/api-keys)** to generate t
 
 ## Getting Started with the Code!
 
-Follow the steps to create the environment necessary to add video calls into your app. Also you can find the code sample for [quickstart here](https://github.com/videosdk-live/quickstart/tree/main/react-rtc).
+Follow the steps to create the environment necessary to add video calls into your app. You can also find the code sample for [quickstart here](https://github.com/videosdk-live/quickstart/tree/main/react-rtc).
 
-### Create new react app
+### Create new React App
 
 Create a new React App using the below command.
 
@@ -53,7 +51,7 @@ Create a new React App using the below command.
 $ npx create-react-app videosdk-rtc-react-app
 ```
 
-### Install Video SDK
+### Install VideoSDK
 
 Install the VideoSDK using the below-mentioned npm command. Make sure you are in your react app directory before you run this command.
 
@@ -104,22 +102,22 @@ Your project structure should look like this.
    .    .
 ```
 
-We are going to use functional components to leverage react's reusable component architecture. There will be components for users, videos and controls (mic, camera, leave) over the video.
+You are going to use functional components to leverage react's reusable component architecture. There will be components for users, videos and controls (mic, camera, leave) over the video.
 
 ### App Architecture
 
-App will contain a `MeetingView` component which includes `ParticipantView` which will render the participant's name, video, audio, etc. We will also have a `Controls` component which will allow user to perform operations like leave and toggle media.
+The App will contain a `MeetingView` component which includes a `ParticipantView` component which will render the participant's name, video, audio, etc. It will also have a `Controls` component which will allow the user to perform operations like leave and toggle media.
 
 ![VideoSDK React JS Quick Start Architecture](/img/react-quick-start.png)
 
-We are going to work on two files:
+You will be working on two files:
 
-- API.js: Responsible to handle API calls such as generating unique meetingId and token
-- App.js: Responsible to render `MeetingView` and join the meeting.
+- API.js: Responsible for handling API calls such as generating unique meetingId and token
+- App.js: Responsible for rendering `MeetingView` and joining the meeting.
 
 ### Step 1: Get started with API.js
 
-Prior to moving on, we must create an API request to generate unique meetingId. You will need an authentication token, which you can create either through the [videosdk-rtc-api-server-examples](https://github.com/videosdk-live/videosdk-rtc-api-server-examples) or directly from the [Video SDK Dashboard](https://app.videosdk.live/api-keys) for developers.
+Prior to moving on, you must create an API request to generate a unique meetingId. You will need an authentication token, which you can create either through the [videosdk-rtc-api-server-examples](https://github.com/videosdk-live/videosdk-rtc-api-server-examples) or directly from the [VideoSDK Dashboard](https://app.videosdk.live/api-keys) for developers.
 
 <Tabs
 defaultValue="jsx"
@@ -131,10 +129,10 @@ values={[
 <TabItem value="jsx">
 
 ```js title="API.js"
-//Auth token we will use to generate a meeting and connect to it
+//This is the Auth token, you will use it to generate a meeting and connect to it
 //highlight-next-line
 export const authToken = "<Generated-from-dashbaord>";
-// API call to create meeting
+// API call to create a meeting
 export const createMeeting = async ({ token }) => {
   const res = await fetch(`https://api.videosdk.live/v2/rooms`, {
     method: "POST",
@@ -155,11 +153,11 @@ export const createMeeting = async ({ token }) => {
 <TabItem value="tsx">
 
 ```js title="API.js"
-//Auth token we will use to generate a meeting and connect to it
+//This is the Auth token, you will use it to generate a meeting and connect to it
 //highlight-next-line
 export const authToken: string = "YOUR GENERATED TOKEN HERE";
 
-// API call to create meeting
+// API call to create a meeting
 export const createMeeting = async ({ token }: { token: string }) => {
   const res = await fetch(`https://api.videosdk.live/v2/rooms`, {
     method: "POST",
@@ -181,18 +179,18 @@ export const createMeeting = async ({ token }: { token: string }) => {
 
 ### Step 2: Wireframe App.js with all the components
 
-To build up wireframe of App.js, we are going to use Video SDK Hooks and Context Providers. Video SDK provides MeetingProvider, MeetingConsumer, useMeeting and useParticipant hooks. Let's understand each of them.
+To build up wireframe of App.js, you will be using VideoSDK Hooks and Context Providers. VideoSDK provides MeetingProvider, MeetingConsumer, useMeeting and useParticipant hooks. Let's understand each of them.
 
 First we will explore Context Provider and Consumer. Context is primarily used when some data needs to be accessible by many components at different nesting levels.
 
-- **MeetingProvider**: It is Context Provider. It accepts value `config` and `token` as props. The Provider component accepts a value prop to be passed to consuming components that are descendants of this Provider. One Provider can be connected to many consumers. Providers can be nested to override values deeper within the tree.
-- **MeetingConsumer**: It is Context Consumer. All consumers that are descendants of a Provider will re-render whenever the Provider’s value prop changes.
-- **useMeeting**: It is meeting react hook API for meeting. It includes all the information related to meeting such as join, leave, enable/disable mic or webcam etc.
-- **useParticipant**: It is participant hook API. useParticipant hook is responsible to handle all the events and props related to one particular participant such as name, webcamStream, micStream etc.
+- **MeetingProvider**: This is the Context Provider. It accepts value `config` and `token` as props. The Provider component accepts a value prop to be passed to consuming components that are descendants of this Provider. One Provider can be connected to many consumers. Providers can be nested to override values deeper within the tree.
+- **MeetingConsumer**: This is the Context Consumer. All consumers that are descendants of a Provider will re-render whenever the Provider’s value prop changes.
+- **useMeeting**: This is the meeting hook API. It includes all the information related to meeting such as join, leave, enable/disable mic or webcam etc.
+- **useParticipant**: This is the participant hook API. It is responsible for handling all the events and props related to one particular participant such as name, webcamStream, micStream etc.
 
-Meeting Context helps to listen on all the changes when participant joines meeting or changes mic or camera etc.
+Meeting Context helps to listen for all the changes when a participant joins the meeting or makes changes to the mic or camera etc.
 
-Let's get started with change couple of lines of code in App.js
+Let's get started by changing a couple of lines of code in App.js
 
 <Tabs
 defaultValue="jsx"
@@ -359,7 +357,7 @@ export default App;
 
 ### Step 3: Implement Join Screen
 
-Join screen will work as medium to either schedule new meeting or to join existing meeting.
+Join screen will serve as a medium to either schedule a new meeting or join an existing one.
 
 <Tabs
 defaultValue="jsx"
@@ -583,11 +581,11 @@ function Controls() {
 
 ### Step 5: Implement Participant View
 
-Before implementing participant view, We need to understand couple of concepts.
+Before implementing participant view, you need to understand a couple of concepts.
 
 ###### 1. Forwarding Ref for mic and camera
 
-We will be using the React `useRef` to reference our audio and video components which will be used to play and stop the audio and video of the participant.
+`useRef` hook is responsible  for referencing the audio and video components. It will be used to play and stop the audio and video of the participant.
 
 ```js title="Forwarding Ref for mic and camera"
 const webcamRef = useRef(null);
@@ -596,7 +594,7 @@ const micRef = useRef(null);
 
 ###### 2. useParticipant Hook
 
-useParticipant hook is responsible to handle all the properties and events of one particular participant joined in the meeting. It will take participantId as argument.
+`useParticipant` hook is responsible for handling all the properties and events of one particular participant joined in the meeting. It will take participantId as argument.
 
 ```js title="useParticipant Hook"
 const { webcamStream, micStream, webcamOn, micOn } = useParticipant(
@@ -606,7 +604,7 @@ const { webcamStream, micStream, webcamOn, micOn } = useParticipant(
 
 ###### 3. MediaStream API
 
-MediaStream is useful to add MediaTrack to the audio / video tag to play the audio or video.
+MediaStream is useful for adding a MediaTrack to the audio/video tag to play the audio or video.
 
 ```js title="MediaStream API"
 const webcamRef = useRef(null);
@@ -621,7 +619,7 @@ webcamRef.current
 
 #### 4. Implemeting `ParticipantView`
 
-Now let's use all this API to create `ParticipantView`
+Now you can use both of the hooks and the API to create `ParticipantView`
 
 <Tabs
 defaultValue="jsx"
@@ -766,7 +764,7 @@ function ParticipantView({ participantId }: { participantId: string }) {
 
 ## Final Output
 
-We are done with implementation of customised video calling app in reeact js using Video SDK. To explore more features go through Basic and Advanced features.
+You have completed the implementation of a customized video calling app in React.js using VideoSDK. To explore more features, go through Basic and Advanced features.
 
 import ReactPlayer from 'react-player'
 

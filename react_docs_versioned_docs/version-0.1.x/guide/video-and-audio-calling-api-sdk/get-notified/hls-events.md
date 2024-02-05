@@ -17,16 +17,16 @@ slug: hls-events
 
 # HLS Events - React
 
-VideoSDK provides `onHlsStateChanged` event which will notify you of the current state of HLS for the meeting.
+VideoSDK provides the `onHlsStateChanged` event, which informs you about the current state of HLS for the meeting.
 
 ### onHlsStateChanged
 
-- This event will be triggered when the meeting's HLS status changed.
-- This event can be subscribed from the `useMeeting` hook.
+- This event is triggered when the HLS status of the meeting changes.
+- It can be subscribed to, from the `useMeeting` hook.
 
 ### Example
 
-Here is the usage of the event mentioned in this page.
+Here is an example demonstrating the usage of the event mentioned on this page.
 
 ```javascript
 import { Constants, useMeeting } from "@videosdk.live/react-sdk";

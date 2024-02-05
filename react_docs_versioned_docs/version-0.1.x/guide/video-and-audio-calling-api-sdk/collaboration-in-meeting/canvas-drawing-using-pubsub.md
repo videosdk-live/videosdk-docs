@@ -18,23 +18,23 @@ slug: canvas-drawing-using-pubsub
 
 # Canvas Drawing using PubSub - React
 
-When in a meeting, it can be very handy to just draw and share your views with all the collaborators. In order to do so, you will need a drawing board which is shared in realtime which you can develope using the publish-subscribe mechanism. If you are not familiar with the PubSub mechanism and `usePubSub`hook, you can [follow this guide](./pubsub).
+When in a meeting, it can be very handy to draw and share your views with all the collaborators. To achieve this, you can develop a drawing board shared in real-time using the publish-subscribe mechanism. If you are not familiar with the PubSub mechanism and the `usePubSub hook`, you can [follow this guide](./pubsub).
 
 ### Implementing Canvas Drawing
 
-To implement the Canvas Drawing feature, we will be using a thrid-party library which prodvides easy solution to draw and render canvas.
+To implement the Canvas Drawing feature, you need to use a third-party library that provides an easy solution for drawing and rendering on the canvas.
 
-1. Lets first install dependency.
+1. First install all the dependencies.
 
 ```bash
 npm i "@shawngoh87/react-sketch-canvas"
 ```
 
-2. With our dependency installed, let us make a new `Canvas` component which will be placed in the `MeetingView` and also add the basic canvas to it.
+2. With the dependencies installed, make a new `Canvas` component which will be placed in the `MeetingView` component, and also add a basic canvas to it.
 
 :::note
 
-As we presume you are familiar with the basics of setting up a VideoSDK meeting, we have not provided Meeting Initialiser code in this guide.
+It is presumed that you are familiar with the basics of setting up a VideoSDK meeting, thus we have not provided Meeting Initialiser code in this guide.
 :::
 
 ```js
@@ -49,10 +49,10 @@ const MeetingView = () => {
 };
 
 const WhiteboardView = () => {
-  //We will define a refernce for our canvas
+  //Define a refernce for the canvas
   const canvasRef = useRef();
 
-  //We will define the props required by the canvas element that we are using
+  //Define the props required by the canvas element used
   const canvasProps = {
     width: "100%",
     height: "500px",
@@ -75,9 +75,9 @@ const WhiteboardView = () => {
 };
 ```
 
-2. With this, your canvas should be ready to draw. If you draw something on your board, other participants won't be see those drawings, so lets use the `usePubSub` hook to accomplish this. We will be getting `publish()` from the `usePubSub` hook for the topic `WHITEBOARD` to send our drawings to all the participants in the meeting.
+2. With this, your canvas is ready for drawing. If you draw something on your board, other participants won't be able to see those drawings yet. To share your drawings with others, use the `usePubSub` hook. Get the `publish()` method from the `usePubSub` hook for the topic `WHITEBOARD` to send your drawings to all the participants in the meeting.
 
-- The data we need to send to all the participants is the strokes which we are drawing, so we will `send a stringified json to all` the participants in the message.
+- The data you need to send to all the participants is the strokes you are drawing, so you will send a stringified JSON to everyone in the message.
 
 ```js
 import { usePubSub } from "@videosdk.live/react-sdk";
@@ -103,11 +103,11 @@ const WhiteboardView = () => {
 };
 ```
 
-3. Even after publishing the drawings wont be appearing to the other participants because they have to re-draw the strokes received from the other participants from the `onMessageReceived` event and from the `onOldMessagesReceived` event.
+3. Even after publishing, the drawings won't appear to other participants because they need to redraw the strokes received from others. This involves handling the `onMessageReceived` event and the `onOldMessagesReceived` event. 
 
-- The data we we will recieve in the events will be `stringified json` which we will have to **`parse`** first before drawing.
+- The data received in these events will be a `stringified JSON`, which needs to be parsed before drawing.
 
-- Also we don't want to re-draw the strokes drown by us, so we will put an extra check to see if the stroke was drawn by localParticipant or not.
+- Additionally, to avoid redrawing the strokes created by the local participant, an extra check is implemented to determine whether the stroke was drawn by the local participant or not.
 
 ```js
 //highlight-next-line
@@ -148,7 +148,7 @@ const WhiteboardView = () => {
 };
 ```
 
-Here is a video of how the canvas drawing will look like after teh implementation.
+Here is a video showcasing the canvas drawing feature after its implementation.
 
 import ReactPlayer from 'react-player'
 

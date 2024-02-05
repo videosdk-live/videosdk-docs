@@ -18,31 +18,31 @@ slug: record-meeting
 
 # Record Meeting - React
 
-VideoSDK allows you to record video & audio during the meeting. The recording files are available in developer dashboard or you can also choose to store them in your own cloud storage.
+VideoSDK enables you to record video and audio during meetings, and you can access the recorded files in the developer dashboard or opt to store them in your own cloud storage.
 
-VideoSDK also allows you to configure the recording layouts in numerous ways like by simply setting different prebuilt layouts in the configuration or by providing your own custom template to do the recording according to your layout choice.
+Additionally, VideoSDK offers flexibility in configuring recording layouts. You can achieve this by selecting various prebuilt layouts in the configuration or by providing your own custom template for recording, tailored to your layout preferences.
 
-This guide will provide an overview of how to implement start and stop Meeting Recording.
+This guide provides an overview of implementing the start and stop functionality for meeting recording.
 
 :::important
 
-To initiate automatic recording at the beginning of a `session`, simply provide the `autoStartConfig` feature `recording` during `room` creation. For more information on configuring the `autoStartConfig`, please refer to the provided documentation **[<u>here</u>](/api-reference/realtime-communication/create-room#autoStartConfig)**.
+To initiate automatic recording at the beginning of a `session`, simply provide the `autoStartConfig` feature, `recording` during `room` creation. For more information on configuring the `autoStartConfig`, please refer to the provided documentation **[<u>here</u>](/api-reference/realtime-communication/create-room#autoStartConfig)**.
 
 :::
 
 ### `startRecording()`
 
-`startRecording()` can be used to start a recording of the meeting which can be accessed from the `useMeeting` hook. This method accepts three parameters:
+The `startRecording()` method, accesible from the `useMeeting` hook, can be used to initiate the recording of a meeting. This method accepts the following three parameters:
 
-- `1. webhookUrl (optional)`: This would the webhook URL where you would like to listen to event happening for the recording like starting and stopping of recording. It will be triggered when the recording is completed and stored into server. Read more about webhooks [here](https://en.wikipedia.org/wiki/Webhook)
+- `1. webhookUrl (optional)`: This is the webhook URL where you can listen to events related to the recording, such as the start and stop of recording. It triggers when the recording is completed and stored on the server. You can learn more about webhooks [here](https://en.wikipedia.org/wiki/Webhook)
 
-- `2. awsDirPath (optional)`: This parameter accepts the path for the your S3 bucket where you want to store recordings to. To allow us to store recording in your S3 bucket, you will need to fill this form by providing the required values. [VideoSDK AWS S3 Integration](/docs/tutorials/user-dashboard/recording-storage-config)
+- `2. awsDirPath (optional)`: This parameter specifies the path to your S3 bucket where you intend to store the recordings. To enable the storage of recordings in your S3 bucket with VideoSDK, follow this guide ([VideoSDK AWS S3 Integration](/docs/tutorials/user-dashboard/recording-storage-config))
 
-- `3. config (optional)`: This parameter will define how the recording should be recorded.
+- `3. config (optional)`: This parameter defines how the recording should be conducted
 
   :::caution
 
-  If you don't have a value for `webhookUrl` or `awsDirPath` and want to use the `config` property, you should pass `null` in place of the missing value. otherwise, configurtion will not reflect in the recording.
+  If you don't have a value for `webhookUrl` or `awsDirPath` and wish to utilize the `config` property, you should pass `null` in place of the missing values. Failing to do so may result in the configuration not being applied to the recording.
   :::
 
   ```js
@@ -80,7 +80,7 @@ To initiate automatic recording at the beginning of a `session`, simply provide 
 
 ### `stopRecording()`
 
-- `stopRecording()` is used to stop the meeting recording which can be accessed from the `useMeeting` hook.
+The `stopRecording()` method, accesible from the `useMeeting` hook, can be used to stop the recording of a meeting.
 
 #### Example
 
@@ -122,7 +122,7 @@ const MeetingView = () => {
 
 ### Event associated with Recording
 
-- **onRecordingStateChanged** - Whenever meeting recording state changes, then `onRecordingStateChanged` event will trigger.
+- **onRecordingStateChanged** - The `onRecordingStateChanged` event is triggered whenever the state of meeting recording changes.
 
 ```js
 import { Constants, useMeeting } from "@videosdk.live/react-sdk";
@@ -153,15 +153,13 @@ const {
 
 ### Storage Configuration
 
-While recording your meetings, you can choose to store them on the VideoSDK's storage or you can also configure your own **`AWS S3 Storage, Azure Blob or GCP Cloud Storage`** to store the meeting recordings directly on your storage.
+While recording your meetings, you have the flexibility to store them either on VideoSDK's storage or configure your own storage solution such as **`AWS S3 Storage, Azure Blob or GCP Cloud Storage`**. To set up your own storage, you can navigate to the [API section](https://app.videosdk.live/api-keys) in the VideoSDK Dashboard.
 
-You can configure your own **`AWS S3 Storage, Azure Blob or GCP Cloud Storage`** from the [VideoSDK Dashboard's API section](https://app.videosdk.live/api-keys).
-
-You can also go through this [guide to setup](/docs/tutorials/user-dashboard/recording-storage-config) the storage or watch this [video to configure](https://www.loom.com/share/23a2617f824a4a5da004d14d1a541a9d) your storage.
+For detailed instructions on configuring storage or a step-by-step guide, you can refer to this [documentation](/docs/tutorials/user-dashboard/recording-storage-config) or watch the accompanying [video tutorial](https://www.loom.com/share/23a2617f824a4a5da004d14d1a541a9d).
 
 ### Custom Template
 
-With VideoSDK, you can also use your own custom designed layout template to record the meetings. In order to use the custom template, you need to create a template for which you can [follow this guide](/react/guide/interactive-live-streaming/custom-template). Once you have setup the template, you can use the [REST API to start](/api-reference/realtime-communication/start-recording) the recording with the `templateURL` parameter.
+With VideoSDK, you have the option to employ your custom-designed layout template for meeting recordings. To use a custom template, [follow this guide](/react/guide/interactive-live-streaming/custom-template) to create and set up the template. Once the template is configured, you can initiate recording using the [REST API](/api-reference/realtime-communication/start-recording), specifying the `templateURL` parameter.
 
 ### API Reference
 

@@ -61,7 +61,7 @@ Then, sign this payload with your `SECRET KEY` and use the `HS256 algorithm`. Fo
 
 ## Generating Meeting Id
 
-With the tokens ready, you can obtain the `meetingId` from the VideoSDK's rooms API, which can be found [here](/api-reference/realtime-communication/create-room).
+With the tokens ready, you can now obtain the `meetingId` from the VideoSDK's rooms API, which can be found [here](/api-reference/realtime-communication/create-room).
 
 Refer to [this guide](/react/guide/video-and-audio-calling-api-sdk/setup-call/initialise-meeting#generating-meeting-id) for generating the meetingId.
 
@@ -71,7 +71,7 @@ Initialize the meeting using the `MeetingProvider` from the React SDK. The `Meet
 
 ### Meeting Provider
 
-`MeetingProvider` is a React [Context.Provider](https://reactjs.org/docs/context.html#contextprovider) that allows consuming components to subscribe to meeting changes. Pass the initialization configuration for the meeting and the token in the `MeetingProvider`.
+`MeetingProvider` is a React [Context.Provider](https://reactjs.org/docs/context.html#contextprovider) that allows consuming components to subscribe to changes in the meeting. Pass the initialization configuration for the meeting and the token in the `MeetingProvider`.
 
 For detailed configuration options, check [here](/react/guide/video-and-audio-calling-api-sdk/setup-call/initialise-meeting#initialization-of-meeting).
 
@@ -94,9 +94,9 @@ For detailed configuration options, check [here](/react/guide/video-and-audio-ca
 
 ## Events associated with Waiting Lobby
 
-The following callbacks are received when a participant successfully joins the meeting.
+The following events are received when a participant successfully joins the meeting.
 
-- When a participant joins as a host, they will receive an `onEntryRequested` event when a guest participant tries to join the meeting.
+- When a participant joins as a host, they will receive an `onEntryRequested` event whenever a guest participant tries to join the meeting.
 
 - When a host allows a guest participant to join the meeting, the guest will receive an `onEntryResponded` event with the newly joined `Participant` object.
 

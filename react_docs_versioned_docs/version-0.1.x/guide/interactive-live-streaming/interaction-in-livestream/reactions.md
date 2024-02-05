@@ -18,13 +18,13 @@ slug: reactions
 
 # Reactions - React
 
-When doing a livestream, one of the way to increase the interaction in between the viewer and speaker is by showing the viewers reaction to all. You might have seen emojis flying around during the livestream happening on instagram.
+To enhance interaction between viewers and speakers during a livestream, a creative approach is to display viewers' reactions to everyone. This can be achieved by creating a lively atmosphere with flying emojis, similar to the experience seen in livestreams on platforms like Instagram.
 
-Lets create a similar flying emoji by using the VideoSDK PubSub mechanism.
+This guide explains how to implement this engaging feature using the VideoSDK PubSub mechanism.
 
 ### Step 1: Creating a button to send reaction
 
-We will create a button to send reaction to all the users. When this button is clicked we will send the emoji name to all the participants using the VideoSDK PubSub mechanism and also to the local participant using the browser `CustomEvents`.
+To implement this functionality, start by creating a button that sends reactions to all users. When this button is clicked, publish a message with the emoji name to all participants using the VideoSDK PubSub mechanism. Additionally, dispatch browser `CustomEvents` to notify the local participant about the reaction.
 
 ```js title="ILSView.js"
 import { usePubSub } from "@videosdk.live/react-sdk";
@@ -65,9 +65,9 @@ function ILSView() {
 
 ### Step 2: Displaying the Reactions to all the users
 
-We will be using the `FlyingEmojiOverlay.js` to show the reactions. Here we will listen to the browser event that we send on the button click and show the flying emoji, as well as we will show all the reactions that are send by other participants.
+`FlyingEmojiOverlay.js` will be utilized to display the reactions on the screen. Listen to the browser event sent on the button click to show the flying emoji and display all reactions sent by other participants
 
-- Listening to local event and adding the `FlyingEmojiOverlay` to `ILSView`;
+- Listening to local event and adding the `FlyingEmojiOverlay` component to the `ILSView`;
 
 ```js title="ILSView.js"
 function ILSView(){
@@ -111,7 +111,7 @@ const FlyingEmojisOverlay = ({}) => {
 export default FlyingEmojisOverlay;
 ```
 
-- Now let us display and remove the flying emojis by using some simple css animations.
+- Next, implement the display and removal of flying emojis using simple CSS animations.
 
 ```js title="FlyingEmojiOverlay.js"
 function FlyingEmojiOverlay(){
@@ -164,7 +164,7 @@ function FlyingEmojiOverlay(){
 }
 ```
 
-- Let us add the animations in the `index.css`
+- Add the animations for the emojis in the `index.css` file.
 
 ```css
 .flying-emojis {
@@ -217,7 +217,7 @@ function FlyingEmojiOverlay(){
 }
 ```
 
-- Let us add listener to our PubSub topic so reaction from other participants is also shown.
+- Finally add the listener to the PubSub topic so reactions from other participants can also be shown.
 
 ```js title="FlyingEmojiOverlay.js"
 function FlyingEmojiOverlay(){

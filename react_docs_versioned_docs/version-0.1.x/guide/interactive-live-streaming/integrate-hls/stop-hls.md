@@ -17,11 +17,11 @@ slug: stop-hls
 
 # Stop HLS - React
 
-This could refer to stopping the transmission of an ongoing HLS stream, which would mean the stream is no longer available to viewers.
+Stopping HLS refers to the process of halting the ongoing HLS stream transmission, indicating that the stream is no longer accessible to viewers.
 
 ## Stopping HLS
 
-`stopHls()` can be used to stop a interactive livestream of the meeting which can be accessed from the `useMeeting` hook.
+The `stopHls()` method, accesible from the `useMeeting` hook, can be used to stop the interactive livestream of a meeting
 
 ### Example
 
@@ -46,7 +46,7 @@ const MeetingView = () => {
 
 ## Event associated with HLS
 
-- **onHlsStateChanged** - Whenever meeting HLS state changes, then `onHlsStateChanged` event will trigger.
+- **onHlsStateChanged** - The `onHlsStateChanged` event is triggered whenever the state of meeting HLS changes.
 
 - You will get `HLS_STOPPING` and `HLS_STOPPED` status on calling `stopHls()`.
 
