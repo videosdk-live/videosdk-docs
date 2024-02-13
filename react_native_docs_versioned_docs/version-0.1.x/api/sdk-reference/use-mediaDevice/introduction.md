@@ -38,7 +38,7 @@ title: Video SDK useMediaDevice Hook
 </div>
 <div class="col col--4 margin-bottom--sm" >
 
-- [checkPermissions](./methods#checkpermissions)
+- [checkPermission](./methods#checkpermission)
 
 </div>
 <div class="col col--4 margin-bottom--sm" >

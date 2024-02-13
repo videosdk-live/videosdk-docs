@@ -174,9 +174,9 @@ const onPress = async () => {
 
 ---
 
-### checkPermissions()
+### checkPermission()
 
-- The `checkPermissions()` method checks for permission to use a camera and mic. It returns a `Promise` that resolves to a `Map<string, boolean>` object.
+- The `checkPermission()` method checks for permission to use a camera and mic. It returns a `Promise` that resolves to a `Map<string, boolean>` object.
 
 #### Parameters
 
@@ -195,24 +195,24 @@ const onPress = async () => {
 ```js
 import { Constants, useMediaDevice } from "@videosdk.live/react-native-sdk";
 
-const { checkPermissions } = useMediaDevice();
+const { checkPermission } = useMediaDevice();
 
 const onPress = async () => {
   try {
-    const checkAudioVideoPermission = await checkPermissions();
+    const checkAudioVideoPermission = await checkPermission();
     console.log(
       "check Audio and Video Permissions",
       checkAudioVideoPermission.get(Constants.permission.AUDIO),
       checkAudioVideoPermission.get(Constants.permission.VIDEO)
     );
   } catch (ex) {
-    console.log("Error in checkPermissions ", ex);
+    console.log("Error in checkPermission ", ex);
   }
 };
 ```
 
 :::tip
-`checkPermissions()` will throw an error when the browser doesn't support permission check functionality.
+`checkPermission()` will throw an error when the browser doesn't support permission check functionality.
 :::
 
 ---
