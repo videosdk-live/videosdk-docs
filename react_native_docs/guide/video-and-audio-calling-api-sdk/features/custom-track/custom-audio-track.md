@@ -28,12 +28,6 @@ We have introduced the ability to pass a custom Audio track for the Audio of the
 
 ### Parameters
 
-- **microphoneId**:
-
-  - type: `String`
-  - required: `false`
-  - It will be the id of the mic from which the audio should be captured.
-
 - **encoderConfig**:
 
   - type: `String`

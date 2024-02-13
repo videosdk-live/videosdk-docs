@@ -209,7 +209,7 @@
     },
     {
       "type": "category",
-      "label": "useMediaDevice Hook",
+      "label": "useMediaDevice Hook (Beta)",
       "items": [
         "api/sdk-reference/use-mediaDevice/introduction",
         "api/sdk-reference/use-mediaDevice/methods",

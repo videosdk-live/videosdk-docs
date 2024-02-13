@@ -115,12 +115,6 @@ let customTrack = await createCameraVideoTrack({
 
 ### Parameters
 
-- **microphoneId**:
-
-  - type: `String`
-  - required: `false`
-  - It will be the id of the mic from which the audio should be captured.
-
 - **encoderConfig**:
 
   - type: `String`

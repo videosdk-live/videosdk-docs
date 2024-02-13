@@ -39,9 +39,6 @@ This feature can be used to add custom layers like background noise removal, ech
 import { createMicrophoneAudioTrack } from "@videosdk.live/react-native-sdk";
 
 let customTrack = await createMicrophoneAudioTrack({
-  // highlight-next-line
-  // It will be the id of the mic from which the voice should be captured.
-  microphoneId : 'mic-id' // OPTIONAL
 
   // highlight-next-line
   // This will accept the voice profile you want to capture.

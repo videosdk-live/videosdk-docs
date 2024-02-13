@@ -202,6 +202,15 @@
     },
     {
       "type": "category",
+      "label": "useMediaDevice Hook (Beta)",
+      "items": [
+        "api/sdk-reference/use-mediaDevice/introduction",
+        "api/sdk-reference/use-mediaDevice/methods",
+        "api/sdk-reference/use-mediaDevice/events"
+      ]
+    },
+    {
+      "type": "category",
       "label": "useMeeting Hook",
       "items": [
         "api/sdk-reference/use-meeting/introduction",

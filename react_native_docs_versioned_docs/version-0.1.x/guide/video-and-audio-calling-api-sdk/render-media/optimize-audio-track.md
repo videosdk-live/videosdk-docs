@@ -15,11 +15,11 @@ keywords:
   - real-time communication
 image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
---- 
+---
 
 # Optimize Audio Track - React Native
 
-To optimize the listening experience, it's essential to fine-tune the audio tracks used during calls. 
+To optimize the listening experience, it's essential to fine-tune the audio tracks used during calls.
 
 For an enhanced fine-tuning experience, we've introduced the capability to provide a custom audio track for a participant's media before and during the meeting.
 
@@ -40,30 +40,27 @@ import { createMicrophoneAudioTrack } from "@videosdk.live/react-native-sdk";
 
 let customTrack = await createMicrophoneAudioTrack({
   // highlight-next-line
-  // It will be the id of the mic from which the voice should be captured.
-  microphoneId : 'mic-id' // OPTIONAL
-
-  // highlight-next-line
   // This will accept the voice profile you want to capture.
   encoderConfig: "speech_standard", // `high_quality` | `music_standard`,  Default : `speech_standard`
 
   noiseConfig: {
-  // highlight-start
-  // It is used to improve the quality of audio by removing background noise
-  // that can interfere with the clarity of speech.
-  // highlight-end
+    // highlight-start
+    // It is used to improve the quality of audio by removing background noise
+    // that can interfere with the clarity of speech.
+    // highlight-end
     noiseSuppression: true,
 
-  // highlight-next-line
-  // It is used to remove unwanted echoes from voice.
+    // highlight-next-line
+    // It is used to remove unwanted echoes from voice.
     echoCancellation: true,
 
- // highlight-next-line
-  // It is used to maintain a consistent level of loudness or amplitude in a voice.
+    // highlight-next-line
+    // It is used to maintain a consistent level of loudness or amplitude in a voice.
     autoGainControl: true,
   },
 });
 ```
+
 Here are different configurations for customizing audio tracks based on specific use cases:
 
 - `speech_standard` : This config is optimised for normal voice communication.

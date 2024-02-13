@@ -9,8 +9,6 @@ pagination_label: useMeeting Hook Event Callbacks
 
 <div class="sdk-api-ref-only-h4">
 
----
-
 ### onMeetingJoined()
 
 - This event callback is trigger when a local participant joins the meeting.
