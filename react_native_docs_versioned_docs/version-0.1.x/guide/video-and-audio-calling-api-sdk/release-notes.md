@@ -8,7 +8,7 @@ tags: [releasenotes]
 
 This page will keep you updated on all the releases of React Native SDK.
 
-## v0.1.3
+## v0.1.4
 
 **Release Date** : 13th Feb 2024
 
