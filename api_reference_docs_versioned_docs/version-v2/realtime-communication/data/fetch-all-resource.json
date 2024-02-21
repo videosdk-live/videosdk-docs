@@ -1,0 +1,55 @@
+{
+  "fetchAllResources": {
+    "title": "Fetch all Resources",
+    "description": "This API lets you fetch all Resources.",
+    "headers": [
+      {
+        "key": "Authorization",
+        "value": "$YOUR_TOKEN"
+      },
+      {
+        "key": "Content-Type",
+        "value": "application/json"
+      }
+    ],
+    "methodType": "GET",
+    "postParameters": [],
+    "queryParameters": [
+      {
+        "key": "page",
+        "defaultValue": "`1`",
+        "value": "1",
+        "description": "#### Page number for the resources",
+        "required": false
+      },
+      {
+        "key": "perPage",
+        "defaultValue": "`20`",
+        "value": "20",
+        "description": "#### Number of resources you want per page.",
+        "required": false
+      }
+    ],
+    "parameters": [],
+    "apiEndpoint": "https://api.videosdk.live/v2/resource",
+    "response": {
+      "pageInfo": {
+        "currentPage": 1,
+        "perPage": 20,
+        "lastPage": 1,
+        "total": 2
+      },
+      "data": [
+        {
+          "id": "abcdef9879288c1f48339f64",
+          "status": "released",
+          "type": "filecomposer",
+          "mode": "video-and-audio",
+          "quality": "med",
+          "composerIds": ["abcdef9879288c1f48339f54"],
+          "webhookUrl": "https://example.com/"
+        }
+      ]
+    }
+  }
+}
