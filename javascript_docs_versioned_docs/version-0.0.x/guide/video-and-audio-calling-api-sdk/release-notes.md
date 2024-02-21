@@ -46,6 +46,10 @@ This page will provide you with updates on all releases of the Javascript SDK.
 
       **Docs** : [getPlaybackDevices()](../../api/sdk-reference/videosdk-class/methods.md#getplaybackdevices)
 
+   - Provide `device-changed` event in `VideoSDK` class, which gets triggered whenever a media device is connected to or removed from the system.
+
+      **Docs** : [device-changed](../../api/sdk-reference/videosdk-class/events.md#device-changed)
+
    - Provide `requestPermission()` method in `VideoSDK` class to request a media permission.
 
       **Docs** : [requestPermission()](../../api/sdk-reference/videosdk-class/methods.md#requestpermission)

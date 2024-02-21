@@ -27,10 +27,9 @@ import { useMeeting } from "@videosdk.live/react-sdk";
 const { participants } = useMeeting();
 
 function handleMuteAllParticipant() {
-  participants.keys().forEach((participantId) => {
-    const { disableMic, isLocal } = useParticipant(participantId);
-    if (!isLocal) {
-      disableMic();
+  [...participants.values()].forEach((participant) => {
+    if (!participant.isLocal) {
+      participant.disableMic();
     }
   });
 }

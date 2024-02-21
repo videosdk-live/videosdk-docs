@@ -28,6 +28,10 @@ This page will keep you updated on all the releases of React Native SDK.
 
     **Docs** : [getAudioDeviceList()](../../api/sdk-reference/use-mediaDevice/methods.md#getaudiodevicelist)
 
+  - Provide `onAudioDeviceChanged()` callback in `useMediaDevice` hook, which gets triggered whenever a audio devices connected to or removed from the mobile-device.
+
+    **Docs** : [onAudioDeviceChanged()](../../api/sdk-reference/use-mediaDevice/events.md#onaudiodevicechanged)
+
   - Provide `requestPermission()` method in `useMediaDevice` hook to request a media permission.
 
     **Docs** : [requestPermission()](../../api/sdk-reference/use-mediaDevice/methods.md#requestpermission)
@@ -48,6 +52,11 @@ This page will keep you updated on all the releases of React Native SDK.
 
 - Foreground service updated for compatibility with React Native v73+.
 
+:::tip
+
+To effectively leverage the functionalities of Pre-Call Screen, it is recommended to utilize version `^0.1.0` of the `@videosdk.live/react-native-incallmanager` library.
+
+:::
 ---
 
 ## v0.1.2
