@@ -76,10 +76,10 @@
         "realtime-communication/fetch-a-resource",
         "realtime-communication/fetch-all-resource",
         "realtime-communication/start-multi-recording",
-        "realtime-communication/start-multi-hls",
-        "realtime-communication/start-multi-rtmp",
         "realtime-communication/stop-multi-recording",
+        "realtime-communication/start-multi-hls",
         "realtime-communication/stop-multi-hls",
+        "realtime-communication/start-multi-rtmp",
         "realtime-communication/stop-multi-rtmp"
       ]
     },
