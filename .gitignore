@@ -26,3 +26,5 @@ docusaurus.zip
 yarn.lock
 package-lock.json
 config.json
+docusaurus.config.js
+gtm.js
