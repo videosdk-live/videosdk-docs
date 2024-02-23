@@ -494,10 +494,10 @@ module.exports = {
     //   src: "https://docs.videosdk.live/js/getkoala.js",
     //   async: true,
     // },
-    // {
-    //   src: "https://docs.videosdk.live/js/gtm.js",
-    //   async: true,
-    // },
+    {
+      src: "https://docs.videosdk.live/js/gtm.js",
+      async: true,
+    },
     // Amplitude
     { src: "https://docs.videosdk.live/js/amplitude.js", async: false },
   ],
