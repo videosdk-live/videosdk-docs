@@ -50,6 +50,7 @@
           "type": "category",
           "label": "Setup Call",
           "items": [
+            "guide/video-and-audio-calling-api-sdk/setup-call/precall",
             "guide/video-and-audio-calling-api-sdk/setup-call/initialise-meeting",
             "guide/video-and-audio-calling-api-sdk/setup-call/join-meeting",
             "guide/video-and-audio-calling-api-sdk/setup-call/waiting-lobby",
