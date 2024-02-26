@@ -2,14 +2,14 @@
 title: Precall | Video SDK
 hide_title: true
 hide_table_of_contents: false
-description: Video SDK and Audio SDK, developers need to implement a token server. This requires efforts on both the front-end and backend.
+description: The precall feature allows users to configure their audio and video settings, test their devices, and view network statistics before starting a video call, ensuring a smooth and tailored communication experience.
 sidebar_label: Precall
 pagination_label: Precall
 keywords:
   - audio calling
   - video calling
   - real-time communication
-  - collaboration
+  - precall
 image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
 slug: Precall
