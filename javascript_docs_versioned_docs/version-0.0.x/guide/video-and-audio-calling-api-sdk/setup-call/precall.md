@@ -16,15 +16,15 @@ slug: Precall
 ---
 
 
-## **What is a Precall Experience?**
+# What is a Precall Experience?
 
-Picture this: before diving into the depths of a video call, imagine giving your setup a quick check-up, like a tech-savvy doctor ensuring all systems are a go. That's essentially what a precall experience does- it’s like your extensive debug session before the main code execution—a crucial step in ensuring your app's performance is top-notch. From making sure your microphone isn't playing hide-and-seek to ensuring your internet connection isn't lost in cyberspace, a precall experience ensures that your devices and network are in tip-top shape before you embark on your virtual journey.
+Picture this: before diving into the depths of a video call, imagine giving your setup a quick check-up, like a tech-savvy doctor ensuring all systems are a go. That's essentially what a precall experience does- it’s like your extensive debug session before the main code execution—a crucial step in ensuring your app's performance is top-notch. 
 
 ## **Why is it necessary?**
 
 Why invest time and effort into crafting a precall experience, you wonder? Well, picture this scenario: your users eagerly join a video call, only to encounter a myriad of technical difficulties—muted microphones, pixelated cameras, and laggy connections. Not exactly the smooth user experience you had in mind, right? 
 
-By integrating a robust precall process into your app, developers become the unsung heroes, preemptively addressing potential pitfalls and ensuring that users step into their video calls with confidence.So, fellow developers, embrace the precall journey, and watch as your app becomes a beacon of reliability and excellence in the vast digital landscape!
+By integrating a robust precall process into your app, developers become the unsung heroes, preemptively addressing potential pitfalls and ensuring that users step into their video calls with confidence.
 
 
 ## **Step-by-Step Guide: Integrating Precall Feature**
