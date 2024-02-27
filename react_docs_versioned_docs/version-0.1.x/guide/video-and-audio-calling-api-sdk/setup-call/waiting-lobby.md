@@ -15,7 +15,7 @@ sidebar_position: 1
 slug: waiting-lobby
 ---
 
-# Waiting Lobby - React SDK
+# Waiting Lobby - React
 
 ## Overview
 
