@@ -1,12 +1,12 @@
 const acquireResource = {
   title: "Acquire Resource",
   description: `This API lets you acquire resource by passing type, mode, quality, webhookUrl and units as body parameters. \n\n![resourceStateDiagram.png](https://cdn.videosdk.live/website-resources/docs-resources/resourceStateDiagram.png)
-  - **Resource States**:
-    - **pending**: The resource enters the pending state when a user requests to acquire it.
-    - **idle**: After the resource is acquired (user will recieve [webhook](https://docs.videosdk.live/api-reference/realtime-communication/user-webhooks#resource-acquired)) and ready for composition, it transitions to the idle state.
-    - **composing**: When a user initiates recording, HLS, or RTMP, the resource enters the composing state. Upon completion of recording, HLS, or RTMP, it returns to the idle state.
-    - **released**: The resource transitions to the released state when a user requests to release it.
-  `,
+  ### Resource States:
+  - **pending**: The resource enters the pending state when you request to acquire it.
+  - **idle**: When a resource is ready for use, it enters an ideal state. You will receive a [webhook](https://docs.videosdk.live/api-reference/realtime-communication/user-webhooks#resource-acquired) when it enters this state for the first time.
+  - **composing**: When you initiate recording, HLS, or RTMP in the resource, it enters the composing state. Upon completion of recording, HLS, or RTMP, it returns to the idle state.
+  - **released**: The resource enters to the released state when a you requests to release it.
+  You can not use this resorce for futher use.`,
   headers: [
     {
       key: "Authorization",
