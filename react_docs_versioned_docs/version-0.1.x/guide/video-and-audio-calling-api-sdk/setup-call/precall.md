@@ -1,10 +1,10 @@
 ---
-title: Precall | Video SDK
+title: Precall Setup | Video SDK
 hide_title: true
 hide_table_of_contents: false
 description: The precall feature allows users to configure their audio and video settings, test their devices, and view network statistics before starting a video call, ensuring a smooth and tailored communication experience.
-sidebar_label: Precall
-pagination_label: Precall
+sidebar_label: Precall Setup
+pagination_label: Precall Setup
 keywords:
   - audio calling
   - video calling
@@ -12,19 +12,18 @@ keywords:
   - precall
 image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
-slug: Precall
+slug: precall
 ---
 
-# What is a Precall Experience?
+# Precall Setup - React
 
-Picture this: before diving into the depths of a video call, imagine giving your setup a quick check-up, like a tech-savvy doctor ensuring all systems are a go. That's essentially what a precall experience does- it’s like your extensive debug session before the main code execution—a crucial step in ensuring your app's performance is top-notch. 
+Picture this: before diving into the depths of a video call, imagine giving your setup a quick check-up, like a tech-savvy doctor ensuring all systems are a go. That's essentially what a precall experience does- it’s like your extensive debug session before the main code execution—a crucial step in ensuring your app's performance is top-notch.
 
 ## **Why is it necessary?**
 
-Why invest time and effort into crafting a precall experience, you wonder? Well, picture this scenario: your users eagerly join a video call, only to encounter a myriad of technical difficulties—muted microphones, pixelated cameras, and laggy connections. Not exactly the smooth user experience you had in mind, right? 
+Why invest time and effort into crafting a precall experience, you wonder? Well, picture this scenario: your users eagerly join a video call, only to encounter a myriad of technical difficulties—muted microphones, pixelated cameras, and laggy connections. Not exactly the smooth user experience you had in mind, right?
 
 By integrating a robust precall process into your app, developers become the unsung heroes, preemptively addressing potential pitfalls and ensuring that users step into their video calls with confidence.
-
 
 ## **Step-by-Step Guide: Integrating Precall Feature**
 
@@ -39,12 +38,12 @@ import { useMediaDevice } from "@videosdk.live/react-sdk";
 const { checkPermissions } = useMediaDevice();
 
 const checkMediaPermission = async () => {
-    //These methods return a Promise that resolve to a Map<string, boolean> object.
-    const checkAudioPermission = await checkPermissions("audio"); //For getting audio permission
-    const checkVideoPermission = await checkPermissions("video"); //For getting video permission
-    const checkAudioVideoPermission = await checkPermissions("audio_video"); //For getting both audio and video permissions
-    // Output: Map object for both audio and video permission:
-    /*
+  //These methods return a Promise that resolve to a Map<string, boolean> object.
+  const checkAudioPermission = await checkPermissions("audio"); //For getting audio permission
+  const checkVideoPermission = await checkPermissions("video"); //For getting video permission
+  const checkAudioVideoPermission = await checkPermissions("audio_video"); //For getting both audio and video permissions
+  // Output: Map object for both audio and video permission:
+  /*
         Map(2)
         0 : {"audio" => true}
             key: "audio"
@@ -55,6 +54,7 @@ const checkMediaPermission = async () => {
     */
 };
 ```
+
 - When microphone and camera permissions are blocked, rendering device lists is not possible:
 
 import ReactPlayer from 'react-player'
@@ -73,16 +73,17 @@ In case permissions are blocked by the user, the browser's permission request di
 
 ```js
 const requestAudioVideoPermission = async () => {
-    try {
-        //These methods return a Promise that resolve to a Map<string, boolean> object.
-        const requestAudioPermission = await requestPermission("audio"); //For Requesting Audio Permission
-        const requestVideoPermission = await requestPermission("video"); //For Requesting Video Permission
-        const requestAudioVideoPermission = await requestPermission("audio_video"); //For Requesting Audio and Video Permissions
-    } catch (ex) {
-        console.log("Error in requestPermission ", ex);
-    }
-}
+  try {
+    //These methods return a Promise that resolve to a Map<string, boolean> object.
+    const requestAudioPermission = await requestPermission("audio"); //For Requesting Audio Permission
+    const requestVideoPermission = await requestPermission("video"); //For Requesting Video Permission
+    const requestAudioVideoPermission = await requestPermission("audio_video"); //For Requesting Audio and Video Permissions
+  } catch (ex) {
+    console.log("Error in requestPermission ", ex);
+  }
+};
 ```
+
 - Requesting permissions if not already granted:
 
 ![Request Permissions](https://cdn.videosdk.live/website-resources/docs-resources/precall_requesting_permissions.png)
@@ -94,18 +95,22 @@ const requestAudioVideoPermission = async () => {
 
 ```js
 const getMediaDevices = async () => {
-    try {
-        //Method to get all available webcams.It returns a Promise that is resolved with an array of CameraDeviceInfo objects describing the video input devices.
-        let webcams = await getCameras();
-        //Method to get all available Microphones.It returns a Promise that is resolved with an array of MicrophoneDeviceInfo objects describing the audio input devices.
-        let mics = await getMicrophones();
-        //Method to get all available speakers.It returns a Promise that is resolved with an array of PlaybackDeviceInfo objects describing the playback devices.
-        let speakers = await getPlaybackDevices();
-    } catch (err) {
-        console.log("Error in getting audio or video devices", err);
-    }
-}
+  try {
+    //Method to get all available webcams.
+    //It returns a Promise that is resolved with an array of CameraDeviceInfo objects describing the video input devices.
+    let webcams = await getCameras();
+    //Method to get all available Microphones.
+    //It returns a Promise that is resolved with an array of MicrophoneDeviceInfo objects describing the audio input devices.
+    let mics = await getMicrophones();
+    //Method to get all available speakers.
+    //It returns a Promise that is resolved with an array of PlaybackDeviceInfo objects describing the playback devices.
+    let speakers = await getPlaybackDevices();
+  } catch (err) {
+    console.log("Error in getting audio or video devices", err);
+  }
+};
 ```
+
 - Displaying device lists once permissions are granted:
 
 <ReactPlayer controls autoplay muted loop playing url='https://cdn.videosdk.live/website-resources/docs-resources/precall_render_device_list.mp4' width={"100%"} />
@@ -125,6 +130,7 @@ function onDeviceChanged(devices) {
     console.log("Device Changed", devices)
 }
 ```
+
 - Dynamically updating device lists when new devices are connected or disconnected:
 
 <ReactPlayer controls autoplay loop playing url='https://cdn.videosdk.live/website-resources/docs-resources/precall_on_device_change.mp4' width={"100%"} />
@@ -135,41 +141,45 @@ function onDeviceChanged(devices) {
 - Ensure that these tracks originate from the user-selected devices for accurate testing.
 
 ```js
-import { createCameraVideoTrack, createMicrophoneAudioTrack } from "@videosdk.live/react-sdk";
+import {
+  createCameraVideoTrack,
+  createMicrophoneAudioTrack,
+} from "@videosdk.live/react-sdk";
 
 //For Getting Audio Tracks
 const getMediaTracks = async () => {
-    try {
-        //Returns a MediaStream object, containing the Audio Stream from the selected Mic Device.
-        const customAudioStream = await createMicrophoneAudioTrack({
-            // Here, selectedMicId should be the microphone id of the device selected by the user.
-            microphoneId: selectedMicId
-        });
-        //To retrive audio tracks that will be displayed to the user from the stream.
-        const audioTracks = stream?.getAudioTracks();
-        const audioTrack = audioTracks.length ? audioTracks[0] : null;
-    } catch (error) {
-        console.log("Error in getting Audio Track", error);
-    }
+  try {
+    //Returns a MediaStream object, containing the Audio Stream from the selected Mic Device.
+    const customAudioStream = await createMicrophoneAudioTrack({
+      // Here, selectedMicId should be the microphone id of the device selected by the user.
+      microphoneId: selectedMicId,
+    });
+    //To retrive audio tracks that will be displayed to the user from the stream.
+    const audioTracks = stream?.getAudioTracks();
+    const audioTrack = audioTracks.length ? audioTracks[0] : null;
+  } catch (error) {
+    console.log("Error in getting Audio Track", error);
+  }
 
-    //For Getting Video Tracks
-    try {
-        //Returns a MediaStream object, containing the Video Stream from the selected Webcam Device.
-        const customVideoStream = await createCameraVideoTrack({
-            // Here, selectedWebcamId should be the webcam id of the device selected by the user.
-            cameraId: selectedWebcamId,
-            encoderConfig: encoderConfig ? encoderConfig : "h540p_w960p",
-            optimizationMode: "motion",
-            multiStream: false,
-        });
-        //To retrive video tracks that will be displayed to the user from the stream.
-        const videoTracks = stream?.getVideoTracks();
-        const videoTrack = videoTracks.length ? videoTracks[0] : null;
-    } catch (error) {
-        console.log("Error in getting Video Track", error);
-    }
-}
+  //For Getting Video Tracks
+  try {
+    //Returns a MediaStream object, containing the Video Stream from the selected Webcam Device.
+    const customVideoStream = await createCameraVideoTrack({
+      // Here, selectedWebcamId should be the webcam id of the device selected by the user.
+      cameraId: selectedWebcamId,
+      encoderConfig: encoderConfig ? encoderConfig : "h540p_w960p",
+      optimizationMode: "motion",
+      multiStream: false,
+    });
+    //To retrive video tracks that will be displayed to the user from the stream.
+    const videoTracks = stream?.getVideoTracks();
+    const videoTrack = videoTracks.length ? videoTracks[0] : null;
+  } catch (error) {
+    console.log("Error in getting Video Track", error);
+  }
+};
 ```
+
 - Rendering Media Tracks when necessary permissions are available:
 
 ![Media Tracks](https://cdn.videosdk.live/website-resources/docs-resources/precall_render_media_tracks.png)
@@ -190,21 +200,21 @@ const getMediaTracks = async () => {
 
 ```js
 const testSpeakers = () => {
-    //Here, you have to path of your desired test sound.
-    const test_sound_path = "test_sound_path";
-    //Create an audio tag using a test sound of your choice.
-    const audio = new Audio(test_sound_path);
-    try {
-        //Set the sinkId of the audio to the speaker's device Id, as selected by the user.
-        audio.setSinkId(selectedSpeakerDeviceId)
-            .then(() => {
-                audio.play();
-            })
-    } catch (error) {
-        console.log(error);
-    };
-}
+  //Here, you have to path of your desired test sound.
+  const test_sound_path = "test_sound_path";
+  //Create an audio tag using a test sound of your choice.
+  const audio = new Audio(test_sound_path);
+  try {
+    //Set the sinkId of the audio to the speaker's device Id, as selected by the user.
+    audio.setSinkId(selectedSpeakerDeviceId).then(() => {
+      audio.play();
+    });
+  } catch (error) {
+    console.log(error);
+  }
+};
 ```
+
 <ReactPlayer controls autoplay muted loop playing url='https://cdn.videosdk.live/website-resources/docs-resources/precall_test_speaker.mp4' width={"100%"} />
 
 ### **Step 8: Network Quality Assessment**
@@ -216,18 +226,19 @@ const testSpeakers = () => {
 import { getNetworkStats } from "@videosdk.live/react-sdk";
 
 const getNetworkStatistics = async () => {
-    try {
-        // The timeOutDuration is a set time, after which the method stops fetching stats and throws a timeout error.
-        const options = { timeoutDuration: 45000 }; 
-        //This method returns a Promise that resolves with an object, containing network speed statistics or rejects with an error message.
-        const networkStats = await getNetworkStats(options);
-        const downloadSpeed = networkStats["downloadSpeed"];
-        const uploadSpeed = networkStats["uploadSpeed"];
-    } catch (ex) {
-        console.log("Error in networkStats: ", ex);
-    }
-}
+  try {
+    //The timeOutDuration is a set time, after which the method stops fetching stats and throws a timeout error.
+    const options = { timeoutDuration: 45000 };
+    //This method returns a Promise that resolves with an object, containing network speed statistics or rejects with an error message.
+    const networkStats = await getNetworkStats(options);
+    const downloadSpeed = networkStats["downloadSpeed"];
+    const uploadSpeed = networkStats["uploadSpeed"];
+  } catch (ex) {
+    console.log("Error in networkStats: ", ex);
+  }
+};
 ```
+
 - Displaying the Upload and Download speeds of the network:
 
 ![Network Stats](https://cdn.videosdk.live/website-resources/docs-resources/precall_network_stats.png)
@@ -261,8 +272,6 @@ const getNetworkStatistics = async () => {
 
 ```
 
-
-
 By following these step-by-step instructions, you can seamlessly integrate a precall feature into your application, empowering users to optimize their audio and video setup for a superior communication experience.
 
 :::note
@@ -279,10 +288,3 @@ The API references for all the methods utilized in this guide are provided below
 - [getNetworkStats()](/react/api/sdk-reference/network-statistics#getnetworkstats)
 - [createMicrophoneAudioTrack()](/react/api/sdk-reference/custom-tracks#custom-audio-track---react)
 - [createCameraVideoTrack()](/react/api/sdk-reference/custom-tracks#custom-video-track---react)
-
-
-
-
-
-
-
