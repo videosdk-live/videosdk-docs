@@ -32,6 +32,10 @@ This page will provide you with updates on all releases of the React JS SDK.
 
       **Docs** : [getPlaybackDevices()](../../api/sdk-reference/use-mediaDevice/methods.md#getplaybackdevices)
 
+   - Provide `onDeviceChanged()` event in `useMediaDevice` hook, which gets triggered whenever a media device is connected to or removed from the system.
+
+      **Docs** : [onDeviceChanged()](../../api/sdk-reference/use-mediaDevice/events.md#ondevicechanged)
+
    - Provide `requestPermission()` method in `useMediaDevice` hook to request a media permission.
 
       **Docs** : [requestPermission()](../../api/sdk-reference/use-mediaDevice/methods.md#requestpermission)
