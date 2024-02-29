@@ -18,7 +18,7 @@ slug: notify-attendees
 
 # Notify Attendees in Realtime - Javascript
 
-This guide explains how PubSub can be used to implement the functionality of broadcasting a message to all the viewers at once. If you are not familiar with the PubSub mechanism and `pubSub`, you can [follow this guide](./pubsub).
+This guide explains how PubSub can be used to implement the functionality of broadcasting a message to all the viewers at once. If you are not familiar with the PubSub mechanism and `pubSub`, you can [follow this guide](/javascript/guide/video-and-audio-calling-api-sdk/collaboration-in-meeting/pubsub).
 
 ### Notifying Attendees
 
