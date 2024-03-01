@@ -7,7 +7,7 @@ sidebar_label: Waiting Lobby
 pagination_label: Waiting Lobby
 keywords:
   - audio calling
-  - video calling 
+  - video calling
   - real-time communication
   - collaboration
 image: img/videosdklive-thumbnail.jpg
@@ -15,7 +15,7 @@ sidebar_position: 1
 slug: waiting-lobby
 ---
 
-# Waiting Lobby - Javascript SDK
+# Waiting Lobby - Javascript
 
 ## Overview
 

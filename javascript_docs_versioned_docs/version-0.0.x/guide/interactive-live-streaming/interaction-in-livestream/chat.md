@@ -20,7 +20,7 @@ slug: chat-using-pubsub
 
 For communication or any kind of messaging between participants, VideoSDK provides the `pubSub` property, which utilizes the Publish-Subscribe mechanism. It can be employed to develop a wide variety of functionalities. For example, participants could use it to send chat messages to each other, share files or other media, or even trigger actions like muting or unmuting audio or video.
 
-This guide focuses on using PubSub to implement Chat functionality. If you are not familiar with the PubSub mechanism and `pubSub`, you can [follow this guide](./pubsub).
+This guide focuses on using PubSub to implement Chat functionality. If you are not familiar with the PubSub mechanism and `pubSub`, you can [follow this guide](/javascript/guide/video-and-audio-calling-api-sdk/collaboration-in-meeting/pubsub).
 
 ### Implementing Chat
 
