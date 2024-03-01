@@ -71,6 +71,18 @@ const createRoom = {
       `,
       required: false,
     },
+    {
+      key: "multiComposition",
+      value: "multiCompositionObj",
+      values:
+        "\n```\n{\n  'multiComposition': {\n    'recording': true,\n    'hls': true\n  }\n}\n```",
+      description: `
+- **recording**: _true_ | _false_
+- **hls**: _true_ | _false_
+- **rtmp**: _true_ | _false_
+`,
+      required: false,
+    },
   ],
   queryParameters: [],
   parameters: [],
