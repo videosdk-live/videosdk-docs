@@ -5,7 +5,7 @@ sidebar_label: Release Resource
 hide_table_of_contents: true
 ---
 
-# Release Resource - API
+# Release Resource - Beta API
 
 import Method from '../../../src/theme/RestApiMethodContainer'
 import {releaseResource} from './data/release-resource.js'

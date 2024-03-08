@@ -68,7 +68,7 @@
     },
     {
       "type": "category",
-      "label": "Resource APIs",
+      "label": "Resource APIs (Beta)",
       "collapsed": true,
       "items": [
         "realtime-communication/acquire-resource",
@@ -96,7 +96,9 @@
       "type": "category",
       "label": "Host into Serverless functions",
       "collapsed": true,
-      "items": ["realtime-communication/firebase-cloud-function"]
+      "items": [
+        "realtime-communication/firebase-cloud-function"
+      ]
     }
   ]
 }

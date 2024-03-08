@@ -5,7 +5,7 @@ sidebar_label: Acquire Resource
 hide_table_of_contents: true
 ---
 
-# Acquire Resource - API
+# Acquire Resource - Beta API
 
 import Method from '../../../src/theme/RestApiMethodContainer'
 import {acquireResource} from './data/acquire-resource.js'
