@@ -8,6 +8,16 @@ tags: [releasenotes]
 
 This page will keep you updated on all the releases of React Native SDK.
 
+## v0.1.5
+
+**Release Date** : 12th Mar 2024
+
+**Bug Fix** :
+
+- Resolved the problem causing flickering in the video and screen share streams when initiating screen sharing.
+
+---
+
 ## v0.1.4
 
 **Release Date** : 13th Feb 2024
@@ -56,8 +66,7 @@ This page will keep you updated on all the releases of React Native SDK.
 
 To effectively leverage the functionalities of Pre-Call Screen, it is recommended to utilize version `^0.1.0` of the `@videosdk.live/react-native-incallmanager` library.
 
-:::
----
+## :::
 
 ## v0.1.2
 

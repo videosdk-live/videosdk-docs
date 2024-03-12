@@ -7,6 +7,16 @@ pagination_label: Release Notes
 
 This page will keep you update all the releases of Android SDK.
 
+## v0.1.26
+
+**Release Date** : 12th Jan 2024
+
+**Bug Fix** :
+
+- Fixed landscape video issue between Firefox browser and native android SDK
+
+---
+
 ## v0.1.25
 
 **Release Date** : 27th Oct 2023
