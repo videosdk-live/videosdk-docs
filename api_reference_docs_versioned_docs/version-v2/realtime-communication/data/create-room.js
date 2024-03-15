@@ -36,7 +36,7 @@ const createRoom = {
       values:
         "\n```\n{\n  'webhook': {\n    'endPoint': 'your webhook endpoint',\n    'events': ['webhook event type_1', 'webhook event type_2']\n   }\n}\n```",
       description:
-        "#### You can subscribe from various events to get webhook. \n - `participant-joined` \n - `participant-left` \n - `session-started` \n - `session-ended` \n - `recording-starting` \n - `recording-started` \n - `recording-stopping` \n - `recording-stopped` \n - `recording-failed` \n - `livestream-starting` \n - `livestream-started` \n - `livestream-stopping` \n - `livestream-stopped` \n - `livestream-failed` \n - `hls-starting` \n - `hls-started` \n - `hls-playable` \n - `hls-stopping` \n - `hls-stopped` \n - `hls-failed` - \n Please refer this [User webhooks](/api-reference/realtime-communication/user-webhooks) for more information. All User webhooks endpoint must me a `POST` method in your api server / webhook server.",
+        "#### You can subscribe from various events to get webhook. \n - `participant-joined` \n - `participant-left` \n - `session-started` \n - `session-ended` \n - `recording-starting` \n - `recording-started` \n - `recording-stopping` \n - `recording-stopped` \n - `recording-failed`  \n - `transcription-completed` \n - `livestream-starting` \n - `livestream-started` \n - `livestream-stopping` \n - `livestream-stopped` \n - `livestream-failed` \n - `hls-starting` \n - `hls-started` \n - `hls-playable` \n - `hls-stopping` \n - `hls-stopped` \n - `hls-failed` - \n Please refer this [User webhooks](/api-reference/realtime-communication/user-webhooks) for more information. All User webhooks endpoint must me a `POST` method in your api server / webhook server.",
       required: false,
     },
     {
@@ -52,10 +52,15 @@ const createRoom = {
       key: "autoStartConfig",
       value: "see example",
       values:
-        "\n```\n{\n  'autoStartConfig': {\n    'recording': {\n      'config': {\n        'layout': { \n          'type': 'GRID',\n          'priority': 'SPEAKER',\n          'gridSize': 4\n        }\n      }\n    },\n    'hls': {\n      'config': {\n        'layout': { \n          'type': 'GRID',\n          'priority': 'SPEAKER',\n          'gridSize': 4\n        }\n      }\n    }\n}\n```",
+        "\n```\n{\n  'autoStartConfig': {\n    'recording': {\n      'transcription': {\n         'enabled' : true\n       }\n      'summary': {\n         'enabled' : true,\n         'prompt' : 'Write summary in sections like Title, Agenda, Speakers, Action Items, Outlines, Notes and Summary'\n       },\n      'config': {\n        'layout': { \n          'type': 'GRID',\n          'priority': 'SPEAKER',\n          'gridSize': 4\n        }\n      }\n    },\n    'hls': {\n      'config': {\n        'layout': { \n          'type': 'GRID',\n          'priority': 'SPEAKER',\n          'gridSize': 4\n        }\n      }\n    }\n}\n```",
       description: `#### This configuration enables automatic initiation of recording, HLS streaming, or both, providing a convenient way to capture and serve content in real-time. It streamlines the process of content management and delivery for enhanced user experience. \n
  * **recording** :
   - **templateUrl** : [Customize Layout of Meeting Recording](/react/guide/interactive-live-streaming/custom-template)
+  - **transcription** :
+      - enabled: true | false
+  - **Summary** :
+      - enabled: true | false
+      - prompt: “Your customized summary prompt”    
   - **config** : 
     - **layout**:
       - **type**: _"GRID"_ | _"SPOTLIGHT"_ | _"SIDEBAR"_

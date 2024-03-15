@@ -43,6 +43,14 @@
     },
     {
       "type": "category",
+      "label": "Transcription APIs",
+      "collapsed": true,
+      "items": [
+        "realtime-communication/fetch-transcription"
+      ]
+    },
+    {
+      "type": "category",
       "label": "RTMP OUT APIs",
       "collapsed": true,
       "items": [
