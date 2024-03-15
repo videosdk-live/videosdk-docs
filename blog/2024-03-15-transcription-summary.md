@@ -9,6 +9,7 @@ slug: transcription-summary
 tags: [Migration Guide, Twilio, Android]
 hide_table_of_contents: false
 ---
+<!-- truncate -->
 
 ## Overview
 
