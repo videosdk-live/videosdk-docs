@@ -15,22 +15,25 @@ hide_table_of_contents: false
 
 Transcription API empowers developers to convert spoken language into written text automatically. In this tutorial, we'll delve into how to effectively utilize a Transcription API to transcribe meeting recordings. We'll explore two distinct methods for initiating transcription: enabling transcription via the start recording API and enabling transcription via auto-configuration while creating a meeting using API.
 
+This feature is currently in BETA.
+
 ## Prerequisites
 Before diving into the Transcription API, ensure you have:
 - Basic knowledge of REST APIs.
 - Understanding of JSON formatting.
-- An Auth Token for the Transcription API.
+- An [Auth Token](https://docs.videosdk.live/react/guide/video-and-audio-calling-api-sdk/authentication-and-token) for the Transcription API.
 
 
-## Step 1: Set Up Your Environment
+## Step 1: Understand the workflow
 
-First and foremost, ensure you have access to the API endpoint and the necessary authentication token.
+Before enabling transcription and summary features in VideoSDK, it's important to understand the basic workflow. Transcription and summarization occur after recording, meaning that recording is a necessary step before these features can be used. To activate the transcription and summary APIs, you must first start recording using either the Start Recording API or by auto config recording within the Create Meeting API.
+To use transcription, recordings needs to be stored in VideoSDK Cloud
 
 ## Step 2: Choosing Your Method
 
 There are two primary methods for initiating transcription
-- via the start recording API
-- via auto configuration while creating a meeting API
+- via the [start recording API](https://docs.videosdk.live/api-reference/realtime-communication/start-recording#config)
+- via auto configuration while [creating a meeting API](https://docs.videosdk.live/api-reference/realtime-communication/create-room#autoStartConfig)
 
 Choose the method that best fits your use case.
 
