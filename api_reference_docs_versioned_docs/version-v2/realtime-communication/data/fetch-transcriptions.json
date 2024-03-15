@@ -1,6 +1,6 @@
 {
     "fetchTranscriptions": {
-      "title": "Fetch Transcriptions",
+      "title": "Fetch Transcriptions & Summary",
       "description": "This API lets you fetch details of all your transcriptions of room by passing roomId or sessionId. Optionally, if you don't specify a roomid , you will fetch all the transcriptions of all your rooms.",
       "headers": [
         {

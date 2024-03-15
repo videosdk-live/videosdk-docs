@@ -60,7 +60,7 @@ const createRoom = {
       - enabled: true | false
   - **Summary** :
       - enabled: true | false
-      - prompt: “Your customized summary prompt”    
+      - prompt: _“Your customized summary prompt”_    
   - **config** : 
     - **layout**:
       - **type**: _"GRID"_ | _"SPOTLIGHT"_ | _"SIDEBAR"_

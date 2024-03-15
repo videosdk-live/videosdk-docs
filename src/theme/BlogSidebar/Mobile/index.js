@@ -2,6 +2,15 @@ import React from 'react';
 import Link from '@docusaurus/Link';
 import {NavbarSecondaryMenuFiller} from '@docusaurus/theme-common';
 function BlogSidebarMobileSecondaryMenu({sidebar}) {
+  const items = sidebar.items;
+  // Find the index of the item with title "hello"
+  const itemFoundIndex = items.findIndex(item => item.title === "Twilio to Video SDK Migration Guide");
+
+  // If itemFoundIndex is found, move that item to the beginning
+  if (itemFoundIndex !== -1) {
+    const foundItem = items.splice(itemFoundIndex, 1)[0];
+    items.unshift(foundItem);
+  }
   return (
     <ul className="menu__list">
       {sidebar.items.map((item) => (

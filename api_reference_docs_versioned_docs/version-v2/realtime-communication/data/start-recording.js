@@ -45,7 +45,7 @@ const startRecording = {
       description:`
 - **summary**:
   - **enabled**: true | false   
-  - **prompt**: “Your customized summary prompt”
+  - **prompt**: _“Your customized summary prompt”_
 `,
       required: false,
     },

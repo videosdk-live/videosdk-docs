@@ -43,10 +43,10 @@
     },
     {
       "type": "category",
-      "label": "Transcription APIs",
+      "label": "Transcription & Summary APIs",
       "collapsed": true,
       "items": [
-        "realtime-communication/fetch-transcription"
+        "realtime-communication/fetch-transcription-summary"
       ]
     },
     {
