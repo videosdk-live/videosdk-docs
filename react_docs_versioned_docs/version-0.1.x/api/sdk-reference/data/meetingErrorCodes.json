@@ -142,5 +142,100 @@
     "type": "ERROR_GET_DISPLAY_MEDIA_PERMISSION_DENIED",
     "code": 3016,
     "message": "Screen sharing permission denied."
+  },
+  {
+    "type": "ERROR_CAMERA_ACCESS_DENIED_OR_DISMISSED",
+    "code": 3017,
+    "message": "Oops! It seems like camera access was denied or dismissed. To proceed, kindly grant access through your browser settings."
+  },
+  {
+    "type": "ERROR_MICROPHONE_ACCESS_DENIED_OR_DISMISSED",
+    "code": 3018,
+    "message": "Oops! It seems like microphone access was denied or dismissed. To proceed, kindly grant access through your browser settings."
+  },
+  {
+    "type": "ERROR_CAMERA_PERMISSION_DENIED_BY_OS",
+    "code": 3019,
+    "message": "Camera permission denied by OS system settings. Please check the system settings and grant permission for this browser."
+  },
+  {
+    "type": "ERROR_MICROPHONE_PERMISSION_DENIED_BY_OS",
+    "code": 3020,
+    "message": "Microphone permission denied by OS system settings. Please check the system settings and grant permission for this browser."
+  },
+  {
+    "type": "ERROR_CAMERA_NOT_FOUND",
+    "code": 3021,
+    "message": "Please ensure your camera is connected and turned on, and that the camera driver is installed and up-to-date."
+  },
+  {
+    "type": "ERROR_MICROPHONE_NOT_FOUND",
+    "code": 3022,
+    "message": "Please ensure your microphone is connected and turned on."
+  },
+  {
+    "type": "ERROR_CAMERA_IN_USE",
+    "code": 3023,
+    "message": "The camera is being used by another application. Please close any programs utilizing the camera, such as video conferencing tools, screen recording software, or other browsers. Restart your browser and attempt again."
+  },
+  {
+    "type": "ERROR_MICROPHONE_IN_USE",
+    "code": 3024,
+    "message": "The microphone is being used by another application. Please close any programs utilizing the microphone, such as video conferencing tools, screen recording software, or other browsers. Restart your browser and attempt again."
+  },
+  {
+    "type": "ERROR_CAMERA_PERMISSION_OR_AUTOPLAY_ISSUE",
+    "code": 3025,
+    "message": "It seems like there's an issue with camera permission or video autoplay, you can check out this link for details: http://tinyurl.com/autoplay-issue"
+  },
+  {
+    "type": "ERROR_VIDEO_SOURCE_INITIATION_FAILED",
+    "code": 3026,
+    "message": "Unable to initiate video source. Please verify browser settings for video permissions."
+  },
+  {
+    "type": "ERROR_WEBCAM_TRACK_ENDED",
+    "code": 3027,
+    "message": "Webcam track has ended or the webcam is disconnected. Please ensure your webcam is properly connected and try restarting it."
+  },
+  {
+    "type": "ERROR_MICROPHONE_TRACK_ENDED",
+    "code": 3028,
+    "message": "Microphone track has ended or the microphone is disconnected. Please check your microphone connection and try again."
+  },
+  {
+    "type": "ERROR_INVALID_CUSTOM_VIDEO_TRACK",
+    "code": 3029,
+    "message": "The provided custom video track is invalid; reverting to the default video track. Please ensure that the video track meets the required specifications."
+  },
+  {
+    "type": "ERROR_INVALID_CUSTOM_AUDIO_TRACK",
+    "code": 3030,
+    "message": "The provided custom audio track is invalid; reverting to the default audio track. Please ensure that the audio track meets the required specifications."
+  },
+  {
+    "type": "ERROR_CUSTOM_VIDEO_TRACK_ENDED",
+    "code": 3031,
+    "message": "The provided custom video track is in an ended state. Please verify the video track's status, and try again."
+  },
+  {
+    "type": "ERROR_CUSTOM_AUDIO_TRACK_ENDED",
+    "code": 3032,
+    "message": "The provided custom audio track is in an ended state. Please verify the audio track's status, and try again."
+  },
+  {
+    "type": "ERROR_CAMERA_ACCESS_UNAVAILABLE",
+    "code": 3033,
+    "message": "Camera access unavailable: Please ensure your device is compatible and that you're on a secure website (https://)."
+  },
+  {
+    "type": "ERROR_MICROPHONE_ACCESS_UNAVAILABLE",
+    "code": 3034,
+    "message": "Microphone access unavailable: Please ensure your device is compatible and that you're on a secure website (https://)."
+  },
+  {
+    "type": "ERROR_ACTION_PERFORMED_BEFORE_MEETING_JOINED",
+    "code": 3035,
+    "message": "Oops! Something went wrong. The room was in a connecting state, and during that time, an action encountered an issue. Please try again after joining a meeting."
   }
 ]
