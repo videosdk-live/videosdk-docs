@@ -21,7 +21,7 @@ This feature is currently in BETA.
 Before diving into the Transcription API, ensure you have:
 - Basic knowledge of REST APIs.
 - Understanding of JSON formatting.
-- An [Auth Token](https://docs.videosdk.live/react/guide/video-and-audio-calling-api-sdk/authentication-and-token) for the Transcription API.
+- An [Auth Token](https://dev-docs.videosdk.live/react/guide/video-and-audio-calling-api-sdk/authentication-and-token) for the Transcription API.
 
 
 ## Step 1: Understand the workflow
@@ -32,8 +32,8 @@ To use transcription, recordings needs to be stored in VideoSDK Cloud
 ## Step 2: Choosing Your Method
 
 There are two primary methods for initiating transcription
-- via the [start recording API](https://docs.videosdk.live/api-reference/realtime-communication/start-recording#config)
-- via auto configuration while [creating a meeting API](https://docs.videosdk.live/api-reference/realtime-communication/create-room#autoStartConfig)
+- via the [start recording API](https://dev-docs.videosdk.live/api-reference/realtime-communication/start-recording#config)
+- via auto configuration while [creating a meeting API](https://dev-docs.videosdk.live/api-reference/realtime-communication/create-room#autoStartConfig)
 
 Choose the method that best fits your use case.
 
