@@ -15,7 +15,7 @@ image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
 slug: quick-start
 ---
- 
+
 # Quick Start for Conference in Angular 2
 
 VideoSDK empowers you to seamlessly integrate the video calling feature into your Angular 2 application within minutes.
@@ -57,7 +57,7 @@ import TabItem from '@theme/TabItem';
   </head>
   <body>
     .....
-    <script src="https://sdk.videosdk.live/js-sdk/0.0.78/videosdk.js"></script>
+    <script src="https://sdk.videosdk.live/js-sdk/0.0.82/videosdk.js"></script>
   </body>
 </html>
 ```
@@ -116,13 +116,11 @@ You will be working on the following files:
 - top-bar.component.ts : Responsible for handling the logic and functionality related to the `top-bar.component.html` template.
 - app.component.ts: Handles various meeting and participant-related events, including `joinMeeting` and `createMeeting`. Additionally, responsible for rendering components such as `join-screen`, `top-bar`, and `participantGrid`.
 
-
 ### Step 1 : Get started with Meeting.service.ts
 
 Prior to moving on, you must create an API request to generate a unique meetingId. You will need an authentication token, which you can create either through the [videosdk-rtc-api-server-examples](https://github.com/videosdk-live/videosdk-rtc-api-server-examples) or directly from the [VideoSDK Dashboard](https://app.videosdk.live/api-keys) for developers.
 
 Configure the token in the `enviroment.ts` file, which you can obtain from the [VideoSDK Dashbord](https://app.videosdk.live/login).
-
 
 ```js title="enviroment.ts"
 // We will use Auth token to generate a meetingId and connect to it
@@ -776,7 +774,7 @@ export class AppComponent {
 
 Thereafter, implement the events related to the participants and the stream.
 
-Following are the events to be executed in this step: 
+Following are the events to be executed in this step:
 
 1. `participant-joined`: When a remote participant joins, this event will trigger. In the event callback, create video and audio elements previously defined for rendering their video and audio streams.
 

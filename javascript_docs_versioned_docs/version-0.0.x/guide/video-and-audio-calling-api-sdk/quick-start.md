@@ -12,7 +12,7 @@ keywords:
   - collaboration
   - Javascript SDK implemntation
 image: img/videosdklive-thumbnail.jpg
-sidebar_position: 1 
+sidebar_position: 1
 slug: quick-start
 ---
 
@@ -59,7 +59,7 @@ import TabItem from '@theme/TabItem';
   </head>
   <body>
     <!--.....-->
-    <script src="https://sdk.videosdk.live/js-sdk/0.0.78/videosdk.js"></script>
+    <script src="https://sdk.videosdk.live/js-sdk/0.0.82/videosdk.js"></script>
   </body>
 </html>
 ```
@@ -135,7 +135,7 @@ Create an HTML file containing the screens, `join-screen` and `grid-screen`.
 
     <!-- Add VideoSDK script -->
     //highlight-next-line
-    <script src="https://sdk.videosdk.live/js-sdk/0.0.78/videosdk.js"></script>
+    <script src="https://sdk.videosdk.live/js-sdk/0.0.82/videosdk.js"></script>
     <script src="config.js"></script>
     <script src="index.js"></script>
   </body>
@@ -158,6 +158,7 @@ Configure the token in the `config.js` file, which you can obtain from the [Vide
 // Auth token will be used to generate a meeting and connect to it
 TOKEN = "Your_Token_Here";
 ```
+
 Next, retrieve all the elements from the DOM and declare the following variables in the `index.js` file. Then, add an event listener to the join and create meeting buttons.
 
 ```js title="index.js"
@@ -359,7 +360,7 @@ function setTrack(stream, audioElement, participant, isLocal) {
 
 Thereafter, implement the events related to the participants and the stream.
 
-Following are the events to be executed in this step: 
+Following are the events to be executed in this step:
 
 1. `participant-joined`: When a remote participant joins, this event will trigger. In the event callback, create video and audio elements previously defined for rendering their video and audio streams.
 

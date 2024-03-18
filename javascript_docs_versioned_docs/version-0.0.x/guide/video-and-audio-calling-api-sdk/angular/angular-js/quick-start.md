@@ -13,7 +13,7 @@ keywords:
   - Javascript SDK implemntation
 image: img/videosdklive-thumbnail.jpg
 sidebar_position: 1
-slug: quick-start 
+slug: quick-start
 ---
 
 # Quick Start for Conference in Angular JS
@@ -57,7 +57,7 @@ import TabItem from '@theme/TabItem';
   </head>
   <body>
     .....
-    <script src="https://sdk.videosdk.live/js-sdk/0.0.78/videosdk.js"></script>
+    <script src="https://sdk.videosdk.live/js-sdk/0.0.82/videosdk.js"></script>
   </body>
 </html>
 ```
@@ -219,7 +219,6 @@ Create an HTML file that will render the `join-screen`, `top-bar` and `meeting-c
 
 Finally, assemble the components by creating the `index.html` file and incorporating all the previously created components into it.
 
-
 ```html ="index.html"
 <!DOCTYPE html>
 <html lang="en" ng-app="myApp">
@@ -246,7 +245,7 @@ Finally, assemble the components by creating the `index.html` file and incorpora
       <meeting-container />
       //highlight-end
     </div>
-    <script src="https://sdk.videosdk.live/js-sdk/0.0.78/videosdk.js"></script>
+    <script src="https://sdk.videosdk.live/js-sdk/0.0.82/videosdk.js"></script>
   </body>
 </html>
 ```
@@ -669,7 +668,7 @@ myApp.controller("myController", function ($scope, $http, ENV) {
 
 Thereafter, implement the events related to the participants and the stream.
 
-Following are the events to be executed in this step: 
+Following are the events to be executed in this step:
 
 1. `participant-joined`: When a remote participant joins, this event will trigger. In the event callback, create video and audio elements previously defined for rendering their video and audio streams.
 

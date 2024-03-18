@@ -11,7 +11,7 @@ VideoSDK offers a range of video streaming tools and solutions for content creat
 
 ### Custom Template
 
-- A custom template is a specialized layout for a live stream that allows users to integrate real-time graphics into their broadcasts. 
+- A custom template is a specialized layout for a live stream that allows users to integrate real-time graphics into their broadcasts.
 
 - With custom templates, users can enhance their video content by overlaying graphics, text, images, and animations onto their live streams. These elements can be customized to align with specific branding requirements.
 
@@ -89,7 +89,7 @@ import TabItem from '@theme/TabItem';
   <head></head>
   <body>
     // highlight-next-line
-    <script src="https://sdk.videosdk.live/js-sdk/0.0.78/videosdk.js"></script>
+    <script src="https://sdk.videosdk.live/js-sdk/0.0.82/videosdk.js"></script>
   </body>
 </html>
 ```
@@ -138,7 +138,7 @@ You can use VideoSDK's React or JavaScript SDK to create custom template. Follow
     <!-- render Video -->
     <div class="row" id="videoContainer"></div>
 
-    <script src="https://sdk.videosdk.live/js-sdk/0.0.78/videosdk.js"></script>
+    <script src="https://sdk.videosdk.live/js-sdk/0.0.82/videosdk.js"></script>
     <script src="index.js"></script>
   </body>
 </html>
@@ -266,7 +266,7 @@ function setTrack(stream, audioElement, participant, isLocal) {
 }
 ```
 
-**`Step 6:`**  Now, listen to PubSub messages from the `CHANGE_BACKGROUND` topic, triggering a change in the meeting's background color accordingly.
+**`Step 6:`** Now, listen to PubSub messages from the `CHANGE_BACKGROUND` topic, triggering a change in the meeting's background color accordingly.
 
 :::note
 
@@ -304,7 +304,6 @@ You can checkout the github repository for sample custom template [created here]
 ```bash
 git clone https://github.com/videosdk-live/videosdk-custom-recording-template-js-example.git
 ```
-
 
 - To utilize the custom template that has been deployed, invoke the [Start HLS API](https://docs.videosdk.live/api-reference/realtime-communication/start-hlsStream) instead of the `startHls` method from the `Meeting` class. The necessary code has already been incorporated in the cloned example above.
 

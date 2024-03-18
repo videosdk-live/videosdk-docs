@@ -28,7 +28,7 @@ Import the given library using the `<script>` tag. The easiest way to get starte
   <head>....</head>
   <body>
     .....
-    <script src="https://sdk.videosdk.live/js-sdk/0.0.78/videosdk.js"></script>
+    <script src="https://sdk.videosdk.live/js-sdk/0.0.82/videosdk.js"></script>
   </body>
 </html>
 ```

@@ -99,7 +99,7 @@ yarn add @videosdk.live/js-sdk
 You can also include it in your application using our CDN.
 
 ```jsx
-<script src="<https://sdk.videosdk.live/js-sdk/0.0.78/videosdk.js>"></script>
+<script src="<https://sdk.videosdk.live/js-sdk/0.0.82/videosdk.js>"></script>
 ```
 
 Using this method, VideoSDK will set a browser global:
@@ -125,7 +125,6 @@ cURL -XPOST <https://api.videosdk.live/v2/rooms> \\
 - When joining and leaving a room, the Twilio Local Participant receives the `connected` and `disconnected` events of the room.
 - On the other hand, the VideoSDK Local Participant receives the `meeting-joined` and `meeting-left` events of the meeting when joining and leaving the room.
 
-
 <Tabs
 defaultValue="Twilio"
 groupId={"Twilio"}
@@ -137,18 +136,18 @@ values={[{label: 'Twilio', value: 'Twilio'},]}>
 const video = Twilio.Video;
 function initializeMeeting() {
   connect("$TOKEN", { name: "my-new-room" }).then(
-      (room) => {
-        console.log(`Successfully joined a Room: ${room}`);
-        room.on("connected", (participant) => {
-          console.log(`Local Participant Joined Successfully`);
-        });
-        room.on("disconnected", (participant) => {
-          console.log(`Local Participant Left the Room`);
-        });
-      },
-      (error) => {
-        console.error(`Unable to connect to Room: ${error.message}`);
-      }
+    (room) => {
+      console.log(`Successfully joined a Room: ${room}`);
+      room.on("connected", (participant) => {
+        console.log(`Local Participant Joined Successfully`);
+      });
+      room.on("disconnected", (participant) => {
+        console.log(`Local Participant Left the Room`);
+      });
+    },
+    (error) => {
+      console.error(`Unable to connect to Room: ${error.message}`);
+    }
   );
 }
 ```
@@ -201,7 +200,6 @@ function initializeMeeting() {
 - To get the MediaStream in VideoSDK, listen for the `stream-enabled` event of the Participant class and set the audio and video tracks accordingly.
 - In the code snippet below, we have defined the magic functions `createVideoElement`, `createAudioElement`, and `setTrack` to help render the Local and Remote Participants easily.
 - VideoSDK automatically detaches the MediaStream Tracks when you leave the meeting. Additionally, you can pause and resume the participant stream using the [pause()](https://docs.videosdk.live/javascript/api/sdk-reference/stream-class/methods#pause) and [resume()](https://docs.videosdk.live/javascript/api/sdk-reference/stream-class/methods#resume) methods of the [Stream](https://docs.videosdk.live/javascript/api/sdk-reference/stream-class/introduction) Class.
-
 
 <Tabs
 defaultValue="Twilio"
@@ -425,7 +423,6 @@ function initializeMeeting() {
   room.on("participantDisconnected", (participant) => {
     participantDisconnected(participant, room);
   });
-  
 }
 
 function participantDisconnected(participant, room) {
@@ -506,12 +503,12 @@ values={[{label: 'Twilio', value: 'Twilio'},]}>
 <TabItem value="Twilio">
 
 ```js
-room.localParticipant.audioTracks.forEach(publication => {
+room.localParticipant.audioTracks.forEach((publication) => {
   publication.track.disable(); // Disable Mic in Meeting
-  publication.track.enable();  // Enable Mic in Meeting
+  publication.track.enable(); // Enable Mic in Meeting
 });
 
-room.localParticipant.videoTracks.forEach(publication => {
+room.localParticipant.videoTracks.forEach((publication) => {
   publication.track.disable(); // Disable Webcam in Meeting
   publication.track.enable(); // Enable Webcam in Meeting
 });
@@ -555,11 +552,11 @@ values={[{label: 'Twilio', value: 'Twilio'},]}>
 <TabItem value="Twilio">
 
 ```js
-room.on('disconnected', room => {
+room.on("disconnected", (room) => {
   // Detach the local media elements
-  room.localParticipant.tracks.forEach(publication => {
+  room.localParticipant.tracks.forEach((publication) => {
     const attachedElements = publication.track.detach();
-    attachedElements.forEach(element => element.remove());
+    attachedElements.forEach((element) => element.remove());
   });
 });
 
