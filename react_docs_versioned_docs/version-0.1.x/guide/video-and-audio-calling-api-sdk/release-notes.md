@@ -8,6 +8,42 @@ tags: [releasenotes]
 
 This page will provide you with updates on all releases of the React JS SDK.
 
+## v0.1.85
+
+**Release Date** : 18th Mar 2024
+
+**Change Log** :
+
+- More Precise Media-Related Errors on `onError` Event:
+
+  This update includes detailed error codes and messages for media-related issues. Listen to these error messages on the onError event to diagnose and resolve issues more effectively.
+
+**Docs** : [Error Event](../video-and-audio-calling-api-sdk/get-notified/error-events.md)
+
+| Constant                                     | Code | Message                                                                                                                                                                                                                          |
+| -------------------------------------------- | ---- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| ERROR_CAMERA_ACCESS_DENIED_OR_DISMISSED      | 3017 | Oops! It seems like camera access was denied or dismissed. To proceed, kindly grant access through your browser settings.                                                                                                        |
+| ERROR_MICROPHONE_ACCESS_DENIED_OR_DISMISSED  | 3018 | Oops! It seems like microphone access was denied or dismissed. To proceed, kindly grant access through your browser settings.                                                                                                    |
+| ERROR_CAMERA_PERMISSION_DENIED_BY_OS         | 3019 | Camera permission denied by OS system settings. Please check the system settings and grant permission for this browser.                                                                                                          |
+| ERROR_MICROPHONE_PERMISSION_DENIED_BY_OS     | 3020 | Microphone permission denied by OS system settings. Please check the system settings and grant permission for this browser.                                                                                                      |
+| ERROR_CAMERA_NOT_FOUND                       | 3021 | Please ensure your camera is connected and turned on, and that the camera driver is installed and up-to-date.                                                                                                                    |
+| ERROR_MICROPHONE_NOT_FOUND                   | 3022 | Please ensure your microphone is connected and turned on.                                                                                                                                                                        |
+| ERROR_CAMERA_IN_USE                          | 3023 | The camera is being used by another application. Please close any programs utilizing the camera, such as video conferencing tools, screen recording software, or other browsers. Restart your browser and attempt again.         |
+| ERROR_MICROPHONE_IN_USE                      | 3024 | The microphone is being used by another application. Please close any programs utilizing the microphone, such as video conferencing tools, screen recording software, or other browsers. Restart your browser and attempt again. |
+| ERROR_CAMERA_PERMISSION_OR_AUTOPLAY_ISSUE    | 3025 | It seems like there's an issue with camera permission or video autoplay, you can check out this link for details: [http://tinyurl.com/autoplay-issue](http://tinyurl.com/autoplay-issue)                                         |
+| ERROR_VIDEO_SOURCE_INITIATION_FAILED         | 3026 | Unable to initiate video source. Please verify browser settings for video permissions.                                                                                                                                           |
+| ERROR_WEBCAM_TRACK_ENDED                     | 3027 | Webcam track has ended or the webcam is disconnected. Please ensure your webcam is properly connected and try restarting it.                                                                                                     |
+| ERROR_MICROPHONE_TRACK_ENDED                 | 3028 | Microphone track has ended or the microphone is disconnected. Please check your microphone connection and try again.                                                                                                             |
+| ERROR_INVALID_CUSTOM_VIDEO_TRACK             | 3029 | The provided custom video track is invalid; reverting to the default video track. Please ensure that the video track meets the required specifications.                                                                          |
+| ERROR_INVALID_CUSTOM_AUDIO_TRACK             | 3030 | The provided custom audio track is invalid; reverting to the default audio track. Please ensure that the audio track meets the required specifications.                                                                          |
+| ERROR_CUSTOM_VIDEO_TRACK_ENDED               | 3031 | The provided custom video track is in an ended state. Please verify the video track's status, and try again.                                                                                                                     |
+| ERROR_CUSTOM_AUDIO_TRACK_ENDED               | 3032 | The provided custom audio track is in an ended state. Please verify the audio track's status, and try again.                                                                                                                     |
+| ERROR_CAMERA_ACCESS_UNAVAILABLE              | 3033 | Camera access unavailable: Please ensure your device is compatible and that you're on a secure website (https://).                                                                                                               |
+| ERROR_MICROPHONE_ACCESS_UNAVAILABLE          | 3034 | Microphone access unavailable: Please ensure your device is compatible and that you're on a secure website (https://).                                                                                                           |
+| ERROR_ACTION_PERFORMED_BEFORE_MEETING_JOINED | 3035 | Oops! Something went wrong. The room was in a connecting state, and during that time, an action encountered an issue. Please try again after joining a meeting.                                                                  |
+
+---
+
 ## v0.1.83
 
 **Release Date** : 25th Jan 2024
@@ -16,37 +52,37 @@ This page will provide you with updates on all releases of the React JS SDK.
 
 - Provide Pre-Call Screen's features.
 
-   - Provide `getDevices()` method in `useMediaDevice` hook to get list of media input/output devices. 
+  - Provide `getDevices()` method in `useMediaDevice` hook to get list of media input/output devices.
 
-       **Docs** : [getDevices()](../../api/sdk-reference/use-mediaDevice/methods.md#getdevices)
+    **Docs** : [getDevices()](../../api/sdk-reference/use-mediaDevice/methods.md#getdevices)
 
-   - Provide `getCameras()` method in `useMediaDevice` hook to get list of camera input devices. 
+  - Provide `getCameras()` method in `useMediaDevice` hook to get list of camera input devices.
 
-      **Docs** : [getCameras()](../../api/sdk-reference/use-mediaDevice/methods.md#getcameras)
+    **Docs** : [getCameras()](../../api/sdk-reference/use-mediaDevice/methods.md#getcameras)
 
-   - Provide `getMicrophones()` method in `useMediaDevice` hook to get list of audio input devices. 
+  - Provide `getMicrophones()` method in `useMediaDevice` hook to get list of audio input devices.
 
-      **Docs** : [getMicrophones()](../../api/sdk-reference/use-mediaDevice/methods.md#getmicrophones)
+    **Docs** : [getMicrophones()](../../api/sdk-reference/use-mediaDevice/methods.md#getmicrophones)
 
-   - Provide `getPlaybackDevices()` method in `useMediaDevice` hook to get list of audio output devices. 
+  - Provide `getPlaybackDevices()` method in `useMediaDevice` hook to get list of audio output devices.
 
-      **Docs** : [getPlaybackDevices()](../../api/sdk-reference/use-mediaDevice/methods.md#getplaybackdevices)
+    **Docs** : [getPlaybackDevices()](../../api/sdk-reference/use-mediaDevice/methods.md#getplaybackdevices)
 
-   - Provide `onDeviceChanged()` event in `useMediaDevice` hook, which gets triggered whenever a media device is connected to or removed from the system.
+  - Provide `onDeviceChanged()` event in `useMediaDevice` hook, which gets triggered whenever a media device is connected to or removed from the system.
 
-      **Docs** : [onDeviceChanged()](../../api/sdk-reference/use-mediaDevice/events.md#ondevicechanged)
+    **Docs** : [onDeviceChanged()](../../api/sdk-reference/use-mediaDevice/events.md#ondevicechanged)
 
-   - Provide `requestPermission()` method in `useMediaDevice` hook to request a media permission.
+  - Provide `requestPermission()` method in `useMediaDevice` hook to request a media permission.
 
-      **Docs** : [requestPermission()](../../api/sdk-reference/use-mediaDevice/methods.md#requestpermission)
+    **Docs** : [requestPermission()](../../api/sdk-reference/use-mediaDevice/methods.md#requestpermission)
 
-   - Provide `checkPermission()` method in `useMediaDevice` hook to check status of a media permissions.
+  - Provide `checkPermission()` method in `useMediaDevice` hook to check status of a media permissions.
 
-      **Docs** : [checkPermission()](../../api/sdk-reference/use-mediaDevice/methods.md#checkpermissions)
-   
-   - Provide `getNetworkStats()` method to get `downloadSpeed` and `uploadSpeed` of network. 
+    **Docs** : [checkPermission()](../../api/sdk-reference/use-mediaDevice/methods.md#checkpermissions)
 
-   **Docs** : [getNetworkStats()](../../api/sdk-reference/network-statistics#getnetworkstats)
+  - Provide `getNetworkStats()` method to get `downloadSpeed` and `uploadSpeed` of network.
+
+  **Docs** : [getNetworkStats()](../../api/sdk-reference/network-statistics#getnetworkstats)
 
 ---
 
@@ -55,6 +91,7 @@ This page will provide you with updates on all releases of the React JS SDK.
 **Release Date** : 5th Jan 2024
 
 **Bug fix** :
+
 - When the participant mode changes participants list is reactive
 
 ---
@@ -78,14 +115,13 @@ This page will provide you with updates on all releases of the React JS SDK.
 
 - Added `captureImage` method in the `useParticipant` hook to capture the image of the user from MediaStream.
 
-   **Docs** : [captureImage()](https://docs.videosdk.live/react/api/sdk-reference/use-participant/methods#captureimage)
-
+  **Docs** : [captureImage()](https://docs.videosdk.live/react/api/sdk-reference/use-participant/methods#captureimage)
 
 - Added methods `uploadBase64File` and `fetchBase64File` in `useFile` hook to upload and download a temporary file.
 
-   **Docs** : [uploadBase64File](https://docs.videosdk.live/react/api/sdk-reference/use-file#uploadbase64file)
-   
-   **Docs** : [fetchbase64file](https://docs.videosdk.live/react/api/sdk-reference/use-file#fetchbase64file)
+  **Docs** : [uploadBase64File](https://docs.videosdk.live/react/api/sdk-reference/use-file#uploadbase64file)
+
+  **Docs** : [fetchbase64file](https://docs.videosdk.live/react/api/sdk-reference/use-file#fetchbase64file)
 
 ---
 
