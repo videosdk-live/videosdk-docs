@@ -142,5 +142,70 @@
     "type": "ERROR_GET_DISPLAY_MEDIA_PERMISSION_DENIED",
     "code": 3016,
     "message": "Screen sharing permission denied."
+  },
+  {
+    "type": "ERROR_INVALID_CUSTOM_VIDEO_TRACK",
+    "code": 3029,
+    "message": "The provided custom video track is invalid; reverting to the default video track. Please ensure that the video track meets the required specifications."
+  },
+  {
+    "type": "ERROR_INVALID_CUSTOM_AUDIO_TRACK",
+    "code": 3030,
+    "message": "The provided custom audio track is invalid; reverting to the default audio track. Please ensure that the audio track meets the required specifications."
+  },
+  {
+    "type": "ERROR_CUSTOM_VIDEO_TRACK_ENDED",
+    "code": 3031,
+    "message": "The provided custom video track is in an ended state. Please verify the video track's status, and try again."
+  },
+  {
+    "type": "ERROR_CUSTOM_AUDIO_TRACK_ENDED",
+    "code": 3032,
+    "message": "The provided custom audio track is in an ended state. Please verify the audio track's status, and try again."
+  },
+  {
+    "type": "ERROR_ACTION_PERFORMED_BEFORE_MEETING_JOINED",
+    "code": 3035,
+    "message": "Oops! Something went wrong. The room was in a connecting state, and during that time, an action encountered an issue. Please try again after joining a meeting."
+  },
+  {
+    "type": "ERROR_RN_CAMERA_ACCESS_DENIED_OR_DISMISSED",
+    "code": 3036,
+    "message": "Oops! It seems like camera access was denied or dismissed. To proceed, kindly grant access through your App settings."
+  },
+  {
+    "type": "ERROR_RN_CAMERA_NOT_FOUND",
+    "code": 3037,
+    "message": "Please ensure your camera is connected and turned on"
+  },
+  {
+    "type": "ERROR_RN_MIC_ACCESS_DENIED_OR_DISMISSED",
+    "code": 3038,
+    "message": "Oops! It seems like mic access was denied or dismissed. To proceed, kindly grant access through your App settings."
+  },
+  {
+    "type": "ERROR_RN_MIC_NOT_FOUND",
+    "code": 3039,
+    "message": "Please ensure your mic is connected and turned on"
+  },
+  {
+    "type": "ERROR_RN_CAMERA_ACCESS_UNAVAILABLE",
+    "code": 3040,
+    "message": "Camera access unavailable: Please ensure your device is compatible."
+  },
+  {
+    "type": "ERROR_RN_MIC_ACCESS_UNAVAILABLE",
+    "code": 3041,
+    "message": "Microphone access unavailable: Please ensure your device is compatible."
+  },
+  {
+    "type": "ERROR_RN_CAMERA_TRACK_ENDED",
+    "code": 3042,
+    "message": "Camera track has ended. Please make sure your camera is turned on or try restarting it."
+  },
+  {
+    "type": "ERROR_RN_MIC_TRACK_ENDED",
+    "code": 3043,
+    "message": "Microphone track has ended or the microphone is disconnected. Please check your microphone connection and try again."
   }
-]
+] 

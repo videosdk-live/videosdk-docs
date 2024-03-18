@@ -83,6 +83,25 @@ We have provided a specific constant along with the corresponding code and messa
 | **ERROR_GET_VIDEO_MEDIA_PERMISSION_DENIED**   | 3014 | Video capture permission denied.                                                                                            |
 | **ERROR_GET_AUDIO_MEDIA_PERMISSION_DENIED**   | 3015 | Audio capture permission denied.                                                                                            |
 | **ERROR_GET_DISPLAY_MEDIA_PERMISSION_DENIED** | 3016 | Screen sharing permission denied.                                                                                           |
+| **ERROR_CAMERA_ACCESS_DENIED_OR_DISMISSED** | 3017 | Oops! It seems like camera access was denied or dismissed. To proceed, kindly grant access through your browser settings. |
+| **ERROR_MICROPHONE_ACCESS_DENIED_OR_DISMISSED** | 3018 | Oops! It seems like microphone access was denied or dismissed. To proceed, kindly grant access through your browser settings. |
+| **ERROR_CAMERA_PERMISSION_DENIED_BY_OS** | 3019 | Camera permission denied by OS system settings. Please check the system settings and grant permission for this browser. |
+| **ERROR_MICROPHONE_PERMISSION_DENIED_BY_OS** | 3020 | Microphone permission denied by OS system settings. Please check the system settings and grant permission for this browser. |
+| **ERROR_CAMERA_NOT_FOUND** | 3021 | Please ensure your camera is connected and turned on, and that the camera driver is installed and up-to-date. |
+| **ERROR_MICROPHONE_NOT_FOUND** | 3022 | Please ensure your microphone is connected and turned on. |
+| **ERROR_CAMERA_IN_USE** | 3023 | The camera is being used by another application. Please close any programs utilizing the camera, such as video conferencing tools, screen recording software, or other browsers. Restart your browser and attempt again. |
+| **ERROR_MICROPHONE_IN_USE** | 3024 | The microphone is being used by another application. Please close any programs utilizing the microphone, such as video conferencing tools, screen recording software, or other browsers. Restart your browser and attempt again. |
+| **ERROR_CAMERA_PERMISSION_OR_AUTOPLAY_ISSUE** | 3025 | It seems like there's an issue with camera permission or video autoplay, you can check out this link for details: [http://tinyurl.com/autoplay-issue](http://tinyurl.com/autoplay-issue) |
+| **ERROR_VIDEO_SOURCE_INITIATION_FAILED** | 3026 | Unable to initiate video source. Please verify browser settings for video permissions. |
+| **ERROR_WEBCAM_TRACK_ENDED** | 3027 | Webcam track has ended or the webcam is disconnected. Please ensure your webcam is properly connected and try restarting it. |
+| **ERROR_MICROPHONE_TRACK_ENDED** | 3028 | Microphone track has ended or the microphone is disconnected. Please check your microphone connection and try again. |
+| **ERROR_INVALID_CUSTOM_VIDEO_TRACK** | 3029 | The provided custom video track is invalid; reverting to the default video track. Please ensure that the video track meets the required specifications. |
+| **ERROR_INVALID_CUSTOM_AUDIO_TRACK** | 3030 | The provided custom audio track is invalid; reverting to the default audio track. Please ensure that the audio track meets the required specifications. |
+| **ERROR_CUSTOM_VIDEO_TRACK_ENDED** | 3031 | The provided custom video track is in an ended state. Please verify the video track's status, and try again. |
+| **ERROR_CUSTOM_AUDIO_TRACK_ENDED** | 3032 | The provided custom audio track is in an ended state. Please verify the audio track's status, and try again. |
+| **ERROR_CAMERA_ACCESS_UNAVAILABLE** | 3033 | Camera access unavailable: Please ensure your device is compatible and that you're on a secure website (https://). |
+| **ERROR_MICROPHONE_ACCESS_UNAVAILABLE** | 3034 | Microphone access unavailable: Please ensure your device is compatible and that you're on a secure website (https://). |
+| **ERROR_ACTION_PERFORMED_BEFORE_MEETING_JOINED** | 3035 | Oops! Something went wrong. The room was in a connecting state, and during that time, an action encountered an issue. Please try again after joining a meeting. |
 
 ### API Reference
 

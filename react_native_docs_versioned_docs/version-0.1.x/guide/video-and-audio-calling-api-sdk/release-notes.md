@@ -8,6 +8,36 @@ tags: [releasenotes]
 
 This page will keep you updated on all the releases of React Native SDK.
 
+## v0.1.6
+
+**Release Date** : 18th Mar 2024
+
+**Change Log** :
+
+- More Precise Media-Related Errors on `onError` Event:
+
+  This update includes detailed error codes and messages for media-related issues. Listen to these error messages on the onError event to diagnose and resolve issues more effectively.
+
+**Docs** : [Error Event](../video-and-audio-calling-api-sdk/get-notified/error-events.md)
+
+| Constant                                     | Code | Message                                                                                                                                                           |
+| -------------------------------------------- | ---- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| ERROR_INVALID_CUSTOM_VIDEO_TRACK             | 3029 | The provided custom video track is invalid; reverting to the default video track. Please ensure that the video track meets the required specifications.         |
+| ERROR_INVALID_CUSTOM_AUDIO_TRACK             | 3030 | The provided custom audio track is invalid; reverting to the default audio track. Please ensure that the audio track meets the required specifications.         |
+| ERROR_CUSTOM_VIDEO_TRACK_ENDED               | 3031 | The provided custom video track is in an ended state. Please verify the video track's status, and try again.                                                    |
+| ERROR_CUSTOM_AUDIO_TRACK_ENDED               | 3032 | The provided custom audio track is in an ended state. Please verify the audio track's status, and try again.                                                    |
+| ERROR_ACTION_PERFORMED_BEFORE_MEETING_JOINED | 3035 | Oops! Something went wrong. The room was in a connecting state, and during that time, an action encountered an issue. Please try again after joining a meeting. |
+| ERROR_RN_CAMERA_ACCESS_DENIED_OR_DISMISSED   | 3036 | Oops! It seems like camera access was denied or dismissed. To proceed, kindly grant access through your App settings.                                           |
+| ERROR_RN_CAMERA_NOT_FOUND                    | 3037 | Please ensure your camera is connected and turned on.                                                                                                           |
+| ERROR_RN_MIC_ACCESS_DENIED_OR_DISMISSED      | 3038 | Oops! It seems like mic access was denied or dismissed. To proceed, kindly grant access through your App settings.                                              |
+| ERROR_RN_MIC_NOT_FOUND                       | 3039 | Please ensure your mic is connected and turned on.                                                                                                              |
+| ERROR_RN_CAMERA_ACCESS_UNAVAILABLE           | 3040 | Camera access unavailable: Please ensure your device is compatible.                                                                                             |
+| ERROR_RN_MIC_ACCESS_UNAVAILABLE              | 3041 | Microphone access unavailable: Please ensure your device is compatible.                                                                                         |
+| ERROR_RN_CAMERA_TRACK_ENDED                  | 3042 | Camera track has ended. Please make sure your camera is turned on or try restarting it.                                                                         |
+| ERROR_RN_MIC_TRACK_ENDED                     | 3043 | Microphone track has ended or the microphone is disconnected. Please check your microphone connection and try again.                                            |
+
+---
+
 ## v0.1.5
 
 **Release Date** : 12th Mar 2024
