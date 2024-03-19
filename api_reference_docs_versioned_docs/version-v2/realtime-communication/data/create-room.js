@@ -15,16 +15,6 @@ const createRoom = {
   methodType: "POST",
   postParameters: [
     {
-      key: "region",
-      description: "",
-      required: false,
-      value: "sg001",
-      isDeprecated: true,
-      isDiscontinued: true,
-      deprecatedMessage:
-        "The region parameter has been discontinued; instead, the Video SDK's smart service will pick the best optimal servers for a conference, closest to your end-users' location. If you still need to hold your conferences in a specific region, i.e. Geo Fencing. \n  \n [Contact Us](https://videosdk.live/contact)",
-    },
-    {
       key: "customRoomId",
       value: "aaa-bbb-ccc",
       description: "#### Customize Room id for better understanding.",
@@ -79,6 +69,18 @@ const createRoom = {
     - **quality**: _"low"_ | _"med"_ | _"high"_
     - **orientation**: _"portrait"_ | _"landscape"_
       `,
+      required: false,
+    },
+    {
+      key: "multiComposition",
+      value: "multiCompositionObj",
+      values:
+        "\n```\n{\n  'multiComposition': {\n    'recording': true,\n    'hls': true\n  }\n}\n```",
+      description: `
+- **recording**: _true_ | _false_
+- **hls**: _true_ | _false_
+- **rtmp**: _true_ | _false_
+`,
       required: false,
     },
   ],

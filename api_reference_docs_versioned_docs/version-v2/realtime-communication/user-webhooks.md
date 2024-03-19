@@ -381,4 +381,24 @@ title: Webhooks List
 }
 ```
 
+---
+
+### resource-acquired
+
+- Resource acquired webhook will be received when resource is successfully acquired and ready for composition.
+
+#### Example
+
+```javascript
+{
+    "webhookType": "resource-acquired",
+    "data": {
+        "id": "abcdef9879288c1f48339f64",
+        "type": "recording",
+    },
+}
+```
+
+---
+
 </div>

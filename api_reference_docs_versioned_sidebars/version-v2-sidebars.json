@@ -68,6 +68,23 @@
     },
     {
       "type": "category",
+      "label": "Resource APIs (Beta)",
+      "collapsed": true,
+      "items": [
+        "realtime-communication/acquire-resource",
+        "realtime-communication/release-resource",
+        "realtime-communication/fetch-a-resource",
+        "realtime-communication/fetch-all-resource",
+        "realtime-communication/start-multi-recording",
+        "realtime-communication/stop-multi-recording",
+        "realtime-communication/start-multi-hls",
+        "realtime-communication/stop-multi-hls",
+        "realtime-communication/start-multi-rtmp",
+        "realtime-communication/stop-multi-rtmp"
+      ]
+    },
+    {
+      "type": "category",
       "label": "User Webhooks",
       "collapsed": true,
       "items": [
@@ -79,7 +96,9 @@
       "type": "category",
       "label": "Host into Serverless functions",
       "collapsed": true,
-      "items": ["realtime-communication/firebase-cloud-function"]
+      "items": [
+        "realtime-communication/firebase-cloud-function"
+      ]
     }
   ]
 }

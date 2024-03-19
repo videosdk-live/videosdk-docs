@@ -386,12 +386,21 @@ function generateCode({
 function parametersToJson(parameters) {
   var json = "{";
   parameters.forEach((element) => {
-    // if (element.required) {
-    json += '"' + element.key + '" : "' + element.value + '",';
-    // }
+    if (!element.isDiscontinued && !element.isDeprecated) {
+      if (typeof element.value == "object") {
+        json +=
+          '\n\t\t"' +
+          element.key +
+          '" : ' +
+          JSON.stringify(element.value) +
+          ",";
+      } else {
+        json += '\n\t\t"' + element.key + '" : "' + element.value + '",';
+      }
+    }
   });
   json = json.slice(0, json.length - 1);
-  json += "}";
+  json += "\n\t}";
   return json;
 }
 
@@ -439,41 +448,43 @@ const MethodRequestResponse = ({
   useEffect(() => {}, [language]);
 
   return (
-    <div className='flex flex-col '>
+    <div className="flex flex-col ">
       <a
-        href='https://www.postman.com/videosdk-apis/workspace/my-workspace/collection/24161231-eb2511fb-998b-448f-b10d-00c2bf257cd7?action=share&creator=24161231'
-        className='flex self-end mb-2'>
-        <img src='https://run.pstmn.io/button.svg' />
+        href="https://www.postman.com/videosdk-apis/workspace/my-workspace/collection/24161231-eb2511fb-998b-448f-b10d-00c2bf257cd7?action=share&creator=24161231"
+        className="flex self-end mb-2"
+      >
+        <img src="https://run.pstmn.io/button.svg" />
       </a>
-      <div className='bg-[#333A47] rounded-t-lg pt-4 pb-4 pl-3 flex flex-row flex-wrap align-middle'>
-        <div className='text-[#72C894] text-sm font-bold'>{methodType}</div>
-        <div className='text-[#7D8EAD] text-sm font-medium pl-[3px] pr-[3px]'>
+      <div className="bg-[#333A47] rounded-t-lg pt-4 pb-4 pl-3 flex flex-row flex-wrap align-middle">
+        <div className="text-[#72C894] text-sm font-bold">{methodType}</div>
+        <div className="text-[#7D8EAD] text-sm font-medium pl-[3px] pr-[3px]">
           |
         </div>
-        <div className='flex-1 text-[#fff] text-sm font-medium'>
+        <div className="flex-1 text-[#fff] text-sm font-medium">
           {apiEndpoint}
         </div>
-        <div className='dropdown dropdown--hoverable dropdown--right'>
-          <div className='flex flex-row pr-3 cursor-pointer'>
-            <div className='text-sm text-white-1'>{language.value}</div>
+        <div className="dropdown dropdown--hoverable dropdown--right">
+          <div className="flex flex-row pr-3 cursor-pointer">
+            <div className="text-sm text-white-1">{language.value}</div>
             <img
-              src='/img/icons/ic_arrow_down.svg'
-              className='pl-2 colored_ic_arrow_down'
+              src="/img/icons/ic_arrow_down.svg"
+              className="pl-2 colored_ic_arrow_down"
             />
           </div>
-          <ul className='dropdown__menu min-w-fit bg-[#252a34]'>
+          <ul className="dropdown__menu min-w-fit bg-[#252a34]">
             {languageList.map((v) => {
               return (
                 <li key={v.id}>
                   <a
-                    className='dropdown__link text-sm cursor-pointer'
+                    className="dropdown__link text-sm cursor-pointer"
                     onClick={(e) => {
                       localStorage.setItem(
                         "rest-api-group-id",
                         JSON.stringify(v)
                       );
                       setLanguage(v);
-                    }}>
+                    }}
+                  >
                     {v.value}
                   </a>
                 </li>
@@ -482,8 +493,8 @@ const MethodRequestResponse = ({
           </ul>
         </div>
       </div>
-      <div className='method_code_block'>
-        <CodeBlock language='js'>
+      <div className="method_code_block">
+        <CodeBlock language="js">
           {generateCode({
             headers,
             methodType,
@@ -494,11 +505,11 @@ const MethodRequestResponse = ({
           })}
         </CodeBlock>
       </div>
-      <div className='bg-[#333A47] rounded-t-lg pt-4 pb-4 pl-3 flex lg:flex-row flex-col align-middle'>
-        <div className='flex-1 text-sm font-bold text-white-1'>RESPONSE</div>
+      <div className="bg-[#333A47] rounded-t-lg pt-4 pb-4 pl-3 flex lg:flex-row flex-col align-middle">
+        <div className="flex-1 text-sm font-bold text-white-1">RESPONSE</div>
       </div>
-      <div className='method_code_block'>
-        <CodeBlock language='jsx'>
+      <div className="method_code_block">
+        <CodeBlock language="jsx">
           {JSON.stringify(response, null, 2)}
         </CodeBlock>
       </div>
@@ -542,24 +553,24 @@ const MethodDescription = ({
   methodType,
 }) => {
   return (
-    <div className='flex flex-col'>
-      <div className='text-gray-250'>{description}</div>
+    <div className="flex flex-col">
+      <div className="text-gray-250">{description}</div>
 
-      <div className='mt-12'>
-        <p className='font-extrabold text-lg'>HTTP method and endpoint</p>
+      <div className="mt-12">
+        <p className="font-extrabold text-lg">HTTP method and endpoint</p>
 
-        <div className='flex text-lg'>
-          <div className='text-green-300 font-bold'>{methodType}</div>
-          <p className='mx-2'>{" | "}</p>
+        <div className="flex text-lg">
+          <div className="text-green-300 font-bold">{methodType}</div>
+          <p className="mx-2">{" | "}</p>
           {apiEndpoint}
         </div>
       </div>
 
       <div>
-        <div className='text-2xl mt-5 font-extrabold text-white-100'>
+        <div className="text-2xl mt-5 font-extrabold text-white-100">
           Headers Parameters
         </div>
-        <div className='bg-[#252A34] mt-3 mb-1 h-[1px]'></div>
+        <div className="bg-[#252A34] mt-3 mb-1 h-[1px]"></div>
         {(postParameters?.length
           ? [
               {
@@ -605,10 +616,10 @@ const MethodDescription = ({
 
       {postParameters?.length != 0 && (
         <div>
-          <div className='text-2xl mt-12 font-extrabold text-white-100'>
+          <div className="text-2xl mt-12 font-extrabold text-white-100">
             Body Parameters
           </div>
-          <div className='bg-[#252A34] mt-3 mb-1 h-[1px]'></div>
+          <div className="bg-[#252A34] mt-3 mb-1 h-[1px]"></div>
           {postParameters?.map((parameter, index) => {
             return (
               <MethodParameter
@@ -629,10 +640,10 @@ const MethodDescription = ({
 
       {responseParameters?.length != 0 && responseParameters && (
         <div>
-          <div className='text-2xl mt-12 font-extrabold text-white-100'>
+          <div className="text-2xl mt-12 font-extrabold text-white-100">
             Response Parameters
           </div>
-          <div className='bg-[#252A34] mt-3 mb-1 h-[1px]'></div>
+          <div className="bg-[#252A34] mt-3 mb-1 h-[1px]"></div>
           {responseParameters?.map((parameter, index) => {
             return (
               <MethodParameter
@@ -653,10 +664,10 @@ const MethodDescription = ({
       )}
       {queryParameters?.length != 0 && (
         <div>
-          <div className='text-2xl mt-12 font-extrabold text-white-100'>
+          <div className="text-2xl mt-12 font-extrabold text-white-100">
             Query Parameters
           </div>
-          <div className='bg-[#252A34] mt-3 mb-1 h-[1px]'></div>
+          <div className="bg-[#252A34] mt-3 mb-1 h-[1px]"></div>
           {queryParameters?.map((parameter, index) => {
             return (
               <MethodParameter
@@ -677,10 +688,10 @@ const MethodDescription = ({
 
       {parameters?.length != 0 && (
         <div>
-          <div className='text-2xl mt-12 font-extrabold text-white-100'>
+          <div className="text-2xl mt-12 font-extrabold text-white-100">
             Parameters
           </div>
-          <div className='bg-[#252A34] mt-3 mb-1 h-[1px]'></div>
+          <div className="bg-[#252A34] mt-3 mb-1 h-[1px]"></div>
           {parameters?.map((parameter, index) => {
             return (
               <MethodParameter
@@ -749,8 +760,8 @@ const MethodParameter = ({
 
   let mdParmName = `## ${parameterName}`;
   return (
-    <div className='w-full' id={parameterName}>
-      <div className='flex flex-row pt-4'>
+    <div className="w-full" id={parameterName}>
+      <div className="flex flex-row pt-4">
         <div>
           <a href={"#" + parameterName}>
             <Markdown
@@ -765,12 +776,13 @@ const MethodParameter = ({
                   },
                 },
               }}
-              children={mdParmName}></Markdown>
+              children={mdParmName}
+            ></Markdown>
           </a>
         </div>
 
         {isDeprecated || isDiscontinued ? (
-          <div className='text-red-200 italic font-semibold text-[12px] leading-7 mt-1'>
+          <div className="text-red-200 italic font-semibold text-[12px] leading-7 mt-1">
             {isDiscontinued
               ? "@discontinued"
               : isDeprecated
@@ -779,11 +791,11 @@ const MethodParameter = ({
           </div>
         ) : !isResponseParam ? (
           required ? (
-            <div className='text-primary font-semibold text-[10px] leading-7 mt-1'>
+            <div className="text-primary font-semibold text-[10px] leading-7 mt-1">
               REQUIRED
             </div>
           ) : (
-            <div className=' text-slate-400 text-[10px] font-medium leading-7 mt-1'>
+            <div className=" text-slate-400 text-[10px] font-medium leading-7 mt-1">
               OPTIONAL
             </div>
           )
@@ -792,7 +804,7 @@ const MethodParameter = ({
 
       {(isDeprecated || isDiscontinued) && deprecatedMessage ? (
         <div>
-          <p className='italic text-red-200'>
+          <p className="italic text-red-200">
             <Markdown
               options={{
                 overrides: {
@@ -803,7 +815,8 @@ const MethodParameter = ({
                     },
                   },
                 },
-              }}>
+              }}
+            >
               {deprecatedMessage}
             </Markdown>
           </p>
@@ -821,10 +834,11 @@ const MethodParameter = ({
               },
             },
           }}
-          children={md}></Markdown>
+          children={md}
+        ></Markdown>
       </div>
 
-      {showDivider && <div className='bg-[#252A34] mt-5 h-[1px]'></div>}
+      {showDivider && <div className="bg-[#252A34] mt-5 h-[1px]"></div>}
     </div>
   );
 };
@@ -842,11 +856,11 @@ function RestApiMethodContainer({
   title,
 }) {
   return (
-    <div id='tailwind'>
-      <div className='flex lg:flex-row flex-col w-full'>
-        <div className='lg:w-1/2 w-full lg:sticky self-start lg:pr-[18px] flex-grow top-10'>
+    <div id="tailwind">
+      <div className="flex lg:flex-row flex-col w-full">
+        <div className="lg:w-1/2 w-full lg:sticky self-start lg:pr-[18px] flex-grow top-10">
           <MethodDescription
-            description={description}
+            description={<Markdown>{description}</Markdown>}
             queryParameters={queryParameters}
             postParameters={postParameters}
             parameters={parameters}
@@ -855,7 +869,7 @@ function RestApiMethodContainer({
             methodType={methodType}
           />
         </div>
-        <div className='lg:w-1/2 w-full lg:pt-0 pt-4 lg:pl-[18px] lg:sticky self-start flex-grow top-10'>
+        <div className="lg:w-1/2 w-full lg:pt-0 pt-4 lg:pl-[18px] lg:sticky self-start flex-grow top-10">
           <MethodRequestResponse
             headers={headers}
             methodType={methodType}

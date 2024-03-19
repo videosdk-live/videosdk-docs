@@ -1,0 +1,35 @@
+{
+  "stopMultiHLSstream": {
+    "title": "Stop Multiple HLS Livestream",
+    "description": "This API lets you stop multiple HLS stream by passing roomId, id as a body parameter.",
+    "headers": [
+      {
+        "key": "Authorization",
+        "value": "$YOUR_TOKEN"
+      },
+      {
+        "key": "Content-Type",
+        "value": "application/json"
+      }
+    ],
+    "methodType": "POST",
+    "postParameters": [
+      {
+        "key": "roomId",
+        "value": "xyz",
+        "description": "The ID of the Room.",
+        "required": true
+      },
+      {
+        "key": "id",
+        "value": "abcdef9879288c1f48339f54",
+        "description": "The id of HLS stream.",
+        "required": true
+      }
+    ],
+    "queryParameters": [],
+    "parameters": [],
+    "apiEndpoint": "https://api.videosdk.live/v2/resource/hls/end",
+    "response": { "success": true, "msg": "HLS ended successfully" }
+  }
+}

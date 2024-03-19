@@ -1,0 +1,38 @@
+{
+  "stopMultiRecording": {
+    "title": "Stop Multiple Recording",
+    "description": "This API lets you stop mutiple recording of your room by passing roomId, id as a body parameter.",
+    "headers": [
+      {
+        "key": "Authorization",
+        "value": "$YOUR_TOKEN"
+      },
+      {
+        "key": "Content-Type",
+        "value": "application/json"
+      }
+    ],
+    "methodType": "POST",
+    "postParameters": [
+      {
+        "key": "roomId",
+        "value": "xyz",
+        "description": "The ID of the Room.",
+        "required": true
+      },
+      {
+        "key": "id",
+        "value": "abcdef9879288c1f48339f54",
+        "description": "The id of Recording.",
+        "required": true
+      }
+    ],
+    "queryParameters": [],
+    "parameters": [],
+    "apiEndpoint": "https://api.videosdk.live/v2/resource/recordings/end",
+    "response": {
+      "success": true,
+      "msg": "Recording ended successfully"
+    }
+  }
+}

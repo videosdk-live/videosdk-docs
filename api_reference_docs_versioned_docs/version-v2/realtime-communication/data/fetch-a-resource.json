@@ -1,0 +1,36 @@
+{
+  "fetchAResource": {
+    "title": "Fetch a Resource",
+    "description": "This API lets you fetch a particular resource info by passing resourceId as parameter.",
+    "headers": [
+      {
+        "key": "Authorization",
+        "value": "$YOUR_TOKEN"
+      },
+      {
+        "key": "Content-Type",
+        "value": "application/json"
+      }
+    ],
+    "methodType": "GET",
+    "postParameters": [],
+    "queryParameters": [],
+    "parameters": [
+      {
+        "key": "resourceId",
+        "description": "#### The ID of the Resource.",
+        "required": true
+      }
+    ],
+    "apiEndpoint": "https://api.videosdk.live/v2/resource/${resourceId}",
+    "response": {
+      "id": "abcdef9879288c1f48339f64",
+      "status": "released",
+      "type": "filecomposer",
+      "mode": "video-and-audio",
+      "quality": "med",
+      "composerIds": ["abcdef9879288c1f48339f54"],
+      "webhookUrl": "https://example.com/"
+    }
+  }
+}

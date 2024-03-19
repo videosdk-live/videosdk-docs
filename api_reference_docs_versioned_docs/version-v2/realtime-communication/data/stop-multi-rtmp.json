@@ -1,0 +1,35 @@
+{
+  "stopMultiLivestream": {
+    "title": "Stop Multiple Livestream",
+    "description": "This API lets you stop multiple livestream by passing roomId, id as a body parameter.",
+    "headers": [
+      {
+        "key": "Authorization",
+        "value": "$YOUR_TOKEN"
+      },
+      {
+        "key": "Content-Type",
+        "value": "application/json"
+      }
+    ],
+    "methodType": "POST",
+    "postParameters": [
+      {
+        "key": "roomId",
+        "value": "abcd-efgh-lmno",
+        "description": "The ID of the Room.",
+        "required": true
+      },
+      {
+        "key": "id",
+        "value": "abcdef9879288c1f48339f54",
+        "description": "The id of Livestream.",
+        "required": true
+      }
+    ],
+    "queryParameters": [],
+    "parameters": [],
+    "apiEndpoint": "https://api.videosdk.live/v2/resource/livestreams/end",
+    "response": { "success": true, "msg": "Livestream ended successfully" }
+  }
+}
