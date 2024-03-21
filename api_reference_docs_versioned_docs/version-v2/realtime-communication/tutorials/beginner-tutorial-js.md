@@ -596,7 +596,7 @@ meeting.on("video-stopped", () => {
 
 ### Restream meeting on social media
 
-Restream meeting on your favorate social media channels using RTMP key and url.
+Restream meeting on your favorite social media channels using RTMP key and url.
 
 ```javascript
 // start livestreaming

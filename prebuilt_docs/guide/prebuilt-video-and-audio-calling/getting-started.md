@@ -28,7 +28,7 @@ Video SDK enables easy to use one-to-one and group call support with voice only 
 | Screen Sharing       | Enables the user to share the screen to other users in the room.                    |
 | Rich Chat            | Enables the user to send messages .                                                 |
 | RTMP Streaming       | Enables going live to RTMP compatible streaming services such as YouTube or Twitch. |
-| Cloud Recording      | Record and store composed cloud recordings to your favorate storage provider.       |
+| Cloud Recording      | Record and store composed cloud recordings to your favorite storage provider.       |
 | Dynamic Layout       | Chage layout of meeting, recording and live streaming on-fly.                       |
 
 ## Known issues
