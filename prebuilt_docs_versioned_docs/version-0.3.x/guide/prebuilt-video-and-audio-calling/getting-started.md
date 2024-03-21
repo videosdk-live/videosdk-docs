@@ -36,7 +36,7 @@ If your application necessitates a higher quota, please [**Contact Us**](https:/
 | Screen Sharing       | Enables the user to share the screen to other users in the room.                    |
 | Rich Chat            | Enables the user to send messages .                                                 |
 | RTMP Streaming       | Enables going live to RTMP compatible streaming services such as YouTube or Twitch. |
-| Cloud Recording      | Record and store composed cloud recordings to your favorate storage provider.       |
+| Cloud Recording      | Record and store composed cloud recordings to your favorite storage provider.       |
 | Dynamic Layout       | Chage layout of meeting, recording and live streaming on-fly.                       |
 | HLS Streaming        | HLS Streaming allows for scaling to millions of viewers in near real time.          |
 
