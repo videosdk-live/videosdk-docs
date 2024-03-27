@@ -7,6 +7,16 @@ pagination_label: Release Notes
 
 This page will keep you update all the releases of Prebuilt SDK.
 
+## 0.3.38
+
+**Release Date** : 27th Mar 2024
+
+**Bug Fix** :
+
+1. Fixed host with permission not able to enable mic, webcam or screen share of remote participants.
+
+2. Fixed edge case where multiple participants attempting screen sharing in a meeting could result in misleading of stream showcase.
+
 ## 0.3.37
 
 **Release Date** : 31st Oct 2023
