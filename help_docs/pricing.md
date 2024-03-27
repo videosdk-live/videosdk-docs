@@ -47,10 +47,13 @@ slug: pricing
             
             | Service | Charge | Unit |
             | --- | --- | --- |
-            | Cloud recording | $0.015 | Per recorded min |
-            | Storage (Recorded video storage) | $0.003 | Per min of video stored, in a month |
+            | Cloud Audio recording | $0.015 | Per recorded audio min |
+            | Cloud Video recording (HD) | $0.015 | Per recorded video min |
+            | Cloud Video recording (Full HD) | $0.030 | Per recorded video min |
+            | Storage (Recorded Audio storage) | $0.0003 | Per min of audio stored, in a month |
+            | Storage (Recorded Video storage) | $0.003 | Per min of video stored, in a month |
             | Streaming (Watching cloud stored video) | $0.0015 | Per min of video viewed |
-            | Re-streaming (RTMP out) | $0.03 | Per re-streamed min |
+            | Re-streaming / RTMP out | $0.03 | Per re-streamed min |
 #### **3. What are the Free Video SDK services?**
   - You are getting free 10,000 participant mins for conferencing/calling, all video resolutions.
 #### **4. What are charges for live-messaging & signaling?**
@@ -159,11 +162,16 @@ slug: pricing
             
           | Service | Charge | Unit |
           | --- | --- | --- |
-          | Encoding (Livestream mins) | $0.04 | Per livestream min |
-          | Cloud recording | $0.015 | Per recorded min |
-          | Storage (Recorded livestream storage) | $0.003 | Per min of video stored, in a month |
+          | Encoding Audio (Livestream mins) | $0.04 | Per livestream audio min |
+          | Encoding Video - HD (Livestream mins) | $0.04 | Per livestream video min |
+          | Encoding Video - Full HD (Livestream mins) | $0.08 | Per livestream video min |
+          | Cloud Audio recording | $0.015 | Per recorded audio min |
+          | Cloud Video recording (HD) | $0.015 | Per recorded video min |
+          | Cloud Video recording (Full HD) | $0.030 | Per recorded video min |
+          | Storage (Recorded livestream Audio storage) | $0.0003 | Per min of video stored, in a month |
+          | Storage (Recorded livestream Video storage) | $0.003 | Per min of video stored, in a month |
           | Streaming (Watching recorded livestream) | Same as viewer-min | Per min of video viewed |
-          | Re-streaming | $0.015 | Per re-streamed min (RTMP-out) |
+          | Re-streaming / RTMP Out | $0.015 | Per re-streamed min (RTMP-out) |
 #### **3. What are the Free Video SDK services?**
   - You are getting free 10,000 speaker & viewer-mins every month, all video resolutions.
 #### **4. What are charges for live-messaging & signaling?**
