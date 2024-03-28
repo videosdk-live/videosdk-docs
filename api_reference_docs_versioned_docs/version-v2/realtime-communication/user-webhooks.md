@@ -183,6 +183,26 @@ title: Webhooks List
 
 ---
 
+
+### transcription-completed
+
+- You will receive a `transcription-completed` webhook when the transcription for the recording is generated. This webhook will be triggered against the `webhookUrl` provided during the start recording API call.
+
+#### Example
+
+```javascript
+{
+    "webhookType": "transcription-completed",
+    "data": {
+        "id": "40b0a4ed-9842-40c9-a288-e4b1bf98a90a",
+        "roomId": "jvsg-8rjn-j304"
+    },
+}
+```
+
+
+---
+
 ### livestream-starting
 
 - A "Livestream Starting" webhook is triggered when the livestreaming process for a meeting is initiated.

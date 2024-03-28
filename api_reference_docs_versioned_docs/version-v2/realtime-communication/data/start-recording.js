@@ -29,6 +29,27 @@ const startRecording = {
       required: false,
     },
     {
+      key: "transcription",
+      value:
+        "transcriptionObj",
+      description:`
+- **transcription**:
+  - **enabled**: true | false   
+`,
+      required: false,
+    },
+    {
+      key: "summary",
+      value:
+        "summaryObj",
+      description:`
+- **summary**:
+  - **enabled**: true | false   
+  - **prompt**: _“Your customized summary prompt”_
+`,
+      required: false,
+    },
+    {
       key: "config",
       value: "configObj",
       description: `
